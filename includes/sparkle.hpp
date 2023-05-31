@@ -2,4 +2,4 @@
 
 #include <iostream>
 
-void print_hello_world();
+#include "design_pattern/spk_singleton.hpp"
