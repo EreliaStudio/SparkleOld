@@ -44,4 +44,5 @@
         "xtr1common": "cpp",
         "xutility": "cpp"
     }
+    "cmake.generator": "Ninja"
 }

@@ -1,26 +1,41 @@
-cmake_minimum_required(VERSION 3.10)
-
-set(PROJECT_NAME "sparkle")
-
-project(${PROJECT_NAME} VERSION 1.0)
-
-add_subdirectory(playground)
-add_dependencies(sparkle_test ${PROJECT_NAME})
-
+cmake_minimum_required(VERSION 3.22)
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(includes)
+project(Sparkle)
 
-file(GLOB SRC_SOURCES "src/*.cpp")
-file(GLOB STRUCTURE_SOURCES "src/structure/*.cpp")
-file(GLOB NETWORK_SOURCES "src/network/*.cpp")
-
-if(WIN32)
-    file(GLOB SYSTEM_SOURCES "src/windows/*.cpp")
-elseif(UNIX)
-    file(GLOB SYSTEM_SOURCES "src/linux/*.cpp")
+set(OSBitness 32)
+if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+    set(OSBitness 64)
 endif()
 
-set(SOURCES ${SRC_SOURCES} ${STRUCTURE_SOURCES} ${NETWORK_SOURCES} ${SYSTEM_SOURCES})
+set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
 
-add_library(${PROJECT_NAME} ${SOURCES})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/archive/${ArchitectureSufix}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/lib/${ArchitectureSufix}")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/executable/${ArchitectureSufix}")
+
+function(SetupSparkleLibrary)
+
+    include_directories(${CMAKE_SOURCE_DIR}/includes)
+
+    file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+
+    list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/src/cross_platform/.*")
+
+    add_library(sparkle ${SOURCE_FILES})
+    
+endfunction()
+
+function(SetupPlayground)
+    set(SOURCE_FILES)
+    
+    file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/playground/src/*.cpp")
+
+    add_executable(playground ${SOURCE_FILES})
+    target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
+    target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
+    target_link_libraries(playground sparkle)
+endfunction()
+
+SetupSparkleLibrary()
+SetupPlayground()
