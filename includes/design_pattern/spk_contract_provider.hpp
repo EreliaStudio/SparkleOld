@@ -7,7 +7,7 @@
 
 namespace spk
 {
-	class ContractFactory
+	class ContractProvider
 	{
 	public:
 		using Callback = std::function<void()>;
@@ -15,17 +15,19 @@ namespace spk
 
 		class Contract
 		{
-			friend class ContractFactory;
+			friend class ContractProvider;
 
 		private:
 			bool _isOriginal = true;
 			CallbackContainer &_callbackOwner;
 			Callback &_callback;
 
-			Contract(CallbackContainer &p_callbackOwner, Callback &p_callback) : _callbackOwner(p_callbackOwner),
-																				 _callback(p_callback),
-																				 _isOriginal(true)
+			Contract(CallbackContainer &p_callbackOwner, Callback &p_callback) :
+				_callbackOwner(p_callbackOwner),
+				_callback(p_callback),
+				_isOriginal(true)
 			{
+
 			}
 
 			Contract(const Contract &p_other) = delete;
@@ -36,9 +38,10 @@ namespace spk
 			}
 
 		public:
-			Contract(Contract &&p_other) : _callbackOwner(p_other._callbackOwner),
-										   _callback(p_other._callback),
-										   _isOriginal(true)
+			Contract(Contract &&p_other) :
+				_callbackOwner(p_other._callbackOwner),
+				_callback(p_other._callback),
+				_isOriginal(true)
 			{
 				p_other._isOriginal = false;
 			}

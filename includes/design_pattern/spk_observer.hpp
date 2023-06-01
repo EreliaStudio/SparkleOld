@@ -2,7 +2,7 @@
 
 #include <map>
 #include <vector>
-#include "design_pattern/spk_contract_factory.hpp"
+#include "design_pattern/spk_contract_provider.hpp"
 
 namespace spk
 {
@@ -16,7 +16,7 @@ namespace spk
 	 * Release Contract memory as soon as the Contract is resigned.
 	 */
 	template <typename TEvent>
-	class Observer : public ContractFactory
+	class Observer : public ContractProvider
 	{
 	private:
 		std::map<TEvent, CallbackContainer> _callbacks;
@@ -28,7 +28,7 @@ namespace spk
 
 		Contract subscribe(TEvent p_event, Callback p_callback)
 		{
-			Contract result = ContractFactory::subscribe(_callbacks[p_event], p_callback);
+			Contract result = ContractProvider::subscribe(_callbacks[p_event], p_callback);
 
 			return (std::move(result));
 		}
