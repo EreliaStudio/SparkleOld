@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include <map>
 #include <vector>
@@ -8,7 +8,7 @@ namespace spk
 {
 	/**
 	 *  Observer is a class that can be used to subscribe to events.
-	 * 
+	 *
 	 * Role:
 	 * Allow user to subscribe to events.
 	 * Allow user to notify all subscribers of an event.
@@ -21,10 +21,9 @@ namespace spk
 	private:
 		std::map<TEvent, CallbackContainer> _callbacks;
 
-	public: 
+	public:
 		Observer()
 		{
-
 		}
 
 		Contract subscribe(TEvent p_event, Callback p_callback)
@@ -36,7 +35,7 @@ namespace spk
 
 		void notify(TEvent p_event)
 		{
-			CallbackContainer& container = _callbacks[p_event];
+			CallbackContainer &container = _callbacks[p_event];
 
 			for (size_t i = 0; i < container.size(); i++)
 			{
