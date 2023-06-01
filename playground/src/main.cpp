@@ -1,48 +1,48 @@
 #include "playground.hpp"
 
-void generateInput(spk::Observer<int>& observer, std::string p_message)
+void generateSignal(spk::Observer<int>& observer, std::string p_message)
 {
     std::cout << " --- " << p_message << " ---" << std::endl;
+
     observer.notify(1);
     observer.notify(2);
-    observer.notify(3);  
-    std::cout << std::endl;
+
+    std::cout << std::endl << std::endl;
 }
 
-void generateScopedContract(spk::Observer<int>& observer)
+void test(spk::Observer<int>::Contract tmp)
 {
-    std::shared_ptr<spk::Observer<int>::Contract> contract10 = observer.subscribe(1, []() { std::cout << "Callback for event 1.2" << std::endl; });
-    std::shared_ptr<spk::Observer<int>::Contract> contract30 = observer.subscribe(3, []() { std::cout << "Callback for event 3.0" << std::endl; });
-    generateInput(observer, "Inside scope");
+
+}
+
+void scopedSubscription(spk::Observer<int>& observer)
+{
+    spk::Observer<int>::Contract contractD = observer.subscribe(2, [&](){std::cout << "Event 2.1 notified ! - scoped" << std::endl;});
+
+    generateSignal(observer, "Inside scoped subscription");
 }
 
 int main()
 {
     spk::Observer<int> observer;
 
-	DEBUG_LINE();
-    // Subscribe to events
-    std::shared_ptr<spk::Observer<int>::Contract> contract10 = observer.subscribe(1, []() { std::cout << "Callback for event 1.0" << std::endl; });
-	DEBUG_LINE();
-    std::shared_ptr<spk::Observer<int>::Contract> contract11 = observer.subscribe(1, []() { std::cout << "Callback for event 1.1" << std::endl; });
-	DEBUG_LINE();
-    std::shared_ptr<spk::Observer<int>::Contract> contract20 = observer.subscribe(2, []() { std::cout << "Callback for event 2.0" << std::endl; });
+    spk::Observer<int>::Contract contractA = observer.subscribe(1, [&](){std::cout << "Event 1.0 notified !" << std::endl;});
+    spk::Observer<int>::Contract contractB = observer.subscribe(1, [&](){std::cout << "Event 1.1 notified !" << std::endl;});
+    spk::Observer<int>::Contract contractC = observer.subscribe(2, [&](){std::cout << "Event 2.0 notified !" << std::endl;});
 
-    // Notify events
-    generateInput(observer, "At start");
-        
-    // Resign from events
-    contract10->resign();
+    generateSignal(observer, "At start");
 
-    generateInput(observer, "After resigning 1.0");
+    contractB.resign();
+    
+    generateSignal(observer, "After resign");
 
-    contract11->edit([]() { std::cout << "Callback for event 1.1 - edited" << std::endl; });
+    contractA.edit([&](){std::cout << "Event 1.0 notified ! - edited" << std::endl;});
+    
+    generateSignal(observer, "After edit");
 
-    generateInput(observer, "After editing 1.1");
-
-    generateScopedContract(observer);
-
-    generateInput(observer, "Outside scope");
+    scopedSubscription(observer);
+    
+    generateSignal(observer, "After scope");
 
     return 0;
 }

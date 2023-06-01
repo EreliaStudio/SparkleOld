@@ -3,114 +3,92 @@
 #include <functional>
 #include <deque>
 #include <cstddef>
-
-#include <iostream>
-#define DEBUG_LINE() std::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+#include <stdexcept>
 
 namespace spk
 {
 	class ContractFactory
-	{
-	public:
-		using Callback = std::function<void()>;
-		using Container = std::deque<Callback>;
-
-		class Contract
-		{
-			friend class ContractFactory;
-			friend class std::shared_ptr<Contract>;
-		private:
-			ContractFactory* _owner;
-			Callback& _callback;
-			Callback _resignCallback;
-
-			Contract(ContractFactory* p_owner, Callback& p_callback) :
-				_owner(p_owner),
-				_callback(p_callback),
-				_resignCallback(nullptr)
-			{
-				if (_callback == nullptr)
-					throw std::runtime_error("Can't create a contract with no callback");
-			}
-
-		public:
-			~Contract()
-			{
-				if (_callback != nullptr)
-					resign();
-			}
-
-			void edit(Callback p_callback)
-			{
-				if (_callback == nullptr)
-					throw std::runtime_error("Can't edit a resigned contract");
-
-				if (p_callback == nullptr)
-					throw std::runtime_error("Can't set a contract to nullptr");
-
-				_callback = p_callback;
-			}
-
-			void resign()
-			{
-				if (_callback == nullptr)
-					throw std::runtime_error("Can't edit a resigned contract");
-				
-				if (_resignCallback != nullptr)
-					_resignCallback();
-
-				_owner->_removeUnusedCallback(*this);
-
-				_callback = nullptr;
-			}
-		};
-
-	private:
-		Container _callbacks;
-
-		void _removeUnusedCallback(Contract& p_contract)
-		{
-			Callback* toDelete = &(p_contract._callback);
-
-			for (size_t i = 0; i < _callbacks.size(); i++)
-			{
-				if (&_callbacks[i] == &p_contract._callback)
-				{
-					_callbacks.erase(_callbacks.begin() + i);
-					return ;
-				}
-			}
-		}
-
-	protected:
-		std::shared_ptr<Contract> subscribe(Callback p_callback)
-		{
-			_callbacks.push_back(p_callback);
-
-			std::shared_ptr<Contract> result = std::shared_ptr<Contract>(new Contract(this, _callbacks.back()));
-
-			return (result);
-		}
-
-		Callback* getContractCallbackAddress(const std::shared_ptr<Contract>& p_contract)
-		{
-			return (&(p_contract->_callback));
-		}
-
-		void setContractResignCallback(std::shared_ptr<Contract> p_contract, Callback p_callback)
-		{
-			p_contract->_resignCallback = p_callback;
-		}
-
-		void executeContract(const std::shared_ptr<Contract>& p_contract)
-		{
-			p_contract->_callback();
-		}
-
+{
 public:
-		Container& container()
-		{
-			return (_callbacks);
-		}
-	};
+    using Callback = std::function<void()>;
+    using CallbackContainer = std::deque<Callback>;
+
+    class Contract
+    {
+        friend class ContractFactory;
+    private:
+        bool _isOriginal = true;
+        CallbackContainer& _callbackOwner;
+        Callback& _callback;
+
+        Contract(CallbackContainer& p_callbackOwner, Callback& p_callback) :
+            _callbackOwner(p_callbackOwner),
+            _callback(p_callback),
+            _isOriginal(true)
+        {
+            
+        }
+
+        Contract(const Contract& p_other) = delete;
+
+        bool isOriginal()
+        {
+            return (_isOriginal == true);
+        }
+
+    public:
+        Contract(Contract&& p_other) :
+            _callbackOwner(p_other._callbackOwner),
+            _callback(p_other._callback),
+            _isOriginal(true)
+        {
+            p_other._isOriginal = false;
+        }
+        
+        ~Contract()
+        {
+            if (isOriginal() == true)
+            {
+                resign();
+            }
+        }
+
+        void edit(Callback p_callback)
+        {
+            if (isOriginal() == true)
+            {
+                _callback = p_callback;
+            }
+			else
+			{
+				throw std::runtime_error("Can't edit a resigned contract");
+			} 
+        }
+
+        void resign()
+        {
+            if (isOriginal() == true)
+            {
+				_isOriginal = false;
+                _callback = nullptr;
+                _callbackOwner.erase(std::remove_if(_callbackOwner.begin(), _callbackOwner.end(),
+                                    [&](const auto& callback) { return &callback == &_callback; }),
+                     _callbackOwner.end());
+            } 
+			else
+			{
+				throw std::runtime_error("Can't resign an already resigned contract");
+			} 
+        }
+    };
+
+private:
+
+protected:
+    Contract subscribe(CallbackContainer& p_callbackOwner, Callback& p_callback)
+    {
+        p_callbackOwner.push_back(p_callback);
+        return (std::move(Contract(p_callbackOwner, p_callbackOwner.back())));
+    }
+};
 }

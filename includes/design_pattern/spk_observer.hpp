@@ -15,54 +15,33 @@ namespace spk
 	 * Allow free handling of events' callbacks thanks to Contract.
 	 * Release Contract memory as soon as the Contract is resigned.
 	 */
-	template<typename TEvent>
+	template <typename TEvent>
 	class Observer : public ContractFactory
 	{
 	private:
-		using ObserverRowContainer = std::deque<Callback*>;
-		using ObserverMapContainer = std::map<TEvent, ObserverRowContainer>;
-		ObserverMapContainer _callbackMap;
+		std::map<TEvent, CallbackContainer> _callbacks;
 
-	public:
-		~Observer()
+	public: 
+		Observer()
 		{
 
 		}
 
-		std::shared_ptr<Contract> subscribe(TEvent p_event, Callback p_callback)
+		Contract subscribe(TEvent p_event, Callback p_callback)
 		{
-			std::shared_ptr<Contract> result = ContractFactory::subscribe(p_callback);
+			Contract result = ContractFactory::subscribe(_callbacks[p_event], p_callback);
 
-			Callback* callbackPtr = getContractCallbackAddress(result);
-			_callbackMap[p_event].push_back(callbackPtr);
-			setContractResignCallback(result, std::bind(
-				[&](Callback* p_callbackToDelete, ObserverRowContainer* callbackArray){
-					callbackArray->erase(std::remove(callbackArray->begin(), callbackArray->end(), p_callbackToDelete), callbackArray->end());
-				},
-				callbackPtr, &(_callbackMap[p_event]))
-				);
-
-			return (result);
+			return (std::move(result));
 		}
 
 		void notify(TEvent p_event)
 		{
-			ObserverRowContainer& callbackArray = _callbackMap[p_event];
+			CallbackContainer& container = _callbacks[p_event];
 
-			for (size_t i = 0; i < callbackArray.size(); i++)
+			for (size_t i = 0; i < container.size(); i++)
 			{
-				(*(callbackArray[i]))();
+				container[i]();
 			}
-		}
-
-		ObserverRowContainer& container(TEvent p_event)
-		{
-			return (_callbackMap[p_event]);
-		}
-
-		ObserverMapContainer& mapContainer()
-		{
-			return (_callbackMap);	
 		}
 	};
 }
