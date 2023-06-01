@@ -7,7 +7,6 @@ void initiatePool()
     pool.reserve(10, 5);
 }
 
-
 spk::Pool<int>::Object functA()
 {
     std::cout << "Initial size : " << pool.size() << std::endl;

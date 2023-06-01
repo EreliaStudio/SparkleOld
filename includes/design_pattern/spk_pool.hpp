@@ -1,5 +1,5 @@
 #pragma once
-#define DEBUG_LINE() std::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+
 namespace spk
 {
     template<typename TType>
