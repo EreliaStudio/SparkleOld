@@ -1,52 +1,34 @@
 #include "playground.hpp"
 
-void activeCallback() {
-    std::cout << "The object is active." << std::endl;
+spk::Pool<int> pool;
+
+void initiatePool()
+{
+    pool.reserve(10, 5);
 }
 
-void inactiveCallback() {
-    std::cout << "The object is inactive." << std::endl;
+
+spk::Pool<int>::Object functA()
+{
+    std::cout << "Initial size : " << pool.size() << std::endl;
+    spk::Pool<int>::Object valueA = pool.obtain(10);
+    spk::Pool<int>::Object valueB = pool.obtain(5);
+    spk::Pool<int>::Object result = pool.obtain(*valueA + *valueB);
+
+    std::cout << "After obtain size : " << pool.size() << std::endl;
+
+    std::cout << "Operation : " << *valueA << " + " << *valueB << " = " << *result << std::endl;
+    std::cout << "At end of function : " << pool.size() << std::endl;
+
+    return (result);
 }
 
-int main() {
-    // Création d'un ActivableObject
-    spk::ActivableObject activable;
+int main()
+{
+    initiatePool();
 
-    // Ajout de callbacks pour les états actif et inactif
-    auto activeContract = activable.addActivationCallback(activeCallback);
-    auto inactiveContract = activable.addDeactivationCallback(inactiveCallback);
+    spk::Pool<int>::Object sum = functA();
 
-    // Activation de l'objet, déclenche le callback actif
-    activable.activate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Désactivation de l'objet, déclenche le callback inactif
-    activable.deactivate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Tentative de modification d'un contrat (doit échouer)
-    try {
-        activeContract.edit([]() { std::cout << "Modified callback." << std::endl; });
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
-
-    // Démission d'un contrat
-    activeContract.resign();
-
-    // Activation de l'objet, ne devrait pas déclencher le callback actif
-    activable.activate();
-
-    // Tentative de démission d'un contrat déjà démissionné (doit échouer)
-    try {
-        activeContract.resign();
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
-
+    std::cout << "Outside of function : " << pool.size() << std::endl;
     return 0;
 }
