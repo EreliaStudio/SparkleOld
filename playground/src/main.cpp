@@ -1,48 +1,52 @@
 #include "playground.hpp"
 
-void generateSignal(spk::Observer<int>& observer, std::string p_message)
-{
-    std::cout << " --- " << p_message << " ---" << std::endl;
-
-    observer.notify(1);
-    observer.notify(2);
-
-    std::cout << std::endl << std::endl;
+void activeCallback() {
+    std::cout << "The object is active." << std::endl;
 }
 
-void test(spk::Observer<int>::Contract tmp)
-{
-
+void inactiveCallback() {
+    std::cout << "The object is inactive." << std::endl;
 }
 
-void scopedSubscription(spk::Observer<int>& observer)
-{
-    spk::Observer<int>::Contract contractD = observer.subscribe(2, [&](){std::cout << "Event 2.1 notified ! - scoped" << std::endl;});
+int main() {
+    // Création d'un ActivableObject
+    spk::ActivableObject activable;
 
-    generateSignal(observer, "Inside scoped subscription");
-}
+    // Ajout de callbacks pour les états actif et inactif
+    auto activeContract = activable.addActivationCallback(activeCallback);
+    auto inactiveContract = activable.addDeactivationCallback(inactiveCallback);
 
-int main()
-{
-    spk::Observer<int> observer;
+    // Activation de l'objet, déclenche le callback actif
+    activable.activate();
 
-    spk::Observer<int>::Contract contractA = observer.subscribe(1, [&](){std::cout << "Event 1.0 notified !" << std::endl;});
-    spk::Observer<int>::Contract contractB = observer.subscribe(1, [&](){std::cout << "Event 1.1 notified !" << std::endl;});
-    spk::Observer<int>::Contract contractC = observer.subscribe(2, [&](){std::cout << "Event 2.0 notified !" << std::endl;});
+    // Vérification de l'état de l'objet
+    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
 
-    generateSignal(observer, "At start");
+    // Désactivation de l'objet, déclenche le callback inactif
+    activable.deactivate();
 
-    contractB.resign();
-    
-    generateSignal(observer, "After resign");
+    // Vérification de l'état de l'objet
+    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
 
-    contractA.edit([&](){std::cout << "Event 1.0 notified ! - edited" << std::endl;});
-    
-    generateSignal(observer, "After edit");
+    // Tentative de modification d'un contrat (doit échouer)
+    try {
+        activeContract.edit([]() { std::cout << "Modified callback." << std::endl; });
+    } catch (const std::runtime_error &e) {
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 
-    scopedSubscription(observer);
-    
-    generateSignal(observer, "After scope");
+    // Démission d'un contrat
+    activeContract.resign();
+
+    // Activation de l'objet, ne devrait pas déclencher le callback actif
+    activable.activate();
+
+    // Tentative de démission d'un contrat déjà démissionné (doit échouer)
+    try {
+        activeContract.resign();
+    } catch (const std::runtime_error &e) {
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 
     return 0;
 }
