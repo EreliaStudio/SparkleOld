@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstdint>
 #include <string>
+#include <cstring>
 #include <stdexcept>
 
 namespace spk
