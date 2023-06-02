@@ -1,52 +1,27 @@
 #include "playground.hpp"
 
-void activeCallback() {
-    std::cout << "The object is active." << std::endl;
-}
+int main()
+{
+    // Création d'un pool de travailleurs avec 4 threads
+    spk::WorkerPool<4> pool(L"Pool");
 
-void inactiveCallback() {
-    std::cout << "The object is inactive." << std::endl;
-}
-
-int main() {
-    // Création d'un ActivableObject
-    spk::ActivableObject activable;
-
-    // Ajout de callbacks pour les états actif et inactif
-    auto activeContract = activable.addActivationCallback(activeCallback);
-    auto inactiveContract = activable.addDeactivationCallback(inactiveCallback);
-
-    // Activation de l'objet, déclenche le callback actif
-    activable.activate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Désactivation de l'objet, déclenche le callback inactif
-    activable.deactivate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Tentative de modification d'un contrat (doit échouer)
-    try {
-        activeContract.edit([]() { std::cout << "Modified callback." << std::endl; });
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
+    // Ajoute des tâches à la queue du pool de travailleurs
+    for (int i = 0; i < 1000; i++)
+    {
+        pool.addJob([i]()
+        {
+            std::wcout << L"Worker is handling job: " << i << std::endl;
+        });
     }
 
-    // Démission d'un contrat
-    activeContract.resign();
+    // Démarre le pool de travailleurs
+    pool.start();
 
-    // Activation de l'objet, ne devrait pas déclencher le callback actif
-    activable.activate();
+    // Ici on simule le reste du programme, pour être sûr que nos jobs ont le temps de s'executer
+    std::this_thread::sleep_for(std::chrono::seconds(2));
 
-    // Tentative de démission d'un contrat déjà démissionné (doit échouer)
-    try {
-        activeContract.resign();
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
+    // Arrête le pool de travailleurs (et attend qu'ils finissent leurs tâches en cours)
+    pool.stop();
 
     return 0;
 }
