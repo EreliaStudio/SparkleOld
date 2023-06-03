@@ -10,7 +10,7 @@ int main()
     {
         pool.addJob([i]()
         {
-            std::wcout << L"Worker is handling job: " << i << std::endl;
+            spk::cout << L"Worker is handling job: " << i << std::endl;
         });
     }
 
