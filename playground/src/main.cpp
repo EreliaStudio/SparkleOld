@@ -1,52 +1,74 @@
 #include "playground.hpp"
+class TestActivity : public spk::Activity
+{
+private:
+    int _counter;
+    std::string _name;
 
-void activeCallback() {
-    std::cout << "The object is active." << std::endl;
-}
-
-void inactiveCallback() {
-    std::cout << "The object is inactive." << std::endl;
-}
-
-int main() {
-    // Création d'un ActivableObject
-    spk::ActivableObject activable;
-
-    // Ajout de callbacks pour les états actif et inactif
-    auto activeContract = activable.addActivationCallback(activeCallback);
-    auto inactiveContract = activable.addDeactivationCallback(inactiveCallback);
-
-    // Activation de l'objet, déclenche le callback actif
-    activable.activate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Désactivation de l'objet, déclenche le callback inactif
-    activable.deactivate();
-
-    // Vérification de l'état de l'objet
-    std::cout << "Is active: " << (activable.isActive() ? "true" : "false") << std::endl;
-
-    // Tentative de modification d'un contrat (doit échouer)
-    try {
-        activeContract.edit([]() { std::cout << "Modified callback." << std::endl; });
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
+public:
+    TestActivity(const std::string& name, int counter) : _name(name), _counter(counter)
+    {
     }
 
-    // Démission d'un contrat
-    activeContract.resign();
-
-    // Activation de l'objet, ne devrait pas déclencher le callback actif
-    activable.activate();
-
-    // Tentative de démission d'un contrat déjà démissionné (doit échouer)
-    try {
-        activeContract.resign();
-    } catch (const std::runtime_error &e) {
-        std::cout << "Error: " << e.what() << std::endl;
+protected:
+    void _onEnter() override
+    {
+        std::cout << "Entering " << _name << "..." << std::endl;
+        _moveNextStep();
     }
+
+    void _execute() override
+    {
+        std::cout << "Executing " << _name << "... counter[" << _counter << "]" << std::endl;
+
+        if (_counter > 0)
+        {
+            --_counter;
+        }
+        else
+        {
+            _moveNextStep();
+        }
+    }
+
+    void _onExit() override
+    {
+        std::cout << "Exiting " << _name << "..." << std::endl;
+        _moveNextStep();
+    }
+};
+
+int main()
+{
+    spk::ActivityScheduler activityScheduler;
+
+    // Créer et ajouter plusieurs activités de test au gestionnaire d'activités
+    TestActivity* testActivity1 = new TestActivity("TestActivity1", 3);
+    activityScheduler.addActivity(testActivity1);
+
+    TestActivity* testActivity2 = new TestActivity("TestActivity2", 5);
+    activityScheduler.addActivity(testActivity2);
+
+    TestActivity* testActivity3 = new TestActivity("TestActivity3", 2);
+    activityScheduler.addActivity(testActivity3);
+
+    // Mettre à jour le gestionnaire d'activités jusqu'à ce que toutes les activités soient complétées
+    while (true)
+    {
+        std::cout << " --- UPDATE ---" << std::endl;
+        activityScheduler.execute();
+
+        if (testActivity1->isCompleted() && testActivity2->isCompleted() && testActivity3->isCompleted())
+        {
+            std::cout << "All TestActivities completed successfully!" << std::endl;
+            break;
+        }
+    }
+
+    // Libérer la mémoire
+    delete testActivity1;
+    delete testActivity2;
+    delete testActivity3;
 
     return 0;
 }
