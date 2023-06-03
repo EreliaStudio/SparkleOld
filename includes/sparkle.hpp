@@ -16,3 +16,5 @@
 #include "threading/spk_thread.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
 #include "threading/spk_worker_pool.hpp"
+#include "design_pattern/spk_activity.hpp"
+#include "design_pattern/spk_activity_scheduler.hpp"
