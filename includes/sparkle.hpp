@@ -10,4 +10,4 @@
 #include "design_pattern/spk_stated_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"
 #include "design_pattern/spk_activity.hpp"
-#include "design_pattern/spk_activity_manager.hpp"
+#include "design_pattern/spk_activity_scheduler.hpp"

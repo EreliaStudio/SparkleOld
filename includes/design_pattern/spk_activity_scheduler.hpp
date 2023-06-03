@@ -5,29 +5,29 @@
 
 namespace spk
 {
-	class ActivityManager
+	class ActivityScheduler
 	{
 	private:
 		std::vector<Activity*> _activities;
 
 	public:
-		ActivityManager()
+		ActivityScheduler()
 		{
 
 		}
 
 		void addActivity(Activity* p_activity)
 		{
-            p_activity->start();
+            p_activity->_start();
 			_activities.push_back(p_activity);
 		}
 
-		void update()
+		void execute()
 		{
 			for (size_t i = 0; i < _activities.size();)
 			{
 				_activities[i]->_update();
-                
+
 				if (_activities[i]->isCompleted() == true)
 				{
 					_activities.erase(_activities.begin() + i);

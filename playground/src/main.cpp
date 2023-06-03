@@ -40,23 +40,23 @@ protected:
 
 int main()
 {
-    spk::ActivityManager activityManager;
+    spk::ActivityScheduler activityScheduler;
 
     // Créer et ajouter plusieurs activités de test au gestionnaire d'activités
     TestActivity* testActivity1 = new TestActivity("TestActivity1", 3);
-    activityManager.addActivity(testActivity1);
+    activityScheduler.addActivity(testActivity1);
 
     TestActivity* testActivity2 = new TestActivity("TestActivity2", 5);
-    activityManager.addActivity(testActivity2);
+    activityScheduler.addActivity(testActivity2);
 
     TestActivity* testActivity3 = new TestActivity("TestActivity3", 2);
-    activityManager.addActivity(testActivity3);
+    activityScheduler.addActivity(testActivity3);
 
     // Mettre à jour le gestionnaire d'activités jusqu'à ce que toutes les activités soient complétées
     while (true)
     {
         std::cout << " --- UPDATE ---" << std::endl;
-        activityManager.update();
+        activityScheduler.execute();
 
         if (testActivity1->isCompleted() && testActivity2->isCompleted() && testActivity3->isCompleted())
         {

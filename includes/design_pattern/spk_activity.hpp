@@ -11,11 +11,13 @@ namespace spk
 	public:
 		enum class Status
 		{
+            Stopped,
 			OnEnter,
 			Running,
 			OnExit,
 			Complete
 		};
+
 		Status _internalWorkingState;
 
 		void _update()
@@ -56,16 +58,20 @@ namespace spk
 			_update();
 		}
 
+		void _start()
+		{
+			_internalWorkingState = Status::OnEnter;
+		}
+
 	protected:
 		virtual void _onEnter() = 0;
 		virtual void _execute() = 0;
 		virtual void _onExit() = 0;
 
-
 	public:
 		Activity()
 		{
-			_internalWorkingState = Status::Complete;
+			_internalWorkingState = Status::Stopped;
 		}
 
         const Status& state() const
@@ -77,11 +83,6 @@ namespace spk
         {
             return (_internalWorkingState == Status::Complete);
         }
-
-		void start()
-		{
-			_internalWorkingState = Status::OnEnter;
-		}
 	};
 }
 
