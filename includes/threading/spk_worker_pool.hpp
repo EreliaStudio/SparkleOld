@@ -37,6 +37,10 @@ namespace spk
         ~WorkerPool()
         {
             stop();
+			for (size_t i = 0; i < NB_THREAD; i++)
+			{
+				delete _workers[i];
+			}
         }
 
         void start()

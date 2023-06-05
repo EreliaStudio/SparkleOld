@@ -19,7 +19,6 @@ namespace spk
         };
 
     private:
-        std::wstring _threadName;
         std::function<void()> _funct;
         std::thread _thread;
         std::promise<bool> _starterSignal;
@@ -27,18 +26,17 @@ namespace spk
     public:
         template <typename Funct, typename... Args>
         Thread(std::wstring p_threadName, Funct &&p_func, Args &&...p_args) :
-            _threadName(std::move(p_threadName)),
             _funct(std::bind(std::forward<Funct>(p_func), std::forward<Args>(p_args)...)),
             _starterSignal()
         {
-            auto wrapper = [this]()
+            auto wrapper = [this](std::wstring threadName)
             {
-                spk::cout.setPrefix(_threadName);
-                spk::cerr.setPrefix(_threadName);
+                spk::cout.setPrefix(threadName);
+                spk::cerr.setPrefix(threadName);
                 _starterSignal.get_future().wait();
                 _funct();
             };
-            _thread = std::thread(wrapper);
+            _thread = std::thread(wrapper(p_threadName));
         }
 
         template <typename Funct, typename... Args>
