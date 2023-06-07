@@ -35,6 +35,7 @@ function(SetupPlayground)
     target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
     target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
     target_link_libraries(playground sparkle)
+	target_link_libraries(playground xcb)
 endfunction()
 
 SetupSparkleLibrary()
