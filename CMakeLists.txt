@@ -20,7 +20,11 @@ function(SetupSparkleLibrary)
 
     file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
-    list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/src/cross_platform/.*")
+    list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/src/application/system/*.cpp")
+
+    file(GLOB_RECURSE CROSS_COMPIL_SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/application/system/*.cpp")
+
+    list(APPEND SOURCE_FILES ${CROSS_COMPIL_SOURCE_FILES})
 
     add_library(sparkle ${SOURCE_FILES})
     
