@@ -22,3 +22,11 @@
 #include "threading/spk_persistent_worker.hpp"
 
 #include "application/spk_abstract_application.hpp"
+#include "application/modules/spk_abstract_module.hpp"
+
+#include "application/system/spk_window.hpp"
+
+#include "application/modules/spk_API_module.hpp"
+#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_mouse_module.hpp"
+#include "application/modules/spk_keyboard_module.hpp"
