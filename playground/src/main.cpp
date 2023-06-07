@@ -1,5 +1,9 @@
 #include "playground.hpp"
 
+#include "application/system/spk_window.hpp"
+#include "application/system/spk_mouse.hpp"
+#include "application/system/spk_keyboard.hpp"
+
 class MyApplication : public spk::AbstractApplication
 {
 private:
@@ -18,6 +22,8 @@ protected:
 		addJob(L"Updater", [&]()
 			   { _mouseModule->update(); });
 		addJob(L"Updater", [&]()
+			   { _mouseModule->updateMouse(); });
+		addJob(L"Updater", [&]()
 			   { _keyboardModule->update(); });
 
 		addJob([&]()
@@ -30,6 +36,8 @@ public:
 	MyApplication(size_t width, size_t height)
 	{
 		spk::Singleton<spk::Window>::instanciate(width, height);
+		spk::Singleton<spk::Mouse>::instanciate();
+		spk::Singleton<spk::Keyboard>::instanciate();
 
 		_APIModule = new spk::APIModule();
 		_windowModule = new spk::WindowModule(_APIModule->windowQueue());
