@@ -21,7 +21,7 @@ namespace spk
 		void addJob(const std::wstring &p_WorkerName, std::function<void()> p_Job)
 		{
 			if (_workers.find(p_WorkerName) == _workers.end())
-				_workers[p_WorkerName] = new spk::PersistentWorker();
+				_workers[p_WorkerName] = new spk::PersistentWorker(p_WorkerName);
 			_workers[p_WorkerName]->addJob(p_Job);
 		}
 

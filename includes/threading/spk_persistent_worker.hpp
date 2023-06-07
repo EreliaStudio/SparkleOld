@@ -14,8 +14,8 @@ namespace spk
 		bool _isRunning = false;
 
 	public:
-		PersistentWorker() :
-			Thread(LaunchMethod::Delayed, L"PersistentWorker", [&]() {
+		PersistentWorker(const std::wstring & p_name) :
+			Thread(LaunchMethod::Delayed, p_name, [&]() {
 				while (_isRunning)
 					for (auto &job : _jobs)
 						job();
