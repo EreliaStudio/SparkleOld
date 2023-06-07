@@ -21,7 +21,12 @@ namespace spk
         {
             for (size_t i = 0; i < NB_THREAD; i++)
             {
-                _workers[i] = new spk::Thread(spk::Thread::LaunchMethod::Delayed, p_poolName + L"/Worker - " + std::to_wstring(i), [&](){
+				std::wstring poolName = p_poolName;
+
+				if (NB_THREAD > 1)
+					poolName += L"/Worker - " + std::to_wstring(i);
+					
+                _workers[i] = new spk::Thread(spk::Thread::LaunchMethod::Delayed, poolName, [&](){
                     while (_running == true)
                     {
                         if (_jobQueue.empty() == false)
