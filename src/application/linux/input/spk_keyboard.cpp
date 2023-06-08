@@ -1,4 +1,4 @@
-#include "application/system/spk_keyboard.hpp"
+#include "application/linux/input/spk_keyboard.hpp"
 
 namespace spk
 {

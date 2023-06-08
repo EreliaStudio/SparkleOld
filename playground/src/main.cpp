@@ -1,9 +1,5 @@
 #include "playground.hpp"
 
-#include "application/system/spk_window.hpp"
-#include "application/system/spk_mouse.hpp"
-#include "application/system/spk_keyboard.hpp"
-
 class MyApplication : public spk::AbstractApplication
 {
 private:

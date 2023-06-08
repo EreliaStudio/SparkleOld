@@ -1,4 +1,4 @@
-#include "application/system/spk_mouse.hpp"
+#include "application/linux/input/spk_mouse.hpp"
 
 namespace spk
 {

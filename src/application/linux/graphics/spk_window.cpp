@@ -1,4 +1,4 @@
-#include "application/system/spk_window.hpp"
+#include "application/linux/graphics/spk_window.hpp"
 
 namespace spk
 {
