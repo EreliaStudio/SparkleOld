@@ -2,8 +2,8 @@
 
 #include "threading/spk_thread_safe_queue.hpp"
 #include "design_pattern/spk_singleton.hpp"
-#include "application/modules/spk_abstract_module.hpp"
-#include "application/system/spk_window.hpp"
+#include "application/linux/modules/spk_abstract_module.hpp"
+#include "application/linux/graphics/spk_window.hpp"
 #include <xcb/xcb.h>
 
 namespace spk

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "threading/spk_thread_safe_queue.hpp"
-#include "application/modules/spk_abstract_module.hpp"
+#include "application/linux/modules/spk_abstract_module.hpp"
 #include <xcb/xcb.h>
-#include "application/system/spk_mouse.hpp"
+#include "application/linux/input/spk_mouse.hpp"
 
 namespace spk
 {

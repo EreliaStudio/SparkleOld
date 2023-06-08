@@ -1,4 +1,4 @@
-#include "application/modules/spk_abstract_module.hpp"
+#include "application/linux/modules/spk_abstract_module.hpp"
 
 namespace spk
 {

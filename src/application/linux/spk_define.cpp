@@ -1,4 +1,4 @@
-#include "application/system/spk_define.hpp"
+#include "application/linux/spk_define.hpp"
 
 namespace spk
 {

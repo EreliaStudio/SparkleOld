@@ -1,7 +1,7 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
-#include "application/system/spk_window.hpp"
+#include "application/linux/modules/spk_abstract_module.hpp"
+#include "application/linux/graphics/spk_window.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
 #include <xcb/xcb.h>

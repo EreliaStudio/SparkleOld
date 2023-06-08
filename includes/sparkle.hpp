@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-
 #include "math/spk_vector2.hpp"
 #include "math/spk_vector3.hpp"
 
@@ -25,11 +23,11 @@
 #include "threading/spk_persistent_worker.hpp"
 
 #include "application/spk_abstract_application.hpp"
-#include "application/modules/spk_abstract_module.hpp"
+#include "application/linux/modules/spk_abstract_module.hpp"
 
-#include "application/system/spk_window.hpp"
+#include "application/linux/graphics/spk_window.hpp"
 
-#include "application/modules/spk_API_module.hpp"
-#include "application/modules/spk_window_module.hpp"
-#include "application/modules/spk_mouse_module.hpp"
-#include "application/modules/spk_keyboard_module.hpp"
+#include "application/linux/modules/spk_API_module.hpp"
+#include "application/linux/modules/spk_window_module.hpp"
+#include "application/linux/modules/spk_mouse_module.hpp"
+#include "application/linux/modules/spk_keyboard_module.hpp"

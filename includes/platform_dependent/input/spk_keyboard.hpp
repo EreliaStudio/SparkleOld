@@ -1,7 +1,7 @@
 #pragma once
 
 #include "design_pattern/spk_singleton.hpp"
-#include "application/system/spk_define.hpp"
+#include "application/linux/spk_define.hpp"
 #include <map>
 
 namespace spk

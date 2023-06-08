@@ -21,7 +21,6 @@ function(SetupSparkleLibrary)
     file(GLOB_RECURSE SOURCE_FILES 
         "${CMAKE_SOURCE_DIR}/src/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/*.cpp"
-	    "${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
@@ -30,7 +29,10 @@ function(SetupSparkleLibrary)
     )
 
     file(GLOB_RECURSE CROSS_COMPIL_SOURCE_FILES 
-        "${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/application/linux/modules/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/linux/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/linux/input/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/linux/graphics/*.cpp"
     )
 
     list(APPEND SOURCE_FILES ${CROSS_COMPIL_SOURCE_FILES})
