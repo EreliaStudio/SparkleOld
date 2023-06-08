@@ -9,13 +9,9 @@ namespace spk
 	class KeyboardModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(xcb_generic_event_t *event)
-		{
-		}
+		void _handleMessage(xcb_generic_event_t *event);
 
 	public:
-		KeyboardModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue) : IMessageConsumerModule(queue)
-		{
-		}
+		KeyboardModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue);
 	};
 }

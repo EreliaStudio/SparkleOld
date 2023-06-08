@@ -53,6 +53,8 @@ public:
 		delete _keyboardModule;
 
 		spk::Singleton<spk::Window>::release();
+		spk::Singleton<spk::Mouse>::release();
+		spk::Singleton<spk::Keyboard>::release();
 	}
 };
 

@@ -6,15 +6,6 @@
 
 namespace spk
 {
-	/**
-	 *  Observer is a class that can be used to subscribe to events.
-	 *
-	 * Role:
-	 * Allow user to subscribe to events.
-	 * Allow user to notify all subscribers of an event.
-	 * Allow free handling of events' callbacks thanks to Contract.
-	 * Release Contract memory as soon as the Contract is resigned.
-	 */
 	template <typename TEvent>
 	class Observer : public ContractProvider
 	{

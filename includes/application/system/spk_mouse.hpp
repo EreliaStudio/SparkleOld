@@ -31,8 +31,7 @@ namespace spk
 		float _wheel;
 
 	private:
-		Mouse()
-		{}
+		Mouse();
 
 		void setMousePosition(Vector2Int p_newPosition);
 		void pressButton(const Button &p_button);
@@ -45,7 +44,6 @@ namespace spk
 		{
 			return (_buttons[static_cast<size_t>(p_button)]);
 		}
-
 		const Vector2Int &position() const { return (_position); }
 		const Vector2Int &deltaPosition() const { return (_deltaPosition); }
 		float wheel() const { return (_wheel); }

@@ -5,59 +5,24 @@
 
 namespace spk
 {
-    template<size_t NB_THREAD>
 	class WorkerPool
 	{
     public:
         using Job = std::function<void()>;
 
 	private:
-        spk::Thread* _workers[NB_THREAD];
+        std::vector<spk::Thread*> _workers;
         spk::ThreadSafeQueue<Job> _jobQueue;
         bool _running = false;
 	
 	public:
-		WorkerPool(std::wstring p_poolName)
-        {
-            for (size_t i = 0; i < NB_THREAD; i++)
-            {
-				std::wstring poolName = p_poolName;
+		WorkerPool(std::wstring p_poolName, size_t p_nbWorker);
+        WorkerPool(const WorkerPool& p_other) = delete;
 
-				if (NB_THREAD > 1)
-					poolName += L"/Worker - " + std::to_wstring(i);
-					
-                _workers[i] = new spk::Thread(spk::Thread::LaunchMethod::Delayed, poolName, [&](){
-                    while (_running == true)
-                    {
-                        if (_jobQueue.empty() == false)
-                        {
-                            Job tmp = _jobQueue.pop_front();
-                            tmp();
-                        }
-                    }
-                });
-            }
-        }
+        ~WorkerPool();
 
-        ~WorkerPool()
-        {
-            stop();
-        }
-
-        void start()
-        {
-            _running = true;
-    
-            for (size_t i = 0; i < NB_THREAD; i++)
-                _workers[i]->start();
-        }
-
-        void stop()
-        {
-            _running = false;
-            for (size_t i = 0; i < NB_THREAD; i++)
-                _workers[i]->join();
-        }
+        void start();
+        void stop();
 
 		template <typename Funct, typename... Args>
 		void addJob(Funct&& p_funct, Args&&... p_args)
@@ -66,5 +31,11 @@ namespace spk
         }
 	};
 
-    using Worker = WorkerPool<1>;
+    class Worker : public spk::WorkerPool
+    {
+        private:
+
+        public:
+        Worker(std::wstring p_name);
+    };
 }

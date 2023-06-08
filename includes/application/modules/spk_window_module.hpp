@@ -11,23 +11,12 @@ namespace spk
 	class WindowModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(xcb_generic_event_t *event)
-		{
-		}
+		void _handleMessage(xcb_generic_event_t *event);
 
 	public:
-		WindowModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue) : IMessageConsumerModule(queue)
-		{
-		}
+		WindowModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue);
 
-		void render()
-		{
-			spk::Singleton<Window>::instance()->render();
-		}
-
-		void clear()
-		{
-			spk::Singleton<Window>::instance()->clear();
-		}
+		void render();
+		void clear();
 	};
 }
