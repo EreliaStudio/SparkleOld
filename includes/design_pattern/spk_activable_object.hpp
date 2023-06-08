@@ -9,23 +9,11 @@ namespace spk
     private:
 
     public:
-        void activate()
-        {
-            setState(true);
-        }
-        void deactivate()
-        {
-            setState(false);
-        }
-        const bool& isActive() const {return (state());}
+        void activate();
+        void deactivate();
+        const bool& isActive() const;
 
-        Contract addActivationCallback(Callback p_callback)
-        {
-            return (std::move(addStateCallback(true, p_callback)));
-        }
-        Contract addDeactivationCallback(Callback p_callback)
-        {
-            return (std::move(addStateCallback(false, p_callback)));
-        }
+        Contract addActivationCallback(Callback p_callback);
+        Contract addDeactivationCallback(Callback p_callback);
     };
 }

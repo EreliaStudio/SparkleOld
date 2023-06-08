@@ -3,10 +3,6 @@
 
 namespace spk
 {
-	/**
-	 * @brief A thread that will execute a function more than once.
-	 *
-	 */
 	class PersistentWorker : public Thread
 	{
 	private:
@@ -14,35 +10,12 @@ namespace spk
 		bool _isRunning = false;
 
 	public:
-		PersistentWorker(const std::wstring & p_name) :
-			Thread(LaunchMethod::Delayed, p_name, [&]() {
-				while (_isRunning)
-					for (auto &job : _jobs)
-						job();
-			}),
-			_jobs(),
-			_isRunning(false)
-		{}
+		PersistentWorker(const std::wstring & p_name);
+		~PersistentWorker();
 
-		~PersistentWorker()
-		{
-			stop();
-		}
+		void addJob(std::function<void()> p_job);
 
-		void addJob(std::function<void()> p_job)
-		{
-			_jobs.push_back(p_job);
-		}
-
-		void start()
-		{
-			_isRunning = true;
-			Thread::start();
-		}
-
-		void stop()
-		{
-			_isRunning = false;
-		}
+		void start();
+		void stop();
 	};
 }

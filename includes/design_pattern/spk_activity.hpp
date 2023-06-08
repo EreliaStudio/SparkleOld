@@ -20,48 +20,12 @@ namespace spk
 
 		Status _internalWorkingState;
 
-		void _update()
-		{
-			switch (_internalWorkingState)
-			{
-			case Status::OnEnter:
-				_onEnter();
-				break;
-			case Status::Running:
-				_execute();
-				break;
-			case Status::OnExit:
-				_onExit();
-				break;
-			}
-		}
+		void _update();
 
-		void _moveNextStep()
-		{
-			switch (_internalWorkingState)
-			{
-			case Status::OnEnter:
-				_internalWorkingState = Status::Running;
-				break;
-			case Status::Running:
-				_internalWorkingState = Status::OnExit;
-				break;
-			case Status::OnExit:
-				_internalWorkingState = Status::Complete;
-				break;
-			}
-		}
+		void _moveNextStep();
+		void _moveNextStepAndExecute();
 
-		void _moveNextStepAndExecute()
-		{
-			_moveNextStep();
-			_update();
-		}
-
-		void _start()
-		{
-			_internalWorkingState = Status::OnEnter;
-		}
+		void _start();
 
 	protected:
 		virtual void _onEnter() = 0;
@@ -69,20 +33,10 @@ namespace spk
 		virtual void _onExit() = 0;
 
 	public:
-		Activity()
-		{
-			_internalWorkingState = Status::Stopped;
-		}
+		Activity();
 
-        const Status& state() const
-        {
-            return (_internalWorkingState);
-        }
-
-		bool isCompleted() const
-        {
-            return (_internalWorkingState == Status::Complete);
-        }
+        const Status& state() const;
+		bool isCompleted() const;
 	};
 }
 

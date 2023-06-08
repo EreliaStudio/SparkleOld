@@ -2,6 +2,12 @@
 
 namespace spk
 {
+	Mouse::Mouse()
+		: _position(0, 0),
+		_deltaPosition(0, 0),
+		_wheel(0)
+	{}
+
     void Mouse::setMousePosition(Vector2Int p_newPosition)
     {
         _deltaPosition = p_newPosition - _position;

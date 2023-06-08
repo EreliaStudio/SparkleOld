@@ -2,6 +2,7 @@
 
 #include <mutex>
 #include <deque>
+#include <condition_variable>
 
 namespace spk
 {

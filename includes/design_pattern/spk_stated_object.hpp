@@ -1,6 +1,7 @@
 #pragma once
 
 #include "design_pattern/spk_contract_provider.hpp"
+#include <map>
 
 namespace spk
 {

@@ -18,11 +18,20 @@ function(SetupSparkleLibrary)
 
     include_directories(${CMAKE_SOURCE_DIR}/includes)
 
-    file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+    file(GLOB_RECURSE SOURCE_FILES 
+        "${CMAKE_SOURCE_DIR}/src/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/math/*.cpp"
+	    "${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
+    )
 
-    list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/src/application/system/*.cpp")
-
-    file(GLOB_RECURSE CROSS_COMPIL_SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/application/system/*.cpp")
+    file(GLOB_RECURSE CROSS_COMPIL_SOURCE_FILES 
+        "${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+    )
 
     list(APPEND SOURCE_FILES ${CROSS_COMPIL_SOURCE_FILES})
 

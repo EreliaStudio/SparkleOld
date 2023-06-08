@@ -8,20 +8,6 @@
 
 namespace spk
 {
-	/**
-	 * Store a set of data, allowing user to retrieve it later on, on the same thread or on another one.
-	 *
-	 * Role:
-	 * Allow user to easily enter data via the << operator
-	 * Allow user to easily retrieve data via the >> operator
-	 * Allow user to easily edit a value stored via edit(offset, input)
-	 *
-	 * Warning:
-	 * Uppon reading, the DataBuffer must throw an exception if it have not enought data to retrieve.
-	 * Uppon inserting, the DataBuffer will throw if an allocation error is raised.
-	 * Uppon edition, the DataBuffer will throw if the offset is out of bound.
-	 */
-
 	class DataBuffer
 	{
 	private:
@@ -29,30 +15,16 @@ namespace spk
 		size_t _bookmark;
 
 	public:
-		DataBuffer() : _data(),
-					   _bookmark(0)
-		{
-		}
+		DataBuffer();
 
 		inline size_t size() const { return _data.size(); }
 		inline size_t bookmark() const { return _bookmark; }
 		inline size_t leftover() const { return size() - bookmark(); }
 		inline bool empty() const { return leftover() == 0; }
 
-		void skip(size_t number)
-		{
-			if (leftover() < number)
-				throw std::runtime_error(std::string("Unable to skip ") + std::to_string(number) + " bytes.");
-			_bookmark += number;
-		}
-
-		void clear(void)
-		{
-			_data.clear();
-			_bookmark = 0;
-		}
-
-		void reset(void) { _bookmark = 0; }
+		void skip(size_t number);
+		void clear(void);
+		void reset(void);
 
 		template <typename InputType>
 		void edit(size_t offset, const InputType &input)

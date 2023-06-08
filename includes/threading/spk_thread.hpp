@@ -49,25 +49,15 @@ namespace spk
             }
         }
 
-        ~Thread()
-        {
-            join();
-        }
+        ~Thread();
 
         std::thread::id getId() const
         {
             return (_thread.get_id());
         }
 
-        void join()
-        {
-            if (_thread.joinable())
-                _thread.join();
-        }
+        void join();
 
-        void start()
-        {
-            _starterSignal.set_value(true);
-        }
+        void start();
     };
 }
