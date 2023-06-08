@@ -15,39 +15,44 @@ namespace spk
 	public:
 		enum Button
 		{
-			Left = 0,
-			Middle = 1,
-			Right = 2
+			Left,
+			Middle,
+			Right,
+			Button3,
+			Button4
 		};
+		static const size_t NB_BUTTON = 5;
 
 	private:
-		InputStatus _buttons[3] = {
-			spk::InputStatus::Up,
-			spk::InputStatus::Up,
-			spk::InputStatus::Up};
+		InputStatus _buttons[NB_BUTTON];
 
 		Vector2Int _position;
 		Vector2Int _deltaPosition;
-		float _wheel;
+		Vector2Int _wheel;
 
 	private:
 		Mouse();
 
 		void setMousePosition(Vector2Int p_newPosition);
-		void pressButton(const Button &p_button);
-		void releaseButton(const Button &p_button);
-		void editWheelPosition(const float &p_delta);
+		void pressButton(const Button& p_button);
+		void releaseButton(const Button& p_button);
+		void editWheelPosition(const Vector2Int& p_delta);
 		void update();
 
 	public:
-		const InputStatus &getbutton(const Button &p_button) const
+		void place(const Vector2Int& p_position)
+		{
+			
+		}
+
+		const InputStatus& getbutton(const Button& p_button) const
 		{
 			return (_buttons[static_cast<size_t>(p_button)]);
 		}
-		const Vector2Int &position() const { return (_position); }
-		const Vector2Int &deltaPosition() const { return (_deltaPosition); }
-		float wheel() const { return (_wheel); }
+		const Vector2Int& position() const { return (_position); }
+		const Vector2Int& deltaPosition() const { return (_deltaPosition); }
+		const Vector2Int& wheel() const { return (_wheel); }
 	};
 
-	std::wstring to_wstring(const Mouse::Button &p_button);
+	std::wstring to_wstring(const Mouse::Button& p_button);
 }

@@ -18,7 +18,36 @@ namespace spk
 		{
 			xcb_button_press_event_t *buttonPressEvent(reinterpret_cast<xcb_button_press_event_t *>(event));
 
-			Singleton<Mouse>::instance()->pressButton(static_cast<Mouse::Button>(buttonPressEvent->detail));
+			switch (buttonPressEvent->detail)
+			{
+				case 1:
+					Singleton<Mouse>::instance()->pressButton(Mouse::Left);
+					break;
+				case 2:
+					Singleton<Mouse>::instance()->pressButton(Mouse::Middle);
+					break;
+				case 3:
+					Singleton<Mouse>::instance()->pressButton(Mouse::Right);
+					break;
+				case 4:
+					Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(0, 1));
+					break;
+				case 5:
+					Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(0, -1));
+					break;
+				case 6:
+					Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(-1, 0));
+					break;
+				case 7:
+					Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(1, 0));
+					break;
+				case 8:
+					Singleton<Mouse>::instance()->pressButton(Mouse::Button3);
+					break;
+				case 9:
+					Singleton<Mouse>::instance()->pressButton(Mouse::Button4);
+					break;
+			}
 
 			break;
 		}
@@ -26,7 +55,24 @@ namespace spk
 		{
 			xcb_button_release_event_t *buttonReleaseEvent(reinterpret_cast<xcb_button_release_event_t *>(event));
 
-			Singleton<Mouse>::instance()->releaseButton(static_cast<Mouse::Button>(buttonReleaseEvent->detail));
+			switch (buttonReleaseEvent->detail)
+			{
+				case 1:
+					Singleton<Mouse>::instance()->releaseButton(Mouse::Left);
+					break;
+				case 2:
+					Singleton<Mouse>::instance()->releaseButton(Mouse::Middle);
+					break;
+				case 3:
+					Singleton<Mouse>::instance()->releaseButton(Mouse::Right);
+					break;
+				case 8:
+					Singleton<Mouse>::instance()->releaseButton(Mouse::Button3);
+					break;
+				case 9:
+					Singleton<Mouse>::instance()->releaseButton(Mouse::Button4);
+					break;
+			}
 
 			break;
 		}

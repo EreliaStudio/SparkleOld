@@ -6,7 +6,12 @@ namespace spk
 		: _position(0, 0),
 		_deltaPosition(0, 0),
 		_wheel(0)
-	{}
+	{
+        for (size_t i = 0; i < NB_BUTTON; i++)
+        {
+            _buttons[i] = InputStatus::Up;
+        }
+    }
 
     void Mouse::setMousePosition(Vector2Int p_newPosition)
     {
@@ -24,7 +29,7 @@ namespace spk
         _buttons[static_cast<size_t>(p_button)] = InputStatus::Released;
     }
 
-    void Mouse::editWheelPosition(const float &p_delta)
+    void Mouse::editWheelPosition(const Vector2Int &p_delta)
     {
         _wheel += p_delta;
     }
@@ -34,7 +39,7 @@ namespace spk
         _deltaPosition.x = 0;
         _deltaPosition.y = 0;
 
-        for (size_t i = 0; i < 3; i++)
+        for (size_t i = 0; i < NB_BUTTON; i++)
         {
             if (_buttons[i] == InputStatus::Pressed)
             {
@@ -45,7 +50,7 @@ namespace spk
                 _buttons[i] = InputStatus::Up;
             }
         
-            spk::cout << "Button " << to_wstring(Button(i)) << " -> " << to_wstring(_buttons[i]) << std::endl;
+            //spk::cout << "Button " << to_wstring(Button(i)) << " -> " << to_wstring(_buttons[i]) << std::endl;
         }
     }
 

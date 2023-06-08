@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+#include "math/spk_vector2.hpp"
+#include "math/spk_vector3.hpp"
+
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
 
