@@ -36,8 +36,6 @@ public:
 	MyApplication(size_t width, size_t height)
 	{
 		spk::Singleton<spk::Window>::instanciate(width, height);
-		spk::Singleton<spk::Mouse>::instanciate();
-		spk::Singleton<spk::Keyboard>::instanciate();
 
 		_APIModule = new spk::APIModule();
 		_windowModule = new spk::WindowModule(_APIModule->windowQueue());

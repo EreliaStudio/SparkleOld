@@ -26,4 +26,17 @@ namespace spk
 				_keys[i] = InputStatus::Up;
 		}
 	}
+
+	const std::wstring& Keyboard::keyToString(const Keyboard::Key& p_key)
+	{
+		if (Keyboard::KeyToStringMap.count(p_key) == 0)
+			return (Keyboard::UnknowKeyName);
+		else 
+			return (Keyboard::KeyToStringMap.at(p_key));
+	}
+
+	const std::wstring& to_wstring(const Keyboard::Key& p_key)
+	{
+		return (Keyboard::keyToString(p_key));
+	}
 }
