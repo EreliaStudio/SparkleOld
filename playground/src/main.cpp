@@ -25,6 +25,8 @@ protected:
 			   { _mouseModule->updateMouse(); });
 		addJob(L"Updater", [&]()
 			   { _keyboardModule->update(); });
+		addJob(L"Updater", [&]()
+			   { _keyboardModule->updateKeyboard(); });
 
 		addJob([&]()
 			   { _windowModule->clear(); });

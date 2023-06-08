@@ -84,6 +84,11 @@ namespace spk
 		spk::Singleton<spk::Mouse>::instanciate();
 	}
 
+	MouseModule::~MouseModule()
+	{
+		spk::Singleton<spk::Mouse>::release();
+	}
+
 	void MouseModule::updateMouse()
 	{
 		Singleton<Mouse>::instance()->update();

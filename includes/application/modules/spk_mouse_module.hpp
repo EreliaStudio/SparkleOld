@@ -14,7 +14,8 @@ namespace spk
 
 	public:
 		MouseModule(ThreadSafeQueue<xcb_generic_event_t *> &queue);
-
+		~MouseModule();
+		
 		void updateMouse();
 	};
 }

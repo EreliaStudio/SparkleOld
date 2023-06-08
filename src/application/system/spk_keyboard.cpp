@@ -3,17 +3,19 @@
 namespace spk
 {
 	Keyboard::Keyboard()
-	{
-		
-	}
+	{}
 
-	void Keyboard::pressKey(const Key &p_key)
+	void Keyboard::pressKey(uint8_t p_key)
 	{
-		_keys[static_cast<size_t>(p_key)] = InputStatus::Pressed;
+		Key& keyValue = _mapping[static_cast<int>(_layout)][p_key];
+
+		_keys[static_cast<size_t>(keyValue)] = InputStatus::Pressed;
 	}
-	void Keyboard::releaseKey(const Key &p_key)
+	void Keyboard::releaseKey(uint8_t p_key)
 	{
-		_keys[static_cast<size_t>(p_key)] = InputStatus::Released;
+		Key& keyValue = _mapping[static_cast<int>(_layout)][p_key];
+		
+		_keys[static_cast<size_t>(keyValue)] = InputStatus::Released;
 	}
 
 	void Keyboard::update()
