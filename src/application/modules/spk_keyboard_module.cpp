@@ -9,6 +9,6 @@ namespace spk
 
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue) : IMessageConsumerModule(queue)
 	{
-		
+		spk::Singleton<spk::Keyboard>::instanciate();
 	}
 }

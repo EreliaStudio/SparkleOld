@@ -81,6 +81,7 @@ namespace spk
 
 	MouseModule::MouseModule(ThreadSafeQueue<xcb_generic_event_t *> &queue) : IMessageConsumerModule(queue)
 	{
+		spk::Singleton<spk::Mouse>::instanciate();
 	}
 
 	void MouseModule::updateMouse()

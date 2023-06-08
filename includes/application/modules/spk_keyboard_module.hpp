@@ -2,6 +2,7 @@
 
 #include "threading/spk_thread_safe_queue.hpp"
 #include "application/modules/spk_abstract_module.hpp"
+#include "application/system/spk_keyboard.hpp"
 #include <xcb/xcb.h>
 
 namespace spk
