@@ -14,140 +14,289 @@ namespace spk
 	public:
 		enum Key
         {
-            Backspace = 8,
-            Tab = 9,
-            Clear = 12,
-            Return = 13,
-            Shift = 16,
-            Control = 17,
-            Alt = 18,
-            Pause = 19,
-            Capslock = 20,
-            Escape = 27,
-            Convert = 28,
-            Non_convert = 29,
-            Accept = 30,
-            Mode_change = 31,
-            Space = 32,
-            Prior = 33,
-            Next = 34,
-            End = 35,
-            Home = 36,
-            LeftArrow = 37,
-            UpArrow = 38,
-            RightArrow = 39,
-            DownArrow = 40,
-            Select = 41,
-            Print = 42,
-            Execute = 43,
-            Snapshot = 44,
-            Insert = 45,
-            Delete = 46,
-            Help = 47,
-            Key0 = 48,
-            Key1 = 49,
-            Key2 = 50,
-            Key3 = 51,
-            Key4 = 52,
-            Key5 = 53,
-            Key6 = 54,
-            Key7 = 55,
-            Key8 = 56,
-            Key9 = 57,
-            A = 65,
-            B = 66,
-            C = 67,
-            D = 68,
-            E = 69,
-            F = 70,
-            G = 71,
-            H = 72,
-            I = 73,
-            J = 74,
-            K = 75,
-            L = 76,
-            M = 77,
-            N = 78,
-            O = 79,
-            P = 80,
-            Q = 81,
-            R = 82,
-            S = 83,
-            T = 84,
-            U = 85,
-            V = 86,
-            W = 87,
-            X = 88,
-            Y = 89,
-            Z = 90,
-            LeftWindows = 91,
-            RightWindows = 92,
-            App = 93,
-            Sleep = 95,
-            Numpad0 = 96,
-            Numpad1 = 97,
-            Numpad2 = 98,
-            Numpad3 = 99,
-            Numpad4 = 100,
-            Numpad5 = 101,
-            Numpad6 = 102,
-            Numpad7 = 103,
-            Numpad8 = 104,
-            Numpad9 = 105,
-            NumpadMultiply = 106,
-            NumpadPlus = 107,
-            NumpadSeparator = 108,
-            NumpadMinus = 109,
-            NumpadDecimal = 110,
-            NumpadDivide = 111,
-            F1 = 112,
-            F2 = 113,
-            F3 = 114,
-            F4 = 115,
-            F5 = 116,
-            F6 = 117,
-            F7 = 118,
-            F8 = 119,
-            F9 = 120,
-            F10 = 121,
-            F11 = 122,
-            F12 = 123,
-            F13 = 124,
-            F14 = 125,
-            F15 = 126,
-            F16 = 127,
-            F17 = 128,
-            F18 = 129,
-            F19 = 130,
-            F20 = 131,
-            F21 = 132,
-            F22 = 133,
-            F23 = 134,
-            F24 = 135,
-            NumLock = 144,
-            Scroll = 145,
-            LeftShift = 160,
-            RightShift = 161,
-            LeftControl = 162,
-            RightControl = 163,
-            LeftMenu = 164,
-            RightMenu = 165,
-            SemiColon = 186,
-            Plus = 187,
-            Comma = 188,
-            Minus = 189,
-            Period = 190,
-            QuestionMark = 191,
-            Tilde = 192,
-            LeftBracket = 219,
-            VerticalLine = 220,
-            RightBracket = 221,
-            Quote = 222,
-            Unknow = 223,
-            AngleBracket = 226,
-            Process = 229,
+            Unknown = -1,
+            Backspace,
+            Tab,
+            Clear,
+            Return,
+            Shift,
+            Control,
+            Alt,
+            Pause,
+            Capslock,
+            Escape,
+            Convert,
+            Non_convert,
+            Accept,
+            Mode_change,
+            Space,
+            Prior,
+            Next,
+            End,
+            Home,
+            LeftArrow,
+            UpArrow,
+            RightArrow,
+            DownArrow,
+            Select,
+            Print,
+            Execute,
+            Snapshot,
+            Insert,
+            Delete,
+            Help,
+            Key0,
+            Key1,
+            Key2,
+            Key3,
+            Key4,
+            Key5,
+            Key6,
+            Key7,
+            Key8,
+            Key9,
+            A,
+            B,
+            C,
+            D,
+            E,
+            F,
+            G,
+            H,
+            I,
+            J,
+            K,
+            L,
+            M,
+            N,
+            O,
+            P,
+            Q,
+            R,
+            S,
+            T,
+            U,
+            V,
+            W,
+            X,
+            Y,
+            Z,
+            LeftWindows,
+            RightWindows,
+            App,
+            Sleep,
+            Numpad0,
+            Numpad1,
+            Numpad2,
+            Numpad3,
+            Numpad4,
+            Numpad5,
+            Numpad6,
+            Numpad7,
+            Numpad8,
+            Numpad9,
+            NumpadMultiply,
+            NumpadPlus,
+            NumpadSeparator,
+            NumpadMinus,
+            NumpadDecimal,
+            NumpadDivide,
+            F1,
+            F2,
+            F3,
+            F4,
+            F5,
+            F6,
+            F7,
+            F8,
+            F9,
+            F10,
+            F11,
+            F12,
+            F13,
+            F14,
+            F15,
+            F16,
+            F17,
+            F18,
+            F19,
+            F20,
+            F21,
+            F22,
+            F23,
+            F24,
+            NumLock,
+            Scroll,
+            LeftShift,
+            RightShift,
+            LeftControl,
+            RightControl,
+            LeftAlt,
+            RightAlt,
+            LeftMenu,
+            RightMenu,
+            SemiColon,
+            Plus,
+            Comma,
+            Minus,
+            Period,
+            QuestionMark,
+            Tilde,
+            LeftBracket,
+            VerticalLine,
+            RightBracket,
+            Quote,
+            Unknow,
+            AngleBracket,
+            Process,
+            Backslash,
+            Slash,
+            NumpadReturn,
+            Equal
         };
-		static inline std::map<Keyboard::Key, std::wstring> KeyToStringMap = {
+
+	enum Layout
+	{
+		Azerty,
+		Qwerty
+	};
+
+	struct Mapping
+	{
+		Key keys[255] = {};
+
+		Mapping()
+		{
+			for (int i = 0; i < 255; ++i)
+				keys[i] = Key::Unknown;
+		}
+
+		void setKey(size_t p_index, Key p_key)
+		{
+			keys[p_index] = p_key;
+		}
+
+        Key& operator[](const size_t& p_index)
+        {
+            return (keys[p_index]);
+        }
+
+		static Mapping createAzertyMapping()
+		{
+			Mapping result;
+
+			// TODO: Fill the mapping for AZERTY keyboard
+
+			return result;
+		}
+
+		static Mapping createQwertyMapping()
+		{
+			Mapping result;
+
+            result.setKey(9, Escape);
+            result.setKey(10, Key1);
+            result.setKey(11, Key2);
+            result.setKey(12, Key3);
+            result.setKey(13, Key4);
+            result.setKey(14, Key5);
+            result.setKey(15, Key6);
+            result.setKey(16, Key7);
+            result.setKey(17, Key8);
+            result.setKey(18, Key9);
+            result.setKey(19, Key0);
+            result.setKey(20, Minus);
+            result.setKey(21, Equal);
+            result.setKey(22, Backspace);
+            result.setKey(23, Tab);
+            result.setKey(24, Q);
+			result.setKey(25, W);
+			result.setKey(26, E);
+			result.setKey(27, R);
+			result.setKey(28, T);
+			result.setKey(29, Y);
+			result.setKey(30, U);
+			result.setKey(31, I);
+			result.setKey(32, O);
+			result.setKey(33, P);
+			result.setKey(34, LeftBracket);
+			result.setKey(35, RightBracket);
+			result.setKey(36, Return);
+			result.setKey(37, LeftControl);
+			result.setKey(38, A);
+			result.setKey(39, S);
+			result.setKey(40, D);
+			result.setKey(41, F);
+			result.setKey(42, G);
+			result.setKey(43, H);
+			result.setKey(44, J);
+			result.setKey(45, K);
+			result.setKey(46, L);
+			result.setKey(47, SemiColon);
+			result.setKey(48, Quote);
+			result.setKey(49, Tilde);
+			result.setKey(50, LeftShift);
+			result.setKey(51, Backslash);
+			result.setKey(52, Z);
+			result.setKey(53, X);
+			result.setKey(54, C);
+			result.setKey(55, V);
+			result.setKey(56, B);
+			result.setKey(57, N);
+			result.setKey(58, M);
+			result.setKey(59, Comma);
+			result.setKey(60, Period);
+			result.setKey(61, Slash);
+			result.setKey(62, RightShift);
+			result.setKey(63, NumpadMultiply);
+			result.setKey(64, LeftAlt);
+			result.setKey(65, Space);
+			result.setKey(66, Capslock);
+			result.setKey(67, F1);
+			result.setKey(68, F2);
+			result.setKey(69, F3);
+			result.setKey(70, F4);
+			result.setKey(71, F5);
+			result.setKey(72, F6);
+			result.setKey(73, F7);
+			result.setKey(74, F8);
+			result.setKey(75, F9);
+			result.setKey(76, F10);
+			result.setKey(77, NumLock);
+			result.setKey(79, Numpad7);
+			result.setKey(80, Numpad8);
+			result.setKey(81, Numpad9);
+			result.setKey(82, NumpadMinus);
+			result.setKey(83, Numpad4);
+			result.setKey(84, Numpad5);
+			result.setKey(85, Numpad6);
+			result.setKey(86, NumpadPlus);
+			result.setKey(87, Numpad1);
+			result.setKey(88, Numpad2);
+			result.setKey(89, Numpad3);
+			result.setKey(90, Numpad0);
+			result.setKey(91, NumpadDecimal);
+			result.setKey(95, F11);
+			result.setKey(96, F12);
+			result.setKey(104, NumpadReturn);
+			result.setKey(105, RightControl);
+			result.setKey(106, NumpadDivide);
+			result.setKey(108, RightAlt);
+			result.setKey(110, Home);
+			result.setKey(111, UpArrow);
+			result.setKey(113, LeftArrow);
+			result.setKey(114, RightArrow);
+			result.setKey(115, End);
+			result.setKey(116, DownArrow);
+			result.setKey(118, Insert);
+			result.setKey(119, Clear);
+
+			return result;
+		}
+	};
+
+	private:
+    static inline std::map<Keyboard::Key, std::wstring> KeyToStringMap = {
             {Keyboard::Key::Backspace, L"Backspace"},
             {Keyboard::Key::Tab, L"Tab"},
             {Keyboard::Key::Clear, L"Clear"},
@@ -264,6 +413,8 @@ namespace spk
             {Keyboard::Key::RightShift, L"RightShift"},
             {Keyboard::Key::LeftControl, L"LeftControl"},
             {Keyboard::Key::RightControl, L"RightControl"},
+            {Keyboard::Key::LeftAlt, L"LeftAlt"},
+            {Keyboard::Key::RightAlt, L"RightAlt"},
             {Keyboard::Key::LeftMenu, L"LeftMenu"},
             {Keyboard::Key::RightMenu, L"RightMenu"},
             {Keyboard::Key::SemiColon, L"SemiColon"},
@@ -280,21 +431,30 @@ namespace spk
             {Keyboard::Key::Unknow, L"Unknow"},
             {Keyboard::Key::AngleBracket, L"AngleBracket"},
             {Keyboard::Key::Process, L"Process"},
+            {Keyboard::Key::Backslash, L"Backslash"},
+            {Keyboard::Key::Slash, L"Slash"},
+            {Keyboard::Key::NumpadReturn, L"NumpadReturn"}
         };
 		static inline const std::wstring UnknowKeyName = L"Unknow key";
 		static const size_t NB_KEYS = 256;
 
+		Layout _layout = Layout::Qwerty;
+		Mapping _mapping[2] = {
+            Mapping::createAzertyMapping(),
+            Mapping::createQwertyMapping()
+        };
 		InputStatus _keys[NB_KEYS];
 
-	private:
 		Keyboard();
 		
-		void pressKey(const Key &p_key);
-		void releaseKey(const Key &p_key);
+		void pressKey(uint8_t p_key);
+		void releaseKey(uint8_t p_key);
 
 		void update();
 
 	public:
+		void setLayout(const Layout& p_layout) { _layout = p_layout; }
+
 		const InputStatus &key(const Key &p_key) const
 		{
 			return (_keys[static_cast<size_t>(p_key)]);

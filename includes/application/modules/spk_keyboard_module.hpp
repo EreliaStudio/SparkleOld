@@ -4,6 +4,7 @@
 #include "application/modules/spk_abstract_module.hpp"
 #include "application/system/spk_keyboard.hpp"
 #include <xcb/xcb.h>
+#include <xcb/xcb_keysyms.h>
 
 namespace spk
 {
@@ -14,5 +15,8 @@ namespace spk
 
 	public:
 		KeyboardModule(spk::ThreadSafeQueue<xcb_generic_event_t *> &queue);
+		~KeyboardModule();
+
+		void updateKeyboard();
 	};
 }
