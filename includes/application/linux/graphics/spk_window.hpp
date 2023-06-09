@@ -1,6 +1,7 @@
 #pragma once
 
 #include "design_pattern/spk_singleton.hpp"
+#include "math/spk_vector2.hpp"
 #include <xcb/xcb.h>
 
 namespace spk
@@ -11,13 +12,17 @@ namespace spk
 		friend class APIModule;
 
 	private:
+		spk::Vector2Int _size;
+
 		xcb_connection_t *_connection;
 		xcb_screen_t *_screen;
 		xcb_window_t _window;
 
-		Window(size_t width, size_t height);
+		Window(spk::Vector2Int p_size);
 
 	public:
+		void setGeometry(spk::Vector2Int p_size);
+		void resize(spk::Vector2Int p_size);
 		void render();
 		void clear();
 	};

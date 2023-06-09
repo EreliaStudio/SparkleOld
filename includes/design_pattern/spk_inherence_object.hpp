@@ -91,6 +91,11 @@ namespace spk
                 return _parent;
             }
 
+            constexpr std::vector<Child> &childrens()
+            {
+                return _childrens;
+            }
+
             constexpr const std::vector<Child> &childrens() const
             {
                 return _childrens;
