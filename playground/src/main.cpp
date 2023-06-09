@@ -5,6 +5,7 @@ class MyApplication : public spk::AbstractApplication
 {
 private:
 	spk::APIModule *_APIModule;
+	spk::TimeModule *_timeModule;
 	spk::WindowModule *_windowModule;
 	spk::MouseModule *_mouseModule;
 	spk::KeyboardModule *_keyboardModule;
@@ -16,6 +17,9 @@ protected:
 	{
 		addJob([&]()
 			   { _APIModule->update(); });
+
+		addJob(L"Updater", [&]()
+			   { _timeModule->update(); });
 
 		addJob(L"Updater", [&]()
 			   { _windowModule->update(); });
@@ -47,6 +51,7 @@ public:
 		spk::Singleton<spk::Window>::instanciate(p_size);
 
 		_APIModule = new spk::APIModule();
+		_timeModule = new spk::TimeModule();
 		_windowModule = new spk::WindowModule(_APIModule->windowQueue());
 		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
@@ -58,14 +63,12 @@ public:
 	~MyApplication()
 	{
 		delete _APIModule;
+		delete _timeModule;
 		delete _windowModule;
 		delete _mouseModule;
 		delete _keyboardModule;
+
 		delete _widgetModule;
-		
-		spk::Singleton<spk::Window>::release();
-		spk::Singleton<spk::Mouse>::release();
-		spk::Singleton<spk::Keyboard>::release();
 	}
 
 	spk::AbstractWidget* centralWidget()

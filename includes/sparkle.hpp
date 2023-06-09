@@ -28,6 +28,7 @@
 #include "application/linux/graphics/spk_window.hpp"
 
 #include "application/linux/modules/spk_API_module.hpp"
+#include "application/linux/modules/spk_time_module.hpp"
 #include "application/linux/modules/spk_window_module.hpp"
 #include "application/linux/modules/spk_mouse_module.hpp"
 #include "application/linux/modules/spk_keyboard_module.hpp"
