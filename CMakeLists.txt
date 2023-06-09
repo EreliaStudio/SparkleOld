@@ -21,6 +21,7 @@ function(SetupSparkleLibrary)
     file(GLOB_RECURSE SOURCE_FILES 
         "${CMAKE_SOURCE_DIR}/src/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"

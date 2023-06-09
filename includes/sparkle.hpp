@@ -31,3 +31,7 @@
 #include "application/linux/modules/spk_window_module.hpp"
 #include "application/linux/modules/spk_mouse_module.hpp"
 #include "application/linux/modules/spk_keyboard_module.hpp"
+
+#include "application/linux/modules/spk_widget_module.hpp"
+
+#include "widget/spk_abstract_widget.hpp"
