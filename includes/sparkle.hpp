@@ -23,16 +23,16 @@
 #include "threading/spk_persistent_worker.hpp"
 
 #include "application/spk_abstract_application.hpp"
-#include "application/linux/modules/spk_abstract_module.hpp"
+#include "application/modules/spk_abstract_module.hpp"
 
-#include "application/linux/graphics/spk_window.hpp"
+#include "application/graphics/spk_window.hpp"
 
-#include "application/linux/modules/spk_API_module.hpp"
-#include "application/linux/modules/spk_time_module.hpp"
-#include "application/linux/modules/spk_window_module.hpp"
-#include "application/linux/modules/spk_mouse_module.hpp"
-#include "application/linux/modules/spk_keyboard_module.hpp"
+#include "application/modules/spk_API_module.hpp"
+#include "application/modules/spk_time_module.hpp"
+#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_mouse_module.hpp"
+#include "application/modules/spk_keyboard_module.hpp"
 
-#include "application/linux/modules/spk_widget_module.hpp"
+#include "application/modules/spk_widget_module.hpp"
 
 #include "widget/spk_abstract_widget.hpp"

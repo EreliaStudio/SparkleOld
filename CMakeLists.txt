@@ -18,9 +18,13 @@ function(SetupSparkleLibrary)
 
     include_directories(${CMAKE_SOURCE_DIR}/includes)
 
-    file(GLOB_RECURSE SOURCE_FILES 
+    file(GLOB SOURCE_FILES 
         "${CMAKE_SOURCE_DIR}/src/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/input/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/system/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/graphics/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
@@ -29,14 +33,7 @@ function(SetupSparkleLibrary)
 	    "${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
     )
 
-    file(GLOB_RECURSE CROSS_COMPIL_SOURCE_FILES 
-	    "${CMAKE_SOURCE_DIR}/src/application/linux/modules/*.cpp"
-        "${CMAKE_SOURCE_DIR}/src/application/linux/*.cpp"
-        "${CMAKE_SOURCE_DIR}/src/application/linux/input/*.cpp"
-        "${CMAKE_SOURCE_DIR}/src/application/linux/graphics/*.cpp"
-    )
-
-    list(APPEND SOURCE_FILES ${CROSS_COMPIL_SOURCE_FILES})
+    list(APPEND SOURCE_FILES)
 
     add_library(sparkle ${SOURCE_FILES})
     
@@ -51,7 +48,11 @@ function(SetupPlayground)
     target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
     target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
     target_link_libraries(playground sparkle)
-	target_link_libraries(playground xcb)
+	if(UNIX)
+        target_link_libraries(playground xcb)
+    elseif(WIN32)
+
+    endif()
 endfunction()
 
 SetupSparkleLibrary()

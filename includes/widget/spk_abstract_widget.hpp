@@ -17,7 +17,7 @@ namespace spk
 		virtual void _onGeometryChange() = 0;
 
 		std::wstring _name;
-		float _geometryEdited;
+		bool _geometryEdited;
 		float _depth;
 		spk::Vector2Int _anchor;
 		spk::Vector2Int _size;
