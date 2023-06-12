@@ -8,6 +8,8 @@ namespace spk
     public:
         class Default
         {
+            friend class Value;
+
         private:
             TType _value;
             size_t _count;
@@ -38,7 +40,7 @@ namespace spk
 
             }
 
-            ~Default()
+            ~Default() noexcept(false)
             {
                 if (_count != 0)
                     throw std::runtime_error("Destroying a Default value still used by at least one Value");
@@ -47,11 +49,13 @@ namespace spk
             Default& operator = (const TType& p_newValue)
             {
                 _value = p_newValue;
+                return (*this);
             }
 
             Default& operator = (const Default& p_other)
             {
                 _value = p_other._value;
+                return (*this);
             }
 
             operator const TType&() const
@@ -74,7 +78,7 @@ namespace spk
     public:
         Value(const Default& p_defaultValue) : 
             _default(nullptr),
-            _value({}),
+            _value(),
             _state(State::Default)
         {
             setDefaultValue(p_defaultValue);
@@ -89,27 +93,39 @@ namespace spk
             setDefaultValue(p_defaultValue);
         }
 
-        void setDefaultValue(const Default& p_newValue)
+        ~Value()
+        {
+            _default->unsubscribe();
+        }
+        
+        void reset()
+        {
+            _state = State::Default;
+        }
+
+        void setDefaultValue(const Default& p_defaultValue)
         {
             Default* tmp = const_cast<Default*>(&p_defaultValue);
 
             if (_default != nullptr)
-                *_default->unsubscribe();
+                _default->unsubscribe();
             _default = tmp;
             if (_default != nullptr)
-                *_default->subscribe();
+                _default->subscribe();
         }
 
-        Value& operator = (const Default& p_newValue)
+        Value& operator = (const Default& p_defaultValue)
         {
-            _value = p_newValue;
-            _state = State::Custom;
+            setDefaultValue(p_defaultValue);
+            _state = State::Default;
+            return (*this);
         }
 
         Value& operator = (const TType& p_newValue)
         {
             _value = p_newValue;
             _state = State::Custom;
+            return (*this);
         }
 
         operator const TType&() const
