@@ -37,13 +37,12 @@ protected:
 		addJob(L"Updater", [&]()
 			   { _keyboardModule->updateKeyboard(); });
 
-		addJob([&]()
-			   { _windowModule->clear(); });
-		addJob([&]()
-			   { _widgetModule->render(); });
-		addJob([&]()
-			   { _windowModule->render(); });
-	}
+	// Assign a custom value
+    valueFromDefault = 100;
+
+    // Test callback subscription and triggering
+    bool callbackTriggered = false;
+    auto callback = [&callbackTriggered]() { callbackTriggered = true; };
 
 public:
 	MyApplication(spk::Vector2Int p_size)
@@ -54,9 +53,14 @@ public:
 		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
 
-		_widgetModule = new spk::WidgetModule();
-		_widgetModule->centralWidget()->setGeometry(0, p_size);
-	}
+
+    // Change default value while on custom should not trigger callback
+    defaultValue = 80;
+    assert(callbackTriggered == false);
+
+    // Change value to trigger callback
+    valueFromDefault = 50;
+    assert(callbackTriggered == true);
 
 	~MyApplication()
 	{
