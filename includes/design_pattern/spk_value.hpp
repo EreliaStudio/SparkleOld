@@ -35,7 +35,8 @@ namespace spk
             {
                 for (size_t i = 0; i < _subscribers.size(); i++)
                 {
-                    _subscribers[i]->_triggerEditionCallback();
+					if (_subscribers[i]->_state == State::Default)
+						_subscribers[i]->_triggerEditionCallback();
                 }
             }
 

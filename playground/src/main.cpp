@@ -39,6 +39,9 @@ int main() {
     valueFromDefault.reset();
     assert(static_cast<int>(valueFromDefault) == 15);
 
+	// Assign a custom value
+    valueFromDefault = 100;
+
     // Test callback subscription and triggering
     bool callbackTriggered = false;
     auto callback = [&callbackTriggered]() { callbackTriggered = true; };
@@ -46,8 +49,13 @@ int main() {
     // Subscribe to callback
     auto contract = valueFromDefault.subscribe(callback);
 
+
+    // Change default value while on custom should not trigger callback
+    defaultValue = 80;
+    assert(callbackTriggered == false);
+
     // Change value to trigger callback
-    valueFromDefault = 35;
+    valueFromDefault = 50;
     assert(callbackTriggered == true);
 
     return 0;
