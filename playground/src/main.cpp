@@ -1,92 +1,53 @@
 #include "playground.hpp"
 
+spk::Value<int>::Default defaultA = 42;
+spk::Value<int>::Default defaultB = 66;
 
-class MyApplication : public spk::AbstractApplication
+spk::Value<int> valueA = defaultA;
+spk::Value<int> valueB = spk::Value<int>(defaultA);
+spk::Value<int> valueC = spk::Value<int>(defaultA, 100);
+
+void printValues(size_t p_nbRun, std::wstring p_message)
 {
-private:
-	spk::APIModule *_APIModule;
-	spk::TimeModule *_timeModule;
-	spk::WindowModule *_windowModule;
-	spk::MouseModule *_mouseModule;
-	spk::KeyboardModule *_keyboardModule;
-
-	spk::WidgetModule* _widgetModule;
-
-protected:
-	void setupJobs()
-	{
-		addJob([&]()
-			   { _APIModule->update(); });
-
-		addJob(L"Updater", [&]()
-			   { _timeModule->update(); });
-
-		addJob(L"Updater", [&]()
-			   { _windowModule->update(); });
-
-		addJob(L"Updater", [&]()
-			   { _mouseModule->update(); });
-		addJob(L"Updater", [&]()
-			   { _keyboardModule->update(); });
-
-		addJob(L"Updater", [&]()
-			   { _widgetModule->update(); });
-
-		addJob(L"Updater", [&]()
-			   { _mouseModule->updateMouse(); });
-		addJob(L"Updater", [&]()
-			   { _keyboardModule->updateKeyboard(); });
-
-		addJob([&]()
-			   { _windowModule->clear(); });
-		addJob([&]()
-			   { _widgetModule->render(); });
-		addJob([&]()
-			   { _windowModule->render(); });
-	}
-
-public:
-	MyApplication(spk::Vector2Int p_size)
-	{
-		spk::Singleton<spk::Window>::instanciate(p_size);
-
-		_APIModule = new spk::APIModule();
-		_timeModule = new spk::TimeModule();
-		_windowModule = new spk::WindowModule(_APIModule->windowQueue());
-		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
-		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
-
-		_widgetModule = new spk::WidgetModule();
-		_widgetModule->centralWidget()->setGeometry(0, p_size);
-	}
-
-	~MyApplication()
-	{
-		delete _APIModule;
-		delete _timeModule;
-		delete _windowModule;
-		delete _mouseModule;
-		delete _keyboardModule;
-
-		delete _widgetModule;
-	}
-
-	spk::AbstractWidget* centralWidget()
-	{
-		return (_widgetModule->centralWidget());
-	}
-
-	void resize(spk::Vector2Int p_size)
-	{
-		spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
-		_widgetModule->centralWidget()->setGeometry(0, p_size);
-	}
-};
-
+	spk::cout << " --- RUN " << p_nbRun << " : " << p_message << " ---" << std::endl;
+	spk::cout << "DefaultA : " << defaultA << std::endl;
+	spk::cout << "DefaultB : " << defaultB << std::endl;
+	spk::cout << "ValueA : " << valueA << std::endl;
+	spk::cout << "ValueB : " << valueB << std::endl;
+	spk::cout << "ValueC : " << valueC << std::endl;
+	spk::cout << " ---" << std::endl;
+}
 
 int main()
 {
-	MyApplication app({300, 600});
+	defaultA = 42;
+	defaultB = 66;
 
-	return app.run();
+	valueA = defaultA;
+	valueB = spk::Value<int>(defaultA);
+	valueC = spk::Value<int>(defaultA, 100);
+
+	printValues(0, L"Initial state");
+
+	valueA = 15;
+
+	printValues(1, L"Setting valueA");
+
+	valueC = valueA + valueB;
+
+	printValues(2, L"Checking sum operation");
+
+	valueA.reset();
+
+	printValues(3, L"Reseting value A");
+
+	defaultA = 1337;
+
+	printValues(4, L"Editing default value A");
+
+	valueA.setDefaultValue(defaultB);
+
+	printValues(5, L"Setting value A default value to B");
+
+	return (0);
 }
