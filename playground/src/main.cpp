@@ -49,5 +49,49 @@ int main()
 
 	printValues(5, L"Setting value A default value to B");
 
+	if (true)
+	{
+		spk::Value<int>::Contract tmpContractA = valueA.subscribe([&](){
+			spk::cout << "ValueA edition" << std::endl;
+		});
+		spk::Value<int>::Contract tmpContractB = valueB.subscribe([&](){
+			spk::cout << "ValueB edition" << std::endl;
+		});
+		spk::Value<int>::Contract tmpContractC = valueC.subscribe([&](){
+			spk::cout << "ValueC edition" << std::endl;
+		});
+
+		spk::cout << "Step 1" << std::endl;
+
+		valueA = 15;
+
+		spk::cout << "Step 2" << std::endl;
+		
+		valueB = 64;
+
+		spk::cout << "Step 3" << std::endl;
+		
+		valueC = 128;
+
+		spk::cout << "Step 4" << std::endl;
+		
+		valueA.reset();
+
+		spk::cout << "Step 5" << std::endl;
+
+		valueB = valueA;
+
+		spk::cout << "Step 6" << std::endl;
+
+		valueC = defaultB;
+
+		spk::cout << "Step 7" << std::endl;
+
+		defaultB = 0;
+
+		spk::cout << "Step 8" << std::endl;
+		
+	}
+
 	return (0);
 }
