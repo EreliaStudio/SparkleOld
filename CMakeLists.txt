@@ -22,9 +22,10 @@ function(SetupSparkleLibrary)
         "${CMAKE_SOURCE_DIR}/src/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/input/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
-        "${CMAKE_SOURCE_DIR}/src/application/graphics/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 	    "${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
@@ -35,12 +36,12 @@ function(SetupSparkleLibrary)
 
 if(UNIX)
     file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
-        "${CMAKE_SOURCE_DIR}/src/application/graphics/linux/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/graphics/linux/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/modules/linux/*.cpp")
 
 elseif(WIN32)
     file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
-        "${CMAKE_SOURCE_DIR}/src/application/graphics/windows/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/graphics/windows/*.cpp"
         "${CMAKE_SOURCE_DIR}/src/application/modules/windows/*.cpp")
 
 endif()

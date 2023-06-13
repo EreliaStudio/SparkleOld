@@ -26,14 +26,12 @@ namespace spk
 			case XCB_ENTER_NOTIFY:
 			case XCB_LEAVE_NOTIFY:
 			case XCB_MOTION_NOTIFY:
-			// case XCB_EVENT_MASK_BUTTON_RELEASE: case XCB_EVENT_MASK_BUTTON_PRESS:
 			case XCB_BUTTON_RELEASE:
 			case XCB_BUTTON_PRESS:
 				_mouseQueue.push_back(event);
 				break;
 			case XCB_KEY_RELEASE:
 			case XCB_KEY_PRESS:
-				// case XCB_EVENT_MASK_KEY_RELEASE: case XCB_EVENT_MASK_KEY_PRESS:
 				_keyboardQueue.push_back(event);
 				break;
 			default:

@@ -26,7 +26,7 @@
 #include "application/spk_abstract_application.hpp"
 #include "application/modules/spk_abstract_module.hpp"
 
-#include "application/graphics/spk_window.hpp"
+#include "graphics/spk_window.hpp"
 
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"
@@ -37,3 +37,5 @@
 #include "application/modules/spk_widget_module.hpp"
 
 #include "widget/spk_abstract_widget.hpp"
+
+#include "application/spk_application.h"
