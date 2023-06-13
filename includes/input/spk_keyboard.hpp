@@ -65,7 +65,9 @@ namespace spk
             Unknow,
             AngleBracket,
             Process,
-            Backslash, Slash
+            Backslash, Slash,
+
+            SIZE
         };
 
         enum Layout
@@ -75,11 +77,9 @@ namespace spk
         };
 
     private:
-        static const size_t NB_KEYS = 256;
-
         struct Mapping
         {
-            Key keys[NB_KEYS];
+            Key keys[Key::SIZE];
 
             Mapping();
             void bindKey(size_t p_index, Key p_key);
@@ -95,12 +95,12 @@ namespace spk
 
 		Layout _layout;
 		Mapping _mapping[2];
-		InputStatus _keys[NB_KEYS];
+		InputStatus _keys[Key::SIZE];
 
 		Keyboard();
 		
-		void pressKey(uint8_t p_key);
-		void releaseKey(uint8_t p_key);
+		void pressKey(const uint32_t& p_key);
+		void releaseKey(const uint32_t& p_key);
 
 		void update();
 

@@ -14,19 +14,25 @@ namespace spk
 	private:
 		spk::Vector2Int _size;
 
+		wchar_t* _convertedTitle;
 		HINSTANCE _hInstance;
-
-		WNDCLASS _windowClass;
-		
+		HWND _windowFrame;
 		RECT _windowSize;
+		WNDCLASS _windowClass;
 		DWORD _windowStyle;
 		DWORD _windowExStyle;
 
-		HWND _windowFrame;
+		void _convertTitle(const std::wstring& p_title);
+		void _createGhostInstance();
+		void _registerWindowClass();
+		void _createWindowFrame(void* p_APIModule, spk::Vector2Int p_size);
+		void _composeOpenGLContext();
+		void _activateWindow();
 
-		Window(spk::Vector2Int p_size, void *p_ptr = nullptr);
+		Window(const std::wstring& p_title, spk::Vector2Int p_size, void *p_ptr = nullptr);
 
 	public:
+		~Window();
 		void setGeometry(spk::Vector2Int p_size);
 		void resize(spk::Vector2Int p_size);
 		void render();

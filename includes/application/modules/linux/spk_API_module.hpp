@@ -20,7 +20,6 @@ namespace spk
 		~APIModule();
 
 		void update();
-		void render();
 
 		spk::ThreadSafeQueue<SystemMessage> &windowQueue() { return _windowQueue; }
 

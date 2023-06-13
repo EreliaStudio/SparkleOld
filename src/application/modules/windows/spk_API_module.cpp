@@ -4,20 +4,22 @@ namespace spk
 {
 	LRESULT CALLBACK APIModule::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
-		static APIModule *pThis = NULL;
+		APIModule *pThis = NULL;
 
 		if (uMsg == WM_NCCREATE)
 		{
 			CREATESTRUCT *pCreate = (CREATESTRUCT *)lParam;
 			pThis = (APIModule *)pCreate->lpCreateParams;
 			SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
-
-			pThis->_windowFrame = hwnd;
+		}
+		else
+		{
+			pThis = (APIModule *)GetWindowLongPtr(hwnd, GWLP_USERDATA);
 		}
 
 		if (pThis)
 		{
-			return pThis->_handleMessage(uMsg, wParam, lParam);
+			return pThis->_handleMessage(hwnd, uMsg, wParam, lParam);
 		}
 		else
 		{
@@ -25,17 +27,7 @@ namespace spk
 		}
 	}
 
-	void APIModule::_pullWinMessage()
-	{
-		MSG msg = {};
-		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-		{
-			int translateResult = TranslateMessage(&msg);
-			int dispatchResult = static_cast<int>(DispatchMessage(&msg));
-		}
-	}
-
-	LRESULT APIModule::_handleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
+	LRESULT APIModule::_handleMessage(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
 
@@ -79,6 +71,16 @@ namespace spk
 			_mouseQueue.push_back(newMessage);
 			break;
 		}
+		case WM_XBUTTONDOWN :
+		case WM_XBUTTONUP :
+		{
+			short value = GET_XBUTTON_WPARAM (wParam);
+
+			*newMessage << value;
+
+			_mouseQueue.push_back(newMessage);
+			break;
+		}
 		case WM_MOUSEHWHEEL:
 		case WM_MOUSEWHEEL:
 		{
@@ -111,6 +113,7 @@ namespace spk
 		{
 			if (wParam == VK_F4 && (lParam & (1 << 29)))
 			{
+				DEBUG_LINE();
 
 				newMessage->clear();
 
@@ -131,7 +134,7 @@ namespace spk
 
 		default:
 		{
-			return DefWindowProc(_windowFrame, uMsg, wParam, lParam);
+			return DefWindowProc(hwnd, uMsg, wParam, lParam);
 		}
 		}
 		return TRUE;
@@ -139,23 +142,22 @@ namespace spk
 
 	APIModule::APIModule()
 	{
+		MessagePoolInstance::instanciate();
 	}
 
 	APIModule::~APIModule()
 	{
+		MessagePoolInstance::release();
 	}
 
 	void APIModule::update()
 	{
 		MSG msg = {};
-		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+
+		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			int translateResult = TranslateMessage(&msg);
 			int dispatchResult = static_cast<int>(DispatchMessage(&msg));
 		}
-	}
-
-	void APIModule::render()
-	{
 	}
 }

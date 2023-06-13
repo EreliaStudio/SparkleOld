@@ -14,7 +14,7 @@ namespace spk
 		void _handleMessage(SystemMessage& event);
 
 	public:
-		WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, spk::Vector2Int p_size, void *p_apiModule);
+		WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule);
 
 		void render();
 		void clear();

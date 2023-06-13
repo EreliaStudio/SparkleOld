@@ -39,7 +39,7 @@ namespace spk
 		}
 
 	public:
-		Application(spk::Vector2Int p_size)
+		Application(const std::wstring& p_title, spk::Vector2Int p_size)
 		{
 			_APIModule = new spk::APIModule();
 			_timeModule = new spk::TimeModule();

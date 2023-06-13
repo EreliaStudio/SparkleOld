@@ -40,9 +40,4 @@ namespace spk
 			}
 		}
 	}
-
-	void APIModule::render()
-	{
-		
-	}
 }
