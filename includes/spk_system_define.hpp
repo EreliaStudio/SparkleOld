@@ -1,6 +1,8 @@
 #pragma once
 
 #ifdef _WIN32
+	#define NOMINMAX
+	#include <Windows.h>
     using SystemMessage = void;
 
 #elif __linux__

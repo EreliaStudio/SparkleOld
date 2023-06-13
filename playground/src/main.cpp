@@ -1,54 +1,90 @@
 #include "playground.hpp"
-#include <assert.h>
 
-int main() {
-    // Testing Default constructor
-    spk::Value<int>::Default defaultValue(10);
-    assert(static_cast<int>(defaultValue) == 10);
 
-    // Testing Default copy constructor
-    spk::Value<int>::Default copiedDefaultValue(defaultValue);
-    assert(static_cast<int>(copiedDefaultValue) == 10);
+class MyApplication : public spk::AbstractApplication
+{
+private:
+	spk::APIModule *_APIModule;
+	spk::TimeModule *_timeModule;
+	spk::WindowModule *_windowModule;
+	spk::MouseModule *_mouseModule;
+	spk::KeyboardModule *_keyboardModule;
 
-    // Testing Value constructor with Default
-    spk::Value<int> valueFromDefault(defaultValue);
-    assert(static_cast<int>(valueFromDefault) == 10);
+	spk::WidgetModule* _widgetModule;
 
-    // Testing Value copy constructor
-    spk::Value<int> copiedValue(valueFromDefault);
-    assert(static_cast<int>(copiedValue) == 10);
+protected:
+	void setupJobs()
+	{
+		addJob([&]()
+			   { _APIModule->update(); });
 
-    // Testing Value constructor with Default and custom value
-    spk::Value<int> customValue(defaultValue, 20);
-    assert(static_cast<int>(customValue) == 20);
+		addJob(L"Updater", [&]()
+			   { _timeModule->update(); });
 
-    // Testing Value assignment operator with Default
-    defaultValue = 15;
-    valueFromDefault = defaultValue;
-    assert(static_cast<int>(valueFromDefault) == 15);
+		addJob(L"Updater", [&]()
+			   { _windowModule->update(); });
 
-    // Testing Value assignment operator with Value
-    copiedValue = customValue;
-    assert(static_cast<int>(copiedValue) == 20);
+		addJob(L"Updater", [&]()
+			   { _mouseModule->update(); });
+		addJob(L"Updater", [&]()
+			   { _keyboardModule->update(); });
 
-    // Testing Value assignment operator with TType
-    valueFromDefault = 30;
-    assert(static_cast<int>(valueFromDefault) == 30);
+		addJob(L"Updater", [&]()
+			   { _widgetModule->update(); });
 
-    // Testing Value reset function
-    valueFromDefault.reset();
-    assert(static_cast<int>(valueFromDefault) == 15);
+		addJob(L"Updater", [&]()
+			   { _mouseModule->updateMouse(); });
+		addJob(L"Updater", [&]()
+			   { _keyboardModule->updateKeyboard(); });
 
-    // Test callback subscription and triggering
-    bool callbackTriggered = false;
-    auto callback = [&callbackTriggered]() { callbackTriggered = true; };
+		addJob([&]()
+			   { _windowModule->clear(); });
+		addJob([&]()
+			   { _widgetModule->render(); });
+		addJob([&]()
+			   { _windowModule->render(); });
+	}
 
-    // Subscribe to callback
-    auto contract = valueFromDefault.subscribe(callback);
+public:
+	MyApplication(spk::Vector2Int p_size)
+	{
+		_APIModule = new spk::APIModule();
+		_timeModule = new spk::TimeModule();
+		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_size);
+		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
+		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
 
-    // Change value to trigger callback
-    valueFromDefault = 35;
-    assert(callbackTriggered == true);
+		_widgetModule = new spk::WidgetModule();
+		_widgetModule->centralWidget()->setGeometry(0, p_size);
+	}
 
-    return 0;
+	~MyApplication()
+	{
+		delete _APIModule;
+		delete _timeModule;
+		delete _windowModule;
+		delete _mouseModule;
+		delete _keyboardModule;
+
+		delete _widgetModule;
+	}
+
+	spk::AbstractWidget* centralWidget()
+	{
+		return (_widgetModule->centralWidget());
+	}
+
+	void resize(spk::Vector2Int p_size)
+	{
+		spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
+		_widgetModule->centralWidget()->setGeometry(0, p_size);
+	}
+};
+
+
+int main()
+{
+	MyApplication app({300, 600});
+
+	return app.run();
 }

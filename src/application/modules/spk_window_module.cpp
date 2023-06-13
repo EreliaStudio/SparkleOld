@@ -22,9 +22,9 @@ namespace spk
 #endif
 	}
 
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage *> &queue) : IMessageConsumerModule(queue)
+	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage *> &queue, spk::Vector2Int p_size) : IMessageConsumerModule(queue)
 	{
-
+		spk::Singleton<spk::Window>::instanciate(p_size);
 	}
 
 	void WindowModule::render()
