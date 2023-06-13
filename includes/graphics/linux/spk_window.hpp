@@ -18,7 +18,7 @@ namespace spk
 		xcb_screen_t *_screen;
 		xcb_window_t _window;
 
-		Window(spk::Vector2Int p_size);
+		Window(const std::wstring& p_title, spk::Vector2Int p_size);
 
 	public:
 		void setGeometry(spk::Vector2Int p_size);

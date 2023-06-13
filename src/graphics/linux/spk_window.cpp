@@ -6,7 +6,7 @@
 
 namespace spk
 {
-	Window::Window(spk::Vector2Int p_size)
+	Window::Window(const std::wstring& p_title, spk::Vector2Int p_size)
 	{
 		_size = p_size;
 		_connection = xcb_connect(NULL, NULL);
@@ -46,6 +46,17 @@ namespace spk
 			XCB_WINDOW_CLASS_INPUT_OUTPUT,
 			_screen->root_visual,
 			mask, values);
+
+		std::string title_str(p_title.begin(), p_title.end());
+
+		xcb_change_property(_connection,
+			XCB_PROP_MODE_REPLACE,
+			_window,
+			XCB_ATOM_WM_NAME,
+			XCB_ATOM_STRING,
+			8,
+			title_str.size(),
+			title_str.c_str());
 
 		xcb_map_window(_connection, _window);
 	}
