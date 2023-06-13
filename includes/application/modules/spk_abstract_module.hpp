@@ -15,12 +15,12 @@ namespace spk
 	class IMessageConsumerModule : public spk::AbstractModule
 	{
 	private:
-		spk::ThreadSafeQueue<SystemMessage *> &_queue;
+		spk::ThreadSafeQueue<SystemMessage> &_queue;
 
-		virtual void _handleMessage(SystemMessage *event) = 0;
+		virtual void _handleMessage(SystemMessage event) = 0;
 
 	public:
-		IMessageConsumerModule(spk::ThreadSafeQueue<SystemMessage *> &queue);
+		IMessageConsumerModule(spk::ThreadSafeQueue<SystemMessage> &queue);
 
 		void update();
 	};

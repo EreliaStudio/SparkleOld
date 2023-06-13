@@ -3,7 +3,7 @@
 
 namespace spk
 {
-	void MouseModule::_handleMessage(SystemMessage *event)
+	void MouseModule::_handleMessage(SystemMessage event)
 	{
 #ifdef _WIN32
 
@@ -84,7 +84,7 @@ namespace spk
 #endif
 	}
 
-	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage *> &queue) : IMessageConsumerModule(queue)
+	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
 	{
 		spk::Singleton<spk::Mouse>::instanciate();
 	}

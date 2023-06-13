@@ -4,11 +4,8 @@
 
 namespace spk
 {
-	void WindowModule::_handleMessage(SystemMessage *event)
+	void WindowModule::_handleMessage(SystemMessage event)
 	{
-#ifdef _WIN32
-
-#elif __linux__
 		switch (event->response_type & ~0x80)
 		{
 			case XCB_RESIZE_REQUEST:
@@ -19,10 +16,9 @@ namespace spk
 				break;
 			}
 		}
-#endif
 	}
 
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage *> &queue, spk::Vector2Int p_size) : IMessageConsumerModule(queue)
+	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, spk::Vector2Int p_size) : IMessageConsumerModule(queue)
 	{
 		spk::Singleton<spk::Window>::instanciate(p_size);
 	}
