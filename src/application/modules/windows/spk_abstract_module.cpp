@@ -13,7 +13,6 @@ namespace spk
 			SystemMessage event(_queue.pop_front());
 
 			_handleMessage(event);
-
 		}
 	}
 }

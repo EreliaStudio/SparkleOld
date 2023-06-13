@@ -2,7 +2,7 @@
 
 int main()
 {
-	spk::Application app({300, 600});
+	spk::Application app(L"ApplicationName", {300, 600});
 
 	return app.run();
 }

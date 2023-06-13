@@ -2,19 +2,23 @@
 #include "iostream/spk_iostream.hpp"
 #include "application/modules/spk_API_module.hpp"
 
-#define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
-
 namespace spk
 {
-	Window::Window(spk::Vector2Int p_size, void* p_windowAPI)
+	void Window::_convertTitle(const std::wstring& p_title)
 	{
-		DEBUG_LINE();
-		const char* tmp = "Nom de ma fenetre";
-
-		DEBUG_LINE();
+		_convertedTitle = new wchar_t[p_title.size() + 1];
+		for (size_t i = 0; i < p_title.size(); i++)
+		{
+			_convertedTitle[i] = p_title[i];
+		}
+		_convertedTitle[p_title.size()] = '\0';
+	}
+	void Window::_createGhostInstance()
+	{
 		_hInstance = GetModuleHandle(NULL);
-
-		DEBUG_LINE();
+	}
+	void Window::_registerWindowClass()
+	{
 		_windowClass.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
 		_windowClass.lpfnWndProc = (WNDPROC)spk::APIModule::WindowProc;
 		_windowClass.cbClsExtra = 0;
@@ -24,36 +28,48 @@ namespace spk
 		_windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
 		_windowClass.hbrBackground = NULL;
 		_windowClass.lpszMenuName = NULL;
+		_windowClass.lpszClassName = _convertedTitle;
 
-		DEBUG_LINE();
-		_windowClass.lpszClassName = tmp;
-
-		DEBUG_LINE();
 		RegisterClass(&_windowClass);
-
-		DEBUG_LINE();
+	}
+	void Window::_createWindowFrame(void* p_APIModule, spk::Vector2Int p_size)
+	{
 		_windowSize.left = (long)0;
 		_windowSize.right = (long)p_size.x;
 		_windowSize.top = (long)0;
 		_windowSize.bottom = (long)p_size.y;
 
-		DEBUG_LINE();
 		_windowExStyle = WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;
 		_windowStyle = WS_OVERLAPPEDWINDOW;
 
-		DEBUG_LINE();
 		AdjustWindowRectEx(&_windowSize, _windowStyle, FALSE, _windowExStyle);
-		
-		DEBUG_LINE();
-		_windowFrame = CreateWindowEx(_windowExStyle, tmp, tmp, WS_OVERLAPPEDWINDOW,
-			0, 0, _windowSize.right - _windowSize.left, _windowSize.bottom - _windowSize.top, NULL, NULL, _hInstance, p_windowAPI);
 
-		DEBUG_LINE();
+		_windowFrame = CreateWindowEx(_windowExStyle, (LPCTSTR)(_convertedTitle), (LPCTSTR)(_convertedTitle), WS_OVERLAPPEDWINDOW,
+			CW_USEDEFAULT, 0, _windowSize.right - _windowSize.left, _windowSize.bottom - _windowSize.top, NULL, NULL, _hInstance, p_APIModule);
+	}
+
+	void Window::_activateWindow()
+	{
 		ShowWindow(_windowFrame, SW_SHOW);
 		UpdateWindow(_windowFrame);
-		DEBUG_LINE();
+	}
+	
+	Window::Window(const std::wstring& p_title, spk::Vector2Int p_size, void* p_APIModule)
+	{
+		_convertTitle(p_title);
 
-		_size = p_size;
+		_createGhostInstance();
+
+		_registerWindowClass();
+
+		_createWindowFrame(p_APIModule, p_size);
+
+		_activateWindow();
+	}
+
+	Window::~Window()
+	{
+		delete _convertedTitle;
 	}
 
 	void Window::setGeometry(spk::Vector2Int p_size)

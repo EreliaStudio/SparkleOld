@@ -18,17 +18,13 @@ namespace spk
 		spk::ThreadSafeQueue<SystemMessage> _mouseQueue;
 		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue;
 
-		HWND _windowFrame;
-
-		void _pullWinMessage();
-		LRESULT _handleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+		LRESULT _handleMessage(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 	public:
 		APIModule();
 		~APIModule();
 
 		void update();
-		void render();
 
 		spk::ThreadSafeQueue<SystemMessage> &systemQueue() { return _systemQueue; }
 

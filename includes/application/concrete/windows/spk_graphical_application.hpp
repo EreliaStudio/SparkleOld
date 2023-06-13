@@ -7,6 +7,7 @@
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
+#include "application/modules/spk_system_module.hpp"
 
 namespace spk
 {
@@ -18,49 +19,42 @@ namespace spk
 		spk::WindowModule *_windowModule;
 		spk::MouseModule *_mouseModule;
 		spk::KeyboardModule *_keyboardModule;
+		spk::SystemModule *_systemModule;
 
 		spk::WidgetModule* _widgetModule;
 
 	protected:
 		void setupJobs()
 		{
-			addJob([&]()
-				{ _APIModule->update(); });
+			addJob([&](){ _APIModule->update(); });
 
-			addJob(L"Updater", [&]()
-				{ _timeModule->update(); });
+			addJob(L"Updater", [&](){ _systemModule->update(); });
+			addJob(L"Updater", [&](){ _timeModule->update(); });
 
-			addJob(L"Updater", [&]()
-				{ _windowModule->update(); });
+			addJob(L"Updater", [&](){ _windowModule->update(); });
 
-			addJob(L"Updater", [&]()
-				{ _mouseModule->update(); });
-			addJob(L"Updater", [&]()
-				{ _keyboardModule->update(); });
+			addJob(L"Updater", [&](){ _mouseModule->update(); });
+			addJob(L"Updater", [&](){ _keyboardModule->update(); });
 
-			addJob(L"Updater", [&]()
-				{ _widgetModule->update(); });
+			addJob(L"Updater", [&](){ _widgetModule->update(); });
 
-			addJob(L"Updater", [&]()
-				{ _mouseModule->updateMouse(); });
-			addJob(L"Updater", [&]()
-				{ _keyboardModule->updateKeyboard(); });
+			addJob(L"Updater", [&](){ _mouseModule->updateMouse(); });
+			addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); });
 
-			addJob([&]()
-				{ _windowModule->clear(); });
-			addJob([&]()
-				{ _widgetModule->render(); });
-			addJob([&]()
-				{ _windowModule->render(); });
+			addJob([&](){ _windowModule->clear(); });
+			addJob([&](){ _widgetModule->render(); });
+			addJob([&](){ _windowModule->render(); });
 		}
 
 	public:
-		Application(spk::Vector2Int p_size)
+		Application(const std::wstring& p_title, spk::Vector2Int p_size)
 		{
 			_APIModule = new spk::APIModule();
+			
+			_systemModule = new spk::SystemModule(_APIModule->systemQueue(), this);
 			_timeModule = new spk::TimeModule();
 			
-			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_size, _APIModule);
+			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, _APIModule);
 			
 			_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 			_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
@@ -76,6 +70,7 @@ namespace spk
 			delete _windowModule;
 			delete _mouseModule;
 			delete _keyboardModule;
+			delete _systemModule;
 
 			delete _widgetModule;
 		}

@@ -1,6 +1,10 @@
 #pragma once
 
 #ifdef _WIN32
+	#ifndef UNICODE
+	#define UNICODE
+	#endif
+	
 	#define NOMINMAX
 	#include <Windows.h>
 

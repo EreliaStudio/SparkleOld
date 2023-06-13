@@ -11,14 +11,14 @@ namespace spk
 			{
 				xcb_key_press_event_t *keyPressEvent(reinterpret_cast<xcb_key_press_event_t *>(event));
 
-				spk::Singleton<spk::Keyboard>::instance()->pressKey(static_cast<spk::Keyboard::Key>(keyPressEvent->detail));
+				spk::Singleton<spk::Keyboard>::instance()->pressKey(keyPressEvent->detail);
 				break;
 			}
 			case XCB_KEY_RELEASE:
 			{
 				xcb_key_press_event_t *keyReleaseEvent(reinterpret_cast<xcb_key_press_event_t *>(event));
 
-				spk::Singleton<spk::Keyboard>::instance()->releaseKey(static_cast<spk::Keyboard::Key>(keyReleaseEvent->detail));
+				spk::Singleton<spk::Keyboard>::instance()->releaseKey(keyReleaseEvent->detail);
 				break;
 			}
 		}
