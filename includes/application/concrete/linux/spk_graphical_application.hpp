@@ -44,7 +44,7 @@ namespace spk
 			_APIModule = new spk::APIModule();
 			_timeModule = new spk::TimeModule();
 			
-			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_size);
+			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size);
 			
 			_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 			_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
