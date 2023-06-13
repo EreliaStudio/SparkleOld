@@ -1,10 +1,10 @@
 #include "application/modules/spk_window_module.hpp"
 #include "iostream/spk_iostream.hpp"
-#include "application/graphics/spk_window.hpp"
+#include "graphics/spk_window.hpp"
 
 namespace spk
 {
-	void WindowModule::_handleMessage(SystemMessage event)
+	void WindowModule::_handleMessage(SystemMessage& event)
 	{
 		switch (event->response_type & ~0x80)
 		{

@@ -10,15 +10,9 @@ namespace spk
 	{
 		while (_queue.empty() == false)
 		{
-#ifdef _WIN32
-
-#elif __linux__
-			xcb_generic_event_t *event(_queue.pop_front());
+			SystemMessage event(_queue.pop_front());
 
 			_handleMessage(event);
-
-			free(event);
-#endif
 
 		}
 	}

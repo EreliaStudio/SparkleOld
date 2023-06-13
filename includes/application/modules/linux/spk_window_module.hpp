@@ -11,7 +11,7 @@ namespace spk
 	class WindowModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(SystemMessage event);
+		void _handleMessage(SystemMessage& event);
 
 	public:
 		WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, spk::Vector2Int p_size);

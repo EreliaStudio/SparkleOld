@@ -3,11 +3,8 @@
 
 namespace spk
 {
-	void KeyboardModule::_handleMessage(SystemMessage event)
+	void KeyboardModule::_handleMessage(SystemMessage& event)
 	{
-#ifdef _WIN32
-
-#elif __linux__
 		switch (event->response_type & ~0x80)
 		{
 			case XCB_KEY_PRESS:
@@ -25,7 +22,6 @@ namespace spk
 				break;
 			}
 		}
-#endif
 	}
 
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)

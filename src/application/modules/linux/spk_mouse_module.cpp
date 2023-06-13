@@ -3,11 +3,8 @@
 
 namespace spk
 {
-	void MouseModule::_handleMessage(SystemMessage event)
+	void MouseModule::_handleMessage(SystemMessage& event)
 	{
-#ifdef _WIN32
-
-#elif __linux__
 		switch (event->response_type & ~0x80)
 		{
 		case XCB_MOTION_NOTIFY:
@@ -81,7 +78,6 @@ namespace spk
 			break;
 		}
 		}
-#endif
 	}
 
 	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
