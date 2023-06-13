@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef _WIN32
-	#include "windows/spk_api_module.hpp"
+	#include "windows/spk_API_module.hpp"
 #elif __linux__
-	#include "linux/spk_api_module.hpp"
+	#include "linux/spk_API_module.hpp"
 #endif

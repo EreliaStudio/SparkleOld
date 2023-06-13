@@ -8,7 +8,6 @@ namespace spk
 {
 	Window::Window(spk::Vector2Int p_size, void* p_windowAPI)
 	{
-#ifdef _WIN32
 		DEBUG_LINE();
 		const char* tmp = "Nom de ma fenetre";
 
@@ -54,7 +53,6 @@ namespace spk
 		UpdateWindow(_windowFrame);
 		DEBUG_LINE();
 
-#elif __linux__
 		_size = p_size;
 		_connection = xcb_connect(NULL, NULL);
 		if (xcb_connection_has_error(_connection))
@@ -95,20 +93,11 @@ namespace spk
 			mask, values);
 
 		xcb_map_window(_connection, _window);
-#endif
 	}
 
 	void Window::setGeometry(spk::Vector2Int p_size)
 	{
 		_size = p_size;
-
-#ifdef _WIN32
-
-#elif __linux__
-		uint32_t values[2] = { static_cast<uint32_t>(p_size.x), static_cast<uint32_t>(p_size.y) };
-    	xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
-#endif
-
 	}
 
 	void Window::resize(spk::Vector2Int p_size)
@@ -118,19 +107,9 @@ namespace spk
 
 	void Window::render()
 	{
-#ifdef _WIN32
-
-#elif __linux__
-		xcb_flush(_connection);
-#endif
 	}
 
 	void Window::clear()
 	{
-#ifdef _WIN32
-
-#elif __linux__
-		xcb_clear_area(_connection, 0, _window, 0, 0, _size.x, _size.y);
-#endif
 	}
 }
