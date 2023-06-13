@@ -27,5 +27,9 @@ namespace spk
 		spk::ThreadSafeQueue<SystemMessage *> &mouseQueue() { return _mouseQueue; }
 
 		spk::ThreadSafeQueue<SystemMessage *> &keyboardQueue() { return _keyboardQueue; }
+
+#ifdef _WIN32
+		LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+#endif
 	};
 }
