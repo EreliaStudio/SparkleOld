@@ -33,9 +33,19 @@ function(SetupSparkleLibrary)
 	    "${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
     )
 
-    list(APPEND SOURCE_FILES)
+if(UNIX)
+    file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+        "${CMAKE_SOURCE_DIR}/src/application/graphics/linux/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/modules/linux/*.cpp")
 
-    add_library(sparkle ${SOURCE_FILES})
+elseif(WIN32)
+    file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+        "${CMAKE_SOURCE_DIR}/src/application/graphics/windows/*.cpp"
+        "${CMAKE_SOURCE_DIR}/src/application/modules/windows/*.cpp")
+
+endif()
+
+    add_library(sparkle ${SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES})
     
 endfunction()
 

@@ -9,10 +9,10 @@ namespace spk
 	class KeyboardModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(SystemMessage *event);
+		void _handleMessage(SystemMessage event);
 
 	public:
-		KeyboardModule(spk::ThreadSafeQueue<SystemMessage *> &queue);
+		KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &queue);
 		~KeyboardModule();
 
 		void updateKeyboard();

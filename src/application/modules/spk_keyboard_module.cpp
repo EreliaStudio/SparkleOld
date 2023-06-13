@@ -3,7 +3,7 @@
 
 namespace spk
 {
-	void KeyboardModule::_handleMessage(SystemMessage *event)
+	void KeyboardModule::_handleMessage(SystemMessage event)
 	{
 #ifdef _WIN32
 
@@ -28,7 +28,7 @@ namespace spk
 #endif
 	}
 
-	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage *> &queue) : IMessageConsumerModule(queue)
+	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
 	{
 		spk::Singleton<spk::Keyboard>::instanciate();
 	}

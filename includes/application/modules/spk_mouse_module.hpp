@@ -9,10 +9,10 @@ namespace spk
 	class MouseModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(SystemMessage *event);
+		void _handleMessage(SystemMessage event);
 
 	public:
-		MouseModule(ThreadSafeQueue<SystemMessage *> &queue);
+		MouseModule(ThreadSafeQueue<SystemMessage> &queue);
 		~MouseModule();
 		
 		void updateMouse();
