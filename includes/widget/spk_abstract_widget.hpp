@@ -30,7 +30,7 @@ namespace spk
 	public:
 		AbstractWidget(const std::wstring& p_name);
 
-		~AbstractWidget();
+		virtual ~AbstractWidget();
 
 		template <typename TChildrenType, typename ... Args>
 		TChildrenType* addChildrenWidget(Args&& ... p_args);
