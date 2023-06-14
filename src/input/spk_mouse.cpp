@@ -68,6 +68,10 @@ namespace spk
 			return (L"Middle");
 		case Mouse::Button::Right:
 			return (L"Right");
+		case Mouse::Button::Button3:
+			return (L"Button3");
+		case Mouse::Button::Button4:
+			return (L"Button4");
 		}
 		return (L"Unknown");
 	}

@@ -15,6 +15,8 @@ namespace spk
 		case Status::OnExit:
 			_onExit();
 			break;
+		default:
+			break;
 		}
 	}
 
@@ -30,6 +32,8 @@ namespace spk
 			break;
 		case Status::OnExit:
 			_internalWorkingState = Status::Complete;
+			break;
+		default:
 			break;
 		}
 	}
