@@ -2,7 +2,7 @@
 
 namespace spk
 {
-    WorkerPool::WorkerPool(std::wstring p_poolName, size_t p_nbWorker)
+    WorkerPool::WorkerPool(const std::wstring& p_poolName, const size_t& p_nbWorker)
     {
         for (size_t i = 0; i < p_nbWorker; i++)
         {
@@ -44,7 +44,7 @@ namespace spk
             _workers[i]->join();
     }
 
-    Worker::Worker(std::wstring p_name) :
+    Worker::Worker(const std::wstring& p_name) :
         spk::WorkerPool(p_name, 1)
     {
 

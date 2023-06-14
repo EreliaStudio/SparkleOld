@@ -16,7 +16,7 @@ namespace spk
         bool _running = false;
 	
 	public:
-		WorkerPool(std::wstring p_poolName, size_t p_nbWorker);
+		WorkerPool(const std::wstring& p_poolName, const size_t& p_nbWorker);
         WorkerPool(const WorkerPool& p_other) = delete;
 
         ~WorkerPool();
@@ -33,9 +33,9 @@ namespace spk
 
     class Worker : public spk::WorkerPool
     {
-        private:
+	private:
 
-        public:
-        Worker(std::wstring p_name);
+	public:
+		Worker(const std::wstring& p_name);
     };
 }
