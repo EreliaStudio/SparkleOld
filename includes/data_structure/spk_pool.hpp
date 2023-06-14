@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 namespace spk
 {
     template <typename TType>
@@ -23,6 +25,7 @@ namespace spk
                                                             _content(p_content),
                                                             _referenceCount(new size_t(1))
             {
+                
             }
 
         public:

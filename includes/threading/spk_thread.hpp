@@ -25,18 +25,18 @@ namespace spk
 
     public:
         template <typename Funct, typename... Args>
-        Thread(std::wstring p_threadName, Funct &&p_func, Args &&...p_args) :
+        Thread(const std::wstring& p_threadName, Funct &&p_func, Args &&...p_args) :
             _funct(std::bind(std::forward<Funct>(p_func), std::forward<Args>(p_args)...)),
             _starterSignal()
         {
-            auto wrapper = [this](std::wstring threadName)
+            auto wrapper = [&](const std::wstring& threadName)
             {
                 spk::cout.setPrefix(threadName);
                 spk::cerr.setPrefix(threadName);
                 _starterSignal.get_future().wait();
                 _funct();
             };
-            _thread = std::thread(wrapper(p_threadName));
+            _thread = std::thread(wrapper, p_threadName);
         }
 
         template <typename Funct, typename... Args>
@@ -49,25 +49,15 @@ namespace spk
             }
         }
 
-        ~Thread()
-        {
-            join();
-        }
+        ~Thread();
 
         std::thread::id getId() const
         {
             return (_thread.get_id());
         }
 
-        void join()
-        {
-            if (_thread.joinable())
-                _thread.join();
-        }
+        void join();
 
-        void start()
-        {
-            _starterSignal.set_value(true);
-        }
+        void start();
     };
 }

@@ -5,7 +5,7 @@ project(Sparkle)
 
 set(OSBitness 32)
 if (CMAKE_SIZEOF_VOID_P EQUAL 8)
-    set(OSBitness 64)
+	set(OSBitness 64)
 endif()
 
 set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
@@ -16,25 +16,59 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/executable/${Architectur
 
 function(SetupSparkleLibrary)
 
-    include_directories(${CMAKE_SOURCE_DIR}/includes)
+	include_directories(${CMAKE_SOURCE_DIR}/includes)
 
-    file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+	file(GLOB SOURCE_FILES 
+		"${CMAKE_SOURCE_DIR}/src/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/input/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/math/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
+	)
 
-    list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/src/cross_platform/.*")
+if(UNIX)
+	file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+		"${CMAKE_SOURCE_DIR}/src/graphics/linux/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/input/linux/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/application/modules/linux/*.cpp"
+	)
 
-    add_library(sparkle ${SOURCE_FILES})
-    
+elseif(WIN32)
+	file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+		"${CMAKE_SOURCE_DIR}/src/graphics/windows/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/input/windows/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/application/modules/windows/*.cpp"
+	)
+
+endif()
+
+	add_library(sparkle ${SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES})
+		
 endfunction()
 
 function(SetupPlayground)
-    set(SOURCE_FILES)
-    
-    file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/playground/src/*.cpp")
+	set(SOURCE_FILES)
+		
+	file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/playground/src/*.cpp")
 
-    add_executable(playground ${SOURCE_FILES})
-    target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
-    target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
-    target_link_libraries(playground sparkle)
+	add_executable(playground ${SOURCE_FILES})
+	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
+	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
+	target_link_libraries(playground sparkle)
+	if(UNIX)
+		target_link_libraries(playground xcb)
+		target_link_libraries(playground pthread)
+	elseif(WIN32)
+
+	endif()
 endfunction()
 
 SetupSparkleLibrary()

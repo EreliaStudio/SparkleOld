@@ -4,17 +4,6 @@
 
 namespace spk
 {
-	/**
-	 * Hold an instance of TType, accessible from anywhere and assuring the unicity of said instance.
-	 *
-	 * Role:
-	 * Instanciate the instance, using variadic parameter or by giving a pre-instancied instance.
-	 * Retrieve the instance when user request it.
-	 * Release the instance when user request it.
-	 *
-	 * Warning:
-	 * The singleton must ALWAYS own the instance of the object.
-	 */
 	template <typename TType>
 	class Singleton
 	{
