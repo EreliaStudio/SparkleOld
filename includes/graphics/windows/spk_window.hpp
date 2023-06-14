@@ -25,16 +25,16 @@ namespace spk
 		void _convertTitle(const std::wstring& p_title);
 		void _createGhostInstance();
 		void _registerWindowClass();
-		void _createWindowFrame(void* p_APIModule, spk::Vector2Int p_size);
+		void _createWindowFrame(void* p_APIModule, const spk::Vector2Int& p_size);
 		void _composeOpenGLContext();
 		void _activateWindow();
 
-		Window(const std::wstring& p_title, spk::Vector2Int p_size, void *p_ptr = nullptr);
+		Window(const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_ptr = nullptr);
 
 	public:
 		~Window();
-		void setGeometry(spk::Vector2Int p_size);
-		void resize(spk::Vector2Int p_size);
+		void setGeometry(const spk::Vector2Int& p_size);
+		void resize(const spk::Vector2Int& p_size);
 		void render();
 		void clear();
 	};

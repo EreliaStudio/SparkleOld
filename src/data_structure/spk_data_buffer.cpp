@@ -2,26 +2,26 @@
 
 namespace spk
 {
-	DataBuffer::DataBuffer() : _data(),
-					_bookmark(0)
+	DataBuffer::DataBuffer() :
+		_data(),
+		_bookmark(0)
 	{
-	
 	}
 
-	void DataBuffer::skip(size_t number)
+	void DataBuffer::skip(const size_t& p_number)
 	{
-		if (leftover() < number)
-			throw std::runtime_error(std::string("Unable to skip ") + std::to_string(number) + " bytes.");
-		_bookmark += number;
+		if (leftover() < p_number)
+			throw std::runtime_error(std::string("Unable to skip ") + std::to_string(p_number) + " bytes.");
+		_bookmark += p_number;
 	}
 
-	void DataBuffer::clear(void)
+	void DataBuffer::clear()
 	{
 		_data.clear();
 		_bookmark = 0;
 	}
 
-	void DataBuffer::reset(void)
+	void DataBuffer::reset()
 	{
 		_bookmark = 0;
 	}

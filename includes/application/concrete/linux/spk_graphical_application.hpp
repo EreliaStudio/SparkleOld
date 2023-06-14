@@ -39,7 +39,7 @@ namespace spk
 		}
 
 	public:
-		Application(const std::wstring& p_title, spk::Vector2Int p_size)
+		Application(const std::wstring& p_title, const spk::Vector2Int& p_size)
 		{
 			_APIModule = new spk::APIModule();
 			_timeModule = new spk::TimeModule();
@@ -50,7 +50,7 @@ namespace spk
 			_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
 
 			_widgetModule = new spk::WidgetModule();
-			_widgetModule->centralWidget()->setGeometry(0, p_size);
+			resize(p_size);
 		}
 
 		~Application()
@@ -69,7 +69,7 @@ namespace spk
 			return (_widgetModule->centralWidget());
 		}
 
-		void resize(spk::Vector2Int p_size)
+		void resize(const spk::Vector2Int& p_size)
 		{
 			spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
 			_widgetModule->centralWidget()->setGeometry(0, p_size);

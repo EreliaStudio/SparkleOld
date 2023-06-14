@@ -2,8 +2,8 @@
 
 namespace spk
 {
-	IMessageConsumerModule::IMessageConsumerModule(spk::ThreadSafeQueue<SystemMessage> &queue):
-		_queue(queue)
+	IMessageConsumerModule::IMessageConsumerModule(spk::ThreadSafeQueue<SystemMessage> &p_queue):
+		_queue(p_queue)
 	{}
 
 	void IMessageConsumerModule::update()

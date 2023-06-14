@@ -2,9 +2,7 @@
 
 #include "design_pattern/spk_singleton.hpp"
 #include "input/spk_input_status.hpp"
-#include "spk_system_define.hpp"
 #include "math/spk_vector2.hpp"
-#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {

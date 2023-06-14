@@ -5,15 +5,18 @@ namespace spk
 {
 	class PersistentWorker : public Thread
 	{
+	public:
+		using Job = std::function<void()>;
+
 	private:
-		std::vector<std::function<void()>> _jobs;
+		std::vector<Job> _jobs;
 		bool _isRunning = false;
 
 	public:
 		PersistentWorker(const std::wstring & p_name);
 		~PersistentWorker();
 
-		void addJob(std::function<void()> p_job);
+		void addJob(const Job& p_job);
 
 		void start();
 		void stop();

@@ -1,8 +1,7 @@
 #pragma once
 
 #include "application/modules/spk_abstract_module.hpp"
-#include "graphics/spk_window.hpp"
-#include "iostream/spk_iostream.hpp"
+#include "design_pattern/spk_singleton.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
 
 namespace spk
@@ -18,7 +17,7 @@ namespace spk
 		spk::ThreadSafeQueue<SystemMessage> _mouseQueue;
 		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue;
 
-		LRESULT _handleMessage(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+		LRESULT _handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam);
 
 	public:
 		APIModule();
@@ -34,6 +33,6 @@ namespace spk
 
 		spk::ThreadSafeQueue<SystemMessage> &keyboardQueue() { return _keyboardQueue; }
 
-		static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+		static LRESULT CALLBACK WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam);
 	};
 }

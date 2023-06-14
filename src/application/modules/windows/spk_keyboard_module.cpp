@@ -3,10 +3,10 @@
 
 namespace spk
 {
-	void KeyboardModule::_handleMessage(SystemMessage& event)
+	void KeyboardModule::_handleMessage(SystemMessage& p_event)
 	{
 		unsigned int messageId;
-		*event >> messageId;
+		*p_event >> messageId;
 
 		switch (messageId)
 		{
@@ -14,7 +14,7 @@ namespace spk
 		{
 			unsigned int value;
 
-			*event >> value;
+			*p_event >> value;
 
 			break;
 		}
@@ -23,7 +23,7 @@ namespace spk
 		{
 			unsigned int value;
 
-			*event >> value;
+			*p_event >> value;
 
 			spk::Singleton<spk::Keyboard>::instance()->pressKey(value);
 
@@ -34,7 +34,7 @@ namespace spk
 		{
 			unsigned int value;
 
-			*event >> value;
+			*p_event >> value;
 
 			spk::Singleton<spk::Keyboard>::instance()->releaseKey(value);
 
@@ -43,7 +43,7 @@ namespace spk
 		}
 	}
 
-	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
+	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
 		spk::Singleton<spk::Keyboard>::instanciate();
 	}

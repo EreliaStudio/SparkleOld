@@ -4,10 +4,10 @@
 
 namespace spk
 {
-	void WindowModule::_handleMessage(SystemMessage& event)
+	void WindowModule::_handleMessage(SystemMessage& p_event)
 	{
 		unsigned int messageId;
-		*event >> messageId;
+		*p_event >> messageId;
 
 		switch (messageId)
 		{
@@ -15,15 +15,15 @@ namespace spk
 			unsigned int width;
 			unsigned int height;
 
-			*event >> width;
-			*event >> height;
+			*p_event >> width;
+			*p_event >> height;
 
 			spk::Window::instance()->resize(spk::Vector2Int(width, height));
 			break;
 		}
 	}
 
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(queue)
+	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
 	{
 		spk::Singleton<spk::Window>::instanciate(p_title, p_size, p_apiModule);
 	}

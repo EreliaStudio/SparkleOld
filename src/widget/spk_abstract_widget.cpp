@@ -31,10 +31,9 @@ namespace spk
 		return (_onUpdate());
 	}
 
-	AbstractWidget::AbstractWidget(std::wstring p_name) :
+	AbstractWidget::AbstractWidget(const std::wstring& p_name) :
 		_name(p_name)
 	{
-
 	}
 
 	AbstractWidget::~AbstractWidget()
@@ -56,7 +55,7 @@ namespace spk
 		return (result);
 	}
 
-	void AbstractWidget::setGeometry(spk::Vector2Int p_anchor, spk::Vector2Int p_size)
+	void AbstractWidget::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
 	{
 		_anchor = p_anchor;
 		_size = p_size;
@@ -64,21 +63,21 @@ namespace spk
 		_geometryEdited = true;
 	}
 	
-	void AbstractWidget::place(spk::Vector2Int p_anchor)
+	void AbstractWidget::place(const spk::Vector2Int& p_anchor)
 	{
 		_anchor = p_anchor;
 		
 		_geometryEdited = true;
 	}
 	
-	void AbstractWidget::move(spk::Vector2Int p_anchor)
+	void AbstractWidget::move(const spk::Vector2Int& p_anchor)
 	{
 		_anchor += p_anchor;
 		
 		_geometryEdited = true;
 	}
 
-	void AbstractWidget::resize(spk::Vector2Int p_size)
+	void AbstractWidget::resize(const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
 		
@@ -107,7 +106,7 @@ namespace spk
 		_name = p_name;
 	}
 
-	bool AbstractWidget::isPointed(spk::Vector2Int p_point)
+	bool AbstractWidget::isPointed(const spk::Vector2Int& p_point)
 	{
 		return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
 	}

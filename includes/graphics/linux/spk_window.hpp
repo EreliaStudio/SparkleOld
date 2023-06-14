@@ -18,11 +18,14 @@ namespace spk
 		xcb_screen_t *_screen;
 		xcb_window_t _window;
 
-		Window(const std::wstring& p_title, spk::Vector2Int p_size);
+		void _createWindow();
+		void _nameWindow(const std::wstring& p_title);
+		
+		Window(const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 	public:
-		void setGeometry(spk::Vector2Int p_size);
-		void resize(spk::Vector2Int p_size);
+		void setGeometry(const spk::Vector2Int& p_size);
+		void resize(const spk::Vector2Int& p_size);
 		void render();
 		void clear();
 	};

@@ -3,13 +3,13 @@
 
 namespace spk
 {
-	void MouseModule::_handleMessage(SystemMessage& event)
+	void MouseModule::_handleMessage(SystemMessage& p_event)
 	{
-		switch (event->response_type & ~0x80)
+		switch (p_event->response_type & ~0x80)
 		{
 		case XCB_MOTION_NOTIFY:
 		{
-			xcb_motion_notify_event_t *motionNotifyEvent(reinterpret_cast<xcb_motion_notify_event_t *>(event));
+			xcb_motion_notify_event_t *motionNotifyEvent(reinterpret_cast<xcb_motion_notify_event_t *>(p_event));
 
 			Singleton<Mouse>::instance()->setMousePosition(Vector2Int(motionNotifyEvent->event_x, motionNotifyEvent->event_y));
 
@@ -17,7 +17,7 @@ namespace spk
 		}
 		case XCB_BUTTON_PRESS:
 		{
-			xcb_button_press_event_t *buttonPressEvent(reinterpret_cast<xcb_button_press_event_t *>(event));
+			xcb_button_press_event_t *buttonPressEvent(reinterpret_cast<xcb_button_press_event_t *>(p_event));
 
 			switch (buttonPressEvent->detail)
 			{
@@ -80,7 +80,7 @@ namespace spk
 		}
 	}
 
-	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
+	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
 		spk::Singleton<spk::Mouse>::instanciate();
 	}

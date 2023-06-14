@@ -2,39 +2,35 @@
 
 namespace spk
 {
-	LRESULT CALLBACK APIModule::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	LRESULT CALLBACK APIModule::WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)
 	{
-		APIModule *pThis = NULL;
+		static APIModule *pThis = NULL;
 
-		if (uMsg == WM_NCCREATE)
+		if (p_uMsg == WM_NCCREATE)
 		{
-			CREATESTRUCT *pCreate = (CREATESTRUCT *)lParam;
+			CREATESTRUCT *pCreate = (CREATESTRUCT *)p_lParam;
 			pThis = (APIModule *)pCreate->lpCreateParams;
-			SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
-		}
-		else
-		{
-			pThis = (APIModule *)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+			SetWindowLongPtr(p_hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
 		}
 
-		if (pThis)
+		if (pThis != NULL)
 		{
-			return pThis->_handleMessage(hwnd, uMsg, wParam, lParam);
+			return pThis->_handleMessage(p_hwnd, p_uMsg, p_wParam, p_lParam);
 		}
 		else
 		{
-			return DefWindowProc(hwnd, uMsg, wParam, lParam);
+			return DefWindowProc(p_hwnd, p_uMsg, p_wParam, p_lParam);
 		}
 	}
 
-	LRESULT APIModule::_handleMessage(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+	LRESULT APIModule::_handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam)
 	{
 		MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
 
 		newMessage->clear();
 
-		*newMessage << uMsg;
-		switch (uMsg)
+		*newMessage << p_uMsg;
+		switch (p_uMsg)
 		{
 		case WM_DESTROY:
 		{
@@ -51,8 +47,8 @@ namespace spk
 		}
 		case WM_SIZE:
 		{
-			unsigned int width = LOWORD(lParam);
-			unsigned int height = HIWORD(lParam);
+			unsigned int width = LOWORD(p_lParam);
+			unsigned int height = HIWORD(p_lParam);
 
 			*newMessage << width;
 			*newMessage << height;
@@ -74,7 +70,7 @@ namespace spk
 		case WM_XBUTTONDOWN :
 		case WM_XBUTTONUP :
 		{
-			short value = GET_XBUTTON_WPARAM (wParam);
+			short value = GET_XBUTTON_WPARAM (p_wParam);
 
 			*newMessage << value;
 
@@ -84,7 +80,7 @@ namespace spk
 		case WM_MOUSEHWHEEL:
 		case WM_MOUSEWHEEL:
 		{
-			short value = GET_WHEEL_DELTA_WPARAM(wParam);
+			short value = GET_WHEEL_DELTA_WPARAM(p_wParam);
 
 			*newMessage << value;
 
@@ -93,8 +89,8 @@ namespace spk
 		}
 		case WM_MOUSEMOVE:
 		{
-			int x = LOWORD(lParam);
-			int y = HIWORD(lParam);
+			int x = LOWORD(p_lParam);
+			int y = HIWORD(p_lParam);
 
 			*newMessage << x;
 			*newMessage << y;
@@ -111,7 +107,7 @@ namespace spk
 		case WM_SYSKEYDOWN:
 		case WM_SYSKEYUP:
 		{
-			if (wParam == VK_F4 && (lParam & (1 << 29)))
+			if (p_wParam == VK_F4 && (p_lParam & (1 << 29)))
 			{
 				DEBUG_LINE();
 
@@ -123,7 +119,7 @@ namespace spk
 			}
 			else
 			{
-				unsigned int value = static_cast<unsigned int>(wParam);
+				unsigned int value = static_cast<unsigned int>(p_wParam);
 
 				*newMessage << value;
 
@@ -134,7 +130,7 @@ namespace spk
 
 		default:
 		{
-			return DefWindowProc(hwnd, uMsg, wParam, lParam);
+			return DefWindowProc(p_hwnd, p_uMsg, p_wParam, p_lParam);
 		}
 		}
 		return TRUE;

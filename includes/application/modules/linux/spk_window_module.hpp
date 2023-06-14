@@ -1,9 +1,6 @@
 #pragma once
 
-#include "threading/spk_thread_safe_queue.hpp"
-#include "design_pattern/spk_singleton.hpp"
 #include "application/modules/spk_abstract_module.hpp"
-#include "spk_system_define.hpp"
 #include "math/spk_vector2.hpp"
 
 namespace spk
@@ -11,10 +8,10 @@ namespace spk
 	class WindowModule : public IMessageConsumerModule
 	{
 	private:
-		void _handleMessage(SystemMessage& event);
+		void _handleMessage(SystemMessage& p_event);
 
 	public:
-		WindowModule(spk::ThreadSafeQueue<SystemMessage> &queue, const std::wstring& p_title, const spk::Vector2Int& p_size);
+		WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 		void render();
 		void clear();

@@ -15,11 +15,11 @@ namespace spk
         return (state());
     }
 
-    ActivableObject::Contract ActivableObject::addActivationCallback(Callback p_callback)
+    ActivableObject::Contract ActivableObject::addActivationCallback(const Callback& p_callback)
     {
         return (std::move(addStateCallback(true, p_callback)));
     }
-    ActivableObject::Contract ActivableObject::addDeactivationCallback(Callback p_callback)
+    ActivableObject::Contract ActivableObject::addDeactivationCallback(const Callback& p_callback)
     {
         return (std::move(addStateCallback(false, p_callback)));
     }

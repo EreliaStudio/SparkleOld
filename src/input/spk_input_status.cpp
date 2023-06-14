@@ -2,7 +2,7 @@
 
 namespace spk
 {
-    std::wstring to_wstring(const InputStatus &p_status)
+	std::wstring to_wstring(const InputStatus &p_status)
 	{
 		switch (p_status)
 		{

@@ -6,12 +6,12 @@ namespace spk
 {
 	class Activity
 	{
-        friend class ActivityManager;
+		friend class ActivityManager;
 
 	public:
 		enum class Status
 		{
-            Stopped,
+			Stopped,
 			OnEnter,
 			Running,
 			OnExit,
@@ -35,7 +35,7 @@ namespace spk
 	public:
 		Activity();
 
-        const Status& state() const;
+		const Status& state() const;
 		bool isCompleted() const;
 	};
 }

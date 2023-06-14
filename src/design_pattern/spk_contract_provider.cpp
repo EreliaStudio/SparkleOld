@@ -31,7 +31,7 @@ namespace spk
 			}
 		}
 
-		void ContractProvider::Contract::edit(Callback p_callback)
+		void ContractProvider::Contract::edit(const Callback& p_callback)
 		{
 			if (isOriginal() == true)
 			{
@@ -50,9 +50,12 @@ namespace spk
 				_isOriginal = false;
 				_callback = nullptr;
 				_callbackOwner.erase(std::remove_if(_callbackOwner.begin(), _callbackOwner.end(),
-													[&](const auto &callback)
-													{ return &callback == &_callback; }),
-										_callbackOwner.end());
+					[&](const auto &callback)
+					{
+						return &callback == &_callback;
+					}),
+					_callbackOwner.end()
+				);
 			}
 			else
 			{

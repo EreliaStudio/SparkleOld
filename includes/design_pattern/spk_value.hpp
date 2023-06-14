@@ -133,7 +133,7 @@ namespace spk
             _default->unsubscribe(this);
         }
 
-        Contract subscribe(Callback p_callback)
+        Contract subscribe(const Callback& p_callback)
         {
             return (std::move(ContractProvider::subscribe(_onEditionCallbacks, p_callback)));
         }

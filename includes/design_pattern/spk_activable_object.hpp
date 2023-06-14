@@ -13,7 +13,7 @@ namespace spk
         void deactivate();
         const bool& isActive() const;
 
-        Contract addActivationCallback(Callback p_callback);
-        Contract addDeactivationCallback(Callback p_callback);
+        Contract addActivationCallback(const Callback& p_callback);
+        Contract addDeactivationCallback(const Callback& p_callback);
     };
 }

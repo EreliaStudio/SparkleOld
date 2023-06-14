@@ -4,12 +4,12 @@
 
 namespace spk
 {
-	void SystemModule::_handleMessage(SystemMessage& event)
+	void SystemModule::_handleMessage(SystemMessage& p_event)
 	{
 		DEBUG_LINE();
 
 		unsigned int messageId;
-		*event >> messageId;
+		*p_event >> messageId;
 
 		switch (messageId)
 		{
@@ -21,7 +21,7 @@ namespace spk
 		}
 	}
 
-	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &queue, spk::AbstractApplication* p_applicationToManage) : IMessageConsumerModule(queue),
+	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, spk::AbstractApplication* p_applicationToManage) : IMessageConsumerModule(p_queue),
 		_applicationToManage(p_applicationToManage)
 	{
 

@@ -28,20 +28,20 @@ namespace spk
 
 
 	public:
-		AbstractWidget(std::wstring p_name);
+		AbstractWidget(const std::wstring& p_name);
 
 		~AbstractWidget();
 
 		template <typename TChildrenType, typename ... Args>
 		TChildrenType* addChildrenWidget(Args&& ... p_args);
 
-		void setGeometry(spk::Vector2Int p_anchor, spk::Vector2Int p_size);
+		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size);
 		
-		void place(spk::Vector2Int p_anchor);
+		void place(const spk::Vector2Int& p_anchor);
 		
-		void move(spk::Vector2Int p_anchor);
+		void move(const spk::Vector2Int& p_anchor);
 
-		void resize(spk::Vector2Int p_size);
+		void resize(const spk::Vector2Int& p_size);
 
 		void sortChildrensByDepth();
 
@@ -52,7 +52,7 @@ namespace spk
 		constexpr const std::wstring& name() const {return (_name);}
 		constexpr const float& depth() const { return (_depth);	}
 
-		bool isPointed(spk::Vector2Int p_point);
+		bool isPointed(const spk::Vector2Int& p_point);
 	};
 
 	class NoGraphicsWidget : public AbstractWidget

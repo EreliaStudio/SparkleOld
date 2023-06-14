@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include <algorithm>
-#include <string>
 
 namespace spk
 {

@@ -2,20 +2,21 @@
 
 namespace spk
 {
-	void AbstractApplication::addJob(const std::wstring &p_WorkerName, std::function<void()> p_Job)
+	void AbstractApplication::addJob(const std::wstring &p_WorkerName, const AbstractApplication::Job& p_job)
 	{
 		if (_workers.find(p_WorkerName) == _workers.end())
 			_workers[p_WorkerName] = new spk::PersistentWorker(p_WorkerName);
-		_workers[p_WorkerName]->addJob(p_Job);
+		_workers[p_WorkerName]->addJob(p_job);
 	}
 
-	void AbstractApplication::addJob(std::function<void()> p_Job)
+	void AbstractApplication::addJob(const AbstractApplication::Job& p_job)
 	{
-		_jobs.push_back(p_Job);
+		_jobs.push_back(p_job);
 	}
 
-	AbstractApplication::AbstractApplication() : _errorCode(0),
-							_isRunning(false)
+	AbstractApplication::AbstractApplication() : 
+		_errorCode(0),
+		_isRunning(false)
 	{
 	}
 

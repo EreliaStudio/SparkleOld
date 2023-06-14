@@ -10,10 +10,10 @@ namespace spk
 	private:
 	
 		spk::AbstractApplication* _applicationToManage;
-		void _handleMessage(SystemMessage& event);
+		void _handleMessage(SystemMessage& p_event);
 
 	public:
-		SystemModule(ThreadSafeQueue<SystemMessage> &queue, spk::AbstractApplication* p_applicationToManage);
+		SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, spk::AbstractApplication* p_applicationToManage);
 		~SystemModule();
 		
 		void updateMouse();

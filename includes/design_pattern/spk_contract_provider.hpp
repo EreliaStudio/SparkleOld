@@ -32,13 +32,13 @@ namespace spk
 
 			~Contract();
 
-			void edit(Callback p_callback);
+			void edit(const Callback& p_callback);
 
 			void resign();
 		};
 
 	private:
 	protected:
-		Contract subscribe(CallbackContainer &p_callbackOwner, Callback &p_callback);
+		Contract subscribe(CallbackContainer &p_callbackOwner, const Callback &p_callback);
 	};
 }

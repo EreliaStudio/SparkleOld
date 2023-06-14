@@ -3,10 +3,10 @@
 
 namespace spk
 {
-	void MouseModule::_handleMessage(SystemMessage& event)
+	void MouseModule::_handleMessage(SystemMessage& p_event)
 	{
 		unsigned int messageId;
-		*event >> messageId;
+		*p_event >> messageId;
 
 		switch (messageId)
 		{
@@ -47,7 +47,7 @@ namespace spk
 		{
 			short value;
 
-			*event >> value;
+			*p_event >> value;
 
 			if (value == MK_XBUTTON1)
 			{
@@ -63,7 +63,7 @@ namespace spk
 		{
 			short value;
 
-			*event >> value;
+			*p_event >> value;
 
 			if (value == MK_XBUTTON1)
 			{
@@ -80,7 +80,7 @@ namespace spk
 		{
 			short value;
 
-			*event >> value;
+			*p_event >> value;
 
 			Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(0, (int)value));
 
@@ -90,7 +90,7 @@ namespace spk
 		{
 			short value;
 
-			*event >> value;
+			*p_event >> value;
 			
 			Singleton<Mouse>::instance()->editWheelPosition(Vector2Int((int)value, 0));
 
@@ -99,8 +99,8 @@ namespace spk
 		case WM_MOUSEMOVE:
 		{
 			int newPosX, newPosY;
-			*event >> newPosX;
-			*event >> newPosY;
+			*p_event >> newPosX;
+			*p_event >> newPosY;
 
 			Singleton<Mouse>::instance()->setMousePosition(Vector2Int(newPosX, newPosY));
 
@@ -109,7 +109,7 @@ namespace spk
 		}
 	}
 
-	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &queue) : IMessageConsumerModule(queue)
+	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
 		spk::Singleton<spk::Mouse>::instanciate();
 	}

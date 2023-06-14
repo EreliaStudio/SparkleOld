@@ -17,7 +17,7 @@ namespace spk
 		stop();
 	}
 
-	void PersistentWorker::addJob(std::function<void()> p_job)
+	void PersistentWorker::addJob(const PersistentWorker::Job& p_job)
 	{
 		_jobs.push_back(p_job);
 	}

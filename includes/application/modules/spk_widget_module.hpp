@@ -18,7 +18,7 @@ namespace spk
 
 			virtual void _onGeometryChange();
 		public:
-			CentralWidget(std::wstring p_name);
+			CentralWidget(const std::wstring& p_name);
 		};
 
 		CentralWidget* _centralWidget;

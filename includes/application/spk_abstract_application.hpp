@@ -2,24 +2,25 @@
 
 #include <map>
 #include <vector>
-#include <string>
-#include <functional>
 #include "threading/spk_persistent_worker.hpp"
 
 namespace spk
 {
 	class AbstractApplication
 	{
+	public:
+		using Job = std::function<void()>;
+
 	private:
 		std::map<std::wstring, spk::PersistentWorker *> _workers;
-		std::vector<std::function<void()>> _jobs;
+		std::vector<Job> _jobs;
 
 		int _errorCode;
 		bool _isRunning;
 
 	protected:
-		void addJob(const std::wstring &p_WorkerName, std::function<void()> p_Job);
-		void addJob(std::function<void()> p_Job);
+		void addJob(const std::wstring &p_WorkerName, const Job& p_job);
+		void addJob(const Job& p_job);
 		virtual void setupJobs() = 0;
 
 	public:

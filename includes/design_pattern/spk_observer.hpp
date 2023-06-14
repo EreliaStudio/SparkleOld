@@ -17,7 +17,7 @@ namespace spk
 		{
 		}
 
-		Contract subscribe(TEvent p_event, Callback p_callback)
+		Contract subscribe(TEvent p_event, const Callback& p_callback)
 		{
 			Contract result = ContractProvider::subscribe(_callbacks[p_event], p_callback);
 
