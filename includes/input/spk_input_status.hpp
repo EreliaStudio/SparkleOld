@@ -4,7 +4,7 @@
 
 namespace spk
 {
-	enum class InputStatus
+	enum class InputState
 	{
 		Up,
 		Pressed,
@@ -12,5 +12,5 @@ namespace spk
 		Released
 	};
 
-	std::wstring to_wstring(const InputStatus &p_status);
+	std::wstring to_wstring(const InputState &p_status);
 }

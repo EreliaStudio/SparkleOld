@@ -1,4 +1,6 @@
 #include "application/modules/spk_API_module.hpp"
+#include "graphics/spk_window.hpp"
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {	
@@ -16,7 +18,7 @@ namespace spk
 	{
 		xcb_generic_event_t *event;
 
-		while (event = xcb_poll_for_event(spk::Singleton<Window>::instance()->_connection))
+		while (event = xcb_poll_for_event(spk::Window::instance()->_connection))
 		{
 			switch (event->response_type & ~0x80)
 			{

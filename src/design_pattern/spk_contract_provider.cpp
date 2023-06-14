@@ -63,7 +63,7 @@ namespace spk
 			}
 		}
 
-		ContractProvider::Contract ContractProvider::subscribe(CallbackContainer &p_callbackOwner, Callback &p_callback)
+		ContractProvider::Contract ContractProvider::subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback)
 		{
 			p_callbackOwner.push_back(p_callback);
 			return (std::move(Contract(p_callbackOwner, p_callbackOwner.back())));

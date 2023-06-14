@@ -16,7 +16,7 @@ namespace spk
 
 	}
 
-	WidgetModule::CentralWidget::CentralWidget(std::wstring p_name) :
+	WidgetModule::CentralWidget::CentralWidget(const std::wstring& p_name) :
 		AbstractWidget(p_name)
 	{
 

@@ -15,7 +15,6 @@
 
 #elif __linux__
 	#include <xcb/xcb.h>
-	#include <xcb/xcb_keysyms.h>
 
     using SystemMessage = xcb_generic_event_t *;
 #else

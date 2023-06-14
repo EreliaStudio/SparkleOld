@@ -54,7 +54,7 @@ namespace spk
 		}
 		case XCB_BUTTON_RELEASE:
 		{
-			xcb_button_release_event_t *buttonReleaseEvent(reinterpret_cast<xcb_button_release_event_t *>(event));
+			xcb_button_release_event_t *buttonReleaseEvent(reinterpret_cast<xcb_button_release_event_t *>(p_event));
 
 			switch (buttonReleaseEvent->detail)
 			{

@@ -30,7 +30,7 @@ namespace spk
 		void edit(const size_t& p_offset, const InputType& p_input)
 		{
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
-			if (offset + sizeof(InputType) > size())
+			if (p_offset + sizeof(InputType) > size())
 				throw std::runtime_error("Unable to edit, offset is out of bound.");
 			memcpy(_data.data() + p_offset, &p_input, sizeof(InputType));
 		}
@@ -55,7 +55,7 @@ namespace spk
 		}
 
 		template <typename OutputType>
-		DataBuffer &operator>>(OutputType& p_output) const
+		const DataBuffer &operator>>(OutputType& p_output) const
 		{
 			static_assert(std::is_standard_layout<OutputType>().value, "Unable to handle this type.");
 			if (leftover() < sizeof(OutputType))

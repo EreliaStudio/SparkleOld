@@ -39,6 +39,6 @@ namespace spk
 
 	private:
 	protected:
-		Contract subscribe(CallbackContainer &p_callbackOwner, const Callback &p_callback);
+		Contract subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback);
 	};
 }

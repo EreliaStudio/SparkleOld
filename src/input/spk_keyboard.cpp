@@ -148,7 +148,7 @@ namespace spk
 			keys[i] = Key::Unknown;
 	}
 
-	void Keyboard::Mapping::bindKey(const size_t& p_index, Key p_key)
+	void Keyboard::Mapping::bindKey(const size_t& p_index, const Key& p_key)
 	{
 		keys[p_index] = p_key;
 	}
@@ -171,23 +171,23 @@ namespace spk
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
 
-		_keys[static_cast<size_t>(keyValue)] = InputStatus::Pressed;
+		_keys[static_cast<size_t>(keyValue)] = InputState::Pressed;
 	}
 	void Keyboard::releaseKey(const uint32_t& p_key)
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
 
-		_keys[static_cast<size_t>(keyValue)] = InputStatus::Released;
+		_keys[static_cast<size_t>(keyValue)] = InputState::Released;
 	}
 
 	void Keyboard::update()
 	{
 		for (size_t i = 0; i < Key::SIZE; i++)
 		{
-			if (_keys[i] == InputStatus::Pressed)
-				_keys[i] = InputStatus::Down;
-			else if (_keys[i] == InputStatus::Released)
-				_keys[i] = InputStatus::Up;
+			if (_keys[i] == InputState::Pressed)
+				_keys[i] = InputState::Down;
+			else if (_keys[i] == InputState::Released)
+				_keys[i] = InputState::Up;
 		}
 	}
 

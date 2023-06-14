@@ -6,7 +6,7 @@
 
 namespace spk
 {
-	Window::_createWindow()
+	void Window::_createWindow()
 	{
 		uint32_t mask = XCB_CW_EVENT_MASK;
 		uint32_t values[2] = {
@@ -38,7 +38,7 @@ namespace spk
 			mask, values);
 	}
 
-	Window::_nameWindow(const std::wstring& p_title)
+	void Window::_nameWindow(const std::wstring& p_title)
 	{
 		std::string title_str(p_title.begin(), p_title.end());
 

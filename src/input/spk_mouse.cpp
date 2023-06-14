@@ -9,7 +9,7 @@ namespace spk
 	{
 		for (size_t i = 0; i < NB_BUTTON; i++)
 		{
-			_buttons[i] = InputStatus::Up;
+			_buttons[i] = InputState::Up;
 		}
 	}
 
@@ -21,12 +21,12 @@ namespace spk
 
 	void Mouse::pressButton(const Button& p_button)
 	{
-		_buttons[static_cast<size_t>(p_button)] = InputStatus::Pressed;
+		_buttons[static_cast<size_t>(p_button)] = InputState::Pressed;
 	}
 
 	void Mouse::releaseButton(const Button& p_button)
 	{
-		_buttons[static_cast<size_t>(p_button)] = InputStatus::Released;
+		_buttons[static_cast<size_t>(p_button)] = InputState::Released;
 	}
 
 	void Mouse::editWheelPosition(const Vector2Int& p_delta)
@@ -41,17 +41,21 @@ namespace spk
 
 		for (size_t i = 0; i < NB_BUTTON; i++)
 		{
-			if (_buttons[i] == InputStatus::Pressed)
+			if (_buttons[i] == InputState::Pressed)
 			{
-				_buttons[i] = InputStatus::Down;
+				_buttons[i] = InputState::Down;
 			}
-			else if (_buttons[i] == InputStatus::Released)
+			else if (_buttons[i] == InputState::Released)
 			{
-				_buttons[i] = InputStatus::Up;
+				_buttons[i] = InputState::Up;
 			}
 
 			// spk::cout << "Button " << to_wstring(Button(i)) << " -> " << to_wstring(_buttons[i]) << std::endl;
 		}
+	}
+
+	void Mouse::place(const Vector2Int& p_position)
+	{	
 	}
 
 	std::wstring to_wstring(const Mouse::Button& p_button)

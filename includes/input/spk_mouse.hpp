@@ -23,7 +23,7 @@ namespace spk
 		static const size_t NB_BUTTON = 5;
 
 	private:
-		InputStatus _buttons[NB_BUTTON];
+		InputState _buttons[NB_BUTTON];
 
 		Vector2Int _position;
 		Vector2Int _deltaPosition;
@@ -32,19 +32,16 @@ namespace spk
 	private:
 		Mouse();
 
-		void setMousePosition(Vector2Int p_newPosition);
+		void setMousePosition(const Vector2Int& p_newPosition);
 		void pressButton(const Button& p_button);
 		void releaseButton(const Button& p_button);
 		void editWheelPosition(const Vector2Int& p_delta);
 		void update();
 
 	public:
-		void place(const Vector2Int& p_position)
-		{
-			
-		}
+		void place(const Vector2Int& p_position);
 
-		const InputStatus& getbutton(const Button& p_button) const
+		const InputState& inputStatus(const Button& p_button) const
 		{
 			return (_buttons[static_cast<size_t>(p_button)]);
 		}

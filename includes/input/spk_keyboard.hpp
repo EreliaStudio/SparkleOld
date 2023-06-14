@@ -82,8 +82,7 @@ namespace spk
 			Key keys[Key::SIZE];
 
 			Mapping();
-			void bindKey(size_t p_index, Key p_key);
-			void bindKeys(size_t p_index, std::vector<Key> p_keys);
+			void bindKey(const size_t& p_index, const Key& p_key);
 			Key &operator[](const size_t &p_index);
 
 			static Mapping createAzertyMapping();
@@ -95,7 +94,7 @@ namespace spk
 
 		Layout _layout;
 		Mapping _mapping[2];
-		InputStatus _keys[Key::SIZE];
+		InputState _keys[Key::SIZE];
 
 		Keyboard();
 
@@ -107,7 +106,7 @@ namespace spk
 	public:
 		void setLayout(const Layout &p_layout) { _layout = p_layout; }
 
-		const InputStatus &key(const Key &p_key) const
+		const InputState &inputStatus(const Key &p_key) const
 		{
 			return (_keys[static_cast<size_t>(p_key)]);
 		}

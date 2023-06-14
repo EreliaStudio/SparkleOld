@@ -65,6 +65,7 @@ function(SetupPlayground)
 	target_link_libraries(playground sparkle)
 	if(UNIX)
 		target_link_libraries(playground xcb)
+		target_link_libraries(playground pthread)
 	elseif(WIN32)
 
 	endif()

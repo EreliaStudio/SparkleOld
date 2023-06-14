@@ -2,17 +2,17 @@
 
 namespace spk
 {
-	std::wstring to_wstring(const InputStatus &p_status)
+	std::wstring to_wstring(const InputState &p_status)
 	{
 		switch (p_status)
 		{
-		case InputStatus::Up:
+		case InputState::Up:
 			return (L"Up");
-		case InputStatus::Pressed:
+		case InputState::Pressed:
 			return (L"Pressed");
-		case InputStatus::Down:
+		case InputState::Down:
 			return (L"Down");
-		case InputStatus::Released:
+		case InputState::Released:
 			return (L"Released");
 		}
 		return (L"Unknown");
