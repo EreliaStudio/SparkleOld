@@ -49,13 +49,14 @@ namespace spk
 			{
 				_isOriginal = false;
 				_callback = nullptr;
-				_callbackOwner.erase(std::remove_if(_callbackOwner.begin(), _callbackOwner.end(),
-					[&](const auto &callback)
+				for (auto it = _callbackOwner.begin(); it != _callbackOwner.end(); ++it)
+				{
+					if (&(*it) == &_callback)
 					{
-						return &callback == &_callback;
-					}),
-					_callbackOwner.end()
-				);
+						_callbackOwner.erase(it);
+						break;
+					}
+				}
 			}
 			else
 			{
