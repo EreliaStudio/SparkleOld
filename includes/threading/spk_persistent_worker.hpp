@@ -1,23 +1,25 @@
 #pragma once
 #include "threading/spk_thread.hpp"
+#include "design_pattern/spk_contract_provider.hpp"
 
 namespace spk
 {
-	class PersistentWorker : public Thread
+	class PersistentWorker : public Thread, public ContractProvider
 	{
 	public:
-		using Job = std::function<void()>;
+		using Job = ContractProvider::Callback;
 
 	private:
-		std::vector<Job> _jobs;
+		CallbackContainer _jobs;
 		bool _isRunning = false;
 
 	public:
 		PersistentWorker(const std::wstring & p_name);
 		~PersistentWorker();
 
-		void addJob(const Job& p_job);
+		Contract addJob(const Job& p_job);
 
+		constexpr bool isRunning() const { return (_isRunning); }
 		void start();
 		void stop();
 	};

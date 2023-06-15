@@ -1,8 +1,39 @@
 #include "playground.hpp"
+spk::PersistentWorker worker(L"Worker");
+
+spk::ContractProvider::Contract addAJob(const std::wstring& to_print)
+{
+	return worker.addJob([to_print]() {
+		spk::cout << to_print << std::endl;
+	});
+}
+
+void resignAndWait(spk::ContractProvider::Contract&& contract)
+{
+	contract.resign();
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+}
 
 int main()
 {
-	spk::Application app(L"ApplicationName", {300, 600});
+	spk::ContractProvider::Contract first_contract = addAJob(L"First");
+	spk::ContractProvider::Contract second_contract = addAJob(L"Second");
+	spk::ContractProvider::Contract third_contract = addAJob(L"Third");
 
-	return app.run();
+	if (worker.isRunning() == false)
+		worker.start();
+
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+
+	spk::cout << "Resigning first contract" << std::endl;
+	resignAndWait(std::move(first_contract));
+
+	spk::cout << "Resigning third contract" << std::endl;
+	resignAndWait(std::move(third_contract));
+
+	spk::cout << "Resigning second contract" << std::endl;
+	resignAndWait(std::move(second_contract));
+
+	worker.stop();
+	return 0;
 }
