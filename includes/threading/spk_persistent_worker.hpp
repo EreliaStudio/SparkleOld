@@ -12,6 +12,7 @@ namespace spk
 	private:
 		CallbackContainer _jobs;
 		bool _isRunning = false;
+		bool _isPaused = false;
 
 	public:
 		PersistentWorker(const std::wstring & p_name);
@@ -22,5 +23,10 @@ namespace spk
 		constexpr bool isRunning() const { return (_isRunning); }
 		void start();
 		void stop();
+
+		void join() = delete;
+
+		void pause();
+		void resume();
 	};
 }

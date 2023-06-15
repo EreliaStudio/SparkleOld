@@ -28,6 +28,13 @@ int main()
 	spk::cout << "Resigning first contract" << std::endl;
 	resignAndWait(std::move(first_contract));
 
+	worker.pause();
+	spk::cout << "Not much should happen now" << std::endl;
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	spk::cout << "Okay, back at it" << std::endl;
+	worker.resume();
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+
 	spk::cout << "Resigning third contract" << std::endl;
 	resignAndWait(std::move(third_contract));
 

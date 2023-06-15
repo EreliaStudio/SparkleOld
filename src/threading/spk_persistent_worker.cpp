@@ -5,6 +5,9 @@ namespace spk
 	PersistentWorker::PersistentWorker(const std::wstring & p_name) :
 		Thread(LaunchMethod::Delayed, p_name, [&]() {
 			while (_isRunning)
+			{
+				if (_isPaused == true)
+					continue;
 				for (auto &job : _jobs)
 				{
 					try 
@@ -15,9 +18,11 @@ namespace spk
 					{
 					}
 				}
+			}
 		}),
 		_jobs(),
-		_isRunning(false)
+		_isRunning(false),
+		_isPaused(false)
 	{}
 
 	PersistentWorker::~PersistentWorker()
@@ -38,13 +43,13 @@ namespace spk
 	void PersistentWorker::start()
 	{
 		_isRunning = true;
+		_isPaused = false;
 		try
 		{
 			Thread::start();
 		}
 		catch (...)
 		{
-			_isRunning = false;
 			throw ;
 		}
 	}
@@ -52,5 +57,16 @@ namespace spk
 	void PersistentWorker::stop()
 	{
 		_isRunning = false;
+		Thread::join();
+	}
+
+	void PersistentWorker::pause()
+	{
+		_isPaused = true;
+	}
+
+	void PersistentWorker::resume()
+	{
+		_isPaused = false;
 	}
 }
