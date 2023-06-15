@@ -5,11 +5,24 @@ namespace spk
 	PersistentWorker::PersistentWorker(const std::wstring & p_name) :
 		Thread(LaunchMethod::Delayed, p_name, [&]() {
 			while (_isRunning)
+			{
+				if (_isPaused == true)
+					continue;
 				for (auto &job : _jobs)
-					job();
+				{
+					try 
+					{
+						job();
+					}
+					catch (...)
+					{
+					}
+				}
+			}
 		}),
 		_jobs(),
-		_isRunning(false)
+		_isRunning(false),
+		_isPaused(false)
 	{}
 
 	PersistentWorker::~PersistentWorker()
@@ -17,19 +30,43 @@ namespace spk
 		stop();
 	}
 
-	void PersistentWorker::addJob(const PersistentWorker::Job& p_job)
+	ContractProvider::Contract PersistentWorker::addJob(const PersistentWorker::Job& p_job)
 	{
-		_jobs.push_back(p_job);
+		return (std::move(ContractProvider::subscribe(_jobs, p_job)));
 	}
 
+	/**
+	 * @brief Start the thread that handle the jobs.
+	 * 
+	 * @warning start will throw an exception if the thread is already running
+	 */
 	void PersistentWorker::start()
 	{
 		_isRunning = true;
-		Thread::start();
+		_isPaused = false;
+		try
+		{
+			Thread::start();
+		}
+		catch (...)
+		{
+			throw ;
+		}
 	}
 
 	void PersistentWorker::stop()
 	{
 		_isRunning = false;
+		Thread::join();
+	}
+
+	void PersistentWorker::pause()
+	{
+		_isPaused = true;
+	}
+
+	void PersistentWorker::resume()
+	{
+		_isPaused = false;
 	}
 }
