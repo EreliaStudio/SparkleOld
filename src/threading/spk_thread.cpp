@@ -15,6 +15,14 @@ namespace spk
 
     void Thread::start()
     {
-        _starterSignal.set_value(true);
+        try
+        {
+            _starterSignal.set_value(true);
+        }
+        catch(const std::exception& e)
+        {
+            throw std::runtime_error("Trying to restart an already launched thread");
+        }
+        
     }
 }
