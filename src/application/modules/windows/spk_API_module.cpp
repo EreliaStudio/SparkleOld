@@ -1,4 +1,5 @@
 #include "application/modules/spk_API_module.hpp"
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
