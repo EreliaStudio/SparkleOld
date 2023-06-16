@@ -112,7 +112,7 @@ namespace spk
 		return (result);
 	}
 
-	int positive_modulo(int p_integer, int p_dividor)
+	int positiveModulo(int p_integer, int p_dividor)
 	{
 		int result = p_integer % p_dividor;
 		while (result < 0)
