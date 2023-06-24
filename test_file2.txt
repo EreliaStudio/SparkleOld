@@ -1,0 +1,2 @@
+Ceci,est,un,fichier,de,test,pour,la,fonction,getStringSplit
+Chaque,mot,est,séparé,par,une,virgule
