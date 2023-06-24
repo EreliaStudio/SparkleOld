@@ -18,17 +18,17 @@ namespace spk
 
 	std::wstring className(const std::wstring& prettyFunction)
 	{
-		size_t methodEnd = prettyFunction.rfind(L"(");
-		if (methodEnd == std::wstring::npos) return L"No class";
-		size_t beginColon = prettyFunction.rfind(L"::", methodEnd);
+		size_t classEnd = prettyFunction.rfind(L"(");
+		if (classEnd == std::wstring::npos) return L"No class";
+		size_t beginColon = prettyFunction.rfind(L"::", classEnd);
 		if (beginColon == std::wstring::npos) return L"No class";
 		size_t beginSpace = prettyFunction.rfind(L" ", beginColon);
 		if (beginSpace != std::wstring::npos) beginSpace += 1;
-		size_t methodBegin = std::max(beginColon, beginSpace);
+		size_t classBegin = std::max(beginColon, beginSpace);
 		int closingBracket = 0;
 		size_t resultStart = 0;
 
-		for (int i = static_cast<int>(methodBegin) - 1; i >= 0; i--)
+		for (int i = static_cast<int>(classBegin) - 1; i >= 0; i--)
 		{
 			if (prettyFunction[i] == L'>')
 				closingBracket++;
@@ -39,7 +39,7 @@ namespace spk
 			resultStart = i;
 		}
 
-		return (prettyFunction.substr(resultStart, methodBegin - resultStart - 2));
+		return (prettyFunction.substr(resultStart, classBegin - resultStart));
 	}
 
 	std::vector<std::wstring> stringSplit(const std::wstring& p_string, const std::wstring& p_delim)
@@ -105,4 +105,19 @@ namespace spk
 		}
 		return result;
 	}
+
+	std::vector<std::wstring> listDir(const std::wstring& p_path)
+	{
+		std::vector<std::wstring> result;
+		for (const auto& entry : std::filesystem::directory_iterator(p_path))
+		{
+			if (std::filesystem::is_directory(entry))
+			{
+				std::wstring tmpDir = entry.path().wstring();
+				result.push_back(tmpDir);
+			}
+		}
+		return result;
+	}
+
 }

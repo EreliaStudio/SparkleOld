@@ -1,46 +1,59 @@
 #include "playground.hpp"
-spk::PersistentWorker worker(L"Worker");
 
-spk::ContractProvider::Contract addAJob(const std::wstring& to_print)
-{
-	return worker.addJob([to_print]() {
-		spk::cout << to_print << std::endl;
-	});
-}
+int main() {
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour methodName et className
+    std::wstring prettyFunction = L"void spk::MyClass::TestFunction()";
+    std::wstring name = spk::methodName(prettyFunction);
+    std::wstring class_name = spk::className(prettyFunction);
+    std::wcout << L"Method Name: " << name << std::endl;
+    std::wcout << L"Class Name: " << class_name << std::endl;
 
-void resignAndWait(spk::ContractProvider::Contract&& contract)
-{
-	contract.resign();
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-}
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour stringSplit
+    std::wstring test_string = L"This is a test string";
+    std::wstring delim = L" ";
+    auto result = spk::stringSplit(test_string, delim);
+    for (const auto& word : result) {
+        std::wcout << word << std::endl;
+    }
 
-int main()
-{
-	spk::ContractProvider::Contract first_contract = addAJob(L"First");
-	spk::ContractProvider::Contract second_contract = addAJob(L"Second");
-	spk::ContractProvider::Contract third_contract = addAJob(L"Third");
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour getStr
+    std::wfstream file(L"test_file.txt");
+    std::wstring file_content = spk::getStr(file);
+    std::wcout << file_content << std::endl;
 
-	if (worker.isRunning() == false)
-		worker.start();
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour getStringSplit
+    std::wfstream file2(L"test_file2.txt");
+    std::wstring delim2 = L",";
+    auto result2 = spk::getStringSplit(file2, delim2);
+    for (const auto& word : result2) {
+        std::wcout << word << std::endl;
+    }
 
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour positive_modulo
+    int modulo_result = spk::positive_modulo(-5, 3);
+    std::wcout << L"Modulo Result: " << modulo_result << std::endl;
 
-	spk::cout << "Resigning first contract" << std::endl;
-	resignAndWait(std::move(first_contract));
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour listFile
+    std::wstring test_path = L".";
+    std::wstring test_extension = L".txt";
+    auto file_list = spk::listFile(test_path, test_extension);
+    for (const auto& file : file_list) {
+        std::wcout << file << std::endl;
+    }
 
-	worker.pause();
-	spk::cout << "Not much should happen now" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	spk::cout << "Okay, back at it" << std::endl;
-	worker.resume();
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	spk::cout << " --- " << __LINE__ << std::endl;
+    // Test pour listDir
+    auto dir_list = spk::listDir(test_path);
+    for (const auto& file : dir_list) {
+        std::wcout << file << std::endl;
+    }
+	spk::cout << " --- " << __LINE__ << std::endl;
 
-	spk::cout << "Resigning third contract" << std::endl;
-	resignAndWait(std::move(third_contract));
-
-	spk::cout << "Resigning second contract" << std::endl;
-	resignAndWait(std::move(second_contract));
-
-	worker.stop();
-	return 0;
+    return 0;
 }

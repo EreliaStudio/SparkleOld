@@ -5,7 +5,10 @@
 	#define UNICODE
 	#endif
 	
+	#ifndef NOMINMAX
 	#define NOMINMAX
+	#endif
+	
 	#include <Windows.h>
 
 	#include "data_structure/spk_pool.hpp"

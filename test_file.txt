@@ -1,0 +1,4 @@
+Ceci est un fichier de test pour la fonction getStr.
+Il contient plusieurs lignes de texte.
+C'est la deuxième ligne.
+Et voici la troisième ligne.

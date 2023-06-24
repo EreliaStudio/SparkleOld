@@ -39,3 +39,5 @@
 #include "widget/spk_abstract_widget.hpp"
 
 #include "application/spk_application.h"
+
+#include "spk_basic_functions.hpp"
