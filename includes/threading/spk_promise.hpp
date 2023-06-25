@@ -11,14 +11,12 @@ namespace spk
 	private:
 		ContractProvider::CallbackContainer _callbackContainer;
 		std::promise<TType> _promise;
-		std::future<TType> _future;
 		std::optional<TType> _value;
 
 	public:
 		Promise() :
 			_callbackContainer(),
 			_promise(),
-			_future(_promise.get_future()),
 			_value()
 		{
 		}
@@ -68,7 +66,7 @@ namespace spk
 		{
 			if (_value.has_value() == false)
 			{
-				_value = _future.get();
+				_value = _promise.get_future().get();
 			}
 			return (_value.value());
 		}
