@@ -1,73 +1,25 @@
 #include "playground.hpp"
 
-struct Client
+int main()
 {
-	int id;
-
-	friend std::wostream& operator << (std::wostream& p_os, const Client& p_client)
-	{
-		p_os << p_client.id;
-		return (p_os);
-	}
-};
-
-struct Employee
-{
-	std::wstring name;
-	std::vector<Client> clients;
-
-	friend std::wostream& operator << (std::wostream& p_os, const Employee& p_employee)
-	{
-		p_os << L"Name [" << p_employee.name << L"] - Client ID [";
-		for (size_t i = 0; i < p_employee.clients.size(); i++)
-		{
-			if (i != 0)
-				p_os << " - ";
-			p_os << p_employee.clients[i];
-		}
-		return (p_os);
-	}
-};
-
-int main() {
-	spk::JSON::Unit data[5];
-
-	data[0].set(true);
-	data[1].set(10);
-	data[2].set(15.5);
-	data[3].set(L"Ceci est un test");
-	data[4].set(data[1].as<int>() + data[2].as<double>());
-
 	spk::JSON::Object object;
+	std::vector<spk::JSON::Object> tmpArray;
+	spk::JSON::Object holder;
 
 	object.addAttribute(L"Depth", 0);
-	object.addAttribute(L"active", data[0]);
-	object.addAttribute(L"level", data[1]);
-	object.addAttribute(L"value", data[2]);
-	object.addAttribute(L"name", data[3]);
-	object.addAttribute(L"sum", data[4]);
 
-	spk::JSON::Object objectHolder;
+	holder.addObjectArray(L"Childrens");
 
-	objectHolder.addAttribute(L"Depth", 1);
-	objectHolder.addAttribute(L"Children", object);
-
-	spk::JSON::Object objectHolder2;
-
-	objectHolder2.addAttribute(L"Depth", 2);
-	objectHolder2.addAttribute(L"Children", objectHolder);
-
-	const spk::JSON::Object* tmpObject = &objectHolder2;
-	while (tmpObject->get(L"Depth").as<int>() > 0)
+	for (size_t i = 0; i < 5; i++)
 	{
-		spk::cout << "Depth : " << tmpObject->get(L"Depth").as<int>() << std::endl;
-		tmpObject = &(tmpObject->operator[](L"Children")[0]);
+		object.get(L"Depth").set<int>(4 - i);
+		holder.getObjectArray(L"Childrens").push_back(object);
 	}
-	spk::cout << "TmpObject active = " << std::boolalpha << tmpObject->get(L"active").as<bool>() << std::endl;
-	spk::cout << "TmpObject level = " << std::boolalpha << tmpObject->get(L"level").as<int>() << std::endl;
-	spk::cout << "TmpObject value = " << std::boolalpha << tmpObject->get(L"value").as<double>() << std::endl;
-	spk::cout << "TmpObject name = " << std::boolalpha << tmpObject->get(L"name").as<std::wstring>() << std::endl;
-	spk::cout << "TmpObject sum = " << std::boolalpha << tmpObject->get(L"sum").as<double>() << std::endl;
 
-    return 0;
+	for (size_t i = 0; i < holder.getObjectArray(L"Childrens").size(); i++)
+	{
+		spk::cout << "Object [" << i << "] -> Depth [" << holder.getObjectArray(L"Childrens")[i].get(L"Depth").as<int>() << "]" << std::endl;
+	}
+
+	return 0;
 }
