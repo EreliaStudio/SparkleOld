@@ -8,7 +8,6 @@ namespace spk
 	class RandomGenerator
 	{
 		private:
-			std::seed_seq _seed;
 			std::mt19937 _generator;
 			std::uniform_int_distribution< IntType > _distribution;
 
@@ -18,10 +17,8 @@ namespace spk
 				_distribution()
 			{}
 
-			template < typename... Args >
-			RandomGenerator(Args&&... p_args) :
-				_seed({std::forward< Args >(p_args)...}),
-				_generator(_seed),
+			RandomGenerator(const uint64_t& p_seed) :
+				_generator(p_seed),
 				_distribution()
 			{}
 

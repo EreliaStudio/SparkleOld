@@ -2,7 +2,7 @@
 
 #include "iostream/spk_iostream.hpp"
 
-spk::RandomGenerator<unsigned short> random_generator( 4, 2, 2, 1 );
+spk::RandomGenerator<unsigned short> random_generator( 42 );
 
 void generateTenNumbers()
 {
