@@ -1,8 +1,24 @@
 #include "spk_basic_functions.hpp"
 #include <filesystem>
+#include <algorithm>
+#include <codecvt>
 
 namespace spk
 {
+	std::wstring methodName(const std::string& prettyFunction)
+	{
+		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+		std::wstring wide = converter.from_bytes(prettyFunction);
+		return methodName(wide);
+	}
+
+	std::wstring className(const std::string& prettyFunction)
+	{
+		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+		std::wstring wide = converter.from_bytes(prettyFunction);
+		return className(wide);
+	}
+
 	std::wstring methodName(const std::wstring& prettyFunction)
 	{
 		size_t end = prettyFunction.rfind(L"(");
@@ -58,6 +74,16 @@ namespace spk
 		result.push_back(p_string.substr(start, end - start));
 
 		return (result);
+	}
+
+	wchar_t getChar(std::wfstream& p_file)
+	{
+		wchar_t c;
+
+		if (p_file.eof())
+			return (L'\0');
+		p_file.get(c);
+		return (c);
 	}
 
 	std::wstring getStr(std::wfstream& p_file)
@@ -120,4 +146,19 @@ namespace spk
 		return result;
 	}
 
+	std::string wstringToString(const std::wstring& p_wstr)
+	{
+		std::string str(p_wstr.length(), ' ');
+		std::transform(p_wstr.begin(), p_wstr.end(), str.begin(),
+					[](wchar_t ch)
+					{
+						return ch <= 0xFF ? static_cast<char>(ch) : '?';
+					});
+		return str;
+	}
+
+	void throwException(const std::wstring& p_errorLine) noexcept(false)
+	{
+		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
+	}
 }

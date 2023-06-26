@@ -87,4 +87,6 @@ namespace spk
     extern thread_local spk::IOStream cerr;
 }
 
+#ifndef DEBUG_LINE
 #define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+#endif

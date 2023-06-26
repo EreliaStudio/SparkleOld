@@ -1,59 +1,73 @@
 #include "playground.hpp"
 
+struct Client
+{
+	int id;
+
+	friend std::wostream& operator << (std::wostream& p_os, const Client& p_client)
+	{
+		p_os << p_client.id;
+		return (p_os);
+	}
+};
+
+struct Employee
+{
+	std::wstring name;
+	std::vector<Client> clients;
+
+	friend std::wostream& operator << (std::wostream& p_os, const Employee& p_employee)
+	{
+		p_os << L"Name [" << p_employee.name << L"] - Client ID [";
+		for (size_t i = 0; i < p_employee.clients.size(); i++)
+		{
+			if (i != 0)
+				p_os << " - ";
+			p_os << p_employee.clients[i];
+		}
+		return (p_os);
+	}
+};
+
 int main() {
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour methodName et className
-    std::wstring prettyFunction = L"void spk::MyClass::TestFunction()";
-    std::wstring name = spk::methodName(prettyFunction);
-    std::wstring class_name = spk::className(prettyFunction);
-    std::wcout << L"Method Name: " << name << std::endl;
-    std::wcout << L"Class Name: " << class_name << std::endl;
+	spk::JSON::Unit data[5];
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour stringSplit
-    std::wstring test_string = L"This is a test string";
-    std::wstring delim = L" ";
-    auto result = spk::stringSplit(test_string, delim);
-    for (const auto& word : result) {
-        std::wcout << word << std::endl;
-    }
+	data[0].set(true);
+	data[1].set(10);
+	data[2].set(15.5);
+	data[3].set(L"Ceci est un test");
+	data[4].set(data[1].as<int>() + data[2].as<double>());
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour getStr
-    std::wfstream file(L"test_file.txt");
-    std::wstring file_content = spk::getStr(file);
-    std::wcout << file_content << std::endl;
+	spk::JSON::Object object;
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour getStringSplit
-    std::wfstream file2(L"test_file2.txt");
-    std::wstring delim2 = L",";
-    auto result2 = spk::getStringSplit(file2, delim2);
-    for (const auto& word : result2) {
-        std::wcout << word << std::endl;
-    }
+	object.addAttribute(L"Depth", 0);
+	object.addAttribute(L"active", data[0]);
+	object.addAttribute(L"level", data[1]);
+	object.addAttribute(L"value", data[2]);
+	object.addAttribute(L"name", data[3]);
+	object.addAttribute(L"sum", data[4]);
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour positive_modulo
-    int modulo_result = spk::positive_modulo(-5, 3);
-    std::wcout << L"Modulo Result: " << modulo_result << std::endl;
+	spk::JSON::Object objectHolder;
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour listFile
-    std::wstring test_path = L".";
-    std::wstring test_extension = L".txt";
-    auto file_list = spk::listFile(test_path, test_extension);
-    for (const auto& file : file_list) {
-        std::wcout << file << std::endl;
-    }
+	objectHolder.addAttribute(L"Depth", 1);
+	objectHolder.addAttribute(L"Children", object);
 
-	spk::cout << " --- " << __LINE__ << std::endl;
-    // Test pour listDir
-    auto dir_list = spk::listDir(test_path);
-    for (const auto& file : dir_list) {
-        std::wcout << file << std::endl;
-    }
-	spk::cout << " --- " << __LINE__ << std::endl;
+	spk::JSON::Object objectHolder2;
+
+	objectHolder2.addAttribute(L"Depth", 2);
+	objectHolder2.addAttribute(L"Children", objectHolder);
+
+	const spk::JSON::Object* tmpObject = &objectHolder2;
+	while (tmpObject->get(L"Depth").as<int>() > 0)
+	{
+		spk::cout << "Depth : " << tmpObject->get(L"Depth").as<int>() << std::endl;
+		tmpObject = &(tmpObject->operator[](L"Children")[0]);
+	}
+	spk::cout << "TmpObject active = " << std::boolalpha << tmpObject->get(L"active").as<bool>() << std::endl;
+	spk::cout << "TmpObject level = " << std::boolalpha << tmpObject->get(L"level").as<int>() << std::endl;
+	spk::cout << "TmpObject value = " << std::boolalpha << tmpObject->get(L"value").as<double>() << std::endl;
+	spk::cout << "TmpObject name = " << std::boolalpha << tmpObject->get(L"name").as<std::wstring>() << std::endl;
+	spk::cout << "TmpObject sum = " << std::boolalpha << tmpObject->get(L"sum").as<double>() << std::endl;
 
     return 0;
 }
