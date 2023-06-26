@@ -9,7 +9,6 @@ namespace spk
 	{
 	private:
 		long long _start;
-		TimeModule _timeModule;
 
 	public:
 		Chronometer();

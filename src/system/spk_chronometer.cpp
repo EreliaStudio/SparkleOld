@@ -3,8 +3,7 @@
 namespace spk
 {
 	Chronometer::Chronometer():
-		_start(0),
-		_timeModule()
+		_start(0)
 	{
 	}
 
@@ -14,7 +13,6 @@ namespace spk
 
 	void Chronometer::start()
 	{
-		_timeModule.update();
 		_start = spk::TimeMetrics::instance()->time();
 	}
 
@@ -22,7 +20,6 @@ namespace spk
 	{
 		if (_start == 0)
 			return (0);
-		_timeModule.update();
 		return (spk::TimeMetrics::instance()->time() - _start);
 	}
 }
