@@ -23,6 +23,8 @@
 #include "threading/spk_worker_pool.hpp"
 #include "threading/spk_persistent_worker.hpp"
 
+#include "system/spk_chronometer.hpp"
+
 #include "application/spk_abstract_application.hpp"
 #include "application/modules/spk_abstract_module.hpp"
 
