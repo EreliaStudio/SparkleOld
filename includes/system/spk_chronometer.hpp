@@ -34,5 +34,11 @@ namespace spk
 		 * @note Return 0 if the chronometer is not started
 		 */
 		const long long& stop();
+
+		/**
+		 * @brief Check if the chronometer is running
+		 * @return True if the chronometer is running, false otherwise
+		 */
+		bool isRunning() const { return (_start != 0); }
 	};
 }
