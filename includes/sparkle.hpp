@@ -24,6 +24,7 @@
 #include "threading/spk_worker_pool.hpp"
 #include "threading/spk_persistent_worker.hpp"
 
+#include "system/spk_chronometer.hpp"
 #include "system/spk_timer.hpp"
 
 #include "application/spk_abstract_application.hpp"
