@@ -1,34 +1,27 @@
 #include "playground.hpp"
 
-void timerTest()
-{
-	spk::Timer timer;
+spk::RandomGenerator<unsigned short> random_generator( 42 );
 
-	timer.setDuration(1000);
-	timer.start();
-	std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	spk::cout << "Timer is running: " << timer.isRunning() << L" remaining: "
-		<< timer.remainingDuration() << L'/' << timer.totalDuration() << std::endl;
-	std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	spk::cout << "Timer is running: " << timer.isRunning() << L" remaining: "
-		<< timer.remainingDuration() << L'/' << timer.totalDuration() << std::endl;
-	if (timer.status() == spk::Timer::State::Timeout)
-		spk::cout << "Timer timeout" << std::endl;
-	timer.stop();
-	if (timer.status() == spk::Timer::State::Idle)
-		spk::cout << "Timer idling" << std::endl;
+void generateTenNumbers()
+{
+	spk::cout << "Generating 10 number in range: " << random_generator.min()
+		<< L" <= " << random_generator.max() << std::endl;
+	for ( int i = 0; i < 10; ++i )
+	{
+		spk::cout << random_generator() << std::endl;
+	}
 }
 
 int main()
 {
-	spk::TimeModule time_module;
-	spk::PersistentWorker worker(L"Time handler");
+	spk::cout << L"Random test: \n"
+		<< random_generator.min() << L" <= " << random_generator() << L" <= " << random_generator.max() << std::endl;
 
-	auto contract = worker.addJob([&]() { time_module.update(); });
-	worker.start();
+	random_generator.setDistributionRange(0, 1);
+	generateTenNumbers();
 
-	timerTest();
+	random_generator.setDistributionRange(0, 10);
+	generateTenNumbers();
 
-	worker.stop();
 	return 0;
 }

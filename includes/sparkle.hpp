@@ -42,3 +42,5 @@
 #include "widget/spk_abstract_widget.hpp"
 
 #include "application/spk_application.h"
+
+#include "system/spk_random_generator.hpp"
