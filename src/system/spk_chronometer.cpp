@@ -18,7 +18,7 @@ namespace spk
 		_duration = 0;
 	}
 
-	const long long& Chronometer::duration()
+	const long long& Chronometer::duration() const
 	{
 		if (_start == 0)
 			return (_duration);

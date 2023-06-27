@@ -9,7 +9,7 @@ namespace spk
 	{
 	private:
 		long long _start;
-		long long _duration;
+		mutable long long _duration;
 
 	public:
 		Chronometer();
@@ -26,7 +26,7 @@ namespace spk
 		 * @note Return 0 if the chronometer is not started.
 		 * @note If stop has been called, the duration is not updated.
 		 */
-		const long long& duration();
+		const long long& duration() const;
 
 		/**
 		 * @brief Stop the chronometer and return the duration
