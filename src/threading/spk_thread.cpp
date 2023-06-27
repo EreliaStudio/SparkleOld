@@ -17,7 +17,7 @@ namespace spk
     {
         try
         {
-            _starterSignal.set_value(true);
+            _starterSignal.set_value();
         }
         catch(const std::exception& e)
         {

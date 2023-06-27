@@ -21,7 +21,7 @@ namespace spk
     private:
         std::function<void()> _funct;
         std::thread _thread;
-        std::promise<bool> _starterSignal;
+        std::promise<void> _starterSignal;
 
     public:
         template <typename Funct, typename... Args>

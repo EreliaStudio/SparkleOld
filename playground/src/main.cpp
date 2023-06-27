@@ -1,7 +1,5 @@
 #include "playground.hpp"
 
-#include "iostream/spk_iostream.hpp"
-
 spk::RandomGenerator<unsigned short> random_generator( 42 );
 
 void generateTenNumbers()
