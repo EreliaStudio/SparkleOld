@@ -25,6 +25,7 @@
 #include "threading/spk_persistent_worker.hpp"
 
 #include "system/spk_chronometer.hpp"
+#include "system/spk_timer.hpp"
 
 #include "application/spk_abstract_application.hpp"
 #include "application/modules/spk_abstract_module.hpp"
@@ -42,3 +43,5 @@
 #include "widget/spk_abstract_widget.hpp"
 
 #include "application/spk_application.h"
+
+#include "system/spk_random_generator.hpp"

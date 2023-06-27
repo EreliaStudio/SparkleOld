@@ -1,39 +1,27 @@
 #include "playground.hpp"
 
+spk::RandomGenerator<unsigned short> random_generator( 42 );
+
+void generateTenNumbers()
+{
+	spk::cout << "Generating 10 number in range: " << random_generator.min()
+		<< L" <= " << random_generator.max() << std::endl;
+	for ( int i = 0; i < 10; ++i )
+	{
+		spk::cout << random_generator() << std::endl;
+	}
+}
+
 int main()
 {
-	spk::Chronometer chrono;
-	spk::TimeModule _timeModule;
-	spk::PersistentWorker worker(L"TimeUpdater");
+	spk::cout << L"Random test: \n"
+		<< random_generator.min() << L" <= " << random_generator() << L" <= " << random_generator.max() << std::endl;
 
-	auto contract = worker.addJob([&]()
-	{
-		_timeModule.update();
-	});
-	worker.start();
+	random_generator.setDistributionRange(0, 1);
+	generateTenNumbers();
 
-	spk::cout << L"Stop called before start: " << chrono.stop() << L" (~0)" << std::endl;
-	chrono.start();
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	spk::cout << L"Waited so far: " << chrono.duration() << L" (~1000)" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	spk::cout << L"Waited so far: " << chrono.duration() << L" (~2000)" << std::endl;
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-
-	const long long &stop_time = chrono.stop();
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	spk::cout << L"Duration should be like stop_time: "
-		<< chrono.duration() << L" == " << stop_time << L" (~3000)" << std::endl;
-
-	chrono.stop();
-	spk::cout << L"Another stop should not change anything: "
-		<< chrono.duration() << L" == " << stop_time << L" (~3000)" << std::endl;
-
-	spk::cout << "Is running: " << chrono.isRunning() << " (false)" << std::endl;
-	chrono.start();
-	spk::cout << "Is running: " << chrono.isRunning() << " (true)" << std::endl;
-
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	spk::cout << L"Restarted chrono: " << chrono.stop() << L" (~1000)" << std::endl;
+	random_generator.setDistributionRange(0, 10);
+	generateTenNumbers();
+  
 	return 0;
 }
