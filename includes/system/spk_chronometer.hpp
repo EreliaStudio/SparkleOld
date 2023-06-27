@@ -9,12 +9,14 @@ namespace spk
 	{
 	private:
 		long long _start;
+		long long _duration;
 
 	public:
 		Chronometer();
 		~Chronometer();
 
 		void start();
-		long long stop();
+		const long long& duration();
+		const long long& stop();
 	};
 }
