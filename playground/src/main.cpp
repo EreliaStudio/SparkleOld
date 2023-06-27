@@ -7,10 +7,11 @@ void timerTest()
 	timer.setDuration(1000);
 	timer.start();
 	std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	spk::cout << "Timer is running: " << timer.isRunning() << std::endl;
+	spk::cout << "Timer is running: " << timer.isRunning() << L" remaining: "
+		<< timer.remainingDuration() << L'/' << timer.totalDuration() << std::endl;
 	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	spk::cout << "Timer is running: " << timer.isRunning() << L" remaining: "
-		<< timer.remainingDuration() << L'/' << timer.duration() << std::endl;
+		<< timer.remainingDuration() << L'/' << timer.totalDuration() << std::endl;
 	if (timer.status() == spk::Timer::State::Timeout)
 		spk::cout << "Timer timeout" << std::endl;
 	timer.stop();
@@ -26,6 +27,7 @@ int main()
 	auto contract = worker.addJob([&]() { time_module.update(); });
 	worker.start();
 
+	timerTest();
 
 	worker.stop();
 	return 0;
