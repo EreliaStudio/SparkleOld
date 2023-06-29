@@ -15,6 +15,7 @@
 #include "design_pattern/spk_activity.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 #include "design_pattern/spk_value.hpp"
+#include "design_pattern/spk_memento.hpp"
 
 #include "iostream/spk_iostream.hpp"
 
