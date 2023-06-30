@@ -158,8 +158,8 @@ public:
 int main()
 {
 	Object weapon = Object();
-	weapon.addAttribute(L"Name").set<std::wstring>(L"Sword");
-	weapon.addAttribute(L"Damage").set<int>(10);
+	weapon.addAttribute(L"Name").set(L"Sword");
+	weapon.addAttribute(L"Damage").set(10);
 
 	Object tmp;
 
@@ -169,11 +169,11 @@ int main()
 	Object& objectB = tmp.append();
 	Object& objectC = tmp.append();
 
-	objectA.set<int>(10);
-	objectB.set<std::wstring>(L"Ceci est un test");
+	objectA.set(10);
+	objectB.set(L"Ceci est un test");
 
-	objectC.addAttribute(L"Name").set<std::wstring>(L"NameOfTheObject"); 
-	objectC.addAttribute(L"Level").set<int>(10);
+	objectC.addAttribute(L"Name").set(L"NameOfTheObject"); 
+	objectC.addAttribute(L"Level").set(10);
 	objectC.addAttribute(L"Weapon").push_back(weapon);
 	objectC[L"Weapon"].push_back(weapon);
 
