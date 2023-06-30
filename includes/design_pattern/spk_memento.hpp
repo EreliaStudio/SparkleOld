@@ -1,52 +1,81 @@
 #pragma once
 
+#include "data_structure/spk_data_buffer.hpp"
+#include <vector>
+
 namespace spk
 {
 	template <typename TType>
 	class Memento
 	{
 	public:
-		class Snapshot
-		{
-		private:
-			TType _objectToCapture;
+		using Snapshot = spk::DataBuffer;
 
-		public:
-			constexpr void save(const TType* p_objectToCapture)
-			{
-				_objectToCapture = *p_objectToCapture;
-			}
-			constexpr void load(TType* p_objectToRestore) const
-			{
-				*p_objectToRestore = _objectToCapture;
-			}
-		};
 	private:
-		TType& _objectTracked;
+		std::vector<Snapshot> _states;
+		int _currentState = -1;
+
+		void _load(Snapshot& p_snapshot, TType& p_state)
+		{
+			p_snapshot >> p_state;
+			p_snapshot.reset();
+		}
 
 	public:
-		Memento() = delete;
-
-		Memento (TType& p_objectToCapture):
-			_objectTracked(p_objectToCapture)
+		/**
+		 * @brief Save the current state of p_state.
+		 *
+		 * @param p_state Value to save.
+		 * @note If there is a state after the current one, it will be erased.
+		 */
+		void save(const TType& p_state)
 		{
+			if (_currentState != _states.size() - 1)
+				_states.erase(_states.begin() + _currentState + 1, _states.end());
+
+			Snapshot newSnapshot;
+			newSnapshot << p_state;
+			_states.push_back(newSnapshot);
+			_currentState = _states.size() - 1;
 		}
 
-		Memento(const Memento& p_other) = delete;
-		Memento& operator=(const Memento& p_other) = delete;
-
-		constexpr Snapshot* takeSnapshot() const
+		/**
+		 * @brief Set p_state to the previous saved one.
+		 *
+		 * @param p_state The state to set that has been saved.
+		 * @throw std::runtime_error If there is no more state to undo.
+		 */
+		void undo(TType& p_state)
 		{
-			Snapshot* result = new Snapshot();
+			if (_currentState <= 0)
+				throw std::runtime_error("Memento: No more _states to undo");
 
-			result->save(&_objectTracked);
-
-			return result;
+			_currentState--;
+			_load(_states[_currentState], p_state);
 		}
 
-		constexpr void restoreSnapshot(const Snapshot* p_snapshot)
+		/**
+		 * @brief Set p_state to the next saved one.
+		 *
+		 * @param p_state The state to set that has been saved.
+		 * @throw std::runtime_error If there is no more state to redo.
+		 */
+		void redo(TType& p_state)
 		{
-			p_snapshot->load(&_objectTracked);
+			if (_currentState >= _states.size() - 1)
+				throw std::runtime_error("Memento: No more _states to redo");
+
+			_currentState++;
+			_load(_states[_currentState], p_state);
+		}
+
+		/**
+		 * @brief Reset the memento and erase all saved states.
+		 */
+		void reset()
+		{
+			_states.clear();
+			_currentState = -1;
 		}
 	};
 }
