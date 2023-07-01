@@ -284,7 +284,6 @@ private:
 		p_index++;
 		for (; p_index < p_content.size() && p_content[p_index] != ']';)
 		{
-			spk::cout << "Loading a new array element from : " << p_content.substr(p_index) << std::endl;
 			spk::JSON::Object newObject;
 
 			_loadContent(newObject, p_content, p_index);
