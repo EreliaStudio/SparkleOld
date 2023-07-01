@@ -163,9 +163,79 @@ namespace spk
 			}
 
 			template<typename TType>
-			const TType& as()
+			const TType& as() const
 			{
 				return (std::get<TType>(std::get<Unit>(_content)));
+			}
+
+			void printUnit(std::wostream& p_os) const
+			{
+				const Unit& tmp = std::get<Unit>(_content);
+
+				switch (tmp.index())
+				{
+					case 0 :
+						p_os << std::boolalpha << as<bool>();
+						break;
+					case 1 :
+						p_os << as<int>();
+						break;
+					case 2 :
+						p_os << as<double>();
+						break;
+					case 3 :
+						p_os << as<std::wstring>();
+						break;
+					case 4 :
+						p_os << *(as<Object*>());
+						break;
+					case 5 :
+						p_os << L"Null";
+						break;
+				}
+			}
+
+			void printObject(std::wostream& p_os) const 
+			{
+				const std::map<std::wstring, Object*>& map = std::get<std::map<std::wstring, Object*>>(_content);
+
+				p_os << L"{" << std::endl;
+				for (auto& tmp : map)
+				{
+					p_os << tmp.first << " : " << *(tmp.second) << std::endl;
+				}
+				p_os << L"}";
+			}
+
+			void printArray(std::wostream& p_os) const
+			{
+				const std::vector<Object*>& vector = std::get<std::vector<Object*>>(_content);
+
+				p_os << L"[" << std::endl;
+				for (size_t i = 0; i < vector.size(); i++)
+				{
+					if (i != 0)
+						p_os << std::endl;
+					p_os << L"Element [" << i << L"] : " << *(vector[i]);
+				}
+				p_os << L"]";
+			}
+
+			friend std::wostream& operator << (std::wostream& p_os, const Object& p_object)
+			{
+				switch (p_object._content.index())
+				{
+					case 0 :
+						p_object.printUnit(p_os);
+						break;
+					case 1 :
+						p_object.printObject(p_os);
+						break;
+					case 2 :
+						p_object.printArray(p_os);
+						break;
+				}
+				return (p_os);
 			}
 		};
 	}
