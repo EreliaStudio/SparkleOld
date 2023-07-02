@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <codecvt>
 #include <locale>
+#include <cwctype>
 
 #include "spk_basic_functions.hpp"
 
@@ -286,16 +287,12 @@ namespace spk
 
 			std::wstring _loadFileContent(const std::wstring &p_filePath)
 			{
-				std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-				std::string narrowFilePath = converter.to_bytes(p_filePath);
-
-				std::wifstream wif(narrowFilePath);
+				std::wifstream wif(p_filePath);
 				if (!wif.is_open())
 				{
 					throw std::runtime_error("Failed to open file");
 				}
-				std::locale loc(std::locale::classic(), new std::codecvt_utf8<wchar_t>);
-				wif.imbue(loc);
+
 				std::wstringstream wss;
 				wss << wif.rdbuf();
 				std::wstring result = wss.str();
@@ -443,8 +440,8 @@ namespace spk
 			void _loadUnitDouble(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString)
 			{
 				if (std::count(p_unitSubString.begin(), p_unitSubString.end(), '.') > 1 ||
-					std::none_of(p_unitSubString.begin(), p_unitSubString.end(), [](char c)
-								 { return std::isdigit(c) || c == '.'; }))
+					std::none_of(p_unitSubString.begin(), p_unitSubString.end(), [](wchar_t c)
+								 { return std::isdigit(c) || c == L'.'; }))
 				{
 					spk::throwException(L"Invalid double JSON value: " + p_unitSubString);
 				}
