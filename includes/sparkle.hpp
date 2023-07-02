@@ -46,6 +46,7 @@
 
 #include "spk_basic_functions.hpp"
 
-#include "miscellaneous/spk_JSON_file.hpp"
+#include "miscellaneous/JSON/spk_JSON_object.hpp"
+#include "miscellaneous/JSON/spk_JSON_file.hpp"
 
 #include "system/spk_random_generator.hpp"

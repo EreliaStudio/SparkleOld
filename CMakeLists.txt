@@ -24,6 +24,7 @@ function(SetupSparkleLibrary)
 		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
