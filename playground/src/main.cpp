@@ -6,5 +6,5 @@ int main()
 
 	spk::cout << "File : " << std::endl << file << std::endl;
 
-	return (0);
+  return (0);
 }
