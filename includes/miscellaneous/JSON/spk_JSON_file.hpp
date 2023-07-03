@@ -12,13 +12,6 @@ namespace spk
 		private:
 			spk::JSON::Object _root;
 
-			static const int _ERROR_UNIT_TYPE = -1;
-			static const int _STRING_UNIT_TYPE = 0;
-			static const int _INT_UNIT_TYPE = 1;
-			static const int _DOUBLE_UNIT_TYPE = 2;
-			static const int _BOOL_UNIT_TYPE = 3;
-			static const int _NULL_UNIT_TYPE = 4;
-
 			void _removeUnnecessaryChar(std::wstring &p_fileContent);
 			std::wstring _loadFileContent(const std::filesystem::path &p_filePath);
 
@@ -26,9 +19,6 @@ namespace spk
 			std::wstring _getAttributeName(const std::wstring &p_content, size_t &p_index);
 
 			std::wstring _extractUnitSubstring(const std::wstring &p_content, size_t &p_index);
-
-
-			int _getUnitType(const std::wstring &p_unitSubString);
 
 			void _loadUnitString(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
 			void _loadUnitInt(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
