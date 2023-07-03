@@ -2,6 +2,7 @@
 
 #include "math/spk_vector2.hpp"
 #include "math/spk_vector3.hpp"
+#include "math/spk_random_generator.hpp"
 
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
@@ -42,6 +43,4 @@
 
 #include "widget/spk_abstract_widget.hpp"
 
-#include "application/spk_application.h"
-
-#include "system/spk_random_generator.hpp"
+#include "application/spk_application.hpp"

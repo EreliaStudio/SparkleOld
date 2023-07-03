@@ -1,27 +1,30 @@
 #include "playground.hpp"
 
-spk::RandomGenerator<unsigned short> random_generator( 42 );
-
-void generateTenNumbers()
-{
-	spk::cout << "Generating 10 number in range: " << random_generator.min()
-		<< L" <= " << random_generator.max() << std::endl;
-	for ( int i = 0; i < 10; ++i )
-	{
-		spk::cout << random_generator() << std::endl;
-	}
-}
-
 int main()
 {
-	spk::cout << L"Random test: \n"
-		<< random_generator.min() << L" <= " << random_generator() << L" <= " << random_generator.max() << std::endl;
+	spk::DataBuffer dataBuffer;
 
-	random_generator.setDistributionRange(0, 1);
-	generateTenNumbers();
 
-	random_generator.setDistributionRange(0, 10);
-	generateTenNumbers();
-  
+
+	int valueA1 = 42;
+	int valueA2 = 12;
+	std::wstring valueB1 = L"Coucou";
+
+	dataBuffer << valueA1;
+	dataBuffer << valueA2;
+	dataBuffer << valueB1;
+
+
+
+	int extractedValueA;
+	int extractedValueA2;
+	std::wstring extractedValueB;
+
+	dataBuffer >> extractedValueA;
+	dataBuffer >> extractedValueA2;
+	dataBuffer >> extractedValueB;
+	
+	spk::cout << "Value A : " << extractedValueA << " - " << extractedValueA2 << " - " << extractedValueB << std::endl;
+
 	return 0;
 }
