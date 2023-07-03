@@ -181,13 +181,9 @@ namespace spk
 
 			void File::_loadUnitBoolean(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString)
 			{
-				std::wstring tmp = p_unitSubString;
-				std::transform(tmp.begin(), tmp.end(), tmp.begin(),
-							   [](wchar_t c)
-							   { return std::towlower(c); });
-				if (tmp == L"true")
+				if (p_unitSubString == L"true")
 					p_objectToFill.set(true);
-				else if (tmp == L"false")
+				else if (p_unitSubString == L"false")
 					p_objectToFill.set(false);
 				else
 					spk::throwException(L"Invalid boolean JSON value: " + p_unitSubString);
@@ -195,12 +191,7 @@ namespace spk
 
 			void File::_loadUnitNull(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString)
 			{
-				std::wstring tmp = p_unitSubString;
-				std::transform(tmp.begin(), tmp.end(), tmp.begin(),
-							   [](wchar_t c)
-							   { return std::towlower(c); });
-
-				if (tmp == L"null" || tmp == L"nullptr")
+				if (p_unitSubString == L"null")
 					p_objectToFill.set(nullptr);
 				else
 					spk::throwException(L"Invalid null JSON value: " + p_unitSubString);

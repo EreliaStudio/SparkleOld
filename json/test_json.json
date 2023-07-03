@@ -1,7 +1,7 @@
 {
-    "nom"    : ,
+    "nom"    : "Dupont",
     "age":     32,
-	"testFun": NuLlPtR,
+	"testFun": null,
     "citoyen" true,
     "salaire": 30000.50    ,
     "object":{
