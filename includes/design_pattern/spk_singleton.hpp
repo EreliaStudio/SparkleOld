@@ -47,24 +47,25 @@ namespace spk
             return _instance;
         }
 
-	public:
-		template <typename... Args>
-		static constexpr std::shared_ptr<TType> instanciate(Args &&...args)
-		{
-			if (_instance != nullptr)
-				throw std::runtime_error("Can't instanciate an already instancied singleton");
-			_instance = std::shared_ptr<TType>(new TType (std::forward<Args>(args)...));
-			return _instance;
-		}
+        /**
+         * @brief Get the singleton instance.
+         * This function returns the shared pointer to the singleton instance.
+         *
+         * @return The shared pointer to the singleton instance.
+         */
+        static constexpr std::shared_ptr<TType> instance()
+        {
+            return _instance;
+        }
 
-		static constexpr std::shared_ptr<TType> instance()
-		{
-			return _instance;
-		}
-
-		static void release()
-		{
-			_instance.reset();
-		}
-	};
+        /**
+         * @brief Release the singleton instance.
+         *
+         * This function releases the singleton instance by resetting the shared pointer to nullptr.
+         */
+        static void release()
+        {
+            _instance.reset();
+        }
+    };
 }
