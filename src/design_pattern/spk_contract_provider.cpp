@@ -23,6 +23,22 @@ namespace spk
 			p_other._isOriginal = false;
 		}
 
+		ContractProvider::Contract& ContractProvider::Contract::operator=(Contract &&p_other) noexcept
+		{
+			if (this != &p_other)
+			{
+				resign();
+
+				_isOriginal = p_other._isOriginal;
+				_callbackOwner = std::move(p_other._callbackOwner);
+				_callback = std::move(p_other._callback);
+
+				p_other._isOriginal = false;
+			}
+
+			return *this;
+		}
+
 		ContractProvider::Contract::~Contract()
 		{
 			if (isOriginal() == true)
