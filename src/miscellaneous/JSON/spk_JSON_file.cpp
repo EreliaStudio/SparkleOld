@@ -123,14 +123,80 @@ namespace spk
 			p_objectToFill.set(p_unitSubString.substr(1, p_unitSubString.size() - 2));
 		}
 
-		void File::_loadUnitInt(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
+		/**
+		 * @brief Assure that the string is a valid JSON's RFC integer
+		 * @details number = [ minus ] int [ frac ] [ exp ]
+		 *
+		 * @param p_objectToFill The object that will receive the value
+		 * @param p_unitSubString The substring that should only contain the number at this point.
+		 * @throw spk::Exception if the string is not a valid JSON's RFC integer
+		 */
+		void File::_loadUnitInt(spk::JSON::Object& p_objectToFill,
+			const std::wstring& p_unitSubString)
 		{
-			if (!std::all_of(p_unitSubString.begin(), p_unitSubString.end(), ::isdigit))
-			{
+			bool isNegative = p_unitSubString[0] == L'-';
+			long longResult(0);
+			double doubleResult(0);
+			size_t exponentPos(0);
+			bool isExponentSigned(false);
+			bool isExponentNegative(false);
+			long exponent(0);
+
+			exponentPos = p_unitSubString.find(L"e");
+			if (exponentPos == std::wstring::npos)
+				exponentPos = p_unitSubString.find(L"E");
+			if (exponentPos == std::wstring::npos)
+				exponentPos = p_unitSubString.size();
+			if ((isNegative == true && p_unitSubString.size() == 1) ||
+				exponentPos == p_unitSubString.size() - 1 ||
+				std::all_of(p_unitSubString.begin() + isNegative,
+					p_unitSubString.begin() + exponentPos, ::isdigit) == false ||
+				p_unitSubString[isNegative] == L'0')
 				spk::throwException(L"Invalid integer JSON value: " + p_unitSubString);
+			try
+			{
+				longResult = std::stol(p_unitSubString, &exponentPos);
+			}
+			catch (const std::exception& e)
+			{
+				spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (long overflow)");
+			}
+			if (exponentPos != p_unitSubString.size())
+			{
+				isExponentSigned = p_unitSubString[exponentPos + 1] == L'-' ||
+					p_unitSubString[exponentPos + 1] == L'+';
+				isExponentNegative = p_unitSubString[exponentPos + 1] == L'-';
+				exponentPos++;
+				if (std::all_of(
+					p_unitSubString.begin() + exponentPos + isExponentSigned,
+					p_unitSubString.end(),
+					::isdigit) == false)
+					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString);
+				try
+				{
+					exponent = std::stol(p_unitSubString.substr(exponentPos));
+				}
+				catch (const std::exception& e)
+				{
+					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (long overflow)");
+				}
+				errno = 0;
+				std::feclearexcept(FE_ALL_EXCEPT);
+				double power = std::pow(10, exponent);
+				
+				if (isExponentNegative == true)
+					doubleResult = longResult * power;
+				else
+					longResult *= power;
+				if (errno == EDOM || errno == ERANGE ||
+					std::fetestexcept(FE_ALL_EXCEPT ^ FE_INEXACT) != 0)
+					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (double overflow)");
 			}
 
-			p_objectToFill.set(std::stoi(p_unitSubString));
+			if (isExponentNegative == true)
+				p_objectToFill.set(doubleResult);
+			else
+				p_objectToFill.set(longResult);
 		}
 
 		void File::_loadUnitDouble(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
@@ -174,6 +240,7 @@ namespace spk
 				break;
 			case '0': case '1': case '2': case '3': case '4':
 			case '5': case '6': case '7': case '8': case '9':
+			case '-':
 				if (substring.find(L'.') != std::wstring::npos)
 					_loadUnitDouble(p_objectToFill, substring);
 				else
@@ -233,6 +300,7 @@ namespace spk
 			case 'f': case 't': case 'n':
 			case '0': case '1': case '2': case '3': case '4':
 			case '5': case '6': case '7': case '8': case '9':
+			case '-':
 				_loadUnit(p_objectToFill, p_content, p_index);
 				break;
 			case '{':

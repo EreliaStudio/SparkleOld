@@ -131,7 +131,7 @@ namespace spk
 					p_os << std::boolalpha << as<bool>();
 					break;
 				case 1:
-					p_os << as<int>();
+					p_os << as<long>();
 					break;
 				case 2:
 					p_os << as<double>();

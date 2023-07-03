@@ -13,7 +13,7 @@ namespace spk
 		class Object
 		{
 		public:
-			using Unit = std::variant<bool, int, double, std::wstring, Object *, std::nullptr_t>;
+			using Unit = std::variant<bool, long, double, std::wstring, Object *, std::nullptr_t>;
 			using ContentType = std::variant<Unit, std::map<std::wstring, Object *>, std::vector<Object *>>;
 
 		private:

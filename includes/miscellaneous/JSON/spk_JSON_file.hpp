@@ -2,6 +2,8 @@
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 #include <filesystem>
+#include <cfenv>
+#include <cmath>
 
 namespace spk
 {
