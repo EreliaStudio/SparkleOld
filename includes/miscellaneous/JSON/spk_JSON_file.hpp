@@ -1,6 +1,7 @@
 #pragma once
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
+#include <filesystem>
 
 namespace spk
 {
@@ -23,7 +24,7 @@ namespace spk
 			static const int _NULL_UNIT_TYPE = 4;
 
 			void _removeUnnecessaryChar(std::wstring &p_fileContent);
-			std::wstring _loadFileContent(const std::wstring &p_filePath);
+			std::wstring _loadFileContent(const std::filesystem::path &p_filePath);
 
 			std::wstring _removeEscapingChar(const std::wstring &p_string);
 			std::wstring _getAttributeName(const std::wstring &p_content, size_t &p_index);
@@ -46,9 +47,9 @@ namespace spk
 
 		public:
 			File();
-			File(const std::wstring &p_filePath);
+			File(const std::filesystem::path& p_filePath);
 
-			void load(const std::wstring &p_filePath);
+			void load(const std::filesystem::path& p_filePath);
 
 			const spk::JSON::Object &operator[](const std::wstring &p_key) const;
 			const spk::JSON::Object &operator[](size_t p_index) const;

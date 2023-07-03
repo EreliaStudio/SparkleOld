@@ -47,7 +47,7 @@ namespace spk
 				p_fileContent = result;
 			}
 
-			std::wstring File::_loadFileContent(const std::wstring &p_filePath)
+			std::wstring File::_loadFileContent(const std::filesystem::path &p_filePath)
 			{
 				std::wifstream wif(p_filePath);
 				if (!wif.is_open())
@@ -307,12 +307,12 @@ namespace spk
 			{
 			}
 
-			File::File(const std::wstring &p_filePath)
+			File::File(const std::filesystem::path& p_filePath)
 			{
 				load(p_filePath);
 			}
 
-			void File::load(const std::wstring &p_filePath)
+			void File::load(const std::filesystem::path& p_filePath)
 			{
 				std::wstring fileContent = _loadFileContent(p_filePath);
 
