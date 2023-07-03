@@ -27,6 +27,9 @@ namespace spk
 		void setupJobs()
 		{
 			addJob([&](){ _APIModule->update(); });
+			addJob([&](){ _windowModule->clear(); });
+			addJob([&](){ _widgetModule->render(); });
+			addJob([&](){ _windowModule->render(); });
 
 			addJob(L"Updater", [&](){ _systemModule->update(); });
 			addJob(L"Updater", [&](){ _timeModule->update(); });
@@ -41,9 +44,6 @@ namespace spk
 			addJob(L"Updater", [&](){ _mouseModule->updateMouse(); });
 			addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); });
 
-			addJob([&](){ _windowModule->clear(); });
-			addJob([&](){ _widgetModule->render(); });
-			addJob([&](){ _windowModule->render(); });
 		}
 
 	public:

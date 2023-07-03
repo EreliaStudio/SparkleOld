@@ -14,6 +14,28 @@ namespace spk
 		std::vector<uint8_t> _data;
 		mutable size_t _bookmark;
 
+	template <typename StringType>
+    DataBuffer& _serializeString(const StringType& str)
+    {
+        *this << str.size();
+        for (size_t i = 0; i < str.size(); i++)
+        {
+            *this << str[i];
+        }
+        return *this;
+    }
+
+    template <typename StringType>
+    const DataBuffer& _deserializeString(StringType& str) const
+    {
+        str.resize(this->get<size_t>());
+        for (size_t i = 0; i < str.size(); i++)
+        {
+            *this >> str[i];
+        }
+        return *this;
+    }
+
 	public:
 		DataBuffer();
 
@@ -25,6 +47,16 @@ namespace spk
 		void skip(const size_t& p_number);
 		void clear();
 		void reset();
+
+		template <typename OutputType>
+		OutputType get() const
+		{
+			OutputType result;
+
+			*this >> result;
+
+			return (result);
+		}
 
 		template <typename InputType>
 		void edit(const size_t& p_offset, const InputType& p_input)
@@ -63,6 +95,30 @@ namespace spk
 			std::memcpy(&p_output, _data.data() + bookmark(), sizeof(OutputType));
 			_bookmark += sizeof(OutputType);
 			return *this;
+		}
+
+		template<>
+		DataBuffer &operator<< <std::string>(const std::string& p_input)
+		{
+			return _serializeString(p_input);
+		}
+
+		template<>
+		const DataBuffer &operator>> <std::string>(std::string& p_output) const
+		{
+			return _deserializeString(p_output);
+		}
+
+		template<>
+		DataBuffer &operator<< <std::wstring>(const std::wstring& p_input)
+		{
+			return _serializeString(p_input);
+		}
+
+		template<>
+		const DataBuffer &operator>> <std::wstring>(std::wstring& p_output) const
+		{
+			return _deserializeString(p_output);
 		}
 	};
 }
