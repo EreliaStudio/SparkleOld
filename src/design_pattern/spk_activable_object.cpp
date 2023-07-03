@@ -2,6 +2,10 @@
 
 namespace spk
 {
+    ActivableObject::ActivableObject(bool p_activable) : StatedObject<bool>(p_activable)
+    {
+    }
+
     void ActivableObject::activate()
     {
         setState(true);

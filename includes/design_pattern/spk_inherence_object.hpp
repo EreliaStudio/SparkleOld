@@ -4,104 +4,185 @@
 #include <vector>
 #include <functional>
 
+
 namespace spk
 {
+    /**
+     * @brief InherenceObject class template.
+     *
+     * This class template represents an object that can be part of an inheritance hierarchy.
+     * It allows setting a parent object, adding child objects, and defining birth and death callbacks.
+     *
+     * @tparam TType The type of the object.
+     */
     template <typename TType>
     class InherenceObject
     {
-        public:
-            using Parent = TType *;
-            using Child = TType *;
-            using Callback = std::function<void(Child)>;
+    public:
+        using Parent = TType*;                           /**< The type of the parent object. */
+        using Child = TType*;                            /**< The type of the child objects. */
+        using Callback = std::function<void(Child)>;     /**< The type of the callback function. */
 
-        private:
-            Parent _parent;
-            std::vector<Child> _childrens;
+    private:
+        Parent _parent;                                 /**< The parent object. */
+        std::vector<Child> _childrens;                   /**< The vector of child objects. */
+        Callback _birthCallback;                         /**< The birth callback function. */
+        Callback _deathCallback;                         /**< The death callback function. */
 
-            Callback _birthCallback;
-            Callback _deathCallback;
+        void _addChild(Child child)
+        {
+            _childrens.push_back(child);
+            if (_birthCallback != nullptr)
+                _birthCallback(child);
+        }
 
-            void _addChild(Child child)
+        void _removeChild(Child child)
+        {
+            if (_deathCallback != nullptr)
+                _deathCallback(child);
+            for (auto it = _childrens.begin(); it != _childrens.end(); ++it)
             {
-                _childrens.push_back(child);
-                if (_birthCallback != nullptr)
-                    _birthCallback(child);
-            }
-
-            void _removeChild(Child child)
-            {
-                if (_deathCallback != nullptr)
-                    _deathCallback(child);
-                for (auto it = _childrens.begin(); it != _childrens.end(); ++it)
+                if (*it == child)
                 {
-                    if (*it == child)
-                    {
-                        _childrens.erase(it);
-                        break;
-                    }
+                    _childrens.erase(it);
+                    break;
                 }
             }
+        }
 
-        public:
-            InherenceObject() :
-                _parent(nullptr),
-                _childrens(),
-                _birthCallback(nullptr),
-                _deathCallback(nullptr)
-            {
-                
-            }
+    public:
+        /**
+         * @brief Default constructor for InherenceObject.
+         *
+         * This constructor initializes the InherenceObject.
+         */
+        InherenceObject() :
+            _parent(nullptr),
+            _childrens(),
+            _birthCallback(nullptr),
+            _deathCallback(nullptr)
+        {
+        }
 
-            ~InherenceObject()
-            {
-                if (_parent != nullptr)
-                    _parent->_removeChild(static_cast<Child>(this));
-                for (auto child : _childrens)
-                    child->_parent = nullptr;
-            }
-            
-            void setParent(Parent parent)
-            {
-                if (_parent != nullptr)
-                    _parent->_removeChild(static_cast<Child>(this));
+        /**
+         * @brief Destructor for InherenceObject.
+         *
+         * This destructor removes the object from its parent's children list and sets the parent of all its children to nullptr.
+         */
+        ~InherenceObject()
+        {
+            if (_parent != nullptr)
+                _parent->_removeChild(static_cast<Child>(this));
+            for (auto child : _childrens)
+                child->_parent = nullptr;
+        }
 
-                _parent = parent;
-                
-                if (_parent != nullptr)
-                    _parent->_addChild(static_cast<Child>(this));
-            }
+        /**
+         * @brief Set the parent object.
+         *
+         * This function sets the parent object of the current object.
+         * It removes the object from its current parent's children list and adds it to the new parent's children list.
+         *
+         * @param parent The parent object to set.
+         */
+        void setParent(Parent parent)
+        {
+            if (_parent != nullptr)
+                _parent->_removeChild(static_cast<Child>(this));
 
-            void addChild(Child child)
-            {
-                child->setParent(static_cast<Parent>(this));
-            }
+            _parent = parent;
 
-            void setBirthCallback(std::function<void(Child)> callback)
-            {
-                _birthCallback = callback;
-            }
+            if (_parent != nullptr)
+                _parent->_addChild(static_cast<Child>(this));
+        }
 
-            void setDeathCallback(std::function<void(Child)> callback)
-            {
-                _deathCallback = callback;
-            }
+        /**
+         * @brief Add a child object.
+         *
+         * This function adds a child object to the current object.
+         * It sets the parent of the child object to the current object.
+         *
+         * @param child The child object to add.
+         */
+        void addChild(Child child)
+        {
+            child->setParent(static_cast<Parent>(this));
+        }
 
-            constexpr const Parent &parent() const
-            {
-                return _parent;
-            }
+        /**
+         * @brief Set the birth callback.
+         *
+         * This function sets the birth callback function.
+         * The birth callback is called when a child object is added to the current object.
+         *
+         * @param callback The birth callback function to set.
+         */
+        void setBirthCallback(std::function<void(Child)> callback)
+        {
+            _birthCallback = callback;
+        }
 
-            constexpr std::vector<Child> &childrens()
-            {
-                return _childrens;
-            }
+        /**
+         * @brief Set the death callback.
+         *
+         * This function sets the death callback function.
+         * The death callback is called when a child object is removed from the current object.
+         *
+         * @param callback The death callback function to set.
+         */
+        void setDeathCallback(std::function<void(Child)> callback)
+        {
+            _deathCallback = callback;
+        }
 
-            constexpr const std::vector<Child> &childrens() const
-            {
-                return _childrens;
-            }
+        /**
+         * @brief Get the parent object.
+         *
+         * This function returns a constant reference to the parent object of the current object.
+         *
+         * @return A constant reference to the parent object.
+         */
+        constexpr const Parent& parent() const
+        {
+            return _parent;
+        }
 
-            InherenceObject(const InherenceObject &) = delete;
-            InherenceObject &operator=(const InherenceObject &) = delete;
+        /**
+         * @brief Get the vector of child objects.
+         *
+         * This function returns a reference to the vector of child objects of the current object.
+         *
+         * @return A reference to the vector of child objects.
+         */
+        constexpr std::vector<Child>& childrens()
+        {
+            return _childrens;
+        }
+
+        /**
+         * @brief Get the vector of child objects (const version).
+         *
+         * This function returns a constant reference to the vector of child objects of the current object.
+         *
+         * @return A constant reference to the vector of child objects.
+         */
+        constexpr const std::vector<Child>& childrens() const
+        {
+            return _childrens;
+        }
+
+        /**
+         * @brief Deleted copy constructor.
+         *
+         * This copy constructor is deleted to prevent copying an InherenceObject.
+         */
+        InherenceObject(const InherenceObject&) = delete;
+
+        /**
+         * @brief Deleted copy assignment operator.
+         *
+         * This copy assignment operator is deleted to prevent assigning an InherenceObject.
+         */
+        InherenceObject& operator=(const InherenceObject&) = delete;
     };
 }
