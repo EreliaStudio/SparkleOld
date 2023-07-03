@@ -5,14 +5,27 @@
 
 namespace spk
 {
-	template <typename TType>
-	class Singleton
-	{
-	protected:
-		Singleton()
-		{
+    /**
+     * @brief Singleton class template.
+     *
+     * This class template provides a base implementation for creating singleton objects.
+     * It ensures that only one instance of the object is created and provides methods to access and release the instance.
+     *
+     * @tparam TType The type of the singleton object.
+     */
+    template <typename TType>
+    class Singleton
+    {
+    protected:
+        /**
+         * @brief Protected constructor.
+         * This constructor is protected to prevent direct instantiation of the singleton class.
+         */
+        Singleton()
+        {
+        }
 
-		}
+        static inline std::shared_ptr<TType> _instance = nullptr; /**< The shared pointer to the singleton instance. */
 
         static inline std::shared_ptr<TType> _instance = nullptr; /**< The shared pointer to the singleton instance. */
 
