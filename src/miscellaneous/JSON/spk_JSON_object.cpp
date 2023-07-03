@@ -11,6 +11,12 @@ namespace spk
 				_initialized = false;
 			}
 
+			void Object::reset()
+			{
+				_initialized = false;
+				_content = ContentType();
+			}
+
 			Object &Object::addAttribute(const std::wstring &p_key)
 			{
 				if (_initialized == false)

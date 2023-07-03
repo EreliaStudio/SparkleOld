@@ -317,6 +317,7 @@ namespace spk
 				std::wstring fileContent = _loadFileContent(p_filePath);
 
 				size_t index = 0;
+				_root.reset();
 				_loadContent(_root, fileContent, index);
 			}
 

@@ -2,6 +2,7 @@
 
 int main()
 {
+	std::filesystem::path path;
 	spk::JSON::File file;
 	std::wstring filesName[6] = {
 		 L"array", L"literal",
@@ -11,8 +12,9 @@ int main()
 
 	for (unsigned short i(0); i < 6; ++i)
 	{
-		file.load(L"json/" + filesName[i] + L".json");
-		spk::cout << "File number [" << i << "]: " << std::endl
+		path = L"json/" + filesName[i] + L".json";
+		file.load(path);
+		spk::cout << "File {" << path << "}: " << std::endl
 			<< file << std::endl;
 	}
 

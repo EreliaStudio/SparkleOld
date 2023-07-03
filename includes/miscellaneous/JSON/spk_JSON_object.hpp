@@ -23,6 +23,8 @@ namespace spk
 		public:
 			Object();
 
+			void reset();
+
 			Object &addAttribute(const std::wstring &p_key);
 
 			Object &operator[](const std::wstring &p_key);
