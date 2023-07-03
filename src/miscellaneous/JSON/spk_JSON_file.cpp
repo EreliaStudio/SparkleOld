@@ -101,26 +101,6 @@ namespace spk
 				return (_removeEscapingChar(p_content.substr(start, p_index - start - 2)));
 			}
 
-			int File::_getLoadingType(const std::wstring &p_content, size_t &p_index)
-			{
-				int result = _ERROR_TYPE;
-
-				switch (p_content[p_index])
-				{
-				case '{':
-					result = (_OBJECT_TYPE);
-					break;
-				case '[':
-					result = (_ARRAY_TYPE);
-					break;
-				default:
-					result = (_UNIT_TYPE);
-					break;
-				}
-
-				return (result);
-			}
-
 			std::wstring File::_extractUnitSubstring(const std::wstring &p_content, size_t &p_index)
 			{
 				size_t oldIndex = p_index;
@@ -285,21 +265,22 @@ namespace spk
 
 			void File::_loadContent(spk::JSON::Object &p_objectToFill, const std::wstring &p_content, size_t &p_index)
 			{
-				int dataType = _getLoadingType(p_content, p_index);
-
-				switch (dataType)
+				switch (p_content[p_index])
 				{
-				case _UNIT_TYPE:
+				case '\"':
+				case 'f': case 't': case 'n':
+				case '0': case '1': case '2': case '3': case '4':
+				case '5': case '6': case '7': case '8': case '9':
 					_loadUnit(p_objectToFill, p_content, p_index);
 					break;
-				case _OBJECT_TYPE:
+				case '{':
 					_loadObject(p_objectToFill, p_content, p_index);
 					break;
-				case _ARRAY_TYPE:
+				case '[':
 					_loadArray(p_objectToFill, p_content, p_index);
 					break;
 				default:
-					throw std::runtime_error("Unexpected data type in JSON");
+					throw std::runtime_error(wstringToString(std::wstring(L"Unexpected data type in JSON: ") + p_content.substr(p_index, 10)));
 				}
 			}
 
