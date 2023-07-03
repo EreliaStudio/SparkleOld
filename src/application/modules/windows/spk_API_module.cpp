@@ -109,8 +109,6 @@ namespace spk
 		{
 			if (p_wParam == VK_F4 && (p_lParam & (1 << 29)))
 			{
-				DEBUG_LINE();
-
 				newMessage->clear();
 
 				*newMessage << WM_DESTROY;
