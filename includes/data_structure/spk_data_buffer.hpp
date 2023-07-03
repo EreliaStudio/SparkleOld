@@ -27,6 +27,28 @@ namespace spk
 		std::vector<uint8_t> _data; ///< The buffer's data, stored as bytes.
 		mutable size_t _bookmark; ///< Bookmark to keep track of the current position in the buffer.
 
+	template <typename StringType>
+    DataBuffer& _serializeString(const StringType& str)
+    {
+        *this << str.size();
+        for (size_t i = 0; i < str.size(); i++)
+        {
+            *this << str[i];
+        }
+        return *this;
+    }
+
+    template <typename StringType>
+    const DataBuffer& _deserializeString(StringType& str) const
+    {
+        str.resize(this->get<size_t>());
+        for (size_t i = 0; i < str.size(); i++)
+        {
+            *this >> str[i];
+        }
+        return *this;
+    }
+
 	public:
 		/**
          * @brief Default constructor for the DataBuffer class.
