@@ -114,5 +114,8 @@ int main()
 	intMementoTest();
 	customMemtoTest();
 
+	random_generator.setDistributionRange(0, 10);
+	generateTenNumbers();
+  
 	return 0;
 }
