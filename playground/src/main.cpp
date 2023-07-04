@@ -3,7 +3,7 @@
 
 int main()
 {
-	spk::StandardValue<int> tmp;
+	spk::StandardType<int> tmp;
 
 	tmp = -1;
 	for (size_t i = 0; i < 4; i++)
