@@ -6,6 +6,8 @@
 #include <cstring>
 #include <stdexcept>
 
+#include "miscellaneous/spk_is_contener.hpp"
+
 namespace spk
 {
 	class DataBuffer
@@ -13,28 +15,6 @@ namespace spk
 	private:
 		std::vector<uint8_t> _data;
 		mutable size_t _bookmark;
-
-	template <typename StringType>
-    DataBuffer& _serializeString(const StringType& str)
-    {
-        *this << str.size();
-        for (size_t i = 0; i < str.size(); i++)
-        {
-            *this << str[i];
-        }
-        return *this;
-    }
-
-    template <typename StringType>
-    const DataBuffer& _deserializeString(StringType& str) const
-    {
-        str.resize(this->get<size_t>());
-        for (size_t i = 0; i < str.size(); i++)
-        {
-            *this >> str[i];
-        }
-        return *this;
-    }
 
 	public:
 		DataBuffer();
@@ -67,7 +47,7 @@ namespace spk
 			memcpy(_data.data() + p_offset, &p_input, sizeof(InputType));
 		}
 
-		template <typename InputType>
+		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value>* = nullptr>
 		DataBuffer &operator<<(const InputType& p_input)
 		{
 			// TODO: thread safety
@@ -86,7 +66,7 @@ namespace spk
 			return *this;
 		}
 
-		template <typename OutputType>
+		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value>* = nullptr>
 		const DataBuffer &operator>>(OutputType& p_output) const
 		{
 			static_assert(std::is_standard_layout<OutputType>().value, "Unable to handle this type.");
@@ -97,28 +77,26 @@ namespace spk
 			return *this;
 		}
 
-		template<>
-		DataBuffer &operator<< <std::string>(const std::string& p_input)
+		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value>* = nullptr>
+		DataBuffer &operator<< (const InputType& p_input)
 		{
-			return _serializeString(p_input);
+			*this << p_input.size();
+			for (size_t i = 0; i < p_input.size(); i++)
+			{
+				*this << p_input[i];
+			}
+			return *this;
 		}
 
-		template<>
-		const DataBuffer &operator>> <std::string>(std::string& p_output) const
+		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value>* = nullptr>
+		const DataBuffer &operator>> (OutputType& p_output) const
 		{
-			return _deserializeString(p_output);
-		}
-
-		template<>
-		DataBuffer &operator<< <std::wstring>(const std::wstring& p_input)
-		{
-			return _serializeString(p_input);
-		}
-
-		template<>
-		const DataBuffer &operator>> <std::wstring>(std::wstring& p_output) const
-		{
-			return _deserializeString(p_output);
+			p_output.resize(this->get<size_t>());
+			for (size_t i = 0; i < p_output.size(); i++)
+			{
+				*this >> p_output[i];
+			}
+			return *this;
 		}
 	};
 }
