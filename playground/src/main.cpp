@@ -21,9 +21,9 @@ private:
 public:
     void save()
     {
-        if (_index < _snapshots.size())
+        if (_index + 1< _snapshots.size())
         {
-            _snapshots.erase(_snapshots.begin() + _index, _snapshots.end());
+            _snapshots.erase(_snapshots.begin() + _index + 1, _snapshots.end());
         }
         _snapshots.push_back(_onSave());
         _index++;
@@ -39,10 +39,10 @@ public:
 
     void redo()
     {
-		if (_index >= _snapshots.size())
+		if ((_index + 1) >= _snapshots.size())
 			throw std::runtime_error("Can't undo cause no snapshot left");
-		_load();
         _index++;
+		_load();
     }
 };
 
@@ -54,7 +54,6 @@ struct MyStruct : Memento
 	{
 		Snapshot result;
 
-		spk::cout << "Saving value : " << value << std::endl;
 		result << value;
 
 		return result;
@@ -77,45 +76,47 @@ int main()
 		tmp.save();
 		tmp.value = i;
 	}
+	tmp.save();
 
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << " --- Undoing ---" << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 3" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 2" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 1" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 0" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be -1" << std::endl;
 
 	spk::cout << " --- Redoing ---" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 0" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 1" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 2" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 3" << std::endl;
 
 	spk::cout << " --- Undoing ---" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 2" << std::endl;
 
 	spk::cout << " --- New branch ---" << std::endl;
 	tmp.value = 42;
 	tmp.save();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 42" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 2" << std::endl;
 	tmp.undo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 1" << std::endl;
 
 	spk::cout << " --- Redoing ---" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 2" << std::endl;
 	tmp.redo();
-	spk::cout << "Value : " << tmp.value << std::endl;
+	spk::cout << "Value : " << tmp.value << " should be 42" << std::endl;
 
 
 	return 0;
