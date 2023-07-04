@@ -23,7 +23,7 @@ namespace spk
 
 		/**
 		 * @brief 
-		 *  Stop the duration 
+		 *  Pause the chronometer set isRunning to false
 		 */
 		void pause();
 
@@ -33,6 +33,14 @@ namespace spk
 		 */
 		void resume();
 		
+		/**
+		 * @brief 
+		 * True if the chronometer is running false if is in pause or stopped
+		 * @return true 
+		 * @return false 
+		 */
+		bool isRunning();
+
 		/**
 		 * @brief Get the duration since the start of the chronometer
 		 * @return The duration in milliseconds
