@@ -51,8 +51,8 @@ namespace spk
 		}
 	};
 
-	template <typename TType>
-	struct StandardValue : Memento
+	template <typename TType, typename = std::enable_if_t<std::is_standard_layout<TType>::value>>
+	struct StandardType : Memento
 	{
 		TType _value;
 
@@ -70,19 +70,19 @@ namespace spk
 			p_snapshot >> _value;
 		}
 
-		StandardValue() :
+		StandardType() :
 			_value()
 		{
-			
+
 		}
 
-		StandardValue(const TType& p_value) :
+		StandardType(const TType& p_value) :
 			_value(p_value)	 
 		{
-			
+
 		}
 		
-		StandardValue& operator = (const TType& p_value)
+		StandardType& operator = (const TType& p_value)
 		{
 			_value = p_value;
 			return (*this);
