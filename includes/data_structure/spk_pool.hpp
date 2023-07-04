@@ -41,6 +41,7 @@ namespace spk
             friend class Pool;
 
         private:
+            
             Container *_source;
             size_t *_referenceCount;
             TType *_content;
