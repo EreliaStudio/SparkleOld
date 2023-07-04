@@ -131,36 +131,43 @@ namespace spk
 		 * @param p_unitSubString The substring that should only contain the number at this point.
 		 * @throw spk::Exception if the string is not a valid JSON's RFC integer
 		 */
-		void File::_loadUnitInt(spk::JSON::Object& p_objectToFill,
+		void File::_loadUnitNumbers(spk::JSON::Object& p_objectToFill,
 			const std::wstring& p_unitSubString)
 		{
 			bool isNegative = p_unitSubString[0] == L'-';
-			long longResult(0);
-			double doubleResult(0);
+			std::wstring digitsPart;
+			std::variant<long, double> result;
 			size_t exponentPos(0);
 			bool isExponentSigned(false);
 			bool isExponentNegative(false);
 			long exponent(0);
+			size_t decimalPos = p_unitSubString.find_last_of(L".");
 
+			if (decimalPos == p_unitSubString.size() - 1 ||
+				(decimalPos != std::wstring::npos &&
+					::isdigit(p_unitSubString[decimalPos + 1]) == false))
+				spk::throwException(L"Invalid fractional numbers JSON value: " + p_unitSubString);
 			exponentPos = p_unitSubString.find(L"e");
 			if (exponentPos == std::wstring::npos)
 				exponentPos = p_unitSubString.find(L"E");
+			if (decimalPos != std::wstring::npos &&
+				exponentPos != std::wstring::npos &&
+				decimalPos > exponentPos)
+				spk::throwException(L"Invalid fractional numbers JSON value: " + p_unitSubString);
 			if (exponentPos == std::wstring::npos)
 				exponentPos = p_unitSubString.size();
 			if ((isNegative == true && p_unitSubString.size() == 1) ||
 				exponentPos == p_unitSubString.size() - 1 ||
-				std::all_of(p_unitSubString.begin() + isNegative,
-					p_unitSubString.begin() + exponentPos, ::isdigit) == false ||
-				p_unitSubString[isNegative] == L'0')
-				spk::throwException(L"Invalid integer JSON value: " + p_unitSubString);
-			try
-			{
-				longResult = std::stol(p_unitSubString, &exponentPos);
-			}
-			catch (const std::exception& e)
-			{
-				spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (long overflow)");
-			}
+				std::count(p_unitSubString.begin() + isNegative,
+					p_unitSubString.begin() + exponentPos + (decimalPos != std::wstring::npos),
+					'.') > 1 ||
+				std::none_of(p_unitSubString.begin() + isNegative,
+					p_unitSubString.begin() + exponentPos + (decimalPos != std::wstring::npos),
+					[](wchar_t c) { return std::isdigit(c) || c == L'.'; }) ||
+				(p_unitSubString[isNegative] == L'0' && p_unitSubString.size() > isNegative + 1 &&
+					std::wstring(L".eE").find(p_unitSubString[isNegative + 1]) == std::wstring::npos))
+				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString);
+			digitsPart = p_unitSubString.substr(0, exponentPos);
 			if (exponentPos != p_unitSubString.size())
 			{
 				isExponentSigned = p_unitSubString[exponentPos + 1] == L'-' ||
@@ -169,46 +176,47 @@ namespace spk
 				exponentPos++;
 				if (std::all_of(
 					p_unitSubString.begin() + exponentPos + isExponentSigned,
-					p_unitSubString.end(),
-					::isdigit) == false)
-					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString);
+					p_unitSubString.end(), ::isdigit) == false)
+					spk::throwException(L"Invalid numbers JSON exponent value: " + p_unitSubString);
 				try
 				{
 					exponent = std::stol(p_unitSubString.substr(exponentPos));
 				}
 				catch (const std::exception& e)
 				{
-					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (long overflow)");
+					spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (number overflow)");
 				}
+			}
+			try
+			{
+				if (decimalPos != std::wstring::npos || exponent >
+					spk::numberLength(std::numeric_limits<long>::max()) ||
+					digitsPart.size() - isNegative >
+					spk::numberLength(std::numeric_limits<long>::max()) ||
+					digitsPart.size() - isNegative + exponent <= 0)
+					result = std::stod(p_unitSubString);
+				else
+					result = std::stol(p_unitSubString);
+			}
+			catch (const std::exception& e)
+			{
+				spk::throwException(L"Invalid numbers JSON value: " +
+					p_unitSubString + L" too big (number overflow)");
+			}
+			if (exponentPos != p_unitSubString.size())
+			{
 				errno = 0;
 				std::feclearexcept(FE_ALL_EXCEPT);
-				double power = std::pow(10, exponent);
-				
-				if (isExponentNegative == true)
-					doubleResult = longResult * power;
-				else
-					longResult *= power;
+				long* longValue = std::get_if<long>(&result);
+
+				if (longValue != nullptr)
+					*longValue *= std::pow(10, exponent);
 				if (errno == EDOM || errno == ERANGE ||
 					std::fetestexcept(FE_ALL_EXCEPT ^ FE_INEXACT) != 0)
-					spk::throwException(L"Invalid integer JSON value: " + p_unitSubString + L" too big (double overflow)");
+					spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (power overflow)");
 			}
-
-			if (isExponentNegative == true)
-				p_objectToFill.set(doubleResult);
-			else
-				p_objectToFill.set(longResult);
-		}
-
-		void File::_loadUnitDouble(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
-		{
-			if (std::count(p_unitSubString.begin(), p_unitSubString.end(), '.') > 1 ||
-				std::none_of(p_unitSubString.begin(), p_unitSubString.end(), [](wchar_t c)
-					{ return std::isdigit(c) || c == L'.'; }))
-			{
-				spk::throwException(L"Invalid double JSON value: " + p_unitSubString);
-			}
-
-			p_objectToFill.set(std::stod(p_unitSubString));
+			p_objectToFill.set((std::get_if<double>(&result) != nullptr) ?
+				std::get<double>(result) : std::get<long>(result));
 		}
 
 		void File::_loadUnitBoolean(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
@@ -241,10 +249,7 @@ namespace spk
 			case '0': case '1': case '2': case '3': case '4':
 			case '5': case '6': case '7': case '8': case '9':
 			case '-':
-				if (substring.find(L'.') != std::wstring::npos)
-					_loadUnitDouble(p_objectToFill, substring);
-				else
-					_loadUnitInt(p_objectToFill, substring);
+				_loadUnitNumbers(p_objectToFill, substring);
 				break;
 			case 't': case 'f':
 				_loadUnitBoolean(p_objectToFill, substring);
@@ -310,7 +315,7 @@ namespace spk
 				_loadArray(p_objectToFill, p_content, p_index);
 				break;
 			default:
-				throw std::runtime_error(wstringToString(std::wstring(L"Unexpected data type in JSON: ") + p_content.substr(p_index, 10)));
+				spk::throwException(L"Unexpected data type in JSON: " + p_content.substr(p_index, 10));
 			}
 		}
 

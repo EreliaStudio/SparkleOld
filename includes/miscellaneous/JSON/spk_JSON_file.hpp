@@ -1,6 +1,7 @@
 #pragma once
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
+#include "spk_basic_functions.hpp"
 #include <filesystem>
 #include <cfenv>
 #include <cmath>
@@ -23,8 +24,7 @@ namespace spk
 			std::wstring _extractUnitSubstring(const std::wstring &p_content, size_t &p_index);
 
 			void _loadUnitString(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
-			void _loadUnitInt(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
-			void _loadUnitDouble(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
+			void _loadUnitNumbers(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
 			void _loadUnitBoolean(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
 			void _loadUnitNull(spk::JSON::Object &p_objectToFill, const std::wstring &p_unitSubString);
 			void _loadUnit(spk::JSON::Object &p_objectToFill, const std::wstring &p_content, size_t &p_index);
