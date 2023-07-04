@@ -11,10 +11,10 @@
     class Profiler
     {
         private:
-		std::map<std::string, spk::Chronometer> _chronometers;
+		std::map<std::wstring, spk::Chronometer> _chronometers;
 
 		public:
-        void startChronometer(const std::string & p_name)
+        void startChronometer(const std::wstring & p_name)
 		{
 			if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
 				{
@@ -23,7 +23,7 @@
 			_chronometers[p_name].start();
 		}
 
-        const long long stopChronometer(const std::string & p_name)
+        const long long stopChronometer(const std::wstring & p_name)
 		{
 			if (_chronometers.count(p_name) == 0 )
 			{
@@ -40,25 +40,25 @@
 
 int main()
 {
+	
 	Profiler test;
 
-
-	test.startChronometer("test 1");
+	test.startChronometer(L"test 1");
 	Sleep(30);
-	spk::cout << "First test of 30ms :"<< test.stopChronometer("test 1");
+	spk::cout << "First test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
 
 
-	test.startChronometer("test 2");
-	test.startChronometer("test 3");
+	test.startChronometer(L"test 2");
+	test.startChronometer(L"test 3");
 	Sleep(55);
-	spk::cout << "Second test of 55ms :"<< test.stopChronometer("test 2");
+	spk::cout << "Second test of 55ms :"<< test.stopChronometer(L"test 2") << std::endl;
 
 	Sleep(80);
-	spk::cout << "Third test of 135ms :"<< test.stopChronometer("test 3");
+	spk::cout << "Third test of 135ms :"<< test.stopChronometer(L"test 3") << std::endl;
 
-		test.startChronometer("test 1");
+	test.startChronometer(L"test 1");
 	Sleep(30);
-	spk::cout << "Forth test of 30ms :"<< test.stopChronometer("test 1");
+	spk::cout << "Forth test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
 
 	return 0;
 }
