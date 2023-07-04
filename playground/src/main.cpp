@@ -1,6 +1,7 @@
 #include "playground.hpp"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 int main()
 {
 	spk::DataBuffer dataBuffer;
@@ -28,119 +29,101 @@ int main()
 	spk::cout << "Value A : " << extractedValueA << " - " << extractedValueA2 << " - " << extractedValueB << std::endl;
 =======
 class Object
+=======
+class Memento
+>>>>>>> f44fb43 (Testing a new Memento implem)
 {
-private:
-	int _toRemember;
-	spk::Vector2Int _toRememberToo;
+public:
+    using Snapshot = spk::DataBuffer;
 
-	int _notImportant;
+private:
+    std::vector<Snapshot> _snapshots;
+    int _index = -1;
+
+    virtual Snapshot _onSave() = 0;
+    virtual void _onLoad(const Snapshot& p_snapshot) = 0;
+
+	void _load()
+	{ 
+		_snapshots[_index].reset();
+        _onLoad(_snapshots[_index]);
+	}
 
 public:
-	Object(int p_toRemember, spk::Vector2Int p_toRememberToo, int p_notImportant):
-		_toRemember(p_toRemember),
-		_toRememberToo(p_toRememberToo),
-		_notImportant(p_notImportant)
-	{
-	}
+    void save()
+    {
+        if (_index < _snapshots.size())
+        {
+            _snapshots.erase(_snapshots.begin() + _index, _snapshots.end());
+        }
+        _snapshots.push_back(_onSave());
+        _index++;
+    }
 
-	friend std::wostream& operator<<(std::wostream& p_os, const Object& p_object)
-	{
-		p_os << L"Object: " << p_object._toRemember << L", " << p_object._toRememberToo << L", " << p_object._notImportant;
-		return p_os;
-	}
+    void undo()
+    {
+		if (_index < 0)
+			throw std::runtime_error("Can't undo cause no snapshot left");
+        _index--;
+		_load();
+    }
 
-	friend spk::DataBuffer& operator<<(spk::DataBuffer& p_buffer, const Object& p_object)
-	{
-		p_buffer << p_object._toRemember << p_object._toRememberToo;
-		return p_buffer;
-	}
-
-	friend spk::DataBuffer& operator>>(spk::DataBuffer& p_buffer, Object& p_object)
-	{
-		p_buffer >> p_object._toRemember >> p_object._toRememberToo;
-		return p_buffer;
-	}
+    void redo()
+    {
+		if (_index >= _snapshots.size())
+			throw std::runtime_error("Can't undo cause no snapshot left");
+		_load();
+        _index++;
+    }
 };
 
-template <typename TType>
-void updateValue(spk::Memento<TType>& p_memento,
-	TType& p_value, const TType& p_newValue)
+
+struct MyStruct : Memento
 {
-	p_value = p_newValue;
-	p_memento.save(p_value);
-	spk::cout << L"Saved at: " << p_value << std::endl;
-}
-
-template <typename TType>
-void undoValue(spk::Memento<TType>& p_memento, TType& p_value)
-{
-	p_memento.undo(p_value);
-	spk::cout << L"\tUndo: " << p_value << std::endl;
-}
-
-template <typename TType>
-void redoValue(spk::Memento<TType>& p_memento, TType& p_value)
-{
-	p_memento.redo(p_value);
-	spk::cout << L"\tRedo: " << p_value << std::endl;
-}
-
-void intMementoTest()
-{
-	spk::cout << L"\nIntMementoTest" << std::endl;
-
-	spk::Memento<int> memento;
-	int state = 0;
-
-	updateValue(memento, state, 1);
-	updateValue(memento, state, 2);
-
-	spk::cout << L"Current state: " << state << std::endl;
-
-	undoValue(memento, state);
-	try
+	Snapshot _onSave()
 	{
-		undoValue(memento, state);
+		Snapshot result;
+
+		spk::cout << "Saving value : " << value << std::endl;
+		result << value;
+
+		return result;
 	}
-	catch (const std::exception& e)
+	
+	void _onLoad(const Snapshot& p_snapshot)
 	{
-		spk::cout << L"\t\t" << e.what() << std::endl;
+		p_snapshot >> value;
 	}
-	redoValue(memento, state);
-
-	undoValue(memento, state);
-	redoValue(memento, state);
-	try
-	{
-		redoValue(memento, state);
-	}
-	catch (const std::exception& e)
-	{
-		spk::cout << L"\t\t" << e.what() << std::endl;
-	}
-}
-
-void customMemtoTest()
-{
-	spk::Memento<Object> memento;
-	Object state(0, {0, 0}, 0);
-
-	updateValue(memento, state, Object(1, {1, 1}, 1));
-	memento.reset();
-	updateValue(memento, state, Object(2, {2, 2}, 2));
-	updateValue(memento, state, Object(3, {3, 3}, 3));
-
-	spk::cout << L"Current state: " << state << std::endl;
-	undoValue(memento, state);
-
-	redoValue(memento, state);
-}
+	
+	int value;
+};
 
 int main()
 {
+<<<<<<< HEAD
 	intMementoTest();
 	customMemtoTest();
 >>>>>>> 76525da (✨✅ Improvement of Memento)
+=======
+	MyStruct tmp;
+
+	tmp.value = -1;
+	for (size_t i = 0; i < 4; i++)
+	{
+		tmp.save();
+		tmp.value = i;
+	}
+
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+>>>>>>> f44fb43 (Testing a new Memento implem)
 
 	return 0;
 }
