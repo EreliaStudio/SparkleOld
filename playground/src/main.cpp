@@ -1,30 +1,58 @@
 #include "playground.hpp"
 
+
 int main()
 {
-	spk::DataBuffer dataBuffer;
+	spk::StandardType<int> tmp;
 
+	tmp = -1;
+	for (size_t i = 0; i < 4; i++)
+	{
+		tmp.save();
+		tmp = i;
+	}
+	tmp.save();
 
+	spk::cout << " --- Undoing ---" << std::endl;
+	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be -1" << std::endl;
 
-	int valueA1 = 42;
-	int valueA2 = 12;
-	std::wstring valueB1 = L"Coucou";
+	spk::cout << " --- Redoing ---" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
 
-	dataBuffer << valueA1;
-	dataBuffer << valueA2;
-	dataBuffer << valueB1;
+	spk::cout << " --- Undoing ---" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
 
+	spk::cout << " --- New branch ---" << std::endl;
+	tmp = 42;
+	tmp.save();
+	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
 
+	spk::cout << " --- Redoing ---" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
 
-	int extractedValueA;
-	int extractedValueA2;
-	std::wstring extractedValueB;
-
-	dataBuffer >> extractedValueA;
-	dataBuffer >> extractedValueA2;
-	dataBuffer >> extractedValueB;
-	
-	spk::cout << "Value A : " << extractedValueA << " - " << extractedValueA2 << " - " << extractedValueB << std::endl;
 
 	return 0;
 }
