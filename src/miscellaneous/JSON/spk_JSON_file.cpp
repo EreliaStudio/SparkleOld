@@ -123,99 +123,99 @@ namespace spk
 			p_objectToFill.set(p_unitSubString.substr(1, p_unitSubString.size() - 2));
 		}
 
-		/**
-		 * @brief Assure that the string is a valid JSON's RFC integer
-		 * @details number = [ minus ] int [ frac ] [ exp ]
-		 *
-		 * @param p_objectToFill The object that will receive the value
-		 * @param p_unitSubString The substring that should only contain the number at this point.
-		 * @throw spk::Exception if the string is not a valid JSON's RFC integer
-		 */
-		void File::_loadUnitNumbers(spk::JSON::Object& p_objectToFill,
-			const std::wstring& p_unitSubString)
+		static bool _isNumberMalformatted(bool p_isNegative, const size_t& p_decimalPos,
+			const size_t& p_exponentPos, const std::wstring& p_unitSubString)
 		{
-			bool isNegative = p_unitSubString[0] == L'-';
-			std::wstring digitsPart;
-			std::variant<long, double> result;
-			size_t exponentPos(0);
-			bool isExponentSigned(false);
-			bool isExponentNegative(false);
-			long exponent(0);
-			size_t decimalPos = p_unitSubString.find_last_of(L".");
+			return (p_exponentPos == p_unitSubString.size() - 1 ||
+				(p_isNegative == true && p_unitSubString.size() == 1) ||
+				(p_isNegative == true && p_unitSubString.size() > 1 && ::isdigit(p_unitSubString[1]) == false) ||
+				p_decimalPos == p_unitSubString.size() - 1 ||
+				(p_decimalPos != std::wstring::npos && ::isdigit(p_unitSubString[p_decimalPos + 1]) == false) ||
+				(p_decimalPos != std::wstring::npos && p_exponentPos != std::wstring::npos && p_decimalPos > p_exponentPos) ||
+				(p_unitSubString[p_isNegative] == L'0' && p_unitSubString.size() > p_isNegative + 1 &&
+					std::wstring(L".eE").find(p_unitSubString[p_isNegative + 1]) == std::wstring::npos) ||
+				std::count(p_unitSubString.begin(), p_unitSubString.end(), L'.') > 1);
+		}
 
-			if (decimalPos == p_unitSubString.size() - 1 ||
-				(decimalPos != std::wstring::npos &&
-					::isdigit(p_unitSubString[decimalPos + 1]) == false))
-				spk::throwException(L"Invalid fractional numbers JSON value: " + p_unitSubString);
-			exponentPos = p_unitSubString.find(L"e");
-			if (exponentPos == std::wstring::npos)
-				exponentPos = p_unitSubString.find(L"E");
-			if (decimalPos != std::wstring::npos &&
-				exponentPos != std::wstring::npos &&
-				decimalPos > exponentPos)
-				spk::throwException(L"Invalid fractional numbers JSON value: " + p_unitSubString);
-			if (exponentPos == std::wstring::npos)
-				exponentPos = p_unitSubString.size();
-			if ((isNegative == true && p_unitSubString.size() == 1) ||
-				exponentPos == p_unitSubString.size() - 1 ||
-				std::count(p_unitSubString.begin() + isNegative,
-					p_unitSubString.begin() + exponentPos + (decimalPos != std::wstring::npos),
-					'.') > 1 ||
-				std::none_of(p_unitSubString.begin() + isNegative,
-					p_unitSubString.begin() + exponentPos + (decimalPos != std::wstring::npos),
-					[](wchar_t c) { return std::isdigit(c) || c == L'.'; }) ||
-				(p_unitSubString[isNegative] == L'0' && p_unitSubString.size() > isNegative + 1 &&
-					std::wstring(L".eE").find(p_unitSubString[isNegative + 1]) == std::wstring::npos))
-				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString);
-			digitsPart = p_unitSubString.substr(0, exponentPos);
-			if (exponentPos != p_unitSubString.size())
-			{
-				isExponentSigned = p_unitSubString[exponentPos + 1] == L'-' ||
-					p_unitSubString[exponentPos + 1] == L'+';
-				isExponentNegative = p_unitSubString[exponentPos + 1] == L'-';
-				exponentPos++;
-				if (std::all_of(
-					p_unitSubString.begin() + exponentPos + isExponentSigned,
-					p_unitSubString.end(), ::isdigit) == false)
-					spk::throwException(L"Invalid numbers JSON exponent value: " + p_unitSubString);
-				try
-				{
-					exponent = std::stol(p_unitSubString.substr(exponentPos));
-				}
-				catch (const std::exception& e)
-				{
-					spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (number overflow)");
-				}
-			}
+		static long _extractExponent(const std::wstring& p_exponentSubstring)
+		{
+			bool isExponentSigned(p_exponentSubstring[0] == L'-' || p_exponentSubstring[0] == L'+');
+			long result(0);
+
+			if (p_exponentSubstring.find_first_not_of(L"0123456789", isExponentSigned) != std::wstring::npos)
+				spk::throwException(L"Invalid numbers JSON exponent value: " + p_exponentSubstring);
 			try
 			{
-				if (decimalPos != std::wstring::npos || exponent >
-					spk::numberLength(std::numeric_limits<long>::max()) ||
-					digitsPart.size() - isNegative >
-					spk::numberLength(std::numeric_limits<long>::max()) ||
-					digitsPart.size() - isNegative + exponent <= 0)
-					result = std::stod(p_unitSubString);
-				else
-					result = std::stol(p_unitSubString);
+				result = std::stol(p_exponentSubstring);
 			}
 			catch (const std::exception& e)
 			{
-				spk::throwException(L"Invalid numbers JSON value: " +
-					p_unitSubString + L" too big (number overflow)");
+				spk::throwException(L"Invalid numbers JSON value: " + p_exponentSubstring + L" too big (number overflow)");
 			}
-			if (exponentPos != p_unitSubString.size())
-			{
-				errno = 0;
-				std::feclearexcept(FE_ALL_EXCEPT);
-				long* longValue = std::get_if<long>(&result);
+			return (result);
+		}
 
-				if (longValue != nullptr)
-					*longValue *= std::pow(10, exponent);
-				if (errno == EDOM || errno == ERANGE ||
-					std::fetestexcept(FE_ALL_EXCEPT ^ FE_INEXACT) != 0)
-					spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (power overflow)");
+		static bool _resultWillBeDouble(const size_t& p_decimalPos, const size_t& p_exponentPos,
+			bool p_isNegative, const long& p_exponent)
+		{
+			return (p_decimalPos != std::wstring::npos ||
+				p_exponent > spk::numberLength(std::numeric_limits<long>::max()) ||
+				p_exponentPos - p_isNegative > spk::numberLength(std::numeric_limits<long>::max()) ||
+				p_exponentPos - p_isNegative + p_exponent <= 0);
+		}
+
+		static long _safePowerOfTen(const long& p_number, const long& p_exponent, const std::wstring& p_unitSubString)
+		{
+			long result(0);
+			errno = 0;
+			std::feclearexcept(FE_ALL_EXCEPT);
+
+			result = p_number * std::pow(10, p_exponent);
+
+			if (errno == EDOM || errno == ERANGE || std::fetestexcept(FE_ALL_EXCEPT ^ FE_INEXACT) != 0)
+				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (power overflow)");
+
+			return (result);
+		}
+
+		void File::_loadUnitNumbers(spk::JSON::Object& p_objectToFill,
+			const std::wstring& p_unitSubString)
+		{
+			std::variant<long, double> result;
+
+			bool isNegative(p_unitSubString[0] == L'-');
+
+			size_t exponentPos(p_unitSubString.find_first_of(L"eE"));
+			long exponent(0);
+
+			size_t decimalPos(p_unitSubString.find_last_of(L"."));
+			bool isFractional(decimalPos != std::wstring::npos);
+
+			if (_isNumberMalformatted(isNegative, decimalPos, exponentPos, p_unitSubString) == true)
+				spk::throwException(L"Malformatted JSON number: " + p_unitSubString);
+
+			exponentPos = (exponentPos == std::wstring::npos) ? p_unitSubString.size() : exponentPos;
+
+			if (p_unitSubString.substr(isNegative, exponentPos - isNegative).find_first_not_of(L".0123456789") != std::wstring::npos)
+				spk::throwException(L"JSON number value is not Numerical: " + p_unitSubString);
+
+			if (exponentPos != p_unitSubString.size())
+				exponent = _extractExponent(p_unitSubString.substr(exponentPos + 1));
+
+			try
+			{
+				result = (_resultWillBeDouble(decimalPos, exponentPos, isNegative, exponent) == true) ?
+					std::stod(p_unitSubString) : std::stol(p_unitSubString);
 			}
-			p_objectToFill.set((std::get_if<double>(&result) != nullptr) ?
+			catch (const std::exception& e)
+			{
+				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (number overflow)");
+			}
+
+			if (exponentPos != p_unitSubString.size() && std::holds_alternative<long>(result) == true)
+				result = _safePowerOfTen(std::get<long>(result), exponent, p_unitSubString);
+
+			p_objectToFill.set((std::holds_alternative<double>(result) == true) ?
 				std::get<double>(result) : std::get<long>(result));
 		}
 
