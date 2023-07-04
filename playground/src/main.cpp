@@ -1,27 +1,50 @@
 #include "playground.hpp"
 
-spk::RandomGenerator<unsigned short> random_generator( 42 );
-
-void generateTenNumbers()
+struct Context
 {
-	spk::cout << "Generating 10 number in range: " << random_generator.min()
-		<< L" <= " << random_generator.max() << std::endl;
-	for ( int i = 0; i < 10; ++i )
+	int value;
+
+	Context()
 	{
-		spk::cout << random_generator() << std::endl;
+
 	}
-}
+};
+
+using RendererContext = spk::ContextManager<Context>::ReadOnlyAccessor;
+using UpdaterContext = spk::ContextManager<Context>::ReadWriteAccessor;
 
 int main()
 {
-	spk::cout << L"Random test: \n"
-		<< random_generator.min() << L" <= " << random_generator() << L" <= " << random_generator.max() << std::endl;
+	spk::ContextManager<Context>::instanciate();
 
-	random_generator.setDistributionRange(0, 1);
-	generateTenNumbers();
+	spk::cout << "1 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "1 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	UpdaterContext::get().value = 10;
 
-	random_generator.setDistributionRange(0, 10);
-	generateTenNumbers();
-  
+	spk::cout << "2 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "2 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+
+	UpdaterContext::swap();
+
+	spk::cout << "3 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "3 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
+
+	UpdaterContext::get().value = 20;
+
+	spk::cout << "4 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "4 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
+
+	UpdaterContext::swap();
+
+	spk::cout << "5 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "5 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
 	return 0;
 }
