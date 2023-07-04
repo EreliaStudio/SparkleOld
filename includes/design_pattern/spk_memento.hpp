@@ -45,7 +45,7 @@ namespace spk
 		void redo()
 		{
 			if ((_index + 1) >= _snapshots.size())
-				throw std::runtime_error("Can't undo cause no snapshot left");
+				throw std::runtime_error("Can't redo cause no snapshot left");
 			_index++;
 			_load();
 		}
