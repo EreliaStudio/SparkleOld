@@ -4,7 +4,8 @@ namespace spk
 {
 	Chronometer::Chronometer():
 		_start(0),
-		_duration(0)
+		_duration(0),
+		_isRunning(false)
 	{
 	}
 
@@ -16,6 +17,17 @@ namespace spk
 	{
 		_start = spk::TimeMetrics::instance()->time();
 		_duration = 0;
+	}
+	
+	void Chronometer::pause()
+	{
+		_duration = spk::TimeMetrics::instance()->time() - _start;
+		_start = 0;
+	}
+
+	void Chronometer::resume()
+	{
+
 	}
 
 	const long long& Chronometer::duration() const

@@ -10,6 +10,7 @@ namespace spk
 	private:
 		long long _start;
 		mutable long long _duration;
+		bool _isRunning;
 
 	public:
 		Chronometer();
@@ -19,6 +20,18 @@ namespace spk
 		 * @brief Start the chronometer and reset the duration
 		 */
 		void start();
+
+		/**
+		 * @brief 
+		 *  Stop the duration 
+		 */
+		void pause();
+
+		/**
+		 * @brief 
+		 *  Start the duration from the time it was put in pause
+		 */
+		void resume();
 		
 		/**
 		 * @brief Get the duration since the start of the chronometer
