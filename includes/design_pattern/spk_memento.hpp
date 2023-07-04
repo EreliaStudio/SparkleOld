@@ -5,77 +5,97 @@
 
 namespace spk
 {
-	template <typename TType>
 	class Memento
 	{
 	public:
 		using Snapshot = spk::DataBuffer;
 
 	private:
-		std::vector<Snapshot> _states;
-		int _currentState = -1;
+		std::vector<Snapshot> _snapshots;
+		int _index = -1;
 
-		void _load(Snapshot& p_snapshot, TType& p_state)
-		{
-			p_snapshot >> p_state;
-			p_snapshot.reset();
+		virtual Snapshot _onSave() = 0;
+		virtual void _onLoad(const Snapshot& p_snapshot) = 0;
+
+		void _load()
+		{ 
+			_snapshots[_index].reset();
+			_onLoad(_snapshots[_index]);
 		}
 
 	public:
-		/**
-		 * @brief Save the current state of p_state.
-		 *
-		 * @param p_state Value to save.
-		 * @note If there is a state after the current one, it will be erased.
-		 */
-		void save(const TType& p_state)
+		void save()
 		{
-			if (_currentState != _states.size() - 1)
-				_states.erase(_states.begin() + _currentState + 1, _states.end());
-
-			Snapshot newSnapshot;
-			newSnapshot << p_state;
-			_states.push_back(newSnapshot);
-			_currentState = _states.size() - 1;
+			if (_index + 1< _snapshots.size())
+			{
+				_snapshots.erase(_snapshots.begin() + _index + 1, _snapshots.end());
+			}
+			_snapshots.push_back(_onSave());
+			_index++;
 		}
 
-		/**
-		 * @brief Set p_state to the previous saved one.
-		 *
-		 * @param p_state The state to set that has been saved.
-		 * @throw std::runtime_error If there is no more state to undo.
-		 */
-		void undo(TType& p_state)
+		void undo()
 		{
-			if (_currentState <= 0)
-				throw std::runtime_error("Memento: No more _states to undo");
-
-			_currentState--;
-			_load(_states[_currentState], p_state);
+			if (_index < 0)
+				throw std::runtime_error("Can't undo cause no snapshot left");
+			_index--;
+			_load();
 		}
 
-		/**
-		 * @brief Set p_state to the next saved one.
-		 *
-		 * @param p_state The state to set that has been saved.
-		 * @throw std::runtime_error If there is no more state to redo.
-		 */
-		void redo(TType& p_state)
+		void redo()
 		{
-			if (_currentState >= _states.size() - 1)
-				throw std::runtime_error("Memento: No more _states to redo");
+			if ((_index + 1) >= _snapshots.size())
+				throw std::runtime_error("Can't undo cause no snapshot left");
+			_index++;
+			_load();
+		}
+	};
 
-			_currentState++;
-			_load(_states[_currentState], p_state);
+	template <typename TType>
+	struct StandardValue : Memento
+	{
+		TType _value;
+
+		Snapshot _onSave()
+		{
+			Snapshot result;
+
+			result << _value;
+
+			return result;
+		}
+		
+		void _onLoad(const Snapshot& p_snapshot)
+		{
+			p_snapshot >> _value;
 		}
 
-		/**
-		 * @brief Reset the memento and erase all saved states.
-		 */
-		void reset()
+		StandardValue() :
+			_value()
 		{
-			_states.clear();
-			_currentState = -1;
+			
+		}
+
+		StandardValue(const TType& p_value) :
+			_value(p_value)	 
+		{
+			
+		}
+		
+		StandardValue& operator = (const TType& p_value)
+		{
+			_value = p_value;
+			return (*this);
+		}
+
+		operator TType&()
+		{
+			return (_value);
+		}
+		
+		operator const TType&() const
+		{
+			return (_value);
 		}
 	};
 }
