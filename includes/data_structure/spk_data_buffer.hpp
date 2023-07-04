@@ -1,4 +1,4 @@
-#pragma once 
+#pragma once
 
 #include <vector>
 #include <cstdint>
@@ -24,7 +24,7 @@ namespace spk
 		inline size_t leftover() const { return size() - bookmark(); }
 		inline bool empty() const { return leftover() == 0; }
 
-		void skip(const size_t& p_number);
+		void skip(const size_t &p_number);
 		void clear();
 		void reset();
 
@@ -39,7 +39,7 @@ namespace spk
 		}
 
 		template <typename InputType>
-		void edit(const size_t& p_offset, const InputType& p_input)
+		void edit(const size_t &p_offset, const InputType &p_input)
 		{
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
 			if (p_offset + sizeof(InputType) > size())
@@ -47,8 +47,8 @@ namespace spk
 			memcpy(_data.data() + p_offset, &p_input, sizeof(InputType));
 		}
 
-		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value>* = nullptr>
-		DataBuffer &operator<<(const InputType& p_input)
+		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value> * = nullptr>
+		DataBuffer &operator<<(const InputType &p_input)
 		{
 			// TODO: thread safety
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
@@ -66,8 +66,8 @@ namespace spk
 			return *this;
 		}
 
-		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value>* = nullptr>
-		const DataBuffer &operator>>(OutputType& p_output) const
+		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value> * = nullptr>
+		const DataBuffer &operator>>(OutputType &p_output) const
 		{
 			static_assert(std::is_standard_layout<OutputType>().value, "Unable to handle this type.");
 			if (leftover() < sizeof(OutputType))
@@ -77,24 +77,24 @@ namespace spk
 			return *this;
 		}
 
-		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value>* = nullptr>
-		DataBuffer &operator<< (const InputType& p_input)
+		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value> * = nullptr>
+		DataBuffer &operator<<(const InputType &p_input)
 		{
 			*this << p_input.size();
-			for (size_t i = 0; i < p_input.size(); i++)
+			for (auto it = p_input.begin(); it != p_input.end(); ++it)
 			{
-				*this << p_input[i];
+				*this << *it;
 			}
 			return *this;
 		}
 
-		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value>* = nullptr>
-		const DataBuffer &operator>> (OutputType& p_output) const
+		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value> * = nullptr>
+		const DataBuffer &operator>>(OutputType &p_output) const
 		{
 			p_output.resize(this->get<size_t>());
-			for (size_t i = 0; i < p_output.size(); i++)
+			for (auto it = p_output.begin(); it != p_output.end(); ++it)
 			{
-				*this >> p_output[i];
+				*this >> *it;
 			}
 			return *this;
 		}
