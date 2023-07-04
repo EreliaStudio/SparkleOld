@@ -88,5 +88,35 @@ int main()
 	tmp.undo();
 	spk::cout << "Value : " << tmp.value << std::endl;
 
+	spk::cout << " --- Redoing ---" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+
+	spk::cout << " --- Undoing ---" << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+
+	spk::cout << " --- New branch ---" << std::endl;
+	tmp.value = 42;
+	tmp.save();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.undo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+
+	spk::cout << " --- Redoing ---" << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+	tmp.redo();
+	spk::cout << "Value : " << tmp.value << std::endl;
+
+
 	return 0;
 }
