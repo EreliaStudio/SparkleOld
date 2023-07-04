@@ -26,6 +26,9 @@ namespace spk
 				}
 
 				Object *result = new Object();
+
+				if (std::get<std::map<std::wstring, Object *>>(_content).count(p_key) != 0)
+					spk::throwException(L"Can't add attribute named [" + p_key + L"] : it already exists");
 				std::get<std::map<std::wstring, Object *>>(_content)[p_key] = result;
 				return (*result);
 			}

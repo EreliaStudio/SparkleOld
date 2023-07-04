@@ -8,7 +8,7 @@ int main()
 	spk::JSON::File file;
 	std::wstring filesName[FILE_AMOUNT] = {
 		//  L"array", L"literal",
-		 L"number"/*, L"object",*/
+		 /*L"number", */L"object"
 		//  L"string", L"test_json"
 	};
 
