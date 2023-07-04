@@ -1,4 +1,11 @@
 #include "playground.hpp"
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+#include <iostream>
+#include <cstdlib>
 
 class Profiler : public spk::Singleton<Profiler>
 {
