@@ -1,105 +1,64 @@
 #include "playground.hpp"
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+#include <iostream>
+#include <cstdlib>
 
-class Profiler : public spk::Singleton<Profiler>
-{
-	friend class spk::Singleton<Profiler>;
 
-private:
-	std::map<std::wstring, spk::Chronometer> _chronometers;
+    class Profiler
+    {
+        private:
+		std::map<std::string, spk::Chronometer> _chronometers;
 
-	Profiler() = default;
-
-public:
-
-	void startChronometer(const std::wstring &p_name)
-	{
-		_chronometers[p_name].start();
-	}
-
-	void resumeChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
+		public:
+        void startChronometer(const std::string & p_name)
 		{
-			throw std::runtime_error("This Chronometer does not exist ");
+			if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
+				{
+					 throw std::runtime_error("Tried to start an already active Chronometer");
+				}
+			_chronometers[p_name].start();
 		}
-		_chronometers[p_name].resume();
-	}
 
-	const long long stopChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
+        const long long stopChronometer(const std::string & p_name)
 		{
-			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		return (_chronometers[p_name].stop());
-	}
-};
-
-class MyWidget : public spk::AbstractWidget
-{
-private:
-	size_t nb = 0;
-	void _onRender()
-	{	
-		if ((nb % 1000) == 0)
-		{
-			if (nb != 0)
+			if (_chronometers.count(p_name) == 0 )
 			{
-				spk::cout << "Chronometer time : " << Profiler::instance()->stopChronometer(L"RenderChronometer") << std::endl;
+					throw std::runtime_error("This Chronometer does not exist ");
 			}
-			Profiler::instance()->startChronometer(L"RenderChronometer");
+			if (_chronometers[p_name].duration() == 0)
+			{
+					throw std::runtime_error("This Chronometer is not started ");
+			}		
+			return(_chronometers[p_name].stop());
 		}
-		nb++;
-	}
-
-	void _onGeometryChange()
-	{
-
-	}
-
-	bool _onUpdate()
-	{
 		
-		return (false);
-	}
-
-public:
-	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
-	{
-		Profiler::instanciate();
-	}
-};
+    };
 
 int main()
 {
-	spk::Application app(L"myApp", spk::Vector2Int(400, 400));
+	Profiler test;
 
-	MyWidget* ourWidget = app.centralWidget()->addChildrenWidget<MyWidget>();
-	ourWidget->activate();
 
-	return app.run();
+	test.startChronometer("test 1");
+	Sleep(30);
+	spk::cout << "First test of 30ms :"<< test.stopChronometer("test 1");
+
+
+	test.startChronometer("test 2");
+	test.startChronometer("test 3");
+	Sleep(55);
+	spk::cout << "Second test of 55ms :"<< test.stopChronometer("test 2");
+
+	Sleep(80);
+	spk::cout << "Third test of 135ms :"<< test.stopChronometer("test 3");
+
+		test.startChronometer("test 1");
+	Sleep(30);
+	spk::cout << "Forth test of 30ms :"<< test.stopChronometer("test 1");
+
+	return 0;
 }
-
-// int main()
-// {
-
-// 	Profiler test;
-
-// 	test.startChronometer(L"test 1");
-// 	spk::TimeMetrics::instance()->sleep(30);
-// 	spk::cout << "First test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
-
-// 	test.startChronometer(L"test 2");
-// 	test.startChronometer(L"test 3");
-// 	spk::TimeMetrics::instance()->sleep(55);
-// 	spk::cout << "Second test of 55ms :"<< test.stopChronometer(L"test 2") << std::endl;
-
-// 	spk::TimeMetrics::instance()->sleep(80);
-// 	spk::cout << "Third test of 135ms :"<< test.stopChronometer(L"test 3") << std::endl;
-
-// 	test.startChronometer(L"test 1");
-// 	spk::TimeMetrics::instance()->sleep(30);
-// 	spk::cout << "Forth test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
-
-// 	return 0;
-// }
