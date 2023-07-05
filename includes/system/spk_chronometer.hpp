@@ -29,7 +29,7 @@ namespace spk
         ~Chronometer();
 
         /**
-         * @brief Start the chronometer.
+         * @brief Start the chronometer. Reset the duration of the chronometer.
          * @throws std::runtime_error if the chronometer is already running.
          */
         void start();
