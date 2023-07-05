@@ -16,7 +16,7 @@ namespace spk
 
 	void Chronometer::start()
 	{
-		if (_isRunning == true)
+		if (isRunning() == true)
 			throw std::runtime_error("Can't start an already started chronometer");
 
 		_start = spk::TimeMetrics::instance()->time();
@@ -27,7 +27,7 @@ namespace spk
 
 	void Chronometer::resume()
 	{
-		if (_isRunning == true)
+		if (isRunning() == true)
 			throw std::runtime_error("Can't resume an already started chronometer");
 
 		_start = spk::TimeMetrics::instance()->time();
@@ -41,14 +41,14 @@ namespace spk
 
 	const long long Chronometer::duration() const
 	{
-		if (_isRunning == true)
+		if (isRunning() == true)
 			_duration = spk::TimeMetrics::instance()->time() - _start;
 		return (_duration + _totalDuration);
 	}
 
 	const long long& Chronometer::stop()
 	{
-		if (_isRunning == false)
+		if (isRunning() == false)
 			throw std::runtime_error("Can't stop an already stopped chronometer");
 
 		_totalDuration = duration();
