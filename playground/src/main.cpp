@@ -7,24 +7,22 @@ class Profiler : public spk::Singleton<Profiler>
 private:
 	std::map<std::wstring, spk::Chronometer> _chronometers;
 
-	Profiler()
-	{
-		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-		{
-			throw std::runtime_error("Profiler can't be launched without an application");
-		}
-	}
+	Profiler() = default;
 
 public:
 
 	void startChronometer(const std::wstring &p_name)
 	{
-		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-		{
-			throw std::runtime_error("Tried to start an already active Chronometer");
-		}
-
 		_chronometers[p_name].start();
+	}
+
+	void resumeChronometer(const std::wstring &p_name)
+	{
+		if (_chronometers.count(p_name) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		_chronometers[p_name].resume();
 	}
 
 	const long long stopChronometer(const std::wstring &p_name)
@@ -32,65 +30,6 @@ public:
 		if (_chronometers.count(p_name) == 0)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		return (_chronometers[p_name].stop());
-	}
-};
-
-class MyWidget : public spk::AbstractWidget
-{
-private:
-	size_t nb = 0;
-	void _onRender()
-	{
-		spk::cout << "Coucou depuis le render" << std::endl;
-	}
-
-	void _onGeometryChange()
-	{
-
-	}
-
-	bool _onUpdate()
-	{
-		
-		return (false);
-	}
-
-public:
-	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
-	{
-		Profiler::instanciate();
-	}
-};
-
-public:
-	Profiler()
-	{
-		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-		{
-			throw std::runtime_error("Profiler can't be launched without an application");
-		}
-	}
-
-	void startChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-		{
-			throw std::runtime_error("Tried to start an already active Chronometer");
-		}
-		_chronometers[p_name].start();
-	}
-
-	const long long stopChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
-		{
-			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		if (_chronometers[p_name].duration() == 0)
-		{
-			throw std::runtime_error("This Chronometer is not started ");
 		}
 		return (_chronometers[p_name].stop());
 	}
