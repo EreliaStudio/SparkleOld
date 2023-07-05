@@ -5,6 +5,7 @@ namespace spk
 	Chronometer::Chronometer():
 		_start(0),
 		_duration(0),
+		_totalDuration(0),
 		_isRunning(false)
 	{
 	}
@@ -15,21 +16,20 @@ namespace spk
 
 	void Chronometer::start()
 	{
+		if (_isRunning == true)
+			throw std::runtime_error("Can't start an already started chronometer");
+
 		_start = spk::TimeMetrics::instance()->time();
 		_duration = 0;
+		_totalDuration = 0;
 		_isRunning = true;
-	}
-	
-	void Chronometer::pause()
-	{
-		_duration += spk::TimeMetrics::instance()->time() - _start;
-		_start = 0;
-		_isRunning = false;
-
 	}
 
 	void Chronometer::resume()
 	{
+		if (_isRunning == true)
+			throw std::runtime_error("Can't resume an already started chronometer");
+
 		_start = spk::TimeMetrics::instance()->time();
 		_isRunning = true;
 	}
@@ -39,22 +39,21 @@ namespace spk
 		return (_isRunning);
 	}
 
-	const long long& Chronometer::duration() const
+	const long long Chronometer::duration() const
 	{
-		if (_start != 0)
-			_duration += spk::TimeMetrics::instance()->time() - _start;
-		return (_duration);
+		if (_isRunning == true)
+			_duration = spk::TimeMetrics::instance()->time() - _start;
+		return (_duration + _totalDuration);
 	}
 
 	const long long& Chronometer::stop()
 	{
-		if (_start != 0)
+		if (_isRunning == true)
 		{
-			_duration += spk::TimeMetrics::instance()->time() - _start;
+			_totalDuration = duration();
 			_start = 0;
 			_isRunning = false;
-
 		}
-		return (_duration);
+		return (_totalDuration);
 	}
 }
