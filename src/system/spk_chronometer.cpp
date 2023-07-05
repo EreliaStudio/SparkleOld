@@ -44,7 +44,7 @@ namespace spk
 	{
 		if (isRunning() == true)
 			throw std::runtime_error("Can't resume an already started chronometer");
-		if (_start == UNINITIALIZED)
+		if (hasBeenStarted() == false)
 			throw std::runtime_error("Can't resume a chronometer that haven't been launched previously");
 
 		_start = spk::TimeMetrics::instance()->time();
