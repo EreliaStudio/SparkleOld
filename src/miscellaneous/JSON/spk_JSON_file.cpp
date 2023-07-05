@@ -265,6 +265,8 @@ namespace spk
 
 		void File::_loadObject(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
+			p_objectToFill.setAsObject();
+
 			p_index++; // Skip the {
 			for (; p_index < p_content.size() && p_content[p_index] != '}';)
 			{
@@ -282,6 +284,8 @@ namespace spk
 
 		void File::_loadArray(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
+			p_objectToFill.setAsArray();
+
 			p_index++;
 			for (; p_index < p_content.size() && p_content[p_index] != ']';)
 			{

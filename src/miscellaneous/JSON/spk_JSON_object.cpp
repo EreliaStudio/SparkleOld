@@ -6,190 +6,206 @@ namespace spk
 {
 	namespace JSON
 	{
-			Object::Object()
+		Object::Object()
+		{
+			_initialized = false;
+		}
+
+		void Object::reset()
+		{
+			_initialized = false;
+			_content = ContentType();
+		}
+
+		Object& Object::addAttribute(const std::wstring& p_key)
+		{
+			if (_initialized == false)
 			{
-				_initialized = false;
+				_content = std::map<std::wstring, Object*>();
+				_initialized = true;
 			}
 
-			void Object::reset()
+			Object* result = new Object();
+
+			if (std::get<std::map<std::wstring, Object*>>(_content).count(p_key) != 0)
+				spk::throwException(L"Can't add attribute named [" + p_key + L"] : it already exists");
+			std::get<std::map<std::wstring, Object*>>(_content)[p_key] = result;
+			return (*result);
+		}
+
+		/*
+			Forced to do this to prevent user from writing as<Object*>() after getting an object from the map
+			it's not mandatory, but it's easier to read for the user with this.
+
+			If not keeped, we coult simply :
+			return (std::get<std::map<std::wstring, Object*>>(_content).at(p_key));
+		*/
+		Object& Object::operator[](const std::wstring& p_key)
+		{
+			auto map = std::get<std::map<std::wstring, Object*>>(_content);
+
+			if (map.count(p_key) == 0)
+				spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
+
+			Object* result = map.at(p_key);
+
+			if (std::holds_alternative<Unit>(result->_content) == false)
+				return (*(result));
+			else
 			{
-				_initialized = false;
-				_content = ContentType();
-			}
-
-			Object &Object::addAttribute(const std::wstring &p_key)
-			{
-				if (_initialized == false)
-				{
-					_content = std::map<std::wstring, Object *>();
-					_initialized = true;
-				}
-
-				Object *result = new Object();
-
-				if (std::get<std::map<std::wstring, Object *>>(_content).count(p_key) != 0)
-					spk::throwException(L"Can't add attribute named [" + p_key + L"] : it already exists");
-				std::get<std::map<std::wstring, Object *>>(_content)[p_key] = result;
-				return (*result);
-			}
-
-			/*
-				Forced to do this to prevent user from writing as<Object*>() after getting an object from the map
-				it's not mandatory, but it's easier to read for the user with this.
-
-				If not keeped, we coult simply :
-				return (std::get<std::map<std::wstring, Object*>>(_content).at(p_key));
-			*/
-			Object &Object::operator[](const std::wstring &p_key)
-			{
-				auto map = std::get<std::map<std::wstring, Object *>>(_content);
-
-				if (map.count(p_key) == 0)
-					spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
-
-				Object *result = map.at(p_key);
-
-				if (std::holds_alternative<Unit>(result->_content) == false)
+				if (std::holds_alternative<Object*>(std::get<Unit>(result->_content)) == false)
 					return (*(result));
 				else
-				{
-					if (std::holds_alternative<Object *>(std::get<Unit>(result->_content)) == false)
-						return (*(result));
-					else
-						return (*(result->as<Object *>()));
-				}
+					return (*(result->as<Object*>()));
 			}
+		}
 
-			const Object &Object::operator[](const std::wstring &p_key) const
+		const Object& Object::operator[](const std::wstring& p_key) const
+		{
+			auto map = std::get<std::map<std::wstring, Object*>>(_content);
+
+			if (map.count(p_key) == 0)
+				spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
+
+			Object* result = map.at(p_key);
+
+			if (std::holds_alternative<Unit>(result->_content) == false)
+				return (*(result));
+			else
 			{
-				auto map = std::get<std::map<std::wstring, Object *>>(_content);
-
-				if (map.count(p_key) == 0)
-					spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
-
-				Object *result = map.at(p_key);
-
-				if (std::holds_alternative<Unit>(result->_content) == false)
+				if (std::holds_alternative<Object*>(std::get<Unit>(result->_content)) == false)
 					return (*(result));
 				else
-				{
-					if (std::holds_alternative<Object *>(std::get<Unit>(result->_content)) == false)
-						return (*(result));
-					else
-						return (*(result->as<Object *>()));
-				}
+					return (*(result->as<Object*>()));
 			}
+		}
 
-			Object &Object::append()
+		void	Object::setAsObject()
+		{
+			if (_initialized == true)
+				spk::throwException(L"Can't set object as object : it is already initialized");
+			_content = std::map<std::wstring, Object*>();
+			_initialized = true;
+		}
+
+		Object& Object::append()
+		{
+			if (_initialized == false)
 			{
-				if (_initialized == false)
-				{
-					_content = std::vector<Object *>();
-					_initialized = true;
-				}
-
-				Object *result = new Object();
-				std::get<std::vector<Object *>>(_content).push_back(result);
-				return (*result);
+				_content = std::vector<Object*>();
+				_initialized = true;
 			}
 
-			void Object::push_back(Object &p_object)
+			Object* result = new Object();
+			std::get<std::vector<Object*>>(_content).push_back(result);
+			return (*result);
+		}
+
+		void Object::push_back(Object& p_object)
+		{
+			if (_initialized == false)
 			{
-				if (_initialized == false)
-				{
-					_content = std::vector<Object *>();
-					_initialized = true;
-				}
-				Object *result = new Object(p_object);
-				std::get<std::vector<Object *>>(_content).push_back(result);
+				_content = std::vector<Object*>();
+				_initialized = true;
 			}
+			Object* result = new Object(p_object);
+			std::get<std::vector<Object*>>(_content).push_back(result);
+		}
 
-			Object &Object::operator[](size_t p_index)
+		Object& Object::operator[](size_t p_index)
+		{
+			return (*(std::get<std::vector<Object*>>(_content)[p_index]));
+		}
+
+		const Object& Object::operator[](size_t p_index) const
+		{
+			return (*(std::get<std::vector<Object*>>(_content)[p_index]));
+		}
+
+		void	Object::setAsArray()
+		{
+			if (_initialized == true)
+				spk::throwException(L"Can't set object as Array : it is already initialized");
+			_content = std::vector<Object*>();
+			_initialized = true;
+		}
+
+		size_t Object::size() const
+		{
+			return (std::get<std::vector<Object*>>(_content).size());
+		}
+
+		size_t Object::count(const std::wstring& p_key) const
+		{
+			return (std::get<std::map<std::wstring, Object*>>(_content).count(p_key));
+		}
+
+		void Object::printUnit(std::wostream& p_os) const
+		{
+			const Unit& tmp = std::get<Unit>(_content);
+
+			switch (tmp.index())
 			{
-				return (*(std::get<std::vector<Object *>>(_content)[p_index]));
+			case 0:
+				p_os << std::boolalpha << as<bool>();
+				break;
+			case 1:
+				p_os << as<long>();
+				break;
+			case 2:
+				p_os << as<double>();
+				break;
+			case 3:
+				p_os << as<std::wstring>();
+				break;
+			case 4:
+				p_os << *(as<Object*>());
+				break;
+			case 5:
+				p_os << L"Null";
+				break;
 			}
+		}
 
-			const Object &Object::operator[](size_t p_index) const
+		void Object::printObject(std::wostream& p_os) const
+		{
+			const std::map<std::wstring, Object*>& map = std::get<std::map<std::wstring, Object*>>(_content);
+
+			p_os << L"{" << std::endl;
+			for (auto& tmp : map)
 			{
-				return (*(std::get<std::vector<Object *>>(_content)[p_index]));
+				p_os << tmp.first << " : " << *(tmp.second) << std::endl;
 			}
+			p_os << L"}";
+		}
 
-			size_t Object::size() const
+		void Object::printArray(std::wostream& p_os) const
+		{
+			const std::vector<Object*>& vector = std::get<std::vector<Object*>>(_content);
+
+			p_os << L"[" << std::endl;
+			for (size_t i = 0; i < vector.size(); i++)
 			{
-				return (std::get<std::vector<Object *>>(_content).size());
+				p_os << L"Element [" << i << L"] : " << *(vector[i]) << std::endl;
 			}
+			p_os << L"]";
+		}
 
-			size_t Object::count(const std::wstring &p_key) const
+		std::wostream& operator<<(std::wostream& p_os, const Object& p_object)
+		{
+			switch (p_object._content.index())
 			{
-				return (std::get<std::map<std::wstring, Object *>>(_content).count(p_key));
+			case 0:
+				p_object.printUnit(p_os);
+				break;
+			case 1:
+				p_object.printObject(p_os);
+				break;
+			case 2:
+				p_object.printArray(p_os);
+				break;
 			}
-
-			void Object::printUnit(std::wostream &p_os) const
-			{
-				const Unit &tmp = std::get<Unit>(_content);
-
-				switch (tmp.index())
-				{
-				case 0:
-					p_os << std::boolalpha << as<bool>();
-					break;
-				case 1:
-					p_os << as<long>();
-					break;
-				case 2:
-					p_os << as<double>();
-					break;
-				case 3:
-					p_os << as<std::wstring>();
-					break;
-				case 4:
-					p_os << *(as<Object *>());
-					break;
-				case 5:
-					p_os << L"Null";
-					break;
-				}
-			}
-
-			void Object::printObject(std::wostream &p_os) const
-			{
-				const std::map<std::wstring, Object *> &map = std::get<std::map<std::wstring, Object *>>(_content);
-
-				p_os << L"{" << std::endl;
-				for (auto &tmp : map)
-				{
-					p_os << tmp.first << " : " << *(tmp.second) << std::endl;
-				}
-				p_os << L"}";
-			}
-
-			void Object::printArray(std::wostream &p_os) const
-			{
-				const std::vector<Object *> &vector = std::get<std::vector<Object *>>(_content);
-
-				p_os << L"[" << std::endl;
-				for (size_t i = 0; i < vector.size(); i++)
-				{
-					p_os << L"Element [" << i << L"] : " << *(vector[i]) << std::endl;
-				}
-				p_os << L"]";
-			}
-
-			std::wostream &operator<<(std::wostream &p_os, const Object &p_object)
-			{
-				switch (p_object._content.index())
-				{
-				case 0:
-					p_object.printUnit(p_os);
-					break;
-				case 1:
-					p_object.printObject(p_os);
-					break;
-				case 2:
-					p_object.printArray(p_os);
-					break;
-				}
-				return (p_os);
-			}
+			return (p_os);
+		}
 	}
 }

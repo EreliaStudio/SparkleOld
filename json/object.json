@@ -1,4 +1,8 @@
 {
-	"test": false,
-	"test": true
+	"array": [
+		42,
+		"number",
+		{},
+		[]
+	]
 }
