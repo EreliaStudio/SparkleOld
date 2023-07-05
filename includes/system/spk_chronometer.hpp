@@ -5,56 +5,58 @@
 
 namespace spk
 {
-	class Chronometer
-	{
-	private:
-		long long _start;
-		mutable long long _duration;
-		mutable long long _totalDuration;
-		bool _isRunning;
+    /**
+     * @class Chronometer
+     * @brief A simple chronometer class to measure elapsed time.
+     */
+    class Chronometer
+    {
+    private:
+        long long _start; ///< Start time.
+        mutable long long _duration; ///< Current duration.
+        mutable long long _totalDuration; ///< Total duration.
+        bool _isRunning; ///< True if chronometer is running, false otherwise.
 
-	public:
-		Chronometer();
-		~Chronometer();
+    public:
+        /**
+         * @brief Default constructor. Initializes start time, duration, total duration and running state to initial values.
+         */
+        Chronometer();
 
-		/**
-		 * @brief Start the chronometer and reset the duration
-		 */
-		void start();
+        /**
+         * @brief Destructor.
+         */
+        ~Chronometer();
 
-		/**
-		 * @brief 
-		 *  Start the duration from the time it was put in pause
-		 */
-		void resume();
-		
-		/**
-		 * @brief 
-		 * True if the chronometer is running false if is in pause or stopped
-		 * @return true 
-		 * @return false 
-		 */
-		bool isRunning();
+        /**
+         * @brief Start the chronometer. Initializes the start time to the current time and resets the duration and total duration.
+         * @throws std::runtime_error if the chronometer is already running.
+         */
+        void start();
 
-		/**
-		 * @brief Get the duration since the start of the chronometer
-		 * @return The duration in milliseconds
-		 * @note Return 0 if the chronometer is not started.
-		 * @note If stop has been called, the duration is not updated.
-		 */
-		const long long duration() const;
+        /**
+         * @brief Resume the chronometer from the time it was stopped.
+         * @throws std::runtime_error if the chronometer is already running.
+         */
+        void resume();
 
-		/**
-		 * @brief Stop the chronometer and return the duration
-		 * @return The duration in milliseconds
-		 * @note Return 0 if the chronometer is not started
-		 */
-		const long long& stop();
+        /**
+         * @brief Check if the chronometer is currently running.
+         * @return True if the chronometer is running, false otherwise.
+         */
+        bool isRunning();
 
-		/**
-		 * @brief Check if the chronometer is running
-		 * @return True if the chronometer is running, false otherwise
+        /**
+         * @brief Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements.
+         * @return The duration in milliseconds. If the chronometer is not running, the duration remains the same.
+         */
+        const long long duration() const;
+
+        /**
+		 * @brief Stop the chronometer. Calculates the final duration, resets the start time, and sets the running state to false.
+		 * @throws std::runtime_error if the chronometer is already stopped.
+		 * @return The total duration in milliseconds. If the chronometer is already stopped, a runtime_error is thrown.
 		 */
-		bool isRunning() const { return (_start != 0); }
-	};
+        const long long& stop();
+    };
 }

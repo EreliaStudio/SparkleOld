@@ -48,12 +48,12 @@ namespace spk
 
 	const long long& Chronometer::stop()
 	{
-		if (_isRunning == true)
-		{
-			_totalDuration = duration();
-			_start = 0;
-			_isRunning = false;
-		}
+		if (_isRunning == false)
+			throw std::runtime_error("Can't stop an already stopped chronometer");
+
+		_totalDuration = duration();
+		_start = 0;
+		_isRunning = false;
 		return (_totalDuration);
 	}
 }
