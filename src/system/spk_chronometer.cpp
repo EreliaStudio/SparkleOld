@@ -34,7 +34,7 @@ namespace spk
 		_isRunning = true;
 	}
 
-	bool Chronometer::isRunning()
+	bool Chronometer::isRunning() const
 	{
 		return (_isRunning);
 	}

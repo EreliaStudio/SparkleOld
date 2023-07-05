@@ -44,7 +44,7 @@ namespace spk
          * @brief Check if the chronometer is currently running.
          * @return True if the chronometer is running, false otherwise.
          */
-        bool isRunning();
+        bool isRunning() const;
 
         /**
          * @brief Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements.
