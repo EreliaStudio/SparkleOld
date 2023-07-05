@@ -1,11 +1,12 @@
 #include "playground.hpp"
 
-class Profiler
+class Profiler : public spk::Singleton<Profiler>
 {
+	friend class spk::Singleton<Profiler>;
+
 private:
 	std::map<std::wstring, spk::Chronometer> _chronometers;
 
-public:
 	Profiler()
 	{
 		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
@@ -14,12 +15,15 @@ public:
 		}
 	}
 
+public:
+
 	void startChronometer(const std::wstring &p_name)
 	{
 		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
 		{
 			throw std::runtime_error("Tried to start an already active Chronometer");
 		}
+
 		_chronometers[p_name].start();
 	}
 
@@ -40,9 +44,18 @@ public:
 class MyWidget : public spk::AbstractWidget
 {
 private:
+	size_t nb = 0;
 	void _onRender()
-	{
-		spk::cout << "Coucou depuis le render" << std::endl;
+	{	
+		if ((nb % 1000) == 0)
+		{
+			if (nb != 0)
+			{
+				spk::cout << "Chronometer time : " << Profiler::instance()->stopChronometer(L"RenderChronometer") << std::endl;
+			}
+			Profiler::instance()->startChronometer(L"RenderChronometer");
+		}
+		nb++;
 	}
 
 	void _onGeometryChange()
@@ -52,14 +65,14 @@ private:
 
 	bool _onUpdate()
 	{
-		spk::cout << "Coucou depuis l'update" << std::endl;
+		
 		return (false);
 	}
 
 public:
 	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
 	{
-
+		Profiler::instanciate();
 	}
 };
 
