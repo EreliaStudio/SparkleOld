@@ -1,58 +1,57 @@
 #include "playground.hpp"
 
+class MyWidget : public spk::AbstractWidget
+{
+private:
+	size_t nb = 0;	
+	void _onRender()
+	{
+
+		if (nb == 0)
+		{
+ 	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
+	spk::TimeMetrics::instance()->sleepAtLeast(30);
+	spk::cout << "First test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
+
+	spk::Debug::Profiler::instance()->startChronometer(L"test 2");
+	spk::Debug::Profiler::instance()->startChronometer(L"test 3");
+	spk::TimeMetrics::instance()->sleepAtLeast(55);
+	spk::cout << "Second test of 55ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 2") << std::endl;
+
+	spk::TimeMetrics::instance()->sleepAtLeast(80);
+	spk::cout << "Third test of 135ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 3") << std::endl;
+
+	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
+	spk::TimeMetrics::instance()->sleepAtLeast(30);
+	spk::cout << "Forth test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
+		}
+		nb++;
+	}
+
+	void _onGeometryChange()
+	{
+
+	}
+
+	bool _onUpdate()
+	{
+		
+		return (false);
+	}
+
+public:
+	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
+	{
+		spk::Debug::Profiler::instanciate();
+	}
+};
 
 int main()
 {
-	spk::StandardType<int> tmp;
+	spk::Application app(L"myApp", spk::Vector2Int(400, 400));
 
-	tmp = -1;
-	for (size_t i = 0; i < 4; i++)
-	{
-		tmp.save();
-		tmp = i;
-	}
-	tmp.save();
+	MyWidget* ourWidget = app.centralWidget()->addChildrenWidget<MyWidget>();
+	ourWidget->activate();
 
-	spk::cout << " --- Undoing ---" << std::endl;
-	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be -1" << std::endl;
-
-	spk::cout << " --- Redoing ---" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
-
-	spk::cout << " --- Undoing ---" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-
-	spk::cout << " --- New branch ---" << std::endl;
-	tmp = 42;
-	tmp.save();
-	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
-
-	spk::cout << " --- Redoing ---" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
-
-
-	return 0;
+	return app.run();
 }

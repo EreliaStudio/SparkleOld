@@ -7,6 +7,8 @@
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
 
+#include "debug/spk_profiler.hpp"
+
 #include "design_pattern/spk_singleton.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_contract_provider.hpp"
@@ -28,6 +30,7 @@
 
 #include "system/spk_chronometer.hpp"
 #include "system/spk_timer.hpp"
+#include "system/spk_time_metrics.hpp"
 
 #include "application/spk_abstract_application.hpp"
 #include "application/modules/spk_abstract_module.hpp"
