@@ -39,7 +39,7 @@ namespace spk
 		return (_isRunning);
 	}
 
-	const long long Chronometer::duration() const
+	long long Chronometer::duration() const
 	{
 		if (isRunning() == true)
 			_duration = spk::TimeMetrics::instance()->time() - _start;
