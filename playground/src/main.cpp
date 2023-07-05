@@ -1,57 +1,50 @@
 #include "playground.hpp"
 
-class MyWidget : public spk::AbstractWidget
+struct Context
 {
-private:
-	size_t nb = 0;	
-	void _onRender()
+	int value;
+
+	Context()
 	{
 
-		if (nb == 0)
-		{
- 	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
-	spk::TimeMetrics::instance()->sleepAtLeast(30);
-	spk::cout << "First test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
-
-	spk::Debug::Profiler::instance()->startChronometer(L"test 2");
-	spk::Debug::Profiler::instance()->startChronometer(L"test 3");
-	spk::TimeMetrics::instance()->sleepAtLeast(55);
-	spk::cout << "Second test of 55ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 2") << std::endl;
-
-	spk::TimeMetrics::instance()->sleepAtLeast(80);
-	spk::cout << "Third test of 135ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 3") << std::endl;
-
-	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
-	spk::TimeMetrics::instance()->sleepAtLeast(30);
-	spk::cout << "Forth test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
-		}
-		nb++;
-	}
-
-	void _onGeometryChange()
-	{
-
-	}
-
-	bool _onUpdate()
-	{
-		
-		return (false);
-	}
-
-public:
-	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
-	{
-		spk::Debug::Profiler::instanciate();
 	}
 };
 
+using RendererContext = spk::ContextManager<Context>::ReadOnlyAccessor;
+using UpdaterContext = spk::ContextManager<Context>::ReadWriteAccessor;
+
 int main()
 {
-	spk::Application app(L"myApp", spk::Vector2Int(400, 400));
+	spk::ContextManager<Context>::instanciate();
 
-	MyWidget* ourWidget = app.centralWidget()->addChildrenWidget<MyWidget>();
-	ourWidget->activate();
+	spk::cout << "1 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "1 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	UpdaterContext::get().value = 10;
 
-	return app.run();
+	spk::cout << "2 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "2 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+
+	UpdaterContext::swap();
+
+	spk::cout << "3 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "3 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
+
+	UpdaterContext::get().value = 20;
+
+	spk::cout << "4 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "4 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
+
+	UpdaterContext::swap();
+
+	spk::cout << "5 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "5 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
+	return 0;
 }

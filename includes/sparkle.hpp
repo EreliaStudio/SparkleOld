@@ -4,6 +4,7 @@
 #include "math/spk_vector3.hpp"
 #include "math/spk_random_generator.hpp"
 
+
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
 
@@ -18,7 +19,10 @@
 #include "design_pattern/spk_activity.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 #include "design_pattern/spk_value.hpp"
+
+#include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
+
 
 #include "iostream/spk_iostream.hpp"
 
@@ -47,4 +51,3 @@
 
 #include "widget/spk_abstract_widget.hpp"
 
-#include "application/spk_application.hpp"
