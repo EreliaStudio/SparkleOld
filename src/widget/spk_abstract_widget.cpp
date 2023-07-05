@@ -44,17 +44,6 @@ namespace spk
 		}	
 	}
 
-	template <typename TChildrenType, typename ... Args>
-	TChildrenType* AbstractWidget::addChildrenWidget(Args&& ... p_args)
-	{
-		TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
-
-		addChild(result);
-		result->setDepth(depth() + 1);
-
-		return (result);
-	}
-
 	void AbstractWidget::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
 	{
 		_anchor = p_anchor;

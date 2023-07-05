@@ -1,63 +1,86 @@
 #include "playground.hpp"
 
+class Profiler
+{
+private:
+	std::map<std::wstring, spk::Chronometer> _chronometers;
 
-    class Profiler
-    {
-        private:
-		std::map<std::wstring, spk::Chronometer> _chronometers;
-
-		public:
-		Profiler()
+public:
+	Profiler()
+	{
+		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
 		{
-			if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-			{
-				throw std::runtime_error("Profiler can't be launched without an application");
-			}
+			throw std::runtime_error("Profiler can't be launched without an application");
 		}
+	}
 
-        void startChronometer(const std::wstring & p_name)
+	void startChronometer(const std::wstring &p_name)
+	{
+		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
 		{
-			if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-			{
-				throw std::runtime_error("Tried to start an already active Chronometer");
-			}
-			_chronometers[p_name].start();
+			throw std::runtime_error("Tried to start an already active Chronometer");
 		}
+		_chronometers[p_name].start();
+	}
 
-        const long long stopChronometer(const std::wstring & p_name)
+	const long long stopChronometer(const std::wstring &p_name)
+	{
+		if (_chronometers.count(p_name) == 0)
 		{
-			if (_chronometers.count(p_name) == 0 )
-			{
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			if (_chronometers[p_name].duration() == 0)
-			{
-				throw std::runtime_error("This Chronometer is not started ");
-			}		
-			return(_chronometers[p_name].stop());
+			throw std::runtime_error("This Chronometer does not exist ");
 		}
-		
-    };
+		if (_chronometers[p_name].duration() == 0)
+		{
+			throw std::runtime_error("This Chronometer is not started ");
+		}
+		return (_chronometers[p_name].stop());
+	}
+};
+
+class MyWidget : public spk::AbstractWidget
+{
+private:
+	void _onRender()
+	{
+		spk::cout << "Coucou depuis le render" << std::endl;
+	}
+
+	void _onGeometryChange()
+	{
+
+	}
+
+	bool _onUpdate()
+	{
+		spk::cout << "Coucou depuis l'update" << std::endl;
+		return (false);
+	}
+
+public:
+	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
+	{
+
+	}
+};
 
 int main()
 {
-	spk::Application app(L"myApp", spk::Vector2Int(400,400));
+	spk::Application app(L"myApp", spk::Vector2Int(400, 400));
 
+	MyWidget* ourWidget = app.centralWidget()->addChildrenWidget<MyWidget>();
+	ourWidget->activate();
 
 	return app.run();
 }
 
-
-
 // int main()
 // {
-	
+
 // 	Profiler test;
 
 // 	test.startChronometer(L"test 1");
 // 	spk::TimeMetrics::instance()->sleep(30);
 // 	spk::cout << "First test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
-
 
 // 	test.startChronometer(L"test 2");
 // 	test.startChronometer(L"test 3");
