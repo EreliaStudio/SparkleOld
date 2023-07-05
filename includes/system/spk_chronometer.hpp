@@ -19,7 +19,7 @@ namespace spk
 
     public:
         /**
-         * @brief Default constructor. Initializes start time, duration, total duration and running state to initial values.
+         * @brief Default constructor.
          */
         Chronometer();
 
@@ -29,7 +29,7 @@ namespace spk
         ~Chronometer();
 
         /**
-         * @brief Start the chronometer. Initializes the start time to the current time and resets the duration and total duration.
+         * @brief Start the chronometer.
          * @throws std::runtime_error if the chronometer is already running.
          */
         void start();
@@ -53,7 +53,7 @@ namespace spk
         const long long duration() const;
 
         /**
-		 * @brief Stop the chronometer. Calculates the final duration, resets the start time, and sets the running state to false.
+		 * @brief Stop the chronometer. Set the status of the chronometer to stopped.
 		 * @throws std::runtime_error if the chronometer is already stopped.
 		 * @return The total duration in milliseconds. If the chronometer is already stopped, a runtime_error is thrown.
 		 */
