@@ -7,6 +7,10 @@ namespace spk
 		, _status(State::Idle)
 		, _startTime(0)
 	{
+		if (spk::TimeMetrics::instance() == nullptr)
+		{
+			throw std::runtime_error("Can't create a Timer without an spk::Application");
+		}
 	}
 
 	void Timer::setDuration(const long long& p_duration)

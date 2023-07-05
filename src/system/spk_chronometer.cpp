@@ -8,6 +8,10 @@ namespace spk
 		_totalDuration(0),
 		_isRunning(false)
 	{
+		if (spk::TimeMetrics::instance() == nullptr)
+		{
+			throw std::runtime_error("Can't create a Chronometer without an spk::Application");
+		}
 	}
 
 	Chronometer::~Chronometer()
