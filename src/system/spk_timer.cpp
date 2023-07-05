@@ -1,12 +1,17 @@
 #include "system/spk_timer.hpp"
+#include <stdexcept>
 
 namespace spk
 {
-	Timer::Timer()
-		: _duration(0)
-		, _status(State::Idle)
-		, _startTime(0)
+	Timer::Timer() :
+		_duration(0),
+		_status(State::Idle),
+		_startTime(0)
 	{
+		if (spk::TimeMetrics::instance() == nullptr)
+		{
+			throw std::runtime_error("Can't create a Timer without an spk::Application");
+		}
 	}
 
 	void Timer::setDuration(const long long& p_duration)

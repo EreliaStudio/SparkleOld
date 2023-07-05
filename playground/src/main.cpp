@@ -1,6 +1,5 @@
 #include "playground.hpp"
 
-
 struct Context
 {
 	int value;

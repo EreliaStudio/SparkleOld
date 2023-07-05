@@ -32,6 +32,8 @@ function(SetupSparkleLibrary)
 		"${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/math/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/debug/*.cpp"
+
 	)
 
 if(UNIX)
