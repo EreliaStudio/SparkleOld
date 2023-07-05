@@ -4,20 +4,43 @@
 
 namespace spk
 {
+    /**
+     * \class Pool
+     * \brief A generic pool class that manages the creation and deletion of objects.
+     *
+     * This class is designed to handle memory in an efficient manner by reusing
+     * previously allocated objects. This avoids frequent memory allocation and
+     * deallocation, which can be costly for performance.
+     *
+     * The Pool class provides a mechanism for 'reserving' a number of objects of a
+     * specific type, and then 'obtaining' those objects for use. When an object is
+     * no longer needed, it is returned to the pool to be reused later.
+     *
+     * \tparam TType The type of objects that the pool will manage.
+     */
     template <typename TType>
     class Pool
     {
     private:
+        /**
+         * \brief The container that holds the objects allocated by the pool.
+         */
         using Container = std::vector<TType *>;
         Container _allocatedObjects;
 
     public:
+        /**
+         * \class Object
+         * \brief An internal class to manage objects retrieved from the pool.
+         *
+         * This class is designed to keep track of the memory it manages and to
+         * automatically return it to the pool when it is no longer needed.
+         */
         class Object
         {
             friend class Pool;
 
         private:
-            
             Container *_source;
             size_t *_referenceCount;
             TType *_content;
@@ -35,7 +58,6 @@ namespace spk
                                                             _content(p_content),
                                                             _referenceCount(new size_t(1))
             {
-                
             }
 
         public:
