@@ -1,6 +1,5 @@
 #pragma once
 
-#include <chrono>
 #include "design_pattern/spk_singleton.hpp"
 #include "application/modules/spk_time_module.hpp"
 
@@ -21,5 +20,7 @@ namespace spk
 
 		constexpr const long long& time() const { return (_time); }
 		constexpr const long long& deltaTime() const { return (_deltaTime); }
+
+		void sleep(size_t p_millisecond);
 	};
 }
