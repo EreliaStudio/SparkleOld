@@ -11,6 +11,8 @@ namespace spk
 
 	private:
 		CallbackContainer _jobs;
+		std::deque<Contract> _contracts;
+
 		bool _isRunning = false;
 		bool _isPaused = false;
 
@@ -18,7 +20,7 @@ namespace spk
 		PersistentWorker(const std::wstring & p_name);
 		~PersistentWorker();
 
-		Contract addJob(const Job& p_job);
+		Contract& addJob(const Job& p_job);
 
 		constexpr bool isRunning() const { return (_isRunning); }
 		void start();

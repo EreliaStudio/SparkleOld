@@ -1,9 +1,10 @@
 #include "application/modules/spk_widget_module.hpp"
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
 	void WidgetModule::CentralWidget::_onRender()
-	{
+	{	
 
 	}
 	bool WidgetModule::CentralWidget::_onUpdate()
@@ -40,6 +41,7 @@ namespace spk
 
 	void WidgetModule::render()
 	{
+		_centralWidget->_render();
 	}
 
 	AbstractWidget* WidgetModule::centralWidget() const

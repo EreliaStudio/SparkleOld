@@ -33,7 +33,15 @@ namespace spk
 		virtual ~AbstractWidget();
 
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addChildrenWidget(Args&& ... p_args);
+		TChildrenType* addChildrenWidget(Args&& ... p_args)
+		{
+			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
+
+			addChild(result);
+			result->setDepth(depth() + 1);
+
+			return (result);
+		}
 
 		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size);
 		

@@ -6,8 +6,6 @@ namespace spk
 {
 	void SystemModule::_handleMessage(SystemMessage& p_event)
 	{
-		DEBUG_LINE();
-
 		unsigned int messageId;
 		*p_event >> messageId;
 
