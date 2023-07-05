@@ -120,6 +120,9 @@ namespace spk
 		 */
 		void swapReadOnlyContext()
 		{
+			if (_isSwappRequested == false)
+				throw std::runtime_error("ReadOnlyContext does not need to be swapped");
+			
 			std::lock_guard<std::recursive_mutex> lock(_bufferAccessMutex);
 
 			_readOnlyContext.swap(_intermediaryBuffer);
