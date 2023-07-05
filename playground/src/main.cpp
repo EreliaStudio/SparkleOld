@@ -7,41 +7,22 @@ class Profiler : public spk::Singleton<Profiler>
 private:
 	std::map<std::wstring, spk::Chronometer> _chronometers;
 
-<<<<<<< HEAD
-	Profiler() = default;
-
 public:
+	Profiler()
+	{
+		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
+		{
+			throw std::runtime_error("Profiler can't be launched without an application");
+		}
+	}
 
 	void startChronometer(const std::wstring &p_name)
 	{
+		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
+		{
+			throw std::runtime_error("Tried to start an already active Chronometer");
+		}
 		_chronometers[p_name].start();
-	}
-
-	void resumeChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
-		{
-			throw std::runtime_error("This Chronometer does not exist ");
-=======
-		public:
-		Profiler()
-		{
-			if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-			{
-				throw std::runtime_error("Profiler can't be launched without an application");
-			}
-		}
-
-        void startChronometer(const std::wstring & p_name)
-		{
-			if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-			{
-				throw std::runtime_error("Tried to start an already active Chronometer");
-			}
-			_chronometers[p_name].start();
->>>>>>> 6111a0d (Add timemetrics to header , change main to work)
-		}
-		_chronometers[p_name].resume();
 	}
 
 	const long long stopChronometer(const std::wstring &p_name)
@@ -59,26 +40,8 @@ class MyWidget : public spk::AbstractWidget
 private:
 	size_t nb = 0;
 	void _onRender()
-	{	
-		if ((nb % 1000) == 0)
-		{
-			if (nb != 0)
-			{
-<<<<<<< HEAD
-				spk::cout << "Chronometer time : " << Profiler::instance()->stopChronometer(L"RenderChronometer") << std::endl;
-			}
-			Profiler::instance()->startChronometer(L"RenderChronometer");
-=======
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			if (_chronometers[p_name].duration() == 0)
-			{
-				throw std::runtime_error("This Chronometer is not started ");
-			}		
-			return(_chronometers[p_name].stop());
->>>>>>> 6111a0d (Add timemetrics to header , change main to work)
-		}
-		nb++;
+	{
+		spk::cout << "Coucou depuis le render" << std::endl;
 	}
 
 	void _onGeometryChange()
