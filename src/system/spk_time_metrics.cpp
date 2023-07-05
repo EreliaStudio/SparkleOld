@@ -23,7 +23,7 @@ namespace spk
 		_updateMetrics();
 	}
 	
-	void TimeMetrics::sleep(size_t p_millisecond)
+	void TimeMetrics::sleepAtLeast(size_t p_millisecond)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(p_millisecond));
 	}

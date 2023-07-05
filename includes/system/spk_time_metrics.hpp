@@ -21,6 +21,6 @@ namespace spk
 		constexpr const long long& time() const { return (_time); }
 		constexpr const long long& deltaTime() const { return (_deltaTime); }
 
-		void sleep(size_t p_millisecond);
+		void sleepAtLeast(size_t p_millisecond);
 	};
 }
