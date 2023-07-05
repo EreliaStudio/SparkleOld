@@ -1,4 +1,3 @@
-#pragma once
 #include "debug/spk_profiler.hpp"
 
 namespace spk
