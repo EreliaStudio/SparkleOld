@@ -69,6 +69,12 @@ namespace spk
 				return (*ContextManager::instance()->_readOnlyContext);
 			}
 
+			static bool swapRequested()
+			{
+				return (*ContextManager::instance()->_isSwapRequested);
+			}
+	
+
 			/**
 			 * \brief Swaps the context object used for read operations with an intermediary buffer.
 			 * \throws std::runtime_error if the ContextManager singleton instance is not initialized.
@@ -120,7 +126,7 @@ namespace spk
 		 */
 		void swapReadOnlyContext()
 		{
-			if (_isSwappRequested == false)
+			if (_isSwapRequested == false)
 				throw std::runtime_error("ReadOnlyContext does not need to be swapped");
 			
 			std::lock_guard<std::recursive_mutex> lock(_bufferAccessMutex);
