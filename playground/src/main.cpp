@@ -1,81 +1,31 @@
 #include "playground.hpp"
 
-class Profiler : public spk::Singleton<Profiler>
-{
-	friend class spk::Singleton<Profiler>;
-
-private:
-	std::map<std::wstring, spk::Chronometer> _chronometers;
-
-<<<<<<< HEAD
-public:
-	Profiler()
-	{
-		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-		{
-			throw std::runtime_error("Profiler can't be launched without an application");
-		}
-	}
-
-	void startChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-		{
-			throw std::runtime_error("Tried to start an already active Chronometer");
-		}
-		_chronometers[p_name].start();
-	}
-
-=======
-	Profiler() = default;
-
-public:
-
-	void startChronometer(const std::wstring &p_name)
-	{
-		_chronometers[p_name].start();
-	}
-
-	void resumeChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
-		{
-			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		_chronometers[p_name].resume();
-	}
-
->>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
-	const long long stopChronometer(const std::wstring &p_name)
-	{
-		if (_chronometers.count(p_name) == 0)
-		{
-			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		return (_chronometers[p_name].stop());
-	}
-};
-
 class MyWidget : public spk::AbstractWidget
 {
 private:
-	size_t nb = 0;
+	size_t nb = 0;	
 	void _onRender()
-<<<<<<< HEAD
 	{
-		spk::cout << "Coucou depuis le render" << std::endl;
-=======
-	{	
-		if ((nb % 1000) == 0)
+
+		if (nb == 0)
 		{
-			if (nb != 0)
-			{
-				spk::cout << "Chronometer time : " << Profiler::instance()->stopChronometer(L"RenderChronometer") << std::endl;
-			}
-			Profiler::instance()->startChronometer(L"RenderChronometer");
+ 	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
+	spk::TimeMetrics::instance()->sleepAtLeast(30);
+	spk::cout << "First test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
+
+	spk::Debug::Profiler::instance()->startChronometer(L"test 2");
+	spk::Debug::Profiler::instance()->startChronometer(L"test 3");
+	spk::TimeMetrics::instance()->sleepAtLeast(55);
+	spk::cout << "Second test of 55ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 2") << std::endl;
+
+	spk::TimeMetrics::instance()->sleepAtLeast(80);
+	spk::cout << "Third test of 135ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 3") << std::endl;
+
+	spk::Debug::Profiler::instance()->startChronometer(L"test 1");
+	spk::TimeMetrics::instance()->sleepAtLeast(30);
+	spk::cout << "Forth test of 30ms :"<< spk::Debug::Profiler::instance()->stopChronometer(L"test 1") << std::endl;
 		}
 		nb++;
->>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
 	}
 
 	void _onGeometryChange()
@@ -92,7 +42,7 @@ private:
 public:
 	MyWidget() : spk::AbstractWidget(L"Ceci est un test")
 	{
-		Profiler::instanciate();
+		spk::Debug::Profiler::instanciate();
 	}
 };
 
@@ -105,31 +55,3 @@ int main()
 
 	return app.run();
 }
-
-// int main()
-// {
-
-// 	Profiler test;
-
-// 	test.startChronometer(L"test 1");
-// 	spk::TimeMetrics::instance()->sleep(30);
-// 	spk::cout << "First test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
-
-// 	test.startChronometer(L"test 2");
-// 	test.startChronometer(L"test 3");
-// 	spk::TimeMetrics::instance()->sleep(55);
-// 	spk::cout << "Second test of 55ms :"<< test.stopChronometer(L"test 2") << std::endl;
-
-// 	spk::TimeMetrics::instance()->sleep(80);
-// 	spk::cout << "Third test of 135ms :"<< test.stopChronometer(L"test 3") << std::endl;
-
-// 	test.startChronometer(L"test 1");
-// 	spk::TimeMetrics::instance()->sleep(30);
-// 	spk::cout << "Forth test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
-
-// 	return 0;
-<<<<<<< HEAD
-// }
-=======
-// }
->>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
