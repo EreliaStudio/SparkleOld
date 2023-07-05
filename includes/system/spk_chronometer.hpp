@@ -11,6 +11,8 @@ namespace spk
      */
     class Chronometer
     {
+	public:
+		static const long long UNINITIALIZED = -1;
     private:
         long long _start; ///< Start time.
         mutable long long _duration; ///< Current duration.
@@ -28,6 +30,11 @@ namespace spk
          */
         ~Chronometer();
 
+		/**
+		 * @brief Full reset of the Chronometer, reseting his status to factory values
+		 */
+		void reset();
+
         /**
          * @brief Start the chronometer. Reset the duration of the chronometer.
          * @throws std::runtime_error if the chronometer is already running.
@@ -39,6 +46,12 @@ namespace spk
          * @throws std::runtime_error if the chronometer is already running.
          */
         void resume();
+
+        /**
+         * @brief Check if the chronometer have been used previously.
+         * @return True if the chronometer have been used, false otherwise.
+         */
+		bool hasBeenStarted() const;
 
         /**
          * @brief Check if the chronometer is currently running.

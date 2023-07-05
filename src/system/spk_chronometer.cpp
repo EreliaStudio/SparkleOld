@@ -3,7 +3,7 @@
 namespace spk
 {
 	Chronometer::Chronometer():
-		_start(0),
+		_start(UNINITIALIZED),
 		_duration(0),
 		_totalDuration(0),
 		_isRunning(false)
@@ -16,6 +16,17 @@ namespace spk
 
 	Chronometer::~Chronometer()
 	{
+	}
+	
+	void Chronometer::reset()
+	{
+		if (hasBeenStarted() == false)
+			throw std::runtime_error("Can't reset a never used chronometer");
+
+		_start = UNINITIALIZED;
+		_duration = 0;
+		_totalDuration = 0;
+		_isRunning = false;
 	}
 
 	void Chronometer::start()
@@ -33,9 +44,16 @@ namespace spk
 	{
 		if (isRunning() == true)
 			throw std::runtime_error("Can't resume an already started chronometer");
+		if (_start == UNINITIALIZED)
+			throw std::runtime_error("Can't resume a chronometer that haven't been launched previously");
 
 		_start = spk::TimeMetrics::instance()->time();
 		_isRunning = true;
+	}
+
+	bool Chronometer::hasBeenStarted() const
+	{
+		return (_start != UNINITIALIZED);
 	}
 
 	bool Chronometer::isRunning() const
