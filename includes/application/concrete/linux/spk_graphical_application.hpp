@@ -7,6 +7,7 @@
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
+#include "application/modules/spk_profiler_module.hpp"
 
 namespace spk
 {
@@ -18,6 +19,7 @@ namespace spk
 		spk::WindowModule *_windowModule;
 		spk::MouseModule *_mouseModule;
 		spk::KeyboardModule *_keyboardModule;
+		spk::ProfilerModule *_profilerModule;
 
 		spk::WidgetModule* _widgetModule;
 
@@ -43,6 +45,7 @@ namespace spk
 		{
 			_APIModule = new spk::APIModule();
 			_timeModule = new spk::TimeModule();
+			_profilerModule = new spk::ProfilerModule();
 			
 			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size);
 			
@@ -60,6 +63,7 @@ namespace spk
 			delete _windowModule;
 			delete _mouseModule;
 			delete _keyboardModule;
+			delete _profilerModule;
 
 			delete _widgetModule;
 		}
