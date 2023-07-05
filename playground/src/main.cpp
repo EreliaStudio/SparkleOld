@@ -7,24 +7,22 @@ class Profiler : public spk::Singleton<Profiler>
 private:
 	std::map<std::wstring, spk::Chronometer> _chronometers;
 
-	Profiler()
-	{
-		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-		{
-			throw std::runtime_error("Profiler can't be launched without an application");
-		}
-	}
+	Profiler() = default;
 
 public:
 
 	void startChronometer(const std::wstring &p_name)
 	{
-		if (_chronometers.count(p_name) != 0 && _chronometers[p_name].duration() != 0)
-		{
-			throw std::runtime_error("Tried to start an already active Chronometer");
-		}
-
 		_chronometers[p_name].start();
+	}
+
+	void resumeChronometer(const std::wstring &p_name)
+	{
+		if (_chronometers.count(p_name) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		_chronometers[p_name].resume();
 	}
 
 	const long long stopChronometer(const std::wstring &p_name)
@@ -32,10 +30,6 @@ public:
 		if (_chronometers.count(p_name) == 0)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
-		}
-		if (_chronometers[p_name].duration() == 0)
-		{
-			throw std::runtime_error("This Chronometer is not started ");
 		}
 		return (_chronometers[p_name].stop());
 	}
