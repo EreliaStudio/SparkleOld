@@ -50,7 +50,7 @@ namespace spk
          * @brief Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements.
          * @return The duration in milliseconds. If the chronometer is not running, the duration remains the same.
          */
-        const long long duration() const;
+        long long duration() const;
 
         /**
 		 * @brief Stop the chronometer. Set the status of the chronometer to stopped.
