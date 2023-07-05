@@ -2,10 +2,10 @@
 
 namespace spk
 {
-	Timer::Timer()
-		: _duration(0)
-		, _status(State::Idle)
-		, _startTime(0)
+	Timer::Timer() :
+		_duration(0),
+		_status(State::Idle),
+		_startTime(0)
 	{
 		if (spk::TimeMetrics::instance() == nullptr)
 		{
