@@ -7,6 +7,7 @@ class Profiler : public spk::Singleton<Profiler>
 private:
 	std::map<std::wstring, spk::Chronometer> _chronometers;
 
+<<<<<<< HEAD
 public:
 	Profiler()
 	{
@@ -25,6 +26,26 @@ public:
 		_chronometers[p_name].start();
 	}
 
+=======
+	Profiler() = default;
+
+public:
+
+	void startChronometer(const std::wstring &p_name)
+	{
+		_chronometers[p_name].start();
+	}
+
+	void resumeChronometer(const std::wstring &p_name)
+	{
+		if (_chronometers.count(p_name) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		_chronometers[p_name].resume();
+	}
+
+>>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
 	const long long stopChronometer(const std::wstring &p_name)
 	{
 		if (_chronometers.count(p_name) == 0)
@@ -40,8 +61,21 @@ class MyWidget : public spk::AbstractWidget
 private:
 	size_t nb = 0;
 	void _onRender()
+<<<<<<< HEAD
 	{
 		spk::cout << "Coucou depuis le render" << std::endl;
+=======
+	{	
+		if ((nb % 1000) == 0)
+		{
+			if (nb != 0)
+			{
+				spk::cout << "Chronometer time : " << Profiler::instance()->stopChronometer(L"RenderChronometer") << std::endl;
+			}
+			Profiler::instance()->startChronometer(L"RenderChronometer");
+		}
+		nb++;
+>>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
 	}
 
 	void _onGeometryChange()
@@ -94,4 +128,8 @@ int main()
 // 	spk::cout << "Forth test of 30ms :"<< test.stopChronometer(L"test 1") << std::endl;
 
 // 	return 0;
+<<<<<<< HEAD
 // }
+=======
+// }
+>>>>>>> 6b0549892d457a49878d2d0fb86b5ab7f15e5b38
