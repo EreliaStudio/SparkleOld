@@ -61,6 +61,23 @@ jobs:
         github_token: ${{ secrets.BOT_ACCESS_TOKEN }}
         publish_dir: ./docs/html
 
+    - name: Remove old documentation issues
+      run: |
+        # Get all issues with title "Missing Doxygen Documentation"
+        ISSUES=$(curl -H "Authorization: token ${{ secrets.BOT_ACCESS_TOKEN }}" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/$GITHUB_REPOSITORY/issues?state=open | jq '.[] | select(.title=="Missing Doxygen Documentation") | .number')
+        # Close all issues with title "Missing Doxygen Documentation"
+        for ISSUE in $ISSUES; do
+          JSON_DATA='{
+            "title":"DEPRECATED : Missing Doxygen Documentation",
+            "state": "closed"
+          }'
+          curl -X PATCH \
+            -H "Authorization: token ${{ secrets.BOT_ACCESS_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$ISSUE \
+            -d "$JSON_DATA"
+        done
+
     - name: Check for missing documentation and create issue
       run: |
         if [ -e doxygen_warnings.log ]; then
