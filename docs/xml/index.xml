@@ -106,6 +106,7 @@
     <member refid="classspk_1_1Application_1ac16011e849fc515558153bc50f08bf01" kind="variable"><name>_windowModule</name></member>
     <member refid="classspk_1_1Application_1ac47ccfdf1a89119bd3714b3014b0a137" kind="variable"><name>_mouseModule</name></member>
     <member refid="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" kind="variable"><name>_keyboardModule</name></member>
+    <member refid="classspk_1_1Application_1a3851e579a021c5baeba3a07900a1cdbb" kind="variable"><name>_profilerModule</name></member>
     <member refid="classspk_1_1Application_1a22899d0e47e6615fb3760a7088fa5fbc" kind="variable"><name>_widgetModule</name></member>
     <member refid="classspk_1_1Application_1ae0d658551145a9946596a4f00b82637a" kind="variable"><name>_systemModule</name></member>
     <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
@@ -593,7 +594,7 @@
     <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" kind="variable"><name>_isPaused</name></member>
     <member refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kind="function"><name>PersistentWorker</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kind="function"><name>~PersistentWorker</name></member>
-    <member refid="classspk_1_1PersistentWorker_1a4795a279ac83e4da6b6789450ce83ee3" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" kind="function"><name>addJob</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kind="function"><name>isRunning</name></member>
     <member refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kind="function"><name>start</name></member>
     <member refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kind="function"><name>stop</name></member>
@@ -609,15 +610,33 @@
     <member refid="classspk_1_1Pool_1a64032a2a21f5cf73a4836178a347a73c" kind="function"><name>obtain</name></member>
     <member refid="classspk_1_1Pool_1ac584858b3175a8feb8cc778542e216c3" kind="function"><name>size</name></member>
   </compound>
-  <compound refid="classspk_1_1Debug_1_1Profiler" kind="class"><name>spk::Debug::Profiler</name>
-    <member refid="classspk_1_1Debug_1_1Profiler_1a149a25a512bb65bfb1a296b4ce69538b" kind="friend"><name>spk::Singleton&lt; Profiler &gt;</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1a801a340618de26bc70f22e309b2754b2" kind="variable"><name>_chronometers</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1af6ef6ef4bb023c14f49dd38e741460e3" kind="function"><name>Profiler</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1a04a4a5d26cf3a535b74ba659a0fe7cca" kind="function"><name>chronometer</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1a7232ad2a39fc3113ad248a149076e9c4" kind="function"><name>resetChronometer</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1af223d7eff676517b16d9c7dbd9e95f78" kind="function"><name>startChronometer</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1acec51d9c494defc9427c74646d90d1ae" kind="function"><name>resumeChronometer</name></member>
-    <member refid="classspk_1_1Debug_1_1Profiler_1a4a26a23d865b16059a7cb6f9dfddf054" kind="function"><name>stopChronometer</name></member>
+  <compound refid="classspk_1_1Profiler" kind="class"><name>spk::Profiler</name>
+    <member refid="classspk_1_1Profiler_1a149a25a512bb65bfb1a296b4ce69538b" kind="friend"><name>spk::Singleton&lt; Profiler &gt;</name></member>
+    <member refid="classspk_1_1Profiler_1ab4d0edd93a8934bd0c844fe4942791d2" kind="variable"><name>RENDER_IPS_COUNTER</name></member>
+    <member refid="classspk_1_1Profiler_1aff4f46bb299ee6b67ab77c19f7f7e07f" kind="variable"><name>UPDATE_IPS_COUNTER</name></member>
+    <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" kind="variable"><name>_chronometers</name></member>
+    <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" kind="variable"><name>_counters</name></member>
+    <member refid="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" kind="function"><name>Profiler</name></member>
+    <member refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" kind="function"><name>chronometer</name></member>
+    <member refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" kind="function"><name>resetChronometer</name></member>
+    <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kind="function"><name>startChronometer</name></member>
+    <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kind="function"><name>resumeChronometer</name></member>
+    <member refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" kind="function"><name>stopChronometer</name></member>
+    <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" kind="function"><name>increseCounter</name></member>
+    <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" kind="function"><name>setCounter</name></member>
+    <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" kind="function"><name>resetCounter</name></member>
+    <member refid="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" kind="function"><name>counter</name></member>
+  </compound>
+  <compound refid="classspk_1_1ProfilerModule" kind="class"><name>spk::ProfilerModule</name>
+    <member refid="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" kind="variable"><name>_oneSecondTime</name></member>
+    <member refid="classspk_1_1ProfilerModule_1a8f17ee288595b93ead41d51316abafcd" kind="variable"><name>_renderIPSCounter</name></member>
+    <member refid="classspk_1_1ProfilerModule_1a60de49994d5389400f2513da1a24dfcd" kind="variable"><name>_updateIPSCounter</name></member>
+    <member refid="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" kind="function"><name>_resetCounter</name></member>
+    <member refid="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" kind="function"><name>ProfilerModule</name></member>
+    <member refid="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" kind="function"><name>~ProfilerModule</name></member>
+    <member refid="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" kind="function"><name>increaseRenderIPS</name></member>
+    <member refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" kind="function"><name>increaseUpdateIPS</name></member>
   </compound>
   <compound refid="classspk_1_1Promise" kind="class"><name>spk::Promise</name>
     <member refid="classspk_1_1Promise_1ae2f938ba28a14eb34998925c73b0004d" kind="variable"><name>_callbackContainer</name></member>
@@ -865,8 +884,6 @@
     <member refid="spk__vector3_8hpp_1a4f95f63066ab643b13ad27871d3a0aca" kind="function"><name>operator*</name></member>
     <member refid="spk__vector3_8hpp_1abc9fb6d5f31677ea83f5e5d3d44c6ed2" kind="function"><name>operator/</name></member>
   </compound>
-  <compound refid="namespacespk_1_1Debug" kind="namespace"><name>spk::Debug</name>
-  </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
   <compound refid="linux_2spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
@@ -890,6 +907,8 @@
   <compound refid="spk__keyboard__module_8hpp" kind="file"><name>spk_keyboard_module.hpp</name>
   </compound>
   <compound refid="spk__mouse__module_8hpp" kind="file"><name>spk_mouse_module.hpp</name>
+  </compound>
+  <compound refid="spk__profiler__module_8hpp" kind="file"><name>spk_profiler_module.hpp</name>
   </compound>
   <compound refid="spk__system__module_8hpp" kind="file"><name>spk_system_module.hpp</name>
   </compound>

@@ -7,7 +7,7 @@ var searchData=
   ['child_43',['Child',['../classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b',1,'spk::InherenceObject']]],
   ['childrens_44',['childrens',['../classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f',1,'spk::InherenceObject::childrens() const'],['../classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80',1,'spk::InherenceObject::childrens()']]],
   ['chronometer_45',['Chronometer',['../classspk_1_1Chronometer.html#ab3ccc11a966c8fae2fda49672e6926e7',1,'spk::Chronometer']]],
-  ['chronometer_46',['chronometer',['../classspk_1_1Debug_1_1Profiler.html#a04a4a5d26cf3a535b74ba659a0fe7cca',1,'spk::Debug::Profiler']]],
+  ['chronometer_46',['chronometer',['../classspk_1_1Profiler.html#ac84ba5655d8d8c0cfddeca273d6eb0f2',1,'spk::Profiler']]],
   ['chronometer_47',['Chronometer',['../classspk_1_1Chronometer.html',1,'spk']]],
   ['clear_48',['clear',['../classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b',1,'spk::WindowModule::clear()'],['../classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b',1,'spk::WindowModule::clear()'],['../classspk_1_1DataBuffer.html#ad4eefec4799fb6b9d6251cca86ebfa04',1,'spk::DataBuffer::clear()'],['../classspk_1_1Window.html#a43fad77a06224e751ef80ab7d0093282',1,'spk::Window::clear()'],['../classspk_1_1Window.html#a43fad77a06224e751ef80ab7d0093282',1,'spk::Window::clear()'],['../classspk_1_1ThreadSafeQueue.html#a5d0f55c23e83d574e0e787249adb24f6',1,'spk::ThreadSafeQueue::clear()']]],
   ['complete_49',['Complete',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d',1,'spk::Activity']]],

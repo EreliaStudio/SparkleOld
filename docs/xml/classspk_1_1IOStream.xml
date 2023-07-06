@@ -18,11 +18,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="60" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="60" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="97" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>spk::IOStream::IOStream</definition>
         <argsstring>(std::wostream &amp;p_outputStream, std::wstring p_prefix=L&quot;&quot;)</argsstring>
@@ -61,9 +61,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="68" column="9"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="105" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="105" bodyend="108"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void spk::IOStream::setPrefix</definition>
         <argsstring>(const std::wstring &amp;p_prefix)</argsstring>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="74" column="14"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="114" column="14" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="114" bodyend="117"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -130,7 +130,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/iostream/spk_iostream.hpp" line="14" column="5" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="15" bodyend="75"/>
+    <location file="includes/iostream/spk_iostream.hpp" line="14" column="5" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="15" bodyend="118"/>
     <listofallmembers>
       <member refid="classspk_1_1IOStream_1a3b1675416bc263b85373bd3012d49ba2" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>buffer</name></member>
       <member refid="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>IOStream</name></member>

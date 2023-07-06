@@ -9,12 +9,14 @@
     <innerclass refid="classspk_1_1IMessageConsumerModule" prot="public">spk::IMessageConsumerModule</innerclass>
     <innerclass refid="classspk_1_1KeyboardModule" prot="public">spk::KeyboardModule</innerclass>
     <innerclass refid="classspk_1_1MouseModule" prot="public">spk::MouseModule</innerclass>
+    <innerclass refid="classspk_1_1ProfilerModule" prot="public">spk::ProfilerModule</innerclass>
     <innerclass refid="classspk_1_1SystemModule" prot="public">spk::SystemModule</innerclass>
     <innerclass refid="classspk_1_1TimeModule" prot="public">spk::TimeModule</innerclass>
     <innerclass refid="classspk_1_1WidgetModule" prot="public">spk::WidgetModule</innerclass>
     <innerclass refid="classspk_1_1AbstractApplication" prot="public">spk::AbstractApplication</innerclass>
     <innerclass refid="classspk_1_1DataBuffer" prot="public">spk::DataBuffer</innerclass>
     <innerclass refid="classspk_1_1Pool" prot="public">spk::Pool</innerclass>
+    <innerclass refid="classspk_1_1Profiler" prot="public">spk::Profiler</innerclass>
     <innerclass refid="classspk_1_1ActivableObject" prot="public">spk::ActivableObject</innerclass>
     <innerclass refid="classspk_1_1Activity" prot="public">spk::Activity</innerclass>
     <innerclass refid="classspk_1_1ActivityScheduler" prot="public">spk::ActivityScheduler</innerclass>
@@ -48,7 +50,6 @@
     <innerclass refid="classspk_1_1AbstractWidget" prot="public">spk::AbstractWidget</innerclass>
     <innerclass refid="classspk_1_1NoGraphicsWidget" prot="public">spk::NoGraphicsWidget</innerclass>
     <innerclass refid="classspk_1_1OnlyGraphicsWidget" prot="public">spk::OnlyGraphicsWidget</innerclass>
-    <innernamespace refid="namespacespk_1_1Debug">spk::Debug</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252" prot="public" static="no" strong="yes">
         <type></type>
@@ -186,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="78" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="78" declcolumn="39"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="121" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
       </memberdef>
       <memberdef kind="variable" id="spk__iostream_8hpp_1a179221b09b037229c2c215cb0e36f263" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
@@ -199,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="79" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="79" declcolumn="39"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="122" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -853,6 +854,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="11" column="1"/>
+    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="12" column="1"/>
   </compounddef>
 </doxygen>
