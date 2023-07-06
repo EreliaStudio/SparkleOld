@@ -112,10 +112,12 @@ namespace spk
 		return (result);
 	}
 
-	int positive_modulo(int i, int n)
+	int positive_modulo(int p_integer, int p_dividor)
 	{
-		int result = i % n;
-		return result >= 0 ? result : result + n;
+		int result = p_integer % p_dividor;
+		while (result < 0)
+			result += p_dividor;
+		return result;
 	}
 
 	std::vector<std::wstring> listFile(const std::wstring& p_path, const std::wstring& p_extension)
