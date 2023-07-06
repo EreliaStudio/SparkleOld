@@ -1,0 +1,70 @@
+\hypertarget{classspk_1_1ContextManager_1_1ReadOnlyAccessor}{}\doxysection{spk\+::Context\+Manager$<$ TContext\+Type $>$\+::Read\+Only\+Accessor Class Reference}
+\label{classspk_1_1ContextManager_1_1ReadOnlyAccessor}\index{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor@{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor}}
+
+
+This class provides static methods to access and swap the context object for read operations.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+context\+\_\+manager.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const TContext\+Type \& \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadOnlyAccessor_abf5a06f279dda5d46546e0a29077215b}{get}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the context object for read operations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_1_1ReadOnlyAccessor_ac33d6aae0b6548b5d6da7b7d89534a5a}\label{classspk_1_1ContextManager_1_1ReadOnlyAccessor_ac33d6aae0b6548b5d6da7b7d89534a5a}} 
+static bool {\bfseries swap\+Requested} ()
+\item 
+static void \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadOnlyAccessor_a1a305713f955eaebfc6e3546fa3a4421}{swap}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the context object used for read operations with an intermediary buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TContext\+Type$>$\newline
+class spk\+::\+Context\+Manager$<$ TContext\+Type $>$\+::\+Read\+Only\+Accessor}
+
+This class provides static methods to access and swap the context object for read operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ContextManager_1_1ReadOnlyAccessor_abf5a06f279dda5d46546e0a29077215b}\label{classspk_1_1ContextManager_1_1ReadOnlyAccessor_abf5a06f279dda5d46546e0a29077215b}} 
+\index{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor@{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor}!get@{get}}
+\index{get@{get}!spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor@{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+static const TContext\+Type\& \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::Read\+Only\+Accessor\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fetches the context object for read operations. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} singleton instance is not initialized. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A const reference to the read-\/only context object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ContextManager_1_1ReadOnlyAccessor_a1a305713f955eaebfc6e3546fa3a4421}\label{classspk_1_1ContextManager_1_1ReadOnlyAccessor_a1a305713f955eaebfc6e3546fa3a4421}} 
+\index{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor@{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor}!swap@{swap}}
+\index{swap@{swap}!spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor@{spk::ContextManager$<$ TContextType $>$::ReadOnlyAccessor}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+static void \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::Read\+Only\+Accessor\+::swap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Swaps the context object used for read operations with an intermediary buffer. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} singleton instance is not initialized. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+context\+\_\+manager.\+hpp\end{DoxyCompactItemize}

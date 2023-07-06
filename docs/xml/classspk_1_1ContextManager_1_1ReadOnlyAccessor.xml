@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kind="class" language="C++" prot="public">
+    <compoundname>spk::ContextManager::ReadOnlyAccessor</compoundname>
+    <includes refid="spk__context__manager_8hpp" local="no">spk_context_manager.hpp</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TContextType &amp;</type>
+        <definition>static const TContextType&amp; spk::ContextManager&lt; TContextType &gt;::ReadOnlyAccessor::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+<para>Fetches the context object for read operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> singleton instance is not initialized. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A const reference to the read-only context object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="65" column="27" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="65" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1ac33d6aae0b6548b5d6da7b7d89534a5a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool spk::ContextManager&lt; TContextType &gt;::ReadOnlyAccessor::swapRequested</definition>
+        <argsstring>()</argsstring>
+        <name>swapRequested</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="72" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void spk::ContextManager&lt; TContextType &gt;::ReadOnlyAccessor::swap</definition>
+        <argsstring>()</argsstring>
+        <name>swap</name>
+        <briefdescription>
+<para>Swaps the context object used for read operations with an intermediary buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> singleton instance is not initialized. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="82" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="82" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class provides static methods to access and swap the context object for read operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/spk_context_manager.hpp" line="57" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="58" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadOnlyAccessor</scope><name>get</name></member>
+      <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadOnlyAccessor</scope><name>swap</name></member>
+      <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1ac33d6aae0b6548b5d6da7b7d89534a5a" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadOnlyAccessor</scope><name>swapRequested</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

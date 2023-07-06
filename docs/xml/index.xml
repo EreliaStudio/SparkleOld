@@ -1,0 +1,1022 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="classspk_1_1AbstractApplication" kind="class"><name>spk::AbstractApplication</name>
+    <member refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kind="typedef"><name>Job</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a2b474ecf321b264b5f25606c3b581cc6" kind="variable"><name>_workers</name></member>
+    <member refid="classspk_1_1AbstractApplication_1ad423907e9bb9de745cad92f8b4fbc486" kind="variable"><name>_jobs</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a3fbe7a7840de39f2b07dad4e5ca682ae" kind="variable"><name>_errorCode</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a946e198c3c7bb48f614158b765db9f5d" kind="variable"><name>_isRunning</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a8bf373350bc5f46d625b44eb79e283fb" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" kind="function"><name>setupJobs</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" kind="function"><name>AbstractApplication</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" kind="function"><name>~AbstractApplication</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" kind="function"><name>run</name></member>
+    <member refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" kind="function"><name>quit</name></member>
+  </compound>
+  <compound refid="classspk_1_1AbstractModule" kind="class"><name>spk::AbstractModule</name>
+    <member refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classspk_1_1AbstractWidget" kind="class"><name>spk::AbstractWidget</name>
+    <member refid="classspk_1_1AbstractWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a3cde042101dcf9b6bda40477b7978b29" kind="variable"><name>_name</name></member>
+    <member refid="classspk_1_1AbstractWidget_1aa4e1b1af7f54966b38730ab1720c1377" kind="variable"><name>_geometryEdited</name></member>
+    <member refid="classspk_1_1AbstractWidget_1acb315df4191229bce9f08515a50f2537" kind="variable"><name>_depth</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a28c2bb54debb23f0268baee69fecffc1" kind="variable"><name>_anchor</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a98a4201cf756cb9bbf7f618ce11f38cb" kind="variable"><name>_size</name></member>
+    <member refid="classspk_1_1AbstractWidget_1aed54e08b3ec23bce19650a95d73259f1" kind="function"><name>_onRender</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a6f74b00cddb2bfe3d77128a64b08c77f" kind="function"><name>_onUpdate</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ae188852df6a62f89f77753ebd5ecbede" kind="function"><name>_onGeometryChange</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ae995fc29164c4a89befae3e0545a4d7e" kind="function"><name>_render</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ac8bd13b45e2b71d56c5fb4e910f78cdb" kind="function"><name>_update</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" kind="function"><name>AbstractWidget</name></member>
+    <member refid="classspk_1_1AbstractWidget_1acaf7b700c9f4f67341dc5156287ad271" kind="function"><name>~AbstractWidget</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kind="function"><name>addChildrenWidget</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" kind="function"><name>setGeometry</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" kind="function"><name>place</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" kind="function"><name>move</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a2059b3aeb3f7ca0290ed70c146a42298" kind="function"><name>resize</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" kind="function"><name>sortChildrensByDepth</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kind="function"><name>setDepth</name></member>
+    <member refid="classspk_1_1AbstractWidget_1af6762afb291b9fe0497fa8ac619ef0f7" kind="function"><name>rename</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" kind="function"><name>name</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" kind="function"><name>depth</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ad1fd1cbebefe93c23a9d1b7b00872a81" kind="function"><name>isPointed</name></member>
+  </compound>
+  <compound refid="classspk_1_1ActivableObject" kind="class"><name>spk::ActivableObject</name>
+    <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kind="function"><name>activate</name></member>
+    <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" kind="function"><name>deactivate</name></member>
+    <member refid="classspk_1_1ActivableObject_1a5627aa938cb1652e8c1aaa55c81da949" kind="function"><name>isActive</name></member>
+    <member refid="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" kind="function"><name>addActivationCallback</name></member>
+    <member refid="classspk_1_1ActivableObject_1a438560e081b7bf03ca5f601197d73d97" kind="function"><name>addDeactivationCallback</name></member>
+  </compound>
+  <compound refid="classspk_1_1Activity" kind="class"><name>spk::Activity</name>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kind="enum"><name>Status</name></member>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2" kind="enumvalue"><name>Stopped</name></member>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0" kind="enumvalue"><name>OnEnter</name></member>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09" kind="enumvalue"><name>Running</name></member>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144" kind="enumvalue"><name>OnExit</name></member>
+    <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d" kind="enumvalue"><name>Complete</name></member>
+    <member refid="classspk_1_1Activity_1a729b6b1b083afe92ee8846069341a458" kind="friend"><name>ActivityManager</name></member>
+    <member refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" kind="variable"><name>_internalWorkingState</name></member>
+    <member refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" kind="function"><name>_update</name></member>
+    <member refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" kind="function"><name>_moveNextStep</name></member>
+    <member refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" kind="function"><name>_moveNextStepAndExecute</name></member>
+    <member refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" kind="function"><name>_start</name></member>
+    <member refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" kind="function"><name>Activity</name></member>
+    <member refid="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" kind="function"><name>state</name></member>
+    <member refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" kind="function"><name>isCompleted</name></member>
+    <member refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" kind="function"><name>_onEnter</name></member>
+    <member refid="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" kind="function"><name>_execute</name></member>
+    <member refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" kind="function"><name>_onExit</name></member>
+  </compound>
+  <compound refid="classspk_1_1ActivityScheduler" kind="class"><name>spk::ActivityScheduler</name>
+    <member refid="classspk_1_1ActivityScheduler_1a1c86511688ba473e040138dbdf595497" kind="variable"><name>_activities</name></member>
+    <member refid="classspk_1_1ActivityScheduler_1ac3cb1398b125d743bef17982a0a7ccd7" kind="function"><name>ActivityScheduler</name></member>
+    <member refid="classspk_1_1ActivityScheduler_1a1467948112bbf2c38bbbaabac4a736ad" kind="function"><name>addActivity</name></member>
+    <member refid="classspk_1_1ActivityScheduler_1a5932655a97e9c53ef47d5752c63276eb" kind="function"><name>execute</name></member>
+  </compound>
+  <compound refid="classspk_1_1APIModule" kind="class"><name>spk::APIModule</name>
+    <member refid="classspk_1_1APIModule_1a81fa0635462c482f24ab5e612cc6edfe" kind="typedef"><name>MessagePool</name></member>
+    <member refid="classspk_1_1APIModule_1aa61cce469130a1dc56c05ff2f60819c8" kind="typedef"><name>MessagePoolInstance</name></member>
+    <member refid="classspk_1_1APIModule_1ae99a6525636c109d4e9d5fe9cbd9a5d3" kind="variable"><name>_windowQueue</name></member>
+    <member refid="classspk_1_1APIModule_1aff1f8b3e2589039d4e7f323d25068493" kind="variable"><name>_mouseQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a9f7d6309636ca30b2a664dbf8afa3d64" kind="variable"><name>_keyboardQueue</name></member>
+    <member refid="classspk_1_1APIModule_1ab89509e906333e9ca1e6567c9b284bc4" kind="variable"><name>_systemQueue</name></member>
+    <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" kind="function"><name>APIModule</name></member>
+    <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" kind="function"><name>~APIModule</name></member>
+    <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kind="function"><name>windowQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
+    <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" kind="function"><name>APIModule</name></member>
+    <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" kind="function"><name>~APIModule</name></member>
+    <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1APIModule_1a28b7825a839dddd7d90ccb960a50e809" kind="function"><name>systemQueue</name></member>
+    <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kind="function"><name>windowQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
+    <member refid="classspk_1_1APIModule_1ab56bdf778c28ce2158fde3f7000c8618" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1APIModule_1ab955c67006b25c8faaa9a21f2d6b1963" kind="function"><name>WindowProc</name></member>
+  </compound>
+  <compound refid="classspk_1_1Application" kind="class"><name>spk::Application</name>
+    <member refid="classspk_1_1Application_1aa4ed6a515b6ea4b9d3161bb6e3b2bba1" kind="variable"><name>_APIModule</name></member>
+    <member refid="classspk_1_1Application_1a3492e76a4727e73e10ef31624aac1349" kind="variable"><name>_timeModule</name></member>
+    <member refid="classspk_1_1Application_1ac16011e849fc515558153bc50f08bf01" kind="variable"><name>_windowModule</name></member>
+    <member refid="classspk_1_1Application_1ac47ccfdf1a89119bd3714b3014b0a137" kind="variable"><name>_mouseModule</name></member>
+    <member refid="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" kind="variable"><name>_keyboardModule</name></member>
+    <member refid="classspk_1_1Application_1a22899d0e47e6615fb3760a7088fa5fbc" kind="variable"><name>_widgetModule</name></member>
+    <member refid="classspk_1_1Application_1ae0d658551145a9946596a4f00b82637a" kind="variable"><name>_systemModule</name></member>
+    <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
+    <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
+    <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
+    <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
+    <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
+    <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
+    <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
+    <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
+    <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
+    <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
+  </compound>
+  <compound refid="classspk_1_1WidgetModule_1_1CentralWidget" kind="class"><name>spk::WidgetModule::CentralWidget</name>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a6c0376b096ccf4cc2a35b54058601f41" kind="function"><name>_onRender</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a66c015bd690191267d19e355c90272fc" kind="function"><name>_onUpdate</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1ad30940232ff0d69d415611b7c326d902" kind="function"><name>_onGeometryChange</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1ac9f062e912b234bcfcba672ee1066a47" kind="function"><name>CentralWidget</name></member>
+  </compound>
+  <compound refid="classspk_1_1Chronometer" kind="class"><name>spk::Chronometer</name>
+    <member refid="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" kind="variable"><name>UNINITIALIZED</name></member>
+    <member refid="classspk_1_1Chronometer_1a147be660da4ef95debe69791a2b9d5ff" kind="variable"><name>_start</name></member>
+    <member refid="classspk_1_1Chronometer_1a2f2d95f26035cac2146133082be08088" kind="variable"><name>_duration</name></member>
+    <member refid="classspk_1_1Chronometer_1ad2b3c3dd3b1b8a3557e0479fee5bd666" kind="variable"><name>_totalDuration</name></member>
+    <member refid="classspk_1_1Chronometer_1af15ee814ba341e93c299acf0ba73426a" kind="variable"><name>_isRunning</name></member>
+    <member refid="classspk_1_1Chronometer_1ab3ccc11a966c8fae2fda49672e6926e7" kind="function"><name>Chronometer</name></member>
+    <member refid="classspk_1_1Chronometer_1a36ee5132ae04063e8a172c7536f65f55" kind="function"><name>~Chronometer</name></member>
+    <member refid="classspk_1_1Chronometer_1a91a0407b2e45991c43636c367fb32839" kind="function"><name>reset</name></member>
+    <member refid="classspk_1_1Chronometer_1af8bcb635c7ebde03542f03ba524c3fac" kind="function"><name>start</name></member>
+    <member refid="classspk_1_1Chronometer_1addd90d2bffe6f22174d7a901795aa1ab" kind="function"><name>resume</name></member>
+    <member refid="classspk_1_1Chronometer_1acaa0be287be0a1ec7a3a19dd01d57c08" kind="function"><name>hasBeenStarted</name></member>
+    <member refid="classspk_1_1Chronometer_1af87e5503b7f9b80fb2f87151c4198ff5" kind="function"><name>isRunning</name></member>
+    <member refid="classspk_1_1Chronometer_1af485ed807d7772e0901e77b65902a79d" kind="function"><name>duration</name></member>
+    <member refid="classspk_1_1Chronometer_1a2a19c00ea8c6e9ba74134214c07b915f" kind="function"><name>stop</name></member>
+  </compound>
+  <compound refid="classspk_1_1ContextManager" kind="class"><name>spk::ContextManager</name>
+    <member refid="classspk_1_1ContextManager_1a81834cda6bc6791270f9728a373b6765" kind="friend"><name>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</name></member>
+    <member refid="classspk_1_1ContextManager_1a6de83fc5f0940935a2fa47d46f108a76" kind="friend"><name>ReadWriteAccessor</name></member>
+    <member refid="classspk_1_1ContextManager_1aff7ee4daa9545a0d20688e49f2163bc5" kind="friend"><name>ReadOnlyAccessor</name></member>
+    <member refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" kind="variable"><name>_bufferAccessMutex</name></member>
+    <member refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" kind="variable"><name>_readWriteContext</name></member>
+    <member refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" kind="variable"><name>_readOnlyContext</name></member>
+    <member refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" kind="variable"><name>_intermediaryBuffer</name></member>
+    <member refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kind="variable"><name>_isSwapRequested</name></member>
+    <member refid="classspk_1_1ContextManager_1a4a41caca5398f4a2a20dbdd6f40127e8" kind="function"><name>ContextManager</name></member>
+    <member refid="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" kind="function"><name>swapReadWriteContext</name></member>
+    <member refid="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" kind="function"><name>swapReadOnlyContext</name></member>
+    <member refid="classspk_1_1ContextManager_1aac749240603395f346c0b88056fb4b9b" kind="function"><name>ContextManager</name></member>
+    <member refid="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="classspk_1_1ContractProvider_1_1Contract" kind="class"><name>spk::ContractProvider::Contract</name>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" kind="friend"><name>ContractProvider</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a0d4e00a53d3a52654c702671dc05ed13" kind="variable"><name>_isOriginal</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" kind="variable"><name>_callbackOwner</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" kind="variable"><name>_callback</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a21bd746bcdfe818a05598f83bc338985" kind="function"><name>Contract</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" kind="function"><name>Contract</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" kind="function"><name>isOriginal</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" kind="function"><name>Contract</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" kind="function"><name>~Contract</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" kind="function"><name>edit</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" kind="function"><name>resign</name></member>
+  </compound>
+  <compound refid="classspk_1_1ContractProvider" kind="class"><name>spk::ContractProvider</name>
+    <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kind="typedef"><name>Callback</name></member>
+    <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kind="typedef"><name>CallbackContainer</name></member>
+    <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" kind="function"><name>subscribe</name></member>
+  </compound>
+  <compound refid="classspk_1_1DataBuffer" kind="class"><name>spk::DataBuffer</name>
+    <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" kind="variable"><name>_data</name></member>
+    <member refid="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" kind="variable"><name>_bookmark</name></member>
+    <member refid="classspk_1_1DataBuffer_1a716866b679b1a1b6d7046a5bb65347ec" kind="function"><name>DataBuffer</name></member>
+    <member refid="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" kind="function"><name>size</name></member>
+    <member refid="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" kind="function"><name>bookmark</name></member>
+    <member refid="classspk_1_1DataBuffer_1aa7f1ec65d939c18bacbc61abe59e1064" kind="function"><name>leftover</name></member>
+    <member refid="classspk_1_1DataBuffer_1a95a4f828b5314bfefd2cbff9bd31e42e" kind="function"><name>empty</name></member>
+    <member refid="classspk_1_1DataBuffer_1adf468b222ec2331008c51c4e9ae7a35a" kind="function"><name>skip</name></member>
+    <member refid="classspk_1_1DataBuffer_1ad4eefec4799fb6b9d6251cca86ebfa04" kind="function"><name>clear</name></member>
+    <member refid="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" kind="function"><name>reset</name></member>
+    <member refid="classspk_1_1DataBuffer_1a62775fb5a5cc3ef25dd87d41976b978f" kind="function"><name>get</name></member>
+    <member refid="classspk_1_1DataBuffer_1ac90c23dd9a031995ecb8f28ded1251b7" kind="function"><name>edit</name></member>
+    <member refid="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" kind="function"><name>operator&gt;&gt;</name></member>
+  </compound>
+  <compound refid="classspk_1_1Value_1_1Default" kind="class"><name>spk::Value::Default</name>
+    <member refid="classspk_1_1Value_1_1Default_1aeceedf6e1a7d48a588516ce2b1983d6f" kind="friend"><name>Value</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1adfe1684a0c57faca907173774444105c" kind="variable"><name>_value</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1abde58d87ef887aa46a2ba06d11a1dcac" kind="variable"><name>_subscribers</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1ae998f457d7a9414b90877e287d654230" kind="function"><name>subscribe</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1a749716cd84297d53b63e869be868bb2a" kind="function"><name>unsubscribe</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1aa69e53a6972acf628761d20829caf8d2" kind="function"><name>_triggerSubscriberEditionCallbacks</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1ae9e4ae3a30832d143345ad35119e7528" kind="function"><name>Default</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1af08f2b7dccddde18f955ae8b7aebf64a" kind="function"><name>Default</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1a4b7002959d78f07b0ed64795cecfef68" kind="function"><name>~Default</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1a76f914d497757411cff7499ec53ba41d" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1a74711a987126d215a51581db6ee99679" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Value_1_1Default_1a17ae54c173cf86cf18bfb4881c0d2282" kind="function"><name>operator const TType &amp;</name></member>
+  </compound>
+  <compound refid="classspk_1_1IMessageConsumerModule" kind="class"><name>spk::IMessageConsumerModule</name>
+    <member refid="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" kind="variable"><name>_queue</name></member>
+    <member refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" kind="function"><name>IMessageConsumerModule</name></member>
+    <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classspk_1_1InherenceObject" kind="class"><name>spk::InherenceObject</name>
+    <member refid="classspk_1_1InherenceObject_1ae763115e2689b399d1faaaf88309bb5d" kind="typedef"><name>Parent</name></member>
+    <member refid="classspk_1_1InherenceObject_1afaae937647084cc67220a3f3d3812f97" kind="typedef"><name>Child</name></member>
+    <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" kind="typedef"><name>Callback</name></member>
+    <member refid="classspk_1_1InherenceObject_1a6975f43b8f3ab8fcdcf0f505db85863f" kind="variable"><name>_parent</name></member>
+    <member refid="classspk_1_1InherenceObject_1a3489f0743f00ba4e73125438481e2465" kind="variable"><name>_childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1a2fa85058c172a9faa23e6afa7775302c" kind="variable"><name>_birthCallback</name></member>
+    <member refid="classspk_1_1InherenceObject_1a90c2e59f44bebc4efd849335727d4aec" kind="variable"><name>_deathCallback</name></member>
+    <member refid="classspk_1_1InherenceObject_1a52ceead92be579647091ed4ba6f1adbb" kind="function"><name>_addChild</name></member>
+    <member refid="classspk_1_1InherenceObject_1a1320bd303255e8110363d3b3223520a6" kind="function"><name>_removeChild</name></member>
+    <member refid="classspk_1_1InherenceObject_1ab17ef56656c9b33064cec33d44d4c7b7" kind="function"><name>InherenceObject</name></member>
+    <member refid="classspk_1_1InherenceObject_1aba5546b2d9a7407fc3aa2cca0461cb7a" kind="function"><name>~InherenceObject</name></member>
+    <member refid="classspk_1_1InherenceObject_1ae5c803c43a3eeb83383e4a95245f765e" kind="function"><name>setParent</name></member>
+    <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" kind="function"><name>addChild</name></member>
+    <member refid="classspk_1_1InherenceObject_1a4d1ecc043e2414e9731195021d28a77e" kind="function"><name>setBirthCallback</name></member>
+    <member refid="classspk_1_1InherenceObject_1a69d05c5f0a43a7b58ad4e08a9790f23a" kind="function"><name>setDeathCallback</name></member>
+    <member refid="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" kind="function"><name>parent</name></member>
+    <member refid="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" kind="function"><name>childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" kind="function"><name>childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" kind="function"><name>InherenceObject</name></member>
+    <member refid="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="classspk_1_1IOStream_1_1IOBuffer" kind="class"><name>spk::IOStream::IOBuffer</name>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a294060a780954e8844b8bd4fdb0cf6f8" kind="variable"><name>_mutex</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a515c3156a5e6c7b7a019b1877bc597e8" kind="variable"><name>_maximumPrefixSize</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a002ea1984bdbe318347b2d2d7848d617" kind="variable"><name>_prefix</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a80e1db0093b437cff770b27db52958b9" kind="variable"><name>_outputStream</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1ac50fc088c75016059e67ae88c41601d6" kind="function"><name>IOBuffer</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a54b6d213b6f5a6ae3060fb58a4f83344" kind="function"><name>~IOBuffer</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1aa126798cb333b4cf886106e4b527ccd5" kind="function"><name>sync</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1a9b060ff7cb655f317ebce52b70cd773e" kind="function"><name>flush</name></member>
+    <member refid="classspk_1_1IOStream_1_1IOBuffer_1ac48a78c41db01d44c29eba848a981170" kind="function"><name>setPrefix</name></member>
+  </compound>
+  <compound refid="classspk_1_1IOStream" kind="class"><name>spk::IOStream</name>
+    <member refid="classspk_1_1IOStream_1a3b1675416bc263b85373bd3012d49ba2" kind="variable"><name>buffer</name></member>
+    <member refid="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" kind="function"><name>IOStream</name></member>
+    <member refid="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" kind="function"><name>setPrefix</name></member>
+  </compound>
+  <compound refid="structspk_1_1IsContainer" kind="struct"><name>spk::IsContainer</name>
+  </compound>
+  <compound refid="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724" kind="struct"><name>spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</name>
+  </compound>
+  <compound refid="structspk_1_1IVector2" kind="struct"><name>spk::IVector2</name>
+    <member refid="structspk_1_1IVector2_1a7aef6e160a85e33668c18c5e743127ef" kind="variable"><name>x</name></member>
+    <member refid="structspk_1_1IVector2_1aefc7c3164247217231e53c0b75e21e3b" kind="variable"><name>y</name></member>
+    <member refid="structspk_1_1IVector2_1ad681cb3d88fd9a4ca1e60c3c44e600b6" kind="function"><name>IVector2</name></member>
+    <member refid="structspk_1_1IVector2_1ae197d470bdc2579bd6434f1d23e569bc" kind="function"><name>IVector2</name></member>
+    <member refid="structspk_1_1IVector2_1a3199f7709d8d15633920c7602b1c1e55" kind="function"><name>IVector2</name></member>
+    <member refid="structspk_1_1IVector2_1a4960cc3b4ade5cfd48cd0b78281d179a" kind="function"><name>operator IVector2&lt; TOtherType &gt;</name></member>
+    <member refid="structspk_1_1IVector2_1a9d6df11d0dea89825de285227208b4e8" kind="function"><name>operator+</name></member>
+    <member refid="structspk_1_1IVector2_1a93181e2a39090202e764fe87e5a6d1c5" kind="function"><name>operator-</name></member>
+    <member refid="structspk_1_1IVector2_1a409c7ef14a15f0e7bee9e781ea3f029c" kind="function"><name>operator*</name></member>
+    <member refid="structspk_1_1IVector2_1a7d8fac9e93e024514717ef2594724aec" kind="function"><name>operator/</name></member>
+    <member refid="structspk_1_1IVector2_1a46f20fbffbe8c392bf857f84f6175c33" kind="function"><name>operator+=</name></member>
+    <member refid="structspk_1_1IVector2_1a96c33ee627ed1700aff6627261a074ac" kind="function"><name>operator-=</name></member>
+    <member refid="structspk_1_1IVector2_1a0609e1b115b35f3293a19e9f1b3aa91c" kind="function"><name>operator*=</name></member>
+    <member refid="structspk_1_1IVector2_1a8158dcf13f51999650b00e83c36be525" kind="function"><name>operator/=</name></member>
+    <member refid="structspk_1_1IVector2_1a19a45be30c1cb18600add47dddd15ce1" kind="function"><name>operator==</name></member>
+    <member refid="structspk_1_1IVector2_1a8a7d7e368595e4a4db1580995d7df6f6" kind="function"><name>operator!=</name></member>
+    <member refid="structspk_1_1IVector2_1a50ee09f391a89938f95501f6f830818d" kind="function"><name>operator&lt;</name></member>
+    <member refid="structspk_1_1IVector2_1ab1b6a3babc24fbb384fde2327590f4ef" kind="function"><name>operator&gt;</name></member>
+    <member refid="structspk_1_1IVector2_1ae1604ed3d5d9945e9183396dc976d906" kind="function"><name>operator&lt;=</name></member>
+    <member refid="structspk_1_1IVector2_1acd97e47a3bfd966a412f9520c98748d1" kind="function"><name>operator&gt;=</name></member>
+    <member refid="structspk_1_1IVector2_1aa0d0c755988c4ce9ec8e86e1744d997e" kind="function"><name>norm</name></member>
+    <member refid="structspk_1_1IVector2_1abf3cb20ecff4c986f8a7d602e89623a2" kind="function"><name>distance</name></member>
+    <member refid="structspk_1_1IVector2_1a6bc80581ee0fb7ce5f10b751b85fa0cb" kind="function"><name>normalize</name></member>
+    <member refid="structspk_1_1IVector2_1a4d5cc1aceeca9b90fcecf6d6fe49520d" kind="function"><name>cross</name></member>
+    <member refid="structspk_1_1IVector2_1a6ab6d332aa26f3da116169b39014f113" kind="function"><name>crossZ</name></member>
+    <member refid="structspk_1_1IVector2_1a5b615184fb3c906955819e01958102bc" kind="function"><name>dot</name></member>
+    <member refid="structspk_1_1IVector2_1a4c3925ad849ad4d9b1bdba9a8c0d879c" kind="function"><name>angle</name></member>
+    <member refid="structspk_1_1IVector2_1a94bb60fe03d90225da1337147ac4bb72" kind="function"><name>invert</name></member>
+    <member refid="structspk_1_1IVector2_1a2a657d838bdfcbb18dd0309977d34d5b" kind="function"><name>rotate</name></member>
+    <member refid="structspk_1_1IVector2_1a0ad00eba4b802fae1acede9ef72d21bd" kind="friend"><name>operator&lt;&lt;</name></member>
+    <member refid="structspk_1_1IVector2_1af58b4937f57ec150690b653144e627f2" kind="function"><name>floor</name></member>
+    <member refid="structspk_1_1IVector2_1ac22c9a8609ce9b7f2215eff7c120ed0c" kind="function"><name>ceiling</name></member>
+    <member refid="structspk_1_1IVector2_1a173f7d72b11d82a87db01e6a6dfe625e" kind="function"><name>round</name></member>
+    <member refid="structspk_1_1IVector2_1ae64ebb9cf02e5bbf329ea31d35e29841" kind="function"><name>min</name></member>
+    <member refid="structspk_1_1IVector2_1a452209253a7a42351fc09951297f7d4d" kind="function"><name>max</name></member>
+    <member refid="structspk_1_1IVector2_1a34fd8293e2ff4b4bfa398dd70d158081" kind="function"><name>isInsideRectangle</name></member>
+    <member refid="structspk_1_1IVector2_1ae564274f20ad50bb14dc2d34806cdec4" kind="function"><name>lerp</name></member>
+  </compound>
+  <compound refid="structspk_1_1IVector3" kind="struct"><name>spk::IVector3</name>
+    <member refid="structspk_1_1IVector3_1a147778b8b9736f2edb095d0102d48d43" kind="variable"><name>x</name></member>
+    <member refid="structspk_1_1IVector3_1a922affa5716cbf8401a21f7602035596" kind="variable"><name>y</name></member>
+    <member refid="structspk_1_1IVector3_1a8254baecf03b5c984a6e25d7a51c095b" kind="variable"><name>z</name></member>
+    <member refid="structspk_1_1IVector3_1a1a30fd5ff259b409a088fa58a6249bc5" kind="function"><name>IVector3</name></member>
+    <member refid="structspk_1_1IVector3_1a6ee20387125930a1693734f905a9b7cb" kind="function"><name>IVector3</name></member>
+    <member refid="structspk_1_1IVector3_1a55a45e32063ccd893f360c9307114302" kind="function"><name>IVector3</name></member>
+    <member refid="structspk_1_1IVector3_1a230e86429a49bc1be347432b21421ac5" kind="function"><name>IVector3</name></member>
+    <member refid="structspk_1_1IVector3_1afb963e6bca429adf9fc5d35f9580cc33" kind="function"><name>IVector3</name></member>
+    <member refid="structspk_1_1IVector3_1a9cbbe780419af56f540e41d1030c78dd" kind="function"><name>operator IVector3&lt; TOtherType &gt;</name></member>
+    <member refid="structspk_1_1IVector3_1a09d2efd6d44b16c57695701070ae5db9" kind="function"><name>operator+</name></member>
+    <member refid="structspk_1_1IVector3_1a2f4474b57b5d0be6013cf80bc2a8e9f5" kind="function"><name>operator-</name></member>
+    <member refid="structspk_1_1IVector3_1acea21497ee4afc37edb45f1c5fb4330f" kind="function"><name>operator*</name></member>
+    <member refid="structspk_1_1IVector3_1a5958dbf2a7086a6733745fb9337f5ae3" kind="function"><name>operator/</name></member>
+    <member refid="structspk_1_1IVector3_1a6c440077f89aaf8a2b0e4943aefd4fa1" kind="function"><name>operator+=</name></member>
+    <member refid="structspk_1_1IVector3_1afc705eb2813c71fe343fb59ddb363142" kind="function"><name>operator-=</name></member>
+    <member refid="structspk_1_1IVector3_1a554c4b94a4eff189e05f7fa81a8de409" kind="function"><name>operator*=</name></member>
+    <member refid="structspk_1_1IVector3_1a0ceb51dfd0ac6ab36b5cb106e20ccc6a" kind="function"><name>operator/=</name></member>
+    <member refid="structspk_1_1IVector3_1aebd6cca762ca14ae011d342d8fbeecc6" kind="function"><name>operator==</name></member>
+    <member refid="structspk_1_1IVector3_1a5fe52f8e10e8cc546dbbff5bc4289fb6" kind="function"><name>operator!=</name></member>
+    <member refid="structspk_1_1IVector3_1ad24172f419e35774c2dc4c05f516a847" kind="function"><name>operator&lt;</name></member>
+    <member refid="structspk_1_1IVector3_1a3be7770d32242fb00b3b9e85426e2bc7" kind="function"><name>operator&gt;</name></member>
+    <member refid="structspk_1_1IVector3_1a8cd7c15e740a43489015a93e1022b687" kind="function"><name>operator&lt;=</name></member>
+    <member refid="structspk_1_1IVector3_1a22b3d1a0b921bff3b49aa10f502edcb7" kind="function"><name>operator&gt;=</name></member>
+    <member refid="structspk_1_1IVector3_1ab2e76c70db3725b0e2967d9c1af8656b" kind="function"><name>operator==</name></member>
+    <member refid="structspk_1_1IVector3_1aca11448f8edf66f5fd8f66f9c09b0fcb" kind="function"><name>operator!=</name></member>
+    <member refid="structspk_1_1IVector3_1a2e1a2f432f1d362c3ce713f2af74cede" kind="function"><name>operator&lt;</name></member>
+    <member refid="structspk_1_1IVector3_1a9b078bc76396aa0becb3f3cc2dc6f9a9" kind="function"><name>operator&gt;</name></member>
+    <member refid="structspk_1_1IVector3_1a81fac36a3b094b293fd453b54651eec7" kind="function"><name>operator&lt;=</name></member>
+    <member refid="structspk_1_1IVector3_1af1685e556c8e3f5e60c02c55f510c2ed" kind="function"><name>operator&gt;=</name></member>
+    <member refid="structspk_1_1IVector3_1a86a9339333a4f6a291aaa0bdf0325b32" kind="function"><name>distance</name></member>
+    <member refid="structspk_1_1IVector3_1a0f8393536cd9515d379fdb5cfa51ce42" kind="function"><name>norm</name></member>
+    <member refid="structspk_1_1IVector3_1abea37a463a1e88283763e39ff9910d37" kind="function"><name>normalize</name></member>
+    <member refid="structspk_1_1IVector3_1acf05bfc43602c284334e8370891e5bb3" kind="function"><name>cross</name></member>
+    <member refid="structspk_1_1IVector3_1a7cb46bc29df99ee08112e5a36505f6f0" kind="function"><name>rotate</name></member>
+    <member refid="structspk_1_1IVector3_1a04baff13ac8b38a5894f6112a80f2fb0" kind="function"><name>dot</name></member>
+    <member refid="structspk_1_1IVector3_1a3ceddf09cfa2ab16f110ea9bc9ef9a7f" kind="function"><name>projectOnPlane</name></member>
+    <member refid="structspk_1_1IVector3_1a7e71f826fbe3aad2b33b9034457903d2" kind="function"><name>removeY</name></member>
+    <member refid="structspk_1_1IVector3_1a37472b6249c183eb47f89827849a72d8" kind="function"><name>inverse</name></member>
+    <member refid="structspk_1_1IVector3_1adbaa8edc68de98abb2a91641c55f1377" kind="friend"><name>operator&lt;&lt;</name></member>
+    <member refid="structspk_1_1IVector3_1a45af1e00c534412f63cbb6c8cc58ae80" kind="function"><name>lerp</name></member>
+  </compound>
+  <compound refid="classspk_1_1Keyboard" kind="class"><name>spk::Keyboard</name>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kind="enum"><name>Key</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a77be39d6726b9de74857828ffe9f94d5" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a476c6a471af858aa5175137ec01b42c5" kind="enumvalue"><name>Backspace</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37aa7602c5731c701d3a1167831342de" kind="enumvalue"><name>Tab</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a60825f9792eb1a06dd5ef09904dc6983" kind="enumvalue"><name>Clear</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3c52352c2241dcdd97277b140370c129" kind="enumvalue"><name>Return</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a74e3cfc422c3a81027a53e898e4e856b" kind="enumvalue"><name>Pause</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8dbb85940920958a5294de98395de80c" kind="enumvalue"><name>Capslock</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a172a42519b15ee5d4d47d944af63e2e4" kind="enumvalue"><name>Escape</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abea4f3e4c08c051bb920edb827556765" kind="enumvalue"><name>Convert</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7b63523d3656c84643b298210604c360" kind="enumvalue"><name>Non_convert</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0a10e5862401d0fdb81ec5e4fd680cb0" kind="enumvalue"><name>Accept</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af52d75f2cfaaeca2ac14a36f8fc683db" kind="enumvalue"><name>Mode_change</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa52041e7ffd1e7ffd118a7334d2d4ee4" kind="enumvalue"><name>Space</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f6c8e2dab7e117e318f3ea53e4e18ce" kind="enumvalue"><name>Prior</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a741da3efb5abd0bee4f4a24bc1d41ff1" kind="enumvalue"><name>Next</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af610646425a253372bc2d4b000160aca" kind="enumvalue"><name>End</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a231caf832d628e2f987f58c0ea116601" kind="enumvalue"><name>Home</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf6c7498436f92e7425c26e0b1a00435" kind="enumvalue"><name>LeftArrow</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50d558dfe66c8b52acbf986073895cac" kind="enumvalue"><name>UpArrow</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad1bb18f7edfd178236092056c4e17b4" kind="enumvalue"><name>RightArrow</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37fd17c50d7bfc3f6e02cb6044d8f7c1" kind="enumvalue"><name>DownArrow</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ad252c29eca11dad2e62b6823d64b7b" kind="enumvalue"><name>Select</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a795a3bd302fe4954f53ae3da93580483" kind="enumvalue"><name>Print</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a584a2c553ca5b761cb21d5e0876c58dc" kind="enumvalue"><name>Execute</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac20f5a01417c62c8c65ef3756a3be4ce" kind="enumvalue"><name>Snapshot</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4151e84f212730f0e0c5409dc8d016f1" kind="enumvalue"><name>Insert</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4f06d361bc8340cf24ab62c05825d940" kind="enumvalue"><name>Delete</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a03f915e6b80808a527ec6dd42a14c7de" kind="enumvalue"><name>Help</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a332be8667d5692d79d76b727fabfde34" kind="enumvalue"><name>Key0</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa6fb4519fbbac3300496345200d4cb20" kind="enumvalue"><name>Key1</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a322e29144cdffeceb6d2218d8d5a75df" kind="enumvalue"><name>Key2</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab2d29655b6e06a516a8c47078c36f154" kind="enumvalue"><name>Key3</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a87a86ba5917fc6f6f073fe5ba89de1f0" kind="enumvalue"><name>Key4</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4c3eb44a701f06d06fcf1399c460f455" kind="enumvalue"><name>Key5</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aaef9d8410c286d1540ab6146315a43ea" kind="enumvalue"><name>Key6</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aed74195a1e4084854567e9a0b237ce76" kind="enumvalue"><name>Key7</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a592e0b0f8829049306709656d054314d" kind="enumvalue"><name>Key8</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab510516d1dbaef62db4dfdf99861e939" kind="enumvalue"><name>Key9</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a75dd3fbf0ceee53da03336f703b57b63" kind="enumvalue"><name>A</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac5ad27bac90ec07e4b3d481e9b3aa685" kind="enumvalue"><name>B</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adc6a88cacee1b1bb25d1e583e1abd6f2" kind="enumvalue"><name>C</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a91098376c650d5caf5138868a4e7bd17" kind="enumvalue"><name>D</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad9691134e06658c55171a0b263830588" kind="enumvalue"><name>E</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac7f4406c18e758ba285ab5fec55beaf3" kind="enumvalue"><name>F</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aeca955954ecba026baa3469529cbdd33" kind="enumvalue"><name>G</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf2c68c09ccd8bc90e4d8f7d2d4479a2" kind="enumvalue"><name>H</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5dbdd2580dc4db4c65c2e516506a8d7d" kind="enumvalue"><name>I</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae4a882d4308da143e8777cb4343e4ecf" kind="enumvalue"><name>J</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8e6ddc32f328356d644b2d6f275f99fb" kind="enumvalue"><name>K</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27db3b4fef2a80cd6b85239025d3172" kind="enumvalue"><name>L</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a16714fa7e96cb8e568d582934bfd9182" kind="enumvalue"><name>M</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a251843a4cba6f54e08597317b6909531" kind="enumvalue"><name>N</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a65e386f6a72209d7f02d2c61ffb913cf" kind="enumvalue"><name>O</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1deeff815ce41703e70f16911d12651" kind="enumvalue"><name>P</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2d3218080a792acb279fdbe511d7bbf0" kind="enumvalue"><name>Q</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adf6b666a3304a45e68522d431c0a248c" kind="enumvalue"><name>R</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a658710a0930ca937fadc48e1bf284088" kind="enumvalue"><name>S</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a10df537d5fd17f073e365ea3f40e554e" kind="enumvalue"><name>T</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa2c0cf73f7437708f0b27f1f1b439232" kind="enumvalue"><name>U</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a17f599cca785501ab96b71a3066b22ee" kind="enumvalue"><name>V</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7ff4dd7fcc80f280ec31e3fc9e6d4a1b" kind="enumvalue"><name>W</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a39543f46a596603a76af2db9024b6717" kind="enumvalue"><name>X</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4e0db1fd591485d98013858884c5b1f9" kind="enumvalue"><name>Y</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac940ba18cbf7cdf271bbf1783381bd48" kind="enumvalue"><name>Z</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a46bc390abd4e94c8963b17e829bb38c4" kind="enumvalue"><name>LeftWindows</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2772d025f8fcbd36b33e53d9c06bbb05" kind="enumvalue"><name>RightWindows</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a160fd946f7275326a2da3b7df929dbe2" kind="enumvalue"><name>App</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad7b94cc9c05967e9791139bf1f929fb" kind="enumvalue"><name>Sleep</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a63543d0572138cbed88a36d4b8153c49" kind="enumvalue"><name>Numpad0</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a08c61b7359b714dd2453018b136d9b9c" kind="enumvalue"><name>Numpad1</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae883ed8dfa350d77911d50b7fc094ad4" kind="enumvalue"><name>Numpad2</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adbcd1bf00b31ec55ddeae4f538276bcf" kind="enumvalue"><name>Numpad3</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3175c96c226faaaf8934bdab2918c531" kind="enumvalue"><name>Numpad4</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af56e95a9e99961b53f1c42e0b335a2e8" kind="enumvalue"><name>Numpad5</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a68f843e2ed25ab2be3dfe9d28883863d" kind="enumvalue"><name>Numpad6</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a586297ec0b6d7104e09fecf67ec391eb" kind="enumvalue"><name>Numpad7</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45b16416c1197bebc5131063040f5027" kind="enumvalue"><name>Numpad8</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2a9de03820ead5858f1ca235d1bc3ff6" kind="enumvalue"><name>Numpad9</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a30fa38dfa3145272422dff0725150bef" kind="enumvalue"><name>NumpadMultiply</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af64227b94e3e9b8c156aa2dd63d002c7" kind="enumvalue"><name>NumpadPlus</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a33242dd990b1ca3e8fa9b6d8403abce6" kind="enumvalue"><name>NumpadMinus</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9b83ceb0ca5304a2d5e6036683378f4b" kind="enumvalue"><name>NumpadDivide</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a52d90de467035dfa507d86d5236cdacb" kind="enumvalue"><name>NumpadSeparator</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50afc72c1bc75d5312a081f64e240575" kind="enumvalue"><name>NumpadDecimal</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae8a105d6cd9eab1e9d4ce2c7e038291a" kind="enumvalue"><name>NumpadReturn</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1685ac94f86c798268e49561dded830" kind="enumvalue"><name>NumLock</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2674fae9d1fb9a8f4fc860fb153053e0" kind="enumvalue"><name>F1</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9e4b61a70035730b6fadc364fe6931ae" kind="enumvalue"><name>F2</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0d9f893d97687393ff7d22709b90deb6" kind="enumvalue"><name>F3</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aca3f9894dfef9aaa9c02996eb66be45a" kind="enumvalue"><name>F4</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0788be2b47107b7e792e63a55efd109c" kind="enumvalue"><name>F5</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45e5ea5b1e299888220c653ee0cc58dc" kind="enumvalue"><name>F6</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1c5725e84243c852b5051c9b9e6c956e" kind="enumvalue"><name>F7</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27c7d1c2c519af0daedc047f18c76aa" kind="enumvalue"><name>F8</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a44ba85394c1cf1e565efc3e3986aa798" kind="enumvalue"><name>F9</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a70b921f3b935433e146deae2c6fac4e8" kind="enumvalue"><name>F10</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a365c1b7560e46453f3550c846c51adc4" kind="enumvalue"><name>F11</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad39aa6cbfe52a134985f68bc670e94bd" kind="enumvalue"><name>F12</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7e8ebcd9c1d8b8707711a80edc179e91" kind="enumvalue"><name>F13</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9104a2f74386ff32b284287900097809" kind="enumvalue"><name>F14</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a502df5ab77fbb10155b2b501219057f6" kind="enumvalue"><name>F15</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afe876d6d8a2e91c054a64a48d65f0971" kind="enumvalue"><name>F16</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae2e7d1a7a30d51f162512327b047b43c" kind="enumvalue"><name>F17</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abed9c3dd256d5c3a5ab4d53ebe5f7460" kind="enumvalue"><name>F18</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acddd3600c3a2520f9614b311a5c52bb1" kind="enumvalue"><name>F19</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aae50bd634e89e6661f7d6058585ee7e8" kind="enumvalue"><name>F20</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a31706c3d4b919540e63efdf122e65fb7" kind="enumvalue"><name>F21</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6c70f1c77c1203780e1c3a06d1e22534" kind="enumvalue"><name>F22</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a99123f18d07d0a7852bbfb5bcbc68a38" kind="enumvalue"><name>F23</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4565dc5e1347d48432024ff443fb9303" kind="enumvalue"><name>F24</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1978f73e8522f86025fafe18851023ca" kind="enumvalue"><name>Scroll</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab35b9cb2b27530bb6c50baee5d4e4b3f" kind="enumvalue"><name>Shift</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a261bfaba349db7202686f6cf16d224cc" kind="enumvalue"><name>LeftShift</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a089331c6b7bc38c0cb969fb0215175be" kind="enumvalue"><name>RightShift</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abfa15dded09bb6fc27127ae99becb32c" kind="enumvalue"><name>Control</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa13d089d3352220c9fa6f6b6d78634b3" kind="enumvalue"><name>LeftControl</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a364905543ad0e39567a74247326afe86" kind="enumvalue"><name>RightControl</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6b3d22f16cd05587ecb813386b6ea3ee" kind="enumvalue"><name>Alt</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad3b6c0b30f7b71d023cd37bb3e6d397d" kind="enumvalue"><name>LeftAlt</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ace00f2e1d0f87d19bb14632bfd939570" kind="enumvalue"><name>RightAlt</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae1fe733084bed06abfca1b88f924ee4a" kind="enumvalue"><name>Menu</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8b3e09e4168864bc6c7dbc652453b892" kind="enumvalue"><name>LeftMenu</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac403a54602b7ff052ec7dcd67e264a17" kind="enumvalue"><name>RightMenu</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab5f9c17b938b1f8bdf1c4a8378a75b72" kind="enumvalue"><name>Plus</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5b3c711aa8b92b34b26940ab2632b526" kind="enumvalue"><name>Minus</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac8a8bfe64fc9077dfd89dcd4f15bd3b8" kind="enumvalue"><name>Equal</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ddff8cb43f187639bedbcb813e42429" kind="enumvalue"><name>Comma</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f3e0c26c2a46ddb3df3d7b2180b0d65" kind="enumvalue"><name>Period</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f7369f3df1ed8dafa125411904ac1c4" kind="enumvalue"><name>SemiColon</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af46c7059f34b86f4f2cf31a66fa86666" kind="enumvalue"><name>QuestionMark</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a22d4f353b2f5da5b3ba002cfd97c472f" kind="enumvalue"><name>Tilde</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4b23332547a3c038554a3b64b39738b8" kind="enumvalue"><name>LeftBracket</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f0f4a7294c5ae6a15a67dced93a11c3" kind="enumvalue"><name>RightBracket</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7027b3dbe83411f53957d6181f196a92" kind="enumvalue"><name>VerticalLine</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae74b05503b4d879c20c21bea549b849b" kind="enumvalue"><name>Quote</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7722fa0c9bbfe9f590aa9aff5d229b24" kind="enumvalue"><name>Unknow</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afaa86b11a8f040e1516abb84b66a2f35" kind="enumvalue"><name>AngleBracket</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4176a84671c1e8d17fda81f177630f39" kind="enumvalue"><name>Process</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af67e8476253e915ef122dfe1f095bb97" kind="enumvalue"><name>Backslash</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afb381106f3428d98ff47e77843c37428" kind="enumvalue"><name>Slash</name></member>
+    <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2bc82c4ef3e54fc7fd2c6cb7fdc9b2ee" kind="enumvalue"><name>SIZE</name></member>
+    <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" kind="enum"><name>Layout</name></member>
+    <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6a3364873273eb9465b05843a7e91f2d85" kind="enumvalue"><name>Azerty</name></member>
+    <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6ae5ffb18a77f858eeb132a9210641d867" kind="enumvalue"><name>Qwerty</name></member>
+    <member refid="classspk_1_1Keyboard_1a94ba38f3d35ba16980e63a20c9afb2df" kind="friend"><name>spk::Singleton&lt; Keyboard &gt;</name></member>
+    <member refid="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" kind="friend"><name>KeyboardModule</name></member>
+    <member refid="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" kind="variable"><name>KeyToStringMap</name></member>
+    <member refid="classspk_1_1Keyboard_1a532d889e2f7354ac11f444ab49a1b858" kind="variable"><name>UnknowKeyName</name></member>
+    <member refid="classspk_1_1Keyboard_1af1b5c41b2b326094dcfc83cc120c9aff" kind="variable"><name>_layout</name></member>
+    <member refid="classspk_1_1Keyboard_1ae39abfd8e727f62414456e3ac0f80ab7" kind="variable"><name>_mapping</name></member>
+    <member refid="classspk_1_1Keyboard_1a39f39df8ce27574e977e9cfc035c7ae4" kind="variable"><name>_keys</name></member>
+    <member refid="classspk_1_1Keyboard_1a9c899c94ba2045460cd9e035754f80a4" kind="function"><name>Keyboard</name></member>
+    <member refid="classspk_1_1Keyboard_1ae7c24eb679b40f736ab882f03ab2f292" kind="function"><name>pressKey</name></member>
+    <member refid="classspk_1_1Keyboard_1a94ecd823d91d43f6c364568a7a23efa1" kind="function"><name>releaseKey</name></member>
+    <member refid="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1Keyboard_1a96c38656ea7b2aefffe62cc4548207bb" kind="function"><name>setLayout</name></member>
+    <member refid="classspk_1_1Keyboard_1a4b65a94087efacfb89ca84dec70253d8" kind="function"><name>inputStatus</name></member>
+    <member refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" kind="function"><name>keyToString</name></member>
+  </compound>
+  <compound refid="classspk_1_1KeyboardModule" kind="class"><name>spk::KeyboardModule</name>
+    <member refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1KeyboardModule_1a3a62882e58161aec70f3f3675c2f0706" kind="function"><name>KeyboardModule</name></member>
+    <member refid="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" kind="function"><name>~KeyboardModule</name></member>
+    <member refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" kind="function"><name>updateKeyboard</name></member>
+  </compound>
+  <compound refid="structspk_1_1Keyboard_1_1Mapping" kind="struct"><name>spk::Keyboard::Mapping</name>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1a862d7e2ab5556a56af7020c33db5c14a" kind="variable"><name>keys</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1ac7348453dd42feef1ba1b2b08dae0d3c" kind="function"><name>Mapping</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" kind="function"><name>bindKey</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1aec6dff1fcdf62d544a171cc8fd0ca541" kind="function"><name>operator[]</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1ab4197f06903fe525205ada5ec0232c8b" kind="function"><name>createAzertyMapping</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1ac5581ec2f8f6b896c4f6d146abee2a8d" kind="function"><name>createQwertyMapping</name></member>
+  </compound>
+  <compound refid="classspk_1_1Memento" kind="class"><name>spk::Memento</name>
+    <member refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" kind="typedef"><name>Snapshot</name></member>
+    <member refid="classspk_1_1Memento_1ad6e4d04ac01aeebc3b9de7a310d30033" kind="variable"><name>_snapshots</name></member>
+    <member refid="classspk_1_1Memento_1a4a4b6ca7879fc120611a0b0e7c969b0b" kind="variable"><name>_index</name></member>
+    <member refid="classspk_1_1Memento_1a491ab5809b78d025351dd71d00aa5983" kind="function"><name>_onSave</name></member>
+    <member refid="classspk_1_1Memento_1a721b3cee608af0aa4a50327b6545ed3a" kind="function"><name>_onLoad</name></member>
+    <member refid="classspk_1_1Memento_1a22c5265768e3ce5daf09a0eca997ee51" kind="function"><name>_load</name></member>
+    <member refid="classspk_1_1Memento_1a7f12af3b10f86024f5ad641737db2670" kind="function"><name>save</name></member>
+    <member refid="classspk_1_1Memento_1a2c527cb980acf2a96a213d17eddcd316" kind="function"><name>undo</name></member>
+    <member refid="classspk_1_1Memento_1acc5b23d29f89d6b525f0addbec8ea1f1" kind="function"><name>redo</name></member>
+  </compound>
+  <compound refid="classspk_1_1Mouse" kind="class"><name>spk::Mouse</name>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kind="enum"><name>Button</name></member>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ab2c826213cb375995ce31e8ebdb0ab60" kind="enumvalue"><name>Left</name></member>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a4433a3ce725138c5a5a6b13405af60a4" kind="enumvalue"><name>Middle</name></member>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5aec110b50a9ba9dd9f5b59f552b7828bc" kind="enumvalue"><name>Right</name></member>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a469bc020b71587f3eb708d8af9b8b328" kind="enumvalue"><name>Button3</name></member>
+    <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ae282fd9b727dd9864c0bab6f94418ec4" kind="enumvalue"><name>Button4</name></member>
+    <member refid="classspk_1_1Mouse_1a56ec2d6a7472fec6745bdc350324a958" kind="friend"><name>spk::Singleton&lt; Mouse &gt;</name></member>
+    <member refid="classspk_1_1Mouse_1a48dc35d65b09169e27b9b8006de9dfbf" kind="friend"><name>MouseModule</name></member>
+    <member refid="classspk_1_1Mouse_1ac1111549d861795553472775e3ca851a" kind="variable"><name>NB_BUTTON</name></member>
+    <member refid="classspk_1_1Mouse_1a6a23c61c61d172d5a46d8927a916f690" kind="variable"><name>_buttons</name></member>
+    <member refid="classspk_1_1Mouse_1aceda75123868e79a169b84773b586ccf" kind="variable"><name>_position</name></member>
+    <member refid="classspk_1_1Mouse_1ad79e3978ff3d3f7d4af7335ba119febd" kind="variable"><name>_deltaPosition</name></member>
+    <member refid="classspk_1_1Mouse_1a7d81427b28a486d0e50ff408c6d82b42" kind="variable"><name>_wheel</name></member>
+    <member refid="classspk_1_1Mouse_1a64dd25a9b4c429e82a180bfee7b67601" kind="function"><name>Mouse</name></member>
+    <member refid="classspk_1_1Mouse_1a3576d3accda65e374ca0aa404b60f767" kind="function"><name>setMousePosition</name></member>
+    <member refid="classspk_1_1Mouse_1ad9a3b0815e9bcdc053ea6af2953713d1" kind="function"><name>pressButton</name></member>
+    <member refid="classspk_1_1Mouse_1a420dd107e3a5c38e7a201b76b9385d4b" kind="function"><name>releaseButton</name></member>
+    <member refid="classspk_1_1Mouse_1a996fc2b2a53ee6dffe4c49b80d92c31c" kind="function"><name>editWheelPosition</name></member>
+    <member refid="classspk_1_1Mouse_1ac6ac1c7429fdc3e498a2aa6d09e3dffb" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" kind="function"><name>place</name></member>
+    <member refid="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" kind="function"><name>inputStatus</name></member>
+    <member refid="classspk_1_1Mouse_1ac3985fa648d414ec9f8e7000e2c35c6e" kind="function"><name>position</name></member>
+    <member refid="classspk_1_1Mouse_1a586de041eeb18225bece40c602fabe4f" kind="function"><name>deltaPosition</name></member>
+    <member refid="classspk_1_1Mouse_1a5430080e4319c4d48d7b482f6bad7994" kind="function"><name>wheel</name></member>
+  </compound>
+  <compound refid="classspk_1_1MouseModule" kind="class"><name>spk::MouseModule</name>
+    <member refid="classspk_1_1MouseModule_1afa5a66104d33670c44b5523f788f6966" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1MouseModule_1af36f93dd3ad1a4a53f4e9f80635f7b24" kind="function"><name>MouseModule</name></member>
+    <member refid="classspk_1_1MouseModule_1a7488472b5dcb2a93d96dd1350a7b9246" kind="function"><name>~MouseModule</name></member>
+    <member refid="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" kind="function"><name>updateMouse</name></member>
+  </compound>
+  <compound refid="classspk_1_1NoGraphicsWidget" kind="class"><name>spk::NoGraphicsWidget</name>
+    <member refid="classspk_1_1NoGraphicsWidget_1ace2423a2b71b7d74d0e85d4fb87521b1" kind="function"><name>_onRender</name></member>
+    <member refid="classspk_1_1NoGraphicsWidget_1a73146accf6688f48f8604fa269deba26" kind="function"><name>_onGeometryChange</name></member>
+    <member refid="classspk_1_1NoGraphicsWidget_1a2328b8ba5e94b52b7bc0be503aae185f" kind="function"><name>_render</name></member>
+  </compound>
+  <compound refid="classspk_1_1Pool_1_1Object" kind="class"><name>spk::Pool::Object</name>
+    <member refid="classspk_1_1Pool_1_1Object_1aaa45caad0db0173735281fcdf9aa5e8b" kind="friend"><name>Pool</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a029605acc00b76100a559823a76f34e4" kind="variable"><name>_source</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a5c9a3fe1450883c0a738c1f01b3c4270" kind="variable"><name>_referenceCount</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a0a79610742251548ee7cca1216cb7650" kind="variable"><name>_content</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a378ffaa8b9fb8da38267eb9848fffac8" kind="function"><name>Object</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a62ad9ca064abef6a380c961fa9a16516" kind="function"><name>~Object</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a1f83127b5f78cbe9752cc4b6419a53bd" kind="function"><name>Object</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1ab235caeb032b6b9c2f3a5ed481287eb9" kind="function"><name>operator()</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a74dee53daa09bd8f2fd2285d26926b33" kind="function"><name>operator()</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1af96ee327ca6eb615af93d0909843aede" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1ab0cef28a202aae98789f48de67e1a7cc" kind="function"><name>operator-&gt;</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a31fc7bcf5596dbceddf9a938f36a5fc8" kind="function"><name>operator*</name></member>
+    <member refid="classspk_1_1Pool_1_1Object_1a978235e7c6d322d8c00d0ca39e06896f" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="classspk_1_1Observer" kind="class"><name>spk::Observer</name>
+    <member refid="classspk_1_1Observer_1a894c190f1a705deb8a3b102594ea3627" kind="variable"><name>_callbacks</name></member>
+    <member refid="classspk_1_1Observer_1a3cd7b9980e08c9d8a156b6f6c4b0c56c" kind="function"><name>Observer</name></member>
+    <member refid="classspk_1_1Observer_1a9d72f4a2515061bab4721fa640da5c3b" kind="function"><name>subscribe</name></member>
+    <member refid="classspk_1_1Observer_1add756ae632b22250c9153bbcda59218c" kind="function"><name>notify</name></member>
+  </compound>
+  <compound refid="classspk_1_1OnlyGraphicsWidget" kind="class"><name>spk::OnlyGraphicsWidget</name>
+    <member refid="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d" kind="function"><name>_onUpdate</name></member>
+    <member refid="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" kind="function"><name>_update</name></member>
+  </compound>
+  <compound refid="classspk_1_1PersistentWorker" kind="class"><name>spk::PersistentWorker</name>
+    <member refid="classspk_1_1PersistentWorker_1a3d6acafce004b1597a480b50baf24881" kind="typedef"><name>Job</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" kind="variable"><name>_jobs</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a032f65a73bfca59e377f637c02ba22c1" kind="variable"><name>_contracts</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a7a15e3914642088d8684e33a8d5a14ea" kind="variable"><name>_isRunning</name></member>
+    <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" kind="variable"><name>_isPaused</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kind="function"><name>PersistentWorker</name></member>
+    <member refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kind="function"><name>~PersistentWorker</name></member>
+    <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kind="function"><name>isRunning</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kind="function"><name>start</name></member>
+    <member refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kind="function"><name>stop</name></member>
+    <member refid="classspk_1_1PersistentWorker_1ad730a6aef37005bc23999327bdd56ac7" kind="function"><name>join</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" kind="function"><name>pause</name></member>
+    <member refid="classspk_1_1PersistentWorker_1afbb963099f60af09f97827e3ab1f2d6b" kind="function"><name>resume</name></member>
+  </compound>
+  <compound refid="classspk_1_1Pool" kind="class"><name>spk::Pool</name>
+    <member refid="classspk_1_1Pool_1a183ad1e7d1f91a63bf4c22ae30caea59" kind="typedef"><name>Container</name></member>
+    <member refid="classspk_1_1Pool_1a2f622c73697f975bde28e0adf0458699" kind="variable"><name>_allocatedObjects</name></member>
+    <member refid="classspk_1_1Pool_1a0d4b6b3222ed33dc857a4f99551fd223" kind="function"><name>Pool</name></member>
+    <member refid="classspk_1_1Pool_1a474e0d1a5d1a045baa2351a978e1406e" kind="function"><name>reserve</name></member>
+    <member refid="classspk_1_1Pool_1a64032a2a21f5cf73a4836178a347a73c" kind="function"><name>obtain</name></member>
+    <member refid="classspk_1_1Pool_1ac584858b3175a8feb8cc778542e216c3" kind="function"><name>size</name></member>
+  </compound>
+  <compound refid="classspk_1_1Debug_1_1Profiler" kind="class"><name>spk::Debug::Profiler</name>
+    <member refid="classspk_1_1Debug_1_1Profiler_1a149a25a512bb65bfb1a296b4ce69538b" kind="friend"><name>spk::Singleton&lt; Profiler &gt;</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1a801a340618de26bc70f22e309b2754b2" kind="variable"><name>_chronometers</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1af6ef6ef4bb023c14f49dd38e741460e3" kind="function"><name>Profiler</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1a04a4a5d26cf3a535b74ba659a0fe7cca" kind="function"><name>chronometer</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1a7232ad2a39fc3113ad248a149076e9c4" kind="function"><name>resetChronometer</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1af223d7eff676517b16d9c7dbd9e95f78" kind="function"><name>startChronometer</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1acec51d9c494defc9427c74646d90d1ae" kind="function"><name>resumeChronometer</name></member>
+    <member refid="classspk_1_1Debug_1_1Profiler_1a4a26a23d865b16059a7cb6f9dfddf054" kind="function"><name>stopChronometer</name></member>
+  </compound>
+  <compound refid="classspk_1_1Promise" kind="class"><name>spk::Promise</name>
+    <member refid="classspk_1_1Promise_1ae2f938ba28a14eb34998925c73b0004d" kind="variable"><name>_callbackContainer</name></member>
+    <member refid="classspk_1_1Promise_1ab49402416b20f99df7bae558812a5c12" kind="variable"><name>_promise</name></member>
+    <member refid="classspk_1_1Promise_1a9e5bdcae7a9994229160093a7b07f6ba" kind="variable"><name>_value</name></member>
+    <member refid="classspk_1_1Promise_1a1f633fca0dabe4e19f99d1bb104498e6" kind="function"><name>Promise</name></member>
+    <member refid="classspk_1_1Promise_1ad4dbd5693e82c5a821af97fc9e86c20b" kind="function"><name>Promise</name></member>
+    <member refid="classspk_1_1Promise_1a0560e9b5ba7802bb42716220619d0d89" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Promise_1aa1ebb12731c598b69359ede70c6a4923" kind="function"><name>~Promise</name></member>
+    <member refid="classspk_1_1Promise_1ac55e4af8d86ac9d7b8fc0cfb8926f0f0" kind="function"><name>subscribe</name></member>
+    <member refid="classspk_1_1Promise_1aaf9ad2cdc422c2a4c211ce921d50df36" kind="function"><name>realised</name></member>
+    <member refid="classspk_1_1Promise_1a492bc5064aca48fc18294ecead334599" kind="function"><name>setValue</name></member>
+    <member refid="classspk_1_1Promise_1af94f17735b511a890a33343ff8d24b66" kind="function"><name>value</name></member>
+  </compound>
+  <compound refid="classspk_1_1RandomGenerator" kind="class"><name>spk::RandomGenerator</name>
+    <member refid="classspk_1_1RandomGenerator_1a4fb1cef23f68d3aaf9e985fa234f59e5" kind="variable"><name>_generator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a21b0d25d6ce9c2d3d7cc3e9fe20d4f18" kind="variable"><name>_distribution</name></member>
+    <member refid="classspk_1_1RandomGenerator_1adff8299eaa9cbc86582321597a80f2b1" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a7f72dae6004074788deecba74c5236cb" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a059cf392c82a52e718c8ce84fb2bb2c2" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1afbf5624de8c186559746af0a8ed9c029" kind="function"><name>setDistributionRange</name></member>
+    <member refid="classspk_1_1RandomGenerator_1abfb6719ee850820f2f090a8d70143873" kind="function"><name>operator()</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a96370335c177656f4878ebab8cc4b4b3" kind="function"><name>min</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a65f9e7bda3b0a4a3a1638c5a55dfcb5c" kind="function"><name>max</name></member>
+  </compound>
+  <compound refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kind="class"><name>spk::ContextManager::ReadOnlyAccessor</name>
+    <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" kind="function"><name>get</name></member>
+    <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1ac33d6aae0b6548b5d6da7b7d89534a5a" kind="function"><name>swapRequested</name></member>
+    <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" kind="function"><name>swap</name></member>
+  </compound>
+  <compound refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" kind="class"><name>spk::ContextManager::ReadWriteAccessor</name>
+    <member refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1a4e4ae1455b0adfa700fa3d1de7f8de79" kind="function"><name>get</name></member>
+    <member refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1ab66aa0655accf306a887a5081f4540bd" kind="function"><name>swap</name></member>
+  </compound>
+  <compound refid="classspk_1_1Singleton" kind="class"><name>spk::Singleton</name>
+    <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kind="variable"><name>_instance</name></member>
+    <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" kind="function"><name>Singleton</name></member>
+    <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" kind="function"><name>instanciate</name></member>
+    <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kind="function"><name>instance</name></member>
+    <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" kind="function"><name>release</name></member>
+  </compound>
+  <compound refid="structspk_1_1StandardType" kind="struct"><name>spk::StandardType</name>
+    <member refid="structspk_1_1StandardType_1a42a28212057ade7832c36f853860f20d" kind="variable"><name>_value</name></member>
+    <member refid="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef" kind="function"><name>_onSave</name></member>
+    <member refid="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd" kind="function"><name>_onLoad</name></member>
+    <member refid="structspk_1_1StandardType_1a64b8eb651319f881834a6534f4c37236" kind="function"><name>StandardType</name></member>
+    <member refid="structspk_1_1StandardType_1a764d4c6e44e84b4c34a5216279afbecf" kind="function"><name>StandardType</name></member>
+    <member refid="structspk_1_1StandardType_1a4cfaaa7966d8cde38e3b9a37e96b296a" kind="function"><name>operator=</name></member>
+    <member refid="structspk_1_1StandardType_1a1c1cd67f446d342eeb2a21a3971400d5" kind="function"><name>operator TType &amp;</name></member>
+    <member refid="structspk_1_1StandardType_1a23e80e70d1a0bfd829ec44c2599b72d6" kind="function"><name>operator const TType &amp;</name></member>
+  </compound>
+  <compound refid="classspk_1_1StatedObject" kind="class"><name>spk::StatedObject</name>
+    <member refid="classspk_1_1StatedObject_1af37d63b941fbdd99a05b07a1c09e69d9" kind="variable"><name>_state</name></member>
+    <member refid="classspk_1_1StatedObject_1a6aa924dee230c4a02d467e7ce937ddf8" kind="variable"><name>_callbacks</name></member>
+    <member refid="classspk_1_1StatedObject_1a797bb0328531e421fe9c16f3062c2e32" kind="function"><name>StatedObject</name></member>
+    <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" kind="function"><name>addStateCallback</name></member>
+    <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" kind="function"><name>setState</name></member>
+    <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" kind="function"><name>state</name></member>
+  </compound>
+  <compound refid="classspk_1_1SystemModule" kind="class"><name>spk::SystemModule</name>
+    <member refid="classspk_1_1SystemModule_1a36e4d62e1ced17d6d640b90b34d09e2d" kind="variable"><name>_applicationToManage</name></member>
+    <member refid="classspk_1_1SystemModule_1a641975eb5ff351282dd55b47865c4b77" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1SystemModule_1a4e69257a48d4e3f620310e0bfc1dea21" kind="function"><name>SystemModule</name></member>
+    <member refid="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" kind="function"><name>~SystemModule</name></member>
+    <member refid="classspk_1_1SystemModule_1afea23ff6727e17a26bf99e13a7a4ab35" kind="function"><name>updateMouse</name></member>
+  </compound>
+  <compound refid="classspk_1_1Thread" kind="class"><name>spk::Thread</name>
+    <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" kind="enum"><name>LaunchMethod</name></member>
+    <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6a6e04a0730cfc0bca398610196b5f8467" kind="enumvalue"><name>Delayed</name></member>
+    <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6a43f6615bbb2c40a5306ff804094420b1" kind="enumvalue"><name>Immediate</name></member>
+    <member refid="classspk_1_1Thread_1af237389d99e85c8dde48d6144e62ff48" kind="variable"><name>_funct</name></member>
+    <member refid="classspk_1_1Thread_1a7702fde0065f2c50cd662a2cece3f016" kind="variable"><name>_thread</name></member>
+    <member refid="classspk_1_1Thread_1aefcb08911f9e6aa4e62f4a111d10b295" kind="variable"><name>_starterSignal</name></member>
+    <member refid="classspk_1_1Thread_1a7addb5ad82fee3d906e0a49cb3572f69" kind="function"><name>Thread</name></member>
+    <member refid="classspk_1_1Thread_1afdc8fce9be9a5bc00dfdd9c7d149f588" kind="function"><name>Thread</name></member>
+    <member refid="classspk_1_1Thread_1a97d08ba39aee6ee49292fd53f08bcb07" kind="function"><name>~Thread</name></member>
+    <member refid="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" kind="function"><name>getId</name></member>
+    <member refid="classspk_1_1Thread_1a4eed5d9b453feae180a98f80a2f117ad" kind="function"><name>join</name></member>
+    <member refid="classspk_1_1Thread_1a3c9242c1ea81ec3de8b78445e1d2a421" kind="function"><name>start</name></member>
+  </compound>
+  <compound refid="classspk_1_1ThreadSafeQueue" kind="class"><name>spk::ThreadSafeQueue</name>
+    <member refid="classspk_1_1ThreadSafeQueue_1ad0a76bf1be9b19a1232a06f6ced62d88" kind="variable"><name>muxQueue</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a4c8b049876a04dcc317169d7f5147e3c" kind="variable"><name>muxBlocking</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1aef0eb26c9d4c8bea6249120a5a674737" kind="variable"><name>_content</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1af85dcfbf85ff17055581432602a3fca2" kind="variable"><name>cvBlocking</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1ad95a7d5bfe93b6d2146e64ee2a433b1b" kind="function"><name>ThreadSafeQueue</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a7ef0d2aea7e6ff8d3f80e4aba00855f0" kind="function"><name>ThreadSafeQueue</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1aa8d9e71b8bee427e21a7121759c0c690" kind="function"><name>~ThreadSafeQueue</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a3f339b2424b4697100d4bb3a501c4bdc" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1acffc6621639cde4e29248fec8db7722e" kind="function"><name>front</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a71c53d3168aef54e9d0fecbb3202b7b8" kind="function"><name>back</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1abdb4b57746427a0f8b7f4e8aff55eff4" kind="function"><name>front</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a0525e56c7f3ec4da434501ffd3f731b4" kind="function"><name>back</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1aaa11b3687a413ed1d05020e9679d708e" kind="function"><name>pop_front</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a8507da2707f396a0db12cbff753c2030" kind="function"><name>pop_back</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1af3d6530f982fbd9b8342bf69b79f170c" kind="function"><name>push_back</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a4a58ccd7575177fed56ecfb028e6537a" kind="function"><name>push_front</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1ae0f8b05a694cb48081a53d1f496c1e5f" kind="function"><name>empty</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a6dacede3ce86503fbbd8cc3da5ac67e5" kind="function"><name>size</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a5d0f55c23e83d574e0e787249adb24f6" kind="function"><name>clear</name></member>
+    <member refid="classspk_1_1ThreadSafeQueue_1a75768d4042460537d331f670a798ce1b" kind="function"><name>wait</name></member>
+  </compound>
+  <compound refid="classspk_1_1TimeMetrics" kind="class"><name>spk::TimeMetrics</name>
+    <member refid="classspk_1_1TimeMetrics_1afad278268bf704627f2cbb665c5b4ace" kind="friend"><name>spk::Singleton&lt; TimeMetrics &gt;</name></member>
+    <member refid="classspk_1_1TimeMetrics_1ade1979a5c31f719d8d9c99880f6719ee" kind="friend"><name>TimeModule</name></member>
+    <member refid="classspk_1_1TimeMetrics_1ab69906c09236dd5b9125083418e6f7b1" kind="variable"><name>_time</name></member>
+    <member refid="classspk_1_1TimeMetrics_1a055db9c88cb78cd31757f3e123af9afd" kind="variable"><name>_deltaTime</name></member>
+    <member refid="classspk_1_1TimeMetrics_1a3467cf2eddb6b68c2bcda59cca087b40" kind="function"><name>_updateMetrics</name></member>
+    <member refid="classspk_1_1TimeMetrics_1a7b90f560ee75228c3e369fd044e6577f" kind="function"><name>TimeMetrics</name></member>
+    <member refid="classspk_1_1TimeMetrics_1ab2ec64db76c2329d780ef3138ea60611" kind="function"><name>time</name></member>
+    <member refid="classspk_1_1TimeMetrics_1a24989064858748b2da18b1726280bd0a" kind="function"><name>deltaTime</name></member>
+    <member refid="classspk_1_1TimeMetrics_1af19a929fc6b3b6be1b9a06ca48022b2d" kind="function"><name>sleepAtLeast</name></member>
+  </compound>
+  <compound refid="classspk_1_1TimeModule" kind="class"><name>spk::TimeModule</name>
+    <member refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" kind="function"><name>TimeModule</name></member>
+    <member refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" kind="function"><name>~TimeModule</name></member>
+    <member refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classspk_1_1Timer" kind="class"><name>spk::Timer</name>
+    <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kind="enum"><name>State</name></member>
+    <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c" kind="enumvalue"><name>Idle</name></member>
+    <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09" kind="enumvalue"><name>Running</name></member>
+    <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398" kind="enumvalue"><name>Timeout</name></member>
+    <member refid="classspk_1_1Timer_1a61d4eb50a10a038ff971abb5e571782e" kind="variable"><name>_duration</name></member>
+    <member refid="classspk_1_1Timer_1a4bac5aabb5359a39cd1f728c61929562" kind="variable"><name>_status</name></member>
+    <member refid="classspk_1_1Timer_1a1572574e86018d51d124b49425568d40" kind="variable"><name>_startTime</name></member>
+    <member refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" kind="function"><name>Timer</name></member>
+    <member refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" kind="function"><name>setDuration</name></member>
+    <member refid="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" kind="function"><name>totalDuration</name></member>
+    <member refid="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" kind="function"><name>remainingDuration</name></member>
+    <member refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" kind="function"><name>start</name></member>
+    <member refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" kind="function"><name>stop</name></member>
+    <member refid="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" kind="function"><name>status</name></member>
+    <member refid="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" kind="function"><name>isRunning</name></member>
+  </compound>
+  <compound refid="classspk_1_1Value" kind="class"><name>spk::Value</name>
+    <member refid="classspk_1_1Value_1a0e4af9f6282cd72766cbd8ea0e50be0a" kind="enum"><name>State</name></member>
+    <member refid="classspk_1_1Value_1a0e4af9f6282cd72766cbd8ea0e50be0aa7a1920d61156abc05a60135aefe8bc67" kind="enumvalue"><name>Default</name></member>
+    <member refid="classspk_1_1Value_1a0e4af9f6282cd72766cbd8ea0e50be0aa90589c47f06eb971d548591f23c285af" kind="enumvalue"><name>Custom</name></member>
+    <member refid="classspk_1_1Value_1a9d23152919feb755a9c33b187c5e19a2" kind="friend"><name>Default</name></member>
+    <member refid="classspk_1_1Value_1a2bba400f219ce928e9b8ea5e1e86dc39" kind="variable"><name>_onEditionCallbacks</name></member>
+    <member refid="classspk_1_1Value_1ab41d605a3ea535ff705e9717100bb9c1" kind="variable"><name>_state</name></member>
+    <member refid="classspk_1_1Value_1a7d1fa77508b780154a8b56bcf3d60e65" kind="variable"><name>_default</name></member>
+    <member refid="classspk_1_1Value_1adca1665f60d07c6718e65395410245f7" kind="variable"><name>_value</name></member>
+    <member refid="classspk_1_1Value_1af8e0c5f3ff17beebc946f4213c4eb3d1" kind="function"><name>_triggerEditionCallback</name></member>
+    <member refid="classspk_1_1Value_1ae475f49d3b040f3ab54fad2691911017" kind="function"><name>Value</name></member>
+    <member refid="classspk_1_1Value_1a45888c18d70fcb13b307b3cee2021f6e" kind="function"><name>Value</name></member>
+    <member refid="classspk_1_1Value_1a463fe62884231cf5c714fbf690915238" kind="function"><name>Value</name></member>
+    <member refid="classspk_1_1Value_1aaa7cba049f4a6f3071889d5f3c7f3024" kind="function"><name>~Value</name></member>
+    <member refid="classspk_1_1Value_1af4d9e5bf126982fdf0643120d6bc353e" kind="function"><name>subscribe</name></member>
+    <member refid="classspk_1_1Value_1a6856d8744fb79f29cd1a004b32818ecf" kind="function"><name>reset</name></member>
+    <member refid="classspk_1_1Value_1a81e20cb2c4acaf4e274855c57148afa6" kind="function"><name>setDefaultValue</name></member>
+    <member refid="classspk_1_1Value_1a45e0beba5d3d415b0d00e186b991513a" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Value_1a3ad908815c627f2b2fee96f5ce40ed32" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Value_1a169179d9efc16fe961c246bfe8c567e6" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1Value_1a57308f762d52732980709a4627285e3f" kind="function"><name>operator const TType &amp;</name></member>
+  </compound>
+  <compound refid="classspk_1_1WidgetModule" kind="class"><name>spk::WidgetModule</name>
+    <member refid="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" kind="variable"><name>_centralWidget</name></member>
+    <member refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" kind="function"><name>WidgetModule</name></member>
+    <member refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" kind="function"><name>~WidgetModule</name></member>
+    <member refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kind="function"><name>render</name></member>
+    <member refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" kind="function"><name>centralWidget</name></member>
+  </compound>
+  <compound refid="classspk_1_1Window" kind="class"><name>spk::Window</name>
+    <member refid="classspk_1_1Window_1ab0c04c85c44c58fbf9300b04bee7a60f" kind="friend"><name>spk::Singleton&lt; Window &gt;</name></member>
+    <member refid="classspk_1_1Window_1a0ac877ae35338497097509c6f090e025" kind="friend"><name>APIModule</name></member>
+    <member refid="classspk_1_1Window_1a5d08731ffbb4270f89cc5cfca1e88a29" kind="variable"><name>_size</name></member>
+    <member refid="classspk_1_1Window_1a349f929462632f471edd07201cc9204a" kind="variable"><name>_connection</name></member>
+    <member refid="classspk_1_1Window_1a4723538b161e315215352307e09d900b" kind="variable"><name>_screen</name></member>
+    <member refid="classspk_1_1Window_1a30cfafb32f27345fdfd933f78653f9a0" kind="variable"><name>_window</name></member>
+    <member refid="classspk_1_1Window_1a7d5c0b3f647f72f1c897b691ea547911" kind="variable"><name>_convertedTitle</name></member>
+    <member refid="classspk_1_1Window_1aaa9f7650f1da3127354243db1dace65a" kind="variable"><name>_hInstance</name></member>
+    <member refid="classspk_1_1Window_1a8a8e2f35c770061ed6745717af98bb4c" kind="variable"><name>_windowFrame</name></member>
+    <member refid="classspk_1_1Window_1a07c419039c8cc2f68897155c7ba51d05" kind="variable"><name>_windowSize</name></member>
+    <member refid="classspk_1_1Window_1af75449e0e450e3e591bfa45de67eb9f1" kind="variable"><name>_windowClass</name></member>
+    <member refid="classspk_1_1Window_1aca8a27d1508e878ee1a7d605b4aa3800" kind="variable"><name>_windowStyle</name></member>
+    <member refid="classspk_1_1Window_1a60580314233389f3e1d0b1840d3c1279" kind="variable"><name>_windowExStyle</name></member>
+    <member refid="classspk_1_1Window_1a75a7326b4cb6373483bfd28cd692cc19" kind="function"><name>_createWindow</name></member>
+    <member refid="classspk_1_1Window_1a5651d26b4f55056b152527f7d3c0114c" kind="function"><name>_nameWindow</name></member>
+    <member refid="classspk_1_1Window_1aac32c004c4a7a636554524570763aa05" kind="function"><name>Window</name></member>
+    <member refid="classspk_1_1Window_1a694ec6233dd2d36927b76de31cfe253c" kind="function"><name>_convertTitle</name></member>
+    <member refid="classspk_1_1Window_1a169896c2d7c72cd3a23fd75c5e395561" kind="function"><name>_createGhostInstance</name></member>
+    <member refid="classspk_1_1Window_1ad04475106030d324cc106b0af3a7dd8f" kind="function"><name>_registerWindowClass</name></member>
+    <member refid="classspk_1_1Window_1aafbc42533f52eef527b8909b9dbdafcc" kind="function"><name>_createWindowFrame</name></member>
+    <member refid="classspk_1_1Window_1ac824731b78fdc1d45ae6803b56c62a8f" kind="function"><name>_composeOpenGLContext</name></member>
+    <member refid="classspk_1_1Window_1a8f79925aa80897f4e42d185fc3c1d93c" kind="function"><name>_activateWindow</name></member>
+    <member refid="classspk_1_1Window_1ae05598f60b99a8ac2ba8861d745c56a1" kind="function"><name>Window</name></member>
+    <member refid="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" kind="function"><name>setGeometry</name></member>
+    <member refid="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" kind="function"><name>resize</name></member>
+    <member refid="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" kind="function"><name>render</name></member>
+    <member refid="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" kind="function"><name>clear</name></member>
+    <member refid="classspk_1_1Window_1ad7b645ee1f79762e79d4c24a42b42cf4" kind="function"><name>~Window</name></member>
+    <member refid="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" kind="function"><name>setGeometry</name></member>
+    <member refid="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" kind="function"><name>resize</name></member>
+    <member refid="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" kind="function"><name>render</name></member>
+    <member refid="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classspk_1_1WindowModule" kind="class"><name>spk::WindowModule</name>
+    <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" kind="function"><name>_handleMessage</name></member>
+    <member refid="classspk_1_1WindowModule_1a9a94140d19b729c855dcd8431de38bac" kind="function"><name>WindowModule</name></member>
+    <member refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" kind="function"><name>render</name></member>
+    <member refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" kind="function"><name>clear</name></member>
+    <member refid="classspk_1_1WindowModule_1a36706fa4088182a2c3b03536d3300809" kind="function"><name>WindowModule</name></member>
+    <member refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" kind="function"><name>render</name></member>
+    <member refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" kind="function"><name>clear</name></member>
+  </compound>
+  <compound refid="classspk_1_1Worker" kind="class"><name>spk::Worker</name>
+    <member refid="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" kind="function"><name>Worker</name></member>
+  </compound>
+  <compound refid="classspk_1_1WorkerPool" kind="class"><name>spk::WorkerPool</name>
+    <member refid="classspk_1_1WorkerPool_1a13c9c723309bc85c39d79edf53ae6945" kind="typedef"><name>Job</name></member>
+    <member refid="classspk_1_1WorkerPool_1af39281fbf936140afdb1329b38901c9e" kind="variable"><name>_workers</name></member>
+    <member refid="classspk_1_1WorkerPool_1a0063b49ac0341d03673176a8018d9241" kind="variable"><name>_jobQueue</name></member>
+    <member refid="classspk_1_1WorkerPool_1ab47cfa97680d5ff476623bf40ea4047f" kind="variable"><name>_running</name></member>
+    <member refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" kind="function"><name>WorkerPool</name></member>
+    <member refid="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" kind="function"><name>WorkerPool</name></member>
+    <member refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" kind="function"><name>~WorkerPool</name></member>
+    <member refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" kind="function"><name>start</name></member>
+    <member refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" kind="function"><name>stop</name></member>
+    <member refid="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" kind="function"><name>addJob</name></member>
+  </compound>
+  <compound refid="namespacespk" kind="namespace"><name>spk</name>
+    <member refid="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252" kind="enum"><name>InputState</name></member>
+    <member refid="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252a258f49887ef8d14ac268c92b02503aaa" kind="enumvalue"><name>Up</name></member>
+    <member refid="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252ad78a68f6a85421ae121c2cb5b73a1040" kind="enumvalue"><name>Pressed</name></member>
+    <member refid="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252a08a38277b0309070706f6652eeae9a53" kind="enumvalue"><name>Down</name></member>
+    <member refid="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252aea1e34304a5d8ffa7c9b0ed8ede4ef1a" kind="enumvalue"><name>Released</name></member>
+    <member refid="spk__vector2_8hpp_1a9b7d33188f36fb94cdde3264ccc16e20" kind="typedef"><name>Vector2</name></member>
+    <member refid="spk__vector2_8hpp_1a81b9738cf9ec67888207021519d1a673" kind="typedef"><name>Vector2Int</name></member>
+    <member refid="spk__vector2_8hpp_1a71e1f556496e4d67f41e1f7807069e54" kind="typedef"><name>Vector2UInt</name></member>
+    <member refid="spk__vector3_8hpp_1a25ce29c89e3ca14bf467a94db03d5939" kind="typedef"><name>Vector3</name></member>
+    <member refid="spk__vector3_8hpp_1afa7d4d8007cf977199c3ba89fd52e283" kind="typedef"><name>Vector3Int</name></member>
+    <member refid="spk__vector3_8hpp_1aa6b7e560fadd4adf03bcea8fb62de5a8" kind="typedef"><name>Vector3UInt</name></member>
+    <member refid="spk__iostream_8hpp_1a43c6cf2bafe645a07a58f10a9b8ea87a" kind="variable"><name>cout</name></member>
+    <member refid="spk__iostream_8hpp_1a179221b09b037229c2c215cb0e36f263" kind="variable"><name>cerr</name></member>
+    <member refid="spk__input__status_8hpp_1a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba" kind="function"><name>to_wstring</name></member>
+    <member refid="spk__keyboard_8hpp_1a0918963ff2089605579cf18aec2ab60a" kind="function"><name>to_wstring</name></member>
+    <member refid="spk__mouse_8hpp_1a8b0d135246aecf232855d7d804bb55bd" kind="function"><name>to_wstring</name></member>
+    <member refid="spk__vector2_8hpp_1ad6c500689e1936587d90db1f1328ceb4" kind="function"><name>operator+</name></member>
+    <member refid="spk__vector2_8hpp_1a443c70714a630e0cbc2199d56b92cc03" kind="function"><name>operator-</name></member>
+    <member refid="spk__vector2_8hpp_1adc4d3ecda52ee833bc55ca7ece2f940e" kind="function"><name>operator*</name></member>
+    <member refid="spk__vector2_8hpp_1a4a8a9957f5dff3695f49beb037108568" kind="function"><name>operator/</name></member>
+    <member refid="spk__vector3_8hpp_1a8581e17fe52f716d72b87d12669f7620" kind="function"><name>operator+</name></member>
+    <member refid="spk__vector3_8hpp_1a70753e5aacb8a5eb2f6ae254c139e44c" kind="function"><name>operator-</name></member>
+    <member refid="spk__vector3_8hpp_1a4f95f63066ab643b13ad27871d3a0aca" kind="function"><name>operator*</name></member>
+    <member refid="spk__vector3_8hpp_1abc9fb6d5f31677ea83f5e5d3d44c6ed2" kind="function"><name>operator/</name></member>
+  </compound>
+  <compound refid="namespacespk_1_1Debug" kind="namespace"><name>spk::Debug</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="linux_2spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
+  </compound>
+  <compound refid="windows_2spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
+  </compound>
+  <compound refid="linux_2spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
+  </compound>
+  <compound refid="spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
+  </compound>
+  <compound refid="windows_2spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
+  </compound>
+  <compound refid="linux_2spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
+  </compound>
+  <compound refid="spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
+  </compound>
+  <compound refid="windows_2spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
+  </compound>
+  <compound refid="spk__abstract__module_8hpp" kind="file"><name>spk_abstract_module.hpp</name>
+  </compound>
+  <compound refid="spk__keyboard__module_8hpp" kind="file"><name>spk_keyboard_module.hpp</name>
+  </compound>
+  <compound refid="spk__mouse__module_8hpp" kind="file"><name>spk_mouse_module.hpp</name>
+  </compound>
+  <compound refid="spk__system__module_8hpp" kind="file"><name>spk_system_module.hpp</name>
+  </compound>
+  <compound refid="spk__time__module_8hpp" kind="file"><name>spk_time_module.hpp</name>
+  </compound>
+  <compound refid="spk__widget__module_8hpp" kind="file"><name>spk_widget_module.hpp</name>
+  </compound>
+  <compound refid="spk__abstract__application_8hpp" kind="file"><name>spk_abstract_application.hpp</name>
+  </compound>
+  <compound refid="spk__application_8hpp" kind="file"><name>spk_application.hpp</name>
+  </compound>
+  <compound refid="spk__data__buffer_8hpp" kind="file"><name>spk_data_buffer.hpp</name>
+  </compound>
+  <compound refid="spk__pool_8hpp" kind="file"><name>spk_pool.hpp</name>
+  </compound>
+  <compound refid="spk__profiler_8hpp" kind="file"><name>spk_profiler.hpp</name>
+  </compound>
+  <compound refid="spk__activable__object_8hpp" kind="file"><name>spk_activable_object.hpp</name>
+  </compound>
+  <compound refid="spk__activity_8hpp" kind="file"><name>spk_activity.hpp</name>
+  </compound>
+  <compound refid="spk__activity__scheduler_8hpp" kind="file"><name>spk_activity_scheduler.hpp</name>
+  </compound>
+  <compound refid="spk__context__manager_8hpp" kind="file"><name>spk_context_manager.hpp</name>
+  </compound>
+  <compound refid="spk__contract__provider_8hpp" kind="file"><name>spk_contract_provider.hpp</name>
+  </compound>
+  <compound refid="spk__inherence__object_8hpp" kind="file"><name>spk_inherence_object.hpp</name>
+  </compound>
+  <compound refid="spk__memento_8hpp" kind="file"><name>spk_memento.hpp</name>
+  </compound>
+  <compound refid="spk__observer_8hpp" kind="file"><name>spk_observer.hpp</name>
+  </compound>
+  <compound refid="spk__singleton_8hpp" kind="file"><name>spk_singleton.hpp</name>
+  </compound>
+  <compound refid="spk__stated__object_8hpp" kind="file"><name>spk_stated_object.hpp</name>
+  </compound>
+  <compound refid="spk__value_8hpp" kind="file"><name>spk_value.hpp</name>
+  </compound>
+  <compound refid="linux_2spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
+  </compound>
+  <compound refid="spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
+  </compound>
+  <compound refid="windows_2spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
+  </compound>
+  <compound refid="spk__input__status_8hpp" kind="file"><name>spk_input_status.hpp</name>
+  </compound>
+  <compound refid="spk__keyboard_8hpp" kind="file"><name>spk_keyboard.hpp</name>
+  </compound>
+  <compound refid="spk__mouse_8hpp" kind="file"><name>spk_mouse.hpp</name>
+  </compound>
+  <compound refid="spk__iostream_8hpp" kind="file"><name>spk_iostream.hpp</name>
+  </compound>
+  <compound refid="spk__random__generator_8hpp" kind="file"><name>spk_random_generator.hpp</name>
+  </compound>
+  <compound refid="spk__vector2_8hpp" kind="file"><name>spk_vector2.hpp</name>
+    <member refid="spk__vector2_8hpp_1a525335710b53cb064ca56b936120431e" kind="define"><name>_USE_MATH_DEFINES</name></member>
+    <member refid="spk__vector2_8hpp_1ae71449b1cc6e6250b91f539153a7a0d3" kind="define"><name>M_PI</name></member>
+  </compound>
+  <compound refid="spk__vector3_8hpp" kind="file"><name>spk_vector3.hpp</name>
+  </compound>
+  <compound refid="spk__is__contener_8hpp" kind="file"><name>spk_is_contener.hpp</name>
+  </compound>
+  <compound refid="sparkle_8hpp" kind="file"><name>sparkle.hpp</name>
+    <member refid="sparkle_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
+  </compound>
+  <compound refid="spk__system__define_8hpp" kind="file"><name>spk_system_define.hpp</name>
+  </compound>
+  <compound refid="spk__chronometer_8hpp" kind="file"><name>spk_chronometer.hpp</name>
+  </compound>
+  <compound refid="spk__time__metrics_8hpp" kind="file"><name>spk_time_metrics.hpp</name>
+  </compound>
+  <compound refid="spk__timer_8hpp" kind="file"><name>spk_timer.hpp</name>
+  </compound>
+  <compound refid="spk__persistent__worker_8hpp" kind="file"><name>spk_persistent_worker.hpp</name>
+  </compound>
+  <compound refid="spk__promise_8hpp" kind="file"><name>spk_promise.hpp</name>
+  </compound>
+  <compound refid="spk__thread_8hpp" kind="file"><name>spk_thread.hpp</name>
+  </compound>
+  <compound refid="spk__thread__safe__queue_8hpp" kind="file"><name>spk_thread_safe_queue.hpp</name>
+  </compound>
+  <compound refid="spk__worker__pool_8hpp" kind="file"><name>spk_worker_pool.hpp</name>
+  </compound>
+  <compound refid="spk__abstract__widget_8hpp" kind="file"><name>spk_abstract_widget.hpp</name>
+  </compound>
+  <compound refid="dir_aecd53831fdc6b2dd5eaa5f97724cc82" kind="dir"><name>includes/application</name>
+  </compound>
+  <compound refid="dir_0169fee49388018a0507c1b0832e6dd6" kind="dir"><name>includes/application/concrete</name>
+  </compound>
+  <compound refid="dir_ebc5d281141387bc90eb64e8fb568179" kind="dir"><name>includes/data_structure</name>
+  </compound>
+  <compound refid="dir_05f2b506267898f6dd4e0c52672de2c3" kind="dir"><name>includes/debug</name>
+  </compound>
+  <compound refid="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir"><name>includes/design_pattern</name>
+  </compound>
+  <compound refid="dir_fecb50b33baf124479efc63989ba8a70" kind="dir"><name>includes/graphics</name>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_a9d8515c93d115b5c689e0996dc3ef33" kind="dir"><name>includes/input</name>
+  </compound>
+  <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
+  </compound>
+  <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
+  </compound>
+  <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
+  </compound>
+  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
+  </compound>
+  <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
+  </compound>
+  <compound refid="dir_30c033750a7a5ab7efccd1bfa6f17d06" kind="dir"><name>includes/miscellaneous</name>
+  </compound>
+  <compound refid="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir"><name>includes/application/modules</name>
+  </compound>
+  <compound refid="dir_9ce4ba8dea44c80507591b5cb14ca8ba" kind="dir"><name>includes/system</name>
+  </compound>
+  <compound refid="dir_d13c0e61298ef12df375d2f8fbcfc354" kind="dir"><name>includes/threading</name>
+  </compound>
+  <compound refid="dir_6865bbd7fed125b9d907dfb26af48d8a" kind="dir"><name>includes/widget</name>
+  </compound>
+  <compound refid="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir"><name>includes/application/modules/windows</name>
+  </compound>
+  <compound refid="dir_4da4d72ca490047577e944980829188b" kind="dir"><name>includes/application/concrete/windows</name>
+  </compound>
+  <compound refid="dir_b0d7979d317da96e18556e960da3e586" kind="dir"><name>includes/graphics/windows</name>
+  </compound>
+</doxygenindex>

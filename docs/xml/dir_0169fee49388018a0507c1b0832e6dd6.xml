@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_0169fee49388018a0507c1b0832e6dd6" kind="dir">
+    <compoundname>includes/application/concrete</compoundname>
+    <innerdir refid="dir_203175f46ace52c3284570ac8daf7959">includes/application/concrete/linux</innerdir>
+    <innerdir refid="dir_4da4d72ca490047577e944980829188b">includes/application/concrete/windows</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/concrete/"/>
+  </compounddef>
+</doxygen>

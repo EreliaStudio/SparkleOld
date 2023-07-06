@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d13c0e61298ef12df375d2f8fbcfc354" kind="dir">
+    <compoundname>includes/threading</compoundname>
+    <innerfile refid="spk__persistent__worker_8hpp">spk_persistent_worker.hpp</innerfile>
+    <innerfile refid="spk__promise_8hpp">spk_promise.hpp</innerfile>
+    <innerfile refid="spk__thread_8hpp">spk_thread.hpp</innerfile>
+    <innerfile refid="spk__thread__safe__queue_8hpp">spk_thread_safe_queue.hpp</innerfile>
+    <innerfile refid="spk__worker__pool_8hpp">spk_worker_pool.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/threading/"/>
+  </compounddef>
+</doxygen>

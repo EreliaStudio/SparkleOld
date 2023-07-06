@@ -1,0 +1,1449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Keyboard" kind="class" language="C++" prot="public">
+    <compoundname>spk::Keyboard</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Keyboard &gt;</basecompoundref>
+    <innerclass refid="structspk_1_1Keyboard_1_1Mapping" prot="private">spk::Keyboard::Mapping</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Key</name>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a77be39d6726b9de74857828ffe9f94d5" prot="public">
+          <name>Unknown</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a476c6a471af858aa5175137ec01b42c5" prot="public">
+          <name>Backspace</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37aa7602c5731c701d3a1167831342de" prot="public">
+          <name>Tab</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a60825f9792eb1a06dd5ef09904dc6983" prot="public">
+          <name>Clear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3c52352c2241dcdd97277b140370c129" prot="public">
+          <name>Return</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a74e3cfc422c3a81027a53e898e4e856b" prot="public">
+          <name>Pause</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8dbb85940920958a5294de98395de80c" prot="public">
+          <name>Capslock</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a172a42519b15ee5d4d47d944af63e2e4" prot="public">
+          <name>Escape</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abea4f3e4c08c051bb920edb827556765" prot="public">
+          <name>Convert</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7b63523d3656c84643b298210604c360" prot="public">
+          <name>Non_convert</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0a10e5862401d0fdb81ec5e4fd680cb0" prot="public">
+          <name>Accept</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af52d75f2cfaaeca2ac14a36f8fc683db" prot="public">
+          <name>Mode_change</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa52041e7ffd1e7ffd118a7334d2d4ee4" prot="public">
+          <name>Space</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f6c8e2dab7e117e318f3ea53e4e18ce" prot="public">
+          <name>Prior</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a741da3efb5abd0bee4f4a24bc1d41ff1" prot="public">
+          <name>Next</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af610646425a253372bc2d4b000160aca" prot="public">
+          <name>End</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a231caf832d628e2f987f58c0ea116601" prot="public">
+          <name>Home</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf6c7498436f92e7425c26e0b1a00435" prot="public">
+          <name>LeftArrow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50d558dfe66c8b52acbf986073895cac" prot="public">
+          <name>UpArrow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad1bb18f7edfd178236092056c4e17b4" prot="public">
+          <name>RightArrow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37fd17c50d7bfc3f6e02cb6044d8f7c1" prot="public">
+          <name>DownArrow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ad252c29eca11dad2e62b6823d64b7b" prot="public">
+          <name>Select</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a795a3bd302fe4954f53ae3da93580483" prot="public">
+          <name>Print</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a584a2c553ca5b761cb21d5e0876c58dc" prot="public">
+          <name>Execute</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac20f5a01417c62c8c65ef3756a3be4ce" prot="public">
+          <name>Snapshot</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4151e84f212730f0e0c5409dc8d016f1" prot="public">
+          <name>Insert</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4f06d361bc8340cf24ab62c05825d940" prot="public">
+          <name>Delete</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a03f915e6b80808a527ec6dd42a14c7de" prot="public">
+          <name>Help</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a332be8667d5692d79d76b727fabfde34" prot="public">
+          <name>Key0</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa6fb4519fbbac3300496345200d4cb20" prot="public">
+          <name>Key1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a322e29144cdffeceb6d2218d8d5a75df" prot="public">
+          <name>Key2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab2d29655b6e06a516a8c47078c36f154" prot="public">
+          <name>Key3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a87a86ba5917fc6f6f073fe5ba89de1f0" prot="public">
+          <name>Key4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4c3eb44a701f06d06fcf1399c460f455" prot="public">
+          <name>Key5</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aaef9d8410c286d1540ab6146315a43ea" prot="public">
+          <name>Key6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aed74195a1e4084854567e9a0b237ce76" prot="public">
+          <name>Key7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a592e0b0f8829049306709656d054314d" prot="public">
+          <name>Key8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab510516d1dbaef62db4dfdf99861e939" prot="public">
+          <name>Key9</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a75dd3fbf0ceee53da03336f703b57b63" prot="public">
+          <name>A</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac5ad27bac90ec07e4b3d481e9b3aa685" prot="public">
+          <name>B</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adc6a88cacee1b1bb25d1e583e1abd6f2" prot="public">
+          <name>C</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a91098376c650d5caf5138868a4e7bd17" prot="public">
+          <name>D</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad9691134e06658c55171a0b263830588" prot="public">
+          <name>E</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac7f4406c18e758ba285ab5fec55beaf3" prot="public">
+          <name>F</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aeca955954ecba026baa3469529cbdd33" prot="public">
+          <name>G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf2c68c09ccd8bc90e4d8f7d2d4479a2" prot="public">
+          <name>H</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5dbdd2580dc4db4c65c2e516506a8d7d" prot="public">
+          <name>I</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae4a882d4308da143e8777cb4343e4ecf" prot="public">
+          <name>J</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8e6ddc32f328356d644b2d6f275f99fb" prot="public">
+          <name>K</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27db3b4fef2a80cd6b85239025d3172" prot="public">
+          <name>L</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a16714fa7e96cb8e568d582934bfd9182" prot="public">
+          <name>M</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a251843a4cba6f54e08597317b6909531" prot="public">
+          <name>N</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a65e386f6a72209d7f02d2c61ffb913cf" prot="public">
+          <name>O</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1deeff815ce41703e70f16911d12651" prot="public">
+          <name>P</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2d3218080a792acb279fdbe511d7bbf0" prot="public">
+          <name>Q</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adf6b666a3304a45e68522d431c0a248c" prot="public">
+          <name>R</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a658710a0930ca937fadc48e1bf284088" prot="public">
+          <name>S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a10df537d5fd17f073e365ea3f40e554e" prot="public">
+          <name>T</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa2c0cf73f7437708f0b27f1f1b439232" prot="public">
+          <name>U</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a17f599cca785501ab96b71a3066b22ee" prot="public">
+          <name>V</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7ff4dd7fcc80f280ec31e3fc9e6d4a1b" prot="public">
+          <name>W</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a39543f46a596603a76af2db9024b6717" prot="public">
+          <name>X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4e0db1fd591485d98013858884c5b1f9" prot="public">
+          <name>Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac940ba18cbf7cdf271bbf1783381bd48" prot="public">
+          <name>Z</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a46bc390abd4e94c8963b17e829bb38c4" prot="public">
+          <name>LeftWindows</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2772d025f8fcbd36b33e53d9c06bbb05" prot="public">
+          <name>RightWindows</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a160fd946f7275326a2da3b7df929dbe2" prot="public">
+          <name>App</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad7b94cc9c05967e9791139bf1f929fb" prot="public">
+          <name>Sleep</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a63543d0572138cbed88a36d4b8153c49" prot="public">
+          <name>Numpad0</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a08c61b7359b714dd2453018b136d9b9c" prot="public">
+          <name>Numpad1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae883ed8dfa350d77911d50b7fc094ad4" prot="public">
+          <name>Numpad2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adbcd1bf00b31ec55ddeae4f538276bcf" prot="public">
+          <name>Numpad3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3175c96c226faaaf8934bdab2918c531" prot="public">
+          <name>Numpad4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af56e95a9e99961b53f1c42e0b335a2e8" prot="public">
+          <name>Numpad5</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a68f843e2ed25ab2be3dfe9d28883863d" prot="public">
+          <name>Numpad6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a586297ec0b6d7104e09fecf67ec391eb" prot="public">
+          <name>Numpad7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45b16416c1197bebc5131063040f5027" prot="public">
+          <name>Numpad8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2a9de03820ead5858f1ca235d1bc3ff6" prot="public">
+          <name>Numpad9</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a30fa38dfa3145272422dff0725150bef" prot="public">
+          <name>NumpadMultiply</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af64227b94e3e9b8c156aa2dd63d002c7" prot="public">
+          <name>NumpadPlus</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a33242dd990b1ca3e8fa9b6d8403abce6" prot="public">
+          <name>NumpadMinus</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9b83ceb0ca5304a2d5e6036683378f4b" prot="public">
+          <name>NumpadDivide</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a52d90de467035dfa507d86d5236cdacb" prot="public">
+          <name>NumpadSeparator</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50afc72c1bc75d5312a081f64e240575" prot="public">
+          <name>NumpadDecimal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae8a105d6cd9eab1e9d4ce2c7e038291a" prot="public">
+          <name>NumpadReturn</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1685ac94f86c798268e49561dded830" prot="public">
+          <name>NumLock</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2674fae9d1fb9a8f4fc860fb153053e0" prot="public">
+          <name>F1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9e4b61a70035730b6fadc364fe6931ae" prot="public">
+          <name>F2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0d9f893d97687393ff7d22709b90deb6" prot="public">
+          <name>F3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aca3f9894dfef9aaa9c02996eb66be45a" prot="public">
+          <name>F4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0788be2b47107b7e792e63a55efd109c" prot="public">
+          <name>F5</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45e5ea5b1e299888220c653ee0cc58dc" prot="public">
+          <name>F6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1c5725e84243c852b5051c9b9e6c956e" prot="public">
+          <name>F7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27c7d1c2c519af0daedc047f18c76aa" prot="public">
+          <name>F8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a44ba85394c1cf1e565efc3e3986aa798" prot="public">
+          <name>F9</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a70b921f3b935433e146deae2c6fac4e8" prot="public">
+          <name>F10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a365c1b7560e46453f3550c846c51adc4" prot="public">
+          <name>F11</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad39aa6cbfe52a134985f68bc670e94bd" prot="public">
+          <name>F12</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7e8ebcd9c1d8b8707711a80edc179e91" prot="public">
+          <name>F13</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9104a2f74386ff32b284287900097809" prot="public">
+          <name>F14</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a502df5ab77fbb10155b2b501219057f6" prot="public">
+          <name>F15</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afe876d6d8a2e91c054a64a48d65f0971" prot="public">
+          <name>F16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae2e7d1a7a30d51f162512327b047b43c" prot="public">
+          <name>F17</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abed9c3dd256d5c3a5ab4d53ebe5f7460" prot="public">
+          <name>F18</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acddd3600c3a2520f9614b311a5c52bb1" prot="public">
+          <name>F19</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aae50bd634e89e6661f7d6058585ee7e8" prot="public">
+          <name>F20</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a31706c3d4b919540e63efdf122e65fb7" prot="public">
+          <name>F21</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6c70f1c77c1203780e1c3a06d1e22534" prot="public">
+          <name>F22</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a99123f18d07d0a7852bbfb5bcbc68a38" prot="public">
+          <name>F23</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4565dc5e1347d48432024ff443fb9303" prot="public">
+          <name>F24</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1978f73e8522f86025fafe18851023ca" prot="public">
+          <name>Scroll</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab35b9cb2b27530bb6c50baee5d4e4b3f" prot="public">
+          <name>Shift</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a261bfaba349db7202686f6cf16d224cc" prot="public">
+          <name>LeftShift</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a089331c6b7bc38c0cb969fb0215175be" prot="public">
+          <name>RightShift</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abfa15dded09bb6fc27127ae99becb32c" prot="public">
+          <name>Control</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa13d089d3352220c9fa6f6b6d78634b3" prot="public">
+          <name>LeftControl</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a364905543ad0e39567a74247326afe86" prot="public">
+          <name>RightControl</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6b3d22f16cd05587ecb813386b6ea3ee" prot="public">
+          <name>Alt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad3b6c0b30f7b71d023cd37bb3e6d397d" prot="public">
+          <name>LeftAlt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ace00f2e1d0f87d19bb14632bfd939570" prot="public">
+          <name>RightAlt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae1fe733084bed06abfca1b88f924ee4a" prot="public">
+          <name>Menu</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8b3e09e4168864bc6c7dbc652453b892" prot="public">
+          <name>LeftMenu</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac403a54602b7ff052ec7dcd67e264a17" prot="public">
+          <name>RightMenu</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab5f9c17b938b1f8bdf1c4a8378a75b72" prot="public">
+          <name>Plus</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5b3c711aa8b92b34b26940ab2632b526" prot="public">
+          <name>Minus</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac8a8bfe64fc9077dfd89dcd4f15bd3b8" prot="public">
+          <name>Equal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ddff8cb43f187639bedbcb813e42429" prot="public">
+          <name>Comma</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f3e0c26c2a46ddb3df3d7b2180b0d65" prot="public">
+          <name>Period</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f7369f3df1ed8dafa125411904ac1c4" prot="public">
+          <name>SemiColon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af46c7059f34b86f4f2cf31a66fa86666" prot="public">
+          <name>QuestionMark</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a22d4f353b2f5da5b3ba002cfd97c472f" prot="public">
+          <name>Tilde</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4b23332547a3c038554a3b64b39738b8" prot="public">
+          <name>LeftBracket</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f0f4a7294c5ae6a15a67dced93a11c3" prot="public">
+          <name>RightBracket</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7027b3dbe83411f53957d6181f196a92" prot="public">
+          <name>VerticalLine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae74b05503b4d879c20c21bea549b849b" prot="public">
+          <name>Quote</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7722fa0c9bbfe9f590aa9aff5d229b24" prot="public">
+          <name>Unknow</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afaa86b11a8f040e1516abb84b66a2f35" prot="public">
+          <name>AngleBracket</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4176a84671c1e8d17fda81f177630f39" prot="public">
+          <name>Process</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af67e8476253e915ef122dfe1f095bb97" prot="public">
+          <name>Backslash</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afb381106f3428d98ff47e77843c37428" prot="public">
+          <name>Slash</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2bc82c4ef3e54fc7fd2c6cb7fdc9b2ee" prot="public">
+          <name>SIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="17" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="18" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="enum" id="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Layout</name>
+        <enumvalue id="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6a3364873273eb9465b05843a7e91f2d85" prot="public">
+          <name>Azerty</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6ae5ffb18a77f858eeb132a9210641d867" prot="public">
+          <name>Qwerty</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="73" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1Keyboard_1a94ba38f3d35ba16980e63a20c9afb2df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; Keyboard &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; Keyboard &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1Keyboard" kindref="compound">Keyboard</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="117" column="20" bodyfile="includes/input/spk_keyboard.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class KeyboardModule</definition>
+        <argsstring></argsstring>
+        <name>KeyboardModule</name>
+        <param>
+          <type><ref refid="classspk_1_1KeyboardModule" kindref="compound">KeyboardModule</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="14" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; Keyboard::Key, std::wstring &gt;</type>
+        <definition>std::map&lt;Keyboard::Key, std::wstring&gt; spk::Keyboard::KeyToStringMap</definition>
+        <argsstring></argsstring>
+        <name>KeyToStringMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="92" column="17" bodyfile="includes/input/spk_keyboard.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1a532d889e2f7354ac11f444ab49a1b858" prot="private" static="yes" mutable="no">
+        <type>const std::wstring</type>
+        <definition>const std::wstring spk::Keyboard::UnknowKeyName</definition>
+        <argsstring></argsstring>
+        <name>UnknowKeyName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="93" column="27" bodyfile="includes/input/spk_keyboard.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1af1b5c41b2b326094dcfc83cc120c9aff" prot="private" static="no" mutable="no">
+        <type>Layout</type>
+        <definition>Layout spk::Keyboard::_layout</definition>
+        <argsstring></argsstring>
+        <name>_layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="95" column="8" bodyfile="includes/input/spk_keyboard.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1ae39abfd8e727f62414456e3ac0f80ab7" prot="private" static="no" mutable="no">
+        <type>Mapping</type>
+        <definition>Mapping spk::Keyboard::_mapping[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>_mapping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="96" column="9" bodyfile="includes/input/spk_keyboard.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1a39f39df8ce27574e977e9cfc035c7ae4" prot="private" static="no" mutable="no">
+        <type>InputState</type>
+        <definition>InputState spk::Keyboard::_keys[Key::SIZE]</definition>
+        <argsstring>[Key::SIZE]</argsstring>
+        <name>_keys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="97" column="12" bodyfile="includes/input/spk_keyboard.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a9c899c94ba2045460cd9e035754f80a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Keyboard::Keyboard</definition>
+        <argsstring>()</argsstring>
+        <name>Keyboard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Keyboard_1ae7c24eb679b40f736ab882f03ab2f292" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Keyboard::pressKey</definition>
+        <argsstring>(const uint32_t &amp;p_key)</argsstring>
+        <name>pressKey</name>
+        <param>
+          <type>const uint32_t &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="101" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a94ecd823d91d43f6c364568a7a23efa1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Keyboard::releaseKey</definition>
+        <argsstring>(const uint32_t &amp;p_key)</argsstring>
+        <name>releaseKey</name>
+        <param>
+          <type>const uint32_t &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="102" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Keyboard::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="104" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a96c38656ea7b2aefffe62cc4548207bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Keyboard::setLayout</definition>
+        <argsstring>(const Layout &amp;p_layout)</argsstring>
+        <name>setLayout</name>
+        <param>
+          <type>const Layout &amp;</type>
+          <declname>p_layout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="107" column="6" bodyfile="includes/input/spk_keyboard.hpp" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a4b65a94087efacfb89ca84dec70253d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const InputState &amp;</type>
+        <definition>const InputState&amp; spk::Keyboard::inputStatus</definition>
+        <argsstring>(const Key &amp;p_key) const</argsstring>
+        <name>inputStatus</name>
+        <param>
+          <type>const Key &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="109" column="18" bodyfile="includes/input/spk_keyboard.hpp" bodystart="109" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::wstring &amp;</type>
+        <definition>static const std::wstring&amp; spk::Keyboard::keyToString</definition>
+        <argsstring>(const Keyboard::Key &amp;p_key)</argsstring>
+        <name>keyToString</name>
+        <param>
+          <type>const Keyboard::Key &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_keyboard.hpp" line="114" column="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::Singleton&lt; Keyboard &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::Keyboard</label>
+        <link refid="classspk_1_1Keyboard"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::Singleton&lt; Keyboard &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::Keyboard</label>
+        <link refid="classspk_1_1Keyboard"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/input/spk_keyboard.hpp" line="11" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="12" bodyend="115"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Keyboard</scope><name>_instance</name></member>
+      <member refid="classspk_1_1Keyboard_1a39f39df8ce27574e977e9cfc035c7ae4" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>_keys</name></member>
+      <member refid="classspk_1_1Keyboard_1af1b5c41b2b326094dcfc83cc120c9aff" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>_layout</name></member>
+      <member refid="classspk_1_1Keyboard_1ae39abfd8e727f62414456e3ac0f80ab7" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>_mapping</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a75dd3fbf0ceee53da03336f703b57b63" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>A</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0a10e5862401d0fdb81ec5e4fd680cb0" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Accept</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6b3d22f16cd05587ecb813386b6ea3ee" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Alt</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afaa86b11a8f040e1516abb84b66a2f35" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>AngleBracket</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a160fd946f7275326a2da3b7df929dbe2" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>App</name></member>
+      <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6a3364873273eb9465b05843a7e91f2d85" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Azerty</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac5ad27bac90ec07e4b3d481e9b3aa685" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>B</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af67e8476253e915ef122dfe1f095bb97" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Backslash</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a476c6a471af858aa5175137ec01b42c5" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Backspace</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adc6a88cacee1b1bb25d1e583e1abd6f2" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>C</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8dbb85940920958a5294de98395de80c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Capslock</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a60825f9792eb1a06dd5ef09904dc6983" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Clear</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ddff8cb43f187639bedbcb813e42429" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Comma</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abfa15dded09bb6fc27127ae99becb32c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Control</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abea4f3e4c08c051bb920edb827556765" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Convert</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a91098376c650d5caf5138868a4e7bd17" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>D</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4f06d361bc8340cf24ab62c05825d940" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Delete</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37fd17c50d7bfc3f6e02cb6044d8f7c1" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>DownArrow</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad9691134e06658c55171a0b263830588" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>E</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af610646425a253372bc2d4b000160aca" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>End</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac8a8bfe64fc9077dfd89dcd4f15bd3b8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Equal</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a172a42519b15ee5d4d47d944af63e2e4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Escape</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a584a2c553ca5b761cb21d5e0876c58dc" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Execute</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac7f4406c18e758ba285ab5fec55beaf3" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2674fae9d1fb9a8f4fc860fb153053e0" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F1</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a70b921f3b935433e146deae2c6fac4e8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F10</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a365c1b7560e46453f3550c846c51adc4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F11</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad39aa6cbfe52a134985f68bc670e94bd" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F12</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7e8ebcd9c1d8b8707711a80edc179e91" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F13</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9104a2f74386ff32b284287900097809" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F14</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a502df5ab77fbb10155b2b501219057f6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F15</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afe876d6d8a2e91c054a64a48d65f0971" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F16</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae2e7d1a7a30d51f162512327b047b43c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F17</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28abed9c3dd256d5c3a5ab4d53ebe5f7460" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F18</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acddd3600c3a2520f9614b311a5c52bb1" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F19</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9e4b61a70035730b6fadc364fe6931ae" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F2</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aae50bd634e89e6661f7d6058585ee7e8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F20</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a31706c3d4b919540e63efdf122e65fb7" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F21</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a6c70f1c77c1203780e1c3a06d1e22534" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F22</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a99123f18d07d0a7852bbfb5bcbc68a38" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F23</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4565dc5e1347d48432024ff443fb9303" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F24</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0d9f893d97687393ff7d22709b90deb6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F3</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aca3f9894dfef9aaa9c02996eb66be45a" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F4</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a0788be2b47107b7e792e63a55efd109c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F5</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45e5ea5b1e299888220c653ee0cc58dc" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F6</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1c5725e84243c852b5051c9b9e6c956e" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F7</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27c7d1c2c519af0daedc047f18c76aa" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F8</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a44ba85394c1cf1e565efc3e3986aa798" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>F9</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aeca955954ecba026baa3469529cbdd33" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>G</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf2c68c09ccd8bc90e4d8f7d2d4479a2" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>H</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a03f915e6b80808a527ec6dd42a14c7de" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Help</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a231caf832d628e2f987f58c0ea116601" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Home</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5dbdd2580dc4db4c65c2e516506a8d7d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>I</name></member>
+      <member refid="classspk_1_1Keyboard_1a4b65a94087efacfb89ca84dec70253d8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>inputStatus</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4151e84f212730f0e0c5409dc8d016f1" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Insert</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae4a882d4308da143e8777cb4343e4ecf" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>J</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8e6ddc32f328356d644b2d6f275f99fb" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>K</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a332be8667d5692d79d76b727fabfde34" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key0</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa6fb4519fbbac3300496345200d4cb20" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key1</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a322e29144cdffeceb6d2218d8d5a75df" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key2</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab2d29655b6e06a516a8c47078c36f154" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key3</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a87a86ba5917fc6f6f073fe5ba89de1f0" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key4</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4c3eb44a701f06d06fcf1399c460f455" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key5</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aaef9d8410c286d1540ab6146315a43ea" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key6</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aed74195a1e4084854567e9a0b237ce76" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key7</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a592e0b0f8829049306709656d054314d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key8</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab510516d1dbaef62db4dfdf99861e939" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key9</name></member>
+      <member refid="classspk_1_1Keyboard_1a9c899c94ba2045460cd9e035754f80a4" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>Keyboard</name></member>
+      <member refid="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>KeyboardModule</name></member>
+      <member refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>keyToString</name></member>
+      <member refid="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>KeyToStringMap</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27db3b4fef2a80cd6b85239025d3172" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>L</name></member>
+      <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Layout</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad3b6c0b30f7b71d023cd37bb3e6d397d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftAlt</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28acf6c7498436f92e7425c26e0b1a00435" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftArrow</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4b23332547a3c038554a3b64b39738b8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftBracket</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa13d089d3352220c9fa6f6b6d78634b3" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftControl</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8b3e09e4168864bc6c7dbc652453b892" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftMenu</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a261bfaba349db7202686f6cf16d224cc" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftShift</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a46bc390abd4e94c8963b17e829bb38c4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftWindows</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a16714fa7e96cb8e568d582934bfd9182" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>M</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae1fe733084bed06abfca1b88f924ee4a" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Menu</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a5b3c711aa8b92b34b26940ab2632b526" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Minus</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af52d75f2cfaaeca2ac14a36f8fc683db" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Mode_change</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a251843a4cba6f54e08597317b6909531" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>N</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a741da3efb5abd0bee4f4a24bc1d41ff1" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Next</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7b63523d3656c84643b298210604c360" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Non_convert</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1685ac94f86c798268e49561dded830" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumLock</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a63543d0572138cbed88a36d4b8153c49" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad0</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a08c61b7359b714dd2453018b136d9b9c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad1</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae883ed8dfa350d77911d50b7fc094ad4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad2</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adbcd1bf00b31ec55ddeae4f538276bcf" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad3</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3175c96c226faaaf8934bdab2918c531" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad4</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af56e95a9e99961b53f1c42e0b335a2e8" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad5</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a68f843e2ed25ab2be3dfe9d28883863d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad6</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a586297ec0b6d7104e09fecf67ec391eb" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad7</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a45b16416c1197bebc5131063040f5027" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad8</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2a9de03820ead5858f1ca235d1bc3ff6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Numpad9</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50afc72c1bc75d5312a081f64e240575" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadDecimal</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9b83ceb0ca5304a2d5e6036683378f4b" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadDivide</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a33242dd990b1ca3e8fa9b6d8403abce6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadMinus</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a30fa38dfa3145272422dff0725150bef" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadMultiply</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af64227b94e3e9b8c156aa2dd63d002c7" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadPlus</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae8a105d6cd9eab1e9d4ce2c7e038291a" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadReturn</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a52d90de467035dfa507d86d5236cdacb" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>NumpadSeparator</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a65e386f6a72209d7f02d2c61ffb913cf" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>O</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab1deeff815ce41703e70f16911d12651" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>P</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a74e3cfc422c3a81027a53e898e4e856b" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Pause</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f3e0c26c2a46ddb3df3d7b2180b0d65" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Period</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab5f9c17b938b1f8bdf1c4a8378a75b72" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Plus</name></member>
+      <member refid="classspk_1_1Keyboard_1ae7c24eb679b40f736ab882f03ab2f292" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>pressKey</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a795a3bd302fe4954f53ae3da93580483" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Print</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f6c8e2dab7e117e318f3ea53e4e18ce" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Prior</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4176a84671c1e8d17fda81f177630f39" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Process</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2d3218080a792acb279fdbe511d7bbf0" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Q</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28af46c7059f34b86f4f2cf31a66fa86666" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>QuestionMark</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ae74b05503b4d879c20c21bea549b849b" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Quote</name></member>
+      <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6ae5ffb18a77f858eeb132a9210641d867" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Qwerty</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28adf6b666a3304a45e68522d431c0a248c" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>R</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>release</name></member>
+      <member refid="classspk_1_1Keyboard_1a94ecd823d91d43f6c364568a7a23efa1" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>releaseKey</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a3c52352c2241dcdd97277b140370c129" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Return</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ace00f2e1d0f87d19bb14632bfd939570" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightAlt</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad1bb18f7edfd178236092056c4e17b4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightArrow</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9f0f4a7294c5ae6a15a67dced93a11c3" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightBracket</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a364905543ad0e39567a74247326afe86" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightControl</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac403a54602b7ff052ec7dcd67e264a17" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightMenu</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a089331c6b7bc38c0cb969fb0215175be" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightShift</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2772d025f8fcbd36b33e53d9c06bbb05" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>RightWindows</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a658710a0930ca937fadc48e1bf284088" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>S</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a1978f73e8522f86025fafe18851023ca" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Scroll</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a9ad252c29eca11dad2e62b6823d64b7b" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Select</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a8f7369f3df1ed8dafa125411904ac1c4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>SemiColon</name></member>
+      <member refid="classspk_1_1Keyboard_1a96c38656ea7b2aefffe62cc4548207bb" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>setLayout</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab35b9cb2b27530bb6c50baee5d4e4b3f" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Shift</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::Keyboard</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a2bc82c4ef3e54fc7fd2c6cb7fdc9b2ee" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>SIZE</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28afb381106f3428d98ff47e77843c37428" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Slash</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aad7b94cc9c05967e9791139bf1f929fb" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Sleep</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac20f5a01417c62c8c65ef3756a3be4ce" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Snapshot</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa52041e7ffd1e7ffd118a7334d2d4ee4" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Space</name></member>
+      <member refid="classspk_1_1Keyboard_1a94ba38f3d35ba16980e63a20c9afb2df" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>spk::Singleton&lt; Keyboard &gt;</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a10df537d5fd17f073e365ea3f40e554e" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>T</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a37aa7602c5731c701d3a1167831342de" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Tab</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a22d4f353b2f5da5b3ba002cfd97c472f" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Tilde</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28aa2c0cf73f7437708f0b27f1f1b439232" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>U</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7722fa0c9bbfe9f590aa9aff5d229b24" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Unknow</name></member>
+      <member refid="classspk_1_1Keyboard_1a532d889e2f7354ac11f444ab49a1b858" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>UnknowKeyName</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a77be39d6726b9de74857828ffe9f94d5" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Unknown</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a50d558dfe66c8b52acbf986073895cac" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>UpArrow</name></member>
+      <member refid="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>update</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a17f599cca785501ab96b71a3066b22ee" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>V</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7027b3dbe83411f53957d6181f196a92" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>VerticalLine</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a7ff4dd7fcc80f280ec31e3fc9e6d4a1b" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>W</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a39543f46a596603a76af2db9024b6717" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>X</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28a4e0db1fd591485d98013858884c5b1f9" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Y</name></member>
+      <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac940ba18cbf7cdf271bbf1783381bd48" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

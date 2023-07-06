@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1TimeMetrics" kind="class" language="C++" prot="public">
+    <compoundname>spk::TimeMetrics</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; TimeMetrics &gt;</basecompoundref>
+    <includes refid="spk__time__metrics_8hpp" local="no">spk_time_metrics.hpp</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1TimeMetrics_1afad278268bf704627f2cbb665c5b4ace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; TimeMetrics &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; TimeMetrics &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="1" column="0" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classspk_1_1TimeMetrics_1ade1979a5c31f719d8d9c99880f6719ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class TimeModule</definition>
+        <argsstring></argsstring>
+        <name>TimeModule</name>
+        <param>
+          <type><ref refid="classspk_1_1TimeModule" kindref="compound">TimeModule</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="20" column="1" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1TimeMetrics_1ab69906c09236dd5b9125083418e6f7b1" prot="private" static="no" mutable="no">
+        <type>long long</type>
+        <definition>long long spk::TimeMetrics::_time</definition>
+        <argsstring></argsstring>
+        <name>_time</name>
+        <briefdescription>
+<para>A long long variable representing the total running time of the software. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="26" column="11" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1TimeMetrics_1a055db9c88cb78cd31757f3e123af9afd" prot="private" static="no" mutable="no">
+        <type>long long</type>
+        <definition>long long spk::TimeMetrics::_deltaTime</definition>
+        <argsstring></argsstring>
+        <name>_deltaTime</name>
+        <briefdescription>
+<para>A long long variable representing the delta time or time elapsed since the last frame update. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="31" column="11" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1TimeMetrics_1a3467cf2eddb6b68c2bcda59cca087b40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::TimeMetrics::_updateMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>_updateMetrics</name>
+        <briefdescription>
+<para>A private function to update the time metrics. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="36" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1TimeMetrics_1a7b90f560ee75228c3e369fd044e6577f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::TimeMetrics::TimeMetrics</definition>
+        <argsstring>()</argsstring>
+        <name>TimeMetrics</name>
+        <briefdescription>
+<para>Private constructor to implement the <ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref> pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="41" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1TimeMetrics_1ab2ec64db76c2329d780ef3138ea60611" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr const long long &amp;</type>
+        <definition>constexpr const long long&amp; spk::TimeMetrics::time</definition>
+        <argsstring>() const</argsstring>
+        <name>time</name>
+        <briefdescription>
+<para>Accessor function to get the total running time of the software. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the total running time of the software variable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="49" column="27" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1TimeMetrics_1a24989064858748b2da18b1726280bd0a" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr const long long &amp;</type>
+        <definition>constexpr const long long&amp; spk::TimeMetrics::deltaTime</definition>
+        <argsstring>() const</argsstring>
+        <name>deltaTime</name>
+        <briefdescription>
+<para>Accessor function to get the time elapsed since the last frame update. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the the time elapsed since the last frame update. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="55" column="27" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1TimeMetrics_1af19a929fc6b3b6be1b9a06ca48022b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::TimeMetrics::sleepAtLeast</definition>
+        <argsstring>(size_t p_millisecond)</argsstring>
+        <name>sleepAtLeast</name>
+        <param>
+          <type>size_t</type>
+          <declname>p_millisecond</declname>
+        </param>
+        <briefdescription>
+<para>Function to put the current thread to sleep for at least the specified duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_millisecond</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum number of milliseconds the thread should sleep. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_time_metrics.hpp" line="61" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A singleton class to manage time-related metrics for the software. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is responsible for keeping track of the software&apos;s running time and other time-related metrics. This ensures consistency across the entire software. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::Singleton&lt; TimeMetrics &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::TimeMetrics</label>
+        <link refid="classspk_1_1TimeMetrics"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::Singleton&lt; TimeMetrics &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::TimeMetrics</label>
+        <link refid="classspk_1_1TimeMetrics"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/system/spk_time_metrics.hpp" line="17" column="1" bodyfile="includes/system/spk_time_metrics.hpp" bodystart="18" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classspk_1_1TimeMetrics_1a055db9c88cb78cd31757f3e123af9afd" prot="private" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>_deltaTime</name></member>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>_instance</name></member>
+      <member refid="classspk_1_1TimeMetrics_1ab69906c09236dd5b9125083418e6f7b1" prot="private" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>_time</name></member>
+      <member refid="classspk_1_1TimeMetrics_1a3467cf2eddb6b68c2bcda59cca087b40" prot="private" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>_updateMetrics</name></member>
+      <member refid="classspk_1_1TimeMetrics_1a24989064858748b2da18b1726280bd0a" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>deltaTime</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>release</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1TimeMetrics_1af19a929fc6b3b6be1b9a06ca48022b2d" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>sleepAtLeast</name></member>
+      <member refid="classspk_1_1TimeMetrics_1afad278268bf704627f2cbb665c5b4ace" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>spk::Singleton&lt; TimeMetrics &gt;</name></member>
+      <member refid="classspk_1_1TimeMetrics_1ab2ec64db76c2329d780ef3138ea60611" prot="public" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>time</name></member>
+      <member refid="classspk_1_1TimeMetrics_1a7b90f560ee75228c3e369fd044e6577f" prot="private" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>TimeMetrics</name></member>
+      <member refid="classspk_1_1TimeMetrics_1ade1979a5c31f719d8d9c99880f6719ee" prot="private" virt="non-virtual"><scope>spk::TimeMetrics</scope><name>TimeModule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

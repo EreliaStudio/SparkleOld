@@ -1,0 +1,44 @@
+\hypertarget{classspk_1_1AbstractApplication}{}\doxysection{spk\+::Abstract\+Application Class Reference}
+\label{classspk_1_1AbstractApplication}\index{spk::AbstractApplication@{spk::AbstractApplication}}
+
+
+Inheritance diagram for spk\+::Abstract\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classspk_1_1AbstractApplication__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}\label{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}} 
+using {\bfseries Job} = std\+::function$<$ void()$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}\label{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}} 
+int {\bfseries run} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}\label{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}} 
+void {\bfseries quit} (int p\+\_\+error\+Code)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}\label{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}} 
+void {\bfseries add\+Job} (const std\+::wstring \&p\+\_\+\+Worker\+Name, const Job \&p\+\_\+job)
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}\label{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}} 
+void {\bfseries add\+Job} (const Job \&p\+\_\+job)
+\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}\label{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}} 
+virtual void {\bfseries setup\+Jobs} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/application/spk\+\_\+abstract\+\_\+application.\+hpp\end{DoxyCompactItemize}

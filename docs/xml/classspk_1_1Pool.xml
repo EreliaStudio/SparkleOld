@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Pool" kind="class" language="C++" prot="public">
+    <compoundname>spk::Pool</compoundname>
+    <innerclass refid="classspk_1_1Pool_1_1Object" prot="public">spk::Pool::Object</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classspk_1_1Pool_1a183ad1e7d1f91a63bf4c22ae30caea59" prot="private" static="no">
+        <type>std::vector&lt; TType * &gt;</type>
+        <definition>using spk::Pool&lt; TType &gt;::Container =  std::vector&lt;TType *&gt;</definition>
+        <argsstring></argsstring>
+        <name>Container</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="11" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Pool_1a2f622c73697f975bde28e0adf0458699" prot="private" static="no" mutable="no">
+        <type>Container</type>
+        <definition>Container spk::Pool&lt; TType &gt;::_allocatedObjects</definition>
+        <argsstring></argsstring>
+        <name>_allocatedObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="12" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Pool_1a0d4b6b3222ed33dc857a4f99551fd223" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::Pool&lt; TType &gt;::Pool</definition>
+        <argsstring>()</argsstring>
+        <name>Pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="77" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1a474e0d1a5d1a045baa2351a978e1406e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::Pool&lt; TType &gt;::reserve</definition>
+        <argsstring>(size_t p_nbElement, Args &amp;&amp;...p_args)</argsstring>
+        <name>reserve</name>
+        <param>
+          <type>size_t</type>
+          <declname>p_nbElement</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="82" column="14" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="82" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1a64032a2a21f5cf73a4836178a347a73c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref></type>
+        <definition>Object spk::Pool&lt; TType &gt;::obtain</definition>
+        <argsstring>(Args &amp;&amp;...p_args)</argsstring>
+        <name>obtain</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="94" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="94" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1ac584858b3175a8feb8cc778542e216c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t spk::Pool&lt; TType &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="114" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/data_structure/spk_pool.hpp" line="8" column="5" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="9" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Pool_1a2f622c73697f975bde28e0adf0458699" prot="private" virt="non-virtual"><scope>spk::Pool</scope><name>_allocatedObjects</name></member>
+      <member refid="classspk_1_1Pool_1a183ad1e7d1f91a63bf4c22ae30caea59" prot="private" virt="non-virtual"><scope>spk::Pool</scope><name>Container</name></member>
+      <member refid="classspk_1_1Pool_1a64032a2a21f5cf73a4836178a347a73c" prot="public" virt="non-virtual"><scope>spk::Pool</scope><name>obtain</name></member>
+      <member refid="classspk_1_1Pool_1a0d4b6b3222ed33dc857a4f99551fd223" prot="public" virt="non-virtual"><scope>spk::Pool</scope><name>Pool</name></member>
+      <member refid="classspk_1_1Pool_1a474e0d1a5d1a045baa2351a978e1406e" prot="public" virt="non-virtual"><scope>spk::Pool</scope><name>reserve</name></member>
+      <member refid="classspk_1_1Pool_1ac584858b3175a8feb8cc778542e216c3" prot="public" virt="non-virtual"><scope>spk::Pool</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

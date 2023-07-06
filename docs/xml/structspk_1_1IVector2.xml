@@ -1,0 +1,826 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1IVector2" kind="struct" language="C++" prot="public">
+    <compoundname>spk::IVector2</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structspk_1_1IVector2_1a7aef6e160a85e33668c18c5e743127ef" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector2&lt; TType &gt;::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="20" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structspk_1_1IVector2_1aefc7c3164247217231e53c0b75e21e3b" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector2&lt; TType &gt;::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="21" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structspk_1_1IVector2_1ad681cb3d88fd9a4ca1e60c3c44e600b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::IVector2&lt; TType &gt;::IVector2</definition>
+        <argsstring>()</argsstring>
+        <name>IVector2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="23" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ae197d470bdc2579bd6434f1d23e569bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2&lt; TType &gt;::IVector2</definition>
+        <argsstring>(const TOtherType &amp;p_value)</argsstring>
+        <name>IVector2</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="26" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a3199f7709d8d15633920c7602b1c1e55" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2&lt; TType &gt;::IVector2</definition>
+        <argsstring>(const TOtherType &amp;p_x, const TOtherType &amp;p_y)</argsstring>
+        <name>IVector2</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_x</declname>
+        </param>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="29" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a4960cc3b4ade5cfd48cd0b78281d179a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2&lt; TType &gt;::operator IVector2&lt; TOtherType &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator IVector2&lt; TOtherType &gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="32" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a9d6df11d0dea89825de285227208b4e8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2&lt; TType &gt;::operator+</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="44" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a93181e2a39090202e764fe87e5a6d1c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2&lt; TType &gt;::operator-</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="50" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a409c7ef14a15f0e7bee9e781ea3f029c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2&lt; TType &gt;::operator*</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="56" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a7d8fac9e93e024514717ef2594724aec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2&lt; TType &gt;::operator/</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="62" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="62" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a46f20fbffbe8c392bf857f84f6175c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2&lt; TType &gt;::operator+=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="70" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="70" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a96c33ee627ed1700aff6627261a074ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2&lt; TType &gt;::operator-=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="77" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a0609e1b115b35f3293a19e9f1b3aa91c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2&lt; TType &gt;::operator*=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="84" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a8158dcf13f51999650b00e83c36be525" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2&lt; TType &gt;::operator/=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="91" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a19a45be30c1cb18600add47dddd15ce1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator==</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;delta) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="100" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a8a7d7e368595e4a4db1580995d7df6f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator!=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;delta) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="106" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a50ee09f391a89938f95501f6f830818d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator&lt;</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="112" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="112" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ab1b6a3babc24fbb384fde2327590f4ef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator&gt;</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="122" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="122" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ae1604ed3d5d9945e9183396dc976d906" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator&lt;=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="132" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="132" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1acd97e47a3bfd966a412f9520c98748d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2&lt; TType &gt;::operator&gt;=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="140" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="140" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1aa0d0c755988c4ce9ec8e86e1744d997e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::IVector2&lt; TType &gt;::norm</definition>
+        <argsstring>() const</argsstring>
+        <name>norm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="147" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="147" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1abf3cb20ecff4c986f8a7d602e89623a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2&lt; TType &gt;::distance</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>distance</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="154" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a6bc80581ee0fb7ce5f10b751b85fa0cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
+        <definition>IVector2&lt;float&gt; spk::IVector2&lt; TType &gt;::normalize</definition>
+        <argsstring>() const</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="159" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="159" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a4d5cc1aceeca9b90fcecf6d6fe49520d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2&lt; TType &gt;::cross</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other=IVector2(0, 0)) const</argsstring>
+        <name>cross</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+          <defval><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="171" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="171" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a6ab6d332aa26f3da116169b39014f113" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2&lt; TType &gt;::crossZ</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>crossZ</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="181" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a5b615184fb3c906955819e01958102bc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2&lt; TType &gt;::dot</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</argsstring>
+        <name>dot</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+          <defval><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="187" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="187" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a4c3925ad849ad4d9b1bdba9a8c0d879c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2&lt; TType &gt;::angle</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</argsstring>
+        <name>angle</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+          <defval><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="197" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="197" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a94bb60fe03d90225da1337147ac4bb72" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2&lt; TType &gt;::invert</definition>
+        <argsstring>() const</argsstring>
+        <name>invert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="208" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a2a657d838bdfcbb18dd0309977d34d5b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2&lt; TType &gt;::rotate</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_center, const float &amp;p_angle) const</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>p_angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="214" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="214" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structspk_1_1IVector2_1a0ad00eba4b802fae1acede9ef72d21bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::wostream &amp;</type>
+        <definition>std::wostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::wostream &amp;p_os, const IVector2 &amp;p_self)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::wostream &amp;</type>
+          <declname>p_os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_self</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="37" column="8" bodyfile="includes/math/spk_vector2.hpp" bodystart="37" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structspk_1_1IVector2_1af58b4937f57ec150690b653144e627f2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::floor</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>floor</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="228" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="228" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ac22c9a8609ce9b7f2215eff7c120ed0c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::ceiling</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>ceiling</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="238" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="238" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a173f7d72b11d82a87db01e6a6dfe625e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::round</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>round</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="248" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="248" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ae64ebb9cf02e5bbf329ea31d35e29841" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::min</definition>
+        <argsstring>(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</argsstring>
+        <name>min</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="258" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="258" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a452209253a7a42351fc09951297f7d4d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::max</definition>
+        <argsstring>(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</argsstring>
+        <name>max</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="263" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="263" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1a34fd8293e2ff4b4bfa398dd70d158081" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool spk::IVector2&lt; TType &gt;::isInsideRectangle</definition>
+        <argsstring>(const IVector2 &amp;p_point, const IVector2 &amp;p_cornerA, const IVector2 &amp;p_cornerB)</argsstring>
+        <name>isInsideRectangle</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_cornerA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_cornerB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="268" column="13" bodyfile="includes/math/spk_vector2.hpp" bodystart="268" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_1ae564274f20ad50bb14dc2d34806cdec4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2&lt; TType &gt;::lerp</definition>
+        <argsstring>(const IVector2 &amp;p_startingPoint, const IVector2 &amp;p_endingPoint, float t)</argsstring>
+        <name>lerp</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_startingPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_endingPoint</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="279" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="279" bodyend="284"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/math/spk_vector2.hpp" line="18" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="19" bodyend="285"/>
+    <listofallmembers>
+      <member refid="structspk_1_1IVector2_1a4c3925ad849ad4d9b1bdba9a8c0d879c" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>angle</name></member>
+      <member refid="structspk_1_1IVector2_1ac22c9a8609ce9b7f2215eff7c120ed0c" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>ceiling</name></member>
+      <member refid="structspk_1_1IVector2_1a4d5cc1aceeca9b90fcecf6d6fe49520d" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>cross</name></member>
+      <member refid="structspk_1_1IVector2_1a6ab6d332aa26f3da116169b39014f113" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>crossZ</name></member>
+      <member refid="structspk_1_1IVector2_1abf3cb20ecff4c986f8a7d602e89623a2" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>distance</name></member>
+      <member refid="structspk_1_1IVector2_1a5b615184fb3c906955819e01958102bc" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>dot</name></member>
+      <member refid="structspk_1_1IVector2_1af58b4937f57ec150690b653144e627f2" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>floor</name></member>
+      <member refid="structspk_1_1IVector2_1a94bb60fe03d90225da1337147ac4bb72" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>invert</name></member>
+      <member refid="structspk_1_1IVector2_1a34fd8293e2ff4b4bfa398dd70d158081" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>isInsideRectangle</name></member>
+      <member refid="structspk_1_1IVector2_1ad681cb3d88fd9a4ca1e60c3c44e600b6" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_1ae197d470bdc2579bd6434f1d23e569bc" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_1a3199f7709d8d15633920c7602b1c1e55" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_1ae564274f20ad50bb14dc2d34806cdec4" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>lerp</name></member>
+      <member refid="structspk_1_1IVector2_1a452209253a7a42351fc09951297f7d4d" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>max</name></member>
+      <member refid="structspk_1_1IVector2_1ae64ebb9cf02e5bbf329ea31d35e29841" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>min</name></member>
+      <member refid="structspk_1_1IVector2_1aa0d0c755988c4ce9ec8e86e1744d997e" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>norm</name></member>
+      <member refid="structspk_1_1IVector2_1a6bc80581ee0fb7ce5f10b751b85fa0cb" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>normalize</name></member>
+      <member refid="structspk_1_1IVector2_1a4960cc3b4ade5cfd48cd0b78281d179a" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator IVector2&lt; TOtherType &gt;</name></member>
+      <member refid="structspk_1_1IVector2_1a8a7d7e368595e4a4db1580995d7df6f6" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator!=</name></member>
+      <member refid="structspk_1_1IVector2_1a409c7ef14a15f0e7bee9e781ea3f029c" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator*</name></member>
+      <member refid="structspk_1_1IVector2_1a0609e1b115b35f3293a19e9f1b3aa91c" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator*=</name></member>
+      <member refid="structspk_1_1IVector2_1a9d6df11d0dea89825de285227208b4e8" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator+</name></member>
+      <member refid="structspk_1_1IVector2_1a46f20fbffbe8c392bf857f84f6175c33" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator+=</name></member>
+      <member refid="structspk_1_1IVector2_1a93181e2a39090202e764fe87e5a6d1c5" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator-</name></member>
+      <member refid="structspk_1_1IVector2_1a96c33ee627ed1700aff6627261a074ac" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator-=</name></member>
+      <member refid="structspk_1_1IVector2_1a7d8fac9e93e024514717ef2594724aec" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator/</name></member>
+      <member refid="structspk_1_1IVector2_1a8158dcf13f51999650b00e83c36be525" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator/=</name></member>
+      <member refid="structspk_1_1IVector2_1a50ee09f391a89938f95501f6f830818d" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator&lt;</name></member>
+      <member refid="structspk_1_1IVector2_1a0ad00eba4b802fae1acede9ef72d21bd" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structspk_1_1IVector2_1ae1604ed3d5d9945e9183396dc976d906" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator&lt;=</name></member>
+      <member refid="structspk_1_1IVector2_1a19a45be30c1cb18600add47dddd15ce1" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator==</name></member>
+      <member refid="structspk_1_1IVector2_1ab1b6a3babc24fbb384fde2327590f4ef" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator&gt;</name></member>
+      <member refid="structspk_1_1IVector2_1acd97e47a3bfd966a412f9520c98748d1" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>operator&gt;=</name></member>
+      <member refid="structspk_1_1IVector2_1a2a657d838bdfcbb18dd0309977d34d5b" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>rotate</name></member>
+      <member refid="structspk_1_1IVector2_1a173f7d72b11d82a87db01e6a6dfe625e" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>round</name></member>
+      <member refid="structspk_1_1IVector2_1a7aef6e160a85e33668c18c5e743127ef" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>x</name></member>
+      <member refid="structspk_1_1IVector2_1aefc7c3164247217231e53c0b75e21e3b" prot="public" virt="non-virtual"><scope>spk::IVector2</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

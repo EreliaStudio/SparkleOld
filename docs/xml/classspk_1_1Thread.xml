@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Thread" kind="class" language="C++" prot="public">
+    <compoundname>spk::Thread</compoundname>
+    <derivedcompoundref refid="classspk_1_1PersistentWorker" prot="public" virt="non-virtual">spk::PersistentWorker</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LaunchMethod</name>
+        <enumvalue id="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6a6e04a0730cfc0bca398610196b5f8467" prot="public">
+          <name>Delayed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6a43f6615bbb2c40a5306ff804094420b1" prot="public">
+          <name>Immediate</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="15" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Thread_1af237389d99e85c8dde48d6144e62ff48" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>std::function&lt;void()&gt; spk::Thread::_funct</definition>
+        <argsstring></argsstring>
+        <name>_funct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="22" column="23" bodyfile="includes/threading/spk_thread.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Thread_1a7702fde0065f2c50cd662a2cece3f016" prot="private" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread spk::Thread::_thread</definition>
+        <argsstring></argsstring>
+        <name>_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="23" column="21" bodyfile="includes/threading/spk_thread.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Thread_1aefcb08911f9e6aa4e62f4a111d10b295" prot="private" static="no" mutable="no">
+        <type>std::promise&lt; void &gt;</type>
+        <definition>std::promise&lt;void&gt; spk::Thread::_starterSignal</definition>
+        <argsstring></argsstring>
+        <name>_starterSignal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="24" column="22" bodyfile="includes/threading/spk_thread.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Thread_1a7addb5ad82fee3d906e0a49cb3572f69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Funct</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::Thread::Thread</definition>
+        <argsstring>(const std::wstring &amp;p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</argsstring>
+        <name>Thread</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_threadName</declname>
+        </param>
+        <param>
+          <type>Funct &amp;&amp;</type>
+          <declname>p_func</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="28" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="28" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Thread_1afdc8fce9be9a5bc00dfdd9c7d149f588" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Funct</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::Thread::Thread</definition>
+        <argsstring>(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</argsstring>
+        <name>Thread</name>
+        <param>
+          <type>LaunchMethod</type>
+          <declname>p_launchMethod</declname>
+        </param>
+        <param>
+          <type>std::wstring</type>
+          <declname>p_threadName</declname>
+        </param>
+        <param>
+          <type>Funct &amp;&amp;</type>
+          <declname>p_func</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="43" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Thread_1a97d08ba39aee6ee49292fd53f08bcb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Thread::~Thread</definition>
+        <argsstring>()</argsstring>
+        <name>~Thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="52" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::thread::id</type>
+        <definition>std::thread::id spk::Thread::getId</definition>
+        <argsstring>() const</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="54" column="25" bodyfile="includes/threading/spk_thread.hpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Thread_1a4eed5d9b453feae180a98f80a2f117ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Thread::join</definition>
+        <argsstring>()</argsstring>
+        <name>join</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="59" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Thread_1a3c9242c1ea81ec3de8b78445e1d2a421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Thread::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread.hpp" line="61" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::Thread</label>
+        <link refid="classspk_1_1Thread"/>
+      </node>
+      <node id="2">
+        <label>spk::PersistentWorker</label>
+        <link refid="classspk_1_1PersistentWorker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="includes/threading/spk_thread.hpp" line="12" column="5" bodyfile="includes/threading/spk_thread.hpp" bodystart="13" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Thread_1af237389d99e85c8dde48d6144e62ff48" prot="private" virt="non-virtual"><scope>spk::Thread</scope><name>_funct</name></member>
+      <member refid="classspk_1_1Thread_1aefcb08911f9e6aa4e62f4a111d10b295" prot="private" virt="non-virtual"><scope>spk::Thread</scope><name>_starterSignal</name></member>
+      <member refid="classspk_1_1Thread_1a7702fde0065f2c50cd662a2cece3f016" prot="private" virt="non-virtual"><scope>spk::Thread</scope><name>_thread</name></member>
+      <member refid="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>getId</name></member>
+      <member refid="classspk_1_1Thread_1a4eed5d9b453feae180a98f80a2f117ad" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>join</name></member>
+      <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>LaunchMethod</name></member>
+      <member refid="classspk_1_1Thread_1a3c9242c1ea81ec3de8b78445e1d2a421" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>start</name></member>
+      <member refid="classspk_1_1Thread_1a7addb5ad82fee3d906e0a49cb3572f69" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>Thread</name></member>
+      <member refid="classspk_1_1Thread_1afdc8fce9be9a5bc00dfdd9c7d149f588" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>Thread</name></member>
+      <member refid="classspk_1_1Thread_1a97d08ba39aee6ee49292fd53f08bcb07" prot="public" virt="non-virtual"><scope>spk::Thread</scope><name>~Thread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1RandomGenerator" kind="class" language="C++" prot="public">
+    <compoundname>spk::RandomGenerator</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename IntType</type>
+        <defval>int</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1RandomGenerator_1a4fb1cef23f68d3aaf9e985fa234f59e5" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 spk::RandomGenerator&lt; IntType &gt;::_generator</definition>
+        <argsstring></argsstring>
+        <name>_generator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="11" column="14" bodyfile="includes/math/spk_random_generator.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1RandomGenerator_1a21b0d25d6ce9c2d3d7cc3e9fe20d4f18" prot="private" static="no" mutable="no">
+        <type>std::uniform_int_distribution&lt; IntType &gt;</type>
+        <definition>std::uniform_int_distribution&lt; IntType &gt; spk::RandomGenerator&lt; IntType &gt;::_distribution</definition>
+        <argsstring></argsstring>
+        <name>_distribution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="12" column="31" bodyfile="includes/math/spk_random_generator.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1adff8299eaa9cbc86582321597a80f2b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::RandomGenerator&lt; IntType &gt;::RandomGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>RandomGenerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="15" column="1" bodyfile="includes/math/spk_random_generator.hpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1a7f72dae6004074788deecba74c5236cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::RandomGenerator&lt; IntType &gt;::RandomGenerator</definition>
+        <argsstring>(const uint64_t &amp;p_seed)</argsstring>
+        <name>RandomGenerator</name>
+        <param>
+          <type>const uint64_t &amp;</type>
+          <declname>p_seed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="20" column="1" bodyfile="includes/math/spk_random_generator.hpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1a059cf392c82a52e718c8ce84fb2bb2c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::RandomGenerator&lt; IntType &gt;::RandomGenerator</definition>
+        <argsstring>(const RandomGenerator &amp;p_other)=delete</argsstring>
+        <name>RandomGenerator</name>
+        <param>
+          <type>const <ref refid="classspk_1_1RandomGenerator" kindref="compound">RandomGenerator</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1afbf5624de8c186559746af0a8ed9c029" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::RandomGenerator&lt; IntType &gt;::setDistributionRange</definition>
+        <argsstring>(const IntType &amp;p_min, const IntType &amp;p_max)</argsstring>
+        <name>setDistributionRange</name>
+        <param>
+          <type>const IntType &amp;</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>const IntType &amp;</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="27" column="6" bodyfile="includes/math/spk_random_generator.hpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1abfb6719ee850820f2f090a8d70143873" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr IntType</type>
+        <definition>constexpr IntType spk::RandomGenerator&lt; IntType &gt;::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="32" column="19" bodyfile="includes/math/spk_random_generator.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1a96370335c177656f4878ebab8cc4b4b3" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr IntType</type>
+        <definition>constexpr IntType spk::RandomGenerator&lt; IntType &gt;::min</definition>
+        <argsstring>() const</argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="34" column="19" bodyfile="includes/math/spk_random_generator.hpp" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1RandomGenerator_1a65f9e7bda3b0a4a3a1638c5a55dfcb5c" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr IntType</type>
+        <definition>constexpr IntType spk::RandomGenerator&lt; IntType &gt;::max</definition>
+        <argsstring>() const</argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_random_generator.hpp" line="35" column="19" bodyfile="includes/math/spk_random_generator.hpp" bodystart="35" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/math/spk_random_generator.hpp" line="8" column="1" bodyfile="includes/math/spk_random_generator.hpp" bodystart="9" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classspk_1_1RandomGenerator_1a21b0d25d6ce9c2d3d7cc3e9fe20d4f18" prot="private" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>_distribution</name></member>
+      <member refid="classspk_1_1RandomGenerator_1a4fb1cef23f68d3aaf9e985fa234f59e5" prot="private" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>_generator</name></member>
+      <member refid="classspk_1_1RandomGenerator_1a65f9e7bda3b0a4a3a1638c5a55dfcb5c" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>max</name></member>
+      <member refid="classspk_1_1RandomGenerator_1a96370335c177656f4878ebab8cc4b4b3" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>min</name></member>
+      <member refid="classspk_1_1RandomGenerator_1abfb6719ee850820f2f090a8d70143873" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>operator()</name></member>
+      <member refid="classspk_1_1RandomGenerator_1adff8299eaa9cbc86582321597a80f2b1" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>RandomGenerator</name></member>
+      <member refid="classspk_1_1RandomGenerator_1a7f72dae6004074788deecba74c5236cb" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>RandomGenerator</name></member>
+      <member refid="classspk_1_1RandomGenerator_1a059cf392c82a52e718c8ce84fb2bb2c2" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>RandomGenerator</name></member>
+      <member refid="classspk_1_1RandomGenerator_1afbf5624de8c186559746af0a8ed9c029" prot="public" virt="non-virtual"><scope>spk::RandomGenerator</scope><name>setDistributionRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

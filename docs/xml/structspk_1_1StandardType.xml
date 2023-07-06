@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1StandardType" kind="struct" language="C++" prot="public">
+    <compoundname>spk::StandardType</compoundname>
+    <basecompoundref refid="classspk_1_1Memento" prot="public" virt="non-virtual">spk::Memento</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+      <param>
+        <type>typename</type>
+        <defval>std::enable_if_t&lt;std::is_standard_layout&lt;TType&gt;::value&gt;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structspk_1_1StandardType_1a42a28212057ade7832c36f853860f20d" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::StandardType&lt; TType, typename &gt;::_value</definition>
+        <argsstring></argsstring>
+        <name>_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="57" column="7" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref></type>
+        <definition>Snapshot spk::StandardType&lt; TType, typename &gt;::_onSave</definition>
+        <argsstring>()</argsstring>
+        <name>_onSave</name>
+        <reimplements refid="classspk_1_1Memento_1a491ab5809b78d025351dd71d00aa5983">_onSave</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="59" column="10" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void spk::StandardType&lt; TType, typename &gt;::_onLoad</definition>
+        <argsstring>(const Snapshot &amp;p_snapshot)</argsstring>
+        <name>_onLoad</name>
+        <reimplements refid="classspk_1_1Memento_1a721b3cee608af0aa4a50327b6545ed3a">_onLoad</reimplements>
+        <param>
+          <type>const <ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref> &amp;</type>
+          <declname>p_snapshot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="68" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a64b8eb651319f881834a6534f4c37236" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::StandardType&lt; TType, typename &gt;::StandardType</definition>
+        <argsstring>()</argsstring>
+        <name>StandardType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="73" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a764d4c6e44e84b4c34a5216279afbecf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::StandardType&lt; TType, typename &gt;::StandardType</definition>
+        <argsstring>(const TType &amp;p_value)</argsstring>
+        <name>StandardType</name>
+        <param>
+          <type>const TType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="79" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="79" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a4cfaaa7966d8cde38e3b9a37e96b296a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1StandardType" kindref="compound">StandardType</ref> &amp;</type>
+        <definition>StandardType&amp; spk::StandardType&lt; TType, typename &gt;::operator=</definition>
+        <argsstring>(const TType &amp;p_value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const TType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="85" column="14" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a1c1cd67f446d342eeb2a21a3971400d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::StandardType&lt; TType, typename &gt;::operator TType &amp;</definition>
+        <argsstring>()</argsstring>
+        <name>operator TType &amp;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="91" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="91" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1StandardType_1a23e80e70d1a0bfd829ec44c2599b72d6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::StandardType&lt; TType, typename &gt;::operator const TType &amp;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator const TType &amp;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="96" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="96" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::StandardType&lt; TType, typename &gt;</label>
+        <link refid="structspk_1_1StandardType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Memento</label>
+        <link refid="classspk_1_1Memento"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::StandardType&lt; TType, typename &gt;</label>
+        <link refid="structspk_1_1StandardType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Memento</label>
+        <link refid="classspk_1_1Memento"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/design_pattern/spk_memento.hpp" line="55" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="56" bodyend="100"/>
+    <listofallmembers>
+      <member refid="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd" prot="public" virt="virtual"><scope>spk::StandardType</scope><name>_onLoad</name></member>
+      <member refid="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef" prot="public" virt="virtual"><scope>spk::StandardType</scope><name>_onSave</name></member>
+      <member refid="structspk_1_1StandardType_1a42a28212057ade7832c36f853860f20d" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>_value</name></member>
+      <member refid="structspk_1_1StandardType_1a23e80e70d1a0bfd829ec44c2599b72d6" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>operator const TType &amp;</name></member>
+      <member refid="structspk_1_1StandardType_1a1c1cd67f446d342eeb2a21a3971400d5" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>operator TType &amp;</name></member>
+      <member refid="structspk_1_1StandardType_1a4cfaaa7966d8cde38e3b9a37e96b296a" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>operator=</name></member>
+      <member refid="classspk_1_1Memento_1acc5b23d29f89d6b525f0addbec8ea1f1" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>redo</name></member>
+      <member refid="classspk_1_1Memento_1a7f12af3b10f86024f5ad641737db2670" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>save</name></member>
+      <member refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>Snapshot</name></member>
+      <member refid="structspk_1_1StandardType_1a64b8eb651319f881834a6534f4c37236" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>StandardType</name></member>
+      <member refid="structspk_1_1StandardType_1a764d4c6e44e84b4c34a5216279afbecf" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>StandardType</name></member>
+      <member refid="classspk_1_1Memento_1a2c527cb980acf2a96a213d17eddcd316" prot="public" virt="non-virtual"><scope>spk::StandardType</scope><name>undo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

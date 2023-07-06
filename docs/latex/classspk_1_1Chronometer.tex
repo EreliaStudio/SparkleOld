@@ -1,0 +1,139 @@
+\hypertarget{classspk_1_1Chronometer}{}\doxysection{spk\+::Chronometer Class Reference}
+\label{classspk_1_1Chronometer}\index{spk::Chronometer@{spk::Chronometer}}
+
+
+A simple chronometer class to measure elapsed time.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+chronometer.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Chronometer_ab3ccc11a966c8fae2fda49672e6926e7}\label{classspk_1_1Chronometer_ab3ccc11a966c8fae2fda49672e6926e7}} 
+\mbox{\hyperlink{classspk_1_1Chronometer_ab3ccc11a966c8fae2fda49672e6926e7}{Chronometer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Chronometer_a36ee5132ae04063e8a172c7536f65f55}\label{classspk_1_1Chronometer_a36ee5132ae04063e8a172c7536f65f55}} 
+\mbox{\hyperlink{classspk_1_1Chronometer_a36ee5132ae04063e8a172c7536f65f55}{$\sim$\+Chronometer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Chronometer_a91a0407b2e45991c43636c367fb32839}\label{classspk_1_1Chronometer_a91a0407b2e45991c43636c367fb32839}} 
+void \mbox{\hyperlink{classspk_1_1Chronometer_a91a0407b2e45991c43636c367fb32839}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Full reset of the \mbox{\hyperlink{classspk_1_1Chronometer}{Chronometer}}, reseting his status to factory values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Chronometer_af8bcb635c7ebde03542f03ba524c3fac}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the chronometer. Reset the duration of the chronometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Chronometer_addd90d2bffe6f22174d7a901795aa1ab}{resume}} ()
+\begin{DoxyCompactList}\small\item\em Resume the chronometer from the time it was stopped. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1Chronometer_acaa0be287be0a1ec7a3a19dd01d57c08}{has\+Been\+Started}} () const
+\begin{DoxyCompactList}\small\item\em Check if the chronometer have been used previously. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1Chronometer_af87e5503b7f9b80fb2f87151c4198ff5}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Check if the chronometer is currently running. \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{classspk_1_1Chronometer_af485ed807d7772e0901e77b65902a79d}{duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements. \end{DoxyCompactList}\item 
+const long long \& \mbox{\hyperlink{classspk_1_1Chronometer_a2a19c00ea8c6e9ba74134214c07b915f}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the chronometer. Set the status of the chronometer to stopped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Chronometer_a5b40d2e9a91ef070de1e392d1e400eae}\label{classspk_1_1Chronometer_a5b40d2e9a91ef070de1e392d1e400eae}} 
+static const long long {\bfseries UNINITIALIZED} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple chronometer class to measure elapsed time. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Chronometer_af485ed807d7772e0901e77b65902a79d}\label{classspk_1_1Chronometer_af485ed807d7772e0901e77b65902a79d}} 
+\index{spk::Chronometer@{spk::Chronometer}!duration@{duration}}
+\index{duration@{duration}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{duration()}{duration()}}
+{\footnotesize\ttfamily long long spk\+::\+Chronometer\+::duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements. 
+
+\begin{DoxyReturn}{Returns}
+The duration in milliseconds. If the chronometer is not running, the duration remains the same. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Chronometer_acaa0be287be0a1ec7a3a19dd01d57c08}\label{classspk_1_1Chronometer_acaa0be287be0a1ec7a3a19dd01d57c08}} 
+\index{spk::Chronometer@{spk::Chronometer}!hasBeenStarted@{hasBeenStarted}}
+\index{hasBeenStarted@{hasBeenStarted}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{hasBeenStarted()}{hasBeenStarted()}}
+{\footnotesize\ttfamily bool spk\+::\+Chronometer\+::has\+Been\+Started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the chronometer have been used previously. 
+
+\begin{DoxyReturn}{Returns}
+True if the chronometer have been used, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Chronometer_af87e5503b7f9b80fb2f87151c4198ff5}\label{classspk_1_1Chronometer_af87e5503b7f9b80fb2f87151c4198ff5}} 
+\index{spk::Chronometer@{spk::Chronometer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool spk\+::\+Chronometer\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the chronometer is currently running. 
+
+\begin{DoxyReturn}{Returns}
+True if the chronometer is running, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Chronometer_addd90d2bffe6f22174d7a901795aa1ab}\label{classspk_1_1Chronometer_addd90d2bffe6f22174d7a901795aa1ab}} 
+\index{spk::Chronometer@{spk::Chronometer}!resume@{resume}}
+\index{resume@{resume}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily void spk\+::\+Chronometer\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resume the chronometer from the time it was stopped. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the chronometer is already running. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Chronometer_af8bcb635c7ebde03542f03ba524c3fac}\label{classspk_1_1Chronometer_af8bcb635c7ebde03542f03ba524c3fac}} 
+\index{spk::Chronometer@{spk::Chronometer}!start@{start}}
+\index{start@{start}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void spk\+::\+Chronometer\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the chronometer. Reset the duration of the chronometer. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the chronometer is already running. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Chronometer_a2a19c00ea8c6e9ba74134214c07b915f}\label{classspk_1_1Chronometer_a2a19c00ea8c6e9ba74134214c07b915f}} 
+\index{spk::Chronometer@{spk::Chronometer}!stop@{stop}}
+\index{stop@{stop}!spk::Chronometer@{spk::Chronometer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily const long long\& spk\+::\+Chronometer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the chronometer. Set the status of the chronometer to stopped. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the chronometer is already stopped. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The total duration in milliseconds. If the chronometer is already stopped, a runtime\+\_\+error is thrown. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/system/spk\+\_\+chronometer.\+hpp\end{DoxyCompactItemize}

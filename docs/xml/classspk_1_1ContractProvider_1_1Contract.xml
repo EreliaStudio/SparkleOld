@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ContractProvider_1_1Contract" kind="class" language="C++" prot="public">
+    <compoundname>spk::ContractProvider::Contract</compoundname>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ContractProvider</definition>
+        <argsstring></argsstring>
+        <name>ContractProvider</name>
+        <param>
+          <type><ref refid="classspk_1_1ContractProvider" kindref="compound">ContractProvider</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="18" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1ContractProvider_1_1Contract_1a0d4e00a53d3a52654c702671dc05ed13" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool spk::ContractProvider::Contract::_isOriginal</definition>
+        <argsstring></argsstring>
+        <name>_isOriginal</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="21" column="6" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" prot="private" static="no" mutable="no">
+        <type>CallbackContainer &amp;</type>
+        <definition>CallbackContainer&amp; spk::ContractProvider::Contract::_callbackOwner</definition>
+        <argsstring></argsstring>
+        <name>_callbackOwner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="22" column="19" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" prot="private" static="no" mutable="no">
+        <type>Callback &amp;</type>
+        <definition>Callback&amp; spk::ContractProvider::Contract::_callback</definition>
+        <argsstring></argsstring>
+        <name>_callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="23" column="10" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a21bd746bcdfe818a05598f83bc338985" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ContractProvider::Contract::Contract</definition>
+        <argsstring>(CallbackContainer &amp;p_callbackOwner, Callback &amp;p_callback)</argsstring>
+        <name>Contract</name>
+        <param>
+          <type>CallbackContainer &amp;</type>
+          <declname>p_callbackOwner</declname>
+        </param>
+        <param>
+          <type>Callback &amp;</type>
+          <declname>p_callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ContractProvider::Contract::Contract</definition>
+        <argsstring>(const Contract &amp;p_other)=delete</argsstring>
+        <name>Contract</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::ContractProvider::Contract::isOriginal</definition>
+        <argsstring>()</argsstring>
+        <name>isOriginal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="28" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ContractProvider::Contract::Contract</definition>
+        <argsstring>(Contract &amp;&amp;p_other)</argsstring>
+        <name>Contract</name>
+        <param>
+          <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &amp;&amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ContractProvider::Contract::~Contract</definition>
+        <argsstring>()</argsstring>
+        <name>~Contract</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ContractProvider::Contract::edit</definition>
+        <argsstring>(const Callback &amp;p_callback)</argsstring>
+        <name>edit</name>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>p_callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="35" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ContractProvider::Contract::resign</definition>
+        <argsstring>()</argsstring>
+        <name>resign</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="37" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/spk_contract_provider.hpp" line="16" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="17" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>_callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>_callbackOwner</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a0d4e00a53d3a52654c702671dc05ed13" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>_isOriginal</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a21bd746bcdfe818a05598f83bc338985" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>Contract</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>Contract</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>Contract</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>ContractProvider</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>edit</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>isOriginal</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>resign</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>~Contract</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

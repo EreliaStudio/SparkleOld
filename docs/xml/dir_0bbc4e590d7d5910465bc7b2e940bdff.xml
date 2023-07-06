@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir">
+    <compoundname>includes/iostream</compoundname>
+    <innerfile refid="spk__iostream_8hpp">spk_iostream.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/iostream/"/>
+  </compounddef>
+</doxygen>

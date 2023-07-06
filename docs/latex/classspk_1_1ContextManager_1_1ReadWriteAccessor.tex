@@ -1,0 +1,67 @@
+\hypertarget{classspk_1_1ContextManager_1_1ReadWriteAccessor}{}\doxysection{spk\+::Context\+Manager$<$ TContext\+Type $>$\+::Read\+Write\+Accessor Class Reference}
+\label{classspk_1_1ContextManager_1_1ReadWriteAccessor}\index{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor@{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor}}
+
+
+This class provides static methods to access and swap the context object for read and write operations.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+context\+\_\+manager.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static TContext\+Type \& \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadWriteAccessor_a4e4ae1455b0adfa700fa3d1de7f8de79}{get}} ()
+\begin{DoxyCompactList}\small\item\em Fetches the context object for read/write operations. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadWriteAccessor_ab66aa0655accf306a887a5081f4540bd}{swap}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the context object used for read/write operations with an intermediary buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TContext\+Type$>$\newline
+class spk\+::\+Context\+Manager$<$ TContext\+Type $>$\+::\+Read\+Write\+Accessor}
+
+This class provides static methods to access and swap the context object for read and write operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ContextManager_1_1ReadWriteAccessor_a4e4ae1455b0adfa700fa3d1de7f8de79}\label{classspk_1_1ContextManager_1_1ReadWriteAccessor_a4e4ae1455b0adfa700fa3d1de7f8de79}} 
+\index{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor@{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor}!get@{get}}
+\index{get@{get}!spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor@{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+static TContext\+Type\& \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::Read\+Write\+Accessor\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fetches the context object for read/write operations. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} singleton instance is not initialized. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A reference to the read/write context object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ContextManager_1_1ReadWriteAccessor_ab66aa0655accf306a887a5081f4540bd}\label{classspk_1_1ContextManager_1_1ReadWriteAccessor_ab66aa0655accf306a887a5081f4540bd}} 
+\index{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor@{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor}!swap@{swap}}
+\index{swap@{swap}!spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor@{spk::ContextManager$<$ TContextType $>$::ReadWriteAccessor}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+static void \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::Read\+Write\+Accessor\+::swap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Swaps the context object used for read/write operations with an intermediary buffer. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} singleton instance is not initialized. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+context\+\_\+manager.\+hpp\end{DoxyCompactItemize}

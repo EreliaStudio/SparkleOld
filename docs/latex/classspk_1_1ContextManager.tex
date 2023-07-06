@@ -1,0 +1,182 @@
+\hypertarget{classspk_1_1ContextManager}{}\doxysection{spk\+::Context\+Manager$<$ TContext\+Type $>$ Class Template Reference}
+\label{classspk_1_1ContextManager}\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+
+
+\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} is a singleton template class that manages Read\+Write and Read\+Only access to a common context.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+context\+\_\+manager.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Context\+Manager$<$ TContext\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classspk_1_1ContextManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Context\+Manager$<$ TContext\+Type $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classspk_1_1ContextManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadOnlyAccessor}{Read\+Only\+Accessor}}
+\begin{DoxyCompactList}\small\item\em This class provides static methods to access and swap the context object for read operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classspk_1_1ContextManager_1_1ReadWriteAccessor}{Read\+Write\+Accessor}}
+\begin{DoxyCompactList}\small\item\em This class provides static methods to access and swap the context object for read and write operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1ContextManager_aac749240603395f346c0b88056fb4b9b}{Context\+Manager}} (const \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} \&)=delete
+\item 
+\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} \& \mbox{\hyperlink{classspk_1_1ContextManager_a047985b77178329613b01e1b1338d568}{operator=}} (const \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1ContextManager_a4a41caca5398f4a2a20dbdd6f40127e8}{Context\+Manager}} (Args \&\&...p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new Context Manager object and initializes the contexts and the intermediary buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_a7c3c2f2ddcb4a6c93ed5e291d01eaed2}\label{classspk_1_1ContextManager_a7c3c2f2ddcb4a6c93ed5e291d01eaed2}} 
+void \mbox{\hyperlink{classspk_1_1ContextManager_a7c3c2f2ddcb4a6c93ed5e291d01eaed2}{swap\+Read\+Write\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the context object used for read/write operations with an intermediary buffer. \mbox{\hyperlink{classspk_1_1Thread}{Thread}} safe due to the usage of std\+::lock\+\_\+guard. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_ad768f31a10cb4bd01ae59c0ad7a01558}\label{classspk_1_1ContextManager_ad768f31a10cb4bd01ae59c0ad7a01558}} 
+void \mbox{\hyperlink{classspk_1_1ContextManager_ad768f31a10cb4bd01ae59c0ad7a01558}{swap\+Read\+Only\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the context object used for read operations with an intermediary buffer. \mbox{\hyperlink{classspk_1_1Thread}{Thread}} safe due to the usage of std\+::lock\+\_\+guard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::recursive\+\_\+mutex \mbox{\hyperlink{classspk_1_1ContextManager_a53069aa2449071fa0b37e8a58b30a6e9}{\+\_\+buffer\+Access\+Mutex}}
+\item 
+std\+::unique\+\_\+ptr$<$ TContext\+Type $>$ \mbox{\hyperlink{classspk_1_1ContextManager_aa66650e4f903996150e2b8451b4e71d6}{\+\_\+read\+Write\+Context}}
+\item 
+std\+::unique\+\_\+ptr$<$ TContext\+Type $>$ \mbox{\hyperlink{classspk_1_1ContextManager_a836f413aea791a8cda9b587659a76617}{\+\_\+read\+Only\+Context}}
+\item 
+std\+::unique\+\_\+ptr$<$ TContext\+Type $>$ \mbox{\hyperlink{classspk_1_1ContextManager_a9c822ce23f242dbe1401ef14328abe1e}{\+\_\+intermediary\+Buffer}}
+\item 
+bool \mbox{\hyperlink{classspk_1_1ContextManager_a12a0d3ea61f6b018d7b0520200760d1b}{\+\_\+is\+Swap\+Requested}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_a81834cda6bc6791270f9728a373b6765}\label{classspk_1_1ContextManager_a81834cda6bc6791270f9728a373b6765}} 
+class {\bfseries spk\+::\+Singleton$<$ Context\+Manager$<$ TContext\+Type $>$ $>$}
+\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_a6de83fc5f0940935a2fa47d46f108a76}\label{classspk_1_1ContextManager_a6de83fc5f0940935a2fa47d46f108a76}} 
+class {\bfseries Read\+Write\+Accessor}
+\item 
+\mbox{\Hypertarget{classspk_1_1ContextManager_aff7ee4daa9545a0d20688e49f2163bc5}\label{classspk_1_1ContextManager_aff7ee4daa9545a0d20688e49f2163bc5}} 
+class {\bfseries Read\+Only\+Accessor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TContext\+Type$>$\newline
+class spk\+::\+Context\+Manager$<$ TContext\+Type $>$}
+
+\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} is a singleton template class that manages Read\+Write and Read\+Only access to a common context. 
+
+This class provides access to a context object for read and write operations in a thread safe manner. It uses double buffering technique, thus ensuring that read operations are not blocked during write operations.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TContext\+Type} & The type of the context object this class is managing. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1ContextManager_a4a41caca5398f4a2a20dbdd6f40127e8}\label{classspk_1_1ContextManager_a4a41caca5398f4a2a20dbdd6f40127e8}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!ContextManager@{ContextManager}}
+\index{ContextManager@{ContextManager}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{ContextManager()}{ContextManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} (\begin{DoxyParamCaption}\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Construct a new Context Manager object and initializes the contexts and the intermediary buffer. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & Arguments for the construction of the context object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1ContextManager_aac749240603395f346c0b88056fb4b9b}\label{classspk_1_1ContextManager_aac749240603395f346c0b88056fb4b9b}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!ContextManager@{ContextManager}}
+\index{ContextManager@{ContextManager}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{ContextManager()}{ContextManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+\mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}}$<$ TContext\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted copy constructor to prevent copy operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ContextManager_a047985b77178329613b01e1b1338d568}\label{classspk_1_1ContextManager_a047985b77178329613b01e1b1338d568}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+\mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}}\& \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1ContextManager}{Context\+Manager}}$<$ TContext\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted copy assignment operator to prevent copy operations. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classspk_1_1ContextManager_a53069aa2449071fa0b37e8a58b30a6e9}\label{classspk_1_1ContextManager_a53069aa2449071fa0b37e8a58b30a6e9}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!\_bufferAccessMutex@{\_bufferAccessMutex}}
+\index{\_bufferAccessMutex@{\_bufferAccessMutex}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{\_bufferAccessMutex}{\_bufferAccessMutex}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+std\+::recursive\+\_\+mutex \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\+\_\+buffer\+Access\+Mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+Mutex to protect context swapping operations. \mbox{\Hypertarget{classspk_1_1ContextManager_a9c822ce23f242dbe1401ef14328abe1e}\label{classspk_1_1ContextManager_a9c822ce23f242dbe1401ef14328abe1e}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!\_intermediaryBuffer@{\_intermediaryBuffer}}
+\index{\_intermediaryBuffer@{\_intermediaryBuffer}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{\_intermediaryBuffer}{\_intermediaryBuffer}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$TContext\+Type$>$ \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\+\_\+intermediary\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+An intermediary buffer for swapping contexts. \mbox{\Hypertarget{classspk_1_1ContextManager_a12a0d3ea61f6b018d7b0520200760d1b}\label{classspk_1_1ContextManager_a12a0d3ea61f6b018d7b0520200760d1b}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!\_isSwapRequested@{\_isSwapRequested}}
+\index{\_isSwapRequested@{\_isSwapRequested}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{\_isSwapRequested}{\_isSwapRequested}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+bool \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\+\_\+is\+Swap\+Requested\hspace{0.3cm}{\ttfamily [protected]}}
+
+Flag to indicate whether a context swap has been requested. \mbox{\Hypertarget{classspk_1_1ContextManager_a836f413aea791a8cda9b587659a76617}\label{classspk_1_1ContextManager_a836f413aea791a8cda9b587659a76617}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!\_readOnlyContext@{\_readOnlyContext}}
+\index{\_readOnlyContext@{\_readOnlyContext}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{\_readOnlyContext}{\_readOnlyContext}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$TContext\+Type$>$ \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\+\_\+read\+Only\+Context\hspace{0.3cm}{\ttfamily [protected]}}
+
+The context object used for read operations. \mbox{\Hypertarget{classspk_1_1ContextManager_aa66650e4f903996150e2b8451b4e71d6}\label{classspk_1_1ContextManager_aa66650e4f903996150e2b8451b4e71d6}} 
+\index{spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}!\_readWriteContext@{\_readWriteContext}}
+\index{\_readWriteContext@{\_readWriteContext}!spk::ContextManager$<$ TContextType $>$@{spk::ContextManager$<$ TContextType $>$}}
+\doxysubsubsection{\texorpdfstring{\_readWriteContext}{\_readWriteContext}}
+{\footnotesize\ttfamily template$<$typename TContext\+Type $>$ \\
+std\+::unique\+\_\+ptr$<$TContext\+Type$>$ \mbox{\hyperlink{classspk_1_1ContextManager}{spk\+::\+Context\+Manager}}$<$ TContext\+Type $>$\+::\+\_\+read\+Write\+Context\hspace{0.3cm}{\ttfamily [protected]}}
+
+The context object used for read/write operations. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+context\+\_\+manager.\+hpp\end{DoxyCompactItemize}

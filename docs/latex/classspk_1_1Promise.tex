@@ -1,0 +1,83 @@
+\hypertarget{classspk_1_1Promise}{}\doxysection{spk\+::Promise$<$ TType $>$ Class Template Reference}
+\label{classspk_1_1Promise}\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+
+
+Inheritance diagram for spk\+::Promise$<$ TType $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classspk_1_1Promise__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Promise$<$ TType $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classspk_1_1Promise__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Promise_ad4dbd5693e82c5a821af97fc9e86c20b}\label{classspk_1_1Promise_ad4dbd5693e82c5a821af97fc9e86c20b}} 
+{\bfseries Promise} (const \mbox{\hyperlink{classspk_1_1Promise}{Promise}} \&p\+\_\+other)=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1Promise_a0560e9b5ba7802bb42716220619d0d89}\label{classspk_1_1Promise_a0560e9b5ba7802bb42716220619d0d89}} 
+\mbox{\hyperlink{classspk_1_1Promise}{Promise}} \& {\bfseries operator=} (const \mbox{\hyperlink{classspk_1_1Promise}{Promise}} \&p\+\_\+other)=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1Promise_ac55e4af8d86ac9d7b8fc0cfb8926f0f0}\label{classspk_1_1Promise_ac55e4af8d86ac9d7b8fc0cfb8926f0f0}} 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} {\bfseries subscribe} (const Callback \&p\+\_\+callback)
+\item 
+\mbox{\Hypertarget{classspk_1_1Promise_aaf9ad2cdc422c2a4c211ce921d50df36}\label{classspk_1_1Promise_aaf9ad2cdc422c2a4c211ce921d50df36}} 
+constexpr bool {\bfseries realised} () const
+\item 
+void \mbox{\hyperlink{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}{set\+Value}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the promise value. \end{DoxyCompactList}\item 
+constexpr const TType \& \mbox{\hyperlink{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}{value}} ()
+\begin{DoxyCompactList}\small\item\em Try to retrieve the value of the promise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}\label{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the promise value. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the promise is already realised \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}\label{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!value@{value}}
+\index{value@{value}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr const TType\& \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Try to retrieve the value of the promise. 
+
+\begin{DoxyReturn}{Returns}
+const TType\& 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function will block until the promise is realised 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+promise.\+hpp\end{DoxyCompactItemize}

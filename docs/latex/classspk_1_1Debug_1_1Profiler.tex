@@ -1,0 +1,165 @@
+\hypertarget{classspk_1_1Debug_1_1Profiler}{}\doxysection{spk\+::Debug\+::Profiler Class Reference}
+\label{classspk_1_1Debug_1_1Profiler}\index{spk::Debug::Profiler@{spk::Debug::Profiler}}
+
+
+A singleton class that handles profiling using various chronometers.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+profiler.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Debug\+::Profiler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classspk_1_1Debug_1_1Profiler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Debug\+::Profiler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classspk_1_1Debug_1_1Profiler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classspk_1_1Chronometer}{spk\+::\+Chronometer}} \& \mbox{\hyperlink{classspk_1_1Debug_1_1Profiler_a04a4a5d26cf3a535b74ba659a0fe7cca}{chronometer}} (const std\+::wstring \&p\+\_\+name) const
+\begin{DoxyCompactList}\small\item\em Retrieves the chronometer associated with a specific name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Debug_1_1Profiler_a7232ad2a39fc3113ad248a149076e9c4}{reset\+Chronometer}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Resets the chronometer associated with a specific name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Debug_1_1Profiler_af223d7eff676517b16d9c7dbd9e95f78}{start\+Chronometer}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Starts the chronometer associated with a specific name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Debug_1_1Profiler_acec51d9c494defc9427c74646d90d1ae}{resume\+Chronometer}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Resumes the chronometer associated with a specific name. \end{DoxyCompactList}\item 
+const long long \mbox{\hyperlink{classspk_1_1Debug_1_1Profiler_a4a26a23d865b16059a7cb6f9dfddf054}{stop\+Chronometer}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Stops the chronometer associated with a specific name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_a149a25a512bb65bfb1a296b4ce69538b}\label{classspk_1_1Debug_1_1Profiler_a149a25a512bb65bfb1a296b4ce69538b}} 
+class {\bfseries spk\+::\+Singleton$<$ Profiler $>$}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A singleton class that handles profiling using various chronometers. 
+
+This class is responsible for managing multiple chronometers, allowing the software to keep track of time metrics for profiling purposes. As a singleton, only one instance of this class can exist. This ensures consistency across the entire software. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_a04a4a5d26cf3a535b74ba659a0fe7cca}\label{classspk_1_1Debug_1_1Profiler_a04a4a5d26cf3a535b74ba659a0fe7cca}} 
+\index{spk::Debug::Profiler@{spk::Debug::Profiler}!chronometer@{chronometer}}
+\index{chronometer@{chronometer}!spk::Debug::Profiler@{spk::Debug::Profiler}}
+\doxysubsubsection{\texorpdfstring{chronometer()}{chronometer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1Chronometer}{spk\+::\+Chronometer}}\& spk\+::\+Debug\+::\+Profiler\+::chronometer (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the chronometer associated with a specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The specified chronometer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_a7232ad2a39fc3113ad248a149076e9c4}\label{classspk_1_1Debug_1_1Profiler_a7232ad2a39fc3113ad248a149076e9c4}} 
+\index{spk::Debug::Profiler@{spk::Debug::Profiler}!resetChronometer@{resetChronometer}}
+\index{resetChronometer@{resetChronometer}!spk::Debug::Profiler@{spk::Debug::Profiler}}
+\doxysubsubsection{\texorpdfstring{resetChronometer()}{resetChronometer()}}
+{\footnotesize\ttfamily void spk\+::\+Debug\+::\+Profiler\+::reset\+Chronometer (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Resets the chronometer associated with a specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_acec51d9c494defc9427c74646d90d1ae}\label{classspk_1_1Debug_1_1Profiler_acec51d9c494defc9427c74646d90d1ae}} 
+\index{spk::Debug::Profiler@{spk::Debug::Profiler}!resumeChronometer@{resumeChronometer}}
+\index{resumeChronometer@{resumeChronometer}!spk::Debug::Profiler@{spk::Debug::Profiler}}
+\doxysubsubsection{\texorpdfstring{resumeChronometer()}{resumeChronometer()}}
+{\footnotesize\ttfamily void spk\+::\+Debug\+::\+Profiler\+::resume\+Chronometer (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Resumes the chronometer associated with a specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_af223d7eff676517b16d9c7dbd9e95f78}\label{classspk_1_1Debug_1_1Profiler_af223d7eff676517b16d9c7dbd9e95f78}} 
+\index{spk::Debug::Profiler@{spk::Debug::Profiler}!startChronometer@{startChronometer}}
+\index{startChronometer@{startChronometer}!spk::Debug::Profiler@{spk::Debug::Profiler}}
+\doxysubsubsection{\texorpdfstring{startChronometer()}{startChronometer()}}
+{\footnotesize\ttfamily void spk\+::\+Debug\+::\+Profiler\+::start\+Chronometer (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Starts the chronometer associated with a specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Debug_1_1Profiler_a4a26a23d865b16059a7cb6f9dfddf054}\label{classspk_1_1Debug_1_1Profiler_a4a26a23d865b16059a7cb6f9dfddf054}} 
+\index{spk::Debug::Profiler@{spk::Debug::Profiler}!stopChronometer@{stopChronometer}}
+\index{stopChronometer@{stopChronometer}!spk::Debug::Profiler@{spk::Debug::Profiler}}
+\doxysubsubsection{\texorpdfstring{stopChronometer()}{stopChronometer()}}
+{\footnotesize\ttfamily const long long spk\+::\+Debug\+::\+Profiler\+::stop\+Chronometer (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Stops the chronometer associated with a specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The time elapsed since the chronometer was started. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/debug/spk\+\_\+profiler.\+hpp\end{DoxyCompactItemize}

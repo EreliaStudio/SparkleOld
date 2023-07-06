@@ -1,0 +1,67 @@
+\hypertarget{classspk_1_1ThreadSafeQueue}{}\doxysection{spk\+::Thread\+Safe\+Queue$<$ T $>$ Class Template Reference}
+\label{classspk_1_1ThreadSafeQueue}\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}\label{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}} 
+{\bfseries Thread\+Safe\+Queue} (const \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ T $>$ \&)=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}\label{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const size\+\_\+t \&p\+\_\+index) const
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}\label{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}} 
+T \& {\bfseries front} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}\label{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}} 
+T \& {\bfseries back} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}\label{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}} 
+const T \& {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}\label{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}} 
+const T \& {\bfseries back} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}\label{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}} 
+T {\bfseries pop\+\_\+front} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}\label{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}} 
+T {\bfseries pop\+\_\+back} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}\label{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}} 
+void {\bfseries push\+\_\+back} (const T \&item)
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}\label{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}} 
+void {\bfseries push\+\_\+front} (const T \&item)
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}\label{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}} 
+bool {\bfseries empty} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}\label{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}} 
+size\+\_\+t {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}\label{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}\label{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}} 
+void {\bfseries wait} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}\label{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}} 
+std\+::mutex {\bfseries mux\+Queue}
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}\label{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}} 
+std\+::mutex {\bfseries mux\+Blocking}
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}\label{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}} 
+std\+::deque$<$ T $>$ {\bfseries \+\_\+content}
+\item 
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}\label{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}} 
+std\+::condition\+\_\+variable {\bfseries cv\+Blocking}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+thread\+\_\+safe\+\_\+queue.\+hpp\end{DoxyCompactItemize}

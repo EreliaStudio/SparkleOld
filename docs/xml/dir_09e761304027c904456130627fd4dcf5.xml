@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_09e761304027c904456130627fd4dcf5" kind="dir">
+    <compoundname>includes</compoundname>
+    <innerdir refid="dir_aecd53831fdc6b2dd5eaa5f97724cc82">includes/application</innerdir>
+    <innerdir refid="dir_ebc5d281141387bc90eb64e8fb568179">includes/data_structure</innerdir>
+    <innerdir refid="dir_05f2b506267898f6dd4e0c52672de2c3">includes/debug</innerdir>
+    <innerdir refid="dir_256790b80462968501d8e07fc5bc1f1d">includes/design_pattern</innerdir>
+    <innerdir refid="dir_fecb50b33baf124479efc63989ba8a70">includes/graphics</innerdir>
+    <innerdir refid="dir_a9d8515c93d115b5c689e0996dc3ef33">includes/input</innerdir>
+    <innerdir refid="dir_0bbc4e590d7d5910465bc7b2e940bdff">includes/iostream</innerdir>
+    <innerdir refid="dir_2b1a82f562d9d140ac52542949113255">includes/math</innerdir>
+    <innerdir refid="dir_30c033750a7a5ab7efccd1bfa6f17d06">includes/miscellaneous</innerdir>
+    <innerdir refid="dir_9ce4ba8dea44c80507591b5cb14ca8ba">includes/system</innerdir>
+    <innerdir refid="dir_d13c0e61298ef12df375d2f8fbcfc354">includes/threading</innerdir>
+    <innerdir refid="dir_6865bbd7fed125b9d907dfb26af48d8a">includes/widget</innerdir>
+    <innerfile refid="sparkle_8hpp">sparkle.hpp</innerfile>
+    <innerfile refid="spk__system__define_8hpp">spk_system_define.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/"/>
+  </compounddef>
+</doxygen>

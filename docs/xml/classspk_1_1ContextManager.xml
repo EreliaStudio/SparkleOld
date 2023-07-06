@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ContextManager" kind="class" language="C++" prot="public">
+    <compoundname>spk::ContextManager</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</basecompoundref>
+    <includes refid="spk__context__manager_8hpp" local="no">spk_context_manager.hpp</includes>
+    <innerclass refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" prot="public">spk::ContextManager::ReadOnlyAccessor</innerclass>
+    <innerclass refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" prot="public">spk::ContextManager::ReadWriteAccessor</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename TContextType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1ContextManager_1a81834cda6bc6791270f9728a373b6765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref>&lt; TContextType &gt; &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="1" column="0" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classspk_1_1ContextManager_1a6de83fc5f0940935a2fa47d46f108a76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ReadWriteAccessor</definition>
+        <argsstring></argsstring>
+        <name>ReadWriteAccessor</name>
+        <param>
+          <type><ref refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" kindref="compound">ReadWriteAccessor</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="20" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classspk_1_1ContextManager_1aff7ee4daa9545a0d20688e49f2163bc5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ReadOnlyAccessor</definition>
+        <argsstring></argsstring>
+        <name>ReadOnlyAccessor</name>
+        <param>
+          <type><ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kindref="compound">ReadOnlyAccessor</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="21" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" prot="protected" static="no" mutable="no">
+        <type>std::recursive_mutex</type>
+        <definition>std::recursive_mutex spk::ContextManager&lt; TContextType &gt;::_bufferAccessMutex</definition>
+        <argsstring></argsstring>
+        <name>_bufferAccessMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mutex to protect context swapping operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="91" column="22" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; TContextType &gt;</type>
+        <definition>std::unique_ptr&lt;TContextType&gt; spk::ContextManager&lt; TContextType &gt;::_readWriteContext</definition>
+        <argsstring></argsstring>
+        <name>_readWriteContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The context object used for read/write operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="92" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; TContextType &gt;</type>
+        <definition>std::unique_ptr&lt;TContextType&gt; spk::ContextManager&lt; TContextType &gt;::_readOnlyContext</definition>
+        <argsstring></argsstring>
+        <name>_readOnlyContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The context object used for read operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="93" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; TContextType &gt;</type>
+        <definition>std::unique_ptr&lt;TContextType&gt; spk::ContextManager&lt; TContextType &gt;::_intermediaryBuffer</definition>
+        <argsstring></argsstring>
+        <name>_intermediaryBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An intermediary buffer for swapping contexts. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="94" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool spk::ContextManager&lt; TContextType &gt;::_isSwapRequested</definition>
+        <argsstring></argsstring>
+        <name>_isSwapRequested</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flag to indicate whether a context swap has been requested. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="95" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classspk_1_1ContextManager_1a4a41caca5398f4a2a20dbdd6f40127e8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::ContextManager&lt; TContextType &gt;::ContextManager</definition>
+        <argsstring>(Args &amp;&amp;...p_args)</argsstring>
+        <name>ContextManager</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new Context Manager object and initializes the contexts and the intermediary buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variadic template argument. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments for the construction of the context object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="103" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="103" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ContextManager&lt; TContextType &gt;::swapReadWriteContext</definition>
+        <argsstring>()</argsstring>
+        <name>swapReadWriteContext</name>
+        <briefdescription>
+<para>Swaps the context object used for read/write operations with an intermediary buffer. <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> safe due to the usage of std::lock_guard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="115" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="115" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ContextManager&lt; TContextType &gt;::swapReadOnlyContext</definition>
+        <argsstring>()</argsstring>
+        <name>swapReadOnlyContext</name>
+        <briefdescription>
+<para>Swaps the context object used for read operations with an intermediary buffer. <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> safe due to the usage of std::lock_guard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="127" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="127" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ContextManager_1aac749240603395f346c0b88056fb4b9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ContextManager&lt; TContextType &gt;::ContextManager</definition>
+        <argsstring>(const ContextManager &amp;)=delete</argsstring>
+        <name>ContextManager</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deleted copy constructor to prevent copy operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> &amp;</type>
+        <definition>ContextManager&amp; spk::ContextManager&lt; TContextType &gt;::operator=</definition>
+        <argsstring>(const ContextManager &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deleted copy assignment operator to prevent copy operations. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="140" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> is a singleton template class that manages ReadWrite and ReadOnly access to a common context. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides access to a context object for read and write operations in a thread safe manner. It uses double buffering technique, thus ensuring that read operations are not blocked during write operations.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TContextType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the context object this class is managing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::ContextManager&lt; TContextType &gt;</label>
+        <link refid="classspk_1_1ContextManager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::ContextManager&lt; TContextType &gt;</label>
+        <link refid="classspk_1_1ContextManager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/design_pattern/spk_context_manager.hpp" line="17" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="18" bodyend="141"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_bufferAccessMutex</name></member>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_instance</name></member>
+      <member refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_intermediaryBuffer</name></member>
+      <member refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_isSwapRequested</name></member>
+      <member refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_readOnlyContext</name></member>
+      <member refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_readWriteContext</name></member>
+      <member refid="classspk_1_1ContextManager_1a4a41caca5398f4a2a20dbdd6f40127e8" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>ContextManager</name></member>
+      <member refid="classspk_1_1ContextManager_1aac749240603395f346c0b88056fb4b9b" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>ContextManager</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>operator=</name></member>
+      <member refid="classspk_1_1ContextManager_1aff7ee4daa9545a0d20688e49f2163bc5" prot="private" virt="non-virtual"><scope>spk::ContextManager</scope><name>ReadOnlyAccessor</name></member>
+      <member refid="classspk_1_1ContextManager_1a6de83fc5f0940935a2fa47d46f108a76" prot="private" virt="non-virtual"><scope>spk::ContextManager</scope><name>ReadWriteAccessor</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>release</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1ContextManager_1a81834cda6bc6791270f9728a373b6765" prot="public" virt="non-virtual"><scope>spk::ContextManager</scope><name>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</name></member>
+      <member refid="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>swapReadOnlyContext</name></member>
+      <member refid="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>swapReadWriteContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

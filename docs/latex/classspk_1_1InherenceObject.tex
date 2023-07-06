@@ -1,0 +1,49 @@
+\hypertarget{classspk_1_1InherenceObject}{}\doxysection{spk\+::Inherence\+Object$<$ TType $>$ Class Template Reference}
+\label{classspk_1_1InherenceObject}\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_ae763115e2689b399d1faaaf88309bb5d}\label{classspk_1_1InherenceObject_ae763115e2689b399d1faaaf88309bb5d}} 
+using {\bfseries Parent} = TType $\ast$
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_afaae937647084cc67220a3f3d3812f97}\label{classspk_1_1InherenceObject_afaae937647084cc67220a3f3d3812f97}} 
+using {\bfseries Child} = TType $\ast$
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}\label{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}} 
+using {\bfseries Callback} = std\+::function$<$ void(Child)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_ae5c803c43a3eeb83383e4a95245f765e}\label{classspk_1_1InherenceObject_ae5c803c43a3eeb83383e4a95245f765e}} 
+void {\bfseries set\+Parent} (Parent parent)
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_af21959de7950ed4d656d8cc318fc9712}\label{classspk_1_1InherenceObject_af21959de7950ed4d656d8cc318fc9712}} 
+void {\bfseries add\+Child} (Child child)
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a4d1ecc043e2414e9731195021d28a77e}\label{classspk_1_1InherenceObject_a4d1ecc043e2414e9731195021d28a77e}} 
+void {\bfseries set\+Birth\+Callback} (std\+::function$<$ void(Child)$>$ callback)
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a69d05c5f0a43a7b58ad4e08a9790f23a}\label{classspk_1_1InherenceObject_a69d05c5f0a43a7b58ad4e08a9790f23a}} 
+void {\bfseries set\+Death\+Callback} (std\+::function$<$ void(Child)$>$ callback)
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}\label{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}} 
+constexpr const Parent \& {\bfseries parent} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a641db511a9e99a441fdbd67504104a80}\label{classspk_1_1InherenceObject_a641db511a9e99a441fdbd67504104a80}} 
+constexpr std\+::vector$<$ Child $>$ \& {\bfseries childrens} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a6de21279dbf9064deea472bb8db3dd2f}\label{classspk_1_1InherenceObject_a6de21279dbf9064deea472bb8db3dd2f}} 
+constexpr const std\+::vector$<$ Child $>$ \& {\bfseries childrens} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a60b7abb954dcf88b9576e5b55b5f6c64}\label{classspk_1_1InherenceObject_a60b7abb954dcf88b9576e5b55b5f6c64}} 
+{\bfseries Inherence\+Object} (const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \&)=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a0f80475dd4e0633e93b2e009b34e6536}\label{classspk_1_1InherenceObject_a0f80475dd4e0633e93b2e009b34e6536}} 
+\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \& {\bfseries operator=} (const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+inherence\+\_\+object.\+hpp\end{DoxyCompactItemize}

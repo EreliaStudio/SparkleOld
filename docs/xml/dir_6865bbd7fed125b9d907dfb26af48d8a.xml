@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_6865bbd7fed125b9d907dfb26af48d8a" kind="dir">
+    <compoundname>includes/widget</compoundname>
+    <innerfile refid="spk__abstract__widget_8hpp">spk_abstract_widget.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/widget/"/>
+  </compounddef>
+</doxygen>

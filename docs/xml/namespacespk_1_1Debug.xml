@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacespk_1_1Debug" kind="namespace" language="C++">
+    <compoundname>spk::Debug</compoundname>
+    <innerclass refid="classspk_1_1Debug_1_1Profiler" prot="public">spk::Debug::Profiler</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/debug/spk_profiler.hpp" line="13" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Memento" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>spk::Memento</compoundname>
+    <derivedcompoundref refid="structspk_1_1StandardType" prot="public" virt="non-virtual">spk::StandardType&lt; TType, typename &gt;</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" prot="public" static="no">
+        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">spk::DataBuffer</ref></type>
+        <definition>using spk::Memento::Snapshot =  spk::DataBuffer</definition>
+        <argsstring></argsstring>
+        <name>Snapshot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="11" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Memento_1ad6e4d04ac01aeebc3b9de7a310d30033" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref> &gt;</type>
+        <definition>std::vector&lt;Snapshot&gt; spk::Memento::_snapshots</definition>
+        <argsstring></argsstring>
+        <name>_snapshots</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="14" column="13" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Memento_1a4a4b6ca7879fc120611a0b0e7c969b0b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int spk::Memento::_index</definition>
+        <argsstring></argsstring>
+        <name>_index</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="15" column="5" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Memento_1a491ab5809b78d025351dd71d00aa5983" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref></type>
+        <definition>virtual Snapshot spk::Memento::_onSave</definition>
+        <argsstring>()=0</argsstring>
+        <name>_onSave</name>
+        <reimplementedby refid="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef">_onSave</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="17" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Memento_1a721b3cee608af0aa4a50327b6545ed3a" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void spk::Memento::_onLoad</definition>
+        <argsstring>(const Snapshot &amp;p_snapshot)=0</argsstring>
+        <name>_onLoad</name>
+        <reimplementedby refid="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd">_onLoad</reimplementedby>
+        <param>
+          <type>const <ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref> &amp;</type>
+          <declname>p_snapshot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="18" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Memento_1a22c5265768e3ce5daf09a0eca997ee51" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Memento::_load</definition>
+        <argsstring>()</argsstring>
+        <name>_load</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="20" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="20" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Memento_1a7f12af3b10f86024f5ad641737db2670" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Memento::save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="27" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Memento_1a2c527cb980acf2a96a213d17eddcd316" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Memento::undo</definition>
+        <argsstring>()</argsstring>
+        <name>undo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="37" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Memento_1acc5b23d29f89d6b525f0addbec8ea1f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Memento::redo</definition>
+        <argsstring>()</argsstring>
+        <name>redo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_memento.hpp" line="45" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="45" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::StandardType&lt; TType, typename &gt;</label>
+        <link refid="structspk_1_1StandardType"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>spk::Memento</label>
+        <link refid="classspk_1_1Memento"/>
+      </node>
+    </inheritancegraph>
+    <location file="includes/design_pattern/spk_memento.hpp" line="8" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="9" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Memento_1a4a4b6ca7879fc120611a0b0e7c969b0b" prot="private" virt="non-virtual"><scope>spk::Memento</scope><name>_index</name></member>
+      <member refid="classspk_1_1Memento_1a22c5265768e3ce5daf09a0eca997ee51" prot="private" virt="non-virtual"><scope>spk::Memento</scope><name>_load</name></member>
+      <member refid="classspk_1_1Memento_1a721b3cee608af0aa4a50327b6545ed3a" prot="private" virt="pure-virtual"><scope>spk::Memento</scope><name>_onLoad</name></member>
+      <member refid="classspk_1_1Memento_1a491ab5809b78d025351dd71d00aa5983" prot="private" virt="pure-virtual"><scope>spk::Memento</scope><name>_onSave</name></member>
+      <member refid="classspk_1_1Memento_1ad6e4d04ac01aeebc3b9de7a310d30033" prot="private" virt="non-virtual"><scope>spk::Memento</scope><name>_snapshots</name></member>
+      <member refid="classspk_1_1Memento_1acc5b23d29f89d6b525f0addbec8ea1f1" prot="public" virt="non-virtual"><scope>spk::Memento</scope><name>redo</name></member>
+      <member refid="classspk_1_1Memento_1a7f12af3b10f86024f5ad641737db2670" prot="public" virt="non-virtual"><scope>spk::Memento</scope><name>save</name></member>
+      <member refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" prot="public" virt="non-virtual"><scope>spk::Memento</scope><name>Snapshot</name></member>
+      <member refid="classspk_1_1Memento_1a2c527cb980acf2a96a213d17eddcd316" prot="public" virt="non-virtual"><scope>spk::Memento</scope><name>undo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

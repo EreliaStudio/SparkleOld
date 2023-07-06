@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Chronometer" kind="class" language="C++" prot="public">
+    <compoundname>spk::Chronometer</compoundname>
+    <includes refid="spk__chronometer_8hpp" local="no">spk_chronometer.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" prot="public" static="yes" mutable="no">
+        <type>const long long</type>
+        <definition>const long long spk::Chronometer::UNINITIALIZED</definition>
+        <argsstring></argsstring>
+        <name>UNINITIALIZED</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="15" column="24" bodyfile="includes/system/spk_chronometer.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Chronometer_1a147be660da4ef95debe69791a2b9d5ff" prot="private" static="no" mutable="no">
+        <type>long long</type>
+        <definition>long long spk::Chronometer::_start</definition>
+        <argsstring></argsstring>
+        <name>_start</name>
+        <briefdescription>
+<para>Start time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="17" column="19" bodyfile="includes/system/spk_chronometer.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Chronometer_1a2f2d95f26035cac2146133082be08088" prot="private" static="no" mutable="yes">
+        <type>long long</type>
+        <definition>long long spk::Chronometer::_duration</definition>
+        <argsstring></argsstring>
+        <name>_duration</name>
+        <briefdescription>
+<para>Current duration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="18" column="27" bodyfile="includes/system/spk_chronometer.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Chronometer_1ad2b3c3dd3b1b8a3557e0479fee5bd666" prot="private" static="no" mutable="yes">
+        <type>long long</type>
+        <definition>long long spk::Chronometer::_totalDuration</definition>
+        <argsstring></argsstring>
+        <name>_totalDuration</name>
+        <briefdescription>
+<para>Total duration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="19" column="27" bodyfile="includes/system/spk_chronometer.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Chronometer_1af15ee814ba341e93c299acf0ba73426a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool spk::Chronometer::_isRunning</definition>
+        <argsstring></argsstring>
+        <name>_isRunning</name>
+        <briefdescription>
+<para>True if chronometer is running, false otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="20" column="14" bodyfile="includes/system/spk_chronometer.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Chronometer_1ab3ccc11a966c8fae2fda49672e6926e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Chronometer::Chronometer</definition>
+        <argsstring>()</argsstring>
+        <name>Chronometer</name>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="26" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1a36ee5132ae04063e8a172c7536f65f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Chronometer::~Chronometer</definition>
+        <argsstring>()</argsstring>
+        <name>~Chronometer</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="31" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1a91a0407b2e45991c43636c367fb32839" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Chronometer::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>Full reset of the <ref refid="classspk_1_1Chronometer" kindref="compound">Chronometer</ref>, reseting his status to factory values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="36" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1af8bcb635c7ebde03542f03ba524c3fac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Chronometer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>Start the chronometer. Reset the duration of the chronometer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the chronometer is already running. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="42" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1addd90d2bffe6f22174d7a901795aa1ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Chronometer::resume</definition>
+        <argsstring>()</argsstring>
+        <name>resume</name>
+        <briefdescription>
+<para>Resume the chronometer from the time it was stopped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the chronometer is already running. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="48" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1acaa0be287be0a1ec7a3a19dd01d57c08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::Chronometer::hasBeenStarted</definition>
+        <argsstring>() const</argsstring>
+        <name>hasBeenStarted</name>
+        <briefdescription>
+<para>Check if the chronometer have been used previously. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the chronometer have been used, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="54" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1af87e5503b7f9b80fb2f87151c4198ff5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::Chronometer::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+<para>Check if the chronometer is currently running. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the chronometer is running, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="60" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1af485ed807d7772e0901e77b65902a79d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long long</type>
+        <definition>long long spk::Chronometer::duration</definition>
+        <argsstring>() const</argsstring>
+        <name>duration</name>
+        <briefdescription>
+<para>Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The duration in milliseconds. If the chronometer is not running, the duration remains the same. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="66" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Chronometer_1a2a19c00ea8c6e9ba74134214c07b915f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const long long &amp;</type>
+        <definition>const long long&amp; spk::Chronometer::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+<para>Stop the chronometer. Set the status of the chronometer to stopped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the chronometer is already stopped. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total duration in milliseconds. If the chronometer is already stopped, a runtime_error is thrown. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/system/spk_chronometer.hpp" line="73" column="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple chronometer class to measure elapsed time. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/system/spk_chronometer.hpp" line="12" column="5" bodyfile="includes/system/spk_chronometer.hpp" bodystart="13" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Chronometer_1a2f2d95f26035cac2146133082be08088" prot="private" virt="non-virtual"><scope>spk::Chronometer</scope><name>_duration</name></member>
+      <member refid="classspk_1_1Chronometer_1af15ee814ba341e93c299acf0ba73426a" prot="private" virt="non-virtual"><scope>spk::Chronometer</scope><name>_isRunning</name></member>
+      <member refid="classspk_1_1Chronometer_1a147be660da4ef95debe69791a2b9d5ff" prot="private" virt="non-virtual"><scope>spk::Chronometer</scope><name>_start</name></member>
+      <member refid="classspk_1_1Chronometer_1ad2b3c3dd3b1b8a3557e0479fee5bd666" prot="private" virt="non-virtual"><scope>spk::Chronometer</scope><name>_totalDuration</name></member>
+      <member refid="classspk_1_1Chronometer_1ab3ccc11a966c8fae2fda49672e6926e7" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>Chronometer</name></member>
+      <member refid="classspk_1_1Chronometer_1af485ed807d7772e0901e77b65902a79d" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>duration</name></member>
+      <member refid="classspk_1_1Chronometer_1acaa0be287be0a1ec7a3a19dd01d57c08" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>hasBeenStarted</name></member>
+      <member refid="classspk_1_1Chronometer_1af87e5503b7f9b80fb2f87151c4198ff5" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>isRunning</name></member>
+      <member refid="classspk_1_1Chronometer_1a91a0407b2e45991c43636c367fb32839" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>reset</name></member>
+      <member refid="classspk_1_1Chronometer_1addd90d2bffe6f22174d7a901795aa1ab" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>resume</name></member>
+      <member refid="classspk_1_1Chronometer_1af8bcb635c7ebde03542f03ba524c3fac" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>start</name></member>
+      <member refid="classspk_1_1Chronometer_1a2a19c00ea8c6e9ba74134214c07b915f" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>stop</name></member>
+      <member refid="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>UNINITIALIZED</name></member>
+      <member refid="classspk_1_1Chronometer_1a36ee5132ae04063e8a172c7536f65f55" prot="public" virt="non-virtual"><scope>spk::Chronometer</scope><name>~Chronometer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

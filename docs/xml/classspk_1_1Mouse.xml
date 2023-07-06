@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Mouse" kind="class" language="C++" prot="public">
+    <compoundname>spk::Mouse</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Mouse &gt;</basecompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Button</name>
+        <enumvalue id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ab2c826213cb375995ce31e8ebdb0ab60" prot="public">
+          <name>Left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a4433a3ce725138c5a5a6b13405af60a4" prot="public">
+          <name>Middle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5aec110b50a9ba9dd9f5b59f552b7828bc" prot="public">
+          <name>Right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a469bc020b71587f3eb708d8af9b8b328" prot="public">
+          <name>Button3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ae282fd9b727dd9864c0bab6f94418ec4" prot="public">
+          <name>Button4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="15" column="1" bodyfile="includes/input/spk_mouse.hpp" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1Mouse_1a56ec2d6a7472fec6745bdc350324a958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; Mouse &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; Mouse &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1Mouse" kindref="compound">Mouse</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="53" column="14" bodyfile="includes/input/spk_mouse.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classspk_1_1Mouse_1a48dc35d65b09169e27b9b8006de9dfbf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class MouseModule</definition>
+        <argsstring></argsstring>
+        <name>MouseModule</name>
+        <param>
+          <type><ref refid="classspk_1_1MouseModule" kindref="compound">MouseModule</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="12" column="1" bodyfile="includes/input/spk_mouse.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Mouse_1ac1111549d861795553472775e3ca851a" prot="public" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t spk::Mouse::NB_BUTTON</definition>
+        <argsstring></argsstring>
+        <name>NB_BUTTON</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="23" column="21" bodyfile="includes/input/spk_mouse.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Mouse_1a6a23c61c61d172d5a46d8927a916f690" prot="private" static="no" mutable="no">
+        <type>InputState</type>
+        <definition>InputState spk::Mouse::_buttons[NB_BUTTON]</definition>
+        <argsstring>[NB_BUTTON]</argsstring>
+        <name>_buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="26" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Mouse_1aceda75123868e79a169b84773b586ccf" prot="private" static="no" mutable="no">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
+        <definition>Vector2Int spk::Mouse::_position</definition>
+        <argsstring></argsstring>
+        <name>_position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="28" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Mouse_1ad79e3978ff3d3f7d4af7335ba119febd" prot="private" static="no" mutable="no">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
+        <definition>Vector2Int spk::Mouse::_deltaPosition</definition>
+        <argsstring></argsstring>
+        <name>_deltaPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="29" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Mouse_1a7d81427b28a486d0e50ff408c6d82b42" prot="private" static="no" mutable="no">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
+        <definition>Vector2Int spk::Mouse::_wheel</definition>
+        <argsstring></argsstring>
+        <name>_wheel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="30" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Mouse_1a64dd25a9b4c429e82a180bfee7b67601" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Mouse::Mouse</definition>
+        <argsstring>()</argsstring>
+        <name>Mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a3576d3accda65e374ca0aa404b60f767" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::setMousePosition</definition>
+        <argsstring>(const Vector2Int &amp;p_newPosition)</argsstring>
+        <name>setMousePosition</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <declname>p_newPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="35" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1ad9a3b0815e9bcdc053ea6af2953713d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::pressButton</definition>
+        <argsstring>(const Button &amp;p_button)</argsstring>
+        <name>pressButton</name>
+        <param>
+          <type>const Button &amp;</type>
+          <declname>p_button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="36" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a420dd107e3a5c38e7a201b76b9385d4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::releaseButton</definition>
+        <argsstring>(const Button &amp;p_button)</argsstring>
+        <name>releaseButton</name>
+        <param>
+          <type>const Button &amp;</type>
+          <declname>p_button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="37" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a996fc2b2a53ee6dffe4c49b80d92c31c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::editWheelPosition</definition>
+        <argsstring>(const Vector2Int &amp;p_delta)</argsstring>
+        <name>editWheelPosition</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <declname>p_delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="38" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1ac6ac1c7429fdc3e498a2aa6d09e3dffb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="39" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Mouse::place</definition>
+        <argsstring>(const Vector2Int &amp;p_position)</argsstring>
+        <name>place</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <declname>p_position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="42" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const InputState &amp;</type>
+        <definition>const InputState&amp; spk::Mouse::inputStatus</definition>
+        <argsstring>(const Button &amp;p_button) const</argsstring>
+        <name>inputStatus</name>
+        <param>
+          <type>const Button &amp;</type>
+          <declname>p_button</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="44" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1ac3985fa648d414ec9f8e7000e2c35c6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <definition>const Vector2Int&amp; spk::Mouse::position</definition>
+        <argsstring>() const</argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="48" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a586de041eeb18225bece40c602fabe4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <definition>const Vector2Int&amp; spk::Mouse::deltaPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>deltaPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="49" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Mouse_1a5430080e4319c4d48d7b482f6bad7994" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <definition>const Vector2Int&amp; spk::Mouse::wheel</definition>
+        <argsstring>() const</argsstring>
+        <name>wheel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse.hpp" line="50" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="50" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::Mouse</label>
+        <link refid="classspk_1_1Mouse"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Singleton&lt; Mouse &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::Mouse</label>
+        <link refid="classspk_1_1Mouse"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Singleton&lt; Mouse &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/input/spk_mouse.hpp" line="9" column="1" bodyfile="includes/input/spk_mouse.hpp" bodystart="10" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Mouse_1a6a23c61c61d172d5a46d8927a916f690" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>_buttons</name></member>
+      <member refid="classspk_1_1Mouse_1ad79e3978ff3d3f7d4af7335ba119febd" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>_deltaPosition</name></member>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Mouse</scope><name>_instance</name></member>
+      <member refid="classspk_1_1Mouse_1aceda75123868e79a169b84773b586ccf" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>_position</name></member>
+      <member refid="classspk_1_1Mouse_1a7d81427b28a486d0e50ff408c6d82b42" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>_wheel</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Button</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a469bc020b71587f3eb708d8af9b8b328" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Button3</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ae282fd9b727dd9864c0bab6f94418ec4" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Button4</name></member>
+      <member refid="classspk_1_1Mouse_1a586de041eeb18225bece40c602fabe4f" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>deltaPosition</name></member>
+      <member refid="classspk_1_1Mouse_1a996fc2b2a53ee6dffe4c49b80d92c31c" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>editWheelPosition</name></member>
+      <member refid="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>inputStatus</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5ab2c826213cb375995ce31e8ebdb0ab60" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Left</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5a4433a3ce725138c5a5a6b13405af60a4" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Middle</name></member>
+      <member refid="classspk_1_1Mouse_1a64dd25a9b4c429e82a180bfee7b67601" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>Mouse</name></member>
+      <member refid="classspk_1_1Mouse_1a48dc35d65b09169e27b9b8006de9dfbf" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>MouseModule</name></member>
+      <member refid="classspk_1_1Mouse_1ac1111549d861795553472775e3ca851a" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>NB_BUTTON</name></member>
+      <member refid="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>place</name></member>
+      <member refid="classspk_1_1Mouse_1ac3985fa648d414ec9f8e7000e2c35c6e" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>position</name></member>
+      <member refid="classspk_1_1Mouse_1ad9a3b0815e9bcdc053ea6af2953713d1" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>pressButton</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>release</name></member>
+      <member refid="classspk_1_1Mouse_1a420dd107e3a5c38e7a201b76b9385d4b" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>releaseButton</name></member>
+      <member refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5aec110b50a9ba9dd9f5b59f552b7828bc" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>Right</name></member>
+      <member refid="classspk_1_1Mouse_1a3576d3accda65e374ca0aa404b60f767" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>setMousePosition</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::Mouse</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1Mouse_1a56ec2d6a7472fec6745bdc350324a958" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>spk::Singleton&lt; Mouse &gt;</name></member>
+      <member refid="classspk_1_1Mouse_1ac6ac1c7429fdc3e498a2aa6d09e3dffb" prot="private" virt="non-virtual"><scope>spk::Mouse</scope><name>update</name></member>
+      <member refid="classspk_1_1Mouse_1a5430080e4319c4d48d7b482f6bad7994" prot="public" virt="non-virtual"><scope>spk::Mouse</scope><name>wheel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

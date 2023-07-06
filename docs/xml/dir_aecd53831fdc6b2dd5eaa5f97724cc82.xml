@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_aecd53831fdc6b2dd5eaa5f97724cc82" kind="dir">
+    <compoundname>includes/application</compoundname>
+    <innerdir refid="dir_0169fee49388018a0507c1b0832e6dd6">includes/application/concrete</innerdir>
+    <innerdir refid="dir_55b1da2540e6841d8143ff5afb8a1ad6">includes/application/modules</innerdir>
+    <innerfile refid="spk__abstract__application_8hpp">spk_abstract_application.hpp</innerfile>
+    <innerfile refid="spk__application_8hpp">spk_application.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/"/>
+  </compounddef>
+</doxygen>

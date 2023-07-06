@@ -1,0 +1,104 @@
+\hypertarget{classspk_1_1TimeMetrics}{}\doxysection{spk\+::Time\+Metrics Class Reference}
+\label{classspk_1_1TimeMetrics}\index{spk::TimeMetrics@{spk::TimeMetrics}}
+
+
+A singleton class to manage time-\/related metrics for the software.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+time\+\_\+metrics.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Time\+Metrics\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classspk_1_1TimeMetrics__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Time\+Metrics\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classspk_1_1TimeMetrics__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const long long \& \mbox{\hyperlink{classspk_1_1TimeMetrics_ab2ec64db76c2329d780ef3138ea60611}{time}} () const
+\begin{DoxyCompactList}\small\item\em Accessor function to get the total running time of the software. \end{DoxyCompactList}\item 
+constexpr const long long \& \mbox{\hyperlink{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}{delta\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Accessor function to get the time elapsed since the last frame update. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}{sleep\+At\+Least}} (size\+\_\+t p\+\_\+millisecond)
+\begin{DoxyCompactList}\small\item\em Function to put the current thread to sleep for at least the specified duration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1TimeMetrics_afad278268bf704627f2cbb665c5b4ace}\label{classspk_1_1TimeMetrics_afad278268bf704627f2cbb665c5b4ace}} 
+class {\bfseries spk\+::\+Singleton$<$ Time\+Metrics $>$}
+\item 
+\mbox{\Hypertarget{classspk_1_1TimeMetrics_ade1979a5c31f719d8d9c99880f6719ee}\label{classspk_1_1TimeMetrics_ade1979a5c31f719d8d9c99880f6719ee}} 
+class {\bfseries Time\+Module}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A singleton class to manage time-\/related metrics for the software. 
+
+This class is responsible for keeping track of the software\textquotesingle{}s running time and other time-\/related metrics. This ensures consistency across the entire software. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}\label{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}} 
+\index{spk::TimeMetrics@{spk::TimeMetrics}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!spk::TimeMetrics@{spk::TimeMetrics}}
+\doxysubsubsection{\texorpdfstring{deltaTime()}{deltaTime()}}
+{\footnotesize\ttfamily constexpr const long long\& spk\+::\+Time\+Metrics\+::delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Accessor function to get the time elapsed since the last frame update. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the the time elapsed since the last frame update. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}\label{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}} 
+\index{spk::TimeMetrics@{spk::TimeMetrics}!sleepAtLeast@{sleepAtLeast}}
+\index{sleepAtLeast@{sleepAtLeast}!spk::TimeMetrics@{spk::TimeMetrics}}
+\doxysubsubsection{\texorpdfstring{sleepAtLeast()}{sleepAtLeast()}}
+{\footnotesize\ttfamily void spk\+::\+Time\+Metrics\+::sleep\+At\+Least (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+millisecond }\end{DoxyParamCaption})}
+
+
+
+Function to put the current thread to sleep for at least the specified duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+millisecond} & The minimum number of milliseconds the thread should sleep. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1TimeMetrics_ab2ec64db76c2329d780ef3138ea60611}\label{classspk_1_1TimeMetrics_ab2ec64db76c2329d780ef3138ea60611}} 
+\index{spk::TimeMetrics@{spk::TimeMetrics}!time@{time}}
+\index{time@{time}!spk::TimeMetrics@{spk::TimeMetrics}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily constexpr const long long\& spk\+::\+Time\+Metrics\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Accessor function to get the total running time of the software. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the total running time of the software variable. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/system/spk\+\_\+time\+\_\+metrics.\+hpp\end{DoxyCompactItemize}

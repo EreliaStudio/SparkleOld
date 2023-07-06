@@ -1,0 +1,156 @@
+\hypertarget{classspk_1_1Timer}{}\doxysection{spk\+::Timer Class Reference}
+\label{classspk_1_1Timer}\index{spk::Timer@{spk::Timer}}
+
+
+A class to manage time-\/based operations.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+timer.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}} \{ \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c}{Idle}}
+, \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09}{Running}}
+, \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398}{Timeout}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the possible states for the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Timer_a407d0e659a442be8f81043fc05d14982}\label{classspk_1_1Timer_a407d0e659a442be8f81043fc05d14982}} 
+\mbox{\hyperlink{classspk_1_1Timer_a407d0e659a442be8f81043fc05d14982}{Timer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classspk_1_1Timer}{Timer}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Timer_aae49033702e6ef1875b4517a969bcc07}{set\+Duration}} (const long long \&p\+\_\+duration)
+\begin{DoxyCompactList}\small\item\em Set the duration for the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+const long long \& \mbox{\hyperlink{classspk_1_1Timer_ad57b7897092566299295a3617851926e}{total\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Accessor function for the total duration of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+long long \mbox{\hyperlink{classspk_1_1Timer_ac07058690788556b47491f9fbbd6b83e}{remaining\+Duration}} () const
+\begin{DoxyCompactList}\small\item\em Get the remaining duration of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Timer_afcf2bb414ce8bff18b7642f392f0c3f2}\label{classspk_1_1Timer_afcf2bb414ce8bff18b7642f392f0c3f2}} 
+void \mbox{\hyperlink{classspk_1_1Timer_afcf2bb414ce8bff18b7642f392f0c3f2}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Timer_af7da190802d2bc83ca2608b609d7806e}\label{classspk_1_1Timer_af7da190802d2bc83ca2608b609d7806e}} 
+void \mbox{\hyperlink{classspk_1_1Timer_af7da190802d2bc83ca2608b609d7806e}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}} \& \mbox{\hyperlink{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}{status}} () const
+\begin{DoxyCompactList}\small\item\em Accessor function for the current state of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1Timer_ac2ec1670d0e9e6b00f2b5504b4227740}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} is currently running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage time-\/based operations. 
+
+This class provides an interface for a simple timer, which can be set to a specific duration, started, stopped, and queried for its current state and remaining duration. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}\label{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}} 
+\index{spk::Timer@{spk::Timer}!State@{State}}
+\index{State@{State}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{spk\+::\+Timer\+::\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of the possible states for the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} class. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Idle@{Idle}!spk::Timer@{spk::Timer}}\index{spk::Timer@{spk::Timer}!Idle@{Idle}}}\mbox{\Hypertarget{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c}\label{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c}} 
+Idle&\mbox{\hyperlink{classspk_1_1Timer}{Timer}} is idle (not running and not timed out). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Running@{Running}!spk::Timer@{spk::Timer}}\index{spk::Timer@{spk::Timer}!Running@{Running}}}\mbox{\Hypertarget{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09}\label{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09}} 
+Running&\mbox{\hyperlink{classspk_1_1Timer}{Timer}} is currently running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Timeout@{Timeout}!spk::Timer@{spk::Timer}}\index{spk::Timer@{spk::Timer}!Timeout@{Timeout}}}\mbox{\Hypertarget{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398}\label{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398}} 
+Timeout&\mbox{\hyperlink{classspk_1_1Timer}{Timer}} has timed out. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Timer_ac2ec1670d0e9e6b00f2b5504b4227740}\label{classspk_1_1Timer_ac2ec1670d0e9e6b00f2b5504b4227740}} 
+\index{spk::Timer@{spk::Timer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool spk\+::\+Timer\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} is currently running. 
+
+\begin{DoxyReturn}{Returns}
+bool True if the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} is running, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Timer_ac07058690788556b47491f9fbbd6b83e}\label{classspk_1_1Timer_ac07058690788556b47491f9fbbd6b83e}} 
+\index{spk::Timer@{spk::Timer}!remainingDuration@{remainingDuration}}
+\index{remainingDuration@{remainingDuration}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{remainingDuration()}{remainingDuration()}}
+{\footnotesize\ttfamily long long spk\+::\+Timer\+::remaining\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the remaining duration of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+
+\begin{DoxyReturn}{Returns}
+long long The amount of time left before the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} times out. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \mbox{\hyperlink{classspk_1_1Timer}{Timer}} has already timed out, this function returns how long it has been in the Timeout state. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classspk_1_1Timer_aae49033702e6ef1875b4517a969bcc07}\label{classspk_1_1Timer_aae49033702e6ef1875b4517a969bcc07}} 
+\index{spk::Timer@{spk::Timer}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}}
+{\footnotesize\ttfamily void spk\+::\+Timer\+::set\+Duration (\begin{DoxyParamCaption}\item[{const long long \&}]{p\+\_\+duration }\end{DoxyParamCaption})}
+
+
+
+Set the duration for the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+duration} & The desired duration for the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the timer is currently running. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}\label{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}} 
+\index{spk::Timer@{spk::Timer}!status@{status}}
+\index{status@{status}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}}\& spk\+::\+Timer\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accessor function for the current state of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the current state of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Timer_ad57b7897092566299295a3617851926e}\label{classspk_1_1Timer_ad57b7897092566299295a3617851926e}} 
+\index{spk::Timer@{spk::Timer}!totalDuration@{totalDuration}}
+\index{totalDuration@{totalDuration}!spk::Timer@{spk::Timer}}
+\doxysubsubsection{\texorpdfstring{totalDuration()}{totalDuration()}}
+{\footnotesize\ttfamily const long long\& spk\+::\+Timer\+::total\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Accessor function for the total duration of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the total duration of the \mbox{\hyperlink{classspk_1_1Timer}{Timer}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/system/spk\+\_\+timer.\+hpp\end{DoxyCompactItemize}

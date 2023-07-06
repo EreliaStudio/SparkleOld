@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir">
+    <compoundname>includes/application/modules/windows</compoundname>
+    <innerfile refid="windows_2spk__API__module_8hpp">spk_API_module.hpp</innerfile>
+    <innerfile refid="windows_2spk__window__module_8hpp">spk_window_module.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/modules/windows/"/>
+  </compounddef>
+</doxygen>

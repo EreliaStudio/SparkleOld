@@ -1,0 +1,65 @@
+\hypertarget{classspk_1_1Activity}{}\doxysection{spk\+::Activity Class Reference}
+\label{classspk_1_1Activity}\index{spk::Activity@{spk::Activity}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}} 
+enum class {\bfseries Status} \{ \newline
+{\bfseries Stopped}
+, {\bfseries On\+Enter}
+, {\bfseries Running}
+, {\bfseries On\+Exit}
+, \newline
+{\bfseries Complete}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_ad9c4fb3d225e7dc0c9e2154295f63605}\label{classspk_1_1Activity_ad9c4fb3d225e7dc0c9e2154295f63605}} 
+void {\bfseries \+\_\+update} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a84446cb99ea3035ed1119fe09742e0d8}\label{classspk_1_1Activity_a84446cb99ea3035ed1119fe09742e0d8}} 
+void {\bfseries \+\_\+move\+Next\+Step} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a361afbd8df75f55a1d3903a903a1358e}\label{classspk_1_1Activity_a361afbd8df75f55a1d3903a903a1358e}} 
+void {\bfseries \+\_\+move\+Next\+Step\+And\+Execute} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a2fc398d0a51902db587abf30d852fee6}\label{classspk_1_1Activity_a2fc398d0a51902db587abf30d852fee6}} 
+void {\bfseries \+\_\+start} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}\label{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}} 
+const Status \& {\bfseries state} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}\label{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}} 
+bool {\bfseries is\+Completed} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}\label{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}} 
+Status {\bfseries \+\_\+internal\+Working\+State}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a1aa7cf3267e674cc737d4d56c674ff4e}\label{classspk_1_1Activity_a1aa7cf3267e674cc737d4d56c674ff4e}} 
+virtual void {\bfseries \+\_\+on\+Enter} ()=0
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_af4c0f1fe9d2299a1c3f096e9687ed234}\label{classspk_1_1Activity_af4c0f1fe9d2299a1c3f096e9687ed234}} 
+virtual void {\bfseries \+\_\+execute} ()=0
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a507057c1dbc10ceb7894fa718fc75012}\label{classspk_1_1Activity_a507057c1dbc10ceb7894fa718fc75012}} 
+virtual void {\bfseries \+\_\+on\+Exit} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a729b6b1b083afe92ee8846069341a458}\label{classspk_1_1Activity_a729b6b1b083afe92ee8846069341a458}} 
+class {\bfseries Activity\+Manager}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+activity.\+hpp\end{DoxyCompactItemize}

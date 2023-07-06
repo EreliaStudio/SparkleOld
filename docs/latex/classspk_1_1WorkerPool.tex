@@ -1,0 +1,41 @@
+\hypertarget{classspk_1_1WorkerPool}{}\doxysection{spk\+::Worker\+Pool Class Reference}
+\label{classspk_1_1WorkerPool}\index{spk::WorkerPool@{spk::WorkerPool}}
+
+
+Inheritance diagram for spk\+::Worker\+Pool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classspk_1_1WorkerPool__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a13c9c723309bc85c39d79edf53ae6945}\label{classspk_1_1WorkerPool_a13c9c723309bc85c39d79edf53ae6945}} 
+using {\bfseries Job} = std\+::function$<$ void()$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a839f0676de4aa4d8584fbbb1e899b08a}\label{classspk_1_1WorkerPool_a839f0676de4aa4d8584fbbb1e899b08a}} 
+{\bfseries Worker\+Pool} (const std\+::wstring \&p\+\_\+pool\+Name, const size\+\_\+t \&p\+\_\+nb\+Worker)
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a480e86565f57a29db1b390530632545d}\label{classspk_1_1WorkerPool_a480e86565f57a29db1b390530632545d}} 
+{\bfseries Worker\+Pool} (const \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} \&p\+\_\+other)=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a5f534195157ac56f61d5b46880d037c2}\label{classspk_1_1WorkerPool_a5f534195157ac56f61d5b46880d037c2}} 
+void {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a4c0b119248905dfb4257df9bfd4b8e40}\label{classspk_1_1WorkerPool_a4c0b119248905dfb4257df9bfd4b8e40}} 
+void {\bfseries stop} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a7691876b56ced3a61b435cd738cdbf4b}\label{classspk_1_1WorkerPool_a7691876b56ced3a61b435cd738cdbf4b}} 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\void {\bfseries add\+Job} (Funct \&\&p\+\_\+funct, Args \&\&... p\+\_\+args)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+worker\+\_\+pool.\+hpp\end{DoxyCompactItemize}

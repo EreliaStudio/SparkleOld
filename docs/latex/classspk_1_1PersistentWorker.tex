@@ -1,0 +1,61 @@
+\hypertarget{classspk_1_1PersistentWorker}{}\doxysection{spk\+::Persistent\+Worker Class Reference}
+\label{classspk_1_1PersistentWorker}\index{spk::PersistentWorker@{spk::PersistentWorker}}
+
+
+Inheritance diagram for spk\+::Persistent\+Worker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classspk_1_1PersistentWorker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Persistent\+Worker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classspk_1_1PersistentWorker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a3d6acafce004b1597a480b50baf24881}\label{classspk_1_1PersistentWorker_a3d6acafce004b1597a480b50baf24881}} 
+using {\bfseries Job} = Contract\+Provider\+::\+Callback
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}\label{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}} 
+{\bfseries Persistent\+Worker} (const std\+::wstring \&p\+\_\+name)
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}\label{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}} 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \& {\bfseries add\+Job} (const Job \&p\+\_\+job)
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}\label{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}} 
+constexpr bool {\bfseries is\+Running} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}\label{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}} 
+void {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}\label{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}} 
+void {\bfseries stop} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}\label{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}} 
+void {\bfseries join} ()=delete
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}\label{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}} 
+void {\bfseries pause} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}\label{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}} 
+void {\bfseries resume} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+persistent\+\_\+worker.\+hpp\end{DoxyCompactItemize}

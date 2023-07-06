@@ -1,0 +1,43 @@
+\hypertarget{classspk_1_1Thread}{}\doxysection{spk\+::Thread Class Reference}
+\label{classspk_1_1Thread}\index{spk::Thread@{spk::Thread}}
+
+
+Inheritance diagram for spk\+::Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classspk_1_1Thread__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}\label{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}} 
+enum class {\bfseries Launch\+Method} \{ {\bfseries Delayed}
+, {\bfseries Immediate}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}\label{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}} 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\{\bfseries Thread} (const std\+::wstring \&p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}\label{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}} 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\{\bfseries Thread} (Launch\+Method p\+\_\+launch\+Method, std\+::wstring p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}\label{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}} 
+std\+::thread\+::id {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}\label{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}} 
+void {\bfseries join} ()
+\item 
+\mbox{\Hypertarget{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}\label{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}} 
+void {\bfseries start} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+thread.\+hpp\end{DoxyCompactItemize}

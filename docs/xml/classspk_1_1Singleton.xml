@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Singleton" kind="class" language="C++" prot="public">
+    <compoundname>spk::Singleton</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" static="yes" mutable="no">
+        <type>std::shared_ptr&lt; TType &gt;</type>
+        <definition>std::shared_ptr&lt;TType&gt; spk::Singleton&lt; TType &gt;::_instance</definition>
+        <argsstring></argsstring>
+        <name>_instance</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_singleton.hpp" line="17" column="31" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::Singleton&lt; TType &gt;::Singleton</definition>
+        <argsstring>()</argsstring>
+        <name>Singleton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_singleton.hpp" line="12" column="1" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr std::shared_ptr&lt; TType &gt;</type>
+        <definition>static constexpr std::shared_ptr&lt;TType&gt; spk::Singleton&lt; TType &gt;::instanciate</definition>
+        <argsstring>(Args &amp;&amp;...args)</argsstring>
+        <name>instanciate</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_singleton.hpp" line="21" column="34" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="21" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr std::shared_ptr&lt; TType &gt;</type>
+        <definition>static constexpr std::shared_ptr&lt;TType&gt; spk::Singleton&lt; TType &gt;::instance</definition>
+        <argsstring>()</argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_singleton.hpp" line="29" column="34" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void spk::Singleton&lt; TType &gt;::release</definition>
+        <argsstring>()</argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_singleton.hpp" line="34" column="13" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/spk_singleton.hpp" line="9" column="1" bodyfile="includes/design_pattern/spk_singleton.hpp" bodystart="10" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Singleton</scope><name>_instance</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Singleton</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Singleton</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::Singleton</scope><name>release</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::Singleton</scope><name>Singleton</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
