@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['iinput_412',['IInput',['../classspk_1_1IInput.html#a0af00a3e86f07666cb3dc76518f2d496',1,'spk::IInput']]],
   ['imessageconsumermodule_413',['IMessageConsumerModule',['../classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a',1,'spk::IMessageConsumerModule']]],
   ['inherenceobject_414',['InherenceObject',['../classspk_1_1InherenceObject.html#ab17ef56656c9b33064cec33d44d4c7b7',1,'spk::InherenceObject::InherenceObject()'],['../classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64',1,'spk::InherenceObject::InherenceObject(const InherenceObject &amp;)=delete']]],
@@ -34,4 +35,21 @@ var searchData=
   ['ivector2_410',['IVector2',['../structspk_1_1IVector2.html#ad681cb3d88fd9a4ca1e60c3c44e600b6',1,'spk::IVector2::IVector2()'],['../structspk_1_1IVector2.html#ae197d470bdc2579bd6434f1d23e569bc',1,'spk::IVector2::IVector2(const TOtherType &amp;p_value)'],['../structspk_1_1IVector2.html#a3199f7709d8d15633920c7602b1c1e55',1,'spk::IVector2::IVector2(const TOtherType &amp;p_x, const TOtherType &amp;p_y)']]],
   ['ivector3_411',['IVector3',['../structspk_1_1IVector3.html#a1a30fd5ff259b409a088fa58a6249bc5',1,'spk::IVector3::IVector3()'],['../structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb',1,'spk::IVector3::IVector3(const TOtherType &amp;p_value)'],['../structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302',1,'spk::IVector3::IVector3(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)'],['../structspk_1_1IVector3.html#a230e86429a49bc1be347432b21421ac5',1,'spk::IVector3::IVector3(const IVector3&lt; TOtherType &gt; &amp;p_other)'],['../structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33',1,'spk::IVector3::IVector3(const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)']]]
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+  ['imessageconsumermodule_399',['IMessageConsumerModule',['../classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a',1,'spk::IMessageConsumerModule']]],
+  ['inherenceobject_400',['InherenceObject',['../classspk_1_1InherenceObject.html#ab17ef56656c9b33064cec33d44d4c7b7',1,'spk::InherenceObject::InherenceObject()'],['../classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64',1,'spk::InherenceObject::InherenceObject(const InherenceObject &amp;)=delete']]],
+  ['inputstatus_401',['inputStatus',['../classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8',1,'spk::Keyboard::inputStatus()'],['../classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390',1,'spk::Mouse::inputStatus()']]],
+  ['instance_402',['instance',['../classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c',1,'spk::Singleton']]],
+  ['instanciate_403',['instanciate',['../classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12',1,'spk::Singleton']]],
+  ['inverse_404',['inverse',['../structspk_1_1IVector3.html#a37472b6249c183eb47f89827849a72d8',1,'spk::IVector3']]],
+  ['invert_405',['invert',['../structspk_1_1IVector2.html#a94bb60fe03d90225da1337147ac4bb72',1,'spk::IVector2']]],
+  ['iostream_406',['IOStream',['../classspk_1_1IOStream.html#acfa77761710612dc114339caa3bb14fd',1,'spk::IOStream']]],
+  ['isactive_407',['isActive',['../classspk_1_1ActivableObject.html#a5627aa938cb1652e8c1aaa55c81da949',1,'spk::ActivableObject']]],
+  ['iscompleted_408',['isCompleted',['../classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499',1,'spk::Activity']]],
+  ['isinsiderectangle_409',['isInsideRectangle',['../structspk_1_1IVector2.html#a34fd8293e2ff4b4bfa398dd70d158081',1,'spk::IVector2']]],
+  ['ispointed_410',['isPointed',['../classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81',1,'spk::AbstractWidget']]],
+  ['isrunning_411',['isRunning',['../classspk_1_1Chronometer.html#af87e5503b7f9b80fb2f87151c4198ff5',1,'spk::Chronometer::isRunning()'],['../classspk_1_1Timer.html#ac2ec1670d0e9e6b00f2b5504b4227740',1,'spk::Timer::isRunning()'],['../classspk_1_1PersistentWorker.html#ad4101a5a0d541968716eb8cb42e95bda',1,'spk::PersistentWorker::isRunning()']]],
+  ['ivector2_412',['IVector2',['../structspk_1_1IVector2.html#ad681cb3d88fd9a4ca1e60c3c44e600b6',1,'spk::IVector2::IVector2()'],['../structspk_1_1IVector2.html#ae197d470bdc2579bd6434f1d23e569bc',1,'spk::IVector2::IVector2(const TOtherType &amp;p_value)'],['../structspk_1_1IVector2.html#a3199f7709d8d15633920c7602b1c1e55',1,'spk::IVector2::IVector2(const TOtherType &amp;p_x, const TOtherType &amp;p_y)']]],
+  ['ivector3_413',['IVector3',['../structspk_1_1IVector3.html#a1a30fd5ff259b409a088fa58a6249bc5',1,'spk::IVector3::IVector3()'],['../structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb',1,'spk::IVector3::IVector3(const TOtherType &amp;p_value)'],['../structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302',1,'spk::IVector3::IVector3(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)'],['../structspk_1_1IVector3.html#a230e86429a49bc1be347432b21421ac5',1,'spk::IVector3::IVector3(const IVector3&lt; TOtherType &gt; &amp;p_other)'],['../structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33',1,'spk::IVector3::IVector3(const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)']]]
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];
