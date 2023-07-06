@@ -1,0 +1,20 @@
+name: Generate Doxygen
+
+on:
+  push:
+    branches:
+      - DoxygenTutorial
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Doxygen
+      run: sudo apt-get update && sudo apt-get install -y doxygen
+
+    - name: Generate Doxygen
+      run: doxygen Doxyfile
