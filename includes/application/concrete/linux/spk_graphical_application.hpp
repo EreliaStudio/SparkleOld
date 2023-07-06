@@ -31,6 +31,9 @@ namespace spk
 
 		spk::WidgetModule* _widgetModule; ///< Widget module instance.
 
+		std::vector<Contract> _renderContract; ///< Vector containing contract linked to render thread.
+		std::vector<Contract> _updateContract; ///< Vector containing contract linked to update thread.
+
 	protected:
 		/**
 		 * @brief Setup the application jobs.
@@ -38,22 +41,23 @@ namespace spk
 		 * This method sets up the jobs for updating and rendering the modules.
 		 */
 		void setupJobs()
-		{
-			addJob([&]() { _profilerModule->increaseRenderIPS();});
-			addJob([&]() { _APIModule->update(); });
-			addJob([&]() { _windowModule->clear(); });
-			addJob([&]() { _widgetModule->render(); });
-			addJob([&]() { _windowModule->render(); });
+		{			
+			_updateContract.emplace_back(addJob([&](){ _profilerModule->increaseRenderIPS(); }));
+			_renderContract.emplace_back(addJob([&](){ _APIModule->update(); }));
+			_renderContract.emplace_back(addJob([&](){ _windowModule->clear(); }));
+			_renderContract.emplace_back(addJob([&](){ _widgetModule->render(); }));
+			_renderContract.emplace_back(addJob([&](){ _windowModule->render(); }));
 
-			addJob(L"Updater", [&]() { _profilerModule->increaseUpdateIPS();});
-			addJob(L"Updater", [&]() { _timeModule->update(); });
-			addJob(L"Updater", [&]() { _profilerModule->update();});
-			addJob(L"Updater", [&]() { _windowModule->update(); });
-			addJob(L"Updater", [&]() { _mouseModule->update(); });
-			addJob(L"Updater", [&]() { _keyboardModule->update(); });
-			addJob(L"Updater", [&]() { _widgetModule->update(); });
-			addJob(L"Updater", [&]() { _mouseModule->updateMouse(); });
-			addJob(L"Updater", [&]() { _keyboardModule->updateKeyboard(); });
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _systemModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _timeModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _windowModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _mouseModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _keyboardModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _widgetModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _mouseModule->updateMouse(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _profilerModule->update(); }));
 		}
 
 	public:
