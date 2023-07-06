@@ -181,6 +181,7 @@
   <compound refid="classspk_1_1DataBuffer" kind="class"><name>spk::DataBuffer</name>
     <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" kind="variable"><name>_data</name></member>
     <member refid="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" kind="variable"><name>_bookmark</name></member>
+    <member refid="classspk_1_1DataBuffer_1a726f3c88727af71c7cb1142efb80fb06" kind="variable"><name>_accessMutex</name></member>
     <member refid="classspk_1_1DataBuffer_1a716866b679b1a1b6d7046a5bb65347ec" kind="function"><name>DataBuffer</name></member>
     <member refid="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" kind="function"><name>size</name></member>
     <member refid="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" kind="function"><name>bookmark</name></member>
