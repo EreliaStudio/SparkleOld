@@ -1,0 +1,77 @@
+\hypertarget{classspk_1_1MouseMovementInput}{}\doxysection{spk\+::Mouse\+Movement\+Input Class Reference}
+\label{classspk_1_1MouseMovementInput}\index{spk::MouseMovementInput@{spk::MouseMovementInput}}
+
+
+A concrete class derived from \mbox{\hyperlink{classspk_1_1IInput}{IInput}} that represents mouse movement input.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+mouse\+\_\+motion\+\_\+input.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Mouse\+Movement\+Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classspk_1_1MouseMovementInput__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Mouse\+Movement\+Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classspk_1_1MouseMovementInput__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1MouseMovementInput_aa0b3e3c9d7230949e8e22d5dfd7e7625}{Mouse\+Movement\+Input}} (unsigned long p\+\_\+delay\+Between\+Input, Funct \&\&p\+\_\+funct, Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1MouseMovementInput}{Mouse\+Movement\+Input}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete class derived from \mbox{\hyperlink{classspk_1_1IInput}{IInput}} that represents mouse movement input. 
+
+\mbox{\hyperlink{classspk_1_1MouseMovementInput}{Mouse\+Movement\+Input}} is a specific implementation of \mbox{\hyperlink{classspk_1_1IInput}{IInput}} for mouse movements. The encapsulated function is always executed in every update, because the {\ttfamily \+\_\+is\+Execution\+Needed()} method always returns true. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1MouseMovementInput_aa0b3e3c9d7230949e8e22d5dfd7e7625}\label{classspk_1_1MouseMovementInput_aa0b3e3c9d7230949e8e22d5dfd7e7625}} 
+\index{spk::MouseMovementInput@{spk::MouseMovementInput}!MouseMovementInput@{MouseMovementInput}}
+\index{MouseMovementInput@{MouseMovementInput}!spk::MouseMovementInput@{spk::MouseMovementInput}}
+\doxysubsubsection{\texorpdfstring{MouseMovementInput()}{MouseMovementInput()}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+spk\+::\+Mouse\+Movement\+Input\+::\+Mouse\+Movement\+Input (\begin{DoxyParamCaption}\item[{unsigned long}]{p\+\_\+delay\+Between\+Input,  }\item[{Funct \&\&}]{p\+\_\+funct,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1MouseMovementInput}{Mouse\+Movement\+Input}} object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & Function type. \\
+\hline
+{\em Args} & Argument types. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+delay\+Between\+Input} & Input delay for the timer. \\
+\hline
+{\em p\+\_\+funct} & Function to be executed. \\
+\hline
+{\em p\+\_\+args} & Arguments for the function. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/input/spk\+\_\+mouse\+\_\+motion\+\_\+input.\+hpp\end{DoxyCompactItemize}

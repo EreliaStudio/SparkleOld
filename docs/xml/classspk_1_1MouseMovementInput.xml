@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1MouseMovementInput" kind="class" language="C++" prot="public">
+    <compoundname>spk::MouseMovementInput</compoundname>
+    <basecompoundref refid="classspk_1_1IInput" prot="public" virt="non-virtual">spk::IInput</basecompoundref>
+    <includes refid="spk__mouse__motion__input_8hpp" local="no">spk_mouse_motion_input.hpp</includes>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1MouseMovementInput_1a18b136b787e7c28abc64e93051e9dcb4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool spk::MouseMovementInput::_isExecutionNeeded</definition>
+        <argsstring>()</argsstring>
+        <name>_isExecutionNeeded</name>
+        <reimplements refid="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662">_isExecutionNeeded</reimplements>
+        <briefdescription>
+<para>Checks whether the function execution is needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In the case of <ref refid="classspk_1_1MouseMovementInput" kindref="compound">MouseMovementInput</ref>, the function execution is always needed.</para>
+<para><simplesect kind="return"><para>Always returns true. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse_motion_input.hpp" line="26" column="6" bodyfile="includes/input/spk_mouse_motion_input.hpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1MouseMovementInput_1aa0b3e3c9d7230949e8e22d5dfd7e7625" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Funct</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::MouseMovementInput::MouseMovementInput</definition>
+        <argsstring>(unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</argsstring>
+        <name>MouseMovementInput</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>p_delayBetweenInput</declname>
+        </param>
+        <param>
+          <type>Funct &amp;&amp;</type>
+          <declname>p_funct</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1MouseMovementInput" kindref="compound">MouseMovementInput</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Argument types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_delayBetweenInput</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input delay for the timer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be executed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments for the function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_mouse_motion_input.hpp" line="41" column="1" bodyfile="includes/input/spk_mouse_motion_input.hpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A concrete class derived from <ref refid="classspk_1_1IInput" kindref="compound">IInput</ref> that represents mouse movement input. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classspk_1_1MouseMovementInput" kindref="compound">MouseMovementInput</ref> is a specific implementation of <ref refid="classspk_1_1IInput" kindref="compound">IInput</ref> for mouse movements. The encapsulated function is always executed in every update, because the <computeroutput>_isExecutionNeeded()</computeroutput> method always returns true. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::IInput</label>
+        <link refid="classspk_1_1IInput"/>
+      </node>
+      <node id="1">
+        <label>spk::MouseMovementInput</label>
+        <link refid="classspk_1_1MouseMovementInput"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::IInput</label>
+        <link refid="classspk_1_1IInput"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>spk::MouseMovementInput</label>
+        <link refid="classspk_1_1MouseMovementInput"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::Timer</label>
+        <link refid="classspk_1_1Timer"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/input/spk_mouse_motion_input.hpp" line="16" column="1" bodyfile="includes/input/spk_mouse_motion_input.hpp" bodystart="17" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classspk_1_1IInput_1a3f003a9960bf0f09e9c40c0cb19b9b11" prot="protected" virt="non-virtual"><scope>spk::MouseMovementInput</scope><name>_funct</name></member>
+      <member refid="classspk_1_1MouseMovementInput_1a18b136b787e7c28abc64e93051e9dcb4" prot="private" virt="virtual"><scope>spk::MouseMovementInput</scope><name>_isExecutionNeeded</name></member>
+      <member refid="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" prot="protected" virt="virtual"><scope>spk::MouseMovementInput</scope><name>_skipCondition</name></member>
+      <member refid="classspk_1_1IInput_1aca480f940165fae3fbad17182222b8b1" prot="protected" virt="non-virtual"><scope>spk::MouseMovementInput</scope><name>_timer</name></member>
+      <member refid="classspk_1_1IInput_1a0af00a3e86f07666cb3dc76518f2d496" prot="public" virt="non-virtual"><scope>spk::MouseMovementInput</scope><name>IInput</name></member>
+      <member refid="classspk_1_1MouseMovementInput_1aa0b3e3c9d7230949e8e22d5dfd7e7625" prot="public" virt="non-virtual"><scope>spk::MouseMovementInput</scope><name>MouseMovementInput</name></member>
+      <member refid="classspk_1_1IInput_1a09e4d70d01debf1dcb5c4ce1d61a3139" prot="public" virt="virtual"><scope>spk::MouseMovementInput</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

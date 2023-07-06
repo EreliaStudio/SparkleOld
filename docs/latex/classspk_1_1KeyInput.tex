@@ -1,0 +1,81 @@
+\hypertarget{classspk_1_1KeyInput}{}\doxysection{spk\+::Key\+Input Class Reference}
+\label{classspk_1_1KeyInput}\index{spk::KeyInput@{spk::KeyInput}}
+
+
+A concrete class derived from \mbox{\hyperlink{classspk_1_1IInput}{IInput}} that represents keyboard input.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+key\+\_\+input.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Key\+Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classspk_1_1KeyInput__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Key\+Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classspk_1_1KeyInput__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1KeyInput_a98d78736bce4c55f04e956b45a8dcede}{Key\+Input}} (\mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{spk\+::\+Keyboard\+::\+Key}} p\+\_\+key, spk\+::\+Input\+Status p\+\_\+expected\+Status, unsigned long p\+\_\+delay\+Between\+Input, Funct \&\&p\+\_\+funct, Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1KeyInput}{Key\+Input}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A concrete class derived from \mbox{\hyperlink{classspk_1_1IInput}{IInput}} that represents keyboard input. 
+
+\mbox{\hyperlink{classspk_1_1KeyInput}{Key\+Input}} is a specific implementation of \mbox{\hyperlink{classspk_1_1IInput}{IInput}} for keyboard inputs. It encapsulates a keyboard key and the expected status of the key. The encapsulated function is executed if the current status of the specified keyboard key matches the expected status. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1KeyInput_a98d78736bce4c55f04e956b45a8dcede}\label{classspk_1_1KeyInput_a98d78736bce4c55f04e956b45a8dcede}} 
+\index{spk::KeyInput@{spk::KeyInput}!KeyInput@{KeyInput}}
+\index{KeyInput@{KeyInput}!spk::KeyInput@{spk::KeyInput}}
+\doxysubsubsection{\texorpdfstring{KeyInput()}{KeyInput()}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+spk\+::\+Key\+Input\+::\+Key\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{spk\+::\+Keyboard\+::\+Key}}}]{p\+\_\+key,  }\item[{spk\+::\+Input\+Status}]{p\+\_\+expected\+Status,  }\item[{unsigned long}]{p\+\_\+delay\+Between\+Input,  }\item[{Funct \&\&}]{p\+\_\+funct,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1KeyInput}{Key\+Input}} object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & Function type. \\
+\hline
+{\em Args} & Argument types. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The keyboard key that this \mbox{\hyperlink{classspk_1_1KeyInput}{Key\+Input}} object should monitor. \\
+\hline
+{\em p\+\_\+expected\+Status} & The expected status of the keyboard key. \\
+\hline
+{\em p\+\_\+delay\+Between\+Input} & Input delay for the timer. \\
+\hline
+{\em p\+\_\+funct} & Function to be executed. \\
+\hline
+{\em p\+\_\+args} & Arguments for the function. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/input/spk\+\_\+key\+\_\+input.\+hpp\end{DoxyCompactItemize}

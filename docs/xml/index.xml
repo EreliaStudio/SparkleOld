@@ -211,6 +211,14 @@
     <member refid="classspk_1_1Value_1_1Default_1a74711a987126d215a51581db6ee99679" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1Value_1_1Default_1a17ae54c173cf86cf18bfb4881c0d2282" kind="function"><name>operator const TType &amp;</name></member>
   </compound>
+  <compound refid="classspk_1_1IInput" kind="class"><name>spk::IInput</name>
+    <member refid="classspk_1_1IInput_1aca480f940165fae3fbad17182222b8b1" kind="variable"><name>_timer</name></member>
+    <member refid="classspk_1_1IInput_1a3f003a9960bf0f09e9c40c0cb19b9b11" kind="variable"><name>_funct</name></member>
+    <member refid="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662" kind="function"><name>_isExecutionNeeded</name></member>
+    <member refid="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" kind="function"><name>_skipCondition</name></member>
+    <member refid="classspk_1_1IInput_1a0af00a3e86f07666cb3dc76518f2d496" kind="function"><name>IInput</name></member>
+    <member refid="classspk_1_1IInput_1a09e4d70d01debf1dcb5c4ce1d61a3139" kind="function"><name>update</name></member>
+  </compound>
   <compound refid="classspk_1_1IMessageConsumerModule" kind="class"><name>spk::IMessageConsumerModule</name>
     <member refid="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" kind="variable"><name>_queue</name></member>
     <member refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78" kind="function"><name>_handleMessage</name></member>
@@ -507,6 +515,12 @@
     <member refid="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" kind="function"><name>~KeyboardModule</name></member>
     <member refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" kind="function"><name>updateKeyboard</name></member>
   </compound>
+  <compound refid="classspk_1_1KeyInput" kind="class"><name>spk::KeyInput</name>
+    <member refid="classspk_1_1KeyInput_1a5577341acc78c27b662116edf51ef520" kind="variable"><name>_key</name></member>
+    <member refid="classspk_1_1KeyInput_1a96796c19955880f51192ed7cc0e750e7" kind="variable"><name>_expectedStatus</name></member>
+    <member refid="classspk_1_1KeyInput_1af69acdaa20e92397bc0f8be3385bb293" kind="function"><name>_isExecutionNeeded</name></member>
+    <member refid="classspk_1_1KeyInput_1a98d78736bce4c55f04e956b45a8dcede" kind="function"><name>KeyInput</name></member>
+  </compound>
   <compound refid="structspk_1_1Keyboard_1_1Mapping" kind="struct"><name>spk::Keyboard::Mapping</name>
     <member refid="structspk_1_1Keyboard_1_1Mapping_1a862d7e2ab5556a56af7020c33db5c14a" kind="variable"><name>keys</name></member>
     <member refid="structspk_1_1Keyboard_1_1Mapping_1ac7348453dd42feef1ba1b2b08dae0d3c" kind="function"><name>Mapping</name></member>
@@ -552,11 +566,21 @@
     <member refid="classspk_1_1Mouse_1a586de041eeb18225bece40c602fabe4f" kind="function"><name>deltaPosition</name></member>
     <member refid="classspk_1_1Mouse_1a5430080e4319c4d48d7b482f6bad7994" kind="function"><name>wheel</name></member>
   </compound>
+  <compound refid="classspk_1_1MouseInput" kind="class"><name>spk::MouseInput</name>
+    <member refid="classspk_1_1MouseInput_1a5ca8b4362c6886c2ddc9313cab00a140" kind="variable"><name>_button</name></member>
+    <member refid="classspk_1_1MouseInput_1aab0d5e7a60ac0c5336aba10156249d92" kind="variable"><name>_expectedStatus</name></member>
+    <member refid="classspk_1_1MouseInput_1a7e74631b44207f9901caa61265640df4" kind="function"><name>_isExecutionNeeded</name></member>
+    <member refid="classspk_1_1MouseInput_1a85acfc45a8c08cddb3f4ff06e3db8db9" kind="function"><name>MouseInput</name></member>
+  </compound>
   <compound refid="classspk_1_1MouseModule" kind="class"><name>spk::MouseModule</name>
     <member refid="classspk_1_1MouseModule_1afa5a66104d33670c44b5523f788f6966" kind="function"><name>_handleMessage</name></member>
     <member refid="classspk_1_1MouseModule_1af36f93dd3ad1a4a53f4e9f80635f7b24" kind="function"><name>MouseModule</name></member>
     <member refid="classspk_1_1MouseModule_1a7488472b5dcb2a93d96dd1350a7b9246" kind="function"><name>~MouseModule</name></member>
     <member refid="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" kind="function"><name>updateMouse</name></member>
+  </compound>
+  <compound refid="classspk_1_1MouseMovementInput" kind="class"><name>spk::MouseMovementInput</name>
+    <member refid="classspk_1_1MouseMovementInput_1a18b136b787e7c28abc64e93051e9dcb4" kind="function"><name>_isExecutionNeeded</name></member>
+    <member refid="classspk_1_1MouseMovementInput_1aa0b3e3c9d7230949e8e22d5dfd7e7625" kind="function"><name>MouseMovementInput</name></member>
   </compound>
   <compound refid="classspk_1_1NoGraphicsWidget" kind="class"><name>spk::NoGraphicsWidget</name>
     <member refid="classspk_1_1NoGraphicsWidget_1ace2423a2b71b7d74d0e85d4fb87521b1" kind="function"><name>_onRender</name></member>
@@ -956,11 +980,19 @@
   </compound>
   <compound refid="windows_2spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
   </compound>
+  <compound refid="spk__input_8hpp" kind="file"><name>spk_input.hpp</name>
+  </compound>
   <compound refid="spk__input__status_8hpp" kind="file"><name>spk_input_status.hpp</name>
+  </compound>
+  <compound refid="spk__key__input_8hpp" kind="file"><name>spk_key_input.hpp</name>
   </compound>
   <compound refid="spk__keyboard_8hpp" kind="file"><name>spk_keyboard.hpp</name>
   </compound>
   <compound refid="spk__mouse_8hpp" kind="file"><name>spk_mouse.hpp</name>
+  </compound>
+  <compound refid="spk__mouse__input_8hpp" kind="file"><name>spk_mouse_input.hpp</name>
+  </compound>
+  <compound refid="spk__mouse__motion__input_8hpp" kind="file"><name>spk_mouse_motion_input.hpp</name>
   </compound>
   <compound refid="spk__iostream_8hpp" kind="file"><name>spk_iostream.hpp</name>
   </compound>

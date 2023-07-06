@@ -30,8 +30,12 @@
     <innerclass refid="classspk_1_1StatedObject" prot="public">spk::StatedObject</innerclass>
     <innerclass refid="classspk_1_1Value" prot="public">spk::Value</innerclass>
     <innerclass refid="classspk_1_1Window" prot="public">spk::Window</innerclass>
+    <innerclass refid="classspk_1_1IInput" prot="public">spk::IInput</innerclass>
+    <innerclass refid="classspk_1_1KeyInput" prot="public">spk::KeyInput</innerclass>
     <innerclass refid="classspk_1_1Keyboard" prot="public">spk::Keyboard</innerclass>
     <innerclass refid="classspk_1_1Mouse" prot="public">spk::Mouse</innerclass>
+    <innerclass refid="classspk_1_1MouseInput" prot="public">spk::MouseInput</innerclass>
+    <innerclass refid="classspk_1_1MouseMovementInput" prot="public">spk::MouseMovementInput</innerclass>
     <innerclass refid="classspk_1_1IOStream" prot="public">spk::IOStream</innerclass>
     <innerclass refid="classspk_1_1RandomGenerator" prot="public">spk::RandomGenerator</innerclass>
     <innerclass refid="structspk_1_1IVector2" prot="public">spk::IVector2</innerclass>
