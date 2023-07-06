@@ -7,12 +7,12 @@
 namespace spk
 {
     /**
-     * \class TimeMetrics
-     * \brief A singleton class to manage time-related metrics for the software.
+     * @class TimeMetrics
+     * @brief Class for recording time-related metrics in the application.
      *
-     * This class is responsible for keeping track of the software's running time
-     * and other time-related metrics. 
-	 * This ensures consistency across the entire software.
+     * This class is a singleton and can be accessed anywhere in the application to get time-related metrics. 
+     * It keeps track of two time metrics: the total time since the application started and the time elapsed 
+     * between the last two frames (delta time).
      */
 	class TimeMetrics : public spk::Singleton<TimeMetrics>
 	{
@@ -20,38 +20,55 @@ namespace spk
 		friend class TimeModule;
 
 	private:
-		/**
-		 * \brief A long long variable representing the total running time of the software.
-		 */
+        /**
+         * @brief The total time since the application started.
+         * 
+         * This variable is used to store the total time since the application started. 
+         * It is updated every frame.
+         */
 		long long _time;
 
-		/**
-		 * \brief A long long variable representing the delta time or time elapsed since the last frame update.
-		 */
+        /**
+         * @brief The time elapsed between the last two frames.
+         * 
+         * This variable is used to store the time elapsed between the last two frames, 
+         * also known as the delta time. It is updated every frame.
+         */
 		long long _deltaTime;
 
-		/**
-		 * \brief A private function to update the time metrics.
-		 */
+        /**
+         * @brief Updates the time metrics.
+         * 
+         * This function is used to update the time and delta time variables. 
+         * It is called every frame by the TimeModule class.
+         */
 		void _updateMetrics();
 
-		/**
-		 * \brief Private constructor to implement the Singleton pattern.
-		 */
+        /**
+         * @brief Construct a new Time Metrics object.
+         * 
+         * This is the default constructor for the TimeMetrics class. 
+         * It initializes the time and delta time to zero.
+         */
 		TimeMetrics();
 
 	public:
-
-		/**
-		 * \brief Accessor function to get the total running time of the software.
-		 * \return A const reference to the total running time of the software variable.
-		 */
+        /**
+         * @brief Get the total time since the application started.
+         * 
+         * This function is used to get the total time since the application started.
+         * 
+         * @return The total time since the application started in milliseconds.
+         */
 		constexpr const long long& time() const { return (_time); }
 
-		/**
-		 * \brief Accessor function to get the time elapsed since the last frame update.
-		 * \return A const reference to the the time elapsed since the last frame update.
-		 */
+        /**
+         * @brief Get the time elapsed between the last two frames.
+         * 
+         * This function is used to get the time elapsed between the last two frames, also known as the delta time.
+         * 
+         * @return The delta time in milliseconds.
+         */
 		constexpr const long long& deltaTime() const { return (_deltaTime); }
 
 		/**

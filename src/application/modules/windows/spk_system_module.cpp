@@ -29,9 +29,4 @@ namespace spk
 	{
 
 	}
-
-	void SystemModule::updateMouse()
-	{
-		
-	}
 }

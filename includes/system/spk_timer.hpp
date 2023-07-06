@@ -6,20 +6,23 @@
 namespace spk
 {
     /**
-     * \class Timer
-     * \brief A class to manage time-based operations.
-     *
-     * This class provides an interface for a simple timer, which can be set to a specific duration, 
-     * started, stopped, and queried for its current state and remaining duration.
+     * @class Timer
+     * @brief Class for creating and managing a timer.
+     * 
+     * This class allows you to create a timer with a specified duration. 
+     * The timer can be started, stopped, and checked for its status.
      */
 	class Timer
 	{
 	public:
-
-        /**
-         * \enum State
-         * \brief Enumeration of the possible states for the Timer class.
-         */
+	    /**
+	     * @enum State
+	     * @brief An enum class to represent the state of the timer.
+	     * 
+	     * This enum class has three states: Idle, Running, and Timeout. 
+	     * The timer is in the Idle state by default, changes to Running when it starts, 
+	     * and goes to Timeout when the duration has passed.
+	     */
 		enum class State
 		{
 			Idle,    ///< Timer is idle (not running and not timed out).
@@ -28,58 +31,98 @@ namespace spk
 		};
 
 	private:
-		long long _duration; ///< The total duration for which the timer will run.
-		mutable State _status; ///< The current state of the timer.
-		long long _startTime; ///< The start time of the timer.
+        /**
+         * @brief The duration of the timer in milliseconds.
+         * 
+         * This variable is used to store the duration of the timer, 
+         * which is set by the user when creating the timer.
+         */
+		long long _duration;
+
+        /**
+         * @brief The current state of the timer.
+         * 
+         * This variable is used to store the current state of the timer, 
+         * which can be Idle, Running, or Timeout.
+         */
+		mutable State _status;
+
+        /**
+         * @brief The time the timer started.
+         * 
+         * This variable is used to record the time at which the timer starts. 
+         * It is recorded in milliseconds since some fixed point in time (often system startup).
+         */
+		long long _startTime;
 
 	public:
-		/**
-		 * \brief Default constructor for Timer class.
-		 */
+        /**
+         * @brief Construct a new Timer object.
+         * 
+         * This is the default constructor for the Timer class. 
+         * It initializes the duration and start time to zero, and the status to Idle.
+         */
 		Timer();
 
-		/**
-		 * \brief Set the duration for the Timer.
-		 *
-		 * \param p_duration The desired duration for the Timer.
-		 * \throw std::runtime_error if the timer is currently running.
-		 */
+        /**
+         * @brief Sets the duration of the timer.
+         * 
+         * This function sets the duration of the timer to the specified value.
+         * 
+         * @param p_duration The duration of the timer in milliseconds.
+         */
 		void setDuration(const long long& p_duration);
 
-		/**
-		 * \brief Accessor function for the total duration of the Timer.
-		 * \return A const reference to the total duration of the Timer.
-		 */
+        /**
+         * @brief Get the total duration of the timer.
+         * 
+         * This function returns the total duration of the timer.
+         * 
+         * @return The total duration of the timer in milliseconds.
+         */
 		const long long& totalDuration() const;
 
-		/**
-		 * \brief Get the remaining duration of the Timer.
-		 * 
-		 * \return long long The amount of time left before the Timer times out.
-		 * \note If the Timer has already timed out, this function returns how long it has been in the Timeout state.
-		 */
+        /**
+         * @brief Get the remaining duration of the timer.
+         * 
+         * This function returns the remaining duration of the timer, 
+         * calculated as the total duration minus the elapsed time since the timer started.
+         * 
+         * @return The remaining duration of the timer in milliseconds.
+         */
 		long long remainingDuration() const;
 
-		/**
-		 * \brief Start the Timer.
-		 */
+        /**
+         * @brief Starts the timer.
+         * 
+         * This function starts the timer by recording the current time as the start time and 
+         * changing the status to Running.
+         */
 		void start();
 
-		/**
-		 * \brief Stop the Timer.
-		 */
+        /**
+         * @brief Stops the timer.
+         * 
+         * This function stops the timer and changes the status to Idle.
+         */
 		void stop();
 
-		/**
-		 * \brief Accessor function for the current state of the Timer.
-		 * \return A const reference to the current state of the Timer.
-		 */
+        /**
+         * @brief Get the status of the timer.
+         * 
+         * This function returns the current status of the timer, which can be Idle, Running, or Timeout.
+         * 
+         * @return The current status of the timer.
+         */
 		const State& status() const;
 
-		/**
-		 * \brief Check if the Timer is currently running.
-		 * \return bool True if the Timer is running, false otherwise.
-		 */
+        /**
+         * @brief Check if thetimer is running.
+
+         * This function checks if the timer is currently running by checking if the status is Running.
+         * 
+         * @return True if the timer is running, false otherwise.
+         */
 		bool isRunning() const;
 	};
 }

@@ -6,49 +6,95 @@
 
 namespace spk
 {
+    /**
+     * @brief A class template for managing a value with default and custom states.
+     *
+     * This class template represents a value that can have a default state and a custom state.
+     * The default state is managed by the inner class Default, and the custom state is managed
+     * by the template itself. The value can be subscribed to and notifies its subscribers when
+     * it is edited through callbacks.
+     *
+     * @tparam TType The type of the value.
+     */
     template <typename TType>
     class Value : public ContractProvider
     {
         friend class Default;
 
     public:
+        /**
+         * @brief The inner class for managing the default state of the value.
+         *
+         * This inner class represents the default state of the value. It holds the actual value,
+         * keeps track of subscribers, and triggers edition callbacks when the value is changed.
+         */
         class Default
         {
             friend class Value;
 
         private:
-            TType _value;
+            TType _value;                             /**< The actual value in the default state. */
+            std::vector<Value<TType>*> _subscribers;   /**< The list of subscribers to the value. */
 
-            std::vector<Value<TType>*> _subscribers;
-
+            /**
+             * @brief Subscribe to the value.
+             *
+             * This function adds a subscriber to the list of subscribers.
+             *
+             * @param p_subscriber The subscriber to add.
+             */
             void subscribe(Value<TType>* p_subscriber)
             {
                 _subscribers.push_back(p_subscriber);
             }
 
+            /**
+             * @brief Unsubscribe from the value.
+             *
+             * This function removes a subscriber from the list of subscribers.
+             *
+             * @param p_subscriber The subscriber to remove.
+             */
             void unsubscribe(Value<TType>* p_subscriber)
             {
                 _subscribers.erase(std::remove(_subscribers.begin(), _subscribers.end(), p_subscriber), _subscribers.end());
             }
-            
+
+            /**
+             * @brief Trigger edition callbacks for subscribers.
+             *
+             * This function triggers the edition callbacks for all the subscribers
+             * whose state is Default.
+             */
             void _triggerSubscriberEditionCallbacks()
             {
                 for (size_t i = 0; i < _subscribers.size(); i++)
                 {
-					if (_subscribers[i]->_state == State::Default)
-						_subscribers[i]->_triggerEditionCallback();
+                    if (_subscribers[i]->_state == State::Default)
+                        _subscribers[i]->_triggerEditionCallback();
                 }
             }
 
         public:
-            template <typename ... Args>
-            Default(Args&& ... p_args) :
+            /**
+             * @brief Construct a new Default object with a given initial value.
+             *
+             * @tparam Args The types of the arguments.
+             * @param p_args The arguments to initialize the value.
+             */
+            template <typename... Args>
+            Default(Args&&... p_args) :
                 _value(std::forward<Args>(p_args)...),
                 _subscribers()
             {
 
             }
-            
+
+            /**
+             * @brief Copy constructor for the Default object.
+             *
+             * @param p_other The Default object to copy.
+             */
             Default(const Default& p_other) :
                 _value(p_other._value),
                 _subscribers()
@@ -56,26 +102,57 @@ namespace spk
 
             }
 
+            /**
+             * @brief Destructor for the Default object.
+             *
+             * @note Throws a std::runtime_error if the Default value is still used by at least one Value.
+             */
             ~Default() noexcept(false)
             {
                 if (_subscribers.empty() == false)
                     throw std::runtime_error("Destroying a Default value still used by at least one Value");
             }
 
-            Default& operator = (const TType& p_newValue)
+            /**
+             * @brief Assignment operator for setting the value in the Default state.
+             *
+             * This operator sets the value in the Default state and triggers the edition
+             * callbacks for the subscribers.
+             *
+             * @param p_newValue The new value to set.
+             * @return A reference to the updated Default object.
+             */
+            Default& operator=(const TType& p_newValue)
             {
                 _value = p_newValue;
                 _triggerSubscriberEditionCallbacks();
                 return (*this);
             }
 
-            Default& operator = (const Default& p_other)
+            /**
+             * @brief Copy assignment operator for the Default object.
+             *
+             * This operator copies the value from another Default object and triggers the edition
+             * callbacks for the subscribers.
+             *
+             * @param p_other The Default object to copy.
+             * @return A reference to the updated Default object.
+             */
+            Default& operator=(const Default& p_other)
             {
                 _value = p_other._value;
                 _triggerSubscriberEditionCallbacks();
                 return (*this);
             }
 
+            /**
+             * @brief Conversion operator for accessing the value in the Default state.
+             *
+             * This conversion operator allows accessing the value in the Default state as
+             * a constant reference.
+             *
+             * @return A constant reference to the value in the Default state.
+             */
             operator const TType&() const
             {
                 return (_value);
@@ -89,11 +166,17 @@ namespace spk
             Custom
         };
 
-        CallbackContainer _onEditionCallbacks;
-        State _state;
-        Default* _default;
-        TType _value;
+        CallbackContainer _onEditionCallbacks;  /**< The callbacks to trigger when the value is edited. */
+        State _state;                           /**< The state of the value (Default or Custom). */
+        Default* _default;                      /**< A pointer to the Default object. */
+        TType _value;                           /**< The value in the custom state. */
 
+        /**
+         * @brief Trigger edition callbacks for subscribers.
+         *
+         * This function triggers the edition callbacks for all the subscribers
+         * of the value.
+         */
         void _triggerEditionCallback()
         {
             for (size_t i = 0; i < _onEditionCallbacks.size(); i++)
@@ -103,7 +186,12 @@ namespace spk
         }
 
     public:
-        Value(const Default& p_defaultValue) : 
+        /**
+         * @brief Construct a new Value object with a given default value.
+         *
+         * @param p_defaultValue The default value for the Value object.
+         */
+        Value(const Default& p_defaultValue) :
             _default(nullptr),
             _value(),
             _state(State::Default)
@@ -111,8 +199,15 @@ namespace spk
             setDefaultValue(p_defaultValue);
         }
 
-        template <typename ... Args>
-        Value(const Default& p_defaultValue, Args&& ... p_args) : 
+        /**
+         * @brief Construct a new Value object with a given default value and custom arguments.
+         *
+         * @tparam Args The types of the arguments.
+         * @param p_defaultValue The default value for the Value object.
+         * @param p_args The arguments to initialize the value in the custom state.
+         */
+        template <typename... Args>
+        Value(const Default& p_defaultValue, Args&&... p_args) :
             _default(nullptr),
             _value(std::forward<Args>(p_args)...),
             _state(State::Custom)
@@ -120,7 +215,12 @@ namespace spk
             setDefaultValue(p_defaultValue);
         }
 
-        Value(const Value& p_other) : 
+        /**
+         * @brief Copy constructor for the Value object.
+         *
+         * @param p_other The Value object to copy.
+         */
+        Value(const Value& p_other) :
             _default(p_other._default),
             _value(p_other._value),
             _state(p_other._state)
@@ -128,22 +228,46 @@ namespace spk
             _default->subscribe(this);
         }
 
+        /**
+         * @brief Destructor for the Value object.
+         */
         ~Value()
         {
             _default->unsubscribe(this);
         }
 
+        /**
+         * @brief Subscribe to the value for edition callbacks.
+         *
+         * This function subscribes a callback to the value for edition callbacks.
+         *
+         * @param p_callback The callback function to subscribe.
+         * @return A Contract object representing the subscription.
+         */
         Contract subscribe(const Callback& p_callback)
         {
             return (std::move(ContractProvider::subscribe(_onEditionCallbacks, p_callback)));
         }
-        
+
+        /**
+         * @brief Reset the value to the default state.
+         *
+         * This function resets the value to the default state and triggers the edition callbacks.
+         */
         void reset()
         {
             _state = State::Default;
             _triggerEditionCallback();
         }
 
+        /**
+         * @brief Set the default value for the Value object.
+         *
+         * This function sets the default value for the Value object and subscribes/unsubscribes
+         * from the Default object as necessary.
+         *
+         * @param p_defaultValue The new default value.
+         */
         void setDefaultValue(const Default& p_defaultValue)
         {
             Default* tmp = const_cast<Default*>(&p_defaultValue);
@@ -155,15 +279,16 @@ namespace spk
                 _default->subscribe(this);
         }
 
-        Value& operator = (const Default& p_defaultValue)
-        {
-            setDefaultValue(p_defaultValue);
-            _state = State::Default;
-            _triggerEditionCallback();
-            return (*this);
-        }
-
-        Value& operator = (const Value& p_other)
+        /**
+         * @brief Copy assignment operator for the Value object.
+         *
+         * This operator copies the default value and the custom value from another Value object
+         * and triggers the edition callbacks.
+         *
+         * @param p_other The Value object to copy.
+         * @return A reference to the updated Value object.
+         */
+        Value& operator=(const Value& p_other)
         {
             setDefaultValue(*p_other._default);
             _value = p_other._value;
@@ -172,7 +297,16 @@ namespace spk
             return (*this);
         }
 
-        Value& operator = (const TType& p_newValue)
+        /**
+         * @brief Assignment operator for setting the value in the custom state.
+         *
+         * This operator sets the value in the custom state and triggers the edition
+         * callbacks.
+         *
+         * @param p_newValue The new value to set.
+         * @return A reference to the updated Value object.
+         */
+        Value& operator=(const TType& p_newValue)
         {
             _value = p_newValue;
             _state = State::Custom;
@@ -180,6 +314,15 @@ namespace spk
             return (*this);
         }
 
+        /**
+         * @brief Conversion operator for accessing the value.
+         *
+         * This conversion operator allows accessing the value as a constant reference.
+         * If the value is in the custom state, it returns the custom value; otherwise, it
+         * returns the default value.
+         *
+         * @return A constant reference to the value.
+         */
         operator const TType&() const
         {
             if (_state == State::Custom)
