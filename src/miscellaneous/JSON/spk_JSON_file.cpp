@@ -8,6 +8,54 @@
 
 namespace spk
 {
+	static std::wstring _handleEscapeSequence(const std::wstring& p_fileContent)
+	{
+		std::wstring result;
+
+		for (size_t i = 0; i < p_fileContent.size(); ++i)
+		{
+			if (p_fileContent[i] == L'\\')
+			{
+				switch (p_fileContent[i + 1])
+				{
+				case L'"':
+					result += L'"';
+					break;
+				case L'\\':
+					result += L"\\";
+					break;
+				case L'/':
+					result += L'/';
+					break;
+				case L'b':
+					result += L'\b';
+					break;
+				case L'f':
+					result += L'\f';
+					break;
+				case L'n':
+					result += L'\n';
+					break;
+				case L'r':
+					result += L'\r';
+					break;
+				case L't':
+					result += L'\t';
+					break;
+				case L'u':
+					result += L"\\u"; //TODO: Check how to handle that.
+					break;
+				default:
+					spk::throwException(L"Invalid escape sequence: <" + p_fileContent.substr(i, 2) + L'>');
+				}
+				++i;
+			}
+			else
+				result += p_fileContent[i];
+		}
+		return (result);
+	}
+
 	namespace JSON
 	{
 		void File::_applyGrammar(std::wstring& p_fileContent)
@@ -18,40 +66,40 @@ namespace spk
 			for (size_t i(0); i < p_fileContent.size(); ++i)
 			{
 				wchar_t c = p_fileContent[i];
+				wchar_t next_c = p_fileContent[i + 1];
 
 				switch (c)
 				{
-					case L'\\':
-						if (i + 1 < p_fileContent.size())
-						{
-							switch (p_fileContent[i + 1])
-							{
-								case L'\"': case L'\\': case L'/': case L'b':
-								case L'f': case L'n': case L'r': case L't':
-								case L'u':
-									result += c;
-									break;
-								default:
-									spk::throwException(L"Invalid escape sequence [" + p_fileContent.substr(i, 6) + L"]");
-									break;
-							}
-						}
-						break;
-					case L'\"':
-						if (i > 0 && p_fileContent[i - 1] != '\\')
-							isLiteral = !isLiteral;
+				case L'\\':
+					if (std::wstring(L"\"\\/bfnrtu").find(next_c) == std::wstring::npos)
+						spk::throwException(L"Invalid escape sequence at line " +
+							std::to_wstring(1 + std::count(p_fileContent.begin(), p_fileContent.begin() + i, '\n')) +
+							L" column " + std::to_wstring(1 + i - p_fileContent.rfind('\n', i)) + L".");
+					if (next_c == L'\\')
+					{
+						result += L"\\";
+						++i;
+					}
+					result += c;
+					break;
+				case L'\"':
+					if ((i >= 1 && p_fileContent[i - 1] != L'\\') ||
+						(i >= 2 && p_fileContent[i - 1] == L'\\' && p_fileContent[i - 2] == L'\\'))
+						isLiteral = !isLiteral;
+					result += c;
+					break;
+				case L' ': case L'\t': case L'\n': case L'\r':
+					if (isLiteral == true && c != L'\n' && c != L'\r')
 						result += c;
-						break;
-					case L' ': case L'\t': case L'\n': case L'\r':
-						if (isLiteral == true)
-							result += c;
-						break;
-					default:
-						result += c;
-						break;
+					else if (isLiteral == true && (c == L'\n' || c == L'\r'))
+						spk::throwException(L"Unexpected end of string " +
+							std::to_wstring(1 + std::count(p_fileContent.begin(), p_fileContent.begin() + i, '\n')) +
+							L" column " + std::to_wstring(i - p_fileContent.rfind('\n', i - 1)) + L".");
+					break;
+				default:
+					result += c;
 				}
 			}
-
 			p_fileContent = result;
 		}
 
@@ -76,36 +124,52 @@ namespace spk
 
 		std::wstring File::_getAttributeName(const std::wstring& p_content, size_t& p_index)
 		{
-			if (p_content[p_index] != L'\"')
-				spk::throwException(L"Invalid attribute name [" + p_content.substr(p_index) + L"]");
+			if (p_content[p_index] != L'"')
+				spk::throwException(L"Invalid attribute name [" + p_content.substr(p_index, 2) + L"]");
 
-			p_index++;
+			++p_index;
 			size_t start = p_index;
-			bool isInsideQuote = true;
-			for (; p_index < p_content.size() && (p_content[p_index] != ':' || isInsideQuote == true); p_index++)
+
+			for (; p_index < p_content.size() && p_content[p_index] != '"'; p_index++)
 			{
-				if (p_content[p_index] == '\"' && p_content[p_index - 1] != '\\')
-					isInsideQuote = !isInsideQuote;
+				if (p_content[p_index] == '\\' && p_content[p_index + 1] != '"')
+					++p_index;
 			}
-			p_index++; // Skipping the :
-			return (p_content.substr(start, p_index - start - 2));
+			++p_index;
+			if (p_content[p_index] != ':')
+				spk::throwException(L"Invalid attribute name [" + p_content.substr(start, p_index - start) + L"]");
+			++p_index;
+			return (_handleEscapeSequence(p_content.substr(start, p_index - start - 2)));
 		}
 
 		std::wstring File::_extractUnitSubstring(const std::wstring& p_content, size_t& p_index)
 		{
 			size_t oldIndex = p_index;
-			bool isInsideQuote = false;
-			bool isSkipped = false;
+			bool isAString = false;
 
-			for (; p_index < p_content.size() &&
-				((p_content[p_index] != ',' && p_content[p_index] != '}' && p_content[p_index] != ']') || isInsideQuote == true);
+			if (p_content[p_index] == '"')
+			{
+				isAString = true;
+				++p_index;
+			}
+			for (; p_index < p_content.size() && ((p_content[p_index] != ',' &&
+				p_content[p_index] != '}' && p_content[p_index] != ']') ||
+				isAString == true);
 				p_index++)
 			{
-				if (p_content[p_index] == '\"' && p_content[p_index - 1] != '\\')
-					isInsideQuote = !isInsideQuote;
+				if (isAString == true &&
+					(p_index >= 1 && p_content[p_index] == '"' && p_content[p_index - 1] != '\\') ||
+					(p_index >= 2 && p_content[p_index] == '"' && p_content[p_index - 1] == '\\' && p_content[p_index - 2] == '\\'))
+				{
+					++p_index;
+					break;
+				}
+				if ((p_content[p_index] == '"' && isAString == false) ||
+					p_content[p_index] == '[' || p_content[p_index] == '{' || p_content[p_index] == ',')
+					spk::throwException(L"Invalid unit substring [" + p_content.substr(p_index, 5) + L"]");
 			}
 
-			return (p_content.substr(oldIndex, p_index - oldIndex));
+			return (_handleEscapeSequence(p_content.substr(oldIndex, p_index - oldIndex)));
 		}
 
 		void File::_loadUnitString(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
@@ -257,7 +321,9 @@ namespace spk
 		{
 			p_objectToFill.setAsObject();
 
-			p_index++; // Skip the {
+			if (p_content[p_index] != '{')
+				spk::throwException(L"Invalid JSON object: " + p_content);
+			p_index++;
 			for (; p_index < p_content.size() && p_content[p_index] != '}';)
 			{
 				std::wstring attributeName = _getAttributeName(p_content, p_index);
@@ -269,7 +335,9 @@ namespace spk
 				if (p_content[p_index] == ',')
 					p_index++;
 			}
-			p_index++; // Skip the }
+			if (p_content[p_index] != '}')
+				spk::throwException(L"Invalid JSON object: " + p_content);
+			p_index++;
 		}
 
 		void File::_loadArray(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
