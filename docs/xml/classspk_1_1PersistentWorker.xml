@@ -123,9 +123,9 @@
         </inbodydescription>
         <location file="includes/threading/spk_persistent_worker.hpp" line="48" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1PersistentWorker_1a4795a279ac83e4da6b6789450ce83ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
-        <definition>Contract spk::PersistentWorker::addJob</definition>
+      <memberdef kind="function" id="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &amp;</type>
+        <definition>Contract&amp; spk::PersistentWorker::addJob</definition>
         <argsstring>(const Job &amp;p_job)</argsstring>
         <name>addJob</name>
         <param>
@@ -296,7 +296,7 @@
       <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_isPaused</name></member>
       <member refid="classspk_1_1PersistentWorker_1a7a15e3914642088d8684e33a8d5a14ea" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_isRunning</name></member>
       <member refid="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_jobs</name></member>
-      <member refid="classspk_1_1PersistentWorker_1a4795a279ac83e4da6b6789450ce83ee3" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>addJob</name></member>
+      <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>addJob</name></member>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>CallbackContainer</name></member>
       <member refid="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>getId</name></member>

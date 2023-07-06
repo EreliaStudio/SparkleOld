@@ -2,6 +2,19 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="spk__application_8hpp" kind="file" language="C++">
     <compoundname>spk_application.hpp</compoundname>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/application/spk_application.hpp</label>
+        <link refid="spk__application_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -8,6 +8,7 @@
     <innerfile refid="spk__API__module_8hpp">spk_API_module.hpp</innerfile>
     <innerfile refid="spk__keyboard__module_8hpp">spk_keyboard_module.hpp</innerfile>
     <innerfile refid="spk__mouse__module_8hpp">spk_mouse_module.hpp</innerfile>
+    <innerfile refid="spk__profiler__module_8hpp">spk_profiler_module.hpp</innerfile>
     <innerfile refid="spk__system__module_8hpp">spk_system_module.hpp</innerfile>
     <innerfile refid="spk__time__module_8hpp">spk_time_module.hpp</innerfile>
     <innerfile refid="spk__widget__module_8hpp">spk_widget_module.hpp</innerfile>

@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Profiler" kind="class" language="C++" prot="public">
+    <compoundname>spk::Profiler</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Profiler &gt;</basecompoundref>
+    <includes refid="spk__profiler_8hpp" local="no">spk_profiler.hpp</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1Profiler_1a149a25a512bb65bfb1a296b4ce69538b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; Profiler &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; Profiler &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1Profiler" kindref="compound">Profiler</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="1" column="0" bodyfile="includes/debug/spk_profiler.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Profiler_1ab4d0edd93a8934bd0c844fe4942791d2" prot="public" static="yes" mutable="no">
+        <type>const std::wstring</type>
+        <definition>const std::wstring spk::Profiler::RENDER_IPS_COUNTER</definition>
+        <argsstring></argsstring>
+        <name>RENDER_IPS_COUNTER</name>
+        <initializer>= L&quot;RenderIPS&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="24" column="34" bodyfile="includes/debug/spk_profiler.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Profiler_1aff4f46bb299ee6b67ab77c19f7f7e07f" prot="public" static="yes" mutable="no">
+        <type>const std::wstring</type>
+        <definition>const std::wstring spk::Profiler::UPDATE_IPS_COUNTER</definition>
+        <argsstring></argsstring>
+        <name>UPDATE_IPS_COUNTER</name>
+        <initializer>= L&quot;UpdateIPS&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="25" column="34" bodyfile="includes/debug/spk_profiler.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::wstring, <ref refid="classspk_1_1Chronometer" kindref="compound">spk::Chronometer</ref> &gt;</type>
+        <definition>std::map&lt;std::wstring, spk::Chronometer&gt; spk::Profiler::_chronometers</definition>
+        <argsstring></argsstring>
+        <name>_chronometers</name>
+        <briefdescription>
+<para>A map that associates each chronometer with a unique name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="32" column="10" bodyfile="includes/debug/spk_profiler.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::wstring, size_t &gt;</type>
+        <definition>std::map&lt;std::wstring, size_t&gt; spk::Profiler::_counters</definition>
+        <argsstring></argsstring>
+        <name>_counters</name>
+        <briefdescription>
+<para>A map that associates each counter with a unique name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="37" column="10" bodyfile="includes/debug/spk_profiler.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Profiler::Profiler</definition>
+        <argsstring>()</argsstring>
+        <name>Profiler</name>
+        <briefdescription>
+<para>Private constructor to implement the <ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref> pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor checks whether a <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref> instance has been created. If not, it throws an error, since <ref refid="classspk_1_1Profiler" kindref="compound">Profiler</ref> requires <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="45" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classspk_1_1Chronometer" kindref="compound">spk::Chronometer</ref> &amp;</type>
+        <definition>const spk::Chronometer&amp; spk::Profiler::chronometer</definition>
+        <argsstring>(const std::wstring &amp;p_key) const</argsstring>
+        <name>chronometer</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the chronometer associated with a specific name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the chronometer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The specified chronometer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="54" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::resetChronometer</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>resetChronometer</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Resets the chronometer associated with a specific name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the chronometer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="61" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::startChronometer</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>startChronometer</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Starts the chronometer associated with a specific name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the chronometer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="67" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::resumeChronometer</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>resumeChronometer</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Resumes the chronometer associated with a specific name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the chronometer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="74" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const long long</type>
+        <definition>const long long spk::Profiler::stopChronometer</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>stopChronometer</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Stops the chronometer associated with a specific name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the chronometer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The time elapsed since the chronometer was started. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="82" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::increseCounter</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>increseCounter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="84" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::setCounter</definition>
+        <argsstring>(const std::wstring &amp;p_key, const size_t &amp;p_value)</argsstring>
+        <name>setCounter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="85" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::resetCounter</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>resetCounter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="86" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const size_t &amp;</type>
+        <definition>const size_t&amp; spk::Profiler::counter</definition>
+        <argsstring>(const std::wstring &amp;p_key) const</argsstring>
+        <name>counter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="87" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A singleton class that handles profiling using various chronometers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is responsible for managing multiple chronometers, allowing the software to keep track of time metrics for profiling purposes. As a singleton, only one instance of this class can exist. This ensures consistency across the entire software. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::Singleton&lt; Profiler &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::Profiler</label>
+        <link refid="classspk_1_1Profiler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::Singleton&lt; Profiler &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::Profiler</label>
+        <link refid="classspk_1_1Profiler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/debug/spk_profiler.hpp" line="20" column="1" bodyfile="includes/debug/spk_profiler.hpp" bodystart="21" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_chronometers</name></member>
+      <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_counters</name></member>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Profiler</scope><name>_instance</name></member>
+      <member refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>chronometer</name></member>
+      <member refid="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>counter</name></member>
+      <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>increseCounter</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>Profiler</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>release</name></member>
+      <member refid="classspk_1_1Profiler_1ab4d0edd93a8934bd0c844fe4942791d2" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>RENDER_IPS_COUNTER</name></member>
+      <member refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>resetChronometer</name></member>
+      <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>resetCounter</name></member>
+      <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>resumeChronometer</name></member>
+      <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>setCounter</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::Profiler</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1Profiler_1a149a25a512bb65bfb1a296b4ce69538b" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>spk::Singleton&lt; Profiler &gt;</name></member>
+      <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>startChronometer</name></member>
+      <member refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>stopChronometer</name></member>
+      <member refid="classspk_1_1Profiler_1aff4f46bb299ee6b67ab77c19f7f7e07f" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>UPDATE_IPS_COUNTER</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

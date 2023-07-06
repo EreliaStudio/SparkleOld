@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ProfilerModule" kind="class" language="C++" prot="public">
+    <compoundname>spk::ProfilerModule</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1Timer" kindref="compound">spk::Timer</ref></type>
+        <definition>spk::Timer spk::ProfilerModule::_oneSecondTime</definition>
+        <argsstring></argsstring>
+        <name>_oneSecondTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="10" column="12" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1a8f17ee288595b93ead41d51316abafcd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::ProfilerModule::_renderIPSCounter</definition>
+        <argsstring></argsstring>
+        <name>_renderIPSCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="11" column="8" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1a60de49994d5389400f2513da1a24dfcd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::ProfilerModule::_updateIPSCounter</definition>
+        <argsstring></argsstring>
+        <name>_updateIPSCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="12" column="8" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::_resetCounter</definition>
+        <argsstring>()</argsstring>
+        <name>_resetCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="14" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ProfilerModule::ProfilerModule</definition>
+        <argsstring>()</argsstring>
+        <name>ProfilerModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="17" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ProfilerModule::~ProfilerModule</definition>
+        <argsstring>()</argsstring>
+        <name>~ProfilerModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="20" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::increaseRenderIPS</definition>
+        <argsstring>()</argsstring>
+        <name>increaseRenderIPS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="21" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::increaseUpdateIPS</definition>
+        <argsstring>()</argsstring>
+        <name>increaseUpdateIPS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="22" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/modules/spk_profiler_module.hpp" line="7" column="1" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="8" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_oneSecondTime</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a8f17ee288595b93ead41d51316abafcd" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_renderIPSCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_resetCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a60de49994d5389400f2513da1a24dfcd" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_updateIPSCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseRenderIPS</name></member>
+      <member refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseUpdateIPS</name></member>
+      <member refid="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>ProfilerModule</name></member>
+      <member refid="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>update</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>~ProfilerModule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
