@@ -6,7 +6,7 @@
 	{
 		"\u005C":"\\",
 		"a\u005C":"key uniqueness test",
-		"a\\":"key uniqueness test",
+		"a\\b":"key uniqueness test",
 		"\uD834\uDD1E":"𝄞",
 		"\u0010WAN\u7020\uD1E0": "\u0010WAN瀠퇠",
 		"Escape sequence:": [

@@ -45,7 +45,15 @@ namespace spk
 						result += L'\t';
 						break;
 					case L'u':
-						result += L"\\u"; //TODO: Check how to handle that.
+						try
+						{
+							result += static_cast<wchar_t>(std::stoi(p_fileContent.substr(i + 2, 4), nullptr, 16));
+						}
+						catch(const std::exception& e)
+						{
+							spk::throwException(L"Invalid Unicode escape : <" + p_fileContent.substr(i, 6) + L'>');
+						}
+						i += 4;
 						break;
 					default:
 						spk::throwException(L"Invalid escape sequence: <" + p_fileContent.substr(i, 2) + L'>');
