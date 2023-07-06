@@ -2,55 +2,77 @@
 
 namespace spk
 {
-	namespace Debug
+	Profiler::Profiler()
 	{
-		Profiler::Profiler()
+		if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
 		{
-			if (spk::Singleton<spk::TimeMetrics>::instance() == nullptr)
-			{
-				throw std::runtime_error("Profiler can't be launched without an application");
-			}
-		}
-
-		const spk::Chronometer &Profiler::chronometer(const std::wstring &p_name) const
-		{
-			if (_chronometers.count(p_name) == 0)
-			{
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			return (_chronometers.at(p_name));
-		}
-
-		void Profiler::resetChronometer(const std::wstring &p_name)
-		{
-			if (_chronometers.count(p_name) == 0)
-			{
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			_chronometers[p_name].reset();
-		}
-
-		void Profiler::startChronometer(const std::wstring &p_name)
-		{
-			_chronometers[p_name].start();
-		}
-
-		void Profiler::resumeChronometer(const std::wstring &p_name)
-		{
-			if (_chronometers.count(p_name) == 0)
-			{
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			_chronometers[p_name].resume();
-		}
-
-		const long long Profiler::stopChronometer(const std::wstring &p_name)
-		{
-			if (_chronometers.count(p_name) == 0)
-			{
-				throw std::runtime_error("This Chronometer does not exist ");
-			}
-			return (_chronometers[p_name].stop());
+			throw std::runtime_error("Profiler can't be launched without an application");
 		}
 	}
+
+	const spk::Chronometer &Profiler::chronometer(const std::wstring &p_key) const
+	{
+		if (_chronometers.count(p_key) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		return (_chronometers.at(p_key));
+	}
+
+	void Profiler::resetChronometer(const std::wstring &p_key)
+	{
+		if (_chronometers.count(p_key) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		_chronometers[p_key].reset();
+	}
+
+	void Profiler::startChronometer(const std::wstring &p_key)
+	{
+		_chronometers[p_key].start();
+	}
+
+	void Profiler::resumeChronometer(const std::wstring &p_key)
+	{
+		if (_chronometers.count(p_key) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		_chronometers[p_key].resume();
+	}
+
+	const long long Profiler::stopChronometer(const std::wstring &p_key)
+	{
+		if (_chronometers.count(p_key) == 0)
+		{
+			throw std::runtime_error("This Chronometer does not exist ");
+		}
+		return (_chronometers[p_key].stop());
+	}
+
+	void Profiler::increseCounter(const std::wstring& p_key)
+	{
+		_counters[p_key]++;
+	}
+	
+	void Profiler::setCounter(const std::wstring& p_key, const size_t& p_value)
+	{
+		_counters[p_key] = p_value;
+	}
+
+	void Profiler::resetCounter(const std::wstring& p_key)
+	{
+		if (_counters.count(p_key) == 0)
+			throw std::runtime_error("Counter [] don't exist");
+		_counters[p_key]++;
+	}
+
+	const size_t& Profiler::counter(const std::wstring& p_key) const
+	{
+		if (_counters.count(p_key) == 0)
+			throw std::runtime_error("Counter [] don't exist");
+		return (_counters.at(p_key));
+	}
+	
 }
