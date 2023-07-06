@@ -65,18 +65,18 @@
         <label>application/modules/spk_API_module.hpp</label>
         <link refid="spk__API__module_8hpp_source"/>
       </node>
-      <node id="18">
+      <node id="19">
         <label>debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="59">
@@ -84,7 +84,7 @@
         <link refid="spk__widget__module_8hpp_source"/>
         <childnode refid="60" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="45">
@@ -111,7 +111,7 @@
       <node id="51">
         <label>threading/spk_worker_pool.hpp</label>
         <link refid="spk__worker__pool_8hpp_source"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
@@ -119,31 +119,31 @@
       <node id="58">
         <label>application/modules/spk_keyboard_module.hpp</label>
         <link refid="spk__keyboard__module_8hpp_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="54">
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="26">
         <label>application/modules/spk_abstract_module.hpp</label>
         <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="16">
         <label>miscellaneous/spk_is_container.hpp</label>
         <link refid="spk__is__container_8hpp_source"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="56">
@@ -161,11 +161,11 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
@@ -193,27 +193,27 @@
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="51" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="53" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="56" relation="include">
         </childnode>
@@ -246,7 +246,7 @@
       <node id="57">
         <label>application/modules/spk_mouse_module.hpp</label>
         <link refid="spk__mouse__module_8hpp_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -271,13 +271,13 @@
         <childnode refid="50" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="20">
         <label>map</label>
       </node>
-      <node id="24">
+      <node id="25">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="44">
@@ -286,10 +286,10 @@
         <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="23">
         <label>design_pattern/spk_singleton.hpp</label>
         <link refid="spk__singleton_8hpp_source"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -313,7 +313,7 @@
       <node id="47">
         <label>design_pattern/spk_context_manager.hpp</label>
         <link refid="spk__context__manager_8hpp_source"/>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="11">
@@ -322,7 +322,7 @@
       <node id="41">
         <label>design_pattern/spk_observer.hpp</label>
         <link refid="spk__observer_8hpp_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -334,21 +334,21 @@
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="37">
         <label>sstream</label>
       </node>
-      <node id="21">
+      <node id="22">
         <label>system/spk_time_metrics.hpp</label>
         <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="18">
         <label>data_structure/spk_pool.hpp</label>
         <link refid="spk__pool_8hpp_source"/>
         <childnode refid="11" relation="include">
@@ -361,17 +361,17 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="27">
         <label>threading/spk_thread_safe_queue.hpp</label>
         <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="27" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
@@ -393,21 +393,23 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="53">
         <label>application/spk_abstract_application.hpp</label>
         <link refid="spk__abstract__application_8hpp_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="21">
         <label>system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
@@ -431,7 +433,7 @@
         <link refid="spk__stated__object_8hpp_source"/>
         <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="28">
@@ -443,7 +445,7 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="15">
         <label>mutex</label>
       </node>
       <node id="33">
@@ -452,14 +454,14 @@
       <node id="40">
         <label>design_pattern/spk_inherence_object.hpp</label>
         <link refid="spk__inherence__object_8hpp_source"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="17">
         <label>type_traits</label>
       </node>
       <node id="32">
@@ -500,7 +502,7 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="24">
         <label>memory</label>
       </node>
     </incdepgraph>

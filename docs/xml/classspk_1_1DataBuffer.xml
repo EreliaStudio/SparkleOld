@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="26" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="26" bodyend="-1"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="27" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" prot="private" static="no" mutable="yes">
         <type>size_t</type>
@@ -30,7 +30,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="27" column="16" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="27" bodyend="-1"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="28" column="16" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1DataBuffer_1a726f3c88727af71c7cb1142efb80fb06" prot="private" static="no" mutable="yes">
+        <type>std::recursive_mutex</type>
+        <definition>std::recursive_mutex spk::DataBuffer::_accessMutex</definition>
+        <argsstring></argsstring>
+        <name>_accessMutex</name>
+        <briefdescription>
+<para>Mutex controling the access to. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="29" column="38" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -46,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="34" column="1"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="35" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -63,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="41" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="41" bodyend="41"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="42" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="42" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -80,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="47" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="47" bodyend="47"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="48" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="48" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1aa7f1ec65d939c18bacbc61abe59e1064" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -97,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="54" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="54" bodyend="54"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="55" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="55" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a95a4f828b5314bfefd2cbff9bd31e42e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -114,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="61" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="61" bodyend="61"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="62" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="62" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1adf468b222ec2331008c51c4e9ae7a35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -142,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="68" column="6"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="69" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1ad4eefec4799fb6b9d6251cca86ebfa04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -156,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="73" column="6"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="74" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="78" column="6"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="79" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a62775fb5a5cc3ef25dd87d41976b978f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -201,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="87" column="12" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="87" bodyend="94"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="88" column="12" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="88" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1ac90c23dd9a031995ecb8f28ded1251b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -255,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="104" column="6" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="104" bodyend="110"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="105" column="6" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="105" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -304,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="122" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="122" bodyend="138"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="125" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="125" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -353,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="150" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="150" bodyend="158"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="154" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="154" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -402,7 +416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="170" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="170" bodyend="178"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="176" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="176" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -451,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_data_buffer.hpp" line="190" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="190" bodyend="198"/>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="198" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="198" bodyend="208"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -461,8 +475,9 @@
 <para>This class is designed to provide convenient and efficient storage and retrieval of data. It supports various data types including standard and container types, provided they are standard layout types.</para>
 <para>The class provides a set of utility methods and operator overloads for reading from and writing to the buffer, as well as for managing the internal state of the buffer. </para>
     </detaileddescription>
-    <location file="includes/data_structure/spk_data_buffer.hpp" line="23" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="24" bodyend="199"/>
+    <location file="includes/data_structure/spk_data_buffer.hpp" line="24" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="25" bodyend="209"/>
     <listofallmembers>
+      <member refid="classspk_1_1DataBuffer_1a726f3c88727af71c7cb1142efb80fb06" prot="private" virt="non-virtual"><scope>spk::DataBuffer</scope><name>_accessMutex</name></member>
       <member refid="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" prot="private" virt="non-virtual"><scope>spk::DataBuffer</scope><name>_bookmark</name></member>
       <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" prot="private" virt="non-virtual"><scope>spk::DataBuffer</scope><name>_data</name></member>
       <member refid="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>bookmark</name></member>
