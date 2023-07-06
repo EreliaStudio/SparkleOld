@@ -111,6 +111,26 @@ namespace spk
 		}
 
 		/**
+		 * @brief Add a new widget inside the application, with the central widget as parent.
+		 * 
+         * @tparam TChildrenType The type of the children widget.
+         * @tparam Args The types of the arguments for constructing the children widget.
+         * @param p_args The arguments for constructing the children widget.
+         * @return Pointer to the children widget.
+		 */
+		template <typename TChildrenType, typename ... Args>
+		TChildrenType* addRootWidget(Args&& ... p_args)
+		{
+			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
+
+			_widgetModule->centralWidget()->addChild(result);
+			result->setDepth(depth() + 1);
+
+			return (result);
+		}
+
+
+		/**
 		 * @brief Resizes the application window and central widget.
 		 * 
 		 * @param p_size The new size of the window and central widget.
