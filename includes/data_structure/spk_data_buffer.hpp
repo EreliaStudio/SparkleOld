@@ -5,6 +5,7 @@
 #include <string>
 #include <cstring>
 #include <stdexcept>
+#include <mutex>
 
 #include "miscellaneous/spk_is_container.hpp"
 
@@ -25,7 +26,7 @@ namespace spk
 	private:
 		std::vector<uint8_t> _data; ///< The buffer's data, stored as bytes.
 		mutable size_t _bookmark; ///< Bookmark to keep track of the current position in the buffer.
-
+        mutable std::recursive_mutex _accessMutex; ///< Mutex controling the access to 
 
 	public:
 		/**
@@ -103,6 +104,8 @@ namespace spk
 		template <typename InputType>
 		void edit(const size_t &p_offset, const InputType &p_input)
 		{
+		    std::lock_guard<std::recursive_mutex> lock(_accessMutex);
+		
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
 			if (p_offset + sizeof(InputType) > size())
 				throw std::runtime_error("Unable to edit, offset is out of bound.");
@@ -121,7 +124,8 @@ namespace spk
 		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value> * = nullptr>
 		DataBuffer &operator<<(const InputType &p_input)
 		{
-			// TODO: thread safety
+		    std::lock_guard<std::recursive_mutex> lock(_accessMutex);
+
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
 			try
 			{
@@ -149,6 +153,8 @@ namespace spk
 		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value> * = nullptr>
 		const DataBuffer &operator>>(OutputType &p_output) const
 		{
+		    std::lock_guard<std::recursive_mutex> lock(_accessMutex);
+
 			static_assert(std::is_standard_layout<OutputType>().value, "Unable to handle this type.");
 			if (leftover() < sizeof(OutputType))
 				throw std::runtime_error("Unable to retrieve data buffer content.");
@@ -169,6 +175,8 @@ namespace spk
 		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value> * = nullptr>
 		DataBuffer &operator<<(const InputType &p_input)
 		{
+		    std::lock_guard<std::recursive_mutex> lock(_accessMutex);
+
 			*this << p_input.size();
 			for (auto it = p_input.begin(); it != p_input.end(); ++it)
 			{
@@ -189,6 +197,8 @@ namespace spk
 		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value> * = nullptr>
 		const DataBuffer &operator>>(OutputType &p_output) const
 		{
+		    std::lock_guard<std::recursive_mutex> lock(_accessMutex);
+            
 			p_output.resize(this->get<size_t>());
 			for (auto it = p_output.begin(); it != p_output.end(); ++it)
 			{
