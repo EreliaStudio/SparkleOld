@@ -25,13 +25,13 @@ namespace spk
 	     */
 		enum class State
 		{
-			Idle,
-			Running,
-			Timeout,
+			Idle,    ///< Timer is idle (not running and not timed out).
+			Running, ///< Timer is currently running.
+			Timeout, ///< Timer has timed out.
 		};
 
 	private:
-	    /**
+        /**
          * @brief The duration of the timer in milliseconds.
          * 
          * This variable is used to store the duration of the timer, 
@@ -39,7 +39,7 @@ namespace spk
          */
 		long long _duration;
 
-		/**
+        /**
          * @brief The current state of the timer.
          * 
          * This variable is used to store the current state of the timer, 
@@ -47,7 +47,7 @@ namespace spk
          */
 		mutable State _status;
 
-		/**
+        /**
          * @brief The time the timer started.
          * 
          * This variable is used to record the time at which the timer starts. 
@@ -56,7 +56,7 @@ namespace spk
 		long long _startTime;
 
 	public:
-	    /**
+        /**
          * @brief Construct a new Timer object.
          * 
          * This is the default constructor for the Timer class. 
@@ -64,7 +64,7 @@ namespace spk
          */
 		Timer();
 
-		/**
+        /**
          * @brief Sets the duration of the timer.
          * 
          * This function sets the duration of the timer to the specified value.
@@ -73,7 +73,7 @@ namespace spk
          */
 		void setDuration(const long long& p_duration);
 
-		/**
+        /**
          * @brief Get the total duration of the timer.
          * 
          * This function returns the total duration of the timer.
@@ -82,7 +82,7 @@ namespace spk
          */
 		const long long& totalDuration() const;
 
-		/**
+        /**
          * @brief Get the remaining duration of the timer.
          * 
          * This function returns the remaining duration of the timer, 
@@ -92,7 +92,7 @@ namespace spk
          */
 		long long remainingDuration() const;
 
-		/**
+        /**
          * @brief Starts the timer.
          * 
          * This function starts the timer by recording the current time as the start time and 
@@ -100,14 +100,14 @@ namespace spk
          */
 		void start();
 
-		/**
+        /**
          * @brief Stops the timer.
          * 
          * This function stops the timer and changes the status to Idle.
          */
 		void stop();
 
-		/**
+        /**
          * @brief Get the status of the timer.
          * 
          * This function returns the current status of the timer, which can be Idle, Running, or Timeout.
@@ -116,7 +116,7 @@ namespace spk
          */
 		const State& status() const;
 
-		/**
+        /**
          * @brief Check if thetimer is running.
 
          * This function checks if the timer is currently running by checking if the status is Running.

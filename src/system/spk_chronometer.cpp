@@ -1,4 +1,5 @@
 #include "system/spk_chronometer.hpp"
+#include <stdexcept>
 
 namespace spk
 {

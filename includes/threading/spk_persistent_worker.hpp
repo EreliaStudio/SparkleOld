@@ -15,7 +15,7 @@ namespace spk
 	class PersistentWorker : public Thread, public ContractProvider
 	{
 	public:
-	    /**
+        /**
          * @typedef Job
          * @brief The type of job to be executed by the worker.
          * 
@@ -25,11 +25,13 @@ namespace spk
 
 	private:
 		CallbackContainer _jobs;
+		std::deque<Contract> _contracts;
+
 		bool _isRunning = false;
 		bool _isPaused = false;
 
 	public:
-	    /**
+        /**
          * @brief Construct a new PersistentWorker object with a specified name.
          * 
          * This constructor creates a new PersistentWorker object with the specified name.
@@ -38,14 +40,14 @@ namespace spk
          */
 		PersistentWorker(const std::wstring & p_name);
 
-		/**
+        /**
          * @brief Destroy the PersistentWorker object.
          * 
          * This is the destructor for the PersistentWorker class.
          */
 		~PersistentWorker();
 
-		/**
+        /**
          * @brief Add a job to the worker.
          * 
          * This function adds a job to the worker. The job will be executed by the worker thread.
@@ -55,7 +57,7 @@ namespace spk
          */
 		Contract addJob(const Job& p_job);
 
-		/**
+        /**
          * @brief Check if the worker is running.
          * 
          * This function checks if the worker is currently running.
@@ -64,35 +66,35 @@ namespace spk
          */
 		constexpr bool isRunning() const { return (_isRunning); }
 
-		/**
+        /**
          * @brief Start the worker.
          * 
          * This function starts the worker thread.
          */
 		void start();
 
-		/**
+        /**
          * @brief Stop the worker.
          * 
          * This function stops the worker thread.
          */
 		void stop();
 
-		/**
+        /**
          * @brief Join the worker.
          * 
          * This function is deleted and not available in the PersistentWorker class.
          */
 		void join() = delete;
 
-		/**
+        /**
          * @brief Pause the worker.
          * 
          * This function pauses the execution of the worker thread.
          */
 		void pause();
 
-		/**
+        /**
          * @brief Resume the worker.
          * 
          * This function resumes the execution of the worker thread.

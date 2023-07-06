@@ -16,6 +16,7 @@ namespace spk
 					}
 					catch (...)
 					{
+
 					}
 				}
 			}
@@ -30,9 +31,9 @@ namespace spk
 		stop();
 	}
 
-	ContractProvider::Contract PersistentWorker::addJob(const PersistentWorker::Job& p_job)
+	ContractProvider::Contract& PersistentWorker::addJob(const PersistentWorker::Job& p_job)
 	{
-		return (std::move(ContractProvider::subscribe(_jobs, p_job)));
+		return (_contracts.emplace_back(std::move(ContractProvider::subscribe(_jobs, p_job))));
 	}
 
 	/**

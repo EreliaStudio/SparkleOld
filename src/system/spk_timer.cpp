@@ -1,4 +1,5 @@
 #include "system/spk_timer.hpp"
+#include <stdexcept>
 
 namespace spk
 {

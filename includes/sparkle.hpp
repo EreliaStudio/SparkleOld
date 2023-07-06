@@ -4,8 +4,11 @@
 #include "math/spk_vector3.hpp"
 #include "math/spk_random_generator.hpp"
 
+
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
+
+#include "debug/spk_profiler.hpp"
 
 #include "design_pattern/spk_singleton.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
@@ -16,7 +19,10 @@
 #include "design_pattern/spk_activity.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 #include "design_pattern/spk_value.hpp"
+
+#include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
+
 
 #include "iostream/spk_iostream.hpp"
 
@@ -28,6 +34,7 @@
 
 #include "system/spk_chronometer.hpp"
 #include "system/spk_timer.hpp"
+#include "system/spk_time_metrics.hpp"
 
 #include "application/spk_abstract_application.hpp"
 #include "application/modules/spk_abstract_module.hpp"
@@ -44,4 +51,3 @@
 
 #include "widget/spk_abstract_widget.hpp"
 
-#include "application/spk_application.hpp"

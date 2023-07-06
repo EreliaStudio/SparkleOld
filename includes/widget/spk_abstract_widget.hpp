@@ -62,7 +62,15 @@ namespace spk
          * @return Pointer to the children widget.
          */
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addChildrenWidget(Args&& ... p_args);
+		TChildrenType* addChildrenWidget(Args&& ... p_args)
+		{
+			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
+
+			addChild(result);
+			result->setDepth(depth() + 1);
+
+			return (result);
+		}
 
 		/**
          * @brief Set the geometry of the widget.

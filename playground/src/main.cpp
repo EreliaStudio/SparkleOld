@@ -1,58 +1,50 @@
 #include "playground.hpp"
 
+struct Context
+{
+	int value;
+
+	Context()
+	{
+
+	}
+};
+
+using RendererContext = spk::ContextManager<Context>::ReadOnlyAccessor;
+using UpdaterContext = spk::ContextManager<Context>::ReadWriteAccessor;
 
 int main()
 {
-	spk::StandardType<int> tmp;
+	spk::ContextManager<Context>::instanciate();
 
-	tmp = -1;
-	for (size_t i = 0; i < 4; i++)
-	{
-		tmp.save();
-		tmp = i;
-	}
-	tmp.save();
+	spk::cout << "1 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "1 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	UpdaterContext::get().value = 10;
 
-	spk::cout << " --- Undoing ---" << std::endl;
-	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be -1" << std::endl;
+	spk::cout << "2 ) ValueA (" << &RendererContext::get() << "): " << RendererContext::get().value << std::endl;
+	spk::cout << "2 ) ValueB (" << &UpdaterContext::get() << "): " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
 
-	spk::cout << " --- Redoing ---" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 0" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 3" << std::endl;
+	UpdaterContext::swap();
 
-	spk::cout << " --- Undoing ---" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
+	spk::cout << "3 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "3 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
 
-	spk::cout << " --- New branch ---" << std::endl;
-	tmp = 42;
-	tmp.save();
-	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.undo();
-	spk::cout << "Value : " << tmp << " should be 1" << std::endl;
+	UpdaterContext::get().value = 20;
 
-	spk::cout << " --- Redoing ---" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 2" << std::endl;
-	tmp.redo();
-	spk::cout << "Value : " << tmp << " should be 42" << std::endl;
+	spk::cout << "4 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "4 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
 
+	UpdaterContext::swap();
 
+	spk::cout << "5 ) ValueA (" << &RendererContext::get() << ") : " << RendererContext::get().value << std::endl;
+	spk::cout << "5 ) ValueB (" << &UpdaterContext::get() << ") : " << UpdaterContext::get().value << std::endl;
+	spk::cout << " -----" << std::endl;
+	
 	return 0;
 }
