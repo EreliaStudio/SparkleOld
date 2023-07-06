@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['idle_78',['Idle',['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c',1,'spk::Timer']]],
   ['iinput_79',['IInput',['../classspk_1_1IInput.html#a0af00a3e86f07666cb3dc76518f2d496',1,'spk::IInput::IInput()'],['../classspk_1_1IInput.html',1,'spk::IInput']]],
   ['imessageconsumermodule_80',['IMessageConsumerModule',['../classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a',1,'spk::IMessageConsumerModule::IMessageConsumerModule()'],['../classspk_1_1IMessageConsumerModule.html',1,'spk::IMessageConsumerModule']]],
@@ -23,6 +24,8 @@ var searchData=
   ['ivector2_3c_20int_20_3e_97',['IVector2&lt; int &gt;',['../structspk_1_1IVector2.html',1,'spk']]],
   ['ivector3_98',['IVector3',['../structspk_1_1IVector3.html#a1a30fd5ff259b409a088fa58a6249bc5',1,'spk::IVector3::IVector3()'],['../structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb',1,'spk::IVector3::IVector3(const TOtherType &amp;p_value)'],['../structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302',1,'spk::IVector3::IVector3(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)'],['../structspk_1_1IVector3.html#a230e86429a49bc1be347432b21421ac5',1,'spk::IVector3::IVector3(const IVector3&lt; TOtherType &gt; &amp;p_other)'],['../structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33',1,'spk::IVector3::IVector3(const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)'],['../structspk_1_1IVector3.html',1,'spk::IVector3&lt; TType &gt;']]]
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['idle_74',['Idle',['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0ae599161956d626eda4cb0a5ffb85271c',1,'spk::Timer']]],
   ['imessageconsumermodule_75',['IMessageConsumerModule',['../classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a',1,'spk::IMessageConsumerModule::IMessageConsumerModule()'],['../classspk_1_1IMessageConsumerModule.html',1,'spk::IMessageConsumerModule']]],
   ['inherenceobject_76',['InherenceObject',['../classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64',1,'spk::InherenceObject::InherenceObject(const InherenceObject &amp;)=delete'],['../classspk_1_1InherenceObject.html#ab17ef56656c9b33064cec33d44d4c7b7',1,'spk::InherenceObject::InherenceObject()'],['../classspk_1_1InherenceObject.html',1,'spk::InherenceObject&lt; TType &gt;']]],
@@ -43,5 +46,8 @@ var searchData=
   ['ivector2_91',['IVector2',['../structspk_1_1IVector2.html#ae197d470bdc2579bd6434f1d23e569bc',1,'spk::IVector2::IVector2(const TOtherType &amp;p_value)'],['../structspk_1_1IVector2.html#ad681cb3d88fd9a4ca1e60c3c44e600b6',1,'spk::IVector2::IVector2()'],['../structspk_1_1IVector2.html#a3199f7709d8d15633920c7602b1c1e55',1,'spk::IVector2::IVector2(const TOtherType &amp;p_x, const TOtherType &amp;p_y)'],['../structspk_1_1IVector2.html',1,'spk::IVector2&lt; TType &gt;']]],
   ['ivector2_3c_20int_20_3e_92',['IVector2&lt; int &gt;',['../structspk_1_1IVector2.html',1,'spk']]],
   ['ivector3_93',['IVector3',['../structspk_1_1IVector3.html#a1a30fd5ff259b409a088fa58a6249bc5',1,'spk::IVector3::IVector3()'],['../structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb',1,'spk::IVector3::IVector3(const TOtherType &amp;p_value)'],['../structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302',1,'spk::IVector3::IVector3(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)'],['../structspk_1_1IVector3.html#a230e86429a49bc1be347432b21421ac5',1,'spk::IVector3::IVector3(const IVector3&lt; TOtherType &gt; &amp;p_other)'],['../structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33',1,'spk::IVector3::IVector3(const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)'],['../structspk_1_1IVector3.html',1,'spk::IVector3&lt; TType &gt;']]]
+<<<<<<< HEAD
+>>>>>>> 2a6dd93 (Update Doxygen)
+=======
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

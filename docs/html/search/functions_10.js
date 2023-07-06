@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['parent_473',['parent',['../classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe',1,'spk::InherenceObject']]],
   ['pause_474',['pause',['../classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79',1,'spk::PersistentWorker']]],
   ['persistentworker_475',['PersistentWorker',['../classspk_1_1PersistentWorker.html#a5b573916b185807a9ea60fbce9690918',1,'spk::PersistentWorker']]],
@@ -33,6 +34,8 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['parent_456',['parent',['../classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe',1,'spk::InherenceObject']]],
   ['pause_457',['pause',['../classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79',1,'spk::PersistentWorker']]],
   ['persistentworker_458',['PersistentWorker',['../classspk_1_1PersistentWorker.html#a5b573916b185807a9ea60fbce9690918',1,'spk::PersistentWorker']]],
@@ -45,7 +48,10 @@ var searchData=
   ['promise_465',['Promise',['../classspk_1_1Promise.html#a1f633fca0dabe4e19f99d1bb104498e6',1,'spk::Promise::Promise()'],['../classspk_1_1Promise.html#ad4dbd5693e82c5a821af97fc9e86c20b',1,'spk::Promise::Promise(const Promise &amp;p_other)=delete']]],
   ['push_5fback_466',['push_back',['../classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c',1,'spk::ThreadSafeQueue']]],
   ['push_5ffront_467',['push_front',['../classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a',1,'spk::ThreadSafeQueue']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

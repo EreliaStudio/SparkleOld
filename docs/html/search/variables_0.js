@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['_5fbufferaccessmutex_577',['_bufferAccessMutex',['../classspk_1_1ContextManager.html#a53069aa2449071fa0b37e8a58b30a6e9',1,'spk::ContextManager']]],
   ['_5fcontent_578',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
   ['_5ffunct_579',['_funct',['../classspk_1_1IInput.html#a3f003a9960bf0f09e9c40c0cb19b9b11',1,'spk::IInput']]],
@@ -29,6 +30,8 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['_5fbufferaccessmutex_560',['_bufferAccessMutex',['../classspk_1_1ContextManager.html#a53069aa2449071fa0b37e8a58b30a6e9',1,'spk::ContextManager']]],
   ['_5fcontent_561',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
   ['_5finstance_562',['_instance',['../classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c',1,'spk::Singleton']]],
@@ -38,7 +41,10 @@ var searchData=
   ['_5freadonlycontext_566',['_readOnlyContext',['../classspk_1_1ContextManager.html#a836f413aea791a8cda9b587659a76617',1,'spk::ContextManager']]],
   ['_5freadwritecontext_567',['_readWriteContext',['../classspk_1_1ContextManager.html#aa66650e4f903996150e2b8451b4e71d6',1,'spk::ContextManager']]],
   ['_5fvalue_568',['_value',['../structspk_1_1StandardType.html#a42a28212057ade7832c36f853860f20d',1,'spk::StandardType']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['abstractapplication_366',['AbstractApplication',['../classspk_1_1AbstractApplication.html#a46056c538113e4272d6d7eb23bfd9f0b',1,'spk::AbstractApplication']]],
   ['abstractwidget_367',['AbstractWidget',['../classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68',1,'spk::AbstractWidget']]],
   ['activableobject_368',['ActivableObject',['../classspk_1_1ActivableObject.html#a831bce3fc7b83728edec22f6e7b07742',1,'spk::ActivableObject']]],
@@ -42,6 +43,8 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['abstractapplication_353',['AbstractApplication',['../classspk_1_1AbstractApplication.html#a46056c538113e4272d6d7eb23bfd9f0b',1,'spk::AbstractApplication']]],
   ['abstractwidget_354',['AbstractWidget',['../classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68',1,'spk::AbstractWidget']]],
   ['activableobject_355',['ActivableObject',['../classspk_1_1ActivableObject.html#a831bce3fc7b83728edec22f6e7b07742',1,'spk::ActivableObject']]],
@@ -59,7 +62,10 @@ var searchData=
   ['angle_367',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
   ['apimodule_368',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()']]],
   ['application_369',['Application',['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

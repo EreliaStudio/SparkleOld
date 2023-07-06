@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['abstractapplication_287',['AbstractApplication',['../classspk_1_1AbstractApplication.html',1,'spk']]],
   ['abstractmodule_288',['AbstractModule',['../classspk_1_1AbstractModule.html',1,'spk']]],
   ['abstractwidget_289',['AbstractWidget',['../classspk_1_1AbstractWidget.html',1,'spk']]],
@@ -25,6 +26,8 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['abstractapplication_280',['AbstractApplication',['../classspk_1_1AbstractApplication.html',1,'spk']]],
   ['abstractmodule_281',['AbstractModule',['../classspk_1_1AbstractModule.html',1,'spk']]],
   ['abstractwidget_282',['AbstractWidget',['../classspk_1_1AbstractWidget.html',1,'spk']]],
@@ -33,7 +36,10 @@ var searchData=
   ['activityscheduler_285',['ActivityScheduler',['../classspk_1_1ActivityScheduler.html',1,'spk']]],
   ['apimodule_286',['APIModule',['../classspk_1_1APIModule.html',1,'spk']]],
   ['application_287',['Application',['../classspk_1_1Application.html',1,'spk']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

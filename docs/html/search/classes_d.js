@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['widgetmodule_350',['WidgetModule',['../classspk_1_1WidgetModule.html',1,'spk']]],
   ['window_351',['Window',['../classspk_1_1Window.html',1,'spk']]],
   ['windowmodule_352',['WindowModule',['../classspk_1_1WindowModule.html',1,'spk']]],
@@ -19,12 +20,17 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['widgetmodule_339',['WidgetModule',['../classspk_1_1WidgetModule.html',1,'spk']]],
   ['window_340',['Window',['../classspk_1_1Window.html',1,'spk']]],
   ['windowmodule_341',['WindowModule',['../classspk_1_1WindowModule.html',1,'spk']]],
   ['worker_342',['Worker',['../classspk_1_1Worker.html',1,'spk']]],
   ['workerpool_343',['WorkerPool',['../classspk_1_1WorkerPool.html',1,'spk']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

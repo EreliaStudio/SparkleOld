@@ -3,6 +3,7 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['randomgenerator_174',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()'],['../classspk_1_1RandomGenerator.html',1,'spk::RandomGenerator&lt; IntType &gt;']]],
   ['readonlyaccessor_175',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
   ['readwriteaccessor_176',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]],
@@ -51,6 +52,8 @@ var searchData=
 <<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['randomgenerator_166',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()'],['../classspk_1_1RandomGenerator.html',1,'spk::RandomGenerator&lt; IntType &gt;']]],
   ['readonlyaccessor_167',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
   ['readwriteaccessor_168',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]],
@@ -72,7 +75,10 @@ var searchData=
   ['round_184',['round',['../structspk_1_1IVector2.html#a173f7d72b11d82a87db01e6a6dfe625e',1,'spk::IVector2']]],
   ['run_185',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]],
   ['running_186',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

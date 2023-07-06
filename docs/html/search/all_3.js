@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['callback_44',['Callback',['../classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f',1,'spk::ContractProvider::Callback()'],['../classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38',1,'spk::InherenceObject::Callback()']]],
   ['callbackcontainer_45',['CallbackContainer',['../classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21',1,'spk::ContractProvider']]],
   ['ceiling_46',['ceiling',['../structspk_1_1IVector2.html#ac22c9a8609ce9b7f2215eff7c120ed0c',1,'spk::IVector2']]],
@@ -39,6 +40,8 @@ var searchData=
   ['cvblocking_55',['cvBlocking',['../classspk_1_1ThreadSafeQueue.html#af85dcfbf85ff17055581432602a3fca2',1,'spk::ThreadSafeQueue']]]
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
   ['callback_40',['Callback',['../classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f',1,'spk::ContractProvider::Callback()'],['../classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38',1,'spk::InherenceObject::Callback()']]],
   ['callbackcontainer_41',['CallbackContainer',['../classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21',1,'spk::ContractProvider']]],
   ['ceiling_42',['ceiling',['../structspk_1_1IVector2.html#ac22c9a8609ce9b7f2215eff7c120ed0c',1,'spk::IVector2']]],
@@ -56,5 +59,8 @@ var searchData=
   ['cross_54',['cross',['../structspk_1_1IVector2.html#a4d5cc1aceeca9b90fcecf6d6fe49520d',1,'spk::IVector2::cross()'],['../structspk_1_1IVector3.html#acf05bfc43602c284334e8370891e5bb3',1,'spk::IVector3::cross()']]],
   ['crossz_55',['crossZ',['../structspk_1_1IVector2.html#a6ab6d332aa26f3da116169b39014f113',1,'spk::IVector2']]],
   ['cvblocking_56',['cvBlocking',['../classspk_1_1ThreadSafeQueue.html#af85dcfbf85ff17055581432602a3fca2',1,'spk::ThreadSafeQueue']]]
+<<<<<<< HEAD
+>>>>>>> 2a6dd93 (Update Doxygen)
+=======
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];
