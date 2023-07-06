@@ -70,12 +70,17 @@ $(function() {
 <div class="title">spk::IsContainer&lt; T, typename &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Metafunction for checking if a type is a container.  
+ <a href="structspk_1_1IsContainer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__is__container_8hpp_source.html">spk_is_container.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::IsContainer&lt; T, typename &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structspk_1_1IsContainer__inherit__graph.png" border="0" usemap="#aspk_1_1IsContainer_3_01T_00_01typename_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1IsContainer_3_01T_00_01typename_01_4_inherit__map" id="aspk_1_1IsContainer_3_01T_00_01typename_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,160,121"/>
+<area shape="rect" title="Metafunction for checking if a type is a container." alt="" coords="5,80,160,121"/>
 <area shape="rect" title=" " alt="" coords="23,5,142,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -84,12 +89,33 @@ Collaboration diagram for spk::IsContainer&lt; T, typename &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structspk_1_1IsContainer__coll__graph.png" border="0" usemap="#aspk_1_1IsContainer_3_01T_00_01typename_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1IsContainer_3_01T_00_01typename_01_4_coll__map" id="aspk_1_1IsContainer_3_01T_00_01typename_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,160,121"/>
+<area shape="rect" title="Metafunction for checking if a type is a container." alt="" coords="5,80,160,121"/>
 <area shape="rect" title=" " alt="" coords="23,5,142,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>includes/miscellaneous/<a class="el" href="spk__is__contener_8hpp_source.html">spk_is_contener.hpp</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T, typename = void&gt;<br />
+struct spk::IsContainer&lt; T, typename &gt;</h3>
+
+<p>Metafunction for checking if a type is a container. </p>
+<p>Metafunction (specialized) for checking if a type is a container.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type to be checked. </td></tr>
+    <tr><td class="paramname">Enable</td><td>Placeholder parameter for SFINAE.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This structure template will derive from <code>std::false_type</code> for non-container types.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type to be checked.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This structure template will derive from <code>std::true_type</code> for container types. A type is considered a container if it defines <code>begin()</code>, <code>end()</code>, and has a nested <code>value_type</code>. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>includes/miscellaneous/<a class="el" href="spk__is__container_8hpp_source.html">spk_is_container.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

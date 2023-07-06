@@ -8,6 +8,7 @@
     <derivedcompoundref refid="classspk_1_1SystemModule" prot="public" virt="non-virtual">spk::SystemModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WindowModule" prot="public" virt="non-virtual">spk::WindowModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WindowModule" prot="public" virt="non-virtual">spk::WindowModule</derivedcompoundref>
+    <includes refid="spk__abstract__module_8hpp" local="no">spk_abstract_module.hpp</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
@@ -15,12 +16,13 @@
         <argsstring></argsstring>
         <name>_queue</name>
         <briefdescription>
+<para>Thread-safe queue for system messages. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="18" column="22" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="18" bodyend="-1"/>
+        <location file="includes/application/modules/spk_abstract_module.hpp" line="32" column="22" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -39,12 +41,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="20" column="14"/>
+        <location file="includes/application/modules/spk_abstract_module.hpp" line="39" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -58,12 +71,23 @@
           <declname>p_queue</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1IMessageConsumerModule" kindref="compound">IMessageConsumerModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for system messages. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="23" column="1"/>
+        <location file="includes/application/modules/spk_abstract_module.hpp" line="47" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -72,17 +96,20 @@
         <name>update</name>
         <reimplements refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4">update</reimplements>
         <briefdescription>
+<para>Updates the <ref refid="classspk_1_1IMessageConsumerModule" kindref="compound">IMessageConsumerModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="25" column="6"/>
+        <location file="includes/application/modules/spk_abstract_module.hpp" line="52" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for modules that consume messages. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides an interface for modules that need to consume system messages. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -134,7 +161,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_abstract_module.hpp" line="15" column="1" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="16" bodyend="26"/>
+    <location file="includes/application/modules/spk_abstract_module.hpp" line="29" column="1" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="30" bodyend="53"/>
     <listofallmembers>
       <member refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78" prot="private" virt="pure-virtual"><scope>spk::IMessageConsumerModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" prot="private" virt="non-virtual"><scope>spk::IMessageConsumerModule</scope><name>_queue</name></member>

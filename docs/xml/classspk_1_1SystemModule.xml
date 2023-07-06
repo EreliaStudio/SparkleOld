@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1SystemModule" kind="class" language="C++" prot="public">
     <compoundname>spk::SystemModule</compoundname>
     <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
+    <includes refid="spk__system__module_8hpp" local="no">spk_system_module.hpp</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1SystemModule_1a36e4d62e1ced17d6d640b90b34d09e2d" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1AbstractApplication" kindref="compound">spk::AbstractApplication</ref> *</type>
@@ -10,12 +11,13 @@
         <argsstring></argsstring>
         <name>_applicationToManage</name>
         <briefdescription>
+<para>Pointer to the application this module is managing. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="12" column="26" bodyfile="includes/application/modules/spk_system_module.hpp" bodystart="12" bodyend="-1"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="20" column="26" bodyfile="includes/application/modules/spk_system_module.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -30,12 +32,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="13" column="6"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="27" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -53,12 +66,31 @@
           <declname>p_applicationToManage</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1SystemModule" kindref="compound">SystemModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for system messages. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_applicationToManage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the application this module will manage. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="16" column="1"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -66,30 +98,20 @@
         <argsstring>()</argsstring>
         <name>~SystemModule</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1SystemModule" kindref="compound">SystemModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="17" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1SystemModule_1afea23ff6727e17a26bf99e13a7a4ab35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void spk::SystemModule::updateMouse</definition>
-        <argsstring>()</argsstring>
-        <name>updateMouse</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="19" column="6"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="41" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing system-level interactions. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class manages system-level interactions, including handling system messages and managing the main application. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -127,14 +149,13 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_system_module.hpp" line="8" column="1" bodyfile="includes/application/modules/spk_system_module.hpp" bodystart="9" bodyend="20"/>
+    <location file="includes/application/modules/spk_system_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_system_module.hpp" bodystart="15" bodyend="42"/>
     <listofallmembers>
       <member refid="classspk_1_1SystemModule_1a36e4d62e1ced17d6d640b90b34d09e2d" prot="private" virt="non-virtual"><scope>spk::SystemModule</scope><name>_applicationToManage</name></member>
       <member refid="classspk_1_1SystemModule_1a641975eb5ff351282dd55b47865c4b77" prot="private" virt="virtual"><scope>spk::SystemModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>IMessageConsumerModule</name></member>
       <member refid="classspk_1_1SystemModule_1a4e69257a48d4e3f620310e0bfc1dea21" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>SystemModule</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" virt="virtual"><scope>spk::SystemModule</scope><name>update</name></member>
-      <member refid="classspk_1_1SystemModule_1afea23ff6727e17a26bf99e13a7a4ab35" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>updateMouse</name></member>
       <member refid="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>~SystemModule</name></member>
     </listofallmembers>
   </compounddef>

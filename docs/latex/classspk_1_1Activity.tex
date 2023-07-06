@@ -1,57 +1,65 @@
 \hypertarget{classspk_1_1Activity}{}\doxysection{spk\+::Activity Class Reference}
 \label{classspk_1_1Activity}\index{spk::Activity@{spk::Activity}}
+
+
+Represents an activity. This class defines an activity that can be managed by an Activity\+Manager. It provides methods for updating, moving to the next step, starting, and checking the status of the activity.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+activity.\+hpp$>$}
+
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}} 
-enum class {\bfseries Status} \{ \newline
-{\bfseries Stopped}
-, {\bfseries On\+Enter}
-, {\bfseries Running}
-, {\bfseries On\+Exit}
+enum class \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{Status}} \{ \newline
+\mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2}{Stopped}}
+, \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0}{On\+Enter}}
+, \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09}{Running}}
+, \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144}{On\+Exit}}
 , \newline
-{\bfseries Complete}
+\mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d}{Complete}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumerates the possible status of the activity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Activity_ad9c4fb3d225e7dc0c9e2154295f63605}\label{classspk_1_1Activity_ad9c4fb3d225e7dc0c9e2154295f63605}} 
-void {\bfseries \+\_\+update} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1Activity_ad9c4fb3d225e7dc0c9e2154295f63605}{\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the activity. This function updates the activity, typically called once per frame. It is responsible for executing the activity\textquotesingle{}s current step and managing the state transitions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Activity_a84446cb99ea3035ed1119fe09742e0d8}\label{classspk_1_1Activity_a84446cb99ea3035ed1119fe09742e0d8}} 
-void {\bfseries \+\_\+move\+Next\+Step} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1Activity_a84446cb99ea3035ed1119fe09742e0d8}{\+\_\+move\+Next\+Step}} ()
+\begin{DoxyCompactList}\small\item\em Moves to the next step of the activity. This function moves the activity to the next step without executing it. It is used for advancing the activity\textquotesingle{}s progress without performing any actions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Activity_a361afbd8df75f55a1d3903a903a1358e}\label{classspk_1_1Activity_a361afbd8df75f55a1d3903a903a1358e}} 
-void {\bfseries \+\_\+move\+Next\+Step\+And\+Execute} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1Activity_a361afbd8df75f55a1d3903a903a1358e}{\+\_\+move\+Next\+Step\+And\+Execute}} ()
+\begin{DoxyCompactList}\small\item\em Moves to the next step of the activity and executes it. This function moves the activity to the next step and executes it. It is used for advancing the activity\textquotesingle{}s progress and performing the associated actions. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Activity_a2fc398d0a51902db587abf30d852fee6}\label{classspk_1_1Activity_a2fc398d0a51902db587abf30d852fee6}} 
-void {\bfseries \+\_\+start} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}\label{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}} 
-const Status \& {\bfseries state} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}\label{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}} 
-bool {\bfseries is\+Completed} () const
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classspk_1_1Activity_a2fc398d0a51902db587abf30d852fee6}{\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the activity. This function starts the activity, setting its initial state and entering the on\+Enter phase. It is called when the activity is initially activated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Activity_a624be8721a7a7e6ab00bb0f865560eac}\label{classspk_1_1Activity_a624be8721a7a7e6ab00bb0f865560eac}} 
+\mbox{\hyperlink{classspk_1_1Activity_a624be8721a7a7e6ab00bb0f865560eac}{Activity}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classspk_1_1Activity}{Activity}}. This constructor initializes the internal working state of the activity. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{Status}} \& \mbox{\hyperlink{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}{state}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current status of the activity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}{is\+Completed}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the activity is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}\label{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}} 
-Status {\bfseries \+\_\+internal\+Working\+State}
+\mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{Status}} \mbox{\hyperlink{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}{\+\_\+internal\+Working\+State}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Activity_a1aa7cf3267e674cc737d4d56c674ff4e}\label{classspk_1_1Activity_a1aa7cf3267e674cc737d4d56c674ff4e}} 
-virtual void {\bfseries \+\_\+on\+Enter} ()=0
-\item 
+virtual void \mbox{\hyperlink{classspk_1_1Activity_a1aa7cf3267e674cc737d4d56c674ff4e}{\+\_\+on\+Enter}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the on\+Enter phase of the activity. This pure virtual function is called when the activity enters the on\+Enter phase. Subclasses must override this function to provide custom implementation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Activity_af4c0f1fe9d2299a1c3f096e9687ed234}\label{classspk_1_1Activity_af4c0f1fe9d2299a1c3f096e9687ed234}} 
-virtual void {\bfseries \+\_\+execute} ()=0
-\item 
+virtual void \mbox{\hyperlink{classspk_1_1Activity_af4c0f1fe9d2299a1c3f096e9687ed234}{\+\_\+execute}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the main execution phase of the activity. This pure virtual function is called when the activity is in the running state and needs to execute its main logic. Subclasses must override this function to provide custom implementation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Activity_a507057c1dbc10ceb7894fa718fc75012}\label{classspk_1_1Activity_a507057c1dbc10ceb7894fa718fc75012}} 
-virtual void {\bfseries \+\_\+on\+Exit} ()=0
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{classspk_1_1Activity_a507057c1dbc10ceb7894fa718fc75012}{\+\_\+on\+Exit}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the on\+Exit phase of the activity. This pure virtual function is called when the activity enters the on\+Exit phase. Subclasses must override this function to provide custom implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +67,82 @@ virtual void {\bfseries \+\_\+on\+Exit} ()=0
 class {\bfseries Activity\+Manager}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents an activity. This class defines an activity that can be managed by an Activity\+Manager. It provides methods for updating, moving to the next step, starting, and checking the status of the activity. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}} 
+\index{spk::Activity@{spk::Activity}!Status@{Status}}
+\index{Status@{Status}!spk::Activity@{spk::Activity}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{spk\+::\+Activity\+::\+Status}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumerates the possible status of the activity. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stopped@{Stopped}!spk::Activity@{spk::Activity}}\index{spk::Activity@{spk::Activity}!Stopped@{Stopped}}}\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2}} 
+Stopped&The activity is stopped. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OnEnter@{OnEnter}!spk::Activity@{spk::Activity}}\index{spk::Activity@{spk::Activity}!OnEnter@{OnEnter}}}\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0}} 
+On\+Enter&The activity is in the on\+Enter phase. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Running@{Running}!spk::Activity@{spk::Activity}}\index{spk::Activity@{spk::Activity}!Running@{Running}}}\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09}} 
+Running&The activity is running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OnExit@{OnExit}!spk::Activity@{spk::Activity}}\index{spk::Activity@{spk::Activity}!OnExit@{OnExit}}}\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144}} 
+On\+Exit&The activity is in the on\+Exit phase. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complete@{Complete}!spk::Activity@{spk::Activity}}\index{spk::Activity@{spk::Activity}!Complete@{Complete}}}\mbox{\Hypertarget{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d}\label{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d}} 
+Complete&The activity is complete. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}\label{classspk_1_1Activity_aab25e8eb7369e26c11f8f74e9db80499}} 
+\index{spk::Activity@{spk::Activity}!isCompleted@{isCompleted}}
+\index{isCompleted@{isCompleted}!spk::Activity@{spk::Activity}}
+\doxysubsubsection{\texorpdfstring{isCompleted()}{isCompleted()}}
+{\footnotesize\ttfamily bool spk\+::\+Activity\+::is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the activity is completed. 
+
+\begin{DoxyReturn}{Returns}
+True if the activity is complete, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}\label{classspk_1_1Activity_a2852c46978738f635cdc98936dce06ae}} 
+\index{spk::Activity@{spk::Activity}!state@{state}}
+\index{state@{state}!spk::Activity@{spk::Activity}}
+\doxysubsubsection{\texorpdfstring{state()}{state()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{Status}}\& spk\+::\+Activity\+::state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the current status of the activity. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the current status of the activity. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}\label{classspk_1_1Activity_a6ce4d394293a7812d9e1be5d8b1de652}} 
+\index{spk::Activity@{spk::Activity}!\_internalWorkingState@{\_internalWorkingState}}
+\index{\_internalWorkingState@{\_internalWorkingState}!spk::Activity@{spk::Activity}}
+\doxysubsubsection{\texorpdfstring{\_internalWorkingState}{\_internalWorkingState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1Activity_a1fa844e585a28ff096c43b924a4d0aec}{Status}} spk\+::\+Activity\+::\+\_\+internal\+Working\+State}
+
+The internal working state of the activity. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

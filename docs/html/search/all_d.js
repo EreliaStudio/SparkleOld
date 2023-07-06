@@ -1,26 +1,10 @@
 var searchData=
 [
-  ['setduration_58',['setDuration',['../classspk_1_1Timer.html#aae49033702e6ef1875b4517a969bcc07',1,'spk::Timer']]],
-  ['setvalue_59',['setValue',['../classspk_1_1Promise.html#a492bc5064aca48fc18294ecead334599',1,'spk::Promise']]],
-  ['singleton_60',['Singleton',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20contextmanager_3c_20tcontexttype_20_3e_20_3e_61',['Singleton&lt; ContextManager&lt; TContextType &gt; &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20keyboard_20_3e_62',['Singleton&lt; Keyboard &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20mouse_20_3e_63',['Singleton&lt; Mouse &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20profiler_20_3e_64',['Singleton&lt; Profiler &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20timemetrics_20_3e_65',['Singleton&lt; TimeMetrics &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['singleton_3c_20window_20_3e_66',['Singleton&lt; Window &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
-  ['sleepatleast_67',['sleepAtLeast',['../classspk_1_1TimeMetrics.html#af19a929fc6b3b6be1b9a06ca48022b2d',1,'spk::TimeMetrics']]],
-  ['standardtype_68',['StandardType',['../structspk_1_1StandardType.html',1,'spk']]],
-  ['start_69',['start',['../classspk_1_1Chronometer.html#af8bcb635c7ebde03542f03ba524c3fac',1,'spk::Chronometer::start()'],['../classspk_1_1Timer.html#afcf2bb414ce8bff18b7642f392f0c3f2',1,'spk::Timer::start()']]],
-  ['startchronometer_70',['startChronometer',['../classspk_1_1Debug_1_1Profiler.html#af223d7eff676517b16d9c7dbd9e95f78',1,'spk::Debug::Profiler']]],
-  ['state_71',['State',['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0',1,'spk::Timer']]],
-  ['statedobject_72',['StatedObject',['../classspk_1_1StatedObject.html',1,'spk']]],
-  ['statedobject_3c_20bool_20_3e_73',['StatedObject&lt; bool &gt;',['../classspk_1_1StatedObject.html',1,'spk']]],
-  ['status_74',['status',['../classspk_1_1Timer.html#a94f43a369515d38d221cc6ab75d244fa',1,'spk::Timer']]],
-  ['stop_75',['stop',['../classspk_1_1Chronometer.html#a2a19c00ea8c6e9ba74134214c07b915f',1,'spk::Chronometer::stop()'],['../classspk_1_1Timer.html#af7da190802d2bc83ca2608b609d7806e',1,'spk::Timer::stop()']]],
-  ['stopchronometer_76',['stopChronometer',['../classspk_1_1Debug_1_1Profiler.html#a4a26a23d865b16059a7cb6f9dfddf054',1,'spk::Debug::Profiler']]],
-  ['swap_77',['swap',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html#ab66aa0655accf306a887a5081f4540bd',1,'spk::ContextManager::ReadWriteAccessor::swap()'],['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html#a1a305713f955eaebfc6e3546fa3a4421',1,'spk::ContextManager::ReadOnlyAccessor::swap()']]],
-  ['swapreadonlycontext_78',['swapReadOnlyContext',['../classspk_1_1ContextManager.html#ad768f31a10cb4bd01ae59c0ad7a01558',1,'spk::ContextManager']]],
-  ['swapreadwritecontext_79',['swapReadWriteContext',['../classspk_1_1ContextManager.html#a7c3c2f2ddcb4a6c93ed5e291d01eaed2',1,'spk::ContextManager']]],
-  ['systemmodule_80',['SystemModule',['../classspk_1_1SystemModule.html',1,'spk']]]
+  ['max_97',['max',['../classspk_1_1RandomGenerator.html#a65f9e7bda3b0a4a3a1638c5a55dfcb5c',1,'spk::RandomGenerator::max()'],['../structspk_1_1IVector2_xC2_xB2.html#a685653d643c79b201b8345b72a7b57aa',1,'spk::IVector2²::max()']]],
+  ['memento_98',['Memento',['../classspk_1_1Memento.html',1,'spk']]],
+  ['min_99',['min',['../classspk_1_1RandomGenerator.html#a96370335c177656f4878ebab8cc4b4b3',1,'spk::RandomGenerator::min()'],['../structspk_1_1IVector2_xC2_xB2.html#a5378cc41007044a80a002d41bff00dcf',1,'spk::IVector2²::min()']]],
+  ['mouse_100',['Mouse',['../classspk_1_1Mouse.html',1,'spk']]],
+  ['mousemodule_101',['MouseModule',['../classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24',1,'spk::MouseModule::MouseModule()'],['../classspk_1_1MouseModule.html',1,'spk::MouseModule']]],
+  ['mousequeue_102',['mouseQueue',['../classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f',1,'spk::APIModule::mouseQueue()'],['../classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f',1,'spk::APIModule::mouseQueue()']]],
+  ['move_103',['move',['../classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d',1,'spk::AbstractWidget']]]
 ];

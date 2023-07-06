@@ -1,4 +1,4 @@
 <map id="spk::Worker" name="spk::Worker">
-<area shape="rect" id="node1" title=" " alt="" coords="19,80,118,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1WorkerPool.html" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title="Class for creating a worker thread." alt="" coords="19,80,118,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1WorkerPool.html" title="Class for creating and managing a pool of worker threads." alt="" coords="5,5,132,32"/>
 </map>

@@ -73,13 +73,18 @@ $(function() {
 <div class="title">spk::StatedObject&lt; TState &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class who manage state switching. This class representing an object who can be in different state. the class additionnaly store lambdas to call uppon specific state. Each lambda is provided to the user as Contract object.  
+ <a href="classspk_1_1StatedObject.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__stated__object_8hpp_source.html">spk_stated_object.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::StatedObject&lt; TState &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1StatedObject__inherit__graph.png" border="0" usemap="#aspk_1_1StatedObject_3_01TState_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1StatedObject_3_01TState_01_4_inherit__map" id="aspk_1_1StatedObject_3_01TState_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="13,80,161,121"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="13,80,161,121"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,5,168,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -87,24 +92,24 @@ Collaboration diagram for spk::StatedObject&lt; TState &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1StatedObject__coll__graph.png" border="0" usemap="#aspk_1_1StatedObject_3_01TState_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1StatedObject_3_01TState_01_4_coll__map" id="aspk_1_1StatedObject_3_01TState_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="13,80,161,121"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="13,80,161,121"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,5,168,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a797bb0328531e421fe9c16f3062c2e32"><td class="memItemLeft" align="right" valign="top"><a id="a797bb0328531e421fe9c16f3062c2e32"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>StatedObject</b> (TState p_defaultState={})</td></tr>
-<tr class="separator:a797bb0328531e421fe9c16f3062c2e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac365fce6e1327db89fe6bb66095ae7d"><td class="memItemLeft" align="right" valign="top"><a id="aac365fce6e1327db89fe6bb66095ae7d"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addStateCallback</b> (TState p_state, Callback p_callback)</td></tr>
+<tr class="memitem:a5d13cdaa131af57a5767414ec363caa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a5d13cdaa131af57a5767414ec363caa3">StatedObject</a> (TState p_defaultState)</td></tr>
+<tr class="memdesc:a5d13cdaa131af57a5767414ec363caa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Stated Object.  <a href="classspk_1_1StatedObject.html#a5d13cdaa131af57a5767414ec363caa3">More...</a><br /></td></tr>
+<tr class="separator:a5d13cdaa131af57a5767414ec363caa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac365fce6e1327db89fe6bb66095ae7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d">addStateCallback</a> (TState p_state, Callback p_callback)</td></tr>
+<tr class="memdesc:aac365fce6e1327db89fe6bb66095ae7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup callback for specific state.  <a href="classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d">More...</a><br /></td></tr>
 <tr class="separator:aac365fce6e1327db89fe6bb66095ae7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3239267c819fa6825a2e19761f8ed697"><td class="memItemLeft" align="right" valign="top"><a id="a3239267c819fa6825a2e19761f8ed697"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (TState p_state)</td></tr>
+<tr class="memitem:a3239267c819fa6825a2e19761f8ed697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a3239267c819fa6825a2e19761f8ed697">setState</a> (TState p_state)</td></tr>
+<tr class="memdesc:a3239267c819fa6825a2e19761f8ed697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the object's State and call the binded function if have one.  <a href="classspk_1_1StatedObject.html#a3239267c819fa6825a2e19761f8ed697">More...</a><br /></td></tr>
 <tr class="separator:a3239267c819fa6825a2e19761f8ed697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6261556d41a0e850eb6b1eca6a3e6c3d"><td class="memItemLeft" align="right" valign="top"><a id="a6261556d41a0e850eb6b1eca6a3e6c3d"></a>
-const TState &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> () const</td></tr>
+<tr class="memitem:a6261556d41a0e850eb6b1eca6a3e6c3d"><td class="memItemLeft" align="right" valign="top">const TState &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a6261556d41a0e850eb6b1eca6a3e6c3d">state</a> () const</td></tr>
+<tr class="memdesc:a6261556d41a0e850eb6b1eca6a3e6c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the current object's state  <a href="classspk_1_1StatedObject.html#a6261556d41a0e850eb6b1eca6a3e6c3d">More...</a><br /></td></tr>
 <tr class="separator:a6261556d41a0e850eb6b1eca6a3e6c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -117,10 +122,174 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Callback</b> = std::
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CallbackContainer</b> = std::deque&lt; Callback &gt;</td></tr>
 <tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
-<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="afb4adba519929353876b0192ea9a8aee"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>subscribe</b> (CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</td></tr>
+<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">subscribe</a> (CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</td></tr>
+<tr class="memdesc:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">More...</a><br /></td></tr>
 <tr class="separator:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename TState&gt;<br />
+class spk::StatedObject&lt; TState &gt;</h3>
+
+<p>A class who manage state switching. This class representing an object who can be in different state. the class additionnaly store lambdas to call uppon specific state. Each lambda is provided to the user as Contract object. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TState</td><td>The status class/structure/enum/type in which the object can be set </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5d13cdaa131af57a5767414ec363caa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d13cdaa131af57a5767414ec363caa3">&#9670;&nbsp;</a></span>StatedObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TState &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1StatedObject.html">spk::StatedObject</a>&lt; TState &gt;::<a class="el" href="classspk_1_1StatedObject.html">StatedObject</a> </td>
+          <td>(</td>
+          <td class="paramtype">TState&#160;</td>
+          <td class="paramname"><em>p_defaultState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new Stated Object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_defaultState</td><td>Represent the default state of the object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aac365fce6e1327db89fe6bb66095ae7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac365fce6e1327db89fe6bb66095ae7d">&#9670;&nbsp;</a></span>addStateCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TState &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a> <a class="el" href="classspk_1_1StatedObject.html">spk::StatedObject</a>&lt; TState &gt;::addStateCallback </td>
+          <td>(</td>
+          <td class="paramtype">TState&#160;</td>
+          <td class="paramname"><em>p_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Callback&#160;</td>
+          <td class="paramname"><em>p_callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup callback for specific state. </p>
+<p>This method will set a specific callback to a desired state. This method will provide a Contract to the user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_state</td><td>The state binded to the callback. </td></tr>
+    <tr><td class="paramname">p_callback</td><td>The callback binded to the state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Contract A Contract representing the bind between state and callback, allowing him to edit/resign the callback added by this method. </dd></dl>
+
+</div>
+</div>
+<a id="a3239267c819fa6825a2e19761f8ed697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3239267c819fa6825a2e19761f8ed697">&#9670;&nbsp;</a></span>setState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TState &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1StatedObject.html">spk::StatedObject</a>&lt; TState &gt;::setState </td>
+          <td>(</td>
+          <td class="paramtype">TState&#160;</td>
+          <td class="paramname"><em>p_state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the object's State and call the binded function if have one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_state</td><td>The new state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6261556d41a0e850eb6b1eca6a3e6c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6261556d41a0e850eb6b1eca6a3e6c3d">&#9670;&nbsp;</a></span>state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TState &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TState&amp; <a class="el" href="classspk_1_1StatedObject.html">spk::StatedObject</a>&lt; TState &gt;::state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the current object's state </p>
+<dl class="section return"><dt>Returns</dt><dd>const TState&amp; </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/design_pattern/<a class="el" href="spk__stated__object_8hpp_source.html">spk_stated_object.hpp</a></li>
 </ul>

@@ -4,19 +4,22 @@
     <compoundname>spk::PersistentWorker</compoundname>
     <basecompoundref refid="classspk_1_1Thread" prot="public" virt="non-virtual">spk::Thread</basecompoundref>
     <basecompoundref refid="classspk_1_1ContractProvider" prot="public" virt="non-virtual">spk::ContractProvider</basecompoundref>
+    <includes refid="spk__persistent__worker_8hpp" local="no">spk_persistent_worker.hpp</includes>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classspk_1_1PersistentWorker_1a3d6acafce004b1597a480b50baf24881" prot="public" static="no">
+      <memberdef kind="typedef" id="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" prot="public" static="no">
         <type>ContractProvider::Callback</type>
-        <definition>using spk::PersistentWorker::Job =  ContractProvider::Callback</definition>
+        <definition>spk::PersistentWorker::Job</definition>
         <argsstring></argsstring>
         <name>Job</name>
         <briefdescription>
+<para>The type of job to be executed by the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This typedef defines the type of job to be executed by the worker. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="10" column="1" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="10" bodyend="-1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="24" column="1" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -31,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="13" column="19" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="27" column="19" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1PersistentWorker_1a032f65a73bfca59e377f637c02ba22c1" prot="private" static="no" mutable="no">
         <type>std::deque&lt; <ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &gt;</type>
@@ -44,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="14" column="12" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="14" bodyend="-1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="28" column="12" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1PersistentWorker_1a7a15e3914642088d8684e33a8d5a14ea" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -58,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="16" column="6" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="16" bodyend="-1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="30" column="6" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -72,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="17" column="6" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="17" bodyend="-1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="31" column="6" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -86,12 +89,24 @@
           <declname>p_name</declname>
         </param>
         <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1PersistentWorker" kindref="compound">PersistentWorker</ref> object with a specified name. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor creates a new <ref refid="classspk_1_1PersistentWorker" kindref="compound">PersistentWorker</ref> object with the specified name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the worker thread. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="20" column="1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="41" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -99,29 +114,45 @@
         <argsstring>()</argsstring>
         <name>~PersistentWorker</name>
         <briefdescription>
+<para>Destroy the <ref refid="classspk_1_1PersistentWorker" kindref="compound">PersistentWorker</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is the destructor for the <ref refid="classspk_1_1PersistentWorker" kindref="compound">PersistentWorker</ref> class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="21" column="1"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="48" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &amp;</type>
-        <definition>Contract&amp; spk::PersistentWorker::addJob</definition>
+      <memberdef kind="function" id="classspk_1_1PersistentWorker_1a4795a279ac83e4da6b6789450ce83ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>Contract spk::PersistentWorker::addJob</definition>
         <argsstring>(const Job &amp;p_job)</argsstring>
         <name>addJob</name>
         <param>
-          <type>const Job &amp;</type>
+          <type>const <ref refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" kindref="member">Job</ref> &amp;</type>
           <declname>p_job</declname>
         </param>
         <briefdescription>
+<para>Add a job to the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function adds a job to the worker. The job will be executed by the worker thread.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_job</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The job to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the job. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="23" column="10"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="58" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -129,12 +160,17 @@
         <argsstring>() const</argsstring>
         <name>isRunning</name>
         <briefdescription>
+<para>Check if the worker is running. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function checks if the worker is currently running.</para>
+<para><simplesect kind="return"><para>True if the worker is running, false otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="25" column="16" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="25" bodyend="25"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="67" column="16" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="67" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -142,12 +178,14 @@
         <argsstring>()</argsstring>
         <name>start</name>
         <briefdescription>
+<para>Start the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function starts the worker thread. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="26" column="6"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="74" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -155,12 +193,14 @@
         <argsstring>()</argsstring>
         <name>stop</name>
         <briefdescription>
+<para>Stop the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function stops the worker thread. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="27" column="6"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="81" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1ad730a6aef37005bc23999327bdd56ac7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,12 +208,14 @@
         <argsstring>()=delete</argsstring>
         <name>join</name>
         <briefdescription>
+<para>Join the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function is deleted and not available in the <ref refid="classspk_1_1PersistentWorker" kindref="compound">PersistentWorker</ref> class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="29" column="6"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="88" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -181,12 +223,14 @@
         <argsstring>()</argsstring>
         <name>pause</name>
         <briefdescription>
+<para>Pause the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function pauses the execution of the worker thread. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="31" column="6"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="95" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1PersistentWorker_1afbb963099f60af09f97827e3ab1f2d6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -194,17 +238,21 @@
         <argsstring>()</argsstring>
         <name>resume</name>
         <briefdescription>
+<para>Resume the worker. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function resumes the execution of the worker thread. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_persistent_worker.hpp" line="32" column="6"/>
+        <location file="includes/threading/spk_persistent_worker.hpp" line="102" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for creating and managing a persistent worker thread. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class extends the <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> class and provides additional functionality for adding jobs to the worker and controlling its execution. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -242,18 +290,18 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/threading/spk_persistent_worker.hpp" line="7" column="1" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="8" bodyend="33"/>
+    <location file="includes/threading/spk_persistent_worker.hpp" line="15" column="1" bodyfile="includes/threading/spk_persistent_worker.hpp" bodystart="16" bodyend="103"/>
     <listofallmembers>
       <member refid="classspk_1_1PersistentWorker_1a032f65a73bfca59e377f637c02ba22c1" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_contracts</name></member>
       <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_isPaused</name></member>
       <member refid="classspk_1_1PersistentWorker_1a7a15e3914642088d8684e33a8d5a14ea" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_isRunning</name></member>
       <member refid="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" prot="private" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>_jobs</name></member>
-      <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>addJob</name></member>
+      <member refid="classspk_1_1PersistentWorker_1a4795a279ac83e4da6b6789450ce83ee3" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>addJob</name></member>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>CallbackContainer</name></member>
       <member refid="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>getId</name></member>
       <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>isRunning</name></member>
-      <member refid="classspk_1_1PersistentWorker_1a3d6acafce004b1597a480b50baf24881" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>Job</name></member>
+      <member refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>Job</name></member>
       <member refid="classspk_1_1PersistentWorker_1ad730a6aef37005bc23999327bdd56ac7" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>join</name></member>
       <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>LaunchMethod</name></member>
       <member refid="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" prot="public" virt="non-virtual"><scope>spk::PersistentWorker</scope><name>pause</name></member>

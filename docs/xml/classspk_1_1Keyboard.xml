@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1Keyboard" kind="class" language="C++" prot="public">
     <compoundname>spk::Keyboard</compoundname>
     <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Keyboard &gt;</basecompoundref>
+    <includes refid="spk__keyboard_8hpp" local="no">spk_keyboard.hpp</includes>
     <innerclass refid="structspk_1_1Keyboard_1_1Mapping" prot="private">spk::Keyboard::Mapping</innerclass>
       <sectiondef kind="public-type">
       <memberdef kind="enum" id="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" prot="public" static="no" strong="no">
@@ -997,12 +998,13 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Enum for representing keyboard keys. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="17" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="18" bodyend="71"/>
+        <location file="includes/input/spk_keyboard.hpp" line="26" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="27" bodyend="80"/>
       </memberdef>
       <memberdef kind="enum" id="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" prot="public" static="no" strong="no">
         <type></type>
@@ -1022,12 +1024,13 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>Enum for representing keyboard layouts. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="73" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="74" bodyend="77"/>
+        <location file="includes/input/spk_keyboard.hpp" line="86" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="87" bodyend="90"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -1045,7 +1048,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="117" column="20" bodyfile="includes/input/spk_keyboard.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="172" column="20" bodyfile="includes/input/spk_keyboard.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
@@ -1061,12 +1064,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="14" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="14" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="19" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
       <memberdef kind="variable" id="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" prot="private" static="yes" mutable="no">
-        <type>std::map&lt; Keyboard::Key, std::wstring &gt;</type>
+        <type>std::map&lt; <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref>, std::wstring &gt;</type>
         <definition>std::map&lt;Keyboard::Key, std::wstring&gt; spk::Keyboard::KeyToStringMap</definition>
         <argsstring></argsstring>
         <name>KeyToStringMap</name>
@@ -1076,7 +1079,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="92" column="17" bodyfile="includes/input/spk_keyboard.hpp" bodystart="92" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="115" column="17" bodyfile="includes/input/spk_keyboard.hpp" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Keyboard_1a532d889e2f7354ac11f444ab49a1b858" prot="private" static="yes" mutable="no">
         <type>const std::wstring</type>
@@ -1089,12 +1092,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="93" column="27" bodyfile="includes/input/spk_keyboard.hpp" bodystart="93" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="116" column="27" bodyfile="includes/input/spk_keyboard.hpp" bodystart="116" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Keyboard_1af1b5c41b2b326094dcfc83cc120c9aff" prot="private" static="no" mutable="no">
-        <type>Layout</type>
+        <type><ref refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" kindref="member">Layout</ref></type>
         <definition>Layout spk::Keyboard::_layout</definition>
         <argsstring></argsstring>
         <name>_layout</name>
@@ -1104,7 +1107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="95" column="8" bodyfile="includes/input/spk_keyboard.hpp" bodystart="95" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="118" column="8" bodyfile="includes/input/spk_keyboard.hpp" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Keyboard_1ae39abfd8e727f62414456e3ac0f80ab7" prot="private" static="no" mutable="no">
         <type>Mapping</type>
@@ -1117,7 +1120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="96" column="9" bodyfile="includes/input/spk_keyboard.hpp" bodystart="96" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="119" column="9" bodyfile="includes/input/spk_keyboard.hpp" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Keyboard_1a39f39df8ce27574e977e9cfc035c7ae4" prot="private" static="no" mutable="no">
         <type>InputState</type>
@@ -1130,7 +1133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="97" column="12" bodyfile="includes/input/spk_keyboard.hpp" bodystart="97" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="120" column="12" bodyfile="includes/input/spk_keyboard.hpp" bodystart="120" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -1145,7 +1148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="99" column="1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="122" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1ae7c24eb679b40f736ab882f03ab2f292" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1157,12 +1160,23 @@
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Registers a key press event. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key that was pressed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="101" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="128" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1a94ecd823d91d43f6c364568a7a23efa1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1174,12 +1188,23 @@
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Registers a key release event. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key that was released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="102" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="134" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1187,12 +1212,13 @@
         <argsstring>()</argsstring>
         <name>update</name>
         <briefdescription>
+<para>Updates the state of the keyboard. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="104" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="139" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1202,16 +1228,27 @@
         <argsstring>(const Layout &amp;p_layout)</argsstring>
         <name>setLayout</name>
         <param>
-          <type>const Layout &amp;</type>
+          <type>const <ref refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" kindref="member">Layout</ref> &amp;</type>
           <declname>p_layout</declname>
         </param>
         <briefdescription>
+<para>Sets the layout of the keyboard. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_layout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The layout to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="107" column="6" bodyfile="includes/input/spk_keyboard.hpp" bodystart="107" bodyend="107"/>
+        <location file="includes/input/spk_keyboard.hpp" line="146" column="6" bodyfile="includes/input/spk_keyboard.hpp" bodystart="146" bodyend="146"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1a4b65a94087efacfb89ca84dec70253d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const InputState &amp;</type>
@@ -1219,16 +1256,29 @@
         <argsstring>(const Key &amp;p_key) const</argsstring>
         <name>inputStatus</name>
         <param>
-          <type>const Key &amp;</type>
+          <type>const <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Key</ref> &amp;</type>
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Returns the input status of a key. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to get the input status of. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The input status of the key. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="109" column="18" bodyfile="includes/input/spk_keyboard.hpp" bodystart="109" bodyend="112"/>
+        <location file="includes/input/spk_keyboard.hpp" line="153" column="18" bodyfile="includes/input/spk_keyboard.hpp" bodystart="153" bodyend="156"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1238,21 +1288,36 @@
         <argsstring>(const Keyboard::Key &amp;p_key)</argsstring>
         <name>keyToString</name>
         <param>
-          <type>const Keyboard::Key &amp;</type>
+          <type>const <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref> &amp;</type>
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Converts a key to a string. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to convert to a string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string representation of the key. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="114" column="27"/>
+        <location file="includes/input/spk_keyboard.hpp" line="163" column="27"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para><ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref> class for keyboard inputs. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class handles keyboard inputs and provides key mapping and layout configuration. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -1278,7 +1343,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/input/spk_keyboard.hpp" line="11" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="12" bodyend="115"/>
+    <location file="includes/input/spk_keyboard.hpp" line="16" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="17" bodyend="164"/>
     <listofallmembers>
       <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Keyboard</scope><name>_instance</name></member>
       <member refid="classspk_1_1Keyboard_1a39f39df8ce27574e977e9cfc035c7ae4" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>_keys</name></member>

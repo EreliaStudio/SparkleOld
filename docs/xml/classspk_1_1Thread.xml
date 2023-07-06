@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1Thread" kind="class" language="C++" prot="public">
     <compoundname>spk::Thread</compoundname>
     <derivedcompoundref refid="classspk_1_1PersistentWorker" prot="public" virt="non-virtual">spk::PersistentWorker</derivedcompoundref>
+    <includes refid="spk__thread_8hpp" local="no">spk_thread.hpp</includes>
       <sectiondef kind="public-type">
       <memberdef kind="enum" id="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" prot="public" static="no" strong="yes">
         <type></type>
@@ -22,12 +23,14 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>An enum class to represent the launch method of the thread. </para>
         </briefdescription>
         <detaileddescription>
+<para>This enum class has two launch methods: Delayed and Immediate. The Delayed method creates the thread but does not start it immediately. The Immediate method creates and starts the thread immediately. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="15" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="16" bodyend="19"/>
+        <location file="includes/threading/spk_thread.hpp" line="31" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="32" bodyend="35"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -42,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="22" column="23" bodyfile="includes/threading/spk_thread.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/threading/spk_thread.hpp" line="38" column="23" bodyfile="includes/threading/spk_thread.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Thread_1a7702fde0065f2c50cd662a2cece3f016" prot="private" static="no" mutable="no">
         <type>std::thread</type>
@@ -55,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="23" column="21" bodyfile="includes/threading/spk_thread.hpp" bodystart="23" bodyend="-1"/>
+        <location file="includes/threading/spk_thread.hpp" line="39" column="21" bodyfile="includes/threading/spk_thread.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Thread_1aefcb08911f9e6aa4e62f4a111d10b295" prot="private" static="no" mutable="no">
         <type>std::promise&lt; void &gt;</type>
@@ -68,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="24" column="22" bodyfile="includes/threading/spk_thread.hpp" bodystart="24" bodyend="-1"/>
+        <location file="includes/threading/spk_thread.hpp" line="40" column="22" bodyfile="includes/threading/spk_thread.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -100,12 +103,57 @@
           <declname>p_args</declname>
         </param>
         <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> object with a specified thread name and function. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor creates a new thread with the specified thread name and function. The function can take any number of arguments.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_threadName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the thread. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="28" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="28" bodyend="40"/>
+        <location file="includes/threading/spk_thread.hpp" line="56" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="56" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1afdc8fce9be9a5bc00dfdd9c7d149f588" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -123,7 +171,7 @@
         <argsstring>(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</argsstring>
         <name>Thread</name>
         <param>
-          <type>LaunchMethod</type>
+          <type><ref refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" kindref="member">LaunchMethod</ref></type>
           <declname>p_launchMethod</declname>
         </param>
         <param>
@@ -139,12 +187,65 @@
           <declname>p_args</declname>
         </param>
         <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> object with a specified launch method, thread name, and function. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor creates a new thread with the specified launch method, thread name, and function. The function can take any number of arguments. If the launch method is Immediate, the thread is started immediately.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_launchMethod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The launch method of the thread. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_threadName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the thread. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments of the thread function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="43" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="43" bodyend="50"/>
+        <location file="includes/threading/spk_thread.hpp" line="84" column="9" bodyfile="includes/threading/spk_thread.hpp" bodystart="84" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1a97d08ba39aee6ee49292fd53f08bcb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -152,12 +253,14 @@
         <argsstring>()</argsstring>
         <name>~Thread</name>
         <briefdescription>
+<para>Destroy the <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is the destructor for the <ref refid="classspk_1_1Thread" kindref="compound">Thread</ref> class. It joins the thread if its still running. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="52" column="9"/>
+        <location file="includes/threading/spk_thread.hpp" line="99" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::thread::id</type>
@@ -165,12 +268,17 @@
         <argsstring>() const</argsstring>
         <name>getId</name>
         <briefdescription>
+<para>Get the ID of the thread. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns the ID of the thread.</para>
+<para><simplesect kind="return"><para>The ID of the thread. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="54" column="25" bodyfile="includes/threading/spk_thread.hpp" bodystart="54" bodyend="57"/>
+        <location file="includes/threading/spk_thread.hpp" line="108" column="25" bodyfile="includes/threading/spk_thread.hpp" bodystart="108" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1a4eed5d9b453feae180a98f80a2f117ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -178,12 +286,14 @@
         <argsstring>()</argsstring>
         <name>join</name>
         <briefdescription>
+<para>Join the thread. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function blocks the current thread until the associated thread finishes its execution. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="59" column="14"/>
+        <location file="includes/threading/spk_thread.hpp" line="118" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1a3c9242c1ea81ec3de8b78445e1d2a421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,17 +301,21 @@
         <argsstring>()</argsstring>
         <name>start</name>
         <briefdescription>
+<para>Start the thread. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function starts the thread by releasing the starter signal. The thread function will begin executing once this signal is released. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="61" column="14"/>
+        <location file="includes/threading/spk_thread.hpp" line="126" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for creating and managing a thread. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides a convenient way to create and manage a thread. It allows you to specify the thread function and its arguments, as well as the launch method (immediate or delayed). </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -215,7 +329,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/threading/spk_thread.hpp" line="12" column="5" bodyfile="includes/threading/spk_thread.hpp" bodystart="13" bodyend="62"/>
+    <location file="includes/threading/spk_thread.hpp" line="20" column="5" bodyfile="includes/threading/spk_thread.hpp" bodystart="21" bodyend="127"/>
     <listofallmembers>
       <member refid="classspk_1_1Thread_1af237389d99e85c8dde48d6144e62ff48" prot="private" virt="non-virtual"><scope>spk::Thread</scope><name>_funct</name></member>
       <member refid="classspk_1_1Thread_1aefcb08911f9e6aa4e62f4a111d10b295" prot="private" virt="non-virtual"><scope>spk::Thread</scope><name>_starterSignal</name></member>

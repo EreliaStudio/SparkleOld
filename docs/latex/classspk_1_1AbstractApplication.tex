@@ -2,6 +2,15 @@
 \label{classspk_1_1AbstractApplication}\index{spk::AbstractApplication@{spk::AbstractApplication}}
 
 
+Abstract base class for the application.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+abstract\+\_\+application.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Abstract\+Application\+:
 \nopagebreak
 \begin{figure}[H]
@@ -14,29 +23,99 @@ Inheritance diagram for spk\+::Abstract\+Application\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}\label{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}} 
-using {\bfseries Job} = std\+::function$<$ void()$>$
-\end{DoxyCompactItemize}
+using \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} = std\+::function$<$ void()$>$
+\begin{DoxyCompactList}\small\item\em Type alias for a job, represented as a void function without arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}\label{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}} 
-int {\bfseries run} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}\label{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}} 
-void {\bfseries quit} (int p\+\_\+error\+Code)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a46056c538113e4272d6d7eb23bfd9f0b}\label{classspk_1_1AbstractApplication_a46056c538113e4272d6d7eb23bfd9f0b}} 
+\mbox{\hyperlink{classspk_1_1AbstractApplication_a46056c538113e4272d6d7eb23bfd9f0b}{Abstract\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1AbstractApplication}{Abstract\+Application}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a2df6534b33148592a208198a875b2a80}\label{classspk_1_1AbstractApplication_a2df6534b33148592a208198a875b2a80}} 
+\mbox{\hyperlink{classspk_1_1AbstractApplication_a2df6534b33148592a208198a875b2a80}{$\sim$\+Abstract\+Application}} ()
+\begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1AbstractApplication}{Abstract\+Application}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}{quit}} (int p\+\_\+error\+Code)
+\begin{DoxyCompactList}\small\item\em Quits the application with a specific error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}\label{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}} 
-void {\bfseries add\+Job} (const std\+::wstring \&p\+\_\+\+Worker\+Name, const Job \&p\+\_\+job)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}\label{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}} 
-void {\bfseries add\+Job} (const Job \&p\+\_\+job)
-\item 
+void \mbox{\hyperlink{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}{add\+Job}} (const std\+::wstring \&p\+\_\+\+Worker\+Name, const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
+\begin{DoxyCompactList}\small\item\em Adds a job to a specific worker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
+\begin{DoxyCompactList}\small\item\em Adds a job to the application. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}\label{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}} 
-virtual void {\bfseries setup\+Jobs} ()=0
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}{setup\+Jobs}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual function to setup jobs, to be implemented by subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for the application. 
+
+This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}\label{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}} 
+\index{spk::AbstractApplication@{spk::AbstractApplication}!addJob@{addJob}}
+\index{addJob@{addJob}!spk::AbstractApplication@{spk::AbstractApplication}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds a job to the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+job} & The job to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}\label{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}} 
+\index{spk::AbstractApplication@{spk::AbstractApplication}!addJob@{addJob}}
+\index{addJob@{addJob}!spk::AbstractApplication@{spk::AbstractApplication}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+\+Worker\+Name,  }\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds a job to a specific worker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+\+Worker\+Name} & The name of the worker. \\
+\hline
+{\em p\+\_\+job} & The job to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}\label{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953aa21204}} 
+\index{spk::AbstractApplication@{spk::AbstractApplication}!quit@{quit}}
+\index{quit@{quit}!spk::AbstractApplication@{spk::AbstractApplication}}
+\doxysubsubsection{\texorpdfstring{quit()}{quit()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Application\+::quit (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+error\+Code }\end{DoxyParamCaption})}
+
+
+
+Quits the application with a specific error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+error\+Code} & The error code with which the application should quit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}\label{classspk_1_1AbstractApplication_a5510ad9b53bc37a847b9d094936d473b}} 
+\index{spk::AbstractApplication@{spk::AbstractApplication}!run@{run}}
+\index{run@{run}!spk::AbstractApplication@{spk::AbstractApplication}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int spk\+::\+Abstract\+Application\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs the application. 
+
+\begin{DoxyReturn}{Returns}
+The error code after the application finishes running. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

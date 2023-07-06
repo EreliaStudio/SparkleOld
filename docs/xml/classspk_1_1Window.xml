@@ -4,6 +4,7 @@
     <compoundname>spk::Window</compoundname>
     <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Window &gt;</basecompoundref>
     <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; Window &gt;</basecompoundref>
+    <includes refid="linux_2spk__window_8hpp" local="no">spk_window.hpp</includes>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="classspk_1_1Window_1ab0c04c85c44c58fbf9300b04bee7a60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
@@ -19,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="1" column="0" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="11" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="1" column="0" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classspk_1_1Window_1a0ac877ae35338497097509c6f090e025" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
@@ -35,22 +36,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="12" column="1" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="12" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="18" column="1" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Window_1a5d08731ffbb4270f89cc5cfca1e88a29" prot="private" static="no" mutable="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::Window::_size</definition>
         <argsstring></argsstring>
         <name>_size</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> size. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="15" column="17" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="15" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="24" column="17" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a349f929462632f471edd07201cc9204a" prot="private" static="no" mutable="no">
         <type>xcb_connection_t *</type>
@@ -58,12 +60,13 @@
         <argsstring></argsstring>
         <name>_connection</name>
         <briefdescription>
+<para>Connection to the X server. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="17" column="18" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="17" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="29" column="18" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a4723538b161e315215352307e09d900b" prot="private" static="no" mutable="no">
         <type>xcb_screen_t *</type>
@@ -71,12 +74,13 @@
         <argsstring></argsstring>
         <name>_screen</name>
         <briefdescription>
+<para>Screen of the X server. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="18" column="14" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="18" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="34" column="14" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a30cfafb32f27345fdfd933f78653f9a0" prot="private" static="no" mutable="no">
         <type>xcb_window_t</type>
@@ -84,12 +88,13 @@
         <argsstring></argsstring>
         <name>_window</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> of the X server. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="19" column="14" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="19" bodyend="-1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="39" column="14" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a7d5c0b3f647f72f1c897b691ea547911" prot="private" static="no" mutable="no">
         <type>wchar_t *</type>
@@ -97,12 +102,13 @@
         <argsstring></argsstring>
         <name>_convertedTitle</name>
         <briefdescription>
+<para>Converted title for window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="17" column="9" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="17" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="29" column="9" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1aaa9f7650f1da3127354243db1dace65a" prot="private" static="no" mutable="no">
         <type>HINSTANCE</type>
@@ -110,12 +116,13 @@
         <argsstring></argsstring>
         <name>_hInstance</name>
         <briefdescription>
+<para>Instance handle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="18" column="11" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="18" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="34" column="11" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a8a8e2f35c770061ed6745717af98bb4c" prot="private" static="no" mutable="no">
         <type>HWND</type>
@@ -123,12 +130,13 @@
         <argsstring></argsstring>
         <name>_windowFrame</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> handle. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="19" column="6" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="19" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="39" column="6" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a07c419039c8cc2f68897155c7ba51d05" prot="private" static="no" mutable="no">
         <type>RECT</type>
@@ -136,12 +144,13 @@
         <argsstring></argsstring>
         <name>_windowSize</name>
         <briefdescription>
+<para>Rectangle structure defining the window size. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="20" column="6" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="20" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="44" column="6" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1af75449e0e450e3e591bfa45de67eb9f1" prot="private" static="no" mutable="no">
         <type>WNDCLASS</type>
@@ -149,12 +158,13 @@
         <argsstring></argsstring>
         <name>_windowClass</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> class structure. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="21" column="10" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="21" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="49" column="10" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1aca8a27d1508e878ee1a7d605b4aa3800" prot="private" static="no" mutable="no">
         <type>DWORD</type>
@@ -162,12 +172,13 @@
         <argsstring></argsstring>
         <name>_windowStyle</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> style. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="22" column="7" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="54" column="7" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Window_1a60580314233389f3e1d0b1840d3c1279" prot="private" static="no" mutable="no">
         <type>DWORD</type>
@@ -175,12 +186,13 @@
         <argsstring></argsstring>
         <name>_windowExStyle</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> extended style. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="23" column="7" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="23" bodyend="-1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="59" column="7" bodyfile="includes/graphics/windows/spk_window.hpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -190,12 +202,13 @@
         <argsstring>()</argsstring>
         <name>_createWindow</name>
         <briefdescription>
+<para>Creates a window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="21" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="44" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a5651d26b4f55056b152527f7d3c0114c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -207,12 +220,23 @@
           <declname>p_title</declname>
         </param>
         <briefdescription>
+<para>Names the window. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="22" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="51" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1aac32c004c4a7a636554524570763aa05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -224,16 +248,35 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1Window" kindref="compound">Window</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="24" column="1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="59" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a694ec6233dd2d36927b76de31cfe253c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -245,12 +288,23 @@
           <declname>p_title</declname>
         </param>
         <briefdescription>
+<para>Converts the title to a wchar_t. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="25" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="66" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a169896c2d7c72cd3a23fd75c5e395561" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -258,12 +312,13 @@
         <argsstring>()</argsstring>
         <name>_createGhostInstance</name>
         <briefdescription>
+<para>Creates a ghost instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="26" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="71" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad04475106030d324cc106b0af3a7dd8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -271,12 +326,13 @@
         <argsstring>()</argsstring>
         <name>_registerWindowClass</name>
         <briefdescription>
+<para>Registers the window class. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="27" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="76" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1aafbc42533f52eef527b8909b9dbdafcc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -288,16 +344,35 @@
           <declname>p_APIModule</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Creates the window frame. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_APIModule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The API module. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="28" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="84" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ac824731b78fdc1d45ae6803b56c62a8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -305,12 +380,13 @@
         <argsstring>()</argsstring>
         <name>_composeOpenGLContext</name>
         <briefdescription>
+<para>Composes OpenGL context. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="29" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="89" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a8f79925aa80897f4e42d185fc3c1d93c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -318,12 +394,13 @@
         <argsstring>()</argsstring>
         <name>_activateWindow</name>
         <briefdescription>
+<para>Activates the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="30" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="94" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ae05598f60b99a8ac2ba8861d745c56a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -335,7 +412,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <param>
@@ -344,12 +421,39 @@
           <defval>nullptr</defval>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1Window" kindref="compound">Window</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An optional pointer (default is nullptr). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="32" column="1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="103" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -359,16 +463,27 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Sets the window geometry. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to set for the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="27" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="67" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -376,16 +491,27 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Resizes the window. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to set for the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="28" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="74" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -393,12 +519,13 @@
         <argsstring>()</argsstring>
         <name>render</name>
         <briefdescription>
+<para>Renders the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="29" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="79" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -406,12 +533,13 @@
         <argsstring>()</argsstring>
         <name>clear</name>
         <briefdescription>
+<para>Clears the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="30" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="84" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad7b645ee1f79762e79d4c24a42b42cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -419,12 +547,13 @@
         <argsstring>()</argsstring>
         <name>~Window</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1Window" kindref="compound">Window</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="35" column="1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="109" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -432,16 +561,27 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Sets the window geometry. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to set for the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="36" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="116" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -449,16 +589,27 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Resizes the window. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size to set for the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="37" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="123" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -466,12 +617,13 @@
         <argsstring>()</argsstring>
         <name>render</name>
         <briefdescription>
+<para>Renders the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="38" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="128" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -479,17 +631,20 @@
         <argsstring>()</argsstring>
         <name>clear</name>
         <briefdescription>
+<para>Clears the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="39" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="133" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para><ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref> class for window. </para>
     </briefdescription>
     <detaileddescription>
+<para>Represents the window of the application, providing functionality to modify its geometry, render content, and clear its content. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -519,7 +674,7 @@
         <link refid="classspk_1_1Singleton"/>
       </node>
     </collaborationgraph>
-    <location file="includes/graphics/linux/spk_window.hpp" line="9" column="1" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="10" bodyend="31"/>
+    <location file="includes/graphics/linux/spk_window.hpp" line="15" column="1" bodyfile="includes/graphics/linux/spk_window.hpp" bodystart="16" bodyend="85"/>
     <listofallmembers>
       <member refid="classspk_1_1Window_1a8f79925aa80897f4e42d185fc3c1d93c" prot="private" virt="non-virtual"><scope>spk::Window</scope><name>_activateWindow</name></member>
       <member refid="classspk_1_1Window_1ac824731b78fdc1d45ae6803b56c62a8f" prot="private" virt="non-virtual"><scope>spk::Window</scope><name>_composeOpenGLContext</name></member>

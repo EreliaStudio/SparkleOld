@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1IOStream" kind="class" language="C++" prot="public">
     <compoundname>spk::IOStream</compoundname>
     <basecompoundref prot="public" virt="non-virtual">std::wostream</basecompoundref>
+    <includes refid="spk__iostream_8hpp" local="no">spk_iostream.hpp</includes>
     <innerclass refid="classspk_1_1IOStream_1_1IOBuffer" prot="private">spk::IOStream::IOBuffer</innerclass>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classspk_1_1IOStream_1a3b1675416bc263b85373bd3012d49ba2" prot="public" static="no" mutable="no">
@@ -16,11 +17,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="70" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="70" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="60" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="60" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>spk::IOStream::IOStream</definition>
         <argsstring>(std::wostream &amp;p_outputStream, std::wstring p_prefix=L&quot;&quot;)</argsstring>
@@ -35,14 +36,33 @@
           <defval>L&quot;&quot;</defval>
         </param>
         <briefdescription>
+<para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_outputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the output stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prefix string for the stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="73" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="73" bodyend="78"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="68" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void spk::IOStream::setPrefix</definition>
         <argsstring>(const std::wstring &amp;p_prefix)</argsstring>
@@ -52,15 +72,27 @@
           <declname>p_prefix</declname>
         </param>
         <briefdescription>
+<para>Sets the prefix of the buffer. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new prefix string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="80" column="14" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="80" bodyend="83"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="74" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>An output stream with a custom prefix, suitable for logging or debugging. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -97,7 +129,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/iostream/spk_iostream.hpp" line="11" column="5" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="12" bodyend="84"/>
+    <location file="includes/iostream/spk_iostream.hpp" line="14" column="5" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="15" bodyend="75"/>
     <listofallmembers>
       <member refid="classspk_1_1IOStream_1a3b1675416bc263b85373bd3012d49ba2" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>buffer</name></member>
       <member refid="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>IOStream</name></member>

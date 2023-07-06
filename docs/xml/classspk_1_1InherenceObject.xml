@@ -2,104 +2,112 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classspk_1_1InherenceObject" kind="class" language="C++" prot="public">
     <compoundname>spk::InherenceObject</compoundname>
+    <includes refid="spk__inherence__object_8hpp" local="no">spk_inherence_object.hpp</includes>
     <templateparamlist>
       <param>
         <type>typename TType</type>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="classspk_1_1InherenceObject_1ae763115e2689b399d1faaaf88309bb5d" prot="public" static="no">
+      <memberdef kind="typedef" id="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" prot="public" static="no">
         <type>TType *</type>
-        <definition>using spk::InherenceObject&lt; TType &gt;::Parent =  TType *</definition>
+        <definition>using spk::InherenceObject&lt; TType &gt;::Parent =  TType*</definition>
         <argsstring></argsstring>
         <name>Parent</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The type of the parent object. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="13" column="13" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="22" column="9" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="22" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="classspk_1_1InherenceObject_1afaae937647084cc67220a3f3d3812f97" prot="public" static="no">
+      <memberdef kind="typedef" id="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" prot="public" static="no">
         <type>TType *</type>
-        <definition>using spk::InherenceObject&lt; TType &gt;::Child =  TType *</definition>
+        <definition>using spk::InherenceObject&lt; TType &gt;::Child =  TType*</definition>
         <argsstring></argsstring>
         <name>Child</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The type of the child objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="14" column="13" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="14" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="23" column="9" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" prot="public" static="no">
-        <type>std::function&lt; void(Child)&gt;</type>
+        <type>std::function&lt; void(<ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref>)&gt;</type>
         <definition>using spk::InherenceObject&lt; TType &gt;::Callback =  std::function&lt;void(Child)&gt;</definition>
         <argsstring></argsstring>
         <name>Callback</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The type of the callback function. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="15" column="13" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="15" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="24" column="9" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1InherenceObject_1a6975f43b8f3ab8fcdcf0f505db85863f" prot="private" static="no" mutable="no">
-        <type>Parent</type>
+        <type><ref refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" kindref="member">Parent</ref></type>
         <definition>Parent spk::InherenceObject&lt; TType &gt;::_parent</definition>
         <argsstring></argsstring>
         <name>_parent</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The parent object. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="18" column="20" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="18" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="27" column="16" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1InherenceObject_1a3489f0743f00ba4e73125438481e2465" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; Child &gt;</type>
+        <type>std::vector&lt; <ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref> &gt;</type>
         <definition>std::vector&lt;Child&gt; spk::InherenceObject&lt; TType &gt;::_childrens</definition>
         <argsstring></argsstring>
         <name>_childrens</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The vector of child objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="19" column="25" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="19" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="28" column="21" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1InherenceObject_1a2fa85058c172a9faa23e6afa7775302c" prot="private" static="no" mutable="no">
-        <type>Callback</type>
+        <type><ref refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" kindref="member">Callback</ref></type>
         <definition>Callback spk::InherenceObject&lt; TType &gt;::_birthCallback</definition>
         <argsstring></argsstring>
         <name>_birthCallback</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The birth callback function. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="21" column="22" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="21" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="29" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1InherenceObject_1a90c2e59f44bebc4efd849335727d4aec" prot="private" static="no" mutable="no">
-        <type>Callback</type>
+        <type><ref refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" kindref="member">Callback</ref></type>
         <definition>Callback spk::InherenceObject&lt; TType &gt;::_deathCallback</definition>
         <argsstring></argsstring>
         <name>_deathCallback</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The death callback function. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="22" column="22" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="30" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -109,7 +117,7 @@
         <argsstring>(Child child)</argsstring>
         <name>_addChild</name>
         <param>
-          <type>Child</type>
+          <type><ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref></type>
           <declname>child</declname>
         </param>
         <briefdescription>
@@ -118,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="24" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="24" bodyend="29"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="32" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="32" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a1320bd303255e8110363d3b3223520a6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -126,7 +134,7 @@
         <argsstring>(Child child)</argsstring>
         <name>_removeChild</name>
         <param>
-          <type>Child</type>
+          <type><ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref></type>
           <declname>child</declname>
         </param>
         <briefdescription>
@@ -135,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="31" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="31" bodyend="43"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="39" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="39" bodyend="51"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -145,12 +153,14 @@
         <argsstring>()</argsstring>
         <name>InherenceObject</name>
         <briefdescription>
+<para>Default constructor for <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor initializes the <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="46" column="13" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="46" bodyend="53"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="59" column="9" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="59" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1aba5546b2d9a7407fc3aa2cca0461cb7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -158,12 +168,14 @@
         <argsstring>()</argsstring>
         <name>~InherenceObject</name>
         <briefdescription>
+<para>Destructor for <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>This destructor removes the object from its parent&apos;s children list and sets the parent of all its children to nullptr. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="55" column="13" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="55" bodyend="61"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="72" column="9" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="72" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1ae5c803c43a3eeb83383e4a95245f765e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -171,16 +183,28 @@
         <argsstring>(Parent parent)</argsstring>
         <name>setParent</name>
         <param>
-          <type>Parent</type>
+          <type><ref refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" kindref="member">Parent</ref></type>
           <declname>parent</declname>
         </param>
         <briefdescription>
+<para>Set the parent object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the parent object of the current object. It removes the object from its current parent&apos;s children list and adds it to the new parent&apos;s children list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent object to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="63" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="63" bodyend="72"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="88" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="88" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -188,16 +212,28 @@
         <argsstring>(Child child)</argsstring>
         <name>addChild</name>
         <param>
-          <type>Child</type>
+          <type><ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref></type>
           <declname>child</declname>
         </param>
         <briefdescription>
+<para>Add a child object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function adds a child object to the current object. It sets the parent of the child object to the current object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child object to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="74" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="74" bodyend="77"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="107" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="107" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a4d1ecc043e2414e9731195021d28a77e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -205,16 +241,28 @@
         <argsstring>(std::function&lt; void(Child)&gt; callback)</argsstring>
         <name>setBirthCallback</name>
         <param>
-          <type>std::function&lt; void(Child)&gt;</type>
+          <type>std::function&lt; void(<ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref>)&gt;</type>
           <declname>callback</declname>
         </param>
         <briefdescription>
+<para>Set the birth callback. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the birth callback function. The birth callback is called when a child object is added to the current object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The birth callback function to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="79" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="79" bodyend="82"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="120" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="120" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a69d05c5f0a43a7b58ad4e08a9790f23a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -222,55 +270,82 @@
         <argsstring>(std::function&lt; void(Child)&gt; callback)</argsstring>
         <name>setDeathCallback</name>
         <param>
-          <type>std::function&lt; void(Child)&gt;</type>
+          <type>std::function&lt; void(<ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref>)&gt;</type>
           <declname>callback</declname>
         </param>
         <briefdescription>
+<para>Set the death callback. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the death callback function. The death callback is called when a child object is removed from the current object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The death callback function to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="84" column="18" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="84" bodyend="87"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="133" column="14" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="133" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr const Parent &amp;</type>
+        <type>constexpr const <ref refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" kindref="member">Parent</ref> &amp;</type>
         <definition>constexpr const Parent&amp; spk::InherenceObject&lt; TType &gt;::parent</definition>
         <argsstring>() const</argsstring>
         <name>parent</name>
         <briefdescription>
+<para>Get the parent object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns a constant reference to the parent object of the current object.</para>
+<para><simplesect kind="return"><para>A constant reference to the parent object. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="89" column="36" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="89" bodyend="92"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="145" column="32" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="145" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr std::vector&lt; Child &gt; &amp;</type>
+        <type>constexpr std::vector&lt; <ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref> &gt; &amp;</type>
         <definition>constexpr std::vector&lt;Child&gt;&amp; spk::InherenceObject&lt; TType &gt;::childrens</definition>
         <argsstring>()</argsstring>
         <name>childrens</name>
         <briefdescription>
+<para>Get the vector of child objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns a reference to the vector of child objects of the current object.</para>
+<para><simplesect kind="return"><para>A reference to the vector of child objects. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="94" column="35" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="94" bodyend="97"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="157" column="31" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="157" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>constexpr const std::vector&lt; Child &gt; &amp;</type>
+        <type>constexpr const std::vector&lt; <ref refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kindref="member">Child</ref> &gt; &amp;</type>
         <definition>constexpr const std::vector&lt;Child&gt;&amp; spk::InherenceObject&lt; TType &gt;::childrens</definition>
         <argsstring>() const</argsstring>
         <name>childrens</name>
         <briefdescription>
+<para>Get the vector of child objects (const version). </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns a constant reference to the vector of child objects of the current object.</para>
+<para><simplesect kind="return"><para>A constant reference to the vector of child objects. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="99" column="41" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="99" bodyend="102"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="169" column="37" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="169" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -281,12 +356,14 @@
           <type>const <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref> &amp;</type>
         </param>
         <briefdescription>
+<para>Deleted copy constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>This copy constructor is deleted to prevent copying an <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="104" column="13"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="179" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref> &amp;</type>
@@ -297,19 +374,33 @@
           <type>const <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref> &amp;</type>
         </param>
         <briefdescription>
+<para>Deleted copy assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para>This copy assignment operator is deleted to prevent assigning an <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_inherence_object.hpp" line="105" column="29"/>
+        <location file="includes/design_pattern/spk_inherence_object.hpp" line="186" column="25"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para><ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref> class template. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class template represents an object that can be part of an inheritance hierarchy. It allows setting a parent object, adding child objects, and defining birth and death callbacks.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="includes/design_pattern/spk_inherence_object.hpp" line="10" column="5" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="11" bodyend="106"/>
+    <location file="includes/design_pattern/spk_inherence_object.hpp" line="19" column="5" bodyfile="includes/design_pattern/spk_inherence_object.hpp" bodystart="20" bodyend="187"/>
     <listofallmembers>
       <member refid="classspk_1_1InherenceObject_1a52ceead92be579647091ed4ba6f1adbb" prot="private" virt="non-virtual"><scope>spk::InherenceObject</scope><name>_addChild</name></member>
       <member refid="classspk_1_1InherenceObject_1a2fa85058c172a9faa23e6afa7775302c" prot="private" virt="non-virtual"><scope>spk::InherenceObject</scope><name>_birthCallback</name></member>
@@ -319,14 +410,14 @@
       <member refid="classspk_1_1InherenceObject_1a1320bd303255e8110363d3b3223520a6" prot="private" virt="non-virtual"><scope>spk::InherenceObject</scope><name>_removeChild</name></member>
       <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>addChild</name></member>
       <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>Callback</name></member>
-      <member refid="classspk_1_1InherenceObject_1afaae937647084cc67220a3f3d3812f97" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>Child</name></member>
+      <member refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>Child</name></member>
       <member refid="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>childrens</name></member>
       <member refid="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>childrens</name></member>
       <member refid="classspk_1_1InherenceObject_1ab17ef56656c9b33064cec33d44d4c7b7" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>InherenceObject</name></member>
       <member refid="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>InherenceObject</name></member>
       <member refid="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>operator=</name></member>
       <member refid="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>parent</name></member>
-      <member refid="classspk_1_1InherenceObject_1ae763115e2689b399d1faaaf88309bb5d" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>Parent</name></member>
+      <member refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>Parent</name></member>
       <member refid="classspk_1_1InherenceObject_1a4d1ecc043e2414e9731195021d28a77e" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>setBirthCallback</name></member>
       <member refid="classspk_1_1InherenceObject_1a69d05c5f0a43a7b58ad4e08a9790f23a" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>setDeathCallback</name></member>
       <member refid="classspk_1_1InherenceObject_1ae5c803c43a3eeb83383e4a95245f765e" prot="public" virt="non-virtual"><scope>spk::InherenceObject</scope><name>setParent</name></member>

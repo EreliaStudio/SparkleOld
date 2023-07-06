@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Activity.html" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="233,5,360,32"/>
 </map>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['memento_37',['Memento',['../classspk_1_1Memento.html',1,'spk']]],
-  ['mouse_38',['Mouse',['../classspk_1_1Mouse.html',1,'spk']]],
-  ['mousemodule_39',['MouseModule',['../classspk_1_1MouseModule.html',1,'spk']]]
+  ['hasbeenstarted_65',['hasBeenStarted',['../classspk_1_1Chronometer.html#acaa0be287be0a1ec7a3a19dd01d57c08',1,'spk::Chronometer']]]
 ];

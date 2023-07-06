@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1Promise" kind="class" language="C++" prot="public">
     <compoundname>spk::Promise</compoundname>
     <basecompoundref refid="classspk_1_1ContractProvider" prot="public" virt="non-virtual">spk::ContractProvider</basecompoundref>
+    <includes refid="spk__promise_8hpp" local="no">spk_promise.hpp</includes>
     <templateparamlist>
       <param>
         <type>typename TType</type>
@@ -20,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="12" column="37" bodyfile="includes/threading/spk_promise.hpp" bodystart="12" bodyend="-1"/>
+        <location file="includes/threading/spk_promise.hpp" line="21" column="37" bodyfile="includes/threading/spk_promise.hpp" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Promise_1ab49402416b20f99df7bae558812a5c12" prot="private" static="no" mutable="no">
         <type>std::promise&lt; TType &gt;</type>
@@ -33,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="13" column="14" bodyfile="includes/threading/spk_promise.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/threading/spk_promise.hpp" line="22" column="14" bodyfile="includes/threading/spk_promise.hpp" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Promise_1a9e5bdcae7a9994229160093a7b07f6ba" prot="private" static="no" mutable="no">
         <type>std::optional&lt; TType &gt;</type>
@@ -46,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="14" column="15" bodyfile="includes/threading/spk_promise.hpp" bodystart="14" bodyend="-1"/>
+        <location file="includes/threading/spk_promise.hpp" line="23" column="15" bodyfile="includes/threading/spk_promise.hpp" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,12 +57,14 @@
         <argsstring>()</argsstring>
         <name>Promise</name>
         <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1Promise" kindref="compound">Promise</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is the default constructor for the <ref refid="classspk_1_1Promise" kindref="compound">Promise</ref> class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="17" column="1" bodyfile="includes/threading/spk_promise.hpp" bodystart="17" bodyend="22"/>
+        <location file="includes/threading/spk_promise.hpp" line="31" column="1" bodyfile="includes/threading/spk_promise.hpp" bodystart="31" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1ad4dbd5693e82c5a821af97fc9e86c20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -73,12 +76,14 @@
           <declname>p_other</declname>
         </param>
         <briefdescription>
+<para>Copy constructor is deleted. </para>
         </briefdescription>
         <detaileddescription>
+<para>Copying a <ref refid="classspk_1_1Promise" kindref="compound">Promise</ref> is not allowed to avoid potential issues with the shared state. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="24" column="1"/>
+        <location file="includes/threading/spk_promise.hpp" line="43" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1a0560e9b5ba7802bb42716220619d0d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1Promise" kindref="compound">Promise</ref> &amp;</type>
@@ -90,25 +95,14 @@
           <declname>p_other</declname>
         </param>
         <briefdescription>
+<para>Assignment operator is deleted. </para>
         </briefdescription>
         <detaileddescription>
+<para>Assigning a <ref refid="classspk_1_1Promise" kindref="compound">Promise</ref> is not allowed to avoid potential issues with the shared state. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="25" column="9"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1Promise_1aa1ebb12731c598b69359ede70c6a4923" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>spk::Promise&lt; TType &gt;::~Promise</definition>
-        <argsstring>()</argsstring>
-        <name>~Promise</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="27" column="1" bodyfile="includes/threading/spk_promise.hpp" bodystart="27" bodyend="29"/>
+        <location file="includes/threading/spk_promise.hpp" line="50" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1ac55e4af8d86ac9d7b8fc0cfb8926f0f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
@@ -120,12 +114,26 @@
           <declname>p_callback</declname>
         </param>
         <briefdescription>
+<para>Subscribe to the promise and receive the value when available. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function allows subscribing to the promise to receive the value when it becomes available.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be called when the value is available. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the subscription. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="31" column="10" bodyfile="includes/threading/spk_promise.hpp" bodystart="31" bodyend="34"/>
+        <location file="includes/threading/spk_promise.hpp" line="60" column="10" bodyfile="includes/threading/spk_promise.hpp" bodystart="60" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1aaf9ad2cdc422c2a4c211ce921d50df36" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -133,12 +141,17 @@
         <argsstring>() const</argsstring>
         <name>realised</name>
         <briefdescription>
+<para>Check if the promise has been fulfilled. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function checks if the promise has been fulfilled and the value is available.</para>
+<para><simplesect kind="return"><para>True if the promise has been fulfilled, false otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="36" column="16" bodyfile="includes/threading/spk_promise.hpp" bodystart="36" bodyend="39"/>
+        <location file="includes/threading/spk_promise.hpp" line="72" column="16" bodyfile="includes/threading/spk_promise.hpp" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1a492bc5064aca48fc18294ecead334599" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -150,15 +163,16 @@
           <declname>p_value</declname>
         </param>
         <briefdescription>
-<para>Set the promise value. </para>
+<para>Set the value of the promise. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="exception"><parameteritem>
+<para>This function sets the value of the promise. Once the value is set, all the subscribed callbacks will be called.</para>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>std::runtime_error</parametername>
+<parametername>p_value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>if the promise is already realised </para>
+<para>The value to set. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -166,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="46" column="6" bodyfile="includes/threading/spk_promise.hpp" bodystart="46" bodyend="57"/>
+        <location file="includes/threading/spk_promise.hpp" line="85" column="6" bodyfile="includes/threading/spk_promise.hpp" bodystart="85" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Promise_1af94f17735b511a890a33343ff8d24b66" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr const TType &amp;</type>
@@ -174,23 +188,34 @@
         <argsstring>()</argsstring>
         <name>value</name>
         <briefdescription>
-<para>Try to retrieve the value of the promise. </para>
+<para>Get the value of the promise. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>const TType&amp; </para>
-</simplesect>
-<simplesect kind="warning"><para>This function will block until the promise is realised </para>
+<para>This function gets the value of the promise. If the value is not available yet, it will wait for the future to be ready and then return the value.</para>
+<para><simplesect kind="return"><para>The value of the promise. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_promise.hpp" line="65" column="23" bodyfile="includes/threading/spk_promise.hpp" bodystart="65" bodyend="72"/>
+        <location file="includes/threading/spk_promise.hpp" line="106" column="23" bodyfile="includes/threading/spk_promise.hpp" bodystart="106" bodyend="113"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for providing a promise with a value. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides a promise that can be fulfilled with a value. It allows subscribing to the promise to receive the value when it becomes available.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -216,7 +241,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/threading/spk_promise.hpp" line="9" column="1" bodyfile="includes/threading/spk_promise.hpp" bodystart="10" bodyend="73"/>
+    <location file="includes/threading/spk_promise.hpp" line="18" column="1" bodyfile="includes/threading/spk_promise.hpp" bodystart="19" bodyend="114"/>
     <listofallmembers>
       <member refid="classspk_1_1Promise_1ae2f938ba28a14eb34998925c73b0004d" prot="private" virt="non-virtual"><scope>spk::Promise</scope><name>_callbackContainer</name></member>
       <member refid="classspk_1_1Promise_1ab49402416b20f99df7bae558812a5c12" prot="private" virt="non-virtual"><scope>spk::Promise</scope><name>_promise</name></member>
@@ -231,7 +256,6 @@
       <member refid="classspk_1_1Promise_1ac55e4af8d86ac9d7b8fc0cfb8926f0f0" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>subscribe</name></member>
       <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Promise</scope><name>subscribe</name></member>
       <member refid="classspk_1_1Promise_1af94f17735b511a890a33343ff8d24b66" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>value</name></member>
-      <member refid="classspk_1_1Promise_1aa1ebb12731c598b69359ede70c6a4923" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>~Promise</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

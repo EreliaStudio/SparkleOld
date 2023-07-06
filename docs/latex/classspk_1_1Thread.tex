@@ -2,6 +2,15 @@
 \label{classspk_1_1Thread}\index{spk::Thread@{spk::Thread}}
 
 
+Class for creating and managing a thread.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+thread.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Thread\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,30 +22,155 @@ Inheritance diagram for spk\+::Thread\+:
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}\label{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}} 
-enum class {\bfseries Launch\+Method} \{ {\bfseries Delayed}
+enum class \mbox{\hyperlink{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}{Launch\+Method}} \{ {\bfseries Delayed}
 , {\bfseries Immediate}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An enum class to represent the launch method of the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}\label{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}} 
-{\footnotesize template$<$typename Funct , typename... Args$>$ }\\{\bfseries Thread} (const std\+::wstring \&p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
-\item 
-\mbox{\Hypertarget{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}\label{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}} 
-{\footnotesize template$<$typename Funct , typename... Args$>$ }\\{\bfseries Thread} (Launch\+Method p\+\_\+launch\+Method, std\+::wstring p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
-\item 
-\mbox{\Hypertarget{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}\label{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}} 
-std\+::thread\+::id {\bfseries get\+Id} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}\label{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}} 
-void {\bfseries join} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}\label{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}} 
-void {\bfseries start} ()
-\end{DoxyCompactItemize}
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}{Thread}} (const std\+::wstring \&p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object with a specified thread name and function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}{Thread}} (\mbox{\hyperlink{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}{Launch\+Method}} p\+\_\+launch\+Method, std\+::wstring p\+\_\+thread\+Name, Funct \&\&p\+\_\+func, Args \&\&...p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object with a specified launch method, thread name, and function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Thread_a97d08ba39aee6ee49292fd53f08bcb07}{$\sim$\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object. \end{DoxyCompactList}\item 
+std\+::thread\+::id \mbox{\hyperlink{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get the ID of the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}{join}} ()
+\begin{DoxyCompactList}\small\item\em Join the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class for creating and managing a thread. 
+
+This class provides a convenient way to create and manage a thread. It allows you to specify the thread function and its arguments, as well as the launch method (immediate or delayed). 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}\label{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}} 
+\index{spk::Thread@{spk::Thread}!LaunchMethod@{LaunchMethod}}
+\index{LaunchMethod@{LaunchMethod}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{LaunchMethod}{LaunchMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}{spk\+::\+Thread\+::\+Launch\+Method}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class to represent the launch method of the thread. 
+
+This enum class has two launch methods\+: Delayed and Immediate. The Delayed method creates the thread but does not start it immediately. The Immediate method creates and starts the thread immediately. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}\label{classspk_1_1Thread_a7addb5ad82fee3d906e0a49cb3572f69}} 
+\index{spk::Thread@{spk::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+spk\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+thread\+Name,  }\item[{Funct \&\&}]{p\+\_\+func,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object with a specified thread name and function. 
+
+This constructor creates a new thread with the specified thread name and function. The function can take any number of arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & The type of the thread function. \\
+\hline
+{\em Args} & The types of the arguments of the thread function. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+thread\+Name} & The name of the thread. \\
+\hline
+{\em p\+\_\+func} & The thread function. \\
+\hline
+{\em p\+\_\+args} & The arguments of the thread function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}\label{classspk_1_1Thread_afdc8fce9be9a5bc00dfdd9c7d149f588}} 
+\index{spk::Thread@{spk::Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{Thread()}{Thread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+spk\+::\+Thread\+::\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1Thread_acc625f78afb482c29338759d4b959af6}{Launch\+Method}}}]{p\+\_\+launch\+Method,  }\item[{std\+::wstring}]{p\+\_\+thread\+Name,  }\item[{Funct \&\&}]{p\+\_\+func,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object with a specified launch method, thread name, and function. 
+
+This constructor creates a new thread with the specified launch method, thread name, and function. The function can take any number of arguments. If the launch method is Immediate, the thread is started immediately.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & The type of the thread function. \\
+\hline
+{\em Args} & The types of the arguments of the thread function. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+launch\+Method} & The launch method of the thread. \\
+\hline
+{\em p\+\_\+thread\+Name} & The name of the thread. \\
+\hline
+{\em p\+\_\+func} & The thread function. \\
+\hline
+{\em p\+\_\+args} & The arguments of the thread function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Thread_a97d08ba39aee6ee49292fd53f08bcb07}\label{classspk_1_1Thread_a97d08ba39aee6ee49292fd53f08bcb07}} 
+\index{spk::Thread@{spk::Thread}!````~Thread@{$\sim$Thread}}
+\index{````~Thread@{$\sim$Thread}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{$\sim$Thread()}{~Thread()}}
+{\footnotesize\ttfamily spk\+::\+Thread\+::$\sim$\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classspk_1_1Thread}{Thread}} object. 
+
+This is the destructor for the \mbox{\hyperlink{classspk_1_1Thread}{Thread}} class. It joins the thread if its still running. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}\label{classspk_1_1Thread_ab5037a0703104b786425a31b78bacfd0}} 
+\index{spk::Thread@{spk::Thread}!getId@{getId}}
+\index{getId@{getId}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::thread\+::id spk\+::\+Thread\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the ID of the thread. 
+
+This function returns the ID of the thread.
+
+\begin{DoxyReturn}{Returns}
+The ID of the thread. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}\label{classspk_1_1Thread_a4eed5d9b453feae180a98f80a2f117ad}} 
+\index{spk::Thread@{spk::Thread}!join@{join}}
+\index{join@{join}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void spk\+::\+Thread\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Join the thread. 
+
+This function blocks the current thread until the associated thread finishes its execution. \mbox{\Hypertarget{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}\label{classspk_1_1Thread_a3c9242c1ea81ec3de8b78445e1d2a421}} 
+\index{spk::Thread@{spk::Thread}!start@{start}}
+\index{start@{start}!spk::Thread@{spk::Thread}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void spk\+::\+Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the thread. 
+
+This function starts the thread by releasing the starter signal. The thread function will begin executing once this signal is released. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

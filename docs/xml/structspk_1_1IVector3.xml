@@ -98,7 +98,7 @@
         <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)</argsstring>
         <name>IVector3</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
           <declname>p_other</declname>
         </param>
         <param>
@@ -710,7 +710,7 @@
         <location file="includes/math/spk_vector3.hpp" line="253" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="253" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1IVector3_1a7e71f826fbe3aad2b33b9034457903d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::IVector3&lt; TType &gt;::removeY</definition>
         <argsstring>()</argsstring>
         <name>removeY</name>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_30c033750a7a5ab7efccd1bfa6f17d06" kind="dir">
     <compoundname>includes/miscellaneous</compoundname>
-    <innerfile refid="spk__is__contener_8hpp">spk_is_contener.hpp</innerfile>
+    <innerfile refid="spk__is__container_8hpp">spk_is_container.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

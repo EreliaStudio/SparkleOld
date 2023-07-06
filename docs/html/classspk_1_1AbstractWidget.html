@@ -74,18 +74,23 @@ $(function() {
 <div class="title">spk::AbstractWidget Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for widgets.  
+ <a href="classspk_1_1AbstractWidget.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__abstract__widget_8hpp_source.html">spk_abstract_widget.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::AbstractWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1AbstractWidget__inherit__graph.png" border="0" usemap="#aspk_1_1AbstractWidget_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1AbstractWidget_inherit__map" id="aspk_1_1AbstractWidget_inherit__map">
-<area shape="rect" title=" " alt="" coords="119,259,272,285"/>
-<area shape="rect" href="classspk_1_1NoGraphicsWidget.html" title=" " alt="" coords="5,333,180,360"/>
-<area shape="rect" href="classspk_1_1OnlyGraphicsWidget.html" title=" " alt="" coords="205,333,391,360"/>
+<area shape="rect" title="Abstract base class for widgets." alt="" coords="119,259,272,285"/>
+<area shape="rect" href="classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="5,333,180,360"/>
+<area shape="rect" href="classspk_1_1OnlyGraphicsWidget.html" title="Class for widgets with only graphics." alt="" coords="205,333,391,360"/>
 <area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="25,169,184,211"/>
-<area shape="rect" href="classspk_1_1ActivableObject.html" title=" " alt="" coords="208,177,364,203"/>
+<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="208,177,364,203"/>
 <area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="212,80,360,121"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title=" " alt="" coords="205,5,367,32"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="205,5,367,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -93,96 +98,110 @@ Collaboration diagram for spk::AbstractWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1AbstractWidget__coll__graph.png" border="0" usemap="#aspk_1_1AbstractWidget_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1AbstractWidget_coll__map" id="aspk_1_1AbstractWidget_coll__map">
-<area shape="rect" title=" " alt="" coords="99,259,252,285"/>
+<area shape="rect" title="Abstract base class for widgets." alt="" coords="99,259,252,285"/>
 <area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="5,169,164,211"/>
-<area shape="rect" href="classspk_1_1ActivableObject.html" title=" " alt="" coords="188,177,344,203"/>
+<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="188,177,344,203"/>
 <area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="192,80,340,121"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title=" " alt="" coords="185,5,347,32"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="185,5,347,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02704ad9ce8f817d72fa76b095e53c68"><td class="memItemLeft" align="right" valign="top"><a id="a02704ad9ce8f817d72fa76b095e53c68"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractWidget</b> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memitem:a02704ad9ce8f817d72fa76b095e53c68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">AbstractWidget</a> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memdesc:a02704ad9ce8f817d72fa76b095e53c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object with a specified name.  <a href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">More...</a><br /></td></tr>
 <tr class="separator:a02704ad9ce8f817d72fa76b095e53c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a439da5239de7fa7980bb697e9e114818"><td class="memTemplParams" colspan="2"><a id="a439da5239de7fa7980bb697e9e114818"></a>
-template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
-<tr class="memitem:a439da5239de7fa7980bb697e9e114818"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>addChildrenWidget</b> (Args &amp;&amp;... p_args)</td></tr>
+<tr class="memitem:acaf7b700c9f4f67341dc5156287ad271"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271">~AbstractWidget</a> ()</td></tr>
+<tr class="memdesc:acaf7b700c9f4f67341dc5156287ad271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object.  <a href="classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271">More...</a><br /></td></tr>
+<tr class="separator:acaf7b700c9f4f67341dc5156287ad271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439da5239de7fa7980bb697e9e114818"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
+<tr class="memitem:a439da5239de7fa7980bb697e9e114818"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818">addChildrenWidget</a> (Args &amp;&amp;... p_args)</td></tr>
+<tr class="memdesc:a439da5239de7fa7980bb697e9e114818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a children widget to this widget.  <a href="classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818">More...</a><br /></td></tr>
 <tr class="separator:a439da5239de7fa7980bb697e9e114818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e428dc19c69b3fa7686df9c7ccf06cf"><td class="memItemLeft" align="right" valign="top"><a id="a5e428dc19c69b3fa7686df9c7ccf06cf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setGeometry</b> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_anchor, const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_size)</td></tr>
+<tr class="memitem:a5e428dc19c69b3fa7686df9c7ccf06cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">setGeometry</a> (const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_anchor, const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_size)</td></tr>
+<tr class="memdesc:a5e428dc19c69b3fa7686df9c7ccf06cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the geometry of the widget.  <a href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">More...</a><br /></td></tr>
 <tr class="separator:a5e428dc19c69b3fa7686df9c7ccf06cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a3c901e7b5b707064eafccc6f64115"><td class="memItemLeft" align="right" valign="top"><a id="a12a3c901e7b5b707064eafccc6f64115"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>place</b> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memitem:a12a3c901e7b5b707064eafccc6f64115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a12a3c901e7b5b707064eafccc6f64115">place</a> (const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memdesc:a12a3c901e7b5b707064eafccc6f64115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place the widget at a specific anchor position.  <a href="classspk_1_1AbstractWidget.html#a12a3c901e7b5b707064eafccc6f64115">More...</a><br /></td></tr>
 <tr class="separator:a12a3c901e7b5b707064eafccc6f64115"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5cdc32c7a1f9a2cda7812182618000d"><td class="memItemLeft" align="right" valign="top"><a id="ab5cdc32c7a1f9a2cda7812182618000d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memitem:ab5cdc32c7a1f9a2cda7812182618000d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d">move</a> (const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memdesc:ab5cdc32c7a1f9a2cda7812182618000d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the widget by a specific amount.  <a href="classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d">More...</a><br /></td></tr>
 <tr class="separator:ab5cdc32c7a1f9a2cda7812182618000d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2059b3aeb3f7ca0290ed70c146a42298"><td class="memItemLeft" align="right" valign="top"><a id="a2059b3aeb3f7ca0290ed70c146a42298"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_size)</td></tr>
+<tr class="memitem:a2059b3aeb3f7ca0290ed70c146a42298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a2059b3aeb3f7ca0290ed70c146a42298">resize</a> (const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_size)</td></tr>
+<tr class="memdesc:a2059b3aeb3f7ca0290ed70c146a42298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the widget to a new size.  <a href="classspk_1_1AbstractWidget.html#a2059b3aeb3f7ca0290ed70c146a42298">More...</a><br /></td></tr>
 <tr class="separator:a2059b3aeb3f7ca0290ed70c146a42298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c407ce05d65cdbe37ecc71f4a8e58d6"><td class="memItemLeft" align="right" valign="top"><a id="a2c407ce05d65cdbe37ecc71f4a8e58d6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sortChildrensByDepth</b> ()</td></tr>
+<tr class="memitem:a2c407ce05d65cdbe37ecc71f4a8e58d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a2c407ce05d65cdbe37ecc71f4a8e58d6">sortChildrensByDepth</a> ()</td></tr>
+<tr class="memdesc:a2c407ce05d65cdbe37ecc71f4a8e58d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the children widgets by their depth value.  <a href="classspk_1_1AbstractWidget.html#a2c407ce05d65cdbe37ecc71f4a8e58d6">More...</a><br /></td></tr>
 <tr class="separator:a2c407ce05d65cdbe37ecc71f4a8e58d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20e7261fea3273f275f2662c630ebe8"><td class="memItemLeft" align="right" valign="top"><a id="ae20e7261fea3273f275f2662c630ebe8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDepth</b> (const float &amp;p_depth)</td></tr>
+<tr class="memitem:ae20e7261fea3273f275f2662c630ebe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#ae20e7261fea3273f275f2662c630ebe8">setDepth</a> (const float &amp;p_depth)</td></tr>
+<tr class="memdesc:ae20e7261fea3273f275f2662c630ebe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the depth value of the widget.  <a href="classspk_1_1AbstractWidget.html#ae20e7261fea3273f275f2662c630ebe8">More...</a><br /></td></tr>
 <tr class="separator:ae20e7261fea3273f275f2662c630ebe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6762afb291b9fe0497fa8ac619ef0f7"><td class="memItemLeft" align="right" valign="top"><a id="af6762afb291b9fe0497fa8ac619ef0f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rename</b> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memitem:af6762afb291b9fe0497fa8ac619ef0f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#af6762afb291b9fe0497fa8ac619ef0f7">rename</a> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memdesc:af6762afb291b9fe0497fa8ac619ef0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename the widget.  <a href="classspk_1_1AbstractWidget.html#af6762afb291b9fe0497fa8ac619ef0f7">More...</a><br /></td></tr>
 <tr class="separator:af6762afb291b9fe0497fa8ac619ef0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7606a7000127e6f3a3c5c61d22f17314"><td class="memItemLeft" align="right" valign="top"><a id="a7606a7000127e6f3a3c5c61d22f17314"></a>
-constexpr const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> () const</td></tr>
+<tr class="memitem:a7606a7000127e6f3a3c5c61d22f17314"><td class="memItemLeft" align="right" valign="top">constexpr const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314">name</a> () const</td></tr>
+<tr class="memdesc:a7606a7000127e6f3a3c5c61d22f17314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the widget.  <a href="classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314">More...</a><br /></td></tr>
 <tr class="separator:a7606a7000127e6f3a3c5c61d22f17314"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734ec4e5f1759dc493e1df73ae973a38"><td class="memItemLeft" align="right" valign="top"><a id="a734ec4e5f1759dc493e1df73ae973a38"></a>
-constexpr const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>depth</b> () const</td></tr>
+<tr class="memitem:a734ec4e5f1759dc493e1df73ae973a38"><td class="memItemLeft" align="right" valign="top">constexpr const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">depth</a> () const</td></tr>
+<tr class="memdesc:a734ec4e5f1759dc493e1df73ae973a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the depth value of the widget.  <a href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">More...</a><br /></td></tr>
 <tr class="separator:a734ec4e5f1759dc493e1df73ae973a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1fd1cbebefe93c23a9d1b7b00872a81"><td class="memItemLeft" align="right" valign="top"><a id="ad1fd1cbebefe93c23a9d1b7b00872a81"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPointed</b> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_point)</td></tr>
+<tr class="memitem:ad1fd1cbebefe93c23a9d1b7b00872a81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81">isPointed</a> (const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;p_point)</td></tr>
+<tr class="memdesc:ad1fd1cbebefe93c23a9d1b7b00872a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a point is inside the widget's boundaries.  <a href="classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81">More...</a><br /></td></tr>
 <tr class="separator:ad1fd1cbebefe93c23a9d1b7b00872a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classspk_1_1InherenceObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classspk_1_1InherenceObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject&lt; AbstractWidget &gt;</a></td></tr>
-<tr class="memitem:a60b7abb954dcf88b9576e5b55b5f6c64 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a60b7abb954dcf88b9576e5b55b5f6c64"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>InherenceObject</b> (const <a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;)=delete</td></tr>
+<tr class="memitem:ab17ef56656c9b33064cec33d44d4c7b7 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#ab17ef56656c9b33064cec33d44d4c7b7">InherenceObject</a> ()</td></tr>
+<tr class="memdesc:ab17ef56656c9b33064cec33d44d4c7b7 inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for InherenceObject.  <a href="classspk_1_1InherenceObject.html#ab17ef56656c9b33064cec33d44d4c7b7">More...</a><br /></td></tr>
+<tr class="separator:ab17ef56656c9b33064cec33d44d4c7b7 inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b7abb954dcf88b9576e5b55b5f6c64 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64">InherenceObject</a> (const <a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a60b7abb954dcf88b9576e5b55b5f6c64 inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64">More...</a><br /></td></tr>
 <tr class="separator:a60b7abb954dcf88b9576e5b55b5f6c64 inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c803c43a3eeb83383e4a95245f765e inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="ae5c803c43a3eeb83383e4a95245f765e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setParent</b> (<a class="el" href="classspk_1_1AbstractWidget.html">Parent</a> parent)</td></tr>
+<tr class="memitem:aba5546b2d9a7407fc3aa2cca0461cb7a inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#aba5546b2d9a7407fc3aa2cca0461cb7a">~InherenceObject</a> ()</td></tr>
+<tr class="memdesc:aba5546b2d9a7407fc3aa2cca0461cb7a inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for InherenceObject.  <a href="classspk_1_1InherenceObject.html#aba5546b2d9a7407fc3aa2cca0461cb7a">More...</a><br /></td></tr>
+<tr class="separator:aba5546b2d9a7407fc3aa2cca0461cb7a inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c803c43a3eeb83383e4a95245f765e inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#ae5c803c43a3eeb83383e4a95245f765e">setParent</a> (<a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> <a class="el" href="classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe">parent</a>)</td></tr>
+<tr class="memdesc:ae5c803c43a3eeb83383e4a95245f765e inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parent object.  <a href="classspk_1_1InherenceObject.html#ae5c803c43a3eeb83383e4a95245f765e">More...</a><br /></td></tr>
 <tr class="separator:ae5c803c43a3eeb83383e4a95245f765e inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af21959de7950ed4d656d8cc318fc9712 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="af21959de7950ed4d656d8cc318fc9712"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addChild</b> (<a class="el" href="classspk_1_1AbstractWidget.html">Child</a> child)</td></tr>
+<tr class="memitem:af21959de7950ed4d656d8cc318fc9712 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">addChild</a> (<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> child)</td></tr>
+<tr class="memdesc:af21959de7950ed4d656d8cc318fc9712 inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a child object.  <a href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">More...</a><br /></td></tr>
 <tr class="separator:af21959de7950ed4d656d8cc318fc9712 inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1ecc043e2414e9731195021d28a77e inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a4d1ecc043e2414e9731195021d28a77e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBirthCallback</b> (std::function&lt; void(<a class="el" href="classspk_1_1AbstractWidget.html">Child</a>)&gt; callback)</td></tr>
+<tr class="memitem:a4d1ecc043e2414e9731195021d28a77e inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e">setBirthCallback</a> (std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt; callback)</td></tr>
+<tr class="memdesc:a4d1ecc043e2414e9731195021d28a77e inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the birth callback.  <a href="classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e">More...</a><br /></td></tr>
 <tr class="separator:a4d1ecc043e2414e9731195021d28a77e inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69d05c5f0a43a7b58ad4e08a9790f23a inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a69d05c5f0a43a7b58ad4e08a9790f23a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeathCallback</b> (std::function&lt; void(<a class="el" href="classspk_1_1AbstractWidget.html">Child</a>)&gt; callback)</td></tr>
+<tr class="memitem:a69d05c5f0a43a7b58ad4e08a9790f23a inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a">setDeathCallback</a> (std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt; callback)</td></tr>
+<tr class="memdesc:a69d05c5f0a43a7b58ad4e08a9790f23a inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the death callback.  <a href="classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a">More...</a><br /></td></tr>
 <tr class="separator:a69d05c5f0a43a7b58ad4e08a9790f23a inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5207c90ce23896bf23aa55c20d82dcbe inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a5207c90ce23896bf23aa55c20d82dcbe"></a>
-constexpr const <a class="el" href="classspk_1_1AbstractWidget.html">Parent</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b> () const</td></tr>
+<tr class="memitem:a5207c90ce23896bf23aa55c20d82dcbe inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe">parent</a> () const</td></tr>
+<tr class="memdesc:a5207c90ce23896bf23aa55c20d82dcbe inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent object.  <a href="classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe">More...</a><br /></td></tr>
 <tr class="separator:a5207c90ce23896bf23aa55c20d82dcbe inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641db511a9e99a441fdbd67504104a80 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a641db511a9e99a441fdbd67504104a80"></a>
-constexpr std::vector&lt; <a class="el" href="classspk_1_1AbstractWidget.html">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>childrens</b> ()</td></tr>
+<tr class="memitem:a641db511a9e99a441fdbd67504104a80 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">constexpr std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80">childrens</a> ()</td></tr>
+<tr class="memdesc:a641db511a9e99a441fdbd67504104a80 inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects.  <a href="classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80">More...</a><br /></td></tr>
 <tr class="separator:a641db511a9e99a441fdbd67504104a80 inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6de21279dbf9064deea472bb8db3dd2f inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a6de21279dbf9064deea472bb8db3dd2f"></a>
-constexpr const std::vector&lt; <a class="el" href="classspk_1_1AbstractWidget.html">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>childrens</b> () const</td></tr>
+<tr class="memitem:a6de21279dbf9064deea472bb8db3dd2f inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">constexpr const std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f">childrens</a> () const</td></tr>
+<tr class="memdesc:a6de21279dbf9064deea472bb8db3dd2f inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects (const version).  <a href="classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f">More...</a><br /></td></tr>
 <tr class="separator:a6de21279dbf9064deea472bb8db3dd2f inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f80475dd4e0633e93b2e009b34e6536 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a0f80475dd4e0633e93b2e009b34e6536"></a>
-<a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;)=delete</td></tr>
+<tr class="memitem:a0f80475dd4e0633e93b2e009b34e6536 inherit pub_methods_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a0f80475dd4e0633e93b2e009b34e6536">operator=</a> (const <a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a0f80475dd4e0633e93b2e009b34e6536 inherit pub_methods_classspk_1_1InherenceObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment operator.  <a href="classspk_1_1InherenceObject.html#a0f80475dd4e0633e93b2e009b34e6536">More...</a><br /></td></tr>
 <tr class="separator:a0f80475dd4e0633e93b2e009b34e6536 inherit pub_methods_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classspk_1_1ActivableObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classspk_1_1ActivableObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classspk_1_1ActivableObject.html">spk::ActivableObject</a></td></tr>
+<tr class="memitem:a831bce3fc7b83728edec22f6e7b07742 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="a831bce3fc7b83728edec22f6e7b07742"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ActivableObject</b> (bool p_activate=false)</td></tr>
+<tr class="separator:a831bce3fc7b83728edec22f6e7b07742 inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7eeea62bbf4b0c9e0f92b5c477591b inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="aaa7eeea62bbf4b0c9e0f92b5c477591b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>activate</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#aaa7eeea62bbf4b0c9e0f92b5c477591b">activate</a> ()</td></tr>
+<tr class="memdesc:aaa7eeea62bbf4b0c9e0f92b5c477591b inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the object. This function activates the object. <br /></td></tr>
 <tr class="separator:aaa7eeea62bbf4b0c9e0f92b5c477591b inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f10c4c4a64b48eafcf7c1b23a139b9 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="a30f10c4c4a64b48eafcf7c1b23a139b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deactivate</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#a30f10c4c4a64b48eafcf7c1b23a139b9">deactivate</a> ()</td></tr>
+<tr class="memdesc:a30f10c4c4a64b48eafcf7c1b23a139b9 inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivates the object. This function deactivates the object. <br /></td></tr>
 <tr class="separator:a30f10c4c4a64b48eafcf7c1b23a139b9 inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5627aa938cb1652e8c1aaa55c81da949 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="a5627aa938cb1652e8c1aaa55c81da949"></a>
-const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> () const</td></tr>
+<tr class="memitem:a5627aa938cb1652e8c1aaa55c81da949 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#a5627aa938cb1652e8c1aaa55c81da949">isActive</a> () const</td></tr>
+<tr class="memdesc:a5627aa938cb1652e8c1aaa55c81da949 inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the object is active.  <a href="classspk_1_1ActivableObject.html#a5627aa938cb1652e8c1aaa55c81da949">More...</a><br /></td></tr>
 <tr class="separator:a5627aa938cb1652e8c1aaa55c81da949 inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae27e21aeef5ff90ac999a034f2bb5623 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="ae27e21aeef5ff90ac999a034f2bb5623"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addActivationCallback</b> (const Callback &amp;p_callback)</td></tr>
+<tr class="memitem:ae27e21aeef5ff90ac999a034f2bb5623 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#ae27e21aeef5ff90ac999a034f2bb5623">addActivationCallback</a> (const Callback &amp;p_callback)</td></tr>
+<tr class="memdesc:ae27e21aeef5ff90ac999a034f2bb5623 inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a callback function to be called when the object is activated.  <a href="classspk_1_1ActivableObject.html#ae27e21aeef5ff90ac999a034f2bb5623">More...</a><br /></td></tr>
 <tr class="separator:ae27e21aeef5ff90ac999a034f2bb5623 inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a438560e081b7bf03ca5f601197d73d97 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a id="a438560e081b7bf03ca5f601197d73d97"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addDeactivationCallback</b> (const Callback &amp;p_callback)</td></tr>
+<tr class="memitem:a438560e081b7bf03ca5f601197d73d97 inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#a438560e081b7bf03ca5f601197d73d97">addDeactivationCallback</a> (const Callback &amp;p_callback)</td></tr>
+<tr class="memdesc:a438560e081b7bf03ca5f601197d73d97 inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a callback function to be called when the object is deactivated.  <a href="classspk_1_1ActivableObject.html#a438560e081b7bf03ca5f601197d73d97">More...</a><br /></td></tr>
 <tr class="separator:a438560e081b7bf03ca5f601197d73d97 inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -194,14 +213,11 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>WidgetModule</b></td
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classspk_1_1InherenceObject"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1InherenceObject')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject&lt; AbstractWidget &gt;</a></td></tr>
-<tr class="memitem:ae763115e2689b399d1faaaf88309bb5d inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="ae763115e2689b399d1faaaf88309bb5d"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Parent</b> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
-<tr class="separator:ae763115e2689b399d1faaaf88309bb5d inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaae937647084cc67220a3f3d3812f97 inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="afaae937647084cc67220a3f3d3812f97"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Child</b> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
-<tr class="separator:afaae937647084cc67220a3f3d3812f97 inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top"><a id="a976e2e85b113a15220e094ff9d7afd38"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Callback</b> = std::function&lt; void(<a class="el" href="classspk_1_1AbstractWidget.html">Child</a>)&gt;</td></tr>
+<tr class="memitem:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
+<tr class="separator:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
+<tr class="separator:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td></tr>
 <tr class="separator:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_types_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
 <tr class="memitem:a3ac086eee3bcd57992944a3d146eca1f inherit pro_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a3ac086eee3bcd57992944a3d146eca1f"></a>
@@ -211,23 +227,407 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Callback</b> = std::
 using&#160;</td><td class="memItemRight" valign="bottom"><b>CallbackContainer</b> = std::deque&lt; Callback &gt;</td></tr>
 <tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pro_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classspk_1_1StatedObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1StatedObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1StatedObject.html">spk::StatedObject&lt; bool &gt;</a></td></tr>
-<tr class="memitem:a797bb0328531e421fe9c16f3062c2e32 inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top"><a id="a797bb0328531e421fe9c16f3062c2e32"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>StatedObject</b> (bool p_defaultState={})</td></tr>
-<tr class="separator:a797bb0328531e421fe9c16f3062c2e32 inherit pro_methods_classspk_1_1StatedObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac365fce6e1327db89fe6bb66095ae7d inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top"><a id="aac365fce6e1327db89fe6bb66095ae7d"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addStateCallback</b> (bool p_state, Callback p_callback)</td></tr>
+<tr class="memitem:a5d13cdaa131af57a5767414ec363caa3 inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a5d13cdaa131af57a5767414ec363caa3">StatedObject</a> (bool p_defaultState)</td></tr>
+<tr class="memdesc:a5d13cdaa131af57a5767414ec363caa3 inherit pro_methods_classspk_1_1StatedObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Stated Object.  <a href="classspk_1_1StatedObject.html#a5d13cdaa131af57a5767414ec363caa3">More...</a><br /></td></tr>
+<tr class="separator:a5d13cdaa131af57a5767414ec363caa3 inherit pro_methods_classspk_1_1StatedObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac365fce6e1327db89fe6bb66095ae7d inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d">addStateCallback</a> (bool p_state, Callback p_callback)</td></tr>
+<tr class="memdesc:aac365fce6e1327db89fe6bb66095ae7d inherit pro_methods_classspk_1_1StatedObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup callback for specific state.  <a href="classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d">More...</a><br /></td></tr>
 <tr class="separator:aac365fce6e1327db89fe6bb66095ae7d inherit pro_methods_classspk_1_1StatedObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3239267c819fa6825a2e19761f8ed697 inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top"><a id="a3239267c819fa6825a2e19761f8ed697"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (bool p_state)</td></tr>
+<tr class="memitem:a3239267c819fa6825a2e19761f8ed697 inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a3239267c819fa6825a2e19761f8ed697">setState</a> (bool p_state)</td></tr>
+<tr class="memdesc:a3239267c819fa6825a2e19761f8ed697 inherit pro_methods_classspk_1_1StatedObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the object's State and call the binded function if have one.  <a href="classspk_1_1StatedObject.html#a3239267c819fa6825a2e19761f8ed697">More...</a><br /></td></tr>
 <tr class="separator:a3239267c819fa6825a2e19761f8ed697 inherit pro_methods_classspk_1_1StatedObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6261556d41a0e850eb6b1eca6a3e6c3d inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top"><a id="a6261556d41a0e850eb6b1eca6a3e6c3d"></a>
-const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> () const</td></tr>
+<tr class="memitem:a6261556d41a0e850eb6b1eca6a3e6c3d inherit pro_methods_classspk_1_1StatedObject"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1StatedObject.html#a6261556d41a0e850eb6b1eca6a3e6c3d">state</a> () const</td></tr>
+<tr class="memdesc:a6261556d41a0e850eb6b1eca6a3e6c3d inherit pro_methods_classspk_1_1StatedObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the current object's state  <a href="classspk_1_1StatedObject.html#a6261556d41a0e850eb6b1eca6a3e6c3d">More...</a><br /></td></tr>
 <tr class="separator:a6261556d41a0e850eb6b1eca6a3e6c3d inherit pro_methods_classspk_1_1StatedObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
-<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="afb4adba519929353876b0192ea9a8aee"></a>
-<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><b>subscribe</b> (CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</td></tr>
+<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">subscribe</a> (CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</td></tr>
+<tr class="memdesc:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">More...</a><br /></td></tr>
 <tr class="separator:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for widgets. </p>
+<p>This class defines the interface and common functionality for widgets. It inherits from <a class="el" href="classspk_1_1InherenceObject.html" title="InherenceObject class template.">InherenceObject</a> and <a class="el" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj...">ActivableObject</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a02704ad9ce8f817d72fa76b095e53c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02704ad9ce8f817d72fa76b095e53c68">&#9670;&nbsp;</a></span>AbstractWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">spk::AbstractWidget::AbstractWidget </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object with a specified name. </p>
+<p>This constructor creates a new <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object with the specified name.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_name</td><td>The name of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acaf7b700c9f4f67341dc5156287ad271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaf7b700c9f4f67341dc5156287ad271">&#9670;&nbsp;</a></span>~AbstractWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual spk::AbstractWidget::~AbstractWidget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object. </p>
+<p>This is the destructor for the <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> class. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a439da5239de7fa7980bb697e9e114818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439da5239de7fa7980bb697e9e114818">&#9670;&nbsp;</a></span>addChildrenWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChildrenType , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TChildrenType* spk::AbstractWidget::addChildrenWidget </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>p_args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a children widget to this widget. </p>
+<p>This function adds a children widget to this widget and returns a pointer to it.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TChildrenType</td><td>The type of the children widget. </td></tr>
+    <tr><td class="paramname">Args</td><td>The types of the arguments for constructing the children widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_args</td><td>The arguments for constructing the children widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the children widget. </dd></dl>
+
+</div>
+</div>
+<a id="a734ec4e5f1759dc493e1df73ae973a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a734ec4e5f1759dc493e1df73ae973a38">&#9670;&nbsp;</a></span>depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const float&amp; spk::AbstractWidget::depth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the depth value of the widget. </p>
+<p>This function returns the depth value of the widget.</p>
+<dl class="section return"><dt>Returns</dt><dd>The depth value of the widget. </dd></dl>
+
+</div>
+</div>
+<a id="ad1fd1cbebefe93c23a9d1b7b00872a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fd1cbebefe93c23a9d1b7b00872a81">&#9670;&nbsp;</a></span>isPointed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::AbstractWidget::isPointed </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a point is inside the widget's boundaries. </p>
+<p>This function checks if a given point is inside the boundaries of the widget.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_point</td><td>The point to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the point is inside the widget, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ab5cdc32c7a1f9a2cda7812182618000d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cdc32c7a1f9a2cda7812182618000d">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_anchor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the widget by a specific amount. </p>
+<p>This function moves the widget by a specific amount, while keeping its current size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_anchor</td><td>The amount to move the widget by. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7606a7000127e6f3a3c5c61d22f17314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7606a7000127e6f3a3c5c61d22f17314">&#9670;&nbsp;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const std::wstring&amp; spk::AbstractWidget::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the name of the widget. </p>
+<p>This function returns the name of the widget.</p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the widget. </dd></dl>
+
+</div>
+</div>
+<a id="a12a3c901e7b5b707064eafccc6f64115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12a3c901e7b5b707064eafccc6f64115">&#9670;&nbsp;</a></span>place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::place </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_anchor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place the widget at a specific anchor position. </p>
+<p>This function places the widget at a specific anchor position, while keeping its current size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_anchor</td><td>The new anchor position of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af6762afb291b9fe0497fa8ac619ef0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6762afb291b9fe0497fa8ac619ef0f7">&#9670;&nbsp;</a></span>rename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::rename </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rename the widget. </p>
+<p>This function renames the widget with a new name.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_name</td><td>The new name of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2059b3aeb3f7ca0290ed70c146a42298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2059b3aeb3f7ca0290ed70c146a42298">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::resize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize the widget to a new size. </p>
+<p>This function resizes the widget to a new size, while keeping its current anchor position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_size</td><td>The new size of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae20e7261fea3273f275f2662c630ebe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20e7261fea3273f275f2662c630ebe8">&#9670;&nbsp;</a></span>setDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::setDepth </td>
+          <td>(</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>p_depth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the depth value of the widget. </p>
+<p>This function sets the depth value of the widget. Widgets with higher depth values will be rendered on top of widgets with lower depth values.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_depth</td><td>The depth value of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e428dc19c69b3fa7686df9c7ccf06cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e428dc19c69b3fa7686df9c7ccf06cf">&#9670;&nbsp;</a></span>setGeometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::setGeometry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_anchor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the geometry of the widget. </p>
+<p>This function sets the geometry of the widget, including the anchor position and size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_anchor</td><td>The anchor position of the widget. </td></tr>
+    <tr><td class="paramname">p_size</td><td>The size of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c407ce05d65cdbe37ecc71f4a8e58d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c407ce05d65cdbe37ecc71f4a8e58d6">&#9670;&nbsp;</a></span>sortChildrensByDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractWidget::sortChildrensByDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort the children widgets by their depth value. </p>
+<p>This function sorts the children widgets of this widget by their depth value, in ascending order. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/widget/<a class="el" href="spk__abstract__widget_8hpp_source.html">spk_abstract_widget.hpp</a></li>
 </ul>

@@ -2,6 +2,15 @@
 \label{classspk_1_1Keyboard}\index{spk::Keyboard@{spk::Keyboard}}
 
 
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for keyboard inputs.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+keyboard.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Keyboard\+:
 \nopagebreak
 \begin{figure}[H]
@@ -24,7 +33,7 @@ Collaboration diagram for spk\+::Keyboard\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}\label{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}} 
-enum {\bfseries Key} \{ \newline
+enum \mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{Key}} \{ \newline
 {\bfseries Unknown} = -\/1
 , {\bfseries Backspace}
 , {\bfseries Tab}
@@ -202,27 +211,24 @@ enum {\bfseries Key} \{ \newline
 , \newline
 {\bfseries SIZE}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Enum for representing keyboard keys. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Keyboard_a6aed52e31a47a4a942d7e72aa65a2cb6}\label{classspk_1_1Keyboard_a6aed52e31a47a4a942d7e72aa65a2cb6}} 
-enum {\bfseries Layout} \{ {\bfseries Azerty}
+enum \mbox{\hyperlink{classspk_1_1Keyboard_a6aed52e31a47a4a942d7e72aa65a2cb6}{Layout}} \{ {\bfseries Azerty}
 , {\bfseries Qwerty}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum for representing keyboard layouts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Keyboard_a96c38656ea7b2aefffe62cc4548207bb}\label{classspk_1_1Keyboard_a96c38656ea7b2aefffe62cc4548207bb}} 
-void {\bfseries set\+Layout} (const Layout \&p\+\_\+layout)
-\item 
-\mbox{\Hypertarget{classspk_1_1Keyboard_a4b65a94087efacfb89ca84dec70253d8}\label{classspk_1_1Keyboard_a4b65a94087efacfb89ca84dec70253d8}} 
-const Input\+State \& {\bfseries input\+Status} (const Key \&p\+\_\+key) const
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classspk_1_1Keyboard_a96c38656ea7b2aefffe62cc4548207bb}{set\+Layout}} (const \mbox{\hyperlink{classspk_1_1Keyboard_a6aed52e31a47a4a942d7e72aa65a2cb6}{Layout}} \&p\+\_\+layout)
+\begin{DoxyCompactList}\small\item\em Sets the layout of the keyboard. \end{DoxyCompactList}\item 
+const Input\+State \& \mbox{\hyperlink{classspk_1_1Keyboard_a4b65a94087efacfb89ca84dec70253d8}{input\+Status}} (const \mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{Key}} \&p\+\_\+key) const
+\begin{DoxyCompactList}\small\item\em Returns the input status of a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Keyboard_a2708ed0435028a8730e47e3835e5ef63}\label{classspk_1_1Keyboard_a2708ed0435028a8730e47e3835e5ef63}} 
-static const std\+::wstring \& {\bfseries key\+To\+String} (const Keyboard\+::\+Key \&p\+\_\+key)
-\end{DoxyCompactItemize}
+static const std\+::wstring \& \mbox{\hyperlink{classspk_1_1Keyboard_a2708ed0435028a8730e47e3835e5ef63}{key\+To\+String}} (const \mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{Keyboard\+::\+Key}} \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Converts a key to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -233,6 +239,65 @@ class {\bfseries spk\+::\+Singleton$<$ Keyboard $>$}
 class {\bfseries Keyboard\+Module}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for keyboard inputs. 
+
+This class handles keyboard inputs and provides key mapping and layout configuration. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Keyboard_a4b65a94087efacfb89ca84dec70253d8}\label{classspk_1_1Keyboard_a4b65a94087efacfb89ca84dec70253d8}} 
+\index{spk::Keyboard@{spk::Keyboard}!inputStatus@{inputStatus}}
+\index{inputStatus@{inputStatus}!spk::Keyboard@{spk::Keyboard}}
+\doxysubsubsection{\texorpdfstring{inputStatus()}{inputStatus()}}
+{\footnotesize\ttfamily const Input\+State\& spk\+::\+Keyboard\+::input\+Status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{Key}} \&}]{p\+\_\+key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the input status of a key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to get the input status of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The input status of the key. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Keyboard_a2708ed0435028a8730e47e3835e5ef63}\label{classspk_1_1Keyboard_a2708ed0435028a8730e47e3835e5ef63}} 
+\index{spk::Keyboard@{spk::Keyboard}!keyToString@{keyToString}}
+\index{keyToString@{keyToString}!spk::Keyboard@{spk::Keyboard}}
+\doxysubsubsection{\texorpdfstring{keyToString()}{keyToString()}}
+{\footnotesize\ttfamily static const std\+::wstring\& spk\+::\+Keyboard\+::key\+To\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Keyboard_a13a0bee8478b4e4e8162d4f389134b28}{Keyboard\+::\+Key}} \&}]{p\+\_\+key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a key to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to convert to a string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string representation of the key. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Keyboard_a96c38656ea7b2aefffe62cc4548207bb}\label{classspk_1_1Keyboard_a96c38656ea7b2aefffe62cc4548207bb}} 
+\index{spk::Keyboard@{spk::Keyboard}!setLayout@{setLayout}}
+\index{setLayout@{setLayout}!spk::Keyboard@{spk::Keyboard}}
+\doxysubsubsection{\texorpdfstring{setLayout()}{setLayout()}}
+{\footnotesize\ttfamily void spk\+::\+Keyboard\+::set\+Layout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Keyboard_a6aed52e31a47a4a942d7e72aa65a2cb6}{Layout}} \&}]{p\+\_\+layout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the layout of the keyboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+layout} & The layout to set. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

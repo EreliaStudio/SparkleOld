@@ -1,50 +1,49 @@
 \hypertarget{classspk_1_1ThreadSafeQueue}{}\doxysection{spk\+::Thread\+Safe\+Queue$<$ T $>$ Class Template Reference}
 \label{classspk_1_1ThreadSafeQueue}\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+
+
+A thread-\/safe queue implementation.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+thread\+\_\+safe\+\_\+queue.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}\label{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}} 
-{\bfseries Thread\+Safe\+Queue} (const \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ T $>$ \&)=delete
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}\label{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}} 
-const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const size\+\_\+t \&p\+\_\+index) const
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}\label{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}} 
-T \& {\bfseries front} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}\label{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}} 
-T \& {\bfseries back} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}\label{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}} 
-const T \& {\bfseries front} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}\label{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}} 
-const T \& {\bfseries back} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}\label{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}} 
-T {\bfseries pop\+\_\+front} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}\label{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}} 
-T {\bfseries pop\+\_\+back} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}\label{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}} 
-void {\bfseries push\+\_\+back} (const T \&item)
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}\label{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}} 
-void {\bfseries push\+\_\+front} (const T \&item)
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}\label{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}} 
-bool {\bfseries empty} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}\label{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}} 
-size\+\_\+t {\bfseries size} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}\label{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}} 
-void {\bfseries clear} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}\label{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}} 
-void {\bfseries wait} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1ThreadSafeQueue_ad95a7d5bfe93b6d2146e64ee2a433b1b}{Thread\+Safe\+Queue}} ()=default
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}{Thread\+Safe\+Queue}} (const \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ T $>$ \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_aa8d9e71b8bee427e21a7121759c0c690}{$\sim$\+Thread\+Safe\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} object. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}{operator\mbox{[}$\,$\mbox{]}}} (const size\+\_\+t \&p\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Access an item in the queue by index. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}{front}} ()
+\begin{DoxyCompactList}\small\item\em Get the reference to the front item in the queue. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}{back}} ()
+\begin{DoxyCompactList}\small\item\em Get the reference to the back item in the queue. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}{front}} () const
+\begin{DoxyCompactList}\small\item\em Get the const reference to the front item in the queue. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}{back}} () const
+\begin{DoxyCompactList}\small\item\em Get the const reference to the back item in the queue. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}{pop\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Remove and return the front item from the queue. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em Remove and return the back item from the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}{push\+\_\+back}} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Push an item to the back of the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}{push\+\_\+front}} (const T \&item)
+\begin{DoxyCompactList}\small\item\em Push an item to the front of the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Check if the queue is empty. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}{size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}{wait}} ()
+\begin{DoxyCompactList}\small\item\em Wait for the queue to become non-\/empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -61,6 +60,267 @@ std\+::deque$<$ T $>$ {\bfseries \+\_\+content}
 std\+::condition\+\_\+variable {\bfseries cv\+Blocking}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class spk\+::\+Thread\+Safe\+Queue$<$ T $>$}
+
+A thread-\/safe queue implementation. 
+
+This class provides a thread-\/safe implementation of a queue. It allows multiple threads to push and pop items from the queue without causing data races or deadlocks.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of items stored in the queue. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ad95a7d5bfe93b6d2146e64ee2a433b1b}\label{classspk_1_1ThreadSafeQueue_ad95a7d5bfe93b6d2146e64ee2a433b1b}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!ThreadSafeQueue@{ThreadSafeQueue}}
+\index{ThreadSafeQueue@{ThreadSafeQueue}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ThreadSafeQueue()}{ThreadSafeQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} object. 
+
+This is the default constructor for the \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} class. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}\label{classspk_1_1ThreadSafeQueue_a7ef0d2aea7e6ff8d3f80e4aba00855f0}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!ThreadSafeQueue@{ThreadSafeQueue}}
+\index{ThreadSafeQueue@{ThreadSafeQueue}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ThreadSafeQueue()}{ThreadSafeQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Copy constructor is deleted. 
+
+Copying a \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} is not allowed to avoid data races. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aa8d9e71b8bee427e21a7121759c0c690}\label{classspk_1_1ThreadSafeQueue_aa8d9e71b8bee427e21a7121759c0c690}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!````~ThreadSafeQueue@{$\sim$ThreadSafeQueue}}
+\index{````~ThreadSafeQueue@{$\sim$ThreadSafeQueue}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$ThreadSafeQueue()}{~ThreadSafeQueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} object. 
+
+This is the destructor for the \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}} class. It clears the content of the queue. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}\label{classspk_1_1ThreadSafeQueue_a71c53d3168aef54e9d0fecbb3202b7b8}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!back@{back}}
+\index{back@{back}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the reference to the back item in the queue. 
+
+This function returns a reference to the back item in the queue.
+
+\begin{DoxyReturn}{Returns}
+Reference to the back item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}\label{classspk_1_1ThreadSafeQueue_a0525e56c7f3ec4da434501ffd3f731b4}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!back@{back}}
+\index{back@{back}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the const reference to the back item in the queue. 
+
+This function returns a const reference to the back item in the queue.
+
+\begin{DoxyReturn}{Returns}
+Const reference to the back item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}\label{classspk_1_1ThreadSafeQueue_a5d0f55c23e83d574e0e787249adb24f6}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the queue. 
+
+This function clears the content of the queue. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}\label{classspk_1_1ThreadSafeQueue_ae0f8b05a694cb48081a53d1f496c1e5f}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the queue is empty. 
+
+This function checks if the queue is empty.
+
+\begin{DoxyReturn}{Returns}
+True if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}\label{classspk_1_1ThreadSafeQueue_acffc6621639cde4e29248fec8db7722e}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!front@{front}}
+\index{front@{front}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the reference to the front item in the queue. 
+
+This function returns a reference to the front item in the queue.
+
+\begin{DoxyReturn}{Returns}
+Reference to the front item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}\label{classspk_1_1ThreadSafeQueue_abdb4b57746427a0f8b7f4e8aff55eff4}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!front@{front}}
+\index{front@{front}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the const reference to the front item in the queue. 
+
+This function returns a const reference to the front item in the queue.
+
+\begin{DoxyReturn}{Returns}
+Const reference to the front item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}\label{classspk_1_1ThreadSafeQueue_a3f339b2424b4697100d4bb3a501c4bdc}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{p\+\_\+index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access an item in the queue by index. 
+
+This operator allows accessing an item in the queue by index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+index} & The index of the item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The item at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}\label{classspk_1_1ThreadSafeQueue_a8507da2707f396a0db12cbff753c2030}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove and return the back item from the queue. 
+
+This function removes and returns the back item from the queue.
+
+\begin{DoxyReturn}{Returns}
+The back item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}\label{classspk_1_1ThreadSafeQueue_aaa11b3687a413ed1d05020e9679d708e}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!pop\_front@{pop\_front}}
+\index{pop\_front@{pop\_front}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_front()}{pop\_front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::pop\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove and return the front item from the queue. 
+
+This function removes and returns the front item from the queue.
+
+\begin{DoxyReturn}{Returns}
+The front item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}\label{classspk_1_1ThreadSafeQueue_af3d6530f982fbd9b8342bf69b79f170c}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Push an item to the back of the queue. 
+
+This function pushes an item to the back of the queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to be pushed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}\label{classspk_1_1ThreadSafeQueue_a4a58ccd7575177fed56ecfb028e6537a}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Push an item to the front of the queue. 
+
+This function pushes an item to the front of the queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to be pushed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}\label{classspk_1_1ThreadSafeQueue_a6dacede3ce86503fbbd8cc3da5ac67e5}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!size@{size}}
+\index{size@{size}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the queue. 
+
+This function returns the size of the queue.
+
+\begin{DoxyReturn}{Returns}
+The size of the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}\label{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798ce1b}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!wait@{wait}}
+\index{wait@{wait}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wait for the queue to become non-\/empty. 
+
+This function waits until the queue becomes non-\/empty. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

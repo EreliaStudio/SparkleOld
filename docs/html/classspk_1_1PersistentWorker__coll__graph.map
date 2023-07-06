@@ -1,5 +1,5 @@
 <map id="spk::PersistentWorker" name="spk::PersistentWorker">
-<area shape="rect" id="node1" title=" " alt="" coords="51,80,213,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1Thread.html" title=" " alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node3" href="$classspk_1_1ContractProvider.html" title=" " alt="" coords="128,5,291,32"/>
+<area shape="rect" id="node1" title="Class for creating and managing a persistent worker thread." alt="" coords="51,80,213,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="128,5,291,32"/>
 </map>

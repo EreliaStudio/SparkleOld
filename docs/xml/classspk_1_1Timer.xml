@@ -32,13 +32,14 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Enumeration of the possible states for the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> class. </para>
+<para>An enum class to represent the state of the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para>This enum class has three states: Idle, Running, and Timeout. The timer is in the Idle state by default, changes to Running when it starts, and goes to Timeout when the duration has passed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="23" column="1" bodyfile="includes/system/spk_timer.hpp" bodystart="24" bodyend="28"/>
+        <location file="includes/system/spk_timer.hpp" line="26" column="1" bodyfile="includes/system/spk_timer.hpp" bodystart="27" bodyend="31"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -48,13 +49,14 @@
         <argsstring></argsstring>
         <name>_duration</name>
         <briefdescription>
-<para>The total duration for which the timer will run. </para>
+<para>The duration of the timer in milliseconds. </para>
         </briefdescription>
         <detaileddescription>
+<para>This variable is used to store the duration of the timer, which is set by the user when creating the timer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="31" column="11" bodyfile="includes/system/spk_timer.hpp" bodystart="31" bodyend="-1"/>
+        <location file="includes/system/spk_timer.hpp" line="40" column="11" bodyfile="includes/system/spk_timer.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Timer_1a4bac5aabb5359a39cd1f728c61929562" prot="private" static="no" mutable="yes">
         <type><ref refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kindref="member">State</ref></type>
@@ -65,10 +67,11 @@
 <para>The current state of the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para>This variable is used to store the current state of the timer, which can be Idle, Running, or Timeout. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="32" column="15" bodyfile="includes/system/spk_timer.hpp" bodystart="32" bodyend="-1"/>
+        <location file="includes/system/spk_timer.hpp" line="48" column="15" bodyfile="includes/system/spk_timer.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Timer_1a1572574e86018d51d124b49425568d40" prot="private" static="no" mutable="no">
         <type>long long</type>
@@ -76,13 +79,14 @@
         <argsstring></argsstring>
         <name>_startTime</name>
         <briefdescription>
-<para>The start time of the timer. </para>
+<para>The time the timer started. </para>
         </briefdescription>
         <detaileddescription>
+<para>This variable is used to record the time at which the timer starts. It is recorded in milliseconds since some fixed point in time (often system startup). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="33" column="11" bodyfile="includes/system/spk_timer.hpp" bodystart="33" bodyend="-1"/>
+        <location file="includes/system/spk_timer.hpp" line="56" column="11" bodyfile="includes/system/spk_timer.hpp" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -92,13 +96,14 @@
         <argsstring>()</argsstring>
         <name>Timer</name>
         <briefdescription>
-<para>Default constructor for <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> class. </para>
+<para>Construct a new <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is the default constructor for the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> class. It initializes the duration and start time to zero, and the status to Idle. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="39" column="1"/>
+        <location file="includes/system/spk_timer.hpp" line="65" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -110,24 +115,16 @@
           <declname>p_duration</declname>
         </param>
         <briefdescription>
-<para>Set the duration for the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Sets the duration of the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the duration of the timer to the specified value.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>p_duration</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The desired duration for the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="exception"><parameteritem>
-<parameternamelist>
-<parametername>std::runtime_error</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if the timer is currently running. </para>
+<para>The duration of the timer in milliseconds. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -135,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="47" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="74" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const long long &amp;</type>
@@ -143,16 +140,17 @@
         <argsstring>() const</argsstring>
         <name>totalDuration</name>
         <briefdescription>
-<para>Accessor function for the total duration of the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Get the total duration of the timer. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A const reference to the total duration of the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>This function returns the total duration of the timer.</para>
+<para><simplesect kind="return"><para>The total duration of the timer in milliseconds. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="53" column="17"/>
+        <location file="includes/system/spk_timer.hpp" line="83" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>long long</type>
@@ -160,18 +158,17 @@
         <argsstring>() const</argsstring>
         <name>remainingDuration</name>
         <briefdescription>
-<para>Get the remaining duration of the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Get the remaining duration of the timer. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>long long The amount of time left before the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> times out. </para>
-</simplesect>
-<simplesect kind="note"><para>If the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> has already timed out, this function returns how long it has been in the Timeout state. </para>
+<para>This function returns the remaining duration of the timer, calculated as the total duration minus the elapsed time since the timer started.</para>
+<para><simplesect kind="return"><para>The remaining duration of the timer in milliseconds. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="61" column="11"/>
+        <location file="includes/system/spk_timer.hpp" line="93" column="11"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -179,13 +176,14 @@
         <argsstring>()</argsstring>
         <name>start</name>
         <briefdescription>
-<para>Start the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Starts the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function starts the timer by recording the current time as the start time and changing the status to Running. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="66" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="101" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -193,13 +191,14 @@
         <argsstring>()</argsstring>
         <name>stop</name>
         <briefdescription>
-<para>Stop the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Stops the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function stops the timer and changes the status to Idle. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="71" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="108" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kindref="member">State</ref> &amp;</type>
@@ -207,16 +206,17 @@
         <argsstring>() const</argsstring>
         <name>status</name>
         <briefdescription>
-<para>Accessor function for the current state of the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>Get the status of the timer. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A const reference to the current state of the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref>. </para>
+<para>This function returns the current status of the timer, which can be Idle, Running, or Timeout.</para>
+<para><simplesect kind="return"><para>The current status of the timer. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="77" column="13"/>
+        <location file="includes/system/spk_timer.hpp" line="117" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -224,25 +224,26 @@
         <argsstring>() const</argsstring>
         <name>isRunning</name>
         <briefdescription>
-<para>Check if the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> is currently running. </para>
+<para>Check if thetimer is running. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>bool True if the <ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> is running, false otherwise. </para>
+<para>This function checks if the timer is currently running by checking if the status is Running.</para>
+<para><simplesect kind="return"><para>True if the timer is running, false otherwise. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="83" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="126" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A class to manage time-based operations. </para>
+<para>Class for creating and managing a timer. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class provides an interface for a simple timer, which can be set to a specific duration, started, stopped, and queried for its current state and remaining duration. </para>
+<para>This class allows you to create a timer with a specified duration. The timer can be started, stopped, and checked for its status. </para>
     </detaileddescription>
-    <location file="includes/system/spk_timer.hpp" line="15" column="1" bodyfile="includes/system/spk_timer.hpp" bodystart="16" bodyend="84"/>
+    <location file="includes/system/spk_timer.hpp" line="15" column="1" bodyfile="includes/system/spk_timer.hpp" bodystart="16" bodyend="127"/>
     <listofallmembers>
       <member refid="classspk_1_1Timer_1a61d4eb50a10a038ff971abb5e571782e" prot="private" virt="non-virtual"><scope>spk::Timer</scope><name>_duration</name></member>
       <member refid="classspk_1_1Timer_1a1572574e86018d51d124b49425568d40" prot="private" virt="non-virtual"><scope>spk::Timer</scope><name>_startTime</name></member>

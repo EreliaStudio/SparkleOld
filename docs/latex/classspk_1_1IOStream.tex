@@ -2,6 +2,15 @@
 \label{classspk_1_1IOStream}\index{spk::IOStream@{spk::IOStream}}
 
 
+An output stream with a custom prefix, suitable for logging or debugging.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+iostream.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::IOStream\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,18 +32,57 @@ Collaboration diagram for spk\+::IOStream\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1IOStream_acfa77761710612dc114339caa3bb14fd}\label{classspk_1_1IOStream_acfa77761710612dc114339caa3bb14fd}} 
-{\bfseries IOStream} (std\+::wostream \&p\+\_\+output\+Stream, std\+::wstring p\+\_\+prefix=L\char`\"{}\char`\"{})
-\item 
-\mbox{\Hypertarget{classspk_1_1IOStream_a07173d0c87a90b1d40c5ce9bdf4bcc62}\label{classspk_1_1IOStream_a07173d0c87a90b1d40c5ce9bdf4bcc62}} 
-void {\bfseries set\+Prefix} (const std\+::wstring \&p\+\_\+prefix)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1IOStream_acfa77761710612dc114339caa3bb14fd}{IOStream}} (std\+::wostream \&p\+\_\+output\+Stream, std\+::wstring p\+\_\+prefix=L\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1IOStream_a07173d0c87a90b1d40c5ce9bdf4bcc62}{set\+Prefix}} (const std\+::wstring \&p\+\_\+prefix)
+\begin{DoxyCompactList}\small\item\em Sets the prefix of the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1IOStream_a3b1675416bc263b85373bd3012d49ba2}\label{classspk_1_1IOStream_a3b1675416bc263b85373bd3012d49ba2}} 
 IOBuffer {\bfseries buffer}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An output stream with a custom prefix, suitable for logging or debugging. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1IOStream_acfa77761710612dc114339caa3bb14fd}\label{classspk_1_1IOStream_acfa77761710612dc114339caa3bb14fd}} 
+\index{spk::IOStream@{spk::IOStream}!IOStream@{IOStream}}
+\index{IOStream@{IOStream}!spk::IOStream@{spk::IOStream}}
+\doxysubsubsection{\texorpdfstring{IOStream()}{IOStream()}}
+{\footnotesize\ttfamily spk\+::\+IOStream\+::\+IOStream (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+output\+Stream,  }\item[{std\+::wstring}]{p\+\_\+prefix = {\ttfamily L\char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+output\+Stream} & Reference to the output stream. \\
+\hline
+{\em p\+\_\+prefix} & Prefix string for the stream. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1IOStream_a07173d0c87a90b1d40c5ce9bdf4bcc62}\label{classspk_1_1IOStream_a07173d0c87a90b1d40c5ce9bdf4bcc62}} 
+\index{spk::IOStream@{spk::IOStream}!setPrefix@{setPrefix}}
+\index{setPrefix@{setPrefix}!spk::IOStream@{spk::IOStream}}
+\doxysubsubsection{\texorpdfstring{setPrefix()}{setPrefix()}}
+{\footnotesize\ttfamily void spk\+::\+IOStream\+::set\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+prefix }\end{DoxyParamCaption})}
+
+
+
+Sets the prefix of the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+prefix} & The new prefix string. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

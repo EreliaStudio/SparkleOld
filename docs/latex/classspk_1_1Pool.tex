@@ -1,22 +1,118 @@
 \hypertarget{classspk_1_1Pool}{}\doxysection{spk\+::Pool$<$ TType $>$ Class Template Reference}
 \label{classspk_1_1Pool}\index{spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}}
+
+
+A generic pool class that manages the creation and deletion of objects.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+pool.\+hpp$>$}
+
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An internal class to manage objects retrieved from the pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Pool_a474e0d1a5d1a045baa2351a978e1406e}\label{classspk_1_1Pool_a474e0d1a5d1a045baa2351a978e1406e}} 
-{\footnotesize template$<$typename... Args$>$ }\\void {\bfseries reserve} (size\+\_\+t p\+\_\+nb\+Element, Args \&\&...p\+\_\+args)
-\item 
+\mbox{\Hypertarget{classspk_1_1Pool_a0d4b6b3222ed33dc857a4f99551fd223}\label{classspk_1_1Pool_a0d4b6b3222ed33dc857a4f99551fd223}} 
+\mbox{\hyperlink{classspk_1_1Pool_a0d4b6b3222ed33dc857a4f99551fd223}{Pool}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classspk_1_1Pool}{Pool}} class. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classspk_1_1Pool_a474e0d1a5d1a045baa2351a978e1406e}{reserve}} (size\+\_\+t p\+\_\+nb\+Element, Args \&\&...p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Reserve a number of elements in the pool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} \mbox{\hyperlink{classspk_1_1Pool_a64032a2a21f5cf73a4836178a347a73c}{obtain}} (Args \&\&...p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Obtain an object from the pool. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1Pool_ac584858b3175a8feb8cc778542e216c3}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Pool$<$ TType $>$}
+
+A generic pool class that manages the creation and deletion of objects. 
+
+This class is designed to handle memory in an efficient manner by reusing previously allocated objects. This avoids frequent memory allocation and deallocation, which can be costly for performance.
+
+The \mbox{\hyperlink{classspk_1_1Pool}{Pool}} class provides a mechanism for \textquotesingle{}reserving\textquotesingle{} a number of objects of a specific type, and then \textquotesingle{}obtaining\textquotesingle{} those objects for use. When an object is no longer needed, it is returned to the pool to be reused later.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of objects that the pool will manage. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1Pool_a64032a2a21f5cf73a4836178a347a73c}\label{classspk_1_1Pool_a64032a2a21f5cf73a4836178a347a73c}} 
-{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} {\bfseries obtain} (Args \&\&...p\+\_\+args)
-\item 
+\index{spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}!obtain@{obtain}}
+\index{obtain@{obtain}!spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{obtain()}{obtain()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::obtain (\begin{DoxyParamCaption}\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtain an object from the pool. 
+
+This function obtains an object from the pool. If there are no available objects, a new object is created using the provided arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & The types of the arguments. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & The arguments to construct the object if necessary. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} that manages the obtained object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_a474e0d1a5d1a045baa2351a978e1406e}\label{classspk_1_1Pool_a474e0d1a5d1a045baa2351a978e1406e}} 
+\index{spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename... Args$>$ \\
+void \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+nb\+Element,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reserve a number of elements in the pool. 
+
+This function reserves a number of elements in the pool by creating new instances of the template type with the provided arguments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & The types of the arguments. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+nb\+Element} & The number of elements to reserve. \\
+\hline
+{\em p\+\_\+args} & The arguments to construct the elements. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classspk_1_1Pool_ac584858b3175a8feb8cc778542e216c3}\label{classspk_1_1Pool_ac584858b3175a8feb8cc778542e216c3}} 
-size\+\_\+t {\bfseries size} () const
-\end{DoxyCompactItemize}
+\index{spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}!size@{size}}
+\index{size@{size}!spk::Pool$<$ TType $>$@{spk::Pool$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+size\+\_\+t \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the pool. 
+
+\begin{DoxyReturn}{Returns}
+The number of objects in the pool. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -4,6 +4,7 @@
     <compoundname>spk::WindowModule</compoundname>
     <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
     <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
+    <includes refid="linux_2spk__window__module_8hpp" local="no">spk_window_module.hpp</includes>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -16,12 +17,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="11" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="23" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -34,12 +46,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_window_module.hpp" line="12" column="6"/>
+        <location file="includes/application/modules/windows/spk_window_module.hpp" line="24" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -57,16 +80,43 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1WindowModule" kindref="compound">WindowModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for window system messages. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="14" column="1"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="33" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -74,12 +124,13 @@
         <argsstring>()</argsstring>
         <name>render</name>
         <briefdescription>
+<para>Renders the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="16" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="38" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -87,12 +138,13 @@
         <argsstring>()</argsstring>
         <name>clear</name>
         <briefdescription>
+<para>Clears the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="17" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="43" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a36706fa4088182a2c3b03536d3300809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -108,7 +160,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <param>
@@ -116,12 +168,47 @@
           <declname>p_apiModule</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1WindowModule" kindref="compound">WindowModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for window system messages. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_apiModule</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the API Module. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_window_module.hpp" line="15" column="1"/>
+        <location file="includes/application/modules/windows/spk_window_module.hpp" line="35" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -129,12 +216,13 @@
         <argsstring>()</argsstring>
         <name>render</name>
         <briefdescription>
+<para>Renders the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_window_module.hpp" line="17" column="6"/>
+        <location file="includes/application/modules/windows/spk_window_module.hpp" line="40" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -142,17 +230,20 @@
         <argsstring>()</argsstring>
         <name>clear</name>
         <briefdescription>
+<para>Clears the window. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_window_module.hpp" line="18" column="6"/>
+        <location file="includes/application/modules/windows/spk_window_module.hpp" line="45" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing the application window. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class manages the application window, including handling system messages related to the window, rendering the window, and clearing the window. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -194,7 +285,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/linux/spk_window_module.hpp" line="8" column="1" bodyfile="includes/application/modules/linux/spk_window_module.hpp" bodystart="9" bodyend="18"/>
+    <location file="includes/application/modules/linux/spk_window_module.hpp" line="15" column="1" bodyfile="includes/application/modules/linux/spk_window_module.hpp" bodystart="16" bodyend="44"/>
     <listofallmembers>
       <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" prot="private" virt="virtual"><scope>spk::WindowModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" prot="private" virt="virtual"><scope>spk::WindowModule</scope><name>_handleMessage</name></member>

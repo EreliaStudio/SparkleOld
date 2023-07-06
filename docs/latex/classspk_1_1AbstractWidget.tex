@@ -2,6 +2,15 @@
 \label{classspk_1_1AbstractWidget}\index{spk::AbstractWidget@{spk::AbstractWidget}}
 
 
+Abstract base class for widgets.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+abstract\+\_\+widget.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Abstract\+Widget\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,42 +32,32 @@ Collaboration diagram for spk\+::Abstract\+Widget\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a02704ad9ce8f817d72fa76b095e53c68}\label{classspk_1_1AbstractWidget_a02704ad9ce8f817d72fa76b095e53c68}} 
-{\bfseries Abstract\+Widget} (const std\+::wstring \&p\+\_\+name)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}\label{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}} 
-{\footnotesize template$<$typename TChildren\+Type , typename ... Args$>$ }\\TChildren\+Type $\ast$ {\bfseries add\+Children\+Widget} (Args \&\&... p\+\_\+args)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}\label{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}} 
-void {\bfseries set\+Geometry} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor, const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}\label{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}} 
-void {\bfseries place} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}\label{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}} 
-void {\bfseries move} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}\label{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}} 
-void {\bfseries resize} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}\label{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}} 
-void {\bfseries sort\+Childrens\+By\+Depth} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_ae20e7261fea3273f275f2662c630ebe8}\label{classspk_1_1AbstractWidget_ae20e7261fea3273f275f2662c630ebe8}} 
-void {\bfseries set\+Depth} (const float \&p\+\_\+depth)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_af6762afb291b9fe0497fa8ac619ef0f7}\label{classspk_1_1AbstractWidget_af6762afb291b9fe0497fa8ac619ef0f7}} 
-void {\bfseries rename} (const std\+::wstring \&p\+\_\+name)
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a7606a7000127e6f3a3c5c61d22f17314}\label{classspk_1_1AbstractWidget_a7606a7000127e6f3a3c5c61d22f17314}} 
-constexpr const std\+::wstring \& {\bfseries name} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}\label{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}} 
-constexpr const float \& {\bfseries depth} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}\label{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}} 
-bool {\bfseries is\+Pointed} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+point)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1AbstractWidget_a02704ad9ce8f817d72fa76b095e53c68}{Abstract\+Widget}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object with a specified name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classspk_1_1AbstractWidget_acaf7b700c9f4f67341dc5156287ad271}{$\sim$\+Abstract\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TChildren\+Type , typename ... Args$>$ }\\TChildren\+Type $\ast$ \mbox{\hyperlink{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}{add\+Children\+Widget}} (Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Add a children widget to this widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}{set\+Geometry}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor, const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set the geometry of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}{place}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
+\begin{DoxyCompactList}\small\item\em Place the widget at a specific anchor position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}{move}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
+\begin{DoxyCompactList}\small\item\em Move the widget by a specific amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}{resize}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resize the widget to a new size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}{sort\+Childrens\+By\+Depth}} ()
+\begin{DoxyCompactList}\small\item\em Sort the children widgets by their depth value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_ae20e7261fea3273f275f2662c630ebe8}{set\+Depth}} (const float \&p\+\_\+depth)
+\begin{DoxyCompactList}\small\item\em Set the depth value of the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_af6762afb291b9fe0497fa8ac619ef0f7}{rename}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Rename the widget. \end{DoxyCompactList}\item 
+constexpr const std\+::wstring \& \mbox{\hyperlink{classspk_1_1AbstractWidget_a7606a7000127e6f3a3c5c61d22f17314}{name}} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the widget. \end{DoxyCompactList}\item 
+constexpr const float \& \mbox{\hyperlink{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}{depth}} () const
+\begin{DoxyCompactList}\small\item\em Get the depth value of the widget. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}{is\+Pointed}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Check if a point is inside the widget\textquotesingle{}s boundaries. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,6 +66,236 @@ class {\bfseries Widget\+Module}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Abstract base class for widgets. 
+
+This class defines the interface and common functionality for widgets. It inherits from \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} and \mbox{\hyperlink{classspk_1_1ActivableObject}{Activable\+Object}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a02704ad9ce8f817d72fa76b095e53c68}\label{classspk_1_1AbstractWidget_a02704ad9ce8f817d72fa76b095e53c68}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!AbstractWidget@{AbstractWidget}}
+\index{AbstractWidget@{AbstractWidget}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{AbstractWidget()}{AbstractWidget()}}
+{\footnotesize\ttfamily spk\+::\+Abstract\+Widget\+::\+Abstract\+Widget (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object with a specified name. 
+
+This constructor creates a new \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object with the specified name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_acaf7b700c9f4f67341dc5156287ad271}\label{classspk_1_1AbstractWidget_acaf7b700c9f4f67341dc5156287ad271}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!````~AbstractWidget@{$\sim$AbstractWidget}}
+\index{````~AbstractWidget@{$\sim$AbstractWidget}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractWidget()}{~AbstractWidget()}}
+{\footnotesize\ttfamily virtual spk\+::\+Abstract\+Widget\+::$\sim$\+Abstract\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object. 
+
+This is the destructor for the \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}\label{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!addChildrenWidget@{addChildrenWidget}}
+\index{addChildrenWidget@{addChildrenWidget}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{addChildrenWidget()}{addChildrenWidget()}}
+{\footnotesize\ttfamily template$<$typename TChildren\+Type , typename ... Args$>$ \\
+TChildren\+Type$\ast$ spk\+::\+Abstract\+Widget\+::add\+Children\+Widget (\begin{DoxyParamCaption}\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a children widget to this widget. 
+
+This function adds a children widget to this widget and returns a pointer to it.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TChildren\+Type} & The type of the children widget. \\
+\hline
+{\em Args} & The types of the arguments for constructing the children widget. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & The arguments for constructing the children widget. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the children widget. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}\label{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!depth@{depth}}
+\index{depth@{depth}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily constexpr const float\& spk\+::\+Abstract\+Widget\+::depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the depth value of the widget. 
+
+This function returns the depth value of the widget.
+
+\begin{DoxyReturn}{Returns}
+The depth value of the widget. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}\label{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!isPointed@{isPointed}}
+\index{isPointed@{isPointed}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{isPointed()}{isPointed()}}
+{\footnotesize\ttfamily bool spk\+::\+Abstract\+Widget\+::is\+Pointed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+point }\end{DoxyParamCaption})}
+
+
+
+Check if a point is inside the widget\textquotesingle{}s boundaries. 
+
+This function checks if a given point is inside the boundaries of the widget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+point} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside the widget, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}\label{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!move@{move}}
+\index{move@{move}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
+
+
+
+Move the widget by a specific amount. 
+
+This function moves the widget by a specific amount, while keeping its current size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+anchor} & The amount to move the widget by. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a7606a7000127e6f3a3c5c61d22f17314}\label{classspk_1_1AbstractWidget_a7606a7000127e6f3a3c5c61d22f17314}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!name@{name}}
+\index{name@{name}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily constexpr const std\+::wstring\& spk\+::\+Abstract\+Widget\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the name of the widget. 
+
+This function returns the name of the widget.
+
+\begin{DoxyReturn}{Returns}
+The name of the widget. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}\label{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!place@{place}}
+\index{place@{place}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{place()}{place()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
+
+
+
+Place the widget at a specific anchor position. 
+
+This function places the widget at a specific anchor position, while keeping its current size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+anchor} & The new anchor position of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_af6762afb291b9fe0497fa8ac619ef0f7}\label{classspk_1_1AbstractWidget_af6762afb291b9fe0497fa8ac619ef0f7}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!rename@{rename}}
+\index{rename@{rename}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{rename()}{rename()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::rename (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Rename the widget. 
+
+This function renames the widget with a new name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The new name of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}\label{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!resize@{resize}}
+\index{resize@{resize}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resize the widget to a new size. 
+
+This function resizes the widget to a new size, while keeping its current anchor position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & The new size of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_ae20e7261fea3273f275f2662c630ebe8}\label{classspk_1_1AbstractWidget_ae20e7261fea3273f275f2662c630ebe8}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!setDepth@{setDepth}}
+\index{setDepth@{setDepth}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{setDepth()}{setDepth()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::set\+Depth (\begin{DoxyParamCaption}\item[{const float \&}]{p\+\_\+depth }\end{DoxyParamCaption})}
+
+
+
+Set the depth value of the widget. 
+
+This function sets the depth value of the widget. Widgets with higher depth values will be rendered on top of widgets with lower depth values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+depth} & The depth value of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}\label{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!setGeometry@{setGeometry}}
+\index{setGeometry@{setGeometry}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{setGeometry()}{setGeometry()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::set\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor,  }\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Set the geometry of the widget. 
+
+This function sets the geometry of the widget, including the anchor position and size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+anchor} & The anchor position of the widget. \\
+\hline
+{\em p\+\_\+size} & The size of the widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}\label{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}} 
+\index{spk::AbstractWidget@{spk::AbstractWidget}!sortChildrensByDepth@{sortChildrensByDepth}}
+\index{sortChildrensByDepth@{sortChildrensByDepth}!spk::AbstractWidget@{spk::AbstractWidget}}
+\doxysubsubsection{\texorpdfstring{sortChildrensByDepth()}{sortChildrensByDepth()}}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::sort\+Childrens\+By\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sort the children widgets by their depth value. 
+
+This function sorts the children widgets of this widget by their depth value, in ascending order. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A singleton class to manage time-related metrics for the software.  
+<p>Class for recording time-related metrics in the application.  
  <a href="classspk_1_1TimeMetrics.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__time__metrics_8hpp_source.html">spk_time_metrics.hpp</a>&gt;</code></p>
@@ -84,7 +84,7 @@ Inheritance diagram for spk::TimeMetrics:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1TimeMetrics__inherit__graph.png" border="0" usemap="#aspk_1_1TimeMetrics_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1TimeMetrics_inherit__map" id="aspk_1_1TimeMetrics_inherit__map">
-<area shape="rect" title="A singleton class to manage time&#45;related metrics for the software." alt="" coords="51,80,185,107"/>
+<area shape="rect" title="Class for recording time&#45;related metrics in the application." alt="" coords="51,80,185,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,231,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -93,7 +93,7 @@ Collaboration diagram for spk::TimeMetrics:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1TimeMetrics__coll__graph.png" border="0" usemap="#aspk_1_1TimeMetrics_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1TimeMetrics_coll__map" id="aspk_1_1TimeMetrics_coll__map">
-<area shape="rect" title="A singleton class to manage time&#45;related metrics for the software." alt="" coords="51,80,185,107"/>
+<area shape="rect" title="Class for recording time&#45;related metrics in the application." alt="" coords="51,80,185,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,231,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -101,10 +101,10 @@ Collaboration diagram for spk::TimeMetrics:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2ec64db76c2329d780ef3138ea60611"><td class="memItemLeft" align="right" valign="top">constexpr const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">time</a> () const</td></tr>
-<tr class="memdesc:ab2ec64db76c2329d780ef3138ea60611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor function to get the total running time of the software.  <a href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">More...</a><br /></td></tr>
+<tr class="memdesc:ab2ec64db76c2329d780ef3138ea60611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total time since the application started.  <a href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">More...</a><br /></td></tr>
 <tr class="separator:ab2ec64db76c2329d780ef3138ea60611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24989064858748b2da18b1726280bd0a"><td class="memItemLeft" align="right" valign="top">constexpr const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">deltaTime</a> () const</td></tr>
-<tr class="memdesc:a24989064858748b2da18b1726280bd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor function to get the time elapsed since the last frame update.  <a href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">More...</a><br /></td></tr>
+<tr class="memdesc:a24989064858748b2da18b1726280bd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time elapsed between the last two frames.  <a href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">More...</a><br /></td></tr>
 <tr class="separator:a24989064858748b2da18b1726280bd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af19a929fc6b3b6be1b9a06ca48022b2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#af19a929fc6b3b6be1b9a06ca48022b2d">sleepAtLeast</a> (size_t p_millisecond)</td></tr>
 <tr class="memdesc:af19a929fc6b3b6be1b9a06ca48022b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to put the current thread to sleep for at least the specified duration.  <a href="classspk_1_1TimeMetrics.html#af19a929fc6b3b6be1b9a06ca48022b2d">More...</a><br /></td></tr>
@@ -122,23 +122,27 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>TimeModule</b></td><
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; TimeMetrics &gt;</a></td></tr>
-<tr class="memitem:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="ab970838cbc825424436ad64613b20c12"></a>
-static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>instanciate</b> (Args &amp;&amp;...args)</td></tr>
+<tr class="memitem:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">instanciate</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the singleton object. This template function creates a new instance of the singleton object if it doesn't exist. If an instance already exists, it returns the existing instance.  <a href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">More...</a><br /></td></tr>
 <tr class="separator:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a5f56bedfe0791cc1cc09d34bb3be382c"></a>
-static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> ()</td></tr>
+<tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">instance</a> ()</td></tr>
+<tr class="memdesc:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">More...</a><br /></td></tr>
 <tr class="separator:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a0fd0698aa7eab7c2a5cfbf11a9ddfad1"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>release</b> ()</td></tr>
+<tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">release</a> ()</td></tr>
+<tr class="memdesc:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the singleton instance.  <a href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">More...</a><br /></td></tr>
 <tr class="separator:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; TimeMetrics &gt;</a></td></tr>
+<tr class="memitem:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a24d01aa8ba49475d195a492d724d43e1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a24d01aa8ba49475d195a492d724d43e1">Singleton</a> ()</td></tr>
+<tr class="memdesc:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor. This constructor is protected to prevent direct instantiation of the singleton class. <br /></td></tr>
+<tr class="separator:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; TimeMetrics &gt;</a></td></tr>
-<tr class="memitem:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a745f66a5489929948d930a09156aec4c"></a>
-static std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_instance</b></td></tr>
+<tr class="memitem:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">TimeMetrics</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c">_instance</a></td></tr>
 <tr class="separator:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A singleton class to manage time-related metrics for the software. </p>
-<p>This class is responsible for keeping track of the software's running time and other time-related metrics. This ensures consistency across the entire software. </p>
+<div class="textblock"><p>Class for recording time-related metrics in the application. </p>
+<p>This class is a singleton and can be accessed anywhere in the application to get time-related metrics. It keeps track of two time metrics: the total time since the application started and the time elapsed between the last two frames (delta time). </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a24989064858748b2da18b1726280bd0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24989064858748b2da18b1726280bd0a">&#9670;&nbsp;</a></span>deltaTime()</h2>
@@ -163,8 +167,9 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">Tim
 </table>
 </div><div class="memdoc">
 
-<p>Accessor function to get the time elapsed since the last frame update. </p>
-<dl class="section return"><dt>Returns</dt><dd>A const reference to the the time elapsed since the last frame update. </dd></dl>
+<p>Get the time elapsed between the last two frames. </p>
+<p>This function is used to get the time elapsed between the last two frames, also known as the delta time.</p>
+<dl class="section return"><dt>Returns</dt><dd>The delta time in milliseconds. </dd></dl>
 
 </div>
 </div>
@@ -217,8 +222,9 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1TimeMetrics.html">Tim
 </table>
 </div><div class="memdoc">
 
-<p>Accessor function to get the total running time of the software. </p>
-<dl class="section return"><dt>Returns</dt><dd>A const reference to the total running time of the software variable. </dd></dl>
+<p>Get the total time since the application started. </p>
+<p>This function is used to get the total time since the application started.</p>
+<dl class="section return"><dt>Returns</dt><dd>The total time since the application started in milliseconds. </dd></dl>
 
 </div>
 </div>

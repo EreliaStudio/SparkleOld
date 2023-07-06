@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1TimeModule" kind="class" language="C++" prot="public">
     <compoundname>spk::TimeModule</compoundname>
     <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
+    <includes refid="spk__time__module_8hpp" local="no">spk_time_module.hpp</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -10,12 +11,13 @@
         <argsstring>()</argsstring>
         <name>TimeModule</name>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1TimeModule" kindref="compound">TimeModule</ref> object. Will instanciate the <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_time_module.hpp" line="10" column="1"/>
+        <location file="includes/application/modules/spk_time_module.hpp" line="21" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -23,12 +25,13 @@
         <argsstring>()</argsstring>
         <name>~TimeModule</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1TimeModule" kindref="compound">TimeModule</ref> object. Will release the <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref> instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_time_module.hpp" line="12" column="1"/>
+        <location file="includes/application/modules/spk_time_module.hpp" line="27" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -37,17 +40,20 @@
         <name>update</name>
         <reimplements refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4">update</reimplements>
         <briefdescription>
+<para>Updates the time state. Will update the <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_time_module.hpp" line="14" column="6"/>
+        <location file="includes/application/modules/spk_time_module.hpp" line="33" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing time-related functionality. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides methods to handle and manage time-related functionality within the application. This class handle the <ref refid="classspk_1_1TimeMetrics" kindref="compound">TimeMetrics</ref> singleton. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -73,7 +79,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_time_module.hpp" line="7" column="1" bodyfile="includes/application/modules/spk_time_module.hpp" bodystart="8" bodyend="15"/>
+    <location file="includes/application/modules/spk_time_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_time_module.hpp" bodystart="15" bodyend="34"/>
     <listofallmembers>
       <member refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" prot="public" virt="non-virtual"><scope>spk::TimeModule</scope><name>TimeModule</name></member>
       <member refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" prot="public" virt="virtual"><scope>spk::TimeModule</scope><name>update</name></member>

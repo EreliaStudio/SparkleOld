@@ -75,12 +75,17 @@ $(function() {
 <div class="title">spk::IOStream Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An output stream with a custom prefix, suitable for logging or debugging.  
+ <a href="classspk_1_1IOStream.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__iostream_8hpp_source.html">spk_iostream.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::IOStream:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1IOStream__inherit__graph.png" border="0" usemap="#aspk_1_1IOStream_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1IOStream_inherit__map" id="aspk_1_1IOStream_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,120,107"/>
+<area shape="rect" title="An output stream with a custom prefix, suitable for logging or debugging." alt="" coords="5,80,120,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,120,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -89,7 +94,7 @@ Collaboration diagram for spk::IOStream:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1IOStream__coll__graph.png" border="0" usemap="#aspk_1_1IOStream_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1IOStream_coll__map" id="aspk_1_1IOStream_coll__map">
-<area shape="rect" title=" " alt="" coords="27,171,141,197"/>
+<area shape="rect" title="An output stream with a custom prefix, suitable for logging or debugging." alt="" coords="27,171,141,197"/>
 <area shape="rect" title=" " alt="" coords="5,81,120,108"/>
 <area shape="rect" title=" " alt="" coords="145,81,319,108"/>
 <area shape="rect" title=" " alt="" coords="173,5,291,32"/>
@@ -98,11 +103,11 @@ Collaboration diagram for spk::IOStream:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acfa77761710612dc114339caa3bb14fd"><td class="memItemLeft" align="right" valign="top"><a id="acfa77761710612dc114339caa3bb14fd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>IOStream</b> (std::wostream &amp;p_outputStream, std::wstring p_prefix=L&quot;&quot;)</td></tr>
+<tr class="memitem:acfa77761710612dc114339caa3bb14fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IOStream.html#acfa77761710612dc114339caa3bb14fd">IOStream</a> (std::wostream &amp;p_outputStream, std::wstring p_prefix=L&quot;&quot;)</td></tr>
+<tr class="memdesc:acfa77761710612dc114339caa3bb14fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classspk_1_1IOStream.html#acfa77761710612dc114339caa3bb14fd">More...</a><br /></td></tr>
 <tr class="separator:acfa77761710612dc114339caa3bb14fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07173d0c87a90b1d40c5ce9bdf4bcc62"><td class="memItemLeft" align="right" valign="top"><a id="a07173d0c87a90b1d40c5ce9bdf4bcc62"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPrefix</b> (const std::wstring &amp;p_prefix)</td></tr>
+<tr class="memitem:a07173d0c87a90b1d40c5ce9bdf4bcc62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a> (const std::wstring &amp;p_prefix)</td></tr>
+<tr class="memdesc:a07173d0c87a90b1d40c5ce9bdf4bcc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prefix of the buffer.  <a href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">More...</a><br /></td></tr>
 <tr class="separator:a07173d0c87a90b1d40c5ce9bdf4bcc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -111,6 +116,73 @@ Public Attributes</h2></td></tr>
 IOBuffer&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b></td></tr>
 <tr class="separator:a3b1675416bc263b85373bd3012d49ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An output stream with a custom prefix, suitable for logging or debugging. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acfa77761710612dc114339caa3bb14fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa77761710612dc114339caa3bb14fd">&#9670;&nbsp;</a></span>IOStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">spk::IOStream::IOStream </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_outputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::wstring&#160;</td>
+          <td class="paramname"><em>p_prefix</em> = <code>L&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_outputStream</td><td>Reference to the output stream. </td></tr>
+    <tr><td class="paramname">p_prefix</td><td>Prefix string for the stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a07173d0c87a90b1d40c5ce9bdf4bcc62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07173d0c87a90b1d40c5ce9bdf4bcc62">&#9670;&nbsp;</a></span>setPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::IOStream::setPrefix </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_prefix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the prefix of the buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_prefix</td><td>The new prefix string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/iostream/<a class="el" href="spk__iostream_8hpp_source.html">spk_iostream.hpp</a></li>
 </ul>

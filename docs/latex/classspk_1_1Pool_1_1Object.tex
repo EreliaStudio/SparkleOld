@@ -1,35 +1,178 @@
 \hypertarget{classspk_1_1Pool_1_1Object}{}\doxysection{spk\+::Pool$<$ TType $>$\+::Object Class Reference}
 \label{classspk_1_1Pool_1_1Object}\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+
+
+An internal class to manage objects retrieved from the pool.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+pool.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a1f83127b5f78cbe9752cc4b6419a53bd}\label{classspk_1_1Pool_1_1Object_a1f83127b5f78cbe9752cc4b6419a53bd}} 
-{\bfseries Object} (const \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} \&p\+\_\+other)
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_ab235caeb032b6b9c2f3a5ed481287eb9}\label{classspk_1_1Pool_1_1Object_ab235caeb032b6b9c2f3a5ed481287eb9}} 
-TType $\ast$ {\bfseries operator()} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a74dee53daa09bd8f2fd2285d26926b33}\label{classspk_1_1Pool_1_1Object_a74dee53daa09bd8f2fd2285d26926b33}} 
-const TType $\ast$ {\bfseries operator()} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_af96ee327ca6eb615af93d0909843aede}\label{classspk_1_1Pool_1_1Object_af96ee327ca6eb615af93d0909843aede}} 
-TType $\ast$ {\bfseries operator-\/$>$} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_ab0cef28a202aae98789f48de67e1a7cc}\label{classspk_1_1Pool_1_1Object_ab0cef28a202aae98789f48de67e1a7cc}} 
-const TType $\ast$ {\bfseries operator-\/$>$} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a31fc7bcf5596dbceddf9a938f36a5fc8}\label{classspk_1_1Pool_1_1Object_a31fc7bcf5596dbceddf9a938f36a5fc8}} 
-TType \& {\bfseries operator$\ast$} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a978235e7c6d322d8c00d0ca39e06896f}\label{classspk_1_1Pool_1_1Object_a978235e7c6d322d8c00d0ca39e06896f}} 
-const TType \& {\bfseries operator$\ast$} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1Pool_1_1Object_a62ad9ca064abef6a380c961fa9a16516}{$\sim$\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Pool_1_1Object_a1f83127b5f78cbe9752cc4b6419a53bd}{Object}} (const \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} class. \end{DoxyCompactList}\item 
+TType $\ast$ \mbox{\hyperlink{classspk_1_1Pool_1_1Object_ab235caeb032b6b9c2f3a5ed481287eb9}{operator()}} ()
+\begin{DoxyCompactList}\small\item\em Function call operator. \end{DoxyCompactList}\item 
+const TType $\ast$ \mbox{\hyperlink{classspk_1_1Pool_1_1Object_a74dee53daa09bd8f2fd2285d26926b33}{operator()}} () const
+\begin{DoxyCompactList}\small\item\em Const version of the function call operator. \end{DoxyCompactList}\item 
+TType $\ast$ \mbox{\hyperlink{classspk_1_1Pool_1_1Object_af96ee327ca6eb615af93d0909843aede}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em Member access operator. \end{DoxyCompactList}\item 
+const TType $\ast$ \mbox{\hyperlink{classspk_1_1Pool_1_1Object_ab0cef28a202aae98789f48de67e1a7cc}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em Const version of the member access operator. \end{DoxyCompactList}\item 
+TType \& \mbox{\hyperlink{classspk_1_1Pool_1_1Object_a31fc7bcf5596dbceddf9a938f36a5fc8}{operator$\ast$}} ()
+\begin{DoxyCompactList}\small\item\em Dereference operator. \end{DoxyCompactList}\item 
+const TType \& \mbox{\hyperlink{classspk_1_1Pool_1_1Object_a978235e7c6d322d8c00d0ca39e06896f}{operator$\ast$}} () const
+\begin{DoxyCompactList}\small\item\em Const version of the dereference operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Pool_1_1Object_aaa45caad0db0173735281fcdf9aa5e8b}\label{classspk_1_1Pool_1_1Object_aaa45caad0db0173735281fcdf9aa5e8b}} 
 class {\bfseries Pool}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Pool$<$ TType $>$\+::\+Object}
+
+An internal class to manage objects retrieved from the pool. 
+
+This class is designed to keep track of the memory it manages and to automatically return it to the pool when it is no longer needed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a62ad9ca064abef6a380c961fa9a16516}\label{classspk_1_1Pool_1_1Object_a62ad9ca064abef6a380c961fa9a16516}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} class. 
+
+The destructor decrements the reference count and if it reaches zero, the content of the object is returned to the pool. \mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a1f83127b5f78cbe9752cc4b6419a53bd}\label{classspk_1_1Pool_1_1Object_a1f83127b5f78cbe9752cc4b6419a53bd}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!Object@{Object}}
+\index{Object@{Object}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor for the \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} class. 
+
+The copy constructor increases the reference count.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The \mbox{\hyperlink{classspk_1_1Pool_1_1Object}{Object}} to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_ab235caeb032b6b9c2f3a5ed481287eb9}\label{classspk_1_1Pool_1_1Object_ab235caeb032b6b9c2f3a5ed481287eb9}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator()@{operator()}}
+\index{operator()@{operator()}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+TType$\ast$ \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function call operator. 
+
+Allows accessing the content of the object using the function call syntax.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a74dee53daa09bd8f2fd2285d26926b33}\label{classspk_1_1Pool_1_1Object_a74dee53daa09bd8f2fd2285d26926b33}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator()@{operator()}}
+\index{operator()@{operator()}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType$\ast$ \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const version of the function call operator. 
+
+Allows accessing the content of the object using the function call syntax, preserving constness.
+
+\begin{DoxyReturn}{Returns}
+A const pointer to the content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a31fc7bcf5596dbceddf9a938f36a5fc8}\label{classspk_1_1Pool_1_1Object_a31fc7bcf5596dbceddf9a938f36a5fc8}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+TType\& \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dereference operator. 
+
+Allows dereferencing the content using the dereference operator.
+
+\begin{DoxyReturn}{Returns}
+A reference to the content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_a978235e7c6d322d8c00d0ca39e06896f}\label{classspk_1_1Pool_1_1Object_a978235e7c6d322d8c00d0ca39e06896f}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType\& \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const version of the dereference operator. 
+
+Allows dereferencing the content using the dereference operator, preserving constness.
+
+\begin{DoxyReturn}{Returns}
+A const reference to the content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_af96ee327ca6eb615af93d0909843aede}\label{classspk_1_1Pool_1_1Object_af96ee327ca6eb615af93d0909843aede}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+TType$\ast$ \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Member access operator. 
+
+Allows accessing members of the content using the arrow operator.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Pool_1_1Object_ab0cef28a202aae98789f48de67e1a7cc}\label{classspk_1_1Pool_1_1Object_ab0cef28a202aae98789f48de67e1a7cc}} 
+\index{spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!spk::Pool$<$ TType $>$::Object@{spk::Pool$<$ TType $>$::Object}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType$\ast$ \mbox{\hyperlink{classspk_1_1Pool}{spk\+::\+Pool}}$<$ TType $>$\+::Object\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const version of the member access operator. 
+
+Allows accessing members of the content using the arrow operator, preserving constness.
+
+\begin{DoxyReturn}{Returns}
+A const pointer to the content. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

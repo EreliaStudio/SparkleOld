@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['thread_81',['Thread',['../classspk_1_1Thread.html',1,'spk']]],
-  ['threadsafequeue_82',['ThreadSafeQueue',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['threadsafequeue_3c_20job_20_3e_83',['ThreadSafeQueue&lt; Job &gt;',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['threadsafequeue_3c_20systemmessage_20_3e_84',['ThreadSafeQueue&lt; SystemMessage &gt;',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['time_85',['time',['../classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611',1,'spk::TimeMetrics']]],
-  ['timemetrics_86',['TimeMetrics',['../classspk_1_1TimeMetrics.html',1,'spk']]],
-  ['timemodule_87',['TimeModule',['../classspk_1_1TimeModule.html',1,'spk']]],
-  ['timeout_88',['Timeout',['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398',1,'spk::Timer']]],
-  ['timer_89',['Timer',['../classspk_1_1Timer.html',1,'spk::Timer'],['../classspk_1_1Timer.html#a407d0e659a442be8f81043fc05d14982',1,'spk::Timer::Timer()']]],
-  ['totalduration_90',['totalDuration',['../classspk_1_1Timer.html#ad57b7897092566299295a3617851926e',1,'spk::Timer']]]
+  ['name_104',['name',['../classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314',1,'spk::AbstractWidget']]],
+  ['nb_5fbutton_105',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]],
+  ['nographicswidget_106',['NoGraphicsWidget',['../classspk_1_1NoGraphicsWidget.html',1,'spk']]],
+  ['norm_107',['norm',['../structspk_1_1IVector2_xC2_xB2.html#a42a82569e87d1ee2b2f8bf5f91b73275',1,'spk::IVector2²']]],
+  ['normalize_108',['normalize',['../structspk_1_1IVector2_xC2_xB2.html#a1407e6aecf160d856032db445ced6a55',1,'spk::IVector2²']]],
+  ['notify_109',['notify',['../classspk_1_1Observer.html#add756ae632b22250c9153bbcda59218c',1,'spk::Observer']]]
 ];

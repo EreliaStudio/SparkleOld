@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1WidgetModule" kind="class" language="C++" prot="public">
     <compoundname>spk::WidgetModule</compoundname>
     <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
+    <includes refid="spk__widget__module_8hpp" local="no">spk_widget_module.hpp</includes>
     <innerclass refid="classspk_1_1WidgetModule_1_1CentralWidget" prot="private">spk::WidgetModule::CentralWidget</innerclass>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" prot="private" static="no" mutable="no">
@@ -11,12 +12,13 @@
         <argsstring></argsstring>
         <name>_centralWidget</name>
         <briefdescription>
+<para>Pointer to the central widget of the application. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="24" column="15" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="24" bodyend="-1"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="57" column="15" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="57" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -26,12 +28,13 @@
         <argsstring>()</argsstring>
         <name>WidgetModule</name>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1WidgetModule" kindref="compound">WidgetModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="27" column="1"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="63" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -39,12 +42,13 @@
         <argsstring>()</argsstring>
         <name>~WidgetModule</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1WidgetModule" kindref="compound">WidgetModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="29" column="1"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -53,12 +57,13 @@
         <name>update</name>
         <reimplements refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4">update</reimplements>
         <briefdescription>
+<para>Updates the widget state. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="31" column="6"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="73" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -66,12 +71,13 @@
         <argsstring>()</argsstring>
         <name>render</name>
         <briefdescription>
+<para>Renders the widget. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="33" column="6"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="78" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> *</type>
@@ -79,17 +85,23 @@
         <argsstring>() const</argsstring>
         <name>centralWidget</name>
         <briefdescription>
+<para>Returns a pointer to the central widget. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the central widget. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="35" column="16"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="85" column="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing widgets within the application. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides methods to handle and manage the widgets within the application. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -115,7 +127,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_widget_module.hpp" line="8" column="1" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="9" bodyend="36"/>
+    <location file="includes/application/modules/spk_widget_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="15" bodyend="86"/>
     <listofallmembers>
       <member refid="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" prot="private" virt="non-virtual"><scope>spk::WidgetModule</scope><name>_centralWidget</name></member>
       <member refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" prot="public" virt="non-virtual"><scope>spk::WidgetModule</scope><name>centralWidget</name></member>

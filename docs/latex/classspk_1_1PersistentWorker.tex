@@ -2,6 +2,15 @@
 \label{classspk_1_1PersistentWorker}\index{spk::PersistentWorker@{spk::PersistentWorker}}
 
 
+Class for creating and managing a persistent worker thread.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+persistent\+\_\+worker.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Persistent\+Worker\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,38 +32,167 @@ Collaboration diagram for spk\+::Persistent\+Worker\+:
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_a3d6acafce004b1597a480b50baf24881}\label{classspk_1_1PersistentWorker_a3d6acafce004b1597a480b50baf24881}} 
-using {\bfseries Job} = Contract\+Provider\+::\+Callback
-\end{DoxyCompactItemize}
+using \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} = Contract\+Provider\+::\+Callback
+\begin{DoxyCompactList}\small\item\em The type of job to be executed by the worker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}\label{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}} 
-{\bfseries Persistent\+Worker} (const std\+::wstring \&p\+\_\+name)
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}\label{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}} 
-\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \& {\bfseries add\+Job} (const Job \&p\+\_\+job)
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}\label{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}} 
-constexpr bool {\bfseries is\+Running} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}\label{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}} 
-void {\bfseries start} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}\label{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}} 
-void {\bfseries stop} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}\label{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}} 
-void {\bfseries join} ()=delete
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}\label{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}} 
-void {\bfseries pause} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}\label{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}} 
-void {\bfseries resume} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}{Persistent\+Worker}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object with a specified name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1PersistentWorker_ad42857f1630499681af81f5ca49fcf37}{$\sim$\+Persistent\+Worker}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1PersistentWorker_a4795a279ac83e4da6b6789450ce83ee3}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&p\+\_\+job)
+\begin{DoxyCompactList}\small\item\em Add a job to the worker. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Check if the worker is running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the worker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the worker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}{join}} ()=delete
+\begin{DoxyCompactList}\small\item\em Join the worker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}{pause}} ()
+\begin{DoxyCompactList}\small\item\em Pause the worker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}{resume}} ()
+\begin{DoxyCompactList}\small\item\em Resume the worker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Class for creating and managing a persistent worker thread. 
+
+This class extends the \mbox{\hyperlink{classspk_1_1Thread}{Thread}} class and provides additional functionality for adding jobs to the worker and controlling its execution. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}\label{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!Job@{Job}}
+\index{Job@{Job}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{Job}{Job}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{spk\+::\+Persistent\+Worker\+::\+Job}}}
+
+
+
+The type of job to be executed by the worker. 
+
+This typedef defines the type of job to be executed by the worker. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}\label{classspk_1_1PersistentWorker_a5b573916b185807a9ea60fbce9690918}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!PersistentWorker@{PersistentWorker}}
+\index{PersistentWorker@{PersistentWorker}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{PersistentWorker()}{PersistentWorker()}}
+{\footnotesize\ttfamily spk\+::\+Persistent\+Worker\+::\+Persistent\+Worker (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object with a specified name. 
+
+This constructor creates a new \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object with the specified name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the worker thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad42857f1630499681af81f5ca49fcf37}\label{classspk_1_1PersistentWorker_ad42857f1630499681af81f5ca49fcf37}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!````~PersistentWorker@{$\sim$PersistentWorker}}
+\index{````~PersistentWorker@{$\sim$PersistentWorker}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{$\sim$PersistentWorker()}{~PersistentWorker()}}
+{\footnotesize\ttfamily spk\+::\+Persistent\+Worker\+::$\sim$\+Persistent\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object. 
+
+This is the destructor for the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a4795a279ac83e4da6b6789450ce83ee3}\label{classspk_1_1PersistentWorker_a4795a279ac83e4da6b6789450ce83ee3}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!addJob@{addJob}}
+\index{addJob@{addJob}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} spk\+::\+Persistent\+Worker\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})}
+
+
+
+Add a job to the worker. 
+
+This function adds a job to the worker. The job will be executed by the worker thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+job} & The job to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A contract representing the job. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}\label{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily constexpr bool spk\+::\+Persistent\+Worker\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Check if the worker is running. 
+
+This function checks if the worker is currently running.
+
+\begin{DoxyReturn}{Returns}
+True if the worker is running, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}\label{classspk_1_1PersistentWorker_ad730a6aef37005bc23999327bdd56ac7}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!join@{join}}
+\index{join@{join}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void spk\+::\+Persistent\+Worker\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Join the worker. 
+
+This function is deleted and not available in the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} class. \mbox{\Hypertarget{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}\label{classspk_1_1PersistentWorker_a48e0003b4bf60e84312d20257a094a79}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!pause@{pause}}
+\index{pause@{pause}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void spk\+::\+Persistent\+Worker\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pause the worker. 
+
+This function pauses the execution of the worker thread. \mbox{\Hypertarget{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}\label{classspk_1_1PersistentWorker_afbb963099f60af09f97827e3ab1f2d6b}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!resume@{resume}}
+\index{resume@{resume}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{resume()}{resume()}}
+{\footnotesize\ttfamily void spk\+::\+Persistent\+Worker\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resume the worker. 
+
+This function resumes the execution of the worker thread. \mbox{\Hypertarget{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}\label{classspk_1_1PersistentWorker_a706be22484b03b2f024308179781e552}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!start@{start}}
+\index{start@{start}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void spk\+::\+Persistent\+Worker\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the worker. 
+
+This function starts the worker thread. \mbox{\Hypertarget{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}\label{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}} 
+\index{spk::PersistentWorker@{spk::PersistentWorker}!stop@{stop}}
+\index{stop@{stop}!spk::PersistentWorker@{spk::PersistentWorker}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void spk\+::\+Persistent\+Worker\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the worker. 
+
+This function stops the worker thread. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

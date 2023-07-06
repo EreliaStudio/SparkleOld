@@ -2,6 +2,15 @@
 \label{classspk_1_1Observer}\index{spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}}
 
 
+\mbox{\hyperlink{classspk_1_1Observer}{Observer}} class template.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+observer.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Observer$<$ TEvent $>$\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,13 +32,84 @@ Collaboration diagram for spk\+::Observer$<$ TEvent $>$\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Observer_a9d72f4a2515061bab4721fa640da5c3b}\label{classspk_1_1Observer_a9d72f4a2515061bab4721fa640da5c3b}} 
-\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} {\bfseries subscribe} (TEvent p\+\_\+event, const Callback \&p\+\_\+callback)
-\item 
-\mbox{\Hypertarget{classspk_1_1Observer_add756ae632b22250c9153bbcda59218c}\label{classspk_1_1Observer_add756ae632b22250c9153bbcda59218c}} 
-void {\bfseries notify} (TEvent p\+\_\+event)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1Observer_a3cd7b9980e08c9d8a156b6f6c4b0c56c}{Observer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classspk_1_1Observer}{Observer}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1Observer_a9d72f4a2515061bab4721fa640da5c3b}{subscribe}} (TEvent p\+\_\+event, const Callback \&p\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Subscribe to an event with a callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Observer_add756ae632b22250c9153bbcda59218c}{notify}} (TEvent p\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Notify the observers of an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TEvent$>$\newline
+class spk\+::\+Observer$<$ TEvent $>$}
+
+\mbox{\hyperlink{classspk_1_1Observer}{Observer}} class template. 
+
+This class template represents an observer that can subscribe to events and notify registered callbacks when the events occur. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TEvent} & The type of the event. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Observer_a3cd7b9980e08c9d8a156b6f6c4b0c56c}\label{classspk_1_1Observer_a3cd7b9980e08c9d8a156b6f6c4b0c56c}} 
+\index{spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}!Observer@{Observer}}
+\index{Observer@{Observer}!spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}}
+\doxysubsubsection{\texorpdfstring{Observer()}{Observer()}}
+{\footnotesize\ttfamily template$<$typename TEvent $>$ \\
+\mbox{\hyperlink{classspk_1_1Observer}{spk\+::\+Observer}}$<$ TEvent $>$\+::\mbox{\hyperlink{classspk_1_1Observer}{Observer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classspk_1_1Observer}{Observer}}. 
+
+This constructor initializes the observer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Observer_add756ae632b22250c9153bbcda59218c}\label{classspk_1_1Observer_add756ae632b22250c9153bbcda59218c}} 
+\index{spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}!notify@{notify}}
+\index{notify@{notify}!spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily template$<$typename TEvent $>$ \\
+void \mbox{\hyperlink{classspk_1_1Observer}{spk\+::\+Observer}}$<$ TEvent $>$\+::notify (\begin{DoxyParamCaption}\item[{TEvent}]{p\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Notify the observers of an event. 
+
+This function notifies all registered callbacks for the specified event. It retrieves the callback container for the event and calls each callback function in the container.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+event} & The event to notify. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Observer_a9d72f4a2515061bab4721fa640da5c3b}\label{classspk_1_1Observer_a9d72f4a2515061bab4721fa640da5c3b}} 
+\index{spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!spk::Observer$<$ TEvent $>$@{spk::Observer$<$ TEvent $>$}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily template$<$typename TEvent $>$ \\
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1Observer}{spk\+::\+Observer}}$<$ TEvent $>$\+::subscribe (\begin{DoxyParamCaption}\item[{TEvent}]{p\+\_\+event,  }\item[{const Callback \&}]{p\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subscribe to an event with a callback. 
+
+This function subscribes to an event with the specified callback. It adds the callback to the corresponding event in the callback map and returns a contract representing the subscription.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+event} & The event to subscribe to. \\
+\hline
+{\em p\+\_\+callback} & The callback function to be registered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A contract representing the subscription. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

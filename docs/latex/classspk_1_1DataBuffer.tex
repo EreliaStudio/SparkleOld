@@ -1,47 +1,271 @@
 \hypertarget{classspk_1_1DataBuffer}{}\doxysection{spk\+::Data\+Buffer Class Reference}
 \label{classspk_1_1DataBuffer}\index{spk::DataBuffer@{spk::DataBuffer}}
+
+
+Class for managing data buffers.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+data\+\_\+buffer.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_a2f13469e9040f9db9d7727cc4aa42778}\label{classspk_1_1DataBuffer_a2f13469e9040f9db9d7727cc4aa42778}} 
-size\+\_\+t {\bfseries size} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_a1441a1c3abc6a4f5c55a2a66798be379}\label{classspk_1_1DataBuffer_a1441a1c3abc6a4f5c55a2a66798be379}} 
-size\+\_\+t {\bfseries bookmark} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_aa7f1ec65d939c18bacbc61abe59e1064}\label{classspk_1_1DataBuffer_aa7f1ec65d939c18bacbc61abe59e1064}} 
-size\+\_\+t {\bfseries leftover} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_a95a4f828b5314bfefd2cbff9bd31e42e}\label{classspk_1_1DataBuffer_a95a4f828b5314bfefd2cbff9bd31e42e}} 
-bool {\bfseries empty} () const
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_adf468b222ec2331008c51c4e9ae7a35a}\label{classspk_1_1DataBuffer_adf468b222ec2331008c51c4e9ae7a35a}} 
-void {\bfseries skip} (const size\+\_\+t \&p\+\_\+number)
-\item 
+\mbox{\Hypertarget{classspk_1_1DataBuffer_a716866b679b1a1b6d7046a5bb65347ec}\label{classspk_1_1DataBuffer_a716866b679b1a1b6d7046a5bb65347ec}} 
+\mbox{\hyperlink{classspk_1_1DataBuffer_a716866b679b1a1b6d7046a5bb65347ec}{Data\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} class. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1DataBuffer_a2f13469e9040f9db9d7727cc4aa42778}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1DataBuffer_a1441a1c3abc6a4f5c55a2a66798be379}{bookmark}} () const
+\begin{DoxyCompactList}\small\item\em Get the bookmark of the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1DataBuffer_aa7f1ec65d939c18bacbc61abe59e1064}{leftover}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the remaining buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1DataBuffer_a95a4f828b5314bfefd2cbff9bd31e42e}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Check whether the buffer is empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1DataBuffer_adf468b222ec2331008c51c4e9ae7a35a}{skip}} (const size\+\_\+t \&p\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Move the bookmark ahead by the specified number. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1DataBuffer_ad4eefec4799fb6b9d6251cca86ebfa04}\label{classspk_1_1DataBuffer_ad4eefec4799fb6b9d6251cca86ebfa04}} 
-void {\bfseries clear} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1DataBuffer_ad4eefec4799fb6b9d6251cca86ebfa04}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the buffer and reset the bookmark. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1DataBuffer_a0ea4655da477844008708b1283c83e75}\label{classspk_1_1DataBuffer_a0ea4655da477844008708b1283c83e75}} 
-void {\bfseries reset} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_a62775fb5a5cc3ef25dd87d41976b978f}\label{classspk_1_1DataBuffer_a62775fb5a5cc3ef25dd87d41976b978f}} 
-{\footnotesize template$<$typename Output\+Type $>$ }\\Output\+Type {\bfseries get} () const
-\item 
+void \mbox{\hyperlink{classspk_1_1DataBuffer_a0ea4655da477844008708b1283c83e75}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the bookmark to the start of the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Output\+Type $>$ }\\Output\+Type \mbox{\hyperlink{classspk_1_1DataBuffer_a62775fb5a5cc3ef25dd87d41976b978f}{get}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve data of a specific type from the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\+Type $>$ }\\void \mbox{\hyperlink{classspk_1_1DataBuffer_ac90c23dd9a031995ecb8f28ded1251b7}{edit}} (const size\+\_\+t \&p\+\_\+offset, const Input\+Type \&p\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Edit the buffer at a specific offset with input data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& \mbox{\hyperlink{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}{operator$<$$<$}} (const Input\+Type \&p\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Insert data into the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& \mbox{\hyperlink{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}{operator$>$$>$}} (Output\+Type \&p\+\_\+output) const
+\begin{DoxyCompactList}\small\item\em Extract data from the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& \mbox{\hyperlink{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}{operator$<$$<$}} (const Input\+Type \&p\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Insert container data into the buffer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& \mbox{\hyperlink{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}{operator$>$$>$}} (Output\+Type \&p\+\_\+output) const
+\begin{DoxyCompactList}\small\item\em Extract container data from the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing data buffers. 
+
+This class is designed to provide convenient and efficient storage and retrieval of data. It supports various data types including standard and container types, provided they are standard layout types.
+
+The class provides a set of utility methods and operator overloads for reading from and writing to the buffer, as well as for managing the internal state of the buffer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_a1441a1c3abc6a4f5c55a2a66798be379}\label{classspk_1_1DataBuffer_a1441a1c3abc6a4f5c55a2a66798be379}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!bookmark@{bookmark}}
+\index{bookmark@{bookmark}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{bookmark()}{bookmark()}}
+{\footnotesize\ttfamily size\+\_\+t spk\+::\+Data\+Buffer\+::bookmark (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the bookmark of the buffer. 
+
+\begin{DoxyReturn}{Returns}
+The position of the bookmark. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1DataBuffer_ac90c23dd9a031995ecb8f28ded1251b7}\label{classspk_1_1DataBuffer_ac90c23dd9a031995ecb8f28ded1251b7}} 
-{\footnotesize template$<$typename Input\+Type $>$ }\\void {\bfseries edit} (const size\+\_\+t \&p\+\_\+offset, const Input\+Type \&p\+\_\+input)
-\item 
+\index{spk::DataBuffer@{spk::DataBuffer}!edit@{edit}}
+\index{edit@{edit}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily template$<$typename Input\+Type $>$ \\
+void spk\+::\+Data\+Buffer\+::edit (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{p\+\_\+offset,  }\item[{const Input\+Type \&}]{p\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Edit the buffer at a specific offset with input data. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of input data. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+offset} & Offset in the buffer where the data should be written. \\
+\hline
+{\em p\+\_\+input} & The data to write into the buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_a95a4f828b5314bfefd2cbff9bd31e42e}\label{classspk_1_1DataBuffer_a95a4f828b5314bfefd2cbff9bd31e42e}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!empty@{empty}}
+\index{empty@{empty}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool spk\+::\+Data\+Buffer\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether the buffer is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if there\textquotesingle{}s no leftover data in the buffer, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_a62775fb5a5cc3ef25dd87d41976b978f}\label{classspk_1_1DataBuffer_a62775fb5a5cc3ef25dd87d41976b978f}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!get@{get}}
+\index{get@{get}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Output\+Type $>$ \\
+Output\+Type spk\+::\+Data\+Buffer\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve data of a specific type from the buffer. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Output\+Type} & The type of data to retrieve. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The retrieved data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_aa7f1ec65d939c18bacbc61abe59e1064}\label{classspk_1_1DataBuffer_aa7f1ec65d939c18bacbc61abe59e1064}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!leftover@{leftover}}
+\index{leftover@{leftover}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{leftover()}{leftover()}}
+{\footnotesize\ttfamily size\+\_\+t spk\+::\+Data\+Buffer\+::leftover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the remaining buffer. 
+
+\begin{DoxyReturn}{Returns}
+The size from the bookmark to the end of the buffer. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}\label{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}} 
-{\footnotesize template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& {\bfseries operator$<$$<$} (const Input\+Type \&p\+\_\+input)
-\item 
-\mbox{\Hypertarget{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}\label{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}} 
-{\footnotesize template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& {\bfseries operator$>$$>$} (Output\+Type \&p\+\_\+output) const
-\item 
+\index{spk::DataBuffer@{spk::DataBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}}\& spk\+::\+Data\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{p\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert data into the buffer. 
+
+This template function handles all non-\/container types.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of input data. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+input} & The data to insert into the buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} object. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}\label{classspk_1_1DataBuffer_adf549d489c5f326e781e4408d550e7e0}} 
-{\footnotesize template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& {\bfseries operator$<$$<$} (const Input\+Type \&p\+\_\+input)
-\item 
+\index{spk::DataBuffer@{spk::DataBuffer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Input\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Input\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+\mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}}\& spk\+::\+Data\+Buffer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{p\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert container data into the buffer. 
+
+This template function handles all container types.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of input data (must be a container type). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+input} & The container data to insert into the buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the current \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} object. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}\label{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}} 
-{\footnotesize template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} \& {\bfseries operator$>$$>$} (Output\+Type \&p\+\_\+output) const
-\end{DoxyCompactItemize}
+\index{spk::DataBuffer@{spk::DataBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$!spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}}\& spk\+::\+Data\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{Output\+Type \&}]{p\+\_\+output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Extract data from the buffer. 
+
+This template function handles all non-\/container types.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Output\+Type} & The type of data to extract. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+output} & Reference to a variable where the extracted data should be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the current \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}\label{classspk_1_1DataBuffer_af94fe4daf3b1d0a9720ea9e19394915b}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Output\+Type , typename std\+::enable\+\_\+if\+\_\+t$<$ spk\+::\+Is\+Container$<$ Output\+Type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+const \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}}\& spk\+::\+Data\+Buffer\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{Output\+Type \&}]{p\+\_\+output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Extract container data from the buffer. 
+
+This template function handles all container types.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Output\+Type} & The type of data to extract (must be a container type). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+output} & Reference to a variable where the extracted data should be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the current \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_a2f13469e9040f9db9d7727cc4aa42778}\label{classspk_1_1DataBuffer_a2f13469e9040f9db9d7727cc4aa42778}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!size@{size}}
+\index{size@{size}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t spk\+::\+Data\+Buffer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the buffer. 
+
+\begin{DoxyReturn}{Returns}
+The size of the buffer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1DataBuffer_adf468b222ec2331008c51c4e9ae7a35a}\label{classspk_1_1DataBuffer_adf468b222ec2331008c51c4e9ae7a35a}} 
+\index{spk::DataBuffer@{spk::DataBuffer}!skip@{skip}}
+\index{skip@{skip}!spk::DataBuffer@{spk::DataBuffer}}
+\doxysubsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily void spk\+::\+Data\+Buffer\+::skip (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{p\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Move the bookmark ahead by the specified number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+number} & The number of bytes to skip. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

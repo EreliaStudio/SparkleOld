@@ -139,6 +139,12 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
+      <node id="15">
+        <label>miscellaneous/spk_is_container.hpp</label>
+        <link refid="spk__is__container_8hpp_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
       <node id="56">
         <label>application/modules/spk_window_module.hpp</label>
         <link refid="spk__window__module_8hpp_source"/>
@@ -286,12 +292,6 @@
       </node>
       <node id="29">
         <label>condition_variable</label>
-      </node>
-      <node id="15">
-        <label>miscellaneous/spk_is_contener.hpp</label>
-        <link refid="spk__is__contener_8hpp_source"/>
-        <childnode refid="16" relation="include">
-        </childnode>
       </node>
       <node id="30">
         <label>spk_system_define.hpp</label>
@@ -508,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/sparkle.hpp" line="27" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="90" bodyend="-1"/>
+        <location file="includes/sparkle.hpp" line="27" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="82" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

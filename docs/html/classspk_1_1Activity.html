@@ -77,57 +77,73 @@ $(function() {
 <div class="title">spk::Activity Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents an activity. This class defines an activity that can be managed by an ActivityManager. It provides methods for updating, moving to the next step, starting, and checking the status of the activity.  
+ <a href="classspk_1_1Activity.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__activity_8hpp_source.html">spk_activity.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a1fa844e585a28ff096c43b924a4d0aec"><td class="memItemLeft" align="right" valign="top"><a id="a1fa844e585a28ff096c43b924a4d0aec"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>Status</b> { <br />
-&#160;&#160;<b>Stopped</b>
-, <b>OnEnter</b>
-, <b>Running</b>
-, <b>OnExit</b>
+<tr class="memitem:a1fa844e585a28ff096c43b924a4d0aec"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a> { <br />
+&#160;&#160;<a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2">Stopped</a>
+, <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0">OnEnter</a>
+, <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09">Running</a>
+, <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144">OnExit</a>
 , <br />
-&#160;&#160;<b>Complete</b>
+&#160;&#160;<a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d">Complete</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a1fa844e585a28ff096c43b924a4d0aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the possible status of the activity.  <a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">More...</a><br /></td></tr>
 <tr class="separator:a1fa844e585a28ff096c43b924a4d0aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9c4fb3d225e7dc0c9e2154295f63605"><td class="memItemLeft" align="right" valign="top"><a id="ad9c4fb3d225e7dc0c9e2154295f63605"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_update</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#ad9c4fb3d225e7dc0c9e2154295f63605">_update</a> ()</td></tr>
+<tr class="memdesc:ad9c4fb3d225e7dc0c9e2154295f63605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the activity. This function updates the activity, typically called once per frame. It is responsible for executing the activity's current step and managing the state transitions. <br /></td></tr>
 <tr class="separator:ad9c4fb3d225e7dc0c9e2154295f63605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84446cb99ea3035ed1119fe09742e0d8"><td class="memItemLeft" align="right" valign="top"><a id="a84446cb99ea3035ed1119fe09742e0d8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_moveNextStep</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a84446cb99ea3035ed1119fe09742e0d8">_moveNextStep</a> ()</td></tr>
+<tr class="memdesc:a84446cb99ea3035ed1119fe09742e0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves to the next step of the activity. This function moves the activity to the next step without executing it. It is used for advancing the activity's progress without performing any actions. <br /></td></tr>
 <tr class="separator:a84446cb99ea3035ed1119fe09742e0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361afbd8df75f55a1d3903a903a1358e"><td class="memItemLeft" align="right" valign="top"><a id="a361afbd8df75f55a1d3903a903a1358e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_moveNextStepAndExecute</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a361afbd8df75f55a1d3903a903a1358e">_moveNextStepAndExecute</a> ()</td></tr>
+<tr class="memdesc:a361afbd8df75f55a1d3903a903a1358e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves to the next step of the activity and executes it. This function moves the activity to the next step and executes it. It is used for advancing the activity's progress and performing the associated actions. <br /></td></tr>
 <tr class="separator:a361afbd8df75f55a1d3903a903a1358e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc398d0a51902db587abf30d852fee6"><td class="memItemLeft" align="right" valign="top"><a id="a2fc398d0a51902db587abf30d852fee6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>_start</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a2fc398d0a51902db587abf30d852fee6">_start</a> ()</td></tr>
+<tr class="memdesc:a2fc398d0a51902db587abf30d852fee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the activity. This function starts the activity, setting its initial state and entering the onEnter phase. It is called when the activity is initially activated. <br /></td></tr>
 <tr class="separator:a2fc398d0a51902db587abf30d852fee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2852c46978738f635cdc98936dce06ae"><td class="memItemLeft" align="right" valign="top"><a id="a2852c46978738f635cdc98936dce06ae"></a>
-const Status &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>state</b> () const</td></tr>
+<tr class="memitem:a624be8721a7a7e6ab00bb0f865560eac"><td class="memItemLeft" align="right" valign="top"><a id="a624be8721a7a7e6ab00bb0f865560eac"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a624be8721a7a7e6ab00bb0f865560eac">Activity</a> ()</td></tr>
+<tr class="memdesc:a624be8721a7a7e6ab00bb0f865560eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classspk_1_1Activity.html" title="Represents an activity. This class defines an activity that can be managed by an ActivityManager....">Activity</a>. This constructor initializes the internal working state of the activity. <br /></td></tr>
+<tr class="separator:a624be8721a7a7e6ab00bb0f865560eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2852c46978738f635cdc98936dce06ae"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a2852c46978738f635cdc98936dce06ae">state</a> () const</td></tr>
+<tr class="memdesc:a2852c46978738f635cdc98936dce06ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current status of the activity.  <a href="classspk_1_1Activity.html#a2852c46978738f635cdc98936dce06ae">More...</a><br /></td></tr>
 <tr class="separator:a2852c46978738f635cdc98936dce06ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab25e8eb7369e26c11f8f74e9db80499"><td class="memItemLeft" align="right" valign="top"><a id="aab25e8eb7369e26c11f8f74e9db80499"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCompleted</b> () const</td></tr>
+<tr class="memitem:aab25e8eb7369e26c11f8f74e9db80499"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499">isCompleted</a> () const</td></tr>
+<tr class="memdesc:aab25e8eb7369e26c11f8f74e9db80499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the activity is completed.  <a href="classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499">More...</a><br /></td></tr>
 <tr class="separator:aab25e8eb7369e26c11f8f74e9db80499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6ce4d394293a7812d9e1be5d8b1de652"><td class="memItemLeft" align="right" valign="top"><a id="a6ce4d394293a7812d9e1be5d8b1de652"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>_internalWorkingState</b></td></tr>
+<tr class="memitem:a6ce4d394293a7812d9e1be5d8b1de652"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">_internalWorkingState</a></td></tr>
 <tr class="separator:a6ce4d394293a7812d9e1be5d8b1de652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1aa7cf3267e674cc737d4d56c674ff4e"><td class="memItemLeft" align="right" valign="top"><a id="a1aa7cf3267e674cc737d4d56c674ff4e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>_onEnter</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">_onEnter</a> ()=0</td></tr>
+<tr class="memdesc:a1aa7cf3267e674cc737d4d56c674ff4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the onEnter phase of the activity. This pure virtual function is called when the activity enters the onEnter phase. Subclasses must override this function to provide custom implementation. <br /></td></tr>
 <tr class="separator:a1aa7cf3267e674cc737d4d56c674ff4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4c0f1fe9d2299a1c3f096e9687ed234"><td class="memItemLeft" align="right" valign="top"><a id="af4c0f1fe9d2299a1c3f096e9687ed234"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>_execute</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">_execute</a> ()=0</td></tr>
+<tr class="memdesc:af4c0f1fe9d2299a1c3f096e9687ed234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the main execution phase of the activity. This pure virtual function is called when the activity is in the running state and needs to execute its main logic. Subclasses must override this function to provide custom implementation. <br /></td></tr>
 <tr class="separator:af4c0f1fe9d2299a1c3f096e9687ed234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507057c1dbc10ceb7894fa718fc75012"><td class="memItemLeft" align="right" valign="top"><a id="a507057c1dbc10ceb7894fa718fc75012"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>_onExit</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">_onExit</a> ()=0</td></tr>
+<tr class="memdesc:a507057c1dbc10ceb7894fa718fc75012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the onExit phase of the activity. This pure virtual function is called when the activity enters the onExit phase. Subclasses must override this function to provide custom implementation. <br /></td></tr>
 <tr class="separator:a507057c1dbc10ceb7894fa718fc75012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -136,6 +152,102 @@ Friends</h2></td></tr>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ActivityManager</b></td></tr>
 <tr class="separator:a729b6b1b083afe92ee8846069341a458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents an activity. This class defines an activity that can be managed by an ActivityManager. It provides methods for updating, moving to the next step, starting, and checking the status of the activity. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a1fa844e585a28ff096c43b924a4d0aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa844e585a28ff096c43b924a4d0aec">&#9670;&nbsp;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">spk::Activity::Status</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumerates the possible status of the activity. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2"></a>Stopped&#160;</td><td class="fielddoc"><p>The activity is stopped. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0"></a>OnEnter&#160;</td><td class="fielddoc"><p>The activity is in the onEnter phase. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09"></a>Running&#160;</td><td class="fielddoc"><p>The activity is running. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144"></a>OnExit&#160;</td><td class="fielddoc"><p>The activity is in the onExit phase. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d"></a>Complete&#160;</td><td class="fielddoc"><p>The activity is complete. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab25e8eb7369e26c11f8f74e9db80499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab25e8eb7369e26c11f8f74e9db80499">&#9670;&nbsp;</a></span>isCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::Activity::isCompleted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the activity is completed. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the activity is complete, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a2852c46978738f635cdc98936dce06ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2852c46978738f635cdc98936dce06ae">&#9670;&nbsp;</a></span>state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a>&amp; spk::Activity::state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current status of the activity. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the current status of the activity. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6ce4d394293a7812d9e1be5d8b1de652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ce4d394293a7812d9e1be5d8b1de652">&#9670;&nbsp;</a></span>_internalWorkingState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a> spk::Activity::_internalWorkingState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The internal working state of the activity. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/design_pattern/<a class="el" href="spk__activity_8hpp_source.html">spk_activity.hpp</a></li>
 </ul>

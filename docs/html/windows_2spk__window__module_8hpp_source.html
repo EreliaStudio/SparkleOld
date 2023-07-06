@@ -78,20 +78,24 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">class </span>WindowModule : <span class="keyword">public</span> IMessageConsumerModule</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        WindowModule(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, <span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size, <span class="keywordtype">void</span> *p_apiModule);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> render();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span> clear();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">class </span>WindowModule : <span class="keyword">public</span> IMessageConsumerModule</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809">   35</a></span>&#160;        <a class="code" href="classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809">WindowModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, <span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_size, <span class="keywordtype">void</span> *p_apiModule);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classspk_1_1WindowModule.html#a0ac729d572ab4a20f60c346c19f1c460">   40</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WindowModule.html#a0ac729d572ab4a20f60c346c19f1c460">render</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">   45</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">clear</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="aclassIVector2_html"><div class="ttname"><a href="classIVector2.html">IVector2&lt; int &gt;</a></div></div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; SystemMessage &gt;</a></div></div>
-<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; int &gt;</a></div></div>
+<div class="ttc" id="aclassspk_1_1WindowModule_html_a0ac729d572ab4a20f60c346c19f1c460"><div class="ttname"><a href="classspk_1_1WindowModule.html#a0ac729d572ab4a20f60c346c19f1c460">spk::WindowModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the window.</div></div>
+<div class="ttc" id="aclassspk_1_1WindowModule_html_a36706fa4088182a2c3b03536d3300809"><div class="ttname"><a href="classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809">spk::WindowModule::WindowModule</a></div><div class="ttdeci">WindowModule(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size, void *p_apiModule)</div><div class="ttdoc">Constructs the WindowModule object.</div></div>
+<div class="ttc" id="aclassspk_1_1WindowModule_html_aa56d1756ecd104726d1e2e87a189815b"><div class="ttname"><a href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">spk::WindowModule::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the window.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

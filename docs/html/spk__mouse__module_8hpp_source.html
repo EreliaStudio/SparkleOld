@@ -76,20 +76,25 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classspk_1_1MouseModule.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1MouseModule.html">MouseModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classspk_1_1MouseModule.html">MouseModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        ~<a class="code" href="classspk_1_1MouseModule.html">MouseModule</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> updateMouse();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    };</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdef"><b>Definition:</b> spk_abstract_module.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1MouseModule_html"><div class="ttname"><a href="classspk_1_1MouseModule.html">spk::MouseModule</a></div><div class="ttdef"><b>Definition:</b> spk_mouse_module.hpp:8</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classspk_1_1MouseModule.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1MouseModule.html">MouseModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage &amp;p_event);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24">   29</a></span>&#160;        <a class="code" href="classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24">MouseModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classspk_1_1MouseModule.html#a7488472b5dcb2a93d96dd1350a7b9246">   34</a></span>&#160;        <a class="code" href="classspk_1_1MouseModule.html#a7488472b5dcb2a93d96dd1350a7b9246">~MouseModule</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classspk_1_1MouseModule.html#a463aa665c2e432316a0231a87a18aba3">   39</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1MouseModule.html#a463aa665c2e432316a0231a87a18aba3">updateMouse</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdoc">Class for modules that consume messages.</div><div class="ttdef"><b>Definition:</b> spk_abstract_module.hpp:30</div></div>
+<div class="ttc" id="aclassspk_1_1MouseModule_html"><div class="ttname"><a href="classspk_1_1MouseModule.html">spk::MouseModule</a></div><div class="ttdoc">Class for managing the mouse interactions.</div><div class="ttdef"><b>Definition:</b> spk_mouse_module.hpp:14</div></div>
+<div class="ttc" id="aclassspk_1_1MouseModule_html_a463aa665c2e432316a0231a87a18aba3"><div class="ttname"><a href="classspk_1_1MouseModule.html#a463aa665c2e432316a0231a87a18aba3">spk::MouseModule::updateMouse</a></div><div class="ttdeci">void updateMouse()</div><div class="ttdoc">Updates the mouse state.</div></div>
+<div class="ttc" id="aclassspk_1_1MouseModule_html_a7488472b5dcb2a93d96dd1350a7b9246"><div class="ttname"><a href="classspk_1_1MouseModule.html#a7488472b5dcb2a93d96dd1350a7b9246">spk::MouseModule::~MouseModule</a></div><div class="ttdeci">~MouseModule()</div><div class="ttdoc">Destructs the MouseModule object.</div></div>
+<div class="ttc" id="aclassspk_1_1MouseModule_html_af36f93dd3ad1a4a53f4e9f80635f7b24"><div class="ttname"><a href="classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24">spk::MouseModule::MouseModule</a></div><div class="ttdeci">MouseModule(ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue)</div><div class="ttdoc">Constructs the MouseModule object.</div></div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; SystemMessage &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

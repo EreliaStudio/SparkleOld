@@ -6,6 +6,7 @@
     <basecompoundref refid="classspk_1_1ActivableObject" prot="public" virt="non-virtual">spk::ActivableObject</basecompoundref>
     <derivedcompoundref refid="classspk_1_1NoGraphicsWidget" prot="public" virt="non-virtual">spk::NoGraphicsWidget</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1OnlyGraphicsWidget" prot="public" virt="non-virtual">spk::OnlyGraphicsWidget</derivedcompoundref>
+    <includes refid="spk__abstract__widget_8hpp" local="no">spk_abstract_widget.hpp</includes>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="classspk_1_1AbstractWidget_1a50912fdf2bcdf3bbc09e332cd223591e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class</type>
@@ -21,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="11" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="11" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="18" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -36,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="19" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="19" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="26" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1aa4e1b1af7f54966b38730ab1720c1377" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -49,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="20" column="6" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="20" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="27" column="6" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1acb315df4191229bce9f08515a50f2537" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -62,10 +63,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="21" column="7" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="21" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="28" column="7" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1a28c2bb54debb23f0268baee69fecffc1" prot="private" static="no" mutable="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::AbstractWidget::_anchor</definition>
         <argsstring></argsstring>
         <name>_anchor</name>
@@ -75,10 +76,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="22" column="17" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="29" column="17" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1a98a4201cf756cb9bbf7f618ce11f38cb" prot="private" static="no" mutable="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::AbstractWidget::_size</definition>
         <argsstring></argsstring>
         <name>_size</name>
@@ -88,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="23" column="17" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="23" bodyend="-1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="30" column="17" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -104,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="14" column="14"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="21" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a6f74b00cddb2bfe3d77128a64b08c77f" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -118,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="15" column="14"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="22" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ae188852df6a62f89f77753ebd5ecbede" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -132,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="17" column="14"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="24" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ae995fc29164c4a89befae3e0545a4d7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -146,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="25" column="14"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="32" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ac8bd13b45e2b71d56c5fb4e910f78cdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -160,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="27" column="14"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="34" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -174,12 +175,24 @@
           <declname>p_name</declname>
         </param>
         <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> object with a specified name. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor creates a new <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> object with the specified name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="31" column="1"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="45" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1acaf7b700c9f4f67341dc5156287ad271" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -187,12 +200,14 @@
         <argsstring>()</argsstring>
         <name>~AbstractWidget</name>
         <briefdescription>
+<para>Destroy the <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is the destructor for the <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="33" column="9"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="52" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -214,12 +229,43 @@
           <declname>p_args</declname>
         </param>
         <briefdescription>
+<para>Add a children widget to this widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function adds a children widget to this widget and returns a pointer to it.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TChildrenType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the children widget. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments for constructing the children widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for constructing the children widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the children widget. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="36" column="15" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="36" bodyend="44"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="65" column="15" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="65" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -227,20 +273,40 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor, const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Set the geometry of the widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the geometry of the widget, including the anchor position and size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_anchor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The anchor position of the widget. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="46" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="83" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -248,16 +314,28 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor)</argsstring>
         <name>place</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <briefdescription>
+<para>Place the widget at a specific anchor position. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function places the widget at a specific anchor position, while keeping its current size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_anchor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new anchor position of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="48" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="92" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -265,16 +343,28 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor)</argsstring>
         <name>move</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <briefdescription>
+<para>Move the widget by a specific amount. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function moves the widget by a specific amount, while keeping its current size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_anchor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount to move the widget by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="50" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="101" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a2059b3aeb3f7ca0290ed70c146a42298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -282,16 +372,28 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Resize the widget to a new size. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function resizes the widget to a new size, while keeping its current anchor position.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="52" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="110" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -299,12 +401,14 @@
         <argsstring>()</argsstring>
         <name>sortChildrensByDepth</name>
         <briefdescription>
+<para>Sort the children widgets by their depth value. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sorts the children widgets of this widget by their depth value, in ascending order. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="54" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="117" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -316,12 +420,24 @@
           <declname>p_depth</declname>
         </param>
         <briefdescription>
+<para>Set the depth value of the widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function sets the depth value of the widget. Widgets with higher depth values will be rendered on top of widgets with lower depth values.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The depth value of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="56" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="126" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1af6762afb291b9fe0497fa8ac619ef0f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -333,12 +449,24 @@
           <declname>p_name</declname>
         </param>
         <briefdescription>
+<para>Rename the widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function renames the widget with a new name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new name of the widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="58" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="135" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr const std::wstring &amp;</type>
@@ -346,12 +474,17 @@
         <argsstring>() const</argsstring>
         <name>name</name>
         <briefdescription>
+<para>Get the name of the widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns the name of the widget.</para>
+<para><simplesect kind="return"><para>The name of the widget. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="60" column="30" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="60" bodyend="60"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="144" column="30" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="144" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr const float &amp;</type>
@@ -359,12 +492,17 @@
         <argsstring>() const</argsstring>
         <name>depth</name>
         <briefdescription>
+<para>Get the depth value of the widget. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function returns the depth value of the widget.</para>
+<para><simplesect kind="return"><para>The depth value of the widget. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="61" column="23" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="61" bodyend="61"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="153" column="23" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="153" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1AbstractWidget_1ad1fd1cbebefe93c23a9d1b7b00872a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -372,21 +510,37 @@
         <argsstring>(const spk::Vector2Int &amp;p_point)</argsstring>
         <name>isPointed</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Check if a point is inside the widget&apos;s boundaries. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function checks if a given point is inside the boundaries of the widget.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the point is inside the widget, false otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="63" column="6"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="163" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Abstract base class for widgets. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class defines the interface and common functionality for widgets. It inherits from <ref refid="classspk_1_1InherenceObject" kindref="compound">InherenceObject</ref> and <ref refid="classspk_1_1ActivableObject" kindref="compound">ActivableObject</ref>. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -460,7 +614,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/widget/spk_abstract_widget.hpp" line="9" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="10" bodyend="64"/>
+    <location file="includes/widget/spk_abstract_widget.hpp" line="16" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="17" bodyend="164"/>
     <listofallmembers>
       <member refid="classspk_1_1AbstractWidget_1a28c2bb54debb23f0268baee69fecffc1" prot="private" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>_anchor</name></member>
       <member refid="classspk_1_1AbstractWidget_1acb315df4191229bce9f08515a50f2537" prot="private" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>_depth</name></member>
@@ -473,6 +627,7 @@
       <member refid="classspk_1_1AbstractWidget_1a98a4201cf756cb9bbf7f618ce11f38cb" prot="private" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>_size</name></member>
       <member refid="classspk_1_1AbstractWidget_1ac8bd13b45e2b71d56c5fb4e910f78cdb" prot="private" virt="virtual"><scope>spk::AbstractWidget</scope><name>_update</name></member>
       <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>AbstractWidget</name></member>
+      <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>ActivableObject</name></member>
       <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>activate</name></member>
       <member refid="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>addActivationCallback</name></member>
       <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>addChild</name></member>
@@ -482,7 +637,7 @@
       <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" prot="public" virt="non-virtual" ambiguityscope="InherenceObject&lt; AbstractWidget &gt;::"><scope>spk::AbstractWidget</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual" ambiguityscope="spk::ActivableObject::"><scope>spk::AbstractWidget</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>CallbackContainer</name></member>
-      <member refid="classspk_1_1InherenceObject_1afaae937647084cc67220a3f3d3812f97" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>Child</name></member>
+      <member refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>Child</name></member>
       <member refid="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>childrens</name></member>
       <member refid="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>childrens</name></member>
       <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>deactivate</name></member>
@@ -494,8 +649,8 @@
       <member refid="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>move</name></member>
       <member refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>name</name></member>
       <member refid="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>operator=</name></member>
+      <member refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>Parent</name></member>
       <member refid="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>parent</name></member>
-      <member refid="classspk_1_1InherenceObject_1ae763115e2689b399d1faaaf88309bb5d" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>Parent</name></member>
       <member refid="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>place</name></member>
       <member refid="classspk_1_1AbstractWidget_1af6762afb291b9fe0497fa8ac619ef0f7" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>rename</name></member>
       <member refid="classspk_1_1AbstractWidget_1a2059b3aeb3f7ca0290ed70c146a42298" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>resize</name></member>
@@ -507,7 +662,7 @@
       <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>setState</name></member>
       <member refid="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" prot="public" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>sortChildrensByDepth</name></member>
       <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>state</name></member>
-      <member refid="classspk_1_1StatedObject_1a797bb0328531e421fe9c16f3062c2e32" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>StatedObject</name></member>
+      <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>StatedObject</name></member>
       <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>subscribe</name></member>
       <member refid="classspk_1_1AbstractWidget_1a50912fdf2bcdf3bbc09e332cd223591e" prot="private" virt="non-virtual"><scope>spk::AbstractWidget</scope><name>WidgetModule</name></member>
       <member refid="classspk_1_1AbstractWidget_1acaf7b700c9f4f67341dc5156287ad271" prot="public" virt="virtual"><scope>spk::AbstractWidget</scope><name>~AbstractWidget</name></member>

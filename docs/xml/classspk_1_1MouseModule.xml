@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1MouseModule" kind="class" language="C++" prot="public">
     <compoundname>spk::MouseModule</compoundname>
     <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
+    <includes refid="spk__mouse__module_8hpp" local="no">spk_mouse_module.hpp</includes>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="classspk_1_1MouseModule_1afa5a66104d33670c44b5523f788f6966" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -15,12 +16,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="10" column="6"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="21" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,12 +46,23 @@
           <declname>p_queue</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1MouseModule" kindref="compound">MouseModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for mouse system messages. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="13" column="1"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="29" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1MouseModule_1a7488472b5dcb2a93d96dd1350a7b9246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -47,12 +70,13 @@
         <argsstring>()</argsstring>
         <name>~MouseModule</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1MouseModule" kindref="compound">MouseModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="14" column="1"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="34" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -60,17 +84,20 @@
         <argsstring>()</argsstring>
         <name>updateMouse</name>
         <briefdescription>
+<para>Updates the mouse state. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="16" column="6"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="39" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing the mouse interactions. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class manages the mouse interactions, including handling system messages related to the mouse. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -108,7 +135,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_mouse_module.hpp" line="7" column="1" bodyfile="includes/application/modules/spk_mouse_module.hpp" bodystart="8" bodyend="17"/>
+    <location file="includes/application/modules/spk_mouse_module.hpp" line="13" column="1" bodyfile="includes/application/modules/spk_mouse_module.hpp" bodystart="14" bodyend="40"/>
     <listofallmembers>
       <member refid="classspk_1_1MouseModule_1afa5a66104d33670c44b5523f788f6966" prot="private" virt="virtual"><scope>spk::MouseModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::MouseModule</scope><name>IMessageConsumerModule</name></member>

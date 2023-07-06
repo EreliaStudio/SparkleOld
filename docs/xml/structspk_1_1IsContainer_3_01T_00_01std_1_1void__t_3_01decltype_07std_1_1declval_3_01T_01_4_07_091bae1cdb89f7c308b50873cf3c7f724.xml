@@ -34,7 +34,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/miscellaneous/spk_is_contener.hpp" line="10" column="1" bodyfile="includes/miscellaneous/spk_is_contener.hpp" bodystart="10" bodyend="10"/>
+    <location file="includes/miscellaneous/spk_is_container.hpp" line="29" column="1" bodyfile="includes/miscellaneous/spk_is_container.hpp" bodystart="29" bodyend="29"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

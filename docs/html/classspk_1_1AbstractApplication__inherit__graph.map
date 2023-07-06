@@ -1,4 +1,4 @@
 <map id="spk::AbstractApplication" name="spk::AbstractApplication">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,185,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1Application.html" title=" " alt="" coords="32,80,159,107"/>
+<area shape="rect" id="node1" title="Abstract base class for the application." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="32,80,159,107"/>
 </map>

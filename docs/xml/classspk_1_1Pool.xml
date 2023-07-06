@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classspk_1_1Pool" kind="class" language="C++" prot="public">
     <compoundname>spk::Pool</compoundname>
+    <includes refid="spk__pool_8hpp" local="no">spk_pool.hpp</includes>
     <innerclass refid="classspk_1_1Pool_1_1Object" prot="public">spk::Pool::Object</innerclass>
     <templateparamlist>
       <param>
@@ -15,12 +16,13 @@
         <argsstring></argsstring>
         <name>Container</name>
         <briefdescription>
+<para>The container that holds the objects allocated by the pool. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="11" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="11" bodyend="-1"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="28" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -35,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="12" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="12" bodyend="-1"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="29" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -45,12 +47,13 @@
         <argsstring>()</argsstring>
         <name>Pool</name>
         <briefdescription>
+<para>Default constructor for the <ref refid="classspk_1_1Pool" kindref="compound">Pool</ref> class. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="77" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="77" bodyend="79"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="172" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="172" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Pool_1a474e0d1a5d1a045baa2351a978e1406e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -73,12 +76,41 @@
           <declname>p_args</declname>
         </param>
         <briefdescription>
+<para>Reserve a number of elements in the pool. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function reserves a number of elements in the pool by creating new instances of the template type with the provided arguments.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_nbElement</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to reserve. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments to construct the elements. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="82" column="14" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="82" bodyend="91"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="187" column="14" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="187" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Pool_1a64032a2a21f5cf73a4836178a347a73c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -97,12 +129,35 @@
           <declname>p_args</declname>
         </param>
         <briefdescription>
+<para>Obtain an object from the pool. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function obtains an object from the pool. If there are no available objects, a new object is created using the provided arguments.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments to construct the object if necessary. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> that manages the obtained object. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="94" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="94" bodyend="112"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="209" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="209" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Pool_1ac584858b3175a8feb8cc778542e216c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -110,19 +165,36 @@
         <argsstring>() const</argsstring>
         <name>size</name>
         <briefdescription>
+<para>Get the size of the pool. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The number of objects in the pool. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/data_structure/spk_pool.hpp" line="114" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="114" bodyend="117"/>
+        <location file="includes/data_structure/spk_pool.hpp" line="233" column="16" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="233" bodyend="236"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A generic pool class that manages the creation and deletion of objects. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class is designed to handle memory in an efficient manner by reusing previously allocated objects. This avoids frequent memory allocation and deallocation, which can be costly for performance.</para>
+<para>The <ref refid="classspk_1_1Pool" kindref="compound">Pool</ref> class provides a mechanism for &apos;reserving&apos; a number of objects of a specific type, and then &apos;obtaining&apos; those objects for use. When an object is no longer needed, it is returned to the pool to be reused later.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of objects that the pool will manage. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="includes/data_structure/spk_pool.hpp" line="8" column="5" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="9" bodyend="118"/>
+    <location file="includes/data_structure/spk_pool.hpp" line="22" column="5" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="23" bodyend="237"/>
     <listofallmembers>
       <member refid="classspk_1_1Pool_1a2f622c73697f975bde28e0adf0458699" prot="private" virt="non-virtual"><scope>spk::Pool</scope><name>_allocatedObjects</name></member>
       <member refid="classspk_1_1Pool_1a183ad1e7d1f91a63bf4c22ae30caea59" prot="private" virt="non-virtual"><scope>spk::Pool</scope><name>Container</name></member>

@@ -8,6 +8,7 @@
     <derivedcompoundref refid="classspk_1_1Promise" prot="public" virt="non-virtual">spk::Promise&lt; TType &gt;</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1StatedObject" prot="public" virt="non-virtual">spk::StatedObject&lt; TState &gt;</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1Value" prot="public" virt="non-virtual">spk::Value&lt; TType &gt;</derivedcompoundref>
+    <includes refid="spk__contract__provider_8hpp" local="no">spk_contract_provider.hpp</includes>
     <innerclass refid="classspk_1_1ContractProvider_1_1Contract" prot="public">spk::ContractProvider::Contract</innerclass>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" static="no">
@@ -21,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="13" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="17" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" static="no">
         <type>std::deque&lt; Callback &gt;</type>
@@ -34,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="14" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="14" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="18" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -52,15 +53,37 @@
           <declname>p_callback</declname>
         </param>
         <briefdescription>
+<para>Add the callback inside the container and create a <ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> representing it. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callbackOwner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container that store the Callback. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function to register in the <ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="42" column="10"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="95" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Construct a <ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> with a callback function and a callbackContainer. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -130,7 +153,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/design_pattern/spk_contract_provider.hpp" line="10" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="11" bodyend="43"/>
+    <location file="includes/design_pattern/spk_contract_provider.hpp" line="14" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="15" bodyend="96"/>
     <listofallmembers>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>CallbackContainer</name></member>

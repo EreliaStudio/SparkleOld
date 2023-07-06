@@ -32,7 +32,7 @@
     <innerclass refid="classspk_1_1Mouse" prot="public">spk::Mouse</innerclass>
     <innerclass refid="classspk_1_1IOStream" prot="public">spk::IOStream</innerclass>
     <innerclass refid="classspk_1_1RandomGenerator" prot="public">spk::RandomGenerator</innerclass>
-    <innerclass refid="structspk_1_1IVector2" prot="public">spk::IVector2</innerclass>
+    <innerclass refid="structspk_1_1IVector2_xC2_xB2" prot="public">spk::IVector2²</innerclass>
     <innerclass refid="structspk_1_1IVector3" prot="public">spk::IVector3</innerclass>
     <innerclass refid="structspk_1_1IsContainer" prot="public">spk::IsContainer</innerclass>
     <innerclass refid="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724" prot="public">spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</innerclass>
@@ -92,7 +92,7 @@
       </sectiondef>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a9b7d33188f36fb94cdde3264ccc16e20" prot="public" static="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
         <definition>using spk::Vector2 = typedef IVector2&lt;float&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2</name>
@@ -102,10 +102,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="309" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="309" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="615" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="615" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a81b9738cf9ec67888207021519d1a673" prot="public" static="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; int &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; int &gt;</type>
         <definition>using spk::Vector2Int = typedef IVector2&lt;int&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2Int</name>
@@ -115,10 +115,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="310" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="310" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="616" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="616" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a71e1f556496e4d67f41e1f7807069e54" prot="public" static="no">
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; unsigned int &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; unsigned int &gt;</type>
         <definition>using spk::Vector2UInt = typedef IVector2&lt;unsigned int&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2UInt</name>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="311" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="311" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="617" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="617" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector3_8hpp_1a25ce29c89e3ca14bf467a94db03d5939" prot="public" static="no">
         <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; float &gt;</type>
@@ -177,12 +177,13 @@
         <argsstring></argsstring>
         <name>cout</name>
         <briefdescription>
+<para>Thread-local instances of <ref refid="classspk_1_1IOStream" kindref="compound">IOStream</ref> for standard output and error output. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="86" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="86" declcolumn="39"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="78" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="78" declcolumn="39"/>
       </memberdef>
       <memberdef kind="variable" id="spk__iostream_8hpp_1a179221b09b037229c2c215cb0e36f263" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
@@ -195,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="87" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="87" declcolumn="39"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="79" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="79" declcolumn="39"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -222,16 +223,29 @@
         <argsstring>(const Keyboard::Key &amp;p_key)</argsstring>
         <name>to_wstring</name>
         <param>
-          <type>const Keyboard::Key &amp;</type>
+          <type>const <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref> &amp;</type>
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Converts a <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref> to a string. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref> to convert to a string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The string representation of the <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="117" column="20" declfile="includes/input/spk_keyboard.hpp" declline="117" declcolumn="20"/>
+        <location file="includes/input/spk_keyboard.hpp" line="172" column="20" declfile="includes/input/spk_keyboard.hpp" declline="172" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="spk__mouse_8hpp_1a8b0d135246aecf232855d7d804bb55bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::wstring</type>
@@ -239,16 +253,29 @@
         <argsstring>(const Mouse::Button &amp;p_button)</argsstring>
         <name>to_wstring</name>
         <param>
-          <type>const Mouse::Button &amp;</type>
+          <type>const <ref refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kindref="member">Mouse::Button</ref> &amp;</type>
           <declname>p_button</declname>
         </param>
         <briefdescription>
+<para>Converts a <ref refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kindref="member">Mouse::Button</ref> value to a wstring. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kindref="member">Mouse::Button</ref> value to convert. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted <ref refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kindref="member">Mouse::Button</ref> value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="53" column="14" declfile="includes/input/spk_mouse.hpp" declline="53" declcolumn="14"/>
+        <location file="includes/input/spk_mouse.hpp" line="125" column="14" declfile="includes/input/spk_mouse.hpp" declline="125" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1ad6c500689e1936587d90db1f1328ceb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -263,7 +290,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator+</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator+</name>
@@ -272,16 +299,54 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overload of the addition operator for an arithmetic value and a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the elements of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the arithmetic value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arithmetic value to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to which the arithmetic value is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new vector resulting from the addition. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="288" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="288" bodyend="291"/>
+        <location file="includes/math/spk_vector2.hpp" line="564" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="564" bodyend="567"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1a443c70714a630e0cbc2199d56b92cc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -296,7 +361,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator-</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator-</name>
@@ -305,16 +370,54 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overload of the substraction operator for an arithmetic value and a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the elements of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the arithmetic value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arithmetic value to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to which the arithmetic value is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new vector resulting from the addition. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="293" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="293" bodyend="296"/>
+        <location file="includes/math/spk_vector2.hpp" line="579" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="579" bodyend="582"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1adc4d3ecda52ee833bc55ca7ece2f940e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -329,7 +432,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator*</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator*</name>
@@ -338,16 +441,54 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overload of the multiplication operator for an arithmetic value and a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the elements of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the arithmetic value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arithmetic value to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to which the arithmetic value is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new vector resulting from the addition. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="298" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="298" bodyend="301"/>
+        <location file="includes/math/spk_vector2.hpp" line="594" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="594" bodyend="597"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1a4a8a9957f5dff3695f49beb037108568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -362,7 +503,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator/</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator/</name>
@@ -371,16 +512,54 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overload of the division operator for an arithmetic value and a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the elements of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the arithmetic value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arithmetic value to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to which the arithmetic value is added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A new vector resulting from the addition. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="303" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="303" bodyend="306"/>
+        <location file="includes/math/spk_vector2.hpp" line="609" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="609" bodyend="612"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector3_8hpp_1a8581e17fe52f716d72b87d12669f7620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

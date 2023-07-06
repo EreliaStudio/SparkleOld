@@ -1,0 +1,1407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1IVector2_xC2_xB2" kind="struct" language="C++" prot="public">
+    <compoundname>spk::IVector2²</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structspk_1_1IVector2_xC2_xB2_1afb6eae684c5a81307ab094c42fa37b1b" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector2²&lt; TType &gt;::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>The x-coordinate of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="28" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structspk_1_1IVector2_xC2_xB2_1a808bf0b52e16bcf4f25fbba5e5db0aef" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector2²&lt; TType &gt;::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>The y-coordinate of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="29" column="15" bodyfile="includes/math/spk_vector2.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a87a1b4508c6ea62688f6623a92392ab2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::IVector2²&lt; TType &gt;::IVector2</definition>
+        <argsstring>()</argsstring>
+        <name>IVector2</name>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a two-dimensional vector with coordinates (0,0). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="36" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a78121616069c4cd83e3fbd38a1c0889b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2²&lt; TType &gt;::IVector2</definition>
+        <argsstring>(const TOtherType &amp;p_value)</argsstring>
+        <name>IVector2</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+<para>Constructor that initializes both coordinates with a single value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be used for both coordinates. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="43" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a83de0866ac6e2bf95ac1a54ef0980be2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2²&lt; TType &gt;::IVector2</definition>
+        <argsstring>(const TOtherType &amp;p_x, const TOtherType &amp;p_y)</argsstring>
+        <name>IVector2</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_x</declname>
+        </param>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_y</declname>
+        </param>
+        <briefdescription>
+<para>Constructor that initializes the vector with two values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be used for the x-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be used for the y-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="51" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a09dac47fe453edc862f83c6bfb71d9b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector2²&lt; TType &gt;::operator IVector2&lt; TOtherType &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator IVector2&lt; TOtherType &gt;</name>
+        <briefdescription>
+<para>Type-casting operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of the class to be type-casted to an instance of <ref refid="classIVector2" kindref="compound">IVector2</ref> of another type. <simplesect kind="return"><para>An instance of <ref refid="classIVector2" kindref="compound">IVector2</ref> of the new type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="61" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a4054ee6296061dfc2e30849b6e0d3491" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2²&lt; TType &gt;::operator+</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of + operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to add two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resulting <ref refid="classIVector2" kindref="compound">IVector2</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="88" column="18" bodyfile="includes/math/spk_vector2.hpp" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a5c73195d9a1a05aa88892e88f9a40301" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2²&lt; TType &gt;::operator-</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of - operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to subtract two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to subtract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resulting <ref refid="classIVector2" kindref="compound">IVector2</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="101" column="18" bodyfile="includes/math/spk_vector2.hpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1af6c510b54e2144f04907b55e23b5c8cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2²&lt; TType &gt;::operator*</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of * operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to multiply two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to multiply with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resulting <ref refid="classIVector2" kindref="compound">IVector2</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="114" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1aa65574d8b991dd9a05ea1ac32fddb6f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector2²&lt; TType &gt;::operator/</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of / operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to divide two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to divide by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resulting <ref refid="classIVector2" kindref="compound">IVector2</ref>. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if an attempt is made to divide by zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="128" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="128" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ab19215e3e2f31785931425b75dc3b95d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2²&lt; TType &gt;::operator+=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of += operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to add another <ref refid="classIVector2" kindref="compound">IVector2</ref> to this object and assign the result to this object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="142" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="142" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ab38a1c1ba5a0f835576caa91dbf9d56b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2²&lt; TType &gt;::operator-=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of -= operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to subtract another <ref refid="classIVector2" kindref="compound">IVector2</ref> from this object and assign the result to this object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to subtract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="155" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="155" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a26172d58485a5f827d9ae74da66ddcc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2²&lt; TType &gt;::operator*=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of *= operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to multiply this object by another <ref refid="classIVector2" kindref="compound">IVector2</ref> and assign the result to this object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to multiply with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="168" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="168" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a44eb9d8ab0f9d48a9c334733189998eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::IVector2²&lt; TType &gt;::operator/=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of /= operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to divide this object by another <ref refid="classIVector2" kindref="compound">IVector2</ref> and assign the result to this object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to divide by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if an attempt is made to divide by zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="182" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="182" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1afbe9d6943cbf382903b8e2a2667a140b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator==</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;delta) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Overload of == operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects are equal. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if both <ref refid="classIVector2" kindref="compound">IVector2</ref> objects are equal, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="197" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="197" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a672603f851980d5f2ab1f7d4c3a095b5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator!=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;delta) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Overload of != operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if two <ref refid="classIVector2" kindref="compound">IVector2</ref> objects are not equal. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if both <ref refid="classIVector2" kindref="compound">IVector2</ref> objects are not equal, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="210" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="210" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ab2b784719aef4b76694dcc53eab25105" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator&lt;</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of &lt; operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if one <ref refid="classIVector2" kindref="compound">IVector2</ref> object is less than another. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if this <ref refid="classIVector2" kindref="compound">IVector2</ref> object is less than the other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="223" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="223" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a110102bb0b3fb604ab9491b01c30b5c1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator&gt;</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of &gt; operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if one <ref refid="classIVector2" kindref="compound">IVector2</ref> object is greater than another. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if this <ref refid="classIVector2" kindref="compound">IVector2</ref> object is greater than the other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="240" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="240" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a0de2d12f0b178e5c0eb3facb5b928ea3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator&lt;=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of &lt;= operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if one <ref refid="classIVector2" kindref="compound">IVector2</ref> object is less than or equal to another. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if this <ref refid="classIVector2" kindref="compound">IVector2</ref> object is less than or equal to the other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="257" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="257" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a43d0cad39c06dd4bcee668e16732718d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector2²&lt; TType &gt;::operator&gt;=</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overload of &gt;= operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to compare if one <ref refid="classIVector2" kindref="compound">IVector2</ref> object is greater than or equal to another. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if this <ref refid="classIVector2" kindref="compound">IVector2</ref> object is greater than or equal to the other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="274" column="6" bodyfile="includes/math/spk_vector2.hpp" bodystart="274" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a42a82569e87d1ee2b2f8bf5f91b73275" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::norm</definition>
+        <argsstring>() const</argsstring>
+        <name>norm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="283" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="283" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a42a82569e87d1ee2b2f8bf5f91b73275" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::norm</definition>
+        <argsstring>() const</argsstring>
+        <name>norm</name>
+        <briefdescription>
+<para>Calculates the norm (or length) of this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the Euclidean norm (also known as the L2 norm) of this vector, which is the square root of the sum of the squares of the coordinates. <simplesect kind="return"><para>The norm of the vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="295" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="295" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a2aea226c63e5ad6b27173ddcf15018be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::distance</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>distance</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the Euclidean distance between this vector and another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the Euclidean distance (or L2 distance) between this vector and another vector. The Euclidean distance is the square root of the sum of the squares of differences in each coordinate. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> object to compute the distance to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Euclidean distance between this vector and the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="310" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="310" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a1407e6aecf160d856032db445ced6a55" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
+        <definition>IVector2&lt;float&gt; spk::IVector2²&lt; TType &gt;::normalize</definition>
+        <argsstring>() const</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+<para>Normalizes this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method normalizes this vector by dividing each coordinate by the norm of the vector. The resulting vector has a norm of 1. If the norm of the vector is zero, a runtime error is thrown. <simplesect kind="return"><para>The normalized vector. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the norm of the vector is zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="322" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="322" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a0d2aee425ae7ca6462a7175e17340a29" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2²&lt; TType &gt;::cross</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other=IVector2(0, 0)) const</argsstring>
+        <name>cross</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+          <defval><ref refid="classIVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+<para>Performs the 2D cross product with another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the 2D cross product of this vector with another vector. The result is a new vector. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> object to compute the cross product with. Defaults to a zero vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The cross product of this vector and the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="341" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="341" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a290461ecc83d83b4109854e82e2b4bf9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::crossZ</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>crossZ</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the z-component of the cross product with another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the z-component of the 2D cross product of this vector with another vector. The result is a scalar. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> object to compute the cross product with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The z-component of the cross product of this vector and the other vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="359" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="359" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a72b9086a584d16c606acc35aeec93849" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::dot</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</argsstring>
+        <name>dot</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+          <defval><ref refid="classIVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+<para>Performs the dot product with another vector, with respect to a center vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the dot product of this vector with another vector, with respect to a center vector. The result is a scalar. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> object to compute the dot product with. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The center <ref refid="classIVector2" kindref="compound">IVector2</ref> object. Defaults to a zero vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The dot product of this vector and the other vector, with respect to the center vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="374" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="374" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a9eaa121b93054a263517a9f541d5f288" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector2²&lt; TType &gt;::angle</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</argsstring>
+        <name>angle</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+          <defval><ref refid="classIVector2" kindref="compound">IVector2</ref>(0, 0)</defval>
+        </param>
+        <briefdescription>
+<para>Calculates the angle between this vector and another vector, with respect to a center vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the angle in degrees between this vector and another vector, with respect to a center vector. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="classIVector2" kindref="compound">IVector2</ref> object to compute the angle to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The center <ref refid="classIVector2" kindref="compound">IVector2</ref> object. Defaults to a zero vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The angle in degrees between this vector and the other vector, with respect to the center vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="393" column="7" bodyfile="includes/math/spk_vector2.hpp" bodystart="393" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ae576c7e1772b9944668d9815e94d7ed2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2²&lt; TType &gt;::invert</definition>
+        <argsstring>() const</argsstring>
+        <name>invert</name>
+        <briefdescription>
+<para>Inverts this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method inverts this vector by multiplying each coordinate by -1. The result is a new vector pointing in the opposite direction. <simplesect kind="return"><para>The inverted vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="411" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a3ef26893f9bd8f3d26c1cb0233e51a19" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>IVector2 spk::IVector2²&lt; TType &gt;::rotate</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_center, const float &amp;p_angle) const</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_center</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>p_angle</declname>
+        </param>
+        <briefdescription>
+<para>Rotates this vector around a given center point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method rotates this vector around a given center point by a specified angle. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the center vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classIVector2" kindref="compound">IVector2</ref> object that serves as the rotation center point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The angle in degrees by which to rotate the vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The rotated vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="426" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="426" bodyend="438"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structspk_1_1IVector2_xC2_xB2_1a0ad00eba4b802fae1acede9ef72d21bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::wostream &amp;</type>
+        <definition>std::wostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::wostream &amp;p_os, const IVector2 &amp;p_self)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::wostream &amp;</type>
+          <declname>p_os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_self</declname>
+        </param>
+        <briefdescription>
+<para>Overload of &lt;&lt; operator for output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator is used to output the content of an <ref refid="classIVector2" kindref="compound">IVector2</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classIVector2" kindref="compound">IVector2</ref> object to output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The output stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="74" column="16" bodyfile="includes/math/spk_vector2.hpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1aa92e2b7834301d879ccfff0386504f4a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::floor</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>floor</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+<para>Rounds down the coordinates of a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method rounds down the coordinates of a given <ref refid="classIVector2" kindref="compound">IVector2</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be rounded down. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector with rounded down coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="447" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="447" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ad4da26dcde24353cc83510dfd05079d2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::ceiling</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>ceiling</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+<para>Rounds up the coordinates of a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method rounds up the coordinates of a given <ref refid="classIVector2" kindref="compound">IVector2</ref> object. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be rounded up. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector with rounded up coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="464" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="464" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a900a737ad76b0b863284f7d6fc746dc0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::round</definition>
+        <argsstring>(const IVector2 &amp;p_vector)</argsstring>
+        <name>round</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_vector</declname>
+        </param>
+        <briefdescription>
+<para>Rounds the coordinates of a vector to the nearest integer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method rounds the coordinates of a given <ref refid="classIVector2" kindref="compound">IVector2</ref> object to the nearest integer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to be rounded. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector with rounded coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="481" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="481" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a5378cc41007044a80a002d41bff00dcf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::min</definition>
+        <argsstring>(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</argsstring>
+        <name>min</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the vector with the minimum coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the <ref refid="classIVector2" kindref="compound">IVector2</ref> object with the minimum coordinates from two given vectors. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector with the minimum coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="499" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="499" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a685653d643c79b201b8345b72a7b57aa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::max</definition>
+        <argsstring>(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</argsstring>
+        <name>max</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the vector with the maximum coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the <ref refid="classIVector2" kindref="compound">IVector2</ref> object with the maximum coordinates from two given vectors. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The vector with the maximum coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="512" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="512" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1a857b475bd31bd430ea0bd87b27d1dfa5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool spk::IVector2²&lt; TType &gt;::isInsideRectangle</definition>
+        <argsstring>(const IVector2 &amp;p_point, const IVector2 &amp;p_cornerA, const IVector2 &amp;p_cornerB)</argsstring>
+        <name>isInsideRectangle</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_point</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_cornerA</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_cornerB</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a point is inside a rectangle defined by two corner points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method checks if a given point (as an <ref refid="classIVector2" kindref="compound">IVector2</ref> object) is inside a rectangle defined by two corner points (as <ref refid="classIVector2" kindref="compound">IVector2</ref> objects). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to be checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cornerA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first corner point of the rectangle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cornerB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second corner point of the rectangle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the point is inside the rectangle, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="526" column="13" bodyfile="includes/math/spk_vector2.hpp" bodystart="526" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector2_xC2_xB2_1ac9c33875b9b908ce875911bd2eb3cd81" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classIVector2" kindref="compound">IVector2</ref></type>
+        <definition>static IVector2 spk::IVector2²&lt; TType &gt;::lerp</definition>
+        <argsstring>(const IVector2 &amp;p_startingPoint, const IVector2 &amp;p_endingPoint, float t)</argsstring>
+        <name>lerp</name>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_startingPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref> &amp;</type>
+          <declname>p_endingPoint</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Interpolates linearly between two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method performs a linear interpolation between two points, creating a smooth transition from the starting point to the ending point. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_startingPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting point for the interpolation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_endingPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending point for the interpolation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolation parameter, ranging from 0 (start point) to 1 (end point). For values outside this range, the function extrapolates. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The interpolated vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector2.hpp" line="546" column="17" bodyfile="includes/math/spk_vector2.hpp" bodystart="546" bodyend="551"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/math/spk_vector2.hpp" line="26" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="27" bodyend="552"/>
+    <listofallmembers>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a9eaa121b93054a263517a9f541d5f288" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>angle</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ad4da26dcde24353cc83510dfd05079d2" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>ceiling</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a0d2aee425ae7ca6462a7175e17340a29" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>cross</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a290461ecc83d83b4109854e82e2b4bf9" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>crossZ</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a2aea226c63e5ad6b27173ddcf15018be" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>distance</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a72b9086a584d16c606acc35aeec93849" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>dot</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1aa92e2b7834301d879ccfff0386504f4a" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>floor</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ae576c7e1772b9944668d9815e94d7ed2" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>invert</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a857b475bd31bd430ea0bd87b27d1dfa5" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>isInsideRectangle</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a87a1b4508c6ea62688f6623a92392ab2" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a78121616069c4cd83e3fbd38a1c0889b" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a83de0866ac6e2bf95ac1a54ef0980be2" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>IVector2</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ac9c33875b9b908ce875911bd2eb3cd81" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>lerp</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a685653d643c79b201b8345b72a7b57aa" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>max</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a5378cc41007044a80a002d41bff00dcf" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>min</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a42a82569e87d1ee2b2f8bf5f91b73275" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>norm</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a42a82569e87d1ee2b2f8bf5f91b73275" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>norm</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a1407e6aecf160d856032db445ced6a55" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>normalize</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a09dac47fe453edc862f83c6bfb71d9b6" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator IVector2&lt; TOtherType &gt;</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a672603f851980d5f2ab1f7d4c3a095b5" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator!=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1af6c510b54e2144f04907b55e23b5c8cd" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator*</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a26172d58485a5f827d9ae74da66ddcc6" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator*=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a4054ee6296061dfc2e30849b6e0d3491" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator+</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ab19215e3e2f31785931425b75dc3b95d" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator+=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a5c73195d9a1a05aa88892e88f9a40301" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator-</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ab38a1c1ba5a0f835576caa91dbf9d56b" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator-=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1aa65574d8b991dd9a05ea1ac32fddb6f3" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator/</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a44eb9d8ab0f9d48a9c334733189998eb" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator/=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1ab2b784719aef4b76694dcc53eab25105" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator&lt;</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a0ad00eba4b802fae1acede9ef72d21bd" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a0de2d12f0b178e5c0eb3facb5b928ea3" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator&lt;=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1afbe9d6943cbf382903b8e2a2667a140b" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator==</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a110102bb0b3fb604ab9491b01c30b5c1" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator&gt;</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a43d0cad39c06dd4bcee668e16732718d" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>operator&gt;=</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a3ef26893f9bd8f3d26c1cb0233e51a19" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>rotate</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a900a737ad76b0b863284f7d6fc746dc0" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>round</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1afb6eae684c5a81307ab094c42fa37b1b" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>x</name></member>
+      <member refid="structspk_1_1IVector2_xC2_xB2_1a808bf0b52e16bcf4f25fbba5e5db0aef" prot="public" virt="non-virtual"><scope>spk::IVector2²</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

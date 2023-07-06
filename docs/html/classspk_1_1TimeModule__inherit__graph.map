@@ -1,4 +1,4 @@
 <map id="spk::TimeModule" name="spk::TimeModule">
-<area shape="rect" id="node1" title=" " alt="" coords="15,80,150,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1AbstractModule.html" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node1" title="Class for managing time&#45;related functionality." alt="" coords="15,80,150,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="5,5,160,32"/>
 </map>

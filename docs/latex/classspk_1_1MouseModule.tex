@@ -2,6 +2,15 @@
 \label{classspk_1_1MouseModule}\index{spk::MouseModule@{spk::MouseModule}}
 
 
+Class for managing the mouse interactions.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+mouse\+\_\+module.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Mouse\+Module\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,12 +32,37 @@ Collaboration diagram for spk\+::Mouse\+Module\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1MouseModule_af36f93dd3ad1a4a53f4e9f80635f7b24}\label{classspk_1_1MouseModule_af36f93dd3ad1a4a53f4e9f80635f7b24}} 
-{\bfseries Mouse\+Module} (\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&p\+\_\+queue)
-\item 
+\mbox{\hyperlink{classspk_1_1MouseModule_af36f93dd3ad1a4a53f4e9f80635f7b24}{Mouse\+Module}} (\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&p\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1MouseModule}{Mouse\+Module}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1MouseModule_a7488472b5dcb2a93d96dd1350a7b9246}\label{classspk_1_1MouseModule_a7488472b5dcb2a93d96dd1350a7b9246}} 
+\mbox{\hyperlink{classspk_1_1MouseModule_a7488472b5dcb2a93d96dd1350a7b9246}{$\sim$\+Mouse\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1MouseModule}{Mouse\+Module}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1MouseModule_a463aa665c2e432316a0231a87a18aba3}\label{classspk_1_1MouseModule_a463aa665c2e432316a0231a87a18aba3}} 
-void {\bfseries update\+Mouse} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classspk_1_1MouseModule_a463aa665c2e432316a0231a87a18aba3}{update\+Mouse}} ()
+\begin{DoxyCompactList}\small\item\em Updates the mouse state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing the mouse interactions. 
+
+This class manages the mouse interactions, including handling system messages related to the mouse. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1MouseModule_af36f93dd3ad1a4a53f4e9f80635f7b24}\label{classspk_1_1MouseModule_af36f93dd3ad1a4a53f4e9f80635f7b24}} 
+\index{spk::MouseModule@{spk::MouseModule}!MouseModule@{MouseModule}}
+\index{MouseModule@{MouseModule}!spk::MouseModule@{spk::MouseModule}}
+\doxysubsubsection{\texorpdfstring{MouseModule()}{MouseModule()}}
+{\footnotesize\ttfamily spk\+::\+Mouse\+Module\+::\+Mouse\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&}]{p\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Constructs the \mbox{\hyperlink{classspk_1_1MouseModule}{Mouse\+Module}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & The thread-\/safe queue for mouse system messages. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

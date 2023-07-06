@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1Observer" kind="class" language="C++" prot="public">
     <compoundname>spk::Observer</compoundname>
     <basecompoundref refid="classspk_1_1ContractProvider" prot="public" virt="non-virtual">spk::ContractProvider</basecompoundref>
+    <includes refid="spk__observer_8hpp" local="no">spk_observer.hpp</includes>
     <templateparamlist>
       <param>
         <type>typename TEvent</type>
@@ -17,10 +18,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The map of keys/values events/callbacks. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_observer.hpp" line="13" column="10" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="13" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_observer.hpp" line="19" column="18" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -30,12 +32,14 @@
         <argsstring>()</argsstring>
         <name>Observer</name>
         <briefdescription>
+<para>Default constructor for <ref refid="classspk_1_1Observer" kindref="compound">Observer</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor initializes the observer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_observer.hpp" line="16" column="1" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="16" bodyend="18"/>
+        <location file="includes/design_pattern/spk_observer.hpp" line="27" column="9" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="27" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Observer_1a9d72f4a2515061bab4721fa640da5c3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
@@ -51,12 +55,34 @@
           <declname>p_callback</declname>
         </param>
         <briefdescription>
+<para>Subscribe to an event with a callback. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function subscribes to an event with the specified callback. It adds the callback to the corresponding event in the callback map and returns a contract representing the subscription.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event to subscribe to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be registered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the subscription. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_observer.hpp" line="20" column="10" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="20" bodyend="25"/>
+        <location file="includes/design_pattern/spk_observer.hpp" line="41" column="18" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="41" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Observer_1add756ae632b22250c9153bbcda59218c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -68,17 +94,40 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Notify the observers of an event. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function notifies all registered callbacks for the specified event. It retrieves the callback container for the event and calls each callback function in the container.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event to notify. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_observer.hpp" line="27" column="6" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="27" bodyend="35"/>
+        <location file="includes/design_pattern/spk_observer.hpp" line="56" column="14" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="56" bodyend="64"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para><ref refid="classspk_1_1Observer" kindref="compound">Observer</ref> class template. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class template represents an observer that can subscribe to events and notify registered callbacks when the events occur. <parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TEvent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -104,7 +153,7 @@
         <link refid="classspk_1_1ContractProvider"/>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_observer.hpp" line="10" column="1" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="11" bodyend="36"/>
+    <location file="includes/design_pattern/spk_observer.hpp" line="16" column="5" bodyfile="includes/design_pattern/spk_observer.hpp" bodystart="17" bodyend="65"/>
     <listofallmembers>
       <member refid="classspk_1_1Observer_1a894c190f1a705deb8a3b102594ea3627" prot="private" virt="non-virtual"><scope>spk::Observer</scope><name>_callbacks</name></member>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::Observer</scope><name>Callback</name></member>

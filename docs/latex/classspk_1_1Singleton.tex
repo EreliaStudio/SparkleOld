@@ -1,24 +1,113 @@
 \hypertarget{classspk_1_1Singleton}{}\doxysection{spk\+::Singleton$<$ TType $>$ Class Template Reference}
 \label{classspk_1_1Singleton}\index{spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}}
+
+
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class template.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+singleton.\+hpp$>$}
+
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Singleton_ab970838cbc825424436ad64613b20c12}\label{classspk_1_1Singleton_ab970838cbc825424436ad64613b20c12}} 
-{\footnotesize template$<$typename... Args$>$ }\\static constexpr std\+::shared\+\_\+ptr$<$ TType $>$ {\bfseries instanciate} (Args \&\&...args)
+{\footnotesize template$<$typename... Args$>$ }\\static constexpr std\+::shared\+\_\+ptr$<$ TType $>$ \mbox{\hyperlink{classspk_1_1Singleton_ab970838cbc825424436ad64613b20c12}{instanciate}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Instantiate the singleton object. This template function creates a new instance of the singleton object if it doesn\textquotesingle{}t exist. If an instance already exists, it returns the existing instance. \end{DoxyCompactList}\item 
+static constexpr std\+::shared\+\_\+ptr$<$ TType $>$ \mbox{\hyperlink{classspk_1_1Singleton_a5f56bedfe0791cc1cc09d34bb3be382c}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the singleton instance. This function returns the shared pointer to the singleton instance. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classspk_1_1Singleton_a0fd0698aa7eab7c2a5cfbf11a9ddfad1}{release}} ()
+\begin{DoxyCompactList}\small\item\em Release the singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Singleton_a5f56bedfe0791cc1cc09d34bb3be382c}\label{classspk_1_1Singleton_a5f56bedfe0791cc1cc09d34bb3be382c}} 
-static constexpr std\+::shared\+\_\+ptr$<$ TType $>$ {\bfseries instance} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Singleton_a0fd0698aa7eab7c2a5cfbf11a9ddfad1}\label{classspk_1_1Singleton_a0fd0698aa7eab7c2a5cfbf11a9ddfad1}} 
-static void {\bfseries release} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classspk_1_1Singleton_a24d01aa8ba49475d195a492d724d43e1}\label{classspk_1_1Singleton_a24d01aa8ba49475d195a492d724d43e1}} 
+\mbox{\hyperlink{classspk_1_1Singleton_a24d01aa8ba49475d195a492d724d43e1}{Singleton}} ()
+\begin{DoxyCompactList}\small\item\em Protected constructor. This constructor is protected to prevent direct instantiation of the singleton class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Singleton_a745f66a5489929948d930a09156aec4c}\label{classspk_1_1Singleton_a745f66a5489929948d930a09156aec4c}} 
-static std\+::shared\+\_\+ptr$<$ TType $>$ {\bfseries \+\_\+instance} = nullptr
+static std\+::shared\+\_\+ptr$<$ TType $>$ \mbox{\hyperlink{classspk_1_1Singleton_a745f66a5489929948d930a09156aec4c}{\+\_\+instance}} = nullptr
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Singleton$<$ TType $>$}
+
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class template. 
+
+This class template provides a base implementation for creating singleton objects. It ensures that only one instance of the object is created and provides methods to access and release the instance.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the singleton object. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Singleton_a5f56bedfe0791cc1cc09d34bb3be382c}\label{classspk_1_1Singleton_a5f56bedfe0791cc1cc09d34bb3be382c}} 
+\index{spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}!instance@{instance}}
+\index{instance@{instance}!spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static constexpr std\+::shared\+\_\+ptr$<$TType$>$ \mbox{\hyperlink{classspk_1_1Singleton}{spk\+::\+Singleton}}$<$ TType $>$\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Get the singleton instance. This function returns the shared pointer to the singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+The shared pointer to the singleton instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Singleton_ab970838cbc825424436ad64613b20c12}\label{classspk_1_1Singleton_ab970838cbc825424436ad64613b20c12}} 
+\index{spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}!instanciate@{instanciate}}
+\index{instanciate@{instanciate}!spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{instanciate()}{instanciate()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename... Args$>$ \\
+static constexpr std\+::shared\+\_\+ptr$<$TType$>$ \mbox{\hyperlink{classspk_1_1Singleton}{spk\+::\+Singleton}}$<$ TType $>$\+::instanciate (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Instantiate the singleton object. This template function creates a new instance of the singleton object if it doesn\textquotesingle{}t exist. If an instance already exists, it returns the existing instance. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & The types of the arguments to be passed to the constructor of the singleton object. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments to be passed to the constructor of the singleton object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The shared pointer to the singleton instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Singleton_a0fd0698aa7eab7c2a5cfbf11a9ddfad1}\label{classspk_1_1Singleton_a0fd0698aa7eab7c2a5cfbf11a9ddfad1}} 
+\index{spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}!release@{release}}
+\index{release@{release}!spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static void \mbox{\hyperlink{classspk_1_1Singleton}{spk\+::\+Singleton}}$<$ TType $>$\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Release the singleton instance. 
+
+This function releases the singleton instance by resetting the shared pointer to nullptr. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classspk_1_1Singleton_a745f66a5489929948d930a09156aec4c}\label{classspk_1_1Singleton_a745f66a5489929948d930a09156aec4c}} 
+\index{spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}!\_instance@{\_instance}}
+\index{\_instance@{\_instance}!spk::Singleton$<$ TType $>$@{spk::Singleton$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{\_instance}{\_instance}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+std\+::shared\+\_\+ptr$<$TType$>$ \mbox{\hyperlink{classspk_1_1Singleton}{spk\+::\+Singleton}}$<$ TType $>$\+::\+\_\+instance = nullptr\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+The shared pointer to the singleton instance. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

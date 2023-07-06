@@ -3,6 +3,7 @@
   <compounddef id="classspk_1_1KeyboardModule" kind="class" language="C++" prot="public">
     <compoundname>spk::KeyboardModule</compoundname>
     <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
+    <includes refid="spk__keyboard__module_8hpp" local="no">spk_keyboard_module.hpp</includes>
       <sectiondef kind="private-func">
       <memberdef kind="function" id="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -15,12 +16,23 @@
           <declname>p_event</declname>
         </param>
         <briefdescription>
+<para>Handles a system message. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="10" column="6"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="21" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,12 +46,23 @@
           <declname>p_queue</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1KeyboardModule" kindref="compound">KeyboardModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for keyboard system messages. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="13" column="1"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="29" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -47,12 +70,13 @@
         <argsstring>()</argsstring>
         <name>~KeyboardModule</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1KeyboardModule" kindref="compound">KeyboardModule</ref> object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="14" column="1"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="34" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -60,17 +84,20 @@
         <argsstring>()</argsstring>
         <name>updateKeyboard</name>
         <briefdescription>
+<para>Updates the keyboard state. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="16" column="6"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="39" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Class for managing the keyboard interactions. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class manages the keyboard interactions, including handling system messages related to the keyboard. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -108,7 +135,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_keyboard_module.hpp" line="7" column="1" bodyfile="includes/application/modules/spk_keyboard_module.hpp" bodystart="8" bodyend="17"/>
+    <location file="includes/application/modules/spk_keyboard_module.hpp" line="13" column="1" bodyfile="includes/application/modules/spk_keyboard_module.hpp" bodystart="14" bodyend="40"/>
     <listofallmembers>
       <member refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" prot="private" virt="virtual"><scope>spk::KeyboardModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>IMessageConsumerModule</name></member>

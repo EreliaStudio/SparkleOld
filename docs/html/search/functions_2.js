@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['get_167',['get',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html#a4e4ae1455b0adfa700fa3d1de7f8de79',1,'spk::ContextManager::ReadWriteAccessor::get()'],['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html#abf5a06f279dda5d46546e0a29077215b',1,'spk::ContextManager::ReadOnlyAccessor::get()']]]
+  ['back_346',['back',['../classspk_1_1ThreadSafeQueue.html#a71c53d3168aef54e9d0fecbb3202b7b8',1,'spk::ThreadSafeQueue::back()'],['../classspk_1_1ThreadSafeQueue.html#a0525e56c7f3ec4da434501ffd3f731b4',1,'spk::ThreadSafeQueue::back() const']]],
+  ['bookmark_347',['bookmark',['../classspk_1_1DataBuffer.html#a1441a1c3abc6a4f5c55a2a66798be379',1,'spk::DataBuffer']]]
 ];

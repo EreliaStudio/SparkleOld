@@ -74,50 +74,61 @@ $(function() {
 <div class="title">spk::ThreadSafeQueue&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A thread-safe queue implementation.  
+ <a href="classspk_1_1ThreadSafeQueue.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__thread__safe__queue_8hpp_source.html">spk_thread_safe_queue.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7ef0d2aea7e6ff8d3f80e4aba00855f0"><td class="memItemLeft" align="right" valign="top"><a id="a7ef0d2aea7e6ff8d3f80e4aba00855f0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ThreadSafeQueue</b> (const <a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a>&lt; T &gt; &amp;)=delete</td></tr>
+<tr class="memitem:ad95a7d5bfe93b6d2146e64ee2a433b1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#ad95a7d5bfe93b6d2146e64ee2a433b1b">ThreadSafeQueue</a> ()=default</td></tr>
+<tr class="memdesc:ad95a7d5bfe93b6d2146e64ee2a433b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> object.  <a href="classspk_1_1ThreadSafeQueue.html#ad95a7d5bfe93b6d2146e64ee2a433b1b">More...</a><br /></td></tr>
+<tr class="separator:ad95a7d5bfe93b6d2146e64ee2a433b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef0d2aea7e6ff8d3f80e4aba00855f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a7ef0d2aea7e6ff8d3f80e4aba00855f0">ThreadSafeQueue</a> (const <a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a>&lt; T &gt; &amp;)=delete</td></tr>
+<tr class="memdesc:a7ef0d2aea7e6ff8d3f80e4aba00855f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor is deleted.  <a href="classspk_1_1ThreadSafeQueue.html#a7ef0d2aea7e6ff8d3f80e4aba00855f0">More...</a><br /></td></tr>
 <tr class="separator:a7ef0d2aea7e6ff8d3f80e4aba00855f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f339b2424b4697100d4bb3a501c4bdc"><td class="memItemLeft" align="right" valign="top"><a id="a3f339b2424b4697100d4bb3a501c4bdc"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const size_t &amp;p_index) const</td></tr>
+<tr class="memitem:aa8d9e71b8bee427e21a7121759c0c690"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#aa8d9e71b8bee427e21a7121759c0c690">~ThreadSafeQueue</a> ()</td></tr>
+<tr class="memdesc:aa8d9e71b8bee427e21a7121759c0c690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> object.  <a href="classspk_1_1ThreadSafeQueue.html#aa8d9e71b8bee427e21a7121759c0c690">More...</a><br /></td></tr>
+<tr class="separator:aa8d9e71b8bee427e21a7121759c0c690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f339b2424b4697100d4bb3a501c4bdc"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc">operator[]</a> (const size_t &amp;p_index) const</td></tr>
+<tr class="memdesc:a3f339b2424b4697100d4bb3a501c4bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access an item in the queue by index.  <a href="classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc">More...</a><br /></td></tr>
 <tr class="separator:a3f339b2424b4697100d4bb3a501c4bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acffc6621639cde4e29248fec8db7722e"><td class="memItemLeft" align="right" valign="top"><a id="acffc6621639cde4e29248fec8db7722e"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>front</b> ()</td></tr>
+<tr class="memitem:acffc6621639cde4e29248fec8db7722e"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#acffc6621639cde4e29248fec8db7722e">front</a> ()</td></tr>
+<tr class="memdesc:acffc6621639cde4e29248fec8db7722e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference to the front item in the queue.  <a href="classspk_1_1ThreadSafeQueue.html#acffc6621639cde4e29248fec8db7722e">More...</a><br /></td></tr>
 <tr class="separator:acffc6621639cde4e29248fec8db7722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71c53d3168aef54e9d0fecbb3202b7b8"><td class="memItemLeft" align="right" valign="top"><a id="a71c53d3168aef54e9d0fecbb3202b7b8"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>back</b> ()</td></tr>
+<tr class="memitem:a71c53d3168aef54e9d0fecbb3202b7b8"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a71c53d3168aef54e9d0fecbb3202b7b8">back</a> ()</td></tr>
+<tr class="memdesc:a71c53d3168aef54e9d0fecbb3202b7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the reference to the back item in the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a71c53d3168aef54e9d0fecbb3202b7b8">More...</a><br /></td></tr>
 <tr class="separator:a71c53d3168aef54e9d0fecbb3202b7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdb4b57746427a0f8b7f4e8aff55eff4"><td class="memItemLeft" align="right" valign="top"><a id="abdb4b57746427a0f8b7f4e8aff55eff4"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>front</b> () const</td></tr>
+<tr class="memitem:abdb4b57746427a0f8b7f4e8aff55eff4"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#abdb4b57746427a0f8b7f4e8aff55eff4">front</a> () const</td></tr>
+<tr class="memdesc:abdb4b57746427a0f8b7f4e8aff55eff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the const reference to the front item in the queue.  <a href="classspk_1_1ThreadSafeQueue.html#abdb4b57746427a0f8b7f4e8aff55eff4">More...</a><br /></td></tr>
 <tr class="separator:abdb4b57746427a0f8b7f4e8aff55eff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0525e56c7f3ec4da434501ffd3f731b4"><td class="memItemLeft" align="right" valign="top"><a id="a0525e56c7f3ec4da434501ffd3f731b4"></a>
-const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>back</b> () const</td></tr>
+<tr class="memitem:a0525e56c7f3ec4da434501ffd3f731b4"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a0525e56c7f3ec4da434501ffd3f731b4">back</a> () const</td></tr>
+<tr class="memdesc:a0525e56c7f3ec4da434501ffd3f731b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the const reference to the back item in the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a0525e56c7f3ec4da434501ffd3f731b4">More...</a><br /></td></tr>
 <tr class="separator:a0525e56c7f3ec4da434501ffd3f731b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa11b3687a413ed1d05020e9679d708e"><td class="memItemLeft" align="right" valign="top"><a id="aaa11b3687a413ed1d05020e9679d708e"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>pop_front</b> ()</td></tr>
+<tr class="memitem:aaa11b3687a413ed1d05020e9679d708e"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#aaa11b3687a413ed1d05020e9679d708e">pop_front</a> ()</td></tr>
+<tr class="memdesc:aaa11b3687a413ed1d05020e9679d708e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the front item from the queue.  <a href="classspk_1_1ThreadSafeQueue.html#aaa11b3687a413ed1d05020e9679d708e">More...</a><br /></td></tr>
 <tr class="separator:aaa11b3687a413ed1d05020e9679d708e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8507da2707f396a0db12cbff753c2030"><td class="memItemLeft" align="right" valign="top"><a id="a8507da2707f396a0db12cbff753c2030"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>pop_back</b> ()</td></tr>
+<tr class="memitem:a8507da2707f396a0db12cbff753c2030"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a8507da2707f396a0db12cbff753c2030">pop_back</a> ()</td></tr>
+<tr class="memdesc:a8507da2707f396a0db12cbff753c2030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the back item from the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a8507da2707f396a0db12cbff753c2030">More...</a><br /></td></tr>
 <tr class="separator:a8507da2707f396a0db12cbff753c2030"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d6530f982fbd9b8342bf69b79f170c"><td class="memItemLeft" align="right" valign="top"><a id="af3d6530f982fbd9b8342bf69b79f170c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>push_back</b> (const T &amp;item)</td></tr>
+<tr class="memitem:af3d6530f982fbd9b8342bf69b79f170c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c">push_back</a> (const T &amp;item)</td></tr>
+<tr class="memdesc:af3d6530f982fbd9b8342bf69b79f170c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push an item to the back of the queue.  <a href="classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c">More...</a><br /></td></tr>
 <tr class="separator:af3d6530f982fbd9b8342bf69b79f170c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a58ccd7575177fed56ecfb028e6537a"><td class="memItemLeft" align="right" valign="top"><a id="a4a58ccd7575177fed56ecfb028e6537a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>push_front</b> (const T &amp;item)</td></tr>
+<tr class="memitem:a4a58ccd7575177fed56ecfb028e6537a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a">push_front</a> (const T &amp;item)</td></tr>
+<tr class="memdesc:a4a58ccd7575177fed56ecfb028e6537a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push an item to the front of the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a">More...</a><br /></td></tr>
 <tr class="separator:a4a58ccd7575177fed56ecfb028e6537a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f8b05a694cb48081a53d1f496c1e5f"><td class="memItemLeft" align="right" valign="top"><a id="ae0f8b05a694cb48081a53d1f496c1e5f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> ()</td></tr>
+<tr class="memitem:ae0f8b05a694cb48081a53d1f496c1e5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#ae0f8b05a694cb48081a53d1f496c1e5f">empty</a> ()</td></tr>
+<tr class="memdesc:ae0f8b05a694cb48081a53d1f496c1e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the queue is empty.  <a href="classspk_1_1ThreadSafeQueue.html#ae0f8b05a694cb48081a53d1f496c1e5f">More...</a><br /></td></tr>
 <tr class="separator:ae0f8b05a694cb48081a53d1f496c1e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dacede3ce86503fbbd8cc3da5ac67e5"><td class="memItemLeft" align="right" valign="top"><a id="a6dacede3ce86503fbbd8cc3da5ac67e5"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
+<tr class="memitem:a6dacede3ce86503fbbd8cc3da5ac67e5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a6dacede3ce86503fbbd8cc3da5ac67e5">size</a> ()</td></tr>
+<tr class="memdesc:a6dacede3ce86503fbbd8cc3da5ac67e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a6dacede3ce86503fbbd8cc3da5ac67e5">More...</a><br /></td></tr>
 <tr class="separator:a6dacede3ce86503fbbd8cc3da5ac67e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0f55c23e83d574e0e787249adb24f6"><td class="memItemLeft" align="right" valign="top"><a id="a5d0f55c23e83d574e0e787249adb24f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:a5d0f55c23e83d574e0e787249adb24f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a5d0f55c23e83d574e0e787249adb24f6">clear</a> ()</td></tr>
+<tr class="memdesc:a5d0f55c23e83d574e0e787249adb24f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the queue.  <a href="classspk_1_1ThreadSafeQueue.html#a5d0f55c23e83d574e0e787249adb24f6">More...</a><br /></td></tr>
 <tr class="separator:a5d0f55c23e83d574e0e787249adb24f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75768d4042460537d331f670a798ce1b"><td class="memItemLeft" align="right" valign="top"><a id="a75768d4042460537d331f670a798ce1b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> ()</td></tr>
+<tr class="memitem:a75768d4042460537d331f670a798ce1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b">wait</a> ()</td></tr>
+<tr class="memdesc:a75768d4042460537d331f670a798ce1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the queue to become non-empty.  <a href="classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b">More...</a><br /></td></tr>
 <tr class="separator:a75768d4042460537d331f670a798ce1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -135,6 +146,531 @@ std::deque&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_con
 std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>cvBlocking</b></td></tr>
 <tr class="separator:af85dcfbf85ff17055581432602a3fca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class spk::ThreadSafeQueue&lt; T &gt;</h3>
+
+<p>A thread-safe queue implementation. </p>
+<p>This class provides a thread-safe implementation of a queue. It allows multiple threads to push and pop items from the queue without causing data races or deadlocks.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of items stored in the queue. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad95a7d5bfe93b6d2146e64ee2a433b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad95a7d5bfe93b6d2146e64ee2a433b1b">&#9670;&nbsp;</a></span>ThreadSafeQueue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::<a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> object. </p>
+<p>This is the default constructor for the <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> class. </p>
+
+</div>
+</div>
+<a id="a7ef0d2aea7e6ff8d3f80e4aba00855f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef0d2aea7e6ff8d3f80e4aba00855f0">&#9670;&nbsp;</a></span>ThreadSafeQueue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::<a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor is deleted. </p>
+<p>Copying a <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> is not allowed to avoid data races. </p>
+
+</div>
+</div>
+<a id="aa8d9e71b8bee427e21a7121759c0c690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d9e71b8bee427e21a7121759c0c690">&#9670;&nbsp;</a></span>~ThreadSafeQueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::~<a class="el" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> object. </p>
+<p>This is the destructor for the <a class="el" href="classspk_1_1ThreadSafeQueue.html" title="A thread-safe queue implementation.">ThreadSafeQueue</a> class. It clears the content of the queue. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a71c53d3168aef54e9d0fecbb3202b7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c53d3168aef54e9d0fecbb3202b7b8">&#9670;&nbsp;</a></span>back() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the reference to the back item in the queue. </p>
+<p>This function returns a reference to the back item in the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the back item. </dd></dl>
+
+</div>
+</div>
+<a id="a0525e56c7f3ec4da434501ffd3f731b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0525e56c7f3ec4da434501ffd3f731b4">&#9670;&nbsp;</a></span>back() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the const reference to the back item in the queue. </p>
+<p>This function returns a const reference to the back item in the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the back item. </dd></dl>
+
+</div>
+</div>
+<a id="a5d0f55c23e83d574e0e787249adb24f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0f55c23e83d574e0e787249adb24f6">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear the queue. </p>
+<p>This function clears the content of the queue. </p>
+
+</div>
+</div>
+<a id="ae0f8b05a694cb48081a53d1f496c1e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f8b05a694cb48081a53d1f496c1e5f">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the queue is empty. </p>
+<p>This function checks if the queue is empty.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the queue is empty, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="acffc6621639cde4e29248fec8db7722e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acffc6621639cde4e29248fec8db7722e">&#9670;&nbsp;</a></span>front() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the reference to the front item in the queue. </p>
+<p>This function returns a reference to the front item in the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the front item. </dd></dl>
+
+</div>
+</div>
+<a id="abdb4b57746427a0f8b7f4e8aff55eff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb4b57746427a0f8b7f4e8aff55eff4">&#9670;&nbsp;</a></span>front() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the const reference to the front item in the queue. </p>
+<p>This function returns a const reference to the front item in the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the front item. </dd></dl>
+
+</div>
+</div>
+<a id="a3f339b2424b4697100d4bb3a501c4bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f339b2424b4697100d4bb3a501c4bdc">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access an item in the queue by index. </p>
+<p>This operator allows accessing an item in the queue by index.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_index</td><td>The index of the item. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The item at the specified index. </dd></dl>
+
+</div>
+</div>
+<a id="a8507da2707f396a0db12cbff753c2030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8507da2707f396a0db12cbff753c2030">&#9670;&nbsp;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::pop_back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove and return the back item from the queue. </p>
+<p>This function removes and returns the back item from the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>The back item. </dd></dl>
+
+</div>
+</div>
+<a id="aaa11b3687a413ed1d05020e9679d708e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa11b3687a413ed1d05020e9679d708e">&#9670;&nbsp;</a></span>pop_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::pop_front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove and return the front item from the queue. </p>
+<p>This function removes and returns the front item from the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>The front item. </dd></dl>
+
+</div>
+</div>
+<a id="af3d6530f982fbd9b8342bf69b79f170c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d6530f982fbd9b8342bf69b79f170c">&#9670;&nbsp;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Push an item to the back of the queue. </p>
+<p>This function pushes an item to the back of the queue.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to be pushed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a58ccd7575177fed56ecfb028e6537a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a58ccd7575177fed56ecfb028e6537a">&#9670;&nbsp;</a></span>push_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Push an item to the front of the queue. </p>
+<p>This function pushes an item to the front of the queue.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item to be pushed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6dacede3ce86503fbbd8cc3da5ac67e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dacede3ce86503fbbd8cc3da5ac67e5">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the size of the queue. </p>
+<p>This function returns the size of the queue.</p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the queue. </dd></dl>
+
+</div>
+</div>
+<a id="a75768d4042460537d331f670a798ce1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75768d4042460537d331f670a798ce1b">&#9670;&nbsp;</a></span>wait()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::wait </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait for the queue to become non-empty. </p>
+<p>This function waits until the queue becomes non-empty. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/threading/<a class="el" href="spk__thread__safe__queue_8hpp_source.html">spk_thread_safe_queue.hpp</a></li>
 </ul>

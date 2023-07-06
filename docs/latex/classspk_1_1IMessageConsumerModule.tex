@@ -2,6 +2,15 @@
 \label{classspk_1_1IMessageConsumerModule}\index{spk::IMessageConsumerModule@{spk::IMessageConsumerModule}}
 
 
+Class for modules that consume messages.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+abstract\+\_\+module.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::IMessage\+Consumer\+Module\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,12 +32,34 @@ Collaboration diagram for spk\+::IMessage\+Consumer\+Module\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1IMessageConsumerModule_a676a40140e06e01f4291941b2b34867a}\label{classspk_1_1IMessageConsumerModule_a676a40140e06e01f4291941b2b34867a}} 
-{\bfseries IMessage\+Consumer\+Module} (\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&p\+\_\+queue)
-\item 
+\mbox{\hyperlink{classspk_1_1IMessageConsumerModule_a676a40140e06e01f4291941b2b34867a}{IMessage\+Consumer\+Module}} (\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&p\+\_\+queue)
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1IMessageConsumerModule}{IMessage\+Consumer\+Module}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1IMessageConsumerModule_a20b0f2b400310160007d491929e17a51}\label{classspk_1_1IMessageConsumerModule_a20b0f2b400310160007d491929e17a51}} 
-void {\bfseries update} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classspk_1_1IMessageConsumerModule_a20b0f2b400310160007d491929e17a51}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{classspk_1_1IMessageConsumerModule}{IMessage\+Consumer\+Module}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for modules that consume messages. 
+
+This class provides an interface for modules that need to consume system messages. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1IMessageConsumerModule_a676a40140e06e01f4291941b2b34867a}\label{classspk_1_1IMessageConsumerModule_a676a40140e06e01f4291941b2b34867a}} 
+\index{spk::IMessageConsumerModule@{spk::IMessageConsumerModule}!IMessageConsumerModule@{IMessageConsumerModule}}
+\index{IMessageConsumerModule@{IMessageConsumerModule}!spk::IMessageConsumerModule@{spk::IMessageConsumerModule}}
+\doxysubsubsection{\texorpdfstring{IMessageConsumerModule()}{IMessageConsumerModule()}}
+{\footnotesize\ttfamily spk\+::\+IMessage\+Consumer\+Module\+::\+IMessage\+Consumer\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&}]{p\+\_\+queue }\end{DoxyParamCaption})}
+
+
+
+Constructs the \mbox{\hyperlink{classspk_1_1IMessageConsumerModule}{IMessage\+Consumer\+Module}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & The thread-\/safe queue for system messages. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

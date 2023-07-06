@@ -4,6 +4,7 @@
     <compoundname>spk::Application</compoundname>
     <basecompoundref refid="classspk_1_1AbstractApplication" prot="public" virt="non-virtual">spk::AbstractApplication</basecompoundref>
     <basecompoundref refid="classspk_1_1AbstractApplication" prot="public" virt="non-virtual">spk::AbstractApplication</basecompoundref>
+    <includes refid="linux_2spk__graphical__application_8hpp" local="no">spk_graphical_application.hpp</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Application_1aa4ed6a515b6ea4b9d3161bb6e3b2bba1" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1APIModule" kindref="compound">spk::APIModule</ref> *</type>
@@ -11,12 +12,13 @@
         <argsstring></argsstring>
         <name>_APIModule</name>
         <briefdescription>
+<para>API module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="16" column="16" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="16" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="24" column="16" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1a3492e76a4727e73e10ef31624aac1349" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1TimeModule" kindref="compound">spk::TimeModule</ref> *</type>
@@ -24,12 +26,13 @@
         <argsstring></argsstring>
         <name>_timeModule</name>
         <briefdescription>
+<para>Time module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="17" column="17" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="17" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="25" column="17" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1ac16011e849fc515558153bc50f08bf01" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1WindowModule" kindref="compound">spk::WindowModule</ref> *</type>
@@ -37,12 +40,13 @@
         <argsstring></argsstring>
         <name>_windowModule</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Window" kindref="compound">Window</ref> module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="18" column="19" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="18" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="26" column="19" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1ac47ccfdf1a89119bd3714b3014b0a137" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1MouseModule" kindref="compound">spk::MouseModule</ref> *</type>
@@ -50,12 +54,13 @@
         <argsstring></argsstring>
         <name>_mouseModule</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Mouse" kindref="compound">Mouse</ref> module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="19" column="18" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="19" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="27" column="18" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1KeyboardModule" kindref="compound">spk::KeyboardModule</ref> *</type>
@@ -63,12 +68,13 @@
         <argsstring></argsstring>
         <name>_keyboardModule</name>
         <briefdescription>
+<para><ref refid="classspk_1_1Keyboard" kindref="compound">Keyboard</ref> module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="20" column="21" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="20" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="28" column="21" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1a22899d0e47e6615fb3760a7088fa5fbc" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1WidgetModule" kindref="compound">spk::WidgetModule</ref> *</type>
@@ -76,12 +82,13 @@
         <argsstring></argsstring>
         <name>_widgetModule</name>
         <briefdescription>
+<para>Widget module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="22" column="19" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="30" column="19" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Application_1ae0d658551145a9946596a4f00b82637a" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1SystemModule" kindref="compound">spk::SystemModule</ref> *</type>
@@ -89,12 +96,13 @@
         <argsstring></argsstring>
         <name>_systemModule</name>
         <briefdescription>
+<para>System module instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="22" column="19" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="22" bodyend="-1"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="31" column="19" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -105,12 +113,14 @@
         <name>setupJobs</name>
         <reimplements refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26">setupJobs</reimplements>
         <briefdescription>
+<para>Setup the application jobs. </para>
         </briefdescription>
         <detaileddescription>
+<para>This method sets up the jobs for updating and rendering the modules. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="25" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="25" bodyend="39"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="38" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="38" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -119,12 +129,14 @@
         <name>setupJobs</name>
         <reimplements refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26">setupJobs</reimplements>
         <briefdescription>
+<para>Setup the application jobs. </para>
         </briefdescription>
         <detaileddescription>
+<para>This method sets up the jobs for updating and rendering the modules. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="27" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="27" bodyend="47"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="41" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="41" bodyend="61"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -138,16 +150,35 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1Application" kindref="compound">Application</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="42" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="42" bodyend="54"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="61" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="61" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -155,12 +186,14 @@
         <argsstring>()</argsstring>
         <name>~Application</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1Application" kindref="compound">Application</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This will delete all modules. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="56" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="56" bodyend="65"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="80" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="80" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref> *</type>
@@ -168,12 +201,16 @@
         <argsstring>()</argsstring>
         <name>centralWidget</name>
         <briefdescription>
+<para>Returns the central widget of the application. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The central widget of the application. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="67" column="21" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="67" bodyend="70"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="96" column="21" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -181,16 +218,27 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Resizes the application window and central widget. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size of the window and central widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="72" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="72" bodyend="76"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="106" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="106" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -202,16 +250,35 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1Application" kindref="compound">Application</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="50" column="1" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="50" bodyend="64"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="70" column="1" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="70" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -219,12 +286,14 @@
         <argsstring>()</argsstring>
         <name>~Application</name>
         <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1Application" kindref="compound">Application</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para>This will delete all modules. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="66" column="1" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="66" bodyend="76"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="91" column="1" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="91" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref> *</type>
@@ -232,12 +301,16 @@
         <argsstring>()</argsstring>
         <name>centralWidget</name>
         <briefdescription>
+<para>Returns the central widget of the application. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The central widget of the application. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="78" column="21" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="78" bodyend="81"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="108" column="21" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="108" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -245,21 +318,34 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
+<para>Resizes the application window and central widget. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new size of the window and central widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="83" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="83" bodyend="87"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="118" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="118" bodyend="122"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Main class for managing application. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class initializes the SPK modules and manages the application loop. The modules are updated and rendered in a specific order. The application window can be resized, and the central widget can be retrieved. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -289,7 +375,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="13" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="14" bodyend="77"/>
+    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="21" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="22" bodyend="111"/>
     <listofallmembers>
       <member refid="classspk_1_1Application_1aa4ed6a515b6ea4b9d3161bb6e3b2bba1" prot="private" virt="non-virtual"><scope>spk::Application</scope><name>_APIModule</name></member>
       <member refid="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" prot="private" virt="non-virtual"><scope>spk::Application</scope><name>_keyboardModule</name></member>

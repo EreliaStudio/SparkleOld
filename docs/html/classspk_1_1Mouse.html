@@ -76,12 +76,17 @@ $(function() {
 <div class="title">spk::Mouse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classspk_1_1Singleton.html" title="Singleton class template.">Singleton</a> class for <a class="el" href="classspk_1_1Mouse.html" title="Singleton class for Mouse.">Mouse</a>.  
+ <a href="classspk_1_1Mouse.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__mouse_8hpp_source.html">spk_mouse.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::Mouse:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Mouse__inherit__graph.png" border="0" usemap="#aspk_1_1Mouse_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1Mouse_inherit__map" id="aspk_1_1Mouse_inherit__map">
-<area shape="rect" title=" " alt="" coords="51,80,147,107"/>
+<area shape="rect" title="Singleton class for Mouse." alt="" coords="51,80,147,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,192,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -90,14 +95,14 @@ Collaboration diagram for spk::Mouse:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Mouse__coll__graph.png" border="0" usemap="#aspk_1_1Mouse_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1Mouse_coll__map" id="aspk_1_1Mouse_coll__map">
-<area shape="rect" title=" " alt="" coords="51,80,147,107"/>
+<area shape="rect" title="Singleton class for Mouse." alt="" coords="51,80,147,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,192,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7e51467586bf8952f05461cc3b9fd5b5"><td class="memItemLeft" align="right" valign="top"><a id="a7e51467586bf8952f05461cc3b9fd5b5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Button</b> { <br />
+<tr class="memitem:a7e51467586bf8952f05461cc3b9fd5b5"><td class="memItemLeft" align="right" valign="top"><a id="a7e51467586bf8952f05461cc3b9fd5b5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a> { <br />
 &#160;&#160;<b>Left</b>
 , <b>Middle</b>
 , <b>Right</b>
@@ -106,30 +111,32 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>Button4</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a7e51467586bf8952f05461cc3b9fd5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for mouse buttons. <br /></td></tr>
 <tr class="separator:a7e51467586bf8952f05461cc3b9fd5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acfc5f290988cf44d44a518391f1f7374"><td class="memItemLeft" align="right" valign="top"><a id="acfc5f290988cf44d44a518391f1f7374"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>place</b> (const <a class="el" href="structspk_1_1IVector2.html">Vector2Int</a> &amp;p_position)</td></tr>
+<tr class="memitem:acfc5f290988cf44d44a518391f1f7374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#acfc5f290988cf44d44a518391f1f7374">place</a> (const <a class="el" href="classIVector2.html">Vector2Int</a> &amp;p_position)</td></tr>
+<tr class="memdesc:acfc5f290988cf44d44a518391f1f7374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places the mouse at a given position.  <a href="classspk_1_1Mouse.html#acfc5f290988cf44d44a518391f1f7374">More...</a><br /></td></tr>
 <tr class="separator:acfc5f290988cf44d44a518391f1f7374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f14a04a4540f1b1efe6d09a35b19390"><td class="memItemLeft" align="right" valign="top"><a id="a5f14a04a4540f1b1efe6d09a35b19390"></a>
-const InputState &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>inputStatus</b> (const Button &amp;p_button) const</td></tr>
+<tr class="memitem:a5f14a04a4540f1b1efe6d09a35b19390"><td class="memItemLeft" align="right" valign="top">const InputState &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">inputStatus</a> (const <a class="el" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a> &amp;p_button) const</td></tr>
+<tr class="memdesc:a5f14a04a4540f1b1efe6d09a35b19390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the input state of a given button.  <a href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">More...</a><br /></td></tr>
 <tr class="separator:a5f14a04a4540f1b1efe6d09a35b19390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3985fa648d414ec9f8e7000e2c35c6e"><td class="memItemLeft" align="right" valign="top"><a id="ac3985fa648d414ec9f8e7000e2c35c6e"></a>
-const <a class="el" href="structspk_1_1IVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>position</b> () const</td></tr>
+<tr class="memitem:ac3985fa648d414ec9f8e7000e2c35c6e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classIVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">position</a> () const</td></tr>
+<tr class="memdesc:ac3985fa648d414ec9f8e7000e2c35c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position of the mouse.  <a href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">More...</a><br /></td></tr>
 <tr class="separator:ac3985fa648d414ec9f8e7000e2c35c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a586de041eeb18225bece40c602fabe4f"><td class="memItemLeft" align="right" valign="top"><a id="a586de041eeb18225bece40c602fabe4f"></a>
-const <a class="el" href="structspk_1_1IVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>deltaPosition</b> () const</td></tr>
+<tr class="memitem:a586de041eeb18225bece40c602fabe4f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classIVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">deltaPosition</a> () const</td></tr>
+<tr class="memdesc:a586de041eeb18225bece40c602fabe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delta position of the mouse.  <a href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">More...</a><br /></td></tr>
 <tr class="separator:a586de041eeb18225bece40c602fabe4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5430080e4319c4d48d7b482f6bad7994"><td class="memItemLeft" align="right" valign="top"><a id="a5430080e4319c4d48d7b482f6bad7994"></a>
-const <a class="el" href="structspk_1_1IVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>wheel</b> () const</td></tr>
+<tr class="memitem:a5430080e4319c4d48d7b482f6bad7994"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classIVector2.html">Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">wheel</a> () const</td></tr>
+<tr class="memdesc:a5430080e4319c4d48d7b482f6bad7994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of the mouse wheel.  <a href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">More...</a><br /></td></tr>
 <tr class="separator:a5430080e4319c4d48d7b482f6bad7994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac1111549d861795553472775e3ca851a"><td class="memItemLeft" align="right" valign="top"><a id="ac1111549d861795553472775e3ca851a"></a>
-static const size_t&#160;</td><td class="memItemRight" valign="bottom"><b>NB_BUTTON</b> = 5</td></tr>
+static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">NB_BUTTON</a> = 5</td></tr>
+<tr class="memdesc:ac1111549d861795553472775e3ca851a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of buttons on a mouse. <br /></td></tr>
 <tr class="separator:ac1111549d861795553472775e3ca851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -144,20 +151,173 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>MouseModule</b></td>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Mouse &gt;</a></td></tr>
-<tr class="memitem:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="ab970838cbc825424436ad64613b20c12"></a>
-static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>instanciate</b> (Args &amp;&amp;...args)</td></tr>
+<tr class="memitem:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">instanciate</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the singleton object. This template function creates a new instance of the singleton object if it doesn't exist. If an instance already exists, it returns the existing instance.  <a href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">More...</a><br /></td></tr>
 <tr class="separator:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a5f56bedfe0791cc1cc09d34bb3be382c"></a>
-static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> ()</td></tr>
+<tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">instance</a> ()</td></tr>
+<tr class="memdesc:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">More...</a><br /></td></tr>
 <tr class="separator:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a0fd0698aa7eab7c2a5cfbf11a9ddfad1"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>release</b> ()</td></tr>
+<tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">release</a> ()</td></tr>
+<tr class="memdesc:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the singleton instance.  <a href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">More...</a><br /></td></tr>
 <tr class="separator:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Mouse &gt;</a></td></tr>
+<tr class="memitem:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a24d01aa8ba49475d195a492d724d43e1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a24d01aa8ba49475d195a492d724d43e1">Singleton</a> ()</td></tr>
+<tr class="memdesc:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor. This constructor is protected to prevent direct instantiation of the singleton class. <br /></td></tr>
+<tr class="separator:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Mouse &gt;</a></td></tr>
-<tr class="memitem:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a745f66a5489929948d930a09156aec4c"></a>
-static std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_instance</b></td></tr>
+<tr class="memitem:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classspk_1_1Mouse.html">Mouse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c">_instance</a></td></tr>
 <tr class="separator:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classspk_1_1Singleton.html" title="Singleton class template.">Singleton</a> class for <a class="el" href="classspk_1_1Mouse.html" title="Singleton class for Mouse.">Mouse</a>. </p>
+<p>Represents the mouse device, providing functionalities to manage mouse actions such as button pressing, position, wheel movement, etc. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a586de041eeb18225bece40c602fabe4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586de041eeb18225bece40c602fabe4f">&#9670;&nbsp;</a></span>deltaPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classIVector2.html">Vector2Int</a>&amp; spk::Mouse::deltaPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the delta position of the mouse. </p>
+<dl class="section return"><dt>Returns</dt><dd>The delta position of the mouse. </dd></dl>
+
+</div>
+</div>
+<a id="a5f14a04a4540f1b1efe6d09a35b19390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f14a04a4540f1b1efe6d09a35b19390">&#9670;&nbsp;</a></span>inputStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const InputState&amp; spk::Mouse::inputStatus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_button</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the input state of a given button. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_button</td><td>The button to get the input state for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The input state of the button. </dd></dl>
+
+</div>
+</div>
+<a id="acfc5f290988cf44d44a518391f1f7374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc5f290988cf44d44a518391f1f7374">&#9670;&nbsp;</a></span>place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Mouse::place </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIVector2.html">Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Places the mouse at a given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_position</td><td>The position to place the mouse at. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac3985fa648d414ec9f8e7000e2c35c6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3985fa648d414ec9f8e7000e2c35c6e">&#9670;&nbsp;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classIVector2.html">Vector2Int</a>&amp; spk::Mouse::position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current position of the mouse. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current position of the mouse. </dd></dl>
+
+</div>
+</div>
+<a id="a5430080e4319c4d48d7b482f6bad7994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5430080e4319c4d48d7b482f6bad7994">&#9670;&nbsp;</a></span>wheel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classIVector2.html">Vector2Int</a>&amp; spk::Mouse::wheel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the position of the mouse wheel. </p>
+<dl class="section return"><dt>Returns</dt><dd>The position of the mouse wheel. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/input/<a class="el" href="spk__mouse_8hpp_source.html">spk_mouse.hpp</a></li>
 </ul>

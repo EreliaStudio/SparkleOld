@@ -77,43 +77,54 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">using</span> Job = std::function&lt;void()&gt;;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        std::vector&lt;spk::Thread*&gt; _workers;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;Job&gt;</a> _jobQueue;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">bool</span> _running = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a>(<span class="keyword">const</span> std::wstring&amp; p_poolName, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_nbWorker);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a>&amp; p_other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        ~<a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> stop();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> addJob(Funct&amp;&amp; p_funct, Args&amp;&amp;... p_args)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            _jobQueue.push_back(std::bind(std::forward&lt;Funct&gt;(p_funct), std::forward&lt;Args&gt;(p_args)...));</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classspk_1_1Worker.html">   34</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Worker.html">Worker</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1WorkerPool.html">spk::WorkerPool</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classspk_1_1Worker.html">Worker</a>(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#ab0ccd4ab156d8131b804adb96f5c9c67">   23</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classspk_1_1WorkerPool.html#ab0ccd4ab156d8131b804adb96f5c9c67">Job</a> = std::function&lt;void()&gt;;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::vector&lt;spk::Thread*&gt; _workers;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;Job&gt;</a> _jobQueue;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">bool</span> _running = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a">   39</a></span>&#160;        <a class="code" href="classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a">WorkerPool</a>(<span class="keyword">const</span> std::wstring&amp; p_poolName, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_nbWorker);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d">   46</a></span>&#160;        <a class="code" href="classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d">WorkerPool</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1WorkerPool.html">WorkerPool</a>&amp; p_other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360">   53</a></span>&#160;        <a class="code" href="classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360">~WorkerPool</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a5f534195157ac56f61d5b46880d037c2">   60</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WorkerPool.html#a5f534195157ac56f61d5b46880d037c2">start</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a4c0b119248905dfb4257df9bfd4b8e40">   67</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WorkerPool.html#a4c0b119248905dfb4257df9bfd4b8e40">stop</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classspk_1_1WorkerPool.html#a7691876b56ced3a61b435cd738cdbf4b">   80</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WorkerPool.html#a7691876b56ced3a61b435cd738cdbf4b">addJob</a>(Funct&amp;&amp; p_funct, Args&amp;&amp;... p_args)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            _jobQueue.<a class="code" href="classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c">push_back</a>(std::bind(std::forward&lt;Funct&gt;(p_funct), std::forward&lt;Args&gt;(p_args)...));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classspk_1_1Worker.html">   92</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Worker.html">Worker</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1WorkerPool.html">spk::WorkerPool</a></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64">  104</a></span>&#160;        <a class="code" href="classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64">Worker</a>(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    };</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; Job &gt;</a></div></div>
-<div class="ttc" id="aclassspk_1_1WorkerPool_html"><div class="ttname"><a href="classspk_1_1WorkerPool.html">spk::WorkerPool</a></div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:9</div></div>
-<div class="ttc" id="aclassspk_1_1Worker_html"><div class="ttname"><a href="classspk_1_1Worker.html">spk::Worker</a></div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:35</div></div>
+<div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html_af3d6530f982fbd9b8342bf69b79f170c"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c">spk::ThreadSafeQueue::push_back</a></div><div class="ttdeci">void push_back(const T &amp;item)</div><div class="ttdoc">Push an item to the back of the queue.</div><div class="ttdef"><b>Definition:</b> spk_thread_safe_queue.hpp:152</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html"><div class="ttname"><a href="classspk_1_1WorkerPool.html">spk::WorkerPool</a></div><div class="ttdoc">Class for creating and managing a pool of worker threads.</div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a480e86565f57a29db1b390530632545d"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d">spk::WorkerPool::WorkerPool</a></div><div class="ttdeci">WorkerPool(const WorkerPool &amp;p_other)=delete</div><div class="ttdoc">Copy constructor is deleted.</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a4c0b119248905dfb4257df9bfd4b8e40"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a4c0b119248905dfb4257df9bfd4b8e40">spk::WorkerPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop the worker pool.</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a5e8ae2aa8600c03b1abc3c93a40c3360"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360">spk::WorkerPool::~WorkerPool</a></div><div class="ttdeci">~WorkerPool()</div><div class="ttdoc">Destroy the WorkerPool object.</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a5f534195157ac56f61d5b46880d037c2"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a5f534195157ac56f61d5b46880d037c2">spk::WorkerPool::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the worker pool.</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a7691876b56ced3a61b435cd738cdbf4b"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a7691876b56ced3a61b435cd738cdbf4b">spk::WorkerPool::addJob</a></div><div class="ttdeci">void addJob(Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</div><div class="ttdoc">Add a job to the worker pool.</div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:80</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_a839f0676de4aa4d8584fbbb1e899b08a"><div class="ttname"><a href="classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a">spk::WorkerPool::WorkerPool</a></div><div class="ttdeci">WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)</div><div class="ttdoc">Construct a new WorkerPool object with a specified pool name and number of workers.</div></div>
+<div class="ttc" id="aclassspk_1_1WorkerPool_html_ab0ccd4ab156d8131b804adb96f5c9c67"><div class="ttname"><a href="classspk_1_1WorkerPool.html#ab0ccd4ab156d8131b804adb96f5c9c67">spk::WorkerPool::Job</a></div><div class="ttdeci">std::function&lt; void()&gt; Job</div><div class="ttdoc">The type of job to be executed by the workers.</div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:23</div></div>
+<div class="ttc" id="aclassspk_1_1Worker_html"><div class="ttname"><a href="classspk_1_1Worker.html">spk::Worker</a></div><div class="ttdoc">Class for creating a worker thread.</div><div class="ttdef"><b>Definition:</b> spk_worker_pool.hpp:93</div></div>
+<div class="ttc" id="aclassspk_1_1Worker_html_ad63fdc3010d478f7e03124269377dc64"><div class="ttname"><a href="classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64">spk::Worker::Worker</a></div><div class="ttdeci">Worker(const std::wstring &amp;p_name)</div><div class="ttdoc">Construct a new Worker object with a specified name.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

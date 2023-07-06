@@ -4,19 +4,39 @@
     <compoundname>spk::ActivableObject</compoundname>
     <basecompoundref refid="classspk_1_1StatedObject" prot="protected" virt="non-virtual">spk::StatedObject&lt; bool &gt;</basecompoundref>
     <derivedcompoundref refid="classspk_1_1AbstractWidget" prot="public" virt="non-virtual">spk::AbstractWidget</derivedcompoundref>
+    <includes refid="spk__activable__object_8hpp" local="no">spk_activable_object.hpp</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void spk::ActivableObject::activate</definition>
-        <argsstring>()</argsstring>
-        <name>activate</name>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ActivableObject::ActivableObject</definition>
+        <argsstring>(bool p_activate=false)</argsstring>
+        <name>ActivableObject</name>
+        <param>
+          <type>bool</type>
+          <declname>p_activate</declname>
+          <defval>false</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activable_object.hpp" line="12" column="14"/>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="18" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ActivableObject::activate</definition>
+        <argsstring>()</argsstring>
+        <name>activate</name>
+        <briefdescription>
+<para>Activates the object. This function activates the object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="23" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -24,12 +44,13 @@
         <argsstring>()</argsstring>
         <name>deactivate</name>
         <briefdescription>
+<para>Deactivates the object. This function deactivates the object. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activable_object.hpp" line="13" column="14"/>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="29" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ActivableObject_1a5627aa938cb1652e8c1aaa55c81da949" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const bool &amp;</type>
@@ -37,12 +58,16 @@
         <argsstring>() const</argsstring>
         <name>isActive</name>
         <briefdescription>
+<para>Checks if the object is active. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to a boolean indicating whether the object is active or not. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activable_object.hpp" line="14" column="20"/>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="35" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
@@ -54,12 +79,25 @@
           <declname>p_callback</declname>
         </param>
         <briefdescription>
+<para>Adds a callback function to be called when the object is activated. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the added callback. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activable_object.hpp" line="16" column="18"/>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="42" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ActivableObject_1a438560e081b7bf03ca5f601197d73d97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
@@ -71,15 +109,29 @@
           <declname>p_callback</declname>
         </param>
         <briefdescription>
+<para>Adds a callback function to be called when the object is deactivated. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the added callback. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activable_object.hpp" line="17" column="18"/>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="49" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Represents an activatable object. This class provides functionality to activate and deactivate an object. It also allows adding activation and deactivation callbacks. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -137,8 +189,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_activable_object.hpp" line="7" column="5" bodyfile="includes/design_pattern/spk_activable_object.hpp" bodystart="8" bodyend="18"/>
+    <location file="includes/design_pattern/spk_activable_object.hpp" line="12" column="5" bodyfile="includes/design_pattern/spk_activable_object.hpp" bodystart="13" bodyend="50"/>
     <listofallmembers>
+      <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>ActivableObject</name></member>
       <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>activate</name></member>
       <member refid="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>addActivationCallback</name></member>
       <member refid="classspk_1_1ActivableObject_1a438560e081b7bf03ca5f601197d73d97" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>addDeactivationCallback</name></member>
@@ -149,7 +202,7 @@
       <member refid="classspk_1_1ActivableObject_1a5627aa938cb1652e8c1aaa55c81da949" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>isActive</name></member>
       <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>setState</name></member>
       <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>state</name></member>
-      <member refid="classspk_1_1StatedObject_1a797bb0328531e421fe9c16f3062c2e32" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>StatedObject</name></member>
+      <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>StatedObject</name></member>
       <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>subscribe</name></member>
     </listofallmembers>
   </compounddef>

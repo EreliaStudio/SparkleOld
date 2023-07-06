@@ -1,23 +1,92 @@
 \hypertarget{classspk_1_1ContractProvider_1_1Contract}{}\doxysection{spk\+::Contract\+Provider\+::Contract Class Reference}
 \label{classspk_1_1ContractProvider_1_1Contract}\index{spk::ContractProvider::Contract@{spk::ContractProvider::Contract}}
+
+
+Represent the ownership of a callback and allow users to interact with it.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+contract\+\_\+provider.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_adede8b3039666079d8c741819c7795b3}\label{classspk_1_1ContractProvider_1_1Contract_adede8b3039666079d8c741819c7795b3}} 
-{\bfseries Contract} (\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \&\&p\+\_\+other)
-\item 
-\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_a63b028cfea4d87406cd6d89227a7892e}\label{classspk_1_1ContractProvider_1_1Contract_a63b028cfea4d87406cd6d89227a7892e}} 
-void {\bfseries edit} (const Callback \&p\+\_\+callback)
-\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract_adede8b3039666079d8c741819c7795b3}{Contract}} (\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \&\&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Constructor by move , move a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} object. Set is\+Original to false. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \& \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract_af796cd8281d9ea859dcdcf14000741f2}{operator=}} (\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \&\&p\+\_\+other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_a6c614784cac84a328a8850af61564966}\label{classspk_1_1ContractProvider_1_1Contract_a6c614784cac84a328a8850af61564966}} 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract_a6c614784cac84a328a8850af61564966}{$\sim$\+Contract}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} object. resign and set is\+Original to false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract_a63b028cfea4d87406cd6d89227a7892e}{edit}} (const Callback \&p\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Modifie the Callback function. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_a02cc8454cffc92cf76cc911d124aef52}\label{classspk_1_1ContractProvider_1_1Contract_a02cc8454cffc92cf76cc911d124aef52}} 
-void {\bfseries resign} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract_a02cc8454cffc92cf76cc911d124aef52}{resign}} ()
+\begin{DoxyCompactList}\small\item\em Erase the \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_a1db48504886e29546019616a033f95ec}\label{classspk_1_1ContractProvider_1_1Contract_a1db48504886e29546019616a033f95ec}} 
 class {\bfseries Contract\+Provider}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent the ownership of a callback and allow users to interact with it. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_adede8b3039666079d8c741819c7795b3}\label{classspk_1_1ContractProvider_1_1Contract_adede8b3039666079d8c741819c7795b3}} 
+\index{spk::ContractProvider::Contract@{spk::ContractProvider::Contract}!Contract@{Contract}}
+\index{Contract@{Contract}!spk::ContractProvider::Contract@{spk::ContractProvider::Contract}}
+\doxysubsubsection{\texorpdfstring{Contract()}{Contract()}}
+{\footnotesize\ttfamily spk\+::\+Contract\+Provider\+::\+Contract\+::\+Contract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \&\&}]{p\+\_\+other }\end{DoxyParamCaption})}
+
+
+
+Constructor by move , move a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} object. Set is\+Original to false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_a63b028cfea4d87406cd6d89227a7892e}\label{classspk_1_1ContractProvider_1_1Contract_a63b028cfea4d87406cd6d89227a7892e}} 
+\index{spk::ContractProvider::Contract@{spk::ContractProvider::Contract}!edit@{edit}}
+\index{edit@{edit}!spk::ContractProvider::Contract@{spk::ContractProvider::Contract}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily void spk\+::\+Contract\+Provider\+::\+Contract\+::edit (\begin{DoxyParamCaption}\item[{const Callback \&}]{p\+\_\+callback }\end{DoxyParamCaption})}
+
+
+
+Modifie the Callback function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+callback} & The new callback function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1ContractProvider_1_1Contract_af796cd8281d9ea859dcdcf14000741f2}\label{classspk_1_1ContractProvider_1_1Contract_af796cd8281d9ea859dcdcf14000741f2}} 
+\index{spk::ContractProvider::Contract@{spk::ContractProvider::Contract}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::ContractProvider::Contract@{spk::ContractProvider::Contract}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}}\& spk\+::\+Contract\+Provider\+::\+Contract\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \&\&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} object to move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}}\& The moved \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} object. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

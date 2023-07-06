@@ -2,6 +2,15 @@
 \label{classspk_1_1WidgetModule}\index{spk::WidgetModule@{spk::WidgetModule}}
 
 
+Class for managing widgets within the application.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+widget\+\_\+module.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Widget\+Module\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,15 +32,41 @@ Collaboration diagram for spk\+::Widget\+Module\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classspk_1_1WidgetModule_a40f05901d95d5102006a53982ddff24c}\label{classspk_1_1WidgetModule_a40f05901d95d5102006a53982ddff24c}} 
+\mbox{\hyperlink{classspk_1_1WidgetModule_a40f05901d95d5102006a53982ddff24c}{Widget\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1WidgetModule}{Widget\+Module}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1WidgetModule_aeb7d3e278f842783e3ea98a37a578fc9}\label{classspk_1_1WidgetModule_aeb7d3e278f842783e3ea98a37a578fc9}} 
+\mbox{\hyperlink{classspk_1_1WidgetModule_aeb7d3e278f842783e3ea98a37a578fc9}{$\sim$\+Widget\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1WidgetModule}{Widget\+Module}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1WidgetModule_a55cababa94fac8da2f4b38a51a2896f3}\label{classspk_1_1WidgetModule_a55cababa94fac8da2f4b38a51a2896f3}} 
-void {\bfseries update} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1WidgetModule_a55cababa94fac8da2f4b38a51a2896f3}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the widget state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1WidgetModule_aeef8f0294f7ecb10a7d54aa1b30c153c}\label{classspk_1_1WidgetModule_aeef8f0294f7ecb10a7d54aa1b30c153c}} 
-void {\bfseries render} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1WidgetModule_aeef8f0294f7ecb10a7d54aa1b30c153c}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the widget. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$ \mbox{\hyperlink{classspk_1_1WidgetModule_ad36689c6e8037facf57a4cead84eb812}{central\+Widget}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the central widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing widgets within the application. 
+
+This class provides methods to handle and manage the widgets within the application. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1WidgetModule_ad36689c6e8037facf57a4cead84eb812}\label{classspk_1_1WidgetModule_ad36689c6e8037facf57a4cead84eb812}} 
-\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$ {\bfseries central\+Widget} () const
-\end{DoxyCompactItemize}
+\index{spk::WidgetModule@{spk::WidgetModule}!centralWidget@{centralWidget}}
+\index{centralWidget@{centralWidget}!spk::WidgetModule@{spk::WidgetModule}}
+\doxysubsubsection{\texorpdfstring{centralWidget()}{centralWidget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}}$\ast$ spk\+::\+Widget\+Module\+::central\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the central widget. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the central widget. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

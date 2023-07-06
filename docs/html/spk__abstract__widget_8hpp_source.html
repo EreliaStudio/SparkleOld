@@ -78,88 +78,103 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt;AbstractWidget&gt;, <span class="keyword">public</span> <a class="code" href="classspk_1_1ActivableObject.html">spk::ActivableObject</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1WidgetModule.html">WidgetModule</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onRender() = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _onUpdate() = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onGeometryChange() = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::wstring _name;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">bool</span> _geometryEdited;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> _depth;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a> _anchor;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a> _size;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _render();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _update();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a>(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TChildrenType, <span class="keyword">typename</span> ... Args&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        TChildrenType* addChildrenWidget(Args&amp;&amp; ... p_args)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            TChildrenType * result = <span class="keyword">new</span> TChildrenType(std::forward&lt;Args&gt;(p_args)...);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            addChild(result);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            result-&gt;setDepth(depth() + 1);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> setGeometry(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_anchor, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> place(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_anchor);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> move(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_anchor);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> resize(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size);</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt;AbstractWidget&gt;, <span class="keyword">public</span> <a class="code" href="classspk_1_1ActivableObject.html">spk::ActivableObject</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1WidgetModule.html">WidgetModule</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onRender() = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _onUpdate() = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onGeometryChange() = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::wstring _name;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">bool</span> _geometryEdited;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">float</span> _depth;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classIVector2.html">spk::Vector2Int</a> _anchor;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classIVector2.html">spk::Vector2Int</a> _size;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _render();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _update();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">   45</a></span>&#160;        <a class="code" href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">AbstractWidget</a>(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271">   52</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271">~AbstractWidget</a>();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> sortChildrensByDepth();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> setDepth(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; p_depth);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> rename(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        constexpr <span class="keyword">const</span> std::wstring&amp; name()<span class="keyword"> const </span>{<span class="keywordflow">return</span> (_name);}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; depth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_depth); }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">bool</span> isPointed(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_point);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classspk_1_1NoGraphicsWidget.html">   66</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1NoGraphicsWidget.html">NoGraphicsWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onRender() {}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onGeometryChange() {}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _render() { }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classspk_1_1OnlyGraphicsWidget.html">   76</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1OnlyGraphicsWidget.html">OnlyGraphicsWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _onUpdate() { <span class="keywordflow">return</span> (<span class="keyword">false</span>); }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _update() { <span class="keywordflow">return</span> (<span class="keyword">false</span>); }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="ttc" id="aclassspk_1_1AbstractWidget_html"><div class="ttname"><a href="classspk_1_1AbstractWidget.html">spk::AbstractWidget</a></div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:10</div></div>
-<div class="ttc" id="aclassspk_1_1ActivableObject_html"><div class="ttname"><a href="classspk_1_1ActivableObject.html">spk::ActivableObject</a></div><div class="ttdef"><b>Definition:</b> spk_activable_object.hpp:8</div></div>
-<div class="ttc" id="aclassspk_1_1InherenceObject_html"><div class="ttname"><a href="classspk_1_1InherenceObject.html">spk::InherenceObject</a></div><div class="ttdef"><b>Definition:</b> spk_inherence_object.hpp:11</div></div>
-<div class="ttc" id="aclassspk_1_1NoGraphicsWidget_html"><div class="ttname"><a href="classspk_1_1NoGraphicsWidget.html">spk::NoGraphicsWidget</a></div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:67</div></div>
-<div class="ttc" id="aclassspk_1_1OnlyGraphicsWidget_html"><div class="ttname"><a href="classspk_1_1OnlyGraphicsWidget.html">spk::OnlyGraphicsWidget</a></div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:77</div></div>
-<div class="ttc" id="aclassspk_1_1WidgetModule_html"><div class="ttname"><a href="classspk_1_1WidgetModule.html">spk::WidgetModule</a></div><div class="ttdef"><b>Definition:</b> spk_widget_module.hpp:9</div></div>
-<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; int &gt;</a></div></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TChildrenType, <span class="keyword">typename</span> ... Args&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818">   65</a></span>&#160;        TChildrenType* <a class="code" href="classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818">addChildrenWidget</a>(Args&amp;&amp; ... p_args)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            TChildrenType * result = <span class="keyword">new</span> TChildrenType(std::forward&lt;Args&gt;(p_args)...);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">addChild</a>(result);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            result-&gt;setDepth(<a class="code" href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">depth</a>() + 1);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">   83</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">setGeometry</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_anchor, <span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_size);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a12a3c901e7b5b707064eafccc6f64115">   92</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#a12a3c901e7b5b707064eafccc6f64115">place</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_anchor);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d">  101</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d">move</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_anchor);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a2059b3aeb3f7ca0290ed70c146a42298">  110</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#a2059b3aeb3f7ca0290ed70c146a42298">resize</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_size);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a2c407ce05d65cdbe37ecc71f4a8e58d6">  117</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#a2c407ce05d65cdbe37ecc71f4a8e58d6">sortChildrensByDepth</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#ae20e7261fea3273f275f2662c630ebe8">  126</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#ae20e7261fea3273f275f2662c630ebe8">setDepth</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; p_depth);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#af6762afb291b9fe0497fa8ac619ef0f7">  135</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1AbstractWidget.html#af6762afb291b9fe0497fa8ac619ef0f7">rename</a>(<span class="keyword">const</span> std::wstring&amp; p_name);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314">  144</a></span>&#160;        constexpr <span class="keyword">const</span> std::wstring&amp; <a class="code" href="classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314">name</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> (_name);}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">  153</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code" href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">depth</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_depth); }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81">  163</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81">isPointed</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_point);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    };</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classspk_1_1NoGraphicsWidget.html">  172</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1NoGraphicsWidget.html">NoGraphicsWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onRender() {}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _onGeometryChange() {}</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> _render() { }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    };</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classspk_1_1OnlyGraphicsWidget.html">  188</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1OnlyGraphicsWidget.html">OnlyGraphicsWidget</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1AbstractWidget.html">AbstractWidget</a></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _onUpdate() { <span class="keywordflow">return</span> (<span class="keyword">false</span>); }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> _update() { <span class="keywordflow">return</span> (<span class="keyword">false</span>); }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    };</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
+<div class="ttc" id="aclassIVector2_html"><div class="ttname"><a href="classIVector2.html">IVector2&lt; int &gt;</a></div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html"><div class="ttname"><a href="classspk_1_1AbstractWidget.html">spk::AbstractWidget</a></div><div class="ttdoc">Abstract base class for widgets.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:17</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a02704ad9ce8f817d72fa76b095e53c68"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">spk::AbstractWidget::AbstractWidget</a></div><div class="ttdeci">AbstractWidget(const std::wstring &amp;p_name)</div><div class="ttdoc">Construct a new AbstractWidget object with a specified name.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a12a3c901e7b5b707064eafccc6f64115"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a12a3c901e7b5b707064eafccc6f64115">spk::AbstractWidget::place</a></div><div class="ttdeci">void place(const spk::Vector2Int &amp;p_anchor)</div><div class="ttdoc">Place the widget at a specific anchor position.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a2059b3aeb3f7ca0290ed70c146a42298"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a2059b3aeb3f7ca0290ed70c146a42298">spk::AbstractWidget::resize</a></div><div class="ttdeci">void resize(const spk::Vector2Int &amp;p_size)</div><div class="ttdoc">Resize the widget to a new size.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a2c407ce05d65cdbe37ecc71f4a8e58d6"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a2c407ce05d65cdbe37ecc71f4a8e58d6">spk::AbstractWidget::sortChildrensByDepth</a></div><div class="ttdeci">void sortChildrensByDepth()</div><div class="ttdoc">Sort the children widgets by their depth value.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a439da5239de7fa7980bb697e9e114818"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818">spk::AbstractWidget::addChildrenWidget</a></div><div class="ttdeci">TChildrenType * addChildrenWidget(Args &amp;&amp;... p_args)</div><div class="ttdoc">Add a children widget to this widget.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:65</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a5e428dc19c69b3fa7686df9c7ccf06cf"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">spk::AbstractWidget::setGeometry</a></div><div class="ttdeci">void setGeometry(const spk::Vector2Int &amp;p_anchor, const spk::Vector2Int &amp;p_size)</div><div class="ttdoc">Set the geometry of the widget.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a734ec4e5f1759dc493e1df73ae973a38"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a734ec4e5f1759dc493e1df73ae973a38">spk::AbstractWidget::depth</a></div><div class="ttdeci">constexpr const float &amp; depth() const</div><div class="ttdoc">Get the depth value of the widget.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:153</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_a7606a7000127e6f3a3c5c61d22f17314"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#a7606a7000127e6f3a3c5c61d22f17314">spk::AbstractWidget::name</a></div><div class="ttdeci">constexpr const std::wstring &amp; name() const</div><div class="ttdoc">Get the name of the widget.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:144</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_ab5cdc32c7a1f9a2cda7812182618000d"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#ab5cdc32c7a1f9a2cda7812182618000d">spk::AbstractWidget::move</a></div><div class="ttdeci">void move(const spk::Vector2Int &amp;p_anchor)</div><div class="ttdoc">Move the widget by a specific amount.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_acaf7b700c9f4f67341dc5156287ad271"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271">spk::AbstractWidget::~AbstractWidget</a></div><div class="ttdeci">virtual ~AbstractWidget()</div><div class="ttdoc">Destroy the AbstractWidget object.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_ad1fd1cbebefe93c23a9d1b7b00872a81"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#ad1fd1cbebefe93c23a9d1b7b00872a81">spk::AbstractWidget::isPointed</a></div><div class="ttdeci">bool isPointed(const spk::Vector2Int &amp;p_point)</div><div class="ttdoc">Check if a point is inside the widget's boundaries.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_ae20e7261fea3273f275f2662c630ebe8"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#ae20e7261fea3273f275f2662c630ebe8">spk::AbstractWidget::setDepth</a></div><div class="ttdeci">void setDepth(const float &amp;p_depth)</div><div class="ttdoc">Set the depth value of the widget.</div></div>
+<div class="ttc" id="aclassspk_1_1AbstractWidget_html_af6762afb291b9fe0497fa8ac619ef0f7"><div class="ttname"><a href="classspk_1_1AbstractWidget.html#af6762afb291b9fe0497fa8ac619ef0f7">spk::AbstractWidget::rename</a></div><div class="ttdeci">void rename(const std::wstring &amp;p_name)</div><div class="ttdoc">Rename the widget.</div></div>
+<div class="ttc" id="aclassspk_1_1ActivableObject_html"><div class="ttname"><a href="classspk_1_1ActivableObject.html">spk::ActivableObject</a></div><div class="ttdoc">Represents an activatable object. This class provides functionality to activate and deactivate an obj...</div><div class="ttdef"><b>Definition:</b> spk_activable_object.hpp:13</div></div>
+<div class="ttc" id="aclassspk_1_1InherenceObject_html"><div class="ttname"><a href="classspk_1_1InherenceObject.html">spk::InherenceObject</a></div><div class="ttdoc">InherenceObject class template.</div><div class="ttdef"><b>Definition:</b> spk_inherence_object.hpp:20</div></div>
+<div class="ttc" id="aclassspk_1_1InherenceObject_html_af21959de7950ed4d656d8cc318fc9712"><div class="ttname"><a href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">spk::InherenceObject&lt; AbstractWidget &gt;::addChild</a></div><div class="ttdeci">void addChild(Child child)</div><div class="ttdoc">Add a child object.</div><div class="ttdef"><b>Definition:</b> spk_inherence_object.hpp:107</div></div>
+<div class="ttc" id="aclassspk_1_1NoGraphicsWidget_html"><div class="ttname"><a href="classspk_1_1NoGraphicsWidget.html">spk::NoGraphicsWidget</a></div><div class="ttdoc">Class for widgets without graphics.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:173</div></div>
+<div class="ttc" id="aclassspk_1_1OnlyGraphicsWidget_html"><div class="ttname"><a href="classspk_1_1OnlyGraphicsWidget.html">spk::OnlyGraphicsWidget</a></div><div class="ttdoc">Class for widgets with only graphics.</div><div class="ttdef"><b>Definition:</b> spk_abstract_widget.hpp:189</div></div>
+<div class="ttc" id="aclassspk_1_1WidgetModule_html"><div class="ttname"><a href="classspk_1_1WidgetModule.html">spk::WidgetModule</a></div><div class="ttdoc">Class for managing widgets within the application.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

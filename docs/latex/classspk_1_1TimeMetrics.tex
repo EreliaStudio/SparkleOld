@@ -2,7 +2,7 @@
 \label{classspk_1_1TimeMetrics}\index{spk::TimeMetrics@{spk::TimeMetrics}}
 
 
-A singleton class to manage time-\/related metrics for the software.  
+Class for recording time-\/related metrics in the application.  
 
 
 
@@ -33,9 +33,9 @@ Collaboration diagram for spk\+::Time\+Metrics\+:
 \begin{DoxyCompactItemize}
 \item 
 constexpr const long long \& \mbox{\hyperlink{classspk_1_1TimeMetrics_ab2ec64db76c2329d780ef3138ea60611}{time}} () const
-\begin{DoxyCompactList}\small\item\em Accessor function to get the total running time of the software. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the total time since the application started. \end{DoxyCompactList}\item 
 constexpr const long long \& \mbox{\hyperlink{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}{delta\+Time}} () const
-\begin{DoxyCompactList}\small\item\em Accessor function to get the time elapsed since the last frame update. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the time elapsed between the last two frames. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}{sleep\+At\+Least}} (size\+\_\+t p\+\_\+millisecond)
 \begin{DoxyCompactList}\small\item\em Function to put the current thread to sleep for at least the specified duration. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
@@ -51,9 +51,9 @@ class {\bfseries Time\+Module}
 
 
 \doxysubsection{Detailed Description}
-A singleton class to manage time-\/related metrics for the software. 
+Class for recording time-\/related metrics in the application. 
 
-This class is responsible for keeping track of the software\textquotesingle{}s running time and other time-\/related metrics. This ensures consistency across the entire software. 
+This class is a singleton and can be accessed anywhere in the application to get time-\/related metrics. It keeps track of two time metrics\+: the total time since the application started and the time elapsed between the last two frames (delta time). 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}\label{classspk_1_1TimeMetrics_a24989064858748b2da18b1726280bd0a}} 
@@ -64,10 +64,12 @@ This class is responsible for keeping track of the software\textquotesingle{}s r
 
 
 
-Accessor function to get the time elapsed since the last frame update. 
+Get the time elapsed between the last two frames. 
+
+This function is used to get the time elapsed between the last two frames, also known as the delta time.
 
 \begin{DoxyReturn}{Returns}
-A const reference to the the time elapsed since the last frame update. 
+The delta time in milliseconds. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}\label{classspk_1_1TimeMetrics_af19a929fc6b3b6be1b9a06ca48022b2d}} 
 \index{spk::TimeMetrics@{spk::TimeMetrics}!sleepAtLeast@{sleepAtLeast}}
@@ -92,10 +94,12 @@ Function to put the current thread to sleep for at least the specified duration.
 
 
 
-Accessor function to get the total running time of the software. 
+Get the total time since the application started. 
+
+This function is used to get the total time since the application started.
 
 \begin{DoxyReturn}{Returns}
-A const reference to the total running time of the software variable. 
+The total time since the application started in milliseconds. 
 \end{DoxyReturn}
 
 

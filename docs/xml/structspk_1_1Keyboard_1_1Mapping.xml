@@ -4,7 +4,7 @@
     <compoundname>spk::Keyboard::Mapping</compoundname>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structspk_1_1Keyboard_1_1Mapping_1a862d7e2ab5556a56af7020c33db5c14a" prot="public" static="no" mutable="no">
-        <type>Key</type>
+        <type><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Key</ref></type>
         <definition>Key spk::Keyboard::Mapping::keys[Key::SIZE]</definition>
         <argsstring>[Key::SIZE]</argsstring>
         <name>keys</name>
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="82" column="5" bodyfile="includes/input/spk_keyboard.hpp" bodystart="82" bodyend="-1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="100" column="5" bodyfile="includes/input/spk_keyboard.hpp" bodystart="100" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="84" column="1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -41,19 +41,38 @@
           <declname>p_index</declname>
         </param>
         <param>
-          <type>const Key &amp;</type>
+          <type>const <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Key</ref> &amp;</type>
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Binds a key to an index. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to bind the key to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to bind. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="85" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="108" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1aec6dff1fcdf62d544a171cc8fd0ca541" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>Key &amp;</type>
+        <type><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Key</ref> &amp;</type>
         <definition>Key&amp; spk::Keyboard::Mapping::operator[]</definition>
         <argsstring>(const size_t &amp;p_index)</argsstring>
         <name>operator[]</name>
@@ -67,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="86" column="5"/>
+        <location file="includes/input/spk_keyboard.hpp" line="109" column="5"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -82,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="88" column="16"/>
+        <location file="includes/input/spk_keyboard.hpp" line="111" column="16"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1ac5581ec2f8f6b896c4f6d146abee2a8d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Mapping</type>
@@ -95,14 +114,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="89" column="16"/>
+        <location file="includes/input/spk_keyboard.hpp" line="112" column="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Structure to handle key mappings. </para>
     </briefdescription>
     <detaileddescription>
+<para>This structure handles key bindings for specific layouts. </para>
     </detaileddescription>
-    <location file="includes/input/spk_keyboard.hpp" line="80" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="81" bodyend="90"/>
+    <location file="includes/input/spk_keyboard.hpp" line="98" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="99" bodyend="113"/>
     <listofallmembers>
       <member refid="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>bindKey</name></member>
       <member refid="structspk_1_1Keyboard_1_1Mapping_1ab4197f06903fe525205ada5ec0232c8b" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>createAzertyMapping</name></member>

@@ -76,20 +76,24 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classspk_1_1KeyboardModule.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1KeyboardModule.html">KeyboardModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classspk_1_1KeyboardModule.html">KeyboardModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        ~<a class="code" href="classspk_1_1KeyboardModule.html">KeyboardModule</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> updateKeyboard();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    };</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdef"><b>Definition:</b> spk_abstract_module.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1KeyboardModule_html"><div class="ttname"><a href="classspk_1_1KeyboardModule.html">spk::KeyboardModule</a></div><div class="ttdef"><b>Definition:</b> spk_keyboard_module.hpp:8</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classspk_1_1KeyboardModule.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1KeyboardModule.html">KeyboardModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classspk_1_1KeyboardModule.html#a3a62882e58161aec70f3f3675c2f0706">   29</a></span>&#160;        <a class="code" href="classspk_1_1KeyboardModule.html#a3a62882e58161aec70f3f3675c2f0706">KeyboardModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classspk_1_1KeyboardModule.html#a57a26afa65b71628d8dc88834006debf">   34</a></span>&#160;        <a class="code" href="classspk_1_1KeyboardModule.html#a57a26afa65b71628d8dc88834006debf">~KeyboardModule</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classspk_1_1KeyboardModule.html#afc1dbda7d91ea3ffb1a8efa0c76186c8">   39</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1KeyboardModule.html#afc1dbda7d91ea3ffb1a8efa0c76186c8">updateKeyboard</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdoc">Class for modules that consume messages.</div><div class="ttdef"><b>Definition:</b> spk_abstract_module.hpp:30</div></div>
+<div class="ttc" id="aclassspk_1_1KeyboardModule_html"><div class="ttname"><a href="classspk_1_1KeyboardModule.html">spk::KeyboardModule</a></div><div class="ttdoc">Class for managing the keyboard interactions.</div><div class="ttdef"><b>Definition:</b> spk_keyboard_module.hpp:14</div></div>
+<div class="ttc" id="aclassspk_1_1KeyboardModule_html_a3a62882e58161aec70f3f3675c2f0706"><div class="ttname"><a href="classspk_1_1KeyboardModule.html#a3a62882e58161aec70f3f3675c2f0706">spk::KeyboardModule::KeyboardModule</a></div><div class="ttdeci">KeyboardModule(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue)</div><div class="ttdoc">Constructs the KeyboardModule object.</div></div>
+<div class="ttc" id="aclassspk_1_1KeyboardModule_html_a57a26afa65b71628d8dc88834006debf"><div class="ttname"><a href="classspk_1_1KeyboardModule.html#a57a26afa65b71628d8dc88834006debf">spk::KeyboardModule::~KeyboardModule</a></div><div class="ttdeci">~KeyboardModule()</div><div class="ttdoc">Destructs the KeyboardModule object.</div></div>
+<div class="ttc" id="aclassspk_1_1KeyboardModule_html_afc1dbda7d91ea3ffb1a8efa0c76186c8"><div class="ttname"><a href="classspk_1_1KeyboardModule.html#afc1dbda7d91ea3ffb1a8efa0c76186c8">spk::KeyboardModule::updateKeyboard</a></div><div class="ttdeci">void updateKeyboard()</div><div class="ttdoc">Updates the keyboard state.</div></div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; SystemMessage &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

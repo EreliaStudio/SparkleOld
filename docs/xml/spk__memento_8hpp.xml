@@ -9,6 +9,12 @@
       <node id="4">
         <label>cstdint</label>
       </node>
+      <node id="8">
+        <label>miscellaneous/spk_is_container.hpp</label>
+        <link refid="spk__is__container_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>includes/design_pattern/spk_memento.hpp</label>
         <link refid="spk__memento_8hpp"/>
@@ -22,12 +28,6 @@
       </node>
       <node id="5">
         <label>string</label>
-      </node>
-      <node id="8">
-        <label>miscellaneous/spk_is_contener.hpp</label>
-        <link refid="spk__is__contener_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
       <node id="3">
         <label>vector</label>
@@ -96,7 +96,7 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_load()</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_snapshots[_index].reset();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_snapshots[_index].<ref refid="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" kindref="member">reset</ref>();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_onLoad(_snapshots[_index]);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>

@@ -1,26 +1,128 @@
 \hypertarget{classspk_1_1RandomGenerator}{}\doxysection{spk\+::Random\+Generator$<$ Int\+Type $>$ Class Template Reference}
 \label{classspk_1_1RandomGenerator}\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+
+
+Random number generator template class.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+random\+\_\+generator.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1RandomGenerator_a7f72dae6004074788deecba74c5236cb}\label{classspk_1_1RandomGenerator_a7f72dae6004074788deecba74c5236cb}} 
-{\bfseries Random\+Generator} (const uint64\+\_\+t \&p\+\_\+seed)
-\item 
+\mbox{\Hypertarget{classspk_1_1RandomGenerator_adff8299eaa9cbc86582321597a80f2b1}\label{classspk_1_1RandomGenerator_adff8299eaa9cbc86582321597a80f2b1}} 
+\mbox{\hyperlink{classspk_1_1RandomGenerator_adff8299eaa9cbc86582321597a80f2b1}{Random\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the generator with a random seed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1RandomGenerator_a7f72dae6004074788deecba74c5236cb}{Random\+Generator}} (const uint64\+\_\+t \&p\+\_\+seed)
+\begin{DoxyCompactList}\small\item\em Constructor that allows to set the seed manually. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1RandomGenerator_a059cf392c82a52e718c8ce84fb2bb2c2}\label{classspk_1_1RandomGenerator_a059cf392c82a52e718c8ce84fb2bb2c2}} 
 {\bfseries Random\+Generator} (const \mbox{\hyperlink{classspk_1_1RandomGenerator}{Random\+Generator}} \&p\+\_\+other)=delete
 \item 
-\mbox{\Hypertarget{classspk_1_1RandomGenerator_afbf5624de8c186559746af0a8ed9c029}\label{classspk_1_1RandomGenerator_afbf5624de8c186559746af0a8ed9c029}} 
-void {\bfseries set\+Distribution\+Range} (const Int\+Type \&p\+\_\+min, const Int\+Type \&p\+\_\+max)
-\item 
-\mbox{\Hypertarget{classspk_1_1RandomGenerator_abfb6719ee850820f2f090a8d70143873}\label{classspk_1_1RandomGenerator_abfb6719ee850820f2f090a8d70143873}} 
-constexpr Int\+Type {\bfseries operator()} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1RandomGenerator_a96370335c177656f4878ebab8cc4b4b3}\label{classspk_1_1RandomGenerator_a96370335c177656f4878ebab8cc4b4b3}} 
-constexpr Int\+Type {\bfseries min} () const
-\item 
+void \mbox{\hyperlink{classspk_1_1RandomGenerator_afbf5624de8c186559746af0a8ed9c029}{set\+Distribution\+Range}} (const Int\+Type \&p\+\_\+min, const Int\+Type \&p\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Set the range of the distribution. \end{DoxyCompactList}\item 
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator_abfb6719ee850820f2f090a8d70143873}{operator()}} ()
+\begin{DoxyCompactList}\small\item\em Generate a random number. \end{DoxyCompactList}\item 
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator_a96370335c177656f4878ebab8cc4b4b3}{min}} () const
+\begin{DoxyCompactList}\small\item\em Get the minimum value of the distribution range. \end{DoxyCompactList}\item 
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator_a65f9e7bda3b0a4a3a1638c5a55dfcb5c}{max}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum value of the distribution range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Int\+Type = int$>$\newline
+class spk\+::\+Random\+Generator$<$ Int\+Type $>$}
+
+Random number generator template class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Int\+Type} & The type of integer to generate (default\+: int). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1RandomGenerator_a7f72dae6004074788deecba74c5236cb}\label{classspk_1_1RandomGenerator_a7f72dae6004074788deecba74c5236cb}} 
+\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}!RandomGenerator@{RandomGenerator}}
+\index{RandomGenerator@{RandomGenerator}!spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+\doxysubsubsection{\texorpdfstring{RandomGenerator()}{RandomGenerator()}}
+{\footnotesize\ttfamily template$<$typename Int\+Type  = int$>$ \\
+\mbox{\hyperlink{classspk_1_1RandomGenerator}{spk\+::\+Random\+Generator}}$<$ Int\+Type $>$\+::\mbox{\hyperlink{classspk_1_1RandomGenerator}{Random\+Generator}} (\begin{DoxyParamCaption}\item[{const uint64\+\_\+t \&}]{p\+\_\+seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that allows to set the seed manually. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+seed} & Seed for the random number generator. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1RandomGenerator_a65f9e7bda3b0a4a3a1638c5a55dfcb5c}\label{classspk_1_1RandomGenerator_a65f9e7bda3b0a4a3a1638c5a55dfcb5c}} 
-constexpr Int\+Type {\bfseries max} () const
-\end{DoxyCompactItemize}
+\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}!max@{max}}
+\index{max@{max}!spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily template$<$typename Int\+Type  = int$>$ \\
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator}{spk\+::\+Random\+Generator}}$<$ Int\+Type $>$\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the maximum value of the distribution range. 
+
+\begin{DoxyReturn}{Returns}
+The maximum value of the distribution range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1RandomGenerator_a96370335c177656f4878ebab8cc4b4b3}\label{classspk_1_1RandomGenerator_a96370335c177656f4878ebab8cc4b4b3}} 
+\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}!min@{min}}
+\index{min@{min}!spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily template$<$typename Int\+Type  = int$>$ \\
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator}{spk\+::\+Random\+Generator}}$<$ Int\+Type $>$\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the minimum value of the distribution range. 
+
+\begin{DoxyReturn}{Returns}
+The minimum value of the distribution range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1RandomGenerator_abfb6719ee850820f2f090a8d70143873}\label{classspk_1_1RandomGenerator_abfb6719ee850820f2f090a8d70143873}} 
+\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename Int\+Type  = int$>$ \\
+constexpr Int\+Type \mbox{\hyperlink{classspk_1_1RandomGenerator}{spk\+::\+Random\+Generator}}$<$ Int\+Type $>$\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Generate a random number. 
+
+\begin{DoxyReturn}{Returns}
+A random number within the set distribution range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1RandomGenerator_afbf5624de8c186559746af0a8ed9c029}\label{classspk_1_1RandomGenerator_afbf5624de8c186559746af0a8ed9c029}} 
+\index{spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}!setDistributionRange@{setDistributionRange}}
+\index{setDistributionRange@{setDistributionRange}!spk::RandomGenerator$<$ IntType $>$@{spk::RandomGenerator$<$ IntType $>$}}
+\doxysubsubsection{\texorpdfstring{setDistributionRange()}{setDistributionRange()}}
+{\footnotesize\ttfamily template$<$typename Int\+Type  = int$>$ \\
+void \mbox{\hyperlink{classspk_1_1RandomGenerator}{spk\+::\+Random\+Generator}}$<$ Int\+Type $>$\+::set\+Distribution\+Range (\begin{DoxyParamCaption}\item[{const Int\+Type \&}]{p\+\_\+min,  }\item[{const Int\+Type \&}]{p\+\_\+max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the range of the distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & The lower bound of the distribution range. \\
+\hline
+{\em p\+\_\+max} & The upper bound of the distribution range. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

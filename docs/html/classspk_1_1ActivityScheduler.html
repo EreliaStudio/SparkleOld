@@ -73,16 +73,55 @@ $(function() {
 <div class="title">spk::ActivityScheduler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Allows activitee to follow each other.  
+ <a href="classspk_1_1ActivityScheduler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__activity__scheduler_8hpp_source.html">spk_activity_scheduler.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1467948112bbf2c38bbbaabac4a736ad"><td class="memItemLeft" align="right" valign="top"><a id="a1467948112bbf2c38bbbaabac4a736ad"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addActivity</b> (<a class="el" href="classspk_1_1Activity.html">Activity</a> *p_activity)</td></tr>
+<tr class="memitem:ac3cb1398b125d743bef17982a0a7ccd7"><td class="memItemLeft" align="right" valign="top"><a id="ac3cb1398b125d743bef17982a0a7ccd7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivityScheduler.html#ac3cb1398b125d743bef17982a0a7ccd7">ActivityScheduler</a> ()</td></tr>
+<tr class="memdesc:ac3cb1398b125d743bef17982a0a7ccd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Activity.html" title="Represents an activity. This class defines an activity that can be managed by an ActivityManager....">Activity</a> Scheduler object. <br /></td></tr>
+<tr class="separator:ac3cb1398b125d743bef17982a0a7ccd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1467948112bbf2c38bbbaabac4a736ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivityScheduler.html#a1467948112bbf2c38bbbaabac4a736ad">addActivity</a> (<a class="el" href="classspk_1_1Activity.html">Activity</a> *p_activity)</td></tr>
+<tr class="memdesc:a1467948112bbf2c38bbbaabac4a736ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an activity at the end of the schedule.  <a href="classspk_1_1ActivityScheduler.html#a1467948112bbf2c38bbbaabac4a736ad">More...</a><br /></td></tr>
 <tr class="separator:a1467948112bbf2c38bbbaabac4a736ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5932655a97e9c53ef47d5752c63276eb"><td class="memItemLeft" align="right" valign="top"><a id="a5932655a97e9c53ef47d5752c63276eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivityScheduler.html#a5932655a97e9c53ef47d5752c63276eb">execute</a> ()</td></tr>
+<tr class="memdesc:a5932655a97e9c53ef47d5752c63276eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start activities one after each other until each one are complete. <br /></td></tr>
 <tr class="separator:a5932655a97e9c53ef47d5752c63276eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Allows activitee to follow each other. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1467948112bbf2c38bbbaabac4a736ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1467948112bbf2c38bbbaabac4a736ad">&#9670;&nbsp;</a></span>addActivity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::ActivityScheduler::addActivity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspk_1_1Activity.html">Activity</a> *&#160;</td>
+          <td class="paramname"><em>p_activity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add an activity at the end of the schedule. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_activity</td><td>The activity to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/design_pattern/<a class="el" href="spk__activity__scheduler_8hpp_source.html">spk_activity_scheduler.hpp</a></li>
 </ul>

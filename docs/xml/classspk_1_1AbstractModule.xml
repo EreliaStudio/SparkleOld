@@ -7,6 +7,7 @@
     <derivedcompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1TimeModule" prot="public" virt="non-virtual">spk::TimeModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WidgetModule" prot="public" virt="non-virtual">spk::WidgetModule</derivedcompoundref>
+    <includes refid="spk__abstract__module_8hpp" local="no">spk_abstract_module.hpp</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -19,17 +20,20 @@
         <reimplementedby refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3">update</reimplementedby>
         <reimplementedby refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487">update</reimplementedby>
         <briefdescription>
+<para>A virtual update function that must be overridden in derived classes. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="12" column="14"/>
+        <location file="includes/application/modules/spk_abstract_module.hpp" line="20" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Base class for modules. </para>
     </briefdescription>
     <detaileddescription>
+<para>This is an abstract class that provides a basic interface for other modules. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -89,7 +93,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/application/modules/spk_abstract_module.hpp" line="9" column="1" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="10" bodyend="13"/>
+    <location file="includes/application/modules/spk_abstract_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="15" bodyend="21"/>
     <listofallmembers>
       <member refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4" prot="public" virt="pure-virtual"><scope>spk::AbstractModule</scope><name>update</name></member>
     </listofallmembers>

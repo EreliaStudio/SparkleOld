@@ -86,304 +86,352 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>spk</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2.html">   18</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structspk_1_1IVector2.html">IVector2</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        TType x;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        TType y;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a>() : x(0), y(0) { }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(<span class="keyword">const</span> TOtherType&amp; p_value) : x(p_value), y(p_value) {}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(<span class="keyword">const</span> TOtherType&amp; p_x, <span class="keyword">const</span> TOtherType&amp; p_y) : x(p_x), y(p_y) {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html">   26</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structspk_1_1IVector2_xC2_xB2.html">IVector2²</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">   28</a></span>&#160;        TType <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">   29</a></span>&#160;        TType <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">operator</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>(<span class="keyword">static_cast&lt;</span>TOtherType<span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span>TOtherType<span class="keyword">&gt;</span>(y)));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">friend</span> std::wostream&amp; operator &lt;&lt; (std::wostream&amp; p_os, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_self)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            p_os &lt;&lt; p_self.x &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; p_self.y;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> (p_os);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a> operator + (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>(x + p_other.x, y + p_other.y));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a> operator - (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>(x - p_other.x, y - p_other.y));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a> operator * (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>(x * p_other.x, y * p_other.y));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a> operator / (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (p_other.x == 0 || p_other.y == 0)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>(x / p_other.x, y / p_other.y));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> operator += (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            x += p_other.x;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            y += p_other.y;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> operator -= (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            x -= p_other.x;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            y -= p_other.y;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> operator *= (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            x *= p_other.x;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            y *= p_other.y;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> operator /= (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (p_other.x == 0 || p_other.y == 0)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            x /= p_other.x;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            y /= p_other.y;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">bool</span> operator == (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; delta)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> (x == delta.x &amp;&amp; y == delta.y);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> operator != (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; delta)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">return</span> (x != delta.x || y != delta.y);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">bool</span> operator &lt; (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (y &lt; p_other.y)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (y == p_other.y &amp;&amp; x &lt; p_other.x)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">bool</span> operator &gt; (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (y &gt; p_other.y)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span> (y == p_other.y &amp;&amp; x &gt; p_other.x)</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">bool</span> operator &lt;= (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (x &lt;= p_other.x &amp;&amp; y &lt;= p_other.y)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">bool</span> operator &gt;= (<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">if</span> (x &gt;= p_other.x &amp;&amp; y &gt;= p_other.y)</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">float</span> norm()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span> (sqrt(pow(x, 2.0f)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                + pow(y, 2.0f)));</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordtype">float</span> distance(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(std::sqrt(pow(p_other.x - x, 2) + pow(p_other.y - y, 2))));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;float&gt;</a> normalize()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordtype">float</span> tmp_norm;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            tmp_norm = this-&gt;norm();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> (tmp_norm == 0)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;float&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(x) / tmp_norm, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(y) / tmp_norm));</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a> cross(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other = <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> result;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            result = <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(-(p_other.y - y), p_other.x - x);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordtype">float</span> crossZ(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">return</span> (x * p_other.y - y * p_other.x);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordtype">float</span> dot(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center = <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordtype">float</span> result;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            result = (x - p_center.x) * (p_other.x - p_center.x) + (y - p_center.y) * (p_other.y - p_center.y);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">   36</a></span>&#160;        <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>() : <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>(0), <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>(0) { }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a78121616069c4cd83e3fbd38a1c0889b">   43</a></span>&#160;        <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a78121616069c4cd83e3fbd38a1c0889b">IVector2</a>(<span class="keyword">const</span> TOtherType&amp; p_value) : <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>(p_value), <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>(p_value) {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a83de0866ac6e2bf95ac1a54ef0980be2">   51</a></span>&#160;        <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a83de0866ac6e2bf95ac1a54ef0980be2">IVector2</a>(<span class="keyword">const</span> TOtherType&amp; p_x, <span class="keyword">const</span> TOtherType&amp; p_y) : <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>(p_x), <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>(p_y) {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a09dac47fe453edc862f83c6bfb71d9b6">   61</a></span>&#160;        <span class="keyword">operator</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>(<span class="keyword">static_cast&lt;</span>TOtherType<span class="keyword">&gt;</span>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>), <span class="keyword">static_cast&lt;</span>TOtherType<span class="keyword">&gt;</span>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>)));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a0ad00eba4b802fae1acede9ef72d21bd">   74</a></span>&#160;        <span class="keyword">friend</span> std::wostream&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a0ad00eba4b802fae1acede9ef72d21bd">operator &lt;&lt; </a>(std::wostream&amp; p_os, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_self)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            p_os &lt;&lt; p_self.x &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; p_self.y;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> p_os;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a4054ee6296061dfc2e30849b6e0d3491">   88</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a4054ee6296061dfc2e30849b6e0d3491">operator + </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> + p_other.x, <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> + p_other.y);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a5c73195d9a1a05aa88892e88f9a40301">  101</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a5c73195d9a1a05aa88892e88f9a40301">operator - </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> - p_other.x, <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> - p_other.y);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#af6c510b54e2144f04907b55e23b5c8cd">  114</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#af6c510b54e2144f04907b55e23b5c8cd">operator * </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> * p_other.x, <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> * p_other.y));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#aa65574d8b991dd9a05ea1ac32fddb6f3">  128</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#aa65574d8b991dd9a05ea1ac32fddb6f3">operator / </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (p_other.x == 0 || p_other.y == 0)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> / p_other.x, <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> / p_other.y));</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ab19215e3e2f31785931425b75dc3b95d">  142</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ab19215e3e2f31785931425b75dc3b95d">operator += </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> += p_other.x;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> += p_other.y;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ab38a1c1ba5a0f835576caa91dbf9d56b">  155</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ab38a1c1ba5a0f835576caa91dbf9d56b">operator -= </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> -= p_other.x;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> -= p_other.y;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a26172d58485a5f827d9ae74da66ddcc6">  168</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a26172d58485a5f827d9ae74da66ddcc6">operator *= </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> *= p_other.x;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> *= p_other.y;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a44eb9d8ab0f9d48a9c334733189998eb">  182</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a44eb9d8ab0f9d48a9c334733189998eb">operator /= </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (p_other.x == 0 || p_other.y == 0)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> /= p_other.x;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> /= p_other.y;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">float</span> angle(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center = <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#afbe9d6943cbf382903b8e2a2667a140b">  197</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afbe9d6943cbf382903b8e2a2667a140b">operator == </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; delta)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordtype">float</span> rdot = dot(p_other, p_center);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            rdot = (rdot &lt; -1.0f ? -1.0f : (rdot &gt; 1.0f ? 1.0f : rdot));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordtype">float</span> angle = std::acos(rdot);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">return</span> (angle * (180 / M_PI));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a> invert()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2</a>(x * -1, y * -1));</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">IVector2</a> rotate(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center, <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; p_angle)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordtype">float</span> theta = p_angle * (M_PI / 180);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordtype">float</span> pcos = cos(theta);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordtype">float</span> psin = sin(theta);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> result;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            result.x = (x - p_center.x) * pcos - (y - p_center.y) * psin;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            result.y = (x - p_center.x) * psin + (y - p_center.y) * pcos;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">return</span> (result + p_center);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> floor(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_vector)</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> == delta.x &amp;&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> == delta.y);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a672603f851980d5f2ab1f7d4c3a095b5">  210</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a672603f851980d5f2ab1f7d4c3a095b5">operator != </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; delta)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> != delta.x || <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> != delta.y);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ab2b784719aef4b76694dcc53eab25105">  223</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ab2b784719aef4b76694dcc53eab25105">operator &lt; </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> &lt; p_other.y)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> == p_other.y &amp;&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> &lt; p_other.x)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            result.x = ::floorf(p_vector.x);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            result.y = ::floorf(p_vector.y);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> ceiling(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_vector)</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> result;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            result.x = ::ceilf(p_vector.x);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            result.y = ::ceilf(p_vector.y);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> round(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_vector)</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> result;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            result.x = ::roundf(p_vector.x);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            result.y = ::roundf(p_vector.y);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> (result);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> min(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_min, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_max)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2</a>(std::min(p_min.x, p_max.x), std::min(p_min.y, p_max.y)));</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> max(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_min, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_max)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2</a>(std::max(p_min.x, p_max.x), std::max(p_min.y, p_max.y)));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> isInsideRectangle(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_point, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_cornerA, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_cornerB)</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> tmpMin = IVector2::min(p_cornerA, p_cornerB);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <a class="code" href="structspk_1_1IVector2.html">IVector2</a> tmpMax = IVector2::max(p_cornerA, p_cornerB);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (p_point.x &lt; tmpMin.x || p_point.y &lt; tmpMin.y ||</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                p_point.x &gt; tmpMax.x || p_point.y &gt; tmpMax.y)</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keyword">static</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a> lerp(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_startingPoint, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>&amp; p_endingPoint, <span class="keywordtype">float</span> t) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="structspk_1_1IVector2.html">IVector2</a>(</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                p_startingPoint.x + (p_endingPoint.x - p_startingPoint.x) * t,</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                p_startingPoint.y + (p_endingPoint.y - p_startingPoint.y) * t</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            );</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    };</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a> operator+(TValueType p_value, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>&amp; p_point)</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2.html">IVector2&lt;TType&gt;</a>(p_value, p_value) + p_point);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    };</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    IVector2&lt;TType&gt; operator-(TValueType p_value, <span class="keyword">const</span> IVector2&lt;TType&gt;&amp; p_point)</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> (IVector2&lt;TType&gt;(p_value, p_value) - p_point);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    };</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    IVector2&lt;TType&gt; operator*(TValueType p_value, <span class="keyword">const</span> IVector2&lt;TType&gt;&amp; p_point)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> (IVector2&lt;TType&gt;(p_value, p_value) * p_point);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    };</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    IVector2&lt;TType&gt; operator/(TValueType p_value, <span class="keyword">const</span> IVector2&lt;TType&gt;&amp; p_point)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">return</span> (IVector2&lt;TType&gt;(p_value, p_value) / p_point);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    };</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keyword">using</span> Vector2 = IVector2&lt;float&gt;;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keyword">using</span> Vector2Int = IVector2&lt;int&gt;;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">using</span> Vector2UInt = IVector2&lt;unsigned int&gt;;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2</a></div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:19</div></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a110102bb0b3fb604ab9491b01c30b5c1">  240</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a110102bb0b3fb604ab9491b01c30b5c1">operator &gt; </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> &gt; p_other.y)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> == p_other.y &amp;&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> &gt; p_other.x)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a0de2d12f0b178e5c0eb3facb5b928ea3">  257</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a0de2d12f0b178e5c0eb3facb5b928ea3">operator &lt;= </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> &lt; p_other.y)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> == p_other.y &amp;&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> &lt;= p_other.x)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a43d0cad39c06dd4bcee668e16732718d">  274</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a43d0cad39c06dd4bcee668e16732718d">operator &gt;= </a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> &gt; p_other.y)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> == p_other.y &amp;&amp; <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> &gt;= p_other.x)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordtype">float</span> norm()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">return</span> (sqrt(pow(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>, 2.0f)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                + pow(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>, 2.0f)));</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a42a82569e87d1ee2b2f8bf5f91b73275">  295</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a42a82569e87d1ee2b2f8bf5f91b73275">norm</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordflow">return</span> (sqrt(pow(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>, 2.0f)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                + pow(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>, 2.0f)));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a2aea226c63e5ad6b27173ddcf15018be">  310</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a2aea226c63e5ad6b27173ddcf15018be">distance</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(std::sqrt(pow(p_other.x - <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>, 2) + pow(p_other.y - <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>, 2))));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a1407e6aecf160d856032db445ced6a55">  322</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2&lt;float&gt;</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a1407e6aecf160d856032db445ced6a55">normalize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordtype">float</span> tmp_norm;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            tmp_norm = this-&gt;norm();</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">if</span> (tmp_norm == 0)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                std::runtime_error(<span class="stringliteral">&quot;Trying to divide by 0&quot;</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;float&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>) / tmp_norm, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>) / tmp_norm));</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a0d2aee425ae7ca6462a7175e17340a29">  341</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a0d2aee425ae7ca6462a7175e17340a29">cross</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other = <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            result = <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(-(p_other.y - <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a>), p_other.x - <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a290461ecc83d83b4109854e82e2b4bf9">  359</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a290461ecc83d83b4109854e82e2b4bf9">crossZ</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> * p_other.y - <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> * p_other.x);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a72b9086a584d16c606acc35aeec93849">  374</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a72b9086a584d16c606acc35aeec93849">dot</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center = <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="keywordtype">float</span> result;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            result = (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> - p_center.x) * (p_other.x - p_center.x) + (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> - p_center.y) * (p_other.y - p_center.y);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a9eaa121b93054a263517a9f541d5f288">  393</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a9eaa121b93054a263517a9f541d5f288">angle</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_other, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center = <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(0, 0))<span class="keyword"> const</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keywordtype">float</span> rdot = <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a72b9086a584d16c606acc35aeec93849">dot</a>(p_other, p_center);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            rdot = (rdot &lt; -1.0f ? -1.0f : (rdot &gt; 1.0f ? 1.0f : rdot));</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordtype">float</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a9eaa121b93054a263517a9f541d5f288">angle</a> = std::acos(rdot);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a9eaa121b93054a263517a9f541d5f288">angle</a> * (180 / M_PI));</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00411"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ae576c7e1772b9944668d9815e94d7ed2">  411</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ae576c7e1772b9944668d9815e94d7ed2">invert</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> * -1, <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> * -1));</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TOtherType&gt;</div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a3ef26893f9bd8f3d26c1cb0233e51a19">  426</a></span>&#160;        <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a3ef26893f9bd8f3d26c1cb0233e51a19">rotate</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TOtherType&gt;</a>&amp; p_center, <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; p_angle)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="keywordtype">float</span> theta = p_angle * (M_PI / 180);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keywordtype">float</span> pcos = cos(theta);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordtype">float</span> psin = sin(theta);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            result.x = (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> - p_center.x) * pcos - (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> - p_center.y) * psin;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            result.y = (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">x</a> - p_center.x) * psin + (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">y</a> - p_center.y) * pcos;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="keywordflow">return</span> (result + p_center);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#aa92e2b7834301d879ccfff0386504f4a">  447</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#aa92e2b7834301d879ccfff0386504f4a">floor</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_vector)</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        {</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            result.x = ::floorf(p_vector.x);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            result.y = ::floorf(p_vector.y);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        }</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ad4da26dcde24353cc83510dfd05079d2">  464</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ad4da26dcde24353cc83510dfd05079d2">ceiling</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_vector)</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        {</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            result.x = ::ceilf(p_vector.x);</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            result.y = ::ceilf(p_vector.y);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        }</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00481"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a900a737ad76b0b863284f7d6fc746dc0">  481</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a900a737ad76b0b863284f7d6fc746dc0">round</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_vector)</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        {</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> result;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            result.x = ::roundf(p_vector.x);</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            result.y = ::roundf(p_vector.y);</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        }</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a5378cc41007044a80a002d41bff00dcf">  499</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a5378cc41007044a80a002d41bff00dcf">min</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_min, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_max)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(std::min(p_min.x, p_max.x), std::min(p_min.y, p_max.y)));</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        }</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a685653d643c79b201b8345b72a7b57aa">  512</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a685653d643c79b201b8345b72a7b57aa">max</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_min, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_max)</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        {</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(std::max(p_min.x, p_max.x), std::max(p_min.y, p_max.y)));</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#a857b475bd31bd430ea0bd87b27d1dfa5">  526</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a857b475bd31bd430ea0bd87b27d1dfa5">isInsideRectangle</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_point, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_cornerA, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_cornerB)</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> tmpMin = IVector2::min(p_cornerA, p_cornerB);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <a class="code" href="classIVector2.html">IVector2</a> tmpMax = IVector2::max(p_cornerA, p_cornerB);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            <span class="keywordflow">if</span> (p_point.x &lt; tmpMin.x || p_point.y &lt; tmpMin.y ||</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                p_point.x &gt; tmpMax.x || p_point.y &gt; tmpMax.y)</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno"><a class="line" href="structspk_1_1IVector2_xC2_xB2.html#ac9c33875b9b908ce875911bd2eb3cd81">  546</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="classIVector2.html">IVector2</a> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#ac9c33875b9b908ce875911bd2eb3cd81">lerp</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_startingPoint, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2</a>&amp; p_endingPoint, <span class="keywordtype">float</span> t) {</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">IVector2</a>(</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                p_startingPoint.x + (p_endingPoint.x - p_startingPoint.x) * t,</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                p_startingPoint.y + (p_endingPoint.y - p_startingPoint.y) * t</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            );</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    };</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> operator+(TValueType p_value, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>&amp; p_point)</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    {</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(p_value, p_value) + p_point);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    };</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> operator-(TValueType p_value, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>&amp; p_point)</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(p_value, p_value) - p_point);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    };</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> operator*(TValueType p_value, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>&amp; p_point)</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(p_value, p_value) * p_point);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    };</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    template&lt;typename TType, typename TValueType, typename = std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;&gt;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a> operator/(TValueType p_value, <span class="keyword">const</span> <a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>&amp; p_point)</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classIVector2.html">IVector2&lt;TType&gt;</a>(p_value, p_value) / p_point);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    };</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keyword">using</span> Vector2 = <a class="code" href="classIVector2.html">IVector2&lt;float&gt;</a>;</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keyword">using</span> Vector2Int = <a class="code" href="classIVector2.html">IVector2&lt;int&gt;</a>;</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keyword">using</span> Vector2UInt = <a class="code" href="classIVector2.html">IVector2&lt;unsigned int&gt;</a>;</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;}</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
+<div class="ttc" id="aclassIVector2_html"><div class="ttname"><a href="classIVector2.html">IVector2</a></div><div class="ttdoc">A two-dimensional vector class with variable type.</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html">spk::IVector2²</a></div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:27</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a0ad00eba4b802fae1acede9ef72d21bd"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a0ad00eba4b802fae1acede9ef72d21bd">spk::IVector2²::operator&lt;&lt;</a></div><div class="ttdeci">friend std::wostream &amp; operator&lt;&lt;(std::wostream &amp;p_os, const IVector2 &amp;p_self)</div><div class="ttdoc">Overload of &lt;&lt; operator for output stream.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:74</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a0d2aee425ae7ca6462a7175e17340a29"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a0d2aee425ae7ca6462a7175e17340a29">spk::IVector2²::cross</a></div><div class="ttdeci">IVector2 cross(const IVector2&lt; TOtherType &gt; &amp;p_other=IVector2(0, 0)) const</div><div class="ttdoc">Performs the 2D cross product with another vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:341</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a0de2d12f0b178e5c0eb3facb5b928ea3"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a0de2d12f0b178e5c0eb3facb5b928ea3">spk::IVector2²::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of &lt;= operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:257</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a110102bb0b3fb604ab9491b01c30b5c1"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a110102bb0b3fb604ab9491b01c30b5c1">spk::IVector2²::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of &gt; operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:240</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a1407e6aecf160d856032db445ced6a55"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a1407e6aecf160d856032db445ced6a55">spk::IVector2²::normalize</a></div><div class="ttdeci">IVector2&lt; float &gt; normalize() const</div><div class="ttdoc">Normalizes this vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:322</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a26172d58485a5f827d9ae74da66ddcc6"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a26172d58485a5f827d9ae74da66ddcc6">spk::IVector2²::operator*=</a></div><div class="ttdeci">void operator*=(const IVector2&lt; TOtherType &gt; &amp;p_other)</div><div class="ttdoc">Overload of *= operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:168</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a290461ecc83d83b4109854e82e2b4bf9"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a290461ecc83d83b4109854e82e2b4bf9">spk::IVector2²::crossZ</a></div><div class="ttdeci">float crossZ(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Calculates the z-component of the cross product with another vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:359</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a2aea226c63e5ad6b27173ddcf15018be"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a2aea226c63e5ad6b27173ddcf15018be">spk::IVector2²::distance</a></div><div class="ttdeci">float distance(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Calculates the Euclidean distance between this vector and another vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:310</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a3ef26893f9bd8f3d26c1cb0233e51a19"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a3ef26893f9bd8f3d26c1cb0233e51a19">spk::IVector2²::rotate</a></div><div class="ttdeci">IVector2 rotate(const IVector2&lt; TOtherType &gt; &amp;p_center, const float &amp;p_angle) const</div><div class="ttdoc">Rotates this vector around a given center point.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:426</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a4054ee6296061dfc2e30849b6e0d3491"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a4054ee6296061dfc2e30849b6e0d3491">spk::IVector2²::operator+</a></div><div class="ttdeci">IVector2&lt; TType &gt; operator+(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of + operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:88</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a42a82569e87d1ee2b2f8bf5f91b73275"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a42a82569e87d1ee2b2f8bf5f91b73275">spk::IVector2²::norm</a></div><div class="ttdeci">float norm() const</div><div class="ttdoc">Calculates the norm (or length) of this vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:295</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a43d0cad39c06dd4bcee668e16732718d"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a43d0cad39c06dd4bcee668e16732718d">spk::IVector2²::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of &gt;= operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:274</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a44eb9d8ab0f9d48a9c334733189998eb"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a44eb9d8ab0f9d48a9c334733189998eb">spk::IVector2²::operator/=</a></div><div class="ttdeci">void operator/=(const IVector2&lt; TOtherType &gt; &amp;p_other)</div><div class="ttdoc">Overload of /= operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:182</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a5378cc41007044a80a002d41bff00dcf"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a5378cc41007044a80a002d41bff00dcf">spk::IVector2²::min</a></div><div class="ttdeci">static IVector2 min(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</div><div class="ttdoc">Calculates the vector with the minimum coordinates.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:499</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a5c73195d9a1a05aa88892e88f9a40301"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a5c73195d9a1a05aa88892e88f9a40301">spk::IVector2²::operator-</a></div><div class="ttdeci">IVector2&lt; TType &gt; operator-(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of - operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:101</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a672603f851980d5f2ab1f7d4c3a095b5"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a672603f851980d5f2ab1f7d4c3a095b5">spk::IVector2²::operator!=</a></div><div class="ttdeci">bool operator!=(const IVector2&lt; TOtherType &gt; &amp;delta) const</div><div class="ttdoc">Overload of != operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:210</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a685653d643c79b201b8345b72a7b57aa"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a685653d643c79b201b8345b72a7b57aa">spk::IVector2²::max</a></div><div class="ttdeci">static IVector2 max(const IVector2 &amp;p_min, const IVector2 &amp;p_max)</div><div class="ttdoc">Calculates the vector with the maximum coordinates.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:512</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a72b9086a584d16c606acc35aeec93849"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a72b9086a584d16c606acc35aeec93849">spk::IVector2²::dot</a></div><div class="ttdeci">float dot(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</div><div class="ttdoc">Performs the dot product with another vector, with respect to a center vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:374</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a78121616069c4cd83e3fbd38a1c0889b"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a78121616069c4cd83e3fbd38a1c0889b">spk::IVector2²::IVector2</a></div><div class="ttdeci">IVector2(const TOtherType &amp;p_value)</div><div class="ttdoc">Constructor that initializes both coordinates with a single value.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:43</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a808bf0b52e16bcf4f25fbba5e5db0aef"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a808bf0b52e16bcf4f25fbba5e5db0aef">spk::IVector2²::y</a></div><div class="ttdeci">TType y</div><div class="ttdoc">The y-coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:29</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a83de0866ac6e2bf95ac1a54ef0980be2"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a83de0866ac6e2bf95ac1a54ef0980be2">spk::IVector2²::IVector2</a></div><div class="ttdeci">IVector2(const TOtherType &amp;p_x, const TOtherType &amp;p_y)</div><div class="ttdoc">Constructor that initializes the vector with two values.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:51</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a857b475bd31bd430ea0bd87b27d1dfa5"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a857b475bd31bd430ea0bd87b27d1dfa5">spk::IVector2²::isInsideRectangle</a></div><div class="ttdeci">static bool isInsideRectangle(const IVector2 &amp;p_point, const IVector2 &amp;p_cornerA, const IVector2 &amp;p_cornerB)</div><div class="ttdoc">Checks if a point is inside a rectangle defined by two corner points.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:526</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a87a1b4508c6ea62688f6623a92392ab2"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a87a1b4508c6ea62688f6623a92392ab2">spk::IVector2²::IVector2</a></div><div class="ttdeci">IVector2()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:36</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a900a737ad76b0b863284f7d6fc746dc0"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a900a737ad76b0b863284f7d6fc746dc0">spk::IVector2²::round</a></div><div class="ttdeci">static IVector2 round(const IVector2 &amp;p_vector)</div><div class="ttdoc">Rounds the coordinates of a vector to the nearest integer.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:481</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_a9eaa121b93054a263517a9f541d5f288"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#a9eaa121b93054a263517a9f541d5f288">spk::IVector2²::angle</a></div><div class="ttdeci">float angle(const IVector2&lt; TOtherType &gt; &amp;p_other, const IVector2&lt; TOtherType &gt; &amp;p_center=IVector2(0, 0)) const</div><div class="ttdoc">Calculates the angle between this vector and another vector, with respect to a center vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:393</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_aa65574d8b991dd9a05ea1ac32fddb6f3"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#aa65574d8b991dd9a05ea1ac32fddb6f3">spk::IVector2²::operator/</a></div><div class="ttdeci">IVector2&lt; TType &gt; operator/(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of / operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:128</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_aa92e2b7834301d879ccfff0386504f4a"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#aa92e2b7834301d879ccfff0386504f4a">spk::IVector2²::floor</a></div><div class="ttdeci">static IVector2 floor(const IVector2 &amp;p_vector)</div><div class="ttdoc">Rounds down the coordinates of a vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:447</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ab19215e3e2f31785931425b75dc3b95d"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ab19215e3e2f31785931425b75dc3b95d">spk::IVector2²::operator+=</a></div><div class="ttdeci">void operator+=(const IVector2&lt; TOtherType &gt; &amp;p_other)</div><div class="ttdoc">Overload of += operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:142</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ab2b784719aef4b76694dcc53eab25105"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ab2b784719aef4b76694dcc53eab25105">spk::IVector2²::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of &lt; operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:223</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ab38a1c1ba5a0f835576caa91dbf9d56b"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ab38a1c1ba5a0f835576caa91dbf9d56b">spk::IVector2²::operator-=</a></div><div class="ttdeci">void operator-=(const IVector2&lt; TOtherType &gt; &amp;p_other)</div><div class="ttdoc">Overload of -= operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:155</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ac9c33875b9b908ce875911bd2eb3cd81"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ac9c33875b9b908ce875911bd2eb3cd81">spk::IVector2²::lerp</a></div><div class="ttdeci">static IVector2 lerp(const IVector2 &amp;p_startingPoint, const IVector2 &amp;p_endingPoint, float t)</div><div class="ttdoc">Interpolates linearly between two points.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:546</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ad4da26dcde24353cc83510dfd05079d2"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ad4da26dcde24353cc83510dfd05079d2">spk::IVector2²::ceiling</a></div><div class="ttdeci">static IVector2 ceiling(const IVector2 &amp;p_vector)</div><div class="ttdoc">Rounds up the coordinates of a vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:464</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_ae576c7e1772b9944668d9815e94d7ed2"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#ae576c7e1772b9944668d9815e94d7ed2">spk::IVector2²::invert</a></div><div class="ttdeci">IVector2 invert() const</div><div class="ttdoc">Inverts this vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:411</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_af6c510b54e2144f04907b55e23b5c8cd"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#af6c510b54e2144f04907b55e23b5c8cd">spk::IVector2²::operator*</a></div><div class="ttdeci">IVector2&lt; TType &gt; operator*(const IVector2&lt; TOtherType &gt; &amp;p_other) const</div><div class="ttdoc">Overload of * operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:114</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_afb6eae684c5a81307ab094c42fa37b1b"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b">spk::IVector2²::x</a></div><div class="ttdeci">TType x</div><div class="ttdoc">The x-coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:28</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_xC2_xB2_html_afbe9d6943cbf382903b8e2a2667a140b"><div class="ttname"><a href="structspk_1_1IVector2_xC2_xB2.html#afbe9d6943cbf382903b8e2a2667a140b">spk::IVector2²::operator==</a></div><div class="ttdeci">bool operator==(const IVector2&lt; TOtherType &gt; &amp;delta) const</div><div class="ttdoc">Overload of == operator.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:197</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

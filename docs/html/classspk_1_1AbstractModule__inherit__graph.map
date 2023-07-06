@@ -1,11 +1,11 @@
 <map id="spk::AbstractModule" name="spk::AbstractModule">
-<area shape="rect" id="node1" title=" " alt="" coords="359,5,513,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1APIModule.html" title=" " alt="" coords="175,80,297,107"/>
-<area shape="rect" id="node3" href="$classspk_1_1IMessageConsumerModule.html" title=" " alt="" coords="321,80,551,107"/>
-<area shape="rect" id="node8" href="$classspk_1_1TimeModule.html" title=" " alt="" coords="575,80,710,107"/>
-<area shape="rect" id="node9" href="$classspk_1_1WidgetModule.html" title=" " alt="" coords="735,80,881,107"/>
-<area shape="rect" id="node4" href="$classspk_1_1KeyboardModule.html" title=" " alt="" coords="5,155,168,181"/>
-<area shape="rect" id="node5" href="$classspk_1_1MouseModule.html" title=" " alt="" coords="192,155,336,181"/>
-<area shape="rect" id="node6" href="$classspk_1_1SystemModule.html" title=" " alt="" coords="361,155,511,181"/>
-<area shape="rect" id="node7" href="$classspk_1_1WindowModule.html" title=" " alt="" coords="535,155,689,181"/>
+<area shape="rect" id="node1" title="Base class for modules." alt="" coords="359,5,513,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1APIModule.html" title="Class for managing the API interactions." alt="" coords="175,80,297,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages." alt="" coords="321,80,551,107"/>
+<area shape="rect" id="node8" href="$classspk_1_1TimeModule.html" title="Class for managing time&#45;related functionality." alt="" coords="575,80,710,107"/>
+<area shape="rect" id="node9" href="$classspk_1_1WidgetModule.html" title="Class for managing widgets within the application." alt="" coords="735,80,881,107"/>
+<area shape="rect" id="node4" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="5,155,168,181"/>
+<area shape="rect" id="node5" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="192,155,336,181"/>
+<area shape="rect" id="node6" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="361,155,511,181"/>
+<area shape="rect" id="node7" href="$classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="535,155,689,181"/>
 </map>

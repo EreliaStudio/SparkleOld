@@ -2,6 +2,15 @@
 \label{classspk_1_1Worker}\index{spk::Worker@{spk::Worker}}
 
 
+Class for creating a worker thread.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+worker\+\_\+pool.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Worker\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,10 +32,34 @@ Collaboration diagram for spk\+::Worker\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Worker_ad63fdc3010d478f7e03124269377dc64}\label{classspk_1_1Worker_ad63fdc3010d478f7e03124269377dc64}} 
-{\bfseries Worker} (const std\+::wstring \&p\+\_\+name)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classspk_1_1Worker_ad63fdc3010d478f7e03124269377dc64}{Worker}} (const std\+::wstring \&p\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Worker}{Worker}} object with a specified name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for creating a worker thread. 
+
+This class extends the \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} class and provides a convenient way to create a single worker thread. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Worker_ad63fdc3010d478f7e03124269377dc64}\label{classspk_1_1Worker_ad63fdc3010d478f7e03124269377dc64}} 
+\index{spk::Worker@{spk::Worker}!Worker@{Worker}}
+\index{Worker@{Worker}!spk::Worker@{spk::Worker}}
+\doxysubsubsection{\texorpdfstring{Worker()}{Worker()}}
+{\footnotesize\ttfamily spk\+::\+Worker\+::\+Worker (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Worker}{Worker}} object with a specified name. 
+
+This constructor creates a new \mbox{\hyperlink{classspk_1_1Worker}{Worker}} object with the specified name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & The name of the worker thread. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
