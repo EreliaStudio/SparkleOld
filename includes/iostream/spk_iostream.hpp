@@ -54,7 +54,6 @@ namespace spk
 			 * @return 0 on success.
 			 */
 			virtual int sync()
-
 			{
 				flush();
 				return 0;
@@ -81,7 +80,6 @@ namespace spk
 			 * @param p_prefix The new prefix string.
 			 */
 			void setPrefix(std::wstring p_prefix)
-
 			{
 				_prefix = p_prefix;
 				_mutex.lock();
