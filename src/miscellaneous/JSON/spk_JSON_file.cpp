@@ -8,57 +8,61 @@
 
 namespace spk
 {
-	static std::wstring _handleEscapeSequence(const std::wstring& p_fileContent)
-	{
-		std::wstring result;
-
-		for (size_t i = 0; i < p_fileContent.size(); ++i)
-		{
-			if (p_fileContent[i] == L'\\')
-			{
-				switch (p_fileContent[i + 1])
-				{
-				case L'"':
-					result += L'"';
-					break;
-				case L'\\':
-					result += L"\\";
-					break;
-				case L'/':
-					result += L'/';
-					break;
-				case L'b':
-					result += L'\b';
-					break;
-				case L'f':
-					result += L'\f';
-					break;
-				case L'n':
-					result += L'\n';
-					break;
-				case L'r':
-					result += L'\r';
-					break;
-				case L't':
-					result += L'\t';
-					break;
-				case L'u':
-					result += L"\\u"; //TODO: Check how to handle that.
-					break;
-				default:
-					spk::throwException(L"Invalid escape sequence: <" + p_fileContent.substr(i, 2) + L'>');
-				}
-				++i;
-			}
-			else
-				result += p_fileContent[i];
-		}
-		return (result);
-	}
-
 	namespace JSON
 	{
-		void File::_applyGrammar(std::wstring& p_fileContent)
+		static std::wstring _handleEscapeSequence(const std::wstring& p_fileContent)
+		{
+			std::wstring result;
+
+			for (size_t i = 0; i < p_fileContent.size(); ++i)
+			{
+				if (p_fileContent[i] == L'\\')
+				{
+					switch (p_fileContent[i + 1])
+					{
+					case L'"':
+						result += L'"';
+						break;
+					case L'\\':
+						result += L"\\";
+						break;
+					case L'/':
+						result += L'/';
+						break;
+					case L'b':
+						result += L'\b';
+						break;
+					case L'f':
+						result += L'\f';
+						break;
+					case L'n':
+						result += L'\n';
+						break;
+					case L'r':
+						result += L'\r';
+						break;
+					case L't':
+						result += L'\t';
+						break;
+					case L'u':
+						result += L"\\u"; //TODO: Check how to handle that.
+						break;
+					default:
+						spk::throwException(L"Invalid escape sequence: <" + p_fileContent.substr(i, 2) + L'>');
+					}
+					++i;
+				}
+				else
+					result += p_fileContent[i];
+			}
+			return (result);
+		}
+
+		/**
+		 * @brief Applies grammar rules to the file content to ensure valid JSON syntax.
+		 * @param p_fileContent The content of the file to be modified.
+		 */
+		static void _applyGrammar(std::wstring& p_fileContent)
 		{
 			std::wstring result;
 			bool isLiteral(false);
@@ -103,7 +107,12 @@ namespace spk
 			p_fileContent = result;
 		}
 
-		std::wstring File::_loadFileContent(const std::filesystem::path& p_filePath)
+		/**
+		 * @brief Loads the content of the file at the specified path.
+		 * @param p_filePath The path to the JSON file.
+		 * @return The loaded content of the file as a wide string.
+		 */
+		static std::wstring _loadFileContent(const std::filesystem::path& p_filePath)
 		{
 			std::wifstream wif;
 
@@ -122,7 +131,13 @@ namespace spk
 			return (result);
 		}
 
-		std::wstring File::_getAttributeName(const std::wstring& p_content, size_t& p_index)
+		/**
+		 * @brief Extracts the attribute name from the content at the specified index.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after the attribute name.
+		 * @return The extracted attribute name.
+		 */
+		static std::wstring _getAttributeName(const std::wstring& p_content, size_t& p_index)
 		{
 			if (p_content[p_index] != L'"')
 				spk::throwException(L"Invalid attribute name [" + p_content.substr(p_index, 2) + L"]");
@@ -142,7 +157,13 @@ namespace spk
 			return (_handleEscapeSequence(p_content.substr(start, p_index - start - 2)));
 		}
 
-		std::wstring File::_extractUnitSubstring(const std::wstring& p_content, size_t& p_index)
+		/**
+		 * @brief Extracts the unit substring from the content at the specified index.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after the unit substring.
+		 * @return The extracted unit substring.
+		 */
+		static std::wstring _extractUnitSubstring(const std::wstring& p_content, size_t& p_index)
 		{
 			size_t oldIndex = p_index;
 			bool isAString = false;
@@ -172,7 +193,12 @@ namespace spk
 			return (_handleEscapeSequence(p_content.substr(oldIndex, p_index - oldIndex)));
 		}
 
-		void File::_loadUnitString(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
+		/**
+		 * @brief Loads the unit string into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the unit string.
+		 * @param p_unitSubString The unit substring to load.
+		 */
+		static void _loadUnitString(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
 		{
 			p_objectToFill.set(p_unitSubString.substr(1, p_unitSubString.size() - 2));
 		}
@@ -232,8 +258,12 @@ namespace spk
 			return (result);
 		}
 
-		void File::_loadUnitNumbers(spk::JSON::Object& p_objectToFill,
-			const std::wstring& p_unitSubString)
+		/**
+		 * @brief Loads the unit numbers into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the unit numbers.
+		 * @param p_unitSubString The unit substring to load.
+		 */
+		static void _loadUnitNumbers(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
 		{
 			std::variant<long, double> result;
 
@@ -273,7 +303,12 @@ namespace spk
 				std::get<double>(result) : std::get<long>(result));
 		}
 
-		void File::_loadUnitBoolean(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
+		/**
+		 * @brief Loads the unit boolean value into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the unit boolean.
+		 * @param p_unitSubString The unit substring to load.
+		 */
+		static void _loadUnitBoolean(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
 		{
 			if (p_unitSubString == L"true")
 				p_objectToFill.set(true);
@@ -283,7 +318,12 @@ namespace spk
 				spk::throwException(L"Invalid boolean JSON value: " + p_unitSubString);
 		}
 
-		void File::_loadUnitNull(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
+		/**
+		 * @brief Loads the unit null value into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the unit null.
+		 * @param p_unitSubString The unit substring to load.
+		 */
+		static void _loadUnitNull(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)
 		{
 			if (p_unitSubString == L"null")
 				p_objectToFill.set(nullptr);
@@ -291,7 +331,13 @@ namespace spk
 				spk::throwException(L"Invalid null JSON value: " + p_unitSubString);
 		}
 
-		void File::_loadUnit(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
+		/**
+		 * @brief Loads the unit value into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the unit value.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after loading the unit value.
+		 */
+		static void _loadUnit(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
 			std::wstring substring = _extractUnitSubstring(p_content, p_index);
 
@@ -317,7 +363,15 @@ namespace spk
 			}
 		}
 
-		void File::_loadObject(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
+		static void _loadContent(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index);
+
+		/**
+		 * @brief Loads the JSON object into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the nested object.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after loading the object.
+		 */
+		static void _loadObject(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
 			p_objectToFill.setAsObject();
 
@@ -340,7 +394,13 @@ namespace spk
 			p_index++;
 		}
 
-		void File::_loadArray(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
+		/**
+		 * @brief Loads the JSON array into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the array.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after loading the array.
+		 */
+		static void _loadArray(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
 			p_objectToFill.setAsArray();
 
@@ -359,7 +419,13 @@ namespace spk
 			p_index++;
 		}
 
-		void File::_loadContent(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
+		/**
+		 * @brief Loads the JSON content into the specified JSON object.
+		 * @param p_objectToFill The JSON object to fill with the content.
+		 * @param p_content The content string.
+		 * @param p_index The current index in the content string. It will be updated to the index after loading the content.
+		 */
+		static void _loadContent(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
 			switch (p_content[p_index])
 			{
