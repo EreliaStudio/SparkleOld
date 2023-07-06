@@ -45,13 +45,13 @@ namespace spk
 		 * @tparam Args Argument types.
 		 * @param p_key The keyboard key that this KeyInput object should monitor.
 		 * @param p_expectedStatus The expected status of the keyboard key.
-		 * @param p_inputDelay Input delay for the timer.
+		 * @param p_delayBetweenInput Input delay for the timer.
 		 * @param p_funct Function to be executed.
 		 * @param p_args Arguments for the function.
 		 */
 		template <typename Funct, typename... Args>
-		KeyInput(spk::Keyboard::Key p_key, spk::InputStatus p_expectedStatus, unsigned long p_inputDelay, Funct&& p_funct, Args&&... p_args) :
-			IInput(p_inputDelay, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
+		KeyInput(spk::Keyboard::Key p_key, spk::InputStatus p_expectedStatus, unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
+			IInput(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
 			_key(p_key),
 			_expectedStatus(p_expectedStatus)
 		{
