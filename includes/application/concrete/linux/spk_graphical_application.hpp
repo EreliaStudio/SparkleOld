@@ -10,18 +10,31 @@
 
 namespace spk
 {
+	/**
+	 * @class Application
+	 * @brief Main class for managing application.
+	 * 
+	 * This class initializes the SPK modules and manages the application loop.
+	 * The modules are updated and rendered in a specific order.
+	 * The application window can be resized, and the central widget can be retrieved.
+	 */
 	class Application : public spk::AbstractApplication
 	{
 	private:
-		spk::APIModule *_APIModule;
-		spk::TimeModule *_timeModule;
-		spk::WindowModule *_windowModule;
-		spk::MouseModule *_mouseModule;
-		spk::KeyboardModule *_keyboardModule;
+		spk::APIModule *_APIModule; ///< API module instance.
+		spk::TimeModule *_timeModule; ///< Time module instance.
+		spk::WindowModule *_windowModule; ///< Window module instance.
+		spk::MouseModule *_mouseModule; ///< Mouse module instance.
+		spk::KeyboardModule *_keyboardModule; ///< Keyboard module instance.
 
-		spk::WidgetModule* _widgetModule;
+		spk::WidgetModule* _widgetModule; ///< Widget module instance.
 
 	protected:
+		/**
+		 * @brief Setup the application jobs.
+		 * 
+		 * This method sets up the jobs for updating and rendering the modules.
+		 */
 		void setupJobs()
 		{
 			addJob([&]() { _APIModule->update(); });
@@ -39,6 +52,12 @@ namespace spk
 		}
 
 	public:
+		/**
+		 * @brief Constructs the Application object.
+		 * 
+		 * @param p_title Title of the window.
+		 * @param p_size Size of the window.
+		 */
 		Application(const std::wstring& p_title, const spk::Vector2Int& p_size)
 		{
 			_APIModule = new spk::APIModule();
@@ -53,6 +72,11 @@ namespace spk
 			resize(p_size);
 		}
 
+		/**
+		 * @brief Destructs the Application object.
+		 * 
+		 * This will delete all modules.
+		 */
 		~Application()
 		{
 			delete _APIModule;
@@ -64,11 +88,21 @@ namespace spk
 			delete _widgetModule;
 		}
 
+		/**
+		 * @brief Returns the central widget of the application.
+		 * 
+		 * @return The central widget of the application.
+		 */
 		spk::AbstractWidget* centralWidget()
 		{
 			return (_widgetModule->centralWidget());
 		}
-
+		
+		/**
+		 * @brief Resizes the application window and central widget.
+		 * 
+		 * @param p_size The new size of the window and central widget.
+		 */
 		void resize(const spk::Vector2Int& p_size)
 		{
 			spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
