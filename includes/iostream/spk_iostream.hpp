@@ -10,6 +10,7 @@ namespace spk
 {
 	/**
 	 * @brief An output stream with a custom prefix, suitable for logging or debugging.
+	 * @note unicode is supported.
 	 */
 	class IOStream : public std::wostream
 	{
