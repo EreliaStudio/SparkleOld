@@ -86,8 +86,11 @@
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="9" relation="include">
         </childnode>
+<<<<<<< HEAD
         <childnode refid="10" relation="include">
         </childnode>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
         <childnode refid="4" relation="include">
         </childnode>
       </node>

@@ -5,7 +5,10 @@
     <includes local="no">stdexcept</includes>
     <includes refid="spk__time__metrics_8hpp" local="yes">system/spk_time_metrics.hpp</includes>
     <includedby refid="spk__profiler__module_8hpp" local="yes">includes/application/modules/spk_profiler_module.hpp</includedby>
+<<<<<<< HEAD
     <includedby refid="spk__input_8hpp" local="yes">includes/input/spk_input.hpp</includedby>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <incdepgraph>
       <node id="7">
@@ -78,10 +81,13 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="5">
+<<<<<<< HEAD
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
       <node id="6">
+=======
+>>>>>>> 5095d1a (Update Doxygen)
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
       </node>
@@ -100,8 +106,11 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+<<<<<<< HEAD
         <childnode refid="6" relation="include">
         </childnode>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
       </node>
       <node id="4">
         <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
