@@ -6,7 +6,10 @@
     <includes refid="spk__time__metrics_8hpp" local="yes">system/spk_time_metrics.hpp</includes>
     <includedby refid="spk__profiler__module_8hpp" local="yes">includes/application/modules/spk_profiler_module.hpp</includedby>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <includedby refid="spk__input_8hpp" local="yes">includes/input/spk_input.hpp</includedby>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
@@ -83,6 +86,7 @@
     <invincdepgraph>
       <node id="5">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
@@ -93,9 +97,19 @@
       <node id="6">
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
         <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/application/modules/spk_profiler_module.hpp</label>
+        <link refid="spk__profiler__module_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -114,8 +128,11 @@
         <childnode refid="5" relation="include">
         </childnode>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <childnode refid="6" relation="include">
         </childnode>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
       </node>

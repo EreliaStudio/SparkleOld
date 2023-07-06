@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['parent_158',['parent',['../classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe',1,'spk::InherenceObject']]],
   ['parent_159',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]],
   ['pause_160',['pause',['../classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79',1,'spk::PersistentWorker']]],
@@ -18,6 +19,8 @@ var searchData=
   ['push_5fback_171',['push_back',['../classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c',1,'spk::ThreadSafeQueue']]],
   ['push_5ffront_172',['push_front',['../classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a',1,'spk::ThreadSafeQueue']]]
 =======
+=======
+>>>>>>> 5095d1a (Update Doxygen)
   ['parent_149',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]],
   ['parent_150',['parent',['../classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe',1,'spk::InherenceObject']]],
   ['pause_151',['pause',['../classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79',1,'spk::PersistentWorker']]],
@@ -33,6 +36,7 @@ var searchData=
   ['promise_161',['Promise',['../classspk_1_1Promise.html#a1f633fca0dabe4e19f99d1bb104498e6',1,'spk::Promise::Promise()'],['../classspk_1_1Promise.html#ad4dbd5693e82c5a821af97fc9e86c20b',1,'spk::Promise::Promise(const Promise &amp;p_other)=delete'],['../classspk_1_1Promise.html',1,'spk::Promise&lt; TType &gt;']]],
   ['push_5fback_162',['push_back',['../classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c',1,'spk::ThreadSafeQueue']]],
   ['push_5ffront_163',['push_front',['../classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a',1,'spk::ThreadSafeQueue']]]
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
   ['parent_150',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]],
@@ -51,4 +55,6 @@ var searchData=
   ['push_5fback_163',['push_back',['../classspk_1_1ThreadSafeQueue.html#af3d6530f982fbd9b8342bf69b79f170c',1,'spk::ThreadSafeQueue']]],
   ['push_5ffront_164',['push_front',['../classspk_1_1ThreadSafeQueue.html#a4a58ccd7575177fed56ecfb028e6537a',1,'spk::ThreadSafeQueue']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 ];

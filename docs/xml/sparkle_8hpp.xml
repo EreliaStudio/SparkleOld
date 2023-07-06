@@ -39,7 +39,10 @@
     <includes refid="spk__widget__module_8hpp" local="yes">application/modules/spk_widget_module.hpp</includes>
     <includes refid="spk__abstract__widget_8hpp" local="yes">widget/spk_abstract_widget.hpp</includes>
     <includes refid="spk__application_8hpp" local="yes">application/spk_application.hpp</includes>
+<<<<<<< HEAD
     <includedby refid="playground_8hpp" local="yes">playground/includes/playground.hpp</includedby>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
     <incdepgraph>
       <node id="43">
         <label>design_pattern/spk_activable_object.hpp</label>
@@ -530,7 +533,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="includes/sparkle.hpp" line="26" column="9"/>
+=======
+        <location file="includes/sparkle.hpp" line="26" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="125" bodyend="-1"/>
+>>>>>>> 5095d1a (Update Doxygen)
       </memberdef>
       </sectiondef>
     <briefdescription>

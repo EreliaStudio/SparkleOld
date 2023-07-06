@@ -620,7 +620,11 @@
     <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" kind="variable"><name>_isPaused</name></member>
     <member refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kind="function"><name>PersistentWorker</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kind="function"><name>~PersistentWorker</name></member>
+<<<<<<< HEAD
     <member refid="classspk_1_1PersistentWorker_1a5880ffdaf3fef5e5115702dacd7a95d6" kind="function"><name>addJob</name></member>
+=======
+    <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" kind="function"><name>addJob</name></member>
+>>>>>>> 5095d1a (Update Doxygen)
     <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kind="function"><name>isRunning</name></member>
     <member refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kind="function"><name>start</name></member>
     <member refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kind="function"><name>stop</name></member>
@@ -643,7 +647,11 @@
     <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" kind="variable"><name>_chronometers</name></member>
     <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" kind="variable"><name>_counters</name></member>
     <member refid="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" kind="function"><name>Profiler</name></member>
+<<<<<<< HEAD
     <member refid="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" kind="function"><name>chronometer</name></member>
+=======
+    <member refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" kind="function"><name>chronometer</name></member>
+>>>>>>> 5095d1a (Update Doxygen)
     <member refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" kind="function"><name>resetChronometer</name></member>
     <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kind="function"><name>startChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kind="function"><name>resumeChronometer</name></member>
@@ -651,7 +659,11 @@
     <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" kind="function"><name>increseCounter</name></member>
     <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" kind="function"><name>setCounter</name></member>
     <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" kind="function"><name>resetCounter</name></member>
+<<<<<<< HEAD
     <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" kind="function"><name>counter</name></member>
+=======
+    <member refid="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" kind="function"><name>counter</name></member>
+>>>>>>> 5095d1a (Update Doxygen)
   </compound>
   <compound refid="classspk_1_1ProfilerModule" kind="class"><name>spk::ProfilerModule</name>
     <member refid="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" kind="variable"><name>_oneSecondTime</name></member>

@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['_7eabstractapplication_267',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
   ['_7eabstractwidget_268',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#ae226e66654f9b84a7501c0a97820efc9',1,'spk::AbstractWidget']]],
   ['_7eapimodule_269',['~APIModule',['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()'],['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()']]],
@@ -23,6 +24,8 @@ var searchData=
   ['_7ewindow_285',['~Window',['../classspk_1_1Window.html#ad7b645ee1f79762e79d4c24a42b42cf4',1,'spk::Window']]],
   ['_7eworkerpool_286',['~WorkerPool',['../classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360',1,'spk::WorkerPool']]]
 =======
+=======
+>>>>>>> 5095d1a (Update Doxygen)
   ['_7eabstractapplication_259',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
   ['_7eabstractwidget_260',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271',1,'spk::AbstractWidget']]],
   ['_7eapimodule_261',['~APIModule',['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()'],['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()']]],
@@ -43,6 +46,7 @@ var searchData=
   ['_7ewidgetmodule_276',['~WidgetModule',['../classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9',1,'spk::WidgetModule']]],
   ['_7ewindow_277',['~Window',['../classspk_1_1Window.html#ad7b645ee1f79762e79d4c24a42b42cf4',1,'spk::Window']]],
   ['_7eworkerpool_278',['~WorkerPool',['../classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360',1,'spk::WorkerPool']]]
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
   ['_7eabstractapplication_260',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
@@ -66,4 +70,6 @@ var searchData=
   ['_7ewindow_278',['~Window',['../classspk_1_1Window.html#ad7b645ee1f79762e79d4c24a42b42cf4',1,'spk::Window']]],
   ['_7eworkerpool_279',['~WorkerPool',['../classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360',1,'spk::WorkerPool']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 ];

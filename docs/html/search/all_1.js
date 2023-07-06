@@ -34,6 +34,9 @@ var searchData=
   ['adddeactivationcallback_29',['addDeactivationCallback',['../classspk_1_1ActivableObject.html#a438560e081b7bf03ca5f601197d73d97',1,'spk::ActivableObject']]],
   ['addjob_30',['addJob',['../classspk_1_1AbstractApplication.html#a092d65d04d8cd9db54d2a8add41519ca',1,'spk::AbstractApplication::addJob(const std::wstring &amp;p_WorkerName, const Job &amp;p_job)'],['../classspk_1_1AbstractApplication.html#a8bf373350bc5f46d625b44eb79e283fb',1,'spk::AbstractApplication::addJob(const Job &amp;p_job)'],['../classspk_1_1PersistentWorker.html#adfe142c7cc4bef14990a2c6d9875703d',1,'spk::PersistentWorker::addJob()'],['../classspk_1_1WorkerPool.html#a7691876b56ced3a61b435cd738cdbf4b',1,'spk::WorkerPool::addJob()']]],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5095d1a (Update Doxygen)
   ['addstatecallback_31',['addStateCallback',['../classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d',1,'spk::StatedObject']]],
   ['angle_32',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
   ['apimodule_33',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],

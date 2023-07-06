@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['randomgenerator_486',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()']]],
   ['realised_487',['realised',['../classspk_1_1Promise.html#aaf9ad2cdc422c2a4c211ce921d50df36',1,'spk::Promise']]],
   ['redo_488',['redo',['../classspk_1_1Memento.html#acc5b23d29f89d6b525f0addbec8ea1f1',1,'spk::Memento']]],
@@ -21,6 +22,8 @@ var searchData=
   ['round_502',['round',['../structspk_1_1IVector2.html#a173f7d72b11d82a87db01e6a6dfe625e',1,'spk::IVector2']]],
   ['run_503',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]]
 =======
+=======
+>>>>>>> 5095d1a (Update Doxygen)
   ['randomgenerator_467',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()']]],
   ['realised_468',['realised',['../classspk_1_1Promise.html#aaf9ad2cdc422c2a4c211ce921d50df36',1,'spk::Promise']]],
   ['redo_469',['redo',['../classspk_1_1Memento.html#acc5b23d29f89d6b525f0addbec8ea1f1',1,'spk::Memento']]],
@@ -39,6 +42,7 @@ var searchData=
   ['rotate_482',['rotate',['../structspk_1_1IVector2.html#a2a657d838bdfcbb18dd0309977d34d5b',1,'spk::IVector2::rotate()'],['../structspk_1_1IVector3.html#a7cb46bc29df99ee08112e5a36505f6f0',1,'spk::IVector3::rotate()']]],
   ['round_483',['round',['../structspk_1_1IVector2.html#a173f7d72b11d82a87db01e6a6dfe625e',1,'spk::IVector2']]],
   ['run_484',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]]
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
   ['randomgenerator_469',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()']]],
@@ -60,4 +64,6 @@ var searchData=
   ['round_485',['round',['../structspk_1_1IVector2.html#a173f7d72b11d82a87db01e6a6dfe625e',1,'spk::IVector2']]],
   ['run_486',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 ];

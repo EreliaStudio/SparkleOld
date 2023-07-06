@@ -192,7 +192,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="src/iostream/spk_iostream.cpp" line="5" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="5" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
+=======
+        <location file="includes/iostream/spk_iostream.hpp" line="121" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
+>>>>>>> 5095d1a (Update Doxygen)
       </memberdef>
       <memberdef kind="variable" id="spk__iostream_8hpp_1a2ac7fd07dd4ad46d0ecd4a814bed814d" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
@@ -206,7 +210,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="src/iostream/spk_iostream.cpp" line="6" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="6" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
+=======
+        <location file="includes/iostream/spk_iostream.hpp" line="122" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
+>>>>>>> 5095d1a (Update Doxygen)
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">

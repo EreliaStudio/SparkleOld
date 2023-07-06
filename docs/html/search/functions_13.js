@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['save_504',['save',['../classspk_1_1Memento.html#a7f12af3b10f86024f5ad641737db2670',1,'spk::Memento']]],
   ['setbirthcallback_505',['setBirthCallback',['../classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e',1,'spk::InherenceObject']]],
   ['setdeathcallback_506',['setDeathCallback',['../classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a',1,'spk::InherenceObject']]],
@@ -36,6 +37,8 @@ var searchData=
   ['systemmodule_535',['SystemModule',['../classspk_1_1SystemModule.html#a4e69257a48d4e3f620310e0bfc1dea21',1,'spk::SystemModule']]],
   ['systemqueue_536',['systemQueue',['../classspk_1_1APIModule.html#a28b7825a839dddd7d90ccb960a50e809',1,'spk::APIModule']]]
 =======
+=======
+>>>>>>> 5095d1a (Update Doxygen)
   ['save_485',['save',['../classspk_1_1Memento.html#a7f12af3b10f86024f5ad641737db2670',1,'spk::Memento']]],
   ['setbirthcallback_486',['setBirthCallback',['../classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e',1,'spk::InherenceObject']]],
   ['setdeathcallback_487',['setDeathCallback',['../classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a',1,'spk::InherenceObject']]],
@@ -69,6 +72,7 @@ var searchData=
   ['swapreadwritecontext_515',['swapReadWriteContext',['../classspk_1_1ContextManager.html#a7c3c2f2ddcb4a6c93ed5e291d01eaed2',1,'spk::ContextManager']]],
   ['systemmodule_516',['SystemModule',['../classspk_1_1SystemModule.html#a4e69257a48d4e3f620310e0bfc1dea21',1,'spk::SystemModule']]],
   ['systemqueue_517',['systemQueue',['../classspk_1_1APIModule.html#a28b7825a839dddd7d90ccb960a50e809',1,'spk::APIModule']]]
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
   ['save_487',['save',['../classspk_1_1Memento.html#a7f12af3b10f86024f5ad641737db2670',1,'spk::Memento']]],
@@ -105,4 +109,6 @@ var searchData=
   ['systemmodule_518',['SystemModule',['../classspk_1_1SystemModule.html#a4e69257a48d4e3f620310e0bfc1dea21',1,'spk::SystemModule']]],
   ['systemqueue_519',['systemQueue',['../classspk_1_1APIModule.html#a28b7825a839dddd7d90ccb960a50e809',1,'spk::APIModule']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
 ];

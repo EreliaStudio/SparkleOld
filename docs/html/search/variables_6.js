@@ -2,6 +2,7 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['y_594',['y',['../structspk_1_1IVector2.html#aefc7c3164247217231e53c0b75e21e3b',1,'spk::IVector2::y()'],['../structspk_1_1IVector3.html#a922affa5716cbf8401a21f7602035596',1,'spk::IVector3::y()']]]
 =======
   ['y_573',['y',['../structspk_1_1IVector2.html#aefc7c3164247217231e53c0b75e21e3b',1,'spk::IVector2::y()'],['../structspk_1_1IVector3.html#a922affa5716cbf8401a21f7602035596',1,'spk::IVector3::y()']]]
@@ -9,4 +10,7 @@ var searchData=
 =======
   ['y_575',['y',['../structspk_1_1IVector2.html#aefc7c3164247217231e53c0b75e21e3b',1,'spk::IVector2::y()'],['../structspk_1_1IVector3.html#a922affa5716cbf8401a21f7602035596',1,'spk::IVector3::y()']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+  ['y_573',['y',['../structspk_1_1IVector2.html#aefc7c3164247217231e53c0b75e21e3b',1,'spk::IVector2::y()'],['../structspk_1_1IVector3.html#a922affa5716cbf8401a21f7602035596',1,'spk::IVector3::y()']]]
+>>>>>>> 5095d1a (Update Doxygen)
 ];

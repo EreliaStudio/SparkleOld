@@ -1,7 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,231,32"/>
 <area shape="rect" id="node2" href="$classspk_1_1TimeMetrics.html" title="Class for recording time&#45;related metrics in the application." alt="" coords="279,5,413,32"/>
+=======
+<area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title="Singleton class template." alt="" coords="5,5,188,32"/>
+>>>>>>> 5095d1a (Update Doxygen)
 =======
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title="Singleton class template." alt="" coords="5,5,188,32"/>
 >>>>>>> 5095d1a (Update Doxygen)
