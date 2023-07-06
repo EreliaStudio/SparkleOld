@@ -60,7 +60,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="includes/data_structure/spk_data_buffer.hpp" line="35" column="1" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="5" bodyend="9"/>
+=======
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="35" column="1"/>
+>>>>>>> 4decf10 (Update Doxygen)
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>size_t</type>
@@ -156,7 +160,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="includes/data_structure/spk_data_buffer.hpp" line="69" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="11" bodyend="18"/>
+=======
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="69" column="6"/>
+>>>>>>> 4decf10 (Update Doxygen)
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1ad4eefec4799fb6b9d6251cca86ebfa04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,7 +178,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="includes/data_structure/spk_data_buffer.hpp" line="74" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="20" bodyend="26"/>
+=======
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="74" column="6"/>
+>>>>>>> 4decf10 (Update Doxygen)
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -184,7 +196,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
+<<<<<<< HEAD
         <location file="includes/data_structure/spk_data_buffer.hpp" line="79" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="28" bodyend="33"/>
+=======
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="79" column="6"/>
+>>>>>>> 4decf10 (Update Doxygen)
       </memberdef>
       <memberdef kind="function" id="classspk_1_1DataBuffer_1a62775fb5a5cc3ef25dd87d41976b978f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
