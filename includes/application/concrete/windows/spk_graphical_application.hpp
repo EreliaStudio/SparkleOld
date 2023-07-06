@@ -42,13 +42,16 @@ namespace spk
 		 */
 		void setupJobs()
 		{
+			addJob([&](){ _profilerModule->increaseRenderIPS();});
 			addJob([&](){ _APIModule->update(); });
 			addJob([&](){ _windowModule->clear(); });
 			addJob([&](){ _widgetModule->render(); });
 			addJob([&](){ _windowModule->render(); });
 
+			addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();});
 			addJob(L"Updater", [&](){ _systemModule->update(); });
 			addJob(L"Updater", [&](){ _timeModule->update(); });
+			addJob(L"Updater", [&](){ _profilerModule->update();});
 
 			addJob(L"Updater", [&](){ _windowModule->update(); });
 
