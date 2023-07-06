@@ -90,7 +90,8 @@ jobs:
           if [ "$CONTENT" != '' ]; then
             JSON_DATA="{
               \"title\": \"Missing Doxygen Documentation\",
-              \"body\": \"There is a set of documentation missing:\n$CONTENT\"
+              \"body\": \"There is a set of documentation missing:\n$CONTENT\",
+              \"tag\":\"Documentation\"
             }"
             echo $JSON_DATA  # Print JSON data to debug
             curl -X POST \
