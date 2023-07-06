@@ -23,7 +23,6 @@
 #include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
 
-
 #include "iostream/spk_iostream.hpp"
 
 #include "threading/spk_promise.hpp"
@@ -50,4 +49,6 @@
 #include "application/modules/spk_widget_module.hpp"
 
 #include "widget/spk_abstract_widget.hpp"
+
+#include "application/spk_application.hpp"
 

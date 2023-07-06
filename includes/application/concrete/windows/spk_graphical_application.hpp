@@ -8,6 +8,7 @@
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
 #include "application/modules/spk_system_module.hpp"
+#include "application/modules/spk_profiler_module.hpp"
 
 namespace spk
 {
@@ -29,6 +30,7 @@ namespace spk
 		spk::MouseModule *_mouseModule; ///< Mouse module instance.
 		spk::KeyboardModule *_keyboardModule; ///< Keyboard module instance.
 		spk::SystemModule *_systemModule; ///< System module instance.
+		spk::ProfilerModule *_profilerModule; ///< Profiler module instance.
 
 		spk::WidgetModule* _widgetModule; ///< Widget module instance.
 
@@ -40,13 +42,16 @@ namespace spk
 		 */
 		void setupJobs()
 		{
+			addJob([&](){ _profilerModule->increaseRenderIPS();});
 			addJob([&](){ _APIModule->update(); });
 			addJob([&](){ _windowModule->clear(); });
 			addJob([&](){ _widgetModule->render(); });
 			addJob([&](){ _windowModule->render(); });
 
+			addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();});
 			addJob(L"Updater", [&](){ _systemModule->update(); });
 			addJob(L"Updater", [&](){ _timeModule->update(); });
+			addJob(L"Updater", [&](){ _profilerModule->update();});
 
 			addJob(L"Updater", [&](){ _windowModule->update(); });
 
@@ -73,6 +78,7 @@ namespace spk
 			
 			_systemModule = new spk::SystemModule(_APIModule->systemQueue(), this);
 			_timeModule = new spk::TimeModule();
+			_profilerModule = new spk::ProfilerModule();
 			
 			_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, _APIModule);
 			
@@ -96,6 +102,7 @@ namespace spk
 			delete _mouseModule;
 			delete _keyboardModule;
 			delete _systemModule;
+			delete _profilerModule;
 
 			delete _widgetModule;
 		}
