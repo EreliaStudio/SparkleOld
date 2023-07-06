@@ -118,6 +118,7 @@
     <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
     <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
     <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
+    <member refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" kind="function"><name>addRootWidget</name></member>
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
   </compound>
   <compound refid="classspk_1_1WidgetModule_1_1CentralWidget" kind="class"><name>spk::WidgetModule::CentralWidget</name>

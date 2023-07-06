@@ -326,6 +326,63 @@
         </inbodydescription>
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="115" column="21" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="115" bodyend="118"/>
       </memberdef>
+      <memberdef kind="function" id="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TChildrenType</type>
+          </param>
+          <param>
+            <type>typename ...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>TChildrenType *</type>
+        <definition>TChildrenType* spk::Application::addRootWidget</definition>
+        <argsstring>(Args &amp;&amp;... p_args)</argsstring>
+        <name>addRootWidget</name>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+<para>Add a new widget inside the application, with the central widget as parent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TChildrenType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the children widget. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments for constructing the children widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for constructing the children widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the children widget. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="129" column="15" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="129" bodyend="137"/>
+      </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void spk::Application::resize</definition>
@@ -352,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="125" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="125" bodyend="129"/>
+        <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="145" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="145" bodyend="149"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -402,6 +459,7 @@
       <member refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" prot="public" virt="non-virtual"><scope>spk::Application</scope><name>AbstractApplication</name></member>
       <member refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" prot="protected" virt="non-virtual"><scope>spk::Application</scope><name>addJob</name></member>
       <member refid="classspk_1_1AbstractApplication_1a8bf373350bc5f46d625b44eb79e283fb" prot="protected" virt="non-virtual"><scope>spk::Application</scope><name>addJob</name></member>
+      <member refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" prot="public" virt="non-virtual"><scope>spk::Application</scope><name>addRootWidget</name></member>
       <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" prot="public" virt="non-virtual"><scope>spk::Application</scope><name>Application</name></member>
       <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" prot="public" virt="non-virtual"><scope>spk::Application</scope><name>Application</name></member>
       <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" prot="public" virt="non-virtual"><scope>spk::Application</scope><name>centralWidget</name></member>
