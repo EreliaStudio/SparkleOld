@@ -23,7 +23,6 @@ namespace spk
 	class Application : public spk::AbstractApplication
 	{
 	private:
-	
 		spk::APIModule *_APIModule; ///< API module instance.
 		spk::TimeModule *_timeModule; ///< Time module instance.
 		spk::WindowModule *_windowModule; ///< Window module instance.
@@ -34,6 +33,9 @@ namespace spk
 
 		spk::WidgetModule* _widgetModule; ///< Widget module instance.
 
+		std::vector<Contract> _renderContract; ///< Vector containing contract linked to render thread.
+		std::vector<Contract> _updateContract; ///< Vector containing contract linked to update thread.
+
 	protected:
 		/**
 		 * @brief Setup the application jobs.
@@ -42,26 +44,22 @@ namespace spk
 		 */
 		void setupJobs()
 		{
-			addJob([&](){ _profilerModule->increaseRenderIPS();});
-			addJob([&](){ _APIModule->update(); });
-			addJob([&](){ _windowModule->clear(); });
-			addJob([&](){ _widgetModule->render(); });
-			addJob([&](){ _windowModule->render(); });
+			_renderContract.emplace_back(addJob([&](){ _profilerModule->increaseRenderIPS(); }));
+			_renderContract.emplace_back(addJob([&](){ _APIModule->update(); }));
+			_renderContract.emplace_back(addJob([&](){ _windowModule->clear(); }));
+			_renderContract.emplace_back(addJob([&](){ _widgetModule->render(); }));
+			_renderContract.emplace_back(addJob([&](){ _windowModule->render(); }));
 
-			addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();});
-			addJob(L"Updater", [&](){ _systemModule->update(); });
-			addJob(L"Updater", [&](){ _timeModule->update(); });
-			addJob(L"Updater", [&](){ _profilerModule->update();});
-
-			addJob(L"Updater", [&](){ _windowModule->update(); });
-
-			addJob(L"Updater", [&](){ _mouseModule->update(); });
-			addJob(L"Updater", [&](){ _keyboardModule->update(); });
-
-			addJob(L"Updater", [&](){ _widgetModule->update(); });
-
-			addJob(L"Updater", [&](){ _mouseModule->updateMouse(); });
-			addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); });
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _systemModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _timeModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _windowModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _mouseModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _keyboardModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _widgetModule->update(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _mouseModule->updateMouse(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); }));
+			_updateContract.emplace_back(addJob(L"Updater", [&](){ _profilerModule->update(); }));
 
 		}
 
@@ -116,26 +114,6 @@ namespace spk
 		{
 			return (_widgetModule->centralWidget());
 		}
-
-		/**
-		 * @brief Add a new widget inside the application, with the central widget as parent.
-		 * 
-         * @tparam TChildrenType The type of the children widget.
-         * @tparam Args The types of the arguments for constructing the children widget.
-         * @param p_args The arguments for constructing the children widget.
-         * @return Pointer to the children widget.
-		 */
-		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addRootWidget(Args&& ... p_args)
-		{
-			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
-
-			_widgetModule->centralWidget()->addChild(result);
-			result->setDepth(depth() + 1);
-
-			return (result);
-		}
-
 
 		/**
 		 * @brief Resizes the application window and central widget.
