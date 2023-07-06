@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">   61</a></span>&#160;        <a class="code" href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">Application</a>(<span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">   61</a></span>&#160;        <a class="code" href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">Application</a>(<span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            _APIModule = <span class="keyword">new</span> <a class="code" href="classspk_1_1APIModule.html">spk::APIModule</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            _timeModule = <span class="keyword">new</span> <a class="code" href="classspk_1_1TimeModule.html">spk::TimeModule</a>();</div>
@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">return</span> (_widgetModule-&gt;<a class="code" href="classspk_1_1WidgetModule.html#ad36689c6e8037facf57a4cead84eb812">centralWidget</a>());</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">  106</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a>(<span class="keyword">const</span> <a class="code" href="classIVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">  106</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt;spk::Window&gt;::instance</a>()-&gt;setGeometry(p_size);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            _widgetModule-&gt;<a class="code" href="classspk_1_1WidgetModule.html#ad36689c6e8037facf57a4cead84eb812">centralWidget</a>()-&gt;<a class="code" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">setGeometry</a>(0, p_size);</div>
@@ -149,7 +149,6 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    };</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="ttc" id="aclassIVector2_html"><div class="ttname"><a href="classIVector2.html">IVector2&lt; int &gt;</a></div></div>
 <div class="ttc" id="aclassspk_1_1APIModule_html"><div class="ttname"><a href="classspk_1_1APIModule.html">spk::APIModule</a></div><div class="ttdoc">Class for managing the API interactions.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1APIModule_html_a61d09040e6f32afac48dded1b0c6d70f"><div class="ttname"><a href="classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f">spk::APIModule::mouseQueue</a></div><div class="ttdeci">spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp; mouseQueue()</div><div class="ttdoc">Returns the thread-safe queue for mouse system messages.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:52</div></div>
 <div class="ttc" id="aclassspk_1_1APIModule_html_a775ee5f6da60b57849296fe60c189487"><div class="ttname"><a href="classspk_1_1APIModule.html#a775ee5f6da60b57849296fe60c189487">spk::APIModule::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the API module.</div></div>
@@ -180,6 +179,7 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1WindowModule_html"><div class="ttname"><a href="classspk_1_1WindowModule.html">spk::WindowModule</a></div><div class="ttdoc">Class for managing the application window.</div><div class="ttdef"><b>Definition:</b> spk_window_module.hpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1WindowModule_html_a0ac729d572ab4a20f60c346c19f1c460"><div class="ttname"><a href="classspk_1_1WindowModule.html#a0ac729d572ab4a20f60c346c19f1c460">spk::WindowModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the window.</div></div>
 <div class="ttc" id="aclassspk_1_1WindowModule_html_aa56d1756ecd104726d1e2e87a189815b"><div class="ttname"><a href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">spk::WindowModule::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the window.</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

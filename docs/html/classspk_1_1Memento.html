@@ -74,34 +74,140 @@ $(function() {
 <div class="title">spk::Memento Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class representing a memento in the <a class="el" href="classspk_1_1Memento.html" title="A class representing a memento in the Memento design pattern.">Memento</a> design pattern.  
+ <a href="classspk_1_1Memento.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__memento_8hpp_source.html">spk_memento.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::Memento:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Memento__inherit__graph.png" border="0" usemap="#aspk_1_1Memento_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1Memento_inherit__map" id="aspk_1_1Memento_inherit__map">
-<area shape="rect" title=" " alt="" coords="25,5,139,32"/>
-<area shape="rect" href="structspk_1_1StandardType.html" title=" " alt="" coords="5,80,159,121"/>
+<area shape="rect" title="A class representing a memento in the Memento design pattern." alt="" coords="25,5,139,32"/>
+<area shape="rect" href="structspk_1_1StandardType.html" title="A class template for standard layout types, derived from Memento." alt="" coords="5,80,159,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a4bc44b5f4cf27ca556fe08eee841918b"><td class="memItemLeft" align="right" valign="top"><a id="a4bc44b5f4cf27ca556fe08eee841918b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Snapshot</b> = <a class="el" href="classspk_1_1DataBuffer.html">spk::DataBuffer</a></td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b">Snapshot</a> = <a class="el" href="classspk_1_1DataBuffer.html">spk::DataBuffer</a></td></tr>
+<tr class="memdesc:a4bc44b5f4cf27ca556fe08eee841918b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data container used for storing snapshot datas. <br /></td></tr>
 <tr class="separator:a4bc44b5f4cf27ca556fe08eee841918b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f12af3b10f86024f5ad641737db2670"><td class="memItemLeft" align="right" valign="top"><a id="a7f12af3b10f86024f5ad641737db2670"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> ()</td></tr>
+<tr class="memitem:a7f12af3b10f86024f5ad641737db2670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Memento.html#a7f12af3b10f86024f5ad641737db2670">save</a> ()</td></tr>
+<tr class="memdesc:a7f12af3b10f86024f5ad641737db2670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the current state.  <a href="classspk_1_1Memento.html#a7f12af3b10f86024f5ad641737db2670">More...</a><br /></td></tr>
 <tr class="separator:a7f12af3b10f86024f5ad641737db2670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c527cb980acf2a96a213d17eddcd316"><td class="memItemLeft" align="right" valign="top"><a id="a2c527cb980acf2a96a213d17eddcd316"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>undo</b> ()</td></tr>
+<tr class="memitem:a2c527cb980acf2a96a213d17eddcd316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Memento.html#a2c527cb980acf2a96a213d17eddcd316">undo</a> ()</td></tr>
+<tr class="memdesc:a2c527cb980acf2a96a213d17eddcd316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undo the last operation.  <a href="classspk_1_1Memento.html#a2c527cb980acf2a96a213d17eddcd316">More...</a><br /></td></tr>
 <tr class="separator:a2c527cb980acf2a96a213d17eddcd316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc5b23d29f89d6b525f0addbec8ea1f1"><td class="memItemLeft" align="right" valign="top"><a id="acc5b23d29f89d6b525f0addbec8ea1f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>redo</b> ()</td></tr>
+<tr class="memitem:acc5b23d29f89d6b525f0addbec8ea1f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Memento.html#acc5b23d29f89d6b525f0addbec8ea1f1">redo</a> ()</td></tr>
+<tr class="memdesc:acc5b23d29f89d6b525f0addbec8ea1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redo the last undone operation.  <a href="classspk_1_1Memento.html#acc5b23d29f89d6b525f0addbec8ea1f1">More...</a><br /></td></tr>
 <tr class="separator:acc5b23d29f89d6b525f0addbec8ea1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class representing a memento in the <a class="el" href="classspk_1_1Memento.html" title="A class representing a memento in the Memento design pattern.">Memento</a> design pattern. </p>
+<p>This class is used to store the state of an object so that it can be restored later. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acc5b23d29f89d6b525f0addbec8ea1f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5b23d29f89d6b525f0addbec8ea1f1">&#9670;&nbsp;</a></span>redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Memento::redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Redo the last undone operation. </p>
+<p>This function redoes the last undone operation and restores the next state.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If there are no more snapshots to redo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7f12af3b10f86024f5ad641737db2670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f12af3b10f86024f5ad641737db2670">&#9670;&nbsp;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Memento::save </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save the current state. </p>
+<p>This function saves the current state into a snapshot and stores it in the list. </p>
+
+</div>
+</div>
+<a id="a2c527cb980acf2a96a213d17eddcd316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c527cb980acf2a96a213d17eddcd316">&#9670;&nbsp;</a></span>undo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Memento::undo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Undo the last operation. </p>
+<p>This function undoes the last operation and restores the previous state.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If there are no more snapshots to undo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/design_pattern/<a class="el" href="spk__memento_8hpp_source.html">spk_memento.hpp</a></li>
 </ul>

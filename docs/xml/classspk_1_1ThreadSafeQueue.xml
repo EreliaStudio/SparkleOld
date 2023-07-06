@@ -17,6 +17,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Mutex for protecting the access to the queue. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -30,6 +31,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Mutex for blocking thread synchronization. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -43,6 +45,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The underlying deque container storing the items in the queue. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -56,6 +59,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Condition variable for blocking thread synchronization. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_238',['x',['../structspk_1_1IVector2_xC2_xB2.html#afb6eae684c5a81307ab094c42fa37b1b',1,'spk::IVector2²']]]
+  ['x_255',['x',['../structspk_1_1IVector2.html#a7aef6e160a85e33668c18c5e743127ef',1,'spk::IVector2::x()'],['../structspk_1_1IVector3.html#a147778b8b9736f2edb095d0102d48d43',1,'spk::IVector3::x()']]]
 ];

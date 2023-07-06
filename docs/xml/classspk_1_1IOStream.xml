@@ -12,6 +12,7 @@
         <argsstring></argsstring>
         <name>buffer</name>
         <briefdescription>
+<para>Buffer instance associated with this output stream. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

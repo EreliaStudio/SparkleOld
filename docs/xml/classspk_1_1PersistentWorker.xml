@@ -7,7 +7,7 @@
     <includes refid="spk__persistent__worker_8hpp" local="no">spk_persistent_worker.hpp</includes>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" prot="public" static="no">
-        <type>ContractProvider::Callback</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">ContractProvider::Callback</ref></type>
         <definition>spk::PersistentWorker::Job</definition>
         <argsstring></argsstring>
         <name>Job</name>
@@ -24,7 +24,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" prot="private" static="no" mutable="no">
-        <type>CallbackContainer</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref></type>
         <definition>CallbackContainer spk::PersistentWorker::_jobs</definition>
         <argsstring></argsstring>
         <name>_jobs</name>

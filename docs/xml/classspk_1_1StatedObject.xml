@@ -24,7 +24,7 @@
         <location file="includes/design_pattern/spk_stated_object.hpp" line="20" column="16" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1StatedObject_1a6aa924dee230c4a02d467e7ce937ddf8" prot="private" static="no" mutable="no">
-        <type>std::map&lt; TState, ContractProvider::CallbackContainer &gt;</type>
+        <type>std::map&lt; TState, <ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">ContractProvider::CallbackContainer</ref> &gt;</type>
         <definition>std::map&lt;TState, ContractProvider::CallbackContainer&gt; spk::StatedObject&lt; TState &gt;::_callbacks</definition>
         <argsstring></argsstring>
         <name>_callbacks</name>
@@ -76,7 +76,7 @@
           <declname>p_state</declname>
         </param>
         <param>
-          <type>Callback</type>
+          <type><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref></type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>

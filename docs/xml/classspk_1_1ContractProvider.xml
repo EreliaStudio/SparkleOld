@@ -17,6 +17,7 @@
         <argsstring></argsstring>
         <name>Callback</name>
         <briefdescription>
+<para>Type of data representing a callback function. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -25,11 +26,12 @@
         <location file="includes/design_pattern/spk_contract_provider.hpp" line="17" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" static="no">
-        <type>std::deque&lt; Callback &gt;</type>
+        <type>std::deque&lt; <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &gt;</type>
         <definition>using spk::ContractProvider::CallbackContainer =  std::deque&lt;Callback&gt;</definition>
         <argsstring></argsstring>
         <name>CallbackContainer</name>
         <briefdescription>
+<para>Type of container for storing callback functions. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -45,11 +47,11 @@
         <argsstring>(CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</argsstring>
         <name>subscribe</name>
         <param>
-          <type>CallbackContainer &amp;</type>
+          <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref> &amp;</type>
           <declname>p_callbackOwner</declname>
         </param>
         <param>
-          <type>const Callback &amp;</type>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>

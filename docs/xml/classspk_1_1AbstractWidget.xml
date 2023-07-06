@@ -66,7 +66,7 @@
         <location file="includes/widget/spk_abstract_widget.hpp" line="28" column="7" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1a28c2bb54debb23f0268baee69fecffc1" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::AbstractWidget::_anchor</definition>
         <argsstring></argsstring>
         <name>_anchor</name>
@@ -79,7 +79,7 @@
         <location file="includes/widget/spk_abstract_widget.hpp" line="29" column="17" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1AbstractWidget_1a98a4201cf756cb9bbf7f618ce11f38cb" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::AbstractWidget::_size</definition>
         <argsstring></argsstring>
         <name>_size</name>
@@ -273,11 +273,11 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor, const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -314,7 +314,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor)</argsstring>
         <name>place</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <briefdescription>
@@ -343,7 +343,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_anchor)</argsstring>
         <name>move</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_anchor</declname>
         </param>
         <briefdescription>
@@ -372,7 +372,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -510,7 +510,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_point)</argsstring>
         <name>isPointed</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>

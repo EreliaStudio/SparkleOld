@@ -47,17 +47,13 @@ void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a75768d4042460537d331f670a798c
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}\label{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}} 
-std\+::mutex {\bfseries mux\+Queue}
+std\+::mutex \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}{mux\+Queue}}
 \item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}\label{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}} 
-std\+::mutex {\bfseries mux\+Blocking}
+std\+::mutex \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}{mux\+Blocking}}
 \item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}\label{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}} 
-std\+::deque$<$ T $>$ {\bfseries \+\_\+content}
+std\+::deque$<$ T $>$ \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}{\+\_\+content}}
 \item 
-\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}\label{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}} 
-std\+::condition\+\_\+variable {\bfseries cv\+Blocking}
+std\+::condition\+\_\+variable \mbox{\hyperlink{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}{cv\+Blocking}}
 \end{DoxyCompactItemize}
 
 
@@ -321,6 +317,37 @@ void \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}
 Wait for the queue to become non-\/empty. 
 
 This function waits until the queue becomes non-\/empty. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}\label{classspk_1_1ThreadSafeQueue_aef0eb26c9d4c8bea6249120a5a674737}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!\_content@{\_content}}
+\index{\_content@{\_content}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_content}{\_content}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::deque$<$T$>$ \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::\+\_\+content\hspace{0.3cm}{\ttfamily [protected]}}
+
+The underlying deque container storing the items in the queue. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}\label{classspk_1_1ThreadSafeQueue_af85dcfbf85ff17055581432602a3fca2}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!cvBlocking@{cvBlocking}}
+\index{cvBlocking@{cvBlocking}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cvBlocking}{cvBlocking}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::cv\+Blocking\hspace{0.3cm}{\ttfamily [protected]}}
+
+Condition variable for blocking thread synchronization. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}\label{classspk_1_1ThreadSafeQueue_a4c8b049876a04dcc317169d7f5147e3c}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!muxBlocking@{muxBlocking}}
+\index{muxBlocking@{muxBlocking}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{muxBlocking}{muxBlocking}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::mux\+Blocking\hspace{0.3cm}{\ttfamily [protected]}}
+
+Mutex for blocking thread synchronization. \mbox{\Hypertarget{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}\label{classspk_1_1ThreadSafeQueue_ad0a76bf1be9b19a1232a06f6ced62d88}} 
+\index{spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}!muxQueue@{muxQueue}}
+\index{muxQueue@{muxQueue}!spk::ThreadSafeQueue$<$ T $>$@{spk::ThreadSafeQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{muxQueue}{muxQueue}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ T $>$\+::mux\+Queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+Mutex for protecting the access to the queue. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

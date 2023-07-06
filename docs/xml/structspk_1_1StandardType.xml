@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="structspk_1_1StandardType" kind="struct" language="C++" prot="public">
+  <compounddef id="structspk_1_1StandardType" kind="class" language="C++" prot="public">
     <compoundname>spk::StandardType</compoundname>
     <basecompoundref refid="classspk_1_1Memento" prot="public" virt="non-virtual">spk::Memento</basecompoundref>
+    <includes refid="spk__memento_8hpp" local="no">spk_memento.hpp</includes>
     <templateparamlist>
       <param>
         <type>typename TType</type>
@@ -19,28 +20,34 @@
         <argsstring></argsstring>
         <name>_value</name>
         <briefdescription>
+<para>The value of the standard layout type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="57" column="7" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="57" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="111" column="7" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="111" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
-        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref></type>
+        <type><ref refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" kindref="member">Snapshot</ref></type>
         <definition>Snapshot spk::StandardType&lt; TType, typename &gt;::_onSave</definition>
         <argsstring>()</argsstring>
         <name>_onSave</name>
         <reimplements refid="classspk_1_1Memento_1a491ab5809b78d025351dd71d00aa5983">_onSave</reimplements>
         <briefdescription>
+<para>Save the current state into a snapshot. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function saves the current value into a snapshot.</para>
+<para><simplesect kind="return"><para>A snapshot representing the current value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="59" column="10" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="59" bodyend="66"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="120" column="10" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="120" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -49,16 +56,28 @@
         <name>_onLoad</name>
         <reimplements refid="classspk_1_1Memento_1a721b3cee608af0aa4a50327b6545ed3a">_onLoad</reimplements>
         <param>
-          <type>const <ref refid="classspk_1_1DataBuffer" kindref="compound">Snapshot</ref> &amp;</type>
+          <type>const <ref refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" kindref="member">Snapshot</ref> &amp;</type>
           <declname>p_snapshot</declname>
         </param>
         <briefdescription>
+<para>Load a state from a snapshot. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function loads a value from a snapshot.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_snapshot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The snapshot to load the value from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="68" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="68" bodyend="71"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="136" column="6" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="136" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a64b8eb651319f881834a6534f4c37236" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -66,12 +85,14 @@
         <argsstring>()</argsstring>
         <name>StandardType</name>
         <briefdescription>
+<para>Default constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor initializes the value to its default state. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="73" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="73" bodyend="77"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="146" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="146" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a764d4c6e44e84b4c34a5216279afbecf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -83,12 +104,24 @@
           <declname>p_value</declname>
         </param>
         <briefdescription>
+<para>Parameterized constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>This constructor initializes the value with a given value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="79" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="79" bodyend="83"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="157" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="157" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a4cfaaa7966d8cde38e3b9a37e96b296a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structspk_1_1StandardType" kindref="compound">StandardType</ref> &amp;</type>
@@ -100,12 +133,26 @@
           <declname>p_value</declname>
         </param>
         <briefdescription>
+<para>Assignment operator. </para>
         </briefdescription>
         <detaileddescription>
+<para>This operator assigns a new value to the object and returns a reference to the object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the object. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="85" column="14" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="85" bodyend="89"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="169" column="14" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="169" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a1c1cd67f446d342eeb2a21a3971400d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -113,12 +160,17 @@
         <argsstring>()</argsstring>
         <name>operator TType &amp;</name>
         <briefdescription>
+<para>Type conversion operator. </para>
         </briefdescription>
         <detaileddescription>
+<para>This operator returns a reference to the value.</para>
+<para><simplesect kind="return"><para>A reference to the value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="91" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="91" bodyend="94"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="182" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="182" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1StandardType_1a23e80e70d1a0bfd829ec44c2599b72d6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -126,17 +178,34 @@
         <argsstring>() const</argsstring>
         <name>operator const TType &amp;</name>
         <briefdescription>
+<para>Type conversion operator. </para>
         </briefdescription>
         <detaileddescription>
+<para>This operator returns a const reference to the value.</para>
+<para><simplesect kind="return"><para>A const reference to the value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_memento.hpp" line="96" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="96" bodyend="99"/>
+        <location file="includes/design_pattern/spk_memento.hpp" line="194" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="194" bodyend="197"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>A class template for standard layout types, derived from <ref refid="classspk_1_1Memento" kindref="compound">Memento</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class is used to save and load the state of a standard layout type.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the standard layout type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -162,7 +231,7 @@
         <link refid="classspk_1_1Memento"/>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_memento.hpp" line="55" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="56" bodyend="100"/>
+    <location file="includes/design_pattern/spk_memento.hpp" line="109" column="1" bodyfile="includes/design_pattern/spk_memento.hpp" bodystart="110" bodyend="198"/>
     <listofallmembers>
       <member refid="structspk_1_1StandardType_1a636a2177a8f8b1d8e15f8aa25054c6cd" prot="public" virt="virtual"><scope>spk::StandardType</scope><name>_onLoad</name></member>
       <member refid="structspk_1_1StandardType_1a948fa5a2189cb64c99148a9d357379ef" prot="public" virt="virtual"><scope>spk::StandardType</scope><name>_onSave</name></member>

@@ -11,7 +11,7 @@
     </templateparamlist>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Promise_1ae2f938ba28a14eb34998925c73b0004d" prot="private" static="no" mutable="no">
-        <type>ContractProvider::CallbackContainer</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">ContractProvider::CallbackContainer</ref></type>
         <definition>ContractProvider::CallbackContainer spk::Promise&lt; TType &gt;::_callbackContainer</definition>
         <argsstring></argsstring>
         <name>_callbackContainer</name>
@@ -110,7 +110,7 @@
         <argsstring>(const Callback &amp;p_callback)</argsstring>
         <name>subscribe</name>
         <param>
-          <type>const Callback &amp;</type>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>

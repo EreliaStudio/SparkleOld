@@ -120,7 +120,7 @@
         <location file="includes/input/spk_mouse.hpp" line="37" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Mouse_1aceda75123868e79a169b84773b586ccf" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
         <definition>Vector2Int spk::Mouse::_position</definition>
         <argsstring></argsstring>
         <name>_position</name>
@@ -134,7 +134,7 @@
         <location file="includes/input/spk_mouse.hpp" line="39" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Mouse_1ad79e3978ff3d3f7d4af7335ba119febd" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
         <definition>Vector2Int spk::Mouse::_deltaPosition</definition>
         <argsstring></argsstring>
         <name>_deltaPosition</name>
@@ -148,7 +148,7 @@
         <location file="includes/input/spk_mouse.hpp" line="40" column="12" bodyfile="includes/input/spk_mouse.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1Mouse_1a7d81427b28a486d0e50ff408c6d82b42" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref></type>
         <definition>Vector2Int spk::Mouse::_wheel</definition>
         <argsstring></argsstring>
         <name>_wheel</name>
@@ -183,7 +183,7 @@
         <argsstring>(const Vector2Int &amp;p_newPosition)</argsstring>
         <name>setMousePosition</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
           <declname>p_newPosition</declname>
         </param>
         <briefdescription>
@@ -267,7 +267,7 @@
         <argsstring>(const Vector2Int &amp;p_delta)</argsstring>
         <name>editWheelPosition</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
           <declname>p_delta</declname>
         </param>
         <briefdescription>
@@ -311,7 +311,7 @@
         <argsstring>(const Vector2Int &amp;p_position)</argsstring>
         <name>place</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
           <declname>p_position</declname>
         </param>
         <briefdescription>
@@ -364,7 +364,7 @@
         <location file="includes/input/spk_mouse.hpp" line="96" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="96" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1ac3985fa648d414ec9f8e7000e2c35c6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
         <definition>const Vector2Int&amp; spk::Mouse::position</definition>
         <argsstring>() const</argsstring>
         <name>position</name>
@@ -381,7 +381,7 @@
         <location file="includes/input/spk_mouse.hpp" line="105" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="105" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a586de041eeb18225bece40c602fabe4f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
         <definition>const Vector2Int&amp; spk::Mouse::deltaPosition</definition>
         <argsstring>() const</argsstring>
         <name>deltaPosition</name>
@@ -398,7 +398,7 @@
         <location file="includes/input/spk_mouse.hpp" line="111" column="18" bodyfile="includes/input/spk_mouse.hpp" bodystart="111" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a5430080e4319c4d48d7b482f6bad7994" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classIVector2" kindref="compound">Vector2Int</ref> &amp;</type>
+        <type>const <ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref> &amp;</type>
         <definition>const Vector2Int&amp; spk::Mouse::wheel</definition>
         <argsstring>() const</argsstring>
         <name>wheel</name>

@@ -102,7 +102,7 @@ Collaboration diagram for spk::PersistentWorker:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a0e26b08e8a01429bd5f17443021125d2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">Job</a> = ContractProvider::Callback</td></tr>
+<tr class="memitem:a0e26b08e8a01429bd5f17443021125d2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">Job</a> = <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">ContractProvider::Callback</a></td></tr>
 <tr class="memdesc:a0e26b08e8a01429bd5f17443021125d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of job to be executed by the worker.  <a href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">More...</a><br /></td></tr>
 <tr class="separator:a0e26b08e8a01429bd5f17443021125d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classspk_1_1Thread"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1Thread')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1Thread.html">spk::Thread</a></td></tr>
@@ -113,10 +113,12 @@ Public Types</h2></td></tr>
 <tr class="separator:acc625f78afb482c29338759d4b959af6 inherit pub_types_classspk_1_1Thread"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
 <tr class="memitem:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a3ac086eee3bcd57992944a3d146eca1f"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Callback</b> = std::function&lt; void()&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> = std::function&lt; void()&gt;</td></tr>
+<tr class="memdesc:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of data representing a callback function. <br /></td></tr>
 <tr class="separator:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a8ad7ce7f08974f54c4168b30fe3d7d21"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>CallbackContainer</b> = std::deque&lt; Callback &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> = std::deque&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
+<tr class="memdesc:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
 <tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -173,7 +175,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
-<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">subscribe</a> (CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</td></tr>
+<tr class="memitem:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
 <tr class="memdesc:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#afb4adba519929353876b0192ea9a8aee">More...</a><br /></td></tr>
 <tr class="separator:afb4adba519929353876b0192ea9a8aee inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

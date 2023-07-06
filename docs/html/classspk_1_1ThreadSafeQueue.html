@@ -133,17 +133,13 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ad0a76bf1be9b19a1232a06f6ced62d88"><td class="memItemLeft" align="right" valign="top"><a id="ad0a76bf1be9b19a1232a06f6ced62d88"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>muxQueue</b></td></tr>
+<tr class="memitem:ad0a76bf1be9b19a1232a06f6ced62d88"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#ad0a76bf1be9b19a1232a06f6ced62d88">muxQueue</a></td></tr>
 <tr class="separator:ad0a76bf1be9b19a1232a06f6ced62d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c8b049876a04dcc317169d7f5147e3c"><td class="memItemLeft" align="right" valign="top"><a id="a4c8b049876a04dcc317169d7f5147e3c"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>muxBlocking</b></td></tr>
+<tr class="memitem:a4c8b049876a04dcc317169d7f5147e3c"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#a4c8b049876a04dcc317169d7f5147e3c">muxBlocking</a></td></tr>
 <tr class="separator:a4c8b049876a04dcc317169d7f5147e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef0eb26c9d4c8bea6249120a5a674737"><td class="memItemLeft" align="right" valign="top"><a id="aef0eb26c9d4c8bea6249120a5a674737"></a>
-std::deque&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_content</b></td></tr>
+<tr class="memitem:aef0eb26c9d4c8bea6249120a5a674737"><td class="memItemLeft" align="right" valign="top">std::deque&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737">_content</a></td></tr>
 <tr class="separator:aef0eb26c9d4c8bea6249120a5a674737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af85dcfbf85ff17055581432602a3fca2"><td class="memItemLeft" align="right" valign="top"><a id="af85dcfbf85ff17055581432602a3fca2"></a>
-std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><b>cvBlocking</b></td></tr>
+<tr class="memitem:af85dcfbf85ff17055581432602a3fca2"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ThreadSafeQueue.html#af85dcfbf85ff17055581432602a3fca2">cvBlocking</a></td></tr>
 <tr class="separator:af85dcfbf85ff17055581432602a3fca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -668,6 +664,107 @@ template&lt;typename T &gt; </div>
 
 <p>Wait for the queue to become non-empty. </p>
 <p>This function waits until the queue becomes non-empty. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aef0eb26c9d4c8bea6249120a5a674737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0eb26c9d4c8bea6249120a5a674737">&#9670;&nbsp;</a></span>_content</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;T&gt; <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::_content</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The underlying deque container storing the items in the queue. </p>
+
+</div>
+</div>
+<a id="af85dcfbf85ff17055581432602a3fca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85dcfbf85ff17055581432602a3fca2">&#9670;&nbsp;</a></span>cvBlocking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::cvBlocking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Condition variable for blocking thread synchronization. </p>
+
+</div>
+</div>
+<a id="a4c8b049876a04dcc317169d7f5147e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8b049876a04dcc317169d7f5147e3c">&#9670;&nbsp;</a></span>muxBlocking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::muxBlocking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Mutex for blocking thread synchronization. </p>
+
+</div>
+</div>
+<a id="ad0a76bf1be9b19a1232a06f6ced62d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a76bf1be9b19a1232a06f6ced62d88">&#9670;&nbsp;</a></span>muxQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex <a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; T &gt;::muxQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Mutex for protecting the access to the queue. </p>
 
 </div>
 </div>

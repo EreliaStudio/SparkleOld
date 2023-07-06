@@ -2,6 +2,15 @@
 \label{classspk_1_1Memento}\index{spk::Memento@{spk::Memento}}
 
 
+A class representing a memento in the \mbox{\hyperlink{classspk_1_1Memento}{Memento}} design pattern.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+memento.\+hpp$>$}
+
+
+
 Inheritance diagram for spk\+::Memento\+:
 \nopagebreak
 \begin{figure}[H]
@@ -14,20 +23,69 @@ Inheritance diagram for spk\+::Memento\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}\label{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}} 
-using {\bfseries Snapshot} = \mbox{\hyperlink{classspk_1_1DataBuffer}{spk\+::\+Data\+Buffer}}
-\end{DoxyCompactItemize}
+using \mbox{\hyperlink{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}{Snapshot}} = \mbox{\hyperlink{classspk_1_1DataBuffer}{spk\+::\+Data\+Buffer}}
+\begin{DoxyCompactList}\small\item\em The data container used for storing snapshot datas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classspk_1_1Memento_a7f12af3b10f86024f5ad641737db2670}\label{classspk_1_1Memento_a7f12af3b10f86024f5ad641737db2670}} 
-void {\bfseries save} ()
-\item 
-\mbox{\Hypertarget{classspk_1_1Memento_a2c527cb980acf2a96a213d17eddcd316}\label{classspk_1_1Memento_a2c527cb980acf2a96a213d17eddcd316}} 
-void {\bfseries undo} ()
-\item 
+void \mbox{\hyperlink{classspk_1_1Memento_a7f12af3b10f86024f5ad641737db2670}{save}} ()
+\begin{DoxyCompactList}\small\item\em Save the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Memento_a2c527cb980acf2a96a213d17eddcd316}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Undo the last operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Memento_acc5b23d29f89d6b525f0addbec8ea1f1}{redo}} ()
+\begin{DoxyCompactList}\small\item\em Redo the last undone operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a memento in the \mbox{\hyperlink{classspk_1_1Memento}{Memento}} design pattern. 
+
+This class is used to store the state of an object so that it can be restored later. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1Memento_acc5b23d29f89d6b525f0addbec8ea1f1}\label{classspk_1_1Memento_acc5b23d29f89d6b525f0addbec8ea1f1}} 
-void {\bfseries redo} ()
-\end{DoxyCompactItemize}
+\index{spk::Memento@{spk::Memento}!redo@{redo}}
+\index{redo@{redo}!spk::Memento@{spk::Memento}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void spk\+::\+Memento\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Redo the last undone operation. 
+
+This function redoes the last undone operation and restores the next state.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If there are no more snapshots to redo. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Memento_a7f12af3b10f86024f5ad641737db2670}\label{classspk_1_1Memento_a7f12af3b10f86024f5ad641737db2670}} 
+\index{spk::Memento@{spk::Memento}!save@{save}}
+\index{save@{save}!spk::Memento@{spk::Memento}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void spk\+::\+Memento\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save the current state. 
+
+This function saves the current state into a snapshot and stores it in the list. \mbox{\Hypertarget{classspk_1_1Memento_a2c527cb980acf2a96a213d17eddcd316}\label{classspk_1_1Memento_a2c527cb980acf2a96a213d17eddcd316}} 
+\index{spk::Memento@{spk::Memento}!undo@{undo}}
+\index{undo@{undo}!spk::Memento@{spk::Memento}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void spk\+::\+Memento\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Undo the last operation. 
+
+This function undoes the last operation and restores the previous state.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & If there are no more snapshots to undo. \\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -29,6 +29,7 @@
         <name>_isOriginal</name>
         <initializer>= true</initializer>
         <briefdescription>
+<para>Indicates whether the contract is the original one or if it has been moved or delegated. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -37,11 +38,12 @@
         <location file="includes/design_pattern/spk_contract_provider.hpp" line="28" column="6" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" prot="private" static="no" mutable="no">
-        <type>CallbackContainer &amp;</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref> &amp;</type>
         <definition>CallbackContainer&amp; spk::ContractProvider::Contract::_callbackOwner</definition>
         <argsstring></argsstring>
         <name>_callbackOwner</name>
         <briefdescription>
+<para>Reference to the container that stores the callback. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -50,11 +52,12 @@
         <location file="includes/design_pattern/spk_contract_provider.hpp" line="29" column="19" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" prot="private" static="no" mutable="no">
-        <type>Callback &amp;</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
         <definition>Callback&amp; spk::ContractProvider::Contract::_callback</definition>
         <argsstring></argsstring>
         <name>_callback</name>
         <briefdescription>
+<para>Reference to the callback function. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -70,11 +73,11 @@
         <argsstring>(CallbackContainer &amp;p_callbackOwner, Callback &amp;p_callback)</argsstring>
         <name>Contract</name>
         <param>
-          <type>CallbackContainer &amp;</type>
+          <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref> &amp;</type>
           <declname>p_callbackOwner</declname>
         </param>
         <param>
-          <type>Callback &amp;</type>
+          <type><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>
@@ -226,7 +229,7 @@
         <argsstring>(const Callback &amp;p_callback)</argsstring>
         <name>edit</name>
         <param>
-          <type>const Callback &amp;</type>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>

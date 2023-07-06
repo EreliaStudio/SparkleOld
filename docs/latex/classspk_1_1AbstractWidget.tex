@@ -38,13 +38,13 @@ virtual \mbox{\hyperlink{classspk_1_1AbstractWidget_acaf7b700c9f4f67341dc5156287
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} object. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename TChildren\+Type , typename ... Args$>$ }\\TChildren\+Type $\ast$ \mbox{\hyperlink{classspk_1_1AbstractWidget_a439da5239de7fa7980bb697e9e114818}{add\+Children\+Widget}} (Args \&\&... p\+\_\+args)
 \begin{DoxyCompactList}\small\item\em Add a children widget to this widget. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}{set\+Geometry}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor, const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a5e428dc19c69b3fa7686df9c7ccf06cf}{set\+Geometry}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor, const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Set the geometry of the widget. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}{place}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a12a3c901e7b5b707064eafccc6f64115}{place}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
 \begin{DoxyCompactList}\small\item\em Place the widget at a specific anchor position. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}{move}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_ab5cdc32c7a1f9a2cda7812182618000d}{move}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+anchor)
 \begin{DoxyCompactList}\small\item\em Move the widget by a specific amount. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}{resize}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+void \mbox{\hyperlink{classspk_1_1AbstractWidget_a2059b3aeb3f7ca0290ed70c146a42298}{resize}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Resize the widget to a new size. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1AbstractWidget_a2c407ce05d65cdbe37ecc71f4a8e58d6}{sort\+Childrens\+By\+Depth}} ()
 \begin{DoxyCompactList}\small\item\em Sort the children widgets by their depth value. \end{DoxyCompactList}\item 
@@ -56,7 +56,7 @@ constexpr const std\+::wstring \& \mbox{\hyperlink{classspk_1_1AbstractWidget_a7
 \begin{DoxyCompactList}\small\item\em Get the name of the widget. \end{DoxyCompactList}\item 
 constexpr const float \& \mbox{\hyperlink{classspk_1_1AbstractWidget_a734ec4e5f1759dc493e1df73ae973a38}{depth}} () const
 \begin{DoxyCompactList}\small\item\em Get the depth value of the widget. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}{is\+Pointed}} (const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+point)
+bool \mbox{\hyperlink{classspk_1_1AbstractWidget_ad1fd1cbebefe93c23a9d1b7b00872a81}{is\+Pointed}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+point)
 \begin{DoxyCompactList}\small\item\em Check if a point is inside the widget\textquotesingle{}s boundaries. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -150,7 +150,7 @@ The depth value of the widget.
 \index{spk::AbstractWidget@{spk::AbstractWidget}!isPointed@{isPointed}}
 \index{isPointed@{isPointed}!spk::AbstractWidget@{spk::AbstractWidget}}
 \doxysubsubsection{\texorpdfstring{isPointed()}{isPointed()}}
-{\footnotesize\ttfamily bool spk\+::\+Abstract\+Widget\+::is\+Pointed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+point }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool spk\+::\+Abstract\+Widget\+::is\+Pointed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+point }\end{DoxyParamCaption})}
 
 
 
@@ -170,7 +170,7 @@ True if the point is inside the widget, false otherwise.
 \index{spk::AbstractWidget@{spk::AbstractWidget}!move@{move}}
 \index{move@{move}!spk::AbstractWidget@{spk::AbstractWidget}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
 
 
 
@@ -202,7 +202,7 @@ The name of the widget.
 \index{spk::AbstractWidget@{spk::AbstractWidget}!place@{place}}
 \index{place@{place}!spk::AbstractWidget@{spk::AbstractWidget}}
 \doxysubsubsection{\texorpdfstring{place()}{place()}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor }\end{DoxyParamCaption})}
 
 
 
@@ -236,7 +236,7 @@ This function renames the widget with a new name.
 \index{spk::AbstractWidget@{spk::AbstractWidget}!resize@{resize}}
 \index{resize@{resize}!spk::AbstractWidget@{spk::AbstractWidget}}
 \doxysubsubsection{\texorpdfstring{resize()}{resize()}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
 
 
 
@@ -270,7 +270,7 @@ This function sets the depth value of the widget. Widgets with higher depth valu
 \index{spk::AbstractWidget@{spk::AbstractWidget}!setGeometry@{setGeometry}}
 \index{setGeometry@{setGeometry}!spk::AbstractWidget@{spk::AbstractWidget}}
 \doxysubsubsection{\texorpdfstring{setGeometry()}{setGeometry()}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::set\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor,  }\item[{const \mbox{\hyperlink{classIVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void spk\+::\+Abstract\+Widget\+::set\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+anchor,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
 
 
 

@@ -41,7 +41,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Window_1a5d08731ffbb4270f89cc5cfca1e88a29" prot="private" static="no" mutable="no">
-        <type><ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref></type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref></type>
         <definition>spk::Vector2Int spk::Window::_size</definition>
         <argsstring></argsstring>
         <name>_size</name>
@@ -248,7 +248,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -344,7 +344,7 @@
           <declname>p_APIModule</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -412,7 +412,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <param>
@@ -463,7 +463,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -491,7 +491,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -561,7 +561,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>setGeometry</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -589,7 +589,7 @@
         <argsstring>(const spk::Vector2Int &amp;p_size)</argsstring>
         <name>resize</name>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>

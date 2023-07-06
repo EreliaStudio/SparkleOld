@@ -32,7 +32,7 @@
     <innerclass refid="classspk_1_1Mouse" prot="public">spk::Mouse</innerclass>
     <innerclass refid="classspk_1_1IOStream" prot="public">spk::IOStream</innerclass>
     <innerclass refid="classspk_1_1RandomGenerator" prot="public">spk::RandomGenerator</innerclass>
-    <innerclass refid="structspk_1_1IVector2_xC2_xB2" prot="public">spk::IVector2²</innerclass>
+    <innerclass refid="structspk_1_1IVector2" prot="public">spk::IVector2</innerclass>
     <innerclass refid="structspk_1_1IVector3" prot="public">spk::IVector3</innerclass>
     <innerclass refid="structspk_1_1IsContainer" prot="public">spk::IsContainer</innerclass>
     <innerclass refid="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724" prot="public">spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</innerclass>
@@ -92,7 +92,7 @@
       </sectiondef>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a9b7d33188f36fb94cdde3264ccc16e20" prot="public" static="no">
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; float &gt;</type>
         <definition>using spk::Vector2 = typedef IVector2&lt;float&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2</name>
@@ -102,10 +102,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="615" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="615" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="607" column="5" bodyfile="includes/math/spk_vector2.hpp" bodystart="607" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a81b9738cf9ec67888207021519d1a673" prot="public" static="no">
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; int &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; int &gt;</type>
         <definition>using spk::Vector2Int = typedef IVector2&lt;int&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2Int</name>
@@ -115,10 +115,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="616" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="616" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="608" column="5" bodyfile="includes/math/spk_vector2.hpp" bodystart="608" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector2_8hpp_1a71e1f556496e4d67f41e1f7807069e54" prot="public" static="no">
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; unsigned int &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; unsigned int &gt;</type>
         <definition>using spk::Vector2UInt = typedef IVector2&lt;unsigned int&gt;</definition>
         <argsstring></argsstring>
         <name>Vector2UInt</name>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="617" column="1" bodyfile="includes/math/spk_vector2.hpp" bodystart="617" bodyend="-1"/>
+        <location file="includes/math/spk_vector2.hpp" line="609" column="5" bodyfile="includes/math/spk_vector2.hpp" bodystart="609" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector3_8hpp_1a25ce29c89e3ca14bf467a94db03d5939" prot="public" static="no">
         <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; float &gt;</type>
@@ -136,12 +136,13 @@
         <argsstring></argsstring>
         <name>Vector3</name>
         <briefdescription>
+<para>Alias for <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> with float type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="292" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="292" bodyend="-1"/>
+        <location file="includes/math/spk_vector3.hpp" line="556" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="556" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector3_8hpp_1afa7d4d8007cf977199c3ba89fd52e283" prot="public" static="no">
         <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; int &gt;</type>
@@ -149,12 +150,13 @@
         <argsstring></argsstring>
         <name>Vector3Int</name>
         <briefdescription>
+<para>Alias for <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> with int type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="293" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="293" bodyend="-1"/>
+        <location file="includes/math/spk_vector3.hpp" line="561" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="561" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="spk__vector3_8hpp_1aa6b7e560fadd4adf03bcea8fb62de5a8" prot="public" static="no">
         <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; unsigned int &gt;</type>
@@ -162,12 +164,13 @@
         <argsstring></argsstring>
         <name>Vector3UInt</name>
         <briefdescription>
+<para>Alias for <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> with unsigned int type. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="294" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="294" bodyend="-1"/>
+        <location file="includes/math/spk_vector3.hpp" line="566" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="566" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -290,7 +293,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator+</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator+</name>
@@ -299,7 +302,7 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
@@ -346,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="564" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="564" bodyend="567"/>
+        <location file="includes/math/spk_vector2.hpp" line="557" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="557" bodyend="560"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1a443c70714a630e0cbc2199d56b92cc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -361,7 +364,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator-</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator-</name>
@@ -370,7 +373,7 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
@@ -417,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="579" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="579" bodyend="582"/>
+        <location file="includes/math/spk_vector2.hpp" line="572" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="572" bodyend="575"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1adc4d3ecda52ee833bc55ca7ece2f940e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -432,7 +435,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator*</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator*</name>
@@ -441,7 +444,7 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
@@ -488,7 +491,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="594" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="594" bodyend="597"/>
+        <location file="includes/math/spk_vector2.hpp" line="587" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="587" bodyend="590"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1a4a8a9957f5dff3695f49beb037108568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -503,7 +506,7 @@
             <defval>std::enable_if_t&lt;std::is_arithmetic&lt;TValueType&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
         <definition>IVector2&lt;TType&gt; spk::operator/</definition>
         <argsstring>(TValueType p_value, const IVector2&lt; TType &gt; &amp;p_point)</argsstring>
         <name>operator/</name>
@@ -512,7 +515,7 @@
           <declname>p_value</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt; &amp;</type>
           <declname>p_point</declname>
         </param>
         <briefdescription>
@@ -559,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector2.hpp" line="609" column="10" bodyfile="includes/math/spk_vector2.hpp" bodystart="609" bodyend="612"/>
+        <location file="includes/math/spk_vector2.hpp" line="602" column="14" bodyfile="includes/math/spk_vector2.hpp" bodystart="602" bodyend="605"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector3_8hpp_1a8581e17fe52f716d72b87d12669f7620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -587,12 +590,50 @@
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overloaded addition operator to add a value to a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be added. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to add the value to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of adding the value to the vector. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="272" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="272" bodyend="275"/>
+        <location file="includes/math/spk_vector3.hpp" line="506" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="506" bodyend="509"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector3_8hpp_1a70753e5aacb8a5eb2f6ae254c139e44c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -620,12 +661,50 @@
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overloaded subtraction operator to subtract a value from a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be subtracted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to subtract the value from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of subtracting the value from the vector. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="277" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="277" bodyend="280"/>
+        <location file="includes/math/spk_vector3.hpp" line="520" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="520" bodyend="523"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector3_8hpp_1a4f95f63066ab643b13ad27871d3a0aca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -653,12 +732,50 @@
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overloaded multiplication operator to multiply a value with a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be multiplied. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to multiply the value with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of multiplying the value with the vector. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="282" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="282" bodyend="285"/>
+        <location file="includes/math/spk_vector3.hpp" line="534" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="534" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector3_8hpp_1abc9fb6d5f31677ea83f5e5d3d44c6ed2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -686,12 +803,50 @@
           <declname>p_point</declname>
         </param>
         <briefdescription>
+<para>Overloaded division operator to divide a value by a vector. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be divided. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector to divide the value by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of dividing the value by the vector. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/math/spk_vector3.hpp" line="287" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="287" bodyend="290"/>
+        <location file="includes/math/spk_vector3.hpp" line="548" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="548" bodyend="551"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

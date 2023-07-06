@@ -10,6 +10,7 @@
         <argsstring></argsstring>
         <name>_mutex</name>
         <briefdescription>
+<para>Mutex for thread safety. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -24,6 +25,7 @@
         <name>_maximumPrefixSize</name>
         <initializer>= 0</initializer>
         <briefdescription>
+<para>Maximum size of prefix string. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -39,6 +41,7 @@
         <argsstring></argsstring>
         <name>_prefix</name>
         <briefdescription>
+<para>Prefix for current instance. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -52,6 +55,7 @@
         <argsstring></argsstring>
         <name>_outputStream</name>
         <briefdescription>
+<para>Reference to output stream. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

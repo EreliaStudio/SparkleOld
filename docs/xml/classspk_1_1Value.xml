@@ -57,7 +57,7 @@
       </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1Value_1a2bba400f219ce928e9b8ea5e1e86dc39" prot="private" static="no" mutable="no">
-        <type>CallbackContainer</type>
+        <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref></type>
         <definition>CallbackContainer spk::Value&lt; TType &gt;::_onEditionCallbacks</definition>
         <argsstring></argsstring>
         <name>_onEditionCallbacks</name>
@@ -263,7 +263,7 @@
         <argsstring>(const Callback &amp;p_callback)</argsstring>
         <name>subscribe</name>
         <param>
-          <type>const Callback &amp;</type>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
           <declname>p_callback</declname>
         </param>
         <briefdescription>

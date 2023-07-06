@@ -80,7 +80,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <briefdescription>
@@ -160,7 +160,7 @@
           <declname>p_title</declname>
         </param>
         <param>
-          <type>const <ref refid="classIVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref> &amp;</type>
           <declname>p_size</declname>
         </param>
         <param>
