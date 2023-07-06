@@ -49,15 +49,18 @@ namespace spk
 
 		std::wstring File::_loadFileContent(const std::filesystem::path& p_filePath)
 		{
-			std::wifstream wif(p_filePath);
+			std::wifstream wif;
+
+			wif.imbue(std::locale(""));
+			wif.open(p_filePath);
 			if (!wif.is_open())
 			{
 				throw std::runtime_error("Failed to open file");
 			}
 
-			std::wstringstream wss;
-			wss << wif.rdbuf();
-			std::wstring result = wss.str();
+			std::wstring result((std::istreambuf_iterator<wchar_t>(wif)),
+				std::istreambuf_iterator<wchar_t>());
+			wif.close();
 
 			_removeUnnecessaryChar(result);
 			return (result);
