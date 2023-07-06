@@ -15,10 +15,9 @@ namespace spk
 		private:
 			spk::JSON::Object _root;
 
-			void _removeUnnecessaryChar(std::wstring &p_fileContent);
+			void _applyGrammar(std::wstring &p_fileContent);
 			std::wstring _loadFileContent(const std::filesystem::path &p_filePath);
 
-			std::wstring _removeEscapingChar(const std::wstring &p_string);
 			std::wstring _getAttributeName(const std::wstring &p_content, size_t &p_index);
 
 			std::wstring _extractUnitSubstring(const std::wstring &p_content, size_t &p_index);

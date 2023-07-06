@@ -10,37 +10,45 @@ namespace spk
 {
 	namespace JSON
 	{
-		void File::_removeUnnecessaryChar(std::wstring& p_fileContent)
+		void File::_applyGrammar(std::wstring& p_fileContent)
 		{
 			std::wstring result;
-			bool isInQuotes = false;
-			bool isSkipped = false;
+			bool isLiteral(false);
 
-			for (wchar_t c : p_fileContent)
+			for (size_t i(0); i < p_fileContent.size(); ++i)
 			{
+				wchar_t c = p_fileContent[i];
+
 				switch (c)
 				{
-				case '\\':
-					isSkipped = true;
-					result += c;
-					break;
-				case '\"':
-					if (isSkipped == false)
-					{
-						isInQuotes = !isInQuotes;
-					}
-					result += c;
-					break;
-
-				case '\t':
-				case '\r':
-				case '\n':
-				case ' ':
-					if (isInQuotes == false)
+					case L'\\':
+						if (i + 1 < p_fileContent.size())
+						{
+							switch (p_fileContent[i + 1])
+							{
+								case L'\"': case L'\\': case L'/': case L'b':
+								case L'f': case L'n': case L'r': case L't':
+								case L'u':
+									result += c;
+									break;
+								default:
+									spk::throwException(L"Invalid escape sequence [" + p_fileContent.substr(i, 6) + L"]");
+									break;
+							}
+						}
 						break;
-				default:
-					result += c;
-					isSkipped = false;
+					case L'\"':
+						if (i > 0 && p_fileContent[i - 1] != '\\')
+							isLiteral = !isLiteral;
+						result += c;
+						break;
+					case L' ': case L'\t': case L'\n': case L'\r':
+						if (isLiteral == true)
+							result += c;
+						break;
+					default:
+						result += c;
+						break;
 				}
 			}
 
@@ -62,29 +70,8 @@ namespace spk
 				std::istreambuf_iterator<wchar_t>());
 			wif.close();
 
-			_removeUnnecessaryChar(result);
+			_applyGrammar(result);
 			return (result);
-		}
-
-		std::wstring File::_removeEscapingChar(const std::wstring& p_string)
-		{
-			std::wstring result;
-			bool previousWasBackslash = false;
-
-			for (wchar_t c : p_string)
-			{
-				if (c == L'\\' && !previousWasBackslash)
-				{
-					previousWasBackslash = true;
-				}
-				else
-				{
-					result += c;
-					previousWasBackslash = false;
-				}
-			}
-
-			return result;
 		}
 
 		std::wstring File::_getAttributeName(const std::wstring& p_content, size_t& p_index)
@@ -101,7 +88,7 @@ namespace spk
 					isInsideQuote = !isInsideQuote;
 			}
 			p_index++; // Skipping the :
-			return (_removeEscapingChar(p_content.substr(start, p_index - start - 2)));
+			return (p_content.substr(start, p_index - start - 2));
 		}
 
 		std::wstring File::_extractUnitSubstring(const std::wstring& p_content, size_t& p_index)
@@ -118,7 +105,7 @@ namespace spk
 					isInsideQuote = !isInsideQuote;
 			}
 
-			return (_removeEscapingChar(p_content.substr(oldIndex, p_index - oldIndex)));
+			return (p_content.substr(oldIndex, p_index - oldIndex));
 		}
 
 		void File::_loadUnitString(spk::JSON::Object& p_objectToFill, const std::wstring& p_unitSubString)

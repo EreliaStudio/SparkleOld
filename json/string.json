@@ -1,7 +1,31 @@
 [
 	"t\"est",
-	"\u005C",
 	"ahah\u0069lol",
 	"дыня",
-	"僕の名前はルーカス"
+	"僕の名前はル\nーカス",
+	{
+		"\u005C":"\\",
+		"a\u005C":"key uniqueness test",
+		"a\\":"key uniqueness test",
+		"\uD834\uDD1E":"𝄞",
+		"\u0010WAN\u7020\uD1E0": "\u0010WAN瀠퇠",
+		"Escape sequence:": [
+			"\"    quotation mark  U+0022",
+			"\\    reverse solidus U+005C",
+			"\/    solidus         U+002F",
+			"\b    backspace       U+0008",
+			"\f    form feed       U+000C",
+			"\n    line feed       U+000A",
+			"\r    carriage return U+000D",
+			"\t    tab             U+0009",
+			"\\uXXXX                U+XXXX"
+		],
+		"insignificant whitespace": [
+			"space U+0020",
+			"horizontal tab U+0009",
+			"line feed U+000A",
+			"carriage return U+000D"
+		],
+		"unescaped = ": "%x20-21 / %x23-5B / %x5D-10FFFF"
+	}
 ]
