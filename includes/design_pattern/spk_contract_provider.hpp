@@ -14,8 +14,8 @@ namespace spk
 	class ContractProvider
 	{
 	public:
-		using Callback = std::function<void()>;
-		using CallbackContainer = std::deque<Callback>;
+		using Callback = std::function<void()>; //!< Type of data representing a callback function.
+		using CallbackContainer = std::deque<Callback>; //!< Type of container for storing callback functions.
 
 		/**
 		 * @brief  Represent the ownership of a callback and allow users to interact with it.
@@ -25,9 +25,9 @@ namespace spk
 			friend class ContractProvider;
 
 		private:
-			bool _isOriginal = true;
-			CallbackContainer &_callbackOwner;
-			Callback &_callback;
+			bool _isOriginal = true; //!< Indicates whether the contract is the original one or if it has been moved or delegated.
+			CallbackContainer &_callbackOwner; //!< Reference to the container that stores the callback.
+			Callback &_callback; //!< Reference to the callback function.
 
 			/**
 			 * @brief Construct a new Contract object.

@@ -19,11 +19,11 @@ namespace spk
 	class ThreadSafeQueue
 	{
 	protected:
-		std::mutex muxQueue;
-		std::mutex muxBlocking;
+		std::mutex muxQueue;	/**< Mutex for protecting the access to the queue. */
+		std::mutex muxBlocking; /**< Mutex for blocking thread synchronization. */
 
-		std::deque<T> _content;
-		std::condition_variable cvBlocking;
+		std::deque<T> _content;				/**< The underlying deque container storing the items in the queue. */
+		std::condition_variable cvBlocking; /**< Condition variable for blocking thread synchronization. */
 
 	public:
 		/**
