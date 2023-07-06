@@ -3,7 +3,7 @@ name: Generate Doxygen
 on:
   push:
     branches:
-      - DoxygenTutorial
+      - main
 
 jobs:
   build:
