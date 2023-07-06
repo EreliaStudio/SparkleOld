@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['abstractapplication_287',['AbstractApplication',['../classspk_1_1AbstractApplication.html',1,'spk']]],
   ['abstractmodule_288',['AbstractModule',['../classspk_1_1AbstractModule.html',1,'spk']]],
   ['abstractwidget_289',['AbstractWidget',['../classspk_1_1AbstractWidget.html',1,'spk']]],
@@ -19,4 +20,14 @@ var searchData=
   ['apimodule_285',['APIModule',['../classspk_1_1APIModule.html',1,'spk']]],
   ['application_286',['Application',['../classspk_1_1Application.html',1,'spk']]]
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+  ['abstractapplication_280',['AbstractApplication',['../classspk_1_1AbstractApplication.html',1,'spk']]],
+  ['abstractmodule_281',['AbstractModule',['../classspk_1_1AbstractModule.html',1,'spk']]],
+  ['abstractwidget_282',['AbstractWidget',['../classspk_1_1AbstractWidget.html',1,'spk']]],
+  ['activableobject_283',['ActivableObject',['../classspk_1_1ActivableObject.html',1,'spk']]],
+  ['activity_284',['Activity',['../classspk_1_1Activity.html',1,'spk']]],
+  ['activityscheduler_285',['ActivityScheduler',['../classspk_1_1ActivityScheduler.html',1,'spk']]],
+  ['apimodule_286',['APIModule',['../classspk_1_1APIModule.html',1,'spk']]],
+  ['application_287',['Application',['../classspk_1_1Application.html',1,'spk']]]
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];

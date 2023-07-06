@@ -1,6 +1,7 @@
 var searchData=
 [
 <<<<<<< HEAD
+<<<<<<< HEAD
   ['_7eabstractapplication_267',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
   ['_7eabstractwidget_268',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271',1,'spk::AbstractWidget']]],
   ['_7eapimodule_269',['~APIModule',['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()'],['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()']]],
@@ -43,4 +44,26 @@ var searchData=
   ['_7ewindow_277',['~Window',['../classspk_1_1Window.html#ad7b645ee1f79762e79d4c24a42b42cf4',1,'spk::Window']]],
   ['_7eworkerpool_278',['~WorkerPool',['../classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360',1,'spk::WorkerPool']]]
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+  ['_7eabstractapplication_260',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
+  ['_7eabstractwidget_261',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271',1,'spk::AbstractWidget']]],
+  ['_7eapimodule_262',['~APIModule',['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()'],['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()']]],
+  ['_7eapplication_263',['~Application',['../classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11',1,'spk::Application::~Application()'],['../classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11',1,'spk::Application::~Application()']]],
+  ['_7echronometer_264',['~Chronometer',['../classspk_1_1Chronometer.html#a36ee5132ae04063e8a172c7536f65f55',1,'spk::Chronometer']]],
+  ['_7econtract_265',['~Contract',['../classspk_1_1ContractProvider_1_1Contract.html#a6c614784cac84a328a8850af61564966',1,'spk::ContractProvider::Contract']]],
+  ['_7edefault_266',['~Default',['../classspk_1_1Value_1_1Default.html#a4b7002959d78f07b0ed64795cecfef68',1,'spk::Value::Default']]],
+  ['_7einherenceobject_267',['~InherenceObject',['../classspk_1_1InherenceObject.html#aba5546b2d9a7407fc3aa2cca0461cb7a',1,'spk::InherenceObject']]],
+  ['_7ekeyboardmodule_268',['~KeyboardModule',['../classspk_1_1KeyboardModule.html#a57a26afa65b71628d8dc88834006debf',1,'spk::KeyboardModule']]],
+  ['_7emousemodule_269',['~MouseModule',['../classspk_1_1MouseModule.html#a7488472b5dcb2a93d96dd1350a7b9246',1,'spk::MouseModule']]],
+  ['_7eobject_270',['~Object',['../classspk_1_1Pool_1_1Object.html#a62ad9ca064abef6a380c961fa9a16516',1,'spk::Pool::Object']]],
+  ['_7epersistentworker_271',['~PersistentWorker',['../classspk_1_1PersistentWorker.html#ad42857f1630499681af81f5ca49fcf37',1,'spk::PersistentWorker']]],
+  ['_7esystemmodule_272',['~SystemModule',['../classspk_1_1SystemModule.html#a3ea988cf3deb772a60cf6e7869635a58',1,'spk::SystemModule']]],
+  ['_7ethread_273',['~Thread',['../classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07',1,'spk::Thread']]],
+  ['_7ethreadsafequeue_274',['~ThreadSafeQueue',['../classspk_1_1ThreadSafeQueue.html#aa8d9e71b8bee427e21a7121759c0c690',1,'spk::ThreadSafeQueue']]],
+  ['_7etimemodule_275',['~TimeModule',['../classspk_1_1TimeModule.html#a4b5d832af3302c1ca6def45c3ceb652e',1,'spk::TimeModule']]],
+  ['_7evalue_276',['~Value',['../classspk_1_1Value.html#aaa7cba049f4a6f3071889d5f3c7f3024',1,'spk::Value']]],
+  ['_7ewidgetmodule_277',['~WidgetModule',['../classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9',1,'spk::WidgetModule']]],
+  ['_7ewindow_278',['~Window',['../classspk_1_1Window.html#ad7b645ee1f79762e79d4c24a42b42cf4',1,'spk::Window']]],
+  ['_7eworkerpool_279',['~WorkerPool',['../classspk_1_1WorkerPool.html#a5e8ae2aa8600c03b1abc3c93a40c3360',1,'spk::WorkerPool']]]
+>>>>>>> 2a6dd93 (Update Doxygen)
 ];
