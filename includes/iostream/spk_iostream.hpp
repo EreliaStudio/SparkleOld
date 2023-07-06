@@ -20,10 +20,10 @@ namespace spk
         class IOBuffer : public std::wstringbuf
         {
         private:
-            static inline std::recursive_mutex _mutex; // Mutex for thread safety.
-            static inline size_t _maximumPrefixSize = 0; // Maximum size of prefix string.
-            std::wstring _prefix; // Prefix for current instance.
-            std::wostream& _outputStream; // Reference to output stream.
+            static inline std::recursive_mutex _mutex; ///< Mutex for thread safety.
+            static inline size_t _maximumPrefixSize = 0; ///< Maximum size of prefix string.
+            std::wstring _prefix; ///< Prefix for current instance.
+            std::wostream& _outputStream; ///< Reference to output stream.
 
         public:
             /**
@@ -57,7 +57,7 @@ namespace spk
         };
 
     public:
-        IOBuffer buffer; // Buffer instance associated with this output stream.
+        IOBuffer buffer; ///< Buffer instance associated with this output stream.
         
     public:
         /**
