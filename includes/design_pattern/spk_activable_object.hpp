@@ -15,6 +15,10 @@ namespace spk
         // Private members (not specified in the code snippet)
 
     public:
+        /**
+         * @brief Constructs an ActivableObject object.
+         * @param p_activate Indicates whether the object should be activated upon construction. Default is false.
+         */
         ActivableObject(bool p_activate = false);
         /**
          * @brief Activates the object.
