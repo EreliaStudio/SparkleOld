@@ -12,7 +12,7 @@ namespace spk
      *
      * This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses.
      */
-	class AbstractApplication
+	class AbstractApplication : public spk::ContractProvider
 	{
 	public:
         /**
@@ -29,7 +29,7 @@ namespace spk
         /**
          * @brief Vector of jobs to be performed.
          */
-		std::vector<Job> _jobs;
+		CallbackContainer _jobs;
 
         /**
          * @brief Error code representing the state of the application.
@@ -48,14 +48,14 @@ namespace spk
          * @param p_WorkerName The name of the worker.
          * @param p_job The job to be added.
          */
-		void addJob(const std::wstring &p_WorkerName, const Job& p_job);
+		Contract addJob(const std::wstring &p_WorkerName, const Job& p_job);
 
         /**
          * @brief Adds a job to the application.
          *
          * @param p_job The job to be added.
          */
-		void addJob(const Job& p_job);
+		Contract addJob(const Job& p_job);
 
         /**
          * @brief Virtual function to setup jobs, to be implemented by subclasses.

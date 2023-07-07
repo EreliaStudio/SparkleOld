@@ -2,6 +2,15 @@
 
 namespace spk
 {
+		ContractProvider::Contract::Contract() :
+			_callbackOwner(_uninitializedCallbackContainer),
+			_callback(_uninitializedCallback),
+			_isOriginal(false)
+		{
+
+		
+		}
+		
 		ContractProvider::Contract::Contract(CallbackContainer &p_callbackOwner, Callback &p_callback) :
 			_callbackOwner(p_callbackOwner),
 			_callback(p_callback),

@@ -34,6 +34,23 @@ namespace spk
 
 		spk::WidgetModule* _widgetModule; ///< Widget module instance.
 
+		Contract _profilerModule_increaseRenderIPS_Contract;
+		Contract _APIModule_update_Contract;
+		Contract _windowModule_clear_Contract;
+		Contract _widgetModule_render_Contract;
+		Contract _windowModule_render_Contract;
+
+		Contract _profilerModule_increaseUpdateIPS_Contract;
+		Contract _systemModule_update_Contract;
+		Contract _timeModule_update_Contract;
+		Contract _profilerModule_update_Contract;
+		Contract _windowModule_update_Contract;
+		Contract _mouseModule_update_Contract;
+		Contract _keyboardModule_update_Contract;
+		Contract _widgetModule_update_Contract;
+		Contract _mouseModule_updateMouse_Contract;
+		Contract _keyboardModule_updateKeyboard_Contract;
+
 	protected:
 		/**
 		 * @brief Setup the application jobs.
@@ -42,26 +59,22 @@ namespace spk
 		 */
 		void setupJobs()
 		{
-			addJob([&](){ _profilerModule->increaseRenderIPS();});
-			addJob([&](){ _APIModule->update(); });
-			addJob([&](){ _windowModule->clear(); });
-			addJob([&](){ _widgetModule->render(); });
-			addJob([&](){ _windowModule->render(); });
+			_profilerModule_increaseRenderIPS_Contract = addJob([&](){ _profilerModule->increaseRenderIPS();});
+			_APIModule_update_Contract = addJob([&](){ _APIModule->update(); });
+			_windowModule_clear_Contract = addJob([&](){ _windowModule->clear(); });
+			_widgetModule_render_Contract = addJob([&](){ _widgetModule->render(); });
+			_windowModule_render_Contract = addJob([&](){ _windowModule->render(); });
 
-			addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();});
-			addJob(L"Updater", [&](){ _systemModule->update(); });
-			addJob(L"Updater", [&](){ _timeModule->update(); });
-			addJob(L"Updater", [&](){ _profilerModule->update();});
-
-			addJob(L"Updater", [&](){ _windowModule->update(); });
-
-			addJob(L"Updater", [&](){ _mouseModule->update(); });
-			addJob(L"Updater", [&](){ _keyboardModule->update(); });
-
-			addJob(L"Updater", [&](){ _widgetModule->update(); });
-
-			addJob(L"Updater", [&](){ _mouseModule->updateMouse(); });
-			addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); });
+			_profilerModule_increaseUpdateIPS_Contract = addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();});
+			_systemModule_update_Contract = addJob(L"Updater", [&](){ _systemModule->update(); });
+			_timeModule_update_Contract = addJob(L"Updater", [&](){ _timeModule->update(); });
+			_profilerModule_update_Contract = addJob(L"Updater", [&](){ _profilerModule->update();});
+			_windowModule_update_Contract = addJob(L"Updater", [&](){ _windowModule->update(); });
+			_mouseModule_update_Contract = addJob(L"Updater", [&](){ _mouseModule->update(); });
+			_keyboardModule_update_Contract = addJob(L"Updater", [&](){ _keyboardModule->update(); });
+			_widgetModule_update_Contract = addJob(L"Updater", [&](){ _widgetModule->update(); });
+			_mouseModule_updateMouse_Contract = addJob(L"Updater", [&](){ _mouseModule->updateMouse(); });
+			_keyboardModule_updateKeyboard_Contract = addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); });
 
 		}
 
@@ -131,7 +144,7 @@ namespace spk
 			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
 
 			_widgetModule->centralWidget()->addChild(result);
-			result->setDepth(depth() + 1);
+			result->setDepth(_widgetModule->centralWidget()->depth() + 1);
 
 			return (result);
 		}
