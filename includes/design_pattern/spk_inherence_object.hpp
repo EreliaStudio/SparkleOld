@@ -1,7 +1,7 @@
 #pragma once 
 
 #include <memory>
-#include <set>
+#include <vector>
 #include <functional>
 
 namespace spk
@@ -20,7 +20,7 @@ namespace spk
     public:
         using Parent = TType*;                           /**< The type of the parent object. */
         using Child = TType*;                            /**< The type of the child objects. */
-        using ChildContainer = std::set<Child>;          /**< The type of child container used by InherenceObject to store them*/
+        using ChildContainer = std::vector<Child>;          /**< The type of child container used by InherenceObject to store them*/
         using Callback = std::function<void(Child)>;     /**< The type of the callback function. */
 
     private:
