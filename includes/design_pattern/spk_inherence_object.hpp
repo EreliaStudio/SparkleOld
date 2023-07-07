@@ -1,9 +1,8 @@
 #pragma once 
 
 #include <memory>
-#include <vector>
+#include <set>
 #include <functional>
-
 
 namespace spk
 {
@@ -21,11 +20,12 @@ namespace spk
     public:
         using Parent = TType*;                           /**< The type of the parent object. */
         using Child = TType*;                            /**< The type of the child objects. */
+        using ChildContainer = std::set<Child>;          /**< The type of child container used by InherenceObject to store them*/
         using Callback = std::function<void(Child)>;     /**< The type of the callback function. */
 
     private:
         Parent _parent;                                 /**< The parent object. */
-        std::vector<Child> _childrens;                   /**< The vector of child objects. */
+        ChildContainer _childrens;                   /**< The vector of child objects. */
         Callback _birthCallback;                         /**< The birth callback function. */
         Callback _deathCallback;                         /**< The death callback function. */
 
@@ -62,6 +62,7 @@ namespace spk
             _birthCallback(nullptr),
             _deathCallback(nullptr)
         {
+
         }
 
         /**
@@ -154,7 +155,7 @@ namespace spk
          *
          * @return A reference to the vector of child objects.
          */
-        constexpr std::vector<Child>& childrens()
+        constexpr ChildContainer& childrens()
         {
             return _childrens;
         }
@@ -166,7 +167,7 @@ namespace spk
          *
          * @return A constant reference to the vector of child objects.
          */
-        constexpr const std::vector<Child>& childrens() const
+        constexpr const ChildContainer& childrens() const
         {
             return _childrens;
         }
