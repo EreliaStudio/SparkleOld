@@ -1,11 +1,20 @@
 #include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_atlas.hpp"
+
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
+    void AbstractWidget::addChild(Child child)
+	{
+		InherenceObject<AbstractWidget>::addChild(child);
+	}
+
 	void AbstractWidget::_render()
 	{
 		if (isActive() == false)
 			return ;
+			
 		if (_geometryEdited == true)
 		{
 			_onGeometryChange();
@@ -13,35 +22,47 @@ namespace spk
 		}
 			
 		_onRender();
-		
-		for (size_t i(0); i < childrens().size(); ++i)
-		{
-			childrens()[i]->_render();
-		}
 	}
 
 	bool AbstractWidget::_update()
 	{
 		if (isActive() == false)
 			return false;
-		for (size_t i(0); i < childrens().size(); ++i)
-			if (childrens()[i]->_update() == true)
-				return (true);
 		
 		return (_onUpdate());
+	}
+
+	void AbstractWidget::_setOperationnal()
+	{
+		_isOperationnal = isActive() && (parent() == nullptr ? true : parent()->_isOperationnal);
+
+		for (auto children : childrens())
+		{
+			children->_setOperationnal();
+		}
 	}
 
 	AbstractWidget::AbstractWidget(const std::wstring& p_name) :
 		_name(p_name)
 	{
+		WidgetAtlas::instance()->insert(this);
+
+		_activationCallback = ActivableObject::addActivationCallback([&](){
+			_setOperationnal();
+		});
+
+		_deactivationCallback = ActivableObject::addDeactivationCallback([&](){
+			_setOperationnal();
+		});
 	}
 
 	AbstractWidget::~AbstractWidget()
 	{
-		for (size_t i(0); i < childrens().size(); ++i)
+		for (auto child : childrens())
 		{
-			delete childrens()[i];
+			delete child;
 		}	
+		WidgetAtlas::instance()->remove(this);
 	}
 
 	void AbstractWidget::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
@@ -73,21 +94,17 @@ namespace spk
 		_geometryEdited = true;
 	}
 
-	void AbstractWidget::sortChildrensByDepth()
-	{
-		std::sort(childrens().begin(), childrens().end(), [](AbstractWidget* lhs, AbstractWidget* rhs) {
-					return lhs->depth() > rhs->depth();
-				});
-	}
-
 	void AbstractWidget::setDepth(const float& p_depth)
 	{
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
-
-		for (size_t i(0); i < childrens().size(); ++i)
-			childrens()[i]->setDepth(childrens()[i]->depth() + delta);
+		WidgetAtlas::instance()->sort(this);
+		
+		for (auto child : childrens())
+		{
+			child->setDepth(child->depth() + delta);
+		}
 	}
 
 	void AbstractWidget::rename(const std::wstring& p_name)

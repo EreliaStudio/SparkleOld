@@ -107,16 +107,6 @@ namespace spk
 		}
 
 		/**
-		 * @brief Returns the central widget of the application.
-		 * 
-		 * @return The central widget of the application.
-		 */
-		spk::AbstractWidget* centralWidget()
-		{
-			return (_widgetModule->centralWidget());
-		}
-
-		/**
 		 * @brief Add a new widget inside the application, with the central widget as parent.
 		 * 
          * @tparam TChildrenType The type of the children widget.
@@ -129,12 +119,10 @@ namespace spk
 		{
 			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
 
-			_widgetModule->centralWidget()->addChild(result);
-			result->setDepth(_widgetModule->centralWidget()->depth() + 1);
+			result->setDepth(0);
 
 			return (result);
 		}
-
 
 		/**
 		 * @brief Resizes the application window and central widget.
@@ -144,7 +132,6 @@ namespace spk
 		void resize(const spk::Vector2Int& p_size)
 		{
 			spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
-			_widgetModule->centralWidget()->setGeometry(0, p_size);
 		}
 	};
 }

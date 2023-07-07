@@ -1,17 +1,18 @@
 #include "design_pattern/spk_contract_provider.hpp"
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
 		ContractProvider::Contract::Contract() :
-			_callbackOwner(_uninitializedCallbackContainer),
-			_callback(_uninitializedCallback),
+			_callbackOwner(nullptr),
+			_callback(nullptr),
 			_isOriginal(false)
 		{
 
 		
 		}
 		
-		ContractProvider::Contract::Contract(CallbackContainer &p_callbackOwner, Callback &p_callback) :
+		ContractProvider::Contract::Contract(CallbackContainer *p_callbackOwner, Callback *p_callback) :
 			_callbackOwner(p_callbackOwner),
 			_callback(p_callback),
 			_isOriginal(true)
@@ -36,11 +37,14 @@ namespace spk
 		{
 			if (this != &p_other)
 			{
-				resign();
+				if (isOriginal() == true)
+				{
+					resign();
+				}
 
 				_isOriginal = p_other._isOriginal;
-				_callbackOwner = std::move(p_other._callbackOwner);
-				_callback = std::move(p_other._callback);
+				_callbackOwner = p_other._callbackOwner;
+				_callback = p_other._callback;
 
 				p_other._isOriginal = false;
 			}
@@ -60,7 +64,7 @@ namespace spk
 		{
 			if (isOriginal() == true)
 			{
-				_callback = p_callback;
+				*_callback = p_callback;
 			}
 			else
 			{
@@ -74,11 +78,11 @@ namespace spk
 			{
 				_isOriginal = false;
 				_callback = nullptr;
-				for (auto it = _callbackOwner.begin(); it != _callbackOwner.end(); ++it)
+				for (auto it = _callbackOwner->begin(); it != _callbackOwner->end(); ++it)
 				{
-					if (&(*it) == &_callback)
+					if (&(*it) == _callback)
 					{
-						_callbackOwner.erase(it);
+						_callbackOwner->erase(it);
 						break;
 					}
 				}
@@ -92,6 +96,6 @@ namespace spk
 		ContractProvider::Contract ContractProvider::subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback)
 		{
 			p_callbackOwner.push_back(p_callback);
-			return (std::move(Contract(p_callbackOwner, p_callbackOwner.back())));
+			return (std::move(Contract(&p_callbackOwner, &(p_callbackOwner.back()))));
 		}
 }

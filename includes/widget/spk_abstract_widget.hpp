@@ -16,6 +16,7 @@ namespace spk
 	class AbstractWidget : public spk::InherenceObject<AbstractWidget>, public spk::ActivableObject
 	{
 		friend class WidgetModule;
+        friend class WidgetAtlas;
 
 	private:
 		virtual void _onRender() = 0;
@@ -23,9 +24,13 @@ namespace spk
 
 		virtual void _onGeometryChange() = 0;
 
+        bool _isOperationnal = false;
+        Contract _activationCallback;
+        Contract _deactivationCallback;
+
 		std::wstring _name;
 		bool _geometryEdited;
-		float _depth;
+		float _depth = 0;
 		spk::Vector2Int _anchor;
 		spk::Vector2Int _size;
 		
@@ -33,6 +38,9 @@ namespace spk
 
 		virtual bool _update();
 
+        void addChild(Child child);
+
+		void _setOperationnal();
 
 	public:
 	    /**
@@ -109,12 +117,6 @@ namespace spk
          */
 		void resize(const spk::Vector2Int& p_size);
 
-		/**
-         * @brief Sort the children widgets by their depth value.
-         * 
-         * This function sorts the children widgets of this widget by their depth value, in ascending order.
-         */
-		void sortChildrensByDepth();
 
 		/**
          * @brief Set the depth value of the widget.
