@@ -1,4 +1,5 @@
 #include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {

@@ -4,8 +4,6 @@
 #include "design_pattern/spk_activable_object.hpp"
 #include "math/spk_vector2.hpp"
 
-#include "widget/spk_widget_atlas.hpp"
-
 namespace spk
 {
     /**
@@ -160,16 +158,6 @@ namespace spk
          * @return True if the point is inside the widget, false otherwise.
          */
 		bool isPointed(const spk::Vector2Int& p_point);
-
-        /**
-         * @brief Overload of the < operator to allow storing of the Widget sorted by there depth
-         * 
-         * @param p_other The other widget to compare depth with.
-         * @return True if current widget if lower, false otherwise.
-         */
-        bool operator<(const InherenceObject<AbstractWidget>::Child& p_other) const {
-            return (depth() < p_other->depth());
-        }
 	};
 
     /**
