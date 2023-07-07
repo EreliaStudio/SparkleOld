@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_stated_object.hpp" line="45" column="18" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="45" bodyend="50"/>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="45" column="18" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_stated_object.hpp" line="56" column="14" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="56" bodyend="66"/>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="54" column="14" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="54" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const TState &amp;</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_stated_object.hpp" line="72" column="22" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="72" bodyend="72"/>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="70" column="22" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="70" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -194,7 +194,7 @@
         <link refid="classspk_1_1ContractProvider"/>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_stated_object.hpp" line="17" column="5" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="18" bodyend="73"/>
+    <location file="includes/design_pattern/spk_stated_object.hpp" line="17" column="5" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="18" bodyend="71"/>
     <listofallmembers>
       <member refid="classspk_1_1StatedObject_1a6aa924dee230c4a02d467e7ce937ddf8" prot="private" virt="non-virtual"><scope>spk::StatedObject</scope><name>_callbacks</name></member>
       <member refid="classspk_1_1StatedObject_1af37d63b941fbdd99a05b07a1c09e69d9" prot="private" virt="non-virtual"><scope>spk::StatedObject</scope><name>_state</name></member>

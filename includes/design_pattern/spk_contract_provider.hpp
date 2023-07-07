@@ -25,11 +25,9 @@ namespace spk
 			friend class ContractProvider;
 
 		private:
-			static inline CallbackContainer _uninitializedCallbackContainer;
-			static inline Callback _uninitializedCallback = nullptr;
 			bool _isOriginal = true; //!< Indicates whether the contract is the original one or if it has been moved or delegated.
-			CallbackContainer &_callbackOwner; //!< Reference to the container that stores the callback.
-			Callback &_callback; //!< Reference to the callback function.
+			CallbackContainer *_callbackOwner; //!< Pointer to the container that stores the callback.
+			Callback *_callback; //!< Pointer to the callback function.
 
 			/**
 			 * @brief Construct a new Contract object.
@@ -37,7 +35,7 @@ namespace spk
 			 * @param p_callbackOwner The container that store the Callback.
 			 * @param p_callback The function to register in the Contract.
 			 */
-			Contract(CallbackContainer &p_callbackOwner, Callback &p_callback);
+			Contract(CallbackContainer *p_callbackOwner, Callback *p_callback);
 			
 			/**
 			 * @brief Disable the construction of a new Contract object by copy.

@@ -4,23 +4,6 @@
     <compoundname>spk::WidgetModule</compoundname>
     <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
     <includes refid="spk__widget__module_8hpp" local="no">spk_widget_module.hpp</includes>
-    <innerclass refid="classspk_1_1WidgetModule_1_1CentralWidget" prot="private">spk::WidgetModule::CentralWidget</innerclass>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" prot="private" static="no" mutable="no">
-        <type>CentralWidget *</type>
-        <definition>CentralWidget* spk::WidgetModule::_centralWidget</definition>
-        <argsstring></argsstring>
-        <name>_centralWidget</name>
-        <briefdescription>
-<para>Pointer to the central widget of the application. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="57" column="15" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="57" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -34,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="63" column="1" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="26" bodyend="30"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="22" column="1" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="7" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -48,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="68" column="1" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="32" bodyend="35"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="27" column="1" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -63,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="73" column="6" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="37" bodyend="40"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="32" column="6" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="17" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -77,24 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="78" column="6" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="42" bodyend="45"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1WidgetModule_1a28de970ea92d8ab9884939c77f380dc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> *</type>
-        <definition>AbstractWidget * spk::WidgetModule::centralWidget</definition>
-        <argsstring>() const</argsstring>
-        <name>centralWidget</name>
-        <briefdescription>
-<para>Returns a pointer to the central widget. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Pointer to the central widget. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/spk_widget_module.hpp" line="85" column="16" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="47" bodyend="50"/>
+        <location file="includes/application/modules/spk_widget_module.hpp" line="37" column="6" bodyfile="src/application/modules/spk_widget_module.cpp" bodystart="28" bodyend="38"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -127,10 +93,8 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/modules/spk_widget_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="15" bodyend="86"/>
+    <location file="includes/application/modules/spk_widget_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_widget_module.hpp" bodystart="15" bodyend="38"/>
     <listofallmembers>
-      <member refid="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" prot="private" virt="non-virtual"><scope>spk::WidgetModule</scope><name>_centralWidget</name></member>
-      <member refid="classspk_1_1WidgetModule_1a28de970ea92d8ab9884939c77f380dc1" prot="public" virt="non-virtual"><scope>spk::WidgetModule</scope><name>centralWidget</name></member>
       <member refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" prot="public" virt="non-virtual"><scope>spk::WidgetModule</scope><name>render</name></member>
       <member refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" prot="public" virt="virtual"><scope>spk::WidgetModule</scope><name>update</name></member>
       <member refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" prot="public" virt="non-virtual"><scope>spk::WidgetModule</scope><name>WidgetModule</name></member>

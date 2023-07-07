@@ -50,6 +50,7 @@
 #include "application/modules/spk_widget_module.hpp"
 
 #include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_atlas.hpp"
 
 #include "application/spk_application.hpp"
 

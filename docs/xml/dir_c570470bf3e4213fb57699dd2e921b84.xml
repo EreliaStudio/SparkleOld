@@ -3,6 +3,7 @@
   <compounddef id="dir_c570470bf3e4213fb57699dd2e921b84" kind="dir">
     <compoundname>src/widget</compoundname>
     <innerfile refid="spk__abstract__widget_8cpp">spk_abstract_widget.cpp</innerfile>
+    <innerfile refid="spk__widget__atlas_8cpp">spk_widget_atlas.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

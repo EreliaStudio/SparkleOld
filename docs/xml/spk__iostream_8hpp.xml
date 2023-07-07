@@ -16,9 +16,11 @@
     <includedby refid="spk__widget__module_8cpp" local="yes">src/application/modules/spk_widget_module.cpp</includedby>
     <includedby refid="spk__system__module_8cpp" local="yes">src/application/modules/windows/spk_system_module.cpp</includedby>
     <includedby refid="windows_2spk__window__module_8cpp" local="yes">src/application/modules/windows/spk_window_module.cpp</includedby>
+    <includedby refid="spk__contract__provider_8cpp" local="yes">src/design_pattern/spk_contract_provider.cpp</includedby>
     <includedby refid="linux_2spk__window_8cpp" local="yes">src/graphics/linux/spk_window.cpp</includedby>
     <includedby refid="windows_2spk__window_8cpp" local="yes">src/graphics/windows/spk_window.cpp</includedby>
     <includedby refid="spk__iostream_8cpp" local="yes">src/iostream/spk_iostream.cpp</includedby>
+    <includedby refid="spk__abstract__widget_8cpp" local="yes">src/widget/spk_abstract_widget.cpp</includedby>
     <incdepgraph>
       <node id="5">
         <label>string</label>

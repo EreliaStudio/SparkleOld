@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="191" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="191" bodyend="191"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="193" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="193" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>bool</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/widget/spk_abstract_widget.hpp" line="192" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="192" bodyend="192"/>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="194" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="194" bodyend="194"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -112,7 +112,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/widget/spk_abstract_widget.hpp" line="188" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="189" bodyend="193"/>
+    <location file="includes/widget/spk_abstract_widget.hpp" line="190" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="191" bodyend="195"/>
     <listofallmembers>
       <member refid="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d" prot="private" virt="virtual"><scope>spk::OnlyGraphicsWidget</scope><name>_onUpdate</name></member>
       <member refid="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" prot="private" virt="virtual"><scope>spk::OnlyGraphicsWidget</scope><name>_update</name></member>
@@ -120,7 +120,7 @@
       <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>ActivableObject</name></member>
       <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>activate</name></member>
       <member refid="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addActivationCallback</name></member>
-      <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addChild</name></member>
+      <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual" ambiguityscope="InherenceObject&lt; AbstractWidget &gt;::"><scope>spk::OnlyGraphicsWidget</scope><name>addChild</name></member>
       <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addChildrenWidget</name></member>
       <member refid="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addDeactivationCallback</name></member>
       <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addStateCallback</name></member>
@@ -128,8 +128,9 @@
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual" ambiguityscope="spk::ActivableObject::"><scope>spk::OnlyGraphicsWidget</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>CallbackContainer</name></member>
       <member refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>Child</name></member>
-      <member refid="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
-      <member refid="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
+      <member refid="classspk_1_1InherenceObject_1abb38a23ee0e49f56d6635bc9b08d347d" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>ChildContainer</name></member>
+      <member refid="classspk_1_1InherenceObject_1a76cd1e3335b5775ecf356da909a01b86" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
+      <member refid="classspk_1_1InherenceObject_1adc6706d7b939d2f30763bf2502f0dd19" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
       <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>deactivate</name></member>
       <member refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>depth</name></member>
       <member refid="classspk_1_1InherenceObject_1ab17ef56656c9b33064cec33d44d4c7b7" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>InherenceObject</name></member>
@@ -150,7 +151,6 @@
       <member refid="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setGeometry</name></member>
       <member refid="classspk_1_1InherenceObject_1ae5c803c43a3eeb83383e4a95245f765e" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setParent</name></member>
       <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setState</name></member>
-      <member refid="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>sortChildrensByDepth</name></member>
       <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>state</name></member>
       <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>StatedObject</name></member>
       <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>subscribe</name></member>

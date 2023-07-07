@@ -28,5 +28,5 @@ int main() {
     }
     spk::cout << std::endl;
 
-    return 0;
+    return (0);
 }

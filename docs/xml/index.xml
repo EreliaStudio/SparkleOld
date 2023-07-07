@@ -19,6 +19,10 @@
   </compound>
   <compound refid="classspk_1_1AbstractWidget" kind="class"><name>spk::AbstractWidget</name>
     <member refid="classspk_1_1AbstractWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a2bf307544498b0f06a2b8577ac16eec1" kind="friend"><name>WidgetAtlas</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ac312a73e7fc00ee33ea97c50664a998e" kind="variable"><name>_isOperationnal</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ac7cb4fd8cc6d22d71002952dc2056bee" kind="variable"><name>_activationCallback</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a1bb4608c21a65704ba6d0cbbfd47023a" kind="variable"><name>_deactivationCallback</name></member>
     <member refid="classspk_1_1AbstractWidget_1a3cde042101dcf9b6bda40477b7978b29" kind="variable"><name>_name</name></member>
     <member refid="classspk_1_1AbstractWidget_1aa4e1b1af7f54966b38730ab1720c1377" kind="variable"><name>_geometryEdited</name></member>
     <member refid="classspk_1_1AbstractWidget_1acb315df4191229bce9f08515a50f2537" kind="variable"><name>_depth</name></member>
@@ -29,6 +33,8 @@
     <member refid="classspk_1_1AbstractWidget_1ae188852df6a62f89f77753ebd5ecbede" kind="function"><name>_onGeometryChange</name></member>
     <member refid="classspk_1_1AbstractWidget_1a1ad36ce94b14bebce683b6aaa3c7ce9c" kind="function"><name>_render</name></member>
     <member refid="classspk_1_1AbstractWidget_1a751e8c7b4e48a949ec57aeb60d154e03" kind="function"><name>_update</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a1fcd21eb3a78162e7f7396da15ae0bc0" kind="function"><name>addChild</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a70c606fd37ad11219fadfdb019385423" kind="function"><name>_setOperationnal</name></member>
     <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" kind="function"><name>AbstractWidget</name></member>
     <member refid="classspk_1_1AbstractWidget_1ae226e66654f9b84a7501c0a97820efc9" kind="function"><name>~AbstractWidget</name></member>
     <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kind="function"><name>addChildrenWidget</name></member>
@@ -36,7 +42,6 @@
     <member refid="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" kind="function"><name>place</name></member>
     <member refid="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" kind="function"><name>move</name></member>
     <member refid="classspk_1_1AbstractWidget_1a2059b3aeb3f7ca0290ed70c146a42298" kind="function"><name>resize</name></member>
-    <member refid="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" kind="function"><name>sortChildrensByDepth</name></member>
     <member refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kind="function"><name>setDepth</name></member>
     <member refid="classspk_1_1AbstractWidget_1af6762afb291b9fe0497fa8ac619ef0f7" kind="function"><name>rename</name></member>
     <member refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" kind="function"><name>name</name></member>
@@ -119,16 +124,8 @@
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
     <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
     <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
-    <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
     <member refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" kind="function"><name>addRootWidget</name></member>
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
-  </compound>
-  <compound refid="classspk_1_1WidgetModule_1_1CentralWidget" kind="class"><name>spk::WidgetModule::CentralWidget</name>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a1a0be4d81b1842ce5883c1de8ae49b37" kind="function"><name>_onRender</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1afca57ece330b2e3d3916ae09f832c7b8" kind="function"><name>_onUpdate</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a155327380850aae817fcf59286ea0e2f" kind="function"><name>_onGeometryChange</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1ac9f062e912b234bcfcba672ee1066a47" kind="function"><name>CentralWidget</name></member>
   </compound>
   <compound refid="classspk_1_1Chronometer" kind="class"><name>spk::Chronometer</name>
     <member refid="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" kind="variable"><name>UNINITIALIZED</name></member>
@@ -163,12 +160,10 @@
   </compound>
   <compound refid="classspk_1_1ContractProvider_1_1Contract" kind="class"><name>spk::ContractProvider::Contract</name>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" kind="friend"><name>ContractProvider</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1ab174ca21e23eae2f9a922cd7dc5f89f7" kind="variable"><name>_uninitializedCallbackContainer</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1a164f9556d3dac4587d76c881621ff9eb" kind="variable"><name>_uninitializedCallback</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a0d4e00a53d3a52654c702671dc05ed13" kind="variable"><name>_isOriginal</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" kind="variable"><name>_callbackOwner</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" kind="variable"><name>_callback</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1a21bd746bcdfe818a05598f83bc338985" kind="function"><name>Contract</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1afc38f5102c32422efe69533ff323589b" kind="variable"><name>_callbackOwner</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a0f2ae150b743fd91d6f4dc25513895e1" kind="variable"><name>_callback</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a077ef364367ff96e18c56e24348180af" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" kind="function"><name>isOriginal</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a8fbd6b095f70bbca9893b42617db03ab" kind="function"><name>Contract</name></member>
@@ -232,9 +227,10 @@
   <compound refid="classspk_1_1InherenceObject" kind="class"><name>spk::InherenceObject</name>
     <member refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" kind="typedef"><name>Parent</name></member>
     <member refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" kind="typedef"><name>Child</name></member>
+    <member refid="classspk_1_1InherenceObject_1abb38a23ee0e49f56d6635bc9b08d347d" kind="typedef"><name>ChildContainer</name></member>
     <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" kind="typedef"><name>Callback</name></member>
     <member refid="classspk_1_1InherenceObject_1a6975f43b8f3ab8fcdcf0f505db85863f" kind="variable"><name>_parent</name></member>
-    <member refid="classspk_1_1InherenceObject_1a3489f0743f00ba4e73125438481e2465" kind="variable"><name>_childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1a20081d45c82f20443ddd6ccc948c7121" kind="variable"><name>_childrens</name></member>
     <member refid="classspk_1_1InherenceObject_1a2fa85058c172a9faa23e6afa7775302c" kind="variable"><name>_birthCallback</name></member>
     <member refid="classspk_1_1InherenceObject_1a90c2e59f44bebc4efd849335727d4aec" kind="variable"><name>_deathCallback</name></member>
     <member refid="classspk_1_1InherenceObject_1a52ceead92be579647091ed4ba6f1adbb" kind="function"><name>_addChild</name></member>
@@ -246,8 +242,8 @@
     <member refid="classspk_1_1InherenceObject_1a4d1ecc043e2414e9731195021d28a77e" kind="function"><name>setBirthCallback</name></member>
     <member refid="classspk_1_1InherenceObject_1a69d05c5f0a43a7b58ad4e08a9790f23a" kind="function"><name>setDeathCallback</name></member>
     <member refid="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" kind="function"><name>parent</name></member>
-    <member refid="classspk_1_1InherenceObject_1a641db511a9e99a441fdbd67504104a80" kind="function"><name>childrens</name></member>
-    <member refid="classspk_1_1InherenceObject_1a6de21279dbf9064deea472bb8db3dd2f" kind="function"><name>childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1a76cd1e3335b5775ecf356da909a01b86" kind="function"><name>childrens</name></member>
+    <member refid="classspk_1_1InherenceObject_1adc6706d7b939d2f30763bf2502f0dd19" kind="function"><name>childrens</name></member>
     <member refid="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" kind="function"><name>InherenceObject</name></member>
     <member refid="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" kind="function"><name>operator=</name></member>
   </compound>
@@ -730,6 +726,12 @@
     <member refid="classspk_1_1SystemModule_1a4e69257a48d4e3f620310e0bfc1dea21" kind="function"><name>SystemModule</name></member>
     <member refid="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" kind="function"><name>~SystemModule</name></member>
   </compound>
+  <compound refid="classTest" kind="class"><name>Test</name>
+    <member refid="classTest_1af0ef996e937c35f7821d8dc361b3e91c" kind="function"><name>_onRender</name></member>
+    <member refid="classTest_1a7c845314c21473f92d97f71aa578c6a2" kind="function"><name>_onGeometryChange</name></member>
+    <member refid="classTest_1abb0a11f874e918a8bd07741708cf3663" kind="function"><name>_onUpdate</name></member>
+    <member refid="classTest_1ab434ddbfc47bc093436ce7d1bb82965f" kind="function"><name>Test</name></member>
+  </compound>
   <compound refid="classspk_1_1Thread" kind="class"><name>spk::Thread</name>
     <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" kind="enum"><name>LaunchMethod</name></member>
     <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6a6e04a0730cfc0bca398610196b5f8467" kind="enumvalue"><name>Delayed</name></member>
@@ -819,14 +821,23 @@
     <member refid="classspk_1_1Value_1a3ad908815c627f2b2fee96f5ce40ed32" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1Value_1a169179d9efc16fe961c246bfe8c567e6" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1Value_1a57308f762d52732980709a4627285e3f" kind="function"><name>operator const TType &amp;</name></member>
+    <member refid="classspk_1_1Value_1aace95a4b72d83ded6f2c217a2b55cb8f" kind="function"><name>value</name></member>
+  </compound>
+  <compound refid="classspk_1_1WidgetAtlas" kind="class"><name>spk::WidgetAtlas</name>
+    <member refid="classspk_1_1WidgetAtlas_1a03536a7c9eac7c15635a4ded1df177a6" kind="typedef"><name>StoringContainer</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1a4daca5bc2270f6945df1b8d34dcc32f3" kind="friend"><name>spk::Singleton&lt; WidgetAtlas &gt;</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1a1f5d6f60c3a93a85d6ee055b98a5ddf3" kind="variable"><name>_widgets</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1a5f45983a0582952917b1278f60fa6c30" kind="function"><name>WidgetAtlas</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1a8367cea8501ad4108fba1c115f4aeeed" kind="function"><name>insert</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1ac7eabaa654ac4496a37130831d6e93b8" kind="function"><name>remove</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1adcf2adee250f0c6b5330da8e1434e066" kind="function"><name>sort</name></member>
+    <member refid="classspk_1_1WidgetAtlas_1a7a029853be7ba1e3bca33f6fa3f648d0" kind="function"><name>widgets</name></member>
   </compound>
   <compound refid="classspk_1_1WidgetModule" kind="class"><name>spk::WidgetModule</name>
-    <member refid="classspk_1_1WidgetModule_1a549ddb2eb59d3cf0065213196df09cf4" kind="variable"><name>_centralWidget</name></member>
     <member refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" kind="function"><name>WidgetModule</name></member>
     <member refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" kind="function"><name>~WidgetModule</name></member>
     <member refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kind="function"><name>update</name></member>
     <member refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kind="function"><name>render</name></member>
-    <member refid="classspk_1_1WidgetModule_1a28de970ea92d8ab9884939c77f380dc1" kind="function"><name>centralWidget</name></member>
   </compound>
   <compound refid="classspk_1_1Window" kind="class"><name>spk::Window</name>
     <member refid="classspk_1_1Window_1ab0c04c85c44c58fbf9300b04bee7a60f" kind="friend"><name>spk::Singleton&lt; Window &gt;</name></member>
@@ -1032,6 +1043,8 @@
   </compound>
   <compound refid="spk__abstract__widget_8hpp" kind="file"><name>spk_abstract_widget.hpp</name>
   </compound>
+  <compound refid="spk__widget__atlas_8hpp" kind="file"><name>spk_widget_atlas.hpp</name>
+  </compound>
   <compound refid="playground_8hpp" kind="file"><name>playground.hpp</name>
   </compound>
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
@@ -1109,6 +1122,8 @@
   <compound refid="spk__worker__pool_8cpp" kind="file"><name>spk_worker_pool.cpp</name>
   </compound>
   <compound refid="spk__abstract__widget_8cpp" kind="file"><name>spk_abstract_widget.cpp</name>
+  </compound>
+  <compound refid="spk__widget__atlas_8cpp" kind="file"><name>spk_widget_atlas.cpp</name>
   </compound>
   <compound refid="dir_aecd53831fdc6b2dd5eaa5f97724cc82" kind="dir"><name>includes/application</name>
   </compound>

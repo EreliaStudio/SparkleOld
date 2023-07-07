@@ -1,51 +1,39 @@
 #include "application/modules/spk_widget_module.hpp"
 #include "iostream/spk_iostream.hpp"
+#include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {
-	void WidgetModule::CentralWidget::_onRender()
-	{	
-
-	}
-	bool WidgetModule::CentralWidget::_onUpdate()
+	WidgetModule::WidgetModule()
 	{
-		return (false);
-	}
-
-	void WidgetModule::CentralWidget::_onGeometryChange()
-	{
-
-	}
-
-	WidgetModule::CentralWidget::CentralWidget(const std::wstring& p_name) :
-		AbstractWidget(p_name)
-	{
-
-	}
-
-	WidgetModule::WidgetModule() :
-		_centralWidget(new CentralWidget(L"CentralWidget"))
-	{
-		_centralWidget->activate();
+		spk::WidgetAtlas::instanciate();
 	}
 
 	WidgetModule::~WidgetModule()
 	{
-		delete _centralWidget;
+		spk::WidgetAtlas::release();
 	}
-	
+
 	void WidgetModule::update()
 	{
-		_centralWidget->_update();
+		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
+
+		for (auto it = widgetSet.rbegin(); it != widgetSet.rend(); ++it)
+		{
+			if ((*it)->_isOperationnal == true)
+				(*it)->_update();
+		}
 	}
 
 	void WidgetModule::render()
 	{
-		_centralWidget->_render();
-	}
+		spk::cout << " ------ " << std::endl;
+		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
 
-	AbstractWidget* WidgetModule::centralWidget() const
-	{
-		return (_centralWidget);
+		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
+		{
+			if ((*it)->_isOperationnal == true)
+				(*it)->_render();
+		}
 	}
 }

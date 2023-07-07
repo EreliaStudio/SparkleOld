@@ -44,9 +44,7 @@ namespace spk
          */
         Contract addStateCallback(TState p_state, Callback p_callback)
         {
-            Contract result = ContractProvider::subscribe(_callbacks[p_state], p_callback);
-
-			return (std::move(result));
+			return (std::move(ContractProvider::subscribe(_callbacks[p_state], p_callback)));
         }
 
         /**
@@ -61,7 +59,7 @@ namespace spk
 
 			for (size_t i = 0; i < container.size(); i++)
 			{
-				container[i]();
+				    container[i]();
 			}
         }
         
