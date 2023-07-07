@@ -5,7 +5,7 @@ class Test : public spk::AbstractWidget
 private:
 	void _onRender()
 	{
-
+        spk::cout << L"Render widget [" << name() <<  L"] at depth [" << depth() << L"]" << std::endl;
 	}
 	void _onGeometryChange()
 	{
@@ -13,7 +13,7 @@ private:
 	}
 	bool _onUpdate()
 	{
-	return (false);
+	    return (false);
 	}
 public:
 	Test(std::wstring p_name) :
@@ -24,53 +24,47 @@ public:
 };
 
 
-int main() {
-    auto widgetAtlas = spk::WidgetAtlas::instanciate();
+int main()
+{
+    spk::Application app(L"Coucou", 400);
 
-    std::wcout << L"---------- Creation ----------" << std::endl;
-    auto widget1 = new Test(L"Widget 1");
-    auto widget2 = new Test(L"Widget 2");
+    Test* widgetA = app.addRootWidget<Test>(L"WidgetA");
+    widgetA->activate();
+    
+    Test* widgetA_A = widgetA->addChildrenWidget<Test>(L"WidgetA_A");
+    widgetA_A->activate();
+    Test* widgetA_A_A = widgetA_A->addChildrenWidget<Test>(L"WidgetA_A_A");
+    widgetA_A_A->activate();
+    Test* widgetA_B = widgetA->addChildrenWidget<Test>(L"WidgetA_B");
+    widgetA_B->activate();
+    Test* widgetA_C = widgetA->addChildrenWidget<Test>(L"WidgetA_C");
+    widgetA_C->activate();
+    Test* widgetA_C_A = widgetA_C->addChildrenWidget<Test>(L"WidgetA_C_A");
+    widgetA_C_A->activate();
 
-    // Add children and grandchildren
-    auto childWidget1 = widget1->addChildrenWidget<Test>(L"Child Widget 1");
-    childWidget1->activate();
-    auto grandChildWidget = childWidget1->addChildrenWidget<Test>(L"Grandchild Widget");
-    grandChildWidget->activate();
+    Test* widgetB = app.addRootWidget<Test>(L"WidgetB");
+    widgetB->activate();
+    Test* widgetB_A = widgetB->addChildrenWidget<Test>(L"WidgetB_A");
+    widgetB_A->activate();
+    
+    Test* widgetC = app.addRootWidget<Test>(L"WidgetC");
+    widgetC->activate();
+    Test* widgetC_A = widgetC->addChildrenWidget<Test>(L"WidgetC_A");
+    widgetC_A->activate();
+    Test* widgetC_B = widgetC->addChildrenWidget<Test>(L"WidgetC_B");
+    widgetC_B->activate();
+    
+    widgetA->setDepth(10);
+        widgetA_A->setDepth(3);
+            widgetA_A_A->setDepth(5);
+        widgetA_B->setDepth(10);
+        widgetA_C->setDepth(11);
+            widgetA_C_A->setDepth(9);
+    widgetB->setDepth(20);
+        widgetB_A->setDepth(25);
+    widgetC->setDepth(0);
+        widgetC_A->setDepth(2);
+        widgetC_B->setDepth(4);
 
-    auto childWidget2 = widget2->addChildrenWidget<Test>(L"Child Widget 2");
-
-    std::wcout << L"---------- After creation ----------" << std::endl;
-
-    spk::WidgetAtlas::instance()->printInfo();
-
-    std::wcout << L"---------- Activation ----------" << std::endl;
-
-    widget1->activate();
-
-    std::wcout << L"---------- After activation ----------" << std::endl;
-
-    spk::WidgetAtlas::instance()->printInfo();
-
-    std::wcout << L"---------- Deactivation ----------" << std::endl;
-
-    widget1->deactivate();
-
-    std::wcout << L"---------- After deactivation ----------" << std::endl;
-
-    spk::WidgetAtlas::instance()->printInfo();
-
-    std::wcout << L"---------- Before widget depth setting ----------" << std::endl;
-    spk::WidgetAtlas::instance()->printInfo();
-
-    widget1->setDepth(10);
-    childWidget1->setDepth(15);
-    grandChildWidget->setDepth(11);
-
-    widget2->setDepth(1);
-    childWidget2->setDepth(100);
-
-    std::wcout << L"---------- After widget depth setting ----------" << std::endl;
-    spk::WidgetAtlas::instance()->printInfo();
-
-    return 0;
+    return (app.run());
 }

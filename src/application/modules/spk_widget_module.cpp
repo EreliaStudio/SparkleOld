@@ -27,6 +27,7 @@ namespace spk
 
 	void WidgetModule::render()
 	{
+		spk::cout << " ------ " << std::endl;
 		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
 
 		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
