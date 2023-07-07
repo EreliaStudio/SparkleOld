@@ -12,14 +12,8 @@ namespace spk
 		friend class spk::Singleton<WidgetAtlas>;
 
 	private:
-		struct WidgetDepthComparator {
-			bool operator()(const AbstractWidget* lhs, const AbstractWidget* rhs) const
-			{
-				return lhs->depth() < rhs->depth();
-			}
-		};
-		
-		std::multiset<spk::AbstractWidget*, WidgetDepthComparator> _widgetSet;
+		using StoringContainer = std::vector<AbstractWidget*>;
+		StoringContainer _widgets;
 
 		WidgetAtlas()
 		{
@@ -29,31 +23,50 @@ namespace spk
 	public:
 		void insert(AbstractWidget* p_widget)
 		{
-			_widgetSet.insert(p_widget);
+			_widgets.push_back(p_widget);
+			sort(p_widget);
 		}
 
 		void remove(AbstractWidget* p_widget)
 		{
-			auto it = _widgetSet.find(p_widget);
+			auto it = std::find(_widgets.begin(), _widgets.end(), p_widget);
 			
-			if (it != _widgetSet.end()) {
-				_widgetSet.erase(it);
+			if (it != _widgets.end()) {
+				_widgets.erase(it);
 			}
 		}
 
-		void update(AbstractWidget* p_widget)
+		void sort(AbstractWidget* p_widget)
 		{
-			auto it = _widgetSet.find(p_widget);
+			auto it = std::find(_widgets.begin(), _widgets.end(), p_widget);
 			
-			if (it != _widgetSet.end()) {
-				auto nodeHandler = _widgetSet.extract(it); // Extraire le widget sans le détruire.
-				_widgetSet.insert(std::move(nodeHandler)); // Réinsérer le widget.
+			if (it != _widgets.end()) {
+				_widgets.erase(it);
+				
+				auto const insertion_point =
+					std::upper_bound(_widgets.begin(), _widgets.end(), p_widget, [](const AbstractWidget* lhs, const AbstractWidget* rhs)
+					{
+						if (lhs->depth() == rhs->depth()) {
+							return lhs < rhs;
+						}
+						return lhs->depth() < rhs->depth();
+					});
+
+				_widgets.insert(insertion_point, p_widget);
 			}
 		}
 
-		const std::multiset<AbstractWidget*, WidgetDepthComparator>& getWidgetSet() const
+				
+		void printInfo()
 		{
-        	return _widgetSet;
+			for (const auto& widget : widgets()) {
+				std::wcout << L"Widget: " << widget->name() << L", depth " << widget->depth() << L", Active: " << (widget->_isOperationnal ? L"True" : L"False") << std::endl;
+			}
+		}
+
+		const StoringContainer& widgets() const
+		{
+        	return _widgets;
     	}
 	};
 }

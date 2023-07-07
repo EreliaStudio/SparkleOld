@@ -16,6 +16,7 @@ namespace spk
 	class AbstractWidget : public spk::InherenceObject<AbstractWidget>, public spk::ActivableObject
 	{
 		friend class WidgetModule;
+        friend class WidgetAtlas;
 
 	private:
 		virtual void _onRender() = 0;
@@ -23,9 +24,13 @@ namespace spk
 
 		virtual void _onGeometryChange() = 0;
 
+        bool _isOperationnal = false;
+        Contract _activationCallback;
+        Contract _deactivationCallback;
+
 		std::wstring _name;
 		bool _geometryEdited;
-		float _depth;
+		float _depth = 0;
 		spk::Vector2Int _anchor;
 		spk::Vector2Int _size;
 		
@@ -33,9 +38,9 @@ namespace spk
 
 		virtual bool _update();
 
-		void _upponChildrenSetDepthCompletion(Child& p_child);
-
         void addChild(Child child);
+
+		void _setOperationnal();
 
 	public:
 	    /**

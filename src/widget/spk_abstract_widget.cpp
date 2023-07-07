@@ -1,8 +1,15 @@
 #include "widget/spk_abstract_widget.hpp"
 #include "widget/spk_widget_atlas.hpp"
 
+#include "iostream/spk_iostream.hpp"
+
 namespace spk
 {
+    void AbstractWidget::addChild(Child child)
+	{
+		InherenceObject<AbstractWidget>::addChild(child);
+	}
+
 	void AbstractWidget::_render()
 	{
 		if (isActive() == false)
@@ -25,10 +32,28 @@ namespace spk
 		return (_onUpdate());
 	}
 
+	void AbstractWidget::_setOperationnal()
+	{
+		_isOperationnal = isActive() && (parent() == nullptr ? true : parent()->_isOperationnal);
+
+		for (auto children : childrens())
+		{
+			children->_setOperationnal();
+		}
+	}
+
 	AbstractWidget::AbstractWidget(const std::wstring& p_name) :
 		_name(p_name)
 	{
 		WidgetAtlas::instance()->insert(this);
+
+		_activationCallback = ActivableObject::addActivationCallback([&](){
+			_setOperationnal();
+		});
+
+		_deactivationCallback = ActivableObject::addDeactivationCallback([&](){
+			_setOperationnal();
+		});
 	}
 
 	AbstractWidget::~AbstractWidget()
@@ -74,7 +99,7 @@ namespace spk
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
-		WidgetAtlas::instance()->update(this);
+		WidgetAtlas::instance()->sort(this);
 		
 		for (auto child : childrens())
 		{

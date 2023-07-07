@@ -16,21 +16,23 @@ namespace spk
 
 	void WidgetModule::update()
 	{
-		auto &widgetSet = spk::WidgetAtlas::instance()->getWidgetSet();
+		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
 
 		for (auto it = widgetSet.rbegin(); it != widgetSet.rend(); ++it)
 		{
-			(*it)->_update();
+			if ((*it)->_isOperationnal == true)
+				(*it)->_update();
 		}
 	}
 
 	void WidgetModule::render()
 	{
-		auto &widgetSet = spk::WidgetAtlas::instance()->getWidgetSet();
+		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
 
-		for (auto &widget : widgetSet)
+		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
 		{
-			widget->_render();
+			if ((*it)->_isOperationnal == true)
+				(*it)->_render();
 		}
 	}
 }
