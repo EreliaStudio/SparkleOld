@@ -1,103 +1,139 @@
 #include "math/spk_perlin.hpp"
+#include "math/spk_vector3.hpp"
+
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
+
+	float Perlin::_smoothstep(float w)
+	{
+		if (w <= 0.0)
+			return 0.0;
+		if (w >= 1.0)
+			return 1.0;
+		return w * w * (3.0 - 2.0 * w);
+	}
+
+	float Perlin::_interpolate(float a0, float a1, float w)
+	{
+		return a0 + (a1 - a0) * _smoothstep(w);
+	}
+
+	float Perlin::_dotGridGradient(int ix, int iy, int iz, float x, float y, float z)
+	{
+		// Compute the distance vector
+		float dx = x - (float)ix;
+		float dy = y - (float)iy;
+		float dz = z - (float)iz;
+
+		// Compute the dot-product
+		return (dx * _gradiants[iz % GradiantSize][iy % GradiantSize][ix % GradiantSize][0] +
+				dy * _gradiants[iz % GradiantSize][iy % GradiantSize][ix % GradiantSize][1] +
+				dz * _gradiants[iz % GradiantSize][iy % GradiantSize][ix % GradiantSize][2]);
+	}
+
 	float Perlin::_computeWaveLength(float p_x, float p_y, float p_z, float p_frequency)
 	{
 		p_x /= p_frequency;
 		p_y /= p_frequency;
 		p_z /= p_frequency;
 
-		Vector3 directions[12] = {
-			Vector3(1, 1, 0), Vector3(-1, 1, 0), Vector3(1, -1, 0), Vector3(-1, -1, 0),
-			Vector3(1, 0, 1), Vector3(-1, 0, 1), Vector3(1, 0, -1), Vector3(-1, 0, -1),
-			Vector3(0, 1, 1), Vector3(0, -1, 1), Vector3(0, 1, -1), Vector3(0, -1, -1)};
+		// Determine grid cell coordinates
+		int x0 = std::floor(p_x);
+		int x1 = x0 + 1;
+		int y0 = std::floor(p_y);
+		int y1 = y0 + 1;
+		int z0 = std::floor(p_z);
+		int z1 = z0 + 1;
 
-		Vector3 points[8] = {
-			Vector3((float)(p_x), (float)(p_y), (float)(p_z)),
-			Vector3((float)(p_x + 1), (float)(p_y), (float)(p_z)),
-			Vector3((float)(p_x), (float)(p_y + 1), (float)(p_z)),
-			Vector3((float)(p_x + 1), (float)(p_y + 1), (float)(p_z)),
-			Vector3((float)(p_x), (float)(p_y), (float)(p_z + 1)),
-			Vector3((float)(p_x + 1), (float)(p_y), (float)(p_z + 1)),
-			Vector3((float)(p_x), (float)(p_y + 1), (float)(p_z + 1)),
-			Vector3((float)(p_x + 1), (float)(p_y + 1), (float)(p_z + 1))};
+		// Determine interpolation weights
+		float sx = p_x - (float)x0;
+		float sy = p_y - (float)y0;
+		float sz = p_z - (float)z0;
 
-		Vector3 targetPoint = Vector3(p_x, p_y, p_z);
-		Vector3 targetDelta = targetPoint - points[0];
+		// _Interpolate between grid point gradients
+		float n0, n1, ix0, ix1, iy0, iy1, value;
+		n0 = _dotGridGradient(x0, y0, z0, p_x, p_y, p_z);
+		n1 = _dotGridGradient(x1, y0, z0, p_x, p_y, p_z);
+		ix0 = _interpolate(n0, n1, sx);
+		n0 = _dotGridGradient(x0, y1, z0, p_x, p_y, p_z);
+		n1 = _dotGridGradient(x1, y1, z0, p_x, p_y, p_z);
+		ix1 = _interpolate(n0, n1, sx);
+		iy0 = _interpolate(ix0, ix1, sy);
 
-		int indices[8];
-		_rng.setDistributionRange(0, 11);
+		n0 = _dotGridGradient(x0, y0, z1, p_x, p_y, p_z);
+		n1 = _dotGridGradient(x1, y0, z1, p_x, p_y, p_z);
+		ix0 = _interpolate(n0, n1, sx);
+		n0 = _dotGridGradient(x0, y1, z1, p_x, p_y, p_z);
+		n1 = _dotGridGradient(x1, y1, z1, p_x, p_y, p_z);
+		ix1 = _interpolate(n0, n1, sx);
+		iy1 = _interpolate(ix0, ix1, sy);
 
-		for (int i = 0; i < 8; i++)
+		value = _interpolate(iy0, iy1, sz);
+
+		return value;
+	}
+
+	void Perlin::_calcGradiant()
+	{
+		for (int i = 0; i < GradiantSize; ++i)
 		{
-			int ii = static_cast<int>(points[i].x) & 255;
-			int jj = static_cast<int>(points[i].y) & 255;
-			int kk = static_cast<int>(points[i].z) & 255;
-
-			indices[i] = _rng() % 12; // Get random index
+			for (int j = 0; j < GradiantSize; ++j)
+			{
+				for (int k = 0; k < GradiantSize; ++k)
+				{
+					for (int l = 0; l < 3; ++l)
+					{
+						_gradiants[i][j][k][l] = static_cast<float>(_rng()) / 10000.0f;
+					}
+				}
+			}
 		}
-
-		float dotProducts[8];
-		for (int i = 0; i < 8; i++)
-		{
-			dotProducts[i] = directions[indices[i]].dot(targetPoint - points[i]);
-		}
-
-		// Compute smooth factors for interpolation
-		float smoothX = 3 * targetDelta.x * targetDelta.x - 2 * targetDelta.x * targetDelta.x * targetDelta.x;
-		float smoothY = 3 * targetDelta.y * targetDelta.y - 2 * targetDelta.y * targetDelta.y * targetDelta.y;
-		float smoothZ = 3 * targetDelta.z * targetDelta.z - 2 * targetDelta.z * targetDelta.z * targetDelta.z;
-
-		// Perform trilinear interpolation
-		float x1 = dotProducts[0] + smoothX * (dotProducts[1] - dotProducts[0]);
-		float x2 = dotProducts[2] + smoothX * (dotProducts[3] - dotProducts[2]);
-		float y1 = x1 + smoothY * (x2 - x1);
-		x1 = dotProducts[4] + smoothX * (dotProducts[5] - dotProducts[4]);
-		x2 = dotProducts[6] + smoothX * (dotProducts[7] - dotProducts[6]);
-		float y2 = x1 + smoothY * (x2 - x1);
-
-		return y1 + smoothZ * (y2 - y1);
 	}
 
 	Perlin::Perlin(unsigned long p_seed) : _seed(p_seed),
-										   _rng(p_seed),
-										   _min(),
-										   _max(),
-										   _range(),
-										   _octaveValue(3),
-										   _frequency(50),
-										   _persistance(0.5f),
-										   _lacunarity(2.0f)
+												   _rng(_seed),
+												   _min(),
+												   _max(),
+												   _range(),
+												   _octaveValue(3),
+												   _frequency(50),
+												   _persistance(0.5f),
+												   _lacunarity(2.0f)
 	{
+		configureSeed(_seed);
+		_calcGradiant();
+	}
+
+	const unsigned long &Perlin::seed() const
+	{
+		return (_seed);
 	}
 
 	void Perlin::configureSeed(unsigned long p_seed)
 	{
 		_seed = p_seed;
-		_rng = spk::RandomGenerator<int>(p_seed);
+		_rng = spk::RandomGenerator<int>(_seed);
+		_rng.setDistributionRange(0, 10000);
+		_calcGradiant();
 	}
-
 	void Perlin::configureFrequency(float p_frequency)
 	{
 		_frequency = p_frequency;
 	}
-
 	void Perlin::configurePersistance(float p_persistance)
 	{
 		_persistance = p_persistance;
 	}
-
 	void Perlin::configureLacunarity(float p_lacunarity)
 	{
 		_lacunarity = p_lacunarity;
 	}
-
 	void Perlin::configureOctave(size_t p_octaveValue)
 	{
 		_octaveValue = p_octaveValue;
 	}
-
 	void Perlin::configureRange(float p_min, float p_max)
 	{
 		_min = p_min;
@@ -107,10 +143,6 @@ namespace spk
 
 	float Perlin::sample(float p_x, float p_y, float p_z)
 	{
-		p_x = std::fabs(p_x + _seed);
-		p_y = std::fabs(p_y + _seed);
-		p_z = std::fabs(p_z + _seed);
-
 		float result = 0;
 		float amplitude = 1.0f;
 		float frequency = _frequency;
@@ -121,6 +153,8 @@ namespace spk
 			amplitude *= _persistance;
 			frequency /= _lacunarity;
 		}
+
+		// spk::cout << "Result : " << result << std::endl;
 
 		result += 1;
 		result /= 2;
