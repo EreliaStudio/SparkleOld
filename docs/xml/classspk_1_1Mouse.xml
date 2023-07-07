@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="47" column="1"/>
+        <location file="includes/input/spk_mouse.hpp" line="47" column="1" bodyfile="src/input/spk_mouse.cpp" bodystart="5" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a3576d3accda65e374ca0aa404b60f767" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="54" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="54" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="16" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1ad9a3b0815e9bcdc053ea6af2953713d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="61" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="61" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="22" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a420dd107e3a5c38e7a201b76b9385d4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="68" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="68" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a996fc2b2a53ee6dffe4c49b80d92c31c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -287,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="75" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="75" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1ac6ac1c7429fdc3e498a2aa6d09e3dffb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -301,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="80" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="80" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="37" bodyend="55"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -331,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="88" column="6"/>
+        <location file="includes/input/spk_mouse.hpp" line="88" column="6" bodyfile="src/input/spk_mouse.cpp" bodystart="57" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const InputState &amp;</type>

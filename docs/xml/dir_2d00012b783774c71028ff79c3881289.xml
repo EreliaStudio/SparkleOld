@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_2d00012b783774c71028ff79c3881289" kind="dir">
+    <compoundname>src/application/modules/windows</compoundname>
+    <innerfile refid="windows_2spk__abstract__module_8cpp">spk_abstract_module.cpp</innerfile>
+    <innerfile refid="windows_2spk__API__module_8cpp">spk_API_module.cpp</innerfile>
+    <innerfile refid="windows_2spk__keyboard__module_8cpp">spk_keyboard_module.cpp</innerfile>
+    <innerfile refid="windows_2spk__mouse__module_8cpp">spk_mouse_module.cpp</innerfile>
+    <innerfile refid="spk__system__module_8cpp">spk_system_module.cpp</innerfile>
+    <innerfile refid="windows_2spk__window__module_8cpp">spk_window_module.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/application/modules/windows/"/>
+  </compounddef>
+</doxygen>

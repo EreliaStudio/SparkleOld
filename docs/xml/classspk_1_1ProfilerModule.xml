@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="14" column="6"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="14" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="19" bodyend="23"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="17" column="1"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="17" column="1" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="6" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="18" column="1"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="18" column="1" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="14" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="20" column="6"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="20" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="25" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="21" column="6"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="21" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_profiler_module.hpp" line="22" column="6"/>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="22" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="43" bodyend="46"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

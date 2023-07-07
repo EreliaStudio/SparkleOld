@@ -5,6 +5,7 @@
     <includes refid="spk__timer_8hpp" local="yes">system/spk_timer.hpp</includes>
     <includedby refid="linux_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
     <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
+    <includedby refid="spk__profiler__module_8cpp" local="yes">src/application/modules/spk_profiler_module.cpp</includedby>
     <incdepgraph>
       <node id="8">
         <label>application/modules/spk_abstract_module.hpp</label>

@@ -1068,9 +1068,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" prot="private" static="yes" mutable="no">
+      <memberdef kind="variable" id="classspk_1_1Keyboard_1ad1352e83d391fa0fae22c1dba316b038" prot="private" static="yes" mutable="no">
         <type>std::map&lt; <ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref>, std::wstring &gt;</type>
-        <definition>std::map&lt;Keyboard::Key, std::wstring&gt; spk::Keyboard::KeyToStringMap</definition>
+        <definition>std::map&lt; Keyboard::Key, std::wstring &gt; spk::Keyboard::KeyToStringMap</definition>
         <argsstring></argsstring>
         <name>KeyToStringMap</name>
         <briefdescription>
@@ -1086,6 +1086,7 @@
         <definition>const std::wstring spk::Keyboard::UnknowKeyName</definition>
         <argsstring></argsstring>
         <name>UnknowKeyName</name>
+        <initializer>= L&quot;Unknow key&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1148,7 +1149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="122" column="1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="122" column="1" bodyfile="src/input/spk_keyboard.cpp" bodystart="161" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1ae7c24eb679b40f736ab882f03ab2f292" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1176,7 +1177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="128" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="128" column="6" bodyfile="src/input/spk_keyboard.cpp" bodystart="170" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1a94ecd823d91d43f6c364568a7a23efa1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1204,7 +1205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="134" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="134" column="6" bodyfile="src/input/spk_keyboard.cpp" bodystart="176" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1218,7 +1219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="139" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="139" column="6" bodyfile="src/input/spk_keyboard.cpp" bodystart="183" bodyend="192"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1282,9 +1283,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Keyboard_1ad2b0cc5897311b9917d2a8e71782db4d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const std::wstring &amp;</type>
-        <definition>static const std::wstring&amp; spk::Keyboard::keyToString</definition>
+        <definition>const std::wstring &amp; spk::Keyboard::keyToString</definition>
         <argsstring>(const Keyboard::Key &amp;p_key)</argsstring>
         <name>keyToString</name>
         <param>
@@ -1310,7 +1311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="163" column="27"/>
+        <location file="includes/input/spk_keyboard.hpp" line="163" column="27" bodyfile="src/input/spk_keyboard.cpp" bodystart="194" bodyend="200"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1421,8 +1422,8 @@
       <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ab510516d1dbaef62db4dfdf99861e939" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Key9</name></member>
       <member refid="classspk_1_1Keyboard_1a9c899c94ba2045460cd9e035754f80a4" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>Keyboard</name></member>
       <member refid="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>KeyboardModule</name></member>
-      <member refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>keyToString</name></member>
-      <member refid="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>KeyToStringMap</name></member>
+      <member refid="classspk_1_1Keyboard_1ad2b0cc5897311b9917d2a8e71782db4d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>keyToString</name></member>
+      <member refid="classspk_1_1Keyboard_1ad1352e83d391fa0fae22c1dba316b038" prot="private" virt="non-virtual"><scope>spk::Keyboard</scope><name>KeyToStringMap</name></member>
       <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ac27db3b4fef2a80cd6b85239025d3172" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>L</name></member>
       <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>Layout</name></member>
       <member refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28ad3b6c0b30f7b71d023cd37bb3e6d397d" prot="public" virt="non-virtual"><scope>spk::Keyboard</scope><name>LeftAlt</name></member>

@@ -8,6 +8,8 @@
     <includes refid="spk__chronometer_8hpp" local="yes">system/spk_chronometer.hpp</includes>
     <includes refid="spk__singleton_8hpp" local="yes">design_pattern/spk_singleton.hpp</includes>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__profiler__module_8cpp" local="yes">src/application/modules/spk_profiler_module.cpp</includedby>
+    <includedby refid="spk__profiler_8cpp" local="yes">src/debug/spk_profiler.cpp</includedby>
     <incdepgraph>
       <node id="25">
         <label>design_pattern/spk_contract_provider.hpp</label>
@@ -173,9 +175,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1Profiler" prot="public">spk::Profiler</innerclass>
@@ -212,15 +220,15 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Profiler" kindref="compound">Profiler</ref>();</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="54" refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Chronometer" kindref="compound">spk::Chronometer</ref><sp/>&amp;<ref refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" kindref="member">chronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Chronometer" kindref="compound">spk::Chronometer</ref><sp/>&amp;<ref refid="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" kindref="member">chronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" kindref="member">resetChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" kindref="member">resetChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kindref="member">startChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kindref="member">startChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kindref="member">resumeChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kindref="member">resumeChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82" refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" kindref="member">stopChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" kindref="member">stopChronometer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_key);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>increseCounter(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_key);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setCounter(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>p_value);</highlight></codeline>

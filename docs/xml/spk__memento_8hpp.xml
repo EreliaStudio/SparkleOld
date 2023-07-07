@@ -61,9 +61,15 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/design_pattern/spk_memento.hpp</label>

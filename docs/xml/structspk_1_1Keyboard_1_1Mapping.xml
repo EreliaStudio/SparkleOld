@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="102" column="1"/>
+        <location file="includes/input/spk_keyboard.hpp" line="102" column="1" bodyfile="src/input/spk_keyboard.cpp" bodystart="145" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -69,11 +69,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="108" column="6"/>
+        <location file="includes/input/spk_keyboard.hpp" line="108" column="6" bodyfile="src/input/spk_keyboard.cpp" bodystart="151" bodyend="154"/>
       </memberdef>
-      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1aec6dff1fcdf62d544a171cc8fd0ca541" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1a45921c1c980f2a4a84e1587c8fcc9823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Key</ref> &amp;</type>
-        <definition>Key&amp; spk::Keyboard::Mapping::operator[]</definition>
+        <definition>Keyboard::Key &amp; spk::Keyboard::Mapping::operator[]</definition>
         <argsstring>(const size_t &amp;p_index)</argsstring>
         <name>operator[]</name>
         <param>
@@ -86,13 +86,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="109" column="5"/>
+        <location file="includes/input/spk_keyboard.hpp" line="109" column="5" bodyfile="src/input/spk_keyboard.cpp" bodystart="156" bodyend="159"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1ab4197f06903fe525205ada5ec0232c8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1aa17569de8d92568e5dce575837951cc9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Mapping</type>
-        <definition>static Mapping spk::Keyboard::Mapping::createAzertyMapping</definition>
+        <definition>Keyboard::Mapping spk::Keyboard::Mapping::createAzertyMapping</definition>
         <argsstring>()</argsstring>
         <name>createAzertyMapping</name>
         <briefdescription>
@@ -101,11 +101,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="111" column="16"/>
+        <location file="includes/input/spk_keyboard.hpp" line="111" column="16" bodyfile="src/input/linux/spk_keyboard.cpp" bodystart="5" bodyend="12"/>
       </memberdef>
-      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1ac5581ec2f8f6b896c4f6d146abee2a8d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structspk_1_1Keyboard_1_1Mapping_1a4d7860015036f2b1792815e440f28c96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Mapping</type>
-        <definition>static Mapping spk::Keyboard::Mapping::createQwertyMapping</definition>
+        <definition>Keyboard::Mapping spk::Keyboard::Mapping::createQwertyMapping</definition>
         <argsstring>()</argsstring>
         <name>createQwertyMapping</name>
         <briefdescription>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="112" column="16"/>
+        <location file="includes/input/spk_keyboard.hpp" line="112" column="16" bodyfile="src/input/linux/spk_keyboard.cpp" bodystart="14" bodyend="116"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -126,11 +126,11 @@
     <location file="includes/input/spk_keyboard.hpp" line="98" column="1" bodyfile="includes/input/spk_keyboard.hpp" bodystart="99" bodyend="113"/>
     <listofallmembers>
       <member refid="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>bindKey</name></member>
-      <member refid="structspk_1_1Keyboard_1_1Mapping_1ab4197f06903fe525205ada5ec0232c8b" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>createAzertyMapping</name></member>
-      <member refid="structspk_1_1Keyboard_1_1Mapping_1ac5581ec2f8f6b896c4f6d146abee2a8d" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>createQwertyMapping</name></member>
+      <member refid="structspk_1_1Keyboard_1_1Mapping_1aa17569de8d92568e5dce575837951cc9" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>createAzertyMapping</name></member>
+      <member refid="structspk_1_1Keyboard_1_1Mapping_1a4d7860015036f2b1792815e440f28c96" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>createQwertyMapping</name></member>
       <member refid="structspk_1_1Keyboard_1_1Mapping_1a862d7e2ab5556a56af7020c33db5c14a" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>keys</name></member>
       <member refid="structspk_1_1Keyboard_1_1Mapping_1ac7348453dd42feef1ba1b2b08dae0d3c" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>Mapping</name></member>
-      <member refid="structspk_1_1Keyboard_1_1Mapping_1aec6dff1fcdf62d544a171cc8fd0ca541" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>operator[]</name></member>
+      <member refid="structspk_1_1Keyboard_1_1Mapping_1a45921c1c980f2a4a84e1587c8fcc9823" prot="public" virt="non-virtual"><scope>spk::Keyboard::Mapping</scope><name>operator[]</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

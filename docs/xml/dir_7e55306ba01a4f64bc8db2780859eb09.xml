@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_7e55306ba01a4f64bc8db2780859eb09" kind="dir">
+    <compoundname>src/threading</compoundname>
+    <innerfile refid="spk__persistent__worker_8cpp">spk_persistent_worker.cpp</innerfile>
+    <innerfile refid="spk__thread_8cpp">spk_thread.cpp</innerfile>
+    <innerfile refid="spk__worker__pool_8cpp">spk_worker_pool.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/threading/"/>
+  </compounddef>
+</doxygen>

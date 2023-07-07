@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="65" column="1"/>
+        <location file="includes/system/spk_timer.hpp" line="65" column="1" bodyfile="src/system/spk_timer.cpp" bodystart="6" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,11 +132,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="74" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="74" column="6" bodyfile="src/system/spk_timer.cpp" bodystart="17" bodyend="23"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Timer_1adbf9623ac0ac02f0bc97a835fe2a08d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const long long &amp;</type>
-        <definition>const long long&amp; spk::Timer::totalDuration</definition>
+        <definition>const long long &amp; spk::Timer::totalDuration</definition>
         <argsstring>() const</argsstring>
         <name>totalDuration</name>
         <briefdescription>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="83" column="17"/>
+        <location file="includes/system/spk_timer.hpp" line="83" column="17" bodyfile="src/system/spk_timer.cpp" bodystart="25" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>long long</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="93" column="11"/>
+        <location file="includes/system/spk_timer.hpp" line="93" column="11" bodyfile="src/system/spk_timer.cpp" bodystart="30" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="101" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="101" column="6" bodyfile="src/system/spk_timer.cpp" bodystart="44" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -198,11 +198,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="108" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="108" column="6" bodyfile="src/system/spk_timer.cpp" bodystart="53" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Timer_1a4c46c8146cee6bde6910f4e200e0fae3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kindref="member">State</ref> &amp;</type>
-        <definition>const State&amp; spk::Timer::status</definition>
+        <definition>const Timer::State &amp; spk::Timer::status</definition>
         <argsstring>() const</argsstring>
         <name>status</name>
         <briefdescription>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="117" column="13"/>
+        <location file="includes/system/spk_timer.hpp" line="117" column="13" bodyfile="src/system/spk_timer.cpp" bodystart="61" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/system/spk_timer.hpp" line="126" column="6"/>
+        <location file="includes/system/spk_timer.hpp" line="126" column="6" bodyfile="src/system/spk_timer.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -253,10 +253,10 @@
       <member refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>setDuration</name></member>
       <member refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>start</name></member>
       <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>State</name></member>
-      <member refid="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>status</name></member>
+      <member refid="classspk_1_1Timer_1a4c46c8146cee6bde6910f4e200e0fae3" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>status</name></member>
       <member refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>stop</name></member>
       <member refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>Timer</name></member>
-      <member refid="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>totalDuration</name></member>
+      <member refid="classspk_1_1Timer_1adbf9623ac0ac02f0bc97a835fe2a08d8" prot="public" virt="non-virtual"><scope>spk::Timer</scope><name>totalDuration</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

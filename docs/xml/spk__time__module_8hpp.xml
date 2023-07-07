@@ -7,6 +7,7 @@
     <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__time__metrics_8hpp" local="yes">includes/system/spk_time_metrics.hpp</includedby>
+    <includedby refid="spk__time__module_8cpp" local="yes">src/application/modules/spk_time_module.cpp</includedby>
     <incdepgraph>
       <node id="2">
         <label>application/modules/spk_abstract_module.hpp</label>
@@ -47,19 +48,25 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="7">
+      <node id="8">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
+      </node>
+      <node id="5">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
       </node>
       <node id="4">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/application/modules/spk_time_module.hpp</label>
@@ -70,10 +77,10 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>includes/application/modules/spk_profiler_module.hpp</label>
         <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="2" relation="include">
@@ -81,30 +88,30 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>includes/system/spk_timer.hpp</label>
         <link refid="spk__timer_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>includes/system/spk_time_metrics.hpp</label>
         <link refid="spk__time__metrics_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>includes/system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
@@ -134,11 +141,11 @@
 <codeline lineno="14" refid="classspk_1_1TimeModule" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1TimeModule" kindref="compound">TimeModule</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractModule" kindref="compound">spk::AbstractModule</ref></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="21" refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" kindref="member">TimeModule</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" kindref="member">TimeModule</ref>();</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" kindref="member">~TimeModule</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" kindref="member">~TimeModule</ref>();</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kindref="member">update</ref>();</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="35"><highlight class="normal">}</highlight></codeline>
     </programlisting>

@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_worker_pool.hpp" line="104" column="1"/>
+        <location file="includes/threading/spk_worker_pool.hpp" line="104" column="1" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="47" bodyend="51"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_18bfe15d38f9d4b020db717ec3dec0ad" kind="dir">
+    <compoundname>src/design_pattern</compoundname>
+    <innerfile refid="spk__activable__object_8cpp">spk_activable_object.cpp</innerfile>
+    <innerfile refid="spk__activity_8cpp">spk_activity.cpp</innerfile>
+    <innerfile refid="spk__activity__scheduler_8cpp">spk_activity_scheduler.cpp</innerfile>
+    <innerfile refid="spk__contract__provider_8cpp">spk_contract_provider.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/design_pattern/"/>
+  </compounddef>
+</doxygen>

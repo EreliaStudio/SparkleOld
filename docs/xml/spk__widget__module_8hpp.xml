@@ -7,6 +7,7 @@
     <includedby refid="linux_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
     <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__widget__module_8cpp" local="yes">src/application/modules/spk_widget_module.cpp</includedby>
     <incdepgraph>
       <node id="7">
         <label>design_pattern/spk_activable_object.hpp</label>
@@ -142,9 +143,15 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="5">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="4">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
@@ -191,15 +198,15 @@
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CentralWidget*<sp/>_centralWidget;</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="63" refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" kindref="member">WidgetModule</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WidgetModule_1a40f05901d95d5102006a53982ddff24c" kindref="member">WidgetModule</ref>();</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" kindref="member">~WidgetModule</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" kindref="member">~WidgetModule</ref>();</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kindref="member">update</ref>();</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kindref="member">render</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kindref="member">render</ref>();</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref>*<sp/><ref refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" kindref="member">centralWidget</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref>*<sp/><ref refid="classspk_1_1WidgetModule_1a28de970ea92d8ab9884939c77f380dc1" kindref="member">centralWidget</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="87"><highlight class="normal">}</highlight></codeline>
     </programlisting>

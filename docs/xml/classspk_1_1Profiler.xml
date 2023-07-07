@@ -96,13 +96,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="45" column="1"/>
+        <location file="includes/debug/spk_profiler.hpp" line="45" column="1" bodyfile="src/debug/spk_profiler.cpp" bodystart="5" bodyend="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classspk_1_1Chronometer" kindref="compound">spk::Chronometer</ref> &amp;</type>
-        <definition>const spk::Chronometer&amp; spk::Profiler::chronometer</definition>
+        <definition>const spk::Chronometer &amp; spk::Profiler::chronometer</definition>
         <argsstring>(const std::wstring &amp;p_key) const</argsstring>
         <name>chronometer</name>
         <param>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="54" column="24"/>
+        <location file="includes/debug/spk_profiler.hpp" line="54" column="24" bodyfile="src/debug/spk_profiler.cpp" bodystart="13" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -174,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="61" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="61" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="22" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -202,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="67" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="67" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="31" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="74" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="74" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="36" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const long long</type>
@@ -278,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="82" column="17"/>
+        <location file="includes/debug/spk_profiler.hpp" line="82" column="17" bodyfile="src/debug/spk_profiler.cpp" bodystart="45" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -295,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="84" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="84" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="54" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -316,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="85" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="85" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="59" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -333,11 +333,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="86" column="6"/>
+        <location file="includes/debug/spk_profiler.hpp" line="86" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="64" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const size_t &amp;</type>
-        <definition>const size_t&amp; spk::Profiler::counter</definition>
+        <definition>const size_t &amp; spk::Profiler::counter</definition>
         <argsstring>(const std::wstring &amp;p_key) const</argsstring>
         <name>counter</name>
         <param>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="87" column="14"/>
+        <location file="includes/debug/spk_profiler.hpp" line="87" column="14" bodyfile="src/debug/spk_profiler.cpp" bodystart="71" bodyend="76"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -388,8 +388,8 @@
       <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_chronometers</name></member>
       <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_counters</name></member>
       <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Profiler</scope><name>_instance</name></member>
-      <member refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>chronometer</name></member>
-      <member refid="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>counter</name></member>
+      <member refid="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>chronometer</name></member>
+      <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>counter</name></member>
       <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>increseCounter</name></member>
       <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instance</name></member>
       <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instanciate</name></member>

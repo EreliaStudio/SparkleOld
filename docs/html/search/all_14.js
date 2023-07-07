@@ -9,5 +9,5 @@ var searchData=
   ['timemodule_245',['TimeModule',['../classspk_1_1TimeModule.html',1,'spk::TimeModule'],['../classspk_1_1TimeModule.html#a927bb091d697cdde8e9a66b1d5bc2a98',1,'spk::TimeModule::TimeModule()']]],
   ['timeout_246',['Timeout',['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0ac85a251cc457840f1e032f1b733e9398',1,'spk::Timer']]],
   ['timer_247',['Timer',['../classspk_1_1Timer.html',1,'spk::Timer'],['../classspk_1_1Timer.html#a407d0e659a442be8f81043fc05d14982',1,'spk::Timer::Timer()']]],
-  ['totalduration_248',['totalDuration',['../classspk_1_1Timer.html#ad57b7897092566299295a3617851926e',1,'spk::Timer']]]
+  ['totalduration_248',['totalDuration',['../classspk_1_1Timer.html#adbf9623ac0ac02f0bc97a835fe2a08d8',1,'spk::Timer']]]
 ];

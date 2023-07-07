@@ -7,6 +7,7 @@
     <includedby refid="spk__profiler__module_8hpp" local="yes">includes/application/modules/spk_profiler_module.hpp</includedby>
     <includedby refid="spk__input_8hpp" local="yes">includes/input/spk_input.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__timer_8cpp" local="yes">src/system/spk_timer.cpp</includedby>
     <incdepgraph>
       <node id="7">
         <label>application/modules/spk_abstract_module.hpp</label>
@@ -81,9 +82,15 @@
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
+      <node id="7">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="6">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>includes/application/modules/spk_profiler_module.hpp</label>
@@ -144,21 +151,21 @@
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>_startTime;</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="65" refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" kindref="member">Timer</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" kindref="member">Timer</ref>();</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" kindref="member">setDuration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>p_duration);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" kindref="member">setDuration</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>p_duration);</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/><ref refid="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" kindref="member">totalDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/><ref refid="classspk_1_1Timer_1adbf9623ac0ac02f0bc97a835fe2a08d8" kindref="member">totalDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93" refid="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" kindref="member">remainingDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" kindref="member">remainingDuration</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101" refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" kindref="member">start</ref>();</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108" refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" kindref="member">stop</ref>();</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kindref="member">State</ref>&amp;<sp/><ref refid="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" kindref="member">status</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kindref="member">State</ref>&amp;<sp/><ref refid="classspk_1_1Timer_1a4c46c8146cee6bde6910f4e200e0fae3" kindref="member">status</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126" refid="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" kindref="member">isRunning</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="128"><highlight class="normal">}</highlight></codeline>
     </programlisting>

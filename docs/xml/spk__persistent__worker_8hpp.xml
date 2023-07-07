@@ -7,6 +7,7 @@
     <includedby refid="spk__abstract__application_8hpp" local="yes">includes/application/spk_abstract_application.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__chronometer_8hpp" local="yes">includes/system/spk_chronometer.hpp</includedby>
+    <includedby refid="spk__persistent__worker_8cpp" local="yes">src/threading/spk_persistent_worker.cpp</includedby>
     <incdepgraph>
       <node id="12">
         <label>design_pattern/spk_contract_provider.hpp</label>
@@ -97,20 +98,26 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="7">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="6">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>includes/system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -134,7 +141,7 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -173,23 +180,23 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_isPaused<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="41" refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kindref="member">PersistentWorker</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;<sp/>p_name);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kindref="member">PersistentWorker</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;<sp/>p_name);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kindref="member">~PersistentWorker</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kindref="member">~PersistentWorker</ref>();</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>&amp;<sp/><ref refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>&amp;<sp/><ref refid="classspk_1_1PersistentWorker_1a5880ffdaf3fef5e5115702dacd7a95d6" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67" refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kindref="member">isRunning</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(_isRunning);<sp/>}</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kindref="member">start</ref>();</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kindref="member">stop</ref>();</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88" refid="classspk_1_1PersistentWorker_1ad730a6aef37005bc23999327bdd56ac7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1ad730a6aef37005bc23999327bdd56ac7" kindref="member">join</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" kindref="member">pause</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1a48e0003b4bf60e84312d20257a094a79" kindref="member">pause</ref>();</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102" refid="classspk_1_1PersistentWorker_1afbb963099f60af09f97827e3ab1f2d6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1afbb963099f60af09f97827e3ab1f2d6b" kindref="member">resume</ref>();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1PersistentWorker_1afbb963099f60af09f97827e3ab1f2d6b" kindref="member">resume</ref>();</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="104"><highlight class="normal">}</highlight></codeline>
     </programlisting>

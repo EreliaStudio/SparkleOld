@@ -5,6 +5,7 @@
     <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
     <includedby refid="spk__keyboard_8hpp" local="yes">includes/input/spk_keyboard.hpp</includedby>
     <includedby refid="spk__mouse_8hpp" local="yes">includes/input/spk_mouse.hpp</includedby>
+    <includedby refid="spk__input__status_8cpp" local="yes">src/input/spk_input_status.cpp</includedby>
     <incdepgraph>
       <node id="6">
         <label>string</label>

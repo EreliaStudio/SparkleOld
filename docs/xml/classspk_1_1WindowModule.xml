@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="23" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="23" column="6" bodyfile="src/application/modules/linux/spk_window_module.cpp" bodystart="7" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="33" column="1"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="33" column="1" bodyfile="src/application/modules/linux/spk_window_module.cpp" bodystart="21" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="38" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="38" column="6" bodyfile="src/application/modules/linux/spk_window_module.cpp" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_window_module.hpp" line="43" column="6"/>
+        <location file="includes/application/modules/linux/spk_window_module.hpp" line="43" column="6" bodyfile="src/application/modules/linux/spk_window_module.cpp" bodystart="31" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a36706fa4088182a2c3b03536d3300809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_window_module.hpp" line="35" column="1"/>
+        <location file="includes/application/modules/windows/spk_window_module.hpp" line="35" column="1" bodyfile="src/application/modules/windows/spk_window_module.cpp" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

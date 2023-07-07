@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="21" column="6"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="21" column="6" bodyfile="src/application/modules/linux/spk_mouse_module.cpp" bodystart="6" bodyend="81"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="29" column="1"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="29" column="1" bodyfile="src/application/modules/linux/spk_mouse_module.cpp" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1MouseModule_1a7488472b5dcb2a93d96dd1350a7b9246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="34" column="1"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="34" column="1" bodyfile="src/application/modules/linux/spk_mouse_module.cpp" bodystart="88" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_mouse_module.hpp" line="39" column="6"/>
+        <location file="includes/application/modules/spk_mouse_module.hpp" line="39" column="6" bodyfile="src/application/modules/linux/spk_mouse_module.cpp" bodystart="93" bodyend="96"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

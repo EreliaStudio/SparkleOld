@@ -6,6 +6,11 @@
     <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
     <includes refid="spk__system__define_8hpp" local="yes">spk_system_define.hpp</includes>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="linux_2spk__API__module_8cpp" local="yes">src/application/modules/linux/spk_API_module.cpp</includedby>
+    <includedby refid="linux_2spk__window__module_8cpp" local="yes">src/application/modules/linux/spk_window_module.cpp</includedby>
+    <includedby refid="windows_2spk__window__module_8cpp" local="yes">src/application/modules/windows/spk_window_module.cpp</includedby>
+    <includedby refid="linux_2spk__window_8cpp" local="yes">src/graphics/linux/spk_window.cpp</includedby>
+    <includedby refid="windows_2spk__window_8cpp" local="yes">src/graphics/windows/spk_window.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/graphics/spk_window.hpp</label>
@@ -62,9 +67,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <briefdescription>

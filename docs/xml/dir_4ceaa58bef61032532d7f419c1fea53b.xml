@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_4ceaa58bef61032532d7f419c1fea53b" kind="dir">
+    <compoundname>playground/includes</compoundname>
+    <innerfile refid="playground_8hpp">playground.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="playground/includes/"/>
+  </compounddef>
+</doxygen>

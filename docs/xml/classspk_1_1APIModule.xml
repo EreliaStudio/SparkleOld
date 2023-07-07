@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_API_module.hpp" line="26" column="1"/>
+        <location file="includes/application/modules/linux/spk_API_module.hpp" line="26" column="1" bodyfile="src/application/modules/linux/spk_API_module.cpp" bodystart="7" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_API_module.hpp" line="31" column="1"/>
+        <location file="includes/application/modules/linux/spk_API_module.hpp" line="31" column="1" bodyfile="src/application/modules/linux/spk_API_module.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/linux/spk_API_module.hpp" line="38" column="6"/>
+        <location file="includes/application/modules/linux/spk_API_module.hpp" line="38" column="6" bodyfile="src/application/modules/linux/spk_API_module.cpp" bodystart="17" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
@@ -366,13 +366,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="36" column="9"/>
+        <location file="includes/application/modules/windows/spk_API_module.hpp" line="36" column="9" bodyfile="src/application/modules/windows/spk_API_module.cpp" bodystart="26" bodyend="135"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classspk_1_1APIModule_1ab955c67006b25c8faaa9a21f2d6b1963" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>LRESULT CALLBACK</type>
-        <definition>static LRESULT CALLBACK spk::APIModule::WindowProc</definition>
+        <definition>LRESULT CALLBACK spk::APIModule::WindowProc</definition>
         <argsstring>(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)</argsstring>
         <name>WindowProc</name>
         <param>
@@ -434,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="91" column="25"/>
+        <location file="includes/application/modules/windows/spk_API_module.hpp" line="91" column="25" bodyfile="src/application/modules/windows/spk_API_module.cpp" bodystart="5" bodyend="24"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -490,7 +490,7 @@
       <member refid="classspk_1_1APIModule_1a28b7825a839dddd7d90ccb960a50e809" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>systemQueue</name></member>
       <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" virt="virtual"><scope>spk::APIModule</scope><name>update</name></member>
       <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" virt="virtual"><scope>spk::APIModule</scope><name>update</name></member>
-      <member refid="classspk_1_1APIModule_1ab955c67006b25c8faaa9a21f2d6b1963" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>WindowProc</name></member>
+      <member refid="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>WindowProc</name></member>
       <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>windowQueue</name></member>
       <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>windowQueue</name></member>
       <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>~APIModule</name></member>

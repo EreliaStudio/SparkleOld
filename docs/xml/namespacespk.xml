@@ -179,11 +179,12 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="spk__iostream_8hpp_1a43c6cf2bafe645a07a58f10a9b8ea87a" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="spk__iostream_8hpp_1a7a6a5cbca57b40e3f41c1c143eb09680" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
-        <definition>thread_local spk::IOStream spk::cout</definition>
+        <definition>thread_local IOStream spk::cout</definition>
         <argsstring></argsstring>
         <name>cout</name>
+        <initializer>= <ref refid="classspk_1_1IOStream" kindref="compound">IOStream</ref>(std::wcout)</initializer>
         <briefdescription>
 <para>Thread-local instances of <ref refid="classspk_1_1IOStream" kindref="compound">IOStream</ref> for standard output and error output. </para>
         </briefdescription>
@@ -191,20 +192,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="121" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
+        <location file="src/iostream/spk_iostream.cpp" line="5" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="5" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
       </memberdef>
-      <memberdef kind="variable" id="spk__iostream_8hpp_1a179221b09b037229c2c215cb0e36f263" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="spk__iostream_8hpp_1a2ac7fd07dd4ad46d0ecd4a814bed814d" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
-        <definition>thread_local spk::IOStream spk::cerr</definition>
+        <definition>thread_local IOStream spk::cerr</definition>
         <argsstring></argsstring>
         <name>cerr</name>
+        <initializer>= <ref refid="classspk_1_1IOStream" kindref="compound">IOStream</ref>(std::wcerr)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="122" column="39" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
+        <location file="src/iostream/spk_iostream.cpp" line="6" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="6" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -223,11 +225,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_input_status.hpp" line="15" column="14" declfile="includes/input/spk_input_status.hpp" declline="15" declcolumn="14"/>
+        <location file="src/input/spk_input_status.cpp" line="5" column="14" bodyfile="src/input/spk_input_status.cpp" bodystart="5" bodyend="19" declfile="includes/input/spk_input_status.hpp" declline="15" declcolumn="14"/>
       </memberdef>
-      <memberdef kind="function" id="spk__keyboard_8hpp_1a0918963ff2089605579cf18aec2ab60a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="spk__keyboard_8hpp_1a98695e9de44684d6aaecc705564cd6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const std::wstring &amp;</type>
-        <definition>const std::wstring&amp; spk::to_wstring</definition>
+        <definition>const std::wstring &amp; spk::to_wstring</definition>
         <argsstring>(const Keyboard::Key &amp;p_key)</argsstring>
         <name>to_wstring</name>
         <param>
@@ -253,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_keyboard.hpp" line="172" column="20" declfile="includes/input/spk_keyboard.hpp" declline="172" declcolumn="20"/>
+        <location file="src/input/spk_keyboard.cpp" line="202" column="20" bodyfile="src/input/spk_keyboard.cpp" bodystart="202" bodyend="205" declfile="includes/input/spk_keyboard.hpp" declline="172" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="spk__mouse_8hpp_1a8b0d135246aecf232855d7d804bb55bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::wstring</type>
@@ -283,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/input/spk_mouse.hpp" line="125" column="14" declfile="includes/input/spk_mouse.hpp" declline="125" declcolumn="14"/>
+        <location file="src/input/spk_mouse.cpp" line="61" column="14" bodyfile="src/input/spk_mouse.cpp" bodystart="61" bodyend="77" declfile="includes/input/spk_mouse.hpp" declline="125" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="spk__vector2_8hpp_1ad6c500689e1936587d90db1f1328ceb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

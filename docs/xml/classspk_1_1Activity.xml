@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="36" column="14"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="36" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="5" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="43" column="14"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="43" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="23" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="50" column="14"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="50" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="41" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="57" column="14"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="57" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -160,11 +160,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="86" column="9"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="86" column="9" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="52" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref> &amp;</type>
-        <definition>const Status&amp; spk::Activity::state</definition>
+        <definition>const Activity::Status &amp; spk::Activity::state</definition>
         <argsstring>() const</argsstring>
         <name>state</name>
         <briefdescription>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="92" column="22"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="92" column="22" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="57" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -194,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_activity.hpp" line="98" column="14"/>
+        <location file="includes/design_pattern/spk_activity.hpp" line="98" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="62" bodyend="65"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -259,7 +259,7 @@
       <member refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>Activity</name></member>
       <member refid="classspk_1_1Activity_1a729b6b1b083afe92ee8846069341a458" prot="private" virt="non-virtual"><scope>spk::Activity</scope><name>ActivityManager</name></member>
       <member refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>isCompleted</name></member>
-      <member refid="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>state</name></member>
+      <member refid="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>state</name></member>
       <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>Status</name></member>
     </listofallmembers>
   </compounddef>

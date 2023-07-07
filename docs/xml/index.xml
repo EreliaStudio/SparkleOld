@@ -27,10 +27,10 @@
     <member refid="classspk_1_1AbstractWidget_1aed54e08b3ec23bce19650a95d73259f1" kind="function"><name>_onRender</name></member>
     <member refid="classspk_1_1AbstractWidget_1a6f74b00cddb2bfe3d77128a64b08c77f" kind="function"><name>_onUpdate</name></member>
     <member refid="classspk_1_1AbstractWidget_1ae188852df6a62f89f77753ebd5ecbede" kind="function"><name>_onGeometryChange</name></member>
-    <member refid="classspk_1_1AbstractWidget_1ae995fc29164c4a89befae3e0545a4d7e" kind="function"><name>_render</name></member>
-    <member refid="classspk_1_1AbstractWidget_1ac8bd13b45e2b71d56c5fb4e910f78cdb" kind="function"><name>_update</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a1ad36ce94b14bebce683b6aaa3c7ce9c" kind="function"><name>_render</name></member>
+    <member refid="classspk_1_1AbstractWidget_1a751e8c7b4e48a949ec57aeb60d154e03" kind="function"><name>_update</name></member>
     <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" kind="function"><name>AbstractWidget</name></member>
-    <member refid="classspk_1_1AbstractWidget_1acaf7b700c9f4f67341dc5156287ad271" kind="function"><name>~AbstractWidget</name></member>
+    <member refid="classspk_1_1AbstractWidget_1ae226e66654f9b84a7501c0a97820efc9" kind="function"><name>~AbstractWidget</name></member>
     <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kind="function"><name>addChildrenWidget</name></member>
     <member refid="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" kind="function"><name>setGeometry</name></member>
     <member refid="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" kind="function"><name>place</name></member>
@@ -47,9 +47,9 @@
     <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" kind="function"><name>ActivableObject</name></member>
     <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kind="function"><name>activate</name></member>
     <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" kind="function"><name>deactivate</name></member>
-    <member refid="classspk_1_1ActivableObject_1a5627aa938cb1652e8c1aaa55c81da949" kind="function"><name>isActive</name></member>
-    <member refid="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" kind="function"><name>addActivationCallback</name></member>
-    <member refid="classspk_1_1ActivableObject_1a438560e081b7bf03ca5f601197d73d97" kind="function"><name>addDeactivationCallback</name></member>
+    <member refid="classspk_1_1ActivableObject_1ab4a73c84beb367d7908aeb402ea0a6e8" kind="function"><name>isActive</name></member>
+    <member refid="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" kind="function"><name>addActivationCallback</name></member>
+    <member refid="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" kind="function"><name>addDeactivationCallback</name></member>
   </compound>
   <compound refid="classspk_1_1Activity" kind="class"><name>spk::Activity</name>
     <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kind="enum"><name>Status</name></member>
@@ -65,7 +65,7 @@
     <member refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" kind="function"><name>_moveNextStepAndExecute</name></member>
     <member refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" kind="function"><name>_start</name></member>
     <member refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" kind="function"><name>Activity</name></member>
-    <member refid="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" kind="function"><name>state</name></member>
+    <member refid="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" kind="function"><name>state</name></member>
     <member refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" kind="function"><name>isCompleted</name></member>
     <member refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" kind="function"><name>_onEnter</name></member>
     <member refid="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" kind="function"><name>_execute</name></member>
@@ -98,7 +98,7 @@
     <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
     <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
     <member refid="classspk_1_1APIModule_1ab56bdf778c28ce2158fde3f7000c8618" kind="function"><name>_handleMessage</name></member>
-    <member refid="classspk_1_1APIModule_1ab955c67006b25c8faaa9a21f2d6b1963" kind="function"><name>WindowProc</name></member>
+    <member refid="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" kind="function"><name>WindowProc</name></member>
   </compound>
   <compound refid="classspk_1_1Application" kind="class"><name>spk::Application</name>
     <member refid="classspk_1_1Application_1aa4ed6a515b6ea4b9d3161bb6e3b2bba1" kind="variable"><name>_APIModule</name></member>
@@ -123,9 +123,9 @@
   </compound>
   <compound refid="classspk_1_1WidgetModule_1_1CentralWidget" kind="class"><name>spk::WidgetModule::CentralWidget</name>
     <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a6c0376b096ccf4cc2a35b54058601f41" kind="function"><name>_onRender</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a66c015bd690191267d19e355c90272fc" kind="function"><name>_onUpdate</name></member>
-    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1ad30940232ff0d69d415611b7c326d902" kind="function"><name>_onGeometryChange</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a1a0be4d81b1842ce5883c1de8ae49b37" kind="function"><name>_onRender</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1afca57ece330b2e3d3916ae09f832c7b8" kind="function"><name>_onUpdate</name></member>
+    <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1a155327380850aae817fcf59286ea0e2f" kind="function"><name>_onGeometryChange</name></member>
     <member refid="classspk_1_1WidgetModule_1_1CentralWidget_1ac9f062e912b234bcfcba672ee1066a47" kind="function"><name>CentralWidget</name></member>
   </compound>
   <compound refid="classspk_1_1Chronometer" kind="class"><name>spk::Chronometer</name>
@@ -142,7 +142,7 @@
     <member refid="classspk_1_1Chronometer_1acaa0be287be0a1ec7a3a19dd01d57c08" kind="function"><name>hasBeenStarted</name></member>
     <member refid="classspk_1_1Chronometer_1af87e5503b7f9b80fb2f87151c4198ff5" kind="function"><name>isRunning</name></member>
     <member refid="classspk_1_1Chronometer_1af485ed807d7772e0901e77b65902a79d" kind="function"><name>duration</name></member>
-    <member refid="classspk_1_1Chronometer_1a2a19c00ea8c6e9ba74134214c07b915f" kind="function"><name>stop</name></member>
+    <member refid="classspk_1_1Chronometer_1a3f338aa73d62fb7b6c8b33747663b3cc" kind="function"><name>stop</name></member>
   </compound>
   <compound refid="classspk_1_1ContextManager" kind="class"><name>spk::ContextManager</name>
     <member refid="classspk_1_1ContextManager_1a81834cda6bc6791270f9728a373b6765" kind="friend"><name>spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;</name></member>
@@ -168,7 +168,7 @@
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" kind="function"><name>isOriginal</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" kind="function"><name>Contract</name></member>
-    <member refid="classspk_1_1ContractProvider_1_1Contract_1af796cd8281d9ea859dcdcf14000741f2" kind="function"><name>operator=</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a5d710e9926005abee47e31d96becfa40" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" kind="function"><name>~Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" kind="function"><name>edit</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" kind="function"><name>resign</name></member>
@@ -176,7 +176,7 @@
   <compound refid="classspk_1_1ContractProvider" kind="class"><name>spk::ContractProvider</name>
     <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kind="typedef"><name>Callback</name></member>
     <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kind="typedef"><name>CallbackContainer</name></member>
-    <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" kind="function"><name>subscribe</name></member>
+    <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" kind="function"><name>subscribe</name></member>
   </compound>
   <compound refid="classspk_1_1DataBuffer" kind="class"><name>spk::DataBuffer</name>
     <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" kind="variable"><name>_data</name></member>
@@ -496,7 +496,7 @@
     <member refid="classspk_1_1Keyboard_1a6aed52e31a47a4a942d7e72aa65a2cb6ae5ffb18a77f858eeb132a9210641d867" kind="enumvalue"><name>Qwerty</name></member>
     <member refid="classspk_1_1Keyboard_1a94ba38f3d35ba16980e63a20c9afb2df" kind="friend"><name>spk::Singleton&lt; Keyboard &gt;</name></member>
     <member refid="classspk_1_1Keyboard_1aa39a823177f470aa267de55498757a22" kind="friend"><name>KeyboardModule</name></member>
-    <member refid="classspk_1_1Keyboard_1a5197b90e912f36ffaf4c10973b467591" kind="variable"><name>KeyToStringMap</name></member>
+    <member refid="classspk_1_1Keyboard_1ad1352e83d391fa0fae22c1dba316b038" kind="variable"><name>KeyToStringMap</name></member>
     <member refid="classspk_1_1Keyboard_1a532d889e2f7354ac11f444ab49a1b858" kind="variable"><name>UnknowKeyName</name></member>
     <member refid="classspk_1_1Keyboard_1af1b5c41b2b326094dcfc83cc120c9aff" kind="variable"><name>_layout</name></member>
     <member refid="classspk_1_1Keyboard_1ae39abfd8e727f62414456e3ac0f80ab7" kind="variable"><name>_mapping</name></member>
@@ -507,7 +507,7 @@
     <member refid="classspk_1_1Keyboard_1a63a243d7c2e1a559feb73565f9f0a45e" kind="function"><name>update</name></member>
     <member refid="classspk_1_1Keyboard_1a96c38656ea7b2aefffe62cc4548207bb" kind="function"><name>setLayout</name></member>
     <member refid="classspk_1_1Keyboard_1a4b65a94087efacfb89ca84dec70253d8" kind="function"><name>inputStatus</name></member>
-    <member refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" kind="function"><name>keyToString</name></member>
+    <member refid="classspk_1_1Keyboard_1ad2b0cc5897311b9917d2a8e71782db4d" kind="function"><name>keyToString</name></member>
   </compound>
   <compound refid="classspk_1_1KeyboardModule" kind="class"><name>spk::KeyboardModule</name>
     <member refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" kind="function"><name>_handleMessage</name></member>
@@ -525,9 +525,9 @@
     <member refid="structspk_1_1Keyboard_1_1Mapping_1a862d7e2ab5556a56af7020c33db5c14a" kind="variable"><name>keys</name></member>
     <member refid="structspk_1_1Keyboard_1_1Mapping_1ac7348453dd42feef1ba1b2b08dae0d3c" kind="function"><name>Mapping</name></member>
     <member refid="structspk_1_1Keyboard_1_1Mapping_1a44e3b474954aba047c7aa75729abdebd" kind="function"><name>bindKey</name></member>
-    <member refid="structspk_1_1Keyboard_1_1Mapping_1aec6dff1fcdf62d544a171cc8fd0ca541" kind="function"><name>operator[]</name></member>
-    <member refid="structspk_1_1Keyboard_1_1Mapping_1ab4197f06903fe525205ada5ec0232c8b" kind="function"><name>createAzertyMapping</name></member>
-    <member refid="structspk_1_1Keyboard_1_1Mapping_1ac5581ec2f8f6b896c4f6d146abee2a8d" kind="function"><name>createQwertyMapping</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1a45921c1c980f2a4a84e1587c8fcc9823" kind="function"><name>operator[]</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1aa17569de8d92568e5dce575837951cc9" kind="function"><name>createAzertyMapping</name></member>
+    <member refid="structspk_1_1Keyboard_1_1Mapping_1a4d7860015036f2b1792815e440f28c96" kind="function"><name>createQwertyMapping</name></member>
   </compound>
   <compound refid="classspk_1_1Memento" kind="class"><name>spk::Memento</name>
     <member refid="classspk_1_1Memento_1a4bc44b5f4cf27ca556fe08eee841918b" kind="typedef"><name>Snapshot</name></member>
@@ -620,7 +620,7 @@
     <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" kind="variable"><name>_isPaused</name></member>
     <member refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kind="function"><name>PersistentWorker</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kind="function"><name>~PersistentWorker</name></member>
-    <member refid="classspk_1_1PersistentWorker_1adfe142c7cc4bef14990a2c6d9875703d" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a5880ffdaf3fef5e5115702dacd7a95d6" kind="function"><name>addJob</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kind="function"><name>isRunning</name></member>
     <member refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kind="function"><name>start</name></member>
     <member refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kind="function"><name>stop</name></member>
@@ -643,7 +643,7 @@
     <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" kind="variable"><name>_chronometers</name></member>
     <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" kind="variable"><name>_counters</name></member>
     <member refid="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" kind="function"><name>Profiler</name></member>
-    <member refid="classspk_1_1Profiler_1ac84ba5655d8d8c0cfddeca273d6eb0f2" kind="function"><name>chronometer</name></member>
+    <member refid="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" kind="function"><name>chronometer</name></member>
     <member refid="classspk_1_1Profiler_1ab80433abd4e910f0d7077514233b4e54" kind="function"><name>resetChronometer</name></member>
     <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kind="function"><name>startChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kind="function"><name>resumeChronometer</name></member>
@@ -651,7 +651,7 @@
     <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" kind="function"><name>increseCounter</name></member>
     <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" kind="function"><name>setCounter</name></member>
     <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" kind="function"><name>resetCounter</name></member>
-    <member refid="classspk_1_1Profiler_1a33de92d7715c131c2ef839e560417778" kind="function"><name>counter</name></member>
+    <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" kind="function"><name>counter</name></member>
   </compound>
   <compound refid="classspk_1_1ProfilerModule" kind="class"><name>spk::ProfilerModule</name>
     <member refid="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" kind="variable"><name>_oneSecondTime</name></member>
@@ -789,11 +789,11 @@
     <member refid="classspk_1_1Timer_1a1572574e86018d51d124b49425568d40" kind="variable"><name>_startTime</name></member>
     <member refid="classspk_1_1Timer_1a407d0e659a442be8f81043fc05d14982" kind="function"><name>Timer</name></member>
     <member refid="classspk_1_1Timer_1aae49033702e6ef1875b4517a969bcc07" kind="function"><name>setDuration</name></member>
-    <member refid="classspk_1_1Timer_1ad57b7897092566299295a3617851926e" kind="function"><name>totalDuration</name></member>
+    <member refid="classspk_1_1Timer_1adbf9623ac0ac02f0bc97a835fe2a08d8" kind="function"><name>totalDuration</name></member>
     <member refid="classspk_1_1Timer_1ac07058690788556b47491f9fbbd6b83e" kind="function"><name>remainingDuration</name></member>
     <member refid="classspk_1_1Timer_1afcf2bb414ce8bff18b7642f392f0c3f2" kind="function"><name>start</name></member>
     <member refid="classspk_1_1Timer_1af7da190802d2bc83ca2608b609d7806e" kind="function"><name>stop</name></member>
-    <member refid="classspk_1_1Timer_1a94f43a369515d38d221cc6ab75d244fa" kind="function"><name>status</name></member>
+    <member refid="classspk_1_1Timer_1a4c46c8146cee6bde6910f4e200e0fae3" kind="function"><name>status</name></member>
     <member refid="classspk_1_1Timer_1ac2ec1670d0e9e6b00f2b5504b4227740" kind="function"><name>isRunning</name></member>
   </compound>
   <compound refid="classspk_1_1Value" kind="class"><name>spk::Value</name>
@@ -823,7 +823,7 @@
     <member refid="classspk_1_1WidgetModule_1aeb7d3e278f842783e3ea98a37a578fc9" kind="function"><name>~WidgetModule</name></member>
     <member refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kind="function"><name>update</name></member>
     <member refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kind="function"><name>render</name></member>
-    <member refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" kind="function"><name>centralWidget</name></member>
+    <member refid="classspk_1_1WidgetModule_1a28de970ea92d8ab9884939c77f380dc1" kind="function"><name>centralWidget</name></member>
   </compound>
   <compound refid="classspk_1_1Window" kind="class"><name>spk::Window</name>
     <member refid="classspk_1_1Window_1ab0c04c85c44c58fbf9300b04bee7a60f" kind="friend"><name>spk::Singleton&lt; Window &gt;</name></member>
@@ -896,10 +896,10 @@
     <member refid="spk__vector3_8hpp_1a25ce29c89e3ca14bf467a94db03d5939" kind="typedef"><name>Vector3</name></member>
     <member refid="spk__vector3_8hpp_1afa7d4d8007cf977199c3ba89fd52e283" kind="typedef"><name>Vector3Int</name></member>
     <member refid="spk__vector3_8hpp_1aa6b7e560fadd4adf03bcea8fb62de5a8" kind="typedef"><name>Vector3UInt</name></member>
-    <member refid="spk__iostream_8hpp_1a43c6cf2bafe645a07a58f10a9b8ea87a" kind="variable"><name>cout</name></member>
-    <member refid="spk__iostream_8hpp_1a179221b09b037229c2c215cb0e36f263" kind="variable"><name>cerr</name></member>
+    <member refid="spk__iostream_8hpp_1a7a6a5cbca57b40e3f41c1c143eb09680" kind="variable"><name>cout</name></member>
+    <member refid="spk__iostream_8hpp_1a2ac7fd07dd4ad46d0ecd4a814bed814d" kind="variable"><name>cerr</name></member>
     <member refid="spk__input__status_8hpp_1a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba" kind="function"><name>to_wstring</name></member>
-    <member refid="spk__keyboard_8hpp_1a0918963ff2089605579cf18aec2ab60a" kind="function"><name>to_wstring</name></member>
+    <member refid="spk__keyboard_8hpp_1a98695e9de44684d6aaecc705564cd6d8" kind="function"><name>to_wstring</name></member>
     <member refid="spk__mouse_8hpp_1a8b0d135246aecf232855d7d804bb55bd" kind="function"><name>to_wstring</name></member>
     <member refid="spk__vector2_8hpp_1ad6c500689e1936587d90db1f1328ceb4" kind="function"><name>operator+</name></member>
     <member refid="spk__vector2_8hpp_1a443c70714a630e0cbc2199d56b92cc03" kind="function"><name>operator-</name></member>
@@ -1029,29 +1029,129 @@
   </compound>
   <compound refid="spk__abstract__widget_8hpp" kind="file"><name>spk_abstract_widget.hpp</name>
   </compound>
+  <compound refid="playground_8hpp" kind="file"><name>playground.hpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="linux_2spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__window__module_8cpp" kind="file"><name>spk_window_module.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__window__module_8cpp" kind="file"><name>spk_window_module.cpp</name>
+  </compound>
+  <compound refid="spk__profiler__module_8cpp" kind="file"><name>spk_profiler_module.cpp</name>
+  </compound>
+  <compound refid="spk__time__module_8cpp" kind="file"><name>spk_time_module.cpp</name>
+  </compound>
+  <compound refid="spk__widget__module_8cpp" kind="file"><name>spk_widget_module.cpp</name>
+  </compound>
+  <compound refid="spk__system__module_8cpp" kind="file"><name>spk_system_module.cpp</name>
+  </compound>
+  <compound refid="spk__abstract__application_8cpp" kind="file"><name>spk_abstract_application.cpp</name>
+  </compound>
+  <compound refid="spk__data__buffer_8cpp" kind="file"><name>spk_data_buffer.cpp</name>
+  </compound>
+  <compound refid="spk__profiler_8cpp" kind="file"><name>spk_profiler.cpp</name>
+  </compound>
+  <compound refid="spk__activable__object_8cpp" kind="file"><name>spk_activable_object.cpp</name>
+  </compound>
+  <compound refid="spk__activity_8cpp" kind="file"><name>spk_activity.cpp</name>
+  </compound>
+  <compound refid="spk__activity__scheduler_8cpp" kind="file"><name>spk_activity_scheduler.cpp</name>
+  </compound>
+  <compound refid="spk__contract__provider_8cpp" kind="file"><name>spk_contract_provider.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__window_8cpp" kind="file"><name>spk_window.cpp</name>
+    <member refid="linux_2spk__window_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
+  </compound>
+  <compound refid="windows_2spk__window_8cpp" kind="file"><name>spk_window.cpp</name>
+  </compound>
+  <compound refid="linux_2spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
+  </compound>
+  <compound refid="spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
+  </compound>
+  <compound refid="windows_2spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
+  </compound>
+  <compound refid="spk__input__status_8cpp" kind="file"><name>spk_input_status.cpp</name>
+  </compound>
+  <compound refid="spk__mouse_8cpp" kind="file"><name>spk_mouse.cpp</name>
+  </compound>
+  <compound refid="spk__iostream_8cpp" kind="file"><name>spk_iostream.cpp</name>
+  </compound>
+  <compound refid="spk__chronometer_8cpp" kind="file"><name>spk_chronometer.cpp</name>
+  </compound>
+  <compound refid="spk__time__metrics_8cpp" kind="file"><name>spk_time_metrics.cpp</name>
+  </compound>
+  <compound refid="spk__timer_8cpp" kind="file"><name>spk_timer.cpp</name>
+  </compound>
+  <compound refid="spk__persistent__worker_8cpp" kind="file"><name>spk_persistent_worker.cpp</name>
+  </compound>
+  <compound refid="spk__thread_8cpp" kind="file"><name>spk_thread.cpp</name>
+  </compound>
+  <compound refid="spk__worker__pool_8cpp" kind="file"><name>spk_worker_pool.cpp</name>
+  </compound>
+  <compound refid="spk__abstract__widget_8cpp" kind="file"><name>spk_abstract_widget.cpp</name>
+  </compound>
   <compound refid="dir_aecd53831fdc6b2dd5eaa5f97724cc82" kind="dir"><name>includes/application</name>
+  </compound>
+  <compound refid="dir_844f6ab5c2ae79211596f3dcdd81adb7" kind="dir"><name>src/application</name>
   </compound>
   <compound refid="dir_0169fee49388018a0507c1b0832e6dd6" kind="dir"><name>includes/application/concrete</name>
   </compound>
+  <compound refid="dir_981422f615e1f86fc178e6fbecda1da3" kind="dir"><name>src/data_structure</name>
+  </compound>
   <compound refid="dir_ebc5d281141387bc90eb64e8fb568179" kind="dir"><name>includes/data_structure</name>
+  </compound>
+  <compound refid="dir_44d5bc2300862405dbe586a8cb303c4f" kind="dir"><name>src/debug</name>
   </compound>
   <compound refid="dir_05f2b506267898f6dd4e0c52672de2c3" kind="dir"><name>includes/debug</name>
   </compound>
   <compound refid="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir"><name>includes/design_pattern</name>
   </compound>
+  <compound refid="dir_18bfe15d38f9d4b020db717ec3dec0ad" kind="dir"><name>src/design_pattern</name>
+  </compound>
   <compound refid="dir_fecb50b33baf124479efc63989ba8a70" kind="dir"><name>includes/graphics</name>
+  </compound>
+  <compound refid="dir_560415a5d2bc4999842279f4fc1debef" kind="dir"><name>src/graphics</name>
+  </compound>
+  <compound refid="dir_4ceaa58bef61032532d7f419c1fea53b" kind="dir"><name>playground/includes</name>
   </compound>
   <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
   </compound>
   <compound refid="dir_a9d8515c93d115b5c689e0996dc3ef33" kind="dir"><name>includes/input</name>
   </compound>
+  <compound refid="dir_d365e15d984c8d0205117ee0c40d6716" kind="dir"><name>src/input</name>
+  </compound>
   <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
+  </compound>
+  <compound refid="dir_e72210afd5269ebe4767cdf8821e9fb6" kind="dir"><name>src/iostream</name>
+  </compound>
+  <compound refid="dir_6ddc0213ad914c7862510b0b5b0f11d6" kind="dir"><name>src/graphics/linux</name>
+  </compound>
+  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
+  </compound>
+  <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
   </compound>
   <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
   </compound>
   <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
   </compound>
-  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
+  <compound refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir"><name>src/application/modules/linux</name>
   </compound>
   <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
   </compound>
@@ -1059,16 +1159,36 @@
   </compound>
   <compound refid="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir"><name>includes/application/modules</name>
   </compound>
+  <compound refid="dir_e3781fa7bac336463b5810548c309841" kind="dir"><name>src/application/modules</name>
+  </compound>
+  <compound refid="dir_2195dec42aed13c440b4eea86e9c5401" kind="dir"><name>playground</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_b87fad53da99d79ed81d01625b4e0439" kind="dir"><name>playground/src</name>
+  </compound>
   <compound refid="dir_9ce4ba8dea44c80507591b5cb14ca8ba" kind="dir"><name>includes/system</name>
+  </compound>
+  <compound refid="dir_d501334aeb1b78ad67cd3c72c37b1e87" kind="dir"><name>src/system</name>
   </compound>
   <compound refid="dir_d13c0e61298ef12df375d2f8fbcfc354" kind="dir"><name>includes/threading</name>
   </compound>
+  <compound refid="dir_7e55306ba01a4f64bc8db2780859eb09" kind="dir"><name>src/threading</name>
+  </compound>
   <compound refid="dir_6865bbd7fed125b9d907dfb26af48d8a" kind="dir"><name>includes/widget</name>
+  </compound>
+  <compound refid="dir_c570470bf3e4213fb57699dd2e921b84" kind="dir"><name>src/widget</name>
+  </compound>
+  <compound refid="dir_2d00012b783774c71028ff79c3881289" kind="dir"><name>src/application/modules/windows</name>
+  </compound>
+  <compound refid="dir_743eb569a20dff9a066ca3f370e93bf9" kind="dir"><name>src/graphics/windows</name>
+  </compound>
+  <compound refid="dir_b0d7979d317da96e18556e960da3e586" kind="dir"><name>includes/graphics/windows</name>
   </compound>
   <compound refid="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir"><name>includes/application/modules/windows</name>
   </compound>
-  <compound refid="dir_4da4d72ca490047577e944980829188b" kind="dir"><name>includes/application/concrete/windows</name>
+  <compound refid="dir_d9173fd93ed0ce4e9acfe9e9a968e1c0" kind="dir"><name>src/input/windows</name>
   </compound>
-  <compound refid="dir_b0d7979d317da96e18556e960da3e586" kind="dir"><name>includes/graphics/windows</name>
+  <compound refid="dir_4da4d72ca490047577e944980829188b" kind="dir"><name>includes/application/concrete/windows</name>
   </compound>
 </doxygenindex>

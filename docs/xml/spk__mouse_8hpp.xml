@@ -5,6 +5,9 @@
     <includes refid="spk__singleton_8hpp" local="yes">design_pattern/spk_singleton.hpp</includes>
     <includes refid="spk__input__status_8hpp" local="yes">input/spk_input_status.hpp</includes>
     <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
+    <includedby refid="linux_2spk__mouse__module_8cpp" local="yes">src/application/modules/linux/spk_mouse_module.cpp</includedby>
+    <includedby refid="windows_2spk__mouse__module_8cpp" local="yes">src/application/modules/windows/spk_mouse_module.cpp</includedby>
+    <includedby refid="spk__mouse_8cpp" local="yes">src/input/spk_mouse.cpp</includedby>
     <incdepgraph>
       <node id="13">
         <label>cmath</label>
@@ -135,7 +138,7 @@
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update();</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="88" refid="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" kindref="member">place</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref>&amp;<sp/>p_position);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Mouse_1acfc5f290988cf44d44a518391f1f7374" kindref="member">place</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">Vector2Int</ref>&amp;<sp/>p_position);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
 <codeline lineno="96" refid="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>InputState&amp;<sp/><ref refid="classspk_1_1Mouse_1a5f14a04a4540f1b1efe6d09a35b19390" kindref="member">inputStatus</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Mouse_1a7e51467586bf8952f05461cc3b9fd5b5" kindref="member">Button</ref>&amp;<sp/>p_button)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="97"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>

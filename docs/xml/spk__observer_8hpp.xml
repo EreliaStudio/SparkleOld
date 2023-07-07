@@ -49,9 +49,15 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/design_pattern/spk_observer.hpp</label>
@@ -87,7 +93,7 @@
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41" refid="classspk_1_1Observer_1a9d72f4a2515061bab4721fa640da5c3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/><ref refid="classspk_1_1Observer_1a9d72f4a2515061bab4721fa640da5c3b" kindref="member">subscribe</ref>(TEvent<sp/>p_event,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref>&amp;<sp/>p_callback)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>result<sp/>=<sp/><ref refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" kindref="member">ContractProvider::subscribe</ref>(_callbacks[p_event],<sp/>p_callback);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>result<sp/>=<sp/><ref refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" kindref="member">ContractProvider::subscribe</ref>(_callbacks[p_event],<sp/>p_callback);</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::move(result);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

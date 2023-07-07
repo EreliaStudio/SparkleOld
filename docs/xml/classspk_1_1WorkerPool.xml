@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_worker_pool.hpp" line="39" column="1"/>
+        <location file="includes/threading/spk_worker_pool.hpp" line="39" column="1" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="5" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_worker_pool.hpp" line="53" column="9"/>
+        <location file="includes/threading/spk_worker_pool.hpp" line="53" column="9" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_worker_pool.hpp" line="60" column="14"/>
+        <location file="includes/threading/spk_worker_pool.hpp" line="60" column="14" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="32" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_worker_pool.hpp" line="67" column="14"/>
+        <location file="includes/threading/spk_worker_pool.hpp" line="67" column="14" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="40" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>

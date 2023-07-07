@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d9173fd93ed0ce4e9acfe9e9a968e1c0" kind="dir">
+    <compoundname>src/input/windows</compoundname>
+    <innerfile refid="windows_2spk__keyboard_8cpp">spk_keyboard.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/input/windows/"/>
+  </compounddef>
+</doxygen>

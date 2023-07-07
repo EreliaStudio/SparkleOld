@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="38" column="1"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="38" column="1" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="5" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -147,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="49" column="6"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="49" column="6" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="13" bodyend="16"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -177,11 +177,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="58" column="1"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="58" column="1" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="18" bodyend="24"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1af796cd8281d9ea859dcdcf14000741f2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a5d710e9926005abee47e31d96becfa40" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref> &amp;</type>
-        <definition>Contract&amp; spk::ContractProvider::Contract::operator=</definition>
+        <definition>ContractProvider::Contract &amp; spk::ContractProvider::Contract::operator=</definition>
         <argsstring>(Contract &amp;&amp;p_other) noexcept</argsstring>
         <name>operator=</name>
         <param>
@@ -207,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="66" column="10"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="66" column="10" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="26" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -221,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="72" column="1"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="72" column="1" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="42" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="78" column="6"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="78" column="6" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="50" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="83" column="6"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="83" column="6" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="62" bodyend="81"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -282,7 +282,7 @@
       <member refid="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>ContractProvider</name></member>
       <member refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>edit</name></member>
       <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" prot="private" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>isOriginal</name></member>
-      <member refid="classspk_1_1ContractProvider_1_1Contract_1af796cd8281d9ea859dcdcf14000741f2" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>operator=</name></member>
+      <member refid="classspk_1_1ContractProvider_1_1Contract_1a5d710e9926005abee47e31d96becfa40" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>operator=</name></member>
       <member refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>resign</name></member>
       <member refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" prot="public" virt="non-virtual"><scope>spk::ContractProvider::Contract</scope><name>~Contract</name></member>
     </listofallmembers>

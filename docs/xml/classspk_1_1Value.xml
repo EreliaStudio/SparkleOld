@@ -470,7 +470,7 @@
       <member refid="classspk_1_1Value_1a81e20cb2c4acaf4e274855c57148afa6" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>setDefaultValue</name></member>
       <member refid="classspk_1_1Value_1a0e4af9f6282cd72766cbd8ea0e50be0a" prot="private" virt="non-virtual"><scope>spk::Value</scope><name>State</name></member>
       <member refid="classspk_1_1Value_1af4d9e5bf126982fdf0643120d6bc353e" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>subscribe</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Value</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Value</scope><name>subscribe</name></member>
       <member refid="classspk_1_1Value_1ae475f49d3b040f3ab54fad2691911017" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>
       <member refid="classspk_1_1Value_1a45888c18d70fcb13b307b3cee2021f6e" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>
       <member refid="classspk_1_1Value_1a463fe62884231cf5c714fbf690915238" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>

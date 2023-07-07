@@ -24,7 +24,7 @@ enum class \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Timer}{Timer}} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1Timer_aae49033702e6ef1875b4517a969bcc07}{set\+Duration}} (const long long \&p\+\_\+duration)
 \begin{DoxyCompactList}\small\item\em Sets the duration of the timer. \end{DoxyCompactList}\item 
-const long long \& \mbox{\hyperlink{classspk_1_1Timer_ad57b7897092566299295a3617851926e}{total\+Duration}} () const
+const long long \& \mbox{\hyperlink{classspk_1_1Timer_adbf9623ac0ac02f0bc97a835fe2a08d8}{total\+Duration}} () const
 \begin{DoxyCompactList}\small\item\em Get the total duration of the timer. \end{DoxyCompactList}\item 
 long long \mbox{\hyperlink{classspk_1_1Timer_ac07058690788556b47491f9fbbd6b83e}{remaining\+Duration}} () const
 \begin{DoxyCompactList}\small\item\em Get the remaining duration of the timer. \end{DoxyCompactList}\item 
@@ -32,7 +32,7 @@ void \mbox{\hyperlink{classspk_1_1Timer_afcf2bb414ce8bff18b7642f392f0c3f2}{start
 \begin{DoxyCompactList}\small\item\em Starts the timer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1Timer_af7da190802d2bc83ca2608b609d7806e}{stop}} ()
 \begin{DoxyCompactList}\small\item\em Stops the timer. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}} \& \mbox{\hyperlink{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}{status}} () const
+const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}} \& \mbox{\hyperlink{classspk_1_1Timer_a4c46c8146cee6bde6910f4e200e0fae3}{status}} () const
 \begin{DoxyCompactList}\small\item\em Get the status of the timer. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classspk_1_1Timer_ac2ec1670d0e9e6b00f2b5504b4227740}{is\+Running}} () const
 \begin{DoxyCompactList}\small\item\em Check if thetimer is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -141,11 +141,11 @@ This function sets the duration of the timer to the specified value.
 
 Starts the timer. 
 
-This function starts the timer by recording the current time as the start time and changing the status to Running. \mbox{\Hypertarget{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}\label{classspk_1_1Timer_a94f43a369515d38d221cc6ab75d244fa}} 
+This function starts the timer by recording the current time as the start time and changing the status to Running. \mbox{\Hypertarget{classspk_1_1Timer_a4c46c8146cee6bde6910f4e200e0fae3}\label{classspk_1_1Timer_a4c46c8146cee6bde6910f4e200e0fae3}} 
 \index{spk::Timer@{spk::Timer}!status@{status}}
 \index{status@{status}!spk::Timer@{spk::Timer}}
 \doxysubsubsection{\texorpdfstring{status()}{status()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{State}}\& spk\+::\+Timer\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1Timer_a68d5c57fd3cd82f4f97fe8a34bc227a0}{Timer\+::\+State}} \& spk\+::\+Timer\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -166,11 +166,11 @@ The current status of the timer.
 
 Stops the timer. 
 
-This function stops the timer and changes the status to Idle. \mbox{\Hypertarget{classspk_1_1Timer_ad57b7897092566299295a3617851926e}\label{classspk_1_1Timer_ad57b7897092566299295a3617851926e}} 
+This function stops the timer and changes the status to Idle. \mbox{\Hypertarget{classspk_1_1Timer_adbf9623ac0ac02f0bc97a835fe2a08d8}\label{classspk_1_1Timer_adbf9623ac0ac02f0bc97a835fe2a08d8}} 
 \index{spk::Timer@{spk::Timer}!totalDuration@{totalDuration}}
 \index{totalDuration@{totalDuration}!spk::Timer@{spk::Timer}}
 \doxysubsubsection{\texorpdfstring{totalDuration()}{totalDuration()}}
-{\footnotesize\ttfamily const long long\& spk\+::\+Timer\+::total\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const long long \& spk\+::\+Timer\+::total\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -183,6 +183,7 @@ The total duration of the timer in milliseconds.
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-includes/system/spk\+\_\+timer.\+hpp\end{DoxyCompactItemize}
+includes/system/spk\+\_\+timer.\+hpp\item 
+src/system/spk\+\_\+timer.\+cpp\end{DoxyCompactItemize}

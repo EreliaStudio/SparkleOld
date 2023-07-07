@@ -254,7 +254,7 @@
       <member refid="classspk_1_1Promise_1aaf9ad2cdc422c2a4c211ce921d50df36" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>realised</name></member>
       <member refid="classspk_1_1Promise_1a492bc5064aca48fc18294ecead334599" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>setValue</name></member>
       <member refid="classspk_1_1Promise_1ac55e4af8d86ac9d7b8fc0cfb8926f0f0" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>subscribe</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Promise</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Promise</scope><name>subscribe</name></member>
       <member refid="classspk_1_1Promise_1af94f17735b511a890a33343ff8d24b66" prot="public" virt="non-virtual"><scope>spk::Promise</scope><name>value</name></member>
     </listofallmembers>
   </compounddef>

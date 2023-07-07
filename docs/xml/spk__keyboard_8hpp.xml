@@ -7,6 +7,11 @@
     <includes local="no">map</includes>
     <includes local="no">vector</includes>
     <includes local="no">string</includes>
+    <includedby refid="linux_2spk__keyboard__module_8cpp" local="yes">src/application/modules/linux/spk_keyboard_module.cpp</includedby>
+    <includedby refid="windows_2spk__keyboard__module_8cpp" local="yes">src/application/modules/windows/spk_keyboard_module.cpp</includedby>
+    <includedby refid="linux_2spk__keyboard_8cpp" local="yes">src/input/linux/spk_keyboard.cpp</includedby>
+    <includedby refid="spk__keyboard_8cpp" local="yes">src/input/spk_keyboard.cpp</includedby>
+    <includedby refid="windows_2spk__keyboard_8cpp" local="yes">src/input/windows/spk_keyboard.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/input/spk_keyboard.hpp</label>
@@ -197,7 +202,7 @@
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(_keys[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(p_key)]);</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163" refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;<ref refid="classspk_1_1Keyboard_1a2708ed0435028a8730e47e3835e5ef63" kindref="member">keyToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref><sp/>&amp;p_key);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;<ref refid="classspk_1_1Keyboard_1ad2b0cc5897311b9917d2a8e71782db4d" kindref="member">keyToString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref><sp/>&amp;p_key);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight></codeline>

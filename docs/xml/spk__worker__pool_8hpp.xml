@@ -5,6 +5,7 @@
     <includes refid="spk__thread__safe__queue_8hpp" local="yes">threading/spk_thread_safe_queue.hpp</includes>
     <includes refid="spk__thread_8hpp" local="yes">threading/spk_thread.hpp</includes>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__worker__pool_8cpp" local="yes">src/threading/spk_worker_pool.cpp</includedby>
     <incdepgraph>
       <node id="8">
         <label>functional</label>
@@ -90,9 +91,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1WorkerPool" prot="public">spk::WorkerPool</innerclass>
@@ -121,15 +128,15 @@
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_running<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="39" refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" kindref="member">WorkerPool</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_poolName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>p_nbWorker);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" kindref="member">WorkerPool</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_poolName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>p_nbWorker);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46" refid="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" kindref="member">WorkerPool</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref>&amp;<sp/>p_other)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" kindref="member">~WorkerPool</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" kindref="member">~WorkerPool</ref>();</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" kindref="member">start</ref>();</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" kindref="member">stop</ref>();</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Funct,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
 <codeline lineno="80" refid="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" kindref="member">addJob</ref>(Funct&amp;&amp;<sp/>p_funct,<sp/>Args&amp;&amp;...<sp/>p_args)</highlight></codeline>
@@ -143,7 +150,7 @@
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="104" refid="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" kindref="member">Worker</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_name);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" kindref="member">Worker</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_name);</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">}</highlight></codeline>
     </programlisting>

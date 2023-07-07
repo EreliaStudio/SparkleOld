@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="44" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="44" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="9" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a5651d26b4f55056b152527f7d3c0114c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="51" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="51" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="41" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1aac32c004c4a7a636554524570763aa05" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="59" column="1"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="59" column="1" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="55" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a694ec6233dd2d36927b76de31cfe253c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -304,7 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="66" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="66" column="6" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="7" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a169896c2d7c72cd3a23fd75c5e395561" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -318,7 +318,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="71" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="71" column="6" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="16" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad04475106030d324cc106b0af3a7dd8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="76" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="76" column="6" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="20" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1aafbc42533f52eef527b8909b9dbdafcc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -372,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="84" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="84" column="6" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="35" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ac824731b78fdc1d45ae6803b56c62a8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -400,7 +400,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="94" column="6"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="94" column="6" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="51" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ae05598f60b99a8ac2ba8861d745c56a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -453,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="103" column="1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="103" column="1" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="57" bodyend="68"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -483,7 +483,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="67" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="67" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="71" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -511,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="74" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="74" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="79" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -525,7 +525,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="79" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="79" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -539,7 +539,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/linux/spk_window.hpp" line="84" column="6"/>
+        <location file="includes/graphics/linux/spk_window.hpp" line="84" column="6" bodyfile="src/graphics/linux/spk_window.cpp" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1ad7b645ee1f79762e79d4c24a42b42cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -553,7 +553,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/graphics/windows/spk_window.hpp" line="109" column="1"/>
+        <location file="includes/graphics/windows/spk_window.hpp" line="109" column="1" bodyfile="src/graphics/windows/spk_window.cpp" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

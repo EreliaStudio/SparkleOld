@@ -260,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="99" column="9"/>
+        <location file="includes/threading/spk_thread.hpp" line="99" column="9" bodyfile="src/threading/spk_thread.cpp" bodystart="5" bodyend="8"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1ab5037a0703104b786425a31b78bacfd0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::thread::id</type>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="118" column="14"/>
+        <location file="includes/threading/spk_thread.hpp" line="118" column="14" bodyfile="src/threading/spk_thread.cpp" bodystart="10" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Thread_1a3c9242c1ea81ec3de8b78445e1d2a421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -308,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/threading/spk_thread.hpp" line="126" column="14"/>
+        <location file="includes/threading/spk_thread.hpp" line="126" column="14" bodyfile="src/threading/spk_thread.cpp" bodystart="16" bodyend="27"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

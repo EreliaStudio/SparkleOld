@@ -16,6 +16,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="5">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="1">
         <label>includes/miscellaneous/spk_is_container.hpp</label>
         <link refid="spk__is__container_8hpp"/>
@@ -25,6 +29,8 @@
       <node id="4">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>includes/design_pattern/spk_memento.hpp</label>

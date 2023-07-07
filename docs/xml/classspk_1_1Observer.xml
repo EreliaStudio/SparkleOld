@@ -161,7 +161,7 @@
       <member refid="classspk_1_1Observer_1add756ae632b22250c9153bbcda59218c" prot="public" virt="non-virtual"><scope>spk::Observer</scope><name>notify</name></member>
       <member refid="classspk_1_1Observer_1a3cd7b9980e08c9d8a156b6f6c4b0c56c" prot="public" virt="non-virtual"><scope>spk::Observer</scope><name>Observer</name></member>
       <member refid="classspk_1_1Observer_1a9d72f4a2515061bab4721fa640da5c3b" prot="public" virt="non-virtual"><scope>spk::Observer</scope><name>subscribe</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Observer</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Observer</scope><name>subscribe</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

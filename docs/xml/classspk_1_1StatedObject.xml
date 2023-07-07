@@ -204,7 +204,7 @@
       <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>setState</name></member>
       <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>state</name></member>
       <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>StatedObject</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual"><scope>spk::StatedObject</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::StatedObject</scope><name>subscribe</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d365e15d984c8d0205117ee0c40d6716" kind="dir">
+    <compoundname>src/input</compoundname>
+    <innerdir refid="dir_aa6c199b2f25c406532890b5d4847bb7">src/input/linux</innerdir>
+    <innerdir refid="dir_d9173fd93ed0ce4e9acfe9e9a968e1c0">src/input/windows</innerdir>
+    <innerfile refid="spk__input__status_8cpp">spk_input_status.cpp</innerfile>
+    <innerfile refid="spk__keyboard_8cpp">spk_keyboard.cpp</innerfile>
+    <innerfile refid="spk__mouse_8cpp">spk_mouse.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/input/"/>
+  </compounddef>
+</doxygen>

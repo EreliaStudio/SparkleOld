@@ -41,9 +41,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
-        <definition>Contract spk::ContractProvider::subscribe</definition>
+        <definition>ContractProvider::Contract spk::ContractProvider::subscribe</definition>
         <argsstring>(CallbackContainer &amp;p_callbackOwner, const Callback &amp;p_callback)</argsstring>
         <name>subscribe</name>
         <param>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="95" column="10"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="95" column="10" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="83" bodyend="87"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -159,7 +159,7 @@
     <listofallmembers>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>CallbackContainer</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual"><scope>spk::ContractProvider</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::ContractProvider</scope><name>subscribe</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

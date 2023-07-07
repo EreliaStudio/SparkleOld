@@ -1,7 +1,7 @@
 var searchData=
 [
   ['_7eabstractapplication_267',['~AbstractApplication',['../classspk_1_1AbstractApplication.html#a2df6534b33148592a208198a875b2a80',1,'spk::AbstractApplication']]],
-  ['_7eabstractwidget_268',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#acaf7b700c9f4f67341dc5156287ad271',1,'spk::AbstractWidget']]],
+  ['_7eabstractwidget_268',['~AbstractWidget',['../classspk_1_1AbstractWidget.html#ae226e66654f9b84a7501c0a97820efc9',1,'spk::AbstractWidget']]],
   ['_7eapimodule_269',['~APIModule',['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()'],['../classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2',1,'spk::APIModule::~APIModule()']]],
   ['_7eapplication_270',['~Application',['../classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11',1,'spk::Application::~Application()'],['../classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11',1,'spk::Application::~Application()']]],
   ['_7echronometer_271',['~Chronometer',['../classspk_1_1Chronometer.html#a36ee5132ae04063e8a172c7536f65f55',1,'spk::Chronometer']]],

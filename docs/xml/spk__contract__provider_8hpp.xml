@@ -11,6 +11,7 @@
     <includedby refid="spk__value_8hpp" local="yes">includes/design_pattern/spk_value.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__persistent__worker_8hpp" local="yes">includes/threading/spk_persistent_worker.hpp</includedby>
+    <includedby refid="spk__contract__provider_8cpp" local="yes">src/design_pattern/spk_contract_provider.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/design_pattern/spk_contract_provider.hpp</label>
@@ -38,18 +39,18 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="13">
+      <node id="14">
         <label>includes/application/modules/spk_system_module.hpp</label>
         <link refid="spk__system__module_8hpp_source"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>includes/design_pattern/spk_activable_object.hpp</label>
         <link refid="spk__activable__object_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -57,44 +58,50 @@
         <link refid="spk__contract__provider_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
       </node>
-      <node id="15">
+      <node id="16">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>includes/application/modules/spk_widget_module.hpp</label>
         <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>includes/widget/spk_abstract_widget.hpp</label>
         <link refid="spk__abstract__widget_8hpp_source"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+      </node>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
       </node>
       <node id="3">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>includes/design_pattern/spk_value.hpp</label>
         <link refid="spk__value_8hpp_source"/>
         <childnode refid="3" relation="include">
@@ -106,49 +113,49 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="15">
         <label>includes/system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>includes/application/spk_abstract_application.hpp</label>
+        <link refid="spk__abstract__application_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="12">
-        <label>includes/application/spk_abstract_application.hpp</label>
-        <link refid="spk__abstract__application_8hpp_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
+        <label>includes/threading/spk_persistent_worker.hpp</label>
+        <link refid="spk__persistent__worker_8hpp_source"/>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="11">
-        <label>includes/threading/spk_persistent_worker.hpp</label>
-        <link refid="spk__persistent__worker_8hpp_source"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>includes/design_pattern/spk_stated_object.hpp</label>
         <link refid="spk__stated__object_8hpp_source"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
         <link refid="windows_2spk__graphical__application_8hpp_source"/>
       </node>
-      <node id="8">
+      <node id="9">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
         <link refid="linux_2spk__graphical__application_8hpp_source"/>
       </node>
@@ -193,20 +200,20 @@
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="58" refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" kindref="member">Contract</ref>(<ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>&amp;&amp;p_other);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>(<ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>&amp;&amp;p_other);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="66" refid="classspk_1_1ContractProvider_1_1Contract_1af796cd8281d9ea859dcdcf14000741f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>&amp;<sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1af796cd8281d9ea859dcdcf14000741f2" kindref="member">operator=</ref>(<ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>&amp;&amp;p_other)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref>&amp;<sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a5d710e9926005abee47e31d96becfa40" kindref="member">operator=</ref>(<ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/>&amp;&amp;p_other)<sp/>noexcept;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="72" refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" kindref="member">~Contract</ref>();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" kindref="member">~Contract</ref>();</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="78" refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" kindref="member">edit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref>&amp;<sp/>p_callback);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a63b028cfea4d87406cd6d89227a7892e" kindref="member">edit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref>&amp;<sp/>p_callback);</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="83" refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" kindref="member">resign</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract_1a02cc8454cffc92cf76cc911d124aef52" kindref="member">resign</ref>();</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="95" refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/><ref refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" kindref="member">subscribe</ref>(<ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref>&amp;<sp/>p_callbackOwner,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref>&amp;<sp/>p_callback);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref><sp/><ref refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" kindref="member">subscribe</ref>(<ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref>&amp;<sp/>p_callbackOwner,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref>&amp;<sp/>p_callback);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
     </programlisting>

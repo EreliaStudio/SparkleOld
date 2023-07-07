@@ -5,5 +5,5 @@ var searchData=
   ['time_539',['time',['../classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611',1,'spk::TimeMetrics']]],
   ['timemodule_540',['TimeModule',['../classspk_1_1TimeModule.html#a927bb091d697cdde8e9a66b1d5bc2a98',1,'spk::TimeModule']]],
   ['timer_541',['Timer',['../classspk_1_1Timer.html#a407d0e659a442be8f81043fc05d14982',1,'spk::Timer']]],
-  ['totalduration_542',['totalDuration',['../classspk_1_1Timer.html#ad57b7897092566299295a3617851926e',1,'spk::Timer']]]
+  ['totalduration_542',['totalDuration',['../classspk_1_1Timer.html#adbf9623ac0ac02f0bc97a835fe2a08d8',1,'spk::Timer']]]
 ];

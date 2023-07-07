@@ -9,6 +9,7 @@
     <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
     <includedby refid="spk__system__module_8hpp" local="yes">includes/application/modules/spk_system_module.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__abstract__application_8cpp" local="yes">src/application/spk_abstract_application.cpp</includedby>
     <incdepgraph>
       <node id="14">
         <label>design_pattern/spk_contract_provider.hpp</label>
@@ -112,9 +113,15 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
+      <node id="6">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="5">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/application/spk_abstract_application.hpp</label>
@@ -167,20 +174,20 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_isRunning;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="51" refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_WorkerName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;p_WorkerName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="classspk_1_1AbstractApplication_1a8bf373350bc5f46d625b44eb79e283fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a8bf373350bc5f46d625b44eb79e283fb" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" kindref="member">addJob</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref>&amp;<sp/>p_job);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63" refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" kindref="member">setupJobs</ref>()<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="69" refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" kindref="member">AbstractApplication</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" kindref="member">AbstractApplication</ref>();</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" kindref="member">~AbstractApplication</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" kindref="member">~AbstractApplication</ref>();</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" kindref="member">run</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" kindref="member">run</ref>();</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88" refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" kindref="member">quit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_errorCode);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" kindref="member">quit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_errorCode);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="90"><highlight class="normal">}</highlight></codeline>
     </programlisting>

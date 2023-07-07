@@ -5,6 +5,7 @@
     <includes local="no">vector</includes>
     <includes refid="spk__activity_8hpp" local="yes">design_pattern/spk_activity.hpp</includes>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__activity__scheduler_8cpp" local="yes">src/design_pattern/spk_activity_scheduler.cpp</includedby>
     <incdepgraph>
       <node id="4">
         <label>functional</label>
@@ -34,9 +35,15 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1ActivityScheduler" prot="public">spk::ActivityScheduler</innerclass>
@@ -59,11 +66,11 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;Activity*&gt;<sp/>_activities;</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20" refid="classspk_1_1ActivityScheduler_1ac3cb1398b125d743bef17982a0a7ccd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ActivityScheduler_1ac3cb1398b125d743bef17982a0a7ccd7" kindref="member">ActivityScheduler</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ActivityScheduler_1ac3cb1398b125d743bef17982a0a7ccd7" kindref="member">ActivityScheduler</ref>();</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="26" refid="classspk_1_1ActivityScheduler_1a1467948112bbf2c38bbbaabac4a736ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ActivityScheduler_1a1467948112bbf2c38bbbaabac4a736ad" kindref="member">addActivity</ref>(<ref refid="classspk_1_1Activity" kindref="compound">Activity</ref>*<sp/>p_activity);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ActivityScheduler_1a1467948112bbf2c38bbbaabac4a736ad" kindref="member">addActivity</ref>(<ref refid="classspk_1_1Activity" kindref="compound">Activity</ref>*<sp/>p_activity);</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="classspk_1_1ActivityScheduler_1a5932655a97e9c53ef47d5752c63276eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ActivityScheduler_1a5932655a97e9c53ef47d5752c63276eb" kindref="member">execute</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ActivityScheduler_1a5932655a97e9c53ef47d5752c63276eb" kindref="member">execute</ref>();</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
     </programlisting>

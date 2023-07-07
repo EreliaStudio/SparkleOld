@@ -41,7 +41,7 @@ using \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object with a specified name. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classspk_1_1PersistentWorker_ad42857f1630499681af81f5ca49fcf37}{$\sim$\+Persistent\+Worker}} ()
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \& \mbox{\hyperlink{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&p\+\_\+job)
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \& \mbox{\hyperlink{classspk_1_1PersistentWorker_a5880ffdaf3fef5e5115702dacd7a95d6}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&p\+\_\+job)
 \begin{DoxyCompactList}\small\item\em Add a job to the worker. \end{DoxyCompactList}\item 
 constexpr bool \mbox{\hyperlink{classspk_1_1PersistentWorker_ad4101a5a0d541968716eb8cb42e95bda}{is\+Running}} () const
 \begin{DoxyCompactList}\small\item\em Check if the worker is running. \end{DoxyCompactList}\item 
@@ -107,11 +107,11 @@ Destroy the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} 
 This is the destructor for the \mbox{\hyperlink{classspk_1_1PersistentWorker}{Persistent\+Worker}} class. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}\label{classspk_1_1PersistentWorker_adfe142c7cc4bef14990a2c6d9875703d}} 
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_a5880ffdaf3fef5e5115702dacd7a95d6}\label{classspk_1_1PersistentWorker_a5880ffdaf3fef5e5115702dacd7a95d6}} 
 \index{spk::PersistentWorker@{spk::PersistentWorker}!addJob@{addJob}}
 \index{addJob@{addJob}!spk::PersistentWorker@{spk::PersistentWorker}}
 \doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}}\& spk\+::\+Persistent\+Worker\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract\+Provider\+::\+Contract}} \& spk\+::\+Persistent\+Worker\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1PersistentWorker_a0e26b08e8a01429bd5f17443021125d2}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})}
 
 
 
@@ -182,7 +182,14 @@ This function resumes the execution of the worker thread. \mbox{\Hypertarget{cla
 
 Start the worker. 
 
-This function starts the worker thread. \mbox{\Hypertarget{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}\label{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}} 
+Start the thread that handle the jobs.
+
+This function starts the worker thread.
+
+\begin{DoxyWarning}{Warning}
+start will throw an exception if the thread is already running 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}\label{classspk_1_1PersistentWorker_ac2fc8e7d0785eaa63c05d5e3540752d8}} 
 \index{spk::PersistentWorker@{spk::PersistentWorker}!stop@{stop}}
 \index{stop@{stop}!spk::PersistentWorker@{spk::PersistentWorker}}
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
@@ -194,6 +201,7 @@ Stop the worker.
 
 This function stops the worker thread. 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-includes/threading/spk\+\_\+persistent\+\_\+worker.\+hpp\end{DoxyCompactItemize}
+includes/threading/spk\+\_\+persistent\+\_\+worker.\+hpp\item 
+src/threading/spk\+\_\+persistent\+\_\+worker.\+cpp\end{DoxyCompactItemize}

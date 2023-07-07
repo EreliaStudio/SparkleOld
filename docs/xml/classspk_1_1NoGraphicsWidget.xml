@@ -38,7 +38,7 @@
         <definition>virtual void spk::NoGraphicsWidget::_render</definition>
         <argsstring>()</argsstring>
         <name>_render</name>
-        <reimplements refid="classspk_1_1AbstractWidget_1ae995fc29164c4a89befae3e0545a4d7e">_render</reimplements>
+        <reimplements refid="classspk_1_1AbstractWidget_1a1ad36ce94b14bebce683b6aaa3c7ce9c">_render</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -134,10 +134,10 @@
       <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>AbstractWidget</name></member>
       <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>ActivableObject</name></member>
       <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>activate</name></member>
-      <member refid="classspk_1_1ActivableObject_1ae27e21aeef5ff90ac999a034f2bb5623" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addActivationCallback</name></member>
+      <member refid="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addActivationCallback</name></member>
       <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addChild</name></member>
       <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addChildrenWidget</name></member>
-      <member refid="classspk_1_1ActivableObject_1a438560e081b7bf03ca5f601197d73d97" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addDeactivationCallback</name></member>
+      <member refid="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addDeactivationCallback</name></member>
       <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="protected" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>addStateCallback</name></member>
       <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" prot="public" virt="non-virtual" ambiguityscope="InherenceObject&lt; AbstractWidget &gt;::"><scope>spk::NoGraphicsWidget</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual" ambiguityscope="spk::ActivableObject::"><scope>spk::NoGraphicsWidget</scope><name>Callback</name></member>
@@ -149,7 +149,7 @@
       <member refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>depth</name></member>
       <member refid="classspk_1_1InherenceObject_1ab17ef56656c9b33064cec33d44d4c7b7" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>InherenceObject</name></member>
       <member refid="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>InherenceObject</name></member>
-      <member refid="classspk_1_1ActivableObject_1a5627aa938cb1652e8c1aaa55c81da949" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>isActive</name></member>
+      <member refid="classspk_1_1ActivableObject_1ab4a73c84beb367d7908aeb402ea0a6e8" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>isActive</name></member>
       <member refid="classspk_1_1AbstractWidget_1ad1fd1cbebefe93c23a9d1b7b00872a81" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>isPointed</name></member>
       <member refid="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>move</name></member>
       <member refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>name</name></member>
@@ -168,8 +168,8 @@
       <member refid="classspk_1_1AbstractWidget_1a2c407ce05d65cdbe37ecc71f4a8e58d6" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>sortChildrensByDepth</name></member>
       <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>state</name></member>
       <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>StatedObject</name></member>
-      <member refid="classspk_1_1ContractProvider_1afb4adba519929353876b0192ea9a8aee" prot="protected" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>subscribe</name></member>
-      <member refid="classspk_1_1AbstractWidget_1acaf7b700c9f4f67341dc5156287ad271" prot="public" virt="virtual"><scope>spk::NoGraphicsWidget</scope><name>~AbstractWidget</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1AbstractWidget_1ae226e66654f9b84a7501c0a97820efc9" prot="public" virt="virtual"><scope>spk::NoGraphicsWidget</scope><name>~AbstractWidget</name></member>
       <member refid="classspk_1_1InherenceObject_1aba5546b2d9a7407fc3aa2cca0461cb7a" prot="public" virt="non-virtual"><scope>spk::NoGraphicsWidget</scope><name>~InherenceObject</name></member>
     </listofallmembers>
   </compounddef>

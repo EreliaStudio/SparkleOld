@@ -4,9 +4,15 @@
     <compoundname>spk_application.hpp</compoundname>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <invincdepgraph>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="2">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/application/spk_application.hpp</label>

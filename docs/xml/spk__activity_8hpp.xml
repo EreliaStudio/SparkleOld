@@ -5,6 +5,7 @@
     <includes local="no">functional</includes>
     <includedby refid="spk__activity__scheduler_8hpp" local="yes">includes/design_pattern/spk_activity_scheduler.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__activity_8cpp" local="yes">src/design_pattern/spk_activity.cpp</includedby>
     <incdepgraph>
       <node id="2">
         <label>functional</label>
@@ -23,9 +24,15 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
       <node id="3">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>includes/design_pattern/spk_activity.hpp</label>
@@ -64,13 +71,13 @@
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref><sp/><ref refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" kindref="member">_internalWorkingState</ref>;<sp/></highlight></codeline>
-<codeline lineno="36" refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" kindref="member">_update</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" kindref="member">_update</ref>();</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" kindref="member">_moveNextStep</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" kindref="member">_moveNextStep</ref>();</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50" refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" kindref="member">_moveNextStepAndExecute</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" kindref="member">_moveNextStepAndExecute</ref>();</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57" refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" kindref="member">_start</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" kindref="member">_start</ref>();</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="65" refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" kindref="member">_onEnter</ref>()<sp/>=<sp/>0;</highlight></codeline>
@@ -80,11 +87,11 @@
 <codeline lineno="79" refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" kindref="member">_onExit</ref>()<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="86" refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" kindref="member">Activity</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" kindref="member">Activity</ref>();</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92" refid="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref>&amp;<sp/><ref refid="classspk_1_1Activity_1a2852c46978738f635cdc98936dce06ae" kindref="member">state</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref>&amp;<sp/><ref refid="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" kindref="member">state</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98" refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" kindref="member">isCompleted</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" kindref="member">isCompleted</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="100"><highlight class="normal">}</highlight></codeline>
     </programlisting>

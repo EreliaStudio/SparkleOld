@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="21" column="6"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="21" column="6" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="6" bodyend="25"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="29" column="1"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="29" column="1" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="27" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="34" column="1"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="34" column="1" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_keyboard_module.hpp" line="39" column="6"/>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="39" column="6" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

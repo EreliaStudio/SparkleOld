@@ -39,6 +39,7 @@
     <includes refid="spk__widget__module_8hpp" local="yes">application/modules/spk_widget_module.hpp</includes>
     <includes refid="spk__abstract__widget_8hpp" local="yes">widget/spk_abstract_widget.hpp</includes>
     <includes refid="spk__application_8hpp" local="yes">application/spk_application.hpp</includes>
+    <includedby refid="playground_8hpp" local="yes">playground/includes/playground.hpp</includedby>
     <incdepgraph>
       <node id="43">
         <label>design_pattern/spk_activable_object.hpp</label>
@@ -506,6 +507,18 @@
         <label>memory</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
       <sectiondef kind="define">
       <memberdef kind="define" id="sparkle_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" prot="public" static="no">
         <name>DEBUG_LINE</name>
@@ -517,7 +530,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/sparkle.hpp" line="26" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="125" bodyend="-1"/>
+        <location file="includes/sparkle.hpp" line="26" column="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
