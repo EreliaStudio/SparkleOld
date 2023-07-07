@@ -25,7 +25,6 @@ namespace spk
 
 	private:
 		CallbackContainer _jobs;
-		std::deque<Contract> _contracts;
 
 		bool _isRunning = false;
 		bool _isPaused = false;
@@ -55,7 +54,7 @@ namespace spk
          * @param p_job The job to be added.
          * @return A contract representing the job.
          */
-		Contract& addJob(const Job& p_job);
+		Contract addJob(const Job& p_job);
 
         /**
          * @brief Check if the worker is running.

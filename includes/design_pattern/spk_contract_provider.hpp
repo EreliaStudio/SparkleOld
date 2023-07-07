@@ -25,6 +25,8 @@ namespace spk
 			friend class ContractProvider;
 
 		private:
+			static inline CallbackContainer _uninitializedCallbackContainer;
+			static inline Callback _uninitializedCallback = nullptr;
 			bool _isOriginal = true; //!< Indicates whether the contract is the original one or if it has been moved or delegated.
 			CallbackContainer &_callbackOwner; //!< Reference to the container that stores the callback.
 			Callback &_callback; //!< Reference to the callback function.
@@ -49,6 +51,11 @@ namespace spk
 			bool isOriginal();
 
 		public:
+			/**
+			 * @brief Default constructor.
+			 * Create a Contract without container and job, as a placeholder for contract provided later on.
+			 */
+			Contract();
 			
 			/**
 			 * @brief Constructor by move , move a Contract object.
