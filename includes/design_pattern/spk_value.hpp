@@ -330,5 +330,22 @@ namespace spk
             else
                 return (*_default);
         }
+
+        /**
+         * @brief Method for accessing the value.
+         *
+         * This method allows accessing the value as a constant reference.
+         * If the value is in the custom state, it returns the custom value; otherwise, it
+         * returns the default value.
+         *
+         * @return A constant reference to the value.
+         */
+        const TType& value() const
+        {
+            if (_state == State::Custom)
+                return (_value);
+            else
+                return (*_default);
+        }
     };
 }
