@@ -1,8 +1,9 @@
 <map id="spk::ActivableObject" name="spk::ActivableObject">
-<area shape="rect" id="node1" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="117,169,273,196"/>
-<area shape="rect" id="node4" href="$classspk_1_1AbstractWidget.html" title="Abstract base class for widgets." alt="" coords="119,244,272,271"/>
-<area shape="rect" id="node2" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="121,80,269,121"/>
-<area shape="rect" id="node3" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="114,5,277,32"/>
-<area shape="rect" id="node5" href="$classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="5,319,180,345"/>
-<area shape="rect" id="node6" href="$classspk_1_1OnlyGraphicsWidget.html" title="Class for widgets with only graphics." alt="" coords="205,319,391,345"/>
+<area shape="rect" id="node1" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="87,169,243,196"/>
+<area shape="rect" id="node4" href="$classspk_1_1AbstractWidget.html" title="Abstract base class for widgets." alt="" coords="89,244,242,271"/>
+<area shape="rect" id="node2" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="91,80,239,121"/>
+<area shape="rect" id="node3" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="84,5,247,32"/>
+<area shape="rect" id="node5" href="$classTest.html" title=" " alt="" coords="5,319,53,345"/>
+<area shape="rect" id="node6" href="$classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="78,319,253,345"/>
+<area shape="rect" id="node7" href="$classspk_1_1OnlyGraphicsWidget.html" title="Class for widgets with only graphics." alt="" coords="277,319,464,345"/>
 </map>

@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57308f762d52732980709a4627285e3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Value.html#a57308f762d52732980709a4627285e3f">operator const TType &amp;</a> () const</td></tr>
 <tr class="memdesc:a57308f762d52732980709a4627285e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion operator for accessing the value.  <a href="classspk_1_1Value.html#a57308f762d52732980709a4627285e3f">More...</a><br /></td></tr>
 <tr class="separator:a57308f762d52732980709a4627285e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace95a4b72d83ded6f2c217a2b55cb8f"><td class="memItemLeft" align="right" valign="top">const TType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Value.html#aace95a4b72d83ded6f2c217a2b55cb8f">value</a> () const</td></tr>
+<tr class="memdesc:aace95a4b72d83ded6f2c217a2b55cb8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for accessing the value.  <a href="classspk_1_1Value.html#aace95a4b72d83ded6f2c217a2b55cb8f">More...</a><br /></td></tr>
+<tr class="separator:aace95a4b72d83ded6f2c217a2b55cb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -512,6 +515,37 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A Contract object representing the subscription. </dd></dl>
+
+</div>
+</div>
+<a id="aace95a4b72d83ded6f2c217a2b55cb8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace95a4b72d83ded6f2c217a2b55cb8f">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TType&amp; <a class="el" href="classspk_1_1Value.html">spk::Value</a>&lt; TType &gt;::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method for accessing the value. </p>
+<p>This method allows accessing the value as a constant reference. If the value is in the custom state, it returns the custom value; otherwise, it returns the default value.</p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the value. </dd></dl>
 
 </div>
 </div>

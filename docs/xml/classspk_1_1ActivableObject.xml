@@ -159,9 +159,15 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>spk::NoGraphicsWidget</label>
         <link refid="classspk_1_1NoGraphicsWidget"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Test</label>
+        <link refid="classTest"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
@@ -169,7 +175,7 @@
         <label>spk::ContractProvider</label>
         <link refid="classspk_1_1ContractProvider"/>
       </node>
-      <node id="6">
+      <node id="7">
         <label>spk::OnlyGraphicsWidget</label>
         <link refid="classspk_1_1OnlyGraphicsWidget"/>
         <childnode refid="4" relation="public-inheritance">

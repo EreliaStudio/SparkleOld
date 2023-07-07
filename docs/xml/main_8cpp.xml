@@ -46,8 +46,6 @@
       <node id="61">
         <label>application/modules/spk_widget_module.hpp</label>
         <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="62" relation="include">
-        </childnode>
         <childnode refid="28" relation="include">
         </childnode>
       </node>
@@ -197,8 +195,10 @@
         </childnode>
         <childnode refid="63" relation="include">
         </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
       </node>
-      <node id="63">
+      <node id="65">
         <label>application/spk_application.hpp</label>
         <link refid="spk__application_8hpp_source"/>
       </node>
@@ -440,6 +440,9 @@
       <node id="19">
         <label>type_traits</label>
       </node>
+      <node id="64">
+        <label>set</label>
+      </node>
       <node id="34">
         <label>threading/spk_thread.hpp</label>
         <link refid="spk__thread_8hpp_source"/>
@@ -467,6 +470,18 @@
       <node id="7">
         <label>algorithm</label>
       </node>
+      <node id="63">
+        <label>widget/spk_widget_atlas.hpp</label>
+        <link refid="spk__widget__atlas_8hpp_source"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
       <node id="16">
         <label>cstring</label>
       </node>
@@ -482,6 +497,7 @@
         <label>memory</label>
       </node>
     </incdepgraph>
+    <innerclass refid="classTest" prot="public">Test</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -494,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="playground/src/main.cpp" line="3" column="5" bodyfile="playground/src/main.cpp" bodystart="3" bodyend="8"/>
+        <location file="playground/src/main.cpp" line="27" column="5" bodyfile="playground/src/main.cpp" bodystart="27" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -504,12 +520,74 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;playground.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="3" refid="classTest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTest" kindref="compound">Test</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref></highlight></codeline>
 <codeline lineno="4"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application" kindref="compound">spk::Application</ref><sp/>app<sp/>=<sp/><ref refid="classspk_1_1Application" kindref="compound">spk::Application</ref>(L</highlight><highlight class="stringliteral">&quot;Coucou&quot;</highlight><highlight class="normal">,<sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>(400,<sp/>400));</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(app.<ref refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" kindref="member">run</ref>());</highlight></codeline>
-<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_onRender()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/>L</highlight><highlight class="stringliteral">&quot;Render<sp/>widget<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" kindref="member">name</ref>()<sp/>&lt;&lt;<sp/><sp/>L</highlight><highlight class="stringliteral">&quot;]<sp/>at<sp/>depth<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" kindref="member">depth</ref>()<sp/>&lt;&lt;<sp/>L</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_onGeometryChange()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_onUpdate()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>(std::wstring<sp/>p_name)<sp/>:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref>(p_name)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application" kindref="compound">spk::Application</ref><sp/>app(L</highlight><highlight class="stringliteral">&quot;Coucou&quot;</highlight><highlight class="normal">,<sp/>400);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_A<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_A_A<sp/>=<sp/>widgetA_A-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_A_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_A_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_B<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_B&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_B-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_C<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_C&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_C-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_C_A<sp/>=<sp/>widgetA_C-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_C_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_C_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetB<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetB&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetB_A<sp/>=<sp/>widgetB-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetB_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC_A<sp/>=<sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC_B<sp/>=<sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC_B&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC_B-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(10);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(3);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_A_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(5);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_B-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(10);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_C-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(11);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_C_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(9);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(20);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetB_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(25);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetC_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(2);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetC_B-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(4);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(app.run());</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="playground/src/main.cpp"/>
   </compounddef>

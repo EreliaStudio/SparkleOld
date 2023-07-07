@@ -412,6 +412,24 @@
         </inbodydescription>
         <location file="includes/design_pattern/spk_value.hpp" line="326" column="9" bodyfile="includes/design_pattern/spk_value.hpp" bodystart="326" bodyend="332"/>
       </memberdef>
+      <memberdef kind="function" id="classspk_1_1Value_1aace95a4b72d83ded6f2c217a2b55cb8f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TType &amp;</type>
+        <definition>const TType&amp; spk::Value&lt; TType &gt;::value</definition>
+        <argsstring>() const</argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Method for accessing the value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method allows accessing the value as a constant reference. If the value is in the custom state, it returns the custom value; otherwise, it returns the default value.</para>
+<para><simplesect kind="return"><para>A constant reference to the value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_value.hpp" line="343" column="21" bodyfile="includes/design_pattern/spk_value.hpp" bodystart="343" bodyend="349"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A class template for managing a value with default and custom states. </para>
@@ -453,7 +471,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_value.hpp" line="20" column="5" bodyfile="includes/design_pattern/spk_value.hpp" bodystart="21" bodyend="333"/>
+    <location file="includes/design_pattern/spk_value.hpp" line="20" column="5" bodyfile="includes/design_pattern/spk_value.hpp" bodystart="21" bodyend="350"/>
     <listofallmembers>
       <member refid="classspk_1_1Value_1a7d1fa77508b780154a8b56bcf3d60e65" prot="private" virt="non-virtual"><scope>spk::Value</scope><name>_default</name></member>
       <member refid="classspk_1_1Value_1a2bba400f219ce928e9b8ea5e1e86dc39" prot="private" virt="non-virtual"><scope>spk::Value</scope><name>_onEditionCallbacks</name></member>
@@ -471,6 +489,7 @@
       <member refid="classspk_1_1Value_1a0e4af9f6282cd72766cbd8ea0e50be0a" prot="private" virt="non-virtual"><scope>spk::Value</scope><name>State</name></member>
       <member refid="classspk_1_1Value_1af4d9e5bf126982fdf0643120d6bc353e" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>subscribe</name></member>
       <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual" ambiguityscope="spk::ContractProvider::"><scope>spk::Value</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1Value_1aace95a4b72d83ded6f2c217a2b55cb8f" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>value</name></member>
       <member refid="classspk_1_1Value_1ae475f49d3b040f3ab54fad2691911017" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>
       <member refid="classspk_1_1Value_1a45888c18d70fcb13b307b3cee2021f6e" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>
       <member refid="classspk_1_1Value_1a463fe62884231cf5c714fbf690915238" prot="public" virt="non-virtual"><scope>spk::Value</scope><name>Value</name></member>

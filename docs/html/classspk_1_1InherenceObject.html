@@ -86,6 +86,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a77e8eb56b6e889a9e8a048bbed8f7c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a769d0e2ea8e7635c993671ec9b1a494b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> = TType *</td></tr>
 <tr class="separator:a769d0e2ea8e7635c993671ec9b1a494b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb38a23ee0e49f56d6635bc9b08d347d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt;</td></tr>
+<tr class="separator:abb38a23ee0e49f56d6635bc9b08d347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a976e2e85b113a15220e094ff9d7afd38"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td></tr>
 <tr class="separator:a976e2e85b113a15220e094ff9d7afd38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -112,12 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5207c90ce23896bf23aa55c20d82dcbe"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe">parent</a> () const</td></tr>
 <tr class="memdesc:a5207c90ce23896bf23aa55c20d82dcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parent object.  <a href="classspk_1_1InherenceObject.html#a5207c90ce23896bf23aa55c20d82dcbe">More...</a><br /></td></tr>
 <tr class="separator:a5207c90ce23896bf23aa55c20d82dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641db511a9e99a441fdbd67504104a80"><td class="memItemLeft" align="right" valign="top">constexpr std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80">childrens</a> ()</td></tr>
-<tr class="memdesc:a641db511a9e99a441fdbd67504104a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects.  <a href="classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80">More...</a><br /></td></tr>
-<tr class="separator:a641db511a9e99a441fdbd67504104a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6de21279dbf9064deea472bb8db3dd2f"><td class="memItemLeft" align="right" valign="top">constexpr const std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f">childrens</a> () const</td></tr>
-<tr class="memdesc:a6de21279dbf9064deea472bb8db3dd2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects (const version).  <a href="classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f">More...</a><br /></td></tr>
-<tr class="separator:a6de21279dbf9064deea472bb8db3dd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76cd1e3335b5775ecf356da909a01b86"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a76cd1e3335b5775ecf356da909a01b86">childrens</a> ()</td></tr>
+<tr class="memdesc:a76cd1e3335b5775ecf356da909a01b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects.  <a href="classspk_1_1InherenceObject.html#a76cd1e3335b5775ecf356da909a01b86">More...</a><br /></td></tr>
+<tr class="separator:a76cd1e3335b5775ecf356da909a01b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc6706d7b939d2f30763bf2502f0dd19"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#adc6706d7b939d2f30763bf2502f0dd19">childrens</a> () const</td></tr>
+<tr class="memdesc:adc6706d7b939d2f30763bf2502f0dd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector of child objects (const version).  <a href="classspk_1_1InherenceObject.html#adc6706d7b939d2f30763bf2502f0dd19">More...</a><br /></td></tr>
+<tr class="separator:adc6706d7b939d2f30763bf2502f0dd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60b7abb954dcf88b9576e5b55b5f6c64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64">InherenceObject</a> (const <a class="el" href="classspk_1_1InherenceObject.html">InherenceObject</a> &amp;)=delete</td></tr>
 <tr class="memdesc:a60b7abb954dcf88b9576e5b55b5f6c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <a href="classspk_1_1InherenceObject.html#a60b7abb954dcf88b9576e5b55b5f6c64">More...</a><br /></td></tr>
 <tr class="separator:a60b7abb954dcf88b9576e5b55b5f6c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +171,23 @@ template&lt;typename TType &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>The type of the child objects. </p>
+
+</div>
+</div>
+<a id="abb38a23ee0e49f56d6635bc9b08d347d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb38a23ee0e49f56d6635bc9b08d347d">&#9670;&nbsp;</a></span>ChildContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::<a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> =  std::vector&lt;<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The type of child container used by <a class="el" href="classspk_1_1InherenceObject.html" title="InherenceObject class template.">InherenceObject</a> to store them </p>
 
 </div>
 </div>
@@ -319,8 +338,8 @@ template&lt;typename TType &gt; </div>
 
 </div>
 </div>
-<a id="a641db511a9e99a441fdbd67504104a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a641db511a9e99a441fdbd67504104a80">&#9670;&nbsp;</a></span>childrens() <span class="overload">[1/2]</span></h2>
+<a id="a76cd1e3335b5775ecf356da909a01b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76cd1e3335b5775ecf356da909a01b86">&#9670;&nbsp;</a></span>childrens() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +350,7 @@ template&lt;typename TType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::vector&lt;<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>&gt;&amp; <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::childrens </td>
+          <td class="memname">constexpr <a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a>&amp; <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::childrens </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -350,8 +369,8 @@ template&lt;typename TType &gt; </div>
 
 </div>
 </div>
-<a id="a6de21279dbf9064deea472bb8db3dd2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6de21279dbf9064deea472bb8db3dd2f">&#9670;&nbsp;</a></span>childrens() <span class="overload">[2/2]</span></h2>
+<a id="adc6706d7b939d2f30763bf2502f0dd19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc6706d7b939d2f30763bf2502f0dd19">&#9670;&nbsp;</a></span>childrens() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,7 +381,7 @@ template&lt;typename TType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const std::vector&lt;<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>&gt;&amp; <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::childrens </td>
+          <td class="memname">constexpr const <a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a>&amp; <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::childrens </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

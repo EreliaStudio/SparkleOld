@@ -36,22 +36,12 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="12">
-        <label>includes/application/modules/spk_widget_module.hpp</label>
-        <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
       <node id="11">
         <label>includes/widget/spk_abstract_widget.hpp</label>
         <link refid="spk__abstract__widget_8hpp_source"/>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -86,10 +76,6 @@
         <label>includes/graphics/windows/spk_window.hpp</label>
         <link refid="windows_2spk__window_8hpp_source"/>
       </node>
-      <node id="14">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
-      </node>
       <node id="4">
         <label>includes/graphics/linux/spk_window.hpp</label>
         <link refid="linux_2spk__window_8hpp_source"/>
@@ -116,9 +102,11 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+      <node id="12">
+        <label>includes/widget/spk_widget_atlas.hpp</label>
+        <link refid="spk__widget__atlas_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="10">
         <label>includes/math/spk_vector3.hpp</label>

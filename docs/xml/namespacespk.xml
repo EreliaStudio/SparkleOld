@@ -54,6 +54,7 @@
     <innerclass refid="classspk_1_1AbstractWidget" prot="public">spk::AbstractWidget</innerclass>
     <innerclass refid="classspk_1_1NoGraphicsWidget" prot="public">spk::NoGraphicsWidget</innerclass>
     <innerclass refid="classspk_1_1OnlyGraphicsWidget" prot="public">spk::OnlyGraphicsWidget</innerclass>
+    <innerclass refid="classspk_1_1WidgetAtlas" prot="public">spk::WidgetAtlas</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252" prot="public" static="no" strong="yes">
         <type></type>

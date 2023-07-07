@@ -57,7 +57,9 @@ void \mbox{\hyperlink{classspk_1_1Value_a81e20cb2c4acaf4e274855c57148afa6}{set\+
 \mbox{\hyperlink{classspk_1_1Value}{Value}} \& \mbox{\hyperlink{classspk_1_1Value_a169179d9efc16fe961c246bfe8c567e6}{operator=}} (const TType \&p\+\_\+new\+Value)
 \begin{DoxyCompactList}\small\item\em Assignment operator for setting the value in the custom state. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classspk_1_1Value_a57308f762d52732980709a4627285e3f}{operator const TType \&}} () const
-\begin{DoxyCompactList}\small\item\em Conversion operator for accessing the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Conversion operator for accessing the value. \end{DoxyCompactList}\item 
+const TType \& \mbox{\hyperlink{classspk_1_1Value_aace95a4b72d83ded6f2c217a2b55cb8f}{value}} () const
+\begin{DoxyCompactList}\small\item\em Method for accessing the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -249,6 +251,22 @@ This function subscribes a callback to the value for edition callbacks.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A Contract object representing the subscription. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Value_aace95a4b72d83ded6f2c217a2b55cb8f}\label{classspk_1_1Value_aace95a4b72d83ded6f2c217a2b55cb8f}} 
+\index{spk::Value$<$ TType $>$@{spk::Value$<$ TType $>$}!value@{value}}
+\index{value@{value}!spk::Value$<$ TType $>$@{spk::Value$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType\& \mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method for accessing the value. 
+
+This method allows accessing the value as a constant reference. If the value is in the custom state, it returns the custom value; otherwise, it returns the default value.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the value. 
 \end{DoxyReturn}
 
 

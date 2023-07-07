@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_contract_provider.hpp" line="102" column="10" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="92" bodyend="96"/>
+        <location file="includes/design_pattern/spk_contract_provider.hpp" line="100" column="10" bodyfile="src/design_pattern/spk_contract_provider.cpp" bodystart="96" bodyend="100"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -91,13 +91,13 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="9">
+      <node id="10">
         <label>spk::Observer&lt; TEvent &gt;</label>
         <link refid="classspk_1_1Observer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
+      <node id="13">
         <label>spk::StatedObject&lt; TState &gt;</label>
         <link refid="classspk_1_1StatedObject"/>
         <childnode refid="1" relation="public-inheritance">
@@ -115,15 +115,21 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>spk::AbstractApplication</label>
         <link refid="classspk_1_1AbstractApplication"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>spk::NoGraphicsWidget</label>
         <link refid="classspk_1_1NoGraphicsWidget"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Test</label>
+        <link refid="classTest"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
@@ -131,27 +137,27 @@
         <label>spk::ContractProvider</label>
         <link refid="classspk_1_1ContractProvider"/>
       </node>
-      <node id="11">
+      <node id="12">
         <label>spk::Promise&lt; TType &gt;</label>
         <link refid="classspk_1_1Promise"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>spk::Application</label>
         <link refid="classspk_1_1Application"/>
-        <childnode refid="7" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>spk::PersistentWorker</label>
         <link refid="classspk_1_1PersistentWorker"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>spk::OnlyGraphicsWidget</label>
         <link refid="classspk_1_1OnlyGraphicsWidget"/>
         <childnode refid="4" relation="public-inheritance">
@@ -163,14 +169,14 @@
         <childnode refid="2" relation="protected-inheritance">
         </childnode>
       </node>
-      <node id="13">
+      <node id="14">
         <label>spk::Value&lt; TType &gt;</label>
         <link refid="classspk_1_1Value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="includes/design_pattern/spk_contract_provider.hpp" line="14" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="15" bodyend="103"/>
+    <location file="includes/design_pattern/spk_contract_provider.hpp" line="14" column="1" bodyfile="includes/design_pattern/spk_contract_provider.hpp" bodystart="15" bodyend="101"/>
     <listofallmembers>
       <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>Callback</name></member>
       <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::ContractProvider</scope><name>CallbackContainer</name></member>
