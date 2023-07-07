@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['ceiling_385',['ceiling',['../structspk_1_1IVector2.html#ac22c9a8609ce9b7f2215eff7c120ed0c',1,'spk::IVector2']]],
   ['centralwidget_386',['centralWidget',['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1WidgetModule.html#a28de970ea92d8ab9884939c77f380dc1',1,'spk::WidgetModule::centralWidget()']]],
   ['childrens_387',['childrens',['../classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80',1,'spk::InherenceObject::childrens()'],['../classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f',1,'spk::InherenceObject::childrens() const']]],
@@ -15,8 +18,11 @@ var searchData=
   ['cross_393',['cross',['../structspk_1_1IVector2.html#a4d5cc1aceeca9b90fcecf6d6fe49520d',1,'spk::IVector2::cross()'],['../structspk_1_1IVector3.html#acf05bfc43602c284334e8370891e5bb3',1,'spk::IVector3::cross()']]],
   ['crossz_394',['crossZ',['../structspk_1_1IVector2.html#a6ab6d332aa26f3da116169b39014f113',1,'spk::IVector2']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['ceiling_370',['ceiling',['../structspk_1_1IVector2.html#ac22c9a8609ce9b7f2215eff7c120ed0c',1,'spk::IVector2']]],
   ['centralwidget_371',['centralWidget',['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1WidgetModule.html#ad36689c6e8037facf57a4cead84eb812',1,'spk::WidgetModule::centralWidget()']]],
   ['childrens_372',['childrens',['../classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80',1,'spk::InherenceObject::childrens()'],['../classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f',1,'spk::InherenceObject::childrens() const']]],
@@ -28,10 +34,15 @@ var searchData=
   ['cross_378',['cross',['../structspk_1_1IVector2.html#a4d5cc1aceeca9b90fcecf6d6fe49520d',1,'spk::IVector2::cross()'],['../structspk_1_1IVector3.html#acf05bfc43602c284334e8370891e5bb3',1,'spk::IVector3::cross()']]],
   ['crossz_379',['crossZ',['../structspk_1_1IVector2.html#a6ab6d332aa26f3da116169b39014f113',1,'spk::IVector2']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['ceiling_372',['ceiling',['../structspk_1_1IVector2.html#ac22c9a8609ce9b7f2215eff7c120ed0c',1,'spk::IVector2']]],
   ['centralwidget_373',['centralWidget',['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44',1,'spk::Application::centralWidget()'],['../classspk_1_1WidgetModule.html#ad36689c6e8037facf57a4cead84eb812',1,'spk::WidgetModule::centralWidget()']]],
   ['childrens_374',['childrens',['../classspk_1_1InherenceObject.html#a641db511a9e99a441fdbd67504104a80',1,'spk::InherenceObject::childrens()'],['../classspk_1_1InherenceObject.html#a6de21279dbf9064deea472bb8db3dd2f',1,'spk::InherenceObject::childrens() const']]],
@@ -43,9 +54,12 @@ var searchData=
   ['cross_380',['cross',['../structspk_1_1IVector2.html#a4d5cc1aceeca9b90fcecf6d6fe49520d',1,'spk::IVector2::cross()'],['../structspk_1_1IVector3.html#acf05bfc43602c284334e8370891e5bb3',1,'spk::IVector3::cross()']]],
   ['crossz_381',['crossZ',['../structspk_1_1IVector2.html#a6ab6d332aa26f3da116169b39014f113',1,'spk::IVector2']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['databuffer_299',['DataBuffer',['../classspk_1_1DataBuffer.html',1,'spk']]],
   ['default_300',['Default',['../classspk_1_1Value_1_1Default.html',1,'spk::Value']]]
 =======
@@ -14,6 +17,7 @@ var searchData=
   ['databuffer_292',['DataBuffer',['../classspk_1_1DataBuffer.html',1,'spk']]],
   ['default_293',['Default',['../classspk_1_1Value_1_1Default.html',1,'spk::Value']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+<<<<<<< HEAD
 =======
   ['databuffer_291',['DataBuffer',['../classspk_1_1DataBuffer.html',1,'spk']]],
   ['default_292',['Default',['../classspk_1_1Value_1_1Default.html',1,'spk::Value']]]
@@ -22,4 +26,6 @@ var searchData=
   ['databuffer_292',['DataBuffer',['../classspk_1_1DataBuffer.html',1,'spk']]],
   ['default_293',['Default',['../classspk_1_1Value_1_1Default.html',1,'spk::Value']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 ];

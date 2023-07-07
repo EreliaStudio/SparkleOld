@@ -1,14 +1,20 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,211,32"/>
 <area shape="rect" id="node2" href="$classspk_1_1Keyboard.html" title="Singleton class for keyboard inputs." alt="" coords="259,5,373,32"/>
 =======
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,192,32"/>
 <area shape="rect" id="node2" href="$classspk_1_1Mouse.html" title="Singleton class for Mouse." alt="" coords="240,5,336,32"/>
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 =======
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,192,32"/>
 <area shape="rect" id="node2" href="$classspk_1_1Mouse.html" title="Singleton class for Mouse." alt="" coords="240,5,336,32"/>
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 </map>

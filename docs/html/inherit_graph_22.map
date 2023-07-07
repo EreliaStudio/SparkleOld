@@ -1,13 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 <area shape="rect" id="node1" href="$classspk_1_1RandomGenerator.html" title="Random number generator template class." alt="" coords="5,5,177,47"/>
 =======
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,243,47"/>
 <area shape="rect" id="node2" href="$classspk_1_1ContextManager.html" title="ContextManager is a singleton template class that manages ReadWrite and ReadOnly access to a common c..." alt="" coords="291,5,452,47"/>
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 =======
 <area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,243,47"/>
 <area shape="rect" id="node2" href="$classspk_1_1ContextManager.html" title="ContextManager is a singleton template class that manages ReadWrite and ReadOnly access to a common c..." alt="" coords="291,5,452,47"/>
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 </map>

@@ -407,6 +407,7 @@
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 <codeline lineno="125" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -422,6 +423,11 @@
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TChildrenType,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>...<sp/>Args&gt;</highlight></codeline>
 <codeline lineno="129" refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TChildrenType*<sp/><ref refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" kindref="member">addRootWidget</ref>(Args&amp;&amp;<sp/>...<sp/>p_args)</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -441,6 +447,20 @@
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<codeline lineno="125" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::Window&gt;::instance</ref>()-&gt;setGeometry(p_size);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_widgetModule-&gt;<ref refid="classspk_1_1WidgetModule_1ad36689c6e8037facf57a4cead84eb812" kindref="member">centralWidget</ref>()-&gt;<ref refid="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" kindref="member">setGeometry</ref>(0,<sp/>p_size);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
     </programlisting>
     <location file="includes/application/concrete/windows/spk_graphical_application.hpp"/>

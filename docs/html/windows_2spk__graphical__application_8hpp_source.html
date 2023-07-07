@@ -191,6 +191,7 @@ $(function() {
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">  125</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
@@ -206,6 +207,11 @@ $(function() {
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 2a6dd93 (Update Doxygen)
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TChildrenType, <span class="keyword">typename</span> ... Args&gt;</div>
 <div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">  129</a></span>&#160;        TChildrenType* <a class="code" href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">addRootWidget</a>(Args&amp;&amp; ... p_args)</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div>
@@ -225,6 +231,20 @@ $(function() {
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    };</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">  125</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt;spk::Window&gt;::instance</a>()-&gt;setGeometry(p_size);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            _widgetModule-&gt;<a class="code" href="classspk_1_1WidgetModule.html#ad36689c6e8037facf57a4cead84eb812">centralWidget</a>()-&gt;<a class="code" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">setGeometry</a>(0, p_size);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    };</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 <div class="ttc" id="aclassspk_1_1APIModule_html"><div class="ttname"><a href="classspk_1_1APIModule.html">spk::APIModule</a></div><div class="ttdoc">Class for managing the API interactions.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1APIModule_html_a28b7825a839dddd7d90ccb960a50e809"><div class="ttname"><a href="classspk_1_1APIModule.html#a28b7825a839dddd7d90ccb960a50e809">spk::APIModule::systemQueue</a></div><div class="ttdeci">spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp; systemQueue()</div><div class="ttdoc">Returns the thread-safe queue for system messages.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:59</div></div>
@@ -257,7 +277,14 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Application_html_a267928bad0a300248da0848a3d1f4f44"><div class="ttname"><a href="classspk_1_1Application.html#a267928bad0a300248da0848a3d1f4f44">spk::Application::centralWidget</a></div><div class="ttdeci">spk::AbstractWidget * centralWidget()</div><div class="ttdoc">Returns the central widget of the application.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:115</div></div>
 <div class="ttc" id="aclassspk_1_1Application_html_a4bb34e8823d56131a205757ca25746e6"><div class="ttname"><a href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">spk::Application::resize</a></div><div class="ttdeci">void resize(const spk::Vector2Int &amp;p_size)</div><div class="ttdoc">Resizes the application window and central widget.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:113</div></div>
 <div class="ttc" id="aclassspk_1_1Application_html_a69d78907af2adc9516a40c37659238fe"><div class="ttname"><a href="classspk_1_1Application.html#a69d78907af2adc9516a40c37659238fe">spk::Application::setupJobs</a></div><div class="ttdeci">void setupJobs()</div><div class="ttdoc">Setup the application jobs.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:43</div></div>
+<<<<<<< HEAD
+<<<<<<< HEAD
 <div class="ttc" id="aclassspk_1_1Application_html_a7b429ea88aa340b70d775deb1fb9623c"><div class="ttname"><a href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">spk::Application::addRootWidget</a></div><div class="ttdeci">TChildrenType * addRootWidget(Args &amp;&amp;... p_args)</div><div class="ttdoc">Add a new widget inside the application, with the central widget as parent.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:129</div></div>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+<div class="ttc" id="aclassspk_1_1Application_html_a7b429ea88aa340b70d775deb1fb9623c"><div class="ttname"><a href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">spk::Application::addRootWidget</a></div><div class="ttdeci">TChildrenType * addRootWidget(Args &amp;&amp;... p_args)</div><div class="ttdoc">Add a new widget inside the application, with the central widget as parent.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:129</div></div>
+>>>>>>> 2a6dd93 (Update Doxygen)
 <div class="ttc" id="aclassspk_1_1Application_html_abcd265ffb90968e0e1351bd2ca899f11"><div class="ttname"><a href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">spk::Application::~Application</a></div><div class="ttdeci">~Application()</div><div class="ttdoc">Destructs the Application object.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:97</div></div>
 <div class="ttc" id="aclassspk_1_1Application_html_ad7f393b12bf9826e08b5d6401c753b44"><div class="ttname"><a href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">spk::Application::Application</a></div><div class="ttdeci">Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)</div><div class="ttdoc">Constructs the Application object.</div><div class="ttdef"><b>Definition:</b> spk_graphical_application.hpp:75</div></div>
 <div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html_a20b0f2b400310160007d491929e17a51"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html#a20b0f2b400310160007d491929e17a51">spk::IMessageConsumerModule::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the IMessageConsumerModule object.</div></div>

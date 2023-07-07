@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['databuffer_395',['DataBuffer',['../classspk_1_1DataBuffer.html#a716866b679b1a1b6d7046a5bb65347ec',1,'spk::DataBuffer']]],
   ['deactivate_396',['deactivate',['../classspk_1_1ActivableObject.html#a30f10c4c4a64b48eafcf7c1b23a139b9',1,'spk::ActivableObject']]],
   ['default_397',['Default',['../classspk_1_1Value_1_1Default.html#ae9e4ae3a30832d143345ad35119e7528',1,'spk::Value::Default::Default(Args &amp;&amp;... p_args)'],['../classspk_1_1Value_1_1Default.html#af08f2b7dccddde18f955ae8b7aebf64a',1,'spk::Value::Default::Default(const Default &amp;p_other)']]],
@@ -14,8 +17,11 @@ var searchData=
   ['dot_402',['dot',['../structspk_1_1IVector2.html#a5b615184fb3c906955819e01958102bc',1,'spk::IVector2::dot()'],['../structspk_1_1IVector3.html#a04baff13ac8b38a5894f6112a80f2fb0',1,'spk::IVector3::dot()']]],
   ['duration_403',['duration',['../classspk_1_1Chronometer.html#af485ed807d7772e0901e77b65902a79d',1,'spk::Chronometer']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['databuffer_380',['DataBuffer',['../classspk_1_1DataBuffer.html#a716866b679b1a1b6d7046a5bb65347ec',1,'spk::DataBuffer']]],
   ['deactivate_381',['deactivate',['../classspk_1_1ActivableObject.html#a30f10c4c4a64b48eafcf7c1b23a139b9',1,'spk::ActivableObject']]],
   ['default_382',['Default',['../classspk_1_1Value_1_1Default.html#ae9e4ae3a30832d143345ad35119e7528',1,'spk::Value::Default::Default(Args &amp;&amp;... p_args)'],['../classspk_1_1Value_1_1Default.html#af08f2b7dccddde18f955ae8b7aebf64a',1,'spk::Value::Default::Default(const Default &amp;p_other)']]],
@@ -26,10 +32,15 @@ var searchData=
   ['dot_387',['dot',['../structspk_1_1IVector2.html#a5b615184fb3c906955819e01958102bc',1,'spk::IVector2::dot()'],['../structspk_1_1IVector3.html#a04baff13ac8b38a5894f6112a80f2fb0',1,'spk::IVector3::dot()']]],
   ['duration_388',['duration',['../classspk_1_1Chronometer.html#af485ed807d7772e0901e77b65902a79d',1,'spk::Chronometer']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['databuffer_382',['DataBuffer',['../classspk_1_1DataBuffer.html#a716866b679b1a1b6d7046a5bb65347ec',1,'spk::DataBuffer']]],
   ['deactivate_383',['deactivate',['../classspk_1_1ActivableObject.html#a30f10c4c4a64b48eafcf7c1b23a139b9',1,'spk::ActivableObject']]],
   ['default_384',['Default',['../classspk_1_1Value_1_1Default.html#ae9e4ae3a30832d143345ad35119e7528',1,'spk::Value::Default::Default(Args &amp;&amp;... p_args)'],['../classspk_1_1Value_1_1Default.html#af08f2b7dccddde18f955ae8b7aebf64a',1,'spk::Value::Default::Default(const Default &amp;p_other)']]],
@@ -40,9 +51,12 @@ var searchData=
   ['dot_389',['dot',['../structspk_1_1IVector2.html#a5b615184fb3c906955819e01958102bc',1,'spk::IVector2::dot()'],['../structspk_1_1IVector3.html#a04baff13ac8b38a5894f6112a80f2fb0',1,'spk::IVector3::dot()']]],
   ['duration_390',['duration',['../classspk_1_1Chronometer.html#af485ed807d7772e0901e77b65902a79d',1,'spk::Chronometer']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

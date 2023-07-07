@@ -21,17 +21,23 @@
       </node>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <node id="19">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       <node id="18">
 =======
       <node id="17">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
 =======
       <node id="17">
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/application/modules/spk_widget_module.hpp</label>
         <link refid="spk__widget__module_8hpp_source"/>
         <childnode refid="6" relation="include">
@@ -43,6 +49,7 @@
       </node>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <node id="18">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
@@ -50,6 +57,8 @@
       <node id="23">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       <node id="17">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
@@ -58,10 +67,13 @@
 =======
       <node id="21">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
 =======
       <node id="21">
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
         <childnode refid="8" relation="include">
@@ -92,12 +104,16 @@
         </childnode>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <childnode refid="12" relation="include">
 =======
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <childnode refid="17" relation="include">
         </childnode>
 >>>>>>> 5095d1a (Update Doxygen)
@@ -131,10 +147,13 @@
       </node>
       <node id="19">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
 =======
       <node id="19">
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/application/modules/windows/spk_window_module.hpp</label>
         <link refid="windows_2spk__window__module_8hpp_source"/>
       </node>
@@ -177,11 +196,15 @@
         </childnode>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <childnode refid="20" relation="include">
         </childnode>
 >>>>>>> 5095d1a (Update Doxygen)
@@ -205,6 +228,7 @@
       </node>
       <node id="18">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
         <label>includes/application/modules/windows/spk_API_module.hpp</label>
         <link refid="windows_2spk__API__module_8hpp_source"/>
@@ -215,6 +239,8 @@
         </childnode>
       </node>
       <node id="18">
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/application/modules/windows/spk_API_module.hpp</label>
         <link refid="windows_2spk__API__module_8hpp_source"/>
       </node>
@@ -251,6 +277,13 @@
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="16" relation="include">
         </childnode>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <childnode refid="17" relation="include">
+        </childnode>
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 5095d1a (Update Doxygen)
         <childnode refid="8" relation="include">
         </childnode>
@@ -279,17 +312,23 @@
       </node>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <node id="24">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       <node id="23">
 =======
       <node id="22">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
 =======
       <node id="22">
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/graphics/windows/spk_window.hpp</label>
         <link refid="windows_2spk__window_8hpp_source"/>
       </node>
@@ -299,17 +338,23 @@
       </node>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <node id="22">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       <node id="21">
 =======
       <node id="20">
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 >>>>>>> 990e809 (Update Doxygen)
 =======
       <node id="20">
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/graphics/linux/spk_window.hpp</label>
         <link refid="linux_2spk__window_8hpp_source"/>
       </node>

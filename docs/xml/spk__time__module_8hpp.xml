@@ -80,11 +80,7 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-<<<<<<< HEAD
-      <node id="10">
-=======
       <node id="9">
->>>>>>> 5095d1a (Update Doxygen)
         <label>includes/application/modules/spk_profiler_module.hpp</label>
         <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="2" relation="include">
@@ -116,6 +112,13 @@
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="9" relation="include">
         </childnode>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <childnode refid="10" relation="include">
+        </childnode>
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 5095d1a (Update Doxygen)
         <childnode refid="4" relation="include">
         </childnode>

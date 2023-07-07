@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['_5fbufferaccessmutex_577',['_bufferAccessMutex',['../classspk_1_1ContextManager.html#a53069aa2449071fa0b37e8a58b30a6e9',1,'spk::ContextManager']]],
   ['_5fcontent_578',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
   ['_5ffunct_579',['_funct',['../classspk_1_1IInput.html#a3f003a9960bf0f09e9c40c0cb19b9b11',1,'spk::IInput']]],
@@ -16,8 +19,11 @@ var searchData=
   ['_5ftimer_586',['_timer',['../classspk_1_1IInput.html#aca480f940165fae3fbad17182222b8b1',1,'spk::IInput']]],
   ['_5fvalue_587',['_value',['../structspk_1_1StandardType.html#a42a28212057ade7832c36f853860f20d',1,'spk::StandardType']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['_5fbufferaccessmutex_558',['_bufferAccessMutex',['../classspk_1_1ContextManager.html#a53069aa2449071fa0b37e8a58b30a6e9',1,'spk::ContextManager']]],
   ['_5fcontent_559',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
   ['_5finstance_560',['_instance',['../classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c',1,'spk::Singleton']]],
@@ -28,10 +34,15 @@ var searchData=
   ['_5freadwritecontext_565',['_readWriteContext',['../classspk_1_1ContextManager.html#aa66650e4f903996150e2b8451b4e71d6',1,'spk::ContextManager']]],
   ['_5fvalue_566',['_value',['../structspk_1_1StandardType.html#a42a28212057ade7832c36f853860f20d',1,'spk::StandardType']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['_5fbufferaccessmutex_560',['_bufferAccessMutex',['../classspk_1_1ContextManager.html#a53069aa2449071fa0b37e8a58b30a6e9',1,'spk::ContextManager']]],
   ['_5fcontent_561',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
   ['_5finstance_562',['_instance',['../classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c',1,'spk::Singleton']]],
@@ -42,9 +53,12 @@ var searchData=
   ['_5freadwritecontext_567',['_readWriteContext',['../classspk_1_1ContextManager.html#aa66650e4f903996150e2b8451b4e71d6',1,'spk::ContextManager']]],
   ['_5fvalue_568',['_value',['../structspk_1_1StandardType.html#a42a28212057ade7832c36f853860f20d',1,'spk::StandardType']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

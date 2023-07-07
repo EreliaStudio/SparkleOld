@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['object_446',['Object',['../classspk_1_1Pool_1_1Object.html#a1f83127b5f78cbe9752cc4b6419a53bd',1,'spk::Pool::Object']]],
   ['observer_447',['Observer',['../classspk_1_1Observer.html#a3cd7b9980e08c9d8a156b6f6c4b0c56c',1,'spk::Observer']]],
   ['obtain_448',['obtain',['../classspk_1_1Pool.html#a64032a2a21f5cf73a4836178a347a73c',1,'spk::Pool']]],
@@ -32,8 +35,11 @@ var searchData=
   ['operator_3e_3e_471',['operator&gt;&gt;',['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const'],['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const']]],
   ['operator_5b_5d_472',['operator[]',['../classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc',1,'spk::ThreadSafeQueue']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['object_427',['Object',['../classspk_1_1Pool_1_1Object.html#a1f83127b5f78cbe9752cc4b6419a53bd',1,'spk::Pool::Object']]],
   ['observer_428',['Observer',['../classspk_1_1Observer.html#a3cd7b9980e08c9d8a156b6f6c4b0c56c',1,'spk::Observer']]],
   ['obtain_429',['obtain',['../classspk_1_1Pool.html#a64032a2a21f5cf73a4836178a347a73c',1,'spk::Pool']]],
@@ -62,10 +68,15 @@ var searchData=
   ['operator_3e_3e_452',['operator&gt;&gt;',['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const'],['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const']]],
   ['operator_5b_5d_453',['operator[]',['../classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc',1,'spk::ThreadSafeQueue']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['object_429',['Object',['../classspk_1_1Pool_1_1Object.html#a1f83127b5f78cbe9752cc4b6419a53bd',1,'spk::Pool::Object']]],
   ['observer_430',['Observer',['../classspk_1_1Observer.html#a3cd7b9980e08c9d8a156b6f6c4b0c56c',1,'spk::Observer']]],
   ['obtain_431',['obtain',['../classspk_1_1Pool.html#a64032a2a21f5cf73a4836178a347a73c',1,'spk::Pool']]],
@@ -94,9 +105,12 @@ var searchData=
   ['operator_3e_3e_454',['operator&gt;&gt;',['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const'],['../classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b',1,'spk::DataBuffer::operator&gt;&gt;(OutputType &amp;p_output) const']]],
   ['operator_5b_5d_455',['operator[]',['../classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc',1,'spk::ThreadSafeQueue']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

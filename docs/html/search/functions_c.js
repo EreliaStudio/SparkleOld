@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['leftover_433',['leftover',['../classspk_1_1DataBuffer.html#aa7f1ec65d939c18bacbc61abe59e1064',1,'spk::DataBuffer']]],
   ['lerp_434',['lerp',['../structspk_1_1IVector2.html#ae564274f20ad50bb14dc2d34806cdec4',1,'spk::IVector2::lerp()'],['../structspk_1_1IVector3.html#a45af1e00c534412f63cbb6c8cc58ae80',1,'spk::IVector3::lerp()']]]
 =======
@@ -14,6 +17,7 @@ var searchData=
   ['leftover_418',['leftover',['../classspk_1_1DataBuffer.html#aa7f1ec65d939c18bacbc61abe59e1064',1,'spk::DataBuffer']]],
   ['lerp_419',['lerp',['../structspk_1_1IVector2.html#ae564274f20ad50bb14dc2d34806cdec4',1,'spk::IVector2::lerp()'],['../structspk_1_1IVector3.html#a45af1e00c534412f63cbb6c8cc58ae80',1,'spk::IVector3::lerp()']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+<<<<<<< HEAD
 =======
   ['leftover_416',['leftover',['../classspk_1_1DataBuffer.html#aa7f1ec65d939c18bacbc61abe59e1064',1,'spk::DataBuffer']]],
   ['lerp_417',['lerp',['../structspk_1_1IVector2.html#ae564274f20ad50bb14dc2d34806cdec4',1,'spk::IVector2::lerp()'],['../structspk_1_1IVector3.html#a45af1e00c534412f63cbb6c8cc58ae80',1,'spk::IVector3::lerp()']]]
@@ -22,4 +26,6 @@ var searchData=
   ['leftover_418',['leftover',['../classspk_1_1DataBuffer.html#aa7f1ec65d939c18bacbc61abe59e1064',1,'spk::DataBuffer']]],
   ['lerp_419',['lerp',['../structspk_1_1IVector2.html#ae564274f20ad50bb14dc2d34806cdec4',1,'spk::IVector2::lerp()'],['../structspk_1_1IVector3.html#a45af1e00c534412f63cbb6c8cc58ae80',1,'spk::IVector3::lerp()']]]
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 ];

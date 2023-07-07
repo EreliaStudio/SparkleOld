@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['wait_255',['wait',['../classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b',1,'spk::ThreadSafeQueue']]],
   ['wheel_256',['wheel',['../classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994',1,'spk::Mouse']]],
   ['widgetmodule_257',['WidgetModule',['../classspk_1_1WidgetModule.html',1,'spk::WidgetModule'],['../classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c',1,'spk::WidgetModule::WidgetModule()']]],
@@ -14,8 +17,11 @@ var searchData=
   ['worker_262',['Worker',['../classspk_1_1Worker.html',1,'spk::Worker'],['../classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64',1,'spk::Worker::Worker()']]],
   ['workerpool_263',['WorkerPool',['../classspk_1_1WorkerPool.html',1,'spk::WorkerPool'],['../classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a',1,'spk::WorkerPool::WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)'],['../classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d',1,'spk::WorkerPool::WorkerPool(const WorkerPool &amp;p_other)=delete']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['wait_247',['wait',['../classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b',1,'spk::ThreadSafeQueue']]],
   ['wheel_248',['wheel',['../classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994',1,'spk::Mouse']]],
   ['widgetmodule_249',['WidgetModule',['../classspk_1_1WidgetModule.html',1,'spk::WidgetModule'],['../classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c',1,'spk::WidgetModule::WidgetModule()']]],
@@ -26,10 +32,15 @@ var searchData=
   ['worker_254',['Worker',['../classspk_1_1Worker.html',1,'spk::Worker'],['../classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64',1,'spk::Worker::Worker()']]],
   ['workerpool_255',['WorkerPool',['../classspk_1_1WorkerPool.html',1,'spk::WorkerPool'],['../classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a',1,'spk::WorkerPool::WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)'],['../classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d',1,'spk::WorkerPool::WorkerPool(const WorkerPool &amp;p_other)=delete']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['wait_248',['wait',['../classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b',1,'spk::ThreadSafeQueue']]],
   ['wheel_249',['wheel',['../classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994',1,'spk::Mouse']]],
   ['widgetmodule_250',['WidgetModule',['../classspk_1_1WidgetModule.html',1,'spk::WidgetModule'],['../classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c',1,'spk::WidgetModule::WidgetModule()']]],
@@ -40,9 +51,12 @@ var searchData=
   ['worker_255',['Worker',['../classspk_1_1Worker.html',1,'spk::Worker'],['../classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64',1,'spk::Worker::Worker()']]],
   ['workerpool_256',['WorkerPool',['../classspk_1_1WorkerPool.html',1,'spk::WorkerPool'],['../classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a',1,'spk::WorkerPool::WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)'],['../classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d',1,'spk::WorkerPool::WorkerPool(const WorkerPool &amp;p_other)=delete']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

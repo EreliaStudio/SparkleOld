@@ -36,23 +36,32 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['addstatecallback_31',['addStateCallback',['../classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d',1,'spk::StatedObject']]],
   ['angle_32',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
   ['apimodule_33',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
   ['application_34',['Application',['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html',1,'spk::Application']]]
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['addrootwidget_31',['addRootWidget',['../classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c',1,'spk::Application']]],
   ['addstatecallback_32',['addStateCallback',['../classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d',1,'spk::StatedObject']]],
   ['angle_33',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
   ['apimodule_34',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
   ['application_35',['Application',['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html',1,'spk::Application']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

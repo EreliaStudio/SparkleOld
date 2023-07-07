@@ -7,11 +7,17 @@
     <includedby refid="spk__profiler__module_8hpp" local="yes">includes/application/modules/spk_profiler_module.hpp</includedby>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <includedby refid="spk__input_8hpp" local="yes">includes/input/spk_input.hpp</includedby>
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+    <includedby refid="spk__input_8hpp" local="yes">includes/input/spk_input.hpp</includedby>
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__timer_8cpp" local="yes">src/system/spk_timer.cpp</includedby>
     <incdepgraph>
@@ -87,6 +93,9 @@
       <node id="5">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
@@ -97,8 +106,11 @@
       <node id="6">
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
         <childnode refid="7" relation="include">
@@ -129,12 +141,18 @@
         </childnode>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <childnode refid="6" relation="include">
         </childnode>
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       </node>
       <node id="4">
         <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>

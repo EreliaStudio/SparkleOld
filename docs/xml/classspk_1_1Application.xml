@@ -327,6 +327,7 @@
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="115" column="21" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="115" bodyend="118"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -386,6 +387,8 @@
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="129" column="15" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="129" bodyend="137"/>
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -533,6 +536,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="145" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="145" bodyend="149"/>
 =======
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="125" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="125" bodyend="129"/>
@@ -540,12 +546,15 @@
 =======
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="145" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="145" bodyend="149"/>
 >>>>>>> 2a6dd93 (Update Doxygen)
+<<<<<<< HEAD
 =======
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="125" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="125" bodyend="129"/>
 >>>>>>> 5095d1a (Update Doxygen)
 =======
         <location file="includes/application/concrete/windows/spk_graphical_application.hpp" line="145" column="6" bodyfile="includes/application/concrete/windows/spk_graphical_application.hpp" bodystart="145" bodyend="149"/>
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
       </memberdef>
       </sectiondef>
     <briefdescription>

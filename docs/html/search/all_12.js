@@ -4,6 +4,9 @@ var searchData=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['randomgenerator_174',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()'],['../classspk_1_1RandomGenerator.html',1,'spk::RandomGenerator&lt; IntType &gt;']]],
   ['readonlyaccessor_175',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
   ['readwriteaccessor_176',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]],
@@ -26,8 +29,11 @@ var searchData=
   ['run_193',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]],
   ['running_194',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['randomgenerator_165',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()'],['../classspk_1_1RandomGenerator.html',1,'spk::RandomGenerator&lt; IntType &gt;']]],
   ['readonlyaccessor_166',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
   ['readwriteaccessor_167',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]],
@@ -50,10 +56,15 @@ var searchData=
   ['run_184',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]],
   ['running_185',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 5095d1a (Update Doxygen)
 =======
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 5095d1a (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['randomgenerator_166',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a7f72dae6004074788deecba74c5236cb',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#adff8299eaa9cbc86582321597a80f2b1',1,'spk::RandomGenerator::RandomGenerator()'],['../classspk_1_1RandomGenerator.html',1,'spk::RandomGenerator&lt; IntType &gt;']]],
   ['readonlyaccessor_167',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
   ['readwriteaccessor_168',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]],
@@ -76,9 +87,12 @@ var searchData=
   ['run_185',['run',['../classspk_1_1AbstractApplication.html#a5510ad9b53bc37a847b9d094936d473b',1,'spk::AbstractApplication']]],
   ['running_186',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
 >>>>>>> 5095d1a (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];

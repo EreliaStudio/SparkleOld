@@ -2,6 +2,9 @@ var searchData=
 [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['max_111',['max',['../structspk_1_1IVector2.html#a452209253a7a42351fc09951297f7d4d',1,'spk::IVector2::max()'],['../classspk_1_1RandomGenerator.html#a65f9e7bda3b0a4a3a1638c5a55dfcb5c',1,'spk::RandomGenerator::max()']]],
   ['memento_112',['Memento',['../classspk_1_1Memento.html',1,'spk']]],
   ['min_113',['min',['../structspk_1_1IVector2.html#ae64ebb9cf02e5bbf329ea31d35e29841',1,'spk::IVector2::min()'],['../classspk_1_1RandomGenerator.html#a96370335c177656f4878ebab8cc4b4b3',1,'spk::RandomGenerator::min()']]],
@@ -14,8 +17,11 @@ var searchData=
   ['muxblocking_120',['muxBlocking',['../classspk_1_1ThreadSafeQueue.html#a4c8b049876a04dcc317169d7f5147e3c',1,'spk::ThreadSafeQueue']]],
   ['muxqueue_121',['muxQueue',['../classspk_1_1ThreadSafeQueue.html#ad0a76bf1be9b19a1232a06f6ced62d88',1,'spk::ThreadSafeQueue']]]
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 2a6dd93 (Update Doxygen)
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
   ['max_105',['max',['../classspk_1_1RandomGenerator.html#a65f9e7bda3b0a4a3a1638c5a55dfcb5c',1,'spk::RandomGenerator::max()'],['../structspk_1_1IVector2.html#a452209253a7a42351fc09951297f7d4d',1,'spk::IVector2::max()']]],
   ['memento_106',['Memento',['../classspk_1_1Memento.html',1,'spk']]],
   ['min_107',['min',['../classspk_1_1RandomGenerator.html#a96370335c177656f4878ebab8cc4b4b3',1,'spk::RandomGenerator::min()'],['../structspk_1_1IVector2.html#ae64ebb9cf02e5bbf329ea31d35e29841',1,'spk::IVector2::min()']]],
@@ -26,7 +32,10 @@ var searchData=
   ['muxblocking_112',['muxBlocking',['../classspk_1_1ThreadSafeQueue.html#a4c8b049876a04dcc317169d7f5147e3c',1,'spk::ThreadSafeQueue']]],
   ['muxqueue_113',['muxQueue',['../classspk_1_1ThreadSafeQueue.html#ad0a76bf1be9b19a1232a06f6ced62d88',1,'spk::ThreadSafeQueue']]]
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2a6dd93 (Update Doxygen)
 =======
+=======
+>>>>>>> 787e083b7d8f70ac4abc683a257b1e8735ebfd6c
 >>>>>>> 2a6dd93 (Update Doxygen)
 ];
