@@ -85,8 +85,18 @@ Inheritance diagram for spk::AbstractApplication:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1AbstractApplication__inherit__graph.png" border="0" usemap="#aspk_1_1AbstractApplication_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1AbstractApplication_inherit__map" id="aspk_1_1AbstractApplication_inherit__map">
-<area shape="rect" title="Abstract base class for the application." alt="" coords="5,5,185,32"/>
-<area shape="rect" href="classspk_1_1Application.html" title="Main class for managing application." alt="" coords="32,80,159,107"/>
+<area shape="rect" title="Abstract base class for the application." alt="" coords="5,80,185,107"/>
+<area shape="rect" href="classspk_1_1Application.html" title="Main class for managing application." alt="" coords="32,155,159,181"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="14,5,177,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for spk::AbstractApplication:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspk_1_1AbstractApplication__coll__graph.png" border="0" usemap="#aspk_1_1AbstractApplication_coll__map" alt="Collaboration graph"/></div>
+<map name="aspk_1_1AbstractApplication_coll__map" id="aspk_1_1AbstractApplication_coll__map">
+<area shape="rect" title="Abstract base class for the application." alt="" coords="5,80,185,107"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="14,5,177,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -96,6 +106,15 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> = std::function&lt; void()&gt;</td></tr>
 <tr class="memdesc:a1c093636f865b66a2eb5090719b2d30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type alias for a job, represented as a void function without arguments. <br /></td></tr>
 <tr class="separator:a1c093636f865b66a2eb5090719b2d30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
+<tr class="memitem:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a3ac086eee3bcd57992944a3d146eca1f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> = std::function&lt; void()&gt;</td></tr>
+<tr class="memdesc:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of data representing a callback function. <br /></td></tr>
+<tr class="separator:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a8ad7ce7f08974f54c4168b30fe3d7d21"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> = std::deque&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
+<tr class="memdesc:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
+<tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,23 +135,27 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a092d65d04d8cd9db54d2a8add41519ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#a092d65d04d8cd9db54d2a8add41519ca">addJob</a> (const std::wstring &amp;p_WorkerName, const <a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> &amp;p_job)</td></tr>
-<tr class="memdesc:a092d65d04d8cd9db54d2a8add41519ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a job to a specific worker.  <a href="classspk_1_1AbstractApplication.html#a092d65d04d8cd9db54d2a8add41519ca">More...</a><br /></td></tr>
-<tr class="separator:a092d65d04d8cd9db54d2a8add41519ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bf373350bc5f46d625b44eb79e283fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#a8bf373350bc5f46d625b44eb79e283fb">addJob</a> (const <a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> &amp;p_job)</td></tr>
-<tr class="memdesc:a8bf373350bc5f46d625b44eb79e283fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a job to the application.  <a href="classspk_1_1AbstractApplication.html#a8bf373350bc5f46d625b44eb79e283fb">More...</a><br /></td></tr>
-<tr class="separator:a8bf373350bc5f46d625b44eb79e283fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25160706b8695b7c900ee36a518b056b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#a25160706b8695b7c900ee36a518b056b">addJob</a> (const std::wstring &amp;p_WorkerName, const <a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> &amp;p_job)</td></tr>
+<tr class="memdesc:a25160706b8695b7c900ee36a518b056b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a job to a specific worker.  <a href="classspk_1_1AbstractApplication.html#a25160706b8695b7c900ee36a518b056b">More...</a><br /></td></tr>
+<tr class="separator:a25160706b8695b7c900ee36a518b056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5687e5ff1eaa1df4ad207097a93359b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#a5687e5ff1eaa1df4ad207097a93359b8">addJob</a> (const <a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> &amp;p_job)</td></tr>
+<tr class="memdesc:a5687e5ff1eaa1df4ad207097a93359b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a job to the application.  <a href="classspk_1_1AbstractApplication.html#a5687e5ff1eaa1df4ad207097a93359b8">More...</a><br /></td></tr>
+<tr class="separator:a5687e5ff1eaa1df4ad207097a93359b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3404f55d68f8119693f44a45a332f26"><td class="memItemLeft" align="right" valign="top"><a id="ab3404f55d68f8119693f44a45a332f26"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractApplication.html#ab3404f55d68f8119693f44a45a332f26">setupJobs</a> ()=0</td></tr>
 <tr class="memdesc:ab3404f55d68f8119693f44a45a332f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function to setup jobs, to be implemented by subclasses. <br /></td></tr>
 <tr class="separator:ab3404f55d68f8119693f44a45a332f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
+<tr class="memitem:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
+<tr class="memdesc:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">More...</a><br /></td></tr>
+<tr class="separator:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for the application. </p>
 <p>This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8bf373350bc5f46d625b44eb79e283fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bf373350bc5f46d625b44eb79e283fb">&#9670;&nbsp;</a></span>addJob() <span class="overload">[1/2]</span></h2>
+<a id="a5687e5ff1eaa1df4ad207097a93359b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5687e5ff1eaa1df4ad207097a93359b8">&#9670;&nbsp;</a></span>addJob() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +164,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::AbstractApplication::addJob </td>
+          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">ContractProvider::Contract</a> spk::AbstractApplication::addJob </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c">Job</a> &amp;&#160;</td>
           <td class="paramname"><em>p_job</em></td><td>)</td>
@@ -165,8 +188,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a092d65d04d8cd9db54d2a8add41519ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a092d65d04d8cd9db54d2a8add41519ca">&#9670;&nbsp;</a></span>addJob() <span class="overload">[2/2]</span></h2>
+<a id="a25160706b8695b7c900ee36a518b056b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25160706b8695b7c900ee36a518b056b">&#9670;&nbsp;</a></span>addJob() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +198,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::AbstractApplication::addJob </td>
+          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">ContractProvider::Contract</a> spk::AbstractApplication::addJob </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>p_WorkerName</em>, </td>

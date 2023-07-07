@@ -1,4 +1,5 @@
 <map id="spk::Application" name="spk::Application">
-<area shape="rect" id="node1" title="Main class for managing application." alt="" coords="32,80,159,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node1" title="Main class for managing application." alt="" coords="32,155,159,181"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="14,5,177,32"/>
 </map>

@@ -19,6 +19,16 @@ Inheritance diagram for spk\+::Abstract\+Application\+:
 \includegraphics[width=215pt]{classspk_1_1AbstractApplication__inherit__graph}
 \end{center}
 \end{figure}
+
+
+Collaboration diagram for spk\+::Abstract\+Application\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classspk_1_1AbstractApplication__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,9 +51,9 @@ void \mbox{\hyperlink{classspk_1_1AbstractApplication_ac8f2a348cdbbf7eaf10e77953
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}{add\+Job}} (const std\+::wstring \&p\+\_\+\+Worker\+Name, const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1AbstractApplication_a25160706b8695b7c900ee36a518b056b}{add\+Job}} (const std\+::wstring \&p\+\_\+\+Worker\+Name, const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
 \begin{DoxyCompactList}\small\item\em Adds a job to a specific worker. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1AbstractApplication_a5687e5ff1eaa1df4ad207097a93359b8}{add\+Job}} (const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&p\+\_\+job)
 \begin{DoxyCompactList}\small\item\em Adds a job to the application. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}\label{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}} 
 virtual void \mbox{\hyperlink{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}{setup\+Jobs}} ()=0
@@ -56,11 +66,11 @@ Abstract base class for the application.
 This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}\label{classspk_1_1AbstractApplication_a8bf373350bc5f46d625b44eb79e283fb}} 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a5687e5ff1eaa1df4ad207097a93359b8}\label{classspk_1_1AbstractApplication_a5687e5ff1eaa1df4ad207097a93359b8}} 
 \index{spk::AbstractApplication@{spk::AbstractApplication}!addJob@{addJob}}
 \index{addJob@{addJob}!spk::AbstractApplication@{spk::AbstractApplication}}
 \doxysubsubsection{\texorpdfstring{addJob()}{addJob()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract\+Provider\+::\+Contract}} spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -71,11 +81,11 @@ Adds a job to the application.
 {\em p\+\_\+job} & The job to be added. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}\label{classspk_1_1AbstractApplication_a092d65d04d8cd9db54d2a8add41519ca}} 
+\mbox{\Hypertarget{classspk_1_1AbstractApplication_a25160706b8695b7c900ee36a518b056b}\label{classspk_1_1AbstractApplication_a25160706b8695b7c900ee36a518b056b}} 
 \index{spk::AbstractApplication@{spk::AbstractApplication}!addJob@{addJob}}
 \index{addJob@{addJob}!spk::AbstractApplication@{spk::AbstractApplication}}
 \doxysubsubsection{\texorpdfstring{addJob()}{addJob()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+\+Worker\+Name,  }\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract\+Provider\+::\+Contract}} spk\+::\+Abstract\+Application\+::add\+Job (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+\+Worker\+Name,  }\item[{const \mbox{\hyperlink{classspk_1_1AbstractApplication_a1c093636f865b66a2eb5090719b2d30c}{Job}} \&}]{p\+\_\+job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

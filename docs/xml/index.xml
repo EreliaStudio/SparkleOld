@@ -3,11 +3,11 @@
   <compound refid="classspk_1_1AbstractApplication" kind="class"><name>spk::AbstractApplication</name>
     <member refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kind="typedef"><name>Job</name></member>
     <member refid="classspk_1_1AbstractApplication_1a2b474ecf321b264b5f25606c3b581cc6" kind="variable"><name>_workers</name></member>
-    <member refid="classspk_1_1AbstractApplication_1ad423907e9bb9de745cad92f8b4fbc486" kind="variable"><name>_jobs</name></member>
+    <member refid="classspk_1_1AbstractApplication_1ac1f0331a7637589992327928578fc7f0" kind="variable"><name>_jobs</name></member>
     <member refid="classspk_1_1AbstractApplication_1a3fbe7a7840de39f2b07dad4e5ca682ae" kind="variable"><name>_errorCode</name></member>
     <member refid="classspk_1_1AbstractApplication_1a946e198c3c7bb48f614158b765db9f5d" kind="variable"><name>_isRunning</name></member>
-    <member refid="classspk_1_1AbstractApplication_1a092d65d04d8cd9db54d2a8add41519ca" kind="function"><name>addJob</name></member>
-    <member refid="classspk_1_1AbstractApplication_1a8bf373350bc5f46d625b44eb79e283fb" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1AbstractApplication_1a5687e5ff1eaa1df4ad207097a93359b8" kind="function"><name>addJob</name></member>
     <member refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" kind="function"><name>setupJobs</name></member>
     <member refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" kind="function"><name>AbstractApplication</name></member>
     <member refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" kind="function"><name>~AbstractApplication</name></member>
@@ -108,6 +108,8 @@
     <member refid="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" kind="variable"><name>_keyboardModule</name></member>
     <member refid="classspk_1_1Application_1a3851e579a021c5baeba3a07900a1cdbb" kind="variable"><name>_profilerModule</name></member>
     <member refid="classspk_1_1Application_1a22899d0e47e6615fb3760a7088fa5fbc" kind="variable"><name>_widgetModule</name></member>
+    <member refid="classspk_1_1Application_1a6006ae2fa9318e8359e328c39cdefdfb" kind="variable"><name>_renderContracts</name></member>
+    <member refid="classspk_1_1Application_1ae4a8740d3dea24999a425fadbafc6529" kind="variable"><name>_updateContracts</name></member>
     <member refid="classspk_1_1Application_1ae0d658551145a9946596a4f00b82637a" kind="variable"><name>_systemModule</name></member>
     <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
     <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
@@ -161,12 +163,15 @@
   </compound>
   <compound refid="classspk_1_1ContractProvider_1_1Contract" kind="class"><name>spk::ContractProvider::Contract</name>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a1db48504886e29546019616a033f95ec" kind="friend"><name>ContractProvider</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1ab174ca21e23eae2f9a922cd7dc5f89f7" kind="variable"><name>_uninitializedCallbackContainer</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a164f9556d3dac4587d76c881621ff9eb" kind="variable"><name>_uninitializedCallback</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a0d4e00a53d3a52654c702671dc05ed13" kind="variable"><name>_isOriginal</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a3937bd0269e40c29d6e96c763ee350b6" kind="variable"><name>_callbackOwner</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a5241f591aeca0c1de959111fb0d71684" kind="variable"><name>_callback</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a21bd746bcdfe818a05598f83bc338985" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a6206f4d98ef763d45c51bc2fdf578cff" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a9e790ad6c841612d990eb84ee29c9ed3" kind="function"><name>isOriginal</name></member>
+    <member refid="classspk_1_1ContractProvider_1_1Contract_1a8fbd6b095f70bbca9893b42617db03ab" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1adede8b3039666079d8c741819c7795b3" kind="function"><name>Contract</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a5d710e9926005abee47e31d96becfa40" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1ContractProvider_1_1Contract_1a6c614784cac84a328a8850af61564966" kind="function"><name>~Contract</name></member>
@@ -181,7 +186,6 @@
   <compound refid="classspk_1_1DataBuffer" kind="class"><name>spk::DataBuffer</name>
     <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" kind="variable"><name>_data</name></member>
     <member refid="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" kind="variable"><name>_bookmark</name></member>
-    <member refid="classspk_1_1DataBuffer_1a726f3c88727af71c7cb1142efb80fb06" kind="variable"><name>_accessMutex</name></member>
     <member refid="classspk_1_1DataBuffer_1a716866b679b1a1b6d7046a5bb65347ec" kind="function"><name>DataBuffer</name></member>
     <member refid="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" kind="function"><name>size</name></member>
     <member refid="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" kind="function"><name>bookmark</name></member>
@@ -615,12 +619,11 @@
   <compound refid="classspk_1_1PersistentWorker" kind="class"><name>spk::PersistentWorker</name>
     <member refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" kind="typedef"><name>Job</name></member>
     <member refid="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" kind="variable"><name>_jobs</name></member>
-    <member refid="classspk_1_1PersistentWorker_1a032f65a73bfca59e377f637c02ba22c1" kind="variable"><name>_contracts</name></member>
     <member refid="classspk_1_1PersistentWorker_1a7a15e3914642088d8684e33a8d5a14ea" kind="variable"><name>_isRunning</name></member>
     <member refid="classspk_1_1PersistentWorker_1aef8e6e6a217ed045e98db401a039ed40" kind="variable"><name>_isPaused</name></member>
     <member refid="classspk_1_1PersistentWorker_1a5b573916b185807a9ea60fbce9690918" kind="function"><name>PersistentWorker</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad42857f1630499681af81f5ca49fcf37" kind="function"><name>~PersistentWorker</name></member>
-    <member refid="classspk_1_1PersistentWorker_1a5880ffdaf3fef5e5115702dacd7a95d6" kind="function"><name>addJob</name></member>
+    <member refid="classspk_1_1PersistentWorker_1a57213ae38b0be502073a9e80c3882257" kind="function"><name>addJob</name></member>
     <member refid="classspk_1_1PersistentWorker_1ad4101a5a0d541968716eb8cb42e95bda" kind="function"><name>isRunning</name></member>
     <member refid="classspk_1_1PersistentWorker_1a706be22484b03b2f024308179781e552" kind="function"><name>start</name></member>
     <member refid="classspk_1_1PersistentWorker_1ac2fc8e7d0785eaa63c05d5e3540752d8" kind="function"><name>stop</name></member>

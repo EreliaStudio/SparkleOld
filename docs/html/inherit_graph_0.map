@@ -1,4 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="5,5,185,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="233,5,360,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="5,107,160,133"/>
+<area shape="rect" id="node2" href="$classspk_1_1APIModule.html" title="Class for managing the API interactions." alt="" coords="261,31,384,57"/>
+<area shape="rect" id="node3" href="$classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages." alt="" coords="208,81,437,108"/>
+<area shape="rect" id="node8" href="$classspk_1_1TimeModule.html" title="Class for managing time&#45;related functionality." alt="" coords="255,132,390,159"/>
+<area shape="rect" id="node9" href="$classspk_1_1WidgetModule.html" title="Class for managing widgets within the application." alt="" coords="249,183,396,209"/>
+<area shape="rect" id="node4" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="485,5,648,32"/>
+<area shape="rect" id="node5" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="495,56,639,83"/>
+<area shape="rect" id="node6" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="491,107,642,133"/>
+<area shape="rect" id="node7" href="$classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="490,157,643,184"/>
 </map>
