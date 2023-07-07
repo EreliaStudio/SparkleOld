@@ -4,102 +4,102 @@
     <compoundname>main.cpp</compoundname>
     <includes refid="playground_8hpp" local="yes">playground.hpp</includes>
     <incdepgraph>
-      <node id="45">
+      <node id="46">
         <label>design_pattern/spk_activable_object.hpp</label>
         <link refid="spk__activable__object_8hpp_source"/>
-        <childnode refid="44" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="40">
+      <node id="41">
         <label>design_pattern/spk_contract_provider.hpp</label>
         <link refid="spk__contract__provider_8hpp_source"/>
-        <childnode refid="36" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="39">
         <label>functional</label>
       </node>
-      <node id="57">
+      <node id="58">
         <label>application/modules/spk_API_module.hpp</label>
         <link refid="spk__API__module_8hpp_source"/>
       </node>
-      <node id="21">
+      <node id="24">
         <label>debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
-        <childnode refid="15" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="61">
-        <label>application/modules/spk_widget_module.hpp</label>
-        <link refid="spk__widget__module_8hpp_source"/>
         <childnode refid="28" relation="include">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>design_pattern/spk_activity_scheduler.hpp</label>
-        <link refid="spk__activity__scheduler_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
         </childnode>
       </node>
       <node id="62">
+        <label>application/modules/spk_widget_module.hpp</label>
+        <link refid="spk__widget__module_8hpp_source"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>design_pattern/spk_activity_scheduler.hpp</label>
+        <link refid="spk__activity__scheduler_8hpp_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
         <label>widget/spk_abstract_widget.hpp</label>
         <link refid="spk__abstract__widget_8hpp_source"/>
-        <childnode refid="42" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="19">
         <label>cstdint</label>
       </node>
-      <node id="53">
+      <node id="54">
         <label>threading/spk_worker_pool.hpp</label>
         <link refid="spk__worker__pool_8hpp_source"/>
-        <childnode refid="29" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
-      <node id="60">
+      <node id="61">
         <label>application/modules/spk_keyboard_module.hpp</label>
         <link refid="spk__keyboard__module_8hpp_source"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="56">
+      <node id="57">
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="28">
+      <node id="31">
         <label>application/modules/spk_abstract_module.hpp</label>
         <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="29" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -108,13 +108,13 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="21">
         <label>miscellaneous/spk_is_container.hpp</label>
         <link refid="spk__is__container_8hpp_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="58">
+      <node id="59">
         <label>application/modules/spk_window_module.hpp</label>
         <link refid="spk__window__module_8hpp_source"/>
       </node>
@@ -129,17 +129,17 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
@@ -155,35 +155,35 @@
         </childnode>
         <childnode refid="50" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
         <childnode refid="51" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="54" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="56" relation="include">
         </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
         <childnode refid="57" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
         <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="59" relation="include">
         </childnode>
@@ -195,53 +195,55 @@
         </childnode>
         <childnode refid="63" relation="include">
         </childnode>
-        <childnode refid="65" relation="include">
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
         </childnode>
       </node>
-      <node id="65">
+      <node id="66">
         <label>application/spk_application.hpp</label>
         <link refid="spk__application_8hpp_source"/>
       </node>
-      <node id="50">
+      <node id="51">
         <label>design_pattern/spk_memento.hpp</label>
         <link refid="spk__memento_8hpp_source"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>cmath</label>
       </node>
-      <node id="59">
+      <node id="60">
         <label>application/modules/spk_mouse_module.hpp</label>
         <link refid="spk__mouse__module_8hpp_source"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="9">
         <label>stdexcept</label>
       </node>
-      <node id="48">
+      <node id="49">
         <label>design_pattern/spk_value.hpp</label>
         <link refid="spk__value_8hpp_source"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="16">
         <label>string</label>
       </node>
-      <node id="51">
+      <node id="52">
         <label>threading/spk_promise.hpp</label>
         <link refid="spk__promise_8hpp_source"/>
-        <childnode refid="37" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="53" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="25">
         <label>map</label>
       </node>
       <node id="1">
@@ -250,22 +252,22 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="30">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="28" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="46">
+      <node id="47">
         <label>design_pattern/spk_activity.hpp</label>
         <link refid="spk__activity_8hpp_source"/>
-        <childnode refid="36" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="28">
         <label>design_pattern/spk_singleton.hpp</label>
         <link refid="spk__singleton_8hpp_source"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -273,146 +275,146 @@
       <node id="11">
         <label>random</label>
       </node>
-      <node id="31">
+      <node id="34">
         <label>condition_variable</label>
       </node>
-      <node id="32">
+      <node id="35">
         <label>spk_system_define.hpp</label>
         <link refid="spk__system__define_8hpp_source"/>
       </node>
-      <node id="37">
+      <node id="40">
         <label>future</label>
       </node>
-      <node id="52">
+      <node id="53">
         <label>optional</label>
       </node>
-      <node id="49">
+      <node id="50">
         <label>design_pattern/spk_context_manager.hpp</label>
         <link refid="spk__context__manager_8hpp_source"/>
-        <childnode refid="25" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="13">
+      <node id="17">
         <label>vector</label>
       </node>
-      <node id="43">
+      <node id="44">
         <label>design_pattern/spk_observer.hpp</label>
         <link refid="spk__observer_8hpp_source"/>
-        <childnode refid="22" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
-      <node id="54">
+      <node id="55">
         <label>system/spk_timer.hpp</label>
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-      </node>
-      <node id="39">
-        <label>sstream</label>
-      </node>
-      <node id="24">
-        <label>system/spk_time_metrics.hpp</label>
-        <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="25" relation="include">
-        </childnode>
         <childnode refid="27" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>data_structure/spk_pool.hpp</label>
-        <link refid="spk__pool_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
+      <node id="14">
+        <label>sstream</label>
       </node>
-      <node id="38">
-        <label>iostream/spk_iostream.hpp</label>
-        <link refid="spk__iostream_8hpp_source"/>
-        <childnode refid="39" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="17" relation="include">
+      <node id="27">
+        <label>system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="28" relation="include">
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+      </node>
+      <node id="23">
+        <label>data_structure/spk_pool.hpp</label>
+        <link refid="spk__pool_8hpp_source"/>
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="12">
-        <label>data_structure/spk_data_buffer.hpp</label>
-        <link refid="spk__data__buffer_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
+      <node id="13">
+        <label>iostream/spk_iostream.hpp</label>
+        <link refid="spk__iostream_8hpp_source"/>
         <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>threading/spk_thread_safe_queue.hpp</label>
+        <link refid="spk__thread__safe__queue_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>data_structure/spk_data_buffer.hpp</label>
+        <link refid="spk__data__buffer_8hpp_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>application/spk_abstract_application.hpp</label>
+        <link refid="spk__abstract__application_8hpp_source"/>
+        <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="55">
-        <label>application/spk_abstract_application.hpp</label>
-        <link refid="spk__abstract__application_8hpp_source"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-      </node>
-      <node id="23">
+      <node id="26">
         <label>system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="24" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>iostream</label>
       </node>
-      <node id="33">
+      <node id="36">
         <label>threading/spk_persistent_worker.hpp</label>
         <link refid="spk__persistent__worker_8hpp_source"/>
-        <childnode refid="34" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="42">
         <label>cstddef</label>
       </node>
-      <node id="44">
+      <node id="45">
         <label>design_pattern/spk_stated_object.hpp</label>
         <link refid="spk__stated__object_8hpp_source"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="30">
+      <node id="33">
         <label>deque</label>
       </node>
       <node id="10">
@@ -421,40 +423,40 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="15">
         <label>mutex</label>
       </node>
-      <node id="35">
+      <node id="38">
         <label>thread</label>
       </node>
-      <node id="42">
+      <node id="43">
         <label>design_pattern/spk_inherence_object.hpp</label>
         <link refid="spk__inherence__object_8hpp_source"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="22">
         <label>type_traits</label>
       </node>
-      <node id="64">
+      <node id="65">
         <label>set</label>
       </node>
-      <node id="34">
+      <node id="37">
         <label>threading/spk_thread.hpp</label>
         <link refid="spk__thread_8hpp_source"/>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
-        </childnode>
         <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -470,19 +472,19 @@
       <node id="7">
         <label>algorithm</label>
       </node>
-      <node id="63">
+      <node id="64">
         <label>widget/spk_widget_atlas.hpp</label>
         <link refid="spk__widget__atlas_8hpp_source"/>
-        <childnode refid="64" relation="include">
+        <childnode refid="65" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="62" relation="include">
+        <childnode refid="63" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="20">
         <label>cstring</label>
       </node>
       <node id="8">
@@ -493,11 +495,18 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="29">
         <label>memory</label>
       </node>
+      <node id="12">
+        <label>math/spk_perlin.hpp</label>
+        <link refid="spk__perlin_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
     </incdepgraph>
-    <innerclass refid="classTest" prot="public">Test</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -510,7 +519,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="playground/src/main.cpp" line="27" column="5" bodyfile="playground/src/main.cpp" bodystart="27" bodyend="70"/>
+        <location file="playground/src/main.cpp" line="3" column="5" bodyfile="playground/src/main.cpp" bodystart="3" bodyend="32"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -520,74 +529,36 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;playground.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3" refid="classTest" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTest" kindref="compound">Test</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref></highlight></codeline>
-<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_onRender()</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/>L</highlight><highlight class="stringliteral">&quot;Render<sp/>widget<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" kindref="member">name</ref>()<sp/>&lt;&lt;<sp/><sp/>L</highlight><highlight class="stringliteral">&quot;]<sp/>at<sp/>depth<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" kindref="member">depth</ref>()<sp/>&lt;&lt;<sp/>L</highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_onGeometryChange()</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_onUpdate()</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>(std::wstring<sp/>p_name)<sp/>:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref>(p_name)</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application" kindref="compound">spk::Application</ref><sp/>app(L</highlight><highlight class="stringliteral">&quot;Coucou&quot;</highlight><highlight class="normal">,<sp/>400);</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/>srand(time(NULL));</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Création<sp/>d&apos;une<sp/>instance<sp/>de<sp/>la<sp/>classe<sp/>Perlin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Perlin" kindref="compound">spk::Perlin</ref><sp/>perlin(rand());</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>de<sp/>quelques<sp/>paramètres</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>perlin.configureRange(0.0f,<sp/>100.0f);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>perlin.configureFrequency(10.0f);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>perlin.configurePersistance(0.5f);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>perlin.configureOctave(3);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Création<sp/>d&apos;un<sp/>échantillon<sp/>de<sp/>valeurs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>0;<sp/>x<sp/>&lt;<sp/>20;<sp/>++x)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>49;<sp/>++y)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Appel<sp/>de<sp/>la<sp/>méthode<sp/>sample</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sample<sp/>=<sp/>perlin.sample(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(x),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(y));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(y<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sample<sp/>&gt;<sp/>50)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_A<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_A_A<sp/>=<sp/>widgetA_A-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_A_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_A_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_B<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_B&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_B-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_C<sp/>=<sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_C&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_C-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetA_C_A<sp/>=<sp/>widgetA_C-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetA_C_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA_C_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetB<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetB&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetB_A<sp/>=<sp/>widgetB-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetB_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC<sp/>=<sp/>app.addRootWidget&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC_A<sp/>=<sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC_A&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC_A-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classTest" kindref="compound">Test</ref>*<sp/>widgetC_B<sp/>=<sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" kindref="member">addChildrenWidget</ref>&lt;<ref refid="classTest" kindref="compound">Test</ref>&gt;(L</highlight><highlight class="stringliteral">&quot;WidgetC_B&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC_B-&gt;<ref refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" kindref="member">activate</ref>();</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetA-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(10);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(3);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_A_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(5);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_B-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(10);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_C-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(11);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetA_C_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(9);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetB-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(20);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetB_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(25);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>widgetC-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(0);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetC_A-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(2);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>widgetC_B-&gt;<ref refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" kindref="member">setDepth</ref>(4);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(app.run());</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="playground/src/main.cpp"/>
   </compounddef>

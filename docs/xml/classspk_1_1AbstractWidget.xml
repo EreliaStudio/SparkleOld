@@ -4,7 +4,6 @@
     <compoundname>spk::AbstractWidget</compoundname>
     <basecompoundref refid="classspk_1_1InherenceObject" prot="public" virt="non-virtual">spk::InherenceObject&lt; AbstractWidget &gt;</basecompoundref>
     <basecompoundref refid="classspk_1_1ActivableObject" prot="public" virt="non-virtual">spk::ActivableObject</basecompoundref>
-    <derivedcompoundref refid="classTest" prot="public" virt="non-virtual">Test</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1NoGraphicsWidget" prot="public" virt="non-virtual">spk::NoGraphicsWidget</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1OnlyGraphicsWidget" prot="public" virt="non-virtual">spk::OnlyGraphicsWidget</derivedcompoundref>
     <includes refid="spk__abstract__widget_8hpp" local="no">spk_abstract_widget.hpp</includes>
@@ -157,7 +156,6 @@
         <argsstring>()=0</argsstring>
         <name>_onRender</name>
         <reimplementedby refid="classspk_1_1NoGraphicsWidget_1ace2423a2b71b7d74d0e85d4fb87521b1">_onRender</reimplementedby>
-        <reimplementedby refid="classTest_1af0ef996e937c35f7821d8dc361b3e91c">_onRender</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -172,7 +170,6 @@
         <argsstring>()=0</argsstring>
         <name>_onUpdate</name>
         <reimplementedby refid="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d">_onUpdate</reimplementedby>
-        <reimplementedby refid="classTest_1abb0a11f874e918a8bd07741708cf3663">_onUpdate</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -187,7 +184,6 @@
         <argsstring>()=0</argsstring>
         <name>_onGeometryChange</name>
         <reimplementedby refid="classspk_1_1NoGraphicsWidget_1a73146accf6688f48f8604fa269deba26">_onGeometryChange</reimplementedby>
-        <reimplementedby refid="classTest_1a7c845314c21473f92d97f71aa578c6a2">_onGeometryChange</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -633,15 +629,9 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>spk::NoGraphicsWidget</label>
         <link refid="classspk_1_1NoGraphicsWidget"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>Test</label>
-        <link refid="classTest"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -653,7 +643,7 @@
         <label>spk::ContractProvider</label>
         <link refid="classspk_1_1ContractProvider"/>
       </node>
-      <node id="8">
+      <node id="7">
         <label>spk::OnlyGraphicsWidget</label>
         <link refid="classspk_1_1OnlyGraphicsWidget"/>
         <childnode refid="1" relation="public-inheritance">

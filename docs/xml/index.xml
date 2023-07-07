@@ -612,6 +612,33 @@
     <member refid="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d" kind="function"><name>_onUpdate</name></member>
     <member refid="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" kind="function"><name>_update</name></member>
   </compound>
+  <compound refid="classspk_1_1Perlin" kind="class"><name>spk::Perlin</name>
+    <member refid="classspk_1_1Perlin_1a99053eaf37c431a2ed85884d0ec165bd" kind="variable"><name>_rng</name></member>
+    <member refid="classspk_1_1Perlin_1ada6995e28752b41fdb171a1ef91bced4" kind="variable"><name>_gradiants</name></member>
+    <member refid="classspk_1_1Perlin_1a71552424ac49e02a267554b116159355" kind="variable"><name>_seed</name></member>
+    <member refid="classspk_1_1Perlin_1aa5e25c5016420267dee6856a5da1eb02" kind="variable"><name>_min</name></member>
+    <member refid="classspk_1_1Perlin_1a8994e08e44d3ed3c583e4073aec057bd" kind="variable"><name>_max</name></member>
+    <member refid="classspk_1_1Perlin_1ae39ccf131334c337d6533a08aefdfb94" kind="variable"><name>_range</name></member>
+    <member refid="classspk_1_1Perlin_1ab6a4efe994b5a2fe78540aaee1631958" kind="variable"><name>_octaveValue</name></member>
+    <member refid="classspk_1_1Perlin_1a84fbf867c0cc9c1d7849cbfa37a57e7f" kind="variable"><name>_frequency</name></member>
+    <member refid="classspk_1_1Perlin_1af0e481cacb106917b22deda0e99eab86" kind="variable"><name>_persistance</name></member>
+    <member refid="classspk_1_1Perlin_1acab4830bc7fa21d5d7f011bdfadd0eac" kind="variable"><name>_lacunarity</name></member>
+    <member refid="classspk_1_1Perlin_1ae80c76127d60b2613416b2629e8af495" kind="variable"><name>GradiantSize</name></member>
+    <member refid="classspk_1_1Perlin_1a5e571d3c43bfe014657207ea0346e385" kind="function"><name>_smoothstep</name></member>
+    <member refid="classspk_1_1Perlin_1a050b431f78900c54a43aea68e35dbe31" kind="function"><name>_interpolate</name></member>
+    <member refid="classspk_1_1Perlin_1a15be4d92370bb34ecd68cc04bf4a93d9" kind="function"><name>_dotGridGradient</name></member>
+    <member refid="classspk_1_1Perlin_1a27dc615cd30b31c5d8480c3013bc3089" kind="function"><name>_computeWaveLength</name></member>
+    <member refid="classspk_1_1Perlin_1a3de7bdea37ca323a62a2c5ba15d858f0" kind="function"><name>_calcGradiant</name></member>
+    <member refid="classspk_1_1Perlin_1a6b30453d0c5084274603577ee4018139" kind="function"><name>Perlin</name></member>
+    <member refid="classspk_1_1Perlin_1a3802bb8a02f129913f0558643fb80862" kind="function"><name>seed</name></member>
+    <member refid="classspk_1_1Perlin_1a5219608fc52b568566f80873d876171c" kind="function"><name>configureSeed</name></member>
+    <member refid="classspk_1_1Perlin_1a7a46cce01afd31e067178675f041bbe5" kind="function"><name>configureFrequency</name></member>
+    <member refid="classspk_1_1Perlin_1aa7b598b8aad646e9415c0d170935122b" kind="function"><name>configurePersistance</name></member>
+    <member refid="classspk_1_1Perlin_1a39b9a27d3de6da48ba34a0285a47e36f" kind="function"><name>configureLacunarity</name></member>
+    <member refid="classspk_1_1Perlin_1a1399132789acef90817acbc028060eb0" kind="function"><name>configureOctave</name></member>
+    <member refid="classspk_1_1Perlin_1a58b540318b3fe0807a43a43c1ce23187" kind="function"><name>configureRange</name></member>
+    <member refid="classspk_1_1Perlin_1aa31de10ae9eb246b1f5e19fb516dc904" kind="function"><name>sample</name></member>
+  </compound>
   <compound refid="classspk_1_1PersistentWorker" kind="class"><name>spk::PersistentWorker</name>
     <member refid="classspk_1_1PersistentWorker_1a0e26b08e8a01429bd5f17443021125d2" kind="typedef"><name>Job</name></member>
     <member refid="classspk_1_1PersistentWorker_1a78feece7a59aef5f494c05edbdbeba47" kind="variable"><name>_jobs</name></member>
@@ -725,12 +752,6 @@
     <member refid="classspk_1_1SystemModule_1a641975eb5ff351282dd55b47865c4b77" kind="function"><name>_handleMessage</name></member>
     <member refid="classspk_1_1SystemModule_1a4e69257a48d4e3f620310e0bfc1dea21" kind="function"><name>SystemModule</name></member>
     <member refid="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" kind="function"><name>~SystemModule</name></member>
-  </compound>
-  <compound refid="classTest" kind="class"><name>Test</name>
-    <member refid="classTest_1af0ef996e937c35f7821d8dc361b3e91c" kind="function"><name>_onRender</name></member>
-    <member refid="classTest_1a7c845314c21473f92d97f71aa578c6a2" kind="function"><name>_onGeometryChange</name></member>
-    <member refid="classTest_1abb0a11f874e918a8bd07741708cf3663" kind="function"><name>_onUpdate</name></member>
-    <member refid="classTest_1ab434ddbfc47bc093436ce7d1bb82965f" kind="function"><name>Test</name></member>
   </compound>
   <compound refid="classspk_1_1Thread" kind="class"><name>spk::Thread</name>
     <member refid="classspk_1_1Thread_1acc625f78afb482c29338759d4b959af6" kind="enum"><name>LaunchMethod</name></member>
@@ -1010,6 +1031,8 @@
   </compound>
   <compound refid="spk__iostream_8hpp" kind="file"><name>spk_iostream.hpp</name>
   </compound>
+  <compound refid="spk__perlin_8hpp" kind="file"><name>spk_perlin.hpp</name>
+  </compound>
   <compound refid="spk__random__generator_8hpp" kind="file"><name>spk_random_generator.hpp</name>
   </compound>
   <compound refid="spk__vector2_8hpp" kind="file"><name>spk_vector2.hpp</name>
@@ -1109,6 +1132,8 @@
   </compound>
   <compound refid="spk__iostream_8cpp" kind="file"><name>spk_iostream.cpp</name>
   </compound>
+  <compound refid="spk__perlin_8cpp" kind="file"><name>spk_perlin.cpp</name>
+  </compound>
   <compound refid="spk__chronometer_8cpp" kind="file"><name>spk_chronometer.cpp</name>
   </compound>
   <compound refid="spk__time__metrics_8cpp" kind="file"><name>spk_time_metrics.cpp</name>
@@ -1139,9 +1164,9 @@
   </compound>
   <compound refid="dir_05f2b506267898f6dd4e0c52672de2c3" kind="dir"><name>includes/debug</name>
   </compound>
-  <compound refid="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir"><name>includes/design_pattern</name>
-  </compound>
   <compound refid="dir_18bfe15d38f9d4b020db717ec3dec0ad" kind="dir"><name>src/design_pattern</name>
+  </compound>
+  <compound refid="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir"><name>includes/design_pattern</name>
   </compound>
   <compound refid="dir_fecb50b33baf124479efc63989ba8a70" kind="dir"><name>includes/graphics</name>
   </compound>
@@ -1155,29 +1180,31 @@
   </compound>
   <compound refid="dir_d365e15d984c8d0205117ee0c40d6716" kind="dir"><name>src/input</name>
   </compound>
-  <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
-  </compound>
   <compound refid="dir_e72210afd5269ebe4767cdf8821e9fb6" kind="dir"><name>src/iostream</name>
   </compound>
-  <compound refid="dir_6ddc0213ad914c7862510b0b5b0f11d6" kind="dir"><name>src/graphics/linux</name>
-  </compound>
-  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
-  </compound>
-  <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
-  </compound>
-  <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
+  <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
   </compound>
   <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
   </compound>
+  <compound refid="dir_6ddc0213ad914c7862510b0b5b0f11d6" kind="dir"><name>src/graphics/linux</name>
+  </compound>
   <compound refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir"><name>src/application/modules/linux</name>
+  </compound>
+  <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
+  </compound>
+  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
+  </compound>
+  <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
   </compound>
   <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
   </compound>
+  <compound refid="dir_ae9a93452e2a84339148a16bcf2eb561" kind="dir"><name>src/math</name>
+  </compound>
   <compound refid="dir_30c033750a7a5ab7efccd1bfa6f17d06" kind="dir"><name>includes/miscellaneous</name>
   </compound>
-  <compound refid="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir"><name>includes/application/modules</name>
-  </compound>
   <compound refid="dir_e3781fa7bac336463b5810548c309841" kind="dir"><name>src/application/modules</name>
+  </compound>
+  <compound refid="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir"><name>includes/application/modules</name>
   </compound>
   <compound refid="dir_2195dec42aed13c440b4eea86e9c5401" kind="dir"><name>playground</name>
   </compound>
@@ -1203,9 +1230,9 @@
   </compound>
   <compound refid="dir_b0d7979d317da96e18556e960da3e586" kind="dir"><name>includes/graphics/windows</name>
   </compound>
-  <compound refid="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir"><name>includes/application/modules/windows</name>
-  </compound>
   <compound refid="dir_d9173fd93ed0ce4e9acfe9e9a968e1c0" kind="dir"><name>src/input/windows</name>
+  </compound>
+  <compound refid="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir"><name>includes/application/modules/windows</name>
   </compound>
   <compound refid="dir_4da4d72ca490047577e944980829188b" kind="dir"><name>includes/application/concrete/windows</name>
   </compound>

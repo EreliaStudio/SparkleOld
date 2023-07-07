@@ -9,6 +9,7 @@
     <innerdir refid="dir_560415a5d2bc4999842279f4fc1debef">src/graphics</innerdir>
     <innerdir refid="dir_d365e15d984c8d0205117ee0c40d6716">src/input</innerdir>
     <innerdir refid="dir_e72210afd5269ebe4767cdf8821e9fb6">src/iostream</innerdir>
+    <innerdir refid="dir_ae9a93452e2a84339148a16bcf2eb561">src/math</innerdir>
     <innerdir refid="dir_d501334aeb1b78ad67cd3c72c37b1e87">src/system</innerdir>
     <innerdir refid="dir_7e55306ba01a4f64bc8db2780859eb09">src/threading</innerdir>
     <innerdir refid="dir_c570470bf3e4213fb57699dd2e921b84">src/widget</innerdir>

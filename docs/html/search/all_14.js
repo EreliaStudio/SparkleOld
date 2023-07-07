@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['test_243',['Test',['../classTest.html',1,'']]],
   ['thread_244',['Thread',['../classspk_1_1Thread.html',1,'spk::Thread'],['../classspk_1_1Thread.html#a7addb5ad82fee3d906e0a49cb3572f69',1,'spk::Thread::Thread(const std::wstring &amp;p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)'],['../classspk_1_1Thread.html#afdc8fce9be9a5bc00dfdd9c7d149f588',1,'spk::Thread::Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)']]],
   ['threadsafequeue_245',['ThreadSafeQueue',['../classspk_1_1ThreadSafeQueue.html',1,'spk::ThreadSafeQueue&lt; T &gt;'],['../classspk_1_1ThreadSafeQueue.html#ad95a7d5bfe93b6d2146e64ee2a433b1b',1,'spk::ThreadSafeQueue::ThreadSafeQueue()=default'],['../classspk_1_1ThreadSafeQueue.html#a7ef0d2aea7e6ff8d3f80e4aba00855f0',1,'spk::ThreadSafeQueue::ThreadSafeQueue(const ThreadSafeQueue&lt; T &gt; &amp;)=delete']]],
   ['threadsafequeue_3c_20job_20_3e_246',['ThreadSafeQueue&lt; Job &gt;',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],

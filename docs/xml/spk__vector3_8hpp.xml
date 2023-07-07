@@ -5,6 +5,7 @@
     <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
     <includes local="no">stdexcept</includes>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__perlin_8cpp" local="yes">src/math/spk_perlin.cpp</includedby>
     <incdepgraph>
       <node id="3">
         <label>cmath</label>

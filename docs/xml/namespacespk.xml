@@ -37,6 +37,7 @@
     <innerclass refid="classspk_1_1MouseInput" prot="public">spk::MouseInput</innerclass>
     <innerclass refid="classspk_1_1MouseMovementInput" prot="public">spk::MouseMovementInput</innerclass>
     <innerclass refid="classspk_1_1IOStream" prot="public">spk::IOStream</innerclass>
+    <innerclass refid="classspk_1_1Perlin" prot="public">spk::Perlin</innerclass>
     <innerclass refid="classspk_1_1RandomGenerator" prot="public">spk::RandomGenerator</innerclass>
     <innerclass refid="structspk_1_1IVector2" prot="public">spk::IVector2</innerclass>
     <innerclass refid="structspk_1_1IVector3" prot="public">spk::IVector3</innerclass>
