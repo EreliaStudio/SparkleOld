@@ -190,12 +190,19 @@ namespace spk
 					(p_index >= 1 && p_content[p_index] == '"' && p_content[p_index - 1] != '\\') ||
 					(p_index >= 2 && p_content[p_index] == '"' && p_content[p_index - 1] == '\\' && p_content[p_index - 2] == '\\'))
 				{
-					++p_index;
 					break;
 				}
-				if ((p_content[p_index] == '"' && isAString == false) ||
-					p_content[p_index] == '[' || p_content[p_index] == '{' || p_content[p_index] == ',')
-					spk::throwException(L"Invalid unit substring [" + p_content.substr(p_index, 5) + L"]");
+				if (isAString == false &&
+					(p_content[p_index] == '"' || p_content[p_index] == '[' ||
+						p_content[p_index] == '{' || p_content[p_index] == ','))
+					spk::throwException(L"Invalid JSON unit [" + p_content.substr(oldIndex, 5) + L"]");
+			}
+			if (isAString == true)
+			{
+				if (p_content[p_index] != '"')
+					spk::throwException(L"Invalid JSON unit [" + p_content.substr(oldIndex, p_index - oldIndex) + L"]");
+				else
+					++p_index;
 			}
 
 			return (_handleEscapeSequence(p_content.substr(oldIndex, p_index - oldIndex)));
