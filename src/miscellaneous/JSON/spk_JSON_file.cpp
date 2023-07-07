@@ -49,7 +49,7 @@ namespace spk
 						{
 							result += static_cast<wchar_t>(std::stoi(p_fileContent.substr(i + 2, 4), nullptr, 16));
 						}
-						catch(const std::exception& e)
+						catch (const std::exception& e)
 						{
 							spk::throwException(L"Invalid Unicode escape : <" + p_fileContent.substr(i, 6) + L'>');
 						}
@@ -384,7 +384,7 @@ namespace spk
 			p_objectToFill.setAsObject();
 
 			if (p_content[p_index] != '{')
-				spk::throwException(L"Invalid JSON object: " + p_content);
+				spk::throwException(L"Invalid JSON object (missing '{')");
 			p_index++;
 			for (; p_index < p_content.size() && p_content[p_index] != '}';)
 			{
@@ -396,9 +396,11 @@ namespace spk
 
 				if (p_content[p_index] == ',')
 					p_index++;
+				else if (p_content[p_index] != '}')
+					spk::throwException(L"Invalid JSON object (missing ',' or '}')");
 			}
 			if (p_content[p_index] != '}')
-				spk::throwException(L"Invalid JSON object: " + p_content);
+				spk::throwException(L"Invalid JSON object (missing '}')");
 			p_index++;
 		}
 
@@ -411,7 +413,8 @@ namespace spk
 		static void _loadArray(spk::JSON::Object& p_objectToFill, const std::wstring& p_content, size_t& p_index)
 		{
 			p_objectToFill.setAsArray();
-
+			if (p_content[p_index] != '[')
+				spk::throwException(L"Invalid JSON array (missing '[')");
 			p_index++;
 			for (; p_index < p_content.size() && p_content[p_index] != ']';)
 			{
@@ -423,7 +426,11 @@ namespace spk
 
 				if (p_content[p_index] == ',')
 					p_index++;
+				else if (p_content[p_index] != ']')
+					spk::throwException(L"Invalid JSON array (missing ',' or ']')");
 			}
+			if (p_content[p_index] != ']')
+				spk::throwException(L"Invalid JSON array (missing ']')");
 			p_index++;
 		}
 
