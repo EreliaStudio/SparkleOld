@@ -7,8 +7,6 @@ int main()
 
 	for (std::wstring filePath : jsonFiles)
 	{
-		if (filePath != L"json/string.json")
-			continue;
 		file.load(filePath);
 		spk::cout << "File {" << filePath << "}: " << std::endl
 			<< file << std::endl;

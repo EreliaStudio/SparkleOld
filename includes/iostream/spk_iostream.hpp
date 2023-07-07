@@ -79,8 +79,8 @@ namespace spk
 			buffer(p_outputStream, p_prefix)
 		{
 			std::locale::global(std::locale(""));
-			std::wostream::imbue(std::locale());
 			std::iostream::sync_with_stdio(false);
+			std::locale::global(std::locale("C"));
 		}
 
 		void setPrefix(const std::wstring& p_prefix)
