@@ -95,7 +95,7 @@ namespace spk
 					result += c;
 					break;
 				case L'\"':
-					if ((i >= 1 && p_fileContent[i - 1] != L'\\') ||
+					if (i == 0 || (i >= 1 && p_fileContent[i - 1] != L'\\') ||
 						(i >= 2 && p_fileContent[i - 1] == L'\\' && p_fileContent[i - 2] == L'\\'))
 						isLiteral = !isLiteral;
 					result += c;
@@ -474,10 +474,14 @@ namespace spk
 		void File::load(const std::filesystem::path& p_filePath)
 		{
 			std::wstring fileContent = _loadFileContent(p_filePath);
-
 			size_t index = 0;
+
+			if (fileContent.empty())
+				spk::throwException(L"Empty file: " + p_filePath.wstring());
 			_root.reset();
 			_loadContent(_root, fileContent, index);
+			if (index != fileContent.size())
+				spk::throwException(L"Invalid JSON file: " + p_filePath.wstring());
 		}
 
 		const spk::JSON::Object& File::operator[](const std::wstring& p_key) const
