@@ -250,13 +250,15 @@ namespace spk
 			return (result);
 		}
 
-		static bool _resultWillBeDouble(const size_t& p_decimalPos, const size_t& p_exponentPos,
+		static bool _resultWillBeDouble(const size_t& p_decimalPos, bool p_hasExponent, const size_t& p_exponentPos,
 			bool p_isNegative, const long& p_exponent)
 		{
-			return (p_decimalPos != std::wstring::npos ||
+			if (p_decimalPos == std::wstring::npos && p_exponentPos == false)
+				return false;
+			return (p_decimalPos != std::wstring::npos || (p_hasExponent == true &&
 				p_exponent > spk::numberLength(std::numeric_limits<long>::max()) ||
 				p_exponentPos - p_isNegative > spk::numberLength(std::numeric_limits<long>::max()) ||
-				p_exponentPos - p_isNegative + p_exponent <= 0);
+				p_exponentPos - p_isNegative + p_exponent <= 0));
 		}
 
 		static long _safePowerOfTen(const long& p_number, const long& p_exponent, const std::wstring& p_unitSubString)
@@ -288,7 +290,6 @@ namespace spk
 			long exponent(0);
 
 			size_t decimalPos(p_unitSubString.find_last_of(L"."));
-			bool isFractional(decimalPos != std::wstring::npos);
 
 			if (_isNumberMalformatted(isNegative, decimalPos, exponentPos, p_unitSubString) == true)
 				spk::throwException(L"Malformatted JSON number: " + p_unitSubString);
@@ -303,8 +304,9 @@ namespace spk
 
 			try
 			{
-				result = (_resultWillBeDouble(decimalPos, exponentPos, isNegative, exponent) == true) ?
-					std::stod(p_unitSubString) : std::stol(p_unitSubString);
+				(_resultWillBeDouble(decimalPos, p_unitSubString.size() != exponentPos,
+					exponentPos, isNegative, exponent) == true) ?
+					result = std::stod(p_unitSubString) : result = std::stol(p_unitSubString);
 			}
 			catch (const std::exception& e)
 			{
