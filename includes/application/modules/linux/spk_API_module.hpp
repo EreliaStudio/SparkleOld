@@ -34,7 +34,7 @@ namespace spk
 		 * 
 		 * This method should be implemented in the .cpp file.
 		 */
-		void update();
+		void pullMessage();
 
 		/**
 		 * @brief Returns the thread-safe queue for window system messages.

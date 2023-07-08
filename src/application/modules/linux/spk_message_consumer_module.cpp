@@ -6,7 +6,7 @@ namespace spk
 		_queue(p_queue)
 	{}
 
-	void IMessageConsumerModule::update()
+	void IMessageConsumerModule::treatMessage()
 	{
 		while (_queue.empty() == false)
 		{

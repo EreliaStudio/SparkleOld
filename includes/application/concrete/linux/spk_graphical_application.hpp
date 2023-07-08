@@ -43,18 +43,20 @@ namespace spk
 		void setupJobs()
 		{
 			_renderContracts.push_back(addJob([&](){ _profilerModule->increaseRenderIPS();}));
-			_renderContracts.push_back(addJob([&](){ _APIModule->update(); }));
+			_renderContracts.push_back(addJob([&](){ _APIModule->pullMessage(); }));
 			_renderContracts.push_back(addJob([&](){ _windowModule->clear(); }));
 			_renderContracts.push_back(addJob([&](){ _widgetModule->render(); }));
 			_renderContracts.push_back(addJob([&](){ _windowModule->render(); }));
 
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _profilerModule->increaseUpdateIPS();}));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _timeModule->update(); }));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _profilerModule->update();}));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _windowModule->update(); }));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _mouseModule->update(); }));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _keyboardModule->update(); }));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _widgetModule->update(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _timeModule->updateTimeMetrics(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _profilerModule->updateData();}));
+
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _windowModule->treatMessage(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _mouseModule->treatMessage(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _keyboardModule->treatMessage(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _widgetModule->treatMessage(); }));
+
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _mouseModule->updateMouse(); }));
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); }));
 		}

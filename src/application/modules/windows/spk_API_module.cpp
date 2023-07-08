@@ -144,7 +144,7 @@ namespace spk
 		MessagePoolInstance::release();
 	}
 
-	void APIModule::update()
+	void APIModule::pullMessage()
 	{
 		MSG msg = {};
 

@@ -1,4 +1,4 @@
-#include "application/modules/spk_abstract_module.hpp"
+#include "application/modules/spk_message_consumer_module.hpp"
 
 namespace spk
 {
@@ -6,7 +6,7 @@ namespace spk
 		_queue(p_queue)
 	{}
 
-	void IMessageConsumerModule::update()
+	void IMessageConsumerModule::treatMessage()
 	{
 		while (_queue.empty() == false)
 		{

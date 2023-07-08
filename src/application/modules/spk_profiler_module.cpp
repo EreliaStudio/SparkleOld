@@ -22,7 +22,7 @@ namespace spk
 		_updateIPSCounter = 0;
 	}
 
-	void ProfilerModule::update()
+	void ProfilerModule::updateData()
 	{
 		if (_oneSecondTime.isRunning() == false)
 		{

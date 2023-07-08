@@ -34,6 +34,6 @@ namespace spk
 		/**
 		 * @brief Updates the IMessageConsumerModule object.
 		 */
-		void update();
+		void treatMessage();
 	};
 }

@@ -28,6 +28,6 @@ namespace spk
          * @brief Updates the time state.
 		 * Will update the TimeMetrics
          */
-		void update();
+		void updateTimeMetrics();
 	};
 }

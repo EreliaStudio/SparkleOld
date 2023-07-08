@@ -17,7 +17,7 @@ namespace spk
 		ProfilerModule();
 		~ProfilerModule();
 
-		void update();
+		void updateData();
 		void increaseRenderIPS();
 		void increaseUpdateIPS();
 	};
