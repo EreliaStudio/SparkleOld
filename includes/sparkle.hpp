@@ -37,7 +37,6 @@
 #include "system/spk_time_metrics.hpp"
 
 #include "application/spk_abstract_application.hpp"
-#include "application/modules/spk_abstract_module.hpp"
 
 #include "graphics/spk_window.hpp"
 

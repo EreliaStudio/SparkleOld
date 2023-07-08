@@ -50,7 +50,7 @@ namespace spk
 		/**
 		 * @brief Updates the API module.
 		 */
-		void update();
+		void pullMessage();
 
 		/**
 		 * @brief Returns the thread-safe queue for system messages.

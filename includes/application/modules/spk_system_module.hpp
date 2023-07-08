@@ -1,6 +1,6 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
+#include "application/modules/spk_message_consumer_module.hpp"
 #include "application/spk_abstract_application.hpp"
 
 namespace spk

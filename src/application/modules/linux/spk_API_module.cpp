@@ -14,7 +14,7 @@ namespace spk
 
 	}
 
-	void APIModule::update()
+	void APIModule::pullMessage()
 	{
 		xcb_generic_event_t *event;
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "math/spk_vector2.hpp"
+#include "application/modules/spk_message_consumer_module.hpp"
 
 namespace spk
 {
