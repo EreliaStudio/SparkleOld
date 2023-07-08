@@ -1,6 +1,8 @@
 #include "system/spk_chronometer.hpp"
 #include <stdexcept>
 
+const int UNINITIALIZED = -1;
+
 namespace spk
 {
 	Chronometer::Chronometer():
