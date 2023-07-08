@@ -120,7 +120,6 @@
     <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
     <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
     <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
-    <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
     <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
     <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>

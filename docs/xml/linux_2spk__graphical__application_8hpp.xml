@@ -299,19 +299,13 @@
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_widgetModule;</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1AbstractWidget" kindref="compound">spk::AbstractWidget</ref>*<sp/><ref refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kindref="member">centralWidget</ref>()</highlight></codeline>
+<codeline lineno="106" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(_widgetModule-&gt;centralWidget());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::Window&gt;::instance</ref>()-&gt;setGeometry(p_size);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="116" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::Window&gt;::instance</ref>()-&gt;setGeometry(p_size);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_widgetModule-&gt;centralWidget()-&gt;setGeometry(0,<sp/>p_size);</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="includes/application/concrete/linux/spk_graphical_application.hpp"/>
   </compounddef>
