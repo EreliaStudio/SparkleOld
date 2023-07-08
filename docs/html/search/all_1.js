@@ -13,9 +13,8 @@ var searchData=
   ['addchildrenwidget_32',['addChildrenWidget',['../classspk_1_1AbstractWidget.html#a439da5239de7fa7980bb697e9e114818',1,'spk::AbstractWidget']]],
   ['adddeactivationcallback_33',['addDeactivationCallback',['../classspk_1_1ActivableObject.html#adbcbc6cb5215e1fecae1cf18c3840d8e',1,'spk::ActivableObject']]],
   ['addjob_34',['addJob',['../classspk_1_1AbstractApplication.html#a25160706b8695b7c900ee36a518b056b',1,'spk::AbstractApplication::addJob(const std::wstring &amp;p_WorkerName, const Job &amp;p_job)'],['../classspk_1_1AbstractApplication.html#a5687e5ff1eaa1df4ad207097a93359b8',1,'spk::AbstractApplication::addJob(const Job &amp;p_job)'],['../classspk_1_1PersistentWorker.html#a57213ae38b0be502073a9e80c3882257',1,'spk::PersistentWorker::addJob()'],['../classspk_1_1WorkerPool.html#a7691876b56ced3a61b435cd738cdbf4b',1,'spk::WorkerPool::addJob()']]],
-  ['addrootwidget_35',['addRootWidget',['../classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c',1,'spk::Application']]],
-  ['addstatecallback_36',['addStateCallback',['../classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d',1,'spk::StatedObject']]],
-  ['angle_37',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
-  ['apimodule_38',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
-  ['application_39',['Application',['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application(const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1Application.html',1,'spk::Application']]]
+  ['addstatecallback_35',['addStateCallback',['../classspk_1_1StatedObject.html#aac365fce6e1327db89fe6bb66095ae7d',1,'spk::StatedObject']]],
+  ['angle_36',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
+  ['apimodule_37',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
+  ['application_38',['Application',['../classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44',1,'spk::Application::Application()'],['../classspk_1_1Application.html',1,'spk::Application']]]
 ];

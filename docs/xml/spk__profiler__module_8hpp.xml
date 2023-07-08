@@ -3,8 +3,7 @@
   <compounddef id="spk__profiler__module_8hpp" kind="file" language="C++">
     <compoundname>spk_profiler_module.hpp</compoundname>
     <includes refid="spk__timer_8hpp" local="yes">system/spk_timer.hpp</includes>
-    <includedby refid="linux_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
-    <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
+    <includedby refid="spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
     <includedby refid="spk__profiler__module_8cpp" local="yes">src/application/modules/spk_profiler_module.cpp</includedby>
     <incdepgraph>
       <node id="8">
@@ -87,16 +86,10 @@
         <link refid="spk__profiler__module_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
       </node>
       <node id="2">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1ProfilerModule" prot="public">spk::ProfilerModule</innerclass>

@@ -3,7 +3,6 @@
   <compounddef id="classspk_1_1AbstractModule" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>spk::AbstractModule</compoundname>
     <derivedcompoundref refid="classspk_1_1APIModule" prot="public" virt="non-virtual">spk::APIModule</derivedcompoundref>
-    <derivedcompoundref refid="classspk_1_1APIModule" prot="public" virt="non-virtual">spk::APIModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1TimeModule" prot="public" virt="non-virtual">spk::TimeModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WidgetModule" prot="public" virt="non-virtual">spk::WidgetModule</derivedcompoundref>
@@ -18,7 +17,6 @@
         <reimplementedby refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51">update</reimplementedby>
         <reimplementedby refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda">update</reimplementedby>
         <reimplementedby refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3">update</reimplementedby>
-        <reimplementedby refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487">update</reimplementedby>
         <briefdescription>
 <para>A virtual update function that must be overridden in derived classes. </para>
         </briefdescription>
@@ -43,8 +41,6 @@
       <node id="7">
         <label>spk::WindowModule</label>
         <link refid="classspk_1_1WindowModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
@@ -81,8 +77,6 @@
       <node id="2">
         <label>spk::APIModule</label>
         <link refid="classspk_1_1APIModule"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

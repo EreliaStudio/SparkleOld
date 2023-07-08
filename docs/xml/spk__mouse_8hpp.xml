@@ -5,8 +5,7 @@
     <includes refid="spk__singleton_8hpp" local="yes">design_pattern/spk_singleton.hpp</includes>
     <includes refid="spk__input__status_8hpp" local="yes">input/spk_input_status.hpp</includes>
     <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
-    <includedby refid="linux_2spk__mouse__module_8cpp" local="yes">src/application/modules/linux/spk_mouse_module.cpp</includedby>
-    <includedby refid="windows_2spk__mouse__module_8cpp" local="yes">src/application/modules/windows/spk_mouse_module.cpp</includedby>
+    <includedby refid="spk__mouse__module_8cpp" local="yes">src/application/modules/linux/spk_mouse_module.cpp</includedby>
     <includedby refid="spk__mouse_8cpp" local="yes">src/input/spk_mouse.cpp</includedby>
     <incdepgraph>
       <node id="13">

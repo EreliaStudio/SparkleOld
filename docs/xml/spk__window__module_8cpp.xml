@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="linux_2spk__window__module_8cpp" kind="file" language="C++">
+  <compounddef id="spk__window__module_8cpp" kind="file" language="C++">
     <compoundname>spk_window_module.cpp</compoundname>
     <includes refid="spk__window__module_8hpp" local="yes">application/modules/spk_window_module.hpp</includes>
     <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
@@ -8,7 +8,7 @@
     <incdepgraph>
       <node id="1">
         <label>src/application/modules/linux/spk_window_module.cpp</label>
-        <link refid="linux_2spk__window__module_8cpp"/>
+        <link refid="spk__window__module_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">

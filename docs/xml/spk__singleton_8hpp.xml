@@ -4,11 +4,9 @@
     <compoundname>spk_singleton.hpp</compoundname>
     <includes local="no">memory</includes>
     <includes local="no">stdexcept</includes>
-    <includedby refid="windows_2spk__API__module_8hpp" local="yes">includes/application/modules/windows/spk_API_module.hpp</includedby>
     <includedby refid="spk__profiler_8hpp" local="yes">includes/debug/spk_profiler.hpp</includedby>
     <includedby refid="spk__context__manager_8hpp" local="yes">includes/design_pattern/spk_context_manager.hpp</includedby>
     <includedby refid="linux_2spk__window_8hpp" local="yes">includes/graphics/linux/spk_window.hpp</includedby>
-    <includedby refid="windows_2spk__window_8hpp" local="yes">includes/graphics/windows/spk_window.hpp</includedby>
     <includedby refid="spk__keyboard_8hpp" local="yes">includes/input/spk_keyboard.hpp</includedby>
     <includedby refid="spk__mouse_8hpp" local="yes">includes/input/spk_mouse.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
@@ -31,31 +29,31 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
+      <node id="2">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="7">
         <label>includes/input/spk_keyboard.hpp</label>
         <link refid="spk__keyboard_8hpp_source"/>
       </node>
-      <node id="17">
+      <node id="14">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
-      <node id="5">
+      <node id="4">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp_source"/>
       </node>
-      <node id="4">
+      <node id="3">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="8">
         <label>includes/input/spk_mouse.hpp</label>
         <link refid="spk__mouse_8hpp_source"/>
       </node>
@@ -64,7 +62,7 @@
         <link refid="spk__singleton_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
@@ -72,83 +70,65 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>includes/design_pattern/spk_context_manager.hpp</label>
-        <link refid="spk__context__manager_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>includes/application/modules/windows/spk_API_module.hpp</label>
-        <link refid="windows_2spk__API__module_8hpp_source"/>
-      </node>
-      <node id="14">
-        <label>includes/application/modules/spk_profiler_module.hpp</label>
-        <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
       </node>
-      <node id="13">
-        <label>includes/system/spk_timer.hpp</label>
-        <link refid="spk__timer_8hpp_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>includes/system/spk_time_metrics.hpp</label>
-        <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
+      <node id="5">
+        <label>includes/design_pattern/spk_context_manager.hpp</label>
+        <link refid="spk__context__manager_8hpp_source"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="12">
-        <label>includes/system/spk_chronometer.hpp</label>
-        <link refid="spk__chronometer_8hpp_source"/>
+        <label>includes/application/modules/spk_profiler_module.hpp</label>
+        <link refid="spk__profiler__module_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>includes/system/spk_timer.hpp</label>
+        <link refid="spk__timer_8hpp_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+      </node>
+      <node id="9">
+        <label>includes/system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>includes/graphics/windows/spk_window.hpp</label>
-        <link refid="windows_2spk__window_8hpp_source"/>
+      <node id="10">
+        <label>includes/system/spk_chronometer.hpp</label>
+        <link refid="spk__chronometer_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
-      <node id="16">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
-      </node>
-      <node id="7">
+      <node id="6">
         <label>includes/graphics/linux/spk_window.hpp</label>
         <link refid="linux_2spk__window_8hpp_source"/>
       </node>
-      <node id="15">
+      <node id="13">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
-      <node id="18">
+      <node id="15">
         <label>includes/widget/spk_widget_atlas.hpp</label>
         <link refid="spk__widget__atlas_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

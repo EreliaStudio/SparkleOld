@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="linux_2spk__window_8cpp" kind="file" language="C++">
+  <compounddef id="spk__window_8cpp" kind="file" language="C++">
     <compoundname>spk_window.cpp</compoundname>
     <includes refid="spk__window_8hpp" local="yes">graphics/spk_window.hpp</includes>
     <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
@@ -19,7 +19,7 @@
       </node>
       <node id="1">
         <label>src/graphics/linux/spk_window.cpp</label>
-        <link refid="linux_2spk__window_8cpp"/>
+        <link refid="spk__window_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -56,7 +56,7 @@
     </incdepgraph>
     <innernamespace refid="namespacespk">spk</innernamespace>
       <sectiondef kind="define">
-      <memberdef kind="define" id="linux_2spk__window_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" prot="public" static="no">
+      <memberdef kind="define" id="spk__window_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" prot="public" static="no">
         <name>DEBUG_LINE</name>
         <param></param>
         <initializer>spk::cout &lt;&lt; __FUNCTION__ &lt;&lt; &quot;::&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</initializer>

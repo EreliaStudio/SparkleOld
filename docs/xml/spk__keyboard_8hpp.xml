@@ -7,11 +7,9 @@
     <includes local="no">map</includes>
     <includes local="no">vector</includes>
     <includes local="no">string</includes>
-    <includedby refid="linux_2spk__keyboard__module_8cpp" local="yes">src/application/modules/linux/spk_keyboard_module.cpp</includedby>
-    <includedby refid="windows_2spk__keyboard__module_8cpp" local="yes">src/application/modules/windows/spk_keyboard_module.cpp</includedby>
+    <includedby refid="spk__keyboard__module_8cpp" local="yes">src/application/modules/linux/spk_keyboard_module.cpp</includedby>
     <includedby refid="linux_2spk__keyboard_8cpp" local="yes">src/input/linux/spk_keyboard.cpp</includedby>
     <includedby refid="spk__keyboard_8cpp" local="yes">src/input/spk_keyboard.cpp</includedby>
-    <includedby refid="windows_2spk__keyboard_8cpp" local="yes">src/input/windows/spk_keyboard.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/input/spk_keyboard.hpp</label>

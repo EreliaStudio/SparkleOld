@@ -3,8 +3,7 @@
   <compounddef id="spk__time__module_8hpp" kind="file" language="C++">
     <compoundname>spk_time_module.hpp</compoundname>
     <includes refid="spk__abstract__module_8hpp" local="yes">application/modules/spk_abstract_module.hpp</includes>
-    <includedby refid="linux_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
-    <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
+    <includedby refid="spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__time__metrics_8hpp" local="yes">includes/system/spk_time_metrics.hpp</includedby>
     <includedby refid="spk__time__module_8cpp" local="yes">src/application/modules/spk_time_module.cpp</includedby>
@@ -48,24 +47,24 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="8">
+      <node id="7">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
-      <node id="5">
+      <node id="4">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp_source"/>
       </node>
-      <node id="4">
+      <node id="3">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -75,54 +74,46 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>includes/application/modules/spk_profiler_module.hpp</label>
         <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="8">
+        <label>includes/system/spk_timer.hpp</label>
+        <link refid="spk__timer_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>includes/system/spk_timer.hpp</label>
-        <link refid="spk__timer_8hpp_source"/>
-        <childnode refid="10" relation="include">
+      <node id="5">
+        <label>includes/system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="6">
-        <label>includes/system/spk_time_metrics.hpp</label>
-        <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
         <label>includes/system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
       </node>
       <node id="2">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1TimeModule" prot="public">spk::TimeModule</innerclass>

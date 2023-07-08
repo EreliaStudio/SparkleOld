@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="windows_2spk__abstract__module_8cpp" kind="file" language="C++">
+  <compounddef id="spk__abstract__module_8cpp" kind="file" language="C++">
     <compoundname>spk_abstract_module.cpp</compoundname>
     <includes refid="spk__abstract__module_8hpp" local="yes">application/modules/spk_abstract_module.hpp</includes>
     <incdepgraph>
       <node id="1">
-        <label>src/application/modules/windows/spk_abstract_module.cpp</label>
-        <link refid="windows_2spk__abstract__module_8cpp"/>
+        <label>src/application/modules/linux/spk_abstract_module.cpp</label>
+        <link refid="spk__abstract__module_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
@@ -63,10 +63,12 @@
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SystemMessage<sp/>event(_queue.pop_front());</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_handleMessage(event);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(event);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="src/application/modules/windows/spk_abstract_module.cpp"/>
+    <location file="src/application/modules/linux/spk_abstract_module.cpp"/>
   </compounddef>
 </doxygen>
