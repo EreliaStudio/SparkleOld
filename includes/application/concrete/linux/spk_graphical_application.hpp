@@ -99,16 +99,6 @@ namespace spk
 		}
 
 		/**
-		 * @brief Returns the central widget of the application.
-		 * 
-		 * @return The central widget of the application.
-		 */
-		spk::AbstractWidget* centralWidget()
-		{
-			return (_widgetModule->centralWidget());
-		}
-		
-		/**
 		 * @brief Resizes the application window and central widget.
 		 * 
 		 * @param p_size The new size of the window and central widget.
@@ -116,7 +106,6 @@ namespace spk
 		void resize(const spk::Vector2Int& p_size)
 		{
 			spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
-			_widgetModule->centralWidget()->setGeometry(0, p_size);
 		}
 	};
 	
