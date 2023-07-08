@@ -11,8 +11,6 @@ namespace spk
      */
     class Chronometer
     {
-	public:
-		static const long long UNINITIALIZED = -1;
     private:
         long long _start; ///< Start time.
         mutable long long _duration; ///< Current duration.

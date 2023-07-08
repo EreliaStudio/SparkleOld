@@ -51,8 +51,17 @@ namespace spk
 		return (_chronometers[p_key].stop());
 	}
 
-	void Profiler::increseCounter(const std::wstring& p_key)
+	void Profiler::createCounter(const std::wstring& p_key)
 	{
+		if (_counters.count(p_key) != 0)
+			throw std::runtime_error("Counter [] already exist");
+		_counters[p_key] = 0;
+	}
+
+	void Profiler::increaseCounter(const std::wstring& p_key)
+	{
+		if (_counters.count(p_key) == 0)
+			createCounter(p_key);
 		_counters[p_key]++;
 	}
 	
@@ -66,6 +75,11 @@ namespace spk
 		if (_counters.count(p_key) == 0)
 			throw std::runtime_error("Counter [] don't exist");
 		_counters[p_key]++;
+	}
+	
+	bool Profiler::containCounter(const std::wstring& p_key) const
+	{
+		return (_counters.count(p_key) != 0);
 	}
 
 	const size_t& Profiler::counter(const std::wstring& p_key) const
