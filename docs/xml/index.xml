@@ -127,7 +127,6 @@
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
   </compound>
   <compound refid="classspk_1_1Chronometer" kind="class"><name>spk::Chronometer</name>
-    <member refid="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" kind="variable"><name>UNINITIALIZED</name></member>
     <member refid="classspk_1_1Chronometer_1a147be660da4ef95debe69791a2b9d5ff" kind="variable"><name>_start</name></member>
     <member refid="classspk_1_1Chronometer_1a2f2d95f26035cac2146133082be08088" kind="variable"><name>_duration</name></member>
     <member refid="classspk_1_1Chronometer_1ad2b3c3dd3b1b8a3557e0479fee5bd666" kind="variable"><name>_totalDuration</name></member>
@@ -673,9 +672,11 @@
     <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kind="function"><name>startChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kind="function"><name>resumeChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" kind="function"><name>stopChronometer</name></member>
-    <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" kind="function"><name>increseCounter</name></member>
+    <member refid="classspk_1_1Profiler_1ad531226bc8a8a390e9df76dafbf973ef" kind="function"><name>createCounter</name></member>
+    <member refid="classspk_1_1Profiler_1ab541f7d78a82df099e1c96605d91802c" kind="function"><name>increaseCounter</name></member>
     <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" kind="function"><name>setCounter</name></member>
     <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" kind="function"><name>resetCounter</name></member>
+    <member refid="classspk_1_1Profiler_1a54d18ec265ec42b4cf250295b5db429f" kind="function"><name>containCounter</name></member>
     <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" kind="function"><name>counter</name></member>
   </compound>
   <compound refid="classspk_1_1ProfilerModule" kind="class"><name>spk::ProfilerModule</name>
@@ -1134,6 +1135,7 @@
   <compound refid="spk__perlin_8cpp" kind="file"><name>spk_perlin.cpp</name>
   </compound>
   <compound refid="spk__chronometer_8cpp" kind="file"><name>spk_chronometer.cpp</name>
+    <member refid="spk__chronometer_8cpp_1ac7e0ca973ef00d5b9e3dc11787bd20ba" kind="variable"><name>UNINITIALIZED</name></member>
   </compound>
   <compound refid="spk__time__metrics_8cpp" kind="file"><name>spk_time_metrics.cpp</name>
   </compound>

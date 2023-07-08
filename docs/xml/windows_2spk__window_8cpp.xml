@@ -6,92 +6,52 @@
     <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
     <includes refid="spk__API__module_8hpp" local="yes">application/modules/spk_API_module.hpp</includes>
     <incdepgraph>
-      <node id="16">
+      <node id="9">
         <label>application/modules/spk_API_module.hpp</label>
         <link refid="spk__API__module_8hpp_source"/>
       </node>
       <node id="2">
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
       </node>
       <node id="7">
-        <label>cmath</label>
-      </node>
-      <node id="5">
-        <label>stdexcept</label>
-      </node>
-      <node id="14">
         <label>string</label>
       </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>sstream</label>
+      </node>
       <node id="3">
-        <label>design_pattern/spk_singleton.hpp</label>
-        <link refid="spk__singleton_8hpp_source"/>
+        <label>iostream/spk_iostream.hpp</label>
+        <link refid="spk__iostream_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="10">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
-      </node>
-      <node id="15">
-        <label>vector</label>
-      </node>
-      <node id="12">
-        <label>sstream</label>
-      </node>
-      <node id="11">
-        <label>iostream/spk_iostream.hpp</label>
-        <link refid="spk__iostream_8hpp_source"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>iostream</label>
-      </node>
-      <node id="13">
-        <label>mutex</label>
-      </node>
-      <node id="6">
-        <label>math/spk_vector2.hpp</label>
-        <link refid="spk__vector2_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
-      <node id="9">
-        <label>algorithm</label>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
       </node>
       <node id="1">
         <label>src/graphics/windows/spk_window.cpp</label>
         <link refid="windows_2spk__window_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>memory</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacespk">spk</innernamespace>

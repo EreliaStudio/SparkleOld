@@ -8,7 +8,6 @@
     <includedby refid="linux_2spk__window__module_8hpp" local="yes">includes/application/modules/linux/spk_window_module.hpp</includedby>
     <includedby refid="windows_2spk__window__module_8hpp" local="yes">includes/application/modules/windows/spk_window_module.hpp</includedby>
     <includedby refid="linux_2spk__window_8hpp" local="yes">includes/graphics/linux/spk_window.hpp</includedby>
-    <includedby refid="spk__window_8hpp" local="yes">includes/graphics/spk_window.hpp</includedby>
     <includedby refid="windows_2spk__window_8hpp" local="yes">includes/graphics/windows/spk_window.hpp</includedby>
     <includedby refid="spk__mouse_8hpp" local="yes">includes/input/spk_mouse.hpp</includedby>
     <includedby refid="spk__vector3_8hpp" local="yes">includes/math/spk_vector3.hpp</includedby>
@@ -36,21 +35,15 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="11">
+      <node id="10">
         <label>includes/widget/spk_abstract_widget.hpp</label>
         <link refid="spk__abstract__widget_8hpp_source"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>includes/graphics/spk_window.hpp</label>
-        <link refid="spk__window_8hpp_source"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="9">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp_source"/>
       </node>
@@ -58,13 +51,13 @@
         <label>includes/application/modules/windows/spk_window_module.hpp</label>
         <link refid="windows_2spk__window__module_8hpp_source"/>
       </node>
-      <node id="6">
+      <node id="8">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="6">
         <label>includes/input/spk_mouse.hpp</label>
         <link refid="spk__mouse_8hpp_source"/>
       </node>
@@ -72,7 +65,7 @@
         <label>includes/application/modules/linux/spk_window_module.hpp</label>
         <link refid="linux_2spk__window__module_8hpp_source"/>
       </node>
-      <node id="8">
+      <node id="5">
         <label>includes/graphics/windows/spk_window.hpp</label>
         <link refid="windows_2spk__window_8hpp_source"/>
       </node>
@@ -91,27 +84,25 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
       </node>
-      <node id="12">
+      <node id="11">
         <label>includes/widget/spk_widget_atlas.hpp</label>
         <link refid="spk__widget__atlas_8hpp_source"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="7">
         <label>includes/math/spk_vector3.hpp</label>
         <link refid="spk__vector3_8hpp_source"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
