@@ -1,8 +1,9 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
+#include "spk_system_define.hpp"
 #include "design_pattern/spk_singleton.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
+#include "data_structure/spk_pool.hpp"
 
 namespace spk
 {
@@ -13,7 +14,7 @@ namespace spk
 	 * This class handles the API interactions and updates for system, window, mouse, and keyboard.
 	 * It uses a pool of DataBuffer as a singleton instance and thread-safe queues to ensure safe multi-threaded operations.
 	 */
-	class APIModule : public spk::AbstractModule
+	class APIModule
 	{
 	private:
 		using MessagePool = spk::Pool<spk::DataBuffer>; ///< Type definition for pool of DataBuffer.
