@@ -116,26 +116,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a814971ff26b580fa15607c1d0fe056ac"><td class="memItemLeft" align="right" valign="top">const long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a814971ff26b580fa15607c1d0fe056ac">stopChronometer</a> (const std::wstring &amp;p_key)</td></tr>
 <tr class="memdesc:a814971ff26b580fa15607c1d0fe056ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#a814971ff26b580fa15607c1d0fe056ac">More...</a><br /></td></tr>
 <tr class="separator:a814971ff26b580fa15607c1d0fe056ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b7321dbf6fe63e4ac2d7bf8a739187"><td class="memItemLeft" align="right" valign="top"><a id="a79b7321dbf6fe63e4ac2d7bf8a739187"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>increseCounter</b> (const std::wstring &amp;p_key)</td></tr>
-<tr class="separator:a79b7321dbf6fe63e4ac2d7bf8a739187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cb189097b22c31207d8d7c718f90b84"><td class="memItemLeft" align="right" valign="top"><a id="a1cb189097b22c31207d8d7c718f90b84"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCounter</b> (const std::wstring &amp;p_key, const size_t &amp;p_value)</td></tr>
+<tr class="memitem:ad531226bc8a8a390e9df76dafbf973ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ad531226bc8a8a390e9df76dafbf973ef">createCounter</a> (const std::wstring &amp;p_key)</td></tr>
+<tr class="memdesc:ad531226bc8a8a390e9df76dafbf973ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new counter, named p_key.  <a href="classspk_1_1Profiler.html#ad531226bc8a8a390e9df76dafbf973ef">More...</a><br /></td></tr>
+<tr class="separator:ad531226bc8a8a390e9df76dafbf973ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab541f7d78a82df099e1c96605d91802c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab541f7d78a82df099e1c96605d91802c">increaseCounter</a> (const std::wstring &amp;p_key)</td></tr>
+<tr class="memdesc:ab541f7d78a82df099e1c96605d91802c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the value of the specified counter by one.  <a href="classspk_1_1Profiler.html#ab541f7d78a82df099e1c96605d91802c">More...</a><br /></td></tr>
+<tr class="separator:ab541f7d78a82df099e1c96605d91802c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb189097b22c31207d8d7c718f90b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84">setCounter</a> (const std::wstring &amp;p_key, const size_t &amp;p_value)</td></tr>
+<tr class="memdesc:a1cb189097b22c31207d8d7c718f90b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the specified counter.  <a href="classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84">More...</a><br /></td></tr>
 <tr class="separator:a1cb189097b22c31207d8d7c718f90b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7131d78f8ddedead9f88433e1f639da4"><td class="memItemLeft" align="right" valign="top"><a id="a7131d78f8ddedead9f88433e1f639da4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetCounter</b> (const std::wstring &amp;p_key)</td></tr>
+<tr class="memitem:a7131d78f8ddedead9f88433e1f639da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a7131d78f8ddedead9f88433e1f639da4">resetCounter</a> (const std::wstring &amp;p_key)</td></tr>
+<tr class="memdesc:a7131d78f8ddedead9f88433e1f639da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the specified counter to 0.  <a href="classspk_1_1Profiler.html#a7131d78f8ddedead9f88433e1f639da4">More...</a><br /></td></tr>
 <tr class="separator:a7131d78f8ddedead9f88433e1f639da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb147302314604495fd898c8b221c73"><td class="memItemLeft" align="right" valign="top"><a id="addb147302314604495fd898c8b221c73"></a>
-const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>counter</b> (const std::wstring &amp;p_key) const</td></tr>
+<tr class="memitem:a54d18ec265ec42b4cf250295b5db429f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a54d18ec265ec42b4cf250295b5db429f">containCounter</a> (const std::wstring &amp;p_key) const</td></tr>
+<tr class="separator:a54d18ec265ec42b4cf250295b5db429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb147302314604495fd898c8b221c73"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#addb147302314604495fd898c8b221c73">counter</a> (const std::wstring &amp;p_key) const</td></tr>
+<tr class="memdesc:addb147302314604495fd898c8b221c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of the specified counter.  <a href="classspk_1_1Profiler.html#addb147302314604495fd898c8b221c73">More...</a><br /></td></tr>
 <tr class="separator:addb147302314604495fd898c8b221c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ab4d0edd93a8934bd0c844fe4942791d2"><td class="memItemLeft" align="right" valign="top"><a id="ab4d0edd93a8934bd0c844fe4942791d2"></a>
-static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><b>RENDER_IPS_COUNTER</b> = L&quot;RenderIPS&quot;</td></tr>
+static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab4d0edd93a8934bd0c844fe4942791d2">RENDER_IPS_COUNTER</a> = L&quot;RenderIPS&quot;</td></tr>
+<tr class="memdesc:ab4d0edd93a8934bd0c844fe4942791d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key representing the counter to the Render thread Iteration Per Second. <br /></td></tr>
 <tr class="separator:ab4d0edd93a8934bd0c844fe4942791d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="memItemLeft" align="right" valign="top"><a id="aff4f46bb299ee6b67ab77c19f7f7e07f"></a>
-static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><b>UPDATE_IPS_COUNTER</b> = L&quot;UpdateIPS&quot;</td></tr>
+static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#aff4f46bb299ee6b67ab77c19f7f7e07f">UPDATE_IPS_COUNTER</a> = L&quot;UpdateIPS&quot;</td></tr>
+<tr class="memdesc:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key representing the counter to the Update thread Iteration Per Second. <br /></td></tr>
 <tr class="separator:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -202,6 +209,126 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a54d18ec265ec42b4cf250295b5db429f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d18ec265ec42b4cf250295b5db429f">&#9670;&nbsp;</a></span>containCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::Profiler::containCounter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if there is a counter name p_key inside the profiler.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the counter exist, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="addb147302314604495fd898c8b221c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb147302314604495fd898c8b221c73">&#9670;&nbsp;</a></span>counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t &amp; spk::Profiler::counter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of the specified counter. </p>
+<p>If the counter does not exist, a runtime error is thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the counter. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad531226bc8a8a390e9df76dafbf973ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad531226bc8a8a390e9df76dafbf973ef">&#9670;&nbsp;</a></span>createCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Profiler::createCounter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new counter, named p_key. </p>
+<p>If the counter already exist, this method will throw an exception</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if a chronometer exists with the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab541f7d78a82df099e1c96605d91802c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab541f7d78a82df099e1c96605d91802c">&#9670;&nbsp;</a></span>increaseCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Profiler::increaseCounter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increases the value of the specified counter by one. </p>
+<p>If the counter does not exist, it is created with a value of 0, and then incremented.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab80433abd4e910f0d7077514233b4e54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab80433abd4e910f0d7077514233b4e54">&#9670;&nbsp;</a></span>resetChronometer()</h2>
 
@@ -222,6 +349,39 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7131d78f8ddedead9f88433e1f639da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7131d78f8ddedead9f88433e1f639da4">&#9670;&nbsp;</a></span>resetCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Profiler::resetCounter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the specified counter to 0. </p>
+<p>If the counter does not exist, a runtime error is thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
   </table>
   </dd>
 </dl>
@@ -260,6 +420,44 @@ Additional Inherited Members</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1cb189097b22c31207d8d7c718f90b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb189097b22c31207d8d7c718f90b84">&#9670;&nbsp;</a></span>setCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Profiler::setCounter </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the value of the specified counter. </p>
+<p>If the counter does not exist, it is created and then set to the specified value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+    <tr><td class="paramname">p_value</td><td>The new value for the counter. </td></tr>
   </table>
   </dd>
 </dl>

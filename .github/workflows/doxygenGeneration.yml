@@ -83,25 +83,31 @@ jobs:
         if [ -e doxygen_warnings.log ]; then
           sed -i 's|/home/runner/work/Sparkle/Sparkle/||g;s|warning: ||g' doxygen_warnings.log
           split -l 50 doxygen_warnings.log chunk-
-          CHUNKS=$(ls chunk-*)
-        fi
-        for CHUNK in $CHUNKS; do
-          CONTENT=$(cat $CHUNK | sed ':a;N;$!ba;s/\n/\\n/g')
-          if [ "$CONTENT" != '' ]; then
-            JSON_DATA="{
-              \"title\": \"Missing Doxygen Documentation\",
-              \"body\": \"There is a set of documentation missing:\n$CONTENT\",
-              \"labels\": [\"Documentation\"],
-              \"projectIds\":[\"2\"]
-            }"
-            echo $JSON_DATA  # Print JSON data to debug
-            curl -X POST \
-              -H "Authorization: token ${{ secrets.BOT_ACCESS_TOKEN }}" \
-              -H "Accept: application/vnd.github.v3+json" \
-              https://api.github.com/repos/$GITHUB_REPOSITORY/issues \
-              -d "$JSON_DATA"
+          if ls chunk-* > /dev/null 2>&1; then  # Check if chunk-* files exist
+            CHUNKS=$(ls chunk-*)
+            for CHUNK in $CHUNKS; do
+              CONTENT=$(cat $CHUNK | sed ':a;N;$!ba;s/\n/\\n/g')
+              if [ "$CONTENT" != '' ]; then
+                JSON_DATA="{
+                  \"title\": \"Missing Doxygen Documentation\",
+                  \"body\": \"There is a set of documentation missing:\n$CONTENT\",
+                  \"labels\": [\"Documentation\"],
+                  \"projectIds\":[\"2\"]
+                }"
+                echo $JSON_DATA  # Print JSON data to debug
+                curl -X POST \
+                  -H "Authorization: token ${{ secrets.BOT_ACCESS_TOKEN }}" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  https://api.github.com/repos/$GITHUB_REPOSITORY/issues \
+                  -d "$JSON_DATA"
+              fi
+            done
+          else
+            echo "No chunk files found."
           fi
-        done
+        else
+          echo "No doxygen warnings log found."
+        fi
 
     - name: Delete Doxygen log files
-      run: rm doxygen_warnings.log || true
+      run: rm doxygen_warnings.log chunk-* || true

@@ -3,7 +3,6 @@
   <compounddef id="dir_560415a5d2bc4999842279f4fc1debef" kind="dir">
     <compoundname>src/graphics</compoundname>
     <innerdir refid="dir_6ddc0213ad914c7862510b0b5b0f11d6">src/graphics/linux</innerdir>
-    <innerdir refid="dir_743eb569a20dff9a066ca3f370e93bf9">src/graphics/windows</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

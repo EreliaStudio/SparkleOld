@@ -112,17 +112,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">clear</a> ()</td></tr>
 <tr class="memdesc:aa56d1756ecd104726d1e2e87a189815b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the window. <br /></td></tr>
 <tr class="separator:aa56d1756ecd104726d1e2e87a189815b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36706fa4088182a2c3b03536d3300809"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809">WindowModule</a> (<a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;p_queue, const std::wstring &amp;p_title, const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_size, void *p_apiModule)</td></tr>
-<tr class="memdesc:a36706fa4088182a2c3b03536d3300809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classspk_1_1WindowModule.html" title="Class for managing the application window.">WindowModule</a> object.  <a href="classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809">More...</a><br /></td></tr>
-<tr class="separator:a36706fa4088182a2c3b03536d3300809"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ac729d572ab4a20f60c346c19f1c460"><td class="memItemLeft" align="right" valign="top"><a id="a0ac729d572ab4a20f60c346c19f1c460"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1WindowModule.html#a0ac729d572ab4a20f60c346c19f1c460">render</a> ()</td></tr>
-<tr class="memdesc:a0ac729d572ab4a20f60c346c19f1c460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the window. <br /></td></tr>
-<tr class="separator:a0ac729d572ab4a20f60c346c19f1c460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa56d1756ecd104726d1e2e87a189815b"><td class="memItemLeft" align="right" valign="top"><a id="aa56d1756ecd104726d1e2e87a189815b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1WindowModule.html#aa56d1756ecd104726d1e2e87a189815b">clear</a> ()</td></tr>
-<tr class="memdesc:aa56d1756ecd104726d1e2e87a189815b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the window. <br /></td></tr>
-<tr class="separator:aa56d1756ecd104726d1e2e87a189815b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classspk_1_1IMessageConsumerModule"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classspk_1_1IMessageConsumerModule')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></td></tr>
 <tr class="memitem:a676a40140e06e01f4291941b2b34867a inherit pub_methods_classspk_1_1IMessageConsumerModule"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a">IMessageConsumerModule</a> (<a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;p_queue)</td></tr>
 <tr class="memdesc:a676a40140e06e01f4291941b2b34867a inherit pub_methods_classspk_1_1IMessageConsumerModule"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages.">IMessageConsumerModule</a> object.  <a href="classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a">More...</a><br /></td></tr>
@@ -137,7 +126,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>This class manages the application window, including handling system messages related to the window, rendering the window, and clearing the window. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9a94140d19b729c855dcd8431de38bac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a94140d19b729c855dcd8431de38bac">&#9670;&nbsp;</a></span>WindowModule() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a94140d19b729c855dcd8431de38bac">&#9670;&nbsp;</a></span>WindowModule()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,57 +163,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
     <tr><td class="paramname">p_queue</td><td>The thread-safe queue for window system messages. </td></tr>
     <tr><td class="paramname">p_title</td><td>The title of the window. </td></tr>
     <tr><td class="paramname">p_size</td><td>The size of the window. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a36706fa4088182a2c3b03536d3300809"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36706fa4088182a2c3b03536d3300809">&#9670;&nbsp;</a></span>WindowModule() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">spk::WindowModule::WindowModule </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p_queue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>p_apiModule</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs the <a class="el" href="classspk_1_1WindowModule.html" title="Class for managing the application window.">WindowModule</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_queue</td><td>The thread-safe queue for window system messages. </td></tr>
-    <tr><td class="paramname">p_title</td><td>The title of the window. </td></tr>
-    <tr><td class="paramname">p_size</td><td>The size of the window. </td></tr>
-    <tr><td class="paramname">p_apiModule</td><td>Pointer to the API Module. </td></tr>
   </table>
   </dd>
 </dl>

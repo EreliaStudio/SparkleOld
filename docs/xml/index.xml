@@ -83,52 +83,32 @@
     <member refid="classspk_1_1ActivityScheduler_1a5932655a97e9c53ef47d5752c63276eb" kind="function"><name>execute</name></member>
   </compound>
   <compound refid="classspk_1_1APIModule" kind="class"><name>spk::APIModule</name>
-    <member refid="classspk_1_1APIModule_1a81fa0635462c482f24ab5e612cc6edfe" kind="typedef"><name>MessagePool</name></member>
-    <member refid="classspk_1_1APIModule_1aa61cce469130a1dc56c05ff2f60819c8" kind="typedef"><name>MessagePoolInstance</name></member>
-    <member refid="classspk_1_1APIModule_1ae99a6525636c109d4e9d5fe9cbd9a5d3" kind="variable"><name>_windowQueue</name></member>
-    <member refid="classspk_1_1APIModule_1aff1f8b3e2589039d4e7f323d25068493" kind="variable"><name>_mouseQueue</name></member>
-    <member refid="classspk_1_1APIModule_1a9f7d6309636ca30b2a664dbf8afa3d64" kind="variable"><name>_keyboardQueue</name></member>
-    <member refid="classspk_1_1APIModule_1ab89509e906333e9ca1e6567c9b284bc4" kind="variable"><name>_systemQueue</name></member>
+    <member refid="classspk_1_1APIModule_1aaff218a364c6038faff5f1756d03d3ea" kind="variable"><name>_windowQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a197fe38e1ce3cbd79392093504f9ad44" kind="variable"><name>_mouseQueue</name></member>
+    <member refid="classspk_1_1APIModule_1a56f0e3aaf8014c5789ba6bd34990f19e" kind="variable"><name>_keyboardQueue</name></member>
     <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" kind="function"><name>APIModule</name></member>
     <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" kind="function"><name>~APIModule</name></member>
     <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kind="function"><name>update</name></member>
     <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kind="function"><name>windowQueue</name></member>
     <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
     <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
-    <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" kind="function"><name>APIModule</name></member>
-    <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" kind="function"><name>~APIModule</name></member>
-    <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kind="function"><name>update</name></member>
-    <member refid="classspk_1_1APIModule_1a28b7825a839dddd7d90ccb960a50e809" kind="function"><name>systemQueue</name></member>
-    <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kind="function"><name>windowQueue</name></member>
-    <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
-    <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
-    <member refid="classspk_1_1APIModule_1ab56bdf778c28ce2158fde3f7000c8618" kind="function"><name>_handleMessage</name></member>
-    <member refid="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" kind="function"><name>WindowProc</name></member>
   </compound>
   <compound refid="classspk_1_1Application" kind="class"><name>spk::Application</name>
-    <member refid="classspk_1_1Application_1aa4ed6a515b6ea4b9d3161bb6e3b2bba1" kind="variable"><name>_APIModule</name></member>
-    <member refid="classspk_1_1Application_1a3492e76a4727e73e10ef31624aac1349" kind="variable"><name>_timeModule</name></member>
-    <member refid="classspk_1_1Application_1ac16011e849fc515558153bc50f08bf01" kind="variable"><name>_windowModule</name></member>
-    <member refid="classspk_1_1Application_1ac47ccfdf1a89119bd3714b3014b0a137" kind="variable"><name>_mouseModule</name></member>
-    <member refid="classspk_1_1Application_1a291cf8d1228ff1a9a69d0fba9584412e" kind="variable"><name>_keyboardModule</name></member>
-    <member refid="classspk_1_1Application_1a3851e579a021c5baeba3a07900a1cdbb" kind="variable"><name>_profilerModule</name></member>
-    <member refid="classspk_1_1Application_1a22899d0e47e6615fb3760a7088fa5fbc" kind="variable"><name>_widgetModule</name></member>
-    <member refid="classspk_1_1Application_1a6006ae2fa9318e8359e328c39cdefdfb" kind="variable"><name>_renderContracts</name></member>
-    <member refid="classspk_1_1Application_1ae4a8740d3dea24999a425fadbafc6529" kind="variable"><name>_updateContracts</name></member>
-    <member refid="classspk_1_1Application_1ae0d658551145a9946596a4f00b82637a" kind="variable"><name>_systemModule</name></member>
-    <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
+    <member refid="classspk_1_1Application_1ae5d636a2d4f337502e416d0e5f0e03e5" kind="variable"><name>_APIModule</name></member>
+    <member refid="classspk_1_1Application_1af1d29b07537fdef711bf97e6629c58b2" kind="variable"><name>_timeModule</name></member>
+    <member refid="classspk_1_1Application_1aabaa8a144ab63760ab5decd297429c30" kind="variable"><name>_windowModule</name></member>
+    <member refid="classspk_1_1Application_1a4aa8ce5dfb9ce75a717e0af774783e80" kind="variable"><name>_mouseModule</name></member>
+    <member refid="classspk_1_1Application_1acc094d9f64efb1ce7024ccf745ca80f7" kind="variable"><name>_keyboardModule</name></member>
+    <member refid="classspk_1_1Application_1a5e19231538bb14b8b9946330bf32cfd6" kind="variable"><name>_profilerModule</name></member>
+    <member refid="classspk_1_1Application_1a26f054f867083526f851a93b46263c69" kind="variable"><name>_widgetModule</name></member>
+    <member refid="classspk_1_1Application_1a0b8928505793fa1c5fd6c1aec2584f34" kind="variable"><name>_renderContracts</name></member>
+    <member refid="classspk_1_1Application_1a546b8ebce7a778b99f7e699d4dd1a585" kind="variable"><name>_updateContracts</name></member>
     <member refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kind="function"><name>setupJobs</name></member>
     <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
     <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
-    <member refid="classspk_1_1Application_1a267928bad0a300248da0848a3d1f4f44" kind="function"><name>centralWidget</name></member>
-    <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
-    <member refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kind="function"><name>Application</name></member>
-    <member refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kind="function"><name>~Application</name></member>
-    <member refid="classspk_1_1Application_1a7b429ea88aa340b70d775deb1fb9623c" kind="function"><name>addRootWidget</name></member>
     <member refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kind="function"><name>resize</name></member>
   </compound>
   <compound refid="classspk_1_1Chronometer" kind="class"><name>spk::Chronometer</name>
-    <member refid="classspk_1_1Chronometer_1a5b40d2e9a91ef070de1e392d1e400eae" kind="variable"><name>UNINITIALIZED</name></member>
     <member refid="classspk_1_1Chronometer_1a147be660da4ef95debe69791a2b9d5ff" kind="variable"><name>_start</name></member>
     <member refid="classspk_1_1Chronometer_1a2f2d95f26035cac2146133082be08088" kind="variable"><name>_duration</name></member>
     <member refid="classspk_1_1Chronometer_1ad2b3c3dd3b1b8a3557e0479fee5bd666" kind="variable"><name>_totalDuration</name></member>
@@ -674,9 +654,11 @@
     <member refid="classspk_1_1Profiler_1af26e29829aef92203a8c30fc6e570c81" kind="function"><name>startChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a3d8843a8439baff714cb69fcd46bceea" kind="function"><name>resumeChronometer</name></member>
     <member refid="classspk_1_1Profiler_1a814971ff26b580fa15607c1d0fe056ac" kind="function"><name>stopChronometer</name></member>
-    <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" kind="function"><name>increseCounter</name></member>
+    <member refid="classspk_1_1Profiler_1ad531226bc8a8a390e9df76dafbf973ef" kind="function"><name>createCounter</name></member>
+    <member refid="classspk_1_1Profiler_1ab541f7d78a82df099e1c96605d91802c" kind="function"><name>increaseCounter</name></member>
     <member refid="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" kind="function"><name>setCounter</name></member>
     <member refid="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" kind="function"><name>resetCounter</name></member>
+    <member refid="classspk_1_1Profiler_1a54d18ec265ec42b4cf250295b5db429f" kind="function"><name>containCounter</name></member>
     <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" kind="function"><name>counter</name></member>
   </compound>
   <compound refid="classspk_1_1ProfilerModule" kind="class"><name>spk::ProfilerModule</name>
@@ -862,33 +844,14 @@
   </compound>
   <compound refid="classspk_1_1Window" kind="class"><name>spk::Window</name>
     <member refid="classspk_1_1Window_1ab0c04c85c44c58fbf9300b04bee7a60f" kind="friend"><name>spk::Singleton&lt; Window &gt;</name></member>
-    <member refid="classspk_1_1Window_1a0ac877ae35338497097509c6f090e025" kind="friend"><name>APIModule</name></member>
+    <member refid="classspk_1_1Window_1a23d524ffc9300e9ba9fc37cf7d98284b" kind="friend"><name>APIModule</name></member>
     <member refid="classspk_1_1Window_1a5d08731ffbb4270f89cc5cfca1e88a29" kind="variable"><name>_size</name></member>
     <member refid="classspk_1_1Window_1a349f929462632f471edd07201cc9204a" kind="variable"><name>_connection</name></member>
     <member refid="classspk_1_1Window_1a4723538b161e315215352307e09d900b" kind="variable"><name>_screen</name></member>
     <member refid="classspk_1_1Window_1a30cfafb32f27345fdfd933f78653f9a0" kind="variable"><name>_window</name></member>
-    <member refid="classspk_1_1Window_1a7d5c0b3f647f72f1c897b691ea547911" kind="variable"><name>_convertedTitle</name></member>
-    <member refid="classspk_1_1Window_1aaa9f7650f1da3127354243db1dace65a" kind="variable"><name>_hInstance</name></member>
-    <member refid="classspk_1_1Window_1a8a8e2f35c770061ed6745717af98bb4c" kind="variable"><name>_windowFrame</name></member>
-    <member refid="classspk_1_1Window_1a07c419039c8cc2f68897155c7ba51d05" kind="variable"><name>_windowSize</name></member>
-    <member refid="classspk_1_1Window_1af75449e0e450e3e591bfa45de67eb9f1" kind="variable"><name>_windowClass</name></member>
-    <member refid="classspk_1_1Window_1aca8a27d1508e878ee1a7d605b4aa3800" kind="variable"><name>_windowStyle</name></member>
-    <member refid="classspk_1_1Window_1a60580314233389f3e1d0b1840d3c1279" kind="variable"><name>_windowExStyle</name></member>
     <member refid="classspk_1_1Window_1a75a7326b4cb6373483bfd28cd692cc19" kind="function"><name>_createWindow</name></member>
     <member refid="classspk_1_1Window_1a5651d26b4f55056b152527f7d3c0114c" kind="function"><name>_nameWindow</name></member>
     <member refid="classspk_1_1Window_1aac32c004c4a7a636554524570763aa05" kind="function"><name>Window</name></member>
-    <member refid="classspk_1_1Window_1a694ec6233dd2d36927b76de31cfe253c" kind="function"><name>_convertTitle</name></member>
-    <member refid="classspk_1_1Window_1a169896c2d7c72cd3a23fd75c5e395561" kind="function"><name>_createGhostInstance</name></member>
-    <member refid="classspk_1_1Window_1ad04475106030d324cc106b0af3a7dd8f" kind="function"><name>_registerWindowClass</name></member>
-    <member refid="classspk_1_1Window_1aafbc42533f52eef527b8909b9dbdafcc" kind="function"><name>_createWindowFrame</name></member>
-    <member refid="classspk_1_1Window_1ac824731b78fdc1d45ae6803b56c62a8f" kind="function"><name>_composeOpenGLContext</name></member>
-    <member refid="classspk_1_1Window_1a8f79925aa80897f4e42d185fc3c1d93c" kind="function"><name>_activateWindow</name></member>
-    <member refid="classspk_1_1Window_1ae05598f60b99a8ac2ba8861d745c56a1" kind="function"><name>Window</name></member>
-    <member refid="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" kind="function"><name>setGeometry</name></member>
-    <member refid="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" kind="function"><name>resize</name></member>
-    <member refid="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" kind="function"><name>render</name></member>
-    <member refid="classspk_1_1Window_1a43fad77a06224e751ef80ab7d0093282" kind="function"><name>clear</name></member>
-    <member refid="classspk_1_1Window_1ad7b645ee1f79762e79d4c24a42b42cf4" kind="function"><name>~Window</name></member>
     <member refid="classspk_1_1Window_1a3576ce767e110b73023d76f9a436ff1e" kind="function"><name>setGeometry</name></member>
     <member refid="classspk_1_1Window_1a5d8a542bf4aacdc0f49483c8dcbe8d22" kind="function"><name>resize</name></member>
     <member refid="classspk_1_1Window_1ad04c6c9d3a12e8792eddf8a8a733bc70" kind="function"><name>render</name></member>
@@ -896,11 +859,7 @@
   </compound>
   <compound refid="classspk_1_1WindowModule" kind="class"><name>spk::WindowModule</name>
     <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" kind="function"><name>_handleMessage</name></member>
-    <member refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f" kind="function"><name>_handleMessage</name></member>
     <member refid="classspk_1_1WindowModule_1a9a94140d19b729c855dcd8431de38bac" kind="function"><name>WindowModule</name></member>
-    <member refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" kind="function"><name>render</name></member>
-    <member refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" kind="function"><name>clear</name></member>
-    <member refid="classspk_1_1WindowModule_1a36706fa4088182a2c3b03536d3300809" kind="function"><name>WindowModule</name></member>
     <member refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" kind="function"><name>render</name></member>
     <member refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" kind="function"><name>clear</name></member>
   </compound>
@@ -947,21 +906,15 @@
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
-  <compound refid="linux_2spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
-  </compound>
-  <compound refid="windows_2spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
+  <compound refid="spk__graphical__application_8hpp" kind="file"><name>spk_graphical_application.hpp</name>
   </compound>
   <compound refid="linux_2spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
   </compound>
   <compound refid="spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
   </compound>
-  <compound refid="windows_2spk__API__module_8hpp" kind="file"><name>spk_API_module.hpp</name>
-  </compound>
   <compound refid="linux_2spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
   </compound>
   <compound refid="spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
-  </compound>
-  <compound refid="windows_2spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
   </compound>
   <compound refid="spk__abstract__module_8hpp" kind="file"><name>spk_abstract_module.hpp</name>
   </compound>
@@ -1012,8 +965,6 @@
   <compound refid="linux_2spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
   </compound>
   <compound refid="spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
-  </compound>
-  <compound refid="windows_2spk__window_8hpp" kind="file"><name>spk_window.hpp</name>
   </compound>
   <compound refid="spk__input_8hpp" kind="file"><name>spk_input.hpp</name>
   </compound>
@@ -1073,33 +1024,21 @@
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="linux_2spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
+  <compound refid="spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
   </compound>
-  <compound refid="windows_2spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
+  <compound refid="spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
   </compound>
-  <compound refid="linux_2spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
+  <compound refid="spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
   </compound>
-  <compound refid="windows_2spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
+  <compound refid="spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
   </compound>
-  <compound refid="linux_2spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
-  </compound>
-  <compound refid="windows_2spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
-  </compound>
-  <compound refid="linux_2spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
-  </compound>
-  <compound refid="windows_2spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
-  </compound>
-  <compound refid="linux_2spk__window__module_8cpp" kind="file"><name>spk_window_module.cpp</name>
-  </compound>
-  <compound refid="windows_2spk__window__module_8cpp" kind="file"><name>spk_window_module.cpp</name>
+  <compound refid="spk__window__module_8cpp" kind="file"><name>spk_window_module.cpp</name>
   </compound>
   <compound refid="spk__profiler__module_8cpp" kind="file"><name>spk_profiler_module.cpp</name>
   </compound>
   <compound refid="spk__time__module_8cpp" kind="file"><name>spk_time_module.cpp</name>
   </compound>
   <compound refid="spk__widget__module_8cpp" kind="file"><name>spk_widget_module.cpp</name>
-  </compound>
-  <compound refid="spk__system__module_8cpp" kind="file"><name>spk_system_module.cpp</name>
   </compound>
   <compound refid="spk__abstract__application_8cpp" kind="file"><name>spk_abstract_application.cpp</name>
   </compound>
@@ -1115,16 +1054,12 @@
   </compound>
   <compound refid="spk__contract__provider_8cpp" kind="file"><name>spk_contract_provider.cpp</name>
   </compound>
-  <compound refid="linux_2spk__window_8cpp" kind="file"><name>spk_window.cpp</name>
-    <member refid="linux_2spk__window_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
-  </compound>
-  <compound refid="windows_2spk__window_8cpp" kind="file"><name>spk_window.cpp</name>
+  <compound refid="spk__window_8cpp" kind="file"><name>spk_window.cpp</name>
+    <member refid="spk__window_8cpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
   </compound>
   <compound refid="linux_2spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
   </compound>
   <compound refid="spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
-  </compound>
-  <compound refid="windows_2spk__keyboard_8cpp" kind="file"><name>spk_keyboard.cpp</name>
   </compound>
   <compound refid="spk__input__status_8cpp" kind="file"><name>spk_input_status.cpp</name>
   </compound>
@@ -1135,6 +1070,7 @@
   <compound refid="spk__perlin_8cpp" kind="file"><name>spk_perlin.cpp</name>
   </compound>
   <compound refid="spk__chronometer_8cpp" kind="file"><name>spk_chronometer.cpp</name>
+    <member refid="spk__chronometer_8cpp_1ac7e0ca973ef00d5b9e3dc11787bd20ba" kind="variable"><name>UNINITIALIZED</name></member>
   </compound>
   <compound refid="spk__time__metrics_8cpp" kind="file"><name>spk_time_metrics.cpp</name>
   </compound>
@@ -1168,9 +1104,9 @@
   </compound>
   <compound refid="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir"><name>includes/design_pattern</name>
   </compound>
-  <compound refid="dir_fecb50b33baf124479efc63989ba8a70" kind="dir"><name>includes/graphics</name>
-  </compound>
   <compound refid="dir_560415a5d2bc4999842279f4fc1debef" kind="dir"><name>src/graphics</name>
+  </compound>
+  <compound refid="dir_fecb50b33baf124479efc63989ba8a70" kind="dir"><name>includes/graphics</name>
   </compound>
   <compound refid="dir_4ceaa58bef61032532d7f419c1fea53b" kind="dir"><name>playground/includes</name>
   </compound>
@@ -1184,21 +1120,21 @@
   </compound>
   <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
   </compound>
-  <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
+  <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
   </compound>
   <compound refid="dir_6ddc0213ad914c7862510b0b5b0f11d6" kind="dir"><name>src/graphics/linux</name>
   </compound>
-  <compound refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir"><name>src/application/modules/linux</name>
-  </compound>
-  <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
-  </compound>
   <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
+  </compound>
+  <compound refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir"><name>src/application/modules/linux</name>
   </compound>
   <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
   </compound>
-  <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
+  <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
   </compound>
   <compound refid="dir_ae9a93452e2a84339148a16bcf2eb561" kind="dir"><name>src/math</name>
+  </compound>
+  <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
   </compound>
   <compound refid="dir_30c033750a7a5ab7efccd1bfa6f17d06" kind="dir"><name>includes/miscellaneous</name>
   </compound>
@@ -1223,17 +1159,5 @@
   <compound refid="dir_6865bbd7fed125b9d907dfb26af48d8a" kind="dir"><name>includes/widget</name>
   </compound>
   <compound refid="dir_c570470bf3e4213fb57699dd2e921b84" kind="dir"><name>src/widget</name>
-  </compound>
-  <compound refid="dir_2d00012b783774c71028ff79c3881289" kind="dir"><name>src/application/modules/windows</name>
-  </compound>
-  <compound refid="dir_743eb569a20dff9a066ca3f370e93bf9" kind="dir"><name>src/graphics/windows</name>
-  </compound>
-  <compound refid="dir_b0d7979d317da96e18556e960da3e586" kind="dir"><name>includes/graphics/windows</name>
-  </compound>
-  <compound refid="dir_d9173fd93ed0ce4e9acfe9e9a968e1c0" kind="dir"><name>src/input/windows</name>
-  </compound>
-  <compound refid="dir_26a9ca6a804b277f1422bcf4480ed6e0" kind="dir"><name>includes/application/modules/windows</name>
-  </compound>
-  <compound refid="dir_4da4d72ca490047577e944980829188b" kind="dir"><name>includes/application/concrete/windows</name>
   </compound>
 </doxygenindex>

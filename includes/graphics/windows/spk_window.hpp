@@ -18,45 +18,15 @@ namespace spk
 		friend class APIModule;
 
 	private:
-        /**
-         * @brief Window size.
-         */
-		spk::Vector2Int _size;
-
-        /**
-         * @brief Converted title for window.
-         */
-		wchar_t* _convertedTitle;
-
-        /**
-         * @brief Instance handle.
-         */
-		HINSTANCE _hInstance;
-
-        /**
-         * @brief Window handle.
-         */
-		HWND _windowFrame;
-
-        /**
-         * @brief Rectangle structure defining the window size.
-         */
-		RECT _windowSize;
-
-        /**
-         * @brief Window class structure.
-         */
-		WNDCLASS _windowClass;
-
-        /**
-         * @brief Window style.
-         */
-		DWORD _windowStyle;
-
-        /**
-         * @brief Window extended style.
-         */
-		DWORD _windowExStyle;
+        
+		spk::Vector2Int _size;///< Window size.
+		wchar_t* _convertedTitle;///< Converted title for window.
+		HINSTANCE _hInstance;///< Instance handle.
+		HWND _windowFrame;///< Window handle.
+		RECT _windowSize;///< Rectangle structure defining the window size.
+		WNDCLASS _windowClass;///< Window class structure.
+		DWORD _windowStyle;///< Window style.
+		DWORD _windowExStyle;///< Window extended style.
 
         /**
          * @brief Converts the title to a wchar_t.

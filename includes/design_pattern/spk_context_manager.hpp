@@ -69,6 +69,9 @@ namespace spk
 				return (*ContextManager::instance()->_readOnlyContext);
 			}
 
+			/**
+			 * \brief Indicate if a swap is requested for the ReadOnlyBuffer.
+			 */
 			static bool swapRequested()
 			{
 				return (*ContextManager::instance()->_isSwapRequested);

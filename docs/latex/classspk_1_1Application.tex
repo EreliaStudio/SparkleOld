@@ -36,23 +36,11 @@ Collaboration diagram for spk\+::Application\+:
 \begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}{$\sim$\+Application}} ()
 \begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1AbstractWidget}{spk\+::\+Abstract\+Widget}} $\ast$ \mbox{\hyperlink{classspk_1_1Application_a267928bad0a300248da0848a3d1f4f44}{central\+Widget}} ()
-\begin{DoxyCompactList}\small\item\em Returns the central widget of the application. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}{resize}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
-\begin{DoxyCompactList}\small\item\em Resizes the application window and central widget. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1Application_ad7f393b12bf9826e08b5d6401c753b44}{Application}} (const std\+::wstring \&p\+\_\+title, const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
-\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}{$\sim$\+Application}} ()
-\begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename TChildren\+Type , typename ... Args$>$ }\\TChildren\+Type $\ast$ \mbox{\hyperlink{classspk_1_1Application_a7b429ea88aa340b70d775deb1fb9623c}{add\+Root\+Widget}} (Args \&\&... p\+\_\+args)
-\begin{DoxyCompactList}\small\item\em Add a new widget inside the application, with the central widget as parent. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}{resize}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
 \begin{DoxyCompactList}\small\item\em Resizes the application window and central widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}{setup\+Jobs}} ()
-\begin{DoxyCompactList}\small\item\em Setup the application jobs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}{setup\+Jobs}} ()
 \begin{DoxyCompactList}\small\item\em Setup the application jobs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
@@ -67,7 +55,7 @@ This class initializes the SPK modules and manages the application loop. The mod
 \mbox{\Hypertarget{classspk_1_1Application_ad7f393b12bf9826e08b5d6401c753b44}\label{classspk_1_1Application_ad7f393b12bf9826e08b5d6401c753b44}} 
 \index{spk::Application@{spk::Application}!Application@{Application}}
 \index{Application@{Application}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
 {\footnotesize\ttfamily spk\+::\+Application\+::\+Application (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+title,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -84,34 +72,7 @@ Constructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object.
 \mbox{\Hypertarget{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}\label{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}} 
 \index{spk::Application@{spk::Application}!````~Application@{$\sim$Application}}
 \index{````~Application@{$\sim$Application}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily spk\+::\+Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Destructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. 
-
-This will delete all modules. \mbox{\Hypertarget{classspk_1_1Application_ad7f393b12bf9826e08b5d6401c753b44}\label{classspk_1_1Application_ad7f393b12bf9826e08b5d6401c753b44}} 
-\index{spk::Application@{spk::Application}!Application@{Application}}
-\index{Application@{Application}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily spk\+::\+Application\+::\+Application (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+title,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Constructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p\+\_\+title} & Title of the window. \\
-\hline
-{\em p\+\_\+size} & Size of the window. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}\label{classspk_1_1Application_abcd265ffb90968e0e1351bd2ca899f11}} 
-\index{spk::Application@{spk::Application}!````~Application@{$\sim$Application}}
-\index{````~Application@{$\sim$Application}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{$\sim$Application()}{~Application()}}
 {\footnotesize\ttfamily spk\+::\+Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -121,64 +82,10 @@ Destructs the \mbox{\hyperlink{classspk_1_1Application}{Application}} object.
 This will delete all modules. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classspk_1_1Application_a7b429ea88aa340b70d775deb1fb9623c}\label{classspk_1_1Application_a7b429ea88aa340b70d775deb1fb9623c}} 
-\index{spk::Application@{spk::Application}!addRootWidget@{addRootWidget}}
-\index{addRootWidget@{addRootWidget}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{addRootWidget()}{addRootWidget()}}
-{\footnotesize\ttfamily template$<$typename TChildren\+Type , typename ... Args$>$ \\
-TChildren\+Type$\ast$ spk\+::\+Application\+::add\+Root\+Widget (\begin{DoxyParamCaption}\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Add a new widget inside the application, with the central widget as parent. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em TChildren\+Type} & The type of the children widget. \\
-\hline
-{\em Args} & The types of the arguments for constructing the children widget. \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em p\+\_\+args} & The arguments for constructing the children widget. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pointer to the children widget. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1Application_a267928bad0a300248da0848a3d1f4f44}\label{classspk_1_1Application_a267928bad0a300248da0848a3d1f4f44}} 
-\index{spk::Application@{spk::Application}!centralWidget@{centralWidget}}
-\index{centralWidget@{centralWidget}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{centralWidget()}{centralWidget()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1AbstractWidget}{spk\+::\+Abstract\+Widget}}$\ast$ spk\+::\+Application\+::central\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the central widget of the application. 
-
-\begin{DoxyReturn}{Returns}
-The central widget of the application. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}\label{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}} 
 \index{spk::Application@{spk::Application}!resize@{resize}}
 \index{resize@{resize}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void spk\+::\+Application\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Resizes the application window and central widget. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p\+\_\+size} & The new size of the window and central widget. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}\label{classspk_1_1Application_a4bb34e8823d56131a205757ca25746e6}} 
-\index{spk::Application@{spk::Application}!resize@{resize}}
-\index{resize@{resize}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
 {\footnotesize\ttfamily void spk\+::\+Application\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -193,21 +100,7 @@ Resizes the application window and central widget.
 \mbox{\Hypertarget{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}\label{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}} 
 \index{spk::Application@{spk::Application}!setupJobs@{setupJobs}}
 \index{setupJobs@{setupJobs}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{setupJobs()}{setupJobs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void spk\+::\+Application\+::setup\+Jobs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
-
-
-
-Setup the application jobs. 
-
-This method sets up the jobs for updating and rendering the modules. 
-
-Implements \mbox{\hyperlink{classspk_1_1AbstractApplication_ab3404f55d68f8119693f44a45a332f26}{spk\+::\+Abstract\+Application}}.
-
-\mbox{\Hypertarget{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}\label{classspk_1_1Application_a69d78907af2adc9516a40c37659238fe}} 
-\index{spk::Application@{spk::Application}!setupJobs@{setupJobs}}
-\index{setupJobs@{setupJobs}!spk::Application@{spk::Application}}
-\doxysubsubsection{\texorpdfstring{setupJobs()}{setupJobs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{setupJobs()}{setupJobs()}}
 {\footnotesize\ttfamily void spk\+::\+Application\+::setup\+Jobs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 

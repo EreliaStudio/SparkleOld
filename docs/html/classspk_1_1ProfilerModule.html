@@ -73,19 +73,96 @@ $(function() {
 <div class="title">spk::ProfilerModule Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class to profile and manage the frames-per-second rates of the application.  
+ <a href="classspk_1_1ProfilerModule.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="spk__profiler__module_8hpp_source.html">spk_profiler_module.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad89c6c2c340b4fa300b8c2482a08ccc"><td class="memItemLeft" align="right" valign="top"><a id="aad89c6c2c340b4fa300b8c2482a08ccc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:ab79ffae57422fddf6e6cef43f34c5c49"><td class="memItemLeft" align="right" valign="top"><a id="ab79ffae57422fddf6e6cef43f34c5c49"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a> ()</td></tr>
+<tr class="memdesc:ab79ffae57422fddf6e6cef43f34c5c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1ProfilerModule.html" title="A class to profile and manage the frames-per-second rates of the application.">ProfilerModule</a> class. <br /></td></tr>
+<tr class="separator:ab79ffae57422fddf6e6cef43f34c5c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6619183c9e521e1da356b6eddc7666"><td class="memItemLeft" align="right" valign="top"><a id="a2c6619183c9e521e1da356b6eddc7666"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a> ()</td></tr>
+<tr class="memdesc:a2c6619183c9e521e1da356b6eddc7666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="classspk_1_1ProfilerModule.html" title="A class to profile and manage the frames-per-second rates of the application.">ProfilerModule</a> class. <br /></td></tr>
+<tr class="separator:a2c6619183c9e521e1da356b6eddc7666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad89c6c2c340b4fa300b8c2482a08ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#aad89c6c2c340b4fa300b8c2482a08ccc">update</a> ()</td></tr>
+<tr class="memdesc:aad89c6c2c340b4fa300b8c2482a08ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the counters and timer.  <a href="classspk_1_1ProfilerModule.html#aad89c6c2c340b4fa300b8c2482a08ccc">More...</a><br /></td></tr>
 <tr class="separator:aad89c6c2c340b4fa300b8c2482a08ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a606c70589cc008b90ffe1aed68fb7c70"><td class="memItemLeft" align="right" valign="top"><a id="a606c70589cc008b90ffe1aed68fb7c70"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>increaseRenderIPS</b> ()</td></tr>
+<tr class="memitem:a606c70589cc008b90ffe1aed68fb7c70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a606c70589cc008b90ffe1aed68fb7c70">increaseRenderIPS</a> ()</td></tr>
+<tr class="memdesc:a606c70589cc008b90ffe1aed68fb7c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the counter for frames rendered per second.  <a href="classspk_1_1ProfilerModule.html#a606c70589cc008b90ffe1aed68fb7c70">More...</a><br /></td></tr>
 <tr class="separator:a606c70589cc008b90ffe1aed68fb7c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa254325e80e6a3c3071f0fa6c5bacd"><td class="memItemLeft" align="right" valign="top"><a id="affa254325e80e6a3c3071f0fa6c5bacd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>increaseUpdateIPS</b> ()</td></tr>
+<tr class="memitem:affa254325e80e6a3c3071f0fa6c5bacd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#affa254325e80e6a3c3071f0fa6c5bacd">increaseUpdateIPS</a> ()</td></tr>
+<tr class="memdesc:affa254325e80e6a3c3071f0fa6c5bacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the counter for updates processed per second.  <a href="classspk_1_1ProfilerModule.html#affa254325e80e6a3c3071f0fa6c5bacd">More...</a><br /></td></tr>
 <tr class="separator:affa254325e80e6a3c3071f0fa6c5bacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class to profile and manage the frames-per-second rates of the application. </p>
+<p>This class is responsible for tracking the number of frames and updates that the application processes every second (known as the "render IPS" and "update IPS" respectively). </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a606c70589cc008b90ffe1aed68fb7c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606c70589cc008b90ffe1aed68fb7c70">&#9670;&nbsp;</a></span>increaseRenderIPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::ProfilerModule::increaseRenderIPS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment the counter for frames rendered per second. </p>
+<p>This method should be called once per frame rendered. </p>
+
+</div>
+</div>
+<a id="affa254325e80e6a3c3071f0fa6c5bacd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa254325e80e6a3c3071f0fa6c5bacd">&#9670;&nbsp;</a></span>increaseUpdateIPS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::ProfilerModule::increaseUpdateIPS </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increment the counter for updates processed per second. </p>
+<p>This method should be called once per update processed. </p>
+
+</div>
+</div>
+<a id="aad89c6c2c340b4fa300b8c2482a08ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad89c6c2c340b4fa300b8c2482a08ccc">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::ProfilerModule::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the counters and timer. </p>
+<p>This method should be called once per frame in the application's main update loop. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>includes/application/modules/<a class="el" href="spk__profiler__module_8hpp_source.html">spk_profiler_module.hpp</a></li>
 <li>src/application/modules/spk_profiler_module.cpp</li>

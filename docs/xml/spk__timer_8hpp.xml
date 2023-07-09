@@ -78,18 +78,18 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="5">
+      <node id="4">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
-      <node id="7">
+      <node id="6">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp_source"/>
       </node>
-      <node id="6">
+      <node id="5">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -97,26 +97,20 @@
         <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>includes/system/spk_timer.hpp</label>
         <link refid="spk__timer_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
       </node>
       <node id="3">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1Timer" prot="public">spk::Timer</innerclass>

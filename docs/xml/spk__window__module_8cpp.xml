@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
-  <compounddef id="linux_2spk__window__module_8cpp" kind="file" language="C++">
+  <compounddef id="spk__window__module_8cpp" kind="file" language="C++">
     <compoundname>spk_window_module.cpp</compoundname>
     <includes refid="spk__window__module_8hpp" local="yes">application/modules/spk_window_module.hpp</includes>
     <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
@@ -8,7 +8,7 @@
     <incdepgraph>
       <node id="1">
         <label>src/application/modules/linux/spk_window_module.cpp</label>
-        <link refid="linux_2spk__window__module_8cpp"/>
+        <link refid="spk__window__module_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -19,37 +19,13 @@
       <node id="9">
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
       </node>
       <node id="2">
         <label>application/modules/spk_window_module.hpp</label>
         <link refid="spk__window__module_8hpp_source"/>
       </node>
-      <node id="14">
-        <label>cmath</label>
-      </node>
-      <node id="12">
-        <label>stdexcept</label>
-      </node>
       <node id="7">
         <label>string</label>
-      </node>
-      <node id="10">
-        <label>design_pattern/spk_singleton.hpp</label>
-        <link refid="spk__singleton_8hpp_source"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
       </node>
       <node id="8">
         <label>vector</label>
@@ -76,22 +52,6 @@
       </node>
       <node id="6">
         <label>mutex</label>
-      </node>
-      <node id="13">
-        <label>math/spk_vector2.hpp</label>
-        <link refid="spk__vector2_8hpp_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>algorithm</label>
-      </node>
-      <node id="11">
-        <label>memory</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacespk">spk</innernamespace>

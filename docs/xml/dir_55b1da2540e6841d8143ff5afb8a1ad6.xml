@@ -3,7 +3,6 @@
   <compounddef id="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir">
     <compoundname>includes/application/modules</compoundname>
     <innerdir refid="dir_236f3c3cc45023562be3bdd435e3e127">includes/application/modules/linux</innerdir>
-    <innerdir refid="dir_26a9ca6a804b277f1422bcf4480ed6e0">includes/application/modules/windows</innerdir>
     <innerfile refid="spk__abstract__module_8hpp">spk_abstract_module.hpp</innerfile>
     <innerfile refid="spk__API__module_8hpp">spk_API_module.hpp</innerfile>
     <innerfile refid="spk__keyboard__module_8hpp">spk_keyboard_module.hpp</innerfile>

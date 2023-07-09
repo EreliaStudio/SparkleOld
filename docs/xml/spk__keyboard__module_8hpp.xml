@@ -3,11 +3,9 @@
   <compounddef id="spk__keyboard__module_8hpp" kind="file" language="C++">
     <compoundname>spk_keyboard_module.hpp</compoundname>
     <includes refid="spk__abstract__module_8hpp" local="yes">application/modules/spk_abstract_module.hpp</includes>
-    <includedby refid="linux_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
-    <includedby refid="windows_2spk__graphical__application_8hpp" local="yes">includes/application/concrete/windows/spk_graphical_application.hpp</includedby>
+    <includedby refid="spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
-    <includedby refid="linux_2spk__keyboard__module_8cpp" local="yes">src/application/modules/linux/spk_keyboard_module.cpp</includedby>
-    <includedby refid="windows_2spk__keyboard__module_8cpp" local="yes">src/application/modules/windows/spk_keyboard_module.cpp</includedby>
+    <includedby refid="spk__keyboard__module_8cpp" local="yes">src/application/modules/linux/spk_keyboard_module.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/application/modules/spk_keyboard_module.hpp</label>
@@ -55,26 +53,20 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
       </node>
-      <node id="5">
+      <node id="4">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp_source"/>
       </node>
-      <node id="4">
+      <node id="3">
         <label>includes/sparkle.hpp</label>
         <link refid="sparkle_8hpp_source"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
       </node>
       <node id="2">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1KeyboardModule" prot="public">spk::KeyboardModule</innerclass>
