@@ -10,6 +10,15 @@ endif()
 
 set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
 
+find_package(Vulkan REQUIRED)
+
+if(VULKAN_FOUND)
+    message(STATUS "Found Vulkan, including: ${Vulkan_INCLUDE_DIRS}")
+    include_directories(${Vulkan_INCLUDE_DIRS})
+else()
+    message(FATAL_ERROR "Could not find Vulkan")
+endif()
+
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/archive/${ArchitectureSufix}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/lib/${ArchitectureSufix}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/executable/${ArchitectureSufix}")
@@ -65,6 +74,14 @@ function(SetupPlayground)
 	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
 	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
 	target_link_libraries(playground sparkle)
+
+	if(VULKAN_FOUND)
+		message(STATUS "Found Vulkan, linking directory: ${Vulkan_LIBRARY_DIRS}")
+		target_link_libraries(playground ${Vulkan_LIBRARIES})
+	else()
+		message(FATAL_ERROR "Could not find Vulkan")
+	endif()
+
 	if(UNIX)
 		target_link_libraries(playground xcb)
 		target_link_libraries(playground pthread)

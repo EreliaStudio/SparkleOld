@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="91" column="22" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="91" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="94" column="22" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" prot="protected" static="no" mutable="no">
         <type>std::unique_ptr&lt; TContextType &gt;</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="92" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="92" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="95" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" prot="protected" static="no" mutable="no">
         <type>std::unique_ptr&lt; TContextType &gt;</type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="93" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="93" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="96" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" prot="protected" static="no" mutable="no">
         <type>std::unique_ptr&lt; TContextType &gt;</type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="94" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="94" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="97" column="17" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" prot="protected" static="no" mutable="no">
         <type>bool</type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="95" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="95" bodyend="-1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="98" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="98" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="103" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="103" bodyend="109"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="106" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="106" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="115" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="115" bodyend="121"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="118" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="118" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="127" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="127" bodyend="136"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="130" column="6" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="130" bodyend="139"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="139" column="1"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="142" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> &amp;</type>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="140" column="16"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="143" column="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -283,7 +283,7 @@
         <link refid="classspk_1_1Singleton"/>
       </node>
     </collaborationgraph>
-    <location file="includes/design_pattern/spk_context_manager.hpp" line="17" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="18" bodyend="141"/>
+    <location file="includes/design_pattern/spk_context_manager.hpp" line="17" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="18" bodyend="144"/>
     <listofallmembers>
       <member refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_bufferAccessMutex</name></member>
       <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::ContextManager</scope><name>_instance</name></member>

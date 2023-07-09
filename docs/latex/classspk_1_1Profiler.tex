@@ -42,27 +42,27 @@ void \mbox{\hyperlink{classspk_1_1Profiler_a3d8843a8439baff714cb69fcd46bceea}{re
 \begin{DoxyCompactList}\small\item\em Resumes the chronometer associated with a specific name. \end{DoxyCompactList}\item 
 const long long \mbox{\hyperlink{classspk_1_1Profiler_a814971ff26b580fa15607c1d0fe056ac}{stop\+Chronometer}} (const std\+::wstring \&p\+\_\+key)
 \begin{DoxyCompactList}\small\item\em Stops the chronometer associated with a specific name. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classspk_1_1Profiler_a79b7321dbf6fe63e4ac2d7bf8a739187}\label{classspk_1_1Profiler_a79b7321dbf6fe63e4ac2d7bf8a739187}} 
-void {\bfseries increse\+Counter} (const std\+::wstring \&p\+\_\+key)
+void \mbox{\hyperlink{classspk_1_1Profiler_ad531226bc8a8a390e9df76dafbf973ef}{create\+Counter}} (const std\+::wstring \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Create a new counter, named p\+\_\+key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Profiler_ab541f7d78a82df099e1c96605d91802c}{increase\+Counter}} (const std\+::wstring \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Increases the value of the specified counter by one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Profiler_a1cb189097b22c31207d8d7c718f90b84}{set\+Counter}} (const std\+::wstring \&p\+\_\+key, const size\+\_\+t \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the value of the specified counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Profiler_a7131d78f8ddedead9f88433e1f639da4}{reset\+Counter}} (const std\+::wstring \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Resets the specified counter to 0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspk_1_1Profiler_a54d18ec265ec42b4cf250295b5db429f}{contain\+Counter}} (const std\+::wstring \&p\+\_\+key) const
 \item 
-\mbox{\Hypertarget{classspk_1_1Profiler_a1cb189097b22c31207d8d7c718f90b84}\label{classspk_1_1Profiler_a1cb189097b22c31207d8d7c718f90b84}} 
-void {\bfseries set\+Counter} (const std\+::wstring \&p\+\_\+key, const size\+\_\+t \&p\+\_\+value)
-\item 
-\mbox{\Hypertarget{classspk_1_1Profiler_a7131d78f8ddedead9f88433e1f639da4}\label{classspk_1_1Profiler_a7131d78f8ddedead9f88433e1f639da4}} 
-void {\bfseries reset\+Counter} (const std\+::wstring \&p\+\_\+key)
-\item 
-\mbox{\Hypertarget{classspk_1_1Profiler_addb147302314604495fd898c8b221c73}\label{classspk_1_1Profiler_addb147302314604495fd898c8b221c73}} 
-const size\+\_\+t \& {\bfseries counter} (const std\+::wstring \&p\+\_\+key) const
-\end{DoxyCompactItemize}
+const size\+\_\+t \& \mbox{\hyperlink{classspk_1_1Profiler_addb147302314604495fd898c8b221c73}{counter}} (const std\+::wstring \&p\+\_\+key) const
+\begin{DoxyCompactList}\small\item\em Retrieves the value of the specified counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classspk_1_1Profiler_ab4d0edd93a8934bd0c844fe4942791d2}\label{classspk_1_1Profiler_ab4d0edd93a8934bd0c844fe4942791d2}} 
-static const std\+::wstring {\bfseries RENDER\+\_\+\+IPS\+\_\+\+COUNTER} = L\char`\"{}Render\+IPS\char`\"{}
-\item 
+static const std\+::wstring \mbox{\hyperlink{classspk_1_1Profiler_ab4d0edd93a8934bd0c844fe4942791d2}{RENDER\+\_\+\+IPS\+\_\+\+COUNTER}} = L\char`\"{}Render\+IPS\char`\"{}
+\begin{DoxyCompactList}\small\item\em The key representing the counter to the Render thread Iteration Per Second. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classspk_1_1Profiler_aff4f46bb299ee6b67ab77c19f7f7e07f}\label{classspk_1_1Profiler_aff4f46bb299ee6b67ab77c19f7f7e07f}} 
-static const std\+::wstring {\bfseries UPDATE\+\_\+\+IPS\+\_\+\+COUNTER} = L\char`\"{}Update\+IPS\char`\"{}
-\end{DoxyCompactItemize}
+static const std\+::wstring \mbox{\hyperlink{classspk_1_1Profiler_aff4f46bb299ee6b67ab77c19f7f7e07f}{UPDATE\+\_\+\+IPS\+\_\+\+COUNTER}} = L\char`\"{}Update\+IPS\char`\"{}
+\begin{DoxyCompactList}\small\item\em The key representing the counter to the Update thread Iteration Per Second. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -101,6 +101,86 @@ Retrieves the chronometer associated with a specific name.
 \begin{DoxyReturn}{Returns}
 The specified chronometer. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Profiler_a54d18ec265ec42b4cf250295b5db429f}\label{classspk_1_1Profiler_a54d18ec265ec42b4cf250295b5db429f}} 
+\index{spk::Profiler@{spk::Profiler}!containCounter@{containCounter}}
+\index{containCounter@{containCounter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{containCounter()}{containCounter()}}
+{\footnotesize\ttfamily bool spk\+::\+Profiler\+::contain\+Counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption}) const}
+
+Check if there is a counter name p\+\_\+key inside the profiler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the counter exist, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Profiler_addb147302314604495fd898c8b221c73}\label{classspk_1_1Profiler_addb147302314604495fd898c8b221c73}} 
+\index{spk::Profiler@{spk::Profiler}!counter@{counter}}
+\index{counter@{counter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{counter()}{counter()}}
+{\footnotesize\ttfamily const size\+\_\+t \& spk\+::\+Profiler\+::counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the value of the specified counter. 
+
+If the counter does not exist, a runtime error is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the counter. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Profiler_ad531226bc8a8a390e9df76dafbf973ef}\label{classspk_1_1Profiler_ad531226bc8a8a390e9df76dafbf973ef}} 
+\index{spk::Profiler@{spk::Profiler}!createCounter@{createCounter}}
+\index{createCounter@{createCounter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{createCounter()}{createCounter()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+::create\+Counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Create a new counter, named p\+\_\+key. 
+
+If the counter already exist, this method will throw an exception
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if a chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Profiler_ab541f7d78a82df099e1c96605d91802c}\label{classspk_1_1Profiler_ab541f7d78a82df099e1c96605d91802c}} 
+\index{spk::Profiler@{spk::Profiler}!increaseCounter@{increaseCounter}}
+\index{increaseCounter@{increaseCounter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{increaseCounter()}{increaseCounter()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+::increase\+Counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Increases the value of the specified counter by one. 
+
+If the counter does not exist, it is created with a value of 0, and then incremented.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classspk_1_1Profiler_ab80433abd4e910f0d7077514233b4e54}\label{classspk_1_1Profiler_ab80433abd4e910f0d7077514233b4e54}} 
 \index{spk::Profiler@{spk::Profiler}!resetChronometer@{resetChronometer}}
 \index{resetChronometer@{resetChronometer}!spk::Profiler@{spk::Profiler}}
@@ -114,6 +194,28 @@ Resets the chronometer associated with a specific name.
 
 \begin{DoxyParams}{Parameters}
 {\em p\+\_\+key} & The name of the chronometer. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Profiler_a7131d78f8ddedead9f88433e1f639da4}\label{classspk_1_1Profiler_a7131d78f8ddedead9f88433e1f639da4}} 
+\index{spk::Profiler@{spk::Profiler}!resetCounter@{resetCounter}}
+\index{resetCounter@{resetCounter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{resetCounter()}{resetCounter()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+::reset\+Counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Resets the specified counter to 0. 
+
+If the counter does not exist, a runtime error is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
 \hline
 \end{DoxyParams}
 
@@ -141,6 +243,25 @@ Resumes the chronometer associated with a specific name.
 {\em std\+::runtime\+\_\+error} & if no chronometer exists with the given name. \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{classspk_1_1Profiler_a1cb189097b22c31207d8d7c718f90b84}\label{classspk_1_1Profiler_a1cb189097b22c31207d8d7c718f90b84}} 
+\index{spk::Profiler@{spk::Profiler}!setCounter@{setCounter}}
+\index{setCounter@{setCounter}!spk::Profiler@{spk::Profiler}}
+\doxysubsubsection{\texorpdfstring{setCounter()}{setCounter()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+::set\+Counter (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key,  }\item[{const size\+\_\+t \&}]{p\+\_\+value }\end{DoxyParamCaption})}
+
+
+
+Sets the value of the specified counter. 
+
+If the counter does not exist, it is created and then set to the specified value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The name of the counter. \\
+\hline
+{\em p\+\_\+value} & The new value for the counter. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classspk_1_1Profiler_af26e29829aef92203a8c30fc6e570c81}\label{classspk_1_1Profiler_af26e29829aef92203a8c30fc6e570c81}} 
 \index{spk::Profiler@{spk::Profiler}!startChronometer@{startChronometer}}
 \index{startChronometer@{startChronometer}!spk::Profiler@{spk::Profiler}}

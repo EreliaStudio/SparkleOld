@@ -193,7 +193,7 @@ namespace spk
 
 	const std::wstring &Keyboard::keyToString(const Keyboard::Key &p_key)
 	{
-		if (Keyboard::KeyToStringMap.count(p_key) == 0)
+		if (Keyboard::KeyToStringMap.contains(p_key) == false)
 			return (Keyboard::UnknowKeyName);
 		else
 			return (Keyboard::KeyToStringMap.at(p_key));

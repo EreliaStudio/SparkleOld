@@ -45,56 +45,19 @@ void \mbox{\hyperlink{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}{u
 \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}{mouse\+Queue}} ()
 \begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for mouse system messages. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}{keyboard\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for keyboard system messages. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classspk_1_1APIModule_ae82aac58db25ad6745ef7aee7a832cd0}\label{classspk_1_1APIModule_ae82aac58db25ad6745ef7aee7a832cd0}} 
-\mbox{\hyperlink{classspk_1_1APIModule_ae82aac58db25ad6745ef7aee7a832cd0}{APIModule}} ()
-\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1APIModule}{APIModule}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}\label{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}} 
-\mbox{\hyperlink{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}{$\sim$\+APIModule}} ()
-\begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1APIModule}{APIModule}} object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}\label{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}} 
-void \mbox{\hyperlink{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}{update}} ()
-\begin{DoxyCompactList}\small\item\em Updates the API module. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_a28b7825a839dddd7d90ccb960a50e809}{system\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for system messages. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}{window\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for window system messages. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}{mouse\+Queue}} ()
-\begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for mouse system messages. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}{keyboard\+Queue}} ()
 \begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for keyboard system messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static LRESULT CALLBACK \mbox{\hyperlink{classspk_1_1APIModule_accd975c587a58847bebacf503643a943}{Window\+Proc}} (HWND p\+\_\+hwnd, UINT p\+\_\+u\+Msg, WPARAM p\+\_\+w\+Param, LPARAM p\+\_\+l\+Param)
-\begin{DoxyCompactList}\small\item\em Processes messages sent to a window. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Class for managing the API interactions. 
 
-This class handles the API interactions and updates for the window, mouse and keyboard. It uses thread-\/safe queues to ensure safe multi-\/threaded operations.
-
-This class handles the API interactions and updates for system, window, mouse, and keyboard. It uses a pool of \mbox{\hyperlink{classspk_1_1DataBuffer}{Data\+Buffer}} as a singleton instance and thread-\/safe queues to ensure safe multi-\/threaded operations. 
+This class handles the API interactions and updates for the window, mouse and keyboard. It uses thread-\/safe queues to ensure safe multi-\/threaded operations. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}\label{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}} 
 \index{spk::APIModule@{spk::APIModule}!keyboardQueue@{keyboardQueue}}
 \index{keyboardQueue@{keyboardQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{keyboardQueue()}{keyboardQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::keyboard\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the thread-\/safe queue for keyboard system messages. 
-
-\begin{DoxyReturn}{Returns}
-Thread-\/safe queue for keyboard system messages. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}\label{classspk_1_1APIModule_a97f46238074160fc7b8d1f32d7a5add8}} 
-\index{spk::APIModule@{spk::APIModule}!keyboardQueue@{keyboardQueue}}
-\index{keyboardQueue@{keyboardQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{keyboardQueue()}{keyboardQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{keyboardQueue()}{keyboardQueue()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::keyboard\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -107,7 +70,7 @@ Thread-\/safe queue for keyboard system messages.
 \mbox{\Hypertarget{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}\label{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}} 
 \index{spk::APIModule@{spk::APIModule}!mouseQueue@{mouseQueue}}
 \index{mouseQueue@{mouseQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{mouseQueue()}{mouseQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{mouseQueue()}{mouseQueue()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::mouse\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -116,32 +79,6 @@ Returns the thread-\/safe queue for mouse system messages.
 
 \begin{DoxyReturn}{Returns}
 Thread-\/safe queue for mouse system messages. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}\label{classspk_1_1APIModule_a61d09040e6f32afac48dded1b0c6d70f}} 
-\index{spk::APIModule@{spk::APIModule}!mouseQueue@{mouseQueue}}
-\index{mouseQueue@{mouseQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{mouseQueue()}{mouseQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::mouse\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the thread-\/safe queue for mouse system messages. 
-
-\begin{DoxyReturn}{Returns}
-Thread-\/safe queue for mouse system messages. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1APIModule_a28b7825a839dddd7d90ccb960a50e809}\label{classspk_1_1APIModule_a28b7825a839dddd7d90ccb960a50e809}} 
-\index{spk::APIModule@{spk::APIModule}!systemQueue@{systemQueue}}
-\index{systemQueue@{systemQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{systemQueue()}{systemQueue()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::system\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the thread-\/safe queue for system messages. 
-
-\begin{DoxyReturn}{Returns}
-Thread-\/safe queue for system messages. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}\label{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}} 
 \index{spk::APIModule@{spk::APIModule}!update@{update}}
@@ -157,47 +94,10 @@ This method should be implemented in the .cpp file.
 
 Implements \mbox{\hyperlink{classspk_1_1AbstractModule_a8dc7a4e8a328a9bd57486df88d3d43b4}{spk\+::\+Abstract\+Module}}.
 
-\mbox{\Hypertarget{classspk_1_1APIModule_accd975c587a58847bebacf503643a943}\label{classspk_1_1APIModule_accd975c587a58847bebacf503643a943}} 
-\index{spk::APIModule@{spk::APIModule}!WindowProc@{WindowProc}}
-\index{WindowProc@{WindowProc}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{WindowProc()}{WindowProc()}}
-{\footnotesize\ttfamily LRESULT CALLBACK spk\+::\+APIModule\+::\+Window\+Proc (\begin{DoxyParamCaption}\item[{HWND}]{p\+\_\+hwnd,  }\item[{UINT}]{p\+\_\+u\+Msg,  }\item[{WPARAM}]{p\+\_\+w\+Param,  }\item[{LPARAM}]{p\+\_\+l\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Processes messages sent to a window. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em p\+\_\+hwnd} & Handle to the window. \\
-\hline
-{\em p\+\_\+u\+Msg} & The message. \\
-\hline
-{\em p\+\_\+w\+Param} & Additional message-\/specific information. \\
-\hline
-{\em p\+\_\+l\+Param} & Additional message-\/specific information. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The result of the message processing and depends on the message sent. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}\label{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}} 
 \index{spk::APIModule@{spk::APIModule}!windowQueue@{windowQueue}}
 \index{windowQueue@{windowQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{windowQueue()}{windowQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::window\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the thread-\/safe queue for window system messages. 
-
-\begin{DoxyReturn}{Returns}
-Thread-\/safe queue for window system messages. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}\label{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}} 
-\index{spk::APIModule@{spk::APIModule}!windowQueue@{windowQueue}}
-\index{windowQueue@{windowQueue}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{windowQueue()}{windowQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{windowQueue()}{windowQueue()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$System\+Message$>$\& spk\+::\+APIModule\+::window\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 

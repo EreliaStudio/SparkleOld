@@ -7,7 +7,6 @@
     <derivedcompoundref refid="classspk_1_1MouseModule" prot="public" virt="non-virtual">spk::MouseModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1SystemModule" prot="public" virt="non-virtual">spk::SystemModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WindowModule" prot="public" virt="non-virtual">spk::WindowModule</derivedcompoundref>
-    <derivedcompoundref refid="classspk_1_1WindowModule" prot="public" virt="non-virtual">spk::WindowModule</derivedcompoundref>
     <includes refid="spk__abstract__module_8hpp" local="no">spk_abstract_module.hpp</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" prot="private" static="no" mutable="no">
@@ -35,7 +34,6 @@
         <reimplementedby refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd">_handleMessage</reimplementedby>
         <reimplementedby refid="classspk_1_1MouseModule_1afa5a66104d33670c44b5523f788f6966">_handleMessage</reimplementedby>
         <reimplementedby refid="classspk_1_1SystemModule_1a641975eb5ff351282dd55b47865c4b77">_handleMessage</reimplementedby>
-        <reimplementedby refid="classspk_1_1WindowModule_1a13b76b0d758259ab2e64f0a28081c16f">_handleMessage</reimplementedby>
         <param>
           <type>SystemMessage &amp;</type>
           <declname>p_event</declname>
@@ -119,8 +117,6 @@
       <node id="6">
         <label>spk::WindowModule</label>
         <link refid="classspk_1_1WindowModule"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_203175f46ace52c3284570ac8daf7959" kind="dir">
     <compoundname>includes/application/concrete/linux</compoundname>
-    <innerfile refid="linux_2spk__graphical__application_8hpp">spk_graphical_application.hpp</innerfile>
+    <innerfile refid="spk__graphical__application_8hpp">spk_graphical_application.hpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

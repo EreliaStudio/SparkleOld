@@ -39,11 +39,9 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="14">
+      <node id="13">
         <label>includes/application/modules/spk_system_module.hpp</label>
         <link refid="spk__system__module_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
       </node>
       <node id="6">
         <label>includes/design_pattern/spk_activable_object.hpp</label>
@@ -67,7 +65,7 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="15">
         <label>includes/debug/spk_profiler.hpp</label>
         <link refid="spk__profiler_8hpp_source"/>
         <childnode refid="3" relation="include">
@@ -103,10 +101,10 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="15">
+      <node id="14">
         <label>includes/system/spk_chronometer.hpp</label>
         <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
@@ -118,8 +116,6 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
@@ -130,7 +126,7 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -141,13 +137,9 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="13">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
-      </node>
       <node id="12">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
       <node id="8">
         <label>includes/widget/spk_widget_atlas.hpp</label>

@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="27" column="6" bodyfile="src/application/modules/windows/spk_system_module.cpp" bodystart="7" bodyend="20"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="27" column="6"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="36" column="1" bodyfile="src/application/modules/windows/spk_system_module.cpp" bodystart="22" bodyend="26"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_system_module.hpp" line="41" column="1" bodyfile="src/application/modules/windows/spk_system_module.cpp" bodystart="28" bodyend="31"/>
+        <location file="includes/application/modules/spk_system_module.hpp" line="41" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

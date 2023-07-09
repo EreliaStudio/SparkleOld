@@ -1,6 +1,7 @@
 #include "playground.hpp"
 
-int main() {
+int main()
+{
     spk::RandomGenerator<float> rng;
 
     rng.setDistributionRange(0.0f, 100.0f);

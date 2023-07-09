@@ -12,7 +12,7 @@ namespace spk
 
 	const spk::Chronometer &Profiler::chronometer(const std::wstring &p_key) const
 	{
-		if (_chronometers.count(p_key) == 0)
+		if (_chronometers.contains(p_key) == false)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
 		}
@@ -21,7 +21,7 @@ namespace spk
 
 	void Profiler::resetChronometer(const std::wstring &p_key)
 	{
-		if (_chronometers.count(p_key) == 0)
+		if (_chronometers.contains(p_key) == false)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
 		}
@@ -35,7 +35,7 @@ namespace spk
 
 	void Profiler::resumeChronometer(const std::wstring &p_key)
 	{
-		if (_chronometers.count(p_key) == 0)
+		if (_chronometers.contains(p_key) == false)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
 		}
@@ -44,15 +44,24 @@ namespace spk
 
 	const long long Profiler::stopChronometer(const std::wstring &p_key)
 	{
-		if (_chronometers.count(p_key) == 0)
+		if (_chronometers.contains(p_key) == false)
 		{
 			throw std::runtime_error("This Chronometer does not exist ");
 		}
 		return (_chronometers[p_key].stop());
 	}
 
-	void Profiler::increseCounter(const std::wstring& p_key)
+	void Profiler::createCounter(const std::wstring& p_key)
 	{
+		if (_counters.contains(p_key) == true)
+			throw std::runtime_error("Counter [] already exist");
+		_counters[p_key] = 0;
+	}
+
+	void Profiler::increaseCounter(const std::wstring& p_key)
+	{
+		if (_counters.contains(p_key) == false)
+			createCounter(p_key);
 		_counters[p_key]++;
 	}
 	
@@ -63,14 +72,19 @@ namespace spk
 
 	void Profiler::resetCounter(const std::wstring& p_key)
 	{
-		if (_counters.count(p_key) == 0)
+		if (_counters.contains(p_key) == false)
 			throw std::runtime_error("Counter [] don't exist");
 		_counters[p_key]++;
+	}
+	
+	bool Profiler::containCounter(const std::wstring& p_key) const
+	{
+		return (_counters.contains(p_key));
 	}
 
 	const size_t& Profiler::counter(const std::wstring& p_key) const
 	{
-		if (_counters.count(p_key) == 0)
+		if (_counters.contains(p_key) == false)
 			throw std::runtime_error("Counter [] don't exist");
 		return (_counters.at(p_key));
 	}

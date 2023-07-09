@@ -36,12 +36,13 @@
         <argsstring>()</argsstring>
         <name>swapRequested</name>
         <briefdescription>
+<para>Indicate if a swap is requested for the ReadOnlyBuffer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="72" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="72" bodyend="75"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="75" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="75" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -65,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/design_pattern/spk_context_manager.hpp" line="82" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="82" bodyend="87"/>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="85" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="85" bodyend="90"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -73,7 +74,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="includes/design_pattern/spk_context_manager.hpp" line="57" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="58" bodyend="88"/>
+    <location file="includes/design_pattern/spk_context_manager.hpp" line="57" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="58" bodyend="91"/>
     <listofallmembers>
       <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadOnlyAccessor</scope><name>get</name></member>
       <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadOnlyAccessor</scope><name>swap</name></member>

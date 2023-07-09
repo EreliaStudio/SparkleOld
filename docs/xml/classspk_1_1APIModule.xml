@@ -3,42 +3,11 @@
   <compounddef id="classspk_1_1APIModule" kind="class" language="C++" prot="public">
     <compoundname>spk::APIModule</compoundname>
     <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
-    <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
     <includes refid="linux_2spk__API__module_8hpp" local="no">spk_API_module.hpp</includes>
-      <sectiondef kind="private-type">
-      <memberdef kind="typedef" id="classspk_1_1APIModule_1a81fa0635462c482f24ab5e612cc6edfe" prot="private" static="no">
-        <type><ref refid="classspk_1_1Pool" kindref="compound">spk::Pool</ref>&lt; <ref refid="classspk_1_1DataBuffer" kindref="compound">spk::DataBuffer</ref> &gt;</type>
-        <definition>using spk::APIModule::MessagePool =  spk::Pool&lt;spk::DataBuffer&gt;</definition>
-        <argsstring></argsstring>
-        <name>MessagePool</name>
-        <briefdescription>
-<para>Type definition for pool of <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref>. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="19" column="1" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="19" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="classspk_1_1APIModule_1aa61cce469130a1dc56c05ff2f60819c8" prot="private" static="no">
-        <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1Pool" kindref="compound">MessagePool</ref> &gt;</type>
-        <definition>using spk::APIModule::MessagePoolInstance =  spk::Singleton&lt;MessagePool&gt;</definition>
-        <argsstring></argsstring>
-        <name>MessagePoolInstance</name>
-        <briefdescription>
-<para>Type definition for singleton instance of <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> pool. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="20" column="1" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="20" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classspk_1_1APIModule_1ae99a6525636c109d4e9d5fe9cbd9a5d3" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classspk_1_1APIModule_1aaff218a364c6038faff5f1756d03d3ea" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt;</type>
-        <definition>spk::ThreadSafeQueue&lt; SystemMessage &gt; spk::APIModule::_windowQueue</definition>
+        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt; spk::APIModule::_windowQueue</definition>
         <argsstring></argsstring>
         <name>_windowQueue</name>
         <briefdescription>
@@ -50,9 +19,9 @@
         </inbodydescription>
         <location file="includes/application/modules/linux/spk_API_module.hpp" line="18" column="22" bodyfile="includes/application/modules/linux/spk_API_module.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classspk_1_1APIModule_1aff1f8b3e2589039d4e7f323d25068493" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classspk_1_1APIModule_1a197fe38e1ce3cbd79392093504f9ad44" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt;</type>
-        <definition>spk::ThreadSafeQueue&lt; SystemMessage &gt; spk::APIModule::_mouseQueue</definition>
+        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt; spk::APIModule::_mouseQueue</definition>
         <argsstring></argsstring>
         <name>_mouseQueue</name>
         <briefdescription>
@@ -64,9 +33,9 @@
         </inbodydescription>
         <location file="includes/application/modules/linux/spk_API_module.hpp" line="19" column="22" bodyfile="includes/application/modules/linux/spk_API_module.hpp" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classspk_1_1APIModule_1a9f7d6309636ca30b2a664dbf8afa3d64" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classspk_1_1APIModule_1a56f0e3aaf8014c5789ba6bd34990f19e" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt;</type>
-        <definition>spk::ThreadSafeQueue&lt; SystemMessage &gt; spk::APIModule::_keyboardQueue</definition>
+        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt; spk::APIModule::_keyboardQueue</definition>
         <argsstring></argsstring>
         <name>_keyboardQueue</name>
         <briefdescription>
@@ -77,20 +46,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="includes/application/modules/linux/spk_API_module.hpp" line="20" column="22" bodyfile="includes/application/modules/linux/spk_API_module.hpp" bodystart="20" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classspk_1_1APIModule_1ab89509e906333e9ca1e6567c9b284bc4" prot="private" static="no" mutable="no">
-        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt;</type>
-        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt; spk::APIModule::_systemQueue</definition>
-        <argsstring></argsstring>
-        <name>_systemQueue</name>
-        <briefdescription>
-<para>Thread-safe queue for system messages. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="22" column="22" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="22" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -189,260 +144,12 @@
         </inbodydescription>
         <location file="includes/application/modules/linux/spk_API_module.hpp" line="59" column="22" bodyfile="includes/application/modules/linux/spk_API_module.hpp" bodystart="59" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>spk::APIModule::APIModule</definition>
-        <argsstring>()</argsstring>
-        <name>APIModule</name>
-        <briefdescription>
-<para>Constructs the <ref refid="classspk_1_1APIModule" kindref="compound">APIModule</ref> object. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="42" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>spk::APIModule::~APIModule</definition>
-        <argsstring>()</argsstring>
-        <name>~APIModule</name>
-        <briefdescription>
-<para>Destructs the <ref refid="classspk_1_1APIModule" kindref="compound">APIModule</ref> object. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="47" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>void spk::APIModule::update</definition>
-        <argsstring>()</argsstring>
-        <name>update</name>
-        <reimplements refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4">update</reimplements>
-        <briefdescription>
-<para>Updates the API module. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="52" column="6"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1a28b7825a839dddd7d90ccb960a50e809" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
-        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt;&amp; spk::APIModule::systemQueue</definition>
-        <argsstring>()</argsstring>
-        <name>systemQueue</name>
-        <briefdescription>
-<para>Returns the thread-safe queue for system messages. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Thread-safe queue for system messages. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="59" column="22" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="59" bodyend="59"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
-        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt;&amp; spk::APIModule::windowQueue</definition>
-        <argsstring>()</argsstring>
-        <name>windowQueue</name>
-        <briefdescription>
-<para>Returns the thread-safe queue for window system messages. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Thread-safe queue for window system messages. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="66" column="22" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="66" bodyend="66"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
-        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt;&amp; spk::APIModule::mouseQueue</definition>
-        <argsstring>()</argsstring>
-        <name>mouseQueue</name>
-        <briefdescription>
-<para>Returns the thread-safe queue for mouse system messages. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Thread-safe queue for mouse system messages. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="73" column="22" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="73" bodyend="73"/>
-      </memberdef>
-      <memberdef kind="function" id="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
-        <definition>spk::ThreadSafeQueue&lt;SystemMessage&gt;&amp; spk::APIModule::keyboardQueue</definition>
-        <argsstring>()</argsstring>
-        <name>keyboardQueue</name>
-        <briefdescription>
-<para>Returns the thread-safe queue for keyboard system messages. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>Thread-safe queue for keyboard system messages. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="80" column="22" bodyfile="includes/application/modules/windows/spk_API_module.hpp" bodystart="80" bodyend="80"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="classspk_1_1APIModule_1ab56bdf778c28ce2158fde3f7000c8618" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>LRESULT</type>
-        <definition>LRESULT spk::APIModule::_handleMessage</definition>
-        <argsstring>(const HWND &amp;p_hwnd, const UINT &amp;p_uMsg, const WPARAM &amp;p_wParam, const LPARAM &amp;p_lParam)</argsstring>
-        <name>_handleMessage</name>
-        <param>
-          <type>const HWND &amp;</type>
-          <declname>p_hwnd</declname>
-        </param>
-        <param>
-          <type>const UINT &amp;</type>
-          <declname>p_uMsg</declname>
-        </param>
-        <param>
-          <type>const WPARAM &amp;</type>
-          <declname>p_wParam</declname>
-        </param>
-        <param>
-          <type>const LPARAM &amp;</type>
-          <declname>p_lParam</declname>
-        </param>
-        <briefdescription>
-<para>Handles a system message. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>p_hwnd</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Handle to the window. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_uMsg</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The message. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_wParam</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Additional message-specific information. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_lParam</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Additional message-specific information. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>The result of the message processing and depends on the message sent. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="36" column="9" bodyfile="src/application/modules/windows/spk_API_module.cpp" bodystart="26" bodyend="135"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>LRESULT CALLBACK</type>
-        <definition>LRESULT CALLBACK spk::APIModule::WindowProc</definition>
-        <argsstring>(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)</argsstring>
-        <name>WindowProc</name>
-        <param>
-          <type>HWND</type>
-          <declname>p_hwnd</declname>
-        </param>
-        <param>
-          <type>UINT</type>
-          <declname>p_uMsg</declname>
-        </param>
-        <param>
-          <type>WPARAM</type>
-          <declname>p_wParam</declname>
-        </param>
-        <param>
-          <type>LPARAM</type>
-          <declname>p_lParam</declname>
-        </param>
-        <briefdescription>
-<para>Processes messages sent to a window. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>p_hwnd</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Handle to the window. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_uMsg</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The message. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_wParam</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Additional message-specific information. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p_lParam</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Additional message-specific information. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>The result of the message processing and depends on the message sent. </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="includes/application/modules/windows/spk_API_module.hpp" line="91" column="25" bodyfile="src/application/modules/windows/spk_API_module.cpp" bodystart="5" bodyend="24"/>
-      </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class for managing the API interactions. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class handles the API interactions and updates for the window, mouse and keyboard. It uses thread-safe queues to ensure safe multi-threaded operations.</para>
-<para>This class handles the API interactions and updates for system, window, mouse, and keyboard. It uses a pool of <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> as a singleton instance and thread-safe queues to ensure safe multi-threaded operations. </para>
+<para>This class handles the API interactions and updates for the window, mouse and keyboard. It uses thread-safe queues to ensure safe multi-threaded operations. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -452,8 +159,6 @@
       <node id="1">
         <label>spk::APIModule</label>
         <link refid="classspk_1_1APIModule"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
@@ -468,32 +173,18 @@
         <link refid="classspk_1_1APIModule"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="includes/application/modules/linux/spk_API_module.hpp" line="15" column="1" bodyfile="includes/application/modules/linux/spk_API_module.hpp" bodystart="16" bodyend="60"/>
     <listofallmembers>
-      <member refid="classspk_1_1APIModule_1ab56bdf778c28ce2158fde3f7000c8618" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_handleMessage</name></member>
-      <member refid="classspk_1_1APIModule_1a9f7d6309636ca30b2a664dbf8afa3d64" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_keyboardQueue</name></member>
-      <member refid="classspk_1_1APIModule_1aff1f8b3e2589039d4e7f323d25068493" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_mouseQueue</name></member>
-      <member refid="classspk_1_1APIModule_1ab89509e906333e9ca1e6567c9b284bc4" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_systemQueue</name></member>
-      <member refid="classspk_1_1APIModule_1ae99a6525636c109d4e9d5fe9cbd9a5d3" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_windowQueue</name></member>
-      <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>APIModule</name></member>
+      <member refid="classspk_1_1APIModule_1a56f0e3aaf8014c5789ba6bd34990f19e" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_keyboardQueue</name></member>
+      <member refid="classspk_1_1APIModule_1a197fe38e1ce3cbd79392093504f9ad44" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_mouseQueue</name></member>
+      <member refid="classspk_1_1APIModule_1aaff218a364c6038faff5f1756d03d3ea" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>_windowQueue</name></member>
       <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>APIModule</name></member>
       <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>keyboardQueue</name></member>
-      <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>keyboardQueue</name></member>
-      <member refid="classspk_1_1APIModule_1a81fa0635462c482f24ab5e612cc6edfe" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>MessagePool</name></member>
-      <member refid="classspk_1_1APIModule_1aa61cce469130a1dc56c05ff2f60819c8" prot="private" virt="non-virtual"><scope>spk::APIModule</scope><name>MessagePoolInstance</name></member>
       <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>mouseQueue</name></member>
-      <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>mouseQueue</name></member>
-      <member refid="classspk_1_1APIModule_1a28b7825a839dddd7d90ccb960a50e809" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>systemQueue</name></member>
       <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" virt="virtual"><scope>spk::APIModule</scope><name>update</name></member>
-      <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" prot="public" virt="virtual"><scope>spk::APIModule</scope><name>update</name></member>
-      <member refid="classspk_1_1APIModule_1accd975c587a58847bebacf503643a943" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>WindowProc</name></member>
       <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>windowQueue</name></member>
-      <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>windowQueue</name></member>
-      <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>~APIModule</name></member>
       <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" prot="public" virt="non-virtual"><scope>spk::APIModule</scope><name>~APIModule</name></member>
     </listofallmembers>
   </compounddef>

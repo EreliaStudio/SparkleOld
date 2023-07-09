@@ -142,8 +142,6 @@
         <link refid="classspk_1_1Application"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="10">
         <label>spk::PersistentWorker</label>

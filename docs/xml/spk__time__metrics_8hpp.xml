@@ -77,7 +77,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>includes/input/spk_input.hpp</label>
         <link refid="spk__input_8hpp_source"/>
       </node>
@@ -96,15 +96,13 @@
         <link refid="spk__profiler__module_8hpp_source"/>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
       <node id="6">
         <label>includes/system/spk_timer.hpp</label>
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
@@ -127,13 +125,9 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>includes/application/concrete/windows/spk_graphical_application.hpp</label>
-        <link refid="windows_2spk__graphical__application_8hpp_source"/>
-      </node>
       <node id="8">
         <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
-        <link refid="linux_2spk__graphical__application_8hpp_source"/>
+        <link refid="spk__graphical__application_8hpp_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classspk_1_1TimeMetrics" prot="public">spk::TimeMetrics</innerclass>

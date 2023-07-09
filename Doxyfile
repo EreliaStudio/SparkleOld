@@ -20,3 +20,5 @@ GENERATE_HTML = YES
 GENERATE_XML = YES
 
 WARN_LOGFILE = doxygen_warnings.log
+
+EXCLUDE_PATTERNS = */windows/*

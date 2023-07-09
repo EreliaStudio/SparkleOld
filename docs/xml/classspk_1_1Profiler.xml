@@ -30,6 +30,7 @@
         <name>RENDER_IPS_COUNTER</name>
         <initializer>= L&quot;RenderIPS&quot;</initializer>
         <briefdescription>
+<para>The key representing the counter to the Render thread Iteration Per Second. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -44,6 +45,7 @@
         <name>UPDATE_IPS_COUNTER</name>
         <initializer>= L&quot;UpdateIPS&quot;</initializer>
         <briefdescription>
+<para>The key representing the counter to the Update thread Iteration Per Second. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -280,22 +282,72 @@
         </inbodydescription>
         <location file="includes/debug/spk_profiler.hpp" line="82" column="17" bodyfile="src/debug/spk_profiler.cpp" bodystart="45" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1Profiler_1ad531226bc8a8a390e9df76dafbf973ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void spk::Profiler::increseCounter</definition>
+        <definition>void spk::Profiler::createCounter</definition>
         <argsstring>(const std::wstring &amp;p_key)</argsstring>
-        <name>increseCounter</name>
+        <name>createCounter</name>
         <param>
           <type>const std::wstring &amp;</type>
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Create a new counter, named p_key. </para>
         </briefdescription>
         <detaileddescription>
+<para>If the counter already exist, this method will throw an exception</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="84" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="54" bodyend="57"/>
+        <location file="includes/debug/spk_profiler.hpp" line="92" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1ab541f7d78a82df099e1c96605d91802c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Profiler::increaseCounter</definition>
+        <argsstring>(const std::wstring &amp;p_key)</argsstring>
+        <name>increaseCounter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Increases the value of the specified counter by one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the counter does not exist, it is created with a value of 0, and then incremented.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="101" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="61" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a1cb189097b22c31207d8d7c718f90b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -311,12 +363,32 @@
           <declname>p_value</declname>
         </param>
         <briefdescription>
+<para>Sets the value of the specified counter. </para>
         </briefdescription>
         <detaileddescription>
+<para>If the counter does not exist, it is created and then set to the specified value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value for the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="85" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="59" bodyend="62"/>
+        <location file="includes/debug/spk_profiler.hpp" line="111" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1a7131d78f8ddedead9f88433e1f639da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -328,12 +400,63 @@
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Resets the specified counter to 0. </para>
         </briefdescription>
         <detaileddescription>
+<para>If the counter does not exist, a runtime error is thrown.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="86" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="64" bodyend="69"/>
+        <location file="includes/debug/spk_profiler.hpp" line="121" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="73" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Profiler_1a54d18ec265ec42b4cf250295b5db429f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::Profiler::containCounter</definition>
+        <argsstring>(const std::wstring &amp;p_key) const</argsstring>
+        <name>containCounter</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if there is a counter name p_key inside the profiler.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the counter exist, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/debug/spk_profiler.hpp" line="129" column="6" bodyfile="src/debug/spk_profiler.cpp" bodystart="80" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const size_t &amp;</type>
@@ -345,12 +468,35 @@
           <declname>p_key</declname>
         </param>
         <briefdescription>
+<para>Retrieves the value of the specified counter. </para>
         </briefdescription>
         <detaileddescription>
+<para>If the counter does not exist, a runtime error is thrown.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the counter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the counter. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if no chronometer exists with the given name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/debug/spk_profiler.hpp" line="87" column="14" bodyfile="src/debug/spk_profiler.cpp" bodystart="71" bodyend="76"/>
+        <location file="includes/debug/spk_profiler.hpp" line="140" column="14" bodyfile="src/debug/spk_profiler.cpp" bodystart="85" bodyend="90"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -383,14 +529,16 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/debug/spk_profiler.hpp" line="20" column="1" bodyfile="includes/debug/spk_profiler.hpp" bodystart="21" bodyend="88"/>
+    <location file="includes/debug/spk_profiler.hpp" line="20" column="1" bodyfile="includes/debug/spk_profiler.hpp" bodystart="21" bodyend="141"/>
     <listofallmembers>
       <member refid="classspk_1_1Profiler_1ae1c7d5f1e4a2e2cc3220e679382fef70" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_chronometers</name></member>
       <member refid="classspk_1_1Profiler_1a466af9ca58e2a11967a29d115ff3eec9" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>_counters</name></member>
       <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::Profiler</scope><name>_instance</name></member>
       <member refid="classspk_1_1Profiler_1a2da29d5128b6b5b3ad042fd13a164c4c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>chronometer</name></member>
+      <member refid="classspk_1_1Profiler_1a54d18ec265ec42b4cf250295b5db429f" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>containCounter</name></member>
       <member refid="classspk_1_1Profiler_1addb147302314604495fd898c8b221c73" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>counter</name></member>
-      <member refid="classspk_1_1Profiler_1a79b7321dbf6fe63e4ac2d7bf8a739187" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>increseCounter</name></member>
+      <member refid="classspk_1_1Profiler_1ad531226bc8a8a390e9df76dafbf973ef" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>createCounter</name></member>
+      <member refid="classspk_1_1Profiler_1ab541f7d78a82df099e1c96605d91802c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>increaseCounter</name></member>
       <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instance</name></member>
       <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::Profiler</scope><name>instanciate</name></member>
       <member refid="classspk_1_1Profiler_1a8d75acdf93bfc2c3508b875092074262" prot="private" virt="non-virtual"><scope>spk::Profiler</scope><name>Profiler</name></member>
