@@ -1,0 +1,191 @@
+\hypertarget{classspk_1_1Perlin}{}\doxysection{spk\+::Perlin Class Reference}
+\label{classspk_1_1Perlin}\index{spk::Perlin@{spk::Perlin}}
+
+
+A class to generate \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} Noise.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+perlin.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1Perlin_a6b30453d0c5084274603577ee4018139}{Perlin}} (unsigned long p\+\_\+seed=12500)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} object. \end{DoxyCompactList}\item 
+const unsigned long \& \mbox{\hyperlink{classspk_1_1Perlin_a3802bb8a02f129913f0558643fb80862}{seed}} () const
+\begin{DoxyCompactList}\small\item\em Get the seed value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_a5219608fc52b568566f80873d876171c}{configure\+Seed}} (unsigned long p\+\_\+seed)
+\begin{DoxyCompactList}\small\item\em Set the seed value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_a7a46cce01afd31e067178675f041bbe5}{configure\+Frequency}} (float p\+\_\+frequency)
+\begin{DoxyCompactList}\small\item\em Set the frequency of the first octave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_aa7b598b8aad646e9415c0d170935122b}{configure\+Persistance}} (float p\+\_\+persistance)
+\begin{DoxyCompactList}\small\item\em Set the persistence value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_a39b9a27d3de6da48ba34a0285a47e36f}{configure\+Lacunarity}} (float p\+\_\+lacunarity)
+\begin{DoxyCompactList}\small\item\em Set the lacunarity value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_a1399132789acef90817acbc028060eb0}{configure\+Octave}} (size\+\_\+t p\+\_\+octave\+Value)
+\begin{DoxyCompactList}\small\item\em Set the number of octaves. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Perlin_a58b540318b3fe0807a43a43c1ce23187}{configure\+Range}} (float p\+\_\+min, float p\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Set the range of the noise. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classspk_1_1Perlin_aa31de10ae9eb246b1f5e19fb516dc904}{sample}} (float p\+\_\+x, float p\+\_\+y=0, float p\+\_\+z=0)
+\begin{DoxyCompactList}\small\item\em Get a sample from the noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to generate \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} Noise. 
+
+The \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} class generates \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} noise, which is a type of gradient noise often used in procedural texture and terrain generation. It uses a pseudo-\/random number generator to create a smooth but non-\/repeating pattern in three dimensions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Perlin_a6b30453d0c5084274603577ee4018139}\label{classspk_1_1Perlin_a6b30453d0c5084274603577ee4018139}} 
+\index{spk::Perlin@{spk::Perlin}!Perlin@{Perlin}}
+\index{Perlin@{Perlin}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{Perlin()}{Perlin()}}
+{\footnotesize\ttfamily spk\+::\+Perlin\+::\+Perlin (\begin{DoxyParamCaption}\item[{unsigned long}]{p\+\_\+seed = {\ttfamily 12500} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Perlin}{Perlin}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+seed} & Seed value for the random number generator. Default value is 12500. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Perlin_a7a46cce01afd31e067178675f041bbe5}\label{classspk_1_1Perlin_a7a46cce01afd31e067178675f041bbe5}} 
+\index{spk::Perlin@{spk::Perlin}!configureFrequency@{configureFrequency}}
+\index{configureFrequency@{configureFrequency}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configureFrequency()}{configureFrequency()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Frequency (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+frequency }\end{DoxyParamCaption})}
+
+
+
+Set the frequency of the first octave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+frequency} & New frequency value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_a39b9a27d3de6da48ba34a0285a47e36f}\label{classspk_1_1Perlin_a39b9a27d3de6da48ba34a0285a47e36f}} 
+\index{spk::Perlin@{spk::Perlin}!configureLacunarity@{configureLacunarity}}
+\index{configureLacunarity@{configureLacunarity}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configureLacunarity()}{configureLacunarity()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Lacunarity (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+lacunarity }\end{DoxyParamCaption})}
+
+
+
+Set the lacunarity value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+lacunarity} & New lacunarity value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_a1399132789acef90817acbc028060eb0}\label{classspk_1_1Perlin_a1399132789acef90817acbc028060eb0}} 
+\index{spk::Perlin@{spk::Perlin}!configureOctave@{configureOctave}}
+\index{configureOctave@{configureOctave}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configureOctave()}{configureOctave()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Octave (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+octave\+Value }\end{DoxyParamCaption})}
+
+
+
+Set the number of octaves. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+octave\+Value} & New number of octaves. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_aa7b598b8aad646e9415c0d170935122b}\label{classspk_1_1Perlin_aa7b598b8aad646e9415c0d170935122b}} 
+\index{spk::Perlin@{spk::Perlin}!configurePersistance@{configurePersistance}}
+\index{configurePersistance@{configurePersistance}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configurePersistance()}{configurePersistance()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Persistance (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+persistance }\end{DoxyParamCaption})}
+
+
+
+Set the persistence value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+persistance} & New persistence value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_a58b540318b3fe0807a43a43c1ce23187}\label{classspk_1_1Perlin_a58b540318b3fe0807a43a43c1ce23187}} 
+\index{spk::Perlin@{spk::Perlin}!configureRange@{configureRange}}
+\index{configureRange@{configureRange}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configureRange()}{configureRange()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Range (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+min,  }\item[{float}]{p\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Set the range of the noise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & Minimum value of the range. \\
+\hline
+{\em p\+\_\+max} & Maximum value of the range. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_a5219608fc52b568566f80873d876171c}\label{classspk_1_1Perlin_a5219608fc52b568566f80873d876171c}} 
+\index{spk::Perlin@{spk::Perlin}!configureSeed@{configureSeed}}
+\index{configureSeed@{configureSeed}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{configureSeed()}{configureSeed()}}
+{\footnotesize\ttfamily void spk\+::\+Perlin\+::configure\+Seed (\begin{DoxyParamCaption}\item[{unsigned long}]{p\+\_\+seed }\end{DoxyParamCaption})}
+
+
+
+Set the seed value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+seed} & New seed value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Perlin_aa31de10ae9eb246b1f5e19fb516dc904}\label{classspk_1_1Perlin_aa31de10ae9eb246b1f5e19fb516dc904}} 
+\index{spk::Perlin@{spk::Perlin}!sample@{sample}}
+\index{sample@{sample}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily float spk\+::\+Perlin\+::sample (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+x,  }\item[{float}]{p\+\_\+y = {\ttfamily 0},  }\item[{float}]{p\+\_\+z = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Get a sample from the noise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+x} & X-\/coordinate. \\
+\hline
+{\em p\+\_\+y} & Y-\/coordinate. Default is 0. \\
+\hline
+{\em p\+\_\+z} & Z-\/coordinate. Default is 0.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The sample from the noise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Perlin_a3802bb8a02f129913f0558643fb80862}\label{classspk_1_1Perlin_a3802bb8a02f129913f0558643fb80862}} 
+\index{spk::Perlin@{spk::Perlin}!seed@{seed}}
+\index{seed@{seed}!spk::Perlin@{spk::Perlin}}
+\doxysubsubsection{\texorpdfstring{seed()}{seed()}}
+{\footnotesize\ttfamily const unsigned long \& spk\+::\+Perlin\+::seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the seed value. 
+
+\begin{DoxyReturn}{Returns}
+const unsigned long\& Reference to the seed value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/math/spk\+\_\+perlin.\+hpp\item 
+src/math/spk\+\_\+perlin.\+cpp\end{DoxyCompactItemize}

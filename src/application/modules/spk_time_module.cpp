@@ -13,7 +13,7 @@ namespace spk
 		spk::Singleton<spk::TimeMetrics>::release();
 	}
 
-	void TimeModule::update()
+	void TimeModule::updateTimeMetrics()
 	{
 		spk::Singleton<spk::TimeMetrics>::instance()->_updateMetrics();
 	}

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Worker" kind="class" language="C++" prot="public">
+    <compoundname>spk::Worker</compoundname>
+    <basecompoundref refid="classspk_1_1WorkerPool" prot="public" virt="non-virtual">spk::WorkerPool</basecompoundref>
+    <includes refid="spk__worker__pool_8hpp" local="no">spk_worker_pool.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Worker::Worker</definition>
+        <argsstring>(const std::wstring &amp;p_name)</argsstring>
+        <name>Worker</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_name</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1Worker" kindref="compound">Worker</ref> object with a specified name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor creates a new <ref refid="classspk_1_1Worker" kindref="compound">Worker</ref> object with the specified name.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the worker thread. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="104" column="1" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="47" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for creating a worker thread. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class extends the <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> class and provides a convenient way to create a single worker thread. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::Worker</label>
+        <link refid="classspk_1_1Worker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::WorkerPool</label>
+        <link refid="classspk_1_1WorkerPool"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::Worker</label>
+        <link refid="classspk_1_1Worker"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::WorkerPool</label>
+        <link refid="classspk_1_1WorkerPool"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/threading/spk_worker_pool.hpp" line="92" column="5" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="93" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>addJob</name></member>
+      <member refid="classspk_1_1WorkerPool_1ab0ccd4ab156d8131b804adb96f5c9c67" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>Job</name></member>
+      <member refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>start</name></member>
+      <member refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>stop</name></member>
+      <member refid="classspk_1_1Worker_1ad63fdc3010d478f7e03124269377dc64" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>Worker</name></member>
+      <member refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>WorkerPool</name></member>
+      <member refid="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>WorkerPool</name></member>
+      <member refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" prot="public" virt="non-virtual"><scope>spk::Worker</scope><name>~WorkerPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

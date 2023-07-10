@@ -1,0 +1,133 @@
+\hypertarget{classspk_1_1IInput}{}\doxysection{spk\+::IInput Class Reference}
+\label{classspk_1_1IInput}\index{spk::IInput@{spk::IInput}}
+
+
+Abstract class providing a common interface for input classes in the \textquotesingle{}spk\textquotesingle{} library.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+input.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::IInput\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classspk_1_1IInput__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::IInput\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{classspk_1_1IInput__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1IInput_a0af00a3e86f07666cb3dc76518f2d496}{IInput}} (unsigned long p\+\_\+delay\+Between\+Input, Funct \&\&p\+\_\+funct, Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1IInput}{IInput}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classspk_1_1IInput_a09e4d70d01debf1dcb5c4ce1d61a3139}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update method for the \mbox{\hyperlink{classspk_1_1IInput}{IInput}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classspk_1_1IInput_af79e6745cbed467b0ba91ce1ff741662}{\+\_\+is\+Execution\+Needed}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to determine whether the function execution is needed. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classspk_1_1IInput_a92ab93dccf24b9c0809cd141a4f975d2}{\+\_\+skip\+Condition}} ()
+\begin{DoxyCompactList}\small\item\em Virtual function to provide a condition under which the update is skipped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1IInput_aca480f940165fae3fbad17182222b8b1}\label{classspk_1_1IInput_aca480f940165fae3fbad17182222b8b1}} 
+\mbox{\hyperlink{classspk_1_1Timer}{spk\+::\+Timer}} \mbox{\hyperlink{classspk_1_1IInput_aca480f940165fae3fbad17182222b8b1}{\+\_\+timer}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classspk_1_1Timer}{Timer}} used to control the execution of the function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1IInput_a3f003a9960bf0f09e9c40c0cb19b9b11}\label{classspk_1_1IInput_a3f003a9960bf0f09e9c40c0cb19b9b11}} 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{classspk_1_1IInput_a3f003a9960bf0f09e9c40c0cb19b9b11}{\+\_\+funct}}
+\begin{DoxyCompactList}\small\item\em The function to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class providing a common interface for input classes in the \textquotesingle{}spk\textquotesingle{} library. 
+
+An \mbox{\hyperlink{classspk_1_1IInput}{IInput}} object encapsulates a function that may need to be executed at a regular interval. The function is executed if the {\ttfamily \mbox{\hyperlink{classspk_1_1IInput_af79e6745cbed467b0ba91ce1ff741662}{\+\_\+is\+Execution\+Needed()}}} method returns true. The {\ttfamily \mbox{\hyperlink{classspk_1_1IInput_a92ab93dccf24b9c0809cd141a4f975d2}{\+\_\+skip\+Condition()}}} method can be overridden to provide a condition under which the update is skipped. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1IInput_a0af00a3e86f07666cb3dc76518f2d496}\label{classspk_1_1IInput_a0af00a3e86f07666cb3dc76518f2d496}} 
+\index{spk::IInput@{spk::IInput}!IInput@{IInput}}
+\index{IInput@{IInput}!spk::IInput@{spk::IInput}}
+\doxysubsubsection{\texorpdfstring{IInput()}{IInput()}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+spk\+::\+IInput\+::\+IInput (\begin{DoxyParamCaption}\item[{unsigned long}]{p\+\_\+delay\+Between\+Input,  }\item[{Funct \&\&}]{p\+\_\+funct,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1IInput}{IInput}} object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & Function type \\
+\hline
+{\em Args} & Argument types \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+delay\+Between\+Input} & Input delay for the timer \\
+\hline
+{\em p\+\_\+funct} & Function to be executed \\
+\hline
+{\em p\+\_\+args} & Arguments for the function \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1IInput_af79e6745cbed467b0ba91ce1ff741662}\label{classspk_1_1IInput_af79e6745cbed467b0ba91ce1ff741662}} 
+\index{spk::IInput@{spk::IInput}!\_isExecutionNeeded@{\_isExecutionNeeded}}
+\index{\_isExecutionNeeded@{\_isExecutionNeeded}!spk::IInput@{spk::IInput}}
+\doxysubsubsection{\texorpdfstring{\_isExecutionNeeded()}{\_isExecutionNeeded()}}
+{\footnotesize\ttfamily virtual bool spk\+::\+IInput\+::\+\_\+is\+Execution\+Needed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to determine whether the function execution is needed. 
+
+\begin{DoxyReturn}{Returns}
+true if function execution is needed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1IInput_a92ab93dccf24b9c0809cd141a4f975d2}\label{classspk_1_1IInput_a92ab93dccf24b9c0809cd141a4f975d2}} 
+\index{spk::IInput@{spk::IInput}!\_skipCondition@{\_skipCondition}}
+\index{\_skipCondition@{\_skipCondition}!spk::IInput@{spk::IInput}}
+\doxysubsubsection{\texorpdfstring{\_skipCondition()}{\_skipCondition()}}
+{\footnotesize\ttfamily virtual bool spk\+::\+IInput\+::\+\_\+skip\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Virtual function to provide a condition under which the update is skipped. 
+
+\begin{DoxyReturn}{Returns}
+true by default. Override this function to provide a custom condition. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1IInput_a09e4d70d01debf1dcb5c4ce1d61a3139}\label{classspk_1_1IInput_a09e4d70d01debf1dcb5c4ce1d61a3139}} 
+\index{spk::IInput@{spk::IInput}!update@{update}}
+\index{update@{update}!spk::IInput@{spk::IInput}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void spk\+::\+IInput\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update method for the \mbox{\hyperlink{classspk_1_1IInput}{IInput}} object. 
+
+If the {\ttfamily \mbox{\hyperlink{classspk_1_1IInput_a92ab93dccf24b9c0809cd141a4f975d2}{\+\_\+skip\+Condition()}}} is true and the timer is running, the update is skipped. If the {\ttfamily \mbox{\hyperlink{classspk_1_1IInput_af79e6745cbed467b0ba91ce1ff741662}{\+\_\+is\+Execution\+Needed()}}} method returns true, the function is executed and the timer is started. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/input/spk\+\_\+input.\+hpp\end{DoxyCompactItemize}

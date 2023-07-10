@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1IsContainer" kind="struct" language="C++" prot="public">
+    <compoundname>spk::IsContainer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::false_type</basecompoundref>
+    <includes refid="spk__is__container_8hpp" local="no">spk_is_container.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename</type>
+        <defval>void</defval>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Metafunction for checking if a type is a container. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Metafunction (specialized) for checking if a type is a container.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to be checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Placeholder parameter for SFINAE.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This structure template will derive from <computeroutput>std::false_type</computeroutput> for non-container types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to be checked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This structure template will derive from <computeroutput>std::true_type</computeroutput> for container types. A type is considered a container if it defines <computeroutput>begin()</computeroutput>, <computeroutput>end()</computeroutput>, and has a nested <computeroutput>value_type</computeroutput>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::IsContainer&lt; T, typename &gt;</label>
+        <link refid="structspk_1_1IsContainer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::IsContainer&lt; T, typename &gt;</label>
+        <link refid="structspk_1_1IsContainer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </collaborationgraph>
+    <location file="includes/miscellaneous/spk_is_container.hpp" line="16" column="1" bodyfile="includes/miscellaneous/spk_is_container.hpp" bodystart="16" bodyend="16"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

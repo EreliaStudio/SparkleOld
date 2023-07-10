@@ -1,0 +1,136 @@
+\hypertarget{classspk_1_1StatedObject}{}\doxysection{spk\+::Stated\+Object$<$ TState $>$ Class Template Reference}
+\label{classspk_1_1StatedObject}\index{spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}}
+
+
+A class who manage state switching. This class representing an object who can be in different state. the class additionnaly store lambdas to call uppon specific state. Each lambda is provided to the user as Contract object.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+stated\+\_\+object.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Stated\+Object$<$ TState $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classspk_1_1StatedObject__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Stated\+Object$<$ TState $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classspk_1_1StatedObject__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1StatedObject_a5d13cdaa131af57a5767414ec363caa3}{Stated\+Object}} (TState p\+\_\+default\+State)
+\begin{DoxyCompactList}\small\item\em Construct a new Stated Object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1StatedObject_aac365fce6e1327db89fe6bb66095ae7d}{add\+State\+Callback}} (TState p\+\_\+state, \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} p\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Setup callback for specific state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1StatedObject_a3239267c819fa6825a2e19761f8ed697}{set\+State}} (TState p\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Set the object\textquotesingle{}s State and call the binded function if have one. \end{DoxyCompactList}\item 
+const TState \& \mbox{\hyperlink{classspk_1_1StatedObject_a6261556d41a0e850eb6b1eca6a3e6c3d}{state}} () const
+\begin{DoxyCompactList}\small\item\em get the current object\textquotesingle{}s state \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TState$>$\newline
+class spk\+::\+Stated\+Object$<$ TState $>$}
+
+A class who manage state switching. This class representing an object who can be in different state. the class additionnaly store lambdas to call uppon specific state. Each lambda is provided to the user as Contract object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TState} & The status class/structure/enum/type in which the object can be set \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1StatedObject_a5d13cdaa131af57a5767414ec363caa3}\label{classspk_1_1StatedObject_a5d13cdaa131af57a5767414ec363caa3}} 
+\index{spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}!StatedObject@{StatedObject}}
+\index{StatedObject@{StatedObject}!spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}}
+\doxysubsubsection{\texorpdfstring{StatedObject()}{StatedObject()}}
+{\footnotesize\ttfamily template$<$typename TState $>$ \\
+\mbox{\hyperlink{classspk_1_1StatedObject}{spk\+::\+Stated\+Object}}$<$ TState $>$\+::\mbox{\hyperlink{classspk_1_1StatedObject}{Stated\+Object}} (\begin{DoxyParamCaption}\item[{TState}]{p\+\_\+default\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Stated Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+default\+State} & Represent the default state of the object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1StatedObject_aac365fce6e1327db89fe6bb66095ae7d}\label{classspk_1_1StatedObject_aac365fce6e1327db89fe6bb66095ae7d}} 
+\index{spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}!addStateCallback@{addStateCallback}}
+\index{addStateCallback@{addStateCallback}!spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}}
+\doxysubsubsection{\texorpdfstring{addStateCallback()}{addStateCallback()}}
+{\footnotesize\ttfamily template$<$typename TState $>$ \\
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1StatedObject}{spk\+::\+Stated\+Object}}$<$ TState $>$\+::add\+State\+Callback (\begin{DoxyParamCaption}\item[{TState}]{p\+\_\+state,  }\item[{\mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}}}]{p\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setup callback for specific state. 
+
+This method will set a specific callback to a desired state. This method will provide a Contract to the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+state} & The state binded to the callback. \\
+\hline
+{\em p\+\_\+callback} & The callback binded to the state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contract A Contract representing the bind between state and callback, allowing him to edit/resign the callback added by this method. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1StatedObject_a3239267c819fa6825a2e19761f8ed697}\label{classspk_1_1StatedObject_a3239267c819fa6825a2e19761f8ed697}} 
+\index{spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}!setState@{setState}}
+\index{setState@{setState}!spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily template$<$typename TState $>$ \\
+void \mbox{\hyperlink{classspk_1_1StatedObject}{spk\+::\+Stated\+Object}}$<$ TState $>$\+::set\+State (\begin{DoxyParamCaption}\item[{TState}]{p\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the object\textquotesingle{}s State and call the binded function if have one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+state} & The new state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1StatedObject_a6261556d41a0e850eb6b1eca6a3e6c3d}\label{classspk_1_1StatedObject_a6261556d41a0e850eb6b1eca6a3e6c3d}} 
+\index{spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}!state@{state}}
+\index{state@{state}!spk::StatedObject$<$ TState $>$@{spk::StatedObject$<$ TState $>$}}
+\doxysubsubsection{\texorpdfstring{state()}{state()}}
+{\footnotesize\ttfamily template$<$typename TState $>$ \\
+const TState\& \mbox{\hyperlink{classspk_1_1StatedObject}{spk\+::\+Stated\+Object}}$<$ TState $>$\+::state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the current object\textquotesingle{}s state 
+
+\begin{DoxyReturn}{Returns}
+const TState\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+stated\+\_\+object.\+hpp\end{DoxyCompactItemize}

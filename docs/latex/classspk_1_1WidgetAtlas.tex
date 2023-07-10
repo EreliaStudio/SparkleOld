@@ -1,0 +1,123 @@
+\hypertarget{classspk_1_1WidgetAtlas}{}\doxysection{spk\+::Widget\+Atlas Class Reference}
+\label{classspk_1_1WidgetAtlas}\index{spk::WidgetAtlas@{spk::WidgetAtlas}}
+
+
+A singleton atlas of widgets.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+widget\+\_\+atlas.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Widget\+Atlas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classspk_1_1WidgetAtlas__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Widget\+Atlas\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classspk_1_1WidgetAtlas__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classspk_1_1WidgetAtlas_a8367cea8501ad4108fba1c115f4aeeed}{insert}} (\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$p\+\_\+widget)
+\begin{DoxyCompactList}\small\item\em Inserts a new widget into the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1WidgetAtlas_ac7eabaa654ac4496a37130831d6e93b8}{remove}} (\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$p\+\_\+widget)
+\begin{DoxyCompactList}\small\item\em Removes a widget from the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1WidgetAtlas_adcf2adee250f0c6b5330da8e1434e066}{sort}} (\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$p\+\_\+widget)
+\begin{DoxyCompactList}\small\item\em Sorts the widgets in the collection based on some criterion. \end{DoxyCompactList}\item 
+const Storing\+Container \& \mbox{\hyperlink{classspk_1_1WidgetAtlas_a7a029853be7ba1e3bca33f6fa3f648d0}{widgets}} () const
+\begin{DoxyCompactList}\small\item\em Returns a constant reference to the collection of widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1WidgetAtlas_a4daca5bc2270f6945df1b8d34dcc32f3}\label{classspk_1_1WidgetAtlas_a4daca5bc2270f6945df1b8d34dcc32f3}} 
+class {\bfseries spk\+::\+Singleton$<$ Widget\+Atlas $>$}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A singleton atlas of widgets. 
+
+\mbox{\hyperlink{classspk_1_1WidgetAtlas}{Widget\+Atlas}} is a class that acts as a collection of \mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} pointers. It provides methods for inserting, removing, and sorting widgets, as well as accessing the collection itself. Being a \mbox{\hyperlink{classspk_1_1Singleton}{Singleton}}, it ensures there is only one instance of this collection in the program.
+
+This class is called automaticaly by the widget when they are created or when they have their depth edited. This singleton is created inside the \mbox{\hyperlink{classspk_1_1WidgetModule}{Widget\+Module}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1WidgetAtlas_a8367cea8501ad4108fba1c115f4aeeed}\label{classspk_1_1WidgetAtlas_a8367cea8501ad4108fba1c115f4aeeed}} 
+\index{spk::WidgetAtlas@{spk::WidgetAtlas}!insert@{insert}}
+\index{insert@{insert}!spk::WidgetAtlas@{spk::WidgetAtlas}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void spk\+::\+Widget\+Atlas\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$}]{p\+\_\+widget }\end{DoxyParamCaption})}
+
+
+
+Inserts a new widget into the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+widget} & A pointer to the widget to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1WidgetAtlas_ac7eabaa654ac4496a37130831d6e93b8}\label{classspk_1_1WidgetAtlas_ac7eabaa654ac4496a37130831d6e93b8}} 
+\index{spk::WidgetAtlas@{spk::WidgetAtlas}!remove@{remove}}
+\index{remove@{remove}!spk::WidgetAtlas@{spk::WidgetAtlas}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void spk\+::\+Widget\+Atlas\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$}]{p\+\_\+widget }\end{DoxyParamCaption})}
+
+
+
+Removes a widget from the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+widget} & A pointer to the widget to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1WidgetAtlas_adcf2adee250f0c6b5330da8e1434e066}\label{classspk_1_1WidgetAtlas_adcf2adee250f0c6b5330da8e1434e066}} 
+\index{spk::WidgetAtlas@{spk::WidgetAtlas}!sort@{sort}}
+\index{sort@{sort}!spk::WidgetAtlas@{spk::WidgetAtlas}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void spk\+::\+Widget\+Atlas\+::sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1AbstractWidget}{Abstract\+Widget}} $\ast$}]{p\+\_\+widget }\end{DoxyParamCaption})}
+
+
+
+Sorts the widgets in the collection based on some criterion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+widget} & A pointer to the widget that provides the sorting criterion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1WidgetAtlas_a7a029853be7ba1e3bca33f6fa3f648d0}\label{classspk_1_1WidgetAtlas_a7a029853be7ba1e3bca33f6fa3f648d0}} 
+\index{spk::WidgetAtlas@{spk::WidgetAtlas}!widgets@{widgets}}
+\index{widgets@{widgets}!spk::WidgetAtlas@{spk::WidgetAtlas}}
+\doxysubsubsection{\texorpdfstring{widgets()}{widgets()}}
+{\footnotesize\ttfamily const Widget\+Atlas\+::\+Storing\+Container \& spk\+::\+Widget\+Atlas\+::widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a constant reference to the collection of widgets. 
+
+\begin{DoxyReturn}{Returns}
+const reference to the Storing\+Container. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/widget/spk\+\_\+widget\+\_\+atlas.\+hpp\item 
+src/widget/spk\+\_\+widget\+\_\+atlas.\+cpp\end{DoxyCompactItemize}

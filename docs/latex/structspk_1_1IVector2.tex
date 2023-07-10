@@ -1,0 +1,835 @@
+\hypertarget{structspk_1_1IVector2}{}\doxysection{spk\+::IVector2$<$ TType $>$ Class Template Reference}
+\label{structspk_1_1IVector2}\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+
+
+A two-\/dimensional vector class with variable type.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+vector2.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structspk_1_1IVector2_ad681cb3d88fd9a4ca1e60c3c44e600b6}{IVector2}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2_ae197d470bdc2579bd6434f1d23e569bc}{IVector2}} (const TOther\+Type \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes both coordinates with a single value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2_a3199f7709d8d15633920c7602b1c1e55}{IVector2}} (const TOther\+Type \&p\+\_\+x, const TOther\+Type \&p\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the vector with two values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2_a4960cc3b4ade5cfd48cd0b78281d179a}{operator IVector2$<$ TOther\+Type $>$}} ()
+\begin{DoxyCompactList}\small\item\em Type-\/casting operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \mbox{\hyperlink{structspk_1_1IVector2_a9d6df11d0dea89825de285227208b4e8}{operator+}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of + operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \mbox{\hyperlink{structspk_1_1IVector2_a93181e2a39090202e764fe87e5a6d1c5}{operator-\/}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of -\/ operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \mbox{\hyperlink{structspk_1_1IVector2_a409c7ef14a15f0e7bee9e781ea3f029c}{operator$\ast$}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of $\ast$ operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \mbox{\hyperlink{structspk_1_1IVector2_a7d8fac9e93e024514717ef2594724aec}{operator/}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of / operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\void \mbox{\hyperlink{structspk_1_1IVector2_a46f20fbffbe8c392bf857f84f6175c33}{operator+=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Overload of += operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\void \mbox{\hyperlink{structspk_1_1IVector2_a96c33ee627ed1700aff6627261a074ac}{operator-\/=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Overload of -\/= operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\void \mbox{\hyperlink{structspk_1_1IVector2_a0609e1b115b35f3293a19e9f1b3aa91c}{operator$\ast$=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Overload of $\ast$= operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\void \mbox{\hyperlink{structspk_1_1IVector2_a8158dcf13f51999650b00e83c36be525}{operator/=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Overload of /= operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_a19a45be30c1cb18600add47dddd15ce1}{operator==}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&delta) const
+\begin{DoxyCompactList}\small\item\em Overload of == operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_a8a7d7e368595e4a4db1580995d7df6f6}{operator!=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&delta) const
+\begin{DoxyCompactList}\small\item\em Overload of != operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_a50ee09f391a89938f95501f6f830818d}{operator$<$}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of $<$ operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_ab1b6a3babc24fbb384fde2327590f4ef}{operator$>$}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of $>$ operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_ae1604ed3d5d9945e9183396dc976d906}{operator$<$=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of $<$= operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\bool \mbox{\hyperlink{structspk_1_1IVector2_acd97e47a3bfd966a412f9520c98748d1}{operator$>$=}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Overload of $>$= operator. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structspk_1_1IVector2_aa0d0c755988c4ce9ec8e86e1744d997e}{norm}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the norm (or length) of this vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\float \mbox{\hyperlink{structspk_1_1IVector2_abf3cb20ecff4c986f8a7d602e89623a2}{distance}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Calculates the Euclidean distance between this vector and another vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ float $>$ \mbox{\hyperlink{structspk_1_1IVector2_a6bc80581ee0fb7ce5f10b751b85fa0cb}{normalize}} () const
+\begin{DoxyCompactList}\small\item\em Normalizes this vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_a4d5cc1aceeca9b90fcecf6d6fe49520d}{cross}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other=\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}(0, 0)) const
+\begin{DoxyCompactList}\small\item\em Performs the 2D cross product with another vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\float \mbox{\hyperlink{structspk_1_1IVector2_a6ab6d332aa26f3da116169b39014f113}{crossZ}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other) const
+\begin{DoxyCompactList}\small\item\em Calculates the z-\/component of the cross product with another vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\float \mbox{\hyperlink{structspk_1_1IVector2_a5b615184fb3c906955819e01958102bc}{dot}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+center=\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}(0, 0)) const
+\begin{DoxyCompactList}\small\item\em Performs the dot product with another vector, with respect to a center vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\float \mbox{\hyperlink{structspk_1_1IVector2_a4c3925ad849ad4d9b1bdba9a8c0d879c}{angle}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+other, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+center=\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}(0, 0)) const
+\begin{DoxyCompactList}\small\item\em Calculates the angle between this vector and another vector, with respect to a center vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_a94bb60fe03d90225da1337147ac4bb72}{invert}} () const
+\begin{DoxyCompactList}\small\item\em Inverts this vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TOther\+Type $>$ }\\\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_a2a657d838bdfcbb18dd0309977d34d5b}{rotate}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&p\+\_\+center, const float \&p\+\_\+angle) const
+\begin{DoxyCompactList}\small\item\em Rotates this vector around a given center point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_af58b4937f57ec150690b653144e627f2}{floor}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Rounds down the coordinates of a vector. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_ac22c9a8609ce9b7f2215eff7c120ed0c}{ceiling}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Rounds up the coordinates of a vector. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_a173f7d72b11d82a87db01e6a6dfe625e}{round}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Rounds the coordinates of a vector to the nearest integer. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_ae64ebb9cf02e5bbf329ea31d35e29841}{min}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+min, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Calculates the vector with the minimum coordinates. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_a452209253a7a42351fc09951297f7d4d}{max}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+min, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Calculates the vector with the maximum coordinates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{structspk_1_1IVector2_a34fd8293e2ff4b4bfa398dd70d158081}{is\+Inside\+Rectangle}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+point, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+cornerA, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+cornerB)
+\begin{DoxyCompactList}\small\item\em Checks if a point is inside a rectangle defined by two corner points. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2_ae564274f20ad50bb14dc2d34806cdec4}{lerp}} (const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+starting\+Point, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+ending\+Point, float t)
+\begin{DoxyCompactList}\small\item\em Interpolates linearly between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structspk_1_1IVector2_a7aef6e160a85e33668c18c5e743127ef}\label{structspk_1_1IVector2_a7aef6e160a85e33668c18c5e743127ef}} 
+TType \mbox{\hyperlink{structspk_1_1IVector2_a7aef6e160a85e33668c18c5e743127ef}{x}}
+\begin{DoxyCompactList}\small\item\em The x-\/coordinate of the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structspk_1_1IVector2_aefc7c3164247217231e53c0b75e21e3b}\label{structspk_1_1IVector2_aefc7c3164247217231e53c0b75e21e3b}} 
+TType \mbox{\hyperlink{structspk_1_1IVector2_aefc7c3164247217231e53c0b75e21e3b}{y}}
+\begin{DoxyCompactList}\small\item\em The y-\/coordinate of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wostream \& \mbox{\hyperlink{structspk_1_1IVector2_a0ad00eba4b802fae1acede9ef72d21bd}{operator$<$$<$}} (std\+::wostream \&p\+\_\+os, const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \&p\+\_\+self)
+\begin{DoxyCompactList}\small\item\em Overload of $<$$<$ operator for output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+IVector2$<$ TType $>$}
+
+A two-\/dimensional vector class with variable type. 
+
+This class represents a two-\/dimensional vector. It provides a number of methods for vector operations. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & Type used for vector coordinates. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structspk_1_1IVector2_ad681cb3d88fd9a4ca1e60c3c44e600b6}\label{structspk_1_1IVector2_ad681cb3d88fd9a4ca1e60c3c44e600b6}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!IVector2@{IVector2}}
+\index{IVector2@{IVector2}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{IVector2()}{IVector2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+Creates a two-\/dimensional vector with coordinates (0,0). \mbox{\Hypertarget{structspk_1_1IVector2_ae197d470bdc2579bd6434f1d23e569bc}\label{structspk_1_1IVector2_ae197d470bdc2579bd6434f1d23e569bc}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!IVector2@{IVector2}}
+\index{IVector2@{IVector2}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{IVector2()}{IVector2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} (\begin{DoxyParamCaption}\item[{const TOther\+Type \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes both coordinates with a single value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The value to be used for both coordinates. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structspk_1_1IVector2_a3199f7709d8d15633920c7602b1c1e55}\label{structspk_1_1IVector2_a3199f7709d8d15633920c7602b1c1e55}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!IVector2@{IVector2}}
+\index{IVector2@{IVector2}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{IVector2()}{IVector2()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} (\begin{DoxyParamCaption}\item[{const TOther\+Type \&}]{p\+\_\+x,  }\item[{const TOther\+Type \&}]{p\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the vector with two values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+x} & The value to be used for the x-\/coordinate. \\
+\hline
+{\em p\+\_\+y} & The value to be used for the y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structspk_1_1IVector2_a4c3925ad849ad4d9b1bdba9a8c0d879c}\label{structspk_1_1IVector2_a4c3925ad849ad4d9b1bdba9a8c0d879c}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!angle@{angle}}
+\index{angle@{angle}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{angle()}{angle()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+float \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+center = {\ttfamily \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$~TType~$>$(0,~0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the angle between this vector and another vector, with respect to a center vector. 
+
+This method calculates the angle in degrees between this vector and another vector, with respect to a center vector. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to compute the angle to. \\
+\hline
+{\em p\+\_\+center} & The center \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object. Defaults to a zero vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle in degrees between this vector and the other vector, with respect to the center vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_ac22c9a8609ce9b7f2215eff7c120ed0c}\label{structspk_1_1IVector2_ac22c9a8609ce9b7f2215eff7c120ed0c}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!ceiling@{ceiling}}
+\index{ceiling@{ceiling}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{ceiling()}{ceiling()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::ceiling (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Rounds up the coordinates of a vector. 
+
+This method rounds up the coordinates of a given \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+vector} & The vector to be rounded up. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector with rounded up coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a4d5cc1aceeca9b90fcecf6d6fe49520d}\label{structspk_1_1IVector2_a4d5cc1aceeca9b90fcecf6d6fe49520d}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!cross@{cross}}
+\index{cross@{cross}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other = {\ttfamily \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$~TType~$>$(0,~0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs the 2D cross product with another vector. 
+
+This method calculates the 2D cross product of this vector with another vector. The result is a new vector. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to compute the cross product with. Defaults to a zero vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cross product of this vector and the other vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a6ab6d332aa26f3da116169b39014f113}\label{structspk_1_1IVector2_a6ab6d332aa26f3da116169b39014f113}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!crossZ@{crossZ}}
+\index{crossZ@{crossZ}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{crossZ()}{crossZ()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+float \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::crossZ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the z-\/component of the cross product with another vector. 
+
+This method calculates the z-\/component of the 2D cross product of this vector with another vector. The result is a scalar. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to compute the cross product with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The z-\/component of the cross product of this vector and the other vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_abf3cb20ecff4c986f8a7d602e89623a2}\label{structspk_1_1IVector2_abf3cb20ecff4c986f8a7d602e89623a2}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!distance@{distance}}
+\index{distance@{distance}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+float \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the Euclidean distance between this vector and another vector. 
+
+This method calculates the Euclidean distance (or L2 distance) between this vector and another vector. The Euclidean distance is the square root of the sum of the squares of differences in each coordinate. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to compute the distance to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Euclidean distance between this vector and the other vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a5b615184fb3c906955819e01958102bc}\label{structspk_1_1IVector2_a5b615184fb3c906955819e01958102bc}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!dot@{dot}}
+\index{dot@{dot}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+float \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+center = {\ttfamily \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$~TType~$>$(0,~0)} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs the dot product with another vector, with respect to a center vector. 
+
+This method calculates the dot product of this vector with another vector, with respect to a center vector. The result is a scalar. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the other vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to compute the dot product with. \\
+\hline
+{\em p\+\_\+center} & The center \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object. Defaults to a zero vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of this vector and the other vector, with respect to the center vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_af58b4937f57ec150690b653144e627f2}\label{structspk_1_1IVector2_af58b4937f57ec150690b653144e627f2}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!floor@{floor}}
+\index{floor@{floor}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{floor()}{floor()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::floor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Rounds down the coordinates of a vector. 
+
+This method rounds down the coordinates of a given \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+vector} & The vector to be rounded down. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector with rounded down coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a94bb60fe03d90225da1337147ac4bb72}\label{structspk_1_1IVector2_a94bb60fe03d90225da1337147ac4bb72}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!invert@{invert}}
+\index{invert@{invert}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::invert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inverts this vector. 
+
+This method inverts this vector by multiplying each coordinate by -\/1. The result is a new vector pointing in the opposite direction. \begin{DoxyReturn}{Returns}
+The inverted vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a34fd8293e2ff4b4bfa398dd70d158081}\label{structspk_1_1IVector2_a34fd8293e2ff4b4bfa398dd70d158081}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!isInsideRectangle@{isInsideRectangle}}
+\index{isInsideRectangle@{isInsideRectangle}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{isInsideRectangle()}{isInsideRectangle()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::is\+Inside\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+point,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+cornerA,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+cornerB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks if a point is inside a rectangle defined by two corner points. 
+
+This method checks if a given point (as an \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object) is inside a rectangle defined by two corner points (as \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects). 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+point} & The point to be checked. \\
+\hline
+{\em p\+\_\+cornerA} & The first corner point of the rectangle. \\
+\hline
+{\em p\+\_\+cornerB} & The second corner point of the rectangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside the rectangle, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_ae564274f20ad50bb14dc2d34806cdec4}\label{structspk_1_1IVector2_ae564274f20ad50bb14dc2d34806cdec4}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!lerp@{lerp}}
+\index{lerp@{lerp}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::lerp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+starting\+Point,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+ending\+Point,  }\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Interpolates linearly between two points. 
+
+This method performs a linear interpolation between two points, creating a smooth transition from the starting point to the ending point. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+starting\+Point} & The starting point for the interpolation. \\
+\hline
+{\em p\+\_\+ending\+Point} & The ending point for the interpolation. \\
+\hline
+{\em t} & The interpolation parameter, ranging from 0 (start point) to 1 (end point). For values outside this range, the function extrapolates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolated vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a452209253a7a42351fc09951297f7d4d}\label{structspk_1_1IVector2_a452209253a7a42351fc09951297f7d4d}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!max@{max}}
+\index{max@{max}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::max (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+min,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the vector with the maximum coordinates. 
+
+This method calculates the \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object with the maximum coordinates from two given vectors. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & The first vector. \\
+\hline
+{\em p\+\_\+max} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector with the maximum coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_ae64ebb9cf02e5bbf329ea31d35e29841}\label{structspk_1_1IVector2_ae64ebb9cf02e5bbf329ea31d35e29841}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!min@{min}}
+\index{min@{min}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::min (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+min,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the vector with the minimum coordinates. 
+
+This method calculates the \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object with the minimum coordinates from two given vectors. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+min} & The first vector. \\
+\hline
+{\em p\+\_\+max} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector with the minimum coordinates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_aa0d0c755988c4ce9ec8e86e1744d997e}\label{structspk_1_1IVector2_aa0d0c755988c4ce9ec8e86e1744d997e}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!norm@{norm}}
+\index{norm@{norm}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+float \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the norm (or length) of this vector. 
+
+This method calculates the Euclidean norm (also known as the L2 norm) of this vector, which is the square root of the sum of the squares of the coordinates. \begin{DoxyReturn}{Returns}
+The norm of the vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a6bc80581ee0fb7ce5f10b751b85fa0cb}\label{structspk_1_1IVector2_a6bc80581ee0fb7ce5f10b751b85fa0cb}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!normalize@{normalize}}
+\index{normalize@{normalize}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$float$>$ \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalizes this vector. 
+
+This method normalizes this vector by dividing each coordinate by the norm of the vector. The resulting vector has a norm of 1. If the norm of the vector is zero, a runtime error is thrown. \begin{DoxyReturn}{Returns}
+The normalized vector. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the norm of the vector is zero. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{structspk_1_1IVector2_a4960cc3b4ade5cfd48cd0b78281d179a}\label{structspk_1_1IVector2_a4960cc3b4ade5cfd48cd0b78281d179a}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator IVector2$<$ TOtherType $>$@{operator IVector2$<$ TOtherType $>$}}
+\index{operator IVector2$<$ TOtherType $>$@{operator IVector2$<$ TOtherType $>$}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator IVector2$<$ TOtherType $>$()}{operator IVector2< TOtherType >()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Type-\/casting operator. 
+
+Allows an instance of the class to be type-\/casted to an instance of \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} of another type. \begin{DoxyReturn}{Returns}
+An instance of \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} of the new type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a8a7d7e368595e4a4db1580995d7df6f6}\label{structspk_1_1IVector2_a8a7d7e368595e4a4db1580995d7df6f6}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{delta }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of != operator. 
+
+This operator is used to compare if two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects are not equal. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects are not equal, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a409c7ef14a15f0e7bee9e781ea3f029c}\label{structspk_1_1IVector2_a409c7ef14a15f0e7bee9e781ea3f029c}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$TType$>$ \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $\ast$ operator. 
+
+This operator is used to multiply two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a0609e1b115b35f3293a19e9f1b3aa91c}\label{structspk_1_1IVector2_a0609e1b115b35f3293a19e9f1b3aa91c}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+void \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $\ast$= operator. 
+
+This operator is used to multiply this object by another \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} and assign the result to this object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to multiply with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structspk_1_1IVector2_a9d6df11d0dea89825de285227208b4e8}\label{structspk_1_1IVector2_a9d6df11d0dea89825de285227208b4e8}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$TType$>$ \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of + operator. 
+
+This operator is used to add two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a46f20fbffbe8c392bf857f84f6175c33}\label{structspk_1_1IVector2_a46f20fbffbe8c392bf857f84f6175c33}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+void \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of += operator. 
+
+This operator is used to add another \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to this object and assign the result to this object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structspk_1_1IVector2_a93181e2a39090202e764fe87e5a6d1c5}\label{structspk_1_1IVector2_a93181e2a39090202e764fe87e5a6d1c5}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$TType$>$ \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of -\/ operator. 
+
+This operator is used to subtract two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a96c33ee627ed1700aff6627261a074ac}\label{structspk_1_1IVector2_a96c33ee627ed1700aff6627261a074ac}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+void \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of -\/= operator. 
+
+This operator is used to subtract another \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} from this object and assign the result to this object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to subtract. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structspk_1_1IVector2_a7d8fac9e93e024514717ef2594724aec}\label{structspk_1_1IVector2_a7d8fac9e93e024514717ef2594724aec}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$TType$>$ \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of / operator. 
+
+This operator is used to divide two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to divide by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if an attempt is made to divide by zero. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{structspk_1_1IVector2_a8158dcf13f51999650b00e83c36be525}\label{structspk_1_1IVector2_a8158dcf13f51999650b00e83c36be525}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+void \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of /= operator. 
+
+This operator is used to divide this object by another \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} and assign the result to this object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to divide by. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if an attempt is made to divide by zero. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{structspk_1_1IVector2_a50ee09f391a89938f95501f6f830818d}\label{structspk_1_1IVector2_a50ee09f391a89938f95501f6f830818d}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $<$ operator. 
+
+This operator is used to compare if one \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is less than another. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is less than the other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_ae1604ed3d5d9945e9183396dc976d906}\label{structspk_1_1IVector2_ae1604ed3d5d9945e9183396dc976d906}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $<$= operator. 
+
+This operator is used to compare if one \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is less than or equal to another. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is less than or equal to the other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a19a45be30c1cb18600add47dddd15ce1}\label{structspk_1_1IVector2_a19a45be30c1cb18600add47dddd15ce1}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{delta }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of == operator. 
+
+This operator is used to compare if two \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects are equal. 
+\begin{DoxyParams}{Parameters}
+{\em delta} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} objects are equal, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_ab1b6a3babc24fbb384fde2327590f4ef}\label{structspk_1_1IVector2_ab1b6a3babc24fbb384fde2327590f4ef}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $>$ operator. 
+
+This operator is used to compare if one \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is greater than another. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is greater than the other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_acd97e47a3bfd966a412f9520c98748d1}\label{structspk_1_1IVector2_acd97e47a3bfd966a412f9520c98748d1}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+bool \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload of $>$= operator. 
+
+This operator is used to compare if one \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is greater than or equal to another. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The other \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object is greater than or equal to the other, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a2a657d838bdfcbb18dd0309977d34d5b}\label{structspk_1_1IVector2_a2a657d838bdfcbb18dd0309977d34d5b}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!rotate@{rotate}}
+\index{rotate@{rotate}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename TOther\+Type $>$ \\
+\mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::rotate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TOther\+Type $>$ \&}]{p\+\_\+center,  }\item[{const float \&}]{p\+\_\+angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates this vector around a given center point. 
+
+This method rotates this vector around a given center point by a specified angle. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TOther\+Type} & The type of the center vector. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+center} & The \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object that serves as the rotation center point. \\
+\hline
+{\em p\+\_\+angle} & The angle in degrees by which to rotate the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotated vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1IVector2_a173f7d72b11d82a87db01e6a6dfe625e}\label{structspk_1_1IVector2_a173f7d72b11d82a87db01e6a6dfe625e}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!round@{round}}
+\index{round@{round}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{round()}{round()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+static \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+IVector2}}$<$ TType $>$\+::round (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Rounds the coordinates of a vector to the nearest integer. 
+
+This method rounds the coordinates of a given \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to the nearest integer. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+vector} & The vector to be rounded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The vector with rounded coordinates. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structspk_1_1IVector2_a0ad00eba4b802fae1acede9ef72d21bd}\label{structspk_1_1IVector2_a0ad00eba4b802fae1acede9ef72d21bd}} 
+\index{spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spk::IVector2$<$ TType $>$@{spk::IVector2$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+std\+::wostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}}$<$ TType $>$ \&}]{p\+\_\+self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overload of $<$$<$ operator for output stream. 
+
+This operator is used to output the content of an \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object. 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream. \\
+\hline
+{\em p\+\_\+self} & The \mbox{\hyperlink{structspk_1_1IVector2}{IVector2}} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/math/spk\+\_\+vector2.\+hpp\end{DoxyCompactItemize}

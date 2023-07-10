@@ -2,16 +2,16 @@
 
 namespace spk
 {
-	void AbstractApplication::addJob(const std::wstring &p_WorkerName, const AbstractApplication::Job& p_job)
+	ContractProvider::Contract AbstractApplication::addJob(const std::wstring &p_WorkerName, const AbstractApplication::Job& p_job)
 	{
 		if (_workers.find(p_WorkerName) == _workers.end())
 			_workers[p_WorkerName] = new spk::PersistentWorker(p_WorkerName);
-		_workers[p_WorkerName]->addJob(p_job);
+		return (std::move(_workers[p_WorkerName]->addJob(p_job)));
 	}
 
-	void AbstractApplication::addJob(const AbstractApplication::Job& p_job)
+	ContractProvider::Contract AbstractApplication::addJob(const AbstractApplication::Job& p_job)
 	{
-		_jobs.push_back(p_job);
+		return (std::move(subscribe(_jobs, p_job)));
 	}
 
 	AbstractApplication::AbstractApplication() : 
@@ -36,6 +36,7 @@ namespace spk
 
 		for (auto &worker : _workers)
 			worker.second->start();
+		spk::cout.setPrefix(L"Renderer");
 		while (_isRunning)
 			for (auto &job : _jobs)
 				job();

@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="sparkle_8hpp" kind="file" language="C++">
+    <compoundname>sparkle.hpp</compoundname>
+    <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
+    <includes refid="spk__vector3_8hpp" local="yes">math/spk_vector3.hpp</includes>
+    <includes refid="spk__random__generator_8hpp" local="yes">math/spk_random_generator.hpp</includes>
+    <includes refid="spk__perlin_8hpp" local="yes">math/spk_perlin.hpp</includes>
+    <includes refid="spk__data__buffer_8hpp" local="yes">data_structure/spk_data_buffer.hpp</includes>
+    <includes refid="spk__pool_8hpp" local="yes">data_structure/spk_pool.hpp</includes>
+    <includes refid="spk__profiler_8hpp" local="yes">debug/spk_profiler.hpp</includes>
+    <includes refid="spk__singleton_8hpp" local="yes">design_pattern/spk_singleton.hpp</includes>
+    <includes refid="spk__inherence__object_8hpp" local="yes">design_pattern/spk_inherence_object.hpp</includes>
+    <includes refid="spk__contract__provider_8hpp" local="yes">design_pattern/spk_contract_provider.hpp</includes>
+    <includes refid="spk__observer_8hpp" local="yes">design_pattern/spk_observer.hpp</includes>
+    <includes refid="spk__stated__object_8hpp" local="yes">design_pattern/spk_stated_object.hpp</includes>
+    <includes refid="spk__activable__object_8hpp" local="yes">design_pattern/spk_activable_object.hpp</includes>
+    <includes refid="spk__activity_8hpp" local="yes">design_pattern/spk_activity.hpp</includes>
+    <includes refid="spk__activity__scheduler_8hpp" local="yes">design_pattern/spk_activity_scheduler.hpp</includes>
+    <includes refid="spk__value_8hpp" local="yes">design_pattern/spk_value.hpp</includes>
+    <includes refid="spk__context__manager_8hpp" local="yes">design_pattern/spk_context_manager.hpp</includes>
+    <includes refid="spk__memento_8hpp" local="yes">design_pattern/spk_memento.hpp</includes>
+    <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
+    <includes refid="spk__promise_8hpp" local="yes">threading/spk_promise.hpp</includes>
+    <includes refid="spk__thread_8hpp" local="yes">threading/spk_thread.hpp</includes>
+    <includes refid="spk__thread__safe__queue_8hpp" local="yes">threading/spk_thread_safe_queue.hpp</includes>
+    <includes refid="spk__worker__pool_8hpp" local="yes">threading/spk_worker_pool.hpp</includes>
+    <includes refid="spk__persistent__worker_8hpp" local="yes">threading/spk_persistent_worker.hpp</includes>
+    <includes refid="spk__chronometer_8hpp" local="yes">system/spk_chronometer.hpp</includes>
+    <includes refid="spk__timer_8hpp" local="yes">system/spk_timer.hpp</includes>
+    <includes refid="spk__time__metrics_8hpp" local="yes">system/spk_time_metrics.hpp</includes>
+    <includes refid="spk__abstract__application_8hpp" local="yes">application/spk_abstract_application.hpp</includes>
+    <includes refid="spk__window_8hpp" local="yes">graphics/spk_window.hpp</includes>
+    <includes refid="spk__API__module_8hpp" local="yes">application/modules/spk_API_module.hpp</includes>
+    <includes refid="spk__time__module_8hpp" local="yes">application/modules/spk_time_module.hpp</includes>
+    <includes refid="spk__window__module_8hpp" local="yes">application/modules/spk_window_module.hpp</includes>
+    <includes refid="spk__mouse__module_8hpp" local="yes">application/modules/spk_mouse_module.hpp</includes>
+    <includes refid="spk__keyboard__module_8hpp" local="yes">application/modules/spk_keyboard_module.hpp</includes>
+    <includes refid="spk__widget__module_8hpp" local="yes">application/modules/spk_widget_module.hpp</includes>
+    <includes refid="spk__abstract__widget_8hpp" local="yes">widget/spk_abstract_widget.hpp</includes>
+    <includes refid="spk__widget__atlas_8hpp" local="yes">widget/spk_widget_atlas.hpp</includes>
+    <includes refid="spk__application_8hpp" local="yes">application/spk_application.hpp</includes>
+    <includedby refid="playground_8hpp" local="yes">playground/includes/playground.hpp</includedby>
+    <incdepgraph>
+      <node id="40">
+        <label>design_pattern/spk_activable_object.hpp</label>
+        <link refid="spk__activable__object_8hpp_source"/>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>design_pattern/spk_contract_provider.hpp</label>
+        <link refid="spk__contract__provider_8hpp_source"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>functional</label>
+      </node>
+      <node id="54">
+        <label>application/modules/spk_API_module.hpp</label>
+        <link refid="spk__API__module_8hpp_source"/>
+      </node>
+      <node id="22">
+        <label>debug/spk_profiler.hpp</label>
+        <link refid="spk__profiler_8hpp_source"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>application/modules/spk_widget_module.hpp</label>
+        <link refid="spk__widget__module_8hpp_source"/>
+      </node>
+      <node id="42">
+        <label>design_pattern/spk_activity_scheduler.hpp</label>
+        <link refid="spk__activity__scheduler_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>widget/spk_abstract_widget.hpp</label>
+        <link refid="spk__abstract__widget_8hpp_source"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>cstdint</label>
+      </node>
+      <node id="50">
+        <label>threading/spk_worker_pool.hpp</label>
+        <link refid="spk__worker__pool_8hpp_source"/>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>application/modules/spk_keyboard_module.hpp</label>
+        <link refid="spk__keyboard__module_8hpp_source"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>graphics/spk_window.hpp</label>
+        <link refid="spk__window_8hpp_source"/>
+      </node>
+      <node id="19">
+        <label>miscellaneous/spk_is_container.hpp</label>
+        <link refid="spk__is__container_8hpp_source"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>application/modules/spk_window_module.hpp</label>
+        <link refid="spk__window__module_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>application/spk_application.hpp</label>
+        <link refid="spk__application_8hpp_source"/>
+      </node>
+      <node id="45">
+        <label>design_pattern/spk_memento.hpp</label>
+        <link refid="spk__memento_8hpp_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cmath</label>
+      </node>
+      <node id="56">
+        <label>application/modules/spk_mouse_module.hpp</label>
+        <link refid="spk__mouse__module_8hpp_source"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdexcept</label>
+      </node>
+      <node id="43">
+        <label>design_pattern/spk_value.hpp</label>
+        <link refid="spk__value_8hpp_source"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>string</label>
+      </node>
+      <node id="46">
+        <label>threading/spk_promise.hpp</label>
+        <link refid="spk__promise_8hpp_source"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>map</label>
+      </node>
+      <node id="28">
+        <label>application/modules/spk_time_module.hpp</label>
+        <link refid="spk__time__module_8hpp_source"/>
+      </node>
+      <node id="41">
+        <label>design_pattern/spk_activity.hpp</label>
+        <link refid="spk__activity_8hpp_source"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp_source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>random</label>
+      </node>
+      <node id="49">
+        <label>condition_variable</label>
+      </node>
+      <node id="58">
+        <label>spk_system_define.hpp</label>
+        <link refid="spk__system__define_8hpp_source"/>
+      </node>
+      <node id="33">
+        <label>future</label>
+      </node>
+      <node id="47">
+        <label>optional</label>
+      </node>
+      <node id="44">
+        <label>design_pattern/spk_context_manager.hpp</label>
+        <link refid="spk__context__manager_8hpp_source"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>vector</label>
+      </node>
+      <node id="38">
+        <label>design_pattern/spk_observer.hpp</label>
+        <link refid="spk__observer_8hpp_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>system/spk_timer.hpp</label>
+        <link refid="spk__timer_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="25">
+        <label>system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>data_structure/spk_pool.hpp</label>
+        <link refid="spk__pool_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>iostream/spk_iostream.hpp</label>
+        <link refid="spk__iostream_8hpp_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>threading/spk_thread_safe_queue.hpp</label>
+        <link refid="spk__thread__safe__queue_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>data_structure/spk_data_buffer.hpp</label>
+        <link refid="spk__data__buffer_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>application/spk_abstract_application.hpp</label>
+        <link refid="spk__abstract__application_8hpp_source"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>system/spk_chronometer.hpp</label>
+        <link refid="spk__chronometer_8hpp_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="29">
+        <label>threading/spk_persistent_worker.hpp</label>
+        <link refid="spk__persistent__worker_8hpp_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>cstddef</label>
+      </node>
+      <node id="39">
+        <label>design_pattern/spk_stated_object.hpp</label>
+        <link refid="spk__stated__object_8hpp_source"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>deque</label>
+      </node>
+      <node id="8">
+        <label>math/spk_random_generator.hpp</label>
+        <link refid="spk__random__generator_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>mutex</label>
+      </node>
+      <node id="31">
+        <label>thread</label>
+      </node>
+      <node id="37">
+        <label>design_pattern/spk_inherence_object.hpp</label>
+        <link refid="spk__inherence__object_8hpp_source"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>type_traits</label>
+      </node>
+      <node id="63">
+        <label>set</label>
+      </node>
+      <node id="30">
+        <label>threading/spk_thread.hpp</label>
+        <link refid="spk__thread_8hpp_source"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>math/spk_vector2.hpp</label>
+        <link refid="spk__vector2_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>algorithm</label>
+      </node>
+      <node id="62">
+        <label>widget/spk_widget_atlas.hpp</label>
+        <link refid="spk__widget__atlas_8hpp_source"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>cstring</label>
+      </node>
+      <node id="6">
+        <label>math/spk_vector3.hpp</label>
+        <link refid="spk__vector3_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>memory</label>
+      </node>
+      <node id="10">
+        <label>math/spk_perlin.hpp</label>
+        <link refid="spk__perlin_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sparkle_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" prot="public" static="no">
+        <name>DEBUG_LINE</name>
+        <param></param>
+        <initializer>spk::cout &lt;&lt; __FUNCTION__ &lt;&lt; &quot;::&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/sparkle.hpp" line="27" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_vector2.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_vector3.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_random_generator.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_perlin.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;data_structure/spk_data_buffer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;data_structure/spk_pool.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;debug/spk_profiler.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_singleton.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_inherence_object.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_contract_provider.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_observer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_stated_object.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_activable_object.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_activity.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_activity_scheduler.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_value.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_context_manager.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_memento.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;iostream/spk_iostream.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;threading/spk_promise.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;threading/spk_thread.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;threading/spk_thread_safe_queue.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;threading/spk_worker_pool.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;threading/spk_persistent_worker.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;system/spk_chronometer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;system/spk_timer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;system/spk_time_metrics.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/spk_abstract_application.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;graphics/spk_window.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_API_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_time_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_window_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_mouse_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_keyboard_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_widget_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;widget/spk_abstract_widget.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;widget/spk_widget_atlas.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/spk_application.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="includes/sparkle.hpp"/>
+  </compounddef>
+</doxygen>

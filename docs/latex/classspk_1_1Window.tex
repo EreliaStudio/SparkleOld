@@ -1,0 +1,98 @@
+\hypertarget{classspk_1_1Window}{}\doxysection{spk\+::Window Class Reference}
+\label{classspk_1_1Window}\index{spk::Window@{spk::Window}}
+
+
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for window.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+window.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classspk_1_1Window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classspk_1_1Window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classspk_1_1Window_a3576ce767e110b73023d76f9a436ff1e}{set\+Geometry}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Sets the window geometry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Window_a5d8a542bf4aacdc0f49483c8dcbe8d22}{resize}} (const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resizes the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Window_ad04c6c9d3a12e8792eddf8a8a733bc70}\label{classspk_1_1Window_ad04c6c9d3a12e8792eddf8a8a733bc70}} 
+void \mbox{\hyperlink{classspk_1_1Window_ad04c6c9d3a12e8792eddf8a8a733bc70}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1Window_a43fad77a06224e751ef80ab7d0093282}\label{classspk_1_1Window_a43fad77a06224e751ef80ab7d0093282}} 
+void \mbox{\hyperlink{classspk_1_1Window_a43fad77a06224e751ef80ab7d0093282}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Window_ab0c04c85c44c58fbf9300b04bee7a60f}\label{classspk_1_1Window_ab0c04c85c44c58fbf9300b04bee7a60f}} 
+class {\bfseries spk\+::\+Singleton$<$ Window $>$}
+\item 
+\mbox{\Hypertarget{classspk_1_1Window_a23d524ffc9300e9ba9fc37cf7d98284b}\label{classspk_1_1Window_a23d524ffc9300e9ba9fc37cf7d98284b}} 
+class {\bfseries APIModule}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for window. 
+
+Represents the window of the application, providing functionality to modify its geometry, render content, and clear its content. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Window_a5d8a542bf4aacdc0f49483c8dcbe8d22}\label{classspk_1_1Window_a5d8a542bf4aacdc0f49483c8dcbe8d22}} 
+\index{spk::Window@{spk::Window}!resize@{resize}}
+\index{resize@{resize}!spk::Window@{spk::Window}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void spk\+::\+Window\+::resize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resizes the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & The size to set for the window. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Window_a3576ce767e110b73023d76f9a436ff1e}\label{classspk_1_1Window_a3576ce767e110b73023d76f9a436ff1e}} 
+\index{spk::Window@{spk::Window}!setGeometry@{setGeometry}}
+\index{setGeometry@{setGeometry}!spk::Window@{spk::Window}}
+\doxysubsubsection{\texorpdfstring{setGeometry()}{setGeometry()}}
+{\footnotesize\ttfamily void spk\+::\+Window\+::set\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Sets the window geometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & The size to set for the window. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/graphics/linux/spk\+\_\+window.\+hpp\item 
+src/graphics/linux/spk\+\_\+window.\+cpp\end{DoxyCompactItemize}

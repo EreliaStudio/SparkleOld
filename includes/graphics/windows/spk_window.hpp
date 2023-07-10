@@ -6,36 +6,100 @@
 
 namespace spk
 {
+    /**
+     * @class Window
+     * @brief Singleton class for window.
+     *
+     * Represents the window of the application, providing functionality to modify its geometry, render content, and clear its content.
+     */
 	class Window : public spk::Singleton<Window>
 	{
 		friend class spk::Singleton<Window>;
 		friend class APIModule;
 
 	private:
-		spk::Vector2Int _size;
+        
+		spk::Vector2Int _size;///< Window size.
+		wchar_t* _convertedTitle;///< Converted title for window.
+		HINSTANCE _hInstance;///< Instance handle.
+		HWND _windowFrame;///< Window handle.
+		RECT _windowSize;///< Rectangle structure defining the window size.
+		WNDCLASS _windowClass;///< Window class structure.
+		DWORD _windowStyle;///< Window style.
+		DWORD _windowExStyle;///< Window extended style.
 
-		wchar_t* _convertedTitle;
-		HINSTANCE _hInstance;
-		HWND _windowFrame;
-		RECT _windowSize;
-		WNDCLASS _windowClass;
-		DWORD _windowStyle;
-		DWORD _windowExStyle;
-
+        /**
+         * @brief Converts the title to a wchar_t.
+         *
+         * @param p_title The title of the window.
+         */
 		void _convertTitle(const std::wstring& p_title);
+
+        /**
+         * @brief Creates a ghost instance.
+         */
 		void _createGhostInstance();
+
+        /**
+         * @brief Registers the window class.
+         */
 		void _registerWindowClass();
+
+        /**
+         * @brief Creates the window frame.
+         *
+         * @param p_APIModule The API module.
+         * @param p_size The size of the window.
+         */
 		void _createWindowFrame(void* p_APIModule, const spk::Vector2Int& p_size);
+
+        /**
+         * @brief Composes OpenGL context.
+         */
 		void _composeOpenGLContext();
+
+        /**
+         * @brief Activates the window.
+         */
 		void _activateWindow();
 
+        /**
+         * @brief Constructs the Window object.
+         *
+         * @param p_title The title of the window.
+         * @param p_size The size of the window.
+         * @param p_ptr An optional pointer (default is nullptr).
+         */
 		Window(const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_ptr = nullptr);
 
 	public:
+        /**
+         * @brief Destructs the Window object.
+         */
 		~Window();
+
+        /**
+         * @brief Sets the window geometry.
+         *
+         * @param p_size The size to set for the window.
+         */
 		void setGeometry(const spk::Vector2Int& p_size);
+
+        /**
+         * @brief Resizes the window.
+         *
+         * @param p_size The size to set for the window.
+         */
 		void resize(const spk::Vector2Int& p_size);
+
+        /**
+         * @brief Renders the window.
+         */
 		void render();
+
+        /**
+         * @brief Clears the window.
+         */
 		void clear();
 	};
 }

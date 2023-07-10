@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__activity_8hpp" kind="file" language="C++">
+    <compoundname>spk_activity.hpp</compoundname>
+    <includes local="no">functional</includes>
+    <includedby refid="spk__activity__scheduler_8hpp" local="yes">includes/design_pattern/spk_activity_scheduler.hpp</includedby>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__activity_8cpp" local="yes">src/design_pattern/spk_activity.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>functional</label>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_activity.hpp</label>
+        <link refid="spk__activity_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>includes/design_pattern/spk_activity_scheduler.hpp</label>
+        <link refid="spk__activity__scheduler_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_activity.hpp</label>
+        <link refid="spk__activity_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classspk_1_1Activity" prot="public">spk::Activity</innerclass>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="classspk_1_1Activity" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1Activity" kindref="compound">Activity</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ActivityManager;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2" kindref="member">Stopped</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0" kindref="member">OnEnter</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09" kindref="member">Running</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144" kindref="member">OnExit</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d" kindref="member">Complete</ref><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref><sp/><ref refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" kindref="member">_internalWorkingState</ref>;<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" kindref="member">_update</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" kindref="member">_moveNextStep</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" kindref="member">_moveNextStepAndExecute</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" kindref="member">_start</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65" refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" kindref="member">_onEnter</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" kindref="member">_execute</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" kindref="member">_onExit</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" kindref="member">Activity</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref>&amp;<sp/><ref refid="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" kindref="member">state</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" kindref="member">isCompleted</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="includes/design_pattern/spk_activity.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,75 @@
+\hypertarget{classspk_1_1WindowModule}{}\doxysection{spk\+::Window\+Module Class Reference}
+\label{classspk_1_1WindowModule}\index{spk::WindowModule@{spk::WindowModule}}
+
+
+Class for managing the application window.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+window\+\_\+module.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Window\+Module\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classspk_1_1WindowModule__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Window\+Module\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classspk_1_1WindowModule__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1WindowModule_a9a94140d19b729c855dcd8431de38bac}{Window\+Module}} (\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&p\+\_\+queue, const std\+::wstring \&p\+\_\+title, const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&p\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classspk_1_1WindowModule}{Window\+Module}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1WindowModule_a0ac729d572ab4a20f60c346c19f1c460}\label{classspk_1_1WindowModule_a0ac729d572ab4a20f60c346c19f1c460}} 
+void \mbox{\hyperlink{classspk_1_1WindowModule_a0ac729d572ab4a20f60c346c19f1c460}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1WindowModule_aa56d1756ecd104726d1e2e87a189815b}\label{classspk_1_1WindowModule_aa56d1756ecd104726d1e2e87a189815b}} 
+void \mbox{\hyperlink{classspk_1_1WindowModule_aa56d1756ecd104726d1e2e87a189815b}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing the application window. 
+
+This class manages the application window, including handling system messages related to the window, rendering the window, and clearing the window. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1WindowModule_a9a94140d19b729c855dcd8431de38bac}\label{classspk_1_1WindowModule_a9a94140d19b729c855dcd8431de38bac}} 
+\index{spk::WindowModule@{spk::WindowModule}!WindowModule@{WindowModule}}
+\index{WindowModule@{WindowModule}!spk::WindowModule@{spk::WindowModule}}
+\doxysubsubsection{\texorpdfstring{WindowModule()}{WindowModule()}}
+{\footnotesize\ttfamily spk\+::\+Window\+Module\+::\+Window\+Module (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \&}]{p\+\_\+queue,  }\item[{const std\+::wstring \&}]{p\+\_\+title,  }\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{spk\+::\+Vector2\+Int}} \&}]{p\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Constructs the \mbox{\hyperlink{classspk_1_1WindowModule}{Window\+Module}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+queue} & The thread-\/safe queue for window system messages. \\
+\hline
+{\em p\+\_\+title} & The title of the window. \\
+\hline
+{\em p\+\_\+size} & The size of the window. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/application/modules/linux/spk\+\_\+window\+\_\+module.\+hpp\item 
+src/application/modules/linux/spk\+\_\+window\+\_\+module.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,179 @@
+\hypertarget{classspk_1_1Promise}{}\doxysection{spk\+::Promise$<$ TType $>$ Class Template Reference}
+\label{classspk_1_1Promise}\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+
+
+Class for providing a promise with a value.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+promise.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Promise$<$ TType $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classspk_1_1Promise__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Promise$<$ TType $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classspk_1_1Promise__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1Promise_a1f633fca0dabe4e19f99d1bb104498e6}{Promise}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Promise}{Promise}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Promise_ad4dbd5693e82c5a821af97fc9e86c20b}{Promise}} (const \mbox{\hyperlink{classspk_1_1Promise}{Promise}} \&p\+\_\+other)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Promise}{Promise}} \& \mbox{\hyperlink{classspk_1_1Promise_a0560e9b5ba7802bb42716220619d0d89}{operator=}} (const \mbox{\hyperlink{classspk_1_1Promise}{Promise}} \&p\+\_\+other)=delete
+\begin{DoxyCompactList}\small\item\em Assignment operator is deleted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1Promise_ac55e4af8d86ac9d7b8fc0cfb8926f0f0}{subscribe}} (const \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} \&p\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Subscribe to the promise and receive the value when available. \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{classspk_1_1Promise_aaf9ad2cdc422c2a4c211ce921d50df36}{realised}} () const
+\begin{DoxyCompactList}\small\item\em Check if the promise has been fulfilled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}{set\+Value}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value of the promise. \end{DoxyCompactList}\item 
+constexpr const TType \& \mbox{\hyperlink{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}{value}} ()
+\begin{DoxyCompactList}\small\item\em Get the value of the promise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Promise$<$ TType $>$}
+
+Class for providing a promise with a value. 
+
+This class provides a promise that can be fulfilled with a value. It allows subscribing to the promise to receive the value when it becomes available.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the value. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Promise_a1f633fca0dabe4e19f99d1bb104498e6}\label{classspk_1_1Promise_a1f633fca0dabe4e19f99d1bb104498e6}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!Promise@{Promise}}
+\index{Promise@{Promise}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{Promise()}{Promise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1Promise}{Promise}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Promise}{Promise}} object. 
+
+This is the default constructor for the \mbox{\hyperlink{classspk_1_1Promise}{Promise}} class. \mbox{\Hypertarget{classspk_1_1Promise_ad4dbd5693e82c5a821af97fc9e86c20b}\label{classspk_1_1Promise_ad4dbd5693e82c5a821af97fc9e86c20b}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!Promise@{Promise}}
+\index{Promise@{Promise}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{Promise()}{Promise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1Promise}{Promise}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Promise}{Promise}}$<$ TType $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Copy constructor is deleted. 
+
+Copying a \mbox{\hyperlink{classspk_1_1Promise}{Promise}} is not allowed to avoid potential issues with the shared state. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Promise_a0560e9b5ba7802bb42716220619d0d89}\label{classspk_1_1Promise_a0560e9b5ba7802bb42716220619d0d89}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Promise}{Promise}}\& \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Promise}{Promise}}$<$ TType $>$ \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Assignment operator is deleted. 
+
+Assigning a \mbox{\hyperlink{classspk_1_1Promise}{Promise}} is not allowed to avoid potential issues with the shared state. \mbox{\Hypertarget{classspk_1_1Promise_aaf9ad2cdc422c2a4c211ce921d50df36}\label{classspk_1_1Promise_aaf9ad2cdc422c2a4c211ce921d50df36}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!realised@{realised}}
+\index{realised@{realised}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{realised()}{realised()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr bool \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::realised (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Check if the promise has been fulfilled. 
+
+This function checks if the promise has been fulfilled and the value is available.
+
+\begin{DoxyReturn}{Returns}
+True if the promise has been fulfilled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}\label{classspk_1_1Promise_a492bc5064aca48fc18294ecead334599}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the value of the promise. 
+
+This function sets the value of the promise. Once the value is set, all the subscribed callbacks will be called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The value to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Promise_ac55e4af8d86ac9d7b8fc0cfb8926f0f0}\label{classspk_1_1Promise_ac55e4af8d86ac9d7b8fc0cfb8926f0f0}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::subscribe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} \&}]{p\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subscribe to the promise and receive the value when available. 
+
+This function allows subscribing to the promise to receive the value when it becomes available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+callback} & The callback function to be called when the value is available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A contract representing the subscription. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}\label{classspk_1_1Promise_af94f17735b511a890a33343ff8d24b66}} 
+\index{spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}!value@{value}}
+\index{value@{value}!spk::Promise$<$ TType $>$@{spk::Promise$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr const TType\& \mbox{\hyperlink{classspk_1_1Promise}{spk\+::\+Promise}}$<$ TType $>$\+::value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the value of the promise. 
+
+This function gets the value of the promise. If the value is not available yet, it will wait for the future to be ready and then return the value.
+
+\begin{DoxyReturn}{Returns}
+The value of the promise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+promise.\+hpp\end{DoxyCompactItemize}

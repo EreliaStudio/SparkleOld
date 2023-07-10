@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724" kind="struct" language="C++" prot="public">
+    <compoundname>spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::true_type</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::true_type</label>
+      </node>
+      <node id="1">
+        <label>spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</label>
+        <link refid="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::true_type</label>
+      </node>
+      <node id="1">
+        <label>spk::IsContainer&lt; T, std::void_t&lt; decltype(std::declval&lt; T &gt;().begin()), decltype(std::declval&lt; T &gt;().end()), typename T::value_type &gt; &gt;</label>
+        <link refid="structspk_1_1IsContainer_3_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01T_01_4_07_091bae1cdb89f7c308b50873cf3c7f724"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/miscellaneous/spk_is_container.hpp" line="29" column="1" bodyfile="includes/miscellaneous/spk_is_container.hpp" bodystart="29" bodyend="29"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

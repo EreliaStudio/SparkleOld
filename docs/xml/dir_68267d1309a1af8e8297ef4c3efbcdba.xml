@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_844f6ab5c2ae79211596f3dcdd81adb7">src/application</innerdir>
+    <innerdir refid="dir_981422f615e1f86fc178e6fbecda1da3">src/data_structure</innerdir>
+    <innerdir refid="dir_44d5bc2300862405dbe586a8cb303c4f">src/debug</innerdir>
+    <innerdir refid="dir_18bfe15d38f9d4b020db717ec3dec0ad">src/design_pattern</innerdir>
+    <innerdir refid="dir_560415a5d2bc4999842279f4fc1debef">src/graphics</innerdir>
+    <innerdir refid="dir_d365e15d984c8d0205117ee0c40d6716">src/input</innerdir>
+    <innerdir refid="dir_e72210afd5269ebe4767cdf8821e9fb6">src/iostream</innerdir>
+    <innerdir refid="dir_ae9a93452e2a84339148a16bcf2eb561">src/math</innerdir>
+    <innerdir refid="dir_d501334aeb1b78ad67cd3c72c37b1e87">src/system</innerdir>
+    <innerdir refid="dir_7e55306ba01a4f64bc8db2780859eb09">src/threading</innerdir>
+    <innerdir refid="dir_c570470bf3e4213fb57699dd2e921b84">src/widget</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

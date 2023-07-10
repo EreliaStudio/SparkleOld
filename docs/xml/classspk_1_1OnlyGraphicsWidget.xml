@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1OnlyGraphicsWidget" kind="class" language="C++" prot="public">
+    <compoundname>spk::OnlyGraphicsWidget</compoundname>
+    <basecompoundref refid="classspk_1_1AbstractWidget" prot="public" virt="non-virtual">spk::AbstractWidget</basecompoundref>
+    <includes refid="spk__abstract__widget_8hpp" local="no">spk_abstract_widget.hpp</includes>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool spk::OnlyGraphicsWidget::_onUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>_onUpdate</name>
+        <reimplements refid="classspk_1_1AbstractWidget_1a6f74b00cddb2bfe3d77128a64b08c77f">_onUpdate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="193" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="193" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool spk::OnlyGraphicsWidget::_update</definition>
+        <argsstring>()</argsstring>
+        <name>_update</name>
+        <reimplements refid="classspk_1_1AbstractWidget_1a751e8c7b4e48a949ec57aeb60d154e03">_update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_abstract_widget.hpp" line="194" column="14" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="194" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for widgets with only graphics. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class extends the <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> class and provides an implementation for widgets with only graphics. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::AbstractWidget</label>
+        <link refid="classspk_1_1AbstractWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>spk::StatedObject&lt; bool &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::InherenceObject&lt; AbstractWidget &gt;</label>
+        <link refid="classspk_1_1InherenceObject"/>
+      </node>
+      <node id="6">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+      <node id="1">
+        <label>spk::OnlyGraphicsWidget</label>
+        <link refid="classspk_1_1OnlyGraphicsWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>spk::ActivableObject</label>
+        <link refid="classspk_1_1ActivableObject"/>
+        <childnode refid="5" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::AbstractWidget</label>
+        <link refid="classspk_1_1AbstractWidget"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>spk::StatedObject&lt; bool &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::InherenceObject&lt; AbstractWidget &gt;</label>
+        <link refid="classspk_1_1InherenceObject"/>
+      </node>
+      <node id="6">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+      <node id="1">
+        <label>spk::OnlyGraphicsWidget</label>
+        <link refid="classspk_1_1OnlyGraphicsWidget"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>spk::ActivableObject</label>
+        <link refid="classspk_1_1ActivableObject"/>
+        <childnode refid="5" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/widget/spk_abstract_widget.hpp" line="190" column="1" bodyfile="includes/widget/spk_abstract_widget.hpp" bodystart="191" bodyend="195"/>
+    <listofallmembers>
+      <member refid="classspk_1_1OnlyGraphicsWidget_1ac48f74aff5787f2c31df6ed3a1c7198d" prot="private" virt="virtual"><scope>spk::OnlyGraphicsWidget</scope><name>_onUpdate</name></member>
+      <member refid="classspk_1_1OnlyGraphicsWidget_1ac13a457d465a26b2b58f08528a42f7b8" prot="private" virt="virtual"><scope>spk::OnlyGraphicsWidget</scope><name>_update</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a02704ad9ce8f817d72fa76b095e53c68" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>AbstractWidget</name></member>
+      <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>ActivableObject</name></member>
+      <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>activate</name></member>
+      <member refid="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addActivationCallback</name></member>
+      <member refid="classspk_1_1InherenceObject_1af21959de7950ed4d656d8cc318fc9712" prot="public" virt="non-virtual" ambiguityscope="InherenceObject&lt; AbstractWidget &gt;::"><scope>spk::OnlyGraphicsWidget</scope><name>addChild</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a439da5239de7fa7980bb697e9e114818" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addChildrenWidget</name></member>
+      <member refid="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addDeactivationCallback</name></member>
+      <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>addStateCallback</name></member>
+      <member refid="classspk_1_1InherenceObject_1a976e2e85b113a15220e094ff9d7afd38" prot="public" virt="non-virtual" ambiguityscope="InherenceObject&lt; AbstractWidget &gt;::"><scope>spk::OnlyGraphicsWidget</scope><name>Callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual" ambiguityscope="spk::ActivableObject::"><scope>spk::OnlyGraphicsWidget</scope><name>Callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>CallbackContainer</name></member>
+      <member refid="classspk_1_1InherenceObject_1a769d0e2ea8e7635c993671ec9b1a494b" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>Child</name></member>
+      <member refid="classspk_1_1InherenceObject_1abb38a23ee0e49f56d6635bc9b08d347d" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>ChildContainer</name></member>
+      <member refid="classspk_1_1InherenceObject_1a76cd1e3335b5775ecf356da909a01b86" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
+      <member refid="classspk_1_1InherenceObject_1adc6706d7b939d2f30763bf2502f0dd19" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>childrens</name></member>
+      <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>deactivate</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a734ec4e5f1759dc493e1df73ae973a38" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>depth</name></member>
+      <member refid="classspk_1_1InherenceObject_1ab17ef56656c9b33064cec33d44d4c7b7" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>InherenceObject</name></member>
+      <member refid="classspk_1_1InherenceObject_1a60b7abb954dcf88b9576e5b55b5f6c64" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>InherenceObject</name></member>
+      <member refid="classspk_1_1ActivableObject_1ab4a73c84beb367d7908aeb402ea0a6e8" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>isActive</name></member>
+      <member refid="classspk_1_1AbstractWidget_1ad1fd1cbebefe93c23a9d1b7b00872a81" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>isPointed</name></member>
+      <member refid="classspk_1_1AbstractWidget_1ab5cdc32c7a1f9a2cda7812182618000d" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>move</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a7606a7000127e6f3a3c5c61d22f17314" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>name</name></member>
+      <member refid="classspk_1_1InherenceObject_1a0f80475dd4e0633e93b2e009b34e6536" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>operator=</name></member>
+      <member refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>Parent</name></member>
+      <member refid="classspk_1_1InherenceObject_1a5207c90ce23896bf23aa55c20d82dcbe" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>parent</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a12a3c901e7b5b707064eafccc6f64115" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>place</name></member>
+      <member refid="classspk_1_1AbstractWidget_1af6762afb291b9fe0497fa8ac619ef0f7" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>rename</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a2059b3aeb3f7ca0290ed70c146a42298" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>resize</name></member>
+      <member refid="classspk_1_1InherenceObject_1a4d1ecc043e2414e9731195021d28a77e" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setBirthCallback</name></member>
+      <member refid="classspk_1_1InherenceObject_1a69d05c5f0a43a7b58ad4e08a9790f23a" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setDeathCallback</name></member>
+      <member refid="classspk_1_1AbstractWidget_1ae20e7261fea3273f275f2662c630ebe8" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setDepth</name></member>
+      <member refid="classspk_1_1AbstractWidget_1a5e428dc19c69b3fa7686df9c7ccf06cf" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setGeometry</name></member>
+      <member refid="classspk_1_1InherenceObject_1ae5c803c43a3eeb83383e4a95245f765e" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setParent</name></member>
+      <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>setState</name></member>
+      <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>state</name></member>
+      <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>StatedObject</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1AbstractWidget_1ae226e66654f9b84a7501c0a97820efc9" prot="public" virt="virtual"><scope>spk::OnlyGraphicsWidget</scope><name>~AbstractWidget</name></member>
+      <member refid="classspk_1_1InherenceObject_1aba5546b2d9a7407fc3aa2cca0461cb7a" prot="public" virt="non-virtual"><scope>spk::OnlyGraphicsWidget</scope><name>~InherenceObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

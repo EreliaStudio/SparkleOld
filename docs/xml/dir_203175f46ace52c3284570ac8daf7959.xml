@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_203175f46ace52c3284570ac8daf7959" kind="dir">
+    <compoundname>includes/application/concrete/linux</compoundname>
+    <innerfile refid="spk__graphical__application_8hpp">spk_graphical_application.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/concrete/linux/"/>
+  </compounddef>
+</doxygen>

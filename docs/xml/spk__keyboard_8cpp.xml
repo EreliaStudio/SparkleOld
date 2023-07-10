@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__keyboard_8cpp" kind="file" language="C++">
+    <compoundname>spk_keyboard.cpp</compoundname>
+    <includes refid="spk__keyboard_8hpp" local="yes">input/spk_keyboard.hpp</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>input/spk_keyboard.hpp</label>
+        <link refid="spk__keyboard_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdexcept</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+      <node id="1">
+        <label>src/input/spk_keyboard.cpp</label>
+        <link refid="spk__keyboard_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="7">
+        <label>iostream/spk_iostream.hpp</label>
+        <link refid="spk__iostream_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>mutex</label>
+      </node>
+      <node id="6">
+        <label>input/spk_input_status.hpp</label>
+        <link refid="spk__input__status_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;input/spk_keyboard.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;Keyboard::Key,<sp/>std::wstring&gt;<sp/>Keyboard::KeyToStringMap<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Backspace,<sp/>L</highlight><highlight class="stringliteral">&quot;Backspace&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Tab,<sp/>L</highlight><highlight class="stringliteral">&quot;Tab&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Clear,<sp/>L</highlight><highlight class="stringliteral">&quot;Clear&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Return,<sp/>L</highlight><highlight class="stringliteral">&quot;Return&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Shift,<sp/>L</highlight><highlight class="stringliteral">&quot;Shift&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Control,<sp/>L</highlight><highlight class="stringliteral">&quot;Control&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Alt,<sp/>L</highlight><highlight class="stringliteral">&quot;Alt&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Pause,<sp/>L</highlight><highlight class="stringliteral">&quot;Pause&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Capslock,<sp/>L</highlight><highlight class="stringliteral">&quot;Capslock&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Escape,<sp/>L</highlight><highlight class="stringliteral">&quot;Escape&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Convert,<sp/>L</highlight><highlight class="stringliteral">&quot;Convert&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Non_convert,<sp/>L</highlight><highlight class="stringliteral">&quot;Non_convert&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Accept,<sp/>L</highlight><highlight class="stringliteral">&quot;Accept&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Mode_change,<sp/>L</highlight><highlight class="stringliteral">&quot;Mode_change&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Space,<sp/>L</highlight><highlight class="stringliteral">&quot;Space&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Prior,<sp/>L</highlight><highlight class="stringliteral">&quot;Prior&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Next,<sp/>L</highlight><highlight class="stringliteral">&quot;Next&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::End,<sp/>L</highlight><highlight class="stringliteral">&quot;End&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Home,<sp/>L</highlight><highlight class="stringliteral">&quot;Home&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftArrow,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftArrow&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::UpArrow,<sp/>L</highlight><highlight class="stringliteral">&quot;UpArrow&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightArrow,<sp/>L</highlight><highlight class="stringliteral">&quot;RightArrow&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::DownArrow,<sp/>L</highlight><highlight class="stringliteral">&quot;DownArrow&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Select,<sp/>L</highlight><highlight class="stringliteral">&quot;Select&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Print,<sp/>L</highlight><highlight class="stringliteral">&quot;Print&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Execute,<sp/>L</highlight><highlight class="stringliteral">&quot;Execute&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Snapshot,<sp/>L</highlight><highlight class="stringliteral">&quot;Snapshot&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Insert,<sp/>L</highlight><highlight class="stringliteral">&quot;Insert&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Delete,<sp/>L</highlight><highlight class="stringliteral">&quot;Delete&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Help,<sp/>L</highlight><highlight class="stringliteral">&quot;Help&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key0,<sp/>L</highlight><highlight class="stringliteral">&quot;Key0&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key1,<sp/>L</highlight><highlight class="stringliteral">&quot;Key1&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key2,<sp/>L</highlight><highlight class="stringliteral">&quot;Key2&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key3,<sp/>L</highlight><highlight class="stringliteral">&quot;Key3&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key4,<sp/>L</highlight><highlight class="stringliteral">&quot;Key4&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key5,<sp/>L</highlight><highlight class="stringliteral">&quot;Key5&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key6,<sp/>L</highlight><highlight class="stringliteral">&quot;Key6&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key7,<sp/>L</highlight><highlight class="stringliteral">&quot;Key7&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key8,<sp/>L</highlight><highlight class="stringliteral">&quot;Key8&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Key9,<sp/>L</highlight><highlight class="stringliteral">&quot;Key9&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::A,<sp/>L</highlight><highlight class="stringliteral">&quot;A&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::B,<sp/>L</highlight><highlight class="stringliteral">&quot;B&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::C,<sp/>L</highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::D,<sp/>L</highlight><highlight class="stringliteral">&quot;D&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::E,<sp/>L</highlight><highlight class="stringliteral">&quot;E&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F,<sp/>L</highlight><highlight class="stringliteral">&quot;F&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::G,<sp/>L</highlight><highlight class="stringliteral">&quot;G&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::H,<sp/>L</highlight><highlight class="stringliteral">&quot;H&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::I,<sp/>L</highlight><highlight class="stringliteral">&quot;I&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::J,<sp/>L</highlight><highlight class="stringliteral">&quot;J&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::K,<sp/>L</highlight><highlight class="stringliteral">&quot;K&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::L,<sp/>L</highlight><highlight class="stringliteral">&quot;L&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::M,<sp/>L</highlight><highlight class="stringliteral">&quot;M&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::N,<sp/>L</highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::O,<sp/>L</highlight><highlight class="stringliteral">&quot;O&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::P,<sp/>L</highlight><highlight class="stringliteral">&quot;P&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Q,<sp/>L</highlight><highlight class="stringliteral">&quot;Q&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::R,<sp/>L</highlight><highlight class="stringliteral">&quot;R&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::S,<sp/>L</highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::T,<sp/>L</highlight><highlight class="stringliteral">&quot;T&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::U,<sp/>L</highlight><highlight class="stringliteral">&quot;U&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::V,<sp/>L</highlight><highlight class="stringliteral">&quot;V&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::W,<sp/>L</highlight><highlight class="stringliteral">&quot;W&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::X,<sp/>L</highlight><highlight class="stringliteral">&quot;X&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Y,<sp/>L</highlight><highlight class="stringliteral">&quot;Y&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Z,<sp/>L</highlight><highlight class="stringliteral">&quot;Z&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftWindows,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftWindows&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightWindows,<sp/>L</highlight><highlight class="stringliteral">&quot;RightWindows&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::App,<sp/>L</highlight><highlight class="stringliteral">&quot;App&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Sleep,<sp/>L</highlight><highlight class="stringliteral">&quot;Sleep&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad0,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad0&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad1,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad1&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad2,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad2&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad3,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad3&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad4,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad4&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad5,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad5&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad6,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad6&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad7,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad7&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad8,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad8&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Numpad9,<sp/>L</highlight><highlight class="stringliteral">&quot;Numpad9&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadMultiply,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadMultiply&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadPlus,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadPlus&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadSeparator,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadSeparator&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadMinus,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadMinus&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadDecimal,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadDecimal&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadDivide,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadDivide&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F1,<sp/>L</highlight><highlight class="stringliteral">&quot;F1&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F2,<sp/>L</highlight><highlight class="stringliteral">&quot;F2&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F3,<sp/>L</highlight><highlight class="stringliteral">&quot;F3&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F4,<sp/>L</highlight><highlight class="stringliteral">&quot;F4&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F5,<sp/>L</highlight><highlight class="stringliteral">&quot;F5&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F6,<sp/>L</highlight><highlight class="stringliteral">&quot;F6&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F7,<sp/>L</highlight><highlight class="stringliteral">&quot;F7&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F8,<sp/>L</highlight><highlight class="stringliteral">&quot;F8&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F9,<sp/>L</highlight><highlight class="stringliteral">&quot;F9&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F10,<sp/>L</highlight><highlight class="stringliteral">&quot;F10&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F11,<sp/>L</highlight><highlight class="stringliteral">&quot;F11&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F12,<sp/>L</highlight><highlight class="stringliteral">&quot;F12&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F13,<sp/>L</highlight><highlight class="stringliteral">&quot;F13&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F14,<sp/>L</highlight><highlight class="stringliteral">&quot;F14&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F15,<sp/>L</highlight><highlight class="stringliteral">&quot;F15&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F16,<sp/>L</highlight><highlight class="stringliteral">&quot;F16&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F17,<sp/>L</highlight><highlight class="stringliteral">&quot;F17&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F18,<sp/>L</highlight><highlight class="stringliteral">&quot;F18&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F19,<sp/>L</highlight><highlight class="stringliteral">&quot;F19&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F20,<sp/>L</highlight><highlight class="stringliteral">&quot;F20&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F21,<sp/>L</highlight><highlight class="stringliteral">&quot;F21&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F22,<sp/>L</highlight><highlight class="stringliteral">&quot;F22&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F23,<sp/>L</highlight><highlight class="stringliteral">&quot;F23&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::F24,<sp/>L</highlight><highlight class="stringliteral">&quot;F24&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumLock,<sp/>L</highlight><highlight class="stringliteral">&quot;NumLock&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Scroll,<sp/>L</highlight><highlight class="stringliteral">&quot;Scroll&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftShift,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftShift&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightShift,<sp/>L</highlight><highlight class="stringliteral">&quot;RightShift&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftControl,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftControl&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightControl,<sp/>L</highlight><highlight class="stringliteral">&quot;RightControl&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftAlt,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftAlt&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightAlt,<sp/>L</highlight><highlight class="stringliteral">&quot;RightAlt&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftMenu,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftMenu&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightMenu,<sp/>L</highlight><highlight class="stringliteral">&quot;RightMenu&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::SemiColon,<sp/>L</highlight><highlight class="stringliteral">&quot;SemiColon&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Plus,<sp/>L</highlight><highlight class="stringliteral">&quot;Plus&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Comma,<sp/>L</highlight><highlight class="stringliteral">&quot;Comma&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Minus,<sp/>L</highlight><highlight class="stringliteral">&quot;Minus&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Period,<sp/>L</highlight><highlight class="stringliteral">&quot;Period&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::QuestionMark,<sp/>L</highlight><highlight class="stringliteral">&quot;QuestionMark&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Tilde,<sp/>L</highlight><highlight class="stringliteral">&quot;Tilde&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::LeftBracket,<sp/>L</highlight><highlight class="stringliteral">&quot;LeftBracket&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::VerticalLine,<sp/>L</highlight><highlight class="stringliteral">&quot;VerticalLine&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::RightBracket,<sp/>L</highlight><highlight class="stringliteral">&quot;RightBracket&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Quote,<sp/>L</highlight><highlight class="stringliteral">&quot;Quote&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Unknow,<sp/>L</highlight><highlight class="stringliteral">&quot;Unknow&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::AngleBracket,<sp/>L</highlight><highlight class="stringliteral">&quot;AngleBracket&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Process,<sp/>L</highlight><highlight class="stringliteral">&quot;Process&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Backslash,<sp/>L</highlight><highlight class="stringliteral">&quot;Backslash&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::Slash,<sp/>L</highlight><highlight class="stringliteral">&quot;Slash&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{Keyboard::Key::NumpadReturn,<sp/>L</highlight><highlight class="stringliteral">&quot;NumpadReturn&quot;</highlight><highlight class="normal">}};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>Keyboard::UnknowKeyName<sp/>=<sp/>L</highlight><highlight class="stringliteral">&quot;Unknow<sp/>key&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>Keyboard::Mapping::Mapping()</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>255;<sp/>++i)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keys[i]<sp/>=<sp/>Key::Unknown;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Keyboard::Mapping::bindKey(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>p_index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Key&amp;<sp/>p_key)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keys[p_index]<sp/>=<sp/>p_key;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Keyboard_1a13a0bee8478b4e4e8162d4f389134b28" kindref="member">Keyboard::Key</ref><sp/>&amp;Keyboard::Mapping::operator[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>&amp;p_index)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(keys[p_index]);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>Keyboard::Keyboard()<sp/>:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_layout(Layout::Qwerty),</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_mapping{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mapping::createAzertyMapping(),</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mapping::createQwertyMapping()</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Keyboard::pressKey(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t&amp;<sp/>p_key)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Key<sp/>&amp;keyValue<sp/>=<sp/>_mapping[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(_layout)][p_key];</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keys[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(keyValue)]<sp/>=<sp/>InputState::Pressed;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Keyboard::releaseKey(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t&amp;<sp/>p_key)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Key<sp/>&amp;keyValue<sp/>=<sp/>_mapping[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(_layout)][p_key];</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keys[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(keyValue)]<sp/>=<sp/>InputState::Released;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Keyboard::update()</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>Key::SIZE;<sp/>i++)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_keys[i]<sp/>==<sp/>InputState::Pressed)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keys[i]<sp/>=<sp/>InputState::Down;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_keys[i]<sp/>==<sp/>InputState::Released)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keys[i]<sp/>=<sp/>InputState::Up;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;Keyboard::keyToString(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Keyboard::Key<sp/>&amp;p_key)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Keyboard::KeyToStringMap.contains(p_key)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Keyboard::UnknowKeyName);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Keyboard::KeyToStringMap.at(p_key));</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring<sp/>&amp;to_wstring(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Keyboard::Key<sp/>&amp;p_key)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(Keyboard::keyToString(p_key));</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/input/spk_keyboard.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__singleton_8hpp" kind="file" language="C++">
+    <compoundname>spk_singleton.hpp</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">stdexcept</includes>
+    <includedby refid="spk__profiler_8hpp" local="yes">includes/debug/spk_profiler.hpp</includedby>
+    <includedby refid="spk__context__manager_8hpp" local="yes">includes/design_pattern/spk_context_manager.hpp</includedby>
+    <includedby refid="linux_2spk__window_8hpp" local="yes">includes/graphics/linux/spk_window.hpp</includedby>
+    <includedby refid="spk__keyboard_8hpp" local="yes">includes/input/spk_keyboard.hpp</includedby>
+    <includedby refid="spk__mouse_8hpp" local="yes">includes/input/spk_mouse.hpp</includedby>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__time__metrics_8hpp" local="yes">includes/system/spk_time_metrics.hpp</includedby>
+    <includedby refid="spk__widget__atlas_8hpp" local="yes">includes/widget/spk_widget_atlas.hpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdexcept</label>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>includes/debug/spk_profiler.hpp</label>
+        <link refid="spk__profiler_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>includes/input/spk_keyboard.hpp</label>
+        <link refid="spk__keyboard_8hpp_source"/>
+      </node>
+      <node id="14">
+        <label>includes/input/spk_input.hpp</label>
+        <link refid="spk__input_8hpp_source"/>
+      </node>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>includes/input/spk_mouse.hpp</label>
+        <link refid="spk__mouse_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>includes/design_pattern/spk_context_manager.hpp</label>
+        <link refid="spk__context__manager_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>includes/application/modules/spk_profiler_module.hpp</label>
+        <link refid="spk__profiler__module_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>includes/system/spk_timer.hpp</label>
+        <link refid="spk__timer_8hpp_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>includes/system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>includes/system/spk_chronometer.hpp</label>
+        <link refid="spk__chronometer_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>includes/graphics/linux/spk_window.hpp</label>
+        <link refid="linux_2spk__window_8hpp_source"/>
+      </node>
+      <node id="13">
+        <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
+        <link refid="spk__graphical__application_8hpp_source"/>
+      </node>
+      <node id="15">
+        <label>includes/widget/spk_widget_atlas.hpp</label>
+        <link refid="spk__widget__atlas_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classspk_1_1Singleton" prot="public">spk::Singleton</innerclass>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TType&gt;</highlight></codeline>
+<codeline lineno="17" refid="classspk_1_1Singleton" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24" refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" kindref="member">Singleton</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;TType&gt;<sp/><ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
+<codeline lineno="41" refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>std::shared_ptr&lt;TType&gt;<sp/><ref refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" kindref="member">instanciate</ref>(Args<sp/>&amp;&amp;...args)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref><sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>instanciate<sp/>an<sp/>already<sp/>instancied<sp/>singleton&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref><sp/>=<sp/>std::shared_ptr&lt;TType&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>TType(std::forward&lt;Args&gt;(args)...));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>std::shared_ptr&lt;TType&gt;<sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">instance</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" kindref="member">release</ref>()</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" kindref="member">_instance</ref>.reset();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="includes/design_pattern/spk_singleton.hpp"/>
+  </compounddef>
+</doxygen>

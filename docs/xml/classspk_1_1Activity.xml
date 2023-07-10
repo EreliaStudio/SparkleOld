@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Activity" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>spk::Activity</compoundname>
+    <includes refid="spk__activity_8hpp" local="no">spk_activity.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Status</name>
+        <enumvalue id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2" prot="public">
+          <name>Stopped</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The activity is stopped. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0" prot="public">
+          <name>OnEnter</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The activity is in the onEnter phase. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09" prot="public">
+          <name>Running</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The activity is running. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144" prot="public">
+          <name>OnExit</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The activity is in the onExit phase. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d" prot="public">
+          <name>Complete</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The activity is complete. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumerates the possible status of the activity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="20" column="9" bodyfile="includes/design_pattern/spk_activity.hpp" bodystart="21" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1Activity_1a729b6b1b083afe92ee8846069341a458" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class ActivityManager</definition>
+        <argsstring></argsstring>
+        <name>ActivityManager</name>
+        <param>
+          <type>ActivityManager</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="14" column="9" bodyfile="includes/design_pattern/spk_activity.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" prot="public" static="no" mutable="no">
+        <type><ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref></type>
+        <definition>Status spk::Activity::_internalWorkingState</definition>
+        <argsstring></argsstring>
+        <name>_internalWorkingState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The internal working state of the activity. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="29" column="16" bodyfile="includes/design_pattern/spk_activity.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Activity::_update</definition>
+        <argsstring>()</argsstring>
+        <name>_update</name>
+        <briefdescription>
+<para>Updates the activity. This function updates the activity, typically called once per frame. It is responsible for executing the activity&apos;s current step and managing the state transitions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="36" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="5" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Activity::_moveNextStep</definition>
+        <argsstring>()</argsstring>
+        <name>_moveNextStep</name>
+        <briefdescription>
+<para>Moves to the next step of the activity. This function moves the activity to the next step without executing it. It is used for advancing the activity&apos;s progress without performing any actions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="43" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="23" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Activity::_moveNextStepAndExecute</definition>
+        <argsstring>()</argsstring>
+        <name>_moveNextStepAndExecute</name>
+        <briefdescription>
+<para>Moves to the next step of the activity and executes it. This function moves the activity to the next step and executes it. It is used for advancing the activity&apos;s progress and performing the associated actions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="50" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Activity::_start</definition>
+        <argsstring>()</argsstring>
+        <name>_start</name>
+        <briefdescription>
+<para>Starts the activity. This function starts the activity, setting its initial state and entering the onEnter phase. It is called when the activity is initially activated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="57" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Activity::Activity</definition>
+        <argsstring>()</argsstring>
+        <name>Activity</name>
+        <briefdescription>
+<para>Default constructor for <ref refid="classspk_1_1Activity" kindref="compound">Activity</ref>. This constructor initializes the internal working state of the activity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="86" column="9" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" kindref="member">Status</ref> &amp;</type>
+        <definition>const Activity::Status &amp; spk::Activity::state</definition>
+        <argsstring>() const</argsstring>
+        <name>state</name>
+        <briefdescription>
+<para>Returns the current status of the activity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to the current status of the activity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="92" column="22" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::Activity::isCompleted</definition>
+        <argsstring>() const</argsstring>
+        <name>isCompleted</name>
+        <briefdescription>
+<para>Checks if the activity is completed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the activity is complete, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="98" column="14" bodyfile="src/design_pattern/spk_activity.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void spk::Activity::_onEnter</definition>
+        <argsstring>()=0</argsstring>
+        <name>_onEnter</name>
+        <briefdescription>
+<para>Executes the onEnter phase of the activity. This pure virtual function is called when the activity enters the onEnter phase. Subclasses must override this function to provide custom implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="65" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void spk::Activity::_execute</definition>
+        <argsstring>()=0</argsstring>
+        <name>_execute</name>
+        <briefdescription>
+<para>Executes the main execution phase of the activity. This pure virtual function is called when the activity is in the running state and needs to execute its main logic. Subclasses must override this function to provide custom implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="72" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void spk::Activity::_onExit</definition>
+        <argsstring>()=0</argsstring>
+        <name>_onExit</name>
+        <briefdescription>
+<para>Executes the onExit phase of the activity. This pure virtual function is called when the activity enters the onExit phase. Subclasses must override this function to provide custom implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activity.hpp" line="79" column="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents an activity. This class defines an activity that can be managed by an ActivityManager. It provides methods for updating, moving to the next step, starting, and checking the status of the activity. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/spk_activity.hpp" line="12" column="5" bodyfile="includes/design_pattern/spk_activity.hpp" bodystart="13" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Activity_1af4c0f1fe9d2299a1c3f096e9687ed234" prot="protected" virt="pure-virtual"><scope>spk::Activity</scope><name>_execute</name></member>
+      <member refid="classspk_1_1Activity_1a6ce4d394293a7812d9e1be5d8b1de652" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>_internalWorkingState</name></member>
+      <member refid="classspk_1_1Activity_1a84446cb99ea3035ed1119fe09742e0d8" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>_moveNextStep</name></member>
+      <member refid="classspk_1_1Activity_1a361afbd8df75f55a1d3903a903a1358e" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>_moveNextStepAndExecute</name></member>
+      <member refid="classspk_1_1Activity_1a1aa7cf3267e674cc737d4d56c674ff4e" prot="protected" virt="pure-virtual"><scope>spk::Activity</scope><name>_onEnter</name></member>
+      <member refid="classspk_1_1Activity_1a507057c1dbc10ceb7894fa718fc75012" prot="protected" virt="pure-virtual"><scope>spk::Activity</scope><name>_onExit</name></member>
+      <member refid="classspk_1_1Activity_1a2fc398d0a51902db587abf30d852fee6" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>_start</name></member>
+      <member refid="classspk_1_1Activity_1ad9c4fb3d225e7dc0c9e2154295f63605" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>_update</name></member>
+      <member refid="classspk_1_1Activity_1a624be8721a7a7e6ab00bb0f865560eac" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>Activity</name></member>
+      <member refid="classspk_1_1Activity_1a729b6b1b083afe92ee8846069341a458" prot="private" virt="non-virtual"><scope>spk::Activity</scope><name>ActivityManager</name></member>
+      <member refid="classspk_1_1Activity_1aab25e8eb7369e26c11f8f74e9db80499" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>isCompleted</name></member>
+      <member refid="classspk_1_1Activity_1ac1159932346bc7040a048df44ba5276c" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>state</name></member>
+      <member refid="classspk_1_1Activity_1a1fa844e585a28ff096c43b924a4d0aec" prot="public" virt="non-virtual"><scope>spk::Activity</scope><name>Status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

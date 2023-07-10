@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1DataBuffer" kind="class" language="C++" prot="public">
+    <compoundname>spk::DataBuffer</compoundname>
+    <includes refid="spk__data__buffer_8hpp" local="no">spk_data_buffer.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; spk::DataBuffer::_data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <briefdescription>
+<para>The buffer&apos;s data, stored as bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="27" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" prot="private" static="no" mutable="yes">
+        <type>size_t</type>
+        <definition>size_t spk::DataBuffer::_bookmark</definition>
+        <argsstring></argsstring>
+        <name>_bookmark</name>
+        <briefdescription>
+<para>Bookmark to keep track of the current position in the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="28" column="16" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a716866b679b1a1b6d7046a5bb65347ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::DataBuffer::DataBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>DataBuffer</name>
+        <briefdescription>
+<para>Default constructor for the <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="34" column="1" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t spk::DataBuffer::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Get the size of the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size of the buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="41" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t spk::DataBuffer::bookmark</definition>
+        <argsstring>() const</argsstring>
+        <name>bookmark</name>
+        <briefdescription>
+<para>Get the bookmark of the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The position of the bookmark. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="47" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1aa7f1ec65d939c18bacbc61abe59e1064" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t spk::DataBuffer::leftover</definition>
+        <argsstring>() const</argsstring>
+        <name>leftover</name>
+        <briefdescription>
+<para>Get the size of the remaining buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size from the bookmark to the end of the buffer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="54" column="15" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a95a4f828b5314bfefd2cbff9bd31e42e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::DataBuffer::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <briefdescription>
+<para>Check whether the buffer is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if there&apos;s no leftover data in the buffer, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="61" column="13" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1adf468b222ec2331008c51c4e9ae7a35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::DataBuffer::skip</definition>
+        <argsstring>(const size_t &amp;p_number)</argsstring>
+        <name>skip</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>p_number</declname>
+        </param>
+        <briefdescription>
+<para>Move the bookmark ahead by the specified number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes to skip. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="68" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1ad4eefec4799fb6b9d6251cca86ebfa04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::DataBuffer::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Clear the buffer and reset the bookmark. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="73" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::DataBuffer::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>Reset the bookmark to the start of the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="78" column="6" bodyfile="src/data_structure/spk_data_buffer.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1a62775fb5a5cc3ef25dd87d41976b978f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OutputType</type>
+          </param>
+        </templateparamlist>
+        <type>OutputType</type>
+        <definition>OutputType spk::DataBuffer::get</definition>
+        <argsstring>() const</argsstring>
+        <name>get</name>
+        <briefdescription>
+<para>Retrieve data of a specific type from the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>OutputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of data to retrieve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The retrieved data. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="87" column="12" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="87" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1ac90c23dd9a031995ecb8f28ded1251b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename InputType</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::DataBuffer::edit</definition>
+        <argsstring>(const size_t &amp;p_offset, const InputType &amp;p_input)</argsstring>
+        <name>edit</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>p_offset</declname>
+        </param>
+        <param>
+          <type>const InputType &amp;</type>
+          <declname>p_input</declname>
+        </param>
+        <briefdescription>
+<para>Edit the buffer at a specific offset with input data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Offset in the buffer where the data should be written. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to write into the buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="104" column="6" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="104" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename InputType</type>
+          </param>
+          <param>
+            <type>typename std::enable_if_t&lt;!<ref refid="structspk_1_1IsContainer" kindref="compound">spk::IsContainer</ref>&lt; InputType &gt;::value &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> &amp;</type>
+        <definition>DataBuffer&amp; spk::DataBuffer::operator&lt;&lt;</definition>
+        <argsstring>(const InputType &amp;p_input)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>const InputType &amp;</type>
+          <declname>p_input</declname>
+        </param>
+        <briefdescription>
+<para>Insert data into the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This template function handles all non-container types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to insert into the buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the current <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="122" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="122" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OutputType</type>
+          </param>
+          <param>
+            <type>typename std::enable_if_t&lt;!<ref refid="structspk_1_1IsContainer" kindref="compound">spk::IsContainer</ref>&lt; OutputType &gt;::value &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type>const <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> &amp;</type>
+        <definition>const DataBuffer&amp; spk::DataBuffer::operator&gt;&gt;</definition>
+        <argsstring>(OutputType &amp;p_output) const</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>OutputType &amp;</type>
+          <declname>p_output</declname>
+        </param>
+        <briefdescription>
+<para>Extract data from the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This template function handles all non-container types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>OutputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of data to extract. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a variable where the extracted data should be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Const reference to the current <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="149" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename InputType</type>
+          </param>
+          <param>
+            <type>typename std::enable_if_t&lt; <ref refid="structspk_1_1IsContainer" kindref="compound">spk::IsContainer</ref>&lt; InputType &gt;::value &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> &amp;</type>
+        <definition>DataBuffer&amp; spk::DataBuffer::operator&lt;&lt;</definition>
+        <argsstring>(const InputType &amp;p_input)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>const InputType &amp;</type>
+          <declname>p_input</declname>
+        </param>
+        <briefdescription>
+<para>Insert container data into the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This template function handles all container types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input data (must be a container type). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container data to insert into the buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the current <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="169" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="169" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename OutputType</type>
+          </param>
+          <param>
+            <type>typename std::enable_if_t&lt; <ref refid="structspk_1_1IsContainer" kindref="compound">spk::IsContainer</ref>&lt; OutputType &gt;::value &gt; *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
+        <type>const <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> &amp;</type>
+        <definition>const DataBuffer&amp; spk::DataBuffer::operator&gt;&gt;</definition>
+        <argsstring>(OutputType &amp;p_output) const</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>OutputType &amp;</type>
+          <declname>p_output</declname>
+        </param>
+        <briefdescription>
+<para>Extract container data from the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This template function handles all container types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>OutputType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of data to extract (must be a container type). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a variable where the extracted data should be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Const reference to the current <ref refid="classspk_1_1DataBuffer" kindref="compound">DataBuffer</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_data_buffer.hpp" line="189" column="18" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="189" bodyend="197"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for managing data buffers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is designed to provide convenient and efficient storage and retrieval of data. It supports various data types including standard and container types, provided they are standard layout types.</para>
+<para>The class provides a set of utility methods and operator overloads for reading from and writing to the buffer, as well as for managing the internal state of the buffer. </para>
+    </detaileddescription>
+    <location file="includes/data_structure/spk_data_buffer.hpp" line="24" column="1" bodyfile="includes/data_structure/spk_data_buffer.hpp" bodystart="25" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classspk_1_1DataBuffer_1a7f53e6ee58bb7a20e0aa5bdc3ff40861" prot="private" virt="non-virtual"><scope>spk::DataBuffer</scope><name>_bookmark</name></member>
+      <member refid="classspk_1_1DataBuffer_1ad0ae5707e9a6ddea8a8fc235c4569007" prot="private" virt="non-virtual"><scope>spk::DataBuffer</scope><name>_data</name></member>
+      <member refid="classspk_1_1DataBuffer_1a1441a1c3abc6a4f5c55a2a66798be379" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>bookmark</name></member>
+      <member refid="classspk_1_1DataBuffer_1ad4eefec4799fb6b9d6251cca86ebfa04" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>clear</name></member>
+      <member refid="classspk_1_1DataBuffer_1a716866b679b1a1b6d7046a5bb65347ec" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>DataBuffer</name></member>
+      <member refid="classspk_1_1DataBuffer_1ac90c23dd9a031995ecb8f28ded1251b7" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>edit</name></member>
+      <member refid="classspk_1_1DataBuffer_1a95a4f828b5314bfefd2cbff9bd31e42e" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>empty</name></member>
+      <member refid="classspk_1_1DataBuffer_1a62775fb5a5cc3ef25dd87d41976b978f" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>get</name></member>
+      <member refid="classspk_1_1DataBuffer_1aa7f1ec65d939c18bacbc61abe59e1064" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>leftover</name></member>
+      <member refid="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classspk_1_1DataBuffer_1adf549d489c5f326e781e4408d550e7e0" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>operator&gt;&gt;</name></member>
+      <member refid="classspk_1_1DataBuffer_1af94fe4daf3b1d0a9720ea9e19394915b" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>operator&gt;&gt;</name></member>
+      <member refid="classspk_1_1DataBuffer_1a0ea4655da477844008708b1283c83e75" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>reset</name></member>
+      <member refid="classspk_1_1DataBuffer_1a2f13469e9040f9db9d7727cc4aa42778" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>size</name></member>
+      <member refid="classspk_1_1DataBuffer_1adf468b222ec2331008c51c4e9ae7a35a" prot="public" virt="non-virtual"><scope>spk::DataBuffer</scope><name>skip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

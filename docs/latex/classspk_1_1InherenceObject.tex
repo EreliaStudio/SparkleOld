@@ -1,0 +1,268 @@
+\hypertarget{classspk_1_1InherenceObject}{}\doxysection{spk\+::Inherence\+Object$<$ TType $>$ Class Template Reference}
+\label{classspk_1_1InherenceObject}\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+
+
+\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} class template.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+inherence\+\_\+object.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}} = TType $\ast$
+\item 
+using \mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}} = TType $\ast$
+\item 
+using \mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}} = std\+::vector$<$ \mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}} $>$
+\item 
+using \mbox{\hyperlink{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}{Callback}} = std\+::function$<$ void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1InherenceObject_ab17ef56656c9b33064cec33d44d4c7b7}{Inherence\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1InherenceObject_aba5546b2d9a7407fc3aa2cca0461cb7a}{$\sim$\+Inherence\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1InherenceObject_ae5c803c43a3eeb83383e4a95245f765e}{set\+Parent}} (\mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}} \mbox{\hyperlink{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}{parent}})
+\begin{DoxyCompactList}\small\item\em Set the parent object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1InherenceObject_af21959de7950ed4d656d8cc318fc9712}{add\+Child}} (\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}} child)
+\begin{DoxyCompactList}\small\item\em Add a child object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1InherenceObject_a4d1ecc043e2414e9731195021d28a77e}{set\+Birth\+Callback}} (std\+::function$<$ void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$ callback)
+\begin{DoxyCompactList}\small\item\em Set the birth callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1InherenceObject_a69d05c5f0a43a7b58ad4e08a9790f23a}{set\+Death\+Callback}} (std\+::function$<$ void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$ callback)
+\begin{DoxyCompactList}\small\item\em Set the death callback. \end{DoxyCompactList}\item 
+constexpr const \mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}} \& \mbox{\hyperlink{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}{parent}} () const
+\begin{DoxyCompactList}\small\item\em Get the parent object. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}} \& \mbox{\hyperlink{classspk_1_1InherenceObject_a76cd1e3335b5775ecf356da909a01b86}{childrens}} ()
+\begin{DoxyCompactList}\small\item\em Get the vector of child objects. \end{DoxyCompactList}\item 
+constexpr const \mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}} \& \mbox{\hyperlink{classspk_1_1InherenceObject_adc6706d7b939d2f30763bf2502f0dd19}{childrens}} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of child objects (const version). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1InherenceObject_a60b7abb954dcf88b9576e5b55b5f6c64}{Inherence\+Object}} (const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \& \mbox{\hyperlink{classspk_1_1InherenceObject_a0f80475dd4e0633e93b2e009b34e6536}{operator=}} (const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Inherence\+Object$<$ TType $>$}
+
+\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} class template. 
+
+This class template represents an object that can be part of an inheritance hierarchy. It allows setting a parent object, adding child objects, and defining birth and death callbacks.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the object. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}\label{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!Callback@{Callback}}
+\index{Callback@{Callback}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+using \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject_a976e2e85b113a15220e094ff9d7afd38}{Callback}} =  std\+::function$<$void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$}
+
+The type of the callback function. \mbox{\Hypertarget{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}\label{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!Child@{Child}}
+\index{Child@{Child}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{Child}{Child}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+using \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}} =  TType$\ast$}
+
+The type of the child objects. \mbox{\Hypertarget{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}\label{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!ChildContainer@{ChildContainer}}
+\index{ChildContainer@{ChildContainer}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{ChildContainer}{ChildContainer}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+using \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}} =  std\+::vector$<$\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}}$>$}
+
+The type of child container used by \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} to store them \mbox{\Hypertarget{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}\label{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!Parent@{Parent}}
+\index{Parent@{Parent}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+using \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}} =  TType$\ast$}
+
+The type of the parent object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_ab17ef56656c9b33064cec33d44d4c7b7}\label{classspk_1_1InherenceObject_ab17ef56656c9b33064cec33d44d4c7b7}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!InherenceObject@{InherenceObject}}
+\index{InherenceObject@{InherenceObject}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{InherenceObject()}{InherenceObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. 
+
+This constructor initializes the \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. \mbox{\Hypertarget{classspk_1_1InherenceObject_aba5546b2d9a7407fc3aa2cca0461cb7a}\label{classspk_1_1InherenceObject_aba5546b2d9a7407fc3aa2cca0461cb7a}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!````~InherenceObject@{$\sim$InherenceObject}}
+\index{````~InherenceObject@{$\sim$InherenceObject}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$InherenceObject()}{~InherenceObject()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::$\sim$\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. 
+
+This destructor removes the object from its parent\textquotesingle{}s children list and sets the parent of all its children to nullptr. \mbox{\Hypertarget{classspk_1_1InherenceObject_a60b7abb954dcf88b9576e5b55b5f6c64}\label{classspk_1_1InherenceObject_a60b7abb954dcf88b9576e5b55b5f6c64}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!InherenceObject@{InherenceObject}}
+\index{InherenceObject@{InherenceObject}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{InherenceObject()}{InherenceObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}$<$ TType $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
+
+This copy constructor is deleted to prevent copying an \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_af21959de7950ed4d656d8cc318fc9712}\label{classspk_1_1InherenceObject_af21959de7950ed4d656d8cc318fc9712}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!addChild@{addChild}}
+\index{addChild@{addChild}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}}}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a child object. 
+
+This function adds a child object to the current object. It sets the parent of the child object to the current object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The child object to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a76cd1e3335b5775ecf356da909a01b86}\label{classspk_1_1InherenceObject_a76cd1e3335b5775ecf356da909a01b86}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!childrens@{childrens}}
+\index{childrens@{childrens}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{childrens()}{childrens()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr \mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}}\& \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::childrens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the vector of child objects. 
+
+This function returns a reference to the vector of child objects of the current object.
+
+\begin{DoxyReturn}{Returns}
+A reference to the vector of child objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_adc6706d7b939d2f30763bf2502f0dd19}\label{classspk_1_1InherenceObject_adc6706d7b939d2f30763bf2502f0dd19}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!childrens@{childrens}}
+\index{childrens@{childrens}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{childrens()}{childrens()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr const \mbox{\hyperlink{classspk_1_1InherenceObject_abb38a23ee0e49f56d6635bc9b08d347d}{Child\+Container}}\& \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::childrens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the vector of child objects (const version). 
+
+This function returns a constant reference to the vector of child objects of the current object.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of child objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a0f80475dd4e0633e93b2e009b34e6536}\label{classspk_1_1InherenceObject_a0f80475dd4e0633e93b2e009b34e6536}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}\& \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}$<$ TType $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator. 
+
+This copy assignment operator is deleted to prevent assigning an \mbox{\hyperlink{classspk_1_1InherenceObject}{Inherence\+Object}}. \mbox{\Hypertarget{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}\label{classspk_1_1InherenceObject_a5207c90ce23896bf23aa55c20d82dcbe}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!parent@{parent}}
+\index{parent@{parent}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+constexpr const \mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}}\& \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Get the parent object. 
+
+This function returns a constant reference to the parent object of the current object.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the parent object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a4d1ecc043e2414e9731195021d28a77e}\label{classspk_1_1InherenceObject_a4d1ecc043e2414e9731195021d28a77e}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!setBirthCallback@{setBirthCallback}}
+\index{setBirthCallback@{setBirthCallback}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{setBirthCallback()}{setBirthCallback()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::set\+Birth\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the birth callback. 
+
+This function sets the birth callback function. The birth callback is called when a child object is added to the current object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The birth callback function to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_a69d05c5f0a43a7b58ad4e08a9790f23a}\label{classspk_1_1InherenceObject_a69d05c5f0a43a7b58ad4e08a9790f23a}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!setDeathCallback@{setDeathCallback}}
+\index{setDeathCallback@{setDeathCallback}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{setDeathCallback()}{setDeathCallback()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::set\+Death\+Callback (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classspk_1_1InherenceObject_a769d0e2ea8e7635c993671ec9b1a494b}{Child}})$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the death callback. 
+
+This function sets the death callback function. The death callback is called when a child object is removed from the current object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The death callback function to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1InherenceObject_ae5c803c43a3eeb83383e4a95245f765e}\label{classspk_1_1InherenceObject_ae5c803c43a3eeb83383e4a95245f765e}} 
+\index{spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}!setParent@{setParent}}
+\index{setParent@{setParent}!spk::InherenceObject$<$ TType $>$@{spk::InherenceObject$<$ TType $>$}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+void \mbox{\hyperlink{classspk_1_1InherenceObject}{spk\+::\+Inherence\+Object}}$<$ TType $>$\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1InherenceObject_a77e8eb56b6e889a9e8a048bbed8f7c1b}{Parent}}}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the parent object. 
+
+This function sets the parent object of the current object. It removes the object from its current parent\textquotesingle{}s children list and adds it to the new parent\textquotesingle{}s children list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent object to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+inherence\+\_\+object.\+hpp\end{DoxyCompactItemize}

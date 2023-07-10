@@ -1,0 +1,1556 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structspk_1_1IVector3" kind="struct" language="C++" prot="public">
+    <compoundname>spk::IVector3</compoundname>
+    <includes refid="spk__vector3_8hpp" local="no">spk_vector3.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename TType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structspk_1_1IVector3_1a147778b8b9736f2edb095d0102d48d43" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector3&lt; TType &gt;::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The x-coordinate value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="16" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structspk_1_1IVector3_1a922affa5716cbf8401a21f7602035596" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector3&lt; TType &gt;::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The y-coordinate value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="17" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structspk_1_1IVector3_1a8254baecf03b5c984a6e25d7a51c095b" prot="public" static="no" mutable="no">
+        <type>TType</type>
+        <definition>TType spk::IVector3&lt; TType &gt;::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The z-coordinate value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="18" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structspk_1_1IVector3_1a1a30fd5ff259b409a088fa58a6249bc5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::IVector3</definition>
+        <argsstring>()</argsstring>
+        <name>IVector3</name>
+        <briefdescription>
+<para>Default constructor. Initializes the vector with zero values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="23" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a6ee20387125930a1693734f905a9b7cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::IVector3</definition>
+        <argsstring>(const TOtherType &amp;p_value)</argsstring>
+        <name>IVector3</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object with the same value for x, y, and z. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to assign to x, y, and z. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="32" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a55a45e32063ccd893f360c9307114302" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+          <param>
+            <type>typename TOtherValueType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::IVector3</definition>
+        <argsstring>(const IVector2&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)</argsstring>
+        <name>IVector3</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <param>
+          <type>const TOtherValueType &amp;</type>
+          <declname>p_value</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object with the x and y values from another <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> object and a specified z value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the x and y values. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TOtherValueType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the z value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref> object to get the x and y values from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to assign to z. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="43" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a230e86429a49bc1be347432b21421ac5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::IVector3</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other)</argsstring>
+        <name>IVector3</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object from another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object with potentially different value types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object&apos;s values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="52" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1afb963e6bca429adf9fc5d35f9580cc33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType1</type>
+          </param>
+          <param>
+            <type>typename TOtherType2</type>
+          </param>
+          <param>
+            <type>typename TOtherType3</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::IVector3</definition>
+        <argsstring>(const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)</argsstring>
+        <name>IVector3</name>
+        <param>
+          <type>const TOtherType1 &amp;</type>
+          <declname>p_x</declname>
+        </param>
+        <param>
+          <type>const TOtherType2 &amp;</type>
+          <declname>p_y</declname>
+        </param>
+        <param>
+          <type>const TOtherType3 &amp;</type>
+          <declname>p_z</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a new <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object with specified x, y, and z values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the x value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TOtherType2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the y value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TOtherType3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the z value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to assign to x. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to assign to y. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to assign to z. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="65" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a9cbbe780419af56f540e41d1030c78dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IVector3&lt; TType &gt;::operator IVector3&lt; TOtherType &gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator IVector3&lt; TOtherType &gt;</name>
+        <briefdescription>
+<para>Conversion operator to convert the vector to another vector type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to convert the vector elements to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object with the elements converted to TOtherType. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="73" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a09d2efd6d44b16c57695701070ae5db9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::operator+</definition>
+        <argsstring>(const IVector3 &amp;p_other) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded addition operator for adding two <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of the addition as an <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="95" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a2f4474b57b5d0be6013cf80bc2a8e9f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::operator-</definition>
+        <argsstring>(const IVector3 &amp;p_other) const</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded subtraction operator for subtracting two <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be subtracted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of the subtraction as an <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="105" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1acea21497ee4afc37edb45f1c5fb4330f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::operator*</definition>
+        <argsstring>(const IVector3 &amp;p_other) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded multiplication operator for multiplying two <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be multiplied. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of the multiplication as an <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="115" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a5958dbf2a7086a6733745fb9337f5ae3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::operator/</definition>
+        <argsstring>(const IVector3 &amp;p_other) const</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded division operator for dividing two <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be divided by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of the division as an <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if any component of p_other is zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="126" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a6c440077f89aaf8a2b0e4943aefd4fa1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IVector3&lt; TType &gt;::operator+=</definition>
+        <argsstring>(const IVector3 &amp;p_other)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded compound addition operator for adding another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="137" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="137" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1afc705eb2813c71fe343fb59ddb363142" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IVector3&lt; TType &gt;::operator-=</definition>
+        <argsstring>(const IVector3 &amp;p_other)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded compound subtraction operator for subtracting another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object from this vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be subtracted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="148" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="148" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a554c4b94a4eff189e05f7fa81a8de409" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IVector3&lt; TType &gt;::operator*=</definition>
+        <argsstring>(const IVector3 &amp;p_other)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded compound multiplication operator for multiplying this vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be multiplied. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="159" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="159" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a0ceb51dfd0ac6ab36b5cb106e20ccc6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IVector3&lt; TType &gt;::operator/=</definition>
+        <argsstring>(const IVector3 &amp;p_other)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded compound division operator for dividing this vector by another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be divided by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if any component of p_other is zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="171" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="171" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1aebd6cca762ca14ae011d342d8fbeecc6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator==</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded equality operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if all components of the vector are equal to p_other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="187" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a5fe52f8e10e8cc546dbbff5bc4289fb6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator!=</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded inequality operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if any component of the vector is not equal to p_other, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="199" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="199" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1ad24172f419e35774c2dc4c05f516a847" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&lt;</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded less than operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is less than p_other based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="211" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="211" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a3be7770d32242fb00b3b9e85426e2bc7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&gt;</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded greater than operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is greater than p_other based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="229" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="229" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a8cd7c15e740a43489015a93e1022b687" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&lt;=</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded less than or equal to operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is less than or equal to p_other based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="247" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a22b3d1a0b921bff3b49aa10f502edcb7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&gt;=</definition>
+        <argsstring>(const TOtherType &amp;p_other) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const TOtherType &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded greater than or equal to operator to compare the vector with another value of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is greater than or equal to p_other based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="261" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="261" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1ab2e76c70db3725b0e2967d9c1af8656b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator==</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded equality operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if all components of the vectors are equal, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="275" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="275" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1aca11448f8edf66f5fd8f66f9c09b0fcb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator!=</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded inequality operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if any component of the vectors is not equal, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="287" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="287" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a2e1a2f432f1d362c3ce713f2af74cede" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&lt;</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded less than operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is less than the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="299" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="299" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a9b078bc76396aa0becb3f3cc2dc6f9a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&gt;</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded greater than operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is greater than the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="317" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="317" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a81fac36a3b094b293fd453b54651eec7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&lt;=</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded less than or equal to operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is less than or equal to the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="335" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="335" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1af1685e556c8e3f5e60c02c55f510c2ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool spk::IVector3&lt; TType &gt;::operator&gt;=</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded greater than or equal to operator to compare the vector with another <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object of a different type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to compare with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vector is greater than or equal to the other <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object based on lexicographic comparison of components, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="349" column="6" bodyfile="includes/math/spk_vector3.hpp" bodystart="349" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a86a9339333a4f6a291aaa0bdf0325b32" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TOtherType</type>
+          </param>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float spk::IVector3&lt; TType &gt;::distance</definition>
+        <argsstring>(const IVector3&lt; TOtherType &gt; &amp;p_other) const</argsstring>
+        <name>distance</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TOtherType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the distance between this vector and another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TOtherType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to calculate the distance to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The distance between this vector and p_other. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="378" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="378" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a0f8393536cd9515d379fdb5cfa51ce42" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::IVector3&lt; TType &gt;::norm</definition>
+        <argsstring>() const</argsstring>
+        <name>norm</name>
+        <briefdescription>
+<para>Calculates the norm (length) of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The norm of the vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="387" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="387" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1abea37a463a1e88283763e39ff9910d37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; float &gt;</type>
+        <definition>IVector3&lt;float&gt; spk::IVector3&lt; TType &gt;::normalize</definition>
+        <argsstring>() const</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+<para>Returns a normalized copy of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A normalized copy of the vector. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the norm of the vector is zero. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="397" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="397" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1acf05bfc43602c284334e8370891e5bb3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::cross</definition>
+        <argsstring>(const IVector3&lt; TType &gt; &amp;p_other) const</argsstring>
+        <name>cross</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the cross product between this vector and another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to calculate the cross product with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The cross product of this vector and p_other. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="419" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="419" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a7cb46bc29df99ee08112e5a36505f6f0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt;</type>
+        <definition>IVector3&lt;TType&gt; spk::IVector3&lt; TType &gt;::rotate</definition>
+        <argsstring>(const IVector3&lt; TType &gt; &amp;p_rotationValues) const</argsstring>
+        <name>rotate</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt; &amp;</type>
+          <declname>p_rotationValues</declname>
+        </param>
+        <briefdescription>
+<para>Rotates the vector based on rotation values in degrees. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the rotation values. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_rotationValues</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rotation values in degrees. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The rotated vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="433" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="433" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a04baff13ac8b38a5894f6112a80f2fb0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TType</type>
+        <definition>TType spk::IVector3&lt; TType &gt;::dot</definition>
+        <argsstring>(const IVector3&lt; TType &gt; &amp;p_other) const</argsstring>
+        <name>dot</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref>&lt; TType &gt; &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the dot product between this vector and another vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the other vector. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other vector to calculate the dot product with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The dot product of this vector and p_other. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="460" column="7" bodyfile="includes/math/spk_vector3.hpp" bodystart="460" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a3ceddf09cfa2ab16f110ea9bc9ef9a7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref></type>
+        <definition>IVector3 spk::IVector3&lt; TType &gt;::projectOnPlane</definition>
+        <argsstring>(const IVector3 &amp;p_planeNormal, const IVector3 &amp;p_planePoint) const</argsstring>
+        <name>projectOnPlane</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_planeNormal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_planePoint</declname>
+        </param>
+        <briefdescription>
+<para>Projects the vector onto a plane defined by its normal and a point on the plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_planeNormal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The normal vector of the plane. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_planePoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point on the plane. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The projected vector onto the plane. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="471" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="471" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a7e71f826fbe3aad2b33b9034457903d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector2" kindref="compound">IVector2</ref>&lt; TType &gt;</type>
+        <definition>IVector2&lt;TType&gt; spk::IVector3&lt; TType &gt;::removeY</definition>
+        <argsstring>()</argsstring>
+        <name>removeY</name>
+        <briefdescription>
+<para>Removes the y component of the vector and returns a 2D vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A 2D vector with the x and z components of the original vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="482" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="482" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="structspk_1_1IVector3_1a37472b6249c183eb47f89827849a72d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref></type>
+        <definition>IVector3 spk::IVector3&lt; TType &gt;::inverse</definition>
+        <argsstring>()</argsstring>
+        <name>inverse</name>
+        <briefdescription>
+<para>Returns the inverse (negation) of the vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The inverse of the vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="491" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="491" bodyend="494"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structspk_1_1IVector3_1adbaa8edc68de98abb2a91641c55f1377" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;p_os, const IVector3 &amp;p_self)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>p_os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>p_self</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded insertion operator for printing the vector to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> object to be printed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The modified output stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="84" column="8" bodyfile="includes/math/spk_vector3.hpp" bodystart="84" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structspk_1_1IVector3_1a45af1e00c534412f63cbb6c8cc58ae80" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref></type>
+        <definition>static IVector3 spk::IVector3&lt; TType &gt;::lerp</definition>
+        <argsstring>(const IVector3 &amp;a, const IVector3 &amp;b, float t)</argsstring>
+        <name>lerp</name>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structspk_1_1IVector3" kindref="compound">IVector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Performs linear interpolation between two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The starting vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ending vector. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The interpolation parameter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The interpolated vector between a and b based on t. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_vector3.hpp" line="363" column="17" bodyfile="includes/math/spk_vector3.hpp" bodystart="363" bodyend="369"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A generic 3D vector class template. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vector components. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="includes/math/spk_vector3.hpp" line="14" column="1" bodyfile="includes/math/spk_vector3.hpp" bodystart="15" bodyend="495"/>
+    <listofallmembers>
+      <member refid="structspk_1_1IVector3_1acf05bfc43602c284334e8370891e5bb3" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>cross</name></member>
+      <member refid="structspk_1_1IVector3_1a86a9339333a4f6a291aaa0bdf0325b32" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>distance</name></member>
+      <member refid="structspk_1_1IVector3_1a04baff13ac8b38a5894f6112a80f2fb0" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>dot</name></member>
+      <member refid="structspk_1_1IVector3_1a37472b6249c183eb47f89827849a72d8" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>inverse</name></member>
+      <member refid="structspk_1_1IVector3_1a1a30fd5ff259b409a088fa58a6249bc5" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>IVector3</name></member>
+      <member refid="structspk_1_1IVector3_1a6ee20387125930a1693734f905a9b7cb" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>IVector3</name></member>
+      <member refid="structspk_1_1IVector3_1a55a45e32063ccd893f360c9307114302" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>IVector3</name></member>
+      <member refid="structspk_1_1IVector3_1a230e86429a49bc1be347432b21421ac5" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>IVector3</name></member>
+      <member refid="structspk_1_1IVector3_1afb963e6bca429adf9fc5d35f9580cc33" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>IVector3</name></member>
+      <member refid="structspk_1_1IVector3_1a45af1e00c534412f63cbb6c8cc58ae80" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>lerp</name></member>
+      <member refid="structspk_1_1IVector3_1a0f8393536cd9515d379fdb5cfa51ce42" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>norm</name></member>
+      <member refid="structspk_1_1IVector3_1abea37a463a1e88283763e39ff9910d37" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>normalize</name></member>
+      <member refid="structspk_1_1IVector3_1a9cbbe780419af56f540e41d1030c78dd" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator IVector3&lt; TOtherType &gt;</name></member>
+      <member refid="structspk_1_1IVector3_1a5fe52f8e10e8cc546dbbff5bc4289fb6" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator!=</name></member>
+      <member refid="structspk_1_1IVector3_1aca11448f8edf66f5fd8f66f9c09b0fcb" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator!=</name></member>
+      <member refid="structspk_1_1IVector3_1acea21497ee4afc37edb45f1c5fb4330f" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator*</name></member>
+      <member refid="structspk_1_1IVector3_1a554c4b94a4eff189e05f7fa81a8de409" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator*=</name></member>
+      <member refid="structspk_1_1IVector3_1a09d2efd6d44b16c57695701070ae5db9" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator+</name></member>
+      <member refid="structspk_1_1IVector3_1a6c440077f89aaf8a2b0e4943aefd4fa1" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator+=</name></member>
+      <member refid="structspk_1_1IVector3_1a2f4474b57b5d0be6013cf80bc2a8e9f5" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator-</name></member>
+      <member refid="structspk_1_1IVector3_1afc705eb2813c71fe343fb59ddb363142" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator-=</name></member>
+      <member refid="structspk_1_1IVector3_1a5958dbf2a7086a6733745fb9337f5ae3" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator/</name></member>
+      <member refid="structspk_1_1IVector3_1a0ceb51dfd0ac6ab36b5cb106e20ccc6a" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator/=</name></member>
+      <member refid="structspk_1_1IVector3_1ad24172f419e35774c2dc4c05f516a847" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&lt;</name></member>
+      <member refid="structspk_1_1IVector3_1a2e1a2f432f1d362c3ce713f2af74cede" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&lt;</name></member>
+      <member refid="structspk_1_1IVector3_1adbaa8edc68de98abb2a91641c55f1377" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structspk_1_1IVector3_1a8cd7c15e740a43489015a93e1022b687" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&lt;=</name></member>
+      <member refid="structspk_1_1IVector3_1a81fac36a3b094b293fd453b54651eec7" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&lt;=</name></member>
+      <member refid="structspk_1_1IVector3_1aebd6cca762ca14ae011d342d8fbeecc6" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator==</name></member>
+      <member refid="structspk_1_1IVector3_1ab2e76c70db3725b0e2967d9c1af8656b" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator==</name></member>
+      <member refid="structspk_1_1IVector3_1a3be7770d32242fb00b3b9e85426e2bc7" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&gt;</name></member>
+      <member refid="structspk_1_1IVector3_1a9b078bc76396aa0becb3f3cc2dc6f9a9" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&gt;</name></member>
+      <member refid="structspk_1_1IVector3_1a22b3d1a0b921bff3b49aa10f502edcb7" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&gt;=</name></member>
+      <member refid="structspk_1_1IVector3_1af1685e556c8e3f5e60c02c55f510c2ed" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>operator&gt;=</name></member>
+      <member refid="structspk_1_1IVector3_1a3ceddf09cfa2ab16f110ea9bc9ef9a7f" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>projectOnPlane</name></member>
+      <member refid="structspk_1_1IVector3_1a7e71f826fbe3aad2b33b9034457903d2" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>removeY</name></member>
+      <member refid="structspk_1_1IVector3_1a7cb46bc29df99ee08112e5a36505f6f0" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>rotate</name></member>
+      <member refid="structspk_1_1IVector3_1a147778b8b9736f2edb095d0102d48d43" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>x</name></member>
+      <member refid="structspk_1_1IVector3_1a922affa5716cbf8401a21f7602035596" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>y</name></member>
+      <member refid="structspk_1_1IVector3_1a8254baecf03b5c984a6e25d7a51c095b" prot="public" virt="non-virtual"><scope>spk::IVector3</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

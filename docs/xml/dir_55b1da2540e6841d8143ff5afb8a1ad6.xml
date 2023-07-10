@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir">
+    <compoundname>includes/application/modules</compoundname>
+    <innerdir refid="dir_236f3c3cc45023562be3bdd435e3e127">includes/application/modules/linux</innerdir>
+    <innerfile refid="spk__API__module_8hpp">spk_API_module.hpp</innerfile>
+    <innerfile refid="spk__keyboard__module_8hpp">spk_keyboard_module.hpp</innerfile>
+    <innerfile refid="spk__message__consumer__module_8hpp">spk_message_consumer_module.hpp</innerfile>
+    <innerfile refid="spk__mouse__module_8hpp">spk_mouse_module.hpp</innerfile>
+    <innerfile refid="spk__profiler__module_8hpp">spk_profiler_module.hpp</innerfile>
+    <innerfile refid="spk__system__module_8hpp">spk_system_module.hpp</innerfile>
+    <innerfile refid="spk__time__module_8hpp">spk_time_module.hpp</innerfile>
+    <innerfile refid="spk__widget__module_8hpp">spk_widget_module.hpp</innerfile>
+    <innerfile refid="spk__window__module_8hpp">spk_window_module.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/application/modules/"/>
+  </compounddef>
+</doxygen>

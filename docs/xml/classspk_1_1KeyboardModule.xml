@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1KeyboardModule" kind="class" language="C++" prot="public">
+    <compoundname>spk::KeyboardModule</compoundname>
+    <basecompoundref refid="classspk_1_1IMessageConsumerModule" prot="public" virt="non-virtual">spk::IMessageConsumerModule</basecompoundref>
+    <includes refid="spk__keyboard__module_8hpp" local="no">spk_keyboard_module.hpp</includes>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void spk::KeyboardModule::_handleMessage</definition>
+        <argsstring>(SystemMessage &amp;p_event)</argsstring>
+        <name>_handleMessage</name>
+        <reimplements refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78">_handleMessage</reimplements>
+        <param>
+          <type>SystemMessage &amp;</type>
+          <declname>p_event</declname>
+        </param>
+        <briefdescription>
+<para>Handles a system message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The system message to handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="21" column="6" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="6" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1KeyboardModule_1a3a62882e58161aec70f3f3675c2f0706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::KeyboardModule::KeyboardModule</definition>
+        <argsstring>(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue)</argsstring>
+        <name>KeyboardModule</name>
+        <param>
+          <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
+          <declname>p_queue</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1KeyboardModule" kindref="compound">KeyboardModule</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_queue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thread-safe queue for keyboard system messages. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="29" column="1" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::KeyboardModule::~KeyboardModule</definition>
+        <argsstring>()</argsstring>
+        <name>~KeyboardModule</name>
+        <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1KeyboardModule" kindref="compound">KeyboardModule</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="34" column="1" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::KeyboardModule::updateKeyboard</definition>
+        <argsstring>()</argsstring>
+        <name>updateKeyboard</name>
+        <briefdescription>
+<para>Updates the keyboard state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_keyboard_module.hpp" line="39" column="6" bodyfile="src/application/modules/linux/spk_keyboard_module.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for managing the keyboard interactions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class manages the keyboard interactions, including handling system messages related to the keyboard. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::KeyboardModule</label>
+        <link refid="classspk_1_1KeyboardModule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::IMessageConsumerModule</label>
+        <link refid="classspk_1_1IMessageConsumerModule"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::KeyboardModule</label>
+        <link refid="classspk_1_1KeyboardModule"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::IMessageConsumerModule</label>
+        <link refid="classspk_1_1IMessageConsumerModule"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/application/modules/spk_keyboard_module.hpp" line="13" column="1" bodyfile="includes/application/modules/spk_keyboard_module.hpp" bodystart="14" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" prot="private" virt="virtual"><scope>spk::KeyboardModule</scope><name>_handleMessage</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>IMessageConsumerModule</name></member>
+      <member refid="classspk_1_1KeyboardModule_1a3a62882e58161aec70f3f3675c2f0706" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>KeyboardModule</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>treatMessage</name></member>
+      <member refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>updateKeyboard</name></member>
+      <member refid="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>~KeyboardModule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

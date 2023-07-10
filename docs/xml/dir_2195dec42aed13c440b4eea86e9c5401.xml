@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_2195dec42aed13c440b4eea86e9c5401" kind="dir">
+    <compoundname>playground</compoundname>
+    <innerdir refid="dir_4ceaa58bef61032532d7f419c1fea53b">playground/includes</innerdir>
+    <innerdir refid="dir_b87fad53da99d79ed81d01625b4e0439">playground/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="playground/"/>
+  </compounddef>
+</doxygen>

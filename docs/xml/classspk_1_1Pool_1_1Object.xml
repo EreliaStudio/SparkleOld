@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Pool_1_1Object" kind="class" language="C++" prot="public">
+    <compoundname>spk::Pool::Object</compoundname>
+    <includes refid="spk__pool_8hpp" local="no">spk_pool.hpp</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1Pool_1_1Object_1aaa45caad0db0173735281fcdf9aa5e8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Pool</definition>
+        <argsstring></argsstring>
+        <name>Pool</name>
+        <param>
+          <type><ref refid="classspk_1_1Pool" kindref="compound">Pool</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="41" column="13" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Pool_1_1Object_1a029605acc00b76100a559823a76f34e4" prot="private" static="no" mutable="no">
+        <type>Container *</type>
+        <definition>Container* spk::Pool&lt; TType &gt;::Object::_source</definition>
+        <argsstring></argsstring>
+        <name>_source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="44" column="23" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Pool_1_1Object_1a5c9a3fe1450883c0a738c1f01b3c4270" prot="private" static="no" mutable="no">
+        <type>size_t *</type>
+        <definition>size_t* spk::Pool&lt; TType &gt;::Object::_referenceCount</definition>
+        <argsstring></argsstring>
+        <name>_referenceCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="45" column="20" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Pool_1_1Object_1a0a79610742251548ee7cca1216cb7650" prot="private" static="no" mutable="no">
+        <type>TType *</type>
+        <definition>TType* spk::Pool&lt; TType &gt;::Object::_content</definition>
+        <argsstring></argsstring>
+        <name>_content</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="46" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a378ffaa8b9fb8da38267eb9848fffac8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::Pool&lt; TType &gt;::Object::Object</definition>
+        <argsstring>(Container *p_source, TType *p_content)</argsstring>
+        <name>Object</name>
+        <param>
+          <type>Container *</type>
+          <declname>p_source</declname>
+        </param>
+        <param>
+          <type>TType *</type>
+          <declname>p_content</declname>
+        </param>
+        <briefdescription>
+<para>Private constructor for the <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The private constructor is only accessible by the <computeroutput><ref refid="classspk_1_1Pool" kindref="compound">Pool</ref></computeroutput> class. It is used to create an <computeroutput><ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref></computeroutput> instance that manages a specific content object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the container of allocated objects. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the content object managed by the <computeroutput><ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref></computeroutput> instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="57" column="13" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="57" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a62ad9ca064abef6a380c961fa9a16516" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::Pool&lt; TType &gt;::Object::~Object</definition>
+        <argsstring>()</argsstring>
+        <name>~Object</name>
+        <briefdescription>
+<para>Destructor for the <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The destructor decrements the reference count and if it reaches zero, the content of the object is returned to the pool. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="70" column="13" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="70" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a1f83127b5f78cbe9752cc4b6419a53bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::Pool&lt; TType &gt;::Object::Object</definition>
+        <argsstring>(const Object &amp;p_other)</argsstring>
+        <name>Object</name>
+        <param>
+          <type>const <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor for the <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The copy constructor increases the reference count.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classspk_1_1Pool_1_1Object" kindref="compound">Object</ref> to copy. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="85" column="13" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1ab235caeb032b6b9c2f3a5ed481287eb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TType *</type>
+        <definition>TType* spk::Pool&lt; TType &gt;::Object::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <briefdescription>
+<para>Function call operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows accessing the content of the object using the function call syntax.</para>
+<para><simplesect kind="return"><para>A pointer to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="99" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a74dee53daa09bd8f2fd2285d26926b33" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TType *</type>
+        <definition>const TType* spk::Pool&lt; TType &gt;::Object::operator()</definition>
+        <argsstring>() const</argsstring>
+        <name>operator()</name>
+        <briefdescription>
+<para>Const version of the function call operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows accessing the content of the object using the function call syntax, preserving constness.</para>
+<para><simplesect kind="return"><para>A const pointer to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="112" column="25" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1af96ee327ca6eb615af93d0909843aede" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TType *</type>
+        <definition>TType* spk::Pool&lt; TType &gt;::Object::operator-&gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+<para>Member access operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows accessing members of the content using the arrow operator.</para>
+<para><simplesect kind="return"><para>A pointer to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="124" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1ab0cef28a202aae98789f48de67e1a7cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TType *</type>
+        <definition>const TType* spk::Pool&lt; TType &gt;::Object::operator-&gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+<para>Const version of the member access operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows accessing members of the content using the arrow operator, preserving constness.</para>
+<para><simplesect kind="return"><para>A const pointer to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="137" column="25" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a31fc7bcf5596dbceddf9a938f36a5fc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TType &amp;</type>
+        <definition>TType&amp; spk::Pool&lt; TType &gt;::Object::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+<para>Dereference operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows dereferencing the content using the dereference operator.</para>
+<para><simplesect kind="return"><para>A reference to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="149" column="19" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Pool_1_1Object_1a978235e7c6d322d8c00d0ca39e06896f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TType &amp;</type>
+        <definition>const TType&amp; spk::Pool&lt; TType &gt;::Object::operator*</definition>
+        <argsstring>() const</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+<para>Const version of the dereference operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows dereferencing the content using the dereference operator, preserving constness.</para>
+<para><simplesect kind="return"><para>A const reference to the content. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/data_structure/spk_pool.hpp" line="162" column="25" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="162" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An internal class to manage objects retrieved from the pool. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is designed to keep track of the memory it manages and to automatically return it to the pool when it is no longer needed. </para>
+    </detaileddescription>
+    <location file="includes/data_structure/spk_pool.hpp" line="39" column="9" bodyfile="includes/data_structure/spk_pool.hpp" bodystart="40" bodyend="166"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Pool_1_1Object_1a0a79610742251548ee7cca1216cb7650" prot="private" virt="non-virtual"><scope>spk::Pool::Object</scope><name>_content</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a5c9a3fe1450883c0a738c1f01b3c4270" prot="private" virt="non-virtual"><scope>spk::Pool::Object</scope><name>_referenceCount</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a029605acc00b76100a559823a76f34e4" prot="private" virt="non-virtual"><scope>spk::Pool::Object</scope><name>_source</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a378ffaa8b9fb8da38267eb9848fffac8" prot="private" virt="non-virtual"><scope>spk::Pool::Object</scope><name>Object</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a1f83127b5f78cbe9752cc4b6419a53bd" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>Object</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1ab235caeb032b6b9c2f3a5ed481287eb9" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator()</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a74dee53daa09bd8f2fd2285d26926b33" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator()</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a31fc7bcf5596dbceddf9a938f36a5fc8" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator*</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a978235e7c6d322d8c00d0ca39e06896f" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator*</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1af96ee327ca6eb615af93d0909843aede" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator-&gt;</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1ab0cef28a202aae98789f48de67e1a7cc" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>operator-&gt;</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1aaa45caad0db0173735281fcdf9aa5e8b" prot="private" virt="non-virtual"><scope>spk::Pool::Object</scope><name>Pool</name></member>
+      <member refid="classspk_1_1Pool_1_1Object_1a62ad9ca064abef6a380c961fa9a16516" prot="public" virt="non-virtual"><scope>spk::Pool::Object</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

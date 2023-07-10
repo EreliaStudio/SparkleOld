@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir">
+    <compoundname>src/application/modules/linux</compoundname>
+    <innerfile refid="spk__API__module_8cpp">spk_API_module.cpp</innerfile>
+    <innerfile refid="spk__keyboard__module_8cpp">spk_keyboard_module.cpp</innerfile>
+    <innerfile refid="spk__message__consumer__module_8cpp">spk_message_consumer_module.cpp</innerfile>
+    <innerfile refid="spk__mouse__module_8cpp">spk_mouse_module.cpp</innerfile>
+    <innerfile refid="spk__window__module_8cpp">spk_window_module.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/application/modules/linux/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_256790b80462968501d8e07fc5bc1f1d" kind="dir">
+    <compoundname>includes/design_pattern</compoundname>
+    <innerfile refid="spk__activable__object_8hpp">spk_activable_object.hpp</innerfile>
+    <innerfile refid="spk__activity_8hpp">spk_activity.hpp</innerfile>
+    <innerfile refid="spk__activity__scheduler_8hpp">spk_activity_scheduler.hpp</innerfile>
+    <innerfile refid="spk__context__manager_8hpp">spk_context_manager.hpp</innerfile>
+    <innerfile refid="spk__contract__provider_8hpp">spk_contract_provider.hpp</innerfile>
+    <innerfile refid="spk__inherence__object_8hpp">spk_inherence_object.hpp</innerfile>
+    <innerfile refid="spk__memento_8hpp">spk_memento.hpp</innerfile>
+    <innerfile refid="spk__observer_8hpp">spk_observer.hpp</innerfile>
+    <innerfile refid="spk__singleton_8hpp">spk_singleton.hpp</innerfile>
+    <innerfile refid="spk__stated__object_8hpp">spk_stated_object.hpp</innerfile>
+    <innerfile refid="spk__value_8hpp">spk_value.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/"/>
+  </compounddef>
+</doxygen>

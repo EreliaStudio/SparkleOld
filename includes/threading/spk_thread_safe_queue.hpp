@@ -6,52 +6,119 @@
 
 namespace spk
 {
-	template<typename T>
+	/**
+	 * @class ThreadSafeQueue
+	 * @brief A thread-safe queue implementation.
+	 *
+	 * This class provides a thread-safe implementation of a queue. It allows multiple threads
+	 * to push and pop items from the queue without causing data races or deadlocks.
+	 *
+	 * @tparam T The type of items stored in the queue.
+	 */
+	template <typename T>
 	class ThreadSafeQueue
 	{
 	protected:
-		std::mutex muxQueue;
-		std::mutex muxBlocking;
-        
-		std::deque<T> _content;
-		std::condition_variable cvBlocking;
+		std::mutex muxQueue;	/**< Mutex for protecting the access to the queue. */
+		std::mutex muxBlocking; /**< Mutex for blocking thread synchronization. */
+
+		std::deque<T> _content;				/**< The underlying deque container storing the items in the queue. */
+		std::condition_variable cvBlocking; /**< Condition variable for blocking thread synchronization. */
 
 	public:
+		/**
+		 * @brief Construct a new ThreadSafeQueue object.
+		 *
+		 * This is the default constructor for the ThreadSafeQueue class.
+		 */
 		ThreadSafeQueue() = default;
 
-		ThreadSafeQueue(const ThreadSafeQueue<T>&) = delete;
+		/**
+		 * @brief Copy constructor is deleted.
+		 *
+		 * Copying a ThreadSafeQueue is not allowed to avoid data races.
+		 */
+		ThreadSafeQueue(const ThreadSafeQueue<T> &) = delete;
 
+		/**
+		 * @brief Destroy the ThreadSafeQueue object.
+		 *
+		 * This is the destructor for the ThreadSafeQueue class. It clears the content of the queue.
+		 */
 		virtual ~ThreadSafeQueue() { clear(); }
 
-		const T& operator [] (const size_t& p_index) const
+		/**
+		 * @brief Access an item in the queue by index.
+		 *
+		 * This operator allows accessing an item in the queue by index.
+		 *
+		 * @param p_index The index of the item.
+		 * @return The item at the specified index.
+		 */
+		const T &operator[](const size_t &p_index) const
 		{
 			return (_content[p_index]);
 		}
 
-		T& front()
+		/**
+		 * @brief Get the reference to the front item in the queue.
+		 *
+		 * This function returns a reference to the front item in the queue.
+		 *
+		 * @return Reference to the front item.
+		 */
+		T &front()
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.front();
 		}
 
-		T& back()
+		/**
+		 * @brief Get the reference to the back item in the queue.
+		 *
+		 * This function returns a reference to the back item in the queue.
+		 *
+		 * @return Reference to the back item.
+		 */
+		T &back()
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.back();
 		}
 
-		const T& front() const
+		/**
+		 * @brief Get the const reference to the front item in the queue.
+		 *
+		 * This function returns a const reference to the front item in the queue.
+		 *
+		 * @return Const reference to the front item.
+		 */
+		const T &front() const
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.front();
 		}
 
-		const T& back() const
+		/**
+		 * @brief Get the const reference to the back item in the queue.
+		 *
+		 * This function returns a const reference to the back item in the queue.
+		 *
+		 * @return Const reference to the back item.
+		 */
+		const T &back() const
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.back();
 		}
 
+		/**
+		 * @brief Remove and return the front item from the queue.
+		 *
+		 * This function removes and returns the front item from the queue.
+		 *
+		 * @return The front item.
+		 */
 		T pop_front()
 		{
 			std::scoped_lock lock(muxQueue);
@@ -60,6 +127,13 @@ namespace spk
 			return (t);
 		}
 
+		/**
+		 * @brief Remove and return the back item from the queue.
+		 *
+		 * This function removes and returns the back item from the queue.
+		 *
+		 * @return The back item.
+		 */
 		T pop_back()
 		{
 			std::scoped_lock lock(muxQueue);
@@ -68,7 +142,14 @@ namespace spk
 			return (t);
 		}
 
-		void push_back(const T& item)
+		/**
+		 * @brief Push an item to the back of the queue.
+		 *
+		 * This function pushes an item to the back of the queue.
+		 *
+		 * @param item The item to be pushed.
+		 */
+		void push_back(const T &item)
 		{
 			std::scoped_lock lock(muxQueue);
 			_content.emplace_back(std::move(item));
@@ -77,7 +158,14 @@ namespace spk
 			cvBlocking.notify_one();
 		}
 
-		void push_front(const T& item)
+		/**
+		 * @brief Push an item to the front of the queue.
+		 *
+		 * This function pushes an item to the front of the queue.
+		 *
+		 * @param item The item to be pushed.
+		 */
+		void push_front(const T &item)
 		{
 			std::scoped_lock lock(muxQueue);
 			_content.emplace_front(std::move(item));
@@ -86,22 +174,47 @@ namespace spk
 			cvBlocking.notify_one();
 		}
 
+		/**
+		 * @brief Check if the queue is empty.
+		 *
+		 * This function checks if the queue is empty.
+		 *
+		 * @return True if the queue is empty, false otherwise.
+		 */
 		bool empty()
 		{
 			return _content.empty();
 		}
 
+		/**
+		 * @brief Get the size of the queue.
+		 *
+		 * This function returns the size of the queue.
+		 *
+		 * @return The size of the queue.
+		 */
 		size_t size()
 		{
 			return _content.size();
 		}
 
+		/**
+		 * @brief Clear the queue.
+		 *
+		 * This function clears the content of the queue.
+		 */
 		void clear()
 		{
 			std::scoped_lock lock(muxQueue);
 			_content.clear();
 		}
 
+		/**
+		 * @brief Wait for the queue to become non-empty.
+		 *
+		 * This function waits until the queue becomes non-empty.
+		 *
+		 */
 		void wait()
 		{
 			while (empty())

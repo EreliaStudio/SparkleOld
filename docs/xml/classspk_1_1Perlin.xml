@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1Perlin" kind="class" language="C++" prot="public">
+    <compoundname>spk::Perlin</compoundname>
+    <includes refid="spk__perlin_8hpp" local="no">spk_perlin.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1Perlin_1a99053eaf37c431a2ed85884d0ec165bd" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1RandomGenerator" kindref="compound">spk::RandomGenerator</ref>&lt; int &gt;</type>
+        <definition>spk::RandomGenerator&lt;int&gt; spk::Perlin::_rng</definition>
+        <argsstring></argsstring>
+        <name>_rng</name>
+        <briefdescription>
+<para>Pseudo-random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="18" column="22" bodyfile="includes/math/spk_perlin.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1ada6995e28752b41fdb171a1ef91bced4" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_gradiants[GradiantSize][GradiantSize][GradiantSize][3]</definition>
+        <argsstring>[GradiantSize][GradiantSize][GradiantSize][3]</argsstring>
+        <name>_gradiants</name>
+        <briefdescription>
+<para>3D gradient vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="24" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1a71552424ac49e02a267554b116159355" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long spk::Perlin::_seed</definition>
+        <argsstring></argsstring>
+        <name>_seed</name>
+        <initializer>= 12500</initializer>
+        <briefdescription>
+<para>Seed value for the random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="27" column="15" bodyfile="includes/math/spk_perlin.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1aa5e25c5016420267dee6856a5da1eb02" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_min</definition>
+        <argsstring></argsstring>
+        <name>_min</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Minimum and maximum values for the range of noise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="30" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1a8994e08e44d3ed3c583e4073aec057bd" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_max</definition>
+        <argsstring></argsstring>
+        <name>_max</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="31" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1ae39ccf131334c337d6533a08aefdfb94" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_range</definition>
+        <argsstring></argsstring>
+        <name>_range</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+<para>Range of the noise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="34" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1ab6a4efe994b5a2fe78540aaee1631958" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::Perlin::_octaveValue</definition>
+        <argsstring></argsstring>
+        <name>_octaveValue</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Number of octaves in the noise function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="37" column="8" bodyfile="includes/math/spk_perlin.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1a84fbf867c0cc9c1d7849cbfa37a57e7f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_frequency</definition>
+        <argsstring></argsstring>
+        <name>_frequency</name>
+        <initializer>= 50.0f</initializer>
+        <briefdescription>
+<para>Frequency of the first octave. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="40" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1af0e481cacb106917b22deda0e99eab86" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_persistance</definition>
+        <argsstring></argsstring>
+        <name>_persistance</name>
+        <initializer>= 0.5f</initializer>
+        <briefdescription>
+<para>Persistance value of the noise function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="43" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1Perlin_1acab4830bc7fa21d5d7f011bdfadd0eac" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float spk::Perlin::_lacunarity</definition>
+        <argsstring></argsstring>
+        <name>_lacunarity</name>
+        <initializer>= 2.0f</initializer>
+        <briefdescription>
+<para>Lacunarity value of the noise function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="46" column="7" bodyfile="includes/math/spk_perlin.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1Perlin_1ae80c76127d60b2613416b2629e8af495" prot="private" static="yes" mutable="no">
+        <type>const size_t</type>
+        <definition>const size_t spk::Perlin::GradiantSize</definition>
+        <argsstring></argsstring>
+        <name>GradiantSize</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Size of the gradient vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="21" column="21" bodyfile="includes/math/spk_perlin.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1Perlin_1a5e571d3c43bfe014657207ea0346e385" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::Perlin::_smoothstep</definition>
+        <argsstring>(float w)</argsstring>
+        <name>_smoothstep</name>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Perform a smooth step interpolation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to be interpolated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float Interpolated value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="54" column="15" bodyfile="src/math/spk_perlin.cpp" bodystart="9" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a050b431f78900c54a43aea68e35dbe31" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::Perlin::_interpolate</definition>
+        <argsstring>(float a0, float a1, float w)</argsstring>
+        <name>_interpolate</name>
+        <param>
+          <type>float</type>
+          <declname>a0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Interpolate between two values using a weight. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The weight. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float Interpolated result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="64" column="15" bodyfile="src/math/spk_perlin.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a15be4d92370bb34ecd68cc04bf4a93d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::Perlin::_dotGridGradient</definition>
+        <argsstring>(int ix, int iy, int iz, float x, float y, float z)</argsstring>
+        <name>_dotGridGradient</name>
+        <param>
+          <type>int</type>
+          <declname>ix</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iy</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>iz</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Compute the dot product of the gradient vector and the vector from the input coordinate to the 8 surrounding points in the grid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer x coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer y coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer z coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float x coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float y coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Float z coordinate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float The computed dot product. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="77" column="15" bodyfile="src/math/spk_perlin.cpp" bodystart="23" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a27dc615cd30b31c5d8480c3013bc3089" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::Perlin::_computeWaveLength</definition>
+        <argsstring>(float p_x, float p_y, float p_z, float p_frequency)</argsstring>
+        <name>_computeWaveLength</name>
+        <param>
+          <type>float</type>
+          <declname>p_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_frequency</declname>
+        </param>
+        <briefdescription>
+<para>Compute the wavelength of the <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> noise at a given point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x-coordinate of the point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y-coordinate of the point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>z-coordinate of the point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Frequency of the <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> noise. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float The wavelength at the given point. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="88" column="15" bodyfile="src/math/spk_perlin.cpp" bodystart="36" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a3de7bdea37ca323a62a2c5ba15d858f0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::_calcGradiant</definition>
+        <argsstring>()</argsstring>
+        <name>_calcGradiant</name>
+        <briefdescription>
+<para>Calculate the gradient vectors for the grid points in the <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> noise function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function populates the 3D array of gradient vectors, _gradiants, with pseudorandom values generated using the random number generator _rng. Each gradient vector has three components (x, y, z). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="95" column="14" bodyfile="src/math/spk_perlin.cpp" bodystart="78" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1Perlin_1a6b30453d0c5084274603577ee4018139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::Perlin::Perlin</definition>
+        <argsstring>(unsigned long p_seed=12500)</argsstring>
+        <name>Perlin</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>p_seed</declname>
+          <defval>12500</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Seed value for the random number generator. Default value is 12500. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="103" column="1" bodyfile="src/math/spk_perlin.cpp" bodystart="95" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a3802bb8a02f129913f0558643fb80862" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const unsigned long &amp;</type>
+        <definition>const unsigned long &amp; spk::Perlin::seed</definition>
+        <argsstring>() const</argsstring>
+        <name>seed</name>
+        <briefdescription>
+<para>Get the seed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const unsigned long&amp; Reference to the seed value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="110" column="21" bodyfile="src/math/spk_perlin.cpp" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a5219608fc52b568566f80873d876171c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configureSeed</definition>
+        <argsstring>(unsigned long p_seed)</argsstring>
+        <name>configureSeed</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>p_seed</declname>
+        </param>
+        <briefdescription>
+<para>Set the seed value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_seed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New seed value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="117" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="114" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a7a46cce01afd31e067178675f041bbe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configureFrequency</definition>
+        <argsstring>(float p_frequency)</argsstring>
+        <name>configureFrequency</name>
+        <param>
+          <type>float</type>
+          <declname>p_frequency</declname>
+        </param>
+        <briefdescription>
+<para>Set the frequency of the first octave. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_frequency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New frequency value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="124" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1aa7b598b8aad646e9415c0d170935122b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configurePersistance</definition>
+        <argsstring>(float p_persistance)</argsstring>
+        <name>configurePersistance</name>
+        <param>
+          <type>float</type>
+          <declname>p_persistance</declname>
+        </param>
+        <briefdescription>
+<para>Set the persistence value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_persistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New persistence value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="131" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a39b9a27d3de6da48ba34a0285a47e36f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configureLacunarity</definition>
+        <argsstring>(float p_lacunarity)</argsstring>
+        <name>configureLacunarity</name>
+        <param>
+          <type>float</type>
+          <declname>p_lacunarity</declname>
+        </param>
+        <briefdescription>
+<para>Set the lacunarity value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_lacunarity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New lacunarity value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="138" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a1399132789acef90817acbc028060eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configureOctave</definition>
+        <argsstring>(size_t p_octaveValue)</argsstring>
+        <name>configureOctave</name>
+        <param>
+          <type>size_t</type>
+          <declname>p_octaveValue</declname>
+        </param>
+        <briefdescription>
+<para>Set the number of octaves. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_octaveValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New number of octaves. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="145" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1a58b540318b3fe0807a43a43c1ce23187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::Perlin::configureRange</definition>
+        <argsstring>(float p_min, float p_max)</argsstring>
+        <name>configureRange</name>
+        <param>
+          <type>float</type>
+          <declname>p_min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_max</declname>
+        </param>
+        <briefdescription>
+<para>Set the range of the noise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum value of the range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum value of the range. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="153" column="6" bodyfile="src/math/spk_perlin.cpp" bodystart="137" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1Perlin_1aa31de10ae9eb246b1f5e19fb516dc904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float spk::Perlin::sample</definition>
+        <argsstring>(float p_x, float p_y=0, float p_z=0)</argsstring>
+        <name>sample</name>
+        <param>
+          <type>float</type>
+          <declname>p_x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_y</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p_z</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Get a sample from the noise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate. Default is 0. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Z-coordinate. Default is 0.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float The sample from the noise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/math/spk_perlin.hpp" line="164" column="7" bodyfile="src/math/spk_perlin.cpp" bodystart="144" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to generate <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> Noise. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> class generates <ref refid="classspk_1_1Perlin" kindref="compound">Perlin</ref> noise, which is a type of gradient noise often used in procedural texture and terrain generation. It uses a pseudo-random number generator to create a smooth but non-repeating pattern in three dimensions. </para>
+    </detaileddescription>
+    <location file="includes/math/spk_perlin.hpp" line="14" column="1" bodyfile="includes/math/spk_perlin.hpp" bodystart="15" bodyend="165"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Perlin_1a3de7bdea37ca323a62a2c5ba15d858f0" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_calcGradiant</name></member>
+      <member refid="classspk_1_1Perlin_1a27dc615cd30b31c5d8480c3013bc3089" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_computeWaveLength</name></member>
+      <member refid="classspk_1_1Perlin_1a15be4d92370bb34ecd68cc04bf4a93d9" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_dotGridGradient</name></member>
+      <member refid="classspk_1_1Perlin_1a84fbf867c0cc9c1d7849cbfa37a57e7f" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_frequency</name></member>
+      <member refid="classspk_1_1Perlin_1ada6995e28752b41fdb171a1ef91bced4" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_gradiants</name></member>
+      <member refid="classspk_1_1Perlin_1a050b431f78900c54a43aea68e35dbe31" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_interpolate</name></member>
+      <member refid="classspk_1_1Perlin_1acab4830bc7fa21d5d7f011bdfadd0eac" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_lacunarity</name></member>
+      <member refid="classspk_1_1Perlin_1a8994e08e44d3ed3c583e4073aec057bd" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_max</name></member>
+      <member refid="classspk_1_1Perlin_1aa5e25c5016420267dee6856a5da1eb02" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_min</name></member>
+      <member refid="classspk_1_1Perlin_1ab6a4efe994b5a2fe78540aaee1631958" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_octaveValue</name></member>
+      <member refid="classspk_1_1Perlin_1af0e481cacb106917b22deda0e99eab86" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_persistance</name></member>
+      <member refid="classspk_1_1Perlin_1ae39ccf131334c337d6533a08aefdfb94" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_range</name></member>
+      <member refid="classspk_1_1Perlin_1a99053eaf37c431a2ed85884d0ec165bd" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_rng</name></member>
+      <member refid="classspk_1_1Perlin_1a71552424ac49e02a267554b116159355" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_seed</name></member>
+      <member refid="classspk_1_1Perlin_1a5e571d3c43bfe014657207ea0346e385" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>_smoothstep</name></member>
+      <member refid="classspk_1_1Perlin_1a7a46cce01afd31e067178675f041bbe5" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configureFrequency</name></member>
+      <member refid="classspk_1_1Perlin_1a39b9a27d3de6da48ba34a0285a47e36f" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configureLacunarity</name></member>
+      <member refid="classspk_1_1Perlin_1a1399132789acef90817acbc028060eb0" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configureOctave</name></member>
+      <member refid="classspk_1_1Perlin_1aa7b598b8aad646e9415c0d170935122b" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configurePersistance</name></member>
+      <member refid="classspk_1_1Perlin_1a58b540318b3fe0807a43a43c1ce23187" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configureRange</name></member>
+      <member refid="classspk_1_1Perlin_1a5219608fc52b568566f80873d876171c" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>configureSeed</name></member>
+      <member refid="classspk_1_1Perlin_1ae80c76127d60b2613416b2629e8af495" prot="private" virt="non-virtual"><scope>spk::Perlin</scope><name>GradiantSize</name></member>
+      <member refid="classspk_1_1Perlin_1a6b30453d0c5084274603577ee4018139" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>Perlin</name></member>
+      <member refid="classspk_1_1Perlin_1aa31de10ae9eb246b1f5e19fb516dc904" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>sample</name></member>
+      <member refid="classspk_1_1Perlin_1a3802bb8a02f129913f0558643fb80862" prot="public" virt="non-virtual"><scope>spk::Perlin</scope><name>seed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

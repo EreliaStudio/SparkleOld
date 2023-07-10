@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ThreadSafeQueue" kind="class" language="C++" prot="public">
+    <compoundname>spk::ThreadSafeQueue</compoundname>
+    <includes refid="spk__thread__safe__queue_8hpp" local="no">spk_thread_safe_queue.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classspk_1_1ThreadSafeQueue_1ad0a76bf1be9b19a1232a06f6ced62d88" prot="protected" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex spk::ThreadSafeQueue&lt; T &gt;::muxQueue</definition>
+        <argsstring></argsstring>
+        <name>muxQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mutex for protecting the access to the queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="22" column="12" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ThreadSafeQueue_1a4c8b049876a04dcc317169d7f5147e3c" prot="protected" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex spk::ThreadSafeQueue&lt; T &gt;::muxBlocking</definition>
+        <argsstring></argsstring>
+        <name>muxBlocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mutex for blocking thread synchronization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="23" column="12" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ThreadSafeQueue_1aef0eb26c9d4c8bea6249120a5a674737" prot="protected" static="no" mutable="no">
+        <type>std::deque&lt; T &gt;</type>
+        <definition>std::deque&lt;T&gt; spk::ThreadSafeQueue&lt; T &gt;::_content</definition>
+        <argsstring></argsstring>
+        <name>_content</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The underlying deque container storing the items in the queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="25" column="12" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ThreadSafeQueue_1af85dcfbf85ff17055581432602a3fca2" prot="protected" static="no" mutable="no">
+        <type>std::condition_variable</type>
+        <definition>std::condition_variable spk::ThreadSafeQueue&lt; T &gt;::cvBlocking</definition>
+        <argsstring></argsstring>
+        <name>cvBlocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Condition variable for blocking thread synchronization. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="26" column="25" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1ad95a7d5bfe93b6d2146e64ee2a433b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ThreadSafeQueue&lt; T &gt;::ThreadSafeQueue</definition>
+        <argsstring>()=default</argsstring>
+        <name>ThreadSafeQueue</name>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the default constructor for the <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref> class. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a7ef0d2aea7e6ff8d3f80e4aba00855f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ThreadSafeQueue&lt; T &gt;::ThreadSafeQueue</definition>
+        <argsstring>(const ThreadSafeQueue&lt; T &gt; &amp;)=delete</argsstring>
+        <name>ThreadSafeQueue</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref>&lt; T &gt; &amp;</type>
+        </param>
+        <briefdescription>
+<para>Copy constructor is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copying a <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref> is not allowed to avoid data races. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1aa8d9e71b8bee427e21a7121759c0c690" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual spk::ThreadSafeQueue&lt; T &gt;::~ThreadSafeQueue</definition>
+        <argsstring>()</argsstring>
+        <name>~ThreadSafeQueue</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the destructor for the <ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">ThreadSafeQueue</ref> class. It clears the content of the queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="48" column="9" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a3f339b2424b4697100d4bb3a501c4bdc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T&amp; spk::ThreadSafeQueue&lt; T &gt;::operator[]</definition>
+        <argsstring>(const size_t &amp;p_index) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>p_index</declname>
+        </param>
+        <briefdescription>
+<para>Access an item in the queue by index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This operator allows accessing an item in the queue by index.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the item. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The item at the specified index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="58" column="9" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1acffc6621639cde4e29248fec8db7722e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T&amp; spk::ThreadSafeQueue&lt; T &gt;::front</definition>
+        <argsstring>()</argsstring>
+        <name>front</name>
+        <briefdescription>
+<para>Get the reference to the front item in the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns a reference to the front item in the queue.</para>
+<para><simplesect kind="return"><para>Reference to the front item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="70" column="3" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="70" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a71c53d3168aef54e9d0fecbb3202b7b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T&amp; spk::ThreadSafeQueue&lt; T &gt;::back</definition>
+        <argsstring>()</argsstring>
+        <name>back</name>
+        <briefdescription>
+<para>Get the reference to the back item in the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns a reference to the back item in the queue.</para>
+<para><simplesect kind="return"><para>Reference to the back item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="83" column="3" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1abdb4b57746427a0f8b7f4e8aff55eff4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T&amp; spk::ThreadSafeQueue&lt; T &gt;::front</definition>
+        <argsstring>() const</argsstring>
+        <name>front</name>
+        <briefdescription>
+<para>Get the const reference to the front item in the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns a const reference to the front item in the queue.</para>
+<para><simplesect kind="return"><para>Const reference to the front item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="96" column="9" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a0525e56c7f3ec4da434501ffd3f731b4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T&amp; spk::ThreadSafeQueue&lt; T &gt;::back</definition>
+        <argsstring>() const</argsstring>
+        <name>back</name>
+        <briefdescription>
+<para>Get the const reference to the back item in the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns a const reference to the back item in the queue.</para>
+<para><simplesect kind="return"><para>Const reference to the back item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="109" column="9" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1aaa11b3687a413ed1d05020e9679d708e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T spk::ThreadSafeQueue&lt; T &gt;::pop_front</definition>
+        <argsstring>()</argsstring>
+        <name>pop_front</name>
+        <briefdescription>
+<para>Remove and return the front item from the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function removes and returns the front item from the queue.</para>
+<para><simplesect kind="return"><para>The front item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="122" column="3" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="122" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a8507da2707f396a0db12cbff753c2030" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T spk::ThreadSafeQueue&lt; T &gt;::pop_back</definition>
+        <argsstring>()</argsstring>
+        <name>pop_back</name>
+        <briefdescription>
+<para>Remove and return the back item from the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function removes and returns the back item from the queue.</para>
+<para><simplesect kind="return"><para>The back item. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="137" column="3" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="137" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1af3d6530f982fbd9b8342bf69b79f170c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ThreadSafeQueue&lt; T &gt;::push_back</definition>
+        <argsstring>(const T &amp;item)</argsstring>
+        <name>push_back</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Push an item to the back of the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function pushes an item to the back of the queue.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to be pushed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="152" column="6" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="152" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a4a58ccd7575177fed56ecfb028e6537a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ThreadSafeQueue&lt; T &gt;::push_front</definition>
+        <argsstring>(const T &amp;item)</argsstring>
+        <name>push_front</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Push an item to the front of the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function pushes an item to the front of the queue.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The item to be pushed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="168" column="6" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="168" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1ae0f8b05a694cb48081a53d1f496c1e5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool spk::ThreadSafeQueue&lt; T &gt;::empty</definition>
+        <argsstring>()</argsstring>
+        <name>empty</name>
+        <briefdescription>
+<para>Check if the queue is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if the queue is empty.</para>
+<para><simplesect kind="return"><para>True if the queue is empty, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="184" column="6" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="184" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a6dacede3ce86503fbbd8cc3da5ac67e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t spk::ThreadSafeQueue&lt; T &gt;::size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Get the size of the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns the size of the queue.</para>
+<para><simplesect kind="return"><para>The size of the queue. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="196" column="8" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a5d0f55c23e83d574e0e787249adb24f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ThreadSafeQueue&lt; T &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Clear the queue. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function clears the content of the queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="206" column="6" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="206" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ThreadSafeQueue_1a75768d4042460537d331f670a798ce1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ThreadSafeQueue&lt; T &gt;::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <briefdescription>
+<para>Wait for the queue to become non-empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function waits until the queue becomes non-empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_thread_safe_queue.hpp" line="218" column="6" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="218" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A thread-safe queue implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a thread-safe implementation of a queue. It allows multiple threads to push and pop items from the queue without causing data races or deadlocks.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of items stored in the queue. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="includes/threading/spk_thread_safe_queue.hpp" line="19" column="1" bodyfile="includes/threading/spk_thread_safe_queue.hpp" bodystart="20" bodyend="226"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ThreadSafeQueue_1aef0eb26c9d4c8bea6249120a5a674737" prot="protected" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>_content</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a71c53d3168aef54e9d0fecbb3202b7b8" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>back</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a0525e56c7f3ec4da434501ffd3f731b4" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>back</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a5d0f55c23e83d574e0e787249adb24f6" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>clear</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1af85dcfbf85ff17055581432602a3fca2" prot="protected" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>cvBlocking</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1ae0f8b05a694cb48081a53d1f496c1e5f" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>empty</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1acffc6621639cde4e29248fec8db7722e" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>front</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1abdb4b57746427a0f8b7f4e8aff55eff4" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>front</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a4c8b049876a04dcc317169d7f5147e3c" prot="protected" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>muxBlocking</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1ad0a76bf1be9b19a1232a06f6ced62d88" prot="protected" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>muxQueue</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a3f339b2424b4697100d4bb3a501c4bdc" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>operator[]</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a8507da2707f396a0db12cbff753c2030" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>pop_back</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1aaa11b3687a413ed1d05020e9679d708e" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>pop_front</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1af3d6530f982fbd9b8342bf69b79f170c" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>push_back</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a4a58ccd7575177fed56ecfb028e6537a" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>push_front</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a6dacede3ce86503fbbd8cc3da5ac67e5" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>size</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1ad95a7d5bfe93b6d2146e64ee2a433b1b" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>ThreadSafeQueue</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a7ef0d2aea7e6ff8d3f80e4aba00855f0" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>ThreadSafeQueue</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1a75768d4042460537d331f670a798ce1b" prot="public" virt="non-virtual"><scope>spk::ThreadSafeQueue</scope><name>wait</name></member>
+      <member refid="classspk_1_1ThreadSafeQueue_1aa8d9e71b8bee427e21a7121759c0c690" prot="public" virt="virtual"><scope>spk::ThreadSafeQueue</scope><name>~ThreadSafeQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

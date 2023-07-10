@@ -1,0 +1,205 @@
+\hypertarget{structspk_1_1StandardType}{}\doxysection{spk\+::Standard\+Type$<$ TType, typename $>$ Class Template Reference}
+\label{structspk_1_1StandardType}\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+
+
+A class template for standard layout types, derived from \mbox{\hyperlink{classspk_1_1Memento}{Memento}}.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+memento.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Standard\+Type$<$ TType, typename $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{structspk_1_1StandardType__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Standard\+Type$<$ TType, typename $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{structspk_1_1StandardType__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}{Snapshot}} \mbox{\hyperlink{structspk_1_1StandardType_a948fa5a2189cb64c99148a9d357379ef}{\+\_\+on\+Save}} ()
+\begin{DoxyCompactList}\small\item\em Save the current state into a snapshot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structspk_1_1StandardType_a636a2177a8f8b1d8e15f8aa25054c6cd}{\+\_\+on\+Load}} (const \mbox{\hyperlink{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}{Snapshot}} \&p\+\_\+snapshot)
+\begin{DoxyCompactList}\small\item\em Load a state from a snapshot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1StandardType_a64b8eb651319f881834a6534f4c37236}{Standard\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1StandardType_a764d4c6e44e84b4c34a5216279afbecf}{Standard\+Type}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1StandardType}{Standard\+Type}} \& \mbox{\hyperlink{structspk_1_1StandardType_a4cfaaa7966d8cde38e3b9a37e96b296a}{operator=}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1StandardType_a1c1cd67f446d342eeb2a21a3971400d5}{operator TType \&}} ()
+\begin{DoxyCompactList}\small\item\em Type conversion operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structspk_1_1StandardType_a23e80e70d1a0bfd829ec44c2599b72d6}{operator const TType \&}} () const
+\begin{DoxyCompactList}\small\item\em Type conversion operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structspk_1_1StandardType_a42a28212057ade7832c36f853860f20d}\label{structspk_1_1StandardType_a42a28212057ade7832c36f853860f20d}} 
+TType \mbox{\hyperlink{structspk_1_1StandardType_a42a28212057ade7832c36f853860f20d}{\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em The value of the standard layout type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType, typename = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$\newline
+class spk\+::\+Standard\+Type$<$ TType, typename $>$}
+
+A class template for standard layout types, derived from \mbox{\hyperlink{classspk_1_1Memento}{Memento}}. 
+
+This class is used to save and load the state of a standard layout type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the standard layout type. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structspk_1_1StandardType_a64b8eb651319f881834a6534f4c37236}\label{structspk_1_1StandardType_a64b8eb651319f881834a6534f4c37236}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!StandardType@{StandardType}}
+\index{StandardType@{StandardType}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{StandardType()}{StandardType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::\mbox{\hyperlink{structspk_1_1StandardType}{Standard\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+This constructor initializes the value to its default state. \mbox{\Hypertarget{structspk_1_1StandardType_a764d4c6e44e84b4c34a5216279afbecf}\label{structspk_1_1StandardType_a764d4c6e44e84b4c34a5216279afbecf}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!StandardType@{StandardType}}
+\index{StandardType@{StandardType}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{StandardType()}{StandardType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::\mbox{\hyperlink{structspk_1_1StandardType}{Standard\+Type}} (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parameterized constructor. 
+
+This constructor initializes the value with a given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The initial value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structspk_1_1StandardType_a636a2177a8f8b1d8e15f8aa25054c6cd}\label{structspk_1_1StandardType_a636a2177a8f8b1d8e15f8aa25054c6cd}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!\_onLoad@{\_onLoad}}
+\index{\_onLoad@{\_onLoad}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{\_onLoad()}{\_onLoad()}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+void \mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::\+\_\+on\+Load (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}{Snapshot}} \&}]{p\+\_\+snapshot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Load a state from a snapshot. 
+
+This function loads a value from a snapshot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+snapshot} & The snapshot to load the value from. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classspk_1_1Memento}{spk\+::\+Memento}}.
+
+\mbox{\Hypertarget{structspk_1_1StandardType_a948fa5a2189cb64c99148a9d357379ef}\label{structspk_1_1StandardType_a948fa5a2189cb64c99148a9d357379ef}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!\_onSave@{\_onSave}}
+\index{\_onSave@{\_onSave}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{\_onSave()}{\_onSave()}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{classspk_1_1Memento_a4bc44b5f4cf27ca556fe08eee841918b}{Snapshot}} \mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::\+\_\+on\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Save the current state into a snapshot. 
+
+This function saves the current value into a snapshot.
+
+\begin{DoxyReturn}{Returns}
+A snapshot representing the current value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classspk_1_1Memento}{spk\+::\+Memento}}.
+
+\mbox{\Hypertarget{structspk_1_1StandardType_a23e80e70d1a0bfd829ec44c2599b72d6}\label{structspk_1_1StandardType_a23e80e70d1a0bfd829ec44c2599b72d6}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!operator const TType \&@{operator const TType \&}}
+\index{operator const TType \&@{operator const TType \&}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{operator const TType \&()}{operator const TType \&()}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::operator const TType \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Type conversion operator. 
+
+This operator returns a const reference to the value.
+
+\begin{DoxyReturn}{Returns}
+A const reference to the value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1StandardType_a1c1cd67f446d342eeb2a21a3971400d5}\label{structspk_1_1StandardType_a1c1cd67f446d342eeb2a21a3971400d5}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!operator TType \&@{operator TType \&}}
+\index{operator TType \&@{operator TType \&}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{operator TType \&()}{operator TType \&()}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::operator TType \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Type conversion operator. 
+
+This operator returns a reference to the value.
+
+\begin{DoxyReturn}{Returns}
+A reference to the value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structspk_1_1StandardType_a4cfaaa7966d8cde38e3b9a37e96b296a}\label{structspk_1_1StandardType_a4cfaaa7966d8cde38e3b9a37e96b296a}} 
+\index{spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::StandardType$<$ TType, typename $>$@{spk::StandardType$<$ TType, typename $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename TType , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+standard\+\_\+layout$<$\+TType$>$\+::value$>$$>$ \\
+\mbox{\hyperlink{structspk_1_1StandardType}{Standard\+Type}}\& \mbox{\hyperlink{structspk_1_1StandardType}{spk\+::\+Standard\+Type}}$<$ TType, typename $>$\+::operator= (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment operator. 
+
+This operator assigns a new value to the object and returns a reference to the object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The new value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+memento.\+hpp\end{DoxyCompactItemize}

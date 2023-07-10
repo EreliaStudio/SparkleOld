@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1StatedObject" kind="class" language="C++" prot="public">
+    <compoundname>spk::StatedObject</compoundname>
+    <basecompoundref refid="classspk_1_1ContractProvider" prot="public" virt="non-virtual">spk::ContractProvider</basecompoundref>
+    <includes refid="spk__stated__object_8hpp" local="no">spk_stated_object.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename TState</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1StatedObject_1af37d63b941fbdd99a05b07a1c09e69d9" prot="private" static="no" mutable="no">
+        <type>TState</type>
+        <definition>TState spk::StatedObject&lt; TState &gt;::_state</definition>
+        <argsstring></argsstring>
+        <name>_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="20" column="16" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1StatedObject_1a6aa924dee230c4a02d467e7ce937ddf8" prot="private" static="no" mutable="no">
+        <type>std::map&lt; TState, <ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">ContractProvider::CallbackContainer</ref> &gt;</type>
+        <definition>std::map&lt;TState, ContractProvider::CallbackContainer&gt; spk::StatedObject&lt; TState &gt;::_callbacks</definition>
+        <argsstring></argsstring>
+        <name>_callbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="21" column="18" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::StatedObject&lt; TState &gt;::StatedObject</definition>
+        <argsstring>(TState p_defaultState)</argsstring>
+        <name>StatedObject</name>
+        <param>
+          <type>TState</type>
+          <declname>p_defaultState</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new Stated Object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_defaultState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Represent the default state of the object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="29" column="9" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>Contract spk::StatedObject&lt; TState &gt;::addStateCallback</definition>
+        <argsstring>(TState p_state, Callback p_callback)</argsstring>
+        <name>addStateCallback</name>
+        <param>
+          <type>TState</type>
+          <declname>p_state</declname>
+        </param>
+        <param>
+          <type><ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref></type>
+          <declname>p_callback</declname>
+        </param>
+        <briefdescription>
+<para>Setup callback for specific state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method will set a specific callback to a desired state. This method will provide a Contract to the user.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The state binded to the callback. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback binded to the state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Contract A Contract representing the bind between state and callback, allowing him to edit/resign the callback added by this method. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="45" column="18" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::StatedObject&lt; TState &gt;::setState</definition>
+        <argsstring>(TState p_state)</argsstring>
+        <name>setState</name>
+        <param>
+          <type>TState</type>
+          <declname>p_state</declname>
+        </param>
+        <briefdescription>
+<para>Set the object&apos;s State and call the binded function if have one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="54" column="14" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="54" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const TState &amp;</type>
+        <definition>const TState&amp; spk::StatedObject&lt; TState &gt;::state</definition>
+        <argsstring>() const</argsstring>
+        <name>state</name>
+        <briefdescription>
+<para>get the current object&apos;s state </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const TState&amp; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_stated_object.hpp" line="70" column="22" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class who manage state switching. This class representing an object who can be in different state. the class additionnaly store lambdas to call uppon specific state. Each lambda is provided to the user as Contract object. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The status class/structure/enum/type in which the object can be set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::StatedObject&lt; TState &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::StatedObject&lt; TState &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/design_pattern/spk_stated_object.hpp" line="17" column="5" bodyfile="includes/design_pattern/spk_stated_object.hpp" bodystart="18" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classspk_1_1StatedObject_1a6aa924dee230c4a02d467e7ce937ddf8" prot="private" virt="non-virtual"><scope>spk::StatedObject</scope><name>_callbacks</name></member>
+      <member refid="classspk_1_1StatedObject_1af37d63b941fbdd99a05b07a1c09e69d9" prot="private" virt="non-virtual"><scope>spk::StatedObject</scope><name>_state</name></member>
+      <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>addStateCallback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>Callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>CallbackContainer</name></member>
+      <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>setState</name></member>
+      <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>state</name></member>
+      <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="public" virt="non-virtual"><scope>spk::StatedObject</scope><name>StatedObject</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::StatedObject</scope><name>subscribe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

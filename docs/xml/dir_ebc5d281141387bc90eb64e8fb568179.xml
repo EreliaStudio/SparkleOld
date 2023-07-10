@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_ebc5d281141387bc90eb64e8fb568179" kind="dir">
+    <compoundname>includes/data_structure</compoundname>
+    <innerfile refid="spk__data__buffer_8hpp">spk_data_buffer.hpp</innerfile>
+    <innerfile refid="spk__pool_8hpp">spk_pool.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/data_structure/"/>
+  </compounddef>
+</doxygen>

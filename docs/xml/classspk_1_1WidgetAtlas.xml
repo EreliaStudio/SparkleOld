@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1WidgetAtlas" kind="class" language="C++" prot="public">
+    <compoundname>spk::WidgetAtlas</compoundname>
+    <basecompoundref refid="classspk_1_1Singleton" prot="public" virt="non-virtual">spk::Singleton&lt; WidgetAtlas &gt;</basecompoundref>
+    <includes refid="spk__widget__atlas_8hpp" local="no">spk_widget_atlas.hpp</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classspk_1_1WidgetAtlas_1a03536a7c9eac7c15635a4ded1df177a6" prot="private" static="no">
+        <type>std::vector&lt; <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> * &gt;</type>
+        <definition>using spk::WidgetAtlas::StoringContainer =  std::vector&lt;AbstractWidget*&gt;</definition>
+        <argsstring></argsstring>
+        <name>StoringContainer</name>
+        <briefdescription>
+<para>A type definition for the container storing widgets. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="29" column="1" bodyfile="includes/widget/spk_widget_atlas.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1WidgetAtlas_1a4daca5bc2270f6945df1b8d34dcc32f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class spk::Singleton&lt; WidgetAtlas &gt;</definition>
+        <argsstring></argsstring>
+        <name>spk::Singleton&lt; WidgetAtlas &gt;</name>
+        <param>
+          <type><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt; <ref refid="classspk_1_1WidgetAtlas" kindref="compound">WidgetAtlas</ref> &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="1" column="0" bodyfile="includes/widget/spk_widget_atlas.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1WidgetAtlas_1a1f5d6f60c3a93a85d6ee055b98a5ddf3" prot="private" static="no" mutable="no">
+        <type>StoringContainer</type>
+        <definition>StoringContainer spk::WidgetAtlas::_widgets</definition>
+        <argsstring></argsstring>
+        <name>_widgets</name>
+        <briefdescription>
+<para>Collection of <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> pointers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="33" column="18" bodyfile="includes/widget/spk_widget_atlas.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1WidgetAtlas_1a5f45983a0582952917b1278f60fa6c30" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::WidgetAtlas::WidgetAtlas</definition>
+        <argsstring>()</argsstring>
+        <name>WidgetAtlas</name>
+        <briefdescription>
+<para>Private default constructor to enforce <ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref> pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="38" column="1" bodyfile="src/widget/spk_widget_atlas.cpp" bodystart="5" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1WidgetAtlas_1a8367cea8501ad4108fba1c115f4aeeed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::WidgetAtlas::insert</definition>
+        <argsstring>(AbstractWidget *p_widget)</argsstring>
+        <name>insert</name>
+        <param>
+          <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> *</type>
+          <declname>p_widget</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a new widget into the collection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_widget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the widget to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="46" column="6" bodyfile="src/widget/spk_widget_atlas.cpp" bodystart="10" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WidgetAtlas_1ac7eabaa654ac4496a37130831d6e93b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::WidgetAtlas::remove</definition>
+        <argsstring>(AbstractWidget *p_widget)</argsstring>
+        <name>remove</name>
+        <param>
+          <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> *</type>
+          <declname>p_widget</declname>
+        </param>
+        <briefdescription>
+<para>Removes a widget from the collection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_widget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the widget to be removed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="53" column="6" bodyfile="src/widget/spk_widget_atlas.cpp" bodystart="16" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WidgetAtlas_1adcf2adee250f0c6b5330da8e1434e066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::WidgetAtlas::sort</definition>
+        <argsstring>(AbstractWidget *p_widget)</argsstring>
+        <name>sort</name>
+        <param>
+          <type><ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> *</type>
+          <declname>p_widget</declname>
+        </param>
+        <briefdescription>
+<para>Sorts the widgets in the collection based on some criterion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_widget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the widget that provides the sorting criterion. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="60" column="6" bodyfile="src/widget/spk_widget_atlas.cpp" bodystart="25" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WidgetAtlas_1a7a029853be7ba1e3bca33f6fa3f648d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const StoringContainer &amp;</type>
+        <definition>const WidgetAtlas::StoringContainer &amp; spk::WidgetAtlas::widgets</definition>
+        <argsstring>() const</argsstring>
+        <name>widgets</name>
+        <briefdescription>
+<para>Returns a constant reference to the collection of widgets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>const reference to the StoringContainer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/widget/spk_widget_atlas.hpp" line="67" column="24" bodyfile="src/widget/spk_widget_atlas.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A singleton atlas of widgets. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classspk_1_1WidgetAtlas" kindref="compound">WidgetAtlas</ref> is a class that acts as a collection of <ref refid="classspk_1_1AbstractWidget" kindref="compound">AbstractWidget</ref> pointers. It provides methods for inserting, removing, and sorting widgets, as well as accessing the collection itself. Being a <ref refid="classspk_1_1Singleton" kindref="compound">Singleton</ref>, it ensures there is only one instance of this collection in the program.</para>
+<para>This class is called automaticaly by the widget when they are created or when they have their depth edited. This singleton is created inside the <ref refid="classspk_1_1WidgetModule" kindref="compound">WidgetModule</ref>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::Singleton&lt; WidgetAtlas &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::WidgetAtlas</label>
+        <link refid="classspk_1_1WidgetAtlas"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::Singleton&lt; WidgetAtlas &gt;</label>
+        <link refid="classspk_1_1Singleton"/>
+      </node>
+      <node id="1">
+        <label>spk::WidgetAtlas</label>
+        <link refid="classspk_1_1WidgetAtlas"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/widget/spk_widget_atlas.hpp" line="21" column="1" bodyfile="includes/widget/spk_widget_atlas.hpp" bodystart="22" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classspk_1_1Singleton_1a745f66a5489929948d930a09156aec4c" prot="protected" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>_instance</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a1f5d6f60c3a93a85d6ee055b98a5ddf3" prot="private" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>_widgets</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a8367cea8501ad4108fba1c115f4aeeed" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>insert</name></member>
+      <member refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>instance</name></member>
+      <member refid="classspk_1_1Singleton_1ab970838cbc825424436ad64613b20c12" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>instanciate</name></member>
+      <member refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>release</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1ac7eabaa654ac4496a37130831d6e93b8" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>remove</name></member>
+      <member refid="classspk_1_1Singleton_1a24d01aa8ba49475d195a492d724d43e1" prot="protected" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>Singleton</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1adcf2adee250f0c6b5330da8e1434e066" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>sort</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a4daca5bc2270f6945df1b8d34dcc32f3" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>spk::Singleton&lt; WidgetAtlas &gt;</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a03536a7c9eac7c15635a4ded1df177a6" prot="private" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>StoringContainer</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a5f45983a0582952917b1278f60fa6c30" prot="private" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>WidgetAtlas</name></member>
+      <member refid="classspk_1_1WidgetAtlas_1a7a029853be7ba1e3bca33f6fa3f648d0" prot="public" virt="non-virtual"><scope>spk::WidgetAtlas</scope><name>widgets</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

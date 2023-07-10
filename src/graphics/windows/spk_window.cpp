@@ -32,7 +32,7 @@ namespace spk
 
 		RegisterClass(&_windowClass);
 	}
-
+  
 	void Window::_createWindowFrame(void* p_APIModule, const spk::Vector2Int& p_size)
 	{
 		_windowSize.left = (long)0;

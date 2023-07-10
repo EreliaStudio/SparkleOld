@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__context__manager_8hpp" kind="file" language="C++">
+    <compoundname>spk_context_manager.hpp</compoundname>
+    <includes refid="spk__singleton_8hpp" local="yes">design_pattern/spk_singleton.hpp</includes>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="2">
+        <label>design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_context_manager.hpp</label>
+        <link refid="spk__context__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="2">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/design_pattern/spk_context_manager.hpp</label>
+        <link refid="spk__context__manager_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classspk_1_1ContextManager" prot="public">spk::ContextManager</innerclass>
+    <innerclass refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" prot="public">spk::ContextManager::ReadWriteAccessor</innerclass>
+    <innerclass refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" prot="public">spk::ContextManager::ReadOnlyAccessor</innerclass>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;design_pattern/spk_singleton.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TContextType&gt;</highlight></codeline>
+<codeline lineno="17" refid="classspk_1_1ContextManager" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt;ContextManager&lt;TContextType&gt;&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1Singleton" kindref="compound">spk::Singleton</ref>&lt;<ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref>&lt;TContextType&gt;&gt;;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" kindref="compound">ReadWriteAccessor</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kindref="compound">ReadOnlyAccessor</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1ContextManager_1_1ReadWriteAccessor" kindref="compound">ReadWriteAccessor</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36" refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1a4e4ae1455b0adfa700fa3d1de7f8de79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>TContextType<sp/>&amp;<ref refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1a4e4ae1455b0adfa700fa3d1de7f8de79" kindref="member">get</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Context<sp/>manager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(*<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()-&gt;<ref refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" kindref="member">_readWriteContext</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46" refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1ab66aa0655accf306a887a5081f4540bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1ab66aa0655accf306a887a5081f4540bd" kindref="member">swap</ref>()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Context<sp/>manager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()-&gt;swapReadWriteContext();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57" refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kindref="compound">ReadOnlyAccessor</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65" refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TContextType<sp/>&amp;<ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" kindref="member">get</ref>()</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Context<sp/>manager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(*<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()-&gt;<ref refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" kindref="member">_readOnlyContext</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1ac33d6aae0b6548b5d6da7b7d89534a5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1ac33d6aae0b6548b5d6da7b7d89534a5a" kindref="member">swapRequested</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(*<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()-&gt;<ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1a1a305713f955eaebfc6e3546fa3a4421" kindref="member">swap</ref>()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;Context<sp/>manager<sp/>not<sp/>initialized&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">ContextManager::instance</ref>()-&gt;swapReadOnlyContext();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="94" refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::recursive_mutex<sp/><ref refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" kindref="member">_bufferAccessMutex</ref>;<sp/></highlight></codeline>
+<codeline lineno="95" refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;TContextType&gt;<sp/><ref refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" kindref="member">_readWriteContext</ref>;<sp/></highlight></codeline>
+<codeline lineno="96" refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;TContextType&gt;<sp/><ref refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" kindref="member">_readOnlyContext</ref>;<sp/></highlight></codeline>
+<codeline lineno="97" refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::unique_ptr&lt;TContextType&gt;<sp/><ref refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" kindref="member">_intermediaryBuffer</ref>;<sp/></highlight></codeline>
+<codeline lineno="98" refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref>;<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
+<codeline lineno="106" refid="classspk_1_1ContextManager_1a4a41caca5398f4a2a20dbdd6f40127e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a4a41caca5398f4a2a20dbdd6f40127e8" kindref="member">ContextManager</ref>(Args<sp/>&amp;&amp;...p_args)<sp/>:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" kindref="member">_readWriteContext</ref>(std::make_unique&lt;TContextType&gt;(std::forward&lt;Args&gt;(p_args)...)),</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" kindref="member">_readOnlyContext</ref>(std::make_unique&lt;TContextType&gt;(std::forward&lt;Args&gt;(p_args)...)),</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" kindref="member">_intermediaryBuffer</ref>(std::make_unique&lt;TContextType&gt;(std::forward&lt;Args&gt;(p_args)...)),<sp/><ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref>(false)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1a7c3c2f2ddcb4a6c93ed5e291d01eaed2" kindref="member">swapReadWriteContext</ref>()</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::recursive_mutex&gt;<sp/>lock(<ref refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" kindref="member">_bufferAccessMutex</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1aa66650e4f903996150e2b8451b4e71d6" kindref="member">_readWriteContext</ref>.swap(<ref refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" kindref="member">_intermediaryBuffer</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager_1ad768f31a10cb4bd01ae59c0ad7a01558" kindref="member">swapReadOnlyContext</ref>()</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;ReadOnlyContext<sp/>does<sp/>not<sp/>need<sp/>to<sp/>be<sp/>swapped&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::recursive_mutex&gt;<sp/>lock(<ref refid="classspk_1_1ContextManager_1a53069aa2449071fa0b37e8a58b30a6e9" kindref="member">_bufferAccessMutex</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a836f413aea791a8cda9b587659a76617" kindref="member">_readOnlyContext</ref>.swap(<ref refid="classspk_1_1ContextManager_1a9c822ce23f242dbe1401ef14328abe1e" kindref="member">_intermediaryBuffer</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1a12a0d3ea61f6b018d7b0520200760d1b" kindref="member">_isSwapRequested</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="142" refid="classspk_1_1ContextManager_1aac749240603395f346c0b88056fb4b9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager_1aac749240603395f346c0b88056fb4b9b" kindref="member">ContextManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="143" refid="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref>&amp;<sp/><ref refid="classspk_1_1ContextManager_1a047985b77178329613b01e1b1338d568" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="includes/design_pattern/spk_context_manager.hpp"/>
+  </compounddef>
+</doxygen>

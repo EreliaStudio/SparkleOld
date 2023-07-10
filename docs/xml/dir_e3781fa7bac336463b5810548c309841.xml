@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e3781fa7bac336463b5810548c309841" kind="dir">
+    <compoundname>src/application/modules</compoundname>
+    <innerdir refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f">src/application/modules/linux</innerdir>
+    <innerfile refid="spk__profiler__module_8cpp">spk_profiler_module.cpp</innerfile>
+    <innerfile refid="spk__time__module_8cpp">spk_time_module.cpp</innerfile>
+    <innerfile refid="spk__widget__module_8cpp">spk_widget_module.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/application/modules/"/>
+  </compounddef>
+</doxygen>

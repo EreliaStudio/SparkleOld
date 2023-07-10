@@ -1,0 +1,161 @@
+\hypertarget{classspk_1_1Value_1_1Default}{}\doxysection{spk\+::Value$<$ TType $>$\+::Default Class Reference}
+\label{classspk_1_1Value_1_1Default}\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+
+
+The inner class for managing the default state of the value.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+value.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{classspk_1_1Value_1_1Default_ae9e4ae3a30832d143345ad35119e7528}{Default}} (Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object with a given initial value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Value_1_1Default_af08f2b7dccddde18f955ae8b7aebf64a}{Default}} (const \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Value_1_1Default_a4b7002959d78f07b0ed64795cecfef68}{$\sim$\+Default}} () noexcept(false)
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \& \mbox{\hyperlink{classspk_1_1Value_1_1Default_a76f914d497757411cff7499ec53ba41d}{operator=}} (const TType \&p\+\_\+new\+Value)
+\begin{DoxyCompactList}\small\item\em Assignment operator for setting the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \& \mbox{\hyperlink{classspk_1_1Value_1_1Default_a74711a987126d215a51581db6ee99679}{operator=}} (const \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \&p\+\_\+other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1Value_1_1Default_a17ae54c173cf86cf18bfb4881c0d2282}{operator const TType \&}} () const
+\begin{DoxyCompactList}\small\item\em Conversion operator for accessing the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_aeceedf6e1a7d48a588516ce2b1983d6f}\label{classspk_1_1Value_1_1Default_aeceedf6e1a7d48a588516ce2b1983d6f}} 
+class {\bfseries Value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TType$>$\newline
+class spk\+::\+Value$<$ TType $>$\+::\+Default}
+
+The inner class for managing the default state of the value. 
+
+This inner class represents the default state of the value. It holds the actual value, keeps track of subscribers, and triggers edition callbacks when the value is changed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_ae9e4ae3a30832d143345ad35119e7528}\label{classspk_1_1Value_1_1Default_ae9e4ae3a30832d143345ad35119e7528}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!Default@{Default}}
+\index{Default@{Default}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{Default()}{Default()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::\+Default (\begin{DoxyParamCaption}\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object with a given initial value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & The types of the arguments. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & The arguments to initialize the value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_af08f2b7dccddde18f955ae8b7aebf64a}\label{classspk_1_1Value_1_1Default_af08f2b7dccddde18f955ae8b7aebf64a}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!Default@{Default}}
+\index{Default@{Default}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{Default()}{Default()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::\+Default (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object to copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_a4b7002959d78f07b0ed64795cecfef68}\label{classspk_1_1Value_1_1Default_a4b7002959d78f07b0ed64795cecfef68}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!````~Default@{$\sim$Default}}
+\index{````~Default@{$\sim$Default}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{$\sim$Default()}{~Default()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::$\sim$\+Default (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. 
+
+\begin{DoxyNote}{Note}
+Throws a std\+::runtime\+\_\+error if the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} value is still used by at least one \mbox{\hyperlink{classspk_1_1Value}{Value}}. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_a17ae54c173cf86cf18bfb4881c0d2282}\label{classspk_1_1Value_1_1Default_a17ae54c173cf86cf18bfb4881c0d2282}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!operator const TType \&@{operator const TType \&}}
+\index{operator const TType \&@{operator const TType \&}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{operator const TType \&()}{operator const TType \&()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::operator const TType \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Conversion operator for accessing the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state. 
+
+This conversion operator allows accessing the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state as a constant reference.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_a74711a987126d215a51581db6ee99679}\label{classspk_1_1Value_1_1Default_a74711a987126d215a51581db6ee99679}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}}\& \mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy assignment operator for the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. 
+
+This operator copies the value from another \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object and triggers the edition callbacks for the subscribers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+other} & The \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the updated \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Value_1_1Default_a76f914d497757411cff7499ec53ba41d}\label{classspk_1_1Value_1_1Default_a76f914d497757411cff7499ec53ba41d}} 
+\index{spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}!operator=@{operator=}}
+\index{operator=@{operator=}!spk::Value$<$ TType $>$::Default@{spk::Value$<$ TType $>$::Default}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+\mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}}\& \mbox{\hyperlink{classspk_1_1Value}{spk\+::\+Value}}$<$ TType $>$\+::Default\+::operator= (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignment operator for setting the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state. 
+
+This operator sets the value in the \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} state and triggers the edition callbacks for the subscribers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+new\+Value} & The new value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the updated \mbox{\hyperlink{classspk_1_1Value_1_1Default}{Default}} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+value.\+hpp\end{DoxyCompactItemize}

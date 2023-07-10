@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1AbstractApplication" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>spk::AbstractApplication</compoundname>
+    <basecompoundref refid="classspk_1_1ContractProvider" prot="public" virt="non-virtual">spk::ContractProvider</basecompoundref>
+    <derivedcompoundref refid="classspk_1_1Application" prot="public" virt="non-virtual">spk::Application</derivedcompoundref>
+    <includes refid="spk__abstract__application_8hpp" local="no">spk_abstract_application.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" prot="public" static="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>using spk::AbstractApplication::Job =  std::function&lt;void()&gt;</definition>
+        <argsstring></argsstring>
+        <name>Job</name>
+        <briefdescription>
+<para>Type alias for a job, represented as a void function without arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="21" column="1" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1AbstractApplication_1a2b474ecf321b264b5f25606c3b581cc6" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::wstring, <ref refid="classspk_1_1PersistentWorker" kindref="compound">spk::PersistentWorker</ref> * &gt;</type>
+        <definition>std::map&lt;std::wstring, spk::PersistentWorker *&gt; spk::AbstractApplication::_workers</definition>
+        <argsstring></argsstring>
+        <name>_workers</name>
+        <briefdescription>
+<para>Map of persistent worker names to pointers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="27" column="10" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1AbstractApplication_1ac1f0331a7637589992327928578fc7f0" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" kindref="member">CallbackContainer</ref></type>
+        <definition>CallbackContainer spk::AbstractApplication::_jobs</definition>
+        <argsstring></argsstring>
+        <name>_jobs</name>
+        <briefdescription>
+<para>Vector of jobs to be performed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="32" column="19" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1AbstractApplication_1a3fbe7a7840de39f2b07dad4e5ca682ae" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int spk::AbstractApplication::_errorCode</definition>
+        <argsstring></argsstring>
+        <name>_errorCode</name>
+        <briefdescription>
+<para>Error code representing the state of the application. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="37" column="5" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1AbstractApplication_1a946e198c3c7bb48f614158b765db9f5d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool spk::AbstractApplication::_isRunning</definition>
+        <argsstring></argsstring>
+        <name>_isRunning</name>
+        <briefdescription>
+<para>Boolean flag indicating if the application is running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="42" column="6" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>ContractProvider::Contract spk::AbstractApplication::addJob</definition>
+        <argsstring>(const std::wstring &amp;p_WorkerName, const Job &amp;p_job)</argsstring>
+        <name>addJob</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_WorkerName</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref> &amp;</type>
+          <declname>p_job</declname>
+        </param>
+        <briefdescription>
+<para>Adds a job to a specific worker. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_WorkerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the worker. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_job</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The job to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="51" column="10" bodyfile="src/application/spk_abstract_application.cpp" bodystart="5" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1a5687e5ff1eaa1df4ad207097a93359b8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>ContractProvider::Contract spk::AbstractApplication::addJob</definition>
+        <argsstring>(const Job &amp;p_job)</argsstring>
+        <name>addJob</name>
+        <param>
+          <type>const <ref refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" kindref="member">Job</ref> &amp;</type>
+          <declname>p_job</declname>
+        </param>
+        <briefdescription>
+<para>Adds a job to the application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_job</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The job to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="58" column="10" bodyfile="src/application/spk_abstract_application.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void spk::AbstractApplication::setupJobs</definition>
+        <argsstring>()=0</argsstring>
+        <name>setupJobs</name>
+        <reimplementedby refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe">setupJobs</reimplementedby>
+        <briefdescription>
+<para>Virtual function to setup jobs, to be implemented by subclasses. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="63" column="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::AbstractApplication::AbstractApplication</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractApplication</name>
+        <briefdescription>
+<para>Constructs the <ref refid="classspk_1_1AbstractApplication" kindref="compound">AbstractApplication</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="69" column="1" bodyfile="src/application/spk_abstract_application.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::AbstractApplication::~AbstractApplication</definition>
+        <argsstring>()</argsstring>
+        <name>~AbstractApplication</name>
+        <briefdescription>
+<para>Destructs the <ref refid="classspk_1_1AbstractApplication" kindref="compound">AbstractApplication</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="74" column="1" bodyfile="src/application/spk_abstract_application.cpp" bodystart="23" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int spk::AbstractApplication::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+<para>Runs the application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The error code after the application finishes running. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="81" column="5" bodyfile="src/application/spk_abstract_application.cpp" bodystart="31" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::AbstractApplication::quit</definition>
+        <argsstring>(int p_errorCode)</argsstring>
+        <name>quit</name>
+        <param>
+          <type>int</type>
+          <declname>p_errorCode</declname>
+        </param>
+        <briefdescription>
+<para>Quits the application with a specific error code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_errorCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code with which the application should quit. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/spk_abstract_application.hpp" line="88" column="6" bodyfile="src/application/spk_abstract_application.cpp" bodystart="47" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Abstract base class for the application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::AbstractApplication</label>
+        <link refid="classspk_1_1AbstractApplication"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+      <node id="3">
+        <label>spk::Application</label>
+        <link refid="classspk_1_1Application"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::AbstractApplication</label>
+        <link refid="classspk_1_1AbstractApplication"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/application/spk_abstract_application.hpp" line="15" column="1" bodyfile="includes/application/spk_abstract_application.hpp" bodystart="16" bodyend="89"/>
+    <listofallmembers>
+      <member refid="classspk_1_1AbstractApplication_1a3fbe7a7840de39f2b07dad4e5ca682ae" prot="private" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>_errorCode</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a946e198c3c7bb48f614158b765db9f5d" prot="private" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>_isRunning</name></member>
+      <member refid="classspk_1_1AbstractApplication_1ac1f0331a7637589992327928578fc7f0" prot="private" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>_jobs</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a2b474ecf321b264b5f25606c3b581cc6" prot="private" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>_workers</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a46056c538113e4272d6d7eb23bfd9f0b" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>AbstractApplication</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" prot="protected" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>addJob</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a5687e5ff1eaa1df4ad207097a93359b8" prot="protected" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>addJob</name></member>
+      <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>Callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>CallbackContainer</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a1c093636f865b66a2eb5090719b2d30c" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>Job</name></member>
+      <member refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>quit</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>run</name></member>
+      <member refid="classspk_1_1AbstractApplication_1ab3404f55d68f8119693f44a45a332f26" prot="protected" virt="pure-virtual"><scope>spk::AbstractApplication</scope><name>setupJobs</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>subscribe</name></member>
+      <member refid="classspk_1_1AbstractApplication_1a2df6534b33148592a208198a875b2a80" prot="public" virt="non-virtual"><scope>spk::AbstractApplication</scope><name>~AbstractApplication</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

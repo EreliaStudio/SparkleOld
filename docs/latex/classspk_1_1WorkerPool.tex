@@ -1,0 +1,157 @@
+\hypertarget{classspk_1_1WorkerPool}{}\doxysection{spk\+::Worker\+Pool Class Reference}
+\label{classspk_1_1WorkerPool}\index{spk::WorkerPool@{spk::WorkerPool}}
+
+
+Class for creating and managing a pool of worker threads.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+worker\+\_\+pool.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Worker\+Pool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classspk_1_1WorkerPool__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classspk_1_1WorkerPool_ab0ccd4ab156d8131b804adb96f5c9c67}{Job}} = std\+::function$<$ void()$>$
+\begin{DoxyCompactList}\small\item\em The type of job to be executed by the workers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1WorkerPool_a839f0676de4aa4d8584fbbb1e899b08a}{Worker\+Pool}} (const std\+::wstring \&p\+\_\+pool\+Name, const size\+\_\+t \&p\+\_\+nb\+Worker)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} object with a specified pool name and number of workers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1WorkerPool_a480e86565f57a29db1b390530632545d}{Worker\+Pool}} (const \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} \&p\+\_\+other)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1WorkerPool_a5e8ae2aa8600c03b1abc3c93a40c3360}{$\sim$\+Worker\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1WorkerPool_a5f534195157ac56f61d5b46880d037c2}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the worker pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1WorkerPool_a4c0b119248905dfb4257df9bfd4b8e40}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the worker pool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Funct , typename... Args$>$ }\\void \mbox{\hyperlink{classspk_1_1WorkerPool_a7691876b56ced3a61b435cd738cdbf4b}{add\+Job}} (Funct \&\&p\+\_\+funct, Args \&\&... p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Add a job to the worker pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for creating and managing a pool of worker threads. 
+
+This class provides a pool of worker threads that can execute jobs concurrently. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classspk_1_1WorkerPool_ab0ccd4ab156d8131b804adb96f5c9c67}\label{classspk_1_1WorkerPool_ab0ccd4ab156d8131b804adb96f5c9c67}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!Job@{Job}}
+\index{Job@{Job}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{Job}{Job}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1WorkerPool_ab0ccd4ab156d8131b804adb96f5c9c67}{spk\+::\+Worker\+Pool\+::\+Job}}}
+
+
+
+The type of job to be executed by the workers. 
+
+This typedef defines the type of job to be executed by the workers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a839f0676de4aa4d8584fbbb1e899b08a}\label{classspk_1_1WorkerPool_a839f0676de4aa4d8584fbbb1e899b08a}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!WorkerPool@{WorkerPool}}
+\index{WorkerPool@{WorkerPool}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{WorkerPool()}{WorkerPool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily spk\+::\+Worker\+Pool\+::\+Worker\+Pool (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+pool\+Name,  }\item[{const size\+\_\+t \&}]{p\+\_\+nb\+Worker }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} object with a specified pool name and number of workers. 
+
+This constructor creates a new \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} object with the specified pool name and number of workers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+pool\+Name} & The name of the worker pool. \\
+\hline
+{\em p\+\_\+nb\+Worker} & The number of workers in the pool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a480e86565f57a29db1b390530632545d}\label{classspk_1_1WorkerPool_a480e86565f57a29db1b390530632545d}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!WorkerPool@{WorkerPool}}
+\index{WorkerPool@{WorkerPool}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{WorkerPool()}{WorkerPool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily spk\+::\+Worker\+Pool\+::\+Worker\+Pool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} \&}]{p\+\_\+other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Copy constructor is deleted. 
+
+Copying a \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} is not allowed to avoid potential issues with the shared state. \mbox{\Hypertarget{classspk_1_1WorkerPool_a5e8ae2aa8600c03b1abc3c93a40c3360}\label{classspk_1_1WorkerPool_a5e8ae2aa8600c03b1abc3c93a40c3360}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!````~WorkerPool@{$\sim$WorkerPool}}
+\index{````~WorkerPool@{$\sim$WorkerPool}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{$\sim$WorkerPool()}{~WorkerPool()}}
+{\footnotesize\ttfamily spk\+::\+Worker\+Pool\+::$\sim$\+Worker\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} object. 
+
+This is the destructor for the \mbox{\hyperlink{classspk_1_1WorkerPool}{Worker\+Pool}} class. It stops the worker pool and cleans up resources. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a7691876b56ced3a61b435cd738cdbf4b}\label{classspk_1_1WorkerPool_a7691876b56ced3a61b435cd738cdbf4b}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!addJob@{addJob}}
+\index{addJob@{addJob}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{addJob()}{addJob()}}
+{\footnotesize\ttfamily template$<$typename Funct , typename... Args$>$ \\
+void spk\+::\+Worker\+Pool\+::add\+Job (\begin{DoxyParamCaption}\item[{Funct \&\&}]{p\+\_\+funct,  }\item[{Args \&\&...}]{p\+\_\+args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a job to the worker pool. 
+
+This function adds a job to the worker pool. The job will be executed by one of the worker threads.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Funct} & The type of the job function. \\
+\hline
+{\em Args} & The types of the arguments of the job function. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+funct} & The job function. \\
+\hline
+{\em p\+\_\+args} & The arguments of the job function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1WorkerPool_a5f534195157ac56f61d5b46880d037c2}\label{classspk_1_1WorkerPool_a5f534195157ac56f61d5b46880d037c2}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!start@{start}}
+\index{start@{start}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void spk\+::\+Worker\+Pool\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the worker pool. 
+
+This function starts the worker pool by starting all the worker threads. \mbox{\Hypertarget{classspk_1_1WorkerPool_a4c0b119248905dfb4257df9bfd4b8e40}\label{classspk_1_1WorkerPool_a4c0b119248905dfb4257df9bfd4b8e40}} 
+\index{spk::WorkerPool@{spk::WorkerPool}!stop@{stop}}
+\index{stop@{stop}!spk::WorkerPool@{spk::WorkerPool}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void spk\+::\+Worker\+Pool\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the worker pool. 
+
+This function stops the worker pool by stopping all the worker threads and clearing the job queue. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/threading/spk\+\_\+worker\+\_\+pool.\+hpp\item 
+src/threading/spk\+\_\+worker\+\_\+pool.\+cpp\end{DoxyCompactItemize}

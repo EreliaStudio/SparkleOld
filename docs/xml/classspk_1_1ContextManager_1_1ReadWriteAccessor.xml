@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ContextManager_1_1ReadWriteAccessor" kind="class" language="C++" prot="public">
+    <compoundname>spk::ContextManager::ReadWriteAccessor</compoundname>
+    <includes refid="spk__context__manager_8hpp" local="no">spk_context_manager.hpp</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadWriteAccessor_1a4e4ae1455b0adfa700fa3d1de7f8de79" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TContextType &amp;</type>
+        <definition>static TContextType&amp; spk::ContextManager&lt; TContextType &gt;::ReadWriteAccessor::get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+<para>Fetches the context object for read/write operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> singleton instance is not initialized. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the read/write context object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="36" column="21" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="36" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ContextManager_1_1ReadWriteAccessor_1ab66aa0655accf306a887a5081f4540bd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void spk::ContextManager&lt; TContextType &gt;::ReadWriteAccessor::swap</definition>
+        <argsstring>()</argsstring>
+        <name>swap</name>
+        <briefdescription>
+<para>Swaps the context object used for read/write operations with an intermediary buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the <ref refid="classspk_1_1ContextManager" kindref="compound">ContextManager</ref> singleton instance is not initialized. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_context_manager.hpp" line="46" column="13" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="46" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class provides static methods to access and swap the context object for read and write operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/design_pattern/spk_context_manager.hpp" line="28" column="1" bodyfile="includes/design_pattern/spk_context_manager.hpp" bodystart="29" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1a4e4ae1455b0adfa700fa3d1de7f8de79" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadWriteAccessor</scope><name>get</name></member>
+      <member refid="classspk_1_1ContextManager_1_1ReadWriteAccessor_1ab66aa0655accf306a887a5081f4540bd" prot="public" virt="non-virtual"><scope>spk::ContextManager::ReadWriteAccessor</scope><name>swap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

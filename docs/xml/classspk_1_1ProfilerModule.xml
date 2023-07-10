@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ProfilerModule" kind="class" language="C++" prot="public">
+    <compoundname>spk::ProfilerModule</compoundname>
+    <includes refid="spk__profiler__module_8hpp" local="no">spk_profiler_module.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1Timer" kindref="compound">spk::Timer</ref></type>
+        <definition>spk::Timer spk::ProfilerModule::_oneSecondTime</definition>
+        <argsstring></argsstring>
+        <name>_oneSecondTime</name>
+        <briefdescription>
+<para><ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> that ticks every second. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="20" column="12" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1a8f17ee288595b93ead41d51316abafcd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::ProfilerModule::_renderIPSCounter</definition>
+        <argsstring></argsstring>
+        <name>_renderIPSCounter</name>
+        <briefdescription>
+<para>Counter for the number of frames rendered per second. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="25" column="8" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1ProfilerModule_1a60de49994d5389400f2513da1a24dfcd" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::ProfilerModule::_updateIPSCounter</definition>
+        <argsstring></argsstring>
+        <name>_updateIPSCounter</name>
+        <briefdescription>
+<para>Counter for the number of updates processed per second. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="30" column="8" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::_resetCounter</definition>
+        <argsstring>()</argsstring>
+        <name>_resetCounter</name>
+        <briefdescription>
+<para>Resets the counters for frames rendered and updates processed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="35" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ProfilerModule::ProfilerModule</definition>
+        <argsstring>()</argsstring>
+        <name>ProfilerModule</name>
+        <briefdescription>
+<para>Default constructor for the <ref refid="classspk_1_1ProfilerModule" kindref="compound">ProfilerModule</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="41" column="1" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="6" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ProfilerModule::~ProfilerModule</definition>
+        <argsstring>()</argsstring>
+        <name>~ProfilerModule</name>
+        <briefdescription>
+<para>Destructor for the <ref refid="classspk_1_1ProfilerModule" kindref="compound">ProfilerModule</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="46" column="1" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::updateData</definition>
+        <argsstring>()</argsstring>
+        <name>updateData</name>
+        <briefdescription>
+<para>Update the counters and timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be called once per frame in the application&apos;s main update loop. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="53" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="25" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::increaseRenderIPS</definition>
+        <argsstring>()</argsstring>
+        <name>increaseRenderIPS</name>
+        <briefdescription>
+<para>Increment the counter for frames rendered per second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be called once per frame rendered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="60" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ProfilerModule::increaseUpdateIPS</definition>
+        <argsstring>()</argsstring>
+        <name>increaseUpdateIPS</name>
+        <briefdescription>
+<para>Increment the counter for updates processed per second. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be called once per update processed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/application/modules/spk_profiler_module.hpp" line="67" column="6" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to profile and manage the frames-per-second rates of the application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is responsible for tracking the number of frames and updates that the application processes every second (known as the &quot;render IPS&quot; and &quot;update IPS&quot; respectively). </para>
+    </detaileddescription>
+    <location file="includes/application/modules/spk_profiler_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_profiler_module.hpp" bodystart="15" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ProfilerModule_1ab47684fbaf3f26dba192ab1788218210" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_oneSecondTime</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a8f17ee288595b93ead41d51316abafcd" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_renderIPSCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_resetCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a60de49994d5389400f2513da1a24dfcd" prot="private" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>_updateIPSCounter</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseRenderIPS</name></member>
+      <member refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseUpdateIPS</name></member>
+      <member refid="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>ProfilerModule</name></member>
+      <member refid="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>updateData</name></member>
+      <member refid="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>~ProfilerModule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

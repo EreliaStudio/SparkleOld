@@ -1,0 +1,159 @@
+\hypertarget{classspk_1_1Mouse}{}\doxysection{spk\+::Mouse Class Reference}
+\label{classspk_1_1Mouse}\index{spk::Mouse@{spk::Mouse}}
+
+
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for \mbox{\hyperlink{classspk_1_1Mouse}{Mouse}}.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+mouse.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Mouse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classspk_1_1Mouse__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for spk\+::Mouse\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classspk_1_1Mouse__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Mouse_a7e51467586bf8952f05461cc3b9fd5b5}\label{classspk_1_1Mouse_a7e51467586bf8952f05461cc3b9fd5b5}} 
+enum \mbox{\hyperlink{classspk_1_1Mouse_a7e51467586bf8952f05461cc3b9fd5b5}{Button}} \{ \newline
+{\bfseries Left}
+, {\bfseries Middle}
+, {\bfseries Right}
+, {\bfseries Button3}
+, \newline
+{\bfseries Button4}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for mouse buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classspk_1_1Mouse_acfc5f290988cf44d44a518391f1f7374}{place}} (const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}} \&p\+\_\+position)
+\begin{DoxyCompactList}\small\item\em Places the mouse at a given position. \end{DoxyCompactList}\item 
+const Input\+State \& \mbox{\hyperlink{classspk_1_1Mouse_a5f14a04a4540f1b1efe6d09a35b19390}{input\+Status}} (const \mbox{\hyperlink{classspk_1_1Mouse_a7e51467586bf8952f05461cc3b9fd5b5}{Button}} \&p\+\_\+button) const
+\begin{DoxyCompactList}\small\item\em Gets the input state of a given button. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}} \& \mbox{\hyperlink{classspk_1_1Mouse_ac3985fa648d414ec9f8e7000e2c35c6e}{position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current position of the mouse. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}} \& \mbox{\hyperlink{classspk_1_1Mouse_a586de041eeb18225bece40c602fabe4f}{delta\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the delta position of the mouse. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}} \& \mbox{\hyperlink{classspk_1_1Mouse_a5430080e4319c4d48d7b482f6bad7994}{wheel}} () const
+\begin{DoxyCompactList}\small\item\em Gets the position of the mouse wheel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Mouse_ac1111549d861795553472775e3ca851a}\label{classspk_1_1Mouse_ac1111549d861795553472775e3ca851a}} 
+static const size\+\_\+t \mbox{\hyperlink{classspk_1_1Mouse_ac1111549d861795553472775e3ca851a}{NB\+\_\+\+BUTTON}} = 5
+\begin{DoxyCompactList}\small\item\em Number of buttons on a mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1Mouse_a56ec2d6a7472fec6745bdc350324a958}\label{classspk_1_1Mouse_a56ec2d6a7472fec6745bdc350324a958}} 
+class {\bfseries spk\+::\+Singleton$<$ Mouse $>$}
+\item 
+\mbox{\Hypertarget{classspk_1_1Mouse_a48dc35d65b09169e27b9b8006de9dfbf}\label{classspk_1_1Mouse_a48dc35d65b09169e27b9b8006de9dfbf}} 
+class {\bfseries Mouse\+Module}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classspk_1_1Singleton}{Singleton}} class for \mbox{\hyperlink{classspk_1_1Mouse}{Mouse}}. 
+
+Represents the mouse device, providing functionalities to manage mouse actions such as button pressing, position, wheel movement, etc. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1Mouse_a586de041eeb18225bece40c602fabe4f}\label{classspk_1_1Mouse_a586de041eeb18225bece40c602fabe4f}} 
+\index{spk::Mouse@{spk::Mouse}!deltaPosition@{deltaPosition}}
+\index{deltaPosition@{deltaPosition}!spk::Mouse@{spk::Mouse}}
+\doxysubsubsection{\texorpdfstring{deltaPosition()}{deltaPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}}\& spk\+::\+Mouse\+::delta\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the delta position of the mouse. 
+
+\begin{DoxyReturn}{Returns}
+The delta position of the mouse. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Mouse_a5f14a04a4540f1b1efe6d09a35b19390}\label{classspk_1_1Mouse_a5f14a04a4540f1b1efe6d09a35b19390}} 
+\index{spk::Mouse@{spk::Mouse}!inputStatus@{inputStatus}}
+\index{inputStatus@{inputStatus}!spk::Mouse@{spk::Mouse}}
+\doxysubsubsection{\texorpdfstring{inputStatus()}{inputStatus()}}
+{\footnotesize\ttfamily const Input\+State\& spk\+::\+Mouse\+::input\+Status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classspk_1_1Mouse_a7e51467586bf8952f05461cc3b9fd5b5}{Button}} \&}]{p\+\_\+button }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the input state of a given button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+button} & The button to get the input state for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The input state of the button. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Mouse_acfc5f290988cf44d44a518391f1f7374}\label{classspk_1_1Mouse_acfc5f290988cf44d44a518391f1f7374}} 
+\index{spk::Mouse@{spk::Mouse}!place@{place}}
+\index{place@{place}!spk::Mouse@{spk::Mouse}}
+\doxysubsubsection{\texorpdfstring{place()}{place()}}
+{\footnotesize\ttfamily void spk\+::\+Mouse\+::place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}} \&}]{p\+\_\+position }\end{DoxyParamCaption})}
+
+
+
+Places the mouse at a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+position} & The position to place the mouse at. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1Mouse_ac3985fa648d414ec9f8e7000e2c35c6e}\label{classspk_1_1Mouse_ac3985fa648d414ec9f8e7000e2c35c6e}} 
+\index{spk::Mouse@{spk::Mouse}!position@{position}}
+\index{position@{position}!spk::Mouse@{spk::Mouse}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}}\& spk\+::\+Mouse\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current position of the mouse. 
+
+\begin{DoxyReturn}{Returns}
+The current position of the mouse. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1Mouse_a5430080e4319c4d48d7b482f6bad7994}\label{classspk_1_1Mouse_a5430080e4319c4d48d7b482f6bad7994}} 
+\index{spk::Mouse@{spk::Mouse}!wheel@{wheel}}
+\index{wheel@{wheel}!spk::Mouse@{spk::Mouse}}
+\doxysubsubsection{\texorpdfstring{wheel()}{wheel()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structspk_1_1IVector2}{Vector2\+Int}}\& spk\+::\+Mouse\+::wheel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the position of the mouse wheel. 
+
+\begin{DoxyReturn}{Returns}
+The position of the mouse wheel. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/input/spk\+\_\+mouse.\+hpp\item 
+src/input/spk\+\_\+mouse.\+cpp\end{DoxyCompactItemize}

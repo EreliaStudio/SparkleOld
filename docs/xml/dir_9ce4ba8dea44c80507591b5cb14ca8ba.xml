@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_9ce4ba8dea44c80507591b5cb14ca8ba" kind="dir">
+    <compoundname>includes/system</compoundname>
+    <innerfile refid="spk__chronometer_8hpp">spk_chronometer.hpp</innerfile>
+    <innerfile refid="spk__time__metrics_8hpp">spk_time_metrics.hpp</innerfile>
+    <innerfile refid="spk__timer_8hpp">spk_timer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/system/"/>
+  </compounddef>
+</doxygen>

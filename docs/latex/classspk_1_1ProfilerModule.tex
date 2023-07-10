@@ -1,0 +1,70 @@
+\hypertarget{classspk_1_1ProfilerModule}{}\doxysection{spk\+::Profiler\+Module Class Reference}
+\label{classspk_1_1ProfilerModule}\index{spk::ProfilerModule@{spk::ProfilerModule}}
+
+
+A class to profile and manage the frames-\/per-\/second rates of the application.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+profiler\+\_\+module.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1ProfilerModule_ab79ffae57422fddf6e6cef43f34c5c49}\label{classspk_1_1ProfilerModule_ab79ffae57422fddf6e6cef43f34c5c49}} 
+\mbox{\hyperlink{classspk_1_1ProfilerModule_ab79ffae57422fddf6e6cef43f34c5c49}{Profiler\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classspk_1_1ProfilerModule}{Profiler\+Module}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ProfilerModule_a2c6619183c9e521e1da356b6eddc7666}\label{classspk_1_1ProfilerModule_a2c6619183c9e521e1da356b6eddc7666}} 
+\mbox{\hyperlink{classspk_1_1ProfilerModule_a2c6619183c9e521e1da356b6eddc7666}{$\sim$\+Profiler\+Module}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classspk_1_1ProfilerModule}{Profiler\+Module}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ProfilerModule_acf075a37331fc5b9dc855804fb9e66b6}{update\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Update the counters and timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ProfilerModule_a606c70589cc008b90ffe1aed68fb7c70}{increase\+Render\+IPS}} ()
+\begin{DoxyCompactList}\small\item\em Increment the counter for frames rendered per second. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1ProfilerModule_affa254325e80e6a3c3071f0fa6c5bacd}{increase\+Update\+IPS}} ()
+\begin{DoxyCompactList}\small\item\em Increment the counter for updates processed per second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to profile and manage the frames-\/per-\/second rates of the application. 
+
+This class is responsible for tracking the number of frames and updates that the application processes every second (known as the \char`\"{}render IPS\char`\"{} and \char`\"{}update IPS\char`\"{} respectively). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ProfilerModule_a606c70589cc008b90ffe1aed68fb7c70}\label{classspk_1_1ProfilerModule_a606c70589cc008b90ffe1aed68fb7c70}} 
+\index{spk::ProfilerModule@{spk::ProfilerModule}!increaseRenderIPS@{increaseRenderIPS}}
+\index{increaseRenderIPS@{increaseRenderIPS}!spk::ProfilerModule@{spk::ProfilerModule}}
+\doxysubsubsection{\texorpdfstring{increaseRenderIPS()}{increaseRenderIPS()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+Module\+::increase\+Render\+IPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment the counter for frames rendered per second. 
+
+This method should be called once per frame rendered. \mbox{\Hypertarget{classspk_1_1ProfilerModule_affa254325e80e6a3c3071f0fa6c5bacd}\label{classspk_1_1ProfilerModule_affa254325e80e6a3c3071f0fa6c5bacd}} 
+\index{spk::ProfilerModule@{spk::ProfilerModule}!increaseUpdateIPS@{increaseUpdateIPS}}
+\index{increaseUpdateIPS@{increaseUpdateIPS}!spk::ProfilerModule@{spk::ProfilerModule}}
+\doxysubsubsection{\texorpdfstring{increaseUpdateIPS()}{increaseUpdateIPS()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+Module\+::increase\+Update\+IPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increment the counter for updates processed per second. 
+
+This method should be called once per update processed. \mbox{\Hypertarget{classspk_1_1ProfilerModule_acf075a37331fc5b9dc855804fb9e66b6}\label{classspk_1_1ProfilerModule_acf075a37331fc5b9dc855804fb9e66b6}} 
+\index{spk::ProfilerModule@{spk::ProfilerModule}!updateData@{updateData}}
+\index{updateData@{updateData}!spk::ProfilerModule@{spk::ProfilerModule}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily void spk\+::\+Profiler\+Module\+::update\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update the counters and timer. 
+
+This method should be called once per frame in the application\textquotesingle{}s main update loop. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/application/modules/spk\+\_\+profiler\+\_\+module.\+hpp\item 
+src/application/modules/spk\+\_\+profiler\+\_\+module.\+cpp\end{DoxyCompactItemize}

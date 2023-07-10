@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1WorkerPool" kind="class" language="C++" prot="public">
+    <compoundname>spk::WorkerPool</compoundname>
+    <derivedcompoundref refid="classspk_1_1Worker" prot="public" virt="non-virtual">spk::Worker</derivedcompoundref>
+    <includes refid="spk__worker__pool_8hpp" local="no">spk_worker_pool.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classspk_1_1WorkerPool_1ab0ccd4ab156d8131b804adb96f5c9c67" prot="public" static="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>spk::WorkerPool::Job</definition>
+        <argsstring></argsstring>
+        <name>Job</name>
+        <briefdescription>
+<para>The type of job to be executed by the workers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This typedef defines the type of job to be executed by the workers. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="23" column="9" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1WorkerPool_1af39281fbf936140afdb1329b38901c9e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classspk_1_1Thread" kindref="compound">spk::Thread</ref> * &gt;</type>
+        <definition>std::vector&lt;spk::Thread*&gt; spk::WorkerPool::_workers</definition>
+        <argsstring></argsstring>
+        <name>_workers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="26" column="21" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1WorkerPool_1a0063b49ac0341d03673176a8018d9241" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; <ref refid="classspk_1_1WorkerPool_1ab0ccd4ab156d8131b804adb96f5c9c67" kindref="member">Job</ref> &gt;</type>
+        <definition>spk::ThreadSafeQueue&lt;Job&gt; spk::WorkerPool::_jobQueue</definition>
+        <argsstring></argsstring>
+        <name>_jobQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="27" column="30" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1WorkerPool_1ab47cfa97680d5ff476623bf40ea4047f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool spk::WorkerPool::_running</definition>
+        <argsstring></argsstring>
+        <name>_running</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="28" column="14" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::WorkerPool::WorkerPool</definition>
+        <argsstring>(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)</argsstring>
+        <name>WorkerPool</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_poolName</declname>
+        </param>
+        <param>
+          <type>const size_t &amp;</type>
+          <declname>p_nbWorker</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> object with a specified pool name and number of workers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor creates a new <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> object with the specified pool name and number of workers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_poolName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the worker pool. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_nbWorker</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of workers in the pool. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="39" column="1" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="5" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::WorkerPool::WorkerPool</definition>
+        <argsstring>(const WorkerPool &amp;p_other)=delete</argsstring>
+        <name>WorkerPool</name>
+        <param>
+          <type>const <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> &amp;</type>
+          <declname>p_other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copying a <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> is not allowed to avoid potential issues with the shared state. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="46" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::WorkerPool::~WorkerPool</definition>
+        <argsstring>()</argsstring>
+        <name>~WorkerPool</name>
+        <briefdescription>
+<para>Destroy the <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the destructor for the <ref refid="classspk_1_1WorkerPool" kindref="compound">WorkerPool</ref> class. It stops the worker pool and cleans up resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="53" column="9" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::WorkerPool::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>Start the worker pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function starts the worker pool by starting all the worker threads. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="60" column="14" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::WorkerPool::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+<para>Stop the worker pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function stops the worker pool by stopping all the worker threads and clearing the job queue. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="67" column="14" bodyfile="src/threading/spk_worker_pool.cpp" bodystart="40" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Funct</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void spk::WorkerPool::addJob</definition>
+        <argsstring>(Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</argsstring>
+        <name>addJob</name>
+        <param>
+          <type>Funct &amp;&amp;</type>
+          <declname>p_funct</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+<para>Add a job to the worker pool. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function adds a job to the worker pool. The job will be executed by one of the worker threads.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the job function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments of the job function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The job function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments of the job function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/threading/spk_worker_pool.hpp" line="80" column="6" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="80" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class for creating and managing a pool of worker threads. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a pool of worker threads that can execute jobs concurrently. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>spk::Worker</label>
+        <link refid="classspk_1_1Worker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>spk::WorkerPool</label>
+        <link refid="classspk_1_1WorkerPool"/>
+      </node>
+    </inheritancegraph>
+    <location file="includes/threading/spk_worker_pool.hpp" line="14" column="1" bodyfile="includes/threading/spk_worker_pool.hpp" bodystart="15" bodyend="84"/>
+    <listofallmembers>
+      <member refid="classspk_1_1WorkerPool_1a0063b49ac0341d03673176a8018d9241" prot="private" virt="non-virtual"><scope>spk::WorkerPool</scope><name>_jobQueue</name></member>
+      <member refid="classspk_1_1WorkerPool_1ab47cfa97680d5ff476623bf40ea4047f" prot="private" virt="non-virtual"><scope>spk::WorkerPool</scope><name>_running</name></member>
+      <member refid="classspk_1_1WorkerPool_1af39281fbf936140afdb1329b38901c9e" prot="private" virt="non-virtual"><scope>spk::WorkerPool</scope><name>_workers</name></member>
+      <member refid="classspk_1_1WorkerPool_1a7691876b56ced3a61b435cd738cdbf4b" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>addJob</name></member>
+      <member refid="classspk_1_1WorkerPool_1ab0ccd4ab156d8131b804adb96f5c9c67" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>Job</name></member>
+      <member refid="classspk_1_1WorkerPool_1a5f534195157ac56f61d5b46880d037c2" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>start</name></member>
+      <member refid="classspk_1_1WorkerPool_1a4c0b119248905dfb4257df9bfd4b8e40" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>stop</name></member>
+      <member refid="classspk_1_1WorkerPool_1a839f0676de4aa4d8584fbbb1e899b08a" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>WorkerPool</name></member>
+      <member refid="classspk_1_1WorkerPool_1a480e86565f57a29db1b390530632545d" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>WorkerPool</name></member>
+      <member refid="classspk_1_1WorkerPool_1a5e8ae2aa8600c03b1abc3c93a40c3360" prot="public" virt="non-virtual"><scope>spk::WorkerPool</scope><name>~WorkerPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

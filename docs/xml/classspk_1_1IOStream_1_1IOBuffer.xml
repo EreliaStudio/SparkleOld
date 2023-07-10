@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1IOStream_1_1IOBuffer" kind="class" language="C++" prot="private">
+    <compoundname>spk::IOStream::IOBuffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::wstringbuf</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a294060a780954e8844b8bd4fdb0cf6f8" prot="private" static="yes" mutable="no">
+        <type>std::recursive_mutex</type>
+        <definition>std::recursive_mutex spk::IOStream::IOBuffer::_mutex</definition>
+        <argsstring></argsstring>
+        <name>_mutex</name>
+        <briefdescription>
+<para>Mutex for thread safety. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="23" column="48" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a515c3156a5e6c7b7a019b1877bc597e8" prot="private" static="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t spk::IOStream::IOBuffer::_maximumPrefixSize</definition>
+        <argsstring></argsstring>
+        <name>_maximumPrefixSize</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Maximum size of prefix string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="24" column="34" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a002ea1984bdbe318347b2d2d7848d617" prot="private" static="no" mutable="no">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::IOStream::IOBuffer::_prefix</definition>
+        <argsstring></argsstring>
+        <name>_prefix</name>
+        <briefdescription>
+<para>Prefix for current instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="25" column="26" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a80e1db0093b437cff770b27db52958b9" prot="private" static="no" mutable="no">
+        <type>std::wostream &amp;</type>
+        <definition>std::wostream&amp; spk::IOStream::IOBuffer::_outputStream</definition>
+        <argsstring></argsstring>
+        <name>_outputStream</name>
+        <briefdescription>
+<para>Reference to output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="26" column="27" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1ac50fc088c75016059e67ae88c41601d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::IOStream::IOBuffer::IOBuffer</definition>
+        <argsstring>(std::wostream &amp;p_outputStream, const std::wstring &amp;p_prefix)</argsstring>
+        <name>IOBuffer</name>
+        <param>
+          <type>std::wostream &amp;</type>
+          <declname>p_outputStream</declname>
+        </param>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_prefix</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_outputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the output stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prefix string for the stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="34" column="13" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1a54b6d213b6f5a6ae3060fb58a4f83344" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>spk::IOStream::IOBuffer::~IOBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~IOBuffer</name>
+        <briefdescription>
+<para>Destructor. If the buffer is not empty, it will be flushed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="43" column="13" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1aa126798cb333b4cf886106e4b527ccd5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int spk::IOStream::IOBuffer::sync</definition>
+        <argsstring>()</argsstring>
+        <name>sync</name>
+        <briefdescription>
+<para>Synchronizes the buffer with the output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>0 on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="56" column="25" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1a9b060ff7cb655f317ebce52b70cd773e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IOStream::IOBuffer::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <briefdescription>
+<para>Flushes the buffer to output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="66" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="66" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1ac48a78c41db01d44c29eba848a981170" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::IOStream::IOBuffer::setPrefix</definition>
+        <argsstring>(std::wstring p_prefix)</argsstring>
+        <name>setPrefix</name>
+        <param>
+          <type>std::wstring</type>
+          <declname>p_prefix</declname>
+        </param>
+        <briefdescription>
+<para>Changes the prefix string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new prefix string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/iostream/spk_iostream.hpp" line="83" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="83" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Custom buffer to support prefix output and thread safety. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::wstringbuf</label>
+      </node>
+      <node id="1">
+        <label>spk::IOStream::IOBuffer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::wstringbuf</label>
+      </node>
+      <node id="1">
+        <label>spk::IOStream::IOBuffer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/iostream/spk_iostream.hpp" line="20" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="21" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a515c3156a5e6c7b7a019b1877bc597e8" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_maximumPrefixSize</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a294060a780954e8844b8bd4fdb0cf6f8" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_mutex</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a80e1db0093b437cff770b27db52958b9" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_outputStream</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a002ea1984bdbe318347b2d2d7848d617" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_prefix</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a9b060ff7cb655f317ebce52b70cd773e" prot="public" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>flush</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1ac50fc088c75016059e67ae88c41601d6" prot="public" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>IOBuffer</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1ac48a78c41db01d44c29eba848a981170" prot="public" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>setPrefix</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1aa126798cb333b4cf886106e4b527ccd5" prot="public" virt="virtual"><scope>spk::IOStream::IOBuffer</scope><name>sync</name></member>
+      <member refid="classspk_1_1IOStream_1_1IOBuffer_1a54b6d213b6f5a6ae3060fb58a4f83344" prot="public" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>~IOBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

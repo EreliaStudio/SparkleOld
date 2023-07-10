@@ -1,0 +1,4 @@
+<map id="spk::Thread" name="spk::Thread">
+<area shape="rect" id="node1" title="Class for creating and managing a thread." alt="" coords="37,5,136,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="5,80,168,107"/>
+</map>

@@ -1,37 +1,36 @@
 #pragma once
 
-#include "widget/spk_abstract_widget.hpp"
-#include "application/modules/spk_abstract_module.hpp"
-
 namespace spk
 {
-	class WidgetModule : public spk::AbstractModule
+    /**
+     * @class WidgetModule
+     * @brief Class for managing widgets within the application.
+     *
+     * This class provides methods to handle and manage the widgets within the application.
+     */
+	class WidgetModule
 	{
 	private:
-		class CentralWidget : public AbstractWidget
-		{
-			friend class WidgetModule;
-			
-		private:
-			virtual void _onRender();
-			virtual bool _onUpdate();
-
-			virtual void _onGeometryChange();
-		public:
-			CentralWidget(const std::wstring& p_name);
-		};
-
-		CentralWidget* _centralWidget;
 
 	public:
+        /**
+         * @brief Constructs the WidgetModule object.
+         */
 		WidgetModule();
 
+        /**
+         * @brief Destructs the WidgetModule object.
+         */
 		~WidgetModule();
-		
+
+        /**
+         * @brief Updates the widget state.
+         */
 		void update();
 
+        /**
+         * @brief Renders the widget.
+         */
 		void render();
-
-		AbstractWidget* centralWidget() const;
 	};
 }

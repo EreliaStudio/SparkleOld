@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__time__module_8hpp" kind="file" language="C++">
+    <compoundname>spk_time_module.hpp</compoundname>
+    <includedby refid="spk__graphical__application_8hpp" local="yes">includes/application/concrete/linux/spk_graphical_application.hpp</includedby>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__time__metrics_8hpp" local="yes">includes/system/spk_time_metrics.hpp</includedby>
+    <includedby refid="spk__time__module_8cpp" local="yes">src/application/modules/spk_time_module.cpp</includedby>
+    <invincdepgraph>
+      <node id="7">
+        <label>includes/debug/spk_profiler.hpp</label>
+        <link refid="spk__profiler_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>includes/input/spk_input.hpp</label>
+        <link refid="spk__input_8hpp_source"/>
+      </node>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>includes/application/modules/spk_time_module.hpp</label>
+        <link refid="spk__time__module_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>includes/application/modules/spk_profiler_module.hpp</label>
+        <link refid="spk__profiler__module_8hpp_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>includes/system/spk_timer.hpp</label>
+        <link refid="spk__timer_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>includes/system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>includes/system/spk_chronometer.hpp</label>
+        <link refid="spk__chronometer_8hpp_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/application/concrete/linux/spk_graphical_application.hpp</label>
+        <link refid="spk__graphical__application_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classspk_1_1TimeModule" prot="public">spk::TimeModule</innerclass>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="classspk_1_1TimeModule" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classspk_1_1TimeModule" kindref="compound">TimeModule</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" kindref="member">TimeModule</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" kindref="member">~TimeModule</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule_1aa6a91529872d4c9551e58c565fa55bb4" kindref="member">updateTimeMetrics</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="includes/application/modules/spk_time_module.hpp"/>
+  </compounddef>
+</doxygen>

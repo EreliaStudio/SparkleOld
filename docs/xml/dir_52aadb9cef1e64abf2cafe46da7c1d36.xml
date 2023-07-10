@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir">
+    <compoundname>includes/graphics/linux</compoundname>
+    <innerfile refid="linux_2spk__window_8hpp">spk_window.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/graphics/linux/"/>
+  </compounddef>
+</doxygen>

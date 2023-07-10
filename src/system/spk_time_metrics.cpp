@@ -1,4 +1,6 @@
 #include "system/spk_time_metrics.hpp"
+#include <chrono>
+#include <thread>
 
 namespace spk
 {
@@ -20,4 +22,10 @@ namespace spk
 
 		_updateMetrics();
 	}
+	
+	void TimeMetrics::sleepAtLeast(size_t p_millisecond)
+	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(p_millisecond));
+	}
+
 }

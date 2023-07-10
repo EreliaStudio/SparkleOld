@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1ActivableObject" kind="class" language="C++" prot="public">
+    <compoundname>spk::ActivableObject</compoundname>
+    <basecompoundref refid="classspk_1_1StatedObject" prot="protected" virt="non-virtual">spk::StatedObject&lt; bool &gt;</basecompoundref>
+    <derivedcompoundref refid="classspk_1_1AbstractWidget" prot="public" virt="non-virtual">spk::AbstractWidget</derivedcompoundref>
+    <includes refid="spk__activable__object_8hpp" local="no">spk_activable_object.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::ActivableObject::ActivableObject</definition>
+        <argsstring>(bool p_activate=false)</argsstring>
+        <name>ActivableObject</name>
+        <param>
+          <type>bool</type>
+          <declname>p_activate</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="classspk_1_1ActivableObject" kindref="compound">ActivableObject</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_activate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether the object should be activated upon construction. Default is false. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="22" column="9" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ActivableObject::activate</definition>
+        <argsstring>()</argsstring>
+        <name>activate</name>
+        <briefdescription>
+<para>Activates the object. This function activates the object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="27" column="14" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::ActivableObject::deactivate</definition>
+        <argsstring>()</argsstring>
+        <name>deactivate</name>
+        <briefdescription>
+<para>Deactivates the object. This function deactivates the object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="33" column="14" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1ab4a73c84beb367d7908aeb402ea0a6e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool &amp;</type>
+        <definition>const bool &amp; spk::ActivableObject::isActive</definition>
+        <argsstring>() const</argsstring>
+        <name>isActive</name>
+        <briefdescription>
+<para>Checks if the object is active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A const reference to a boolean indicating whether the object is active or not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="39" column="20" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>ActivableObject::Contract spk::ActivableObject::addActivationCallback</definition>
+        <argsstring>(const Callback &amp;p_callback)</argsstring>
+        <name>addActivationCallback</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
+          <declname>p_callback</declname>
+        </param>
+        <briefdescription>
+<para>Adds a callback function to be called when the object is activated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the added callback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="46" column="18" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classspk_1_1ContractProvider_1_1Contract" kindref="compound">Contract</ref></type>
+        <definition>ActivableObject::Contract spk::ActivableObject::addDeactivationCallback</definition>
+        <argsstring>(const Callback &amp;p_callback)</argsstring>
+        <name>addDeactivationCallback</name>
+        <param>
+          <type>const <ref refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" kindref="member">Callback</ref> &amp;</type>
+          <declname>p_callback</declname>
+        </param>
+        <briefdescription>
+<para>Adds a callback function to be called when the object is deactivated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callback function to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A contract representing the added callback. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/design_pattern/spk_activable_object.hpp" line="53" column="18" bodyfile="src/design_pattern/spk_activable_object.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents an activatable object. This class provides functionality to activate and deactivate an object. It also allows adding activation and deactivation callbacks. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>spk::AbstractWidget</label>
+        <link refid="classspk_1_1AbstractWidget"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::StatedObject&lt; bool &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>spk::NoGraphicsWidget</label>
+        <link refid="classspk_1_1NoGraphicsWidget"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+      <node id="6">
+        <label>spk::OnlyGraphicsWidget</label>
+        <link refid="classspk_1_1OnlyGraphicsWidget"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>spk::ActivableObject</label>
+        <link refid="classspk_1_1ActivableObject"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>spk::StatedObject&lt; bool &gt;</label>
+        <link refid="classspk_1_1StatedObject"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::ContractProvider</label>
+        <link refid="classspk_1_1ContractProvider"/>
+      </node>
+      <node id="1">
+        <label>spk::ActivableObject</label>
+        <link refid="classspk_1_1ActivableObject"/>
+        <childnode refid="2" relation="protected-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/design_pattern/spk_activable_object.hpp" line="12" column="5" bodyfile="includes/design_pattern/spk_activable_object.hpp" bodystart="13" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classspk_1_1ActivableObject_1a831bce3fc7b83728edec22f6e7b07742" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>ActivableObject</name></member>
+      <member refid="classspk_1_1ActivableObject_1aaa7eeea62bbf4b0c9e0f92b5c477591b" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>activate</name></member>
+      <member refid="classspk_1_1ActivableObject_1a16208e87a5e21cd89e1cff629983e6a4" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>addActivationCallback</name></member>
+      <member refid="classspk_1_1ActivableObject_1adbcbc6cb5215e1fecae1cf18c3840d8e" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>addDeactivationCallback</name></member>
+      <member refid="classspk_1_1StatedObject_1aac365fce6e1327db89fe6bb66095ae7d" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>addStateCallback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a3ac086eee3bcd57992944a3d146eca1f" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>Callback</name></member>
+      <member refid="classspk_1_1ContractProvider_1a8ad7ce7f08974f54c4168b30fe3d7d21" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>CallbackContainer</name></member>
+      <member refid="classspk_1_1ActivableObject_1a30f10c4c4a64b48eafcf7c1b23a139b9" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>deactivate</name></member>
+      <member refid="classspk_1_1ActivableObject_1ab4a73c84beb367d7908aeb402ea0a6e8" prot="public" virt="non-virtual"><scope>spk::ActivableObject</scope><name>isActive</name></member>
+      <member refid="classspk_1_1StatedObject_1a3239267c819fa6825a2e19761f8ed697" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>setState</name></member>
+      <member refid="classspk_1_1StatedObject_1a6261556d41a0e850eb6b1eca6a3e6c3d" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>state</name></member>
+      <member refid="classspk_1_1StatedObject_1a5d13cdaa131af57a5767414ec363caa3" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>StatedObject</name></member>
+      <member refid="classspk_1_1ContractProvider_1a20a4093dd5ca766f2cb8bdf9e0bf0c25" prot="protected" virt="non-virtual"><scope>spk::ActivableObject</scope><name>subscribe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

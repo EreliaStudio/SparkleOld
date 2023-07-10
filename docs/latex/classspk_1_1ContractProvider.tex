@@ -1,0 +1,72 @@
+\hypertarget{classspk_1_1ContractProvider}{}\doxysection{spk\+::Contract\+Provider Class Reference}
+\label{classspk_1_1ContractProvider}\index{spk::ContractProvider@{spk::ContractProvider}}
+
+
+Construct a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} with a callback function and a callback\+Container.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+contract\+\_\+provider.\+hpp$>$}
+
+
+
+Inheritance diagram for spk\+::Contract\+Provider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classspk_1_1ContractProvider__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}}
+\begin{DoxyCompactList}\small\item\em Represent the ownership of a callback and allow users to interact with it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}\label{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}} 
+using \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} = std\+::function$<$ void()$>$
+\begin{DoxyCompactList}\small\item\em Type of data representing a callback function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1ContractProvider_a8ad7ce7f08974f54c4168b30fe3d7d21}\label{classspk_1_1ContractProvider_a8ad7ce7f08974f54c4168b30fe3d7d21}} 
+using \mbox{\hyperlink{classspk_1_1ContractProvider_a8ad7ce7f08974f54c4168b30fe3d7d21}{Callback\+Container}} = std\+::deque$<$ \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} $>$
+\begin{DoxyCompactList}\small\item\em Type of container for storing callback functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} \mbox{\hyperlink{classspk_1_1ContractProvider_a20a4093dd5ca766f2cb8bdf9e0bf0c25}{subscribe}} (\mbox{\hyperlink{classspk_1_1ContractProvider_a8ad7ce7f08974f54c4168b30fe3d7d21}{Callback\+Container}} \&p\+\_\+callback\+Owner, const \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} \&p\+\_\+callback)
+\begin{DoxyCompactList}\small\item\em Add the callback inside the container and create a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} representing it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Construct a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} with a callback function and a callback\+Container. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1ContractProvider_a20a4093dd5ca766f2cb8bdf9e0bf0c25}\label{classspk_1_1ContractProvider_a20a4093dd5ca766f2cb8bdf9e0bf0c25}} 
+\index{spk::ContractProvider@{spk::ContractProvider}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!spk::ContractProvider@{spk::ContractProvider}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract\+Provider\+::\+Contract}} spk\+::\+Contract\+Provider\+::subscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1ContractProvider_a8ad7ce7f08974f54c4168b30fe3d7d21}{Callback\+Container}} \&}]{p\+\_\+callback\+Owner,  }\item[{const \mbox{\hyperlink{classspk_1_1ContractProvider_a3ac086eee3bcd57992944a3d146eca1f}{Callback}} \&}]{p\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add the callback inside the container and create a \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} representing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+callback\+Owner} & The container that store the Callback. \\
+\hline
+{\em p\+\_\+callback} & The function to register in the \mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classspk_1_1ContractProvider_1_1Contract}{Contract}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/design\+\_\+pattern/spk\+\_\+contract\+\_\+provider.\+hpp\item 
+src/design\+\_\+pattern/spk\+\_\+contract\+\_\+provider.\+cpp\end{DoxyCompactItemize}

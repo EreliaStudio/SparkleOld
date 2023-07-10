@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1IInput" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>spk::IInput</compoundname>
+    <derivedcompoundref refid="classspk_1_1KeyInput" prot="public" virt="non-virtual">spk::KeyInput</derivedcompoundref>
+    <derivedcompoundref refid="classspk_1_1MouseInput" prot="public" virt="non-virtual">spk::MouseInput</derivedcompoundref>
+    <derivedcompoundref refid="classspk_1_1MouseMovementInput" prot="public" virt="non-virtual">spk::MouseMovementInput</derivedcompoundref>
+    <includes refid="spk__input_8hpp" local="no">spk_input.hpp</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classspk_1_1IInput_1aca480f940165fae3fbad17182222b8b1" prot="protected" static="no" mutable="no">
+        <type><ref refid="classspk_1_1Timer" kindref="compound">spk::Timer</ref></type>
+        <definition>spk::Timer spk::IInput::_timer</definition>
+        <argsstring></argsstring>
+        <name>_timer</name>
+        <briefdescription>
+<para><ref refid="classspk_1_1Timer" kindref="compound">Timer</ref> used to control the execution of the function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="23" column="12" bodyfile="includes/input/spk_input.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classspk_1_1IInput_1a3f003a9960bf0f09e9c40c0cb19b9b11" prot="protected" static="no" mutable="no">
+        <type>std::function&lt; void()&gt;</type>
+        <definition>std::function&lt;void()&gt; spk::IInput::_funct</definition>
+        <argsstring></argsstring>
+        <name>_funct</name>
+        <briefdescription>
+<para>The function to be executed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="28" column="15" bodyfile="includes/input/spk_input.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool spk::IInput::_isExecutionNeeded</definition>
+        <argsstring>()=0</argsstring>
+        <name>_isExecutionNeeded</name>
+        <reimplementedby refid="classspk_1_1KeyInput_1af69acdaa20e92397bc0f8be3385bb293">_isExecutionNeeded</reimplementedby>
+        <reimplementedby refid="classspk_1_1MouseInput_1a7e74631b44207f9901caa61265640df4">_isExecutionNeeded</reimplementedby>
+        <reimplementedby refid="classspk_1_1MouseMovementInput_1a18b136b787e7c28abc64e93051e9dcb4">_isExecutionNeeded</reimplementedby>
+        <briefdescription>
+<para>Pure virtual function to determine whether the function execution is needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if function execution is needed, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="35" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool spk::IInput::_skipCondition</definition>
+        <argsstring>()</argsstring>
+        <name>_skipCondition</name>
+        <briefdescription>
+<para>Virtual function to provide a condition under which the update is skipped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true by default. Override this function to provide a custom condition. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="42" column="14" bodyfile="includes/input/spk_input.hpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1IInput_1a0af00a3e86f07666cb3dc76518f2d496" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Funct</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>spk::IInput::IInput</definition>
+        <argsstring>(unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</argsstring>
+        <name>IInput</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>p_delayBetweenInput</declname>
+        </param>
+        <param>
+          <type>Funct &amp;&amp;</type>
+          <declname>p_funct</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>p_args</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="classspk_1_1IInput" kindref="compound">IInput</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Argument types </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_delayBetweenInput</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input delay for the timer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_funct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to be executed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments for the function </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="57" column="1" bodyfile="includes/input/spk_input.hpp" bodystart="57" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1IInput_1a09e4d70d01debf1dcb5c4ce1d61a3139" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void spk::IInput::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+<para>Update method for the <ref refid="classspk_1_1IInput" kindref="compound">IInput</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the <computeroutput><ref refid="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" kindref="member">_skipCondition()</ref></computeroutput> is true and the timer is running, the update is skipped. If the <computeroutput><ref refid="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662" kindref="member">_isExecutionNeeded()</ref></computeroutput> method returns true, the function is executed and the timer is started. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/input/spk_input.hpp" line="70" column="14" bodyfile="includes/input/spk_input.hpp" bodystart="70" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Abstract class providing a common interface for input classes in the &apos;spk&apos; library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An <ref refid="classspk_1_1IInput" kindref="compound">IInput</ref> object encapsulates a function that may need to be executed at a regular interval. The function is executed if the <computeroutput><ref refid="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662" kindref="member">_isExecutionNeeded()</ref></computeroutput> method returns true. The <computeroutput><ref refid="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" kindref="member">_skipCondition()</ref></computeroutput> method can be overridden to provide a condition under which the update is skipped. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>spk::IInput</label>
+        <link refid="classspk_1_1IInput"/>
+      </node>
+      <node id="2">
+        <label>spk::KeyInput</label>
+        <link refid="classspk_1_1KeyInput"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>spk::MouseMovementInput</label>
+        <link refid="classspk_1_1MouseMovementInput"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>spk::MouseInput</label>
+        <link refid="classspk_1_1MouseInput"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>spk::IInput</label>
+        <link refid="classspk_1_1IInput"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>_timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spk::Timer</label>
+        <link refid="classspk_1_1Timer"/>
+      </node>
+    </collaborationgraph>
+    <location file="includes/input/spk_input.hpp" line="17" column="1" bodyfile="includes/input/spk_input.hpp" bodystart="18" bodyend="80"/>
+    <listofallmembers>
+      <member refid="classspk_1_1IInput_1a3f003a9960bf0f09e9c40c0cb19b9b11" prot="protected" virt="non-virtual"><scope>spk::IInput</scope><name>_funct</name></member>
+      <member refid="classspk_1_1IInput_1af79e6745cbed467b0ba91ce1ff741662" prot="protected" virt="pure-virtual"><scope>spk::IInput</scope><name>_isExecutionNeeded</name></member>
+      <member refid="classspk_1_1IInput_1a92ab93dccf24b9c0809cd141a4f975d2" prot="protected" virt="virtual"><scope>spk::IInput</scope><name>_skipCondition</name></member>
+      <member refid="classspk_1_1IInput_1aca480f940165fae3fbad17182222b8b1" prot="protected" virt="non-virtual"><scope>spk::IInput</scope><name>_timer</name></member>
+      <member refid="classspk_1_1IInput_1a0af00a3e86f07666cb3dc76518f2d496" prot="public" virt="non-virtual"><scope>spk::IInput</scope><name>IInput</name></member>
+      <member refid="classspk_1_1IInput_1a09e4d70d01debf1dcb5c4ce1d61a3139" prot="public" virt="virtual"><scope>spk::IInput</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
