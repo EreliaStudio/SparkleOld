@@ -1,0 +1,4 @@
+<map id="spk::SystemModule" name="spk::SystemModule">
+<area shape="rect" id="node1" title="Class for managing system&#45;level interactions." alt="" coords="45,80,195,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages." alt="" coords="5,5,235,32"/>
+</map>

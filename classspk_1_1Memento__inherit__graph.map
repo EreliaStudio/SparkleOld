@@ -1,0 +1,4 @@
+<map id="spk::Memento" name="spk::Memento">
+<area shape="rect" id="node1" title="A class representing a memento in the Memento design pattern." alt="" coords="25,5,139,32"/>
+<area shape="rect" id="node2" href="$structspk_1_1StandardType.html" title="A class template for standard layout types, derived from Memento." alt="" coords="5,80,159,121"/>
+</map>
