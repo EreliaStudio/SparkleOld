@@ -4,6 +4,7 @@
 	#ifndef UNICODE
 	#define UNICODE
 	#endif
+
 	#ifndef NOMINMAX
 	#define NOMINMAX
 	#endif

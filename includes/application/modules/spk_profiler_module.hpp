@@ -9,7 +9,7 @@ namespace spk
 	 * \brief A class to profile and manage the frames-per-second rates of the application.
 	 *
 	 * This class is responsible for tracking the number of frames and updates that the application
-	 * processes every second (known as the "render IPS" and "update IPS" respectively). 
+	 * processes every second (known as the "render IPS" and "update IPS" respectively).
 	 */
 	class ProfilerModule
 	{
