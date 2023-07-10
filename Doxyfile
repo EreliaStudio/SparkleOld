@@ -1,0 +1,24 @@
+# Doxyfile configuration file
+
+# Project name
+PROJECT_NAME = "Sparkle"
+
+# Project version
+PROJECT_NUMBER = 1.0
+
+# The root directory of the source code
+INPUT = .
+
+# Recursively include all subdirectories
+RECURSIVE = YES
+
+# Output directory for the generated documentation
+OUTPUT_DIRECTORY = docs
+
+# Output format
+GENERATE_HTML = YES
+GENERATE_XML = YES
+
+WARN_LOGFILE = doxygen_warnings.log
+
+EXCLUDE_PATTERNS = */windows/*
