@@ -154,7 +154,7 @@ namespace spk
 				switch (c)
 				{
 				case L'\\':
-					result.replace(i, 1, L"\\u005C");
+					result.replace(i, 1, L"\\u005c");
 					i += 5;
 					break;
 				case L'\"':

@@ -3,18 +3,20 @@
 int main()
 {
 	spk::JSON::File file;
-	std::wstring filesName[6] = {
-		 L"array", L"literal",
-		 L"number", L"object",
-		 L"string", L"test_json"
-	};
+	std::vector<std::wstring> filePath = spk::listFile(L"json", L".json");
 
-	for (unsigned short i(0); i < 6; ++i)
+	for (const auto& path : filePath)
 	{
-		file.load(L"json/" + filesName[i] + L".json");
-		spk::cout << "File number [" << i << "]: " << std::endl
-			<< file << std::endl;
+		try
+		{
+			file.load(path);
+			std::wcout << L"Path: " << path << std::endl;
+			std::wcout << L"File: " << file << std::endl;
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
-
 	return (0);
 }
