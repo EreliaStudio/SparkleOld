@@ -11,6 +11,14 @@
     <includes refid="spk__widget__module_8hpp" local="yes">application/modules/spk_widget_module.hpp</includes>
     <includes refid="spk__profiler__module_8hpp" local="yes">application/modules/spk_profiler_module.hpp</includes>
     <incdepgraph>
+      <node id="23">
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
       <node id="15">
         <label>design_pattern/spk_contract_provider.hpp</label>
         <link refid="spk__contract__provider_8hpp_source"/>
@@ -33,31 +41,21 @@
       <node id="28">
         <label>application/modules/spk_widget_module.hpp</label>
         <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="21" relation="include">
-        </childnode>
       </node>
       <node id="27">
         <label>application/modules/spk_keyboard_module.hpp</label>
         <link refid="spk__keyboard__module_8hpp_source"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="21">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
         <label>application/modules/spk_window_module.hpp</label>
         <link refid="spk__window__module_8hpp_source"/>
       </node>
-      <node id="26">
+      <node id="22">
         <label>application/modules/spk_mouse_module.hpp</label>
         <link refid="spk__mouse__module_8hpp_source"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -72,8 +70,6 @@
       <node id="20">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="21" relation="include">
-        </childnode>
       </node>
       <node id="32">
         <label>design_pattern/spk_singleton.hpp</label>
@@ -83,10 +79,10 @@
         <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="25">
         <label>condition_variable</label>
       </node>
-      <node id="24">
+      <node id="26">
         <label>spk_system_define.hpp</label>
         <link refid="spk__system__define_8hpp_source"/>
       </node>
@@ -135,14 +131,14 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="24">
         <label>threading/spk_thread_safe_queue.hpp</label>
         <link refid="spk__thread__safe__queue_8hpp_source"/>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -201,9 +197,9 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
@@ -255,57 +251,59 @@
 <codeline lineno="43" refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a69d78907af2adc9516a40c37659238fe" kindref="member">setupJobs</ref>()</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_profilerModule-&gt;<ref refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" kindref="member">increaseRenderIPS</ref>();}));</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a2061e8ad2cbc3b8318f5bcb12b843de2" kindref="member">pullMessage</ref>();<sp/>}));</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_windowModule-&gt;<ref refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" kindref="member">clear</ref>();<sp/>}));</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_widgetModule-&gt;<ref refid="classspk_1_1WidgetModule_1aeef8f0294f7ecb10a7d54aa1b30c153c" kindref="member">render</ref>();<sp/>}));</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_renderContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>([&amp;](){<sp/>_windowModule-&gt;<ref refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" kindref="member">render</ref>();<sp/>}));</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_profilerModule-&gt;<ref refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" kindref="member">increaseUpdateIPS</ref>();}));</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_timeModule-&gt;<ref refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_profilerModule-&gt;<ref refid="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" kindref="member">update</ref>();}));</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_windowModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_mouseModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_keyboardModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_widgetModule-&gt;<ref refid="classspk_1_1WidgetModule_1a55cababa94fac8da2f4b38a51a2896f3" kindref="member">update</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_mouseModule-&gt;<ref refid="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" kindref="member">updateMouse</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_keyboardModule-&gt;<ref refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" kindref="member">updateKeyboard</ref>();<sp/>}));</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="69" refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kindref="member">Application</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_APIModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1APIModule" kindref="compound">spk::APIModule</ref>();</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timeModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule" kindref="compound">spk::TimeModule</ref>();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_profilerModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ProfilerModule" kindref="compound">spk::ProfilerModule</ref>();</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_windowModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WindowModule" kindref="compound">spk::WindowModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kindref="member">windowQueue</ref>(),<sp/>p_title,<sp/>p_size);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_timeModule-&gt;<ref refid="classspk_1_1TimeModule_1aa6a91529872d4c9551e58c565fa55bb4" kindref="member">updateTimeMetrics</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_profilerModule-&gt;<ref refid="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" kindref="member">updateData</ref>();}));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_windowModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" kindref="member">treatMessage</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_mouseModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" kindref="member">treatMessage</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_keyboardModule-&gt;<ref refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" kindref="member">treatMessage</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_widgetModule-&gt;treatMessage();<sp/>}));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_mouseModule-&gt;<ref refid="classspk_1_1MouseModule_1a463aa665c2e432316a0231a87a18aba3" kindref="member">updateMouse</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_updateContracts.push_back(<ref refid="classspk_1_1AbstractApplication_1a25160706b8695b7c900ee36a518b056b" kindref="member">addJob</ref>(L</highlight><highlight class="stringliteral">&quot;Updater&quot;</highlight><highlight class="normal">,<sp/>[&amp;](){<sp/>_keyboardModule-&gt;<ref refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" kindref="member">updateKeyboard</ref>();<sp/>}));</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71" refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1ad7f393b12bf9826e08b5d6401c753b44" kindref="member">Application</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_APIModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1APIModule" kindref="compound">spk::APIModule</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_timeModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule" kindref="compound">spk::TimeModule</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_profilerModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1ProfilerModule" kindref="compound">spk::ProfilerModule</ref>();</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_mouseModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1MouseModule" kindref="compound">spk::MouseModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kindref="member">mouseQueue</ref>());</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keyboardModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1KeyboardModule" kindref="compound">spk::KeyboardModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kindref="member">keyboardQueue</ref>());</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_widgetModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule" kindref="compound">spk::WidgetModule</ref>();</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(p_size);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89" refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kindref="member">~Application</ref>()</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_APIModule;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_timeModule;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_windowModule;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_mouseModule;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_keyboardModule;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_profilerModule;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_widgetModule;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::Window&gt;::instance</ref>()-&gt;setGeometry(p_size);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_windowModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WindowModule" kindref="compound">spk::WindowModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kindref="member">windowQueue</ref>(),<sp/>p_title,<sp/>p_size);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_mouseModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1MouseModule" kindref="compound">spk::MouseModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kindref="member">mouseQueue</ref>());</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_keyboardModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1KeyboardModule" kindref="compound">spk::KeyboardModule</ref>(_APIModule-&gt;<ref refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kindref="member">keyboardQueue</ref>());</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_widgetModule<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1WidgetModule" kindref="compound">spk::WidgetModule</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(p_size);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" kindref="member">~Application</ref>()</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_APIModule;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_timeModule;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_windowModule;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_mouseModule;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_keyboardModule;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_profilerModule;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_widgetModule;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" kindref="member">resize</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structspk_1_1IVector2" kindref="compound">spk::Vector2Int</ref>&amp;<sp/>p_size)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::Window&gt;::instance</ref>()-&gt;setGeometry(p_size);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="includes/application/concrete/linux/spk_graphical_application.hpp"/>
   </compounddef>

@@ -14,9 +14,6 @@
     <member refid="classspk_1_1AbstractApplication_1a5510ad9b53bc37a847b9d094936d473b" kind="function"><name>run</name></member>
     <member refid="classspk_1_1AbstractApplication_1ac8f2a348cdbbf7eaf10e77953aa21204" kind="function"><name>quit</name></member>
   </compound>
-  <compound refid="classspk_1_1AbstractModule" kind="class"><name>spk::AbstractModule</name>
-    <member refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4" kind="function"><name>update</name></member>
-  </compound>
   <compound refid="classspk_1_1AbstractWidget" kind="class"><name>spk::AbstractWidget</name>
     <member refid="classspk_1_1AbstractWidget_1a50912fdf2bcdf3bbc09e332cd223591e" kind="friend"><name>WidgetModule</name></member>
     <member refid="classspk_1_1AbstractWidget_1a2bf307544498b0f06a2b8577ac16eec1" kind="friend"><name>WidgetAtlas</name></member>
@@ -88,7 +85,7 @@
     <member refid="classspk_1_1APIModule_1a56f0e3aaf8014c5789ba6bd34990f19e" kind="variable"><name>_keyboardQueue</name></member>
     <member refid="classspk_1_1APIModule_1ae82aac58db25ad6745ef7aee7a832cd0" kind="function"><name>APIModule</name></member>
     <member refid="classspk_1_1APIModule_1ab09bde7c662be0042fe7864ac93258c2" kind="function"><name>~APIModule</name></member>
-    <member refid="classspk_1_1APIModule_1a775ee5f6da60b57849296fe60c189487" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1APIModule_1a2061e8ad2cbc3b8318f5bcb12b843de2" kind="function"><name>pullMessage</name></member>
     <member refid="classspk_1_1APIModule_1ac99489e2893d8b07a4b59ee458e97f5b" kind="function"><name>windowQueue</name></member>
     <member refid="classspk_1_1APIModule_1a61d09040e6f32afac48dded1b0c6d70f" kind="function"><name>mouseQueue</name></member>
     <member refid="classspk_1_1APIModule_1a97f46238074160fc7b8d1f32d7a5add8" kind="function"><name>keyboardQueue</name></member>
@@ -202,7 +199,7 @@
     <member refid="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" kind="variable"><name>_queue</name></member>
     <member refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78" kind="function"><name>_handleMessage</name></member>
     <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" kind="function"><name>IMessageConsumerModule</name></member>
-    <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" kind="function"><name>treatMessage</name></member>
   </compound>
   <compound refid="classspk_1_1InherenceObject" kind="class"><name>spk::InherenceObject</name>
     <member refid="classspk_1_1InherenceObject_1a77e8eb56b6e889a9e8a048bbed8f7c1b" kind="typedef"><name>Parent</name></member>
@@ -668,7 +665,7 @@
     <member refid="classspk_1_1ProfilerModule_1af5a728e88155ba4b0480137b82404c0f" kind="function"><name>_resetCounter</name></member>
     <member refid="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" kind="function"><name>ProfilerModule</name></member>
     <member refid="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" kind="function"><name>~ProfilerModule</name></member>
-    <member refid="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" kind="function"><name>updateData</name></member>
     <member refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" kind="function"><name>increaseRenderIPS</name></member>
     <member refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" kind="function"><name>increaseUpdateIPS</name></member>
   </compound>
@@ -685,15 +682,16 @@
     <member refid="classspk_1_1Promise_1af94f17735b511a890a33343ff8d24b66" kind="function"><name>value</name></member>
   </compound>
   <compound refid="classspk_1_1RandomGenerator" kind="class"><name>spk::RandomGenerator</name>
-    <member refid="classspk_1_1RandomGenerator_1a4fb1cef23f68d3aaf9e985fa234f59e5" kind="variable"><name>_generator</name></member>
-    <member refid="classspk_1_1RandomGenerator_1a21b0d25d6ce9c2d3d7cc3e9fe20d4f18" kind="variable"><name>_distribution</name></member>
-    <member refid="classspk_1_1RandomGenerator_1adff8299eaa9cbc86582321597a80f2b1" kind="function"><name>RandomGenerator</name></member>
-    <member refid="classspk_1_1RandomGenerator_1a7f72dae6004074788deecba74c5236cb" kind="function"><name>RandomGenerator</name></member>
-    <member refid="classspk_1_1RandomGenerator_1a059cf392c82a52e718c8ce84fb2bb2c2" kind="function"><name>RandomGenerator</name></member>
-    <member refid="classspk_1_1RandomGenerator_1afbf5624de8c186559746af0a8ed9c029" kind="function"><name>setDistributionRange</name></member>
-    <member refid="classspk_1_1RandomGenerator_1abfb6719ee850820f2f090a8d70143873" kind="function"><name>operator()</name></member>
-    <member refid="classspk_1_1RandomGenerator_1a96370335c177656f4878ebab8cc4b4b3" kind="function"><name>min</name></member>
-    <member refid="classspk_1_1RandomGenerator_1a65f9e7bda3b0a4a3a1638c5a55dfcb5c" kind="function"><name>max</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a7f7fb30deb532ed8bcd3b7f4951e4a96" kind="typedef"><name>GeneratorType</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a4ce4787cdfb46a1caeeb7e2fbdcef836" kind="variable"><name>_generator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a2d0b1d47c777629b85256b692034ac28" kind="variable"><name>_distribution</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a11a3b5f092c4f4da26ee3826ac101a3f" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a39ad642be13a0843ae45355143ebd487" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a301e58954bd4d01521de6d80c9fa1690" kind="function"><name>RandomGenerator</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a4ed12a6d2b9b97491381fe2a802e618d" kind="function"><name>setDistributionRange</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a94f0dd891c00eb7fe9a195ede548d8fe" kind="function"><name>operator()</name></member>
+    <member refid="classspk_1_1RandomGenerator_1a873244e578c872984ca815e396eaabb1" kind="function"><name>min</name></member>
+    <member refid="classspk_1_1RandomGenerator_1ac64780f71057a7db7f87a90033d99a29" kind="function"><name>max</name></member>
   </compound>
   <compound refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor" kind="class"><name>spk::ContextManager::ReadOnlyAccessor</name>
     <member refid="classspk_1_1ContextManager_1_1ReadOnlyAccessor_1abf5a06f279dda5d46546e0a29077215b" kind="function"><name>get</name></member>
@@ -785,7 +783,7 @@
   <compound refid="classspk_1_1TimeModule" kind="class"><name>spk::TimeModule</name>
     <member refid="classspk_1_1TimeModule_1a927bb091d697cdde8e9a66b1d5bc2a98" kind="function"><name>TimeModule</name></member>
     <member refid="classspk_1_1TimeModule_1a4b5d832af3302c1ca6def45c3ceb652e" kind="function"><name>~TimeModule</name></member>
-    <member refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kind="function"><name>update</name></member>
+    <member refid="classspk_1_1TimeModule_1aa6a91529872d4c9551e58c565fa55bb4" kind="function"><name>updateTimeMetrics</name></member>
   </compound>
   <compound refid="classspk_1_1Timer" kind="class"><name>spk::Timer</name>
     <member refid="classspk_1_1Timer_1a68d5c57fd3cd82f4f97fe8a34bc227a0" kind="enum"><name>State</name></member>
@@ -916,9 +914,9 @@
   </compound>
   <compound refid="spk__window__module_8hpp" kind="file"><name>spk_window_module.hpp</name>
   </compound>
-  <compound refid="spk__abstract__module_8hpp" kind="file"><name>spk_abstract_module.hpp</name>
-  </compound>
   <compound refid="spk__keyboard__module_8hpp" kind="file"><name>spk_keyboard_module.hpp</name>
+  </compound>
+  <compound refid="spk__message__consumer__module_8hpp" kind="file"><name>spk_message_consumer_module.hpp</name>
   </compound>
   <compound refid="spk__mouse__module_8hpp" kind="file"><name>spk_mouse_module.hpp</name>
   </compound>
@@ -1024,11 +1022,11 @@
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="spk__abstract__module_8cpp" kind="file"><name>spk_abstract_module.cpp</name>
-  </compound>
   <compound refid="spk__API__module_8cpp" kind="file"><name>spk_API_module.cpp</name>
   </compound>
   <compound refid="spk__keyboard__module_8cpp" kind="file"><name>spk_keyboard_module.cpp</name>
+  </compound>
+  <compound refid="spk__message__consumer__module_8cpp" kind="file"><name>spk_message_consumer_module.cpp</name>
   </compound>
   <compound refid="spk__mouse__module_8cpp" kind="file"><name>spk_mouse_module.cpp</name>
   </compound>

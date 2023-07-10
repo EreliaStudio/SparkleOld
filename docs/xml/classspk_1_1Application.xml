@@ -147,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="43" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="43" bodyend="60"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="43" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="43" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -189,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="69" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="69" bodyend="82"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="71" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="71" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1abcd265ffb90968e0e1351bd2ca899f11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="89" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="89" bodyend="99"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="91" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="91" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1Application_1a4bb34e8823d56131a205757ca25746e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="106" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="106" bodyend="109"/>
+        <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="108" column="6" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="108" bodyend="111"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -277,7 +277,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="22" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="23" bodyend="110"/>
+    <location file="includes/application/concrete/linux/spk_graphical_application.hpp" line="22" column="1" bodyfile="includes/application/concrete/linux/spk_graphical_application.hpp" bodystart="23" bodyend="112"/>
     <listofallmembers>
       <member refid="classspk_1_1Application_1ae5d636a2d4f337502e416d0e5f0e03e5" prot="private" virt="non-virtual"><scope>spk::Application</scope><name>_APIModule</name></member>
       <member refid="classspk_1_1Application_1acc094d9f64efb1ce7024ccf745ca80f7" prot="private" virt="non-virtual"><scope>spk::Application</scope><name>_keyboardModule</name></member>

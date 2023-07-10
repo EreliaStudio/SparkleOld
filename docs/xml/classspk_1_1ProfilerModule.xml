@@ -92,11 +92,11 @@
         </inbodydescription>
         <location file="includes/application/modules/spk_profiler_module.hpp" line="46" column="1" bodyfile="src/application/modules/spk_profiler_module.cpp" bodystart="14" bodyend="17"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void spk::ProfilerModule::update</definition>
+        <definition>void spk::ProfilerModule::updateData</definition>
         <argsstring>()</argsstring>
-        <name>update</name>
+        <name>updateData</name>
         <briefdescription>
 <para>Update the counters and timer. </para>
         </briefdescription>
@@ -153,7 +153,7 @@
       <member refid="classspk_1_1ProfilerModule_1a606c70589cc008b90ffe1aed68fb7c70" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseRenderIPS</name></member>
       <member refid="classspk_1_1ProfilerModule_1affa254325e80e6a3c3071f0fa6c5bacd" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>increaseUpdateIPS</name></member>
       <member refid="classspk_1_1ProfilerModule_1ab79ffae57422fddf6e6cef43f34c5c49" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>ProfilerModule</name></member>
-      <member refid="classspk_1_1ProfilerModule_1aad89c6c2c340b4fa300b8c2482a08ccc" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>update</name></member>
+      <member refid="classspk_1_1ProfilerModule_1acf075a37331fc5b9dc855804fb9e66b6" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>updateData</name></member>
       <member refid="classspk_1_1ProfilerModule_1a2c6619183c9e521e1da356b6eddc7666" prot="public" virt="non-virtual"><scope>spk::ProfilerModule</scope><name>~ProfilerModule</name></member>
     </listofallmembers>
   </compounddef>

@@ -77,27 +77,17 @@ $(function() {
 <p>Class for modules that consume messages.  
  <a href="classspk_1_1IMessageConsumerModule.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="spk__abstract__module_8hpp_source.html">spk_abstract_module.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="spk__message__consumer__module_8hpp_source.html">spk_message_consumer_module.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::IMessageConsumerModule:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1IMessageConsumerModule__inherit__graph.png" border="0" usemap="#aspk_1_1IMessageConsumerModule_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1IMessageConsumerModule_inherit__map" id="aspk_1_1IMessageConsumerModule_inherit__map">
-<area shape="rect" title="Class for modules that consume messages." alt="" coords="235,80,464,107"/>
-<area shape="rect" href="classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="5,155,168,181"/>
-<area shape="rect" href="classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="192,155,336,181"/>
-<area shape="rect" href="classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="361,155,511,181"/>
-<area shape="rect" href="classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="535,155,689,181"/>
-<area shape="rect" href="classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="272,5,427,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for spk::IMessageConsumerModule:</div>
-<div class="dyncontent">
-<div class="center"><img src="classspk_1_1IMessageConsumerModule__coll__graph.png" border="0" usemap="#aspk_1_1IMessageConsumerModule_coll__map" alt="Collaboration graph"/></div>
-<map name="aspk_1_1IMessageConsumerModule_coll__map" id="aspk_1_1IMessageConsumerModule_coll__map">
-<area shape="rect" title="Class for modules that consume messages." alt="" coords="5,80,235,107"/>
-<area shape="rect" href="classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="43,5,197,32"/>
+<area shape="rect" title="Class for modules that consume messages." alt="" coords="235,5,464,32"/>
+<area shape="rect" href="classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="5,80,168,107"/>
+<area shape="rect" href="classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="192,80,336,107"/>
+<area shape="rect" href="classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="361,80,511,107"/>
+<area shape="rect" href="classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="535,80,689,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -106,10 +96,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a676a40140e06e01f4291941b2b34867a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a">IMessageConsumerModule</a> (<a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;p_queue)</td></tr>
 <tr class="memdesc:a676a40140e06e01f4291941b2b34867a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages.">IMessageConsumerModule</a> object.  <a href="classspk_1_1IMessageConsumerModule.html#a676a40140e06e01f4291941b2b34867a">More...</a><br /></td></tr>
 <tr class="separator:a676a40140e06e01f4291941b2b34867a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20b0f2b400310160007d491929e17a51"><td class="memItemLeft" align="right" valign="top"><a id="a20b0f2b400310160007d491929e17a51"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IMessageConsumerModule.html#a20b0f2b400310160007d491929e17a51">update</a> ()</td></tr>
-<tr class="memdesc:a20b0f2b400310160007d491929e17a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages.">IMessageConsumerModule</a> object. <br /></td></tr>
-<tr class="separator:a20b0f2b400310160007d491929e17a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad01abf44c5f4a4eefed697ceccb255"><td class="memItemLeft" align="right" valign="top"><a id="a3ad01abf44c5f4a4eefed697ceccb255"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IMessageConsumerModule.html#a3ad01abf44c5f4a4eefed697ceccb255">treatMessage</a> ()</td></tr>
+<tr class="memdesc:a3ad01abf44c5f4a4eefed697ceccb255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages.">IMessageConsumerModule</a> object. <br /></td></tr>
+<tr class="separator:a3ad01abf44c5f4a4eefed697ceccb255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for modules that consume messages. </p>
@@ -142,8 +132,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/application/modules/<a class="el" href="spk__abstract__module_8hpp_source.html">spk_abstract_module.hpp</a></li>
-<li>src/application/modules/linux/spk_abstract_module.cpp</li>
+<li>includes/application/modules/<a class="el" href="spk__message__consumer__module_8hpp_source.html">spk_message_consumer_module.hpp</a></li>
+<li>src/application/modules/linux/spk_message_consumer_module.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

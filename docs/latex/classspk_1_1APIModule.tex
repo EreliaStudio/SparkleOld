@@ -9,26 +9,6 @@ Class for managing the API interactions.
 
 {\ttfamily \#include $<$spk\+\_\+\+API\+\_\+module.\+hpp$>$}
 
-
-
-Inheritance diagram for spk\+::APIModule\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=196pt]{classspk_1_1APIModule__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for spk\+::APIModule\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=196pt]{classspk_1_1APIModule__coll__graph}
-\end{center}
-\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,7 +18,7 @@ Collaboration diagram for spk\+::APIModule\+:
 \mbox{\Hypertarget{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}\label{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}} 
 \mbox{\hyperlink{classspk_1_1APIModule_ab09bde7c662be0042fe7864ac93258c2}{$\sim$\+APIModule}} ()
 \begin{DoxyCompactList}\small\item\em Destructs the \mbox{\hyperlink{classspk_1_1APIModule}{APIModule}} object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}{update}} ()
+void \mbox{\hyperlink{classspk_1_1APIModule_a2061e8ad2cbc3b8318f5bcb12b843de2}{pull\+Message}} ()
 \begin{DoxyCompactList}\small\item\em Updates the API module. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classspk_1_1ThreadSafeQueue}{spk\+::\+Thread\+Safe\+Queue}}$<$ System\+Message $>$ \& \mbox{\hyperlink{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}{window\+Queue}} ()
 \begin{DoxyCompactList}\small\item\em Returns the thread-\/safe queue for window system messages. \end{DoxyCompactList}\item 
@@ -80,21 +60,17 @@ Returns the thread-\/safe queue for mouse system messages.
 \begin{DoxyReturn}{Returns}
 Thread-\/safe queue for mouse system messages. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}\label{classspk_1_1APIModule_a775ee5f6da60b57849296fe60c189487}} 
-\index{spk::APIModule@{spk::APIModule}!update@{update}}
-\index{update@{update}!spk::APIModule@{spk::APIModule}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void spk\+::\+APIModule\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{classspk_1_1APIModule_a2061e8ad2cbc3b8318f5bcb12b843de2}\label{classspk_1_1APIModule_a2061e8ad2cbc3b8318f5bcb12b843de2}} 
+\index{spk::APIModule@{spk::APIModule}!pullMessage@{pullMessage}}
+\index{pullMessage@{pullMessage}!spk::APIModule@{spk::APIModule}}
+\doxysubsubsection{\texorpdfstring{pullMessage()}{pullMessage()}}
+{\footnotesize\ttfamily void spk\+::\+APIModule\+::pull\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Updates the API module. 
 
-This method should be implemented in the .cpp file. 
-
-Implements \mbox{\hyperlink{classspk_1_1AbstractModule_a8dc7a4e8a328a9bd57486df88d3d43b4}{spk\+::\+Abstract\+Module}}.
-
-\mbox{\Hypertarget{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}\label{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}} 
+This method should be implemented in the .cpp file. \mbox{\Hypertarget{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}\label{classspk_1_1APIModule_ac99489e2893d8b07a4b59ee458e97f5b}} 
 \index{spk::APIModule@{spk::APIModule}!windowQueue@{windowQueue}}
 \index{windowQueue@{windowQueue}!spk::APIModule@{spk::APIModule}}
 \doxysubsubsection{\texorpdfstring{windowQueue()}{windowQueue()}}

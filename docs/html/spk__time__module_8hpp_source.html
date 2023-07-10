@@ -72,25 +72,22 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;application/modules/spk_abstract_module.hpp&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>spk</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1TimeModule.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1TimeModule.html">TimeModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1AbstractModule.html">spk::AbstractModule</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classspk_1_1TimeModule.html#a927bb091d697cdde8e9a66b1d5bc2a98">TimeModule</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classspk_1_1TimeModule.html#a4b5d832af3302c1ca6def45c3ceb652e">~TimeModule</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimeModule.html#a689fe31307b43609d1cbbc3107900cda">update</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1AbstractModule_html"><div class="ttname"><a href="classspk_1_1AbstractModule.html">spk::AbstractModule</a></div><div class="ttdoc">Base class for modules.</div><div class="ttdef"><b>Definition:</b> spk_abstract_module.hpp:15</div></div>
-<div class="ttc" id="aclassspk_1_1TimeModule_html"><div class="ttname"><a href="classspk_1_1TimeModule.html">spk::TimeModule</a></div><div class="ttdoc">Class for managing time-related functionality.</div><div class="ttdef"><b>Definition:</b> spk_time_module.hpp:15</div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classspk_1_1TimeModule.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1TimeModule.html">TimeModule</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classspk_1_1TimeModule.html#a927bb091d697cdde8e9a66b1d5bc2a98">TimeModule</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classspk_1_1TimeModule.html#a4b5d832af3302c1ca6def45c3ceb652e">~TimeModule</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimeModule.html#aa6a91529872d4c9551e58c565fa55bb4">updateTimeMetrics</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1TimeModule_html"><div class="ttname"><a href="classspk_1_1TimeModule.html">spk::TimeModule</a></div><div class="ttdoc">Class for managing time-related functionality.</div><div class="ttdef"><b>Definition:</b> spk_time_module.hpp:13</div></div>
 <div class="ttc" id="aclassspk_1_1TimeModule_html_a4b5d832af3302c1ca6def45c3ceb652e"><div class="ttname"><a href="classspk_1_1TimeModule.html#a4b5d832af3302c1ca6def45c3ceb652e">spk::TimeModule::~TimeModule</a></div><div class="ttdeci">~TimeModule()</div><div class="ttdoc">Destructs the TimeModule object. Will release the TimeMetrics instance.</div><div class="ttdef"><b>Definition:</b> spk_time_module.cpp:11</div></div>
-<div class="ttc" id="aclassspk_1_1TimeModule_html_a689fe31307b43609d1cbbc3107900cda"><div class="ttname"><a href="classspk_1_1TimeModule.html#a689fe31307b43609d1cbbc3107900cda">spk::TimeModule::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the time state. Will update the TimeMetrics.</div><div class="ttdef"><b>Definition:</b> spk_time_module.cpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1TimeModule_html_a927bb091d697cdde8e9a66b1d5bc2a98"><div class="ttname"><a href="classspk_1_1TimeModule.html#a927bb091d697cdde8e9a66b1d5bc2a98">spk::TimeModule::TimeModule</a></div><div class="ttdeci">TimeModule()</div><div class="ttdoc">Constructs the TimeModule object. Will instanciate the TimeMetrics.</div><div class="ttdef"><b>Definition:</b> spk_time_module.cpp:6</div></div>
+<div class="ttc" id="aclassspk_1_1TimeModule_html_aa6a91529872d4c9551e58c565fa55bb4"><div class="ttname"><a href="classspk_1_1TimeModule.html#aa6a91529872d4c9551e58c565fa55bb4">spk::TimeModule::updateTimeMetrics</a></div><div class="ttdeci">void updateTimeMetrics()</div><div class="ttdoc">Updates the time state. Will update the TimeMetrics.</div><div class="ttdef"><b>Definition:</b> spk_time_module.cpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

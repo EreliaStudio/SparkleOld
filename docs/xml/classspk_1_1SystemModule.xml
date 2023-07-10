@@ -114,10 +114,6 @@
 <para>This class manages system-level interactions, including handling system messages and managing the main application. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::SystemModule</label>
         <link refid="classspk_1_1SystemModule"/>
@@ -127,15 +123,9 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::SystemModule</label>
         <link refid="classspk_1_1SystemModule"/>
@@ -145,8 +135,6 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="includes/application/modules/spk_system_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_system_module.hpp" bodystart="15" bodyend="42"/>
@@ -155,7 +143,7 @@
       <member refid="classspk_1_1SystemModule_1a641975eb5ff351282dd55b47865c4b77" prot="private" virt="virtual"><scope>spk::SystemModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>IMessageConsumerModule</name></member>
       <member refid="classspk_1_1SystemModule_1a4e69257a48d4e3f620310e0bfc1dea21" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>SystemModule</name></member>
-      <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" virt="virtual"><scope>spk::SystemModule</scope><name>update</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>treatMessage</name></member>
       <member refid="classspk_1_1SystemModule_1a3ea988cf3deb772a60cf6e7869635a58" prot="public" virt="non-virtual"><scope>spk::SystemModule</scope><name>~SystemModule</name></member>
     </listofallmembers>
   </compounddef>

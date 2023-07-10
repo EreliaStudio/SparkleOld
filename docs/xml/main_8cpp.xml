@@ -4,28 +4,36 @@
     <compoundname>main.cpp</compoundname>
     <includes refid="playground_8hpp" local="yes">playground.hpp</includes>
     <incdepgraph>
-      <node id="46">
+      <node id="42">
         <label>design_pattern/spk_activable_object.hpp</label>
         <link refid="spk__activable__object_8hpp_source"/>
-        <childnode refid="45" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="59">
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
         <label>design_pattern/spk_contract_provider.hpp</label>
         <link refid="spk__contract__provider_8hpp_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="39">
+      <node id="34">
         <label>functional</label>
       </node>
-      <node id="58">
+      <node id="56">
         <label>application/modules/spk_API_module.hpp</label>
         <link refid="spk__API__module_8hpp_source"/>
       </node>
@@ -46,23 +54,21 @@
       <node id="62">
         <label>application/modules/spk_widget_module.hpp</label>
         <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="31" relation="include">
-        </childnode>
       </node>
-      <node id="48">
+      <node id="44">
         <label>design_pattern/spk_activity_scheduler.hpp</label>
         <link refid="spk__activity__scheduler_8hpp_source"/>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="47" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="63">
         <label>widget/spk_abstract_widget.hpp</label>
         <link refid="spk__abstract__widget_8hpp_source"/>
-        <childnode refid="43" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
@@ -70,31 +76,23 @@
       <node id="19">
         <label>cstdint</label>
       </node>
-      <node id="54">
+      <node id="52">
         <label>threading/spk_worker_pool.hpp</label>
         <link refid="spk__worker__pool_8hpp_source"/>
-        <childnode refid="32" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
       <node id="61">
         <label>application/modules/spk_keyboard_module.hpp</label>
         <link refid="spk__keyboard__module_8hpp_source"/>
-        <childnode refid="31" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
       </node>
-      <node id="57">
+      <node id="55">
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
-      </node>
-      <node id="31">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
       </node>
       <node id="2">
         <label>playground.hpp</label>
@@ -108,7 +106,7 @@
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="59">
+      <node id="57">
         <label>application/modules/spk_window_module.hpp</label>
         <link refid="spk__window__module_8hpp_source"/>
       </node>
@@ -131,9 +129,17 @@
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
         </childnode>
         <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
@@ -143,45 +149,35 @@
         </childnode>
         <childnode refid="47" relation="include">
         </childnode>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="49" relation="include">
-        </childnode>
-        <childnode refid="50" relation="include">
-        </childnode>
-        <childnode refid="51" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="48" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="54" relation="include">
+        <childnode refid="50" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="55" relation="include">
+        <childnode refid="53" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
         <childnode refid="56" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="58" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="59" relation="include">
-        </childnode>
-        <childnode refid="60" relation="include">
         </childnode>
         <childnode refid="61" relation="include">
         </childnode>
@@ -198,7 +194,7 @@
         <label>application/spk_application.hpp</label>
         <link refid="spk__application_8hpp_source"/>
       </node>
-      <node id="51">
+      <node id="47">
         <label>design_pattern/spk_memento.hpp</label>
         <link refid="spk__memento_8hpp_source"/>
         <childnode refid="18" relation="include">
@@ -209,19 +205,19 @@
       <node id="5">
         <label>cmath</label>
       </node>
-      <node id="60">
+      <node id="58">
         <label>application/modules/spk_mouse_module.hpp</label>
         <link refid="spk__mouse__module_8hpp_source"/>
-        <childnode refid="31" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
       </node>
       <node id="9">
         <label>stdexcept</label>
       </node>
-      <node id="49">
+      <node id="45">
         <label>design_pattern/spk_value.hpp</label>
         <link refid="spk__value_8hpp_source"/>
-        <childnode refid="41" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -229,12 +225,12 @@
       <node id="16">
         <label>string</label>
       </node>
-      <node id="52">
+      <node id="48">
         <label>threading/spk_promise.hpp</label>
         <link refid="spk__promise_8hpp_source"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
       </node>
       <node id="25">
@@ -249,13 +245,11 @@
       <node id="30">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="31" relation="include">
-        </childnode>
       </node>
-      <node id="47">
+      <node id="43">
         <label>design_pattern/spk_activity.hpp</label>
         <link refid="spk__activity_8hpp_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
       <node id="28">
@@ -269,20 +263,20 @@
       <node id="11">
         <label>random</label>
       </node>
-      <node id="34">
+      <node id="51">
         <label>condition_variable</label>
       </node>
-      <node id="35">
+      <node id="60">
         <label>spk_system_define.hpp</label>
         <link refid="spk__system__define_8hpp_source"/>
       </node>
-      <node id="40">
+      <node id="35">
         <label>future</label>
       </node>
-      <node id="53">
+      <node id="49">
         <label>optional</label>
       </node>
-      <node id="50">
+      <node id="46">
         <label>design_pattern/spk_context_manager.hpp</label>
         <link refid="spk__context__manager_8hpp_source"/>
         <childnode refid="28" relation="include">
@@ -291,17 +285,17 @@
       <node id="17">
         <label>vector</label>
       </node>
-      <node id="44">
+      <node id="40">
         <label>design_pattern/spk_observer.hpp</label>
         <link refid="spk__observer_8hpp_source"/>
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="55">
+      <node id="53">
         <label>system/spk_timer.hpp</label>
         <link refid="spk__timer_8hpp_source"/>
         <childnode refid="9" relation="include">
@@ -340,14 +334,14 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="32">
+      <node id="50">
         <label>threading/spk_thread_safe_queue.hpp</label>
         <link refid="spk__thread__safe__queue_8hpp_source"/>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="51" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -368,14 +362,14 @@
         <childnode refid="21" relation="include">
         </childnode>
       </node>
-      <node id="56">
+      <node id="54">
         <label>application/spk_abstract_application.hpp</label>
         <link refid="spk__abstract__application_8hpp_source"/>
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="26">
@@ -383,32 +377,32 @@
         <link refid="spk__chronometer_8hpp_source"/>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="6">
         <label>iostream</label>
       </node>
-      <node id="36">
+      <node id="31">
         <label>threading/spk_persistent_worker.hpp</label>
         <link refid="spk__persistent__worker_8hpp_source"/>
-        <childnode refid="37" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="38">
         <label>cstddef</label>
       </node>
-      <node id="45">
+      <node id="41">
         <label>design_pattern/spk_stated_object.hpp</label>
         <link refid="spk__stated__object_8hpp_source"/>
-        <childnode refid="41" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="37">
         <label>deque</label>
       </node>
       <node id="10">
@@ -420,17 +414,17 @@
       <node id="15">
         <label>mutex</label>
       </node>
-      <node id="38">
+      <node id="33">
         <label>thread</label>
       </node>
-      <node id="43">
+      <node id="39">
         <label>design_pattern/spk_inherence_object.hpp</label>
         <link refid="spk__inherence__object_8hpp_source"/>
         <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
       <node id="22">
@@ -439,16 +433,16 @@
       <node id="65">
         <label>set</label>
       </node>
-      <node id="37">
+      <node id="32">
         <label>threading/spk_thread.hpp</label>
         <link refid="spk__thread_8hpp_source"/>
-        <childnode refid="38" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -513,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="playground/src/main.cpp" line="3" column="5" bodyfile="playground/src/main.cpp" bodystart="3" bodyend="7"/>
+        <location file="playground/src/main.cpp" line="3" column="5" bodyfile="playground/src/main.cpp" bodystart="3" bodyend="15"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -523,11 +517,19 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;playground.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
-<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Application" kindref="compound">spk::Application</ref><sp/>app(L</highlight><highlight class="stringliteral">&quot;VulkanTest&quot;</highlight><highlight class="normal">,<sp/>400);</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(app.run());</highlight></codeline>
-<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classspk_1_1RandomGenerator" kindref="compound">spk::RandomGenerator&lt;float&gt;</ref><sp/>rng;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>rng.<ref refid="classspk_1_1RandomGenerator_1a4ed12a6d2b9b97491381fe2a802e618d" kindref="member">setDistributionRange</ref>(0.0f,<sp/>100.0f);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>15;<sp/>i++)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>spk::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;RNG[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>-&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>rng()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="playground/src/main.cpp"/>
   </compounddef>

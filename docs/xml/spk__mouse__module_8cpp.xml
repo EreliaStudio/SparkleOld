@@ -6,8 +6,8 @@
     <includes refid="spk__mouse_8hpp" local="yes">input/spk_mouse.hpp</includes>
     <incdepgraph>
       <node id="3">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="8" relation="include">

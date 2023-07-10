@@ -2,24 +2,24 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="linux_2spk__window__module_8hpp" kind="file" language="C++">
     <compoundname>spk_window_module.hpp</compoundname>
-    <includes refid="spk__abstract__module_8hpp" local="yes">application/modules/spk_abstract_module.hpp</includes>
     <includes refid="spk__vector2_8hpp" local="yes">math/spk_vector2.hpp</includes>
+    <includes refid="spk__message__consumer__module_8hpp" local="yes">application/modules/spk_message_consumer_module.hpp</includes>
     <incdepgraph>
-      <node id="2">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
+      <node id="6">
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
-      <node id="9">
+      <node id="3">
         <label>cmath</label>
       </node>
-      <node id="6">
+      <node id="10">
         <label>condition_variable</label>
       </node>
-      <node id="7">
+      <node id="11">
         <label>spk_system_define.hpp</label>
         <link refid="spk__system__define_8hpp_source"/>
       </node>
@@ -28,39 +28,39 @@
         <link refid="linux_2spk__window__module_8hpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>iostream</label>
-      </node>
-      <node id="5">
-        <label>deque</label>
-      </node>
-      <node id="4">
-        <label>mutex</label>
-      </node>
-      <node id="8">
-        <label>math/spk_vector2.hpp</label>
-        <link refid="spk__vector2_8hpp_source"/>
+      <node id="7">
+        <label>threading/spk_thread_safe_queue.hpp</label>
+        <link refid="spk__thread__safe__queue_8hpp_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>deque</label>
+      </node>
+      <node id="8">
+        <label>mutex</label>
+      </node>
+      <node id="2">
+        <label>math/spk_vector2.hpp</label>
+        <link refid="spk__vector2_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="5">
         <label>algorithm</label>
       </node>
     </incdepgraph>
@@ -73,8 +73,8 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_abstract_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_vector2.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math/spk_vector2.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_message_consumer_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
 <codeline lineno="7"><highlight class="normal">{</highlight></codeline>

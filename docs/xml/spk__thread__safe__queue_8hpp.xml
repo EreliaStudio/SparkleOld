@@ -6,7 +6,7 @@
     <includes local="no">deque</includes>
     <includes local="no">condition_variable</includes>
     <includedby refid="linux_2spk__API__module_8hpp" local="yes">includes/application/modules/linux/spk_API_module.hpp</includedby>
-    <includedby refid="spk__abstract__module_8hpp" local="yes">includes/application/modules/spk_abstract_module.hpp</includedby>
+    <includedby refid="spk__message__consumer__module_8hpp" local="yes">includes/application/modules/spk_message_consumer_module.hpp</includedby>
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__worker__pool_8hpp" local="yes">includes/threading/spk_worker_pool.hpp</includedby>
     <incdepgraph>
@@ -35,25 +35,19 @@
         <label>includes/application/modules/spk_system_module.hpp</label>
         <link refid="spk__system__module_8hpp_source"/>
       </node>
-      <node id="14">
-        <label>includes/debug/spk_profiler.hpp</label>
-        <link refid="spk__profiler_8hpp_source"/>
-        <childnode refid="7" relation="include">
+      <node id="3">
+        <label>includes/application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="18">
-        <label>includes/application/modules/spk_widget_module.hpp</label>
-        <link refid="spk__widget__module_8hpp_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>includes/input/spk_input.hpp</label>
-        <link refid="spk__input_8hpp_source"/>
-      </node>
-      <node id="19">
+      <node id="11">
         <label>includes/threading/spk_worker_pool.hpp</label>
         <link refid="spk__worker__pool_8hpp_source"/>
         <childnode refid="7" relation="include">
@@ -63,26 +57,6 @@
         <label>includes/application/modules/spk_keyboard_module.hpp</label>
         <link refid="spk__keyboard__module_8hpp_source"/>
         <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>includes/application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -109,42 +83,6 @@
         <label>includes/application/modules/linux/spk_API_module.hpp</label>
         <link refid="linux_2spk__API__module_8hpp_source"/>
       </node>
-      <node id="11">
-        <label>includes/application/modules/spk_time_module.hpp</label>
-        <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>includes/application/modules/spk_profiler_module.hpp</label>
-        <link refid="spk__profiler__module_8hpp_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>includes/system/spk_timer.hpp</label>
-        <link refid="spk__timer_8hpp_source"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>includes/system/spk_time_metrics.hpp</label>
-        <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
       <node id="4">
         <label>includes/application/modules/linux/spk_window_module.hpp</label>
         <link refid="linux_2spk__window__module_8hpp_source"/>
@@ -158,15 +96,7 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>includes/system/spk_chronometer.hpp</label>
-        <link refid="spk__chronometer_8hpp_source"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="6">
