@@ -2,21 +2,19 @@
 
 int main()
 {
-	spk::JSON::File file;
-	std::vector<std::wstring> filePath = spk::listFile(L"json", L".json");
+	CommandParser parser;
+	
+	parser.setCommandIndicator(L"//");
+	
+	parser.setNoCommandCallback([&](const std::wstring& p_lineToExecute){spk::cout << L"Command not found : " << p_lineToExecute << std::endl;});
+	parser.addCommandCallback(L"add", [&](const std::wstring& p_lineToExecute){spk::cout << L"Launching the add command with [" << p_lineToExecute << L"]" << std::endl; });
+	parser.addCommandCallback(L"remove", [&](const std::wstring& p_lineToExecute){spk::cout << L"Launching the remove command with [" << p_lineToExecute << L"]" << std::endl; });
 
-	for (const auto& path : filePath)
-	{
-		try
-		{
-			file.load(path);
-			std::wcout << L"Path: " << path << std::endl;
-			std::wcout << L"File: " << file << std::endl;
-		}
-		catch (const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-	}
+	parser.parse(L"/add This is a test");
+	parser.parse(L"/add This is another test");
+	parser.parse(L"/remove This is a test with the remove command");
+	parser.parse(L"coucou This is a test without indicator");
+	parser.parse(L"/notValidCommand This is a test with an indicator, but with an invalid command key");
+
 	return (0);
 }
