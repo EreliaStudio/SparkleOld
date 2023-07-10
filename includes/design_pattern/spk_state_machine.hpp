@@ -14,10 +14,15 @@ class StateMachine : public spk::ContractProvider
 {
 private:
 
-
+    /**
+     * @brief Struct representing a key for the transitionCallbacks map.
+     * 
+     * This struct is used as a key in the map that stores callbacks for specific state transitions.
+     */
     struct Key {
-        TState source;       
-        TState destination;       
+
+        TState source;           /**< The source state of the transition. */
+        TState destination;      /**< The destination state of the transition. */
         bool operator<(const Key& p_other) const
         {
             if (source < p_other.source)
@@ -32,23 +37,31 @@ private:
         }
     };
 
-    TState _state;
-    std::map<TState, ContractProvider::CallbackContainer> _executionCallbacks;
-    std::map<Key , ContractProvider::CallbackContainer> _transitionCallbacks;
-    ContractProvider::CallbackContainer _unknowExecutionCallback;
-    ContractProvider::CallbackContainer _unknowTransitionCallback;
+    TState _state;         /**< The current state of the state machine. */
+    std::map<TState, ContractProvider::CallbackContainer> _executionCallbacks;          /**< Map storing callbacks for state executions. */
+    std::map<Key , ContractProvider::CallbackContainer> _transitionCallbacks;          /**< Map storing callbacks for state transitions. */
+    ContractProvider::CallbackContainer _unknownExecutionCallback;          /**< Callback container for unknown state executions. */
+    ContractProvider::CallbackContainer _unknownTransitionCallback;  /**< Callback container for unknown state transition. */
 
-
-    void callCallbacks(ContractProvider::CallbackContainer p_know, ContractProvider::CallbackContainer p_unknow)
+    /**
+     * @brief Calls the callbacks stored in the provided callback containers.
+     * 
+     * If the known callback container is empty, the unknown callback container is used.
+     * If both containers are empty, a runtime_error is thrown.
+     * 
+     * @param p_known The callback container for known callbacks.
+     * @param p_unknown The callback container for unknown callbacks.
+     */
+    void _callCallbacks(const ContractProvider::CallbackContainer &p_know,const  ContractProvider::CallbackContainer &p_unknown)
     {
-        CallbackContainer *container = &p_know;
+        const CallbackContainer *container = &p_know;
         if (container->size() == 0)
         { 
-            if (p_unknow.size() == 0)
+            if (p_unknown.size() == 0)
             {
-				throw std::runtime_error("Unknow Callback is undefined and Callback is undefined");
+				throw std::runtime_error("Unknown Callback is undefined and Callback is undefined");
             }
-            container = &p_unknow;
+            container = &p_unknown;
         }
         for (size_t i = 0; i < container->size(); i++)
         {
@@ -66,22 +79,21 @@ public:
     {}
 
     /**
-     * @brief Update the state machine. The behavior of this method depends on the specific state machine implementation.
+     * @brief Execute the execution callbacks for the current state. The behavior of this method depends on the specific state machine implementation.
      */
     void update()
     {
-        // execution
-        callCallbacks(_executionCallbacks[_state], _unknowExecutionCallback);
+        _callCallbacks(_executionCallbacks[_state], _unknownExecutionCallback);
     }
     
     /**
-     * @brief Changes the current state of the state machine.
+     * @brief Changes the current state of the state machine and call the transition callback.
      *
      * @param p_state The new state.
      */
     void setState(const TState& p_state)
     {
-        callCallbacks(_transitionCallbacks[{_state, p_state}], _unknowTransitionCallback);
+        _callCallbacks(_transitionCallbacks[{_state, p_state}], _unknownTransitionCallback);
         _state = p_state;
     }
 
@@ -93,7 +105,7 @@ public:
      */
     Contract setOnUnknowStateTransition(const Callback& p_callback)
     {
-        return(std::move(ContractProvider::subscribe(_unknowTransitionCallback, p_callback)));
+        return(std::move(ContractProvider::subscribe(_unknownTransitionCallback, p_callback)));
     }
 
     /**
@@ -104,7 +116,7 @@ public:
      */
     Contract setOnUnknowStateExecution(const Callback& p_callback)
     {
-        return(std::move(ContractProvider::subscribe(_unknowExecutionCallback, p_callback)));
+        return(std::move(ContractProvider::subscribe(_unknownExecutionCallback, p_callback)));
     }
 
     /**
@@ -131,5 +143,4 @@ public:
     {
         return(std::move(ContractProvider::subscribe(_executionCallbacks[p_state], p_callback)));
     }
-    
 };
