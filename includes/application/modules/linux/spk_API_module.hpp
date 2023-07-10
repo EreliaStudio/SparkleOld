@@ -1,6 +1,7 @@
 #pragma once
 
 #include "threading/spk_thread_safe_queue.hpp"
+#include "spk_system_define.hpp"
 
 namespace spk
 {
