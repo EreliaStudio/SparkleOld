@@ -6,14 +6,20 @@ namespace spk
 {
 	/**
 	 * @brief Random number generator template class.
-	 * @tparam IntType The type of integer to generate (default: int).
+	 * @tparam TGeneratedType The type of integer to generate (default: int).
 	 */
-	template < typename IntType = int >
+	template < typename TGeneratedType = int >
 	class RandomGenerator
 	{
 		private:
+			using GeneratorType = typename std::conditional<
+				std::is_same<TGeneratedType, double>::value || std::is_same<TGeneratedType, float>::value,
+				std::uniform_real_distribution<TGeneratedType>,
+				std::uniform_int_distribution<TGeneratedType>
+			>::type;
+
 			std::mt19937 _generator; // Mersenne Twister 19937 generator.
-			std::uniform_int_distribution< IntType > _distribution; // Uniform distribution.
+			GeneratorType _distribution; // Uniform distribution.
 
 		public:
 			/**
@@ -41,27 +47,27 @@ namespace spk
 			 * @param p_min The lower bound of the distribution range.
 			 * @param p_max The upper bound of the distribution range.
 			 */
-			void setDistributionRange(const IntType& p_min, const IntType& p_max)
+			void setDistributionRange(const TGeneratedType& p_min, const TGeneratedType& p_max)
 			{
-				_distribution.param(typename std::uniform_int_distribution< IntType >::param_type(p_min, p_max));
+				_distribution.param(typename GeneratorType::param_type(p_min, p_max));
 			}
 
 			/**
 			 * @brief Generate a random number.
 			 * @return A random number within the set distribution range.
 			 */
-			constexpr IntType operator()() { return _distribution(_generator); }
+			constexpr TGeneratedType operator()() { return _distribution(_generator); }
 
 			/**
 			 * @brief Get the minimum value of the distribution range.
 			 * @return The minimum value of the distribution range.
 			 */
-			constexpr IntType min() const { return _distribution.min(); }
+			constexpr TGeneratedType min() const { return _distribution.min(); }
 
 			/**
 			 * @brief Get the maximum value of the distribution range.
 			 * @return The maximum value of the distribution range.
 			 */
-			constexpr IntType max() const { return _distribution.max(); }
+			constexpr TGeneratedType max() const { return _distribution.max(); }
 	};
 }
