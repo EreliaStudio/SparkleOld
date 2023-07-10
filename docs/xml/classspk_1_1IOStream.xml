@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="97" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="97" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="96" column="10" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="96" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="105" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="105" bodyend="108"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="104" column="1" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="104" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IOStream_1a07173d0c87a90b1d40c5ce9bdf4bcc62" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -89,13 +89,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="114" column="14" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="114" bodyend="117"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="117" column="6" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="117" bodyend="120"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>An output stream with a custom prefix, suitable for logging or debugging. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="note"><para>unicode is supported. </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -130,7 +133,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/iostream/spk_iostream.hpp" line="14" column="5" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="15" bodyend="118"/>
+    <location file="includes/iostream/spk_iostream.hpp" line="15" column="1" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="16" bodyend="121"/>
     <listofallmembers>
       <member refid="classspk_1_1IOStream_1a3b1675416bc263b85373bd3012d49ba2" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>buffer</name></member>
       <member refid="classspk_1_1IOStream_1acfa77761710612dc114339caa3bb14fd" prot="public" virt="non-virtual"><scope>spk::IOStream</scope><name>IOStream</name></member>

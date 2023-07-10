@@ -10,6 +10,7 @@ namespace spk
 {
 	/**
 	 * @brief An output stream with a custom prefix, suitable for logging or debugging.
+	 * @note unicode is supported.
 	 */
 	class IOStream : public std::wostream
 	{
@@ -31,8 +32,9 @@ namespace spk
 			 * @param p_outputStream Reference to the output stream.
 			 * @param p_prefix Prefix string for the stream.
 			 */
-			IOBuffer(std::wostream &p_outputStream, const std::wstring &p_prefix) : _outputStream(p_outputStream),
-																					_prefix(L"")
+			IOBuffer(std::wostream& p_outputStream, const std::wstring& p_prefix) :
+				_outputStream(p_outputStream),
+				_prefix(L"")
 			{
 				setPrefix(p_prefix);
 			}
@@ -41,7 +43,6 @@ namespace spk
 			 * @brief Destructor. If the buffer is not empty, it will be flushed.
 			 */
 			~IOBuffer()
-
 			{
 				if (pbase() != pptr())
 				{
@@ -116,10 +117,12 @@ namespace spk
 			buffer.setPrefix(p_prefix);
 		}
 	};
-
+  
 	/// @brief Thread-local instances of IOStream for standard output and error output.
 	extern thread_local spk::IOStream cout;
 	extern thread_local spk::IOStream cerr;
 }
 
+#ifndef DEBUG_LINE
 #define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+#endif

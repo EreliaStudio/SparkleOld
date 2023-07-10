@@ -2,14 +2,21 @@
 
 int main()
 {
-	spk::RandomGenerator<float> rng;
+	spk::JSON::File file;
+	std::vector<std::wstring> filePath = spk::listFile(L"json", L".json");
 
-	rng.setDistributionRange(0.0f, 100.0f);
-	
-	for (size_t i = 0; i < 15; i++)
+	for (const auto& path : filePath)
 	{
-		spk::cout << "RNG[" << i << "] -> " << rng() << std::endl;
+		try
+		{
+			file.load(path);
+			std::wcout << L"Path: " << path << std::endl;
+			std::wcout << L"File: " << file << std::endl;
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
-
 	return (0);
 }

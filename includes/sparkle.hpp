@@ -6,6 +6,7 @@
 #include "math/spk_perlin.hpp"
 
 
+
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
 
@@ -20,6 +21,8 @@
 #include "design_pattern/spk_activity.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 #include "design_pattern/spk_value.hpp"
+#include "design_pattern/spk_context_manager.hpp"
+#include "design_pattern/spk_memento.hpp"
 
 #include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
@@ -53,3 +56,7 @@
 
 #include "application/spk_application.hpp"
 
+#include "spk_basic_functions.hpp"
+
+#include "miscellaneous/JSON/spk_JSON_object.hpp"
+#include "miscellaneous/JSON/spk_JSON_file.hpp"

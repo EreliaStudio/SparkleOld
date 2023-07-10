@@ -14,11 +14,12 @@ namespace spk
 	 * \class DataBuffer
 	 * \brief Class for managing data buffers.
 	 *
-	 * This class is designed to provide convenient and efficient storage and retrieval of data. 
-	 * It supports various data types including standard and container types, provided they are 
+	 * This class is designed to provide convenient and efficient storage and retrieval of data.
+	 * It supports various data types including standard and container types, provided they are
 	 * standard layout types.
 	 *
-	 * The class provides a set of utility methods and operator overloads for reading from and 
+	 * The class provides a set of utility methods and operator overloads for reading from and
+   
 	 * writing to the buffer, as well as for managing the internal state of the buffer.
 	 */
 	class DataBuffer
@@ -101,7 +102,7 @@ namespace spk
 		 * @param p_input The data to write into the buffer.
 		 */
 		template <typename InputType>
-		void edit(const size_t &p_offset, const InputType &p_input)
+		void edit(const size_t& p_offset, const InputType& p_input)
 		{
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
 			if (p_offset + sizeof(InputType) > size())
@@ -118,8 +119,8 @@ namespace spk
 		 * @param p_input The data to insert into the buffer.
 		 * @return Reference to the current DataBuffer object.
 		 */
-		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value> * = nullptr>
-		DataBuffer &operator<<(const InputType &p_input)
+		template <typename InputType, typename std::enable_if_t<!spk::IsContainer<InputType>::value>* = nullptr>
+		DataBuffer& operator<<(const InputType& p_input)
 		{
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
 			try
@@ -145,8 +146,8 @@ namespace spk
 		 * @param p_output Reference to a variable where the extracted data should be stored.
 		 * @return Const reference to the current DataBuffer object.
 		 */
-		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value> * = nullptr>
-		const DataBuffer &operator>>(OutputType &p_output) const
+		template <typename OutputType, typename std::enable_if_t<!spk::IsContainer<OutputType>::value>* = nullptr>
+		const DataBuffer& operator>>(OutputType& p_output) const
 		{
 			static_assert(std::is_standard_layout<OutputType>().value, "Unable to handle this type.");
 			if (leftover() < sizeof(OutputType))
@@ -165,8 +166,8 @@ namespace spk
 		 * @param p_input The container data to insert into the buffer.
 		 * @return Reference to the current DataBuffer object.
 		 */
-		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value> * = nullptr>
-		DataBuffer &operator<<(const InputType &p_input)
+		template <typename InputType, typename std::enable_if_t<spk::IsContainer<InputType>::value>* = nullptr>
+		DataBuffer& operator<<(const InputType& p_input)
 		{
 			*this << p_input.size();
 			for (auto it = p_input.begin(); it != p_input.end(); ++it)
@@ -185,8 +186,8 @@ namespace spk
 		 * @param p_output Reference to a variable where the extracted data should be stored.
 		 * @return Const reference to the current DataBuffer object.
 		 */
-		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value> * = nullptr>
-		const DataBuffer &operator>>(OutputType &p_output) const
+		template <typename OutputType, typename std::enable_if_t<spk::IsContainer<OutputType>::value>* = nullptr>
+		const DataBuffer& operator>>(OutputType& p_output) const
 		{
 			p_output.resize(this->get<size_t>());
 			for (auto it = p_output.begin(); it != p_output.end(); ++it)

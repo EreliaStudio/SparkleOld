@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_0648e67fc1cb6de7a714c27ffe94ae4e" kind="dir">
+    <compoundname>src/miscellaneous/JSON</compoundname>
+    <innerfile refid="spk__JSON__file_8cpp">spk_JSON_file.cpp</innerfile>
+    <innerfile refid="spk__JSON__file__number_8cpp">spk_JSON_file_number.cpp</innerfile>
+    <innerfile refid="spk__JSON__file__string_8cpp">spk_JSON_file_string.cpp</innerfile>
+    <innerfile refid="spk__JSON__object_8cpp">spk_JSON_object.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/miscellaneous/JSON/"/>
+  </compounddef>
+</doxygen>

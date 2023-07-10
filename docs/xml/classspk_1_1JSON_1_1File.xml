@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classspk_1_1JSON_1_1File" kind="class" language="C++" prot="public">
+    <compoundname>spk::JSON::File</compoundname>
+    <includes refid="spk__JSON__file_8hpp" local="no">spk_JSON_file.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classspk_1_1JSON_1_1File_1a1c56a4cf392bbc21aba8f09eaf22d88c" prot="private" static="no" mutable="no">
+        <type><ref refid="classspk_1_1JSON_1_1Object" kindref="compound">spk::JSON::Object</ref></type>
+        <definition>spk::JSON::Object spk::JSON::File::_root</definition>
+        <argsstring></argsstring>
+        <name>_root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The root JSON object of the file. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="19" column="19" bodyfile="includes/miscellaneous/JSON/spk_JSON_file.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a448f3a4b90930b87408c35d9b2b3cb53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::JSON::File::File</definition>
+        <argsstring>()</argsstring>
+        <name>File</name>
+        <briefdescription>
+<para>Default constructor for the <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="25" column="1" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="202" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1ae33058d0101c9fb12709d51c5a8ec655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>spk::JSON::File::File</definition>
+        <argsstring>(const std::filesystem::path &amp;p_filePath)</argsstring>
+        <name>File</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>p_filePath</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> class that loads the specified JSON file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to the JSON file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="31" column="1" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="206" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a2d14fcfa9698f647011755f022ed9d7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::JSON::File::load</definition>
+        <argsstring>(const std::filesystem::path &amp;p_filePath)</argsstring>
+        <name>load</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>p_filePath</declname>
+        </param>
+        <briefdescription>
+<para>Loads the specified JSON file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to the JSON file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="37" column="6" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="211" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1ad080a2de01ae0eb62145778bb96432d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::JSON::File::save</definition>
+        <argsstring>(const std::filesystem::path &amp;p_filePath) const</argsstring>
+        <name>save</name>
+        <param>
+          <type>const std::filesystem::path &amp;</type>
+          <declname>p_filePath</declname>
+        </param>
+        <briefdescription>
+<para>Saves the JSON file to the specified path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path to save the JSON file to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="43" column="6" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="224" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a2fd10b49b958b47f2ec344c3045662bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classspk_1_1JSON_1_1Object" kindref="compound">spk::JSON::Object</ref> &amp;</type>
+        <definition>const spk::JSON::Object &amp; spk::JSON::File::operator[]</definition>
+        <argsstring>(const std::wstring &amp;p_key) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_key</declname>
+        </param>
+        <briefdescription>
+<para>Accesses the JSON object value with the specified key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key to access the JSON object value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The JSON object value with the specified key. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="50" column="25" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="236" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a0b2bb08f3432245f18b73f44dfa1af39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classspk_1_1JSON_1_1Object" kindref="compound">spk::JSON::Object</ref> &amp;</type>
+        <definition>const spk::JSON::Object &amp; spk::JSON::File::operator[]</definition>
+        <argsstring>(size_t p_index) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>size_t</type>
+          <declname>p_index</declname>
+        </param>
+        <briefdescription>
+<para>Accesses the JSON object value at the specified index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index to access the JSON object value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The JSON object value at the specified index. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="57" column="25" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a7f171a1473d5f1d74845653855e62ccd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename TType</type>
+          </param>
+        </templateparamlist>
+        <type>const TType &amp;</type>
+        <definition>const TType&amp; spk::JSON::File::as</definition>
+        <argsstring>()</argsstring>
+        <name>as</name>
+        <briefdescription>
+<para>Converts the root JSON object to the specified type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to convert the root JSON object to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The root JSON object as the specified type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="65" column="13" bodyfile="includes/miscellaneous/JSON/spk_JSON_file.hpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classspk_1_1JSON_1_1File_1a165c2e57b670a7f02802e9ecd931c074" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classspk_1_1JSON_1_1Object" kindref="compound">spk::JSON::Object</ref> &amp;</type>
+        <definition>const spk::JSON::Object &amp; spk::JSON::File::root</definition>
+        <argsstring>() const</argsstring>
+        <name>root</name>
+        <briefdescription>
+<para>Returns the root JSON object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The root JSON object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="74" column="25" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="246" bodyend="249"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classspk_1_1JSON_1_1File_1a209516d1d04659ce474fd91521a58ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wostream &amp;</type>
+        <definition>std::wostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::wostream &amp;p_os, const File &amp;p_file)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::wostream &amp;</type>
+          <declname>p_os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> &amp;</type>
+          <declname>p_file</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded stream insertion operator to output the contents of the <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> object to an output stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output stream to write the <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> object to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classspk_1_1JSON_1_1File" kindref="compound">File</ref> object to output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The modified output stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="82" column="8" bodyfile="src/miscellaneous/JSON/spk_JSON_file.cpp" bodystart="251" bodyend="255"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a JSON file and provides methods to load and access its contents. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/miscellaneous/JSON/spk_JSON_file.hpp" line="16" column="1" bodyfile="includes/miscellaneous/JSON/spk_JSON_file.hpp" bodystart="17" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classspk_1_1JSON_1_1File_1a1c56a4cf392bbc21aba8f09eaf22d88c" prot="private" virt="non-virtual"><scope>spk::JSON::File</scope><name>_root</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a7f171a1473d5f1d74845653855e62ccd" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>as</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a448f3a4b90930b87408c35d9b2b3cb53" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>File</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1ae33058d0101c9fb12709d51c5a8ec655" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>File</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a2d14fcfa9698f647011755f022ed9d7c" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>load</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a209516d1d04659ce474fd91521a58ef7" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a2fd10b49b958b47f2ec344c3045662bc" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>operator[]</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a0b2bb08f3432245f18b73f44dfa1af39" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>operator[]</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1a165c2e57b670a7f02802e9ecd931c074" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>root</name></member>
+      <member refid="classspk_1_1JSON_1_1File_1ad080a2de01ae0eb62145778bb96432d6" prot="public" virt="non-virtual"><scope>spk::JSON::File</scope><name>save</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

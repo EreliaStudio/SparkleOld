@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="23" column="48" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="23" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="24" column="36" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a515c3156a5e6c7b7a019b1877bc597e8" prot="private" static="yes" mutable="no">
         <type>size_t</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="24" column="34" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="24" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="25" column="22" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="25" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="25" column="26" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="25" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="26" column="14" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classspk_1_1IOStream_1_1IOBuffer_1a80e1db0093b437cff770b27db52958b9" prot="private" static="no" mutable="no">
         <type>std::wostream &amp;</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="26" column="27" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="26" bodyend="-1"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="27" column="15" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="34" column="13" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="34" bodyend="38"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="35" column="1" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="35" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1a54b6d213b6f5a6ae3060fb58a4f83344" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="43" column="13" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="43" bodyend="50"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="45" column="1" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="45" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1aa126798cb333b4cf886106e4b527ccd5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>int</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="56" column="25" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="56" bodyend="61"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="57" column="13" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="57" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1a9b060ff7cb655f317ebce52b70cd773e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="66" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="66" bodyend="77"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="66" column="6" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="66" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classspk_1_1IOStream_1_1IOBuffer_1ac48a78c41db01d44c29eba848a981170" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/iostream/spk_iostream.hpp" line="83" column="18" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="83" bodyend="93"/>
+        <location file="includes/iostream/spk_iostream.hpp" line="83" column="6" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="83" bodyend="92"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -204,7 +204,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="includes/iostream/spk_iostream.hpp" line="20" column="9" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="21" bodyend="94"/>
+    <location file="includes/iostream/spk_iostream.hpp" line="21" column="1" bodyfile="includes/iostream/spk_iostream.hpp" bodystart="22" bodyend="93"/>
     <listofallmembers>
       <member refid="classspk_1_1IOStream_1_1IOBuffer_1a515c3156a5e6c7b7a019b1877bc597e8" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_maximumPrefixSize</name></member>
       <member refid="classspk_1_1IOStream_1_1IOBuffer_1a294060a780954e8844b8bd4fdb0cf6f8" prot="private" virt="non-virtual"><scope>spk::IOStream::IOBuffer</scope><name>_mutex</name></member>

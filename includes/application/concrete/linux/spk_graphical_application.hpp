@@ -55,7 +55,7 @@ namespace spk
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _windowModule->treatMessage(); }));
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _mouseModule->treatMessage(); }));
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _keyboardModule->treatMessage(); }));
-			_updateContracts.push_back(addJob(L"Updater", [&](){ _widgetModule->treatMessage(); }));
+			_updateContracts.push_back(addJob(L"Updater", [&](){ _widgetModule->update(); }));
 
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _mouseModule->updateMouse(); }));
 			_updateContracts.push_back(addJob(L"Updater", [&](){ _keyboardModule->updateKeyboard(); }));
