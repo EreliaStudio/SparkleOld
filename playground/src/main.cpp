@@ -9,6 +9,8 @@ int main()
 	{
 		try
 		{
+			if (filePath.find(L"array.json") == std::wstring::npos)
+				continue;
 			if (filePath.find(L"copy") != std::wstring::npos)
 			{
 				std::filesystem::remove(filePath);
@@ -18,6 +20,8 @@ int main()
 			spk::cout << "File {" << filePath << "}: " << std::endl
 				<< file << std::endl;
 			file.save(filePath.erase(filePath.find_last_of(L'.')).append(L"_copy.json"));
+			spk::cout << "File done." << std::endl;
+			spk::cout << L"DECODER: " << spk::universalCodeEncoder(L"\\uD834\\uDD1E") << std::endl;
 		}
 		catch(const std::exception& e)
 		{

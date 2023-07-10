@@ -184,7 +184,7 @@ namespace spk
 				default:
 					if (c < 0x20 || c > 0x7E)
 					{
-						universalCodedCharSet = spk::universalCodeToWstring(c);
+						universalCodedCharSet = spk::universalCodeDecoder(c);
 
 						result.replace(i, 1, universalCodedCharSet);
 						i += universalCodedCharSet.size() - 1;

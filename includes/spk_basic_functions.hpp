@@ -112,7 +112,17 @@ namespace spk
 	 * @note If the character is in range ]32-126[, it is returned as is.
 	 * 	If the character code is higher than 0x10FFFF, an empty string is returned.
 	 */
-	std::wstring universalCodeToWstring(const wchar_t& p_code);
+	std::wstring universalCodeDecoder(const wchar_t& p_code);
+
+	/**
+	 * @brief Turns a universal code into a non printable or unicode character.
+	 * 
+	 * @param p_code The wstring containing the universal code of the character.
+	 * @return wchar_t A non printable or unicode character. ]0-31[ or ]127-0x10FFFF[
+	 * @warning If your local does not support UTF16,
+	 * you should use try/catch if you plan to convert or print the result.
+	 */
+	wchar_t universalCodeEncoder(const std::wstring& p_code);
 
 	/**
 	 * @brief Calculates the length of a numeric value in a specified base.

@@ -164,7 +164,7 @@ namespace spk
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
 
-	std::wstring universalCodeToWstring(const wchar_t& p_code)
+	std::wstring universalCodeDecoder(const wchar_t& p_code)
 	{
 		std::wstring result;
 		std::wstringstream ss;
@@ -190,6 +190,28 @@ namespace spk
 			result = L"";
 		else
 			result += p_code;
+		return (result);
+	}
+
+	wchar_t universalCodeEncoder(const std::wstring& p_code)
+	{
+		wchar_t result = 0;
+
+		if (p_code.size() == 6 && p_code[0] == L'\\' && p_code[1] == L'u')
+		{
+			result = static_cast<wchar_t>(std::stoi(p_code.substr(2, 4), nullptr, 16));
+		}
+		else if (p_code.size() == 12 && p_code[0] == L'\\' && p_code[1] == L'u' &&  p_code[6] == L'\\' && p_code[7] == L'u')
+		{
+			int highSurrogate = static_cast<int>(std::stoi(p_code.substr(2, 4), nullptr, 16));
+			int lowSurrogate = static_cast<int>(std::stoi(p_code.substr(8, 4), nullptr, 16));
+
+			highSurrogate = (highSurrogate - 0xD800) << 10;
+			lowSurrogate -= 0xDC00;
+			result = static_cast<wchar_t>(highSurrogate + lowSurrogate + 0x10000);
+		}
+		else
+			result = p_code[0];
 		return (result);
 	}
 }
