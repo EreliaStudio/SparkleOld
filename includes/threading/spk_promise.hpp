@@ -5,15 +5,15 @@
 
 namespace spk
 {
-    /**
-     * @class Promise
-     * @brief Class for providing a promise with a value.
-     * 
-     * This class provides a promise that can be fulfilled with a value. 
-     * It allows subscribing to the promise to receive the value when it becomes available.
-     * 
-     * @tparam TType The type of the value.
-     */
+	/**
+	 * @class Promise
+	 * @brief Class for providing a promise with a value.
+	 * 
+	 * This class provides a promise that can be fulfilled with a value. 
+	 * It allows subscribing to the promise to receive the value when it becomes available.
+	 * 
+	 * @tparam TType The type of the value.
+	 */
 	template<typename TType>
 	class Promise : public ContractProvider
 	{

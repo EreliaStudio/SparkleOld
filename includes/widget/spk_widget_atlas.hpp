@@ -7,17 +7,17 @@
 
 namespace spk
 {
-    /**
-     * @class WidgetAtlas
-     * @brief A singleton atlas of widgets.
-     *
-     * WidgetAtlas is a class that acts as a collection of AbstractWidget pointers. It provides methods 
-     * for inserting, removing, and sorting widgets, as well as accessing the collection itself. Being a
-     * Singleton, it ensures there is only one instance of this collection in the program.
+	/**
+	 * @class WidgetAtlas
+	 * @brief A singleton atlas of widgets.
+	 *
+	 * WidgetAtlas is a class that acts as a collection of AbstractWidget pointers. It provides methods 
+	 * for inserting, removing, and sorting widgets, as well as accessing the collection itself. Being a
+	 * Singleton, it ensures there is only one instance of this collection in the program.
 	 * 
 	 * This class is called automaticaly by the widget when they are created or when they have their depth edited.
 	 * This singleton is created inside the WidgetModule.
-     */
+	 */
 	class WidgetAtlas : public spk::Singleton<WidgetAtlas>
 	{
 		friend class spk::Singleton<WidgetAtlas>;

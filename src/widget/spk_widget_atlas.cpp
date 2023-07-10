@@ -44,6 +44,6 @@ namespace spk
 
 		const WidgetAtlas::StoringContainer& WidgetAtlas::widgets() const
 		{
-        	return _widgets;
-    	}
+			return _widgets;
+		}
 }

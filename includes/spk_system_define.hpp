@@ -12,12 +12,12 @@
 	#include "data_structure/spk_pool.hpp"
 	#include "data_structure/spk_data_buffer.hpp"
 
-    using SystemMessage = spk::Pool<spk::DataBuffer>::Object;
+	using SystemMessage = spk::Pool<spk::DataBuffer>::Object;
 
 #elif __linux__
 	#include <xcb/xcb.h>
 
-    using SystemMessage = xcb_generic_event_t *;
+	using SystemMessage = xcb_generic_event_t *;
 #else
 #   error "Unknown compiler"
 #endif

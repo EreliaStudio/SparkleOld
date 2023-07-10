@@ -9,20 +9,20 @@
 namespace spk
 {
 	/**
-     * @class Keyboard
-     * @brief Singleton class for keyboard inputs.
-     * @details This class handles keyboard inputs and provides key mapping and layout configuration.
-     */
+	 * @class Keyboard
+	 * @brief Singleton class for keyboard inputs.
+	 * @details This class handles keyboard inputs and provides key mapping and layout configuration.
+	 */
 	class Keyboard : public spk::Singleton<Keyboard>
 	{
 		friend class spk::Singleton<Keyboard>;
 		friend class KeyboardModule;
 
 	public:
-	    /**
-         * @enum Key
-         * @brief Enum for representing keyboard keys.
-         */
+		/**
+		 * @enum Key
+		 * @brief Enum for representing keyboard keys.
+		 */
 		enum Key
 		{
 			Unknown = -1,  // Represents an unknown key
@@ -79,10 +79,10 @@ namespace spk
 			SIZE // Represents the total number of keys
 		};
 
-        /**
-         * @enum Layout
-         * @brief Enum for representing keyboard layouts.
-         */
+		/**
+		 * @enum Layout
+		 * @brief Enum for representing keyboard layouts.
+		 */
 		enum Layout
 		{
 			Azerty, // Represents Azerty layout
@@ -90,21 +90,21 @@ namespace spk
 		};
 
 	private:
-	    /**
-         * @struct Mapping
-         * @brief Structure to handle key mappings.
-         * @details This structure handles key bindings for specific layouts.
-         */
+		/**
+		 * @struct Mapping
+		 * @brief Structure to handle key mappings.
+		 * @details This structure handles key bindings for specific layouts.
+		 */
 		struct Mapping
 		{
 			Key keys[Key::SIZE];  // Array to store key mapping
 
 			Mapping();
-			            /**
-             * @brief Binds a key to an index.
-             * @param p_index The index to bind the key to.
-             * @param p_key The key to bind.
-             */
+						/**
+			 * @brief Binds a key to an index.
+			 * @param p_index The index to bind the key to.
+			 * @param p_key The key to bind.
+			 */
 			void bindKey(const size_t& p_index, const Key& p_key);
 			Key &operator[](const size_t &p_index);
 
@@ -121,53 +121,53 @@ namespace spk
 
 		Keyboard();
 
-       /**
-         * @brief Registers a key press event.
-         * @param p_key The key that was pressed.
-         */
+	   /**
+		 * @brief Registers a key press event.
+		 * @param p_key The key that was pressed.
+		 */
 		void pressKey(const uint32_t &p_key);
 		
 		/**
-         * @brief Registers a key release event.
-         * @param p_key The key that was released.
-         */
+		 * @brief Registers a key release event.
+		 * @param p_key The key that was released.
+		 */
 		void releaseKey(const uint32_t &p_key);
 
-        /**
-         * @brief Updates the state of the keyboard.
-         */
+		/**
+		 * @brief Updates the state of the keyboard.
+		 */
 		void update();
 
 	public:
 		/**
-         * @brief Sets the layout of the keyboard.
-         * @param p_layout The layout to set.
-         */
+		 * @brief Sets the layout of the keyboard.
+		 * @param p_layout The layout to set.
+		 */
 		void setLayout(const Layout &p_layout) { _layout = p_layout; }
 
 		/**
-         * @brief Returns the input status of a key.
-         * @param p_key The key to get the input status of.
-         * @return The input status of the key.
-         */
+		 * @brief Returns the input status of a key.
+		 * @param p_key The key to get the input status of.
+		 * @return The input status of the key.
+		 */
 		const InputState &inputStatus(const Key &p_key) const
 		{
 			return (_keys[static_cast<size_t>(p_key)]);
 		}
 
-        /**
-         * @brief Converts a key to a string.
-         * @param p_key The key to convert to a string.
-         * @return The string representation of the key.
-         */
+		/**
+		 * @brief Converts a key to a string.
+		 * @param p_key The key to convert to a string.
+		 * @return The string representation of the key.
+		 */
 		static const std::wstring &keyToString(const Keyboard::Key &p_key);
 	};
 
 
-    /**
-     * @brief Converts a Keyboard::Key to a string.
-     * @param p_key The Keyboard::Key to convert to a string.
-     * @return The string representation of the Keyboard::Key.
-     */
+	/**
+	 * @brief Converts a Keyboard::Key to a string.
+	 * @param p_key The Keyboard::Key to convert to a string.
+	 * @return The string representation of the Keyboard::Key.
+	 */
 	const std::wstring &to_wstring(const Keyboard::Key &p_key);
 }

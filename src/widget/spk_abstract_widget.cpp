@@ -5,7 +5,7 @@
 
 namespace spk
 {
-    void AbstractWidget::addChild(Child child)
+	void AbstractWidget::addChild(Child child)
 	{
 		InherenceObject<AbstractWidget>::addChild(child);
 	}

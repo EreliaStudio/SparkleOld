@@ -109,10 +109,10 @@ namespace spk
 		/**
 		 * @brief Add a new widget inside the application, with the central widget as parent.
 		 * 
-         * @tparam TChildrenType The type of the children widget.
-         * @tparam Args The types of the arguments for constructing the children widget.
-         * @param p_args The arguments for constructing the children widget.
-         * @return Pointer to the children widget.
+		 * @tparam TChildrenType The type of the children widget.
+		 * @tparam Args The types of the arguments for constructing the children widget.
+		 * @param p_args The arguments for constructing the children widget.
+		 * @return Pointer to the children widget.
 		 */
 		template <typename TChildrenType, typename ... Args>
 		TChildrenType* addRootWidget(Args&& ... p_args)
