@@ -6,27 +6,12 @@
 namespace spk
 {
 	/**
-	 * @class AbstractModule
-	 * @brief Base class for modules.
-	 * 
-	 * This is an abstract class that provides a basic interface for other modules.
-	 */
-	class AbstractModule
-	{
-	public:
-		/**
-		 * @brief A virtual update function that must be overridden in derived classes.
-		 */
-		virtual void update() = 0;
-	};
-
-	/**
 	 * @class IMessageConsumerModule
 	 * @brief Class for modules that consume messages.
 	 * 
 	 * This class provides an interface for modules that need to consume system messages.
 	 */
-	class IMessageConsumerModule : public spk::AbstractModule
+	class IMessageConsumerModule
 	{
 	private:
 		spk::ThreadSafeQueue<SystemMessage> &_queue; ///< Thread-safe queue for system messages.
@@ -49,6 +34,6 @@ namespace spk
 		/**
 		 * @brief Updates the IMessageConsumerModule object.
 		 */
-		void update();
+		void treatMessage();
 	};
 }

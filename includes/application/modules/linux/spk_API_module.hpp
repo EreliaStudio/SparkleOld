@@ -1,6 +1,5 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
 
 namespace spk
@@ -12,7 +11,7 @@ namespace spk
 	 * This class handles the API interactions and updates for the window, mouse and keyboard.
 	 * It uses thread-safe queues to ensure safe multi-threaded operations.
 	 */
-	class APIModule : public spk::AbstractModule
+	class APIModule
 	{
 	private:
 		spk::ThreadSafeQueue<SystemMessage> _windowQueue; ///< Thread-safe queue for window system messages.
@@ -35,7 +34,7 @@ namespace spk
 		 * 
 		 * This method should be implemented in the .cpp file.
 		 */
-		void update();
+		void pullMessage();
 
 		/**
 		 * @brief Returns the thread-safe queue for window system messages.

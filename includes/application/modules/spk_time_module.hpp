@@ -1,7 +1,5 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
-
 namespace spk
 {
     /**
@@ -11,7 +9,7 @@ namespace spk
      * This class provides methods to handle and manage time-related functionality within the application.
 	 * This class handle the TimeMetrics singleton.
      */
-	class TimeModule : public spk::AbstractModule
+	class TimeModule
 	{
 	public:
         /**
@@ -30,6 +28,6 @@ namespace spk
          * @brief Updates the time state.
 		 * Will update the TimeMetrics
          */
-		void update();
+		void updateTimeMetrics();
 	};
 }

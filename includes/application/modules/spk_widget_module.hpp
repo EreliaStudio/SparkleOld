@@ -1,8 +1,5 @@
 #pragma once
 
-#include "application/modules/spk_abstract_module.hpp"
-
-
 namespace spk
 {
     /**
@@ -11,7 +8,7 @@ namespace spk
      *
      * This class provides methods to handle and manage the widgets within the application.
      */
-	class WidgetModule : public spk::AbstractModule
+	class WidgetModule
 	{
 	private:
 

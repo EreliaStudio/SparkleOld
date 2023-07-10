@@ -50,7 +50,7 @@ namespace spk
 		 *
 		 * This method should be called once per frame in the application's main update loop.
 		 */
-		void update();
+		void updateData();
 
 		/**
 		 * \brief Increment the counter for frames rendered per second.
