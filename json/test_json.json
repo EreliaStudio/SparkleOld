@@ -1,0 +1,20 @@
+{
+    "nom"    : "Dupont",
+    "age":     32,
+    "testFun": null,
+    "citoyen" true,
+    "salaire": 30000.50    ,
+    "object":{
+        "name":"AttacherCase",
+        "value":105
+    ,
+    "friends":[
+        "A",
+        "B",
+        "C",
+        {
+            "name":"D",
+            "citoyen":true
+                
+    ,
+    "object2":null
