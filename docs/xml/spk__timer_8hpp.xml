@@ -9,22 +9,12 @@
     <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
     <includedby refid="spk__timer_8cpp" local="yes">src/system/spk_timer.cpp</includedby>
     <incdepgraph>
-      <node id="7">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
       <node id="2">
         <label>stdexcept</label>
       </node>
       <node id="6">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
       </node>
       <node id="4">
         <label>design_pattern/spk_singleton.hpp</label>
@@ -33,13 +23,6 @@
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="11">
-        <label>condition_variable</label>
-      </node>
-      <node id="12">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
       </node>
       <node id="1">
         <label>includes/system/spk_timer.hpp</label>
@@ -56,22 +39,6 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="8">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>deque</label>
-      </node>
-      <node id="9">
-        <label>mutex</label>
       </node>
       <node id="5">
         <label>memory</label>

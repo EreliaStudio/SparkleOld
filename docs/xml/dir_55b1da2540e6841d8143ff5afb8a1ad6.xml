@@ -3,9 +3,9 @@
   <compounddef id="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir">
     <compoundname>includes/application/modules</compoundname>
     <innerdir refid="dir_236f3c3cc45023562be3bdd435e3e127">includes/application/modules/linux</innerdir>
-    <innerfile refid="spk__abstract__module_8hpp">spk_abstract_module.hpp</innerfile>
     <innerfile refid="spk__API__module_8hpp">spk_API_module.hpp</innerfile>
     <innerfile refid="spk__keyboard__module_8hpp">spk_keyboard_module.hpp</innerfile>
+    <innerfile refid="spk__message__consumer__module_8hpp">spk_message_consumer_module.hpp</innerfile>
     <innerfile refid="spk__mouse__module_8hpp">spk_mouse_module.hpp</innerfile>
     <innerfile refid="spk__profiler__module_8hpp">spk_profiler_module.hpp</innerfile>
     <innerfile refid="spk__system__module_8hpp">spk_system_module.hpp</innerfile>

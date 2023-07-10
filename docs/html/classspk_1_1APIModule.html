@@ -78,24 +78,6 @@ $(function() {
  <a href="classspk_1_1APIModule.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="linux_2spk__API__module_8hpp_source.html">spk_API_module.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for spk::APIModule:</div>
-<div class="dyncontent">
-<div class="center"><img src="classspk_1_1APIModule__inherit__graph.png" border="0" usemap="#aspk_1_1APIModule_inherit__map" alt="Inheritance graph"/></div>
-<map name="aspk_1_1APIModule_inherit__map" id="aspk_1_1APIModule_inherit__map">
-<area shape="rect" title="Class for managing the API interactions." alt="" coords="21,80,144,107"/>
-<area shape="rect" href="classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="5,5,160,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for spk::APIModule:</div>
-<div class="dyncontent">
-<div class="center"><img src="classspk_1_1APIModule__coll__graph.png" border="0" usemap="#aspk_1_1APIModule_coll__map" alt="Collaboration graph"/></div>
-<map name="aspk_1_1APIModule_coll__map" id="aspk_1_1APIModule_coll__map">
-<area shape="rect" title="Class for managing the API interactions." alt="" coords="21,80,144,107"/>
-<area shape="rect" href="classspk_1_1AbstractModule.html" title="Base class for modules." alt="" coords="5,5,160,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -107,9 +89,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#ab09bde7c662be0042fe7864ac93258c2">~APIModule</a> ()</td></tr>
 <tr class="memdesc:ab09bde7c662be0042fe7864ac93258c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classspk_1_1APIModule.html" title="Class for managing the API interactions.">APIModule</a> object. <br /></td></tr>
 <tr class="separator:ab09bde7c662be0042fe7864ac93258c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a775ee5f6da60b57849296fe60c189487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#a775ee5f6da60b57849296fe60c189487">update</a> ()</td></tr>
-<tr class="memdesc:a775ee5f6da60b57849296fe60c189487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the API module.  <a href="classspk_1_1APIModule.html#a775ee5f6da60b57849296fe60c189487">More...</a><br /></td></tr>
-<tr class="separator:a775ee5f6da60b57849296fe60c189487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2061e8ad2cbc3b8318f5bcb12b843de2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#a2061e8ad2cbc3b8318f5bcb12b843de2">pullMessage</a> ()</td></tr>
+<tr class="memdesc:a2061e8ad2cbc3b8318f5bcb12b843de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the API module.  <a href="classspk_1_1APIModule.html#a2061e8ad2cbc3b8318f5bcb12b843de2">More...</a><br /></td></tr>
+<tr class="separator:a2061e8ad2cbc3b8318f5bcb12b843de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac99489e2893d8b07a4b59ee458e97f5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b">windowQueue</a> ()</td></tr>
 <tr class="memdesc:ac99489e2893d8b07a4b59ee458e97f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the thread-safe queue for window system messages.  <a href="classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b">More...</a><br /></td></tr>
 <tr class="separator:ac99489e2893d8b07a4b59ee458e97f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,33 +162,23 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a775ee5f6da60b57849296fe60c189487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a775ee5f6da60b57849296fe60c189487">&#9670;&nbsp;</a></span>update()</h2>
+<a id="a2061e8ad2cbc3b8318f5bcb12b843de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2061e8ad2cbc3b8318f5bcb12b843de2">&#9670;&nbsp;</a></span>pullMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::APIModule::update </td>
+          <td class="memname">void spk::APIModule::pullMessage </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Updates the API module. </p>
 <p>This method should be implemented in the .cpp file. </p>
-
-<p>Implements <a class="el" href="classspk_1_1AbstractModule.html#a8dc7a4e8a328a9bd57486df88d3d43b4">spk::AbstractModule</a>.</p>
 
 </div>
 </div>

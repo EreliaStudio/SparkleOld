@@ -11,17 +11,9 @@
         <link refid="spk__time__metrics_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
         <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -30,8 +22,6 @@
       <node id="6">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
       </node>
       <node id="3">
         <label>design_pattern/spk_singleton.hpp</label>
@@ -41,13 +31,6 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>condition_variable</label>
-      </node>
-      <node id="12">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
-      </node>
       <node id="2">
         <label>system/spk_time_metrics.hpp</label>
         <link refid="spk__time__metrics_8hpp_source"/>
@@ -56,26 +39,10 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>deque</label>
-      </node>
-      <node id="9">
-        <label>mutex</label>
-      </node>
-      <node id="13">
+      <node id="7">
         <label>chrono</label>
       </node>
-      <node id="14">
+      <node id="8">
         <label>thread</label>
       </node>
       <node id="4">

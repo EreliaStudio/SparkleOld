@@ -124,10 +124,6 @@
 <para>This class manages the application window, including handling system messages related to the window, rendering the window, and clearing the window. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::WindowModule</label>
         <link refid="classspk_1_1WindowModule"/>
@@ -137,15 +133,9 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::WindowModule</label>
         <link refid="classspk_1_1WindowModule"/>
@@ -155,8 +145,6 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="includes/application/modules/linux/spk_window_module.hpp" line="15" column="1" bodyfile="includes/application/modules/linux/spk_window_module.hpp" bodystart="16" bodyend="44"/>
@@ -165,7 +153,7 @@
       <member refid="classspk_1_1WindowModule_1aa56d1756ecd104726d1e2e87a189815b" prot="public" virt="non-virtual"><scope>spk::WindowModule</scope><name>clear</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::WindowModule</scope><name>IMessageConsumerModule</name></member>
       <member refid="classspk_1_1WindowModule_1a0ac729d572ab4a20f60c346c19f1c460" prot="public" virt="non-virtual"><scope>spk::WindowModule</scope><name>render</name></member>
-      <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" virt="virtual"><scope>spk::WindowModule</scope><name>update</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" virt="non-virtual"><scope>spk::WindowModule</scope><name>treatMessage</name></member>
       <member refid="classspk_1_1WindowModule_1a9a94140d19b729c855dcd8431de38bac" prot="public" virt="non-virtual"><scope>spk::WindowModule</scope><name>WindowModule</name></member>
     </listofallmembers>
   </compounddef>

@@ -5,9 +5,8 @@
     <innerclass refid="classspk_1_1Application" prot="public">spk::Application</innerclass>
     <innerclass refid="classspk_1_1APIModule" prot="public">spk::APIModule</innerclass>
     <innerclass refid="classspk_1_1WindowModule" prot="public">spk::WindowModule</innerclass>
-    <innerclass refid="classspk_1_1AbstractModule" prot="public">spk::AbstractModule</innerclass>
-    <innerclass refid="classspk_1_1IMessageConsumerModule" prot="public">spk::IMessageConsumerModule</innerclass>
     <innerclass refid="classspk_1_1KeyboardModule" prot="public">spk::KeyboardModule</innerclass>
+    <innerclass refid="classspk_1_1IMessageConsumerModule" prot="public">spk::IMessageConsumerModule</innerclass>
     <innerclass refid="classspk_1_1MouseModule" prot="public">spk::MouseModule</innerclass>
     <innerclass refid="classspk_1_1ProfilerModule" prot="public">spk::ProfilerModule</innerclass>
     <innerclass refid="classspk_1_1SystemModule" prot="public">spk::SystemModule</innerclass>

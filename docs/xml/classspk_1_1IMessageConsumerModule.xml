@@ -2,12 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="classspk_1_1IMessageConsumerModule" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>spk::IMessageConsumerModule</compoundname>
-    <basecompoundref refid="classspk_1_1AbstractModule" prot="public" virt="non-virtual">spk::AbstractModule</basecompoundref>
     <derivedcompoundref refid="classspk_1_1KeyboardModule" prot="public" virt="non-virtual">spk::KeyboardModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1MouseModule" prot="public" virt="non-virtual">spk::MouseModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1SystemModule" prot="public" virt="non-virtual">spk::SystemModule</derivedcompoundref>
     <derivedcompoundref refid="classspk_1_1WindowModule" prot="public" virt="non-virtual">spk::WindowModule</derivedcompoundref>
-    <includes refid="spk__abstract__module_8hpp" local="no">spk_abstract_module.hpp</includes>
+    <includes refid="spk__message__consumer__module_8hpp" local="no">spk_message_consumer_module.hpp</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" prot="private" static="no" mutable="no">
         <type><ref refid="classspk_1_1ThreadSafeQueue" kindref="compound">spk::ThreadSafeQueue</ref>&lt; SystemMessage &gt; &amp;</type>
@@ -21,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="32" column="22" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="32" bodyend="-1"/>
+        <location file="includes/application/modules/spk_message_consumer_module.hpp" line="17" column="22" bodyfile="includes/application/modules/spk_message_consumer_module.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -55,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="39" column="14"/>
+        <location file="includes/application/modules/spk_message_consumer_module.hpp" line="24" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -85,14 +84,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="47" column="1" bodyfile="src/application/modules/linux/spk_abstract_module.cpp" bodystart="5" bodyend="7"/>
+        <location file="includes/application/modules/spk_message_consumer_module.hpp" line="32" column="1" bodyfile="src/application/modules/linux/spk_message_consumer_module.cpp" bodystart="5" bodyend="7"/>
       </memberdef>
-      <memberdef kind="function" id="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void spk::IMessageConsumerModule::update</definition>
+        <definition>void spk::IMessageConsumerModule::treatMessage</definition>
         <argsstring>()</argsstring>
-        <name>update</name>
-        <reimplements refid="classspk_1_1AbstractModule_1a8dc7a4e8a328a9bd57486df88d3d43b4">update</reimplements>
+        <name>treatMessage</name>
         <briefdescription>
 <para>Updates the <ref refid="classspk_1_1IMessageConsumerModule" kindref="compound">IMessageConsumerModule</ref> object. </para>
         </briefdescription>
@@ -100,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/application/modules/spk_abstract_module.hpp" line="52" column="6" bodyfile="src/application/modules/linux/spk_abstract_module.cpp" bodystart="9" bodyend="19"/>
+        <location file="includes/application/modules/spk_message_consumer_module.hpp" line="37" column="6" bodyfile="src/application/modules/linux/spk_message_consumer_module.cpp" bodystart="9" bodyend="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -110,29 +108,25 @@
 <para>This class provides an interface for modules that need to consume system messages. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
-      <node id="6">
+      <node id="5">
         <label>spk::WindowModule</label>
         <link refid="classspk_1_1WindowModule"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="4">
         <label>spk::SystemModule</label>
         <link refid="classspk_1_1SystemModule"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="2">
         <label>spk::KeyboardModule</label>
         <link refid="classspk_1_1KeyboardModule"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="3">
         <label>spk::MouseModule</label>
         <link refid="classspk_1_1MouseModule"/>
         <childnode refid="1" relation="public-inheritance">
@@ -141,28 +135,14 @@
       <node id="1">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
-      <node id="1">
-        <label>spk::IMessageConsumerModule</label>
-        <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-    </collaborationgraph>
-    <location file="includes/application/modules/spk_abstract_module.hpp" line="29" column="1" bodyfile="includes/application/modules/spk_abstract_module.hpp" bodystart="30" bodyend="53"/>
+    <location file="includes/application/modules/spk_message_consumer_module.hpp" line="14" column="1" bodyfile="includes/application/modules/spk_message_consumer_module.hpp" bodystart="15" bodyend="38"/>
     <listofallmembers>
       <member refid="classspk_1_1IMessageConsumerModule_1a5fcda2e48b05ecdfe647a64f3ca47d78" prot="private" virt="pure-virtual"><scope>spk::IMessageConsumerModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a109cbce6434f51ce3f31d10138aeda2b" prot="private" virt="non-virtual"><scope>spk::IMessageConsumerModule</scope><name>_queue</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::IMessageConsumerModule</scope><name>IMessageConsumerModule</name></member>
-      <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" virt="virtual"><scope>spk::IMessageConsumerModule</scope><name>update</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" virt="non-virtual"><scope>spk::IMessageConsumerModule</scope><name>treatMessage</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

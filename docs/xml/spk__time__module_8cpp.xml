@@ -5,15 +5,7 @@
     <includes refid="spk__time__module_8hpp" local="yes">application/modules/spk_time_module.hpp</includes>
     <includes refid="spk__time__metrics_8hpp" local="yes">system/spk_time_metrics.hpp</includes>
     <incdepgraph>
-      <node id="3">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
+      <node id="6">
         <label>stdexcept</label>
       </node>
       <node id="1">
@@ -21,55 +13,30 @@
         <link refid="spk__time__module_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="2">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>design_pattern/spk_singleton.hpp</label>
-        <link refid="spk__singleton_8hpp_source"/>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>condition_variable</label>
-      </node>
-      <node id="8">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
-      </node>
-      <node id="9">
-        <label>system/spk_time_metrics.hpp</label>
-        <link refid="spk__time__metrics_8hpp_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
       </node>
       <node id="4">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
+        <label>design_pattern/spk_singleton.hpp</label>
+        <link refid="spk__singleton_8hpp_source"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+      </node>
+      <node id="3">
+        <label>system/spk_time_metrics.hpp</label>
+        <link refid="spk__time__metrics_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>deque</label>
-      </node>
       <node id="5">
-        <label>mutex</label>
-      </node>
-      <node id="11">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -94,7 +61,7 @@
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a0fd0698aa7eab7c2a5cfbf11a9ddfad1" kindref="member">spk::Singleton&lt;spk::TimeMetrics&gt;::release</ref>();</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule_1a689fe31307b43609d1cbbc3107900cda" kindref="member">TimeModule::update</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classspk_1_1TimeModule_1aa6a91529872d4c9551e58c565fa55bb4" kindref="member">TimeModule::updateTimeMetrics</ref>()</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classspk_1_1Singleton_1a5f56bedfe0791cc1cc09d34bb3be382c" kindref="member">spk::Singleton&lt;spk::TimeMetrics&gt;::instance</ref>()-&gt;_updateMetrics();</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

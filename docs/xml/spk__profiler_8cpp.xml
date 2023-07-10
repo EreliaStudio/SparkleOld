@@ -4,19 +4,19 @@
     <compoundname>spk_profiler.cpp</compoundname>
     <includes refid="spk__profiler_8hpp" local="yes">debug/spk_profiler.hpp</includes>
     <incdepgraph>
-      <node id="26">
+      <node id="21">
         <label>design_pattern/spk_contract_provider.hpp</label>
         <link refid="spk__contract__provider_8hpp_source"/>
-        <childnode refid="20" relation="include">
-        </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="14">
         <label>functional</label>
       </node>
       <node id="2">
@@ -31,14 +31,6 @@
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>application/modules/spk_abstract_module.hpp</label>
-        <link refid="spk__abstract__module_8hpp_source"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -59,8 +51,6 @@
       <node id="10">
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
-        <childnode refid="11" relation="include">
-        </childnode>
       </node>
       <node id="8">
         <label>design_pattern/spk_singleton.hpp</label>
@@ -71,19 +61,12 @@
         </childnode>
       </node>
       <node id="15">
-        <label>condition_variable</label>
-      </node>
-      <node id="16">
-        <label>spk_system_define.hpp</label>
-        <link refid="spk__system__define_8hpp_source"/>
-      </node>
-      <node id="21">
         <label>future</label>
       </node>
-      <node id="25">
+      <node id="20">
         <label>vector</label>
       </node>
-      <node id="23">
+      <node id="17">
         <label>sstream</label>
       </node>
       <node id="7">
@@ -94,28 +77,18 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="22">
+      <node id="16">
         <label>iostream/spk_iostream.hpp</label>
         <link refid="spk__iostream_8hpp_source"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>threading/spk_thread_safe_queue.hpp</label>
-        <link refid="spk__thread__safe__queue_8hpp_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -123,44 +96,44 @@
         <link refid="spk__chronometer_8hpp_source"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
-      </node>
-      <node id="24">
-        <label>iostream</label>
-      </node>
-      <node id="17">
-        <label>threading/spk_persistent_worker.hpp</label>
-        <link refid="spk__persistent__worker_8hpp_source"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>cstddef</label>
-      </node>
-      <node id="14">
-        <label>deque</label>
-      </node>
-      <node id="13">
-        <label>mutex</label>
-      </node>
-      <node id="19">
-        <label>thread</label>
       </node>
       <node id="18">
-        <label>threading/spk_thread.hpp</label>
-        <link refid="spk__thread_8hpp_source"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>threading/spk_persistent_worker.hpp</label>
+        <link refid="spk__persistent__worker_8hpp_source"/>
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+      </node>
+      <node id="23">
+        <label>cstddef</label>
+      </node>
+      <node id="22">
+        <label>deque</label>
+      </node>
+      <node id="19">
+        <label>mutex</label>
+      </node>
+      <node id="13">
+        <label>thread</label>
+      </node>
+      <node id="12">
+        <label>threading/spk_thread.hpp</label>
+        <link refid="spk__thread_8hpp_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="9">

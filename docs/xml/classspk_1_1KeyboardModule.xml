@@ -100,10 +100,6 @@
 <para>This class manages the keyboard interactions, including handling system messages related to the keyboard. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::KeyboardModule</label>
         <link refid="classspk_1_1KeyboardModule"/>
@@ -113,15 +109,9 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>spk::AbstractModule</label>
-        <link refid="classspk_1_1AbstractModule"/>
-      </node>
       <node id="1">
         <label>spk::KeyboardModule</label>
         <link refid="classspk_1_1KeyboardModule"/>
@@ -131,8 +121,6 @@
       <node id="2">
         <label>spk::IMessageConsumerModule</label>
         <link refid="classspk_1_1IMessageConsumerModule"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
     <location file="includes/application/modules/spk_keyboard_module.hpp" line="13" column="1" bodyfile="includes/application/modules/spk_keyboard_module.hpp" bodystart="14" bodyend="40"/>
@@ -140,7 +128,7 @@
       <member refid="classspk_1_1KeyboardModule_1a9eb31593b9b40d9a2ac45cf6313b31dd" prot="private" virt="virtual"><scope>spk::KeyboardModule</scope><name>_handleMessage</name></member>
       <member refid="classspk_1_1IMessageConsumerModule_1a676a40140e06e01f4291941b2b34867a" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>IMessageConsumerModule</name></member>
       <member refid="classspk_1_1KeyboardModule_1a3a62882e58161aec70f3f3675c2f0706" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>KeyboardModule</name></member>
-      <member refid="classspk_1_1IMessageConsumerModule_1a20b0f2b400310160007d491929e17a51" prot="public" virt="virtual"><scope>spk::KeyboardModule</scope><name>update</name></member>
+      <member refid="classspk_1_1IMessageConsumerModule_1a3ad01abf44c5f4a4eefed697ceccb255" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>treatMessage</name></member>
       <member refid="classspk_1_1KeyboardModule_1afc1dbda7d91ea3ffb1a8efa0c76186c8" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>updateKeyboard</name></member>
       <member refid="classspk_1_1KeyboardModule_1a57a26afa65b71628d8dc88834006debf" prot="public" virt="non-virtual"><scope>spk::KeyboardModule</scope><name>~KeyboardModule</name></member>
     </listofallmembers>
