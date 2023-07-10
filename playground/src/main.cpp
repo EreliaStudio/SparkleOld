@@ -8,7 +8,7 @@ int main()
 
 	try
 	{
-		atlas.load(L"json/en_EN.json");
+		atlas.load(L"playground/src/en_EN.json");
 	}
 	catch (const std::exception& e)
 	{
