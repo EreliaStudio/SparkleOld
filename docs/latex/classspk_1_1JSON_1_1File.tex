@@ -1,0 +1,187 @@
+\hypertarget{classspk_1_1JSON_1_1File}{}\doxysection{spk\+::JSON\+::File Class Reference}
+\label{classspk_1_1JSON_1_1File}\index{spk::JSON::File@{spk::JSON::File}}
+
+
+Represents a JSON file and provides methods to load and access its contents.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+\+JSON\+\_\+file.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a448f3a4b90930b87408c35d9b2b3cb53}\label{classspk_1_1JSON_1_1File_a448f3a4b90930b87408c35d9b2b3cb53}} 
+\mbox{\hyperlink{classspk_1_1JSON_1_1File_a448f3a4b90930b87408c35d9b2b3cb53}{File}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1JSON_1_1File_ae33058d0101c9fb12709d51c5a8ec655}{File}} (const std\+::filesystem\+::path \&p\+\_\+file\+Path)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} class that loads the specified JSON file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1File_a2d14fcfa9698f647011755f022ed9d7c}{load}} (const std\+::filesystem\+::path \&p\+\_\+file\+Path)
+\begin{DoxyCompactList}\small\item\em Loads the specified JSON file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1File_ad080a2de01ae0eb62145778bb96432d6}{save}} (const std\+::filesystem\+::path \&p\+\_\+file\+Path) const
+\begin{DoxyCompactList}\small\item\em Saves the JSON file to the specified path. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1File_a2fd10b49b958b47f2ec344c3045662bc}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::wstring \&p\+\_\+key) const
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object value with the specified key. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1File_a0b2bb08f3432245f18b73f44dfa1af39}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t p\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object value at the specified index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TType $>$ }\\const TType \& \mbox{\hyperlink{classspk_1_1JSON_1_1File_a7f171a1473d5f1d74845653855e62ccd}{as}} ()
+\begin{DoxyCompactList}\small\item\em Converts the root JSON object to the specified type. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1File_a165c2e57b670a7f02802e9ecd931c074}{root}} () const
+\begin{DoxyCompactList}\small\item\em Returns the root JSON object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wostream \& \mbox{\hyperlink{classspk_1_1JSON_1_1File_a209516d1d04659ce474fd91521a58ef7}{operator$<$$<$}} (std\+::wostream \&p\+\_\+os, const \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} \&p\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Overloaded stream insertion operator to output the contents of the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} object to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a JSON file and provides methods to load and access its contents. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_ae33058d0101c9fb12709d51c5a8ec655}\label{classspk_1_1JSON_1_1File_ae33058d0101c9fb12709d51c5a8ec655}} 
+\index{spk::JSON::File@{spk::JSON::File}!File@{File}}
+\index{File@{File}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{File()}{File()}}
+{\footnotesize\ttfamily spk\+::\+JSON\+::\+File\+::\+File (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{p\+\_\+file\+Path }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} class that loads the specified JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+file\+Path} & The path to the JSON file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a7f171a1473d5f1d74845653855e62ccd}\label{classspk_1_1JSON_1_1File_a7f171a1473d5f1d74845653855e62ccd}} 
+\index{spk::JSON::File@{spk::JSON::File}!as@{as}}
+\index{as@{as}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{as()}{as()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType\& spk\+::\+JSON\+::\+File\+::as (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts the root JSON object to the specified type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type to convert the root JSON object to. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The root JSON object as the specified type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a2d14fcfa9698f647011755f022ed9d7c}\label{classspk_1_1JSON_1_1File_a2d14fcfa9698f647011755f022ed9d7c}} 
+\index{spk::JSON::File@{spk::JSON::File}!load@{load}}
+\index{load@{load}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+File\+::load (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{p\+\_\+file\+Path }\end{DoxyParamCaption})}
+
+
+
+Loads the specified JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+file\+Path} & The path to the JSON file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a2fd10b49b958b47f2ec344c3045662bc}\label{classspk_1_1JSON_1_1File_a2fd10b49b958b47f2ec344c3045662bc}} 
+\index{spk::JSON::File@{spk::JSON::File}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& spk\+::\+JSON\+::\+File\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the JSON object value with the specified key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to access the JSON object value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The JSON object value with the specified key. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a0b2bb08f3432245f18b73f44dfa1af39}\label{classspk_1_1JSON_1_1File_a0b2bb08f3432245f18b73f44dfa1af39}} 
+\index{spk::JSON::File@{spk::JSON::File}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& spk\+::\+JSON\+::\+File\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the JSON object value at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+index} & The index to access the JSON object value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The JSON object value at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a165c2e57b670a7f02802e9ecd931c074}\label{classspk_1_1JSON_1_1File_a165c2e57b670a7f02802e9ecd931c074}} 
+\index{spk::JSON::File@{spk::JSON::File}!root@{root}}
+\index{root@{root}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{root()}{root()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{spk\+::\+JSON\+::\+Object}} \& spk\+::\+JSON\+::\+File\+::root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the root JSON object. 
+
+\begin{DoxyReturn}{Returns}
+The root JSON object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_ad080a2de01ae0eb62145778bb96432d6}\label{classspk_1_1JSON_1_1File_ad080a2de01ae0eb62145778bb96432d6}} 
+\index{spk::JSON::File@{spk::JSON::File}!save@{save}}
+\index{save@{save}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+File\+::save (\begin{DoxyParamCaption}\item[{const std\+::filesystem\+::path \&}]{p\+\_\+file\+Path }\end{DoxyParamCaption}) const}
+
+
+
+Saves the JSON file to the specified path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+file\+Path} & The path to save the JSON file to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1File_a209516d1d04659ce474fd91521a58ef7}\label{classspk_1_1JSON_1_1File_a209516d1d04659ce474fd91521a58ef7}} 
+\index{spk::JSON::File@{spk::JSON::File}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spk::JSON::File@{spk::JSON::File}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::wostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os,  }\item[{const \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} \&}]{p\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloaded stream insertion operator to output the contents of the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} object to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream to write the \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} object to. \\
+\hline
+{\em p\+\_\+file} & The \mbox{\hyperlink{classspk_1_1JSON_1_1File}{File}} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/miscellaneous/\+JSON/spk\+\_\+\+JSON\+\_\+file.\+hpp\item 
+src/miscellaneous/\+JSON/spk\+\_\+\+JSON\+\_\+file.\+cpp\end{DoxyCompactItemize}

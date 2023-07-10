@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="spk__basic__functions_8hpp" kind="file" language="C++">
+    <compoundname>spk_basic_functions.hpp</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">fstream</includes>
+    <includes refid="spk__iostream_8hpp" local="yes">iostream/spk_iostream.hpp</includes>
+    <includedby refid="spk__JSON__file_8hpp" local="yes">includes/miscellaneous/JSON/spk_JSON_file.hpp</includedby>
+    <includedby refid="sparkle_8hpp" local="yes">includes/sparkle.hpp</includedby>
+    <includedby refid="spk__JSON__file_8cpp" local="yes">src/miscellaneous/JSON/spk_JSON_file.cpp</includedby>
+    <includedby refid="spk__JSON__file__number_8cpp" local="yes">src/miscellaneous/JSON/spk_JSON_file_number.cpp</includedby>
+    <includedby refid="spk__JSON__file__string_8cpp" local="yes">src/miscellaneous/JSON/spk_JSON_file_string.cpp</includedby>
+    <includedby refid="spk__JSON__object_8cpp" local="yes">src/miscellaneous/JSON/spk_JSON_object.cpp</includedby>
+    <includedby refid="spk__basic__functions_8cpp" local="yes">src/spk_basic_functions.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>includes/spk_basic_functions.hpp</label>
+        <link refid="spk__basic__functions_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+      <node id="6">
+        <label>sstream</label>
+      </node>
+      <node id="5">
+        <label>iostream/spk_iostream.hpp</label>
+        <link refid="spk__iostream_8hpp_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>playground/includes/playground.hpp</label>
+        <link refid="playground_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>includes/spk_basic_functions.hpp</label>
+        <link refid="spk__basic__functions_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>includes/sparkle.hpp</label>
+        <link refid="sparkle_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>includes/miscellaneous/JSON/spk_JSON_file.hpp</label>
+        <link refid="spk__JSON__file_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacespk">spk</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="spk__basic__functions_8hpp_1a9c15fe1e91b07ea3280f5239f9841b67" prot="public" static="no">
+        <name>__PRETTY_FUNCTION__</name>
+        <initializer>__FUNCSIG__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/spk_basic_functions.hpp" line="156" column="9" bodyfile="includes/spk_basic_functions.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="spk__basic__functions_8hpp_1a55fa3e6383498fdb5da98ec262537e6c" prot="public" static="no">
+        <name>__METHOD__</name>
+        <initializer>spk::methodName(__PRETTY_FUNCTION__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/spk_basic_functions.hpp" line="160" column="9" bodyfile="includes/spk_basic_functions.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="spk__basic__functions_8hpp_1a9c88c507a8590feb0894dccdbedcf3ea" prot="public" static="no">
+        <name>__CLASS__</name>
+        <initializer>spk::className(__PRETTY_FUNCTION__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/spk_basic_functions.hpp" line="164" column="9" bodyfile="includes/spk_basic_functions.hpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="spk__basic__functions_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" prot="public" static="no">
+        <name>DEBUG_LINE</name>
+        <param></param>
+        <initializer>spk::cout &lt;&lt; __METHOD__ &lt;&lt; &quot;::&quot; &lt;&lt; __LINE__ &lt;&lt; std::endl</initializer>
+        <briefdescription>
+<para>Prints the current method name and line number for debugging purposes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/spk_basic_functions.hpp" line="173" column="9" bodyfile="includes/spk_basic_functions.hpp" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;iostream/spk_iostream.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>methodName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prettyFunction);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>className(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prettyFunction);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>methodName(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>prettyFunction);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>className(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>prettyFunction);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::wstring&gt;<sp/>stringSplit(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_string,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_delim);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>getChar(std::wfstream&amp;<sp/>p_file);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>getStr(std::wfstream&amp;<sp/>p_file);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::wstring&gt;<sp/>getStringSplit(std::wfstream&amp;<sp/>p_file,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_delim,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>p_expectedSize<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>positiveModulo(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_integer,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_dividor);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::wstring&gt;<sp/>listFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_extension<sp/>=<sp/>L</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::wstring&gt;<sp/>listDir(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_path);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>wstringToString(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_wstr);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>throwException(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_errorLine);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>std::wstring<sp/>universalCodeDecoder(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">&amp;<sp/>p_code);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>universalCodeEncoder(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::wstring&amp;<sp/>p_code);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>NumericType&gt;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>numberLength(NumericType<sp/>p_number,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>base<sp/>=<sp/>10)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>result(1);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(base<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;numberLength:<sp/>Base<sp/>cannot<sp/>be<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p_number<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++result;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_number<sp/>=<sp/>-p_number;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(p_number<sp/>&gt;=<sp/>base)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_number<sp/>/=<sp/>base;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++result;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(result);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__PRETTY_FUNCTION__)<sp/>&amp;&amp;<sp/>!defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PRETTY_FUNCTION__<sp/>__FUNCSIG__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__METHOD__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__METHOD__<sp/>spk::methodName(__PRETTY_FUNCTION__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__CLASS__<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__CLASS__<sp/>spk::className(__PRETTY_FUNCTION__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG_LINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>DEBUG_LINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_LINE()<sp/>spk::cout<sp/>&lt;&lt;<sp/>__METHOD__<sp/>&lt;&lt;<sp/>&quot;::&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/>std::endl</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="includes/spk_basic_functions.hpp"/>
+  </compounddef>
+</doxygen>

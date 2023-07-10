@@ -187,6 +187,18 @@
     <member refid="classspk_1_1Value_1_1Default_1a74711a987126d215a51581db6ee99679" kind="function"><name>operator=</name></member>
     <member refid="classspk_1_1Value_1_1Default_1a17ae54c173cf86cf18bfb4881c0d2282" kind="function"><name>operator const TType &amp;</name></member>
   </compound>
+  <compound refid="classspk_1_1JSON_1_1File" kind="class"><name>spk::JSON::File</name>
+    <member refid="classspk_1_1JSON_1_1File_1a1c56a4cf392bbc21aba8f09eaf22d88c" kind="variable"><name>_root</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a448f3a4b90930b87408c35d9b2b3cb53" kind="function"><name>File</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1ae33058d0101c9fb12709d51c5a8ec655" kind="function"><name>File</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a2d14fcfa9698f647011755f022ed9d7c" kind="function"><name>load</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1ad080a2de01ae0eb62145778bb96432d6" kind="function"><name>save</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a2fd10b49b958b47f2ec344c3045662bc" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a0b2bb08f3432245f18b73f44dfa1af39" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a7f171a1473d5f1d74845653855e62ccd" kind="function"><name>as</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a165c2e57b670a7f02802e9ecd931c074" kind="function"><name>root</name></member>
+    <member refid="classspk_1_1JSON_1_1File_1a209516d1d04659ce474fd91521a58ef7" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
   <compound refid="classspk_1_1IInput" kind="class"><name>spk::IInput</name>
     <member refid="classspk_1_1IInput_1aca480f940165fae3fbad17182222b8b1" kind="variable"><name>_timer</name></member>
     <member refid="classspk_1_1IInput_1a3f003a9960bf0f09e9c40c0cb19b9b11" kind="variable"><name>_funct</name></member>
@@ -564,6 +576,34 @@
     <member refid="classspk_1_1NoGraphicsWidget_1a73146accf6688f48f8604fa269deba26" kind="function"><name>_onGeometryChange</name></member>
     <member refid="classspk_1_1NoGraphicsWidget_1a2328b8ba5e94b52b7bc0be503aae185f" kind="function"><name>_render</name></member>
   </compound>
+  <compound refid="classspk_1_1JSON_1_1Object" kind="class"><name>spk::JSON::Object</name>
+    <member refid="classspk_1_1JSON_1_1Object_1a3c309e7bde9def6b14f8ea1eeb17b9a9" kind="typedef"><name>Unit</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a43240c597aa86fa22191427fb1fecc2b" kind="typedef"><name>ContentType</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a247d88b673ad65a623ade02d16376333" kind="variable"><name>_initialized</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a76666221085af3facd3b7769aef0e914" kind="variable"><name>_content</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1afba1286b4dbbbdf3b1d24435af0aa24e" kind="variable"><name>_indent</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a9e22f8bb32ed7006df2d723296704b01" kind="variable"><name>_indentSize</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a5766312191b2dd2ab1b4d19f5abef44c" kind="function"><name>Object</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a9026fd2ef8903d031ca351d785dd468e" kind="function"><name>reset</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1ac65aaf98a97410e60fa43ecd9ff398e3" kind="function"><name>addAttribute</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a2b52eff7794d917e59edd6b6d81ff292" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a4bc66afac51ac850f76944f99f0b4cc2" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a826b822374050478d94d5d294cb6e372" kind="function"><name>setAsObject</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1ac4eaf3932e729e39cf6eafabf16c7d89" kind="function"><name>append</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a049616cb5b1eab7786f28d668cd82444" kind="function"><name>push_back</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a0ebf473737a9cb3eeea7b1c8eb80331d" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1abd2f9c065e2af390aa351595649ab6ae" kind="function"><name>operator[]</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a47453923b2bb7a472691d19f3d60fd89" kind="function"><name>setAsArray</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a8f7363332a391be57bca99aeb05459c6" kind="function"><name>size</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1aa5df897c3ac5bd107032524bcb7558e8" kind="function"><name>count</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a0c37111c20936c44f2b64773dbaa2246" kind="function"><name>set</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a0c37111c20936c44f2b64773dbaa2246" kind="function"><name>set</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a4656a5e45ba6633b43dbdc1dc46d5263" kind="function"><name>as</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a4c7d8f4a4427d6295c84dee45f6fb83f" kind="function"><name>printUnit</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a4ae9423cd50f8d1204e8df639f8b9463" kind="function"><name>printObject</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a451ea87ef56eabf347f0e9e93dfa6c5c" kind="function"><name>printArray</name></member>
+    <member refid="classspk_1_1JSON_1_1Object_1a66edc339ea544e43e30ca55c07827081" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
   <compound refid="classspk_1_1Pool_1_1Object" kind="class"><name>spk::Pool::Object</name>
     <member refid="classspk_1_1Pool_1_1Object_1aaa45caad0db0173735281fcdf9aa5e8b" kind="friend"><name>Pool</name></member>
     <member refid="classspk_1_1Pool_1_1Object_1a029605acc00b76100a559823a76f34e4" kind="variable"><name>_source</name></member>
@@ -901,6 +941,44 @@
     <member refid="spk__vector3_8hpp_1a70753e5aacb8a5eb2f6ae254c139e44c" kind="function"><name>operator-</name></member>
     <member refid="spk__vector3_8hpp_1a4f95f63066ab643b13ad27871d3a0aca" kind="function"><name>operator*</name></member>
     <member refid="spk__vector3_8hpp_1abc9fb6d5f31677ea83f5e5d3d44c6ed2" kind="function"><name>operator/</name></member>
+    <member refid="spk__basic__functions_8hpp_1a3bfb867af25d965b131886fe857d23d4" kind="function"><name>methodName</name></member>
+    <member refid="spk__basic__functions_8hpp_1aefd0e04975ab0187d20665ab8a864158" kind="function"><name>className</name></member>
+    <member refid="spk__basic__functions_8hpp_1a7220789e458bf250bb05472cd28acc6b" kind="function"><name>methodName</name></member>
+    <member refid="spk__basic__functions_8hpp_1abfcc5509d013801fd4d0ccf7c64cd83e" kind="function"><name>className</name></member>
+    <member refid="spk__basic__functions_8hpp_1a1e939c5f5ec45c7e93528a983b494a0d" kind="function"><name>stringSplit</name></member>
+    <member refid="spk__basic__functions_8hpp_1af1da86df753aa08c134375767f1fd4b1" kind="function"><name>getChar</name></member>
+    <member refid="spk__basic__functions_8hpp_1ae9f2918180da54f142029f041b9d1fa3" kind="function"><name>getStr</name></member>
+    <member refid="spk__basic__functions_8hpp_1a1254ad34752aba2c1362dedb3b3c2175" kind="function"><name>getStringSplit</name></member>
+    <member refid="spk__basic__functions_8hpp_1aaf53e1dfbe01a3347f1a00fbf24297f3" kind="function"><name>positiveModulo</name></member>
+    <member refid="spk__basic__functions_8hpp_1a7fcd8e63bed947649a6876dc58f2b51c" kind="function"><name>listFile</name></member>
+    <member refid="spk__basic__functions_8hpp_1acf34a729deb44804d107aef9d2aaad5c" kind="function"><name>listDir</name></member>
+    <member refid="spk__basic__functions_8hpp_1af968ab2db5e30a212aa373cddf7016d5" kind="function"><name>wstringToString</name></member>
+    <member refid="spk__basic__functions_8hpp_1afd100e360a6ec28d27838bedd6167f02" kind="function"><name>throwException</name></member>
+    <member refid="spk__basic__functions_8hpp_1a736875e1ee6b20eb1e2dd997ba8d354e" kind="function"><name>universalCodeDecoder</name></member>
+    <member refid="spk__basic__functions_8hpp_1a6848012087aaf1cc22b17362bd495af5" kind="function"><name>universalCodeEncoder</name></member>
+    <member refid="spk__basic__functions_8hpp_1a8cd3e0a18ce342e7152da660662a371d" kind="function"><name>numberLength</name></member>
+  </compound>
+  <compound refid="namespacespk_1_1JSON" kind="namespace"><name>spk::JSON</name>
+    <member refid="spk__JSON__file_8cpp_1ad8aae6c20a52a35016b719fc8a2eaee2" kind="function"><name>_applyGrammar</name></member>
+    <member refid="spk__JSON__file_8cpp_1aeb91577f0dde5363d4762be678864118" kind="function"><name>_extractUnitSubstring</name></member>
+    <member refid="spk__JSON__file_8cpp_1aa6347d3b5317696abd2edb90344ef537" kind="function"><name>_getAttributeName</name></member>
+    <member refid="spk__JSON__file_8cpp_1a42f96ec573e783030b7617d5aa7a3e72" kind="function"><name>_loadUnitNumbers</name></member>
+    <member refid="spk__JSON__file_8cpp_1a1b2820e73573552f0233436de02a64ce" kind="function"><name>_loadContent</name></member>
+    <member refid="spk__JSON__file_8cpp_1a09ed8fb8ce1b7e0f213fe0cdd00233cb" kind="function"><name>_loadFileContent</name></member>
+    <member refid="spk__JSON__file_8cpp_1a39c9755f0a55c9d2b4da1781f34584e9" kind="function"><name>_loadUnitString</name></member>
+    <member refid="spk__JSON__file_8cpp_1af265c364fa8fec331832b38ab5613689" kind="function"><name>_loadUnitBoolean</name></member>
+    <member refid="spk__JSON__file_8cpp_1aaaadf438d72e7a46b1b841be4a41d2e2" kind="function"><name>_loadUnitNull</name></member>
+    <member refid="spk__JSON__file_8cpp_1a1d7baf43b7fc06b93c0e44f51bb98c8f" kind="function"><name>_loadUnit</name></member>
+    <member refid="spk__JSON__file_8cpp_1a1cf5c558ef349afa381e633121a6b2cd" kind="function"><name>_loadObject</name></member>
+    <member refid="spk__JSON__file_8cpp_1ad3d813c26626239060b44993d5d66518" kind="function"><name>_loadArray</name></member>
+    <member refid="spk__JSON__file_8cpp_1af004f27888d5979f3a73567be1febf1d" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="spk__JSON__file__number_8cpp_1ae79cbaf14425da6236527db27bc91b03" kind="function"><name>_isNumberMalformatted</name></member>
+    <member refid="spk__JSON__file__number_8cpp_1ad9db092fed54d00d46673bdd92af92f5" kind="function"><name>_extractExponent</name></member>
+    <member refid="spk__JSON__file__number_8cpp_1affc7c86e770d7b901398dd858813692c" kind="function"><name>_resultWillBeDouble</name></member>
+    <member refid="spk__JSON__file__number_8cpp_1a07be396c1293ab4d5fc88c919b92bdc5" kind="function"><name>_safePowerOfTen</name></member>
+    <member refid="spk__JSON__file__string_8cpp_1a8ab85dee6f5266f8361d26974c732195" kind="function"><name>_handleEscapeSequence</name></member>
+    <member refid="spk__JSON__object_8cpp_1ae1702a4d5a92120f2feea8326d291c64" kind="function"><name>_cleanUnicodeString</name></member>
+    <member refid="spk__JSON__object_8cpp_1aadfc3d38cfdebe3a567b67129b07f3a8" kind="function"><name>operator&lt;&lt;</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
@@ -979,6 +1057,7 @@
   <compound refid="spk__mouse__motion__input_8hpp" kind="file"><name>spk_mouse_motion_input.hpp</name>
   </compound>
   <compound refid="spk__iostream_8hpp" kind="file"><name>spk_iostream.hpp</name>
+    <member refid="spk__iostream_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
   </compound>
   <compound refid="spk__perlin_8hpp" kind="file"><name>spk_perlin.hpp</name>
   </compound>
@@ -990,10 +1069,19 @@
   </compound>
   <compound refid="spk__vector3_8hpp" kind="file"><name>spk_vector3.hpp</name>
   </compound>
+  <compound refid="spk__JSON__file_8hpp" kind="file"><name>spk_JSON_file.hpp</name>
+  </compound>
+  <compound refid="spk__JSON__object_8hpp" kind="file"><name>spk_JSON_object.hpp</name>
+  </compound>
   <compound refid="spk__is__container_8hpp" kind="file"><name>spk_is_container.hpp</name>
   </compound>
   <compound refid="sparkle_8hpp" kind="file"><name>sparkle.hpp</name>
-    <member refid="sparkle_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
+  </compound>
+  <compound refid="spk__basic__functions_8hpp" kind="file"><name>spk_basic_functions.hpp</name>
+    <member refid="spk__basic__functions_8hpp_1a9c15fe1e91b07ea3280f5239f9841b67" kind="define"><name>__PRETTY_FUNCTION__</name></member>
+    <member refid="spk__basic__functions_8hpp_1a55fa3e6383498fdb5da98ec262537e6c" kind="define"><name>__METHOD__</name></member>
+    <member refid="spk__basic__functions_8hpp_1a9c88c507a8590feb0894dccdbedcf3ea" kind="define"><name>__CLASS__</name></member>
+    <member refid="spk__basic__functions_8hpp_1a7a114d97cbe378fb461b86edf1cdda9c" kind="define"><name>DEBUG_LINE</name></member>
   </compound>
   <compound refid="spk__system__define_8hpp" kind="file"><name>spk_system_define.hpp</name>
   </compound>
@@ -1067,6 +1155,16 @@
   </compound>
   <compound refid="spk__perlin_8cpp" kind="file"><name>spk_perlin.cpp</name>
   </compound>
+  <compound refid="spk__JSON__file_8cpp" kind="file"><name>spk_JSON_file.cpp</name>
+  </compound>
+  <compound refid="spk__JSON__file__number_8cpp" kind="file"><name>spk_JSON_file_number.cpp</name>
+  </compound>
+  <compound refid="spk__JSON__file__string_8cpp" kind="file"><name>spk_JSON_file_string.cpp</name>
+  </compound>
+  <compound refid="spk__JSON__object_8cpp" kind="file"><name>spk_JSON_object.cpp</name>
+  </compound>
+  <compound refid="spk__basic__functions_8cpp" kind="file"><name>spk_basic_functions.cpp</name>
+  </compound>
   <compound refid="spk__chronometer_8cpp" kind="file"><name>spk_chronometer.cpp</name>
     <member refid="spk__chronometer_8cpp_1ac7e0ca973ef00d5b9e3dc11787bd20ba" kind="variable"><name>UNINITIALIZED</name></member>
   </compound>
@@ -1090,9 +1188,9 @@
   </compound>
   <compound refid="dir_0169fee49388018a0507c1b0832e6dd6" kind="dir"><name>includes/application/concrete</name>
   </compound>
-  <compound refid="dir_981422f615e1f86fc178e6fbecda1da3" kind="dir"><name>src/data_structure</name>
-  </compound>
   <compound refid="dir_ebc5d281141387bc90eb64e8fb568179" kind="dir"><name>includes/data_structure</name>
+  </compound>
+  <compound refid="dir_981422f615e1f86fc178e6fbecda1da3" kind="dir"><name>src/data_structure</name>
   </compound>
   <compound refid="dir_44d5bc2300862405dbe586a8cb303c4f" kind="dir"><name>src/debug</name>
   </compound>
@@ -1110,35 +1208,41 @@
   </compound>
   <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
   </compound>
-  <compound refid="dir_a9d8515c93d115b5c689e0996dc3ef33" kind="dir"><name>includes/input</name>
-  </compound>
   <compound refid="dir_d365e15d984c8d0205117ee0c40d6716" kind="dir"><name>src/input</name>
+  </compound>
+  <compound refid="dir_a9d8515c93d115b5c689e0996dc3ef33" kind="dir"><name>includes/input</name>
   </compound>
   <compound refid="dir_e72210afd5269ebe4767cdf8821e9fb6" kind="dir"><name>src/iostream</name>
   </compound>
   <compound refid="dir_0bbc4e590d7d5910465bc7b2e940bdff" kind="dir"><name>includes/iostream</name>
   </compound>
+  <compound refid="dir_6ff697996d48ff267dcf52eb7d2aabbb" kind="dir"><name>includes/miscellaneous/JSON</name>
+  </compound>
+  <compound refid="dir_0648e67fc1cb6de7a714c27ffe94ae4e" kind="dir"><name>src/miscellaneous/JSON</name>
+  </compound>
   <compound refid="dir_aa6c199b2f25c406532890b5d4847bb7" kind="dir"><name>src/input/linux</name>
   </compound>
   <compound refid="dir_6ddc0213ad914c7862510b0b5b0f11d6" kind="dir"><name>src/graphics/linux</name>
   </compound>
-  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
-  </compound>
   <compound refid="dir_0385fbbb183a7e8d31dc4618d33b7d5f" kind="dir"><name>src/application/modules/linux</name>
+  </compound>
+  <compound refid="dir_52aadb9cef1e64abf2cafe46da7c1d36" kind="dir"><name>includes/graphics/linux</name>
   </compound>
   <compound refid="dir_236f3c3cc45023562be3bdd435e3e127" kind="dir"><name>includes/application/modules/linux</name>
   </compound>
   <compound refid="dir_203175f46ace52c3284570ac8daf7959" kind="dir"><name>includes/application/concrete/linux</name>
   </compound>
-  <compound refid="dir_ae9a93452e2a84339148a16bcf2eb561" kind="dir"><name>src/math</name>
-  </compound>
   <compound refid="dir_2b1a82f562d9d140ac52542949113255" kind="dir"><name>includes/math</name>
+  </compound>
+  <compound refid="dir_ae9a93452e2a84339148a16bcf2eb561" kind="dir"><name>src/math</name>
   </compound>
   <compound refid="dir_30c033750a7a5ab7efccd1bfa6f17d06" kind="dir"><name>includes/miscellaneous</name>
   </compound>
-  <compound refid="dir_e3781fa7bac336463b5810548c309841" kind="dir"><name>src/application/modules</name>
+  <compound refid="dir_3fdd52885b45c724e87cb86ca117b2b4" kind="dir"><name>src/miscellaneous</name>
   </compound>
   <compound refid="dir_55b1da2540e6841d8143ff5afb8a1ad6" kind="dir"><name>includes/application/modules</name>
+  </compound>
+  <compound refid="dir_e3781fa7bac336463b5810548c309841" kind="dir"><name>src/application/modules</name>
   </compound>
   <compound refid="dir_2195dec42aed13c440b4eea86e9c5401" kind="dir"><name>playground</name>
   </compound>

@@ -8,6 +8,7 @@
     <includedby refid="spk__keyboard__module_8hpp" local="yes">includes/application/modules/spk_keyboard_module.hpp</includedby>
     <includedby refid="spk__mouse__module_8hpp" local="yes">includes/application/modules/spk_mouse_module.hpp</includedby>
     <includedby refid="spk__system__module_8hpp" local="yes">includes/application/modules/spk_system_module.hpp</includedby>
+    <includedby refid="spk__message__consumer__module_8cpp" local="yes">src/application/modules/linux/spk_message_consumer_module.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>includes/application/modules/spk_message_consumer_module.hpp</label>

@@ -2,16 +2,44 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="spk__message__consumer__module_8cpp" kind="file" language="C++">
     <compoundname>spk_message_consumer_module.cpp</compoundname>
-    <includes local="yes">application/modules/spk_abstract_module.hpp</includes>
+    <includes refid="spk__message__consumer__module_8hpp" local="yes">application/modules/spk_message_consumer_module.hpp</includes>
     <incdepgraph>
       <node id="2">
-        <label>application/modules/spk_abstract_module.hpp</label>
+        <label>application/modules/spk_message_consumer_module.hpp</label>
+        <link refid="spk__message__consumer__module_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>condition_variable</label>
+      </node>
+      <node id="7">
+        <label>spk_system_define.hpp</label>
+        <link refid="spk__system__define_8hpp_source"/>
       </node>
       <node id="1">
         <label>src/application/modules/linux/spk_message_consumer_module.cpp</label>
         <link refid="spk__message__consumer__module_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="3">
+        <label>threading/spk_thread_safe_queue.hpp</label>
+        <link refid="spk__thread__safe__queue_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>deque</label>
+      </node>
+      <node id="4">
+        <label>mutex</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacespk">spk</innernamespace>
@@ -20,7 +48,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_abstract_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;application/modules/spk_message_consumer_module.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">spk</highlight></codeline>
 <codeline lineno="4"><highlight class="normal">{</highlight></codeline>

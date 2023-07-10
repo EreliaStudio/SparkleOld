@@ -15,6 +15,7 @@
     <innerdir refid="dir_d13c0e61298ef12df375d2f8fbcfc354">includes/threading</innerdir>
     <innerdir refid="dir_6865bbd7fed125b9d907dfb26af48d8a">includes/widget</innerdir>
     <innerfile refid="sparkle_8hpp">sparkle.hpp</innerfile>
+    <innerfile refid="spk__basic__functions_8hpp">spk_basic_functions.hpp</innerfile>
     <innerfile refid="spk__system__define_8hpp">spk_system_define.hpp</innerfile>
     <briefdescription>
     </briefdescription>

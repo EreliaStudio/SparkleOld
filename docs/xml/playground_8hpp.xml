@@ -31,6 +31,9 @@
         <childnode refid="8" relation="include">
         </childnode>
       </node>
+      <node id="70">
+        <label>iomanip</label>
+      </node>
       <node id="33">
         <label>functional</label>
       </node>
@@ -51,6 +54,9 @@
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
+      </node>
+      <node id="72">
+        <label>filesystem</label>
       </node>
       <node id="61">
         <label>application/modules/spk_widget_module.hpp</label>
@@ -95,6 +101,9 @@
         <label>graphics/spk_window.hpp</label>
         <link refid="spk__window_8hpp_source"/>
       </node>
+      <node id="69">
+        <label>variant</label>
+      </node>
       <node id="1">
         <label>playground/includes/playground.hpp</label>
         <link refid="playground_8hpp"/>
@@ -105,6 +114,18 @@
         <label>miscellaneous/spk_is_container.hpp</label>
         <link refid="spk__is__container_8hpp_source"/>
         <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>spk_basic_functions.hpp</label>
+        <link refid="spk__basic__functions_8hpp_source"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="56">
@@ -190,6 +211,12 @@
         </childnode>
         <childnode refid="65" relation="include">
         </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
       </node>
       <node id="65">
         <label>application/spk_application.hpp</label>
@@ -241,6 +268,9 @@
         <label>application/modules/spk_time_module.hpp</label>
         <link refid="spk__time__module_8hpp_source"/>
       </node>
+      <node id="67">
+        <label>fstream</label>
+      </node>
       <node id="42">
         <label>design_pattern/spk_activity.hpp</label>
         <link refid="spk__activity_8hpp_source"/>
@@ -275,6 +305,20 @@
         <label>design_pattern/spk_context_manager.hpp</label>
         <link refid="spk__context__manager_8hpp_source"/>
         <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>miscellaneous/JSON/spk_JSON_file.hpp</label>
+        <link refid="spk__JSON__file_8hpp_source"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="16">
@@ -313,6 +357,22 @@
         <label>data_structure/spk_pool.hpp</label>
         <link refid="spk__pool_8hpp_source"/>
         <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>miscellaneous/JSON/spk_JSON_object.hpp</label>
+        <link refid="spk__JSON__object_8hpp_source"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -374,6 +434,9 @@
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
+      </node>
+      <node id="73">
+        <label>cfenv</label>
       </node>
       <node id="5">
         <label>iostream</label>

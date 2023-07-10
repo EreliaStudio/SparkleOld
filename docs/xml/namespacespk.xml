@@ -55,6 +55,7 @@
     <innerclass refid="classspk_1_1NoGraphicsWidget" prot="public">spk::NoGraphicsWidget</innerclass>
     <innerclass refid="classspk_1_1OnlyGraphicsWidget" prot="public">spk::OnlyGraphicsWidget</innerclass>
     <innerclass refid="classspk_1_1WidgetAtlas" prot="public">spk::WidgetAtlas</innerclass>
+    <innernamespace refid="namespacespk_1_1JSON">spk::JSON</innernamespace>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="spk__input__status_8hpp_1aed6527896d34c2628aec65a369dee252" prot="public" static="no" strong="yes">
         <type></type>
@@ -193,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/iostream/spk_iostream.cpp" line="5" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="5" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="121" declcolumn="39"/>
+        <location file="src/iostream/spk_iostream.cpp" line="5" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="5" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="124" declcolumn="35"/>
       </memberdef>
       <memberdef kind="variable" id="spk__iostream_8hpp_1a2ac7fd07dd4ad46d0ecd4a814bed814d" prot="public" static="no" mutable="no">
         <type>thread_local <ref refid="classspk_1_1IOStream" kindref="compound">spk::IOStream</ref></type>
@@ -207,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/iostream/spk_iostream.cpp" line="6" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="6" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="122" declcolumn="39"/>
+        <location file="src/iostream/spk_iostream.cpp" line="6" column="23" bodyfile="src/iostream/spk_iostream.cpp" bodystart="6" bodyend="-1" declfile="includes/iostream/spk_iostream.hpp" declline="125" declcolumn="35"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -855,6 +856,577 @@
         <inbodydescription>
         </inbodydescription>
         <location file="includes/math/spk_vector3.hpp" line="548" column="10" bodyfile="includes/math/spk_vector3.hpp" bodystart="548" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a3bfb867af25d965b131886fe857d23d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::methodName</definition>
+        <argsstring>(const std::string &amp;prettyFunction)</argsstring>
+        <name>methodName</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prettyFunction</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the method name from the provided pretty function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prettyFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pretty function string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted method name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="8" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="8" bodyend="13" declfile="includes/spk_basic_functions.hpp" declline="15" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1aefd0e04975ab0187d20665ab8a864158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::className</definition>
+        <argsstring>(const std::string &amp;prettyFunction)</argsstring>
+        <name>className</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prettyFunction</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the class name from the provided pretty function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prettyFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pretty function string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted class name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="15" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="15" bodyend="20" declfile="includes/spk_basic_functions.hpp" declline="22" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a7220789e458bf250bb05472cd28acc6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::methodName</definition>
+        <argsstring>(const std::wstring &amp;prettyFunction)</argsstring>
+        <name>methodName</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>prettyFunction</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the method name from the provided wide string pretty function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prettyFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide string pretty function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted method name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="22" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="22" bodyend="33" declfile="includes/spk_basic_functions.hpp" declline="29" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1abfcc5509d013801fd4d0ccf7c64cd83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::className</definition>
+        <argsstring>(const std::wstring &amp;prettyFunction)</argsstring>
+        <name>className</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>prettyFunction</declname>
+        </param>
+        <briefdescription>
+<para>Extracts the class name from the provided wide string pretty function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prettyFunction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide string pretty function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted class name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="35" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="35" bodyend="59" declfile="includes/spk_basic_functions.hpp" declline="36" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a1e939c5f5ec45c7e93528a983b494a0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::wstring &gt;</type>
+        <definition>std::vector&lt; std::wstring &gt; spk::stringSplit</definition>
+        <argsstring>(const std::wstring &amp;p_string, const std::wstring &amp;p_delim)</argsstring>
+        <name>stringSplit</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_string</declname>
+        </param>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_delim</declname>
+        </param>
+        <briefdescription>
+<para>Splits the input wide string into a vector of substrings based on the provided delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input wide string to split. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiter to split the string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of substrings after splitting. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="61" column="13" bodyfile="src/spk_basic_functions.cpp" bodystart="61" bodyend="77" declfile="includes/spk_basic_functions.hpp" declline="44" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1af1da86df753aa08c134375767f1fd4b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wchar_t</type>
+        <definition>wchar_t spk::getChar</definition>
+        <argsstring>(std::wfstream &amp;p_file)</argsstring>
+        <name>getChar</name>
+        <param>
+          <type>std::wfstream &amp;</type>
+          <declname>p_file</declname>
+        </param>
+        <briefdescription>
+<para>Reads a wide character from the provided wide file stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide file stream to read from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The readed wide character. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="79" column="9" bodyfile="src/spk_basic_functions.cpp" bodystart="79" bodyend="87" declfile="includes/spk_basic_functions.hpp" declline="51" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1ae9f2918180da54f142029f041b9d1fa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::getStr</definition>
+        <argsstring>(std::wfstream &amp;p_file)</argsstring>
+        <name>getStr</name>
+        <param>
+          <type>std::wfstream &amp;</type>
+          <declname>p_file</declname>
+        </param>
+        <briefdescription>
+<para>Reads a wide string from the provided wide file stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide file stream to read from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The readed wide string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="89" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="89" bodyend="101" declfile="includes/spk_basic_functions.hpp" declline="58" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a1254ad34752aba2c1362dedb3b3c2175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::wstring &gt;</type>
+        <definition>std::vector&lt; std::wstring &gt; spk::getStringSplit</definition>
+        <argsstring>(std::wfstream &amp;p_file, const std::wstring &amp;p_delim, const int &amp;p_expectedSize=-1)</argsstring>
+        <name>getStringSplit</name>
+        <param>
+          <type>std::wfstream &amp;</type>
+          <declname>p_file</declname>
+        </param>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_delim</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>p_expectedSize</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Reads and splits a wide string from the provided wide file stream based on the delimiter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide file stream to read from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiter to split the string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_expectedSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expected size of the resulting vector. Default is -1, indicating no specific size. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of substrings after splitting. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="103" column="13" bodyfile="src/spk_basic_functions.cpp" bodystart="103" bodyend="113" declfile="includes/spk_basic_functions.hpp" declline="67" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1aaf53e1dfbe01a3347f1a00fbf24297f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int spk::positiveModulo</definition>
+        <argsstring>(int p_integer, int p_dividor)</argsstring>
+        <name>positiveModulo</name>
+        <param>
+          <type>int</type>
+          <declname>p_integer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p_dividor</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the positive modulo of the given integer and divisor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_integer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_dividor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The divisor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The positive modulo result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="115" column="5" bodyfile="src/spk_basic_functions.cpp" bodystart="115" bodyend="121" declfile="includes/spk_basic_functions.hpp" declline="75" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a7fcd8e63bed947649a6876dc58f2b51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::wstring &gt;</type>
+        <definition>std::vector&lt; std::wstring &gt; spk::listFile</definition>
+        <argsstring>(const std::wstring &amp;p_path, const std::wstring &amp;p_extension=L&quot;*&quot;)</argsstring>
+        <name>listFile</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_path</declname>
+        </param>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_extension</declname>
+          <defval>L&quot;*&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Lists all files in the specified directory path with the provided extension. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The directory path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_extension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file extension to filter files. Default is &quot;*&quot; (matches all files). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of file names. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="123" column="13" bodyfile="src/spk_basic_functions.cpp" bodystart="123" bodyend="135" declfile="includes/spk_basic_functions.hpp" declline="84" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1acf34a729deb44804d107aef9d2aaad5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::wstring &gt;</type>
+        <definition>std::vector&lt; std::wstring &gt; spk::listDir</definition>
+        <argsstring>(const std::wstring &amp;p_path)</argsstring>
+        <name>listDir</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_path</declname>
+        </param>
+        <briefdescription>
+<para>Lists all directories in the specified directory path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The directory path. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of directory names. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="137" column="13" bodyfile="src/spk_basic_functions.cpp" bodystart="137" bodyend="149" declfile="includes/spk_basic_functions.hpp" declline="91" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1af968ab2db5e30a212aa373cddf7016d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string spk::wstringToString</definition>
+        <argsstring>(const std::wstring &amp;p_wstr)</argsstring>
+        <name>wstringToString</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_wstr</declname>
+        </param>
+        <briefdescription>
+<para>Converts a wide string to a standard string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_wstr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wide string to convert. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The converted standard string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="151" column="13" bodyfile="src/spk_basic_functions.cpp" bodystart="151" bodyend="160" declfile="includes/spk_basic_functions.hpp" declline="98" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1afd100e360a6ec28d27838bedd6167f02" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void spk::throwException</definition>
+        <argsstring>(const std::wstring &amp;p_errorLine)</argsstring>
+        <name>throwException</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_errorLine</declname>
+        </param>
+        <briefdescription>
+<para>Throws a runtime_error with the provided error message as wide string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_errorLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="162" column="6" bodyfile="src/spk_basic_functions.cpp" bodystart="162" bodyend="165" declfile="includes/spk_basic_functions.hpp" declline="104" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a736875e1ee6b20eb1e2dd997ba8d354e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::wstring</type>
+        <definition>std::wstring spk::universalCodeDecoder</definition>
+        <argsstring>(const wchar_t &amp;p_code)</argsstring>
+        <name>universalCodeDecoder</name>
+        <param>
+          <type>const wchar_t &amp;</type>
+          <declname>p_code</declname>
+        </param>
+        <briefdescription>
+<para>Turns a non printable or unicode character into its universal code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non printable or unicode character. ]0-31[ or ]127-0x10FFFF[ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>std::wstring A string containing the universal code of the character. (\uXXXX or \uXXXX\uXXXX respectively for 8 or 16 bit characters) </para>
+</simplesect>
+<simplesect kind="note"><para>If the character is in range ]32-126[, it is returned as is. If the character code is higher than 0x10FFFF, an empty string is returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="167" column="14" bodyfile="src/spk_basic_functions.cpp" bodystart="167" bodyend="194" declfile="includes/spk_basic_functions.hpp" declline="115" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a6848012087aaf1cc22b17362bd495af5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wchar_t</type>
+        <definition>wchar_t spk::universalCodeEncoder</definition>
+        <argsstring>(const std::wstring &amp;p_code)</argsstring>
+        <name>universalCodeEncoder</name>
+        <param>
+          <type>const std::wstring &amp;</type>
+          <declname>p_code</declname>
+        </param>
+        <briefdescription>
+<para>Turns a universal code into a non printable or unicode character. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wstring containing the universal code of the character. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>wchar_t A non printable or unicode character. ]0-31[ or ]127-0x10FFFF[ </para>
+</simplesect>
+<simplesect kind="warning"><para>If your local does not support UTF16, you should use try/catch if you plan to convert or print the result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/spk_basic_functions.cpp" line="196" column="9" bodyfile="src/spk_basic_functions.cpp" bodystart="196" bodyend="216" declfile="includes/spk_basic_functions.hpp" declline="125" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="spk__basic__functions_8hpp_1a8cd3e0a18ce342e7152da660662a371d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename NumericType</type>
+          </param>
+        </templateparamlist>
+        <type>unsigned short</type>
+        <definition>unsigned short spk::numberLength</definition>
+        <argsstring>(NumericType p_number, unsigned short base=10)</argsstring>
+        <name>numberLength</name>
+        <param>
+          <type>NumericType</type>
+          <declname>p_number</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>base</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>Calculates the length of a numeric value in a specified base. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>NumericType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the numeric value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The numeric value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base in which to calculate the length. Default is 10. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The length of the numeric value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/spk_basic_functions.hpp" line="135" column="16" bodyfile="includes/spk_basic_functions.hpp" bodystart="135" bodyend="152"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

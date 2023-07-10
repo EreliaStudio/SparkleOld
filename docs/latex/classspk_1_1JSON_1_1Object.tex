@@ -1,0 +1,379 @@
+\hypertarget{classspk_1_1JSON_1_1Object}{}\doxysection{spk\+::JSON\+::Object Class Reference}
+\label{classspk_1_1JSON_1_1Object}\index{spk::JSON::Object@{spk::JSON::Object}}
+
+
+Represents a JSON object that can store various types of values.  
+
+
+
+
+{\ttfamily \#include $<$spk\+\_\+\+JSON\+\_\+object.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}{Unit}} = std\+::variant$<$ bool, long, double, std\+::wstring, \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} $\ast$, std\+::nullptr\+\_\+t $>$
+\item 
+using \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a43240c597aa86fa22191427fb1fecc2b}{Content\+Type}} = std\+::variant$<$ \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}{Unit}}, std\+::map$<$ std\+::wstring, \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} $\ast$ $>$, std\+::vector$<$ \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} $\ast$ $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a5766312191b2dd2ab1b4d19f5abef44c}\label{classspk_1_1JSON_1_1Object_a5766312191b2dd2ab1b4d19f5abef44c}} 
+\mbox{\hyperlink{classspk_1_1JSON_1_1Object_a5766312191b2dd2ab1b4d19f5abef44c}{Object}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a9026fd2ef8903d031ca351d785dd468e}\label{classspk_1_1JSON_1_1Object_a9026fd2ef8903d031ca351d785dd468e}} 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a9026fd2ef8903d031ca351d785dd468e}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the object to its default state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_ac65aaf98a97410e60fa43ecd9ff398e3}{add\+Attribute}} (const std\+::wstring \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Adds an attribute to the JSON object with the specified key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a2b52eff7794d917e59edd6b6d81ff292}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::wstring \&p\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object or value with the specified key. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a4bc66afac51ac850f76944f99f0b4cc2}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::wstring \&p\+\_\+key) const
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object or value with the specified key (const version). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a826b822374050478d94d5d294cb6e372}\label{classspk_1_1JSON_1_1Object_a826b822374050478d94d5d294cb6e372}} 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a826b822374050478d94d5d294cb6e372}{set\+As\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Sets the JSON object as an object type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_ac4eaf3932e729e39cf6eafabf16c7d89}{append}} ()
+\begin{DoxyCompactList}\small\item\em Appends an empty JSON object to the JSON array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a049616cb5b1eab7786f28d668cd82444}{push\+\_\+back}} (\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \&p\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Adds a JSON object to the JSON array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a0ebf473737a9cb3eeea7b1c8eb80331d}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t p\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object or value at the specified index. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_abd2f9c065e2af390aa351595649ab6ae}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t p\+\_\+index) const
+\begin{DoxyCompactList}\small\item\em Accesses the JSON object or value at the specified index (const version). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a47453923b2bb7a472691d19f3d60fd89}\label{classspk_1_1JSON_1_1Object_a47453923b2bb7a472691d19f3d60fd89}} 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a47453923b2bb7a472691d19f3d60fd89}{set\+As\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Sets the JSON object as an array type. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a8f7363332a391be57bca99aeb05459c6}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of attributes or elements in the JSON object. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspk_1_1JSON_1_1Object_aa5df897c3ac5bd107032524bcb7558e8}{count}} (const std\+::wstring \&p\+\_\+key) const
+\begin{DoxyCompactList}\small\item\em Returns the number of occurrences of the specified key in the JSON object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TType , typename std\+::enable\+\_\+if$<$!std\+::is\+\_\+same$<$ TType, Object $>$\+::value, int $>$\+::type  = 0$>$ }\\void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}{set}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the JSON object value to the specified type and value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TType , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ TType, Object $>$\+::value, int $>$\+::type  = 0$>$ }\\void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}{set}} (const TType \&p\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Sets the JSON object value to the specified \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} type and value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename TType $>$ }\\const TType \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a4656a5e45ba6633b43dbdc1dc46d5263}{as}} () const
+\begin{DoxyCompactList}\small\item\em Returns the JSON object value as the specified type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a4c7d8f4a4427d6295c84dee45f6fb83f}{print\+Unit}} (std\+::wostream \&p\+\_\+os) const
+\begin{DoxyCompactList}\small\item\em Prints the JSON unit value to the output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a4ae9423cd50f8d1204e8df639f8b9463}{print\+Object}} (std\+::wostream \&p\+\_\+os) const
+\begin{DoxyCompactList}\small\item\em Prints the JSON object to the output stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a451ea87ef56eabf347f0e9e93dfa6c5c}{print\+Array}} (std\+::wostream \&p\+\_\+os) const
+\begin{DoxyCompactList}\small\item\em Prints the JSON array to the output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wostream \& \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a66edc339ea544e43e30ca55c07827081}{operator$<$$<$}} (std\+::wostream \&p\+\_\+os, const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \&p\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Overloaded stream insertion operator to output the contents of the \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a JSON object that can store various types of values. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a43240c597aa86fa22191427fb1fecc2b}\label{classspk_1_1JSON_1_1Object_a43240c597aa86fa22191427fb1fecc2b}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!ContentType@{ContentType}}
+\index{ContentType@{ContentType}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{ContentType}{ContentType}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a43240c597aa86fa22191427fb1fecc2b}{spk\+::\+JSON\+::\+Object\+::\+Content\+Type}} =  std\+::variant$<$\mbox{\hyperlink{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}{Unit}}, std\+::map$<$std\+::wstring, \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}}$\ast$$>$, std\+::vector$<$\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}}$\ast$$>$ $>$}
+
+The type for the content of the JSON object. \mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}\label{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!Unit@{Unit}}
+\index{Unit@{Unit}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{Unit}{Unit}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classspk_1_1JSON_1_1Object_a3c309e7bde9def6b14f8ea1eeb17b9a9}{spk\+::\+JSON\+::\+Object\+::\+Unit}} =  std\+::variant$<$bool, long, double, std\+::wstring, \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}}$\ast$, std\+::nullptr\+\_\+t$>$}
+
+The type for a single JSON value. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_ac65aaf98a97410e60fa43ecd9ff398e3}\label{classspk_1_1JSON_1_1Object_ac65aaf98a97410e60fa43ecd9ff398e3}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!addAttribute@{addAttribute}}
+\index{addAttribute@{addAttribute}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{addAttribute()}{addAttribute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::add\+Attribute (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Adds an attribute to the JSON object with the specified key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key of the attribute to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the JSON object itself. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_ac4eaf3932e729e39cf6eafabf16c7d89}\label{classspk_1_1JSON_1_1Object_ac4eaf3932e729e39cf6eafabf16c7d89}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!append@{append}}
+\index{append@{append}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::append (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Appends an empty JSON object to the JSON array. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the appended JSON object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a4656a5e45ba6633b43dbdc1dc46d5263}\label{classspk_1_1JSON_1_1Object_a4656a5e45ba6633b43dbdc1dc46d5263}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!as@{as}}
+\index{as@{as}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{as()}{as()}}
+{\footnotesize\ttfamily template$<$typename TType $>$ \\
+const TType\& spk\+::\+JSON\+::\+Object\+::as (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the JSON object value as the specified type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type to convert the JSON object value to. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The JSON object value as the specified type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_aa5df897c3ac5bd107032524bcb7558e8}\label{classspk_1_1JSON_1_1Object_aa5df897c3ac5bd107032524bcb7558e8}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!count@{count}}
+\index{count@{count}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily size\+\_\+t spk\+::\+JSON\+::\+Object\+::count (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of occurrences of the specified key in the JSON object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to count occurrences. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of occurrences of the specified key in the JSON object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a2b52eff7794d917e59edd6b6d81ff292}\label{classspk_1_1JSON_1_1Object_a2b52eff7794d917e59edd6b6d81ff292}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption})}
+
+
+
+Accesses the JSON object or value with the specified key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to access the JSON object or value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the JSON object or value with the specified key. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a4bc66afac51ac850f76944f99f0b4cc2}\label{classspk_1_1JSON_1_1Object_a4bc66afac51ac850f76944f99f0b4cc2}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{p\+\_\+key }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the JSON object or value with the specified key (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+key} & The key to access the JSON object or value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the JSON object or value with the specified key. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a0ebf473737a9cb3eeea7b1c8eb80331d}\label{classspk_1_1JSON_1_1Object_a0ebf473737a9cb3eeea7b1c8eb80331d}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Accesses the JSON object or value at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+index} & The index to access the JSON object or value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the JSON object or value at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_abd2f9c065e2af390aa351595649ab6ae}\label{classspk_1_1JSON_1_1Object_abd2f9c065e2af390aa351595649ab6ae}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \& spk\+::\+JSON\+::\+Object\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+\_\+index }\end{DoxyParamCaption}) const}
+
+
+
+Accesses the JSON object or value at the specified index (const version). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+index} & The index to access the JSON object or value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the JSON object or value at the specified index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a451ea87ef56eabf347f0e9e93dfa6c5c}\label{classspk_1_1JSON_1_1Object_a451ea87ef56eabf347f0e9e93dfa6c5c}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!printArray@{printArray}}
+\index{printArray@{printArray}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{printArray()}{printArray()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+Object\+::print\+Array (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os }\end{DoxyParamCaption}) const}
+
+
+
+Prints the JSON array to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream to write the JSON array to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a4ae9423cd50f8d1204e8df639f8b9463}\label{classspk_1_1JSON_1_1Object_a4ae9423cd50f8d1204e8df639f8b9463}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!printObject@{printObject}}
+\index{printObject@{printObject}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{printObject()}{printObject()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+Object\+::print\+Object (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os }\end{DoxyParamCaption}) const}
+
+
+
+Prints the JSON object to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream to write the JSON object to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a4c7d8f4a4427d6295c84dee45f6fb83f}\label{classspk_1_1JSON_1_1Object_a4c7d8f4a4427d6295c84dee45f6fb83f}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!printUnit@{printUnit}}
+\index{printUnit@{printUnit}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{printUnit()}{printUnit()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+Object\+::print\+Unit (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os }\end{DoxyParamCaption}) const}
+
+
+
+Prints the JSON unit value to the output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream to write the JSON unit value to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a049616cb5b1eab7786f28d668cd82444}\label{classspk_1_1JSON_1_1Object_a049616cb5b1eab7786f28d668cd82444}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily void spk\+::\+JSON\+::\+Object\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \&}]{p\+\_\+object }\end{DoxyParamCaption})}
+
+
+
+Adds a JSON object to the JSON array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+object} & The JSON object to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}\label{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!set@{set}}
+\index{set@{set}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TType , typename std\+::enable\+\_\+if$<$!std\+::is\+\_\+same$<$ TType, Object $>$\+::value, int $>$\+::type  = 0$>$ \\
+void spk\+::\+JSON\+::\+Object\+::set (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the JSON object value to the specified type and value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the value. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is enabled for non-\/\+Object types. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}\label{classspk_1_1JSON_1_1Object_a0c37111c20936c44f2b64773dbaa2246}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!set@{set}}
+\index{set@{set}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TType , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+same$<$ TType, Object $>$\+::value, int $>$\+::type  = 0$>$ \\
+void spk\+::\+JSON\+::\+Object\+::set (\begin{DoxyParamCaption}\item[{const TType \&}]{p\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the JSON object value to the specified \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} type and value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TType} & The type of the value. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+value} & The value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is enabled for \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} type. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a8f7363332a391be57bca99aeb05459c6}\label{classspk_1_1JSON_1_1Object_a8f7363332a391be57bca99aeb05459c6}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!size@{size}}
+\index{size@{size}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t spk\+::\+JSON\+::\+Object\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of attributes or elements in the JSON object. 
+
+\begin{DoxyReturn}{Returns}
+The number of attributes or elements in the JSON object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classspk_1_1JSON_1_1Object_a66edc339ea544e43e30ca55c07827081}\label{classspk_1_1JSON_1_1Object_a66edc339ea544e43e30ca55c07827081}} 
+\index{spk::JSON::Object@{spk::JSON::Object}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spk::JSON::Object@{spk::JSON::Object}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::wostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{p\+\_\+os,  }\item[{const \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} \&}]{p\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloaded stream insertion operator to output the contents of the \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+os} & The output stream to write the \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} to. \\
+\hline
+{\em p\+\_\+object} & The \mbox{\hyperlink{classspk_1_1JSON_1_1Object}{Object}} to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified output stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/miscellaneous/\+JSON/spk\+\_\+\+JSON\+\_\+object.\+hpp\item 
+src/miscellaneous/\+JSON/spk\+\_\+\+JSON\+\_\+object.\+cpp\end{DoxyCompactItemize}

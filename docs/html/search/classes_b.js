@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['thread_370',['Thread',['../classspk_1_1Thread.html',1,'spk']]],
-  ['threadsafequeue_371',['ThreadSafeQueue',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['threadsafequeue_3c_20job_20_3e_372',['ThreadSafeQueue&lt; Job &gt;',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['threadsafequeue_3c_20systemmessage_20_3e_373',['ThreadSafeQueue&lt; SystemMessage &gt;',['../classspk_1_1ThreadSafeQueue.html',1,'spk']]],
-  ['timemetrics_374',['TimeMetrics',['../classspk_1_1TimeMetrics.html',1,'spk']]],
-  ['timemodule_375',['TimeModule',['../classspk_1_1TimeModule.html',1,'spk']]],
-  ['timer_376',['Timer',['../classspk_1_1Timer.html',1,'spk']]]
+  ['singleton_374',['Singleton',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20contextmanager_3c_20tcontexttype_20_3e_20_3e_375',['Singleton&lt; ContextManager&lt; TContextType &gt; &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20keyboard_20_3e_376',['Singleton&lt; Keyboard &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20mouse_20_3e_377',['Singleton&lt; Mouse &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20profiler_20_3e_378',['Singleton&lt; Profiler &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20timemetrics_20_3e_379',['Singleton&lt; TimeMetrics &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20widgetatlas_20_3e_380',['Singleton&lt; WidgetAtlas &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['singleton_3c_20window_20_3e_381',['Singleton&lt; Window &gt;',['../classspk_1_1Singleton.html',1,'spk']]],
+  ['standardtype_382',['StandardType',['../structspk_1_1StandardType.html',1,'spk']]],
+  ['statedobject_383',['StatedObject',['../classspk_1_1StatedObject.html',1,'spk']]],
+  ['statedobject_3c_20bool_20_3e_384',['StatedObject&lt; bool &gt;',['../classspk_1_1StatedObject.html',1,'spk']]],
+  ['systemmodule_385',['SystemModule',['../classspk_1_1SystemModule.html',1,'spk']]]
 ];
