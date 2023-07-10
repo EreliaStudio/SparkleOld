@@ -2,21 +2,20 @@
 
 int main()
 {
-	spk::JSON::File file;
-	std::vector<std::wstring> filePath = spk::listFile(L"json", L".json");
+	spk::TranslationAtlas atlas;
+	std::vector<std::wstring> args = { L"key", L"key2", L"key3", L"key4",
+										L"key5", L"key6", L"key7", L"key8" };
 
-	for (const auto& path : filePath)
+	try
 	{
-		try
-		{
-			file.load(path);
-			std::wcout << L"Path: " << path << std::endl;
-			std::wcout << L"File: " << file << std::endl;
-		}
-		catch (const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+		atlas.load(L"json/en_EN.json");
 	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	for (const auto& key : args)
+		spk::cout << atlas.get(key) << std::endl;
 	return (0);
 }
