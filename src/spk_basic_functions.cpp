@@ -152,15 +152,44 @@ namespace spk
 	{
 		std::string str(p_wstr.length(), ' ');
 		std::transform(p_wstr.begin(), p_wstr.end(), str.begin(),
-					[](wchar_t ch)
-					{
-						return ch <= 0xFF ? static_cast<char>(ch) : '?';
-					});
+			[](wchar_t ch)
+			{
+				return ch <= 0xFF ? static_cast<char>(ch) : '?';
+			});
 		return str;
 	}
 
 	void throwException(const std::wstring& p_errorLine) noexcept(false)
 	{
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
+	}
+
+	std::wstring universalCodeToWstring(const wchar_t& p_code)
+	{
+		std::wstring result;
+		std::wstringstream ss;
+
+		if (isprint(p_code) == false || (p_code > 127 && p_code < 0xFFFF))
+		{
+			ss << L"\\u" << std::hex << std::setw(4) << std::setfill(L'0') << (int)p_code;
+			result = ss.str();
+		}
+		else if (p_code > 0xFFFF && p_code < 0x10FFFF)
+		{
+			int highSurrogate((int)p_code - 0x10000);
+			int lowSurrogate(highSurrogate & 0x3FF);
+
+			highSurrogate = (highSurrogate >> 10) + 0xD800;
+			lowSurrogate += 0xDC00;
+
+			ss << L"\\u" << std::hex << std::setw(4) << std::setfill(L'0') << highSurrogate <<
+				L"\\u" << std::hex << std::setw(4) << std::setfill(L'0') << lowSurrogate;
+			result = ss.str();
+		}
+		else if (p_code > 0x10FFFF)
+			result = L"";
+		else
+			result += p_code;
+		return (result);
 	}
 }

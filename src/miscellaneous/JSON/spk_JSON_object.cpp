@@ -6,6 +6,8 @@ namespace spk
 {
 	namespace JSON
 	{
+		size_t Object::_indent = 0;
+
 		Object::Object()
 		{
 			_initialized = false;
@@ -140,6 +142,59 @@ namespace spk
 			return (std::get<std::map<std::wstring, Object*>>(_content).count(p_key));
 		}
 
+		static std::wstring _cleanUnicodeString(const std::wstring& p_string)
+		{
+			std::wstring result(p_string);
+
+			for (size_t i(0); i < result.size(); ++i)
+			{
+				const wchar_t c = result[i];
+				std::wstring universalCodedCharSet;
+
+				switch (c)
+				{
+				case L'\\':
+					result.replace(i, 1, L"\\u005C");
+					i += 5;
+					break;
+				case L'\"':
+					result.replace(i, 1, L"\\\"");
+					i += 1;
+					break;
+				case L'\b':
+					result.replace(i, 1, L"\\b");
+					i += 1;
+					break;
+				case L'\f':
+					result.replace(i, 1, L"\\f");
+					i += 1;
+					break;
+				case L'\n':
+					result.replace(i, 1, L"\\n");
+					i += 1;
+					break;
+				case L'\r':
+					result.replace(i, 1, L"\\r");
+					i += 1;
+					break;
+				case L'\t':
+					result.replace(i, 1, L"\\t");
+					i += 1;
+					break;
+				default:
+					if (c < 0x20 || c > 0x7E)
+					{
+						universalCodedCharSet = spk::universalCodeToWstring(c);
+
+						result.replace(i, 1, universalCodedCharSet);
+						i += universalCodedCharSet.size() - 1;
+					}
+					break;
+				}
+			}
+			return (result);
+		}
+
 		void Object::printUnit(std::wostream& p_os) const
 		{
 			const Unit& tmp = std::get<Unit>(_content);
@@ -156,13 +211,13 @@ namespace spk
 				p_os << as<double>();
 				break;
 			case 3:
-				p_os << as<std::wstring>();
+				p_os << L'"' << _cleanUnicodeString(as<std::wstring>()) << L'"';
 				break;
 			case 4:
 				p_os << *(as<Object*>());
 				break;
 			case 5:
-				p_os << L"Null";
+				p_os << L"null";
 				break;
 			}
 		}
@@ -170,25 +225,45 @@ namespace spk
 		void Object::printObject(std::wostream& p_os) const
 		{
 			const std::map<std::wstring, Object*>& map = std::get<std::map<std::wstring, Object*>>(_content);
+			std::wstring cleanedKey;
 
-			p_os << L"{" << std::endl;
+			p_os << std::setw(_indent * _indentSize) << L"" << L"{" << std::endl;
+			++_indent;
 			for (auto& tmp : map)
 			{
-				p_os << tmp.first << " : " << *(tmp.second) << std::endl;
+				cleanedKey = _cleanUnicodeString(tmp.first);
+
+				p_os << std::setw(_indent * _indentSize) << L"" <<
+					L'"' << cleanedKey << L"\": ";
+
+				if (tmp.second->_content.index() == 1 ||
+					tmp.second->_content.index() == 2)
+					p_os << std::endl;
+
+				p_os << *(tmp.second);
+				if (&tmp != &(*map.rbegin()))
+					p_os << L',';
+				p_os << std::endl;
 			}
-			p_os << L"}";
+			--_indent;
+			p_os << std::setw(_indent * _indentSize) << L"" << L"}";
 		}
 
 		void Object::printArray(std::wostream& p_os) const
 		{
 			const std::vector<Object*>& vector = std::get<std::vector<Object*>>(_content);
 
-			p_os << L"[" << std::endl;
+			p_os << std::setw(_indent * _indentSize) << L"" << L'[' << std::endl;
+			++_indent;
 			for (size_t i = 0; i < vector.size(); i++)
 			{
-				p_os << L"Element [" << i << L"] : " << *(vector[i]) << std::endl;
+				p_os << std::setw(_indent * _indentSize) << L"" << *(vector[i]);
+				if (i != vector.size() - 1)
+					p_os << L',';
+				p_os << std::endl;
 			}
-			p_os << L"]";
+			--_indent;
+			p_os << std::setw(_indent * _indentSize) << L"" << L']';
 		}
 
 		std::wostream& operator<<(std::wostream& p_os, const Object& p_object)

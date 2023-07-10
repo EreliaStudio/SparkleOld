@@ -3,6 +3,8 @@
 #include <variant>
 #include <map>
 #include <vector>
+#include <iomanip>
+#include <algorithm>
 
 #include "iostream/spk_iostream.hpp"
 
@@ -22,6 +24,8 @@ namespace spk
 		private:
 			bool _initialized; /**< Flag indicating whether the object has been initialized. */
 			ContentType _content; /**< The content of the JSON object. */
+			static size_t _indent; /**< The indentation level of the JSON object. */
+			const static uint8_t _indentSize = 4; /**< The size of the indentation. */
 
 		public:
 			/**

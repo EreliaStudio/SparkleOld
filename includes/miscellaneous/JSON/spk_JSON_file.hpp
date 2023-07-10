@@ -37,6 +37,12 @@ namespace spk
 			void load(const std::filesystem::path& p_filePath);
 
 			/**
+			 * @brief Saves the JSON file to the specified path.
+			 * @param p_filePath The path to save the JSON file to.
+			 */
+			void save(const std::filesystem::path& p_filePath) const;
+
+			/**
 			 * @brief Accesses the JSON object value with the specified key.
 			 * @param p_key The key to access the JSON object value.
 			 * @return The JSON object value with the specified key.

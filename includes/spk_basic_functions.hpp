@@ -104,6 +104,17 @@ namespace spk
 	void throwException(const std::wstring& p_errorLine);
 
 	/**
+	 * @brief Turns a non printable or unicode character into its universal code.
+	 * 
+	 * @param p_code A non printable or unicode character. ]0-31[ or ]127-0x10FFFF[
+	 * @return std::wstring A string containing the universal code of the character.
+	 * (\\uXXXX or \\uXXXX\\uXXXX respectively for 8 or 16 bit characters)
+	 * @note If the character is in range ]32-126[, it is returned as is.
+	 * 	If the character code is higher than 0x10FFFF, an empty string is returned.
+	 */
+	std::wstring universalCodeToWstring(const wchar_t& p_code);
+
+	/**
 	 * @brief Calculates the length of a numeric value in a specified base.
 	 * @tparam NumericType The type of the numeric value.
 	 * @param p_number The numeric value.

@@ -493,6 +493,18 @@ namespace spk
 				spk::throwException(L"Invalid JSON file: " + p_filePath.wstring());
 		}
 
+		void File::save(const std::filesystem::path& p_filePath) const
+		{
+			std::wofstream file;
+
+			file.imbue(std::locale(""));
+			file.open(p_filePath);
+			if (file.is_open() == false)
+				spk::throwException(L"Unable to open file: " + p_filePath.wstring());
+			file << _root;
+			file.close();
+		}
+
 		const spk::JSON::Object& File::operator[](const std::wstring& p_key) const
 		{
 			return (_root[p_key]);
