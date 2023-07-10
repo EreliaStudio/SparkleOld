@@ -1,7 +1,15 @@
 #include "playground.hpp"
 
-int main() {
-    spk::Application app(L"VulkanTest", 400);
+int main()
+{
+    spk::RandomGenerator<float> rng;
 
-    return (app.run());
+    rng.setDistributionRange(0.0f, 100.0f);
+    
+    for (size_t i = 0; i < 15; i++)
+    {
+        spk::cout << "RNG[" << i << "] -> " << rng() << std::endl;
+    }
+
+    return (0);
 }
