@@ -11,6 +11,6 @@ var searchData=
   ['standardtype_387',['StandardType',['../structspk_1_1StandardType.html',1,'spk']]],
   ['statedobject_388',['StatedObject',['../classspk_1_1StatedObject.html',1,'spk']]],
   ['statedobject_3c_20bool_20_3e_389',['StatedObject&lt; bool &gt;',['../classspk_1_1StatedObject.html',1,'spk']]],
-  ['statemachine_390',['StateMachine',['../classStateMachine.html',1,'']]],
+  ['statemachine_390',['StateMachine',['../classspk_1_1StateMachine.html',1,'spk']]],
   ['systemmodule_391',['SystemModule',['../classspk_1_1SystemModule.html',1,'spk']]]
 ];

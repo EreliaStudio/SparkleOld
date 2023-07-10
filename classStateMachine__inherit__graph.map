@@ -1,4 +1,0 @@
-<map id="StateMachine&lt; TState &gt;" name="StateMachine&lt; TState &gt;">
-<area shape="rect" id="node1" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="5,80,188,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="15,5,178,32"/>
-</map>

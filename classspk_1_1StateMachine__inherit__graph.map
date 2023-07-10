@@ -1,0 +1,4 @@
+<map id="spk::StateMachine&lt; TState &gt;" name="spk::StateMachine&lt; TState &gt;">
+<area shape="rect" id="node1" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="10,80,163,121"/>
+<area shape="rect" id="node2" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,5,168,32"/>
+</map>
