@@ -60,6 +60,11 @@ namespace spk
 			const Object& operator[](const std::wstring& p_key) const;
 
 			/**
+			 * @brief Get the map of elements in the JSON object.
+			 */
+			std::map<std::wstring, Object*> getObjectElements() const;
+
+			/**
 			 * @brief Sets the JSON object as an object type.
 			 */
 			void setAsObject();
