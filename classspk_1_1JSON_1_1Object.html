@@ -101,6 +101,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ac65aaf98a97410e60fa43ecd9ff398e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1JSON_1_1Object.html">Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#ac65aaf98a97410e60fa43ecd9ff398e3">addAttribute</a> (const std::wstring &amp;p_key)</td></tr>
 <tr class="memdesc:ac65aaf98a97410e60fa43ecd9ff398e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an attribute to the JSON object with the specified key.  <a href="classspk_1_1JSON_1_1Object.html#ac65aaf98a97410e60fa43ecd9ff398e3">More...</a><br /></td></tr>
 <tr class="separator:ac65aaf98a97410e60fa43ecd9ff398e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af451f079690edf29f4d218bc6f72a525"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::wstring, <a class="el" href="classspk_1_1JSON_1_1Object.html">Object</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#af451f079690edf29f4d218bc6f72a525">members</a> () const</td></tr>
+<tr class="memdesc:af451f079690edf29f4d218bc6f72a525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of members in the JSON object.  <a href="classspk_1_1JSON_1_1Object.html#af451f079690edf29f4d218bc6f72a525">More...</a><br /></td></tr>
+<tr class="separator:af451f079690edf29f4d218bc6f72a525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b52eff7794d917e59edd6b6d81ff292"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1JSON_1_1Object.html">Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#a2b52eff7794d917e59edd6b6d81ff292">operator[]</a> (const std::wstring &amp;p_key)</td></tr>
 <tr class="memdesc:a2b52eff7794d917e59edd6b6d81ff292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the JSON object or value with the specified key.  <a href="classspk_1_1JSON_1_1Object.html#a2b52eff7794d917e59edd6b6d81ff292">More...</a><br /></td></tr>
 <tr class="separator:a2b52eff7794d917e59edd6b6d81ff292"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,6 +305,33 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of occurrences of the specified key in the JSON object. </dd></dl>
+
+</div>
+</div>
+<a id="af451f079690edf29f4d218bc6f72a525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af451f079690edf29f4d218bc6f72a525">&#9670;&nbsp;</a></span>members()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; std::wstring, <a class="el" href="classspk_1_1JSON_1_1Object.html">Object</a> * &gt; &amp; spk::JSON::Object::members </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the map of members in the JSON object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The map of members in the JSON object. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The keys are unique. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the JSON object is not an object type or uninitialized. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
