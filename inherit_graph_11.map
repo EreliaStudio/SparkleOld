@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1InherenceObject.html" title="InherenceObject class template." alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node1" href="$classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages." alt="" coords="5,81,235,108"/>
+<area shape="rect" id="node2" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="283,5,445,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="292,56,436,83"/>
+<area shape="rect" id="node4" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="289,107,439,133"/>
+<area shape="rect" id="node5" href="$classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="287,157,441,184"/>
 </map>
