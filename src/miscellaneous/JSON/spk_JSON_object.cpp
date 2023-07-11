@@ -82,10 +82,10 @@ namespace spk
 			}
 		}
 
-		std::map<std::wstring, Object*> Object::getObjectElements() const
+		const std::map<std::wstring, Object*>& Object::members() const
 		{
 			if (_initialized == false || std::holds_alternative<std::map<std::wstring, Object*>>(_content) == false)
-				spk::throwException(L"Can't get object elements : object is not initialized or is not an object");
+				spk::throwException(L"Can't get object members : object is not initialized or is not of type object");
 			return (std::get<std::map<std::wstring, Object*>>(_content));
 		}
 

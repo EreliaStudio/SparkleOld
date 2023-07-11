@@ -21,7 +21,7 @@ namespace spk
 			throw std::runtime_error("TranslationAtlas::load() : " + std::string(e.what()));
 		}
 
-		for (const auto& [key, value] : file.root().getObjectElements())
+		for (const auto& [key, value] : file.root().members())
 			_translations[key] = value->as<std::wstring>();
 	}
 
