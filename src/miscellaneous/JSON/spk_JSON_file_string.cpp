@@ -10,8 +10,8 @@ namespace spk
 	namespace JSON
 	{
 		/**
-		 * @brief Convert escape sequence such as '\r' to their corresponding character.
-		 * Also handle universal character name such as '\uXXXX'.
+		 * @brief Convert escape sequence such as '\\r' to their corresponding character.
+		 * Also handle universal character name such as '\\uXXXX'.
 		 *
 		 * @param p_fileContent The string to start from.
 		 * @return std::wstring The resulting string after handling.

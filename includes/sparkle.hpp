@@ -24,6 +24,7 @@
 #include "design_pattern/spk_value.hpp"
 #include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
+#include "design_pattern/spk_state_machine.hpp"
 
 #include "design_pattern/spk_context_manager.hpp"
 #include "design_pattern/spk_memento.hpp"
@@ -61,3 +62,4 @@
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 #include "miscellaneous/JSON/spk_JSON_file.hpp"
+#include "miscellaneous/spk_translation_atlas.hpp"

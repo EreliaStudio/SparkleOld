@@ -25,5 +25,6 @@ int main()
 	parser.parse(L"");
 	parser.parse(L"/add");
 	parser.parse(L"/removeThis is a test with the remove command");
+
 	return (0);
 }
