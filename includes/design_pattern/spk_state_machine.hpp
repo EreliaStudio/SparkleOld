@@ -47,15 +47,15 @@ namespace spk
         /**
          * @brief Calls the callbacks stored in the provided callback containers.
          *
-         * If the known callback container is empty, the unknown callback container is used.
+         * @details If the known callback container is empty, the unknown callback container is used.
          * If both containers are empty, a runtime_error is thrown.
          *
          * @param p_known The callback container for known callbacks.
          * @param p_unknown The callback container for unknown callbacks.
          */
-        void _callCallbacks(const ContractProvider::CallbackContainer &p_know, const ContractProvider::CallbackContainer &p_unknown)
+        void _callCallbacks(const ContractProvider::CallbackContainer &p_known, const ContractProvider::CallbackContainer &p_unknown)
         {
-            const CallbackContainer *container = &p_know;
+            const CallbackContainer *container = &p_known;
             if (container->size() == 0)
             {
                 if (p_unknown.size() == 0)
