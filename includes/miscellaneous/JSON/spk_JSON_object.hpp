@@ -46,6 +46,14 @@ namespace spk
 			Object& addAttribute(const std::wstring& p_key);
 
 			/**
+			 * @brief Get the map of members in the JSON object.
+			 * @return The map of members in the JSON object.
+			 * @note The keys are unique.
+			 * @throw std::runtime_error if the JSON object is not an object type or uninitialized.
+			 */
+			const std::map<std::wstring, Object*>& members() const;
+
+			/**
 			 * @brief Accesses the JSON object or value with the specified key.
 			 * @param p_key The key to access the JSON object or value.
 			 * @return Reference to the JSON object or value with the specified key.

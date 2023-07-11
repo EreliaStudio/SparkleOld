@@ -106,6 +106,9 @@ namespace spk
 		IOStream(std::wostream &p_outputStream, std::wstring p_prefix = L"") : std::wostream(&buffer),
 																			   buffer(p_outputStream, p_prefix)
 		{
+			std::locale::global(std::locale(""));
+			std::ios_base::sync_with_stdio(false);
+			std::locale::global(std::locale("C"));
 		}
 
 		/**
