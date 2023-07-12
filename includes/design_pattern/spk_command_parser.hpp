@@ -45,7 +45,7 @@ namespace spk
 		 *
 		 * @param p_commandSeparator The command separator to set.
 		 */
-		void setCommandsSeparator(const std::wstring& p_commandIndicator);
+		void setCommandsSeparator(const std::wstring& p_commandSeparator);
 
 		/**
 		 * @brief Sets the callback function to be executed when no command is found.
