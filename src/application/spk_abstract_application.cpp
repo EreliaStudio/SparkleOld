@@ -41,6 +41,9 @@ namespace spk
 			for (auto &job : _jobs)
 				job();
 
+		for (auto &worker : _workers)
+			worker.second->stop();
+			
 		return _errorCode;
 	}
 
@@ -48,8 +51,5 @@ namespace spk
 	{
 		_errorCode = p_errorCode;
 		_isRunning = false;
-
-		for (auto &worker : _workers)
-			worker.second->stop();
 	}
 }

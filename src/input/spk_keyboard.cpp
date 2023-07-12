@@ -165,6 +165,10 @@ namespace spk
 				Mapping::createQwertyMapping()
 			}
 	{
+		for (size_t i = 0; i < Key::SIZE; i++)
+		{
+			_keys[i] = InputState::Up;
+		}
 	}
 
 	void Keyboard::pressKey(const uint32_t& p_key)

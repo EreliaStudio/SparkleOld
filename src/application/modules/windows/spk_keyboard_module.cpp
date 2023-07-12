@@ -25,7 +25,7 @@ namespace spk
 
 			*p_event >> value;
 
-			spk::Singleton<spk::Keyboard>::instance()->pressKey(value);
+			spk::Keyboard::instance()->pressKey(value);
 
 			break;
 		}
@@ -36,7 +36,7 @@ namespace spk
 
 			*p_event >> value;
 
-			spk::Singleton<spk::Keyboard>::instance()->releaseKey(value);
+			spk::Keyboard::instance()->releaseKey(value);
 
 			break;
 		}
@@ -45,12 +45,13 @@ namespace spk
 
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
-		spk::Singleton<spk::Keyboard>::instanciate();
+		spk::Keyboard::instanciate();
+		spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 	}
 
 	KeyboardModule::~KeyboardModule()
 	{
-		spk::Singleton<spk::Keyboard>::release();
+		spk::Keyboard::release();
 	}
 
 	void KeyboardModule::updateKeyboard()
