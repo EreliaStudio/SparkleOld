@@ -8,7 +8,7 @@ var searchData=
   ['setasobject_607',['setAsObject',['../classspk_1_1JSON_1_1Object.html#a826b822374050478d94d5d294cb6e372',1,'spk::JSON::Object']]],
   ['setbirthcallback_608',['setBirthCallback',['../classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e',1,'spk::InherenceObject']]],
   ['setcommandsindicator_609',['setCommandsIndicator',['../classspk_1_1CommandParser.html#a9affa43bbb5e9b2f77cdd0f1ae4db743',1,'spk::CommandParser']]],
-  ['setcommandsseparator_610',['setCommandsSeparator',['../classspk_1_1CommandParser.html#a650209d2864eaeb5079280b359ff6cb7',1,'spk::CommandParser']]],
+  ['setcommandsseparator_610',['setCommandsSeparator',['../classspk_1_1CommandParser.html#a1562e2faeccbc3fa6c77585883658171',1,'spk::CommandParser']]],
   ['setcounter_611',['setCounter',['../classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84',1,'spk::Profiler']]],
   ['setdeathcallback_612',['setDeathCallback',['../classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a',1,'spk::InherenceObject']]],
   ['setdefaultvalue_613',['setDefaultValue',['../classspk_1_1Value.html#a81e20cb2c4acaf4e274855c57148afa6',1,'spk::Value']]],
