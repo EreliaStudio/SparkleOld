@@ -1,4 +1,4 @@
-name: Generate Doxygen
+name: Validate Doxygen documentation
 
 on:
   pull_request:
