@@ -1,0 +1,62 @@
+name: Generate Doxygen
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+    - name: Install Doxygen
+      run: sudo apt-get update && sudo apt-get install -y doxygen
+
+    - name: Install Graphviz
+      run: sudo apt-get update && sudo apt-get install graphviz
+
+    - name: Generate Doxygen
+      run: doxygen Doxyfile
+
+    - name: Check if warnings exist
+      id: check_warnings
+      run: |
+        WARNINGS=$(cat doxygen_warnings.log | wc -l)
+        echo "WARNINGS=$WARNINGS" >> $GITHUB_ENV
+        if [ $WARNINGS -gt 0 ]
+        then
+          echo "::set-output name=warnings::true"
+          echo "Doxygen documentation generation failed. Please fix the warnings and try again." >> $GITHUB_ENV
+        else
+          echo "::set-output name=warnings::false"
+        fi
+
+    - name: Comment on PR with Doxygen warnings
+      if: steps.check_warnings.outputs.warnings == 'true'
+      continue-on-error: true
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { context, github } = require('@actions/github');
+          const fs = require('fs');
+          const warnings = fs.readFileSync('doxygen_warnings.log', 'utf8');
+          const pullRequestNumber = context.payload.pull_request.number;
+          const commentBody = `**Doxygen Warnings:**
+          \n${warnings}`;
+          github.issues.createComment({
+            ...context.repo,
+            issue_number: pullRequestNumber,
+            body: commentBody
+          });
+
+    - name: Set workflow status as failure
+      if: steps.check_warnings.outputs.warnings == 'true'
+      run: exit 1
