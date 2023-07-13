@@ -2,17 +2,19 @@
 
 #include "network/spk_message.hpp"
 #include "network/spk_sink.hpp"
-#include "network/spk_source.hpp"
 
 namespace spk
 {
 	class Client
 	{
 	public:
-		spk::Sink _sink;
-		spk::Source _source;
+		spk::PersistentWorker _socketContextWorker;
+		spk::ContractProvider::Contract _readingSocketDataContract;
 
-		std::map<spk::Message::ID, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
+		spk::Socket _socket;
+		spk::ThreadSafeQueue<spk::Message> _messagesToTreat;
+
+		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
 
 		void _treatMessage(const spk::Message& p_msg)
 		{
@@ -28,45 +30,60 @@ namespace spk
 		}
 
 	public:
-		Client()
+		Client() :
+			_socketContextWorker(L"Client socket")
 		{
+			_readingSocketDataContract = _socketContextWorker.addJob([&](){
+				spk::Message newMessage;
 
+				if (_socket.isConnected() == true)
+				{
+					Socket::ReadResult readStatus = _socket.receive(newMessage);
+
+					switch (readStatus)
+					{
+						case Socket::ReadResult::Closed:
+							spk::cout << "Require closing socket" << std::endl;
+							_socket.close();
+							break;
+						case Socket::ReadResult::Success:
+							_messagesToTreat.push_back(newMessage);
+							break;
+					}
+				}
+			});
+			_socketContextWorker.start();
+			_socketContextWorker.pause();
 		}
 
 		~Client()
 		{
-			
+			_socketContextWorker.stop();
 		}
 
 		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort)
 		{
-			_source.connect(p_serverAddress, p_serverPort);
-			_sink.bind(_source);
+			_socket.connect(p_serverAddress, p_serverPort);
 		}
 
 		void disconnect()
 		{
-			_source.disconnect();
-			_sink.unbind();
-		}
-
-		void reconnect()
-		{
-			_source.reconnect();
-			_sink.bind(_source);
+			_socket.close();
 		}
 
 		void treatMessages()
 		{
-			while (_sink.messagesToTreat().empty() == false)
+			if (_socket.isConnected() == true)
+				_socketContextWorker.resume();
+
+			while (_messagesToTreat.empty() == false)
 			{
-				spk::Sink::Content sinkContent = _sink.messagesToTreat().pop_front();
-				_treatMessage(sinkContent.second);
+				_treatMessage(_messagesToTreat.pop_front());
 			}
 		}
 
 		template <typename Funct, typename ... Args>
-		void setOnMessageReceptionCallback(const spk::Message::ID& p_id, Funct&& p_funct, Args&& ... p_args)
+		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
 		{
 			if (_onMessageReceptionCallbacks.contains(p_id) == true)
 				spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_id) + L"]");
@@ -75,7 +92,7 @@ namespace spk
 
 		void send(const spk::Message& p_msg)
 		{
-			_source.send(p_msg);
+			_socket.send(p_msg);
 		}
 	};
 }

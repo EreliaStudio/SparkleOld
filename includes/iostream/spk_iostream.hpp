@@ -44,6 +44,7 @@ namespace spk
 			 */
 			~IOBuffer()
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
 				if (pbase() != pptr())
 				{
 					flush();
@@ -57,6 +58,7 @@ namespace spk
 			virtual int sync()
 
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
 				flush();
 				return 0;
 			}
@@ -66,7 +68,8 @@ namespace spk
 			 */
 			void flush()
 			{
-				_mutex.lock();
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
+
 				if (_prefix.size() != 0)
 				{
 					_outputStream << L"[" << std::wstring(_maximumPrefixSize - _prefix.size(), ' ') << _prefix << L"] - ";
@@ -74,7 +77,6 @@ namespace spk
 				_outputStream << str();
 				str(L"");
 				_outputStream.flush();
-				_mutex.unlock();
 			}
 
 			/**
@@ -91,15 +93,14 @@ namespace spk
 			 * @param p_prefix The new prefix string.
 			 */
 			void setPrefix(std::wstring p_prefix)
-
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
+
 				_prefix = p_prefix;
-				_mutex.lock();
 				if (_prefix.size() > _maximumPrefixSize)
 				{
 					_maximumPrefixSize = _prefix.size();
 				}
-				_mutex.unlock();
 			}
 		};
 
