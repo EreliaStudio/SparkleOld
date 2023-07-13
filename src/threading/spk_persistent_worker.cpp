@@ -14,9 +14,10 @@ namespace spk
 					{
 						job();
 					}
-					catch (...)
+					catch (std::runtime_error& error)
 					{
-
+						spk::cout << "Unexpected throw catched : " << error.what() << std::endl;
+						job = nullptr;
 					}
 				}
 			}

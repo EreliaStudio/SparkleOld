@@ -12,27 +12,27 @@ namespace spk
 		class Header
 		{
 		public:
-			using ID = int32_t;
+			using Type = int32_t;
 			friend class Message;
 
 		private:
-			ID _id;
+			Type _id;
 			uint32_t _size;
 
 		public:
-			Header(ID p_id = 0):
+			Header(Type p_id = 0):
 				_id(p_id),
 				_size(0)
 			{
 
 			}
 
-			const ID& id() const
+			const Type& id() const
 			{
 				return (_id);
 			}
 
-			void setID(ID p_id)
+			void setType(Type p_id)
 			{
 				_id = p_id;
 			}
@@ -42,7 +42,7 @@ namespace spk
 				_size = p_size;
 			}
 		};
-		using ID = Header::ID;
+		using Type = Header::Type;
 
 	private:
 		Header _header;
