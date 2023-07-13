@@ -170,5 +170,5 @@ namespace spk
  * @def DEBUG_LINE()
  * @brief Prints the current method name and line number for debugging purposes.
  */
-#define DEBUG_LINE() spk::cout << __METHOD__ << "::" << __LINE__ << std::endl
+#define DEBUG_LINE() spk::cout << __CLASS__ << "::" << __METHOD__ << "::" << __LINE__ << std::endl
 #endif
