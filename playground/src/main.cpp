@@ -15,34 +15,23 @@ private:
 
 	}
 
-	void _transferMessages(spk::Source& p_source, spk::Sink& p_sink)
-	{
-		auto& messages = p_source.messagesToSend();
-		for (size_t i = 0; i < messages.size(); i++)
-		{
-			auto tmp = messages.pop_front();
-
-			p_sink.receive(0, tmp);
-		}
-	}
-
 	bool _onUpdate()
-	{
-		_transferMessages(_server->_sources[0], _client->_sink);
-		_transferMessages(_client->_source, _server->_sink);
-		
+	{		
 		return (false);
 	}
 
 	void sendToClient(const size_t& p_msgID, const size_t& p_awnserID)
 	{
+		if (_server->_clients.size() == 0)
+			return ;
+
 		spk::cout << L"Server received message ID [" << p_msgID << L"] -> Sending client message [" << p_awnserID << L"]" << std::endl;
-		_server->_sources[0].send(spk::Message(p_awnserID));
+		_server->sendTo(_server->_clients.begin()->second, spk::Message(p_awnserID));
 	}
 	void sendToServer(const size_t& p_msgID, const size_t& p_awnserID)
 	{
 		spk::cout << L"Client received message ID [" << p_msgID << L"] -> Sending server message [" << p_awnserID << L"]" << std::endl;
-		_client->_source.send(spk::Message(p_awnserID));
+		_client->send(spk::Message(p_awnserID));
 	}
 public:
 	NetworkAbstraction(std::wstring p_name) : spk::AbstractWidget(p_name)
@@ -54,22 +43,22 @@ public:
 	{
 		_server = p_server;
 
-		_server->setOnMessageReceptionCallback(0, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(0, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			sendToClient(0, 0);
 		});
-		_server->setOnMessageReceptionCallback(1, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(1, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			sendToClient(1, 1);
 		});
-		_server->setOnMessageReceptionCallback(2, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(2, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			sendToClient(2, 2);
 		});
-		_server->setOnMessageReceptionCallback(3, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(3, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			sendToClient(3, 3);
 		});
-		_server->setOnMessageReceptionCallback(4, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(4, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			sendToClient(4, 4);
 		});
-		_server->setOnMessageReceptionCallback(5, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
+		_server->setOnMessageReceptionCallback(5, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
 			spk::cout << "Last message received" << std::endl;
 			sendToClient(5, 5);
 		});
@@ -114,6 +103,11 @@ int main()
 	clientManager->setClient(new spk::Client());
 	clientManager->client()->connect(L"127.0.0.1", 12500);
 	clientManager->activate();
+
+	spk::ClientManager* clientManager2 = app.addRootWidget<spk::ClientManager>(L"ClientManager");
+	clientManager2->setClient(new spk::Client());
+	clientManager2->client()->connect(L"127.0.0.1", 12500);
+	clientManager2->activate();
 
 	NetworkAbstraction* networkAbstraction = app.addRootWidget<NetworkAbstraction>(L"NetworkAbstractionWidget");
 	networkAbstraction->setServer(serverManager->server());
