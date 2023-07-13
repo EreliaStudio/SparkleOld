@@ -55,22 +55,23 @@ public:
 		_server = p_server;
 
 		_server->setOnMessageReceptionCallback(0, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
-			sendToClient(0, 2);
+			sendToClient(0, 0);
 		});
 		_server->setOnMessageReceptionCallback(1, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
-			sendToClient(1, 3);
+			sendToClient(1, 1);
 		});
 		_server->setOnMessageReceptionCallback(2, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
-			sendToClient(2, 4);
+			sendToClient(2, 2);
 		});
 		_server->setOnMessageReceptionCallback(3, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
-			sendToClient(3, 1);
+			sendToClient(3, 3);
 		});
 		_server->setOnMessageReceptionCallback(4, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
-			sendToClient(4, 0);
+			sendToClient(4, 4);
 		});
 		_server->setOnMessageReceptionCallback(5, [&](const spk::Server::Emiter& p_emiter, const spk::Message& p_msg){
 			spk::cout << "Last message received" << std::endl;
+			sendToClient(5, 5);
 		});
 	}
 
@@ -90,10 +91,10 @@ public:
 		_client->setOnMessageReceptionCallback(3, [&](const spk::Message& p_msg){
 			sendToServer(3, 4);
 		});
-		_client->setOnMessageReceptionCallback(3, [&](const spk::Message& p_msg){
+		_client->setOnMessageReceptionCallback(4, [&](const spk::Message& p_msg){
 			sendToServer(4, 5);
 		});
-		_client->setOnMessageReceptionCallback(4, [&](const spk::Message& p_msg){
+		_client->setOnMessageReceptionCallback(5, [&](const spk::Message& p_msg){
 			spk::cout << "Last message received" << std::endl;
 		});
 	}
