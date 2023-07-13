@@ -2,6 +2,7 @@
 
 #include "network/spk_message.hpp"
 #include "network/spk_sink.hpp"
+#include "network/spk_socket.hpp"
 
 namespace spk
 {
