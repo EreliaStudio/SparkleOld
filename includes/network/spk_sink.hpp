@@ -20,7 +20,7 @@ namespace spk
 			spk::NetworkObject(),
 			_socket(NULL)
 		{
-
+			spk::cout << L"Starting server on port " << p_port << std::endl;
 		}
 
 		~Sink()
