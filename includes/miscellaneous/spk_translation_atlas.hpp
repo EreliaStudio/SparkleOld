@@ -1,5 +1,6 @@
 #pragma once
 
+#include <unordered_map>
 #include "miscellaneous/JSON/spk_JSON_file.hpp"
 
 namespace spk

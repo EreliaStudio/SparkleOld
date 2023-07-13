@@ -88,7 +88,7 @@ function(SetupPlayground)
 		target_link_libraries(playground xcb)
 		target_link_libraries(playground pthread)
 	elseif(WIN32)
-
+		target_link_libraries(playground ws2_32)
 	endif()
 endfunction()
 

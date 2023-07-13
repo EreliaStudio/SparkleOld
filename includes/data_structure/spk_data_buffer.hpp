@@ -35,6 +35,26 @@ namespace spk
 		DataBuffer();
 
 		/**
+		 * @brief Return the content of the DataBuffer as a raw bytes array
+		 * 
+		 * @return The content of the DataBuffer as raw bytes
+		*/
+		uint8_t* data()
+		{
+			return (_data.data());
+		}
+
+		/**
+		 * @brief Return the content of the DataBuffer as a const raw bytes array
+		 * 
+		 * @return The content of the DataBuffer as const raw bytes
+		*/
+		const uint8_t* data() const
+		{
+			return (_data.data());
+		}
+
+		/**
 		 * @brief Get the size of the buffer.
 		 *
 		 * @return The size of the buffer.
@@ -60,6 +80,13 @@ namespace spk
 		 * @return True if there's no leftover data in the buffer, false otherwise.
 		 */
 		inline bool empty() const { return leftover() == 0; }
+
+		/**
+		 * @brief Resize the amount of data requested.
+		 *
+		 * @param p_newSize The number of bytes required inside the content.
+		 */
+		void resize(const size_t &p_newSize);
 
 		/**
 		 * @brief Move the bookmark ahead by the specified number.
