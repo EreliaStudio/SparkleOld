@@ -31,7 +31,7 @@ namespace spk
 
 		void _launchConnection()
 		{
-
+			spk::cout << L"Connecting source to " << _destinationAddress.address << L" with port " << _destinationAddress.port << std::endl;
 		}
 
 		void _stopConnection()
@@ -40,6 +40,11 @@ namespace spk
 		}
 
 	public:
+		void setID(const long long& p_id)
+		{
+			_id = p_id;
+		}
+
 		void send(const spk::Message& p_msg)
 		{
 			_messagesToSend.push_back(p_msg);
