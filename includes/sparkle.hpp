@@ -1,11 +1,11 @@
 #pragma once
 
+#include "spk_system_define.hpp"
+
 #include "math/spk_vector2.hpp"
 #include "math/spk_vector3.hpp"
 #include "math/spk_random_generator.hpp"
 #include "math/spk_perlin.hpp"
-
-
 
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
@@ -45,6 +45,13 @@
 
 #include "graphics/spk_window.hpp"
 
+#include "network/spk_message.hpp"
+#include "network/spk_socket.hpp"
+#include "network/spk_sink.hpp"
+#include "network/spk_source.hpp"
+#include "network/spk_client.hpp"
+#include "network/spk_server.hpp"
+
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"
 #include "application/modules/spk_window_module.hpp"
@@ -55,6 +62,9 @@
 
 #include "widget/spk_abstract_widget.hpp"
 #include "widget/spk_widget_atlas.hpp"
+
+#include "widget/spk_client_manager.hpp"
+#include "widget/spk_server_manager.hpp"
 
 #include "application/spk_application.hpp"
 

@@ -8,7 +8,14 @@
 	#ifndef NOMINMAX
 	#define NOMINMAX
 	#endif
-	#include <Windows.h>
+	
+	#include <winsock2.h>
+	#include <ws2tcpip.h>
+	#include <iphlpapi.h>
+	
+	#include <windows.h>
+
+	#pragma comment(lib, "Ws2_32.lib")
 
 	#include "data_structure/spk_pool.hpp"
 	#include "data_structure/spk_data_buffer.hpp"

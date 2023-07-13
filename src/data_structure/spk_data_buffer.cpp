@@ -7,6 +7,11 @@ namespace spk
 		_bookmark(0)
 	{
 	}
+	
+	void DataBuffer::resize(const size_t &p_newSize)
+	{
+		_data.resize(p_newSize);
+	}
 
 	void DataBuffer::skip(const size_t& p_number)
 	{
