@@ -46,9 +46,6 @@
 #include "graphics/spk_window.hpp"
 
 #include "network/spk_message.hpp"
-#include "network/spk_socket.hpp"
-#include "network/spk_sink.hpp"
-#include "network/spk_source.hpp"
 #include "network/spk_client.hpp"
 #include "network/spk_server.hpp"
 
