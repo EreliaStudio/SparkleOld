@@ -68,6 +68,8 @@ namespace spk
 		template <typename Funct, typename ... Args>
 		void setOnMessageReceptionCallback(const spk::Message::ID& p_id, Funct&& p_funct, Args&& ... p_args)
 		{
+			if (_onMessageReceptionCallbacks.contains(p_id) == true)
+				spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_id) + L"]");
 			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
 		}
 
