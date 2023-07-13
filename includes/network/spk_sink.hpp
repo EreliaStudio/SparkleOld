@@ -18,7 +18,7 @@ namespace spk
 	public:
 		void start(const size_t& p_port)
 		{
-
+			spk::cout << L"Starting server on port " << p_port << std::endl;
 		}
 
 		void stop()
