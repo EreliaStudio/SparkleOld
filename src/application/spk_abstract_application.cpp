@@ -44,7 +44,7 @@ namespace spk
 
 		for (auto &worker : _workers)
 			worker.second->stop();
-
+    
 		return _errorCode;
 	}
 

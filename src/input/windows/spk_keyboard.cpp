@@ -6,7 +6,6 @@ namespace spk
 	{
 		Mapping result;
 
-
 		result.bindKey(8, Backspace);
 		result.bindKey(9, Tab);
 		result.bindKey(12, Clear);
