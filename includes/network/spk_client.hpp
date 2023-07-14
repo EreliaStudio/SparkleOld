@@ -34,7 +34,7 @@ namespace spk
 		Client() :
 			_socketContextWorker(L"Client socket")
 		{
-			_readingSocketDataContract = _socketContextWorker.addJob([&](){
+			_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&](){
 				spk::Message newMessage;
 
 				if (_socket.isConnected() == true)

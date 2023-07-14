@@ -49,7 +49,7 @@ namespace spk
 		Server() :
 			_socketContextWorker(L"Server Socket")
 		{
-			_socketListeningContract = _socketContextWorker.addJob([&](){
+			_socketListeningContract = _socketContextWorker.addJob(L"Accepting new connection", [&](){
 				Socket newSocket;
 				if (_sink.accept(newSocket) == true)
 				{
@@ -58,7 +58,7 @@ namespace spk
 				}
 			});
 
-			_readingIncomingMessageContract = _socketContextWorker.addJob([&](){
+			_readingIncomingMessageContract = _socketContextWorker.addJob(L"Reading incoming message", [&](){
 				spk::Message newMessage;
 
 				for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
