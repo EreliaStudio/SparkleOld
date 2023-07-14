@@ -36,10 +36,14 @@ namespace spk
 
 		for (auto &worker : _workers)
 			worker.second->start();
+
 		spk::cout.setPrefix(L"Renderer");
 		while (_isRunning)
 			for (auto &job : _jobs)
 				job();
+
+		for (auto &worker : _workers)
+			worker.second->stop();
 
 		return _errorCode;
 	}
