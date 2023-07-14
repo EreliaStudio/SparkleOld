@@ -46,7 +46,7 @@ namespace spk
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
 		spk::Keyboard::instanciate();
-		spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
+		spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Qwerty);
 	}
 
 	KeyboardModule::~KeyboardModule()
