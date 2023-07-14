@@ -77,6 +77,10 @@ namespace spk
 				_mutex.unlock();
 			}
 
+			/**
+			 * @brief Returns the size of the maximum prefix used.
+			 * @return The size of the maximum prefix.
+			 */
 			size_t prefixSize() const 
 			{
 				return (_maximumPrefixSize);
@@ -125,6 +129,10 @@ namespace spk
 			buffer.setPrefix(p_prefix);
 		}
 
+		/**
+		 * @brief Returns the size of the maximum prefix used.
+		 * @return The size of the maximum prefix.
+		 */
 		size_t prefixSize() const 
 		{
 			return (buffer.prefixSize());

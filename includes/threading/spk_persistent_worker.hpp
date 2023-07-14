@@ -53,6 +53,7 @@ namespace spk
 		 * 
 		 * This function adds a job to the worker. The job will be executed by the worker thread.
 		 * 
+		 * @param p_jobName The name of the new job to be added.
 		 * @param p_job The job to be added.
 		 * @return A contract representing the job.
 		 */
