@@ -26,6 +26,8 @@ namespace spk
 	private:
 		CallbackContainer _jobs;
 
+		const std::wstring* _activeJobName = nullptr;
+
 		bool _isRunning = false;
 		bool _isPaused = false;
 
@@ -51,10 +53,11 @@ namespace spk
 		 * 
 		 * This function adds a job to the worker. The job will be executed by the worker thread.
 		 * 
+		 * @param p_jobName The name of the new job to be added.
 		 * @param p_job The job to be added.
 		 * @return A contract representing the job.
 		 */
-		Contract addJob(const Job& p_job);
+		Contract addJob(const std::wstring& p_jobName, const Job& p_job);
 
 		/**
 		 * @brief Check if the worker is running.

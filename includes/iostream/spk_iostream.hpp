@@ -78,6 +78,15 @@ namespace spk
 			}
 
 			/**
+			 * @brief Returns the size of the maximum prefix used.
+			 * @return The size of the maximum prefix.
+			 */
+			size_t prefixSize() const 
+			{
+				return (_maximumPrefixSize);
+			}
+
+			/**
 			 * @brief Changes the prefix string.
 			 * @param p_prefix The new prefix string.
 			 */
@@ -118,6 +127,15 @@ namespace spk
 		void setPrefix(const std::wstring &p_prefix)
 		{
 			buffer.setPrefix(p_prefix);
+		}
+
+		/**
+		 * @brief Returns the size of the maximum prefix used.
+		 * @return The size of the maximum prefix.
+		 */
+		size_t prefixSize() const 
+		{
+			return (buffer.prefixSize());
 		}
 	};
   
