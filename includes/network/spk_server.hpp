@@ -120,7 +120,7 @@ namespace spk
 			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::placeholders::_2, std::forward<Args>(p_args)...);
 		}
 
-		void sendTo(Socket p_target, const spk::Message& p_msg)
+		void sendTo(Socket& p_target, const spk::Message& p_msg)
 		{
 			p_target.send(p_msg);
 		}

@@ -93,6 +93,8 @@ namespace spk
 
 		void send(const spk::Message& p_msg)
 		{
+			if (_socket.isConnected() == false)
+				spk::throwException(L"Can't send a message throught a disconnected socket");
 			_socket.send(p_msg);
 		}
 	};

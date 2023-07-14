@@ -25,12 +25,10 @@ private:
 		if (_server->_clients.size() == 0)
 			return ;
 
-		spk::cout << L"Server received message ID [" << p_msgID << L"] -> Sending client message [" << p_awnserID << L"]" << std::endl;
 		_server->sendTo(_server->_clients.begin()->second, spk::Message(p_awnserID));
 	}
 	void sendToServer(const size_t& p_msgID, const size_t& p_awnserID)
 	{
-		spk::cout << L"Client received message ID [" << p_msgID << L"] -> Sending server message [" << p_awnserID << L"]" << std::endl;
 		_client->send(spk::Message(p_awnserID));
 	}
 public:
@@ -59,7 +57,6 @@ public:
 			sendToClient(4, 4);
 		});
 		_server->setOnMessageReceptionCallback(5, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			spk::cout << "Last message received" << std::endl;
 			sendToClient(5, 5);
 		});
 	}
@@ -84,7 +81,10 @@ public:
 			sendToServer(4, 5);
 		});
 		_client->setOnMessageReceptionCallback(5, [&](const spk::Message& p_msg){
-			spk::cout << "Last message received" << std::endl;
+			static int nbLoop = 0;
+			spk::cout << "Last message received : Loop [" << nbLoop << "]" << std::endl;
+			nbLoop++;
+			sendToServer(5, 0);
 		});
 	}
 };
@@ -93,21 +93,18 @@ public:
 int main()
 {
 	spk::Application app(L"Playground", spk::Vector2Int(400, 400));
+	spk::Server server;
+	spk::Client client;
 	
 	spk::ServerManager* serverManager = app.addRootWidget<spk::ServerManager>(L"ServerManager");
-	serverManager->setServer(new spk::Server());
+	serverManager->setServer(&server);
 	serverManager->server()->start(12500);
 	serverManager->activate();
 
 	spk::ClientManager* clientManager = app.addRootWidget<spk::ClientManager>(L"ClientManager");
-	clientManager->setClient(new spk::Client());
+	clientManager->setClient(&client);
 	clientManager->client()->connect(L"127.0.0.1", 12500);
 	clientManager->activate();
-
-	spk::ClientManager* clientManager2 = app.addRootWidget<spk::ClientManager>(L"ClientManager");
-	clientManager2->setClient(new spk::Client());
-	clientManager2->client()->connect(L"127.0.0.1", 12500);
-	clientManager2->activate();
 
 	NetworkAbstraction* networkAbstraction = app.addRootWidget<NetworkAbstraction>(L"NetworkAbstractionWidget");
 	networkAbstraction->setServer(serverManager->server());

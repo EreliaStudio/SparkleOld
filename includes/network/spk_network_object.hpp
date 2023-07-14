@@ -13,9 +13,9 @@ namespace spk
 
 		static void _initializeWinSockData()
 		{
+			spk::cout << "Requesting initialization of WinSockData" << std::endl;
 			int initializationResult;
 
-			// Initialize Winsock
 			initializationResult = WSAStartup(MAKEWORD(2,2), &wsaData);
 			if (initializationResult != 0) {
 				spk::throwException(L"Initialization of network failed : WSAStartup error code [" + std::to_wstring(initializationResult) + L"]");
@@ -24,6 +24,7 @@ namespace spk
 
 		static void _releaseWinSockData()
 		{
+			spk::cout << "Releasing WinSockData" << std::endl;
 			WSACleanup();
 		}
 	public:
