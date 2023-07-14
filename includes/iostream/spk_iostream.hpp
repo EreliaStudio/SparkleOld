@@ -77,6 +77,11 @@ namespace spk
 				_mutex.unlock();
 			}
 
+			size_t prefixSize() const 
+			{
+				return (_maximumPrefixSize);
+			}
+
 			/**
 			 * @brief Changes the prefix string.
 			 * @param p_prefix The new prefix string.
@@ -118,6 +123,11 @@ namespace spk
 		void setPrefix(const std::wstring &p_prefix)
 		{
 			buffer.setPrefix(p_prefix);
+		}
+
+		size_t prefixSize() const 
+		{
+			return (buffer.prefixSize());
 		}
 	};
   

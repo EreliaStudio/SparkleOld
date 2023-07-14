@@ -164,6 +164,15 @@ namespace spk
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
 
+	void redirectException(std::runtime_error& e, const std::wstring* p_jobName)
+	{
+		spk::cout << "Unexpected throw";
+		if (p_jobName != nullptr)
+			spk::cout << " during execution of [" << *p_jobName << "] job";
+		spk::cout << "\n";
+		spk::cout << std::wstring(spk::cout.prefixSize() + 5, L' ') << "Error : [" << e.what() << "]" << std::endl;
+	}
+
 	std::wstring universalCodeDecoder(const wchar_t& p_code)
 	{
 		std::wstring result;
