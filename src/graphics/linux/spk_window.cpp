@@ -68,6 +68,12 @@ namespace spk
 		xcb_map_window(_connection, _window);
 	}
 
+	Window::~Window()
+	{
+		xcb_destroy_window(_connection, _window);
+		xcb_disconnect(_connection);
+	}
+
 	void Window::setGeometry(const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
