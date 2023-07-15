@@ -1,8 +1,10 @@
 #pragma once
 
+#include <map>
 #include "network/spk_message.hpp"
-#include "network/spk_sink.hpp"
+#include "network/spk_acceptor.hpp"
 #include "network/spk_socket.hpp"
+#include "threading/spk_persistent_worker.hpp"
 
 namespace spk
 {
@@ -17,71 +19,16 @@ namespace spk
 
 		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
 
-		void _treatMessage(const spk::Message& p_msg)
-		{
-			auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
-			if(callbackIt != _onMessageReceptionCallbacks.end())
-			{
-				callbackIt->second(p_msg);
-			}
-			else
-			{
-				spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().id()) + L"]");
-			}
-		}
+		void _treatMessage(const spk::Message& p_msg);
 
 	public:
-		Client() :
-			_socketContextWorker(L"Client socket")
-		{
-			_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&](){
-				spk::Message newMessage;
+		Client();
+		~Client();
 
-				if (_socket.isConnected() == true)
-				{
-					Socket::ReadResult readStatus = _socket.receive(newMessage);
+		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort);
+		void disconnect();
 
-					switch (readStatus)
-					{
-						case Socket::ReadResult::Closed:
-							spk::cout << "Require closing socket" << std::endl;
-							_socket.close();
-							break;
-						case Socket::ReadResult::Success:
-							_messagesToTreat.push_back(newMessage);
-							break;
-					}
-				}
-			});
-			_socketContextWorker.start();
-			_socketContextWorker.pause();
-		}
-
-		~Client()
-		{
-			_socketContextWorker.stop();
-		}
-
-		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort)
-		{
-			_socket.connect(p_serverAddress, p_serverPort);
-		}
-
-		void disconnect()
-		{
-			_socket.close();
-		}
-
-		void treatMessages()
-		{
-			if (_socket.isConnected() == true)
-				_socketContextWorker.resume();
-
-			while (_messagesToTreat.empty() == false)
-			{
-				_treatMessage(_messagesToTreat.pop_front());
-			}
-		}
+		void treatMessages();
 
 		template <typename Funct, typename ... Args>
 		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
@@ -91,11 +38,6 @@ namespace spk
 			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
 		}
 
-		void send(const spk::Message& p_msg)
-		{
-			if (_socket.isConnected() == false)
-				spk::throwException(L"Can't send a message throught a disconnected socket");
-			_socket.send(p_msg);
-		}
+		void send(const spk::Message& p_msg);
 	};
 }

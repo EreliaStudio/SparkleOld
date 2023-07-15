@@ -31,6 +31,7 @@ function(SetupSparkleLibrary)
 		"${CMAKE_SOURCE_DIR}/src/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/input/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
@@ -49,6 +50,7 @@ function(SetupSparkleLibrary)
 
 if(UNIX)
 	file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+		"${CMAKE_SOURCE_DIR}/src/network/linux/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/linux/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/input/linux/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/modules/linux/*.cpp"
@@ -56,6 +58,7 @@ if(UNIX)
 
 elseif(WIN32)
 	file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
+		"${CMAKE_SOURCE_DIR}/src/network/windows/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/windows/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/input/windows/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/modules/windows/*.cpp"

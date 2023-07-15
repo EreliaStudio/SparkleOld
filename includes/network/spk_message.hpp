@@ -20,27 +20,11 @@ namespace spk
 			uint32_t _size;
 
 		public:
-			Header(Type p_id = 0):
-				_id(p_id),
-				_size(0)
-			{
+			Header(Type p_id = 0);
 
-			}
-
-			const Type& id() const
-			{
-				return (_id);
-			}
-
-			void setType(Type p_id)
-			{
-				_id = p_id;
-			}
-
-			void reset(uint32_t p_size)
-			{
-				_size = p_size;
-			}
+			const Type& id() const;
+			void setType(Type p_id);
+			void reset(uint32_t p_size);
 		};
 		using Type = Header::Type;
 
@@ -49,36 +33,15 @@ namespace spk
 		DataBuffer _content;
 	
 	public:
-		Message(int32_t p_id = 0) : 
-			_header(p_id)
-		{
+		Message(int32_t p_id = 0);
 
-		}
+		Header& header();
+		const Header& header() const;
 
-		Header& header()
-		{
-			return (_header);
-		}
+		uint8_t* data();
+		const uint8_t* data() const;
 
-		const Header& header() const
-		{
-			return (_header);
-		}
-
-		uint8_t* data()
-		{
-			return (_content.data());
-		}
-
-		const uint8_t* data() const
-		{
-			return (_content.data());
-		}
-
-		size_t size() const
-		{
-			return (_header._size);
-		}
+		size_t size() const;
 
 		template <typename InputType>
 		Message& operator<<(const InputType& p_input)
