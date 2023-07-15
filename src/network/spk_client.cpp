@@ -11,7 +11,7 @@ namespace spk
 		}
 		else
 		{
-			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().id()) + L"]");
+			_onUnknowMessageReception(p_msg);
 		}
 	}
 

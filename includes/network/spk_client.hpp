@@ -18,6 +18,9 @@ namespace spk
 		spk::ThreadSafeQueue<spk::Message> _messagesToTreat;
 
 		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
+		std::function<void(const spk::Message&)> _onUnknowMessageReception = [&](const spk::Message& p_msg){
+			spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_msg.header().id()) + L"]");
+		};
 
 		void _treatMessage(const spk::Message& p_msg);
 
@@ -34,8 +37,14 @@ namespace spk
 		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
 		{
 			if (_onMessageReceptionCallbacks.contains(p_id) == true)
-				spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_id) + L"]");
+				spk::throwException(L"Callback already defined for message type [" + std::to_wstring(p_id) + L"]");
 			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
+		}
+
+		template <typename Funct, typename ... Args>
+		void setUnknowMessageReceptionCallback(Funct&& p_funct, Args&& ... p_args)
+		{
+			_onUnknowMessageReception = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
 		}
 
 		void send(const spk::Message& p_msg);

@@ -48,6 +48,7 @@
 #include "network/spk_message.hpp"
 #include "network/spk_client.hpp"
 #include "network/spk_server.hpp"
+#include "network/spk_node_system.hpp"
 
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"

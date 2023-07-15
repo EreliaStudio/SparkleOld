@@ -13,17 +13,21 @@ namespace spk
 		{
 		public:
 			using Type = int32_t;
+			using EmiterID = long long;
 			friend class Message;
 
 		private:
 			Type _id;
 			uint32_t _size;
+			mutable EmiterID _emiter;
 
 		public:
 			Header(Type p_id = 0);
 
+			const EmiterID& emiterID() const;
 			const Type& id() const;
 			void setType(Type p_id);
+			void setEmiter(EmiterID p_emiterID) const;
 			void reset(uint32_t p_size);
 		};
 		using Type = Header::Type;
