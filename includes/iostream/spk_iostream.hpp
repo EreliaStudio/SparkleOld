@@ -24,7 +24,7 @@ namespace spk
 			static inline std::recursive_mutex _mutex;   ///< Mutex for thread safety.
 			static inline size_t _maximumPrefixSize = 0; ///< Maximum size of prefix string.
 			std::wstring _prefix;						///< Prefix for current instance.
-			std::wostream &_outputStream;				///< Reference to output stream.
+			std::wostream& _outputStream;				///< Reference to output stream.
 
 		public:
 			/**
@@ -103,24 +103,31 @@ namespace spk
 		 * @param p_outputStream Reference to the output stream.
 		 * @param p_prefix Prefix string for the stream.
 		 */
-		IOStream(std::wostream &p_outputStream, std::wstring p_prefix = L"") : std::wostream(&buffer),
-																			   buffer(p_outputStream, p_prefix)
+		IOStream(std::wostream& p_outputStream, std::wstring p_prefix = L"") :
+			std::wostream(&buffer),
+			buffer(p_outputStream, p_prefix)
 		{
-			std::locale::global(std::locale(""));
-			std::ios_base::sync_with_stdio(false);
-			std::locale::global(std::locale("C"));
+			// Only update the global locale once.
+			static bool _localeUpdated = false;
+			if (_localeUpdated == false)
+			{
+				std::locale::global(std::locale(""));
+				std::ios_base::sync_with_stdio(false);
+				std::locale::global(std::locale("C"));
+				_localeUpdated = true;
+			}
 		}
 
 		/**
 		 * @brief Sets the prefix of the buffer.
 		 * @param p_prefix The new prefix string.
 		 */
-		void setPrefix(const std::wstring &p_prefix)
+		void setPrefix(const std::wstring& p_prefix)
 		{
 			buffer.setPrefix(p_prefix);
 		}
 	};
-  
+
 	/// @brief Thread-local instances of IOStream for standard output and error output.
 	extern thread_local spk::IOStream cout;
 	extern thread_local spk::IOStream cerr;
