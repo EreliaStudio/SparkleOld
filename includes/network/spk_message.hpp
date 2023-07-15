@@ -48,12 +48,14 @@ namespace spk
 		{
 			_content << p_input;
 			_header._size = _content.size();
+			return *this;
 		}
 
 		template <typename OutputType>
 		const Message& operator>>(OutputType& p_output) const
 		{
 			_content >> p_output;
+			return *this;
 		}
 	};
 }

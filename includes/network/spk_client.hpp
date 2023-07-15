@@ -5,6 +5,8 @@
 #include "network/spk_acceptor.hpp"
 #include "network/spk_socket.hpp"
 #include "threading/spk_persistent_worker.hpp"
+#include "threading/spk_thread_safe_queue.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {

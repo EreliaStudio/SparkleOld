@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
+#include "network/spk_socket.hpp"
 
 namespace spk
 { 

@@ -1,5 +1,7 @@
 #include "network/linux/spk_acceptor.hpp"
 #include <fcntl.h>
+#include "iostream/spk_iostream.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {
@@ -50,13 +52,13 @@ namespace spk
 		}
 
 		int bindingListeningSocketError = ::bind(_socket, result->ai_addr, (int)result->ai_addrlen);
-		if (bindingListeningSocketError == SOCKET_ERROR)
+		if (bindingListeningSocketError == -1)
 		{
 			spk::throwException(L"Binding listening socket creation failed : socket error code [" + std::to_wstring(errno) + L"]");
 		}
 		freeaddrinfo(result);
 
-		if (::listen(_socket, SOMAXCONN) == SOCKET_ERROR)
+		if (::listen(_socket, SOMAXCONN) == -1)
 		{
 			spk::throwException(L"Error while listening : socket error code [" + std::to_wstring(errno) + L"]");
 		}

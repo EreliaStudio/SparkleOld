@@ -3,6 +3,8 @@
 #include <netdb.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {
@@ -12,7 +14,7 @@ namespace spk
 		_isConnected = true;
 	}
 
-	void Socket::connect(const std::string &p_serverAddress, const size_t &p_serverPort)
+	void Socket::connect(const std::wstring &p_serverAddress, const size_t &p_serverPort)
 	{
 		struct addrinfo *result = NULL;
 		struct addrinfo *ptr = NULL;
@@ -23,10 +25,10 @@ namespace spk
 		hints.ai_socktype = SOCK_STREAM;
 		hints.ai_protocol = IPPROTO_TCP;
 
-		int sourceAddressResolutionError = getaddrinfo(p_serverAddress.c_str(), std::to_string(p_serverPort).c_str(), &hints, &result);
+		int sourceAddressResolutionError = getaddrinfo(spk::wstringToString(p_serverAddress).c_str(), std::to_string(p_serverPort).c_str(), &hints, &result);
 		if (sourceAddressResolutionError != 0)
 		{
-			spk::throwException("Source creation failed : getaddrinfo error code [" + std::to_string(sourceAddressResolutionError) + "]");
+			spk::throwException(L"Source creation failed : getaddrinfo error code [" + std::to_wstring(sourceAddressResolutionError) + L"]");
 		}
 
 		_socket = -1;
@@ -38,7 +40,7 @@ namespace spk
 			int socketConnectionError = ::connect(_socket, result->ai_addr, result->ai_addrlen);
 			if (socketConnectionError == -1)
 			{
-				spk::throwException("Unable to connect to server [" + p_serverAddress + "] at port [" + std::to_string(p_serverPort) + "][" + std::to_string(errno) + "]");
+				spk::throwException(L"Unable to connect to server [" + p_serverAddress + L"] at port [" + std::to_wstring(p_serverPort) + L"][" + std::to_wstring(errno) + L"]");
 			}
 		}
 
@@ -55,7 +57,7 @@ namespace spk
 		int shutdowningSocketError = shutdown(_socket, SHUT_WR);
 		if (shutdowningSocketError == -1)
 		{
-			spk::throwException("shutdown failed with error: " + std::to_string(errno));
+			spk::throwException(L"shutdown failed with error: " + std::to_wstring(errno));
 		}
 		::close(_socket);
 		_isConnected = false;
@@ -71,7 +73,7 @@ namespace spk
 		int sendingMessageHeaderError = ::send(_socket, reinterpret_cast<const char *>(&(p_msg.header())), sizeof(spk::Message::Header), 0);
 		if (sendingMessageHeaderError == -1)
 		{
-			spk::throwException("Error while sending header: socket error code [" + std::to_string(errno) + "]");
+			spk::throwException(L"Error while sending header: socket error code [" + std::to_wstring(errno) + L"]");
 		}
 
 		if (p_msg.size() != 0)
@@ -80,7 +82,7 @@ namespace spk
 
 			if (sendingMessageDataError == -1)
 			{
-				spk::throwException("Error while sending data: socket error code [" + std::to_string(errno) + "]");
+				spk::throwException(L"Error while sending data: socket error code [" + std::to_wstring(errno) + L"]");
 			}
 		}
 	}
@@ -99,7 +101,7 @@ namespace spk
 		{
 			if (errno != EAGAIN)
 			{
-				spk::throwException("Error while receiving header: socket error code [" + std::to_string(errno) + "]");
+				spk::throwException(L"Error while receiving header: socket error code [" + std::to_wstring(errno) + L"]");
 			}
 			else
 			{
@@ -112,7 +114,7 @@ namespace spk
 			bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()), p_messageToFill.size(), 0);
 			if (bytesRead != p_messageToFill.size())
 			{
-				spk::throwException("Error while receiving data: socket error code [" + std::to_string(errno) + "]");
+				spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(errno) + L"]");
 			}
 		}
 

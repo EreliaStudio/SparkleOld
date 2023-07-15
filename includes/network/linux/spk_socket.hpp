@@ -5,7 +5,7 @@
 
 namespace spk
 {
-	class Socket : spk::NetworkObject
+	class Socket
 	{
 		friend class Server;
 		friend class Client;
@@ -24,7 +24,7 @@ namespace spk
 		bool _isConnected = false;
 
 		void connect(int p_socket);
-		void connect(const std::string& p_serverAddress, const size_t& p_serverPort);
+		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort);
 
 		void close();
 
