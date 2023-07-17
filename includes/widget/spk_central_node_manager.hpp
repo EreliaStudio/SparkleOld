@@ -1,6 +1,7 @@
 #pragma once
 
-#include "network/spk_client.hpp"
+#include "network/spk_central_node.hpp"
+#include "widget/spk_abstract_widget.hpp"
 
 namespace spk
 {
@@ -9,44 +10,16 @@ namespace spk
 	private:
 		CentralNode* _centralNodeToManage;
 
-		void _onRender()
-		{
-
-		}
-
-		void _onGeometryChange()
-		{
-			
-		}
-
-		bool _onUpdate()
-		{
-			if (_centralNodeToManage != nullptr)
-				_centralNodeToManage->treatMessages();
-			return (false);
-		}
+		void _onRender();
+		void _onGeometryChange();
+		bool _onUpdate();
 
 	public:
-		CentralNodeManager(const std::wstring& p_name) :
-			AbstractWidget(p_name),
-			_centralNodeToManage(nullptr)
-		{
+		CentralNodeManager(const std::wstring& p_name);
 
-		}
+		void setCentralNode(CentralNode* p_client);
 
-		void setCentralNode(CentralNode* p_client)
-		{
-			_centralNodeToManage = p_client;
-		}
-
-		CentralNode* centralNode()
-		{
-			return (_centralNodeToManage);
-		}
-
-		const CentralNode* centralNode() const
-		{
-			return (_centralNodeToManage);
-		}
+		CentralNode* centralNode();
+		const CentralNode* centralNode() const;
 	};
 }

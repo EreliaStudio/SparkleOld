@@ -1,6 +1,7 @@
 #pragma once
 
 #include "network/spk_server.hpp"
+#include "widget/spk_abstract_widget.hpp"
 
 namespace spk
 {
@@ -9,43 +10,15 @@ namespace spk
 	private:
 		Server* _serverToManage;
 
-		void _onRender()
-		{
-
-		}
-
-		void _onGeometryChange()
-		{
-
-		}
-
-		bool _onUpdate()
-		{
-			if (_serverToManage != nullptr)
-				_serverToManage->treatMessages();
-			return (false);
-		}
+		void _onRender();
+		void _onGeometryChange();
+		bool _onUpdate();
 	public:
-		ServerManager(const std::wstring& p_name) :
-			AbstractWidget(p_name),
-			_serverToManage(nullptr)
-		{
+		ServerManager(const std::wstring& p_name);
 
-		}
+		void setServer(Server* p_server);
 
-		void setServer(Server* p_server)
-		{
-			_serverToManage = p_server;
-		}
-
-		Server* server()
-		{
-			return (_serverToManage);
-		}
-
-		const Server* server() const
-		{
-			return (_serverToManage);
-		}
+		Server* server();
+		const Server* server() const;
 	};
 }

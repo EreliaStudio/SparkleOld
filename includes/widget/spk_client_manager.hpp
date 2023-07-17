@@ -1,6 +1,7 @@
 #pragma once
 
 #include "network/spk_client.hpp"
+#include "widget/spk_abstract_widget.hpp"
 
 namespace spk
 {
@@ -9,44 +10,16 @@ namespace spk
 	private:
 		Client* _clientToManage;
 
-		void _onRender()
-		{
-
-		}
-
-		void _onGeometryChange()
-		{
-			
-		}
-
-		bool _onUpdate()
-		{
-			if (_clientToManage != nullptr)
-				_clientToManage->treatMessages();
-			return (false);
-		}
+		void _onRender();
+		void _onGeometryChange();
+		bool _onUpdate();
 
 	public:
-		ClientManager(const std::wstring& p_name) :
-			AbstractWidget(p_name),
-			_clientToManage(nullptr)
-		{
+		ClientManager(const std::wstring& p_name);
 
-		}
+		void setClient(Client* p_client);
 
-		void setClient(Client* p_client)
-		{
-			_clientToManage = p_client;
-		}
-
-		Client* client()
-		{
-			return (_clientToManage);
-		}
-
-		const Client* client() const
-		{
-			return (_clientToManage);
-		}
+		Client* client();
+		const Client* client() const;
 	};
 }

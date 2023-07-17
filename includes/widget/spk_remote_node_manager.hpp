@@ -1,6 +1,7 @@
 #pragma once
 
-#include "network/spk_client.hpp"
+#include "network/spk_remote_node.hpp"
+#include "widget/spk_abstract_widget.hpp"
 
 namespace spk
 {
@@ -9,44 +10,16 @@ namespace spk
 	private:
 		RemoteNode* _remoteNodeToManage;
 
-		void _onRender()
-		{
-
-		}
-
-		void _onGeometryChange()
-		{
-			
-		}
-
-		bool _onUpdate()
-		{
-			if (_remoteNodeToManage != nullptr)
-				_remoteNodeToManage->treatMessages();
-			return (false);
-		}
+		void _onRender();
+		void _onGeometryChange();
+		bool _onUpdate();
 
 	public:
-		RemoteNodeManager(const std::wstring& p_name) :
-			AbstractWidget(p_name),
-			_remoteNodeToManage(nullptr)
-		{
+		RemoteNodeManager(const std::wstring& p_name);
 
-		}
+		void setRemoteNode(RemoteNode* p_client);
 
-		void setRemoteNode(RemoteNode* p_client)
-		{
-			_remoteNodeToManage = p_client;
-		}
-
-		RemoteNode* remoteNode()
-		{
-			return (_remoteNodeToManage);
-		}
-
-		const RemoteNode* remoteNode() const
-		{
-			return (_remoteNodeToManage);
-		}
+		RemoteNode* remoteNode();
+		const RemoteNode* remoteNode() const;
 	};
 }
