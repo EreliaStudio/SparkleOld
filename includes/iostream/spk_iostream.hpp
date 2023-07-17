@@ -102,6 +102,16 @@ namespace spk
 					_maximumPrefixSize = _prefix.size();
 				}
 			}
+
+			void lock()
+			{
+				_mutex.lock();
+			}
+
+			void unlock()
+			{
+				_mutex.unlock();
+			}
 		};
 
 	public:
@@ -137,6 +147,17 @@ namespace spk
 		size_t prefixSize() const 
 		{
 			return (buffer.prefixSize());
+		}
+
+
+		void lock()
+		{
+			buffer.lock();
+		}
+		
+		void unlock()
+		{
+			buffer.unlock();
 		}
 	};
   

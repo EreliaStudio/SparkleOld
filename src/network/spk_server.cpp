@@ -34,7 +34,7 @@ namespace spk
 				if (_Acceptor.accept(newSocket) == true)
 				{
 					EmiterID newId = _findValidID();
-					_clients[newId] = newSocket;
+					_clients[newId] = std::move(newSocket);
 					if (_onNewConnectionCallback != nullptr)
 						_onNewConnectionCallback(newId);
 				}
