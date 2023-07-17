@@ -2,7 +2,7 @@
 
 namespace spk
 {
-	void printStackTrace()
+	void printCallStack()
 	{
 		
 	}
