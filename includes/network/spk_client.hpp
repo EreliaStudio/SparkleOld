@@ -10,54 +10,78 @@
 
 namespace spk
 {
+    /**
+     * @class Client
+     * @brief The Client class encapsulates the behavior of a client in a network communication context.
+     *
+     * The Client class handles connecting to a server, sending messages, receiving messages, and processing received messages. 
+     * It also supports setting callbacks for specific types of messages.
+     */
 	class Client
 	{
 	public:
-		spk::PersistentWorker _socketContextWorker;
-		spk::ContractProvider::Contract _readingSocketDataContract;
+		spk::PersistentWorker _socketContextWorker; /**< A worker object that handles tasks related to the socket context */
+		spk::ContractProvider::Contract _readingSocketDataContract; /**< A contract object used for reading data from the socket */
 
-		spk::Socket _socket;
-		spk::ThreadSafeQueue<spk::Message> _messagesToTreat;
+		spk::Socket _socket; /**< The socket object used for network communication */
+		spk::ThreadSafeQueue<spk::Message> _messagesToTreat; /**< A thread-safe queue that stores messages to be processed */
 
-		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
+		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks; /**< Map storing callbacks for specific types of messages */
 		std::function<void(const spk::Message&)> _onUnknowMessageReception = [&](const spk::Message& p_msg){
-			spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_msg.header().id()) + L"]");
-		};
+			spk::throwException(L"Unknow message ID [" + std::to_wstring(p_msg.header().id()) + L"] received");
+		}; /**< Callback function for handling unknown message types */
 
-		void _treatMessage(const spk::Message& p_msg);
+		void _treatMessage(const spk::Message& p_msg); /**< Internal function to handle a specific message */
 
 	public:
+        /**
+         * @brief Constructor for Client.
+         */
 		Client();
+
+        /**
+         * @brief Destructor for Client.
+         */
 		~Client();
 
+        /**
+         * @brief Connects to a server at the specified address and port.
+         *
+         * @param p_serverAddress The address of the server to connect to.
+         * @param p_serverPort The port of the server to connect to.
+         */
 		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort);
+
+        /**
+         * @brief Disconnects from the server.
+         */
 		void disconnect();
 
+        /**
+         * @brief Processes all pending messages.
+         */
 		void treatMessages();
 
-		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct)
-		{
-			if (_onMessageReceptionCallbacks.contains(p_id) == true)
-				spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
-			_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1);
-		}
-		template <typename ... Args>
-		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&, Args...)> p_funct, Args&& ... p_args)
-		{
-			if (_onMessageReceptionCallbacks.contains(p_id) == true)
-				spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
-			_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::forward<Args>(p_args)...);
-		}
-		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct)
-		{
-			_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1);
-		}
-		template <typename ... Args>
-		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&, Args...)> p_funct, Args&& ... p_args)
-		{
-			_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1, std::forward<Args>(p_args)...);
-		}
+        /**
+         * @brief Sets a callback for a specific message type.
+         *
+         * @param p_id The ID of the message type.
+         * @param p_funct The callback function.
+         */
+		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct);
 
+        /**
+         * @brief Sets a callback for unknown message types.
+         *
+         * @param p_funct The callback function.
+         */
+		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct);
+
+        /**
+         * @brief Sends a message to the server.
+         *
+         * @param p_msg The message to send.
+         */
 		void send(const spk::Message& p_msg);
 	};
 }

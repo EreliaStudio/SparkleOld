@@ -99,6 +99,28 @@ namespace spk
 		}
 	}
 
+	void Server::setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Message&)> p_funct)
+	{
+		if (_onMessageReceptionCallbacks.contains(p_id) == true)
+			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
+		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
+	}
+	
+	void Server::setNewConnectionCallback(std::function<void(const EmiterID&)> p_funct)
+	{
+		_onNewConnectionCallback = std::bind(p_funct, std::placeholders::_1);
+	}
+	
+	void Server::setConnectionDisconnectionCallback(std::function<void(const EmiterID&)> p_funct)
+	{
+		_onConnectionDisconnectionCallback = std::bind(p_funct, std::placeholders::_1);
+	}
+
+	void Server::setUnknowMessageReceptionCallback(std::function<void(const EmiterID&, const spk::Message&)> p_funct)
+	{
+		_onUnknownMessageTypeCallback = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
+	}
+
 	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Message &p_msg)
 	{
 		if (_clients.contains(p_emiterID) == false)

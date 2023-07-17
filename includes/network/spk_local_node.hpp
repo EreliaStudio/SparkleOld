@@ -8,32 +8,47 @@
 
 namespace spk
 {
+    /**
+     * @class LocalNode
+     * @brief The LocalNode class extends the Node class, encapsulating the behavior of a local node in a network.
+     *
+     * The LocalNode class provides support for receiving and sending messages. It also allows setting callbacks 
+     * for specific message types and handling of unknown message types.
+     */
 	class LocalNode : public spk::Node
 	{
 	private:
-		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
-
+		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks; /**< Map storing callbacks for specific types of messages */
 		std::function<void(const spk::Message&)> _onUnknowMessageReception = [&](const spk::Message& p_msg){
 			spk::throwException(L"Message [" + std::to_wstring(p_msg.header().id()) + L"] not defined in local node");
-		};
+		}; /**< Callback function for handling unknown message types */
 
 	public:
+        /**
+         * @brief Constructor for LocalNode.
+         */
 		LocalNode();
 
-		template <typename Funct, typename ... Args>
-		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
-		{
-			if (_onMessageReceptionCallbacks.contains(p_id) == true)
-				spk::throwException(L"Callback already defined for message type [" + std::to_wstring(p_id) + L"]");
-			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
-		}
+        /**
+         * @brief Sets a callback for a specific message type.
+         *
+         * @param p_id The ID of the message type.
+         * @param p_funct The callback function.
+         */
+		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct);
 
-		template <typename Funct, typename ... Args>
-		void setUnknowMessageReceptionCallback(Funct&& p_funct, Args&& ... p_args)
-		{
-			_onUnknowMessageReception = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
-		}
+        /**
+         * @brief Sets a callback for unknown message types.
+         *
+         * @param p_funct The callback function.
+         */
+		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct);
 
+        /**
+         * @brief Sends a message to the network.
+         *
+         * @param p_msg The message to send.
+         */
 		void send(const spk::Message& p_msg);
 	};
 }
