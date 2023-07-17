@@ -36,7 +36,7 @@ namespace spk
          *
          * @param p_centralNode Pointer to the central node to manage.
          */
-		void setCentralNode(CentralNode* p_client);
+		void setCentralNode(CentralNode* p_centralNode);
 
         /**
          * @brief Gets the central node being managed.

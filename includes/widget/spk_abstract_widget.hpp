@@ -174,13 +174,27 @@ namespace spk
 	class NoGraphicsWidget : public AbstractWidget
 	{
 	private:
+		/**
+		 * @brief A private method that is an empty implementation for rendering.
+		 */
 		virtual void _onRender() {}
 
+		/**
+		 * @brief A private method that is an empty implementation for responding to geometry changes.
+		 */
 		virtual void _onGeometryChange() {}
 
+		/**
+		 * @brief A private method that is an empty implementation for rendering.
+		 */
 		virtual void _render() { }
 
 	public:
+		/**
+		 * @brief Constructor for the NoGraphicsWidget class.
+		 *
+		 * @param p_name The name of the widget.
+		 */
 		NoGraphicsWidget(const std::wstring& p_name) :
 			AbstractWidget(p_name)
 		{}
@@ -195,13 +209,30 @@ namespace spk
 	class OnlyGraphicsWidget : public AbstractWidget
 	{
 	private:
+		/**
+		 * @brief A private method that is an empty implementation for updating. Returns false as there is no update.
+		 * 
+		 * @return false
+		 */
 		virtual bool _onUpdate() { return (false); }
+
+		/**
+		 * @brief A private method that is an empty implementation for updating. Returns false as there is no update.
+		 * 
+		 * @return false
+		 */
 		virtual bool _update() { return (false); }
 
 	public:
+		/**
+		 * @brief Constructor for the OnlyGraphicsWidget class.
+		 *
+		 * @param p_name The name of the widget.
+		 */
 		OnlyGraphicsWidget(const std::wstring& p_name) :
 			AbstractWidget(p_name)
 		{}
 	};
+
 
 };

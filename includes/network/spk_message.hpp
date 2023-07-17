@@ -15,6 +15,9 @@ namespace spk
 	{
 		friend class Socket;
 	public:
+		/**
+		 * \brief Represents the header of a Message object.
+		 */
 		class Header
 		{
 		public:
@@ -71,7 +74,7 @@ namespace spk
 			void reset(uint32_t p_size);
 		};
 
-		using Type = Header::Type;
+		using Type = Header::Type; ///< Redirection of the Type describe in Header class
 
 	private:
 		Header _header; /**< Header of the message */

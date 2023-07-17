@@ -15,9 +15,9 @@ namespace spk
 	{
 	}
 
-	void CentralNodeManager::setCentralNode(CentralNode *p_client)
+	void CentralNodeManager::setCentralNode(CentralNode *p_centralNode)
 	{
-		_centralNodeToManage = p_client;
+		_centralNodeToManage = p_centralNode;
 	}
 
 	CentralNode *CentralNodeManager::centralNode()

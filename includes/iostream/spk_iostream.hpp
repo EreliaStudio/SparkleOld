@@ -149,12 +149,24 @@ namespace spk
 			return (buffer.prefixSize());
 		}
 
-
+		/**
+		 * @brief Locks the stream's buffer, ensuring thread safety.
+		 *
+		 * This method prevents simultaneous access to the stream's buffer from different threads.
+		 * It effectively provides a mechanism to ensure that any modifications to the buffer
+		 * (such as appending output or changing the prefix) are done in a thread-safe manner.
+		 */
 		void lock()
 		{
 			buffer.lock();
 		}
 		
+		/**
+		 * @brief Unlocks the stream's buffer, allowing other threads to access it.
+		 *
+		 * This method ends the period of exclusive access that began with a call to `lock()`.
+		 * After a call to `unlock()`, the buffer can be accessed by the next thread that successfully locks it.
+		 */
 		void unlock()
 		{
 			buffer.unlock();
