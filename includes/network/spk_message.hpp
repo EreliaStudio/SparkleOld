@@ -37,7 +37,9 @@ namespace spk
 		DataBuffer _content;
 	
 	public:
-		Message(int32_t p_id = 0);
+		Message(Header::Type p_id = 0);
+
+		Message createAwnser(Header::Type p_id) const;
 
 		Header& header();
 		const Header& header() const;

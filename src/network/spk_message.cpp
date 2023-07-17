@@ -32,9 +32,20 @@ namespace spk
 		_size = p_size;
 	}
 
-	Message::Message(int32_t p_id) : _header(p_id)
+	Message::Message(Header::Type p_type) : _header(p_type)
 	{
 
+	}
+	
+	Message Message::createAwnser(Header::Type p_type) const
+	{
+		Message result;
+
+		result._header = _header;
+		result._header._size = 0;
+		result._header.setType(p_type);
+
+		return (result);
 	}
 
 	Message::Header &Message::header()

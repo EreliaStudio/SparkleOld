@@ -35,8 +35,12 @@ namespace spk
 				{
 					EmiterID newId = _findValidID();
 					_clients[newId] = std::move(newSocket);
+					DEBUG_LINE();
 					if (_onNewConnectionCallback != nullptr)
+					{
+						DEBUG_LINE();
 						_onNewConnectionCallback(newId);
+					}
 				}
 			});
 
@@ -54,7 +58,7 @@ namespace spk
 
 						switch (readStatus)
 						{
-							case Socket::ReadResult::Closed:					
+							case Socket::ReadResult::Closed:
 								_clients.erase(it);
 								break;
 							case Socket::ReadResult::Success:

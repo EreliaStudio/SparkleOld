@@ -35,18 +35,27 @@ namespace spk
 
 		void treatMessages();
 
-		template <typename Funct, typename ... Args>
-		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
+		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct)
 		{
 			if (_onMessageReceptionCallbacks.contains(p_id) == true)
-				spk::throwException(L"Callback already defined for message type [" + std::to_wstring(p_id) + L"]");
-			_onMessageReceptionCallbacks[p_id] = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
+				spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
+			_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1);
 		}
-
-		template <typename Funct, typename ... Args>
-		void setUnknowMessageReceptionCallback(Funct&& p_funct, Args&& ... p_args)
+		template <typename ... Args>
+		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&, Args...)> p_funct, Args&& ... p_args)
 		{
-			_onUnknowMessageReception = std::bind(std::forward<Funct>(p_funct), std::placeholders::_1, std::forward<Args>(p_args)...);
+			if (_onMessageReceptionCallbacks.contains(p_id) == true)
+				spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
+			_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::forward<Args>(p_args)...);
+		}
+		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct)
+		{
+			_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1);
+		}
+		template <typename ... Args>
+		void setUnknowMessageReceptionCallback(std::function<void(const spk::Message&, Args...)> p_funct, Args&& ... p_args)
+		{
+			_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1, std::forward<Args>(p_args)...);
 		}
 
 		void send(const spk::Message& p_msg);
