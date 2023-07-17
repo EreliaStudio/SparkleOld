@@ -2,14 +2,6 @@
 
 namespace spk
 {
-	void CentralNodeManager::_onRender()
-	{
-	}
-
-	void CentralNodeManager::_onGeometryChange()
-	{
-	}
-
 	bool CentralNodeManager::_onUpdate()
 	{
 		if (_centralNodeToManage != nullptr)
@@ -18,7 +10,7 @@ namespace spk
 	}
 
 	CentralNodeManager::CentralNodeManager(const std::wstring &p_name) : 
-		AbstractWidget(p_name),
+		NoGraphicsWidget(p_name),
 		_centralNodeToManage(nullptr)
 	{
 	}

@@ -179,6 +179,11 @@ namespace spk
 		virtual void _onGeometryChange() {}
 
 		virtual void _render() { }
+
+	public:
+		NoGraphicsWidget(const std::wstring& p_name) :
+			AbstractWidget(p_name)
+		{}
 	};
 
 	/**
@@ -192,6 +197,11 @@ namespace spk
 	private:
 		virtual bool _onUpdate() { return (false); }
 		virtual bool _update() { return (false); }
+
+	public:
+		OnlyGraphicsWidget(const std::wstring& p_name) :
+			AbstractWidget(p_name)
+		{}
 	};
 
 };

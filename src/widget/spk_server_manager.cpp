@@ -2,15 +2,6 @@
 
 namespace spk
 {
-	void ServerManager::_onRender()
-	{
-
-	}
-
-	void ServerManager::_onGeometryChange()
-	{
-
-	}
 
 	bool ServerManager::_onUpdate()
 	{
@@ -20,7 +11,7 @@ namespace spk
 	}
 
 	ServerManager::ServerManager(const std::wstring& p_name) :
-		AbstractWidget(p_name),
+		NoGraphicsWidget(p_name),
 		_serverToManage(nullptr)
 	{
 

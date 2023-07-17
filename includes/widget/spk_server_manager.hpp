@@ -5,13 +5,11 @@
 
 namespace spk
 {
-	class ServerManager : public AbstractWidget
+	class ServerManager : public NoGraphicsWidget
 	{
 	private:
 		Server* _serverToManage;
 
-		void _onRender();
-		void _onGeometryChange();
 		bool _onUpdate();
 	public:
 		ServerManager(const std::wstring& p_name);

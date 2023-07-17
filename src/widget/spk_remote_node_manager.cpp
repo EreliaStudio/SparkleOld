@@ -2,15 +2,6 @@
 
 namespace spk
 {
-	void RemoteNodeManager::_onRender()
-	{
-
-	}
-
-	void RemoteNodeManager::_onGeometryChange()
-	{
-		
-	}
 
 	bool RemoteNodeManager::_onUpdate()
 	{
@@ -20,7 +11,7 @@ namespace spk
 	}
 
 	RemoteNodeManager::RemoteNodeManager(const std::wstring& p_name) :
-		AbstractWidget(p_name),
+		NoGraphicsWidget(p_name),
 		_remoteNodeToManage(nullptr)
 	{
 

@@ -2,13 +2,6 @@
 
 namespace spk
 {
-	void ClientManager::_onRender()
-	{
-	}
-
-	void ClientManager::_onGeometryChange()
-	{
-	}
 
 	bool ClientManager::_onUpdate()
 	{
@@ -18,7 +11,7 @@ namespace spk
 	}
 
 	ClientManager::ClientManager(const std::wstring &p_name) :
-		AbstractWidget(p_name),
+		NoGraphicsWidget(p_name),
 		_clientToManage(nullptr)
 	{
 	}
