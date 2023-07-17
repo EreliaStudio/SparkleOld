@@ -15,7 +15,11 @@ namespace spk
 		static void _releaseWinSockData();
 	public:
 		NetworkObject();
-		NetworkObject(const NetworkObject& p_other);
+		NetworkObject(const NetworkObject& p_other);   
+		NetworkObject(NetworkObject&& p_other);
+
+		NetworkObject& operator=(const NetworkObject& p_other);
+		NetworkObject& operator=(NetworkObject&& p_other);
 
 		~NetworkObject();
 	};

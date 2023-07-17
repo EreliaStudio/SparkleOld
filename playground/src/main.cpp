@@ -1,117 +1,95 @@
 #include "playground.hpp"
 
-class NetworkAbstraction : public spk::AbstractWidget
-{
-private:
-	spk::Server* _server;
-	spk::Client* _client;
-
-	void _onRender()
-	{
-
-	}
-	void _onGeometryChange()
-	{
-
-	}
-
-	bool _onUpdate()
-	{		
-		return (false);
-	}
-
-	void sendToClient(const size_t& p_msgID, const size_t& p_awnserID)
-	{
-		if (_server->_clients.size() == 0)
-			return ;
-
-		_server->sendTo(_server->_clients.begin()->second, spk::Message(p_awnserID));
-	}
-	void sendToServer(const size_t& p_msgID, const size_t& p_awnserID)
-	{
-		_client->send(spk::Message(p_awnserID));
-	}
-public:
-	NetworkAbstraction(std::wstring p_name) : spk::AbstractWidget(p_name)
-	{
-		
-	}
-
-	void setServer(spk::Server* p_server)
-	{
-		_server = p_server;
-
-		_server->setOnMessageReceptionCallback(0, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(0, 0);
-		});
-		_server->setOnMessageReceptionCallback(1, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(1, 1);
-		});
-		_server->setOnMessageReceptionCallback(2, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(2, 2);
-		});
-		_server->setOnMessageReceptionCallback(3, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(3, 3);
-		});
-		_server->setOnMessageReceptionCallback(4, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(4, 4);
-		});
-		_server->setOnMessageReceptionCallback(5, [&](const spk::Server::ID& p_emiter, const spk::Message& p_msg){
-			sendToClient(5, 5);
-		});
-	}
-
-	void setClient(spk::Client* p_client)
-	{
-		_client = p_client;
-
-		_client->setOnMessageReceptionCallback(0, [&](const spk::Message& p_msg){
-			sendToServer(0, 1);
-		});
-		_client->setOnMessageReceptionCallback(1, [&](const spk::Message& p_msg){
-			sendToServer(1, 2);
-		});
-		_client->setOnMessageReceptionCallback(2, [&](const spk::Message& p_msg){
-			sendToServer(2, 3);
-		});
-		_client->setOnMessageReceptionCallback(3, [&](const spk::Message& p_msg){
-			sendToServer(3, 4);
-		});
-		_client->setOnMessageReceptionCallback(4, [&](const spk::Message& p_msg){
-			sendToServer(4, 5);
-		});
-		_client->setOnMessageReceptionCallback(5, [&](const spk::Message& p_msg){
-			static int nbLoop = 0;
-			spk::cout << "Last message received : Loop [" << nbLoop << "]" << std::endl;
-			nbLoop++;
-			sendToServer(5, 0);
-		});
-	}
-};
-
-
 int main()
 {
 	spk::Application app(L"Playground", spk::Vector2Int(400, 400));
-	spk::Server server;
-	spk::Client client;
-	
-	spk::ServerManager* serverManager = app.addRootWidget<spk::ServerManager>(L"ServerManager");
-	serverManager->setServer(&server);
-	serverManager->server()->start(12500);
-	serverManager->activate();
 
-	spk::ClientManager* clientManager = app.addRootWidget<spk::ClientManager>(L"ClientManager");
-	clientManager->setClient(&client);
-	clientManager->client()->connect(L"127.0.0.1", 12500);
-	clientManager->activate();
+	spk::CentralNode centralNode;
 
-	NetworkAbstraction* networkAbstraction = app.addRootWidget<NetworkAbstraction>(L"NetworkAbstractionWidget");
-	networkAbstraction->setServer(serverManager->server());
-	networkAbstraction->setClient(clientManager->client());
-	networkAbstraction->activate();
+	spk::RemoteNode nodeA;
+	spk::Server serverA;
 
-	clientManager->client()->send(spk::Message(0));
+	spk::RemoteNode nodeB;
+	spk::Server serverB;
+
+	spk::Client clientA;
+	spk::Client clientB;
+
+	clientA.setOnMessageReceptionCallback(0, [&clientA](const spk::Message& p_msg){
+		spk::cout << "Receiving message type 0" << std::endl;
+		clientA.send(spk::Message(1));
+	});
+	clientA.setOnMessageReceptionCallback(1, [&clientA](const spk::Message& p_msg){
+		spk::cout << "Receiving message type 1" << std::endl;
+		clientA.send(spk::Message(2));
+	});
+	clientA.setOnMessageReceptionCallback(2, [&clientA](const spk::Message& p_msg){
+		spk::cout << "Receiving final message type 2" << std::endl;
+	});
+
+	clientB.setOnMessageReceptionCallback(0, [&clientB](const spk::Message& p_msg){
+		spk::cout << "Receiving message type 0" << std::endl;
+		clientB.send(spk::Message(1));
+	});
+	clientB.setOnMessageReceptionCallback(1, [&clientB](const spk::Message& p_msg){
+		spk::cout << "Receiving message type 1" << std::endl;
+		clientB.send(spk::Message(2));
+	});
+	clientB.setOnMessageReceptionCallback(2, [&clientB](const spk::Message& p_msg){
+		spk::cout << "Receiving final message type 2" << std::endl;
+	});
+
+	centralNode.redirectMessage(0, &nodeA);
+	centralNode.redirectMessage(1, &nodeB);
+	centralNode.redirectMessage(2, &nodeA);
+
+	serverA.setOnMessageReceptionCallback(0, [&serverA](const spk::Server::EmiterID& p_emiter, const spk::Message& p_msg){
+		serverA.sendTo(p_emiter, spk::Message(0));
+	});
+	serverB.setOnMessageReceptionCallback(1, [&serverB](const spk::Server::EmiterID& p_emiter, const spk::Message& p_msg){
+		serverB.sendTo(p_emiter, spk::Message(1));
+	});
+	serverA.setOnMessageReceptionCallback(2, [&serverA](const spk::Server::EmiterID& p_emiter, const spk::Message& p_msg){
+		serverA.sendTo(p_emiter, spk::Message(2));
+	});
+
+	centralNode.start(12500);
+	serverA.start(12501);
+	serverB.start(12502);
+
+	clientA.connect(L"127.0.0.1", 12500);
+	clientB.connect(L"127.0.0.1", 12500);
+
+	nodeA.connect(L"127.0.0.1", 12501);
+	nodeB.connect(L"127.0.0.1", 12502);
+
+	spk::CentralNodeManager* centralNodeManager = app.addRootWidget<spk::CentralNodeManager>(L"CentralNodeManager");
+	centralNodeManager->setCentralNode(&centralNode);
+	centralNodeManager->activate(); 
+
+	spk::ServerManager* serverManagerNodeA = app.addRootWidget<spk::ServerManager>(L"ServerNodeA");
+	serverManagerNodeA->setServer(&serverA);
+	serverManagerNodeA->activate();
+
+	spk::ServerManager* serverManagerNodeB = app.addRootWidget<spk::ServerManager>(L"ServerNodeB");
+	serverManagerNodeB->setServer(&serverB);
+	serverManagerNodeB->activate();
+
+	spk::RemoteNodeManager* removeManagerA = app.addRootWidget<spk::RemoteNodeManager>(L"RemoveNodeA");
+	removeManagerA->setRemoteNode(&nodeA);
+	removeManagerA->activate(); 
+
+	spk::RemoteNodeManager* removeManagerB = app.addRootWidget<spk::RemoteNodeManager>(L"RemoteNodeB");
+	removeManagerB->setRemoteNode(&nodeB);
+	removeManagerB->activate(); 
+
+	spk::ClientManager* clientManagerA = app.addRootWidget<spk::ClientManager>(L"ClientManagerA");
+	clientManagerA->setClient(&clientA);
+	clientManagerA->activate(); 
+
+	spk::ClientManager* clientManagerB = app.addRootWidget<spk::ClientManager>(L"ClientManagerB");
+	clientManagerB->setClient(&clientB);
+	clientManagerB->activate(); 
 
 	return (app.run());
 }

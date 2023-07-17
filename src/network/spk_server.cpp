@@ -2,7 +2,7 @@
 
 namespace spk
 {
-	void Server::_treatMessage(const ID &p_emiterID, const spk::Message &p_msg)
+	void Server::_treatMessage(const EmiterID &p_emiterID, const spk::Message &p_msg)
 	{
 		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
@@ -11,7 +11,8 @@ namespace spk
 		}
 		else
 		{
-			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().id()) + L"]");
+			if (_onUnknownMessageTypeCallback != nullptr)
+				_onUnknownMessageTypeCallback(p_emiterID, p_msg);
 		}
 	}
 
@@ -32,8 +33,10 @@ namespace spk
 				Socket newSocket;
 				if (_Acceptor.accept(newSocket) == true)
 				{
-					ID newId = _findValidID();
-					_clients[newId] = newSocket;
+					EmiterID newId = _findValidID();
+					_clients[newId] = std::move(newSocket);
+					if (_onNewConnectionCallback != nullptr)
+						_onNewConnectionCallback(newId);
 				}
 			});
 
@@ -87,13 +90,15 @@ namespace spk
 	{
 		while (_messagesToTreat.empty() == false)
 		{
-			std::pair<ID, spk::Message> pairMessageID = _messagesToTreat.pop_front();
+			std::pair<EmiterID, spk::Message> pairMessageID = _messagesToTreat.pop_front();
 			_treatMessage(pairMessageID.first, pairMessageID.second);
 		}
 	}
 
-	void Server::sendTo(Socket &p_target, const spk::Message &p_msg)
+	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Message &p_msg)
 	{
-		p_target.send(p_msg);
+		if (_clients.contains(p_emiterID) == false)
+			spk::throwException(L"Emiter link to no client");
+		_clients[p_emiterID].send(p_msg);
 	}
 }

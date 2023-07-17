@@ -12,9 +12,19 @@ namespace spk
 		return (_id);
 	}
 
+	const Message::Header::EmiterID& Message::Header::emiterID() const
+	{
+		return (_emiter);
+	}
+
 	void Message::Header::setType(Type p_id)
 	{
 		_id = p_id;
+	}
+
+	void Message::Header::setEmiter(EmiterID p_emiter) const
+	{
+		_emiter = p_emiter;
 	}
 
 	void Message::Header::reset(uint32_t p_size)
@@ -24,6 +34,7 @@ namespace spk
 
 	Message::Message(int32_t p_id) : _header(p_id)
 	{
+
 	}
 
 	Message::Header &Message::header()

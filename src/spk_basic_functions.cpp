@@ -26,6 +26,7 @@ namespace spk
 		size_t beginColon = prettyFunction.rfind(L"::", end);
 		if (beginColon != std::wstring::npos) beginColon += 2;
 		size_t beginSpace = prettyFunction.rfind(L" ", end);
+		if (beginColon == std::wstring::npos) return (prettyFunction.substr(beginSpace, end - beginSpace));
 		if (beginSpace != std::wstring::npos) beginSpace += 1;
 		size_t begin = std::max(beginColon, beginSpace);
 		std::wstring result = prettyFunction.substr(begin, end - begin);
@@ -52,6 +53,7 @@ namespace spk
 				closingBracket--;
 			else if ((prettyFunction[i] == L' ' || prettyFunction[i] == L'\t') && closingBracket == 0)
 				break;
+
 			resultStart = i;
 		}
 

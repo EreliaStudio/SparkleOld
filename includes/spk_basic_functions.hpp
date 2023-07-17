@@ -152,6 +152,8 @@ namespace spk
 		}
 		return (result);
 	}
+
+	void printCallStack();
 }
 
 #if !defined(__PRETTY_FUNCTION__) && !defined(__GNUC__)

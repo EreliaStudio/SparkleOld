@@ -1,39 +1,24 @@
 #pragma once
 
 #include <map>
+#include <functional>
 #include "network/spk_message.hpp"
-#include "network/spk_acceptor.hpp"
-#include "network/spk_socket.hpp"
-#include "threading/spk_persistent_worker.hpp"
-#include "threading/spk_thread_safe_queue.hpp"
+#include "network/spk_node.hpp"
 #include "spk_basic_functions.hpp"
 
 namespace spk
 {
-	class Client
+	class LocalNode : public spk::Node
 	{
-	public:
-		spk::PersistentWorker _socketContextWorker;
-		spk::ContractProvider::Contract _readingSocketDataContract;
-
-		spk::Socket _socket;
-		spk::ThreadSafeQueue<spk::Message> _messagesToTreat;
-
+	private:
 		std::map<spk::Message::Type, std::function<void(const spk::Message&)>> _onMessageReceptionCallbacks;
+
 		std::function<void(const spk::Message&)> _onUnknowMessageReception = [&](const spk::Message& p_msg){
-			spk::throwException(L"Callback already define for message ID [" + std::to_wstring(p_msg.header().id()) + L"]");
+			spk::throwException(L"Message [" + std::to_wstring(p_msg.header().id()) + L"] not defined in local node");
 		};
 
-		void _treatMessage(const spk::Message& p_msg);
-
 	public:
-		Client();
-		~Client();
-
-		void connect(const std::wstring& p_serverAddress, const size_t& p_serverPort);
-		void disconnect();
-
-		void treatMessages();
+		LocalNode();
 
 		template <typename Funct, typename ... Args>
 		void setOnMessageReceptionCallback(const spk::Message::Type& p_id, Funct&& p_funct, Args&& ... p_args)
