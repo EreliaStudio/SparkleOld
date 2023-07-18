@@ -59,6 +59,12 @@ namespace spk
 		Window(const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 	public:
+
+		/**
+		 * @brief Destroys the Window object.
+		 */
+		~Window();
+		
 		/**
 		 * @brief Sets the window geometry.
 		 *
