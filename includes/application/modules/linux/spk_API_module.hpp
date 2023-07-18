@@ -15,6 +15,7 @@ namespace spk
 	class APIModule
 	{
 	private:
+		spk::ThreadSafeQueue<SystemMessage> _systemQueue; ///< Thread-safe queue for window system messages.
 		spk::ThreadSafeQueue<SystemMessage> _windowQueue; ///< Thread-safe queue for window system messages.
 		spk::ThreadSafeQueue<SystemMessage> _mouseQueue; ///< Thread-safe queue for mouse system messages.
 		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue; ///< Thread-safe queue for keyboard system messages.
@@ -36,6 +37,13 @@ namespace spk
 		 * This method should be implemented in the .cpp file.
 		 */
 		void pullMessage();
+
+		/**
+		 * @brief Returns the thread-safe queue for system messages.
+		 * 
+		 * @return Thread-safe queue for system messages.
+		 */
+		spk::ThreadSafeQueue<SystemMessage> &systemQueue() { return _systemQueue; }
 
 		/**
 		 * @brief Returns the thread-safe queue for window system messages.

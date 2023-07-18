@@ -52,6 +52,20 @@ namespace spk
 			title_str.c_str());
 	}
 
+	static xcb_intern_atom_reply_t* _enableDestroyXCBProperty(xcb_connection_t* p_connection, xcb_window_t p_window)
+	{
+		xcb_intern_atom_cookie_t cookie = xcb_intern_atom(p_connection, 1, 12, "WM_PROTOCOLS");
+		xcb_intern_atom_cookie_t cookie2 = xcb_intern_atom(p_connection, 0, 16, "WM_DELETE_WINDOW");
+
+		xcb_intern_atom_reply_t* reply = xcb_intern_atom_reply(p_connection, cookie, 0);
+		xcb_intern_atom_reply_t* reply2 = xcb_intern_atom_reply(p_connection, cookie2, 0);
+
+		xcb_change_property(p_connection, XCB_PROP_MODE_REPLACE, p_window, (*reply).atom, 4, 32, 1, &(*reply2).atom);
+		free(reply);
+
+		return reply2;
+	}
+
 	Window::Window(const std::wstring& p_title, const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
@@ -65,11 +79,14 @@ namespace spk
 		_createWindow();
 		_nameWindow(p_title);
 
+		_atom_wm_delete_window = _enableDestroyXCBProperty(_connection, _window);
+
 		xcb_map_window(_connection, _window);
 	}
 
 	Window::~Window()
 	{
+		free(_atom_wm_delete_window);
 		xcb_destroy_window(_connection, _window);
 		xcb_disconnect(_connection);
 	}

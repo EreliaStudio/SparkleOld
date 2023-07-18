@@ -12,7 +12,7 @@ namespace spk
 			{
 				xcb_resize_request_event_t *resizeRequestEvent = reinterpret_cast<xcb_resize_request_event_t *>(p_event);
 				
-				spk::Singleton<Window>::instance()->resize(spk::Vector2Int(resizeRequestEvent->width, resizeRequestEvent->height));
+				Window::instance()->resize(spk::Vector2Int(resizeRequestEvent->width, resizeRequestEvent->height));
 				break;
 			}
 		}
@@ -20,16 +20,21 @@ namespace spk
 
 	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size) : IMessageConsumerModule(p_queue)
 	{
-		spk::Singleton<spk::Window>::instanciate(p_title, p_size);
+		Window::instanciate(p_title, p_size);
+	}
+
+	WindowModule::~WindowModule()
+	{
+		Window::release();
 	}
 
 	void WindowModule::render()
 	{
-		spk::Singleton<Window>::instance()->render();
+		Window::instance()->render();
 	}
 
 	void WindowModule::clear()
 	{
-		spk::Singleton<Window>::instance()->clear();
+		Window::instance()->clear();
 	}
 }
