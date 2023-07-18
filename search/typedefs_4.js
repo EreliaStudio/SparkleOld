@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_729',['Unit',['../classspk_1_1JSON_1_1Object.html#a3c309e7bde9def6b14f8ea1eeb17b9a9',1,'spk::JSON::Object']]]
+  ['snapshot_869',['Snapshot',['../classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b',1,'spk::Memento']]]
 ];

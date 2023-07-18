@@ -109,6 +109,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7539264843e3875f9915d259ad145c7c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IOStream.html#a7539264843e3875f9915d259ad145c7c">prefixSize</a> () const</td></tr>
 <tr class="memdesc:a7539264843e3875f9915d259ad145c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the maximum prefix used.  <a href="classspk_1_1IOStream.html#a7539264843e3875f9915d259ad145c7c">More...</a><br /></td></tr>
 <tr class="separator:a7539264843e3875f9915d259ad145c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f0961ca9ec5167acebc6d5dfe8ea6e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IOStream.html#a4f0961ca9ec5167acebc6d5dfe8ea6e2">lock</a> ()</td></tr>
+<tr class="memdesc:a4f0961ca9ec5167acebc6d5dfe8ea6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the stream's buffer, ensuring thread safety.  <a href="classspk_1_1IOStream.html#a4f0961ca9ec5167acebc6d5dfe8ea6e2">More...</a><br /></td></tr>
+<tr class="separator:a4f0961ca9ec5167acebc6d5dfe8ea6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06291c0bc38a3813694e9a3da967010c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IOStream.html#a06291c0bc38a3813694e9a3da967010c">unlock</a> ()</td></tr>
+<tr class="memdesc:a06291c0bc38a3813694e9a3da967010c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the stream's buffer, allowing other threads to access it.  <a href="classspk_1_1IOStream.html#a06291c0bc38a3813694e9a3da967010c">More...</a><br /></td></tr>
+<tr class="separator:a06291c0bc38a3813694e9a3da967010c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An output stream with a custom prefix, suitable for logging or debugging. </p>
@@ -160,6 +166,34 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4f0961ca9ec5167acebc6d5dfe8ea6e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f0961ca9ec5167acebc6d5dfe8ea6e2">&#9670;&nbsp;</a></span>lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::IOStream::lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locks the stream's buffer, ensuring thread safety. </p>
+<p>This method prevents simultaneous access to the stream's buffer from different threads. It effectively provides a mechanism to ensure that any modifications to the buffer (such as appending output or changing the prefix) are done in a thread-safe manner. </p>
+
+</div>
+</div>
 <a id="a7539264843e3875f9915d259ad145c7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7539264843e3875f9915d259ad145c7c">&#9670;&nbsp;</a></span>prefixSize()</h2>
 
@@ -219,6 +253,34 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a06291c0bc38a3813694e9a3da967010c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06291c0bc38a3813694e9a3da967010c">&#9670;&nbsp;</a></span>unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::IOStream::unlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unlocks the stream's buffer, allowing other threads to access it. </p>
+<p>This method ends the period of exclusive access that began with a call to <code><a class="el" href="classspk_1_1IOStream.html#a4f0961ca9ec5167acebc6d5dfe8ea6e2" title="Locks the stream&#39;s buffer, ensuring thread safety.">lock()</a></code>. After a call to <code><a class="el" href="classspk_1_1IOStream.html#a06291c0bc38a3813694e9a3da967010c" title="Unlocks the stream&#39;s buffer, allowing other threads to access it.">unlock()</a></code>, the buffer can be accessed by the next thread that successfully locks it. </p>
 
 </div>
 </div>

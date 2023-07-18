@@ -1,9 +1,13 @@
 <map id="spk::AbstractWidget" name="spk::AbstractWidget">
-<area shape="rect" id="node1" title="Abstract base class for widgets." alt="" coords="119,259,272,285"/>
-<area shape="rect" id="node6" href="$classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="5,333,180,360"/>
-<area shape="rect" id="node7" href="$classspk_1_1OnlyGraphicsWidget.html" title="Class for widgets with only graphics." alt="" coords="205,333,391,360"/>
-<area shape="rect" id="node2" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="25,169,184,211"/>
-<area shape="rect" id="node3" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="208,177,364,203"/>
-<area shape="rect" id="node4" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="212,80,360,121"/>
-<area shape="rect" id="node5" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="205,5,367,32"/>
+<area shape="rect" id="node1" title="Abstract base class for widgets." alt="" coords="619,107,772,133"/>
+<area shape="rect" id="node6" href="$classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="826,81,1001,108"/>
+<area shape="rect" id="node11" href="$classspk_1_1OnlyGraphicsWidget.html" title="Class for widgets with only graphics." alt="" coords="820,132,1007,159"/>
+<area shape="rect" id="node2" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="412,70,571,111"/>
+<area shape="rect" id="node3" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,136,569,163"/>
+<area shape="rect" id="node4" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="216,129,364,170"/>
+<area shape="rect" id="node5" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,136,168,163"/>
+<area shape="rect" id="node7" href="$classspk_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::CentralNode." alt="" coords="1057,5,1247,32"/>
+<area shape="rect" id="node8" href="$classspk_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphicsWidget." alt="" coords="1078,56,1226,83"/>
+<area shape="rect" id="node9" href="$classspk_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphicsWidget." alt="" coords="1055,107,1249,133"/>
+<area shape="rect" id="node10" href="$classspk_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1076,157,1228,184"/>
 </map>

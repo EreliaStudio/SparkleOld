@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parent_727',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]]
+  ['job_867',['Job',['../classspk_1_1AbstractApplication.html#a1c093636f865b66a2eb5090719b2d30c',1,'spk::AbstractApplication::Job()'],['../classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2',1,'spk::PersistentWorker::Job()'],['../classspk_1_1WorkerPool.html#ab0ccd4ab156d8131b804adb96f5c9c67',1,'spk::WorkerPool::Job()']]]
 ];

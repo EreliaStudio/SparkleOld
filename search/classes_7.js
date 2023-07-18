@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nographicswidget_381',['NoGraphicsWidget',['../classspk_1_1NoGraphicsWidget.html',1,'spk']]]
+  ['localnode_447',['LocalNode',['../classspk_1_1LocalNode.html',1,'spk']]]
 ];

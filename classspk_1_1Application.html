@@ -108,6 +108,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcd265ffb90968e0e1351bd2ca899f11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">~Application</a> ()</td></tr>
 <tr class="memdesc:abcd265ffb90968e0e1351bd2ca899f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classspk_1_1Application.html" title="Main class for managing application.">Application</a> object.  <a href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">More...</a><br /></td></tr>
 <tr class="separator:abcd265ffb90968e0e1351bd2ca899f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b429ea88aa340b70d775deb1fb9623c"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
+<tr class="memitem:a7b429ea88aa340b70d775deb1fb9623c"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">addRootWidget</a> (Args &amp;&amp;... p_args)</td></tr>
+<tr class="memdesc:a7b429ea88aa340b70d775deb1fb9623c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new widget inside the application, with the central widget as parent.  <a href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">More...</a><br /></td></tr>
+<tr class="separator:a7b429ea88aa340b70d775deb1fb9623c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb34e8823d56131a205757ca25746e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a> (const <a class="el" href="structspk_1_1IVector2.html">spk::Vector2Int</a> &amp;p_size)</td></tr>
 <tr class="memdesc:a4bb34e8823d56131a205757ca25746e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the application window and central widget.  <a href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">More...</a><br /></td></tr>
 <tr class="separator:a4bb34e8823d56131a205757ca25746e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,6 +243,50 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b429ea88aa340b70d775deb1fb9623c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b429ea88aa340b70d775deb1fb9623c">&#9670;&nbsp;</a></span>addRootWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TChildrenType , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TChildrenType* spk::Application::addRootWidget </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>p_args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a new widget inside the application, with the central widget as parent. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TChildrenType</td><td>The type of the children widget. </td></tr>
+    <tr><td class="paramname">Args</td><td>The types of the arguments for constructing the children widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_args</td><td>The arguments for constructing the children widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the children widget. </dd></dl>
+
+</div>
+</div>
 <a id="a4bb34e8823d56131a205757ca25746e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bb34e8823d56131a205757ca25746e6">&#9670;&nbsp;</a></span>resize()</h2>
 

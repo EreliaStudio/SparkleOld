@@ -1,0 +1,9 @@
+<map id="spk::ServerManager" name="spk::ServerManager">
+<area shape="rect" id="node1" title="A widget that is used to manage a server." alt="" coords="99,408,251,435"/>
+<area shape="rect" id="node2" href="$classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics." alt="" coords="88,333,263,360"/>
+<area shape="rect" id="node3" href="$classspk_1_1AbstractWidget.html" title="Abstract base class for widgets." alt="" coords="99,259,252,285"/>
+<area shape="rect" id="node4" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="5,169,164,211"/>
+<area shape="rect" id="node5" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="188,177,344,203"/>
+<area shape="rect" id="node6" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="192,80,340,121"/>
+<area shape="rect" id="node7" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="185,5,347,32"/>
+</map>

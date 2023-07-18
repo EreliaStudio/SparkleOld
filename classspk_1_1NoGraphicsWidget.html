@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classspk_1_1NoGraphicsWidget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::NoGraphicsWidget Class Reference</div>  </div>
@@ -82,12 +83,16 @@ Inheritance diagram for spk::NoGraphicsWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1NoGraphicsWidget__inherit__graph.png" border="0" usemap="#aspk_1_1NoGraphicsWidget_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1NoGraphicsWidget_inherit__map" id="aspk_1_1NoGraphicsWidget_inherit__map">
-<area shape="rect" title="Class for widgets without graphics." alt="" coords="88,333,263,360"/>
-<area shape="rect" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets." alt="" coords="99,259,252,285"/>
-<area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="5,169,164,211"/>
-<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="188,177,344,203"/>
-<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="192,80,340,121"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="185,5,347,32"/>
+<area shape="rect" title="Class for widgets without graphics." alt="" coords="820,81,995,108"/>
+<area shape="rect" href="classspk_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::CentralNode." alt="" coords="1045,5,1235,32"/>
+<area shape="rect" href="classspk_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphicsWidget." alt="" coords="1066,56,1214,83"/>
+<area shape="rect" href="classspk_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphicsWidget." alt="" coords="1043,107,1237,133"/>
+<area shape="rect" href="classspk_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1064,157,1216,184"/>
+<area shape="rect" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets." alt="" coords="619,81,772,108"/>
+<area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="412,45,571,86"/>
+<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,111,569,137"/>
+<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="216,103,364,145"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,111,168,137"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -104,17 +109,11 @@ Collaboration diagram for spk::NoGraphicsWidget:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_classspk_1_1InherenceObject"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1InherenceObject')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject&lt; AbstractWidget &gt;</a></td></tr>
-<tr class="memitem:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
-<tr class="separator:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
-<tr class="separator:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb38a23ee0e49f56d6635bc9b08d347d inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt;</td></tr>
-<tr class="separator:abb38a23ee0e49f56d6635bc9b08d347d inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td></tr>
-<tr class="separator:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4035c6ce418524b00723933d2c6ab6e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1NoGraphicsWidget.html#a4035c6ce418524b00723933d2c6ab6e3">NoGraphicsWidget</a> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memdesc:a4035c6ce418524b00723933d2c6ab6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics.">NoGraphicsWidget</a> class.  <a href="classspk_1_1NoGraphicsWidget.html#a4035c6ce418524b00723933d2c6ab6e3">More...</a><br /></td></tr>
+<tr class="separator:a4035c6ce418524b00723933d2c6ab6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classspk_1_1AbstractWidget"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classspk_1_1AbstractWidget')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classspk_1_1AbstractWidget.html">spk::AbstractWidget</a></td></tr>
 <tr class="memitem:a02704ad9ce8f817d72fa76b095e53c68 inherit pub_methods_classspk_1_1AbstractWidget"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">AbstractWidget</a> (const std::wstring &amp;p_name)</td></tr>
 <tr class="memdesc:a02704ad9ce8f817d72fa76b095e53c68 inherit pub_methods_classspk_1_1AbstractWidget"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> object with a specified name.  <a href="classspk_1_1AbstractWidget.html#a02704ad9ce8f817d72fa76b095e53c68">More...</a><br /></td></tr>
@@ -208,6 +207,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:adbcbc6cb5215e1fecae1cf18c3840d8e inherit pub_methods_classspk_1_1ActivableObject"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ActivableObject.html#adbcbc6cb5215e1fecae1cf18c3840d8e">addDeactivationCallback</a> (const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
 <tr class="memdesc:adbcbc6cb5215e1fecae1cf18c3840d8e inherit pub_methods_classspk_1_1ActivableObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a callback function to be called when the object is deactivated.  <a href="classspk_1_1ActivableObject.html#adbcbc6cb5215e1fecae1cf18c3840d8e">More...</a><br /></td></tr>
 <tr class="separator:adbcbc6cb5215e1fecae1cf18c3840d8e inherit pub_methods_classspk_1_1ActivableObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classspk_1_1InherenceObject"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classspk_1_1InherenceObject')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject&lt; AbstractWidget &gt;</a></td></tr>
+<tr class="memitem:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
+<tr class="separator:a77e8eb56b6e889a9e8a048bbed8f7c1b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> = <a class="el" href="classspk_1_1AbstractWidget.html">AbstractWidget</a> *</td></tr>
+<tr class="separator:a769d0e2ea8e7635c993671ec9b1a494b inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb38a23ee0e49f56d6635bc9b08d347d inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt;</td></tr>
+<tr class="separator:abb38a23ee0e49f56d6635bc9b08d347d inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td></tr>
+<tr class="separator:a976e2e85b113a15220e094ff9d7afd38 inherit pub_types_classspk_1_1InherenceObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_types_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
 <tr class="memitem:a3ac086eee3bcd57992944a3d146eca1f inherit pro_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a3ac086eee3bcd57992944a3d146eca1f"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> = std::function&lt; void()&gt;</td></tr>
@@ -238,7 +249,42 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for widgets without graphics. </p>
 <p>This class extends the <a class="el" href="classspk_1_1AbstractWidget.html" title="Abstract base class for widgets.">AbstractWidget</a> class and provides an implementation for widgets without graphics. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4035c6ce418524b00723933d2c6ab6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4035c6ce418524b00723933d2c6ab6e3">&#9670;&nbsp;</a></span>NoGraphicsWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">spk::NoGraphicsWidget::NoGraphicsWidget </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classspk_1_1NoGraphicsWidget.html" title="Class for widgets without graphics.">NoGraphicsWidget</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_name</td><td>The name of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>includes/widget/<a class="el" href="spk__abstract__widget_8hpp_source.html">spk_abstract_widget.hpp</a></li>
 </ul>
 </div><!-- contents -->

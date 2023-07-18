@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['snapshot_728',['Snapshot',['../classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b',1,'spk::Memento']]]
+  ['parent_868',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]]
 ];

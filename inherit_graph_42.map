@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Value_1_1Default.html" title="The inner class for managing the default state of the value." alt="" coords="5,5,163,47"/>
+<area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,201,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Window.html" title="Singleton class for window." alt="" coords="249,5,355,32"/>
 </map>

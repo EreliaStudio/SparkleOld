@@ -75,6 +75,25 @@ $(function() {
 <li>seed()
 : <a class="el" href="classspk_1_1Perlin.html#a3802bb8a02f129913f0558643fb80862">spk::Perlin</a>
 </li>
+<li>send()
+: <a class="el" href="classspk_1_1Client.html#ac0d3ce71beded3f0112ec8263a461f06">spk::Client</a>
+, <a class="el" href="classspk_1_1LocalNode.html#ab9becc589ff546223524f0fd9335078d">spk::LocalNode</a>
+, <a class="el" href="classspk_1_1Node.html#aefdeb397da69704b0f510388f1e65c03">spk::Node</a>
+, <a class="el" href="classspk_1_1RemoteNode.html#a4a7eed93d4ae9aeaabbda26fe573fe01">spk::RemoteNode</a>
+, <a class="el" href="classspk_1_1Socket.html#a0e4bf4e23f6a0a72fead218f252f3368">spk::Socket</a>
+</li>
+<li>sendTo()
+: <a class="el" href="classspk_1_1Server.html#a0d6646f393d61b153e2f824be5cc2c34">spk::Server</a>
+</li>
+<li>Server()
+: <a class="el" href="classspk_1_1Server.html#a311b02a7cc7c4e0c000cae9d86604437">spk::Server</a>
+</li>
+<li>server()
+: <a class="el" href="classspk_1_1ServerManager.html#a1de786d50be82453ea02842c23b0aa57">spk::ServerManager</a>
+</li>
+<li>ServerManager()
+: <a class="el" href="classspk_1_1ServerManager.html#ae3c1dd93f55d5acf3bdb5ce757df9fed">spk::ServerManager</a>
+</li>
 <li>set()
 : <a class="el" href="classspk_1_1JSON_1_1Object.html#a0c37111c20936c44f2b64773dbaa2246">spk::JSON::Object</a>
 </li>
@@ -87,11 +106,20 @@ $(function() {
 <li>setBirthCallback()
 : <a class="el" href="classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e">spk::InherenceObject&lt; TType &gt;</a>
 </li>
+<li>setCentralNode()
+: <a class="el" href="classspk_1_1CentralNodeManager.html#afdaed378651f27f7ae67fee1e8c5ccfc">spk::CentralNodeManager</a>
+</li>
+<li>setClient()
+: <a class="el" href="classspk_1_1ClientManager.html#ad4687a61913c810cb9d0d40e71fc5d2e">spk::ClientManager</a>
+</li>
 <li>setCommandsIndicator()
 : <a class="el" href="classspk_1_1CommandParser.html#a9affa43bbb5e9b2f77cdd0f1ae4db743">spk::CommandParser</a>
 </li>
 <li>setCommandsSeparator()
 : <a class="el" href="classspk_1_1CommandParser.html#a1562e2faeccbc3fa6c77585883658171">spk::CommandParser</a>
+</li>
+<li>setConnectionDisconnectionCallback()
+: <a class="el" href="classspk_1_1Server.html#a91b50308c7d599480742d9bb0c80429e">spk::Server</a>
 </li>
 <li>setCounter()
 : <a class="el" href="classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84">spk::Profiler</a>
@@ -111,6 +139,9 @@ $(function() {
 <li>setDuration()
 : <a class="el" href="classspk_1_1Timer.html#aae49033702e6ef1875b4517a969bcc07">spk::Timer</a>
 </li>
+<li>setEmiter()
+: <a class="el" href="classspk_1_1Message_1_1Header.html#a0b10d68759329f90d08d3b8b8262ef8d">spk::Message::Header</a>
+</li>
 <li>setGeometry()
 : <a class="el" href="classspk_1_1AbstractWidget.html#a5e428dc19c69b3fa7686df9c7ccf06cf">spk::AbstractWidget</a>
 , <a class="el" href="classspk_1_1Window.html#a3576ce767e110b73023d76f9a436ff1e">spk::Window</a>
@@ -118,8 +149,16 @@ $(function() {
 <li>setLayout()
 : <a class="el" href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">spk::Keyboard</a>
 </li>
+<li>setNewConnectionCallback()
+: <a class="el" href="classspk_1_1Server.html#ad54bc218961d87d4db3eb0ef2f8a1afe">spk::Server</a>
+</li>
 <li>setNoCommandCallback()
 : <a class="el" href="classspk_1_1CommandParser.html#a0b6abd1be7e2f456f61d9a41947a3cc7">spk::CommandParser</a>
+</li>
+<li>setOnMessageReceptionCallback()
+: <a class="el" href="classspk_1_1Client.html#a75c59f582a5440aeafbcd4a54103b849">spk::Client</a>
+, <a class="el" href="classspk_1_1LocalNode.html#aa88d9b71e360d73f0298b08f175afade">spk::LocalNode</a>
+, <a class="el" href="classspk_1_1Server.html#a5551e91a281fda9bd8ca31c65446420d">spk::Server</a>
 </li>
 <li>setOnUnknowStateExecution()
 : <a class="el" href="classspk_1_1StateMachine.html#a8c2c5d6900d67f3af22c18cb685b5144">spk::StateMachine&lt; TState &gt;</a>
@@ -133,6 +172,12 @@ $(function() {
 <li>setPrefix()
 : <a class="el" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">spk::IOStream</a>
 </li>
+<li>setRemoteNode()
+: <a class="el" href="classspk_1_1RemoteNodeManager.html#a9d2f1daae3a072f9c52cd8f79df8a1fe">spk::RemoteNodeManager</a>
+</li>
+<li>setServer()
+: <a class="el" href="classspk_1_1ServerManager.html#abbb29d3a3d00e29ac1ad50a4ef339bd1">spk::ServerManager</a>
+</li>
 <li>setState()
 : <a class="el" href="classspk_1_1StatedObject.html#a3239267c819fa6825a2e19761f8ed697">spk::StatedObject&lt; TState &gt;</a>
 , <a class="el" href="classspk_1_1StateMachine.html#a282db9ad91b02101dd3f267362dd4c79">spk::StateMachine&lt; TState &gt;</a>
@@ -142,6 +187,14 @@ $(function() {
 </li>
 <li>setStateTransitionCallback()
 : <a class="el" href="classspk_1_1StateMachine.html#aa952867206da0b2c13ae19c17e2b8fa7">spk::StateMachine&lt; TState &gt;</a>
+</li>
+<li>setType()
+: <a class="el" href="classspk_1_1Message_1_1Header.html#a2366de4a79b5b70c950e55476388dfdc">spk::Message::Header</a>
+</li>
+<li>setUnknowMessageReceptionCallback()
+: <a class="el" href="classspk_1_1Client.html#aa3d53f3190a0a09f24ef12385a04cf1c">spk::Client</a>
+, <a class="el" href="classspk_1_1LocalNode.html#a87cef2a12976dd9a7f8a0029b21c8232">spk::LocalNode</a>
+, <a class="el" href="classspk_1_1Server.html#a93bcfb17448c944c18e5be9b2afcb5e9">spk::Server</a>
 </li>
 <li>setupJobs()
 : <a class="el" href="classspk_1_1AbstractApplication.html#ab3404f55d68f8119693f44a45a332f26">spk::AbstractApplication</a>
@@ -156,6 +209,7 @@ $(function() {
 <li>size()
 : <a class="el" href="classspk_1_1DataBuffer.html#a2f13469e9040f9db9d7727cc4aa42778">spk::DataBuffer</a>
 , <a class="el" href="classspk_1_1JSON_1_1Object.html#a8f7363332a391be57bca99aeb05459c6">spk::JSON::Object</a>
+, <a class="el" href="classspk_1_1Message.html#afccc06a7f94af7c62a093c618038a52a">spk::Message</a>
 , <a class="el" href="classspk_1_1Pool.html#ac584858b3175a8feb8cc778542e216c3">spk::Pool&lt; TType &gt;</a>
 , <a class="el" href="classspk_1_1ThreadSafeQueue.html#a6dacede3ce86503fbbd8cc3da5ac67e5">spk::ThreadSafeQueue&lt; T &gt;</a>
 </li>
@@ -175,8 +229,11 @@ $(function() {
 : <a class="el" href="structspk_1_1StandardType.html#a64b8eb651319f881834a6534f4c37236">spk::StandardType&lt; TType, typename &gt;</a>
 </li>
 <li>start()
-: <a class="el" href="classspk_1_1Chronometer.html#af8bcb635c7ebde03542f03ba524c3fac">spk::Chronometer</a>
+: <a class="el" href="classspk_1_1Acceptor.html#ad651e13194b566677cbc5db7d436e8c2">spk::Acceptor</a>
+, <a class="el" href="classspk_1_1CentralNode.html#a227227048867d53ef9bf4a073d93532c">spk::CentralNode</a>
+, <a class="el" href="classspk_1_1Chronometer.html#af8bcb635c7ebde03542f03ba524c3fac">spk::Chronometer</a>
 , <a class="el" href="classspk_1_1PersistentWorker.html#a706be22484b03b2f024308179781e552">spk::PersistentWorker</a>
+, <a class="el" href="classspk_1_1Server.html#a2c6861f00de4fffc513ee1261fcc85f2">spk::Server</a>
 , <a class="el" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">spk::Thread</a>
 , <a class="el" href="classspk_1_1Timer.html#afcf2bb414ce8bff18b7642f392f0c3f2">spk::Timer</a>
 , <a class="el" href="classspk_1_1WorkerPool.html#a5f534195157ac56f61d5b46880d037c2">spk::WorkerPool</a>
@@ -204,8 +261,10 @@ $(function() {
 : <a class="el" href="classspk_1_1Timer.html#a4c46c8146cee6bde6910f4e200e0fae3">spk::Timer</a>
 </li>
 <li>stop()
-: <a class="el" href="classspk_1_1Chronometer.html#a3f338aa73d62fb7b6c8b33747663b3cc">spk::Chronometer</a>
+: <a class="el" href="classspk_1_1Acceptor.html#abcf0e591f43cce744d33e790b654f208">spk::Acceptor</a>
+, <a class="el" href="classspk_1_1Chronometer.html#a3f338aa73d62fb7b6c8b33747663b3cc">spk::Chronometer</a>
 , <a class="el" href="classspk_1_1PersistentWorker.html#ac2fc8e7d0785eaa63c05d5e3540752d8">spk::PersistentWorker</a>
+, <a class="el" href="classspk_1_1Server.html#a41240f2c7b8bd1716fdbbcaa9c8889b3">spk::Server</a>
 , <a class="el" href="classspk_1_1Timer.html#af7da190802d2bc83ca2608b609d7806e">spk::Timer</a>
 , <a class="el" href="classspk_1_1WorkerPool.html#a4c0b119248905dfb4257df9bfd4b8e40">spk::WorkerPool</a>
 </li>

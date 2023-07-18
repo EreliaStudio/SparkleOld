@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['randomgenerator_391',['RandomGenerator',['../classspk_1_1RandomGenerator.html',1,'spk']]],
-  ['randomgenerator_3c_20int_20_3e_392',['RandomGenerator&lt; int &gt;',['../classspk_1_1RandomGenerator.html',1,'spk']]],
-  ['readonlyaccessor_393',['ReadOnlyAccessor',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html',1,'spk::ContextManager']]],
-  ['readwriteaccessor_394',['ReadWriteAccessor',['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html',1,'spk::ContextManager']]]
+  ['object_456',['Object',['../classspk_1_1JSON_1_1Object.html',1,'spk::JSON::Object'],['../classspk_1_1Pool_1_1Object.html',1,'spk::Pool&lt; TType &gt;::Object']]],
+  ['observer_457',['Observer',['../classspk_1_1Observer.html',1,'spk']]],
+  ['onlygraphicswidget_458',['OnlyGraphicsWidget',['../classspk_1_1OnlyGraphicsWidget.html',1,'spk']]]
 ];
