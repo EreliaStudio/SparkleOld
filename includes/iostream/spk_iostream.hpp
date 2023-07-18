@@ -103,8 +103,21 @@ namespace spk
 			}
 		};
 
-	public:
+	private:
 		IOBuffer buffer; ///< Buffer instance associated with this output stream.
+
+		static inline bool _localeUpdated = false; ///< Whether the global locale has been updated.
+
+		void _setUnicodeLocale()
+		{
+			if (_localeUpdated == false)
+			{
+				std::locale::global(std::locale(""));
+				std::ios_base::sync_with_stdio(false);
+				std::locale::global(std::locale("C"));
+				_localeUpdated = true;
+			}
+		}
 
 	public:
 		/**
@@ -116,15 +129,7 @@ namespace spk
 			std::wostream(&buffer),
 			buffer(p_outputStream, p_prefix)
 		{
-			// Only update the global locale once.
-			static bool _localeUpdated = false;
-			if (_localeUpdated == false)
-			{
-				std::locale::global(std::locale(""));
-				std::ios_base::sync_with_stdio(false);
-				std::locale::global(std::locale("C"));
-				_localeUpdated = true;
-			}
+			_setUnicodeLocale();
 		}
 
 		/**
