@@ -74,5 +74,6 @@ var searchData=
   ['swapreadonlycontext_344',['swapReadOnlyContext',['../classspk_1_1ContextManager.html#ad768f31a10cb4bd01ae59c0ad7a01558',1,'spk::ContextManager']]],
   ['swapreadwritecontext_345',['swapReadWriteContext',['../classspk_1_1ContextManager.html#a7c3c2f2ddcb4a6c93ed5e291d01eaed2',1,'spk::ContextManager']]],
   ['swaprequested_346',['swapRequested',['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html#ac33d6aae0b6548b5d6da7b7d89534a5a',1,'spk::ContextManager::ReadOnlyAccessor']]],
-  ['systemmodule_347',['SystemModule',['../classspk_1_1SystemModule.html',1,'spk::SystemModule'],['../classspk_1_1SystemModule.html#a4e69257a48d4e3f620310e0bfc1dea21',1,'spk::SystemModule::SystemModule()']]]
+  ['systemmodule_347',['SystemModule',['../classspk_1_1SystemModule.html',1,'spk::SystemModule'],['../classspk_1_1SystemModule.html#a4e69257a48d4e3f620310e0bfc1dea21',1,'spk::SystemModule::SystemModule()']]],
+  ['systemqueue_348',['systemQueue',['../classspk_1_1APIModule.html#a28b7825a839dddd7d90ccb960a50e809',1,'spk::APIModule']]]
 ];
