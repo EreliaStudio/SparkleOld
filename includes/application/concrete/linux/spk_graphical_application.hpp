@@ -4,6 +4,7 @@
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"
 #include "application/modules/spk_window_module.hpp"
+#include "graphics/spk_window.hpp"
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
@@ -96,6 +97,24 @@ namespace spk
 			delete _profilerModule;
 
 			delete _widgetModule;
+		}
+
+		/**
+		 * @brief Add a new widget inside the application, with the central widget as parent.
+		 * 
+		 * @tparam TChildrenType The type of the children widget.
+		 * @tparam Args The types of the arguments for constructing the children widget.
+		 * @param p_args The arguments for constructing the children widget.
+		 * @return Pointer to the children widget.
+		 */
+		template <typename TChildrenType, typename ... Args>
+		TChildrenType* addRootWidget(Args&& ... p_args)
+		{
+			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
+
+			result->setDepth(0);
+
+			return (result);
 		}
 
 		/**

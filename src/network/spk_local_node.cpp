@@ -1,0 +1,26 @@
+#include "network/spk_local_node.hpp"
+
+namespace spk
+{
+	LocalNode::LocalNode()
+	{
+	}
+
+	void LocalNode::setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct)
+	{
+		if (_onMessageReceptionCallbacks.contains(p_id) == true)
+			spk::throwException(L"Callback already defined for message type [" + std::to_wstring(p_id) + L"]");
+		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1);
+	}
+
+	void LocalNode::setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct)
+	{
+		_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1);
+	}
+
+
+	void LocalNode::send(const spk::Message &p_msg)
+	{
+		_onMessageReceptionCallbacks[p_msg.header().id()](p_msg);
+	}
+}

@@ -44,6 +44,7 @@ namespace spk
 			 */
 			~IOBuffer()
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
 				if (pbase() != pptr())
 				{
 					flush();
@@ -57,6 +58,7 @@ namespace spk
 			virtual int sync()
 
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
 				flush();
 				return 0;
 			}
@@ -66,7 +68,8 @@ namespace spk
 			 */
 			void flush()
 			{
-				_mutex.lock();
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
+
 				if (_prefix.size() != 0)
 				{
 					_outputStream << L"[" << std::wstring(_maximumPrefixSize - _prefix.size(), ' ') << _prefix << L"] - ";
@@ -74,7 +77,6 @@ namespace spk
 				_outputStream << str();
 				str(L"");
 				_outputStream.flush();
-				_mutex.unlock();
 			}
 
 			/**
@@ -91,14 +93,23 @@ namespace spk
 			 * @param p_prefix The new prefix string.
 			 */
 			void setPrefix(std::wstring p_prefix)
-
 			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
+
 				_prefix = p_prefix;
-				_mutex.lock();
 				if (_prefix.size() > _maximumPrefixSize)
 				{
 					_maximumPrefixSize = _prefix.size();
 				}
+			}
+
+			void lock()
+			{
+				_mutex.lock();
+			}
+
+			void unlock()
+			{
 				_mutex.unlock();
 			}
 		};
@@ -149,6 +160,29 @@ namespace spk
 		{
 			return (buffer.prefixSize());
 		}
+
+		/**
+		 * @brief Locks the stream's buffer, ensuring thread safety.
+		 *
+		 * This method prevents simultaneous access to the stream's buffer from different threads.
+		 * It effectively provides a mechanism to ensure that any modifications to the buffer
+		 * (such as appending output or changing the prefix) are done in a thread-safe manner.
+		 */
+		void lock()
+		{
+			buffer.lock();
+		}
+		
+		/**
+		 * @brief Unlocks the stream's buffer, allowing other threads to access it.
+		 *
+		 * This method ends the period of exclusive access that began with a call to `lock()`.
+		 * After a call to `unlock()`, the buffer can be accessed by the next thread that successfully locks it.
+		 */
+		void unlock()
+		{
+			buffer.unlock();
+		}
 	};
 
 	/// @brief Thread-local instances of IOStream for standard output and error output.
@@ -157,5 +191,5 @@ namespace spk
 }
 
 #ifndef DEBUG_LINE
-#define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+#define DEBUG_LINE() spk::cout << __FUNCTION__ << " - line: " << __LINE__ << std::endl
 #endif

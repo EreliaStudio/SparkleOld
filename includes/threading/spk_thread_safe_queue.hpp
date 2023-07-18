@@ -124,7 +124,7 @@ namespace spk
 			std::scoped_lock lock(muxQueue);
 			auto t = std::move(_content.front());
 			_content.pop_front();
-			return (t);
+			return (std::move(t));
 		}
 
 		/**
@@ -139,7 +139,7 @@ namespace spk
 			std::scoped_lock lock(muxQueue);
 			auto t = std::move(_content.back());
 			_content.pop_back();
-			return (t);
+			return (std::move(t));
 		}
 
 		/**

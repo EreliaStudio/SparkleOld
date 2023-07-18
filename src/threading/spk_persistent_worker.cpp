@@ -16,7 +16,7 @@ namespace spk
 						if (job != nullptr)
 							job();
 					}
-					catch (std::runtime_error& e)
+					catch (std::exception& e)
 					{
 						redirectException(e, _activeJobName);
 						_isRunning = false;

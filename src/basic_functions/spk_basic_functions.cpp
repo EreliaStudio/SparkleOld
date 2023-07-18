@@ -22,12 +22,24 @@ namespace spk
 	std::wstring methodName(const std::wstring& prettyFunction)
 	{
 		size_t end = prettyFunction.rfind(L"(");
-		if (end == std::wstring::npos) return L"";
-		size_t beginColon = prettyFunction.rfind(L"::", end);
-		if (beginColon != std::wstring::npos) beginColon += 2;
+		if (end == std::wstring::npos)
+			return L"";
+
 		size_t beginSpace = prettyFunction.rfind(L" ", end);
-		if (beginSpace != std::wstring::npos) beginSpace += 1;
+		if (beginSpace == std::wstring::npos)
+			beginSpace = 0;
+
+		size_t beginColon = prettyFunction.rfind(L"::", end);
+		if (beginColon != std::wstring::npos)
+			beginColon += 2;
+		else if (beginColon == std::wstring::npos)
+			return (prettyFunction.substr(beginSpace, end - beginSpace));
+
+		if (beginSpace != std::wstring::npos)
+			beginSpace += 1;
+
 		size_t begin = std::max(beginColon, beginSpace);
+
 		std::wstring result = prettyFunction.substr(begin, end - begin);
 		return (result + L"()");
 	}
@@ -35,11 +47,21 @@ namespace spk
 	std::wstring className(const std::wstring& prettyFunction)
 	{
 		size_t classEnd = prettyFunction.rfind(L"(");
-		if (classEnd == std::wstring::npos) return L"No class";
+		if (classEnd == std::wstring::npos)
+			return L"No class";
+
+		size_t beginSpace = prettyFunction.rfind(L" ", classEnd);
+		if (beginSpace != std::wstring::npos)
+			beginSpace += 1;
+		else if (beginSpace == std::wstring::npos)
+			beginSpace = 0;
+
 		size_t beginColon = prettyFunction.rfind(L"::", classEnd);
-		if (beginColon == std::wstring::npos) return L"No class";
-		size_t beginSpace = prettyFunction.rfind(L" ", beginColon);
-		if (beginSpace != std::wstring::npos) beginSpace += 1;
+		if (beginColon == std::wstring::npos)
+			return L"No class";
+		if (beginColon == std::wstring::npos)
+			return (prettyFunction.substr(beginSpace, classEnd - beginSpace));
+
 		size_t classBegin = std::max(beginColon, beginSpace);
 		int closingBracket = 0;
 		size_t resultStart = 0;
@@ -52,6 +74,7 @@ namespace spk
 				closingBracket--;
 			else if ((prettyFunction[i] == L' ' || prettyFunction[i] == L'\t') && closingBracket == 0)
 				break;
+
 			resultStart = i;
 		}
 
@@ -161,10 +184,11 @@ namespace spk
 
 	void throwException(const std::wstring& p_errorLine) noexcept(false)
 	{
+		//spk::cout << p_errorLine << std::endl;
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
 
-	void redirectException(std::runtime_error& e, const std::wstring* p_jobName)
+	void redirectException(std::exception& e, const std::wstring* p_jobName)
 	{
 		spk::cout << "Unexpected throw";
 		if (p_jobName != nullptr)
@@ -210,7 +234,7 @@ namespace spk
 		{
 			result = static_cast<wchar_t>(std::stoi(p_code.substr(2, 4), nullptr, 16));
 		}
-		else if (p_code.size() == 12 && p_code[0] == L'\\' && p_code[1] == L'u' &&  p_code[6] == L'\\' && p_code[7] == L'u')
+		else if (p_code.size() == 12 && p_code[0] == L'\\' && p_code[1] == L'u' && p_code[6] == L'\\' && p_code[7] == L'u')
 		{
 			int highSurrogate = static_cast<int>(std::stoi(p_code.substr(2, 4), nullptr, 16));
 			int lowSurrogate = static_cast<int>(std::stoi(p_code.substr(8, 4), nullptr, 16));

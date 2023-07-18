@@ -3,24 +3,24 @@
 
 namespace spk
 {
-	ContractProvider::Contract AbstractApplication::addJob(const std::wstring &p_WorkerName, const std::wstring &p_jobName, const AbstractApplication::Job& p_job)
+	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_WorkerName, const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
 		if (_workers.find(p_WorkerName) == _workers.end())
 			_workers[p_WorkerName] = new spk::PersistentWorker(p_WorkerName);
 		return (std::move(_workers[p_WorkerName]->addJob(p_jobName, p_job)));
 	}
 
-	ContractProvider::Contract AbstractApplication::addJob(const std::wstring &p_jobName, const AbstractApplication::Job& p_job)
+	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
-		std::function<void()> funct = [this, p_jobName, p_job](){
+		std::function<void()> funct = [this, p_jobName, p_job]() {
 			_activeJobName = &p_jobName;
 			p_job();
 			_activeJobName = nullptr;
-		};
+			};
 		return (std::move(ContractProvider::subscribe(_jobs, funct)));
 	}
 
-	AbstractApplication::AbstractApplication() : 
+	AbstractApplication::AbstractApplication() :
 		_errorCode(0),
 		_isRunning(false)
 	{
@@ -30,7 +30,7 @@ namespace spk
 	{
 		_isRunning = false;
 
-		for (auto &worker : _workers)
+		for (auto& worker : _workers)
 			delete worker.second;
 	}
 
@@ -40,24 +40,26 @@ namespace spk
 		_errorCode = 0;
 		_isRunning = true;
 
-		for (auto &worker : _workers)
+		for (auto& worker : _workers)
 			worker.second->start();
 
 		spk::cout.setPrefix(L"Renderer");
 		while (_isRunning)
 		{
-			for (auto &worker : _workers)
+			for (auto& worker : _workers)
 				if (worker.second->isRunning() == false)
+				{
 					quit(1);
+				}
 
-			for (auto &job : _jobs)
+			for (auto& job : _jobs)
 			{
-				try 
+				try
 				{
 					if (job != nullptr)
 						job();
 				}
-				catch (std::runtime_error& e)
+				catch (std::exception& e)
 				{
 					redirectException(e, _activeJobName);
 					quit(1);
@@ -65,9 +67,9 @@ namespace spk
 			}
 		}
 
-		for (auto &worker : _workers)
+		for (auto& worker : _workers)
 			worker.second->stop();
-    
+
 		return _errorCode;
 	}
 
