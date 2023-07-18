@@ -21,9 +21,6 @@ namespace spk
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
 		spk::cout << "Releasing WinSockData" << std::endl;
 		
-		printCallStack();
-
-		exit(1);
 		WSACleanup();
 	}
 	void NetworkObject::_incrementCount()

@@ -8,7 +8,7 @@ namespace spk
 
 	Acceptor::~Acceptor()
 	{
-		
+		close(_socket);
 	}
 
 	void Acceptor::start(const size_t &p_port)

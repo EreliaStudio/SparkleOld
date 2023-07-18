@@ -41,6 +41,7 @@ namespace spk
 		if (beginColon == std::wstring::npos) return L"No class";
 		size_t beginSpace = prettyFunction.rfind(L" ", beginColon);
 		if (beginSpace != std::wstring::npos) beginSpace += 1;
+		if (beginColon == std::wstring::npos) return (prettyFunction.substr(beginSpace, classEnd - beginSpace));
 		size_t classBegin = std::max(beginColon, beginSpace);
 		int closingBracket = 0;
 		size_t resultStart = 0;
