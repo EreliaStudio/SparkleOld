@@ -179,5 +179,5 @@ namespace spk
 }
 
 #ifndef DEBUG_LINE
-#define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
+#define DEBUG_LINE() spk::cout << __FUNCTION__ << " - line: " << __LINE__ << std::endl
 #endif

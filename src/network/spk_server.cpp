@@ -2,7 +2,7 @@
 
 namespace spk
 {
-	void Server::_treatMessage(const EmiterID &p_emiterID, const spk::Message &p_msg)
+	void Server::_treatMessage(const EmiterID& p_emiterID, const spk::Message& p_msg)
 	{
 		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
@@ -35,10 +35,8 @@ namespace spk
 				{
 					EmiterID newId = _findValidID();
 					_clients[newId] = std::move(newSocket);
-					DEBUG_LINE();
 					if (_onNewConnectionCallback != nullptr)
 					{
-						DEBUG_LINE();
 						_onNewConnectionCallback(newId);
 					}
 				}
@@ -58,12 +56,12 @@ namespace spk
 
 						switch (readStatus)
 						{
-							case Socket::ReadResult::Closed:
-								_clients.erase(it);
-								break;
-							case Socket::ReadResult::Success:
-								_messagesToTreat.push_back(std::make_pair(it->first, newMessage));
-								break;
+						case Socket::ReadResult::Closed:
+							_clients.erase(it);
+							break;
+						case Socket::ReadResult::Success:
+							_messagesToTreat.push_back(std::make_pair(it->first, newMessage));
+							break;
 						}
 					}
 				}
@@ -78,7 +76,7 @@ namespace spk
 		_socketContextWorker.stop();
 	}
 
-	void Server::start(const size_t &p_serverPort)
+	void Server::start(const size_t& p_serverPort)
 	{
 		_Acceptor.start(p_serverPort);
 		_socketContextWorker.resume();
@@ -105,12 +103,12 @@ namespace spk
 			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
 		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
 	}
-	
+
 	void Server::setNewConnectionCallback(std::function<void(const EmiterID&)> p_funct)
 	{
 		_onNewConnectionCallback = std::bind(p_funct, std::placeholders::_1);
 	}
-	
+
 	void Server::setConnectionDisconnectionCallback(std::function<void(const EmiterID&)> p_funct)
 	{
 		_onConnectionDisconnectionCallback = std::bind(p_funct, std::placeholders::_1);
@@ -121,7 +119,7 @@ namespace spk
 		_onUnknownMessageTypeCallback = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
 	}
 
-	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Message &p_msg)
+	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Message& p_msg)
 	{
 		if (_clients.contains(p_emiterID) == false)
 			spk::throwException(L"Emiter link to no client");

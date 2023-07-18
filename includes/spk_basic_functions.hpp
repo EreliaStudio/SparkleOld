@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "iostream/spk_iostream.hpp"
+#include <stdexcept>
 
 namespace spk
 {
@@ -103,7 +104,7 @@ namespace spk
 	 */
 	void throwException(const std::wstring& p_errorLine);
 	
-	void redirectException(std::runtime_error& e, const std::wstring* p_jobName);
+	void redirectException(std::exception& e, const std::wstring* p_jobName);
 
 	/**
 	 * @brief Turns a non printable or unicode character into its universal code.
@@ -174,5 +175,5 @@ namespace spk
  * @def DEBUG_LINE()
  * @brief Prints the current method name and line number for debugging purposes.
  */
-#define DEBUG_LINE() spk::cout << __CLASS__ << "::" << __METHOD__ << "::" << __LINE__ << std::endl
+#define DEBUG_LINE() spk::cout << __CLASS__ << "::" << __METHOD__ << " - line: " << __LINE__ << std::endl
 #endif

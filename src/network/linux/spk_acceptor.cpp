@@ -5,7 +5,7 @@
 
 namespace spk
 {
-	Acceptor::Acceptor() : 
+	Acceptor::Acceptor() :
 		_socket(INVALID_SOCKET)
 	{
 	}
@@ -15,11 +15,11 @@ namespace spk
 		close(_socket);
 	}
 
-	void Acceptor::start(const size_t &p_port)
+	void Acceptor::start(const size_t& p_port)
 	{
 		spk::cout << L"Starting server on port " << p_port << std::endl;
 
-		struct addrinfo *result = NULL, hints = {};
+		struct addrinfo* result = NULL, hints = {};
 
 		hints.ai_family = AF_INET;
 		hints.ai_socktype = SOCK_STREAM;
@@ -69,7 +69,7 @@ namespace spk
 		close(_socket);
 	}
 
-	bool Acceptor::accept(Socket &p_socket)
+	bool Acceptor::accept(Socket& p_socket)
 	{
 		int newConnectionSocket = ::accept(_socket, NULL, NULL);
 
