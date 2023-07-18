@@ -18,23 +18,28 @@ namespace spk
 			*p_event >> width;
 			*p_event >> height;
 
-			spk::Window::instance()->resize(spk::Vector2Int(width, height));
+			Window::instance()->resize(spk::Vector2Int(width, height));
 			break;
 		}
 	}
 
 	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
 	{
-		spk::Singleton<spk::Window>::instanciate(p_title, p_size, p_apiModule);
+		Window::instanciate(p_title, p_size, p_apiModule);
+	}
+
+	WindowModule::~WindowModule()
+	{
+		Window::release();
 	}
 
 	void WindowModule::render()
 	{
-		spk::Singleton<Window>::instance()->render();
+		Window::instance()->render();
 	}
 
 	void WindowModule::clear()
 	{
-		spk::Singleton<Window>::instance()->clear();
+		Window::instance()->clear();
 	}
 }

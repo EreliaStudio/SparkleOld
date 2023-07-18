@@ -18,25 +18,12 @@ namespace spk
 		friend class APIModule;
 
 	private:
-		/**
-		 * @brief Window size.
-		 */
-		spk::Vector2Int _size;
 
-		/**
-		 * @brief Connection to the X server.
-		 */
-		xcb_connection_t *_connection;
-
-		/**
-		 * @brief Screen of the X server.
-		 */
-		xcb_screen_t *_screen;
-
-		/**
-		 * @brief Window of the X server.
-		 */
-		xcb_window_t _window;
+		spk::Vector2Int _size; ///< Window size.
+		xcb_connection_t* _connection; ///< Connection to the X server.
+		xcb_screen_t* _screen; ///< Screen of the X server.
+		xcb_window_t _window; ///< Window of the X server.
+		xcb_intern_atom_reply_t* _atom_wm_delete_window; ///< Atom for the window manager to close the window.
 
 		/**
 		 * @brief Creates a window.
@@ -64,7 +51,7 @@ namespace spk
 		 * @brief Destroys the Window object.
 		 */
 		~Window();
-		
+
 		/**
 		 * @brief Sets the window geometry.
 		 *

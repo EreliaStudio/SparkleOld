@@ -22,6 +22,12 @@ namespace spk
 		{
 			switch (event->response_type & ~0x80)
 			{
+			case XCB_CLIENT_MESSAGE:
+				if(((xcb_client_message_event_t*)event)->data.data32[0] ==
+					spk::Window::instance()->_atom_wm_delete_window->atom)
+					event->response_type = XCB_DESTROY_NOTIFY;
+				_systemQueue.push_back(event);
+				break;
 			case XCB_RESIZE_REQUEST:
 				_windowQueue.push_back(event);
 				break;

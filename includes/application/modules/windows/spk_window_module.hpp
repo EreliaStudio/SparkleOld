@@ -35,6 +35,11 @@ namespace spk
 		WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule);
 
 		/**
+		 * @brief Destructs the WindowModule object.
+		 */
+		~WindowModule();
+		
+		/**
 		 * @brief Renders the window.
 		 */
 		void render();
