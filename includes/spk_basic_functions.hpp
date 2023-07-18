@@ -102,6 +102,8 @@ namespace spk
 	 * @param p_errorLine The error message.
 	 */
 	void throwException(const std::wstring& p_errorLine);
+	
+	void redirectException(std::runtime_error& e, const std::wstring* p_jobName);
 
 	/**
 	 * @brief Turns a non printable or unicode character into its universal code.

@@ -1,4 +1,5 @@
 #include "threading/spk_persistent_worker.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {
@@ -12,11 +13,13 @@ namespace spk
 				{
 					try 
 					{
-						job();
+						if (job != nullptr)
+							job();
 					}
-					catch (...)
+					catch (std::runtime_error& e)
 					{
-
+						redirectException(e, _activeJobName);
+						_isRunning = false;
 					}
 				}
 			}
@@ -31,9 +34,14 @@ namespace spk
 		stop();
 	}
 
-	ContractProvider::Contract PersistentWorker::addJob(const PersistentWorker::Job& p_job)
+	ContractProvider::Contract PersistentWorker::addJob(const std::wstring& p_jobName, const PersistentWorker::Job& p_job)
 	{
-		return (std::move(ContractProvider::subscribe(_jobs, p_job)));
+		std::function<void()> funct = [this, p_jobName, p_job](){
+			_activeJobName = &p_jobName;
+			p_job();
+			_activeJobName = nullptr;
+		};
+		return (std::move(ContractProvider::subscribe(_jobs, funct)));
 	}
 
 	/**
