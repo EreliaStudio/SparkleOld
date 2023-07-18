@@ -1,7 +1,7 @@
 #pragma once
 
 #include "network/spk_client.hpp"
-#include "interface/spk_abstract_widget.hpp"
+#include "widget/spk_abstract_widget.hpp"
 
 namespace spk
 {

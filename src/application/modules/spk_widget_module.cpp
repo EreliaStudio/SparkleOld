@@ -2,6 +2,7 @@
 #include "iostream/spk_iostream.hpp"
 #include "widget/spk_widget_atlas.hpp"
 #include "spk_basic_functions.hpp"
+#include <cstring>
 
 namespace spk
 {
