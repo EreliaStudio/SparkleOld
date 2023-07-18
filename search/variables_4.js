@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nb_5fbutton_715',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]]
+  ['render_5fips_5fcounter_715',['RENDER_IPS_COUNTER',['../classspk_1_1Profiler.html#ab4d0edd93a8934bd0c844fe4942791d2',1,'spk::Profiler']]]
 ];

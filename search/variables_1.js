@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_711',['buffer',['../classspk_1_1IOStream.html#a3b1675416bc263b85373bd3012d49ba2',1,'spk::IOStream']]]
+  ['cvblocking_711',['cvBlocking',['../classspk_1_1ThreadSafeQueue.html#af85dcfbf85ff17055581432602a3fca2',1,'spk::ThreadSafeQueue']]]
 ];
