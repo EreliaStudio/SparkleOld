@@ -5,13 +5,13 @@
 
 namespace spk
 {    /**
-     * @class CentralNodeManager
+     * @class CentralNodeWidget
      * @brief A no-graphics widget class for managing a spk::CentralNode.
      *
-     * The CentralNodeManager class is a graphical user interface widget that can manage an instance of spk::CentralNode. 
+     * The CentralNodeWidget class is a graphical user interface widget that can manage an instance of spk::CentralNode. 
      * This includes rendering the central node status on the GUI, handling geometry changes, and performing periodic updates.
      */
-	class CentralNodeManager : public NoGraphicsWidget
+	class CentralNodeWidget : public NoGraphicsWidget
 	{
 	private:
 		CentralNode* _centralNodeToManage; /**< Pointer to the central node to manage */
@@ -25,11 +25,11 @@ namespace spk
 
 	public:
 		/**
-         * @brief Constructs a new CentralNodeManager.
+         * @brief Constructs a new CentralNodeWidget.
          *
          * @param p_name Name of the widget.
          */
-		CentralNodeManager(const std::wstring& p_name);
+		CentralNodeWidget(const std::wstring& p_name);
 
         /**
          * @brief Sets the central node to manage.

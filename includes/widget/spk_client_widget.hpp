@@ -8,7 +8,7 @@ namespace spk
 	/**
 	 * \brief Manager class for Client. Inherits from NoGraphicsWidget.
 	 */
-	class ClientManager : public NoGraphicsWidget
+	class ClientWidget : public NoGraphicsWidget
 	{
 	private:
 		Client* _clientToManage; ///< The Client object to manage.
@@ -21,10 +21,10 @@ namespace spk
 
 	public:
 		/**
-		 * \brief Constructor for ClientManager class.
-		 * \param p_name Name of the ClientManager object.
+		 * \brief Constructor for ClientWidget class.
+		 * \param p_name Name of the ClientWidget object.
 		 */
-		ClientManager(const std::wstring& p_name);
+		ClientWidget(const std::wstring& p_name);
 
 		/**
 		 * \brief Sets the Client object to manage.

@@ -1,4 +1,4 @@
-#include "widget/spk_remote_node_manager.hpp"
+#include "widget/spk_remote_node_widget.hpp"
 
 namespace spk
 {

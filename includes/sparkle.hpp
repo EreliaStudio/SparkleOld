@@ -65,9 +65,9 @@
 #include "widget/spk_widget_atlas.hpp"
 
 #include "widget/spk_client_manager.hpp"
-#include "widget/spk_server_manager.hpp"
-#include "widget/spk_central_node_manager.hpp"
-#include "widget/spk_remote_node_manager.hpp"
+#include "widget/spk_server_widget.hpp"
+#include "widget/spk_central_node_widget.hpp"
+#include "widget/spk_remote_node_widget.hpp"
 
 #include "application/spk_application.hpp"
 

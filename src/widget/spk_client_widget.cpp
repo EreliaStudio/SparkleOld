@@ -3,30 +3,30 @@
 namespace spk
 {
 
-	bool ClientManager::_onUpdate()
+	bool ClientWidget::_onUpdate()
 	{
 		if (_clientToManage != nullptr)
 			_clientToManage->treatMessages();
 		return (false);
 	}
 
-	ClientManager::ClientManager(const std::wstring &p_name) :
+	ClientWidget::ClientWidget(const std::wstring &p_name) :
 		NoGraphicsWidget(p_name),
 		_clientToManage(nullptr)
 	{
 	}
 
-	void ClientManager::setClient(Client *p_client)
+	void ClientWidget::setClient(Client *p_client)
 	{
 		_clientToManage = p_client;
 	}
 
-	Client *ClientManager::client()
+	Client *ClientWidget::client()
 	{
 		return (_clientToManage);
 	}
 
-	const Client *ClientManager::client() const
+	const Client *ClientWidget::client() const
 	{
 		return (_clientToManage);
 	}

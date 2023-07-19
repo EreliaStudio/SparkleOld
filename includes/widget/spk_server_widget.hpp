@@ -6,13 +6,13 @@
 namespace spk
 {
 	/** 
-	 *  \class ServerManager
+	 *  \class ServerWidget
 	 *  \brief A widget that is used to manage a server. 
 	 *
-	 *  The ServerManager class is a NoGraphicsWidget that controls the life cycle of a Server.
+	 *  The ServerWidget class is a NoGraphicsWidget that controls the life cycle of a Server.
 	 *  It provides an interface to set the Server to manage and access it.
 	 */
-	class ServerManager : public NoGraphicsWidget
+	class ServerWidget : public NoGraphicsWidget
 	{
 	private:
 		Server* _serverToManage; ///< The server that this manager is controlling.
@@ -25,16 +25,16 @@ namespace spk
 		bool _onUpdate();
 	public:
 		/** 
-		 *  \brief The constructor of the ServerManager class.
+		 *  \brief The constructor of the ServerWidget class.
 		 *
-		 *  \param p_name The name of the ServerManager. This is used for identification purposes.
+		 *  \param p_name The name of the ServerWidget. This is used for identification purposes.
 		 */
-		ServerManager(const std::wstring& p_name);
+		ServerWidget(const std::wstring& p_name);
 
 		/** 
 		 *  \brief Set the server to be managed.
 		 *
-		 *  \param p_server The server that will be managed by this ServerManager.
+		 *  \param p_server The server that will be managed by this ServerWidget.
 		 */
 		void setServer(Server* p_server);
 
