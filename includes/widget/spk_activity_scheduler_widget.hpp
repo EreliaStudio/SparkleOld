@@ -6,14 +6,14 @@ namespace spk
 {
 	class Activity;
 
-	class ActivitySchedulerManager : public spk::NoGraphicsWidget
+	class ActivitySchedulerWidget : public spk::NoGraphicsWidget
 	{
 	private:
 		bool _onUpdate();
 	
 	public:
-		ActivitySchedulerManager(const std::wstring& p_name);
-		~ActivitySchedulerManager();
+		ActivitySchedulerWidget(const std::wstring& p_name);
+		~ActivitySchedulerWidget();
 	};
 	
 	void launchActivity(spk::Activity* p_activity);

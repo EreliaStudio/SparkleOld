@@ -3,19 +3,19 @@
 
 namespace spk
 {	
-	bool ActivitySchedulerManager::_onUpdate()
+	bool ActivitySchedulerWidget::_onUpdate()
 	{
 		spk::Singleton<spk::ActivityScheduler>::instance()->execute();
 		return (false);
 	}
 	
-	ActivitySchedulerManager::ActivitySchedulerManager(const std::wstring& p_name) : 
+	ActivitySchedulerWidget::ActivitySchedulerWidget(const std::wstring& p_name) : 
 		spk::NoGraphicsWidget(p_name)
 	{
 		spk::Singleton<spk::ActivityScheduler>::instanciate();
 	}
 	
-	ActivitySchedulerManager::~ActivitySchedulerManager()
+	ActivitySchedulerWidget::~ActivitySchedulerWidget()
 	{
 		spk::Singleton<spk::ActivityScheduler>::release();
 	}
