@@ -8,12 +8,12 @@ namespace spk
 	/**
 	 * @class MouseInput
 	 * 
-	 * @brief A concrete class derived from IInput that represents mouse input.
+	 * @brief A concrete class derived from Input that represents mouse input.
 	 * 
-	 * MouseInput is a specific implementation of IInput for mouse inputs. It encapsulates a mouse button and the expected status of the button.
+	 * MouseInput is a specific implementation of Input for mouse inputs. It encapsulates a mouse button and the expected status of the button.
 	 * The encapsulated function is executed if the current status of the specified mouse button matches the expected status.
 	 */
-	class MouseInput : public IInput
+	class MouseInput : public Input
 	{
 	private:
 		/**
@@ -51,7 +51,7 @@ namespace spk
 		 */
 		template <typename Funct, typename... Args>
 		MouseInput(spk::Mouse::Button p_button, spk::InputStatus p_expectedStatus, unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
-			IInput(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
+			Input(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
 			_button(p_button),
 			_expectedStatus(p_expectedStatus)
 		{

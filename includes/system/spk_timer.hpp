@@ -61,8 +61,10 @@ namespace spk
 		 * 
 		 * This is the default constructor for the Timer class. 
 		 * It initializes the duration and start time to zero, and the status to Idle.
+		 * 
+		 * @param p_duration The duration of the timer in milliseconds.
 		 */
-		Timer();
+		Timer(const long long& p_duration = 0);
 
 		/**
 		 * @brief Sets the duration of the timer.

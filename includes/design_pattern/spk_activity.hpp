@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include "system/spk_timer.hpp"
 
 namespace spk
 {
@@ -97,4 +98,99 @@ namespace spk
 		 */
 		bool isCompleted() const;
 	};
+	
+	/**
+	 * @class TimedActivity
+	 * @brief Represents an activity that executes a function after a specified delay.
+	 *
+	 * TimedActivity is an Activity that begins a timer on activation. Once the timer
+	 * has reached the specified delay, it executes a specified function.
+	 * This is useful for scheduling tasks to run after a certain amount of time has passed.
+	 */
+	class TimedActivity : public spk::Activity
+	{
+	private:
+		/// Timer object used to keep track of time for this activity.
+		spk::Timer _timer;
+
+		/// Function to be executed by the timed activity.
+		std::function<void()> _funct;
+
+		/// The onEnter function that is called when the activity enters the onEnter state.
+		void _onEnter();
+
+		/// The execution function that is called when the activity is in the running state.
+		void _execute();
+
+		/// The onExit function that is called when the activity enters the onExit state.
+		void _onExit();
+
+	public:
+		/// Default constructor for TimedActivity.
+		TimedActivity();
+
+		/**
+		 * @brief Constructs a TimedActivity with a delay and a function.
+		 *
+		 * @param p_delay The delay before the function should be executed.
+		 * @param p_funct The function to be executed.
+		 */
+		TimedActivity(const size_t& p_delay, const std::function<void()>& p_funct);
+
+		/**
+		 * @brief Sets the function to be executed by the TimedActivity.
+		 *
+		 * @param p_funct The function to be executed.
+		 */
+		void setFunct(const std::function<void()>& p_funct);
+
+		/**
+		 * @brief Sets the delay before the function should be executed.
+		 *
+		 * @param p_delay The delay before the function should be executed.
+		 */
+		void setDelay(const size_t& p_delay);
+	};
+
+	/**
+	 * @class RetryActivity
+	 * @brief Represents an activity that repeatedly executes a function until it returns true.
+	 *
+	 * RetryActivity is an Activity that continuously retries a specified function until it returns true.
+	 * This is useful for tasks that might fail and need to be retried several times until they succeed.
+	 */
+	class RetryActivity : public spk::Activity
+	{
+	private:
+		/// Function to be executed by the RetryActivity.
+		std::function<bool()> _funct;
+
+		/// The onEnter function that is called when the activity enters the onEnter state.
+		void _onEnter();
+
+		/// The execution function that is called when the activity is in the running state.
+		void _execute();
+
+		/// The onExit function that is called when the activity enters the onExit state.
+		void _onExit();
+
+	public:
+		/// Default constructor for RetryActivity.
+		RetryActivity();
+
+		/**
+		 * @brief Constructs a RetryActivity with a function.
+		 *
+		 * @param p_funct The function to be executed.
+		 */
+		RetryActivity(const std::function<bool()>& p_funct);
+
+		/**
+		 * @brief Sets the function to be executed by the RetryActivity.
+		 *
+		 * @param p_funct The function to be executed.
+		 */
+		void setFunct(const std::function<bool()>& p_funct);
+	};
+
 }

@@ -8,17 +8,17 @@ namespace spk
 {
 	WidgetModule::WidgetModule()
 	{
-		spk::WidgetAtlas::instanciate();
+		spk::Widget::Atlas::instanciate();
 	}
 
 	WidgetModule::~WidgetModule()
 	{
-		spk::WidgetAtlas::release();
+		spk::Widget::Atlas::release();
 	}
 
 	void WidgetModule::update()
 	{
-			auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
+			auto &widgetSet = spk::Widget::Atlas::instance()->widgets();
 
 			for (auto it = widgetSet.rbegin(); it != widgetSet.rend(); ++it)
 			{
@@ -39,7 +39,7 @@ namespace spk
 
 	void WidgetModule::render()
 	{
-		auto &widgetSet = spk::WidgetAtlas::instance()->widgets();
+		auto &widgetSet = spk::Widget::Atlas::instance()->widgets();
 
 		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
 		{
