@@ -1,7 +1,7 @@
-#include "network/spk_node.hpp"
-#include "network/spk_central_node.hpp"
+#include "network/spk_network_node.hpp"
+#include "network/spk_network_central_node.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	Node::Node() : _centralNode(nullptr)
 	{
@@ -12,7 +12,7 @@ namespace spk
 		_centralNode = p_centralNode;
 	}
 
-	void Node::receive(const spk::Message &p_msg)
+	void Node::receive(const spk::Network::Message &p_msg)
 	{
 		_centralNode->returnMessage(p_msg);
 	}

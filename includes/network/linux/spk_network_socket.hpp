@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
-#include "network/spk_message.hpp"
+#include "network/spk_network_message.hpp"
 
-namespace spk
+namespace spk::Network
 {
     /**
      * @class Socket
@@ -69,13 +69,13 @@ namespace spk
          * @brief Sends a message over the socket.
          * @param p_msg The message to send.
          */
-		void send(const spk::Message& p_msg);
+		void send(const spk::Network::Message& p_msg);
 
         /**
          * @brief Receives a message from the socket.
          * @param p_messageToFill The message object to fill with the received data.
          * @return The result of the receive operation (see ReadResult).
          */
-		ReadResult receive(spk::Message& p_messageToFill);
+		ReadResult receive(spk::Network::Message& p_messageToFill);
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "network/spk_server.hpp"
+#include "network/spk_network_server.hpp"
 #include "widget/spk_widget_interface.hpp"
 
 namespace spk::Widget
@@ -15,7 +15,7 @@ namespace spk::Widget
 	class ServerManager : public NoGraphics
 	{
 	private:
-		spk::Server* _serverToManage; ///< The server that this manager is controlling.
+		spk::Network::Server* _serverToManage; ///< The server that this manager is controlling.
 
 		/** 
 		 *  \brief Private method that is called every frame to update the server state.
@@ -36,20 +36,20 @@ namespace spk::Widget
 		 *
 		 *  \param p_server The server that will be managed by this Server.
 		 */
-		void setServer(spk::Server* p_server);
+		void setServer(spk::Network::Server* p_server);
 
 		/** 
 		 *  @brief Get the server that is currently being managed.
 		 *
 		 *  @return A pointer to the server being managed.
 		 */
-		spk::Server* server();
+		spk::Network::Server* server();
 
 		/** 
 		 *  \brief Get the server that is currently being managed, but disallow modification.
 		 *
 		 *  \return A const pointer to the server being managed.
 		 */
-		const spk::Server* server() const;
+		const spk::Network::Server* server() const;
 	};
 }

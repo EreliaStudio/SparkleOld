@@ -1,18 +1,18 @@
 #pragma once
 
-#include "network/spk_network_object.hpp"
-#include "network/spk_message.hpp"
+#include "network/spk_network_network_object.hpp"
+#include "network/spk_network_message.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
 
-namespace spk
+namespace spk::Network
 {
     /**
      * @class Socket
      * @brief The Socket class encapsulates a network socket, and includes methods for establishing connections, sending messages, and receiving messages.
      *
-     * The Socket class extends from the NetworkObject class. The Server, Client, and Acceptor classes are friends of Socket, giving them access to its private members and methods.
+     * The Socket class extends from the Object class. The Server, Client, and Acceptor classes are friends of Socket, giving them access to its private members and methods.
      */
-	class Socket : spk::NetworkObject
+	class Socket : spk::Network::Object
 	{
 		friend class Server;
 		friend class Client;
@@ -74,7 +74,7 @@ namespace spk
          *
          * @param p_msg The message to send.
          */
-		void send(const spk::Message& p_msg);
+		void send(const spk::Network::Message& p_msg);
 
 		/**
          * @brief Receives a message from the socket.
@@ -82,6 +82,6 @@ namespace spk
          * @param p_messageToFill The message object to fill with the received data.
          * @return The result of the read operation (see ReadResult).
          */
-		ReadResult receive(spk::Message& p_messageToFill);
+		ReadResult receive(spk::Network::Message& p_messageToFill);
 	};
 }

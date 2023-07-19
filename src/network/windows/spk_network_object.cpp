@@ -1,9 +1,9 @@
-#include "network/spk_network_object.hpp"
+#include "network/spk_network_network_object.hpp"
 #include "spk_basic_functions.hpp"
 
-namespace spk
+namespace spk::Network
 {
-	void NetworkObject::_initializeWinSockData()
+	void Object::_initializeWinSockData()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
 		spk::cout << "Requesting initialization of WinSockData" << std::endl;
@@ -16,14 +16,14 @@ namespace spk
 		}
 	}
 
-	void NetworkObject::_releaseWinSockData()
+	void Object::_releaseWinSockData()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
 		spk::cout << "Releasing WinSockData" << std::endl;
 		
 		WSACleanup();
 	}
-	void NetworkObject::_incrementCount()
+	void Object::_incrementCount()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
 		if (nb_element == 0)
@@ -31,7 +31,7 @@ namespace spk
 		nb_element++;
 	}
 		
-	void NetworkObject::_decrementCount()
+	void Object::_decrementCount()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
 		nb_element--;
@@ -39,22 +39,22 @@ namespace spk
 			_releaseWinSockData();
 	}
 
-	NetworkObject::NetworkObject()
+	Object::Object()
 	{
         _incrementCount();
 	}
 
-	NetworkObject::NetworkObject(const NetworkObject &p_other)
+	Object::Object(const Object &p_other)
 	{
         _incrementCount();
 	}
 
-	NetworkObject::NetworkObject(NetworkObject&& p_other)
+	Object::Object(Object&& p_other)
     {
         _incrementCount();
     }
 
-    NetworkObject& NetworkObject::operator=(const NetworkObject& p_other)
+    Object& Object::operator=(const Object& p_other)
     {
         if (this != &p_other)
         {
@@ -63,7 +63,7 @@ namespace spk
         return *this;
     }
 
-    NetworkObject& NetworkObject::operator=(NetworkObject&& p_other)
+    Object& Object::operator=(Object&& p_other)
     {
         if (this != &p_other)
         {
@@ -72,7 +72,7 @@ namespace spk
         return *this;
     }
 
-	NetworkObject::~NetworkObject()
+	Object::~Object()
 	{
 		_decrementCount();
 	}

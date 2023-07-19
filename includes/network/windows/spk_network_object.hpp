@@ -3,20 +3,20 @@
 #include "spk_system_define.hpp"
 #include "spk_basic_functions.hpp"
 
-namespace spk
+namespace spk::Network
 {
     /**
-     * @class NetworkObject
+     * @class Object
      * @brief Base class for objects that utilize network resources.
      *
-     * The NetworkObject class encapsulates the basic behaviors common to network objects, such as socket management.
+     * The Object class encapsulates the basic behaviors common to network objects, such as socket management.
      * This class is intended to be a base class for other network-related classes, such as sockets, acceptors, etc.
      */
-	class NetworkObject
+	class Object
 	{
 	private:
 		static inline std::recursive_mutex _mutex; /**< Mutex for thread safety */
-		static inline size_t nb_element = 0; /**< Counter for the number of NetworkObject instances */
+		static inline size_t nb_element = 0; /**< Counter for the number of Object instances */
 		static inline WSADATA wsaData; /**< Windows Sockets API data */
 
 		/**
@@ -35,66 +35,66 @@ namespace spk
 		static void _releaseWinSockData();
 
 		/**
-         * @brief Increments the count of NetworkObject instances.
+         * @brief Increments the count of Object instances.
          *
-         * This function increments the count of NetworkObject instances, typically when a new instance is created.
+         * This function increments the count of Object instances, typically when a new instance is created.
          */
 		static void _incrementCount();
 
 		/**
-         * @brief Decrements the count of NetworkObject instances.
+         * @brief Decrements the count of Object instances.
          *
-         * This function decrements the count of NetworkObject instances, typically when an instance is destroyed.
+         * This function decrements the count of Object instances, typically when an instance is destroyed.
          */
 		static void _decrementCount();
 
 	public:
 		/**
-         * @brief Default constructor for NetworkObject.
+         * @brief Default constructor for Object.
          *
-         * This constructor initializes a new instance of a NetworkObject.
+         * This constructor initializes a new instance of a Object.
          */
-		NetworkObject();
+		Object();
 
 		/**
-         * @brief Copy constructor for NetworkObject.
+         * @brief Copy constructor for Object.
          *
-         * This constructor initializes a new instance of a NetworkObject, copying the data from another instance.
+         * This constructor initializes a new instance of a Object, copying the data from another instance.
          * @param p_other The other instance to copy data from.
          */
-		NetworkObject(const NetworkObject& p_other);
+		Object(const Object& p_other);
 
 		/**
-         * @brief Move constructor for NetworkObject.
+         * @brief Move constructor for Object.
          *
-         * This constructor initializes a new instance of a NetworkObject, moving the data from another instance.
+         * This constructor initializes a new instance of a Object, moving the data from another instance.
          * @param p_other The other instance to move data from.
          */
-		NetworkObject(NetworkObject&& p_other);
+		Object(Object&& p_other);
 
 		/**
-         * @brief Copy assignment operator for NetworkObject.
+         * @brief Copy assignment operator for Object.
          *
-         * This operator is used to copy the data from another NetworkObject into this instance.
+         * This operator is used to copy the data from another Object into this instance.
          * @param p_other The other instance to copy data from.
          * @return A reference to this instance.
          */
-		NetworkObject& operator=(const NetworkObject& p_other);
+		Object& operator=(const Object& p_other);
 
 		/**
-         * @brief Move assignment operator for NetworkObject.
+         * @brief Move assignment operator for Object.
          *
-         * This operator is used to move the data from another NetworkObject into this instance.
+         * This operator is used to move the data from another Object into this instance.
          * @param p_other The other instance to move data from.
          * @return A reference to this instance.
          */
-		NetworkObject& operator=(NetworkObject&& p_other);
+		Object& operator=(Object&& p_other);
 
 		/**
-         * @brief Destructor for NetworkObject.
+         * @brief Destructor for Object.
          *
-         * This destructor is responsible for releasing any resources the NetworkObject may hold.
+         * This destructor is responsible for releasing any resources the Object may hold.
          */
-		~NetworkObject();
+		~Object();
 	};
 }

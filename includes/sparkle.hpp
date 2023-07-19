@@ -45,13 +45,13 @@
 
 #include "graphics/spk_window.hpp"
 
-#include "network/spk_message.hpp"
-#include "network/spk_client.hpp"
-#include "network/spk_server.hpp"
-#include "network/spk_node.hpp"
-#include "network/spk_local_node.hpp"
-#include "network/spk_remote_node.hpp"
-#include "network/spk_central_node.hpp"
+#include "network/spk_network_message.hpp"
+#include "network/spk_network_client.hpp"
+#include "network/spk_network_server.hpp"
+#include "network/spk_network_node.hpp"
+#include "network/spk_network_local_node.hpp"
+#include "network/spk_network_remote_node.hpp"
+#include "network/spk_network_central_node.hpp"
 
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"

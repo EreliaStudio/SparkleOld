@@ -1,6 +1,6 @@
-#include "network/spk_message.hpp"
+#include "network/spk_network_message.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	Message::Header::Header(Type p_id) : _id(p_id),
 											 _size(0)

@@ -15,17 +15,17 @@ namespace spk::Widget
 	{
 	}
 
-	void CentralNodeManager::setCentralNode(spk::CentralNode *p_centralNode)
+	void CentralNodeManager::setCentralNode(spk::Network::CentralNode *p_centralNode)
 	{
 		_centralNodeToManage = p_centralNode;
 	}
 
-	spk::CentralNode *CentralNodeManager::centralNode()
+	spk::Network::CentralNode *CentralNodeManager::centralNode()
 	{
 		return (_centralNodeToManage);
 	}
 
-	const spk::CentralNode *CentralNodeManager::centralNode() const
+	const spk::Network::CentralNode *CentralNodeManager::centralNode() const
 	{
 		return (_centralNodeToManage);
 	}

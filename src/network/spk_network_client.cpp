@@ -1,8 +1,8 @@
-#include "network/spk_client.hpp"
+#include "network/spk_network_client.hpp"
 
-namespace spk
+namespace spk::Network
 {
-	void Client::_treatMessage(const spk::Message &p_msg)
+	void Client::_treatMessage(const spk::Network::Message &p_msg)
 	{
 		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
@@ -19,7 +19,7 @@ namespace spk
 	{
 		_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&]()
 			{
-				spk::Message newMessage;
+				spk::Network::Message newMessage;
 
 				if (_socket.isConnected() == true)
 				{
@@ -67,19 +67,19 @@ namespace spk
 		}
 	}
 
-	void Client::setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const spk::Message&)> p_funct)
+	void Client::setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const spk::Network::Message&)> p_funct)
 	{
 		if (_onMessageReceptionCallbacks.contains(p_id) == true)
 			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
 		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1);
 	}
 	
-	void Client::setUnknowMessageReceptionCallback(std::function<void(const spk::Message&)> p_funct)
+	void Client::setUnknowMessageReceptionCallback(std::function<void(const spk::Network::Message&)> p_funct)
 	{
 		_onUnknowMessageReception = std::bind(p_funct, std::placeholders::_1);
 	}
 
-	void Client::send(const spk::Message &p_msg)
+	void Client::send(const spk::Network::Message &p_msg)
 	{
 		if (_socket.isConnected() == false)
 			spk::throwException(L"Can't send a message throught a disconnected socket");

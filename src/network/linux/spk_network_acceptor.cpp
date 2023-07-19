@@ -3,7 +3,7 @@
 #include "iostream/spk_iostream.hpp"
 #include "spk_basic_functions.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	Acceptor::Acceptor() :
 		_socket(INVALID_SOCKET)

@@ -1,7 +1,8 @@
-#include "network/windows/spk_acceptor.hpp"
-namespace spk
+#include "network/windows/spk_network_acceptor.hpp"
+
+namespace spk::Network
 {
-	Acceptor::Acceptor() : spk::NetworkObject(),
+	Acceptor::Acceptor() : spk::Network::Object(),
 						   _socket()
 	{
 	}

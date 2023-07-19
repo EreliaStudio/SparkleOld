@@ -17,17 +17,17 @@ namespace spk::Widget
 
 	}
 
-	void ServerManager::setServer(spk::Server* p_server)
+	void ServerManager::setServer(spk::Network::Server* p_server)
 	{
 		_serverToManage = p_server;
 	}
 
-	spk::Server* ServerManager::server()
+	spk::Network::Server* ServerManager::server()
 	{
 		return (_serverToManage);
 	}
 
-	const spk::Server* ServerManager::server() const
+	const spk::Network::Server* ServerManager::server() const
 	{
 		return (_serverToManage);
 	}

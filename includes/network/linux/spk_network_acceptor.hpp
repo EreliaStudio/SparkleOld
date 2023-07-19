@@ -1,26 +1,26 @@
 #pragma once
 
-#include "network/spk_network_object.hpp"
-#include "network/spk_message.hpp"
-#include "threading/spk_thread_safe_queue.hpp"
-#include "network/spk_socket.hpp"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <unistd.h>
+#include "network/spk_network_socket.hpp"
 
-namespace spk
-{
+namespace spk::Network
+{ 
     /**
      * @class Acceptor
      * @brief The Acceptor class is a wrapper around a socket, intended to accept connections from clients.
      *
-     * The Acceptor object represents a server-side, listening socket. It extends from the NetworkObject class.
-     * This class simplifies the task of starting a server and accepting client connections.
+     * An Acceptor object represents a server-side, listening socket. This class
+     * simplifies the task of starting a server and accepting client connections.
      */
-	class Acceptor : spk::NetworkObject
+	class Acceptor
 	{
 	private:
-		static inline u_long BLOCKING_SOCKET = 0; /**< Constant value representing a blocking socket */
-		static inline u_long NON_BLOCKING_SOCKET = 1; /**< Constant value representing a non-blocking socket */
-
-		SOCKET _socket; /**< The socket file descriptor */
+		static constexpr int INVALID_SOCKET = -1;
+		int _socket; /**< The socket file descriptor */
 
 	public:
         /**

@@ -1,10 +1,10 @@
-#include "network/spk_central_node.hpp"
+#include "network/spk_network_central_node.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	CentralNode::CentralNode()
 	{
-		_server.setUnknowMessageReceptionCallback([&](const spk::Server::EmiterID &p_emiterID, const spk::Message &p_msg)
+		_server.setUnknowMessageReceptionCallback([&](const spk::Network::Server::EmiterID &p_emiterID, const spk::Network::Message &p_msg)
 		{
 			if (_messagesRedirection.contains(p_msg.header().id()) == false)
 			{
@@ -20,12 +20,12 @@ namespace spk
 		_server.start(p_serverPort);
 	}
 
-	void CentralNode::returnMessage(const spk::Message &p_msg)
+	void CentralNode::returnMessage(const spk::Network::Message &p_msg)
 	{
 		_server.sendTo(p_msg.header().emiterID(), p_msg);
 	}
 
-	void CentralNode::redirectMessage(spk::Message::Type p_type, Node *p_destinationNode)
+	void CentralNode::redirectMessage(spk::Network::Message::Type p_type, Node *p_destinationNode)
 	{
 		if (_messagesRedirection.contains(p_type) == true)
 			spk::throwException(L"CentralNode has already a defined Node to message [" + std::to_wstring(p_type) + L"]");

@@ -1,8 +1,8 @@
-#include "network/spk_server.hpp"
+#include "network/spk_network_server.hpp"
 
-namespace spk
+namespace spk::Network
 {
-	void Server::_treatMessage(const EmiterID& p_emiterID, const spk::Message& p_msg)
+	void Server::_treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg)
 	{
 		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
@@ -44,7 +44,7 @@ namespace spk
 
 		_readingIncomingMessageContract = _socketContextWorker.addJob(L"Reading incoming message", [&]()
 			{
-				spk::Message newMessage;
+				spk::Network::Message newMessage;
 
 				for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
 				{
@@ -92,12 +92,12 @@ namespace spk
 	{
 		while (_messagesToTreat.empty() == false)
 		{
-			std::pair<EmiterID, spk::Message> pairMessageID = _messagesToTreat.pop_front();
+			std::pair<EmiterID, spk::Network::Message> pairMessageID = _messagesToTreat.pop_front();
 			_treatMessage(pairMessageID.first, pairMessageID.second);
 		}
 	}
 
-	void Server::setOnMessageReceptionCallback(const spk::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Message&)> p_funct)
+	void Server::setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
 	{
 		if (_onMessageReceptionCallbacks.contains(p_id) == true)
 			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
@@ -114,12 +114,12 @@ namespace spk
 		_onConnectionDisconnectionCallback = std::bind(p_funct, std::placeholders::_1);
 	}
 
-	void Server::setUnknowMessageReceptionCallback(std::function<void(const EmiterID&, const spk::Message&)> p_funct)
+	void Server::setUnknowMessageReceptionCallback(std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
 	{
 		_onUnknownMessageTypeCallback = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
 	}
 
-	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Message& p_msg)
+	void Server::sendTo(const Server::EmiterID& p_emiterID, const spk::Network::Message& p_msg)
 	{
 		if (_clients.contains(p_emiterID) == false)
 			spk::throwException(L"Emiter link to no client");

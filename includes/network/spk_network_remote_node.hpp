@@ -1,10 +1,10 @@
 #pragma once
 
-#include "network/spk_message.hpp"
-#include "network/spk_node.hpp"
-#include "network/spk_client.hpp"
+#include "network/spk_network_message.hpp"
+#include "network/spk_network_node.hpp"
+#include "network/spk_network_client.hpp"
 
-namespace spk
+namespace spk::Network
 {
     /**
      * @class RemoteNode
@@ -12,10 +12,10 @@ namespace spk
      *
      * The RemoteNode class extends the Node class, providing additional functionality for managing a remote network connection.
      */
-	class RemoteNode : public spk::Node
+	class RemoteNode : public spk::Network::Node
 	{
 	private:
-		spk::Client _client; /**< The client used for network communication */
+		spk::Network::Client _client; /**< The client used for network communication */
 		CentralNode* _centralNode; /**< Pointer to the central node */
 
 	public:
@@ -37,7 +37,7 @@ namespace spk
          *
          * @param p_msg Message to be sent.
          */
-		void send(const spk::Message& p_msg);
+		void send(const spk::Network::Message& p_msg);
 
         /**
          * @brief Process incoming messages from the remote node.

@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include "data_structure/spk_data_buffer.hpp"
 
-namespace spk
+namespace spk::Network
 {
     /**
      * @class Message

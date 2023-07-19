@@ -16,17 +16,17 @@ namespace spk::Widget
 	{
 	}
 
-	void ClientManager::setClient(spk::Client *p_client)
+	void ClientManager::setClient(spk::Network::Client *p_client)
 	{
 		_clientToManage = p_client;
 	}
 
-	spk::Client *ClientManager::client()
+	spk::Network::Client *ClientManager::client()
 	{
 		return (_clientToManage);
 	}
 
-	const spk::Client *ClientManager::client() const
+	const spk::Network::Client *ClientManager::client() const
 	{
 		return (_clientToManage);
 	}

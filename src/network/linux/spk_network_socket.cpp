@@ -1,4 +1,4 @@
-#include "network/linux/spk_socket.hpp"
+#include "network/linux/spk_network_socket.hpp"
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <sys/ioctl.h>
@@ -6,7 +6,7 @@
 #include <fcntl.h>
 #include "spk_basic_functions.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	void Socket::connect(int p_socket)
 	{
@@ -68,9 +68,9 @@ namespace spk
 		return (_isConnected);
 	}
 
-	void Socket::send(const spk::Message &p_msg)
+	void Socket::send(const spk::Network::Message &p_msg)
 	{
-		int sendingMessageHeaderError = ::send(_socket, reinterpret_cast<const char *>(&(p_msg.header())), sizeof(spk::Message::Header), 0);
+		int sendingMessageHeaderError = ::send(_socket, reinterpret_cast<const char *>(&(p_msg.header())), sizeof(spk::Network::Message::Header), 0);
 		if (sendingMessageHeaderError == -1)
 		{
 			spk::throwException(L"Error while sending header: socket error code [" + std::to_wstring(errno) + L"]");
@@ -87,10 +87,10 @@ namespace spk
 		}
 	}
 
-	Socket::ReadResult Socket::receive(spk::Message &p_messageToFill)
+	Socket::ReadResult Socket::receive(spk::Network::Message &p_messageToFill)
 	{
-		spk::Message newMessage;
-		int bytesRead = ::recv(_socket, reinterpret_cast<char *>(&(p_messageToFill.header())), sizeof(spk::Message::Header), 0);
+		spk::Network::Message newMessage;
+		int bytesRead = ::recv(_socket, reinterpret_cast<char *>(&(p_messageToFill.header())), sizeof(spk::Network::Message::Header), 0);
 
 		if (bytesRead == 0)
 		{

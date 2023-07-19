@@ -1,8 +1,8 @@
 #pragma once
 
-#include "network/spk_message.hpp"
+#include "network/spk_network_message.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	class CentralNode;
 
@@ -15,7 +15,7 @@ namespace spk
 	class Node
 	{
 	private:
-		CentralNode* _centralNode; /**< Pointer to the central node */
+		spk::Network::CentralNode* _centralNode; /**< Pointer to the central node */
 
 	public:
         /**
@@ -28,20 +28,20 @@ namespace spk
          *
          * @param p_centralNode Pointer to the CentralNode to link with.
          */
-		void link(CentralNode* p_centralNode);
+		void link(spk::Network::CentralNode* p_centralNode);
 
         /**
          * @brief Sends a message. Must be implemented by derived classes.
          *
          * @param p_msg Message to send.
          */
-		virtual void send(const spk::Message& p_msg) = 0;
+		virtual void send(const spk::Network::Message& p_msg) = 0;
 
         /**
          * @brief Receives a message. Can be overridden by derived classes.
          *
          * @param p_msg Message to receive.
          */
-		virtual void receive(const spk::Message& p_msg);
+		virtual void receive(const spk::Network::Message& p_msg);
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "network/spk_client.hpp"
+#include "network/spk_network_client.hpp"
 #include "widget/spk_widget_interface.hpp"
 
 namespace spk::Widget
@@ -11,7 +11,7 @@ namespace spk::Widget
 	class ClientManager : public NoGraphics
 	{
 	private:
-		spk::Client* _clientToManage; ///< The Client object to manage.
+		spk::Network::Client* _clientToManage; ///< The Client object to manage.
 
 		/**
 		 * \brief Called each frame. Updates the internal state of the widget.
@@ -30,18 +30,18 @@ namespace spk::Widget
 		 * \brief Sets the Client object to manage.
 		 * \param p_client Pointer to the Client object.
 		 */
-		void setClient(spk::Client* p_client);
+		void setClient(spk::Network::Client* p_client);
 
 		/**
 		 * \brief Gets the Client object being managed.
 		 * \return Pointer to the Client object being managed.
 		 */
-		spk::Client* client();
+		spk::Network::Client* client();
 
 		/**
 		 * \brief Gets the Client object being managed.
 		 * \return Constant pointer to the Client object being managed.
 		 */
-		const spk::Client* client() const;
+		const spk::Network::Client* client() const;
 	};
 }

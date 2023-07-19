@@ -1,10 +1,10 @@
-#include "network/spk_remote_node.hpp"
+#include "network/spk_network_remote_node.hpp"
 
-namespace spk
+namespace spk::Network
 {
 	RemoteNode::RemoteNode()
 	{
-		_client.setUnknowMessageReceptionCallback([&](const spk::Message &p_msg)
+		_client.setUnknowMessageReceptionCallback([&](const spk::Network::Message &p_msg)
 												  { receive(p_msg); });
 	}
 
@@ -13,7 +13,7 @@ namespace spk
 		_client.connect(p_serverAddress, p_serverPort);
 	}
 
-	void RemoteNode::send(const spk::Message &p_msg)
+	void RemoteNode::send(const spk::Network::Message &p_msg)
 	{
 		_client.send(p_msg);
 	}

@@ -16,17 +16,17 @@ namespace spk::Widget
 
 	}
 
-	void RemoteNodeManager::setRemoteNode(spk::RemoteNode* p_client)
+	void RemoteNodeManager::setRemoteNode(spk::Network::RemoteNode* p_client)
 	{
 		_remoteNodeToManage = p_client;
 	}
 
-	spk::RemoteNode* RemoteNodeManager::remoteNode()
+	spk::Network::RemoteNode* RemoteNodeManager::remoteNode()
 	{
 		return (_remoteNodeToManage);
 	}
 
-	const spk::RemoteNode* RemoteNodeManager::remoteNode() const
+	const spk::Network::RemoteNode* RemoteNodeManager::remoteNode() const
 	{
 		return (_remoteNodeToManage);
 	}
