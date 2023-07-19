@@ -1,17 +1,17 @@
 #pragma once
 
 #include "network/spk_client.hpp"
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 
-namespace spk
+namespace spk::Widget
 {
 	/**
-	 * \brief Manager class for Client. Inherits from NoGraphicsWidget.
+	 * \brief Manager class for Client. Inherits from NoGraphics.
 	 */
-	class ClientWidget : public NoGraphicsWidget
+	class Client : public NoGraphics
 	{
 	private:
-		Client* _clientToManage; ///< The Client object to manage.
+		spk::Client* _clientToManage; ///< The Client object to manage.
 
 		/**
 		 * \brief Called each frame. Updates the internal state of the widget.
@@ -21,27 +21,27 @@ namespace spk
 
 	public:
 		/**
-		 * \brief Constructor for ClientWidget class.
-		 * \param p_name Name of the ClientWidget object.
+		 * \brief Constructor for Client class.
+		 * \param p_name Name of the Client object.
 		 */
-		ClientWidget(const std::wstring& p_name);
+		Client(const std::wstring& p_name);
 
 		/**
 		 * \brief Sets the Client object to manage.
 		 * \param p_client Pointer to the Client object.
 		 */
-		void setClient(Client* p_client);
+		void setClient(spk::Client* p_client);
 
 		/**
 		 * \brief Gets the Client object being managed.
 		 * \return Pointer to the Client object being managed.
 		 */
-		Client* client();
+		spk::Client* client();
 
 		/**
 		 * \brief Gets the Client object being managed.
 		 * \return Constant pointer to the Client object being managed.
 		 */
-		const Client* client() const;
+		const spk::Client* client() const;
 	};
 }

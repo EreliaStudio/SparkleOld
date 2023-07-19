@@ -1,16 +1,16 @@
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_atlas.hpp"
 
 #include "iostream/spk_iostream.hpp"
 
-namespace spk
+namespace spk::Widget
 {
-	void AbstractWidget::addChild(Child child)
+	void Interface::addChild(Child child)
 	{
-		InherenceObject<AbstractWidget>::addChild(child);
+		InherenceObject<Interface>::addChild(child);
 	}
 
-	void AbstractWidget::_render()
+	void Interface::_render()
 	{
 		if (isActive() == false)
 			return ;
@@ -24,7 +24,7 @@ namespace spk
 		_onRender();
 	}
 
-	bool AbstractWidget::_update()
+	bool Interface::_update()
 	{
 		if (isActive() == false)
 			return false;
@@ -32,7 +32,7 @@ namespace spk
 		return (_onUpdate());
 	}
 
-	void AbstractWidget::_setOperationnal()
+	void Interface::_setOperationnal()
 	{
 		_isOperationnal = isActive() && (parent() == nullptr ? true : parent()->_isOperationnal);
 
@@ -42,10 +42,10 @@ namespace spk
 		}
 	}
 
-	AbstractWidget::AbstractWidget(const std::wstring& p_name) :
+	Interface::Interface(const std::wstring& p_name) :
 		_name(p_name)
 	{
-		WidgetAtlas::instance()->insert(this);
+		Atlas::instance()->insert(this);
 
 		_activationCallback = ActivableObject::addActivationCallback([&](){
 			_setOperationnal();
@@ -56,16 +56,16 @@ namespace spk
 		});
 	}
 
-	AbstractWidget::~AbstractWidget()
+	Interface::~Interface()
 	{
 		for (auto child : childrens())
 		{
 			delete child;
 		}	
-		WidgetAtlas::instance()->remove(this);
+		Atlas::instance()->remove(this);
 	}
 
-	void AbstractWidget::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
+	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
 	{
 		_anchor = p_anchor;
 		_size = p_size;
@@ -73,33 +73,33 @@ namespace spk
 		_geometryEdited = true;
 	}
 	
-	void AbstractWidget::place(const spk::Vector2Int& p_anchor)
+	void Interface::place(const spk::Vector2Int& p_anchor)
 	{
 		_anchor = p_anchor;
 		
 		_geometryEdited = true;
 	}
 	
-	void AbstractWidget::move(const spk::Vector2Int& p_anchor)
+	void Interface::move(const spk::Vector2Int& p_anchor)
 	{
 		_anchor += p_anchor;
 		
 		_geometryEdited = true;
 	}
 
-	void AbstractWidget::resize(const spk::Vector2Int& p_size)
+	void Interface::resize(const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
 		
 		_geometryEdited = true;
 	}
 
-	void AbstractWidget::setDepth(const float& p_depth)
+	void Interface::setDepth(const float& p_depth)
 	{
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
-		WidgetAtlas::instance()->sort(this);
+		Atlas::instance()->sort(this);
 		
 		for (auto child : childrens())
 		{
@@ -107,12 +107,12 @@ namespace spk
 		}
 	}
 
-	void AbstractWidget::rename(const std::wstring& p_name)
+	void Interface::rename(const std::wstring& p_name)
 	{
 		_name = p_name;
 	}
 
-	bool AbstractWidget::isPointed(const spk::Vector2Int& p_point)
+	bool Interface::isPointed(const spk::Vector2Int& p_point)
 	{
 		return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
 	}

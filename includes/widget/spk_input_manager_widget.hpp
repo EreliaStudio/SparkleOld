@@ -1,18 +1,18 @@
 #pragma once
 
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 #include "input/spk_input.hpp"
 
-namespace spk
+namespace spk::Widget
 {
-	class InputManagerWidget : public spk::NoGraphicsWidget
+	class InputManager : public spk::Widget::NoGraphics
 	{
 	private:
 		bool _onUpdate();
 	
 	public:
-		InputManagerWidget(const std::wstring& p_name);
-		~InputManagerWidget();
+		InputManager(const std::wstring& p_name);
+		~InputManager();
 	};
 	
 	void addInput(Input* p_input);

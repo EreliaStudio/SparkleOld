@@ -27,9 +27,9 @@ namespace spk
 	void Application::_initializeConfigurableValues(const Application::Configuration& p_configuration)
 	{
 		if (p_configuration.initActivityScheduler == true)
-			addRootWidget<spk::ActivitySchedulerWidget>(L"ActivitySchedulerWidget")->activate();
+			addRootWidget<spk::Widget::ActivityScheduler>(L"ActivityScheduler")->activate();
 		if (p_configuration.initInputManager == true)
-			addRootWidget<spk::InputManagerWidget>(L"InputManagerWidget")->activate();
+			addRootWidget<spk::Widget::InputManager>(L"InputManager")->activate();
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const Configuration& p_configuration)

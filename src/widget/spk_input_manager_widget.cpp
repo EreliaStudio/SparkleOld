@@ -2,22 +2,22 @@
 #include "input/spk_input_manager.hpp"
 #include "design_pattern/spk_singleton.hpp"
 
-namespace spk
+namespace spk::Widget
 {
-	bool InputManagerWidget::_onUpdate()
+	bool InputManager::_onUpdate()
 	{
 		spk::Singleton<spk::InputManager>::instance()->update();
 
 		return (false);
 	}
 	
-	InputManagerWidget::InputManagerWidget(const std::wstring& p_name) : 
-		spk::NoGraphicsWidget(p_name)
+	InputManager::InputManager(const std::wstring& p_name) : 
+		spk::Widget::NoGraphics(p_name)
 	{
 		spk::Singleton<spk::InputManager>::instanciate();
 	}
 	
-	InputManagerWidget::~InputManagerWidget()
+	InputManager::~InputManager()
 	{
 		spk::Singleton<spk::InputManager>::release();
 	}

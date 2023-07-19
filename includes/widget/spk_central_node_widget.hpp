@@ -1,20 +1,20 @@
 #pragma once
 
 #include "network/spk_central_node.hpp"
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 
-namespace spk
+namespace spk::Widget
 {    /**
-     * @class CentralNodeWidget
+     * @class CentralNode
      * @brief A no-graphics widget class for managing a spk::CentralNode.
      *
-     * The CentralNodeWidget class is a graphical user interface widget that can manage an instance of spk::CentralNode. 
+     * The CentralNode class is a graphical user interface widget that can manage an instance of spk::CentralNode. 
      * This includes rendering the central node status on the GUI, handling geometry changes, and performing periodic updates.
      */
-	class CentralNodeWidget : public NoGraphicsWidget
+	class CentralNode : public NoGraphics
 	{
 	private:
-		CentralNode* _centralNodeToManage; /**< Pointer to the central node to manage */
+		spk::CentralNode* _centralNodeToManage; /**< Pointer to the central node to manage */
 
         /**
          * @brief Method to handle updates.
@@ -25,31 +25,31 @@ namespace spk
 
 	public:
 		/**
-         * @brief Constructs a new CentralNodeWidget.
+         * @brief Constructs a new CentralNode.
          *
          * @param p_name Name of the widget.
          */
-		CentralNodeWidget(const std::wstring& p_name);
+		CentralNode(const std::wstring& p_name);
 
         /**
          * @brief Sets the central node to manage.
          *
          * @param p_centralNode Pointer to the central node to manage.
          */
-		void setCentralNode(CentralNode* p_centralNode);
+		void setCentralNode(spk::CentralNode* p_centralNode);
 
         /**
          * @brief Gets the central node being managed.
          *
          * @return CentralNode* Pointer to the central node being managed.
          */
-		CentralNode* centralNode();
+		spk::CentralNode* centralNode();
 
 		/**
          * @brief Gets the central node being managed. Const variant.
          *
          * @return const CentralNode* Const pointer to the central node being managed.
          */
-		const CentralNode* centralNode() const;
+		const spk::CentralNode* centralNode() const;
 	};
 }

@@ -1,21 +1,21 @@
 #pragma once
 
 #include "network/spk_server.hpp"
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 
-namespace spk
+namespace spk::Widget
 {
 	/** 
-	 *  \class ServerWidget
+	 *  \class Server
 	 *  \brief A widget that is used to manage a server. 
 	 *
-	 *  The ServerWidget class is a NoGraphicsWidget that controls the life cycle of a Server.
+	 *  The Server class is a NoGraphics that controls the life cycle of a Server.
 	 *  It provides an interface to set the Server to manage and access it.
 	 */
-	class ServerWidget : public NoGraphicsWidget
+	class Server : public NoGraphics
 	{
 	private:
-		Server* _serverToManage; ///< The server that this manager is controlling.
+		spk::Server* _serverToManage; ///< The server that this manager is controlling.
 
 		/** 
 		 *  \brief Private method that is called every frame to update the server state.
@@ -25,31 +25,31 @@ namespace spk
 		bool _onUpdate();
 	public:
 		/** 
-		 *  \brief The constructor of the ServerWidget class.
+		 *  \brief The constructor of the Server class.
 		 *
-		 *  \param p_name The name of the ServerWidget. This is used for identification purposes.
+		 *  \param p_name The name of the Server. This is used for identification purposes.
 		 */
-		ServerWidget(const std::wstring& p_name);
+		Server(const std::wstring& p_name);
 
 		/** 
 		 *  \brief Set the server to be managed.
 		 *
-		 *  \param p_server The server that will be managed by this ServerWidget.
+		 *  \param p_server The server that will be managed by this Server.
 		 */
-		void setServer(Server* p_server);
+		void setServer(spk::Server* p_server);
 
 		/** 
 		 *  @brief Get the server that is currently being managed.
 		 *
 		 *  @return A pointer to the server being managed.
 		 */
-		Server* server();
+		spk::Server* server();
 
 		/** 
 		 *  \brief Get the server that is currently being managed, but disallow modification.
 		 *
 		 *  \return A const pointer to the server being managed.
 		 */
-		const Server* server() const;
+		const spk::Server* server() const;
 	};
 }

@@ -4,19 +4,19 @@
 #include "design_pattern/spk_activable_object.hpp"
 #include "math/spk_vector2.hpp"
 
-namespace spk
+namespace spk::Widget
 {
 	/**
-	 * @class AbstractWidget
+	 * @class Interface
 	 * @brief Abstract base class for widgets.
 	 * 
 	 * This class defines the interface and common functionality for widgets.
 	 * It inherits from InherenceObject and ActivableObject.
 	 */
-	class AbstractWidget : public spk::InherenceObject<AbstractWidget>, public spk::ActivableObject
+	class Interface : public spk::InherenceObject<Interface>, public spk::ActivableObject
 	{
 		friend class WidgetModule;
-		friend class WidgetAtlas;
+		friend class Atlas;
 
 	private:
 		virtual void _onRender() = 0;
@@ -44,20 +44,20 @@ namespace spk
 
 	public:
 		/**
-		 * @brief Construct a new AbstractWidget object with a specified name.
+		 * @brief Construct a new Interface object with a specified name.
 		 * 
-		 * This constructor creates a new AbstractWidget object with the specified name.
+		 * This constructor creates a new Interface object with the specified name.
 		 * 
 		 * @param p_name The name of the widget.
 		 */
-		AbstractWidget(const std::wstring& p_name);
+		Interface(const std::wstring& p_name);
 
 		/**
-		 * @brief Destroy the AbstractWidget object.
+		 * @brief Destroy the Interface object.
 		 * 
-		 * This is the destructor for the AbstractWidget class.
+		 * This is the destructor for the Interface class.
 		 */
-		virtual ~AbstractWidget();
+		virtual ~Interface();
 
 		/**
 		 * @brief Add a children widget to this widget.
@@ -166,12 +166,12 @@ namespace spk
 	};
 
 	/**
-	 * @class NoGraphicsWidget
+	 * @class NoGraphics
 	 * @brief Class for widgets without graphics.
 	 * 
-	 * This class extends the AbstractWidget class and provides an implementation for widgets without graphics.
+	 * This class extends the Interface class and provides an implementation for widgets without graphics.
 	 */
-	class NoGraphicsWidget : public AbstractWidget
+	class NoGraphics : public Interface
 	{
 	private:
 		/**
@@ -191,22 +191,22 @@ namespace spk
 
 	public:
 		/**
-		 * @brief Constructor for the NoGraphicsWidget class.
+		 * @brief Constructor for the NoGraphics class.
 		 *
 		 * @param p_name The name of the widget.
 		 */
-		NoGraphicsWidget(const std::wstring& p_name) :
-			AbstractWidget(p_name)
+		NoGraphics(const std::wstring& p_name) :
+			Interface(p_name)
 		{}
 	};
 
 	/**
-	 * @class OnlyGraphicsWidget
+	 * @class OnlyGraphics
 	 * @brief Class for widgets with only graphics.
 	 * 
-	 * This class extends the AbstractWidget class and provides an implementation for widgets with only graphics.
+	 * This class extends the Interface class and provides an implementation for widgets with only graphics.
 	 */
-	class OnlyGraphicsWidget : public AbstractWidget
+	class OnlyGraphics : public Interface
 	{
 	private:
 		/**
@@ -225,12 +225,12 @@ namespace spk
 
 	public:
 		/**
-		 * @brief Constructor for the OnlyGraphicsWidget class.
+		 * @brief Constructor for the OnlyGraphics class.
 		 *
 		 * @param p_name The name of the widget.
 		 */
-		OnlyGraphicsWidget(const std::wstring& p_name) :
-			AbstractWidget(p_name)
+		OnlyGraphics(const std::wstring& p_name) :
+			Interface(p_name)
 		{}
 	};
 

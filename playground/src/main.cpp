@@ -74,33 +74,33 @@ int main()
 	nodeA.connect(L"127.0.0.1", 12501);
 	nodeB.connect(L"127.0.0.1", 12502);
 
-	spk::CentralNodeWidget* CentralNodeWidget = app.addRootWidget<spk::CentralNodeWidget>(L"CentralNodeWidget");
-	CentralNodeWidget->setCentralNode(&centralNode);
-	CentralNodeWidget->activate();
+	spk::Widget::CentralNode* CentralNode = app.addRootWidget<spk::Widget::CentralNode>(L"CentralNode");
+	CentralNode->setCentralNode(&centralNode);
+	CentralNode->activate();
 
-	spk::ServerWidget* ServerWidgetNodeA = app.addRootWidget<spk::ServerWidget>(L"ServerNodeA");
-	ServerWidgetNodeA->setServer(&serverA);
-	ServerWidgetNodeA->activate();
+	spk::Widget::Server* ServerNodeA = app.addRootWidget<spk::Widget::Server>(L"ServerNodeA");
+	ServerNodeA->setServer(&serverA);
+	ServerNodeA->activate();
 
-	spk::ServerWidget* ServerWidgetNodeB = app.addRootWidget<spk::ServerWidget>(L"ServerNodeB");
-	ServerWidgetNodeB->setServer(&serverB);
-	ServerWidgetNodeB->activate();
+	spk::Widget::Server* ServerNodeB = app.addRootWidget<spk::Widget::Server>(L"ServerNodeB");
+	ServerNodeB->setServer(&serverB);
+	ServerNodeB->activate();
 
-	spk::RemoteNodeManager* removeManagerA = app.addRootWidget<spk::RemoteNodeManager>(L"RemoteNodeA");
+	spk::Widget::RemoteNode* removeManagerA = app.addRootWidget<spk::Widget::RemoteNode>(L"RemoteNodeA");
 	removeManagerA->setRemoteNode(&nodeA);
 	removeManagerA->activate();
 
-	spk::RemoteNodeManager* removeManagerB = app.addRootWidget<spk::RemoteNodeManager>(L"RemoteNodeB");
+	spk::Widget::RemoteNode* removeManagerB = app.addRootWidget<spk::Widget::RemoteNode>(L"RemoteNodeB");
 	removeManagerB->setRemoteNode(&nodeB);
 	removeManagerB->activate();
 
-	spk::ClientWidget* ClientWidgetA = app.addRootWidget<spk::ClientWidget>(L"ClientWidgetA");
-	ClientWidgetA->setClient(&clientA);
-	ClientWidgetA->activate();
+	spk::Widget::Client* ClientA = app.addRootWidget<spk::Widget::Client>(L"ClientA");
+	ClientA->setClient(&clientA);
+	ClientA->activate();
 
-	spk::ClientWidget* ClientWidgetB = app.addRootWidget<spk::ClientWidget>(L"ClientWidgetB");
-	ClientWidgetB->setClient(&clientB);
-	ClientWidgetB->activate();
+	spk::Widget::Client* ClientB = app.addRootWidget<spk::Widget::Client>(L"ClientB");
+	ClientB->setClient(&clientB);
+	ClientB->activate();
 
 	clientA.send(spk::Message(0));
 	clientB.send(spk::Message(0));

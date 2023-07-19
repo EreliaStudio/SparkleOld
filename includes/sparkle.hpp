@@ -61,10 +61,10 @@
 
 #include "application/modules/spk_widget_module.hpp"
 
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_atlas.hpp"
 
-#include "widget/spk_client_manager.hpp"
+#include "widget/spk_client_widget.hpp"
 #include "widget/spk_server_widget.hpp"
 #include "widget/spk_central_node_widget.hpp"
 #include "widget/spk_remote_node_widget.hpp"

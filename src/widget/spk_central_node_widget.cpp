@@ -1,31 +1,31 @@
 #include "widget/spk_central_node_widget.hpp"
 
-namespace spk
+namespace spk::Widget
 {
-	bool CentralNodeWidget::_onUpdate()
+	bool CentralNode::_onUpdate()
 	{
 		if (_centralNodeToManage != nullptr)
 			_centralNodeToManage->treatMessages();
 		return (false);
 	}
 
-	CentralNodeWidget::CentralNodeWidget(const std::wstring &p_name) : 
-		NoGraphicsWidget(p_name),
+	CentralNode::CentralNode(const std::wstring &p_name) : 
+		NoGraphics(p_name),
 		_centralNodeToManage(nullptr)
 	{
 	}
 
-	void CentralNodeWidget::setCentralNode(CentralNode *p_centralNode)
+	void CentralNode::setCentralNode(spk::CentralNode *p_centralNode)
 	{
 		_centralNodeToManage = p_centralNode;
 	}
 
-	CentralNode *CentralNodeWidget::centralNode()
+	spk::CentralNode *CentralNode::centralNode()
 	{
 		return (_centralNodeToManage);
 	}
 
-	const CentralNode *CentralNodeWidget::centralNode() const
+	const spk::CentralNode *CentralNode::centralNode() const
 	{
 		return (_centralNodeToManage);
 	}

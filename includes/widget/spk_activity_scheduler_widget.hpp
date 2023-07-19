@@ -1,19 +1,20 @@
 #pragma once
 
-#include "widget/spk_abstract_widget.hpp"
+#include "widget/spk_widget_interface.hpp"
+#include "design_pattern/spk_activity.hpp"
 
-namespace spk
+namespace spk::Widget
 {
 	class Activity;
 
-	class ActivitySchedulerWidget : public spk::NoGraphicsWidget
+	class ActivityScheduler : public spk::Widget::NoGraphics
 	{
 	private:
 		bool _onUpdate();
 	
 	public:
-		ActivitySchedulerWidget(const std::wstring& p_name);
-		~ActivitySchedulerWidget();
+		ActivityScheduler(const std::wstring& p_name);
+		~ActivityScheduler();
 	};
 	
 	void launchActivity(spk::Activity* p_activity);
