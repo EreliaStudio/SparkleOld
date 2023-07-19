@@ -6,10 +6,10 @@
 namespace spk::Widget
 {
 	/** 
-	 *  \class Server
+	 *  \class ServerManager
 	 *  \brief A widget that is used to manage a server. 
 	 *
-	 *  The Server class is a NoGraphics that controls the life cycle of a Server.
+	 *  The ServerManager class is a NoGraphics that controls the life cycle of a Server.
 	 *  It provides an interface to set the Server to manage and access it.
 	 */
 	class ServerManager : public NoGraphics
