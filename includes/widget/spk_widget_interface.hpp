@@ -3,9 +3,11 @@
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"
 #include "math/spk_vector2.hpp"
-
+#include "application/modules/spk_widget_module.hpp"
 namespace spk::Widget
 {
+	class Atlas;
+
 	/**
 	 * @class Interface
 	 * @brief Abstract base class for widgets.
@@ -15,8 +17,8 @@ namespace spk::Widget
 	 */
 	class Interface : public spk::InherenceObject<Interface>, public spk::ActivableObject
 	{
-		friend class WidgetModule;
-		friend class Atlas;
+		friend class spk::WidgetModule;
+		friend class spk::Widget::Atlas;
 
 	private:
 		virtual void _onRender() = 0;

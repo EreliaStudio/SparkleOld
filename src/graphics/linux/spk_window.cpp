@@ -2,8 +2,6 @@
 #include "iostream/spk_iostream.hpp"
 #include "application/modules/spk_API_module.hpp"
 
-#define DEBUG_LINE() spk::cout << __FUNCTION__ << "::" << __LINE__ << std::endl
-
 namespace spk
 {
 	void Window::_createWindow()
