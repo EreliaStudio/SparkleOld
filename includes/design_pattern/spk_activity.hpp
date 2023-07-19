@@ -97,4 +97,12 @@ namespace spk
 		 */
 		bool isCompleted() const;
 	};
+
+	class TimedActivity
+	{
+	private:
+
+	public:
+		TimedActivity();
+	};
 }
