@@ -3,8 +3,8 @@
 
 namespace spk
 {
-	Timer::Timer() :
-		_duration(0),
+	Timer::Timer(const long long& p_duration) :
+		_duration(p_duration),
 		_status(State::Idle),
 		_startTime(0)
 	{

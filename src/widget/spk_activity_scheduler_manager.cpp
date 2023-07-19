@@ -20,7 +20,7 @@ namespace spk
 		spk::Singleton<spk::ActivityScheduler>::release();
 	}
 
-	launchActivity(spk::Activity* p_activity)
+	void launchActivity(spk::Activity* p_activity)
 	{
 		spk::Singleton<spk::ActivityScheduler>::instance()->addActivity(p_activity);
 	}

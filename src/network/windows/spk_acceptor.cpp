@@ -2,13 +2,13 @@
 namespace spk
 {
 	Acceptor::Acceptor() : spk::NetworkObject(),
-						   _socket(NULL)
+						   _socket()
 	{
 	}
 
 	Acceptor::~Acceptor()
 	{
-		close(_socket);
+		stop();
 	}
 
 	void Acceptor::start(const size_t &p_port)

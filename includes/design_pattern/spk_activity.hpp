@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include "system/spk_timer.hpp"
 
 namespace spk
 {
@@ -98,11 +99,39 @@ namespace spk
 		bool isCompleted() const;
 	};
 
-	class TimedActivity
+	class TimedActivity : public spk::Activity
 	{
 	private:
+		spk::Timer _timer;
+		std::function<void()> _funct;
+
+		void _onEnter();
+		void _execute();
+		void _onExit();
 
 	public:
 		TimedActivity();
+		
+		TimedActivity(const size_t& p_delay, const std::function<void()>& p_funct);
+
+		void setFunct(const std::function<void()>& p_funct);
+
+	    void setDelay(const size_t& p_delay);
+	};
+
+	class RetryActivity : public spk::Activity
+	{
+	private:
+		std::function<bool()> _funct;
+
+		void _onEnter();
+		void _execute();
+		void _onExit();
+
+	public:
+		RetryActivity();
+		RetryActivity(const std::function<bool()>& p_funct);
+		
+		void setFunct(const std::function<bool()>& p_funct);
 	};
 }

@@ -16,5 +16,5 @@ namespace spk
 		~ActivitySchedulerManager();
 	};
 	
-	launchActivity(spk::Activity* p_activity);
+	void launchActivity(spk::Activity* p_activity);
 }
