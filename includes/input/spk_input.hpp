@@ -6,15 +6,15 @@
 namespace spk
 {
 	/**
-	 * @class IInput
+	 * @class Input
 	 * 
 	 * @brief Abstract class providing a common interface for input classes in the 'spk' library.
 	 * 
-	 * An IInput object encapsulates a function that may need to be executed at a regular interval.
+	 * An Input object encapsulates a function that may need to be executed at a regular interval.
 	 * The function is executed if the `_isExecutionNeeded()` method returns true.
 	 * The `_skipCondition()` method can be overridden to provide a condition under which the update is skipped.
 	 */
-	class IInput
+	class Input
 	{
 	protected:
 		/**
@@ -45,7 +45,7 @@ namespace spk
 
 	public:
 		/**
-		 * @brief Construct a new IInput object
+		 * @brief Construct a new Input object
 		 * 
 		 * @tparam Funct Function type
 		 * @tparam Args Argument types
@@ -54,7 +54,7 @@ namespace spk
 		 * @param p_args Arguments for the function
 		 */
 		template <typename Funct, typename... Args>
-		IInput(unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
+		Input(unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
 			_timer(p_delayBetweenInput),
 			_funct(std::bind(std::forward<Funct>(p_funct), std::forward<Args>(p_args)...))
 		{
@@ -62,7 +62,7 @@ namespace spk
 		}
 
 		/**
-		 * @brief Update method for the IInput object.
+		 * @brief Update method for the Input object.
 		 * 
 		 * If the `_skipCondition()` is true and the timer is running, the update is skipped.
 		 * If the `_isExecutionNeeded()` method returns true, the function is executed and the timer is started.

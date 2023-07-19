@@ -8,12 +8,12 @@ namespace spk
 	/**
 	 * @class MouseMovementInput
 	 * 
-	 * @brief A concrete class derived from IInput that represents mouse movement input.
+	 * @brief A concrete class derived from Input that represents mouse movement input.
 	 * 
-	 * MouseMovementInput is a specific implementation of IInput for mouse movements. 
+	 * MouseMovementInput is a specific implementation of Input for mouse movements. 
 	 * The encapsulated function is always executed in every update, because the `_isExecutionNeeded()` method always returns true.
 	 */
-	class MouseMovementInput : public IInput
+	class MouseMovementInput : public Input
 	{
 	private:
 		/**
@@ -39,7 +39,7 @@ namespace spk
 		 */
 		template <typename Funct, typename... Args>
 		MouseMovementInput(unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
-			IInput(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...)
+			Input(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...)
 		{
 
 		}

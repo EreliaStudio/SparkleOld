@@ -8,12 +8,12 @@ namespace spk
 	/**
 	 * @class KeyInput
 	 * 
-	 * @brief A concrete class derived from IInput that represents keyboard input.
+	 * @brief A concrete class derived from Input that represents keyboard input.
 	 * 
-	 * KeyInput is a specific implementation of IInput for keyboard inputs. It encapsulates a keyboard key and the expected status of the key.
+	 * KeyInput is a specific implementation of Input for keyboard inputs. It encapsulates a keyboard key and the expected status of the key.
 	 * The encapsulated function is executed if the current status of the specified keyboard key matches the expected status.
 	 */
-	class KeyInput : public IInput
+	class KeyInput : public Input
 	{
 	private:
 		/**
@@ -51,7 +51,7 @@ namespace spk
 		 */
 		template <typename Funct, typename... Args>
 		KeyInput(spk::Keyboard::Key p_key, spk::InputStatus p_expectedStatus, unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
-			IInput(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
+			Input(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
 			_key(p_key),
 			_expectedStatus(p_expectedStatus)
 		{
