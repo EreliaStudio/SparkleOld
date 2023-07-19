@@ -1,21 +1,21 @@
-#include "widget/spk_activity_scheduler_widget.hpp"
+#include "widget/spk_widget_activity_scheduler_manager.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 
 namespace spk::Widget
 {	
-	bool ActivityScheduler::_onUpdate()
+	bool ActivitySchedulerManager::_onUpdate()
 	{
 		spk::Singleton<spk::ActivityScheduler>::instance()->execute();
 		return (false);
 	}
 	
-	ActivityScheduler::ActivityScheduler(const std::wstring& p_name) : 
+	ActivitySchedulerManager::ActivitySchedulerManager(const std::wstring& p_name) : 
 		spk::Widget::NoGraphics(p_name)
 	{
 		spk::Singleton<spk::ActivityScheduler>::instanciate();
 	}
 	
-	ActivityScheduler::~ActivityScheduler()
+	ActivitySchedulerManager::~ActivitySchedulerManager()
 	{
 		spk::Singleton<spk::ActivityScheduler>::release();
 	}

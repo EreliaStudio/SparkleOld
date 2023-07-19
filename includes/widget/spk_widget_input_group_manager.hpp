@@ -5,14 +5,14 @@
 
 namespace spk::Widget
 {
-	class InputManager : public spk::Widget::NoGraphics
+	class InputGroupManager : public spk::Widget::NoGraphics
 	{
 	private:
 		bool _onUpdate();
 	
 	public:
-		InputManager(const std::wstring& p_name);
-		~InputManager();
+		InputGroupManager(const std::wstring& p_name);
+		~InputGroupManager();
 	};
 	
 	void addInput(Input* p_input);

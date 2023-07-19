@@ -74,31 +74,31 @@ int main()
 	nodeA.connect(L"127.0.0.1", 12501);
 	nodeB.connect(L"127.0.0.1", 12502);
 
-	spk::Widget::CentralNode* CentralNode = app.addRootWidget<spk::Widget::CentralNode>(L"CentralNode");
+	spk::Widget::CentralNodeManager* CentralNode = app.addRootWidget<spk::Widget::CentralNodeManager>(L"CentralNode");
 	CentralNode->setCentralNode(&centralNode);
 	CentralNode->activate();
 
-	spk::Widget::Server* ServerNodeA = app.addRootWidget<spk::Widget::Server>(L"ServerNodeA");
+	spk::Widget::ServerManager* ServerNodeA = app.addRootWidget<spk::Widget::ServerManager>(L"ServerNodeA");
 	ServerNodeA->setServer(&serverA);
 	ServerNodeA->activate();
 
-	spk::Widget::Server* ServerNodeB = app.addRootWidget<spk::Widget::Server>(L"ServerNodeB");
+	spk::Widget::ServerManager* ServerNodeB = app.addRootWidget<spk::Widget::ServerManager>(L"ServerNodeB");
 	ServerNodeB->setServer(&serverB);
 	ServerNodeB->activate();
 
-	spk::Widget::RemoteNode* removeManagerA = app.addRootWidget<spk::Widget::RemoteNode>(L"RemoteNodeA");
+	spk::Widget::RemoteNodeManager* removeManagerA = app.addRootWidget<spk::Widget::RemoteNodeManager>(L"RemoteNodeA");
 	removeManagerA->setRemoteNode(&nodeA);
 	removeManagerA->activate();
 
-	spk::Widget::RemoteNode* removeManagerB = app.addRootWidget<spk::Widget::RemoteNode>(L"RemoteNodeB");
+	spk::Widget::RemoteNodeManager* removeManagerB = app.addRootWidget<spk::Widget::RemoteNodeManager>(L"RemoteNodeB");
 	removeManagerB->setRemoteNode(&nodeB);
 	removeManagerB->activate();
 
-	spk::Widget::Client* ClientA = app.addRootWidget<spk::Widget::Client>(L"ClientA");
+	spk::Widget::ClientManager* ClientA = app.addRootWidget<spk::Widget::ClientManager>(L"ClientA");
 	ClientA->setClient(&clientA);
 	ClientA->activate();
 
-	spk::Widget::Client* ClientB = app.addRootWidget<spk::Widget::Client>(L"ClientB");
+	spk::Widget::ClientManager* ClientB = app.addRootWidget<spk::Widget::ClientManager>(L"ClientB");
 	ClientB->setClient(&clientB);
 	ClientB->activate();
 

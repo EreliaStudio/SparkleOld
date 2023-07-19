@@ -12,7 +12,7 @@ namespace spk::Widget
 	 *  The Server class is a NoGraphics that controls the life cycle of a Server.
 	 *  It provides an interface to set the Server to manage and access it.
 	 */
-	class Server : public NoGraphics
+	class ServerManager : public NoGraphics
 	{
 	private:
 		spk::Server* _serverToManage; ///< The server that this manager is controlling.
@@ -29,7 +29,7 @@ namespace spk::Widget
 		 *
 		 *  \param p_name The name of the Server. This is used for identification purposes.
 		 */
-		Server(const std::wstring& p_name);
+		ServerManager(const std::wstring& p_name);
 
 		/** 
 		 *  \brief Set the server to be managed.

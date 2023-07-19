@@ -1,20 +1,20 @@
-#include "input/spk_input_manager.hpp"
+#include "input/spk_input_group.hpp"
 #include "spk_basic_functions.hpp"
 
 namespace spk
 {
-	void InputManager::addInput(Input* p_input)
+	void InputGroup::addInput(Input* p_input)
 	{
 		auto it = std::find(_inputs.begin(), _inputs.end(), p_input);
 		if (it != _inputs.end())
 		{
-			spk::throwException(L"Input already inside the InputManager");
+			spk::throwException(L"Input already inside the InputGroup");
 		}
 
 		_inputs.push_back(p_input);
 	}
 	
-	void InputManager::removeInput(Input* p_input)
+	void InputGroup::removeInput(Input* p_input)
 	{
 		auto it = std::find(_inputs.begin(), _inputs.end(), p_input);
 		if (it != _inputs.end())
@@ -23,11 +23,11 @@ namespace spk
 		}
 		else
 		{
-			spk::throwException(L"Input not contained inside InputManager");
+			spk::throwException(L"Input not contained inside InputGroup");
 		}
 	}
 
-	void InputManager::update()
+	void InputGroup::update()
 	{
 		for (auto& input : _inputs)
 		{

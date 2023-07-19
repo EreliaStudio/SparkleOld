@@ -1,6 +1,6 @@
 #include "application/spk_application.hpp"
-#include "widget/spk_activity_scheduler_widget.hpp"
-#include "widget/spk_input_manager_widget.hpp"
+#include "widget/spk_widget_activity_scheduler_manager.hpp"
+#include "widget/spk_widget_input_group_manager.hpp"
 
 namespace spk
 {
@@ -27,9 +27,9 @@ namespace spk
 	void Application::_initializeConfigurableValues(const Application::Configuration& p_configuration)
 	{
 		if (p_configuration.initActivityScheduler == true)
-			addRootWidget<spk::Widget::ActivityScheduler>(L"ActivityScheduler")->activate();
+			addRootWidget<spk::Widget::ActivitySchedulerManager>(L"ActivitySchedulerManager")->activate();
 		if (p_configuration.initInputManager == true)
-			addRootWidget<spk::Widget::InputManager>(L"InputManager")->activate();
+			addRootWidget<spk::Widget::InputGroupManager>(L"InputGroupManager")->activate();
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const Configuration& p_configuration)

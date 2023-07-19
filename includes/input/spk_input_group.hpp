@@ -5,7 +5,7 @@
 
 namespace spk
 {
-	class InputManager
+	class InputGroup
 	{
 	private:
 		std::vector<Input*> _inputs;

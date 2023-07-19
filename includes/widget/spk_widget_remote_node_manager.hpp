@@ -8,7 +8,7 @@ namespace spk::Widget
 	/**
 	 * \brief Manager class for RemoteNode. Inherits from NoGraphics.
 	 */
-	class RemoteNode : public NoGraphics
+	class RemoteNodeManager : public NoGraphics
 	{
 	private:
 		spk::RemoteNode* _remoteNodeToManage; ///< The RemoteNode object to manage.
@@ -24,7 +24,7 @@ namespace spk::Widget
 		 * \brief Constructor for RemoteNode class.
 		 * \param p_name Name of the RemoteNode object.
 		 */
-		RemoteNode(const std::wstring& p_name);
+		RemoteNodeManager(const std::wstring& p_name);
 
 		/**
 		 * \brief Sets the RemoteNode object to manage.

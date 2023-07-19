@@ -7,14 +7,14 @@ namespace spk::Widget
 {
 	class Activity;
 
-	class ActivityScheduler : public spk::Widget::NoGraphics
+	class ActivitySchedulerManager : public spk::Widget::NoGraphics
 	{
 	private:
 		bool _onUpdate();
 	
 	public:
-		ActivityScheduler(const std::wstring& p_name);
-		~ActivityScheduler();
+		ActivitySchedulerManager(const std::wstring& p_name);
+		~ActivitySchedulerManager();
 	};
 	
 	void launchActivity(spk::Activity* p_activity);

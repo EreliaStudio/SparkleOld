@@ -1,33 +1,33 @@
-#include "widget/spk_server_widget.hpp"
+#include "widget/spk_widget_server_manager.hpp"
 
 namespace spk::Widget
 {
 
-	bool Server::_onUpdate()
+	bool ServerManager::_onUpdate()
 	{
 		if (_serverToManage != nullptr)
 			_serverToManage->treatMessages();
 		return (false);
 	}
 
-	Server::Server(const std::wstring& p_name) :
+	ServerManager::ServerManager(const std::wstring& p_name) :
 		NoGraphics(p_name),
 		_serverToManage(nullptr)
 	{
 
 	}
 
-	void Server::setServer(spk::Server* p_server)
+	void ServerManager::setServer(spk::Server* p_server)
 	{
 		_serverToManage = p_server;
 	}
 
-	spk::Server* Server::server()
+	spk::Server* ServerManager::server()
 	{
 		return (_serverToManage);
 	}
 
-	const spk::Server* Server::server() const
+	const spk::Server* ServerManager::server() const
 	{
 		return (_serverToManage);
 	}
