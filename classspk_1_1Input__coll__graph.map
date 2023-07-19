@@ -1,0 +1,4 @@
+<map id="spk::Input" name="spk::Input">
+<area shape="rect" id="node1" title="Abstract class providing a common interface for input classes in the &#39;spk&#39; library." alt="" coords="7,95,94,121"/>
+<area shape="rect" id="node2" href="$classspk_1_1Timer.html" title="Class for creating and managing a timer." alt="" coords="5,5,96,32"/>
+</map>

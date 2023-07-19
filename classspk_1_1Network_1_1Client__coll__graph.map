@@ -1,0 +1,9 @@
+<map id="spk::Network::Client" name="spk::Network::Client">
+<area shape="rect" id="node1" title="The Client class encapsulates the behavior of a client in a network communication context." alt="" coords="659,119,813,145"/>
+<area shape="rect" id="node2" href="$classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="238,31,401,57"/>
+<area shape="rect" id="node3" href="$classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="37,5,136,32"/>
+<area shape="rect" id="node4" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,56,168,83"/>
+<area shape="rect" id="node5" href="$classspk_1_1ThreadSafeQueue.html" title=" " alt="" coords="217,82,421,123"/>
+<area shape="rect" id="node6" href="$classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket." alt="" coords="240,148,399,175"/>
+<area shape="rect" id="node7" href="$classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it." alt="" coords="238,199,401,241"/>
+</map>

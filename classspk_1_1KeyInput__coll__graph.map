@@ -1,5 +1,5 @@
 <map id="spk::KeyInput" name="spk::KeyInput">
-<area shape="rect" id="node1" title="A concrete class derived from IInput that represents keyboard input." alt="" coords="5,171,116,197"/>
-<area shape="rect" id="node2" href="$classspk_1_1IInput.html" title="Abstract class providing a common interface for input classes in the &#39;spk&#39; library." alt="" coords="15,95,106,121"/>
+<area shape="rect" id="node1" title="A concrete class derived from Input that represents keyboard input." alt="" coords="5,171,116,197"/>
+<area shape="rect" id="node2" href="$classspk_1_1Input.html" title="Abstract class providing a common interface for input classes in the &#39;spk&#39; library." alt="" coords="17,95,104,121"/>
 <area shape="rect" id="node3" href="$classspk_1_1Timer.html" title="Class for creating and managing a timer." alt="" coords="15,5,106,32"/>
 </map>

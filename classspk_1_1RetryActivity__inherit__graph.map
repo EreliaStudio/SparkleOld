@@ -1,0 +1,4 @@
+<map id="spk::RetryActivity" name="spk::RetryActivity">
+<area shape="rect" id="node1" title="Represents an activity that repeatedly executes a function until it returns true." alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Activity.html" title="Represents an activity. This class defines an activity that can be managed by an ActivityManager...." alt="" coords="23,5,126,32"/>
+</map>

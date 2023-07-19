@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,231,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1TimeMetrics.html" title="Class for recording time&#45;related metrics in the application." alt="" coords="279,5,413,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,243,47"/>
+<area shape="rect" id="node2" href="$classspk_1_1ContextManager.html" title="ContextManager is a singleton template class that manages ReadWrite and ReadOnly access to a common c..." alt="" coords="291,5,452,47"/>
 </map>

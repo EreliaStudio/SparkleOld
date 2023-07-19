@@ -1,4 +1,4 @@
 <map id="spk::KeyInput" name="spk::KeyInput">
-<area shape="rect" id="node1" title="A concrete class derived from IInput that represents keyboard input." alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1IInput.html" title="Abstract class providing a common interface for input classes in the &#39;spk&#39; library." alt="" coords="15,5,106,32"/>
+<area shape="rect" id="node1" title="A concrete class derived from Input that represents keyboard input." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Input.html" title="Abstract class providing a common interface for input classes in the &#39;spk&#39; library." alt="" coords="17,5,104,32"/>
 </map>

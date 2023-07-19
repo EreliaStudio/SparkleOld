@@ -73,50 +73,94 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>spk</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Activity.html">Activity</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span>ActivityManager;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">   20</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2">Stopped</a>,   </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0">OnEnter</a>,   </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09">Running</a>,   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144">OnExit</a>, </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d">Complete</a>   </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">   29</a></span>&#160;        <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a> <a class="code" href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">_internalWorkingState</a>; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#ad9c4fb3d225e7dc0c9e2154295f63605">_update</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a84446cb99ea3035ed1119fe09742e0d8">_moveNextStep</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a361afbd8df75f55a1d3903a903a1358e">_moveNextStepAndExecute</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a2fc398d0a51902db587abf30d852fee6">_start</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">   65</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">_onEnter</a>() = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">   72</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">_execute</a>() = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">   79</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">_onExit</a>() = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classspk_1_1Activity.html#a624be8721a7a7e6ab00bb0f865560eac">Activity</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a>&amp; <a class="code" href="classspk_1_1Activity.html#ac1159932346bc7040a048df44ba5276c">state</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499">isCompleted</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    };</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1Activity_html"><div class="ttname"><a href="classspk_1_1Activity.html">spk::Activity</a></div><div class="ttdoc">Represents an activity. This class defines an activity that can be managed by an ActivityManager....</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:13</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;system/spk_timer.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Activity.html">Activity</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span>ActivityManager;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">   21</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecac23e2b09ebe6bf4cb5e2a9abe85c0be2">Stopped</a>,   </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0">OnEnter</a>,   </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09">Running</a>,   </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144">OnExit</a>, </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d">Complete</a>   </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">   30</a></span>&#160;        <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a> <a class="code" href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">_internalWorkingState</a>; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#ad9c4fb3d225e7dc0c9e2154295f63605">_update</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a84446cb99ea3035ed1119fe09742e0d8">_moveNextStep</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a361afbd8df75f55a1d3903a903a1358e">_moveNextStepAndExecute</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a2fc398d0a51902db587abf30d852fee6">_start</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">   66</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">_onEnter</a>() = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">   73</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">_execute</a>() = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">   80</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">_onExit</a>() = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classspk_1_1Activity.html#a624be8721a7a7e6ab00bb0f865560eac">Activity</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">Status</a>&amp; <a class="code" href="classspk_1_1Activity.html#ac1159932346bc7040a048df44ba5276c">state</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499">isCompleted</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classspk_1_1TimedActivity.html">  110</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1TimedActivity.html">TimedActivity</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Activity.html">spk::Activity</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classspk_1_1Timer.html">spk::Timer</a> _timer;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::function&lt;void()&gt; _funct;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">void</span> _onEnter();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">void</span> _execute();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">void</span> _onExit();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="classspk_1_1TimedActivity.html#aa05646bb07d0f8f743f8baccab55fb1b">TimedActivity</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classspk_1_1TimedActivity.html#aa05646bb07d0f8f743f8baccab55fb1b">TimedActivity</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_delay, <span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; p_funct);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimedActivity.html#adf6a18ad5193cb4c3bb30f1cc7c1acb2">setFunct</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>()&gt;&amp; p_funct);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimedActivity.html#a1ce7944a53ce51d65dc187c1725698eb">setDelay</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_delay);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classspk_1_1RetryActivity.html">  162</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1RetryActivity.html">RetryActivity</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Activity.html">spk::Activity</a></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        std::function&lt;bool()&gt; _funct;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordtype">void</span> _onEnter();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordtype">void</span> _execute();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordtype">void</span> _onExit();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="classspk_1_1RetryActivity.html#a68f49385671bda43fd31b979115f6151">RetryActivity</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classspk_1_1RetryActivity.html#a68f49385671bda43fd31b979115f6151">RetryActivity</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>()&gt;&amp; p_funct);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1RetryActivity.html#ab973966b5e03c83b361f6c4662fd1d19">setFunct</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>()&gt;&amp; p_funct);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    };</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Activity_html"><div class="ttname"><a href="classspk_1_1Activity.html">spk::Activity</a></div><div class="ttdoc">Represents an activity. This class defines an activity that can be managed by an ActivityManager....</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:14</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a1aa7cf3267e674cc737d4d56c674ff4e"><div class="ttname"><a href="classspk_1_1Activity.html#a1aa7cf3267e674cc737d4d56c674ff4e">spk::Activity::_onEnter</a></div><div class="ttdeci">virtual void _onEnter()=0</div><div class="ttdoc">Executes the onEnter phase of the activity. This pure virtual function is called when the activity en...</div></div>
-<div class="ttc" id="aclassspk_1_1Activity_html_a1fa844e585a28ff096c43b924a4d0aec"><div class="ttname"><a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">spk::Activity::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">Enumerates the possible status of the activity.</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:21</div></div>
+<div class="ttc" id="aclassspk_1_1Activity_html_a1fa844e585a28ff096c43b924a4d0aec"><div class="ttname"><a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aec">spk::Activity::Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">Enumerates the possible status of the activity.</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:22</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144"><div class="ttname"><a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144">spk::Activity::Status::OnExit</a></div><div class="ttdeci">@ OnExit</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09"><div class="ttname"><a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09">spk::Activity::Status::Running</a></div><div class="ttdeci">@ Running</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d"><div class="ttname"><a href="classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecaae94f80b3ce82062a5dd7815daa04f9d">spk::Activity::Status::Complete</a></div><div class="ttdeci">@ Complete</div></div>
@@ -126,12 +170,20 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Activity_html_a361afbd8df75f55a1d3903a903a1358e"><div class="ttname"><a href="classspk_1_1Activity.html#a361afbd8df75f55a1d3903a903a1358e">spk::Activity::_moveNextStepAndExecute</a></div><div class="ttdeci">void _moveNextStepAndExecute()</div><div class="ttdoc">Moves to the next step of the activity and executes it. This function moves the activity to the next ...</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:41</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a507057c1dbc10ceb7894fa718fc75012"><div class="ttname"><a href="classspk_1_1Activity.html#a507057c1dbc10ceb7894fa718fc75012">spk::Activity::_onExit</a></div><div class="ttdeci">virtual void _onExit()=0</div><div class="ttdoc">Executes the onExit phase of the activity. This pure virtual function is called when the activity ent...</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a624be8721a7a7e6ab00bb0f865560eac"><div class="ttname"><a href="classspk_1_1Activity.html#a624be8721a7a7e6ab00bb0f865560eac">spk::Activity::Activity</a></div><div class="ttdeci">Activity()</div><div class="ttdoc">Default constructor for Activity. This constructor initializes the internal working state of the acti...</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:52</div></div>
-<div class="ttc" id="aclassspk_1_1Activity_html_a6ce4d394293a7812d9e1be5d8b1de652"><div class="ttname"><a href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">spk::Activity::_internalWorkingState</a></div><div class="ttdeci">Status _internalWorkingState</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:29</div></div>
+<div class="ttc" id="aclassspk_1_1Activity_html_a6ce4d394293a7812d9e1be5d8b1de652"><div class="ttname"><a href="classspk_1_1Activity.html#a6ce4d394293a7812d9e1be5d8b1de652">spk::Activity::_internalWorkingState</a></div><div class="ttdeci">Status _internalWorkingState</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:30</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_a84446cb99ea3035ed1119fe09742e0d8"><div class="ttname"><a href="classspk_1_1Activity.html#a84446cb99ea3035ed1119fe09742e0d8">spk::Activity::_moveNextStep</a></div><div class="ttdeci">void _moveNextStep()</div><div class="ttdoc">Moves to the next step of the activity. This function moves the activity to the next step without exe...</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:23</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_aab25e8eb7369e26c11f8f74e9db80499"><div class="ttname"><a href="classspk_1_1Activity.html#aab25e8eb7369e26c11f8f74e9db80499">spk::Activity::isCompleted</a></div><div class="ttdeci">bool isCompleted() const</div><div class="ttdoc">Checks if the activity is completed.</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:62</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_ac1159932346bc7040a048df44ba5276c"><div class="ttname"><a href="classspk_1_1Activity.html#ac1159932346bc7040a048df44ba5276c">spk::Activity::state</a></div><div class="ttdeci">const Status &amp; state() const</div><div class="ttdoc">Returns the current status of the activity.</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:57</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_ad9c4fb3d225e7dc0c9e2154295f63605"><div class="ttname"><a href="classspk_1_1Activity.html#ad9c4fb3d225e7dc0c9e2154295f63605">spk::Activity::_update</a></div><div class="ttdeci">void _update()</div><div class="ttdoc">Updates the activity. This function updates the activity, typically called once per frame....</div><div class="ttdef"><b>Definition:</b> spk_activity.cpp:5</div></div>
 <div class="ttc" id="aclassspk_1_1Activity_html_af4c0f1fe9d2299a1c3f096e9687ed234"><div class="ttname"><a href="classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234">spk::Activity::_execute</a></div><div class="ttdeci">virtual void _execute()=0</div><div class="ttdoc">Executes the main execution phase of the activity. This pure virtual function is called when the acti...</div></div>
+<div class="ttc" id="aclassspk_1_1RetryActivity_html"><div class="ttname"><a href="classspk_1_1RetryActivity.html">spk::RetryActivity</a></div><div class="ttdoc">Represents an activity that repeatedly executes a function until it returns true.</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:163</div></div>
+<div class="ttc" id="aclassspk_1_1RetryActivity_html_a68f49385671bda43fd31b979115f6151"><div class="ttname"><a href="classspk_1_1RetryActivity.html#a68f49385671bda43fd31b979115f6151">spk::RetryActivity::RetryActivity</a></div><div class="ttdeci">RetryActivity()</div><div class="ttdoc">Default constructor for RetryActivity.</div><div class="ttdef"><b>Definition:</b> spk_retry_activity.cpp:21</div></div>
+<div class="ttc" id="aclassspk_1_1RetryActivity_html_ab973966b5e03c83b361f6c4662fd1d19"><div class="ttname"><a href="classspk_1_1RetryActivity.html#ab973966b5e03c83b361f6c4662fd1d19">spk::RetryActivity::setFunct</a></div><div class="ttdeci">void setFunct(const std::function&lt; bool()&gt; &amp;p_funct)</div><div class="ttdoc">Sets the function to be executed by the RetryActivity.</div><div class="ttdef"><b>Definition:</b> spk_retry_activity.cpp:33</div></div>
+<div class="ttc" id="aclassspk_1_1TimedActivity_html"><div class="ttname"><a href="classspk_1_1TimedActivity.html">spk::TimedActivity</a></div><div class="ttdoc">Represents an activity that executes a function after a specified delay.</div><div class="ttdef"><b>Definition:</b> spk_activity.hpp:111</div></div>
+<div class="ttc" id="aclassspk_1_1TimedActivity_html_a1ce7944a53ce51d65dc187c1725698eb"><div class="ttname"><a href="classspk_1_1TimedActivity.html#a1ce7944a53ce51d65dc187c1725698eb">spk::TimedActivity::setDelay</a></div><div class="ttdeci">void setDelay(const size_t &amp;p_delay)</div><div class="ttdoc">Sets the delay before the function should be executed.</div><div class="ttdef"><b>Definition:</b> spk_timed_actitivy.cpp:42</div></div>
+<div class="ttc" id="aclassspk_1_1TimedActivity_html_aa05646bb07d0f8f743f8baccab55fb1b"><div class="ttname"><a href="classspk_1_1TimedActivity.html#aa05646bb07d0f8f743f8baccab55fb1b">spk::TimedActivity::TimedActivity</a></div><div class="ttdeci">TimedActivity()</div><div class="ttdoc">Default constructor for TimedActivity.</div><div class="ttdef"><b>Definition:</b> spk_timed_actitivy.cpp:23</div></div>
+<div class="ttc" id="aclassspk_1_1TimedActivity_html_adf6a18ad5193cb4c3bb30f1cc7c1acb2"><div class="ttname"><a href="classspk_1_1TimedActivity.html#adf6a18ad5193cb4c3bb30f1cc7c1acb2">spk::TimedActivity::setFunct</a></div><div class="ttdeci">void setFunct(const std::function&lt; void()&gt; &amp;p_funct)</div><div class="ttdoc">Sets the function to be executed by the TimedActivity.</div><div class="ttdef"><b>Definition:</b> spk_timed_actitivy.cpp:37</div></div>
+<div class="ttc" id="aclassspk_1_1Timer_html"><div class="ttname"><a href="classspk_1_1Timer.html">spk::Timer</a></div><div class="ttdoc">Class for creating and managing a timer.</div><div class="ttdef"><b>Definition:</b> spk_timer.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

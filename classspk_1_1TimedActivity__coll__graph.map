@@ -1,0 +1,4 @@
+<map id="spk::TimedActivity" name="spk::TimedActivity">
+<area shape="rect" id="node1" title="Represents an activity that executes a function after a specified delay." alt="" coords="5,80,149,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Activity.html" title="Represents an activity. This class defines an activity that can be managed by an ActivityManager...." alt="" coords="26,5,129,32"/>
+</map>

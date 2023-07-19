@@ -1,0 +1,5 @@
+<map id="spk::Network::Node" name="spk::Network::Node">
+<area shape="rect" id="node1" title="Class encapsulating a node, remote or local." alt="" coords="130,5,281,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Network_1_1LocalNode.html" title="The LocalNode class extends the Node class, encapsulating the behavior of a local node in a network." alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1Network_1_1RemoteNode.html" title="Class representing a remote network node." alt="" coords="214,80,415,107"/>
+</map>

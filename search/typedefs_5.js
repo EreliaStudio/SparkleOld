@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_874',['Type',['../classspk_1_1Message_1_1Header.html#a18ab3a81fef94f13a0d3298fda5f09c6',1,'spk::Message::Header::Type()'],['../classspk_1_1Message.html#a1a389a724bd35faaaaa55956fc0ee1c5',1,'spk::Message::Type()']]]
+  ['type_907',['Type',['../classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da',1,'spk::Network::Message::Header::Type()'],['../classspk_1_1Network_1_1Message.html#af80fa1c065c83d58336d3d86be659171',1,'spk::Network::Message::Type()']]]
 ];
