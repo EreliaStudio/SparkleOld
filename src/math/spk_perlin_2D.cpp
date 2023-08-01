@@ -2,6 +2,12 @@
 
 namespace spk
 {
+	Perlin2D::Perlin2D() :
+		Perlin1D()
+	{
+
+	}
+	
 	Perlin2D::Perlin2D(const long long& p_seed) :
 		Perlin1D(p_seed)
 	{
@@ -14,31 +20,29 @@ namespace spk
 
 	}
 
-	float Perlin2D::_dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const
-	{
-		size_t firstDim = (ix % PermutationTableSize) % PermutationTableSize;
-		size_t secondDim = (_permutationTable[ firstDim ] + iy) % PermutationTableSize;
-		unsigned int hash = _permutationTable[secondDim ] % 12;
-
-		// Use the hashed index to look up a gradient vector
-		const float gradients[12][3] = {
-			{1, 1, 0}, {-1, 1, 0}, {1, -1, 0}, {-1, -1, 0},
-			{1, 0, 1}, {-1, 0, 1}, {1, 0, -1}, {-1, 0, -1},
-			{0, 1, 1}, {0, -1, 1}, {0, 1, -1}, {0, -1, -1}
-		};
-		const float* gradient = gradients[hash];
-
-		// Compute the distance vector
-		float dx = x - (float)ix;
-		float dy = y - (float)iy;
-
-		// Compute the dot-product
-		return (dx * gradient[0] + dy * gradient[1]);
-	}
-
 	float Perlin2D::_computeWaveLength(const float& p_x, const float& p_y, const float& p_frequency) const
 	{
-		return 0;
+		float fx = p_x / p_frequency;
+		float fy = p_y / p_frequency;
+
+		int x0 = std::floor(fx);
+		int x1 = x0 + 1;
+		int y0 = std::floor(fy);
+		int y1 = y0 + 1;
+
+		float sx = fx - (float)x0;
+		float sy = fy - (float)y0;
+
+		float n0, n1, ix0, ix1, value;
+		n0 = _dotGridGradient(x0, y0, 0, fx, fy, 0);
+		n1 = _dotGridGradient(x1, y0, 0, fx, fy, 0);
+		ix0 = _interpolate(n0, n1, sx);
+		n0 = _dotGridGradient(x0, y1, 0, fx, fy, 0);
+		n1 = _dotGridGradient(x1, y1, 0, fx, fy, 0);
+		ix1 = _interpolate(n0, n1, sx);
+		value = _interpolate(ix0, ix1, sy);
+
+		return value;
 	}
 
 	float Perlin2D::sample(const float& p_x, const float& p_y) const

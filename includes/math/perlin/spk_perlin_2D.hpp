@@ -10,10 +10,10 @@ namespace spk
 	{
 	private:
 		float _computeWaveLength(const float& p_x, const float& p_y, const float& p_frequency) const;
-		float _dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const;
 
 	public:
-		Perlin2D(const long long& p_seed = 12500);
+		Perlin2D();
+		Perlin2D(const long long& p_seed);
 		Perlin2D(const spk::JSON::Object& p_object);
 
 		float sample(const float& p_x, const float& p_y) const;

@@ -15,15 +15,18 @@ namespace spk
 		};
 
 	protected:		
-		float _interpolate(const float& a0, const float& a1, const float& w) const;
-		float _calcRatio(const float& w) const;
-
 		Interpolation _interpolation = Interpolation::Linear;
 
 		static const size_t PermutationTableSize = 256;
 		using PermutationTable = unsigned char[PermutationTableSize * 2];
 
 		PermutationTable _permutationTable;
+
+		const float _gradients[12][3] = {
+			{1, 1, 0}, {-1, 1, 0}, {1, -1, 0}, {-1, -1, 0},
+			{1, 0, 1}, {-1, 0, 1}, {1, 0, -1}, {-1, 0, -1},
+			{0, 1, 1}, {0, -1, 1}, {0, 1, -1}, {0, -1, -1}
+		};
 
 		unsigned long _seed = 12500;
 
@@ -44,7 +47,13 @@ namespace spk
 
 		float _executeSample(const std::function<float(const float& p_frequency)>& p_lambda) const;
 
+		float _dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const;
+		float _interpolate(const float& a0, const float& a1, const float& w) const;
+		float _calcRatio(const float& w) const;
+
 	public:
+		IPerlin();
+		
 		IPerlin(unsigned long p_seed);
 
 		IPerlin(const spk::JSON::Object& p_object);

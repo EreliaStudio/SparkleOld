@@ -2,6 +2,12 @@
 
 namespace spk
 {
+	Perlin1D::Perlin1D() :
+		IPerlin()
+	{
+
+	}
+
 	Perlin1D::Perlin1D(const long long& p_seed) :
 		IPerlin(p_seed)
 	{
@@ -14,29 +20,21 @@ namespace spk
 
 	}
 
-	float Perlin1D::_dotGridGradient(const int& ix, const float& x) const
-	{
-		size_t firstDim = (ix % PermutationTableSize) % PermutationTableSize;
-		unsigned int hash = _permutationTable[firstDim ] % 12;
-
-		// Use the hashed index to look up a gradient vector
-		const float gradients[12][3] = {
-			{1, 1, 0}, {-1, 1, 0}, {1, -1, 0}, {-1, -1, 0},
-			{1, 0, 1}, {-1, 0, 1}, {1, 0, -1}, {-1, 0, -1},
-			{0, 1, 1}, {0, -1, 1}, {0, 1, -1}, {0, -1, -1}
-		};
-		const float* gradient = gradients[hash];
-
-		// Compute the distance vector
-		float dx = x - (float)ix;
-
-		// Compute the dot-product
-		return (dx * gradient[0]);
-	}
-
 	float Perlin1D::_computeWaveLength(const float& p_x, const float& p_frequency) const
 	{
-		return 0;
+		float fx = p_x / p_frequency;
+
+		int x0 = std::floor(fx);
+		int x1 = x0 + 1;
+
+		float sx = fx - (float)x0;
+
+		float n0, n1, value;
+		n0 = _dotGridGradient(x0, 0, 0, fx, 0, 0);
+		n1 = _dotGridGradient(x1, 0, 0, fx, 0, 0);
+		value = _interpolate(n0, n1, sx);
+
+		return value;
 	}
 
 	float Perlin1D::sample(const float& p_x) const

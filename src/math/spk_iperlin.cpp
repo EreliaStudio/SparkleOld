@@ -3,35 +3,24 @@
 
 namespace spk
 {
-
-	float IPerlin::_calcRatio(const float& w) const
+	IPerlin::IPerlin() :
+		_seed(std::random_device()()),
+		_min(0),
+		_max(100),
+		_range(100),
+		_octaveValue(3),
+		_frequency(50),
+		_persistance(0.5f),
+		_lacunarity(2.0f)
 	{
-		if (w <= 0.0)
-			return 0.0;
-		if (w >= 1.0)
-			return 1.0;
-			
-		switch (_interpolation)
-		{
-			case Interpolation::Linear:
-				return w;
-			case Interpolation::SmoothStep:
-				return w * w * (3.0 - 2.0 * w);
-			default:
-				return w;
-		}
-	}
-
-	float IPerlin::_interpolate(const float& a0, const float& a1, const float& w) const
-	{
-		return a0 + (a1 - a0) * _calcRatio(w);
+		_onSeedEdition();
 	}
 
 	IPerlin::IPerlin(unsigned long p_seed) :
 		_seed(p_seed),
 		_min(0),
 		_max(100),
-		_range(10),
+		_range(100),
 		_octaveValue(3),
 		_frequency(50),
 		_persistance(0.5f),
@@ -69,6 +58,46 @@ namespace spk
 			spk::throwException(L"Unexpected JSON type while creating a perlin");
 		}
 		_onSeedEdition();
+	}
+
+	float IPerlin::_calcRatio(const float& w) const
+	{
+		if (w <= 0.0)
+			return 0.0;
+		if (w >= 1.0)
+			return 1.0;
+			
+		switch (_interpolation)
+		{
+			case Interpolation::Linear:
+				return w;
+			case Interpolation::SmoothStep:
+				return w * w * (3.0 - 2.0 * w);
+			default:
+				return w;
+		}
+	}
+
+	float IPerlin::_interpolate(const float& a0, const float& a1, const float& w) const
+	{
+		return a0 + (a1 - a0) * _calcRatio(w);
+	}
+
+	float IPerlin::_dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const
+	{
+		size_t hashValue = (ix % PermutationTableSize) % PermutationTableSize;
+		if (y != 0)
+			hashValue = (_permutationTable[ hashValue ] + iy) % PermutationTableSize;
+		if (z != 0)
+			hashValue = (_permutationTable[ hashValue ] + iz) % PermutationTableSize;
+		unsigned int hash = _permutationTable[hashValue ] % 12;
+
+		float result = (x - (float)ix) * _gradients[hash][0];
+		if (y != 0)
+			result += (y - (float)iy) * _gradients[hash][1];
+		if (z != 0)
+			result += (z - (float)iz) * _gradients[hash][2];
+		return (result);
 	}
 
 	const unsigned long &IPerlin::seed() const
