@@ -105,7 +105,7 @@ namespace spk
 	void throwException(const std::wstring& p_errorLine);
 	
 	/**
-	 * @Redirect an exception emitted by a thread during the execution of a job.
+	 * @brief Redirect an exception emitted by a thread during the execution of a job.
 	 * @param e The orginal exception.
 	 * @param p_jobName The name of the job who just thrown an exception.
 	*/

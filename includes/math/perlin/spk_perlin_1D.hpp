@@ -4,6 +4,17 @@
 
 namespace spk
 {
+	/**
+	 * @class Perlin1D
+	 * @brief A Perlin noise generator for one-dimensional input.
+	 * 
+	 * This class extends the base class IPerlin to generate Perlin noise 
+	 * for one-dimensional input. It uses a seed for noise generation that 
+	 * can be provided either directly or through a JSON object. 
+	 * The sample method computes a noise value based on a position on the X axis.
+	 * 
+	 * @see spk::IPerlin
+	 */
 	class Perlin1D : public IPerlin
 	{
 	private:

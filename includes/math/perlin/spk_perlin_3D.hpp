@@ -6,6 +6,17 @@
 
 namespace spk
 {
+	/**
+	 * @class Perlin2D
+	 * @brief A Perlin noise generator for three-dimensional input.
+	 * 
+	 * This class extends the base class Perlin2D to generate Perlin noise 
+	 * for three-dimensional input. It uses a seed for noise generation that 
+	 * can be provided either directly or through a JSON object. 
+	 * The sample method computes a noise value based on a position on the X axis.
+	 * 
+	 * @see spk::Perlin2D
+	 */
 	class Perlin3D : public Perlin2D
 	{
 	private:
