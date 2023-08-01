@@ -604,7 +604,18 @@ namespace spk
 		return (IVector2<TType>(p_value, p_value) / p_point);
 	};
 
+	/**
+	 * @brief Alias for IVector2 with float type.
+	 */
 	using Vector2 = IVector2<float>;
+
+	/**
+	 * @brief Alias for IVector2 with int type.
+	 */
 	using Vector2Int = IVector2<int>;
+
+	/**
+	 * @brief Alias for IVector2 with unsigned int type.
+	 */
 	using Vector2UInt = IVector2<unsigned int>;
 }
