@@ -16,6 +16,7 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/math/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/math/perlin/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/debug/*.cpp"
 	)
