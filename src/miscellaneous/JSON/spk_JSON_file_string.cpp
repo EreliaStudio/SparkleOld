@@ -55,7 +55,7 @@ namespace spk
 						{
 							result += static_cast<wchar_t>(std::stoi(p_fileContent.substr(i + 2, 4), nullptr, 16));
 						}
-						catch (const std::exception& e)
+						catch (const std::exception&)
 						{
 							spk::throwException(L"Invalid Unicode escape : <" + p_fileContent.substr(i, 6) + L'>');
 						}

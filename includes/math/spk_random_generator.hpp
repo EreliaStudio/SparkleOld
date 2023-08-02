@@ -35,7 +35,7 @@ namespace spk
 			 * @brief Constructor that allows to set the seed manually.
 			 * @param p_seed Seed for the random number generator.
 			 */
-			RandomGenerator(const uint64_t& p_seed) :
+			RandomGenerator(const unsigned int& p_seed) :
 				_generator(p_seed),
 				_distribution()
 			{}

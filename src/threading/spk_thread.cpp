@@ -19,10 +19,9 @@ namespace spk
 		{
 			_starterSignal.set_value();
 		}
-		catch(const std::exception& e)
+		catch(const std::exception&)
 		{
 			throw std::runtime_error("Trying to restart an already launched thread");
 		}
-		
 	}
 }

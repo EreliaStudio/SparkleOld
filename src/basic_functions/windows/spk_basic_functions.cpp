@@ -8,6 +8,22 @@
 
 namespace spk
 {
+	std::wstring methodName(const std::string& prettyFunction)
+	{
+		int size_needed = MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), NULL, 0);
+		std::wstring wide(size_needed, 0);
+		MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), &wide[0], size_needed);
+		return methodName(wide);
+	}
+
+	std::wstring className(const std::string& prettyFunction)
+	{
+		int size_needed = MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), NULL, 0);
+		std::wstring wide(size_needed, 0);
+		MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), &wide[0], size_needed);
+		return className(wide);
+	}
+	
 	void printCallStack()
 	{
 		spk::cout.lock();

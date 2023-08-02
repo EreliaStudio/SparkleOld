@@ -1,23 +1,9 @@
 #include "spk_basic_functions.hpp"
 #include <filesystem>
 #include <algorithm>
-#include <codecvt>
 
 namespace spk
 {
-	std::wstring methodName(const std::string& prettyFunction)
-	{
-		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-		std::wstring wide = converter.from_bytes(prettyFunction);
-		return methodName(wide);
-	}
-
-	std::wstring className(const std::string& prettyFunction)
-	{
-		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-		std::wstring wide = converter.from_bytes(prettyFunction);
-		return className(wide);
-	}
 
 	std::wstring methodName(const std::wstring& prettyFunction)
 	{
@@ -38,7 +24,7 @@ namespace spk
 		if (beginSpace != std::wstring::npos)
 			beginSpace += 1;
 
-		size_t begin = std::max(beginColon, beginSpace);
+		size_t begin = std::max<size_t>(beginColon, beginSpace);
 
 		std::wstring result = prettyFunction.substr(begin, end - begin);
 		return (result + L"()");
@@ -62,7 +48,7 @@ namespace spk
 		if (beginColon == std::wstring::npos)
 			return (prettyFunction.substr(beginSpace, classEnd - beginSpace));
 
-		size_t classBegin = std::max(beginColon, beginSpace);
+		size_t classBegin = std::max<size_t>(beginColon, beginSpace);
 		int closingBracket = 0;
 		size_t resultStart = 0;
 
