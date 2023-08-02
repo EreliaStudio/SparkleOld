@@ -19,6 +19,21 @@ namespace spk
 			_content = ContentType();
 		}
 
+		bool Object::isObject() const
+		{
+			return (std::holds_alternative<std::map<std::wstring, Object*>>(_content));
+		}
+
+		bool Object::isArray() const
+		{
+			return (std::holds_alternative<std::vector<Object*>>(_content));
+		}
+
+		bool Object::isUnit() const
+		{
+			return (std::holds_alternative<Unit>(_content));
+		}
+
 		Object& Object::addAttribute(const std::wstring& p_key)
 		{
 			if (_initialized == false)
@@ -34,6 +49,13 @@ namespace spk
 			std::get<std::map<std::wstring, Object*>>(_content)[p_key] = result;
 			return (*result);
 		}
+		
+		bool Object::contains(const std::wstring& p_key) const
+		{
+			auto& map = std::get<std::map<std::wstring, Object*>>(_content);
+
+			return (map.contains(p_key));
+		}
 
 		/*
 			Forced to do this to prevent user from writing as<Object*>() after getting an object from the map
@@ -44,7 +66,7 @@ namespace spk
 		*/
 		Object& Object::operator[](const std::wstring& p_key)
 		{
-			auto map = std::get<std::map<std::wstring, Object*>>(_content);
+			auto& map = std::get<std::map<std::wstring, Object*>>(_content);
 
 			if (map.count(p_key) == 0)
 				spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
@@ -64,7 +86,7 @@ namespace spk
 
 		const Object& Object::operator[](const std::wstring& p_key) const
 		{
-			auto map = std::get<std::map<std::wstring, Object*>>(_content);
+			auto& map = std::get<std::map<std::wstring, Object*>>(_content);
 
 			if (map.count(p_key) == 0)
 				spk::throwException(L"Can't acces JSON object named [" + p_key + L"] : it does not exist");
@@ -95,6 +117,22 @@ namespace spk
 				spk::throwException(L"Can't set object as object : it is already initialized");
 			_content = std::map<std::wstring, Object*>();
 			_initialized = true;
+		}
+		
+		void Object::resize(size_t p_size)
+		{
+			if (_initialized == false)
+			{
+				_content = std::vector<Object*>();
+				_initialized = true;
+			}
+			std::vector<Object*>& array = std::get<std::vector<Object*>>(_content);
+
+			for (size_t i = p_size; i < array.size(); i++)
+				delete array[i];
+
+			for (size_t i = array.size(); i < p_size; i++)
+				array.push_back(new Object());
 		}
 
 		Object& Object::append()

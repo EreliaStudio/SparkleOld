@@ -104,6 +104,11 @@ namespace spk
 	 */
 	void throwException(const std::wstring& p_errorLine);
 	
+	/**
+	 * @brief Redirect an exception emitted by a thread during the execution of a job.
+	 * @param e The orginal exception.
+	 * @param p_jobName The name of the job who just thrown an exception.
+	*/
 	void redirectException(std::exception& e, const std::wstring* p_jobName);
 
 	/**
@@ -154,6 +159,9 @@ namespace spk
 		return (result);
 	}
 
+	/**
+	 * @brief Print the callstack of the current program.
+	 */
 	void printCallStack();
 }
 
