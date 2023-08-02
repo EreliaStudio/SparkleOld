@@ -1,21 +1,24 @@
 #include "spk_basic_functions.hpp"
 #include <filesystem>
 #include <algorithm>
-#include <codecvt>
+#include <Windows.h>
+#include <string>
 
 namespace spk
 {
 	std::wstring methodName(const std::string& prettyFunction)
 	{
-		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-		std::wstring wide = converter.from_bytes(prettyFunction);
+		int size_needed = MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), NULL, 0);
+		std::wstring wide(size_needed, 0);
+		MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), &wide[0], size_needed);
 		return methodName(wide);
 	}
 
 	std::wstring className(const std::string& prettyFunction)
 	{
-		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-		std::wstring wide = converter.from_bytes(prettyFunction);
+		int size_needed = MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), NULL, 0);
+		std::wstring wide(size_needed, 0);
+		MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), &wide[0], size_needed);
 		return className(wide);
 	}
 
@@ -38,7 +41,7 @@ namespace spk
 		if (beginSpace != std::wstring::npos)
 			beginSpace += 1;
 
-		size_t begin = std::max(beginColon, beginSpace);
+		size_t begin = std::max<size_t>(beginColon, beginSpace);
 
 		std::wstring result = prettyFunction.substr(begin, end - begin);
 		return (result + L"()");
@@ -62,7 +65,7 @@ namespace spk
 		if (beginColon == std::wstring::npos)
 			return (prettyFunction.substr(beginSpace, classEnd - beginSpace));
 
-		size_t classBegin = std::max(beginColon, beginSpace);
+		size_t classBegin = std::max<size_t>(beginColon, beginSpace);
 		int closingBracket = 0;
 		size_t resultStart = 0;
 

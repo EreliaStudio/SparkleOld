@@ -29,7 +29,7 @@ namespace spk
 				p_decimalPos == p_unitSubString.size() - 1 ||
 				(p_decimalPos != std::wstring::npos && ::isdigit(p_unitSubString[p_decimalPos + 1]) == false) ||
 				(p_decimalPos != std::wstring::npos && p_exponentPos != std::wstring::npos && p_decimalPos > p_exponentPos) ||
-				(p_unitSubString[p_isNegative] == L'0' && p_unitSubString.size() > p_isNegative + 1 &&
+				(p_unitSubString[p_isNegative] == L'0' && p_unitSubString.size() > static_cast<size_t>(p_isNegative) + 1u &&
 					std::wstring(L".eE").find(p_unitSubString[p_isNegative + 1]) == std::wstring::npos) ||
 				std::count(p_unitSubString.begin(), p_unitSubString.end(), L'.') > 1);
 		}
@@ -51,7 +51,7 @@ namespace spk
 			{
 				result = std::stol(p_exponentSubstring);
 			}
-			catch (const std::exception& e)
+			catch (const std::exception&)
 			{
 				spk::throwException(L"Invalid numbers JSON value: " + p_exponentSubstring + L" too big (number overflow)");
 			}
@@ -94,7 +94,7 @@ namespace spk
 			errno = 0;
 			std::feclearexcept(FE_ALL_EXCEPT);
 
-			result = p_number * std::pow(10, p_exponent);
+			result = static_cast<long>(p_number * std::pow(10, p_exponent));
 
 			if (errno == EDOM || errno == ERANGE || std::fetestexcept(FE_ALL_EXCEPT ^ FE_INEXACT) != 0)
 				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (power overflow)");
@@ -135,7 +135,7 @@ namespace spk
 					exponentPos, isNegative, exponent) == true) ?
 					result = std::stod(p_unitSubString) : result = std::stol(p_unitSubString);
 			}
-			catch (const std::exception& e)
+			catch (const std::exception&)
 			{
 				spk::throwException(L"Invalid numbers JSON value: " + p_unitSubString + L" too big (number overflow)");
 			}

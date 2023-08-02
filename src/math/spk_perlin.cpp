@@ -5,14 +5,13 @@
 
 namespace spk
 {
-
 	float Perlin::_smoothstep(float w)
 	{
-		if (w <= 0.0)
-			return 0.0;
-		if (w >= 1.0)
-			return 1.0;
-		return w * w * (3.0 - 2.0 * w);
+		if (w <= 0.0f)
+			return 0.0f;
+		if (w >= 1.0f)
+			return 1.0f;
+		return w * w * (3.0f - 2.0f * w);
 	}
 
 	float Perlin::_interpolate(float a0, float a1, float w)
@@ -40,11 +39,11 @@ namespace spk
 		p_z /= p_frequency;
 
 		// Determine grid cell coordinates
-		int x0 = std::floor(p_x);
+		int x0 = static_cast<int>(std::floor(p_x));
 		int x1 = x0 + 1;
-		int y0 = std::floor(p_y);
+		int y0 = static_cast<int>(std::floor(p_y));
 		int y1 = y0 + 1;
-		int z0 = std::floor(p_z);
+		int z0 = static_cast<int>(std::floor(p_z));
 		int z1 = z0 + 1;
 
 		// Determine interpolation weights
