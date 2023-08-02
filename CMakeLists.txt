@@ -12,42 +12,34 @@ set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
 
 find_package(Vulkan REQUIRED)
 
-if(VULKAN_FOUND)
-    message(STATUS "Found Vulkan, including: ${Vulkan_INCLUDE_DIRS}")
-    include_directories(${Vulkan_INCLUDE_DIRS})
-else()
-    message(FATAL_ERROR "Could not find Vulkan")
-endif()
+include_directories(${Vulkan_INCLUDE_DIRS})
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/archive/${ArchitectureSufix}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/lib/${ArchitectureSufix}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/executable/${ArchitectureSufix}")
 
-function(SetupSparkleLibrary)
+include_directories(${CMAKE_SOURCE_DIR}/includes)
 
-	include_directories(${CMAKE_SOURCE_DIR}/includes)
-
-	file(GLOB SOURCE_FILES 
-		"${CMAKE_SOURCE_DIR}/src/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/basic_functions/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/input/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/math/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/debug/*.cpp"
-
-	)
+file(GLOB SOURCE_FILES 
+	"${CMAKE_SOURCE_DIR}/src/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/basic_functions/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/input/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/iostream/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/math/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
+	"${CMAKE_SOURCE_DIR}/src/debug/*.cpp"
+)
 
 if(UNIX)
 	file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
@@ -69,34 +61,4 @@ elseif(WIN32)
 
 endif()
 
-	add_library(sparkle ${SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES})
-		
-endfunction()
-
-function(SetupPlayground)
-	set(SOURCE_FILES)
-		
-	file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/playground/src/*.cpp")
-
-	add_executable(playground ${SOURCE_FILES})
-	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/playground/includes)
-	target_include_directories(playground PRIVATE ${CMAKE_SOURCE_DIR}/includes)
-	target_link_libraries(playground sparkle)
-
-	if(VULKAN_FOUND)
-		message(STATUS "Found Vulkan, linking directory: ${Vulkan_LIBRARY_DIRS}")
-		target_link_libraries(playground ${Vulkan_LIBRARIES})
-	else()
-		message(FATAL_ERROR "Could not find Vulkan")
-	endif()
-
-	if(UNIX)
-		target_link_libraries(playground xcb)
-		target_link_libraries(playground pthread)
-	elseif(WIN32)
-		target_link_libraries(playground ws2_32)
-	endif()
-endfunction()
-
-SetupSparkleLibrary()
-SetupPlayground()
+add_library(sparkle ${SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES})
