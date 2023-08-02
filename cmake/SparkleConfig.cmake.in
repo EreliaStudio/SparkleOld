@@ -8,7 +8,11 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories("@CMAKE_INSTALL_PREFIX@/include")
 link_directories("@CMAKE_INSTALL_PREFIX@/lib")
-link_libraries("@CMAKE_INSTALL_PREFIX@/lib/Sparkle.lib")
+if(UNIX)
+  link_libraries("${CMAKE_INSTALL_PREFIX}/lib/sparkle.a")
+else()
+  link_libraries("${CMAKE_INSTALL_PREFIX}/lib/Sparkle.lib")
+endif()
 
 include_directories(@Vulkan_INCLUDE_DIRS@)
 link_libraries(@Vulkan_LIBRARIES@)

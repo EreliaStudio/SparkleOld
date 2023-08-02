@@ -1,5 +1,6 @@
 #include "spk_basic_functions.hpp"
 #include <codecvt>
+#include <locale>
 
 namespace spk
 {
