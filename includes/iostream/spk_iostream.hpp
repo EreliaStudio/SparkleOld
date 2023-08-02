@@ -185,8 +185,9 @@ namespace spk
 		}
 	};
 
-	/// @brief Thread-local instances of IOStream for standard output and error output.
+	/// @brief Thread-local instances of IOStream for standard output.
 	extern thread_local spk::IOStream cout;
+	/// @brief Thread-local instances of IOStream for error output.
 	extern thread_local spk::IOStream cerr;
 }
 

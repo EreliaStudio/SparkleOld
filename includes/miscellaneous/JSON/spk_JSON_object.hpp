@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include "iostream/spk_iostream.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {
@@ -39,6 +40,24 @@ namespace spk
 			void reset();
 
 			/**
+			 * @brief Return of the object is in fact an object and not an array or a value
+			 * @return True if the object is an object, false otherwise
+			*/
+			bool isObject() const;
+
+			/**
+			 * @brief Return of the object is in fact an array and not an object or a value
+			 * @return True if the object is an array, false otherwise
+			*/
+			bool isArray() const;
+
+			/**
+			 * @brief Return of the object is in fact a value and not an array or an object
+			 * @return True if the object is a value, false otherwise
+			*/
+			bool isUnit() const;
+
+			/**
 			 * @brief Adds an attribute to the JSON object with the specified key.
 			 * @param p_key The key of the attribute to add.
 			 * @return Reference to the JSON object itself.
@@ -52,6 +71,13 @@ namespace spk
 			 * @throw std::runtime_error if the JSON object is not an object type or uninitialized.
 			 */
 			const std::map<std::wstring, Object*>& members() const;
+
+			/**
+			 * @brief Check if the object contains an attribute named p_key 
+			 * @param p_key The key to access the JSON object or value.
+			 * @return True if the key is contained inside the object. False otherwise.
+			 */
+			bool contains(const std::wstring& p_key) const;
 
 			/**
 			 * @brief Accesses the JSON object or value with the specified key.
@@ -71,6 +97,12 @@ namespace spk
 			 * @brief Sets the JSON object as an object type.
 			 */
 			void setAsObject();
+
+			/**
+			 * @brief Resize the JSON object, treated as an array
+			 * 
+			 */
+			void resize(size_t p_size);
 
 			/**
 			 * @brief Appends an empty JSON object to the JSON array.
@@ -157,7 +189,17 @@ namespace spk
 			template <typename TType>
 			const TType& as() const
 			{
-				return (std::get<TType>(std::get<Unit>(_content)));
+				const Unit& unit = std::get<Unit>(_content);
+				const TType* value = std::get_if<TType>(&unit);
+
+				if (value == nullptr)
+				{
+					Unit tmpUnit = TType();
+					std::wstring types[] = {L"bool", L"long", L"double", L"std::wstring", L"Object*", L"std::nullptr_t"};
+					spk::throwException(L"Wrong type request for Unit : Request type [" + types[tmpUnit.index()] + L"] but unit contain [" + types[unit.index()] + L"]");
+				}
+
+				return (*value);
 			}
 
 			/**
