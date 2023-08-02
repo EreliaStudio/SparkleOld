@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['randomgenerator_800',['RandomGenerator',['../classspk_1_1RandomGenerator.html#a39ad642be13a0843ae45355143ebd487',1,'spk::RandomGenerator::RandomGenerator(const uint64_t &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#ae463dc25be6a85da453fe3c87b90c295',1,'spk::RandomGenerator::RandomGenerator(const spk::JSON::Object &amp;p_object)'],['../classspk_1_1RandomGenerator.html#a11a3b5f092c4f4da26ee3826ac101a3f',1,'spk::RandomGenerator::RandomGenerator()']]],
+  ['randomgenerator_800',['RandomGenerator',['../classspk_1_1RandomGenerator.html#aa944e6c7ea75f0e03bfe01ad0d4a74d3',1,'spk::RandomGenerator::RandomGenerator(const unsigned int &amp;p_seed)'],['../classspk_1_1RandomGenerator.html#ae463dc25be6a85da453fe3c87b90c295',1,'spk::RandomGenerator::RandomGenerator(const spk::JSON::Object &amp;p_object)'],['../classspk_1_1RandomGenerator.html#a11a3b5f092c4f4da26ee3826ac101a3f',1,'spk::RandomGenerator::RandomGenerator()']]],
   ['realised_801',['realised',['../classspk_1_1Promise.html#aaf9ad2cdc422c2a4c211ce921d50df36',1,'spk::Promise']]],
   ['receive_802',['receive',['../classspk_1_1Network_1_1Socket.html#a4b6b8614eebc657a0db477c92f4729b8',1,'spk::Network::Socket::receive()'],['../classspk_1_1Network_1_1Node.html#aaef824ffcd9ec07bc9b5aa49b891d674',1,'spk::Network::Node::receive()']]],
   ['redirectexception_803',['redirectException',['../namespacespk.html#a0c3f970e1658247b9ee9797f18727934',1,'spk']]],
