@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_INSTALL_PREFIX}/lib/cmake/@PROJECT_NAME@/@PROJECT_NAME@Targets.cmake")
+
+find_package(Vulkan REQUIRED)
+
+include_directories("@CMAKE_INSTALL_PREFIX@/include")
+link_directories("@CMAKE_INSTALL_PREFIX@/lib")
+link_libraries(@Sparkle_LIBRARIES@)
+
+include_directories(@Vulkan_INCLUDE_DIRS@)
+link_libraries(@Vulkan_LIBRARIES@)

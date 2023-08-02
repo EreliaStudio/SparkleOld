@@ -58,7 +58,7 @@ namespace spk
 		 */
 		void save()
 		{
-			if (_index + 1 < _snapshots.size())
+			if (static_cast<size_t>(_index + 1) < _snapshots.size())
 			{
 				_snapshots.erase(_snapshots.begin() + _index + 1, _snapshots.end());
 			}
@@ -90,7 +90,7 @@ namespace spk
 		 */
 		void redo()
 		{
-			if ((_index + 1) >= _snapshots.size())
+			if (static_cast<size_t>(_index + 1) >= _snapshots.size())
 				throw std::runtime_error("Can't redo cause no snapshot left");
 			_index++;
 			_load();
