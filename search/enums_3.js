@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['readresult_913',['ReadResult',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781',1,'spk::Network::Socket']]]
+  ['launchmethod_1026',['LaunchMethod',['../classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6',1,'spk::Thread']]],
+  ['layout_1027',['Layout',['../classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6',1,'spk::Keyboard']]]
 ];

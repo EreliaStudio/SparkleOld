@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1IOStream.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1IOStream.html">IOStream</a> : <span class="keyword">public</span> std::wostream</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
@@ -201,19 +201,22 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    };</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">extern</span> thread_local <a class="code" href="classspk_1_1IOStream.html">spk::IOStream</a> cout;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">extern</span> thread_local <a class="code" href="classspk_1_1IOStream.html">spk::IOStream</a> cerr;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#ifndef DEBUG_LINE</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#define DEBUG_LINE() spk::cout &lt;&lt; __FUNCTION__ &lt;&lt; &quot; - line: &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;#endif</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">extern</span> thread_local <a class="code" href="classspk_1_1IOStream.html">spk::IOStream</a> <a class="code" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">cout</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">extern</span> thread_local <a class="code" href="classspk_1_1IOStream.html">spk::IOStream</a> <a class="code" href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">cerr</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifndef DEBUG_LINE</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#define DEBUG_LINE() spk::cout &lt;&lt; __FUNCTION__ &lt;&lt; &quot; - line: &quot;</span> &lt;&lt; __LINE__ &lt;&lt; std::endl</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;#endif</div>
 <div class="ttc" id="aclassspk_1_1IOStream_html"><div class="ttname"><a href="classspk_1_1IOStream.html">spk::IOStream</a></div><div class="ttdoc">An output stream with a custom prefix, suitable for logging or debugging.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_a06291c0bc38a3813694e9a3da967010c"><div class="ttname"><a href="classspk_1_1IOStream.html#a06291c0bc38a3813694e9a3da967010c">spk::IOStream::unlock</a></div><div class="ttdeci">void unlock()</div><div class="ttdoc">Unlocks the stream's buffer, allowing other threads to access it.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:182</div></div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_a07173d0c87a90b1d40c5ce9bdf4bcc62"><div class="ttname"><a href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">spk::IOStream::setPrefix</a></div><div class="ttdeci">void setPrefix(const std::wstring &amp;p_prefix)</div><div class="ttdoc">Sets the prefix of the buffer.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:150</div></div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_a4f0961ca9ec5167acebc6d5dfe8ea6e2"><div class="ttname"><a href="classspk_1_1IOStream.html#a4f0961ca9ec5167acebc6d5dfe8ea6e2">spk::IOStream::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdoc">Locks the stream's buffer, ensuring thread safety.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:171</div></div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_a7539264843e3875f9915d259ad145c7c"><div class="ttname"><a href="classspk_1_1IOStream.html#a7539264843e3875f9915d259ad145c7c">spk::IOStream::prefixSize</a></div><div class="ttdeci">size_t prefixSize() const</div><div class="ttdoc">Returns the size of the maximum prefix used.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:159</div></div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_acfa77761710612dc114339caa3bb14fd"><div class="ttname"><a href="classspk_1_1IOStream.html#acfa77761710612dc114339caa3bb14fd">spk::IOStream::IOStream</a></div><div class="ttdeci">IOStream(std::wostream &amp;p_outputStream, std::wstring p_prefix=L&quot;&quot;)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:139</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="anamespacespk_html_a2ac7fd07dd4ad46d0ecd4a814bed814d"><div class="ttname"><a href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a></div><div class="ttdeci">thread_local spk::IOStream cerr</div><div class="ttdoc">Thread-local instances of IOStream for error output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:6</div></div>
+<div class="ttc" id="anamespacespk_html_a7a6a5cbca57b40e3f41c1c143eb09680"><div class="ttname"><a href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a></div><div class="ttdeci">thread_local spk::IOStream cout</div><div class="ttdoc">Thread-local instances of IOStream for standard output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

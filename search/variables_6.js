@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_5fips_5fcounter_893',['UPDATE_IPS_COUNTER',['../classspk_1_1Profiler.html#aff4f46bb299ee6b67ab77c19f7f7e07f',1,'spk::Profiler']]]
+  ['render_5fips_5fcounter_998',['RENDER_IPS_COUNTER',['../classspk_1_1Profiler.html#ab4d0edd93a8934bd0c844fe4942791d2',1,'spk::Profiler']]]
 ];

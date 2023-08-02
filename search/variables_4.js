@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nb_5fbutton_891',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]]
+  ['nb_5fbutton_996',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]]
 ];

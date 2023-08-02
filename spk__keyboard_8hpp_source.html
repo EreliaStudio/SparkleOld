@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classspk_1_1Keyboard.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Keyboard.html">Keyboard</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;Keyboard&gt;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
@@ -166,7 +166,7 @@ $(function() {
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6">Layout</a> _layout;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        Mapping _mapping[2];</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        InputState _keys[Key::SIZE];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> _keys[Key::SIZE];</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        Keyboard();</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
@@ -179,7 +179,7 @@ $(function() {
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">  146</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">setLayout</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6">Layout</a> &amp;p_layout) { _layout = p_layout; }</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">  153</a></span>&#160;        <span class="keyword">const</span> InputState &amp;<a class="code" href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">inputStatus</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Key</a> &amp;p_key)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">  153</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> &amp;<a class="code" href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">inputStatus</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Key</a> &amp;p_key)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">return</span> (_keys[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(p_key)]);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
@@ -188,7 +188,7 @@ $(function() {
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    };</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> std::wstring &amp;to_wstring(<span class="keyword">const</span> <a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Keyboard::Key</a> &amp;p_key);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">const</span> std::wstring &amp;<a class="code" href="namespacespk.html#a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba">to_wstring</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Keyboard::Key</a> &amp;p_key);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1KeyboardModule_html"><div class="ttname"><a href="classspk_1_1KeyboardModule.html">spk::KeyboardModule</a></div><div class="ttdoc">Class for managing the keyboard interactions.</div><div class="ttdef"><b>Definition:</b> spk_keyboard_module.hpp:14</div></div>
 <div class="ttc" id="aclassspk_1_1Keyboard_html"><div class="ttname"><a href="classspk_1_1Keyboard.html">spk::Keyboard</a></div><div class="ttdoc">Singleton class for keyboard inputs.</div><div class="ttdef"><b>Definition:</b> spk_keyboard.hpp:17</div></div>
@@ -198,6 +198,9 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Keyboard_html_a96c38656ea7b2aefffe62cc4548207bb"><div class="ttname"><a href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">spk::Keyboard::setLayout</a></div><div class="ttdeci">void setLayout(const Layout &amp;p_layout)</div><div class="ttdoc">Sets the layout of the keyboard.</div><div class="ttdef"><b>Definition:</b> spk_keyboard.hpp:146</div></div>
 <div class="ttc" id="aclassspk_1_1Keyboard_html_ad2b0cc5897311b9917d2a8e71782db4d"><div class="ttname"><a href="classspk_1_1Keyboard.html#ad2b0cc5897311b9917d2a8e71782db4d">spk::Keyboard::keyToString</a></div><div class="ttdeci">static const std::wstring &amp; keyToString(const Keyboard::Key &amp;p_key)</div><div class="ttdoc">Converts a key to a string.</div><div class="ttdef"><b>Definition:</b> spk_keyboard.cpp:198</div></div>
 <div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="anamespacespk_html_a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba"><div class="ttname"><a href="namespacespk.html#a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba">spk::to_wstring</a></div><div class="ttdeci">std::wstring to_wstring(const InputState &amp;p_status)</div><div class="ttdoc">Converts an InputState value to a string.</div><div class="ttdef"><b>Definition:</b> spk_input_status.cpp:5</div></div>
+<div class="ttc" id="anamespacespk_html_aed6527896d34c2628aec65a369dee252"><div class="ttname"><a href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a></div><div class="ttdeci">InputState</div><div class="ttdoc">The state of an input device like a button or key.</div><div class="ttdef"><b>Definition:</b> spk_input_status.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>spk</b></li><li class="navelem"><a class="el" href="classspk_1_1RandomGenerator.html">RandomGenerator</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacespk.html">spk</a></li><li class="navelem"><a class="el" href="classspk_1_1RandomGenerator.html">RandomGenerator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,15 +88,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39ad642be13a0843ae45355143ebd487"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#a39ad642be13a0843ae45355143ebd487">RandomGenerator</a> (const uint64_t &amp;p_seed)</td></tr>
 <tr class="memdesc:a39ad642be13a0843ae45355143ebd487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that allows to set the seed manually.  <a href="classspk_1_1RandomGenerator.html#a39ad642be13a0843ae45355143ebd487">More...</a><br /></td></tr>
 <tr class="separator:a39ad642be13a0843ae45355143ebd487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae463dc25be6a85da453fe3c87b90c295"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#ae463dc25be6a85da453fe3c87b90c295">RandomGenerator</a> (const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;p_object)</td></tr>
+<tr class="memdesc:ae463dc25be6a85da453fe3c87b90c295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor using a <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">JSON::Object</a> as input.  <a href="classspk_1_1RandomGenerator.html#ae463dc25be6a85da453fe3c87b90c295">More...</a><br /></td></tr>
+<tr class="separator:ae463dc25be6a85da453fe3c87b90c295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a301e58954bd4d01521de6d80c9fa1690"><td class="memItemLeft" align="right" valign="top"><a id="a301e58954bd4d01521de6d80c9fa1690"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RandomGenerator</b> (const <a class="el" href="classspk_1_1RandomGenerator.html">RandomGenerator</a> &amp;p_other)=delete</td></tr>
 <tr class="separator:a301e58954bd4d01521de6d80c9fa1690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed12a6d2b9b97491381fe2a802e618d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#a4ed12a6d2b9b97491381fe2a802e618d">setDistributionRange</a> (const TGeneratedType &amp;p_min, const TGeneratedType &amp;p_max)</td></tr>
-<tr class="memdesc:a4ed12a6d2b9b97491381fe2a802e618d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the range of the distribution.  <a href="classspk_1_1RandomGenerator.html#a4ed12a6d2b9b97491381fe2a802e618d">More...</a><br /></td></tr>
-<tr class="separator:a4ed12a6d2b9b97491381fe2a802e618d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f0dd891c00eb7fe9a195ede548d8fe"><td class="memItemLeft" align="right" valign="top">constexpr TGeneratedType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#a94f0dd891c00eb7fe9a195ede548d8fe">operator()</a> ()</td></tr>
-<tr class="memdesc:a94f0dd891c00eb7fe9a195ede548d8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random number.  <a href="classspk_1_1RandomGenerator.html#a94f0dd891c00eb7fe9a195ede548d8fe">More...</a><br /></td></tr>
-<tr class="separator:a94f0dd891c00eb7fe9a195ede548d8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcec37c11a98959107384255d499b120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#adcec37c11a98959107384255d499b120">configureSeed</a> (const uint64_t &amp;p_seed)</td></tr>
+<tr class="memdesc:adcec37c11a98959107384255d499b120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the seed of the number generator.  <a href="classspk_1_1RandomGenerator.html#adcec37c11a98959107384255d499b120">More...</a><br /></td></tr>
+<tr class="separator:adcec37c11a98959107384255d499b120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5acf45fbbfa19d2843d05a323b8686f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#aa5acf45fbbfa19d2843d05a323b8686f">configureRange</a> (const TGeneratedType &amp;p_min, const TGeneratedType &amp;p_max)</td></tr>
+<tr class="memdesc:aa5acf45fbbfa19d2843d05a323b8686f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the range of the distribution.  <a href="classspk_1_1RandomGenerator.html#aa5acf45fbbfa19d2843d05a323b8686f">More...</a><br /></td></tr>
+<tr class="separator:aa5acf45fbbfa19d2843d05a323b8686f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5c6dba6573957ff61caedbcefc01fb"><td class="memItemLeft" align="right" valign="top">constexpr TGeneratedType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#abd5c6dba6573957ff61caedbcefc01fb">sample</a> ()</td></tr>
+<tr class="memdesc:abd5c6dba6573957ff61caedbcefc01fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random number.  <a href="classspk_1_1RandomGenerator.html#abd5c6dba6573957ff61caedbcefc01fb">More...</a><br /></td></tr>
+<tr class="separator:abd5c6dba6573957ff61caedbcefc01fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a873244e578c872984ca815e396eaabb1"><td class="memItemLeft" align="right" valign="top">constexpr TGeneratedType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1RandomGenerator.html#a873244e578c872984ca815e396eaabb1">min</a> () const</td></tr>
 <tr class="memdesc:a873244e578c872984ca815e396eaabb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum value of the distribution range.  <a href="classspk_1_1RandomGenerator.html#a873244e578c872984ca815e396eaabb1">More...</a><br /></td></tr>
 <tr class="separator:a873244e578c872984ca815e396eaabb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,7 +123,7 @@ class spk::RandomGenerator&lt; TGeneratedType &gt;</h3>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a39ad642be13a0843ae45355143ebd487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39ad642be13a0843ae45355143ebd487">&#9670;&nbsp;</a></span>RandomGenerator()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ad642be13a0843ae45355143ebd487">&#9670;&nbsp;</a></span>RandomGenerator() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +158,126 @@ template&lt;typename TGeneratedType  = int&gt; </div>
 
 </div>
 </div>
+<a id="ae463dc25be6a85da453fe3c87b90c295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae463dc25be6a85da453fe3c87b90c295">&#9670;&nbsp;</a></span>RandomGenerator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TGeneratedType  = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::<a class="el" href="classspk_1_1RandomGenerator.html">RandomGenerator</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor using a <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">JSON::Object</a> as input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_object</td><td>The object to parse to create the <a class="el" href="classspk_1_1RandomGenerator.html" title="Random number generator template class.">RandomGenerator</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa5acf45fbbfa19d2843d05a323b8686f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5acf45fbbfa19d2843d05a323b8686f">&#9670;&nbsp;</a></span>configureRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TGeneratedType  = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::configureRange </td>
+          <td>(</td>
+          <td class="paramtype">const TGeneratedType &amp;&#160;</td>
+          <td class="paramname"><em>p_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TGeneratedType &amp;&#160;</td>
+          <td class="paramname"><em>p_max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the range of the distribution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_min</td><td>The lower bound of the distribution range. </td></tr>
+    <tr><td class="paramname">p_max</td><td>The upper bound of the distribution range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adcec37c11a98959107384255d499b120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcec37c11a98959107384255d499b120">&#9670;&nbsp;</a></span>configureSeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TGeneratedType  = int&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::configureSeed </td>
+          <td>(</td>
+          <td class="paramtype">const uint64_t &amp;&#160;</td>
+          <td class="paramname"><em>p_seed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the seed of the number generator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_seed</td><td>The new seed of the generator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac64780f71057a7db7f87a90033d99a29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac64780f71057a7db7f87a90033d99a29">&#9670;&nbsp;</a></span>max()</h2>
 
@@ -213,8 +338,8 @@ template&lt;typename TGeneratedType  = int&gt; </div>
 
 </div>
 </div>
-<a id="a94f0dd891c00eb7fe9a195ede548d8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94f0dd891c00eb7fe9a195ede548d8fe">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="abd5c6dba6573957ff61caedbcefc01fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5c6dba6573957ff61caedbcefc01fb">&#9670;&nbsp;</a></span>sample()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +350,7 @@ template&lt;typename TGeneratedType  = int&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr TGeneratedType <a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::operator() </td>
+          <td class="memname">constexpr TGeneratedType <a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::sample </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -240,53 +365,6 @@ template&lt;typename TGeneratedType  = int&gt; </div>
 
 <p>Generate a random number. </p>
 <dl class="section return"><dt>Returns</dt><dd>A random number within the set distribution range. </dd></dl>
-
-</div>
-</div>
-<a id="a4ed12a6d2b9b97491381fe2a802e618d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ed12a6d2b9b97491381fe2a802e618d">&#9670;&nbsp;</a></span>setDistributionRange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TGeneratedType  = int&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classspk_1_1RandomGenerator.html">spk::RandomGenerator</a>&lt; TGeneratedType &gt;::setDistributionRange </td>
-          <td>(</td>
-          <td class="paramtype">const TGeneratedType &amp;&#160;</td>
-          <td class="paramname"><em>p_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const TGeneratedType &amp;&#160;</td>
-          <td class="paramname"><em>p_max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the range of the distribution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_min</td><td>The lower bound of the distribution range. </td></tr>
-    <tr><td class="paramname">p_max</td><td>The upper bound of the distribution range. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

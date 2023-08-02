@@ -1,0 +1,6 @@
+<map id="spk::Perlin2D" name="spk::Perlin2D">
+<area shape="rect" id="node1" title="A Perlin noise generator for two&#45;dimensional input." alt="" coords="5,155,113,181"/>
+<area shape="rect" id="node4" href="$classspk_1_1Perlin3D.html" title="A Perlin noise generator for three&#45;dimensional input." alt="" coords="5,229,113,256"/>
+<area shape="rect" id="node2" href="$classspk_1_1Perlin1D.html" title="A Perlin noise generator for one&#45;dimensional input." alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1IPerlin.html" title="Provides functionality related to Perlin noise generation." alt="" coords="12,5,107,32"/>
+</map>

@@ -74,7 +74,7 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;design_pattern/spk_singleton.hpp&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TContextType&gt;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classspk_1_1ContextManager.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1ContextManager.html">ContextManager</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;ContextManager&lt;TContextType&gt;&gt;</div>
@@ -183,6 +183,7 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1ContextManager_html_ad768f31a10cb4bd01ae59c0ad7a01558"><div class="ttname"><a href="classspk_1_1ContextManager.html#ad768f31a10cb4bd01ae59c0ad7a01558">spk::ContextManager::swapReadOnlyContext</a></div><div class="ttdeci">void swapReadOnlyContext()</div><div class="ttdoc">Swaps the context object used for read operations with an intermediary buffer. Thread safe due to the...</div><div class="ttdef"><b>Definition:</b> spk_context_manager.hpp:130</div></div>
 <div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1Singleton_html_a5f56bedfe0791cc1cc09d34bb3be382c"><div class="ttname"><a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt; ContextManager&lt; TContextType &gt; &gt;::instance</a></div><div class="ttdeci">static constexpr std::shared_ptr&lt; ContextManager&lt; TContextType &gt; &gt; instance()</div><div class="ttdoc">Get the singleton instance. This function returns the shared pointer to the singleton instance.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:56</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -79,7 +79,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;iostream/spk_iostream.hpp&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>spk</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Thread.html">Thread</a></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
@@ -103,8 +103,8 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">auto</span> wrapper = [&amp;](<span class="keyword">const</span> std::wstring&amp; threadName)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                spk::cout.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                spk::cerr.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                _starterSignal.get_future().wait();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                _funct();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            };</div>
@@ -142,6 +142,9 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Thread_html_ab5037a0703104b786425a31b78bacfd0"><div class="ttname"><a href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">spk::Thread::getId</a></div><div class="ttdeci">std::thread::id getId() const</div><div class="ttdoc">Get the ID of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:108</div></div>
 <div class="ttc" id="aclassspk_1_1Thread_html_acc625f78afb482c29338759d4b959af6"><div class="ttname"><a href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">spk::Thread::LaunchMethod</a></div><div class="ttdeci">LaunchMethod</div><div class="ttdoc">An enum class to represent the launch method of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:32</div></div>
 <div class="ttc" id="aclassspk_1_1Thread_html_afdc8fce9be9a5bc00dfdd9c7d149f588"><div class="ttname"><a href="classspk_1_1Thread.html#afdc8fce9be9a5bc00dfdd9c7d149f588">spk::Thread::Thread</a></div><div class="ttdeci">Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</div><div class="ttdoc">Construct a new Thread object with a specified launch method, thread name, and function.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:84</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="anamespacespk_html_a2ac7fd07dd4ad46d0ecd4a814bed814d"><div class="ttname"><a href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a></div><div class="ttdeci">thread_local spk::IOStream cerr</div><div class="ttdoc">Thread-local instances of IOStream for error output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:6</div></div>
+<div class="ttc" id="anamespacespk_html_a7a6a5cbca57b40e3f41c1c143eb09680"><div class="ttname"><a href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a></div><div class="ttdeci">thread_local spk::IOStream cout</div><div class="ttdoc">Thread-local instances of IOStream for standard output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
