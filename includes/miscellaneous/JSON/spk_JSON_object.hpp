@@ -24,6 +24,7 @@ namespace spk
 
 		private:
 			bool _initialized; /**< Flag indicating whether the object has been initialized. */
+			std::wstring _name; /**< The name of the JSON object*/
 			ContentType _content; /**< The content of the JSON object. */
 			static size_t _indent; /**< The indentation level of the JSON object. */
 			const static uint8_t _indentSize = 4; /**< The size of the indentation. */
@@ -32,7 +33,7 @@ namespace spk
 			/**
 			 * @brief Default constructor for the Object class.
 			 */
-			Object();
+			Object(const std::wstring& p_name = L"Unnamed");
 
 			/**
 			 * @brief Resets the object to its default state.
@@ -196,7 +197,7 @@ namespace spk
 				{
 					Unit tmpUnit = TType();
 					std::wstring types[] = {L"bool", L"long", L"double", L"std::wstring", L"Object*", L"std::nullptr_t"};
-					spk::throwException(L"Wrong type request for Unit : Request type [" + types[tmpUnit.index()] + L"] but unit contain [" + types[unit.index()] + L"]");
+					spk::throwException(L"Wrong type request for object [" + _name + L"] as Unit : Request type [" + types[tmpUnit.index()] + L"] but unit contain [" + types[unit.index()] + L"]");
 				}
 
 				return (*value);

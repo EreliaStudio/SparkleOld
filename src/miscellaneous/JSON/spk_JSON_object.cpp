@@ -8,7 +8,8 @@ namespace spk
 	{
 		size_t Object::_indent = 0;
 
-		Object::Object()
+		Object::Object(const std::wstring& p_name) :
+			_name(p_name)
 		{
 			_initialized = false;
 		}
@@ -42,7 +43,7 @@ namespace spk
 				_initialized = true;
 			}
 
-			Object* result = new Object();
+			Object* result = new Object(p_key);
 
 			if (std::get<std::map<std::wstring, Object*>>(_content).count(p_key) != 0)
 				spk::throwException(L"Can't add attribute named [" + p_key + L"] : it already exists");
@@ -132,7 +133,7 @@ namespace spk
 				delete array[i];
 
 			for (size_t i = array.size(); i < p_size; i++)
-				array.push_back(new Object());
+				array.push_back(new Object(L"[" + std::to_wstring(i) + L"]"));
 		}
 
 		Object& Object::append()
@@ -143,7 +144,7 @@ namespace spk
 				_initialized = true;
 			}
 
-			Object* result = new Object();
+			Object* result = new Object(L"[" + std::to_wstring(std::get<std::vector<Object*>>(_content).size()) + L"]");
 			std::get<std::vector<Object*>>(_content).push_back(result);
 			return (*result);
 		}

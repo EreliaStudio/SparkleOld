@@ -168,12 +168,6 @@ namespace spk
 		return str;
 	}
 
-	void throwException(const std::wstring& p_errorLine) noexcept(false)
-	{
-		//spk::cout << p_errorLine << std::endl;
-		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
-	}
-
 	void redirectException(std::exception& e, const std::wstring* p_jobName)
 	{
 		spk::cout << "Unexpected throw";

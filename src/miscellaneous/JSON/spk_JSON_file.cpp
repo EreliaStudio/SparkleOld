@@ -155,7 +155,7 @@ namespace spk
 			p_index++;
 			for (; p_index < p_content.size() && p_content[p_index] != ']';)
 			{
-				spk::JSON::Object newObject;
+				spk::JSON::Object newObject(L"[" + std::to_wstring(p_objectToFill.size()) + L"]");
 
 				_loadContent(newObject, p_content, p_index);
 
@@ -199,11 +199,13 @@ namespace spk
 			}
 		}
 
-		File::File()
+		File::File() :
+			_root(L"Root")
 		{
 		}
 
-		File::File(const std::filesystem::path& p_filePath)
+		File::File(const std::filesystem::path& p_filePath) :
+			_root(L"Root")
 		{
 			load(p_filePath);
 		}
