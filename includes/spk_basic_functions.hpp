@@ -74,7 +74,7 @@ namespace spk
 	 * @param p_dividor The divisor.
 	 * @return The positive modulo result.
 	 */
-	int positiveModulo(int p_integer, int p_dividor);
+	intmax_t positiveModulo(intmax_t p_integer, intmax_t p_dividor);
 
 	/**
 	 * @brief Lists all files in the specified directory path with the provided extension.

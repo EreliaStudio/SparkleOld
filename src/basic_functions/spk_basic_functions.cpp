@@ -121,9 +121,9 @@ namespace spk
 		return (result);
 	}
 
-	int positiveModulo(int p_integer, int p_dividor)
+	intmax_t positiveModulo(intmax_t p_integer, intmax_t p_dividor)
 	{
-		int result = p_integer % p_dividor;
+		intmax_t result = p_integer % p_dividor;
 		while (result < 0)
 			result += p_dividor;
 		return result;
