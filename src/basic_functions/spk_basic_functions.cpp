@@ -1,8 +1,6 @@
 #include "spk_basic_functions.hpp"
 #include <filesystem>
 #include <algorithm>
-#include <Windows.h>
-#include <string>
 
 namespace spk
 {

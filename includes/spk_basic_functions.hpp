@@ -5,6 +5,7 @@
 #include <fstream>
 #include "iostream/spk_iostream.hpp"
 #include <stdexcept>
+#include "spk_system_define.hpp"
 
 namespace spk
 {
