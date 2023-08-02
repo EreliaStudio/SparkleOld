@@ -44,8 +44,6 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 endfunction()
 
 function(setupLibraryInstallation)
-	set(CMAKE_BUILD_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
-
 	install(TARGETS ${PROJECT_NAME}
 			EXPORT ${PROJECT_NAME}Targets
 			LIBRARY DESTINATION lib
@@ -67,10 +65,10 @@ function(setupLibraryInstallation)
 		DESTINATION lib/cmake/${PROJECT_NAME}
 	)
 
-	configure_file(cmake/${PROJECT_NAME}Config.cmake.in "${CMAKE_BUILD_OUTPUT_DIRECTORY}/${PROJECT_NAME}Config.cmake")
+	configure_file(cmake/${PROJECT_NAME}Config.cmake.in "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake")
 	install(FILES
-		"${CMAKE_BUILD_OUTPUT_DIRECTORY}/${PROJECT_NAME}Config.cmake"
-		"${CMAKE_BUILD_OUTPUT_DIRECTORY}/${PROJECT_NAME}ConfigVersion.cmake"
+		"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+		"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
 		DESTINATION lib/cmake/${PROJECT_NAME}
 	)
 
