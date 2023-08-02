@@ -43,13 +43,13 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 	set(${SYSTEM_FILES_VAR} ${SYSTEM_DEPENDENT_SOURCE_FILES} PARENT_SCOPE)
 endfunction()
 
-function(installLibrary)
+function(setupLibraryInstallation)
 	install(TARGETS ${PROJECT_NAME}
 			EXPORT ${PROJECT_NAME}Targets
 			LIBRARY DESTINATION lib
 			ARCHIVE DESTINATION lib
 			RUNTIME DESTINATION bin
-			INCLUDES DESTINATION include
+			INCLUDES DESTINATION includeTest
 			)
 
 	include(CMakePackageConfigHelpers)
@@ -65,9 +65,14 @@ function(installLibrary)
 		DESTINATION lib/cmake/${PROJECT_NAME}
 	)
 
-	configure_file(${PROJECT_NAME}Config.cmake.in ${PROJECT_NAME}Config.cmake @ONLY)
-	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-				"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-			DESTINATION lib/cmake/${PROJECT_NAME}
-			)
+	configure_file(cmake/${PROJECT_NAME}Config.cmake.in "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake")
+	install(FILES
+		"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+		"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+		DESTINATION lib/cmake/${PROJECT_NAME}
+	)
+
+	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/includes/
+			DESTINATION include
+			FILES_MATCHING PATTERN "*.hpp")
 endfunction()
