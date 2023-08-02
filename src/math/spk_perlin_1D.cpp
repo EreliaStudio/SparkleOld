@@ -8,7 +8,7 @@ namespace spk
 
 	}
 
-	Perlin1D::Perlin1D(const long long& p_seed) :
+	Perlin1D::Perlin1D(const unsigned long& p_seed) :
 		IPerlin(p_seed)
 	{
 
@@ -24,7 +24,7 @@ namespace spk
 	{
 		float fx = p_x / p_frequency;
 
-		int x0 = std::floor(fx);
+		int x0 = static_cast<int>(std::floor(fx));
 		int x1 = x0 + 1;
 
 		float sx = fx - (float)x0;

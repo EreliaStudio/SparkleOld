@@ -8,7 +8,7 @@ namespace spk
 
 	}
 
-	Perlin3D::Perlin3D(const long long& p_seed) :
+	Perlin3D::Perlin3D(const unsigned long& p_seed) :
 		Perlin2D(p_seed)
 	{
 
@@ -26,11 +26,11 @@ namespace spk
 		float fy = p_y / p_frequency;
 		float fz = p_z / p_frequency;
 
-		int x0 = std::floor(fx);
+		int x0 = static_cast<int>(std::floor(fx));
 		int x1 = x0 + 1;
-		int y0 = std::floor(fy);
+		int y0 = static_cast<int>(std::floor(fy));
 		int y1 = y0 + 1;
-		int z0 = std::floor(fz);
+		int z0 = static_cast<int>(std::floor(fz));
 		int z1 = z0 + 1;
 
 		float sx = fx - (float)x0;

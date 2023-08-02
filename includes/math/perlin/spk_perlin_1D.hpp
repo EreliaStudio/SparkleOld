@@ -35,7 +35,7 @@ namespace spk
 		 * @brief Overloaded constructor for the Perlin1D class that takes a seed value.
 		 * @param p_seed Seed value for Perlin noise generation.
 		 */
-		Perlin1D(const long long& p_seed);
+		Perlin1D(const unsigned long& p_seed);
 
 		/**
 		 * @brief Overloaded constructor for the Perlin1D class that takes a JSON object.
