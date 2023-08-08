@@ -30,8 +30,8 @@ namespace spk
 		float sx = fx - (float)x0;
 
 		float n0, n1, value;
-		n0 = _dotGridGradient(x0, 0, 0, fx, 0, 0);
-		n1 = _dotGridGradient(x1, 0, 0, fx, 0, 0);
+		n0 = _dotGridGradient(x0, fx);
+		n1 = _dotGridGradient(x1, fx);
 		value = _interpolate(n0, n1, sx);
 
 		return value;

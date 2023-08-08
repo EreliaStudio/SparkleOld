@@ -2,6 +2,7 @@
 
 #include "math/spk_vector2.hpp"
 #include <stdexcept>
+#include <string>
 
 namespace spk
 {
@@ -73,6 +74,11 @@ namespace spk
 		operator IVector3<TOtherType>()
 		{
 			return (IVector3<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y), static_cast<TOtherType>(z)));
+		}
+
+		std::wstring to_wstring() const
+		{
+			return (std::to_wstring(x) + L" / " + std::to_wstring(y) + L" / " + std::to_wstring(z));
 		}
 
 		/**
@@ -549,6 +555,12 @@ namespace spk
 	{
 		return (IVector3<TType>(p_value) / p_point);
 	};
+
+	template <typename TType>
+	std::wstring to_wstring(const IVector3<TType> &p_point)
+	{
+		return (p_point.to_wstring());
+	}
 
 	/**
 	 * @brief Alias for IVector3 with float type.

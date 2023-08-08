@@ -9,6 +9,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+#include <string>
 #include <iostream>
 #include <algorithm>
 
@@ -40,7 +41,7 @@ namespace spk
 		 * @param p_value The value to be used for both coordinates.
 		 */
 		template <typename TOtherType>
-		IVector2(const TOtherType &p_value) : x(p_value), y(p_value) {}
+		IVector2(const TOtherType &p_value) : x(static_cast<TType>(p_value)), y(static_cast<TType>(p_value)) {}
 
 		/**
 		 * @brief Constructor that initializes the vector with two values.
@@ -48,7 +49,7 @@ namespace spk
 		 * @param p_y The value to be used for the y-coordinate.
 		 */
 		template <typename TOtherType>
-		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(p_x), y(p_y) {}
+		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)) {}
 
 		/**
 		 * @brief Type-casting operator.
@@ -76,6 +77,12 @@ namespace spk
 			p_os << p_self.x << " / " << p_self.y;
 			return p_os;
 		}
+
+		std::wstring to_wstring() const
+		{
+			return (std::to_wstring(x) + L" / " + std::to_wstring(y));
+		}
+
 
 		/**
 		 * @brief Overload of + operator.
@@ -603,6 +610,12 @@ namespace spk
 	{
 		return (IVector2<TType>(p_value, p_value) / p_point);
 	};
+
+	template <typename TType>
+	std::wstring to_wstring(const IVector2<TType> &p_point)
+	{
+		return (p_point.to_wstring());
+	}
 
 	/**
 	 * @brief Alias for IVector2 with float type.

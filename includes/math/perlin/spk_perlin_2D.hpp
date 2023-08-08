@@ -60,7 +60,7 @@ namespace spk
 		template<typename TVectorType>
 		float sample(const spk::IVector2<TVectorType>& p_position) const
 		{
-			return (sample(p_position.x, p_position.y));
+			return (sample(static_cast<float>(p_position.x), static_cast<float>(p_position.y)));
 		}
 	};
 }

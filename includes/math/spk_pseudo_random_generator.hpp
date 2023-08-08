@@ -28,7 +28,7 @@ namespace spk
 		/**
 		 * @brief The seed used to initialize the pseudo random number generator.
 		 */
-		uintmax_t _seed;
+		intmax_t _seed;
 
 		/**
 		 * @brief The precision of generated values when the type is a floating point type.
@@ -38,7 +38,7 @@ namespace spk
 		/**
 		 * @brief The modulo value for the precision calculation.
 		 */
-		uint32_t _precisionModulo = 100;
+		intmax_t _precisionModulo = 100;
 
 		/**
 		 * @brief The minimum value of the generated numbers.
@@ -64,9 +64,13 @@ namespace spk
 		 * @return The generated value.
 		 */
 		template <typename TOtherType>
-		inline uintmax_t _generateValue(const uintmax_t& p_seed, const TOtherType& p_x, const TOtherType& p_y, const TOtherType& p_z) const
+		inline intmax_t _generateValue(const intmax_t& p_seed, const TOtherType& p_x, const TOtherType& p_y, const TOtherType& p_z) const
 		{
-			uintmax_t result = p_seed + p_x * 374761393 + p_y * 668265263 + p_z * 982451653; //all constants are prime
+			intmax_t result =
+				p_seed +
+				static_cast<intmax_t>(p_x) * 374761393 +
+				static_cast<intmax_t>(p_y) * 668265263 +
+				static_cast<intmax_t>(p_z) * 982451653;
 			result = (result ^ (result >> 13)) * 1274126177;
 			return (result);
 		}
@@ -81,13 +85,13 @@ namespace spk
 		template <typename TOtherType>
 		inline TGeneratedType _generate(const TOtherType& p_x, const TOtherType& p_y, const TOtherType& p_z) const
 		{
-			uintmax_t value = _generateValue(_seed, p_x, p_y, p_z);
+			intmax_t value = _generateValue(_seed, p_x, p_y, p_z);
 
 			if constexpr (std::is_floating_point<TGeneratedType>::value)
 			{
 				return (
-					static_cast<TGeneratedType>(spk::positiveModulo(value, _range)) + //before ,
-					static_cast<TGeneratedType>(spk::positiveModulo(_generateValue(_seed + 11, p_x, p_y, p_z), _precisionModulo)) / _precisionModulo //After ,
+					static_cast<TGeneratedType>(spk::positiveModulo(static_cast<intmax_t>(value), static_cast<intmax_t>(_range))) + //before ,
+					static_cast<TGeneratedType>(spk::positiveModulo(static_cast<intmax_t>(_generateValue(_seed + 11, p_x, p_y, p_z)), _precisionModulo)) / _precisionModulo //After ,
 				);
 			}
 			else
@@ -168,7 +172,11 @@ namespace spk
 		 */
 		template <typename TOtherType>
 		TGeneratedType sample(const spk::IVector3<TOtherType>& p_vector3) const {
-			return _generate(p_vector3.x, p_vector3.y, p_vector3.z);
+			return _generate(
+					static_cast<TGeneratedType>(p_vector3.x),
+					static_cast<TGeneratedType>(p_vector3.y),
+					static_cast<TGeneratedType>(p_vector3.z)
+				);
 		}
 
 		/**
@@ -178,7 +186,11 @@ namespace spk
 		 */
 		template <typename TOtherType>
 		TGeneratedType sample(const spk::IVector2<TOtherType>& p_vector2) const {
-			return _generate(p_vector2.x, p_vector2.y, 0.0f);
+			return _generate(
+					static_cast<TGeneratedType>(p_vector2.x),
+					static_cast<TGeneratedType>(p_vector2.y),
+					static_cast<TGeneratedType>(0)
+				);
 		}
 
 		/**
