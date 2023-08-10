@@ -14,17 +14,23 @@ namespace spk
 	class Mesh
 	{
 	public:
+		/**
+		* @brief Represents a face of a 3D object, storing a set of Point.
+		*/
 		class Face
 		{
 		public:
+			/**
+			* @brief Rrepresenting vertex, normal and uv indexes.
+			*/
 			struct Point
 			{
-				size_t vertex;
-				size_t normal;
-				size_t uv;
+				size_t vertex; /**<The index of the vertex stored inside the Mesh>*/
+				size_t normal; /**<The index of the normal stored inside the Mesh>*/
+				size_t uv; /**<The index of the uv stored inside the Mesh>*/
 			};
 
-			std::vector<Point> content;
+			std::vector<Point> content; /**<Content of the face>*/
 		};
 
 	private:

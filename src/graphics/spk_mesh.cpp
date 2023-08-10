@@ -115,10 +115,6 @@ namespace spk
 		_normals.push_back(p_normal);
 	}
 
-	/**
-	 * @brief Insert a new face into the Mesh.
-	 * @param p_face The new face to add.
-	*/
 	void Mesh::addFace(const Mesh::Face& p_face)
 	{
 		_faces.push_back(p_face);
