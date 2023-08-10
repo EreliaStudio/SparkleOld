@@ -24,17 +24,11 @@ namespace spk
 		_computedIndexes.clear(); 
 	}
 
-	/**
-	 * @brief Return the baking state of the Mesh. 
-	 */
 	bool Mesh::isBaked() const
 	{
 		return (_isBaked);
 	}
 
-	/**
-	 * @brief Bake the Mesh, to fill its computedVector.
-	*/
 	void Mesh::bake()
 	{
 		for (size_t i = 0; i < _faces.size(); i++)
@@ -55,7 +49,8 @@ namespace spk
 				0, 1, 2, //First triangle
 				0, 2, 3};//Second triangle
 
-			for (size_t j = 0; j < (_faces[i].content.size() == 3 ? 3 : 6); j++)
+			size_t targetSize = (_faces[i].content.size() == 3 ? 3 : 6);
+			for (size_t j = 0; j < targetSize; j++)
 			{
 				_computedIndexes.push_back(indexesValues[j] + indexBaseValue);
 			}
