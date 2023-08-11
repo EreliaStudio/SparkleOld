@@ -9,6 +9,7 @@
 #include "math/spk_perlin.hpp"
 
 #include "data_structure/spk_data_buffer.hpp"
+#include "data_structure/spk_content_array.hpp"
 #include "data_structure/spk_pool.hpp"
 
 #include "debug/spk_profiler.hpp"
