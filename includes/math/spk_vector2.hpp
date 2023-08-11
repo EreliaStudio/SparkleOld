@@ -13,6 +13,8 @@
 #include <iostream>
 #include <algorithm>
 
+#include "miscellaneous/JSON/spk_JSON_object.hpp"
+
 namespace spk
 {
 	/**
