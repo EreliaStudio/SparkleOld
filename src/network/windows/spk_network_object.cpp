@@ -6,7 +6,7 @@ namespace spk::Network
 	void Object::_initializeWinSockData()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
-		spk::cout << "Requesting initialization of WinSockData" << std::endl;
+
 		int initializationResult;
 
 		initializationResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -19,7 +19,6 @@ namespace spk::Network
 	void Object::_releaseWinSockData()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
-		spk::cout << "Releasing WinSockData" << std::endl;
 		
 		WSACleanup();
 	}
