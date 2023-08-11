@@ -51,6 +51,20 @@ namespace spk
 		template <typename TOtherType>
 		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)) {}
 
+		IVector2(const spk::JSON::Object& p_object)
+		{
+			if constexpr (std::is_floating_point<TType>::value)
+			{
+				x = p_object[L"x"].as<double>();
+				y = p_object[L"y"].as<double>();
+			}
+			else
+			{
+				x = p_object[L"x"].as<int>();
+				y = p_object[L"y"].as<int>();
+			}
+		}
+
 		/**
 		 * @brief Type-casting operator.
 		 *
