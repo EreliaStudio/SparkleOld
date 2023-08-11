@@ -227,4 +227,11 @@ namespace spk
 			result = p_code[0];
 		return (result);
 	}
+
+	std::wstring stringToWString(const std::string &s)
+	{
+		std::wstring result(s.begin(), s.end());
+
+		return (result);
+	}
 }

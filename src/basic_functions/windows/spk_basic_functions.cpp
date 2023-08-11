@@ -26,7 +26,7 @@ namespace spk
 
 	void throwException(const std::wstring& p_errorLine) noexcept(false)
 	{
-		spk::cout << "Critical exception raised" << std::endl << p_errorLine << std::endl;
+		spk::cout << "Critical exception raised : " << std::endl << p_errorLine << std::endl;
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
 	

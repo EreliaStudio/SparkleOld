@@ -164,6 +164,11 @@ namespace spk
 	 * @brief Print the callstack of the current program.
 	 */
 	void printCallStack();
+
+	/**
+	 * @brief Convert a string to a wstring
+	*/
+	std::wstring stringToWString(const std::string &s);
 }
 
 #if !defined(__PRETTY_FUNCTION__) && !defined(__GNUC__)
