@@ -65,6 +65,22 @@ namespace spk
 		template <typename TOtherType1, typename TOtherType2, typename TOtherType3>
 		IVector3(const TOtherType1 &p_x, const TOtherType2 &p_y, const TOtherType3 &p_z) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)), z(static_cast<TType>(p_z)) {}
 
+		IVector3(const spk::JSON::Object& p_object)
+		{
+			if constexpr (std::is_floating_point<TType>::value)
+			{
+				x = p_object[L"x"].as<double>();
+				y = p_object[L"y"].as<double>();
+				z = p_object[L"z"].as<double>();
+			}
+			else
+			{
+				x = p_object[L"x"].as<int>();
+				y = p_object[L"y"].as<int>();
+				z = p_object[L"z"].as<int>();
+			}
+		}
+
 		/**
 		 * @brief Conversion operator to convert the vector to another vector type.
 		 * @tparam TOtherType The type to convert the vector elements to.
