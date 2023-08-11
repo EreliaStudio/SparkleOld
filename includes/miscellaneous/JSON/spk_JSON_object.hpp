@@ -150,6 +150,20 @@ namespace spk
 			size_t count(const std::wstring& p_key) const;
 
 			/**
+			 * @brief Return true if the type stored is the same as the one stored inside the object
+			 * @tparam TType The value type to test.
+			 * @return True if the unit store the templated type. False otherwise.
+			 * @throw This method will throw is the object isn't a Unit object.
+			*/
+			template <typename TType>
+			bool hold()
+			{
+				if (isUnit() == false)
+					spk::throwException(L"Can't verify the holding type of an object who isn't a Unit");
+				return (std::holds_alternative<TType>(std::get<Unit>(_content)));
+			}
+
+			/**
 			 * @brief Sets the JSON object value to the specified type and value.
 			 * @tparam TType The type of the value.
 			 * @param p_value The value to set.
