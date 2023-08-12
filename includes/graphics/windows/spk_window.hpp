@@ -93,6 +93,11 @@ namespace spk
 		void resize(const spk::Vector2Int& p_size);
 
 		/**
+		 * @brief Return the size of the window.
+		*/
+		const spk::Vector2Int& size() const;
+
+		/**
 		 * @brief Renders the window.
 		 */
 		void render();
