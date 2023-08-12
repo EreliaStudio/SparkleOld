@@ -74,7 +74,7 @@ namespace spk
 			 */
 			static bool swapRequested()
 			{
-				return (*ContextManager::instance()->_isSwapRequested);
+				return (ContextManager::instance()->_isSwapRequested);
 			}
 	
 
