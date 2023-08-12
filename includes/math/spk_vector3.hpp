@@ -29,7 +29,7 @@ namespace spk
 		 * @tparam TOtherType The type of the value.
 		 * @param p_value The value to assign to x, y, and z.
 		 */
-		template <typename TOtherType>
+		template <typename TOtherType, typename = std::enable_if_t<std::is_arithmetic<TOtherType>::value>>
 		IVector3(const TOtherType &p_value) : x(static_cast<TType>(p_value)), y(static_cast<TType>(p_value)), z(static_cast<TType>(p_value)) {}
 
 		/**

@@ -42,7 +42,7 @@ namespace spk
 		 * @brief Constructor that initializes both coordinates with a single value.
 		 * @param p_value The value to be used for both coordinates.
 		 */
-		template <typename TOtherType>
+		template <typename TOtherType, typename = std::enable_if_t<std::is_arithmetic<TOtherType>::value>>
 		IVector2(const TOtherType &p_value) : x(static_cast<TType>(p_value)), y(static_cast<TType>(p_value)) {}
 
 		/**
@@ -52,6 +52,15 @@ namespace spk
 		 */
 		template <typename TOtherType>
 		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)) {}
+
+		/**
+		 * @brief Constructs a new IVector3 object from another IVector3 object with potentially different value types.
+		 *
+		 * @tparam TOtherType The type of the other IVector3 object's values.
+		 * @param p_other The other IVector3 object.
+		 */
+		template <typename TOtherType>
+		IVector2(const IVector2<TOtherType> &p_other) : x(p_other.x), y(p_other.y) {}
 
 		IVector2(const spk::JSON::Object& p_object)
 		{
