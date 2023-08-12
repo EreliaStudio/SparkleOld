@@ -17,8 +17,6 @@ namespace spk::Network
 
 	void Acceptor::start(const size_t& p_port)
 	{
-		spk::cout << L"Starting server on port " << p_port << std::endl;
-
 		struct addrinfo* result = NULL, hints = {};
 
 		hints.ai_family = AF_INET;
