@@ -72,4 +72,9 @@ namespace spk
 	{
 		spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
 	}
+	
+	const spk::Vector2Int& Application::size() const
+	{
+		return (spk::Window::instance()->size());
+	}
 }
