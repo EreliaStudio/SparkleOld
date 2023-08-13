@@ -1,7 +1,7 @@
 #pragma once
 
-#include "input/spk_input.h"
-#include "input/spk_mouse.h"
+#include "input/spk_input.hpp"
+#include "input/spk_mouse.hpp"
 
 namespace spk
 {
@@ -24,7 +24,7 @@ namespace spk
 		/**
 		 * @brief The expected status of the mouse button.
 		 */
-		spk::InputStatus _expectedStatus;
+		spk::InputState _expectedStatus;
 
 		/**
 		 * @brief Checks whether the function execution is needed.
@@ -34,7 +34,7 @@ namespace spk
 		 * @return true if the function execution is needed, false otherwise.
 		 */
 		bool _isExecutionNeeded() {
-			return (spk::Mouse::instance()->getButton(_button) == _expectedStatus);
+			return (spk::Mouse::instance()->inputStatus(_button) == _expectedStatus);
 		}
 
 	public:
@@ -50,7 +50,7 @@ namespace spk
 		 * @param p_args Arguments for the function.
 		 */
 		template <typename Funct, typename... Args>
-		MouseInput(spk::Mouse::Button p_button, spk::InputStatus p_expectedStatus, unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
+		MouseInput(spk::Mouse::Button p_button, spk::InputState p_expectedStatus, unsigned long p_delayBetweenInput, Funct&& p_funct, Args&&... p_args) :
 			Input(p_delayBetweenInput, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...),
 			_button(p_button),
 			_expectedStatus(p_expectedStatus)

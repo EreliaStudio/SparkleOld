@@ -1,7 +1,7 @@
 #pragma once
 
-#include "input/spk_input.h"
-#include "input/spk_mouse.h"
+#include "input/spk_input.hpp"
+#include "input/spk_mouse.hpp"
 
 namespace spk
 {

@@ -50,13 +50,24 @@ namespace spk::Network
 				{
 					if (it->second.isConnected() == true)
 					{
-						Socket::ReadResult readStatus = it->second.receive(newMessage);
+						Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
+						
+						try
+						{
+							readStatus = it->second.receive(newMessage);
+						}
+						catch(...)
+						{
+							readStatus = Socket::ReadResult::Closed;
+						}
 
 						++next_it;
 
 						switch (readStatus)
 						{
 						case Socket::ReadResult::Closed:
+							if (_onConnectionDisconnectionCallback != nullptr)
+								_onConnectionDisconnectionCallback(it->first);
 							_clients.erase(it);
 							break;
 						case Socket::ReadResult::Success:
