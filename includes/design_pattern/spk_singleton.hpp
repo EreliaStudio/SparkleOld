@@ -59,6 +59,17 @@ namespace spk
 		}
 
 		/**
+		 * @brief Get the singleton instance.
+		 * This function returns the shared pointer to the singleton instance.
+		 *
+		 * @return The shared pointer to the singleton instance.
+		 */
+		static constexpr const std::shared_ptr<const TType> c_instance()
+		{
+			return _instance;
+		}
+
+		/**
 		 * @brief Release the singleton instance.
 		 *
 		 * This function releases the singleton instance by resetting the shared pointer to nullptr.
