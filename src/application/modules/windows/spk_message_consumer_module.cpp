@@ -1,4 +1,5 @@
 #include "application/modules/spk_message_consumer_module.hpp"
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
@@ -11,6 +12,8 @@ namespace spk
 		while (_queue.empty() == false)
 		{
 			SystemMessage event(_queue.pop_front());
+			
+			event->reset();
 
 			_handleMessage(event);
 		}
