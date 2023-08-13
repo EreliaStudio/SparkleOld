@@ -49,6 +49,14 @@ namespace spk
 					throw std::runtime_error("Context manager not initialized");
 				ContextManager::instance()->swapReadWriteContext();
 			}
+
+			/**
+			 * @brief Duplicate the content of the current context, and swap it.
+			*/
+			static void copyAndSwap()
+			{
+				ContextManager::instance()->copyAndSwapReadWriteContext();
+			}
 		};
 		/**
 		 * \class ReadOnlyAccessor
@@ -136,6 +144,16 @@ namespace spk
 
 			_readOnlyContext.swap(_intermediaryBuffer);
 			_isSwapRequested = false;
+		}
+
+		/**
+		 * \brief Swaps the context object used for read/write operations with an intermediary buffer after duplicating it.
+		 * Thread safe due to the usage of std::lock_guard. 
+		*/
+		void copyAndSwapReadWriteContext()
+		{
+			*_intermediaryBuffer = *_readWriteContext;
+			swapReadWriteContext();
 		}
 
 	public:
