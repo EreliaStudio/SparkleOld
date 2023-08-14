@@ -6,8 +6,12 @@
 
 namespace spk
 {
+	/**
+     * @brief Represents a 4x4 matrix.
+     */
 	struct Matrix4x4
     {
+		/// Default 4x4 identity matrix initialization.
         float data[4][4] = {
 			{1, 0, 0, 0},
 			{0, 1, 0, 0},
@@ -15,242 +19,103 @@ namespace spk
 			{0, 0, 0, 1}
 		};
 
-		Matrix4x4()
-		{
+		/// Default constructor.
+		Matrix4x4();
 
-		}
+		/**
+         * @brief Multiplies matrix with a Vector3.
+         * @param v The Vector3 to multiply with.
+         * @return The resulting Vector3 after multiplication.
+         */
+        Vector3 operator*(const Vector3& v) const;
 
-        Vector3 operator*(const Vector3& v) const
-        {
-            float w = data[3][0] * v.x + data[3][1] * v.y + data[3][2] * v.z + data[3][3];
-            return Vector3(
-                (data[0][0] * v.x + data[0][1] * v.y + data[0][2] * v.z + data[0][3]) / w,
-                (data[1][0] * v.x + data[1][1] * v.y + data[1][2] * v.z + data[1][3]) / w,
-                (data[2][0] * v.x + data[2][1] * v.y + data[2][2] * v.z + data[2][3]) / w
-            );
-        }
+		/**
+         * @brief Multiplies this matrix with another matrix.
+         * @param other The other matrix to multiply with.
+         * @return The resulting Matrix4x4 after multiplication.
+         */
+        Matrix4x4 operator*(const Matrix4x4& other) const;
 
-        Matrix4x4 operator*(const Matrix4x4& other) const
-        {
-            Matrix4x4 result;
+		/**
+         * @brief Constructs a look-at matrix.
+         * @param p_from Starting position of the view.
+         * @param p_to Target position.
+         * @param p_up Up direction (default is positive Y).
+         * @return The look-at matrix.
+         */
+		static Matrix4x4 lookAt(const Vector3& p_from, const Vector3& p_to, const Vector3& p_up = Vector3(0, 1, 0));
 
-            for (int i = 0; i < 4; ++i)
-            {
-                for (int j = 0; j < 4; ++j)
-                {
-                    result.data[i][j] = data[i][0] * other.data[0][j]
-                                      + data[i][1] * other.data[1][j]
-                                      + data[i][2] * other.data[2][j]
-                                      + data[i][3] * other.data[3][j];
-                }
-            }
+		/**
+         * @brief Constructs a translation matrix.
+         * @param p_translation Translation vector.
+         * @return The translation matrix.
+         */
+        static Matrix4x4 translationMatrix(const Vector3& p_translation);
 
-            return result;
-        }
+		/**
+         * @brief Constructs a scale matrix.
+         * @param p_scale Scale vector.
+         * @return The scale matrix.
+         */
+        static Matrix4x4 scaleMatrix(const Vector3& p_scale);
 
-		static Matrix4x4 lookAt(const Vector3& p_from, const Vector3& p_to, const Vector3& p_up = Vector3(0, 1, 0))
-		{
-			Matrix4x4 result;
+		/**
+         * @brief Constructs a rotation matrix from Euler angles.
+         * @param p_rotation Rotation angles in radians.
+         * @return The rotation matrix.
+         */
+        static Matrix4x4 rotationMatrix(const Vector3& p_rotation);
 
-			Vector3 forward = (p_from - p_to).normalize();
-			Vector3 right = p_up.cross(forward).normalize();
-			Vector3 up = forward.cross(right).normalize();
+		/**
+         * @brief Constructs a matrix for rotation around an arbitrary axis.
+         * @param p_axis The axis to rotate around.
+         * @param p_rotationAngle The rotation angle in radians.
+         * @return The rotation matrix.
+         */
+		static Matrix4x4 rotateAroundAxis(const Vector3& p_axis, const float& p_rotationAngle);
 
-			result.data[0][0] = right.x;
-			result.data[0][1] = right.y;
-			result.data[0][2] = right.z;
-			result.data[0][3] = -right.dot(p_from);
+		/**
+         * @brief Checks matrix equality.
+         * @param other The other matrix.
+         * @return True if matrices are equal, false otherwise.
+         */
+		bool operator==(const Matrix4x4& other) const;
 
-			result.data[1][0] = up.x;
-			result.data[1][1] = up.y;
-			result.data[1][2] = up.z;
-			result.data[1][3] = -up.dot(p_from);
+		/// Check matrix inequality.
+		bool operator!=(const Matrix4x4& other) const;
 
-			result.data[2][0] = forward.x;
-			result.data[2][1] = forward.y;
-			result.data[2][2] = forward.z;
-			result.data[2][3] = -forward.dot(p_from);
+		/**
+         * @brief Returns the transpose of the matrix.
+         * @return Transposed matrix.
+         */
+		Matrix4x4 transpose() const;
 
-			result.data[3][0] = 0.0f;
-			result.data[3][1] = 0.0f;
-			result.data[3][2] = 0.0f;
-			result.data[3][3] = 1.0f;
+		/**
+         * @brief Computes determinant of a 2x2 matrix.
+         * @param a Element at position (0,0).
+         * @param b Element at position (0,1).
+         * @param c Element at position (1,0).
+         * @param d Element at position (1,1).
+         * @return Determinant of the matrix.
+         */
+		float determinant2x2(float a, float b, float c, float d);
 
-			return result;
-		}
+		/**
+         * @brief Computes the inverse of the matrix.
+         * @return Inverted matrix.
+         */
+		Matrix4x4 inverse() const;
 
+		/**
+         * @brief Returns a raw pointer to the matrix data.
+         * @return Pointer to the matrix data.
+         */
+		float* ptr();
 
-        static Matrix4x4 translationMatrix(const Vector3& p_translation)
-        {
-            Matrix4x4 result;
-            result.data[0][3] = p_translation.x;
-            result.data[1][3] = p_translation.y;
-            result.data[2][3] = p_translation.z;
-            return result;
-        }
-
-        static Matrix4x4 scaleMatrix(const Vector3& p_scale)
-        {
-            Matrix4x4 result;
-            result.data[0][0] = p_scale.x;
-            result.data[1][1] = p_scale.y;
-            result.data[2][2] = p_scale.z;
-            return result;
-        }
-
-        static Matrix4x4 rotationMatrix(const Vector3& p_rotation)
-        {
-            Matrix4x4 rx, ry, rz;
-            
-            float cosX = cos(p_rotation.x);
-            float sinX = sin(p_rotation.x);
-
-            rx.data[1][1] = cosX;
-            rx.data[1][2] = -sinX;
-            rx.data[2][1] = sinX;
-            rx.data[2][2] = cosX;
-
-            float cosY = cos(p_rotation.y);
-            float sinY = sin(p_rotation.y);
-
-            ry.data[0][0] = cosY;
-            ry.data[0][2] = sinY;
-            ry.data[2][0] = -sinY;
-            ry.data[2][2] = cosY;
-
-            float cosZ = cos(p_rotation.z);
-            float sinZ = sin(p_rotation.z);
-
-            rz.data[0][0] = cosZ;
-            rz.data[0][1] = -sinZ;
-            rz.data[1][0] = sinZ;
-            rz.data[1][1] = cosZ;
-
-            return rz * ry * rx;
-        }
-
-		static Matrix4x4 rotateAroundAxis(const Vector3& p_axis, const float& p_rotationAngle)
-		{
-			Matrix4x4 result;
-
-			Vector3 v = p_axis.normalize();
-			
-			float c = cos(p_rotationAngle);
-			float s = sin(p_rotationAngle);
-			
-			result.data[0][0] = c + v.x * v.x * (1 - c);
-			result.data[0][1] = v.x * v.y * (1 - c) - v.z * s;
-			result.data[0][2] = v.x * v.z * (1 - c) + v.y * s;
-
-			result.data[1][0] = v.y * v.x * (1 - c) + v.z * s;
-			result.data[1][1] = c + v.y * v.y * (1 - c);
-			result.data[1][2] = v.y * v.z * (1 - c) - v.x * s;
-
-			result.data[2][0] = v.z * v.x * (1 - c) - v.y * s;
-			result.data[2][1] = v.z * v.y * (1 - c) + v.x * s;
-			result.data[2][2] = c + v.z * v.z * (1 - c);
-
-			result.data[3][0] = 0.0f;
-			result.data[3][1] = 0.0f;
-			result.data[3][2] = 0.0f;
-			result.data[3][3] = 1.0f;
-
-			return result;
-		}
-
-		bool operator==(const Matrix4x4& other) const
-		{
-			for (int i = 0; i < 4; ++i)
-			{
-				for (int j = 0; j < 4; ++j)
-				{
-					if (data[i][j] != other.data[i][j])
-					{
-						return false;
-					}
-				}
-			}
-			return true;
-		}
-
-		bool operator!=(const Matrix4x4& other) const
-		{
-			return !(*this == other);
-		}
-
-		Matrix4x4 transpose() const
-		{
-			Matrix4x4 result;
-			for (int i = 0; i < 4; ++i)
-			{
-				for (int j = 0; j < 4; ++j)
-				{
-					result.data[j][i] = data[i][j];
-				}
-			}
-			return result;
-		}
-
-		float determinant2x2(float a, float b, float c, float d)
-		{
-			return a * d - b * c;
-		}
-
-		Matrix4x4 inverse() const
-		{
-			Matrix4x4 adjugate;
-			float det = 0;
-
-			for (int i = 0; i < 4; ++i)
-			{
-				for (int j = 0; j < 4; ++j)
-				{
-					float sub[3][3] = {0};
-					for (int x = 0; x < 3; ++x)
-					{
-						for (int y = 0; y < 3; ++y)
-						{
-							int xi = (x < i) ? x : x + 1;
-							int yj = (y < j) ? y : y + 1;
-							sub[x][y] = data[xi][yj];
-						}
-					}
-
-					float det3x3 = sub[0][0] * (sub[1][1] * sub[2][2] - sub[1][2] * sub[2][1])
-								- sub[0][1] * (sub[1][0] * sub[2][2] - sub[1][2] * sub[2][0])
-								+ sub[0][2] * (sub[1][0] * sub[2][1] - sub[1][1] * sub[2][0]);
-
-					adjugate.data[j][i] = ((i + j) % 2 == 0 ? 1 : -1) * det3x3;
-
-					if (i == 0)
-						det += data[i][j] * adjugate.data[j][i];
-				}
-			}
-
-			if (det == 0)
-			{
-				return Matrix4x4();
-			}
-
-			for (int i = 0; i < 4; ++i)
-			{
-				for (int j = 0; j < 4; ++j)
-				{
-					adjugate.data[i][j] /= det;
-				}
-			}
-
-			return adjugate;
-		}
-
-		float* ptr()
-		{
-			return (&(data[0][0]));
-		}
-
-		const float* c_ptr() const
-		{
-			return (&(data[0][0]));
-		}
+		/**
+         * @brief Returns a constant raw pointer to the matrix data.
+         * @return Constant pointer to the matrix data.
+         */
+		const float* c_ptr() const;
     };
 }
