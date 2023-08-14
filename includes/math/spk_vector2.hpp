@@ -62,6 +62,14 @@ namespace spk
 		template <typename TOtherType>
 		IVector2(const IVector2<TOtherType> &p_other) : x(p_other.x), y(p_other.y) {}
 
+		/**
+		 * @brief Construct a new IVector3 object from a JSON::Object
+		 * @note Data must follow the following pattern :
+		 * {
+		 *     "X":XValue,
+		 *     "Y":YValue
+		 * }
+		*/
 		IVector2(const spk::JSON::Object& p_object)
 		{
 			if constexpr (std::is_floating_point<TType>::value)
