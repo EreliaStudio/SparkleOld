@@ -7,6 +7,7 @@
 #include "math/spk_random_generator.hpp"
 #include "math/spk_pseudo_random_generator.hpp"
 #include "math/spk_perlin.hpp"
+#include "math/spk_matrix4x4.hpp"
 
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_content_array.hpp"
