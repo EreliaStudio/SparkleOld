@@ -61,7 +61,7 @@ namespace spk
 		return result;
 	}
 
-	static Matrix4x4 Matrix4x4::translationMatrix(const Vector3 &p_translation)
+	Matrix4x4 Matrix4x4::translationMatrix(const Vector3 &p_translation)
 	{
 		Matrix4x4 result;
 		result.data[0][3] = p_translation.x;
