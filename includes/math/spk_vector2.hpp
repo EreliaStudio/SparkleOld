@@ -78,6 +78,10 @@ namespace spk
 			return p_os;
 		}
 
+		/**
+		 * @brief Convert the vector to a wstring.
+		 * @return The resulting string.
+		*/
 		std::wstring to_wstring() const
 		{
 			return (std::to_wstring(x) + L" / " + std::to_wstring(y));
@@ -611,6 +615,13 @@ namespace spk
 		return (IVector2<TType>(p_value, p_value) / p_point);
 	};
 
+
+	/**
+	 * @brief Convert a vector to a wstring.
+	 * @param p_point The vector to convert.
+	 * @tparam TType The type of the vector.
+	 * @return The resulting string.
+	*/
 	template <typename TType>
 	std::wstring to_wstring(const IVector2<TType> &p_point)
 	{

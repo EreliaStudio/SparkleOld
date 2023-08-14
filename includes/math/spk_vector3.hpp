@@ -76,11 +76,6 @@ namespace spk
 			return (IVector3<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y), static_cast<TOtherType>(z)));
 		}
 
-		std::wstring to_wstring() const
-		{
-			return (std::to_wstring(x) + L" / " + std::to_wstring(y) + L" / " + std::to_wstring(z));
-		}
-
 		/**
 		 * @brief Overloaded insertion operator for printing the vector to an output stream.
 		 * @param p_os The output stream.
@@ -91,6 +86,15 @@ namespace spk
 		{
 			p_os << p_self.x << " / " << p_self.y << " / " << p_self.z;
 			return (p_os);
+		}
+
+		/**
+		 * @brief Convert the vector to a wstring.
+		 * @return The resulting string.
+		*/
+		std::wstring to_wstring() const
+		{
+			return (std::to_wstring(x) + L" / " + std::to_wstring(y) + L" / " + std::to_wstring(z));
 		}
 
 		/**
@@ -556,6 +560,12 @@ namespace spk
 		return (IVector3<TType>(p_value) / p_point);
 	};
 
+	/**
+	 * @brief Convert a vector to a wstring.
+	 * @param p_point The vector to convert.
+	 * @tparam TType The type of the vector.
+	 * @return The resulting string.
+	*/
 	template <typename TType>
 	std::wstring to_wstring(const IVector3<TType> &p_point)
 	{
