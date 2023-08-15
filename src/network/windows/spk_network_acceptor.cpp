@@ -75,10 +75,8 @@ namespace spk::Network
 			}
 		}
 
-		spk::cout << "Adding socket : " << newConnectionSocket << " to the reading fds" << std::endl;
 		FD_SET(newConnectionSocket, &(spk::Network::Object::readingFDs()));
 		
-		spk::cout << "Comparing : " << newConnectionSocket << " > " << spk::Network::Object::maxFD() << "(Socket error : " << SOCKET_ERROR << ")" << std::endl;
 		if (spk::Network::Object::maxFD() == SOCKET_ERROR || newConnectionSocket > spk::Network::Object::maxFD()) {
 			spk::Network::Object::maxFD() = newConnectionSocket;
 		}

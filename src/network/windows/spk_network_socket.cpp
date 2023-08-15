@@ -172,8 +172,6 @@ namespace spk::Network
 		if (readingHeaderResult != Socket::ReadResult::Success)
 			return (readingHeaderResult);
 
-		spk::cout << "Header received : " << p_messageToFill.header().type() << " - size : " << p_messageToFill.size() << std::endl;
-		
 		if (p_messageToFill.size() == 0)
 			return (readingHeaderResult);
 
