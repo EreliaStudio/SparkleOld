@@ -38,7 +38,7 @@ namespace spk::Network
 		std::function<void(const EmiterID&)> _onNewConnectionCallback = nullptr; /**< Callback function for new connection */
 		std::function<void(const EmiterID&)> _onConnectionDisconnectionCallback = nullptr; /**< Callback function for connection disconnection */
 		std::function<void(const EmiterID&, const spk::Network::Message&)> _onUnknownMessageTypeCallback = [&](const EmiterID& p_id, const spk::Network::Message& p_msg){
-			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().id()) + L"]");
+			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().type()) + L"]");
 		};
 
 		void _treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg); /**< Function to process a received message */

@@ -4,7 +4,7 @@ namespace spk::Network
 {
 	void Client::_treatMessage(const spk::Network::Message &p_msg)
 	{
-		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
+		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().type());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
 		{
 			callbackIt->second(p_msg);

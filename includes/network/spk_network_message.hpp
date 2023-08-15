@@ -26,7 +26,7 @@ namespace spk::Network
 			friend class Message;
 
 		private:
-			Type _id; /**< Identifier of the message */
+			Type _type; /**< Identifier of the message */
 			uint32_t _size; /**< Size of the message */
 			mutable EmiterID _emiter; /**< Emitter of the message */
 
@@ -34,9 +34,15 @@ namespace spk::Network
             /**
              * @brief Constructs a new Header with specified ID.
              *
-             * @param p_id Identifier for the new header.
+             * @param p_type Identifier for the new header.
              */
-			Header(Type p_id = 0);
+            template <typename TMessageType = Type>
+			Header(TMessageType p_type = 0) :
+                _type(static_cast<Type>(p_type)),
+                _size(0)
+            {
+
+            }
 
             /**
              * @brief Returns the emitter ID.
@@ -50,14 +56,32 @@ namespace spk::Network
              *
              * @return ID of the header.
              */
-			const Type& id() const;
+			const Type& type() const
+            {
+                return (_type);
+            }
+
+            /**
+             * @brief Returns the ID of the header.
+             *
+             * @return ID of the header.
+             */
+            template <typename TMessageType>
+			const TMessageType typeAs() const
+            {
+                return (static_cast<TMessageType>(_type));
+            }
 
             /**
              * @brief Sets the type of the header.
              *
-             * @param p_id New type for the header.
+             * @param p_type New type for the header.
              */
-			void setType(Type p_id);
+            template <typename TMessageType>
+			void setType(TMessageType p_type)
+            {
+                _type = static_cast<Type>(p_type);
+            }
 
             /**
              * @brief Sets the emitter ID of the header.
@@ -84,17 +108,21 @@ namespace spk::Network
         /**
          * @brief Constructs a new Message with specified ID.
          *
-         * @param p_id Identifier for the new message.
+         * @param p_type Identifier for the new message.
          */
-		Message(Header::Type p_id = 0);
+        template <typename TMessageType = Type>
+		Message(TMessageType p_type = 0) : _header(p_type)
+        {
+
+        }
 
         /**
          * @brief Creates an answer message with the specified ID.
          *
-         * @param p_id ID of the answer message.
+         * @param p_type ID of the answer message.
          * @return A new message.
          */
-		Message createAwnser(Header::Type p_id) const;
+		Message createAwnser(Header::Type p_type) const;
 
         /**
          * @brief Returns the header of the message.

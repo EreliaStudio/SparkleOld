@@ -21,6 +21,6 @@ namespace spk::Network
 
 	void LocalNode::send(const spk::Network::Message &p_msg)
 	{
-		_onMessageReceptionCallbacks[p_msg.header().id()](p_msg);
+		_onMessageReceptionCallbacks[p_msg.header().type()](p_msg);
 	}
 }
