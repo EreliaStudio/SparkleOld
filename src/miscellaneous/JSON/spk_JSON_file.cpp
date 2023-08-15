@@ -30,7 +30,7 @@ namespace spk
 			wif.open(p_filePath);
 			if (!wif.is_open())
 			{
-				spk::throwException(L"Failed to open file [" + std::wstring(p_filePath.c_str()) + L"]");
+				spk::throwException(L"Failed to open file [" + p_filePath.wstring() + L"]");
 			}
 
 			std::wstring result((std::istreambuf_iterator<wchar_t>(wif)),

@@ -1,5 +1,6 @@
 #include "math/perlin/spk_iperlin.hpp"
 #include <random>
+#include <cfloat>
 
 namespace spk
 {
