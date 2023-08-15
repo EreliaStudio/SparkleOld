@@ -79,8 +79,8 @@ namespace spk
 			}
 			else
 			{
-				x = p_object[L"x"].as<int>();
-				y = p_object[L"y"].as<int>();
+				x = p_object[L"x"].as<long>();
+				y = p_object[L"y"].as<long>();
 			}
 		}
 
