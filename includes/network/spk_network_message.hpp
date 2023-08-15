@@ -166,6 +166,58 @@ namespace spk::Network
         */
         bool empty() const;
 
+		/**
+		 * @brief Resize the amount of data stored inside the message.
+		 *
+		 * @param p_newSize The number of bytes required inside the message.
+		 */
+		void resize(const size_t &p_newSize);
+
+        /**
+         * @brief Skip a certain number of bytes inside the message
+		 *
+		 * @param p_number The number of bytes to skip.
+         */
+		void skip(const size_t &p_number);
+
+        /**
+         * @brief Clear the content of the message.
+         * @note The message will have a size of zero after this method is called.
+         * You may want to check the "reset" method.
+         */
+		void clear();
+
+        /**
+         * @brief Reset the bookmark inside the message, allowing you to re-read it from start.
+        */
+		void reset();
+
+		/**
+		 * @brief Retrieve data of a specific type from the buffer.
+		 *
+		 * @tparam OutputType The type of data to retrieve.
+		 * @return The retrieved data.
+		 */
+		template <typename OutputType>
+		OutputType get() const
+		{
+			return (_content.get<OutputType>());
+		}
+
+		/**
+		 * @brief Edit the buffer at a specific offset with input data.
+		 *
+		 * @tparam InputType The type of input data.
+		 * @param p_offset Offset in the buffer where the data should be written.
+		 * @param p_input The data to write into the buffer.
+		 */
+		template <typename InputType>
+		void edit(const size_t& p_offset, const InputType& p_input)
+		{
+			_content.edit(p_offset, p_input);
+		}
+
+
         /**
          * @brief Serialization operator.
          *

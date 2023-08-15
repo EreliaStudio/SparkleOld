@@ -57,4 +57,25 @@ namespace spk::Network
 	{
 		return (_content.empty());
 	}
+
+	void Message::resize(const size_t &p_newSize)
+	{
+		_content.resize(p_newSize);
+	}
+
+	void Message::skip(const size_t &p_number)
+	{
+		_content.skip(p_number);
+	}
+
+	void Message::clear()
+	{
+		_content.clear();
+		_header._size = 0;
+	}
+
+	void Message::reset()
+    {
+		_content.reset();
+    }
 }
