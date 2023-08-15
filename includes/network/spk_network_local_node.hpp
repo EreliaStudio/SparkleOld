@@ -20,7 +20,7 @@ namespace spk::Network
 	private:
 		std::map<spk::Network::Message::Type, std::function<void(const spk::Network::Message&)>> _onMessageReceptionCallbacks; /**< Map storing callbacks for specific types of messages */
 		std::function<void(const spk::Network::Message&)> _onUnknowMessageReception = [&](const spk::Network::Message& p_msg){
-			spk::throwException(L"Message [" + std::to_wstring(p_msg.header().id()) + L"] not defined in local node");
+			spk::throwException(L"Message [" + std::to_wstring(p_msg.header().type()) + L"] not defined in local node");
 		}; /**< Callback function for handling unknown message types */
 
 	public:

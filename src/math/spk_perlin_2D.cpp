@@ -34,11 +34,11 @@ namespace spk
 		float sy = fy - (float)y0;
 
 		float n0, n1, ix0, ix1, value;
-		n0 = _dotGridGradient(x0, y0, 0, fx, fy, 0);
-		n1 = _dotGridGradient(x1, y0, 0, fx, fy, 0);
+		n0 = _dotGridGradient(x0, y0, fx, fy);
+		n1 = _dotGridGradient(x1, y0, fx, fy);
 		ix0 = _interpolate(n0, n1, sx);
-		n0 = _dotGridGradient(x0, y1, 0, fx, fy, 0);
-		n1 = _dotGridGradient(x1, y1, 0, fx, fy, 0);
+		n0 = _dotGridGradient(x0, y1, fx, fy);
+		n1 = _dotGridGradient(x1, y1, fx, fy);
 		ix1 = _interpolate(n0, n1, sx);
 		value = _interpolate(ix0, ix1, sy);
 

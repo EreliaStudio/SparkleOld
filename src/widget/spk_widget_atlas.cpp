@@ -46,4 +46,12 @@ namespace spk::Widget
 	{
 		return _widgets;
 	}
+
+	void Atlas::resize(const spk::Vector2& p_resizeRatio)
+	{
+		for (size_t i = 0; i < _widgets.size(); i++)
+		{
+			_widgets[i]->setGeometry(_widgets[i]->anchor() * p_resizeRatio, _widgets[i]->size() * p_resizeRatio);
+		}
+	}
 }

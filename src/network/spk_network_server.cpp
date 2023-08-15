@@ -4,7 +4,7 @@ namespace spk::Network
 {
 	void Server::_treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg)
 	{
-		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().id());
+		auto callbackIt = _onMessageReceptionCallbacks.find(p_msg.header().type());
 		if (callbackIt != _onMessageReceptionCallbacks.end())
 		{
 			callbackIt->second(p_emiterID, p_msg);
@@ -50,13 +50,24 @@ namespace spk::Network
 				{
 					if (it->second.isConnected() == true)
 					{
-						Socket::ReadResult readStatus = it->second.receive(newMessage);
+						Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
+						
+						try
+						{
+							readStatus = it->second.receive(newMessage);
+						}
+						catch(...)
+						{
+							readStatus = Socket::ReadResult::Closed;
+						}
 
 						++next_it;
 
 						switch (readStatus)
 						{
 						case Socket::ReadResult::Closed:
+							if (_onConnectionDisconnectionCallback != nullptr)
+								_onConnectionDisconnectionCallback(it->first);
 							_clients.erase(it);
 							break;
 						case Socket::ReadResult::Success:
@@ -95,13 +106,6 @@ namespace spk::Network
 			std::pair<EmiterID, spk::Network::Message> pairMessageID = _messagesToTreat.pop_front();
 			_treatMessage(pairMessageID.first, pairMessageID.second);
 		}
-	}
-
-	void Server::setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
-	{
-		if (_onMessageReceptionCallbacks.contains(p_id) == true)
-			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
-		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
 	}
 
 	void Server::setNewConnectionCallback(std::function<void(const EmiterID&)> p_funct)

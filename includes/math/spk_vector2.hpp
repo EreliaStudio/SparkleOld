@@ -9,8 +9,11 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+#include <string>
 #include <iostream>
 #include <algorithm>
+
+#include "miscellaneous/JSON/spk_JSON_object.hpp"
 
 namespace spk
 {
@@ -39,8 +42,8 @@ namespace spk
 		 * @brief Constructor that initializes both coordinates with a single value.
 		 * @param p_value The value to be used for both coordinates.
 		 */
-		template <typename TOtherType>
-		IVector2(const TOtherType &p_value) : x(p_value), y(p_value) {}
+		template <typename TOtherType, typename = std::enable_if_t<std::is_arithmetic<TOtherType>::value>>
+		IVector2(const TOtherType &p_value) : x(static_cast<TType>(p_value)), y(static_cast<TType>(p_value)) {}
 
 		/**
 		 * @brief Constructor that initializes the vector with two values.
@@ -48,7 +51,38 @@ namespace spk
 		 * @param p_y The value to be used for the y-coordinate.
 		 */
 		template <typename TOtherType>
-		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(p_x), y(p_y) {}
+		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)) {}
+
+		/**
+		 * @brief Constructs a new IVector3 object from another IVector3 object with potentially different value types.
+		 *
+		 * @tparam TOtherType The type of the other IVector3 object's values.
+		 * @param p_other The other IVector3 object.
+		 */
+		template <typename TOtherType>
+		IVector2(const IVector2<TOtherType> &p_other) : x(p_other.x), y(p_other.y) {}
+
+		/**
+		 * @brief Construct a new IVector3 object from a JSON::Object
+		 * @note Data must follow the following pattern :
+		 * {
+		 *     "X":XValue,
+		 *     "Y":YValue
+		 * }
+		*/
+		IVector2(const spk::JSON::Object& p_object)
+		{
+			if constexpr (std::is_floating_point<TType>::value)
+			{
+				x = p_object[L"x"].as<double>();
+				y = p_object[L"y"].as<double>();
+			}
+			else
+			{
+				x = p_object[L"x"].as<long>();
+				y = p_object[L"y"].as<long>();
+			}
+		}
 
 		/**
 		 * @brief Type-casting operator.
@@ -76,6 +110,16 @@ namespace spk
 			p_os << p_self.x << " / " << p_self.y;
 			return p_os;
 		}
+
+		/**
+		 * @brief Convert the vector to a wstring.
+		 * @return The resulting string.
+		*/
+		std::wstring to_wstring() const
+		{
+			return (std::to_wstring(x) + L" / " + std::to_wstring(y));
+		}
+
 
 		/**
 		 * @brief Overload of + operator.
@@ -603,6 +647,19 @@ namespace spk
 	{
 		return (IVector2<TType>(p_value, p_value) / p_point);
 	};
+
+
+	/**
+	 * @brief Convert a vector to a wstring.
+	 * @param p_point The vector to convert.
+	 * @tparam TType The type of the vector.
+	 * @return The resulting string.
+	*/
+	template <typename TType>
+	std::wstring to_wstring(const IVector2<TType> &p_point)
+	{
+		return (p_point.to_wstring());
+	}
 
 	/**
 	 * @brief Alias for IVector2 with float type.

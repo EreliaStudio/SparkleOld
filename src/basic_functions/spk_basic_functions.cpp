@@ -121,9 +121,9 @@ namespace spk
 		return (result);
 	}
 
-	int positiveModulo(int p_integer, int p_dividor)
+	intmax_t positiveModulo(intmax_t p_integer, intmax_t p_dividor)
 	{
-		int result = p_integer % p_dividor;
+		intmax_t result = p_integer % p_dividor;
 		while (result < 0)
 			result += p_dividor;
 		return result;
@@ -166,12 +166,6 @@ namespace spk
 				return ch <= 0xFF ? static_cast<char>(ch) : '?';
 			});
 		return str;
-	}
-
-	void throwException(const std::wstring& p_errorLine) noexcept(false)
-	{
-		//spk::cout << p_errorLine << std::endl;
-		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
 
 	void redirectException(std::exception& e, const std::wstring* p_jobName)
@@ -231,6 +225,13 @@ namespace spk
 		}
 		else
 			result = p_code[0];
+		return (result);
+	}
+
+	std::wstring stringToWString(const std::string &s)
+	{
+		std::wstring result(s.begin(), s.end());
+
 		return (result);
 	}
 }

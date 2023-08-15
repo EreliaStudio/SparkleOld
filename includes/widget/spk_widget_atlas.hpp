@@ -65,5 +65,11 @@ namespace spk::Widget
 		 * @return const reference to the StoringContainer.
 		 */
 		const StoringContainer& widgets() const;
+		
+		/**
+		 * @brief Resize every widget using a ratio.
+		 * @param p_resizeRatio The ratio between the old and new screen size
+		*/
+		void resize(const spk::Vector2& p_resizeRatio);
 	};
 }

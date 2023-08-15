@@ -1,5 +1,6 @@
 #include "math/perlin/spk_iperlin.hpp"
 #include <random>
+#include <cfloat>
 
 namespace spk
 {
@@ -86,10 +87,8 @@ namespace spk
 	float IPerlin::_dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const
 	{
 		size_t hashValue = (ix % PermutationTableSize) % PermutationTableSize;
-		if (y != 0)
-			hashValue = (_permutationTable[ hashValue ] + iy) % PermutationTableSize;
-		if (z != 0)
-			hashValue = (_permutationTable[ hashValue ] + iz) % PermutationTableSize;
+		hashValue = (_permutationTable[ hashValue ] + iy) % PermutationTableSize;
+		hashValue = (_permutationTable[ hashValue ] + iz) % PermutationTableSize;
 		unsigned int hash = _permutationTable[hashValue ] % 12;
 
 		float result = (x - (float)ix) * _gradients[hash][0];
@@ -97,6 +96,26 @@ namespace spk
 			result += (y - (float)iy) * _gradients[hash][1];
 		if (z != 0)
 			result += (z - (float)iz) * _gradients[hash][2];
+		return (result);
+	}
+
+	float IPerlin::_dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const
+	{
+		size_t hashValue = (ix % PermutationTableSize) % PermutationTableSize;
+		hashValue = (_permutationTable[ hashValue ] + iy) % PermutationTableSize;
+		unsigned int hash = _permutationTable[hashValue ] % 12;
+
+		float result = (x - (float)ix) * _gradients[hash][0];
+		result += (y - (float)iy) * _gradients[hash][1];
+		return (result);
+	}
+
+	float IPerlin::_dotGridGradient(const int& ix, const float& x) const
+	{
+		size_t hashValue = (ix % PermutationTableSize) % PermutationTableSize;
+		unsigned int hash = _permutationTable[hashValue ] % 12;
+
+		float result = (x - (float)ix) * _gradients[hash][0];
 		return (result);
 	}
 

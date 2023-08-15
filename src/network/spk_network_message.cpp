@@ -2,24 +2,9 @@
 
 namespace spk::Network
 {
-	Message::Header::Header(Type p_id) : _id(p_id),
-											 _size(0)
-	{
-	}
-
-	const Message::Type &Message::Header::id() const
-	{
-		return (_id);
-	}
-
 	const Message::Header::EmiterID& Message::Header::emiterID() const
 	{
 		return (_emiter);
-	}
-
-	void Message::Header::setType(Type p_id)
-	{
-		_id = p_id;
 	}
 
 	void Message::Header::setEmiter(EmiterID p_emiter) const
@@ -30,11 +15,6 @@ namespace spk::Network
 	void Message::Header::reset(uint32_t p_size)
 	{
 		_size = p_size;
-	}
-
-	Message::Message(Header::Type p_type) : _header(p_type)
-	{
-
 	}
 	
 	Message Message::createAwnser(Header::Type p_type) const
@@ -72,4 +52,30 @@ namespace spk::Network
 	{
 		return (_header._size);
 	}
+    
+	bool Message::empty() const
+	{
+		return (_content.empty());
+	}
+
+	void Message::resize(const size_t &p_newSize)
+	{
+		_content.resize(p_newSize);
+	}
+
+	void Message::skip(const size_t &p_number)
+	{
+		_content.skip(p_number);
+	}
+
+	void Message::clear()
+	{
+		_content.clear();
+		_header._size = 0;
+	}
+
+	void Message::reset()
+    {
+		_content.reset();
+    }
 }

@@ -24,6 +24,7 @@ namespace spk
 
 		private:
 			bool _initialized; /**< Flag indicating whether the object has been initialized. */
+			std::wstring _name; /**< The name of the JSON object*/
 			ContentType _content; /**< The content of the JSON object. */
 			static size_t _indent; /**< The indentation level of the JSON object. */
 			const static uint8_t _indentSize = 4; /**< The size of the indentation. */
@@ -32,7 +33,7 @@ namespace spk
 			/**
 			 * @brief Default constructor for the Object class.
 			 */
-			Object();
+			Object(const std::wstring& p_name = L"Unnamed");
 
 			/**
 			 * @brief Resets the object to its default state.
@@ -149,6 +150,20 @@ namespace spk
 			size_t count(const std::wstring& p_key) const;
 
 			/**
+			 * @brief Return true if the type stored is the same as the one stored inside the object
+			 * @tparam TType The value type to test.
+			 * @return True if the unit store the templated type. False otherwise.
+			 * @throw This method will throw is the object isn't a Unit object.
+			*/
+			template <typename TType>
+			bool hold()
+			{
+				if (isUnit() == false)
+					spk::throwException(L"Can't verify the holding type of an object who isn't a Unit");
+				return (std::holds_alternative<TType>(std::get<Unit>(_content)));
+			}
+
+			/**
 			 * @brief Sets the JSON object value to the specified type and value.
 			 * @tparam TType The type of the value.
 			 * @param p_value The value to set.
@@ -196,7 +211,7 @@ namespace spk
 				{
 					Unit tmpUnit = TType();
 					std::wstring types[] = {L"bool", L"long", L"double", L"std::wstring", L"Object*", L"std::nullptr_t"};
-					spk::throwException(L"Wrong type request for Unit : Request type [" + types[tmpUnit.index()] + L"] but unit contain [" + types[unit.index()] + L"]");
+					spk::throwException(L"Wrong type request for object [" + _name + L"] as Unit : Request type [" + types[tmpUnit.index()] + L"] but unit contain [" + types[unit.index()] + L"]");
 				}
 
 				return (*value);

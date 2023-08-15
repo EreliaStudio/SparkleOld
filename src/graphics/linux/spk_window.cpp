@@ -102,6 +102,11 @@ namespace spk
 		_size = p_size;
 	}
 
+	const spk::Vector2Int& Window::size() const
+	{
+		return (_size);
+	}
+
 	void Window::render()
 	{
 		xcb_flush(_connection);

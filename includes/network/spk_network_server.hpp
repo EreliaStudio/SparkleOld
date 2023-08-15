@@ -38,7 +38,7 @@ namespace spk::Network
 		std::function<void(const EmiterID&)> _onNewConnectionCallback = nullptr; /**< Callback function for new connection */
 		std::function<void(const EmiterID&)> _onConnectionDisconnectionCallback = nullptr; /**< Callback function for connection disconnection */
 		std::function<void(const EmiterID&, const spk::Network::Message&)> _onUnknownMessageTypeCallback = [&](const EmiterID& p_id, const spk::Network::Message& p_msg){
-			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().id()) + L"]");
+			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().type()) + L"]");
 		};
 
 		void _treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg); /**< Function to process a received message */
@@ -75,10 +75,17 @@ namespace spk::Network
         /**
          * @brief Sets the callback function for a specific message type.
          *
-         * @param p_id The type of the message.
+         * @param p_messageType The type of the message.
          * @param p_funct The callback function.
          */
-		void setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct);
+        template <typename TMessageType>
+		void setOnMessageReceptionCallback(const TMessageType& p_messageType, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
+        {
+            Message::Type messageType = static_cast<Message::Type>(p_messageType);
+            if (_onMessageReceptionCallbacks.contains(messageType) == true)
+                spk::throwException(L"Callback already define for message type [" + std::to_wstring(messageType) + L"]");
+            _onMessageReceptionCallbacks[messageType] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
+        }
 
         /**
          * @brief Sets the callback function for a new connection event.

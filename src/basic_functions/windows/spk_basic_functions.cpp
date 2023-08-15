@@ -23,6 +23,12 @@ namespace spk
 		MultiByteToWideChar(CP_UTF8, 0, &prettyFunction[0], (int)prettyFunction.size(), &wide[0], size_needed);
 		return className(wide);
 	}
+
+	void throwException(const std::wstring& p_errorLine) noexcept(false)
+	{
+		spk::cout << "Critical exception raised : " << std::endl << p_errorLine << std::endl;
+		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
+	}
 	
 	void printCallStack()
 	{

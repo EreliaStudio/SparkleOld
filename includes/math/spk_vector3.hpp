@@ -2,6 +2,7 @@
 
 #include "math/spk_vector2.hpp"
 #include <stdexcept>
+#include <string>
 
 namespace spk
 {
@@ -28,7 +29,7 @@ namespace spk
 		 * @tparam TOtherType The type of the value.
 		 * @param p_value The value to assign to x, y, and z.
 		 */
-		template <typename TOtherType>
+		template <typename TOtherType, typename = std::enable_if_t<std::is_arithmetic<TOtherType>::value>>
 		IVector3(const TOtherType &p_value) : x(static_cast<TType>(p_value)), y(static_cast<TType>(p_value)), z(static_cast<TType>(p_value)) {}
 
 		/**
@@ -64,6 +65,32 @@ namespace spk
 		template <typename TOtherType1, typename TOtherType2, typename TOtherType3>
 		IVector3(const TOtherType1 &p_x, const TOtherType2 &p_y, const TOtherType3 &p_z) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)), z(static_cast<TType>(p_z)) {}
 
+
+		/**
+		 * @brief Construct a new IVector3 object from a JSON::Object
+		 * @note Data must follow the following pattern :
+		 * {
+		 *     "X":XValue,
+		 *     "Y":YValue,
+		 *     "Z":ZValue
+		 * }
+		*/
+		IVector3(const spk::JSON::Object& p_object)
+		{
+			if constexpr (std::is_floating_point<TType>::value)
+			{
+				x = p_object[L"x"].as<double>();
+				y = p_object[L"y"].as<double>();
+				z = p_object[L"z"].as<double>();
+			}
+			else
+			{
+				x = p_object[L"x"].as<long>();
+				y = p_object[L"y"].as<long>();
+				z = p_object[L"z"].as<long>();
+			}
+		}
+
 		/**
 		 * @brief Conversion operator to convert the vector to another vector type.
 		 * @tparam TOtherType The type to convert the vector elements to.
@@ -85,6 +112,15 @@ namespace spk
 		{
 			p_os << p_self.x << " / " << p_self.y << " / " << p_self.z;
 			return (p_os);
+		}
+
+		/**
+		 * @brief Convert the vector to a wstring.
+		 * @return The resulting string.
+		*/
+		std::wstring to_wstring() const
+		{
+			return (std::to_wstring(x) + L" / " + std::to_wstring(y) + L" / " + std::to_wstring(z));
 		}
 
 		/**
@@ -549,6 +585,18 @@ namespace spk
 	{
 		return (IVector3<TType>(p_value) / p_point);
 	};
+
+	/**
+	 * @brief Convert a vector to a wstring.
+	 * @param p_point The vector to convert.
+	 * @tparam TType The type of the vector.
+	 * @return The resulting string.
+	*/
+	template <typename TType>
+	std::wstring to_wstring(const IVector3<TType> &p_point)
+	{
+		return (p_point.to_wstring());
+	}
 
 	/**
 	 * @brief Alias for IVector3 with float type.

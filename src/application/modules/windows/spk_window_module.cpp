@@ -1,6 +1,7 @@
 #include "application/modules/spk_window_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
+#include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {
@@ -18,7 +19,14 @@ namespace spk
 			*p_event >> width;
 			*p_event >> height;
 
+			spk::Vector2 ratio = spk::Vector2(
+				static_cast<float>(width) / Window::instance()->size().x,
+				static_cast<float>(height) / Window::instance()->size().y
+			);
+
 			Window::instance()->resize(spk::Vector2Int(width, height));
+			Widget::Atlas::instance()->resize(ratio);
+
 			break;
 		}
 	}

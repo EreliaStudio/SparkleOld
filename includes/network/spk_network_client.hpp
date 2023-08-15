@@ -28,7 +28,7 @@ namespace spk::Network
 
 		std::map<spk::Network::Message::Type, std::function<void(const spk::Network::Message&)>> _onMessageReceptionCallbacks; /**< Map storing callbacks for specific types of messages */
 		std::function<void(const spk::Network::Message&)> _onUnknowMessageReception = [&](const spk::Network::Message& p_msg){
-			spk::throwException(L"Unknow message ID [" + std::to_wstring(p_msg.header().id()) + L"] received");
+			spk::throwException(L"Unknow message ID [" + std::to_wstring(p_msg.header().type()) + L"] received");
 		}; /**< Callback function for handling unknown message types */
 
 		void _treatMessage(const spk::Network::Message& p_msg); /**< Internal function to handle a specific message */
@@ -65,10 +65,17 @@ namespace spk::Network
         /**
          * @brief Sets a callback for a specific message type.
          *
-         * @param p_id The ID of the message type.
+         * @param p_messageType The type of the message type.
          * @param p_funct The callback function.
          */
-		void setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const spk::Network::Message&)> p_funct);
+        template <typename TMessageType>
+		void setOnMessageReceptionCallback(const TMessageType& p_messageType, std::function<void(const spk::Network::Message&)> p_funct)
+        {
+            Message::Type messageType = static_cast<Message::Type>(p_messageType);
+            if (_onMessageReceptionCallbacks.contains(messageType) == true)
+                spk::throwException(L"Callback already define for message type [" + std::to_wstring(messageType) + L"]");
+            _onMessageReceptionCallbacks[messageType] = std::bind(p_funct, std::placeholders::_1);
+        }
 
         /**
          * @brief Sets a callback for unknown message types.

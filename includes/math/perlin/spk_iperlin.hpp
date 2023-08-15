@@ -122,6 +122,24 @@ namespace spk
      * @return The result of the dot product operation.
      */
     float _dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const;
+	
+    /**
+     * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
+     * @param ix The x-coordinate of the input point.
+     * @param iy The y-coordinate of the input point.
+     * @param x The x-coordinate of the vector from the input coordinate.
+     * @param y The y-coordinate of the vector from the input coordinate.
+     * @return The result of the dot product operation.
+     */
+	float _dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const;
+	
+    /**
+     * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
+     * @param ix The x-coordinate of the input point.
+     * @param x The x-coordinate of the vector from the input coordinate.
+     * @return The result of the dot product operation.
+     */
+    float _dotGridGradient(const int& ix, const float& x) const;
 
     /**
      * @brief Performs an interpolation operation between two points.

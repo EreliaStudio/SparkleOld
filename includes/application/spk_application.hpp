@@ -120,6 +120,11 @@ namespace spk
 		 * @param p_size The new size of the window and central widget.
 		 */
 		void resize(const spk::Vector2Int& p_size);
+
+		/**
+		 * @brief Return the current size of the Window.
+		*/
+		const spk::Vector2Int& size() const;
 	};
 
 }

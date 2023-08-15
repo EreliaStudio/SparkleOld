@@ -143,8 +143,10 @@ namespace spk
 			if (exponentPos != p_unitSubString.size() && std::holds_alternative<long>(result) == true)
 				result = _safePowerOfTen(std::get<long>(result), exponent, p_unitSubString);
 
-			p_objectToFill.set((std::holds_alternative<double>(result) == true) ?
-				std::get<double>(result) : std::get<long>(result));
+			if (std::holds_alternative<double>(result) == true)
+				p_objectToFill.set(std::get<double>(result));
+			else
+				p_objectToFill.set(std::get<long>(result));
 		}
 	}
 }

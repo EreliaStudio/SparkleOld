@@ -74,7 +74,7 @@ namespace spk
 	 * @param p_dividor The divisor.
 	 * @return The positive modulo result.
 	 */
-	int positiveModulo(int p_integer, int p_dividor);
+	intmax_t positiveModulo(intmax_t p_integer, intmax_t p_dividor);
 
 	/**
 	 * @brief Lists all files in the specified directory path with the provided extension.
@@ -164,6 +164,11 @@ namespace spk
 	 * @brief Print the callstack of the current program.
 	 */
 	void printCallStack();
+
+	/**
+	 * @brief Convert a string to a wstring
+	*/
+	std::wstring stringToWString(const std::string &s);
 }
 
 #if !defined(__PRETTY_FUNCTION__) && !defined(__GNUC__)
