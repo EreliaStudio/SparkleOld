@@ -75,10 +75,17 @@ namespace spk::Network
         /**
          * @brief Sets the callback function for a specific message type.
          *
-         * @param p_id The type of the message.
+         * @param p_messageType The type of the message.
          * @param p_funct The callback function.
          */
-		void setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct);
+        template <typename TMessageType>
+		void setOnMessageReceptionCallback(const TMessageType& p_messageType, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
+        {
+            Message::Type messageType = static_cast<Message::Type>(p_messageType);
+            if (_onMessageReceptionCallbacks.contains(messageType) == true)
+                spk::throwException(L"Callback already define for message type [" + std::to_wstring(messageType) + L"]");
+            _onMessageReceptionCallbacks[messageType] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
+        }
 
         /**
          * @brief Sets the callback function for a new connection event.

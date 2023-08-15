@@ -108,13 +108,6 @@ namespace spk::Network
 		}
 	}
 
-	void Server::setOnMessageReceptionCallback(const spk::Network::Message::Type& p_id, std::function<void(const EmiterID&, const spk::Network::Message&)> p_funct)
-	{
-		if (_onMessageReceptionCallbacks.contains(p_id) == true)
-			spk::throwException(L"Callback already define for message type [" + std::to_wstring(p_id) + L"]");
-		_onMessageReceptionCallbacks[p_id] = std::bind(p_funct, std::placeholders::_1, std::placeholders::_2);
-	}
-
 	void Server::setNewConnectionCallback(std::function<void(const EmiterID&)> p_funct)
 	{
 		_onNewConnectionCallback = std::bind(p_funct, std::placeholders::_1);
