@@ -160,6 +160,13 @@ namespace spk::Network
 		size_t size() const;
 
         /**
+         * @brief Check if the message is empty or if there is still data to read.
+         * 
+         * @return Return true if there is no data left inside the message, false otherwise.
+        */
+        bool empty() const;
+
+        /**
          * @brief Serialization operator.
          *
          * @param p_input Input data to serialize into the message.

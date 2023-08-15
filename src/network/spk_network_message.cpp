@@ -52,4 +52,9 @@ namespace spk::Network
 	{
 		return (_header._size);
 	}
+    
+	bool Message::empty() const
+	{
+		return (_content.empty());
+	}
 }
