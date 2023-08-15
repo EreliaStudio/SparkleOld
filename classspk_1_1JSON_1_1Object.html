@@ -90,10 +90,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5766312191b2dd2ab1b4d19f5abef44c"><td class="memItemLeft" align="right" valign="top"><a id="a5766312191b2dd2ab1b4d19f5abef44c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#a5766312191b2dd2ab1b4d19f5abef44c">Object</a> ()</td></tr>
-<tr class="memdesc:a5766312191b2dd2ab1b4d19f5abef44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">Object</a> class. <br /></td></tr>
-<tr class="separator:a5766312191b2dd2ab1b4d19f5abef44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945d176bd294d6a4a3da430aa1eb6371"><td class="memItemLeft" align="right" valign="top"><a id="a945d176bd294d6a4a3da430aa1eb6371"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#a945d176bd294d6a4a3da430aa1eb6371">Object</a> (const std::wstring &amp;p_name=L&quot;Unnamed&quot;)</td></tr>
+<tr class="memdesc:a945d176bd294d6a4a3da430aa1eb6371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">Object</a> class. <br /></td></tr>
+<tr class="separator:a945d176bd294d6a4a3da430aa1eb6371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9026fd2ef8903d031ca351d785dd468e"><td class="memItemLeft" align="right" valign="top"><a id="a9026fd2ef8903d031ca351d785dd468e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#a9026fd2ef8903d031ca351d785dd468e">reset</a> ()</td></tr>
 <tr class="memdesc:a9026fd2ef8903d031ca351d785dd468e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the object to its default state. <br /></td></tr>
@@ -152,6 +152,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aa5df897c3ac5bd107032524bcb7558e8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#aa5df897c3ac5bd107032524bcb7558e8">count</a> (const std::wstring &amp;p_key) const</td></tr>
 <tr class="memdesc:aa5df897c3ac5bd107032524bcb7558e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of occurrences of the specified key in the JSON object.  <a href="classspk_1_1JSON_1_1Object.html#aa5df897c3ac5bd107032524bcb7558e8">More...</a><br /></td></tr>
 <tr class="separator:aa5df897c3ac5bd107032524bcb7558e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf50b933fdfb98a44c3d1a3f963c7d16"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
+<tr class="memitem:abf50b933fdfb98a44c3d1a3f963c7d16"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#abf50b933fdfb98a44c3d1a3f963c7d16">hold</a> ()</td></tr>
+<tr class="memdesc:abf50b933fdfb98a44c3d1a3f963c7d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the type stored is the same as the one stored inside the object.  <a href="classspk_1_1JSON_1_1Object.html#abf50b933fdfb98a44c3d1a3f963c7d16">More...</a><br /></td></tr>
+<tr class="separator:abf50b933fdfb98a44c3d1a3f963c7d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c37111c20936c44f2b64773dbaa2246"><td class="memTemplParams" colspan="2">template&lt;typename TType , typename std::enable_if&lt;!std::is_same&lt; TType, Object &gt;::value, int &gt;::type  = 0&gt; </td></tr>
 <tr class="memitem:a0c37111c20936c44f2b64773dbaa2246"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1Object.html#a0c37111c20936c44f2b64773dbaa2246">set</a> (const TType &amp;p_value)</td></tr>
 <tr class="memdesc:a0c37111c20936c44f2b64773dbaa2246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the JSON object value to the specified type and value.  <a href="classspk_1_1JSON_1_1Object.html#a0c37111c20936c44f2b64773dbaa2246">More...</a><br /></td></tr>
@@ -348,6 +352,48 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of occurrences of the specified key in the JSON object. </dd></dl>
+
+</div>
+</div>
+<a id="abf50b933fdfb98a44c3d1a3f963c7d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf50b933fdfb98a44c3d1a3f963c7d16">&#9670;&nbsp;</a></span>hold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::JSON::Object::hold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return true if the type stored is the same as the one stored inside the object. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TType</td><td>The value type to test. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the unit store the templated type. False otherwise. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">This</td><td>method will throw is the object isn't a Unit object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

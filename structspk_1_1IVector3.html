@@ -88,10 +88,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a1a30fd5ff259b409a088fa58a6249bc5">IVector3</a> ()</td></tr>
 <tr class="memdesc:a1a30fd5ff259b409a088fa58a6249bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Initializes the vector with zero values. <br /></td></tr>
 <tr class="separator:a1a30fd5ff259b409a088fa58a6249bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ee20387125930a1693734f905a9b7cb"><td class="memTemplParams" colspan="2">template&lt;typename TOtherType &gt; </td></tr>
-<tr class="memitem:a6ee20387125930a1693734f905a9b7cb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb">IVector3</a> (const TOtherType &amp;p_value)</td></tr>
-<tr class="memdesc:a6ee20387125930a1693734f905a9b7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object with the same value for x, y, and z.  <a href="structspk_1_1IVector3.html#a6ee20387125930a1693734f905a9b7cb">More...</a><br /></td></tr>
-<tr class="separator:a6ee20387125930a1693734f905a9b7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fbbc78e88baef73da898e9c5fd2747"><td class="memTemplParams" colspan="2">template&lt;typename TOtherType , typename  = std::enable_if_t&lt;std::is_arithmetic&lt;TOtherType&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a39fbbc78e88baef73da898e9c5fd2747"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a39fbbc78e88baef73da898e9c5fd2747">IVector3</a> (const TOtherType &amp;p_value)</td></tr>
+<tr class="memdesc:a39fbbc78e88baef73da898e9c5fd2747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object with the same value for x, y, and z.  <a href="structspk_1_1IVector3.html#a39fbbc78e88baef73da898e9c5fd2747">More...</a><br /></td></tr>
+<tr class="separator:a39fbbc78e88baef73da898e9c5fd2747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a45e32063ccd893f360c9307114302"><td class="memTemplParams" colspan="2">template&lt;typename TOtherType , typename TOtherValueType &gt; </td></tr>
 <tr class="memitem:a55a45e32063ccd893f360c9307114302"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302">IVector3</a> (const <a class="el" href="structspk_1_1IVector2.html">IVector2</a>&lt; TOtherType &gt; &amp;p_other, const TOtherValueType &amp;p_value)</td></tr>
 <tr class="memdesc:a55a45e32063ccd893f360c9307114302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object with the x and y values from another <a class="el" href="structspk_1_1IVector2.html" title="A two-dimensional vector class with variable type.">IVector2</a> object and a specified z value.  <a href="structspk_1_1IVector3.html#a55a45e32063ccd893f360c9307114302">More...</a><br /></td></tr>
@@ -104,10 +104,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb963e6bca429adf9fc5d35f9580cc33"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33">IVector3</a> (const TOtherType1 &amp;p_x, const TOtherType2 &amp;p_y, const TOtherType3 &amp;p_z)</td></tr>
 <tr class="memdesc:afb963e6bca429adf9fc5d35f9580cc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object with specified x, y, and z values.  <a href="structspk_1_1IVector3.html#afb963e6bca429adf9fc5d35f9580cc33">More...</a><br /></td></tr>
 <tr class="separator:afb963e6bca429adf9fc5d35f9580cc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88688213b91af48ec05081e78ad7c394"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a88688213b91af48ec05081e78ad7c394">IVector3</a> (const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;p_object)</td></tr>
+<tr class="memdesc:a88688213b91af48ec05081e78ad7c394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object from a <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">JSON::Object</a>.  <a href="structspk_1_1IVector3.html#a88688213b91af48ec05081e78ad7c394">More...</a><br /></td></tr>
+<tr class="separator:a88688213b91af48ec05081e78ad7c394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cbbe780419af56f540e41d1030c78dd"><td class="memTemplParams" colspan="2">template&lt;typename TOtherType &gt; </td></tr>
 <tr class="memitem:a9cbbe780419af56f540e41d1030c78dd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a9cbbe780419af56f540e41d1030c78dd">operator IVector3&lt; TOtherType &gt;</a> ()</td></tr>
 <tr class="memdesc:a9cbbe780419af56f540e41d1030c78dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion operator to convert the vector to another vector type.  <a href="structspk_1_1IVector3.html#a9cbbe780419af56f540e41d1030c78dd">More...</a><br /></td></tr>
 <tr class="separator:a9cbbe780419af56f540e41d1030c78dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c90ec95c01f7e6024a537c6c204df4"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#ac3c90ec95c01f7e6024a537c6c204df4">to_wstring</a> () const</td></tr>
+<tr class="memdesc:ac3c90ec95c01f7e6024a537c6c204df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the vector to a wstring.  <a href="structspk_1_1IVector3.html#ac3c90ec95c01f7e6024a537c6c204df4">More...</a><br /></td></tr>
+<tr class="separator:ac3c90ec95c01f7e6024a537c6c204df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09d2efd6d44b16c57695701070ae5db9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structspk_1_1IVector3.html">IVector3</a>&lt; TType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1IVector3.html#a09d2efd6d44b16c57695701070ae5db9">operator+</a> (const <a class="el" href="structspk_1_1IVector3.html">IVector3</a> &amp;p_other) const</td></tr>
 <tr class="memdesc:a09d2efd6d44b16c57695701070ae5db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded addition operator for adding two <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> objects.  <a href="structspk_1_1IVector3.html#a09d2efd6d44b16c57695701070ae5db9">More...</a><br /></td></tr>
 <tr class="separator:a09d2efd6d44b16c57695701070ae5db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,15 +248,15 @@ struct spk::IVector3&lt; TType &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6ee20387125930a1693734f905a9b7cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ee20387125930a1693734f905a9b7cb">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[1/4]</span></h2>
+<a id="a39fbbc78e88baef73da898e9c5fd2747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39fbbc78e88baef73da898e9c5fd2747">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TType &gt; </div>
 <div class="memtemplate">
-template&lt;typename TOtherType &gt; </div>
+template&lt;typename TOtherType , typename  = std::enable_if_t&lt;std::is_arithmetic&lt;TOtherType&gt;::value&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -287,7 +293,7 @@ template&lt;typename TOtherType &gt; </div>
 </div>
 </div>
 <a id="a55a45e32063ccd893f360c9307114302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55a45e32063ccd893f360c9307114302">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a45e32063ccd893f360c9307114302">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -343,7 +349,7 @@ template&lt;typename TOtherType , typename TOtherValueType &gt; </div>
 </div>
 </div>
 <a id="a230e86429a49bc1be347432b21421ac5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a230e86429a49bc1be347432b21421ac5">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a230e86429a49bc1be347432b21421ac5">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +393,7 @@ template&lt;typename TOtherType &gt; </div>
 </div>
 </div>
 <a id="afb963e6bca429adf9fc5d35f9580cc33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb963e6bca429adf9fc5d35f9580cc33">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb963e6bca429adf9fc5d35f9580cc33">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -447,6 +453,37 @@ template&lt;typename TOtherType1 , typename TOtherType2 , typename TOtherType3 &
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a88688213b91af48ec05081e78ad7c394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88688213b91af48ec05081e78ad7c394">&#9670;&nbsp;</a></span>IVector3() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspk_1_1IVector3.html">spk::IVector3</a>&lt; TType &gt;::<a class="el" href="structspk_1_1IVector3.html">IVector3</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="structspk_1_1IVector3.html" title="A generic 3D vector class template.">IVector3</a> object from a <a class="el" href="classspk_1_1JSON_1_1Object.html" title="Represents a JSON object that can store various types of values.">JSON::Object</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>Data must follow the following pattern : { "X":XValue, "Y":YValue, "Z":ZValue } </dd></dl>
 
 </div>
 </div>
@@ -1733,6 +1770,36 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The rotated vector. </dd></dl>
+
+</div>
+</div>
+<a id="ac3c90ec95c01f7e6024a537c6c204df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c90ec95c01f7e6024a537c6c204df4">&#9670;&nbsp;</a></span>to_wstring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring <a class="el" href="structspk_1_1IVector3.html">spk::IVector3</a>&lt; TType &gt;::to_wstring </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert the vector to a wstring. </p>
+<dl class="section return"><dt>Returns</dt><dd>The resulting string. </dd></dl>
 
 </div>
 </div>

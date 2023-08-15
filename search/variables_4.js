@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nb_5fbutton_996',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]]
+  ['muxblocking_1078',['muxBlocking',['../classspk_1_1ThreadSafeQueue.html#a4c8b049876a04dcc317169d7f5147e3c',1,'spk::ThreadSafeQueue']]],
+  ['muxqueue_1079',['muxQueue',['../classspk_1_1ThreadSafeQueue.html#ad0a76bf1be9b19a1232a06f6ced62d88',1,'spk::ThreadSafeQueue']]]
 ];

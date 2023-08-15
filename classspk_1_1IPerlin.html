@@ -159,6 +159,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a5cf9120c257fcba9cfffab64108a73a6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IPerlin.html#a5cf9120c257fcba9cfffab64108a73a6">_dotGridGradient</a> (const int &amp;ix, const int &amp;iy, const int &amp;iz, const float &amp;x, const float &amp;y, const float &amp;z) const</td></tr>
 <tr class="memdesc:a5cf9120c257fcba9cfffab64108a73a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.  <a href="classspk_1_1IPerlin.html#a5cf9120c257fcba9cfffab64108a73a6">More...</a><br /></td></tr>
 <tr class="separator:a5cf9120c257fcba9cfffab64108a73a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424d0d660b52e78b798fcf07cc1d962b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IPerlin.html#a424d0d660b52e78b798fcf07cc1d962b">_dotGridGradient</a> (const int &amp;ix, const int &amp;iy, const float &amp;x, const float &amp;y) const</td></tr>
+<tr class="memdesc:a424d0d660b52e78b798fcf07cc1d962b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.  <a href="classspk_1_1IPerlin.html#a424d0d660b52e78b798fcf07cc1d962b">More...</a><br /></td></tr>
+<tr class="separator:a424d0d660b52e78b798fcf07cc1d962b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa937568477a45c6f1b1ff020cb9b2c95"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IPerlin.html#aa937568477a45c6f1b1ff020cb9b2c95">_dotGridGradient</a> (const int &amp;ix, const float &amp;x) const</td></tr>
+<tr class="memdesc:aa937568477a45c6f1b1ff020cb9b2c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.  <a href="classspk_1_1IPerlin.html#aa937568477a45c6f1b1ff020cb9b2c95">More...</a><br /></td></tr>
+<tr class="separator:aa937568477a45c6f1b1ff020cb9b2c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5252dcbf6a7abd2b7ec465b563e5b936"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1IPerlin.html#a5252dcbf6a7abd2b7ec465b563e5b936">_interpolate</a> (const float &amp;a0, const float &amp;a1, const float &amp;w) const</td></tr>
 <tr class="memdesc:a5252dcbf6a7abd2b7ec465b563e5b936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an interpolation operation between two points.  <a href="classspk_1_1IPerlin.html#a5252dcbf6a7abd2b7ec465b563e5b936">More...</a><br /></td></tr>
 <tr class="separator:a5252dcbf6a7abd2b7ec465b563e5b936"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,8 +348,114 @@ static const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class=
 
 </div>
 </div>
+<a id="aa937568477a45c6f1b1ff020cb9b2c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa937568477a45c6f1b1ff020cb9b2c95">&#9670;&nbsp;</a></span>_dotGridGradient() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float spk::IPerlin::_dotGridGradient </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ix</td><td>The x-coordinate of the input point. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the vector from the input coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the dot product operation. </dd></dl>
+
+</div>
+</div>
+<a id="a424d0d660b52e78b798fcf07cc1d962b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424d0d660b52e78b798fcf07cc1d962b">&#9670;&nbsp;</a></span>_dotGridGradient() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float spk::IPerlin::_dotGridGradient </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>iy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ix</td><td>The x-coordinate of the input point. </td></tr>
+    <tr><td class="paramname">iy</td><td>The y-coordinate of the input point. </td></tr>
+    <tr><td class="paramname">x</td><td>The x-coordinate of the vector from the input coordinate. </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the vector from the input coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the dot product operation. </dd></dl>
+
+</div>
+</div>
 <a id="a5cf9120c257fcba9cfffab64108a73a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cf9120c257fcba9cfffab64108a73a6">&#9670;&nbsp;</a></span>_dotGridGradient()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cf9120c257fcba9cfffab64108a73a6">&#9670;&nbsp;</a></span>_dotGridGradient() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memItemLeft" align="right" valign="top">const StoringContainer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">widgets</a> () const</td></tr>
 <tr class="memdesc:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the collection of widgets.  <a href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">More...</a><br /></td></tr>
 <tr class="separator:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f8eeb550ee91391e72aa286629f1bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#ae0f8eeb550ee91391e72aa286629f1bf">resize</a> (const <a class="el" href="namespacespk.html#a9b7d33188f36fb94cdde3264ccc16e20">spk::Vector2</a> &amp;p_resizeRatio)</td></tr>
+<tr class="memdesc:ae0f8eeb550ee91391e72aa286629f1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize every widget using a ratio.  <a href="classspk_1_1Widget_1_1Atlas.html#ae0f8eeb550ee91391e72aa286629f1bf">More...</a><br /></td></tr>
+<tr class="separator:ae0f8eeb550ee91391e72aa286629f1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -128,6 +131,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; Atlas &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">instance</a> ()</td></tr>
 <tr class="memdesc:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">More...</a><br /></td></tr>
 <tr class="separator:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr const std::shared_ptr&lt; const Atlas &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a64fbc9fa7719e8121b71c7d0646b5b44">c_instance</a> ()</td></tr>
+<tr class="memdesc:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a64fbc9fa7719e8121b71c7d0646b5b44">More...</a><br /></td></tr>
+<tr class="separator:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">release</a> ()</td></tr>
 <tr class="memdesc:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the singleton instance.  <a href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">More...</a><br /></td></tr>
 <tr class="separator:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +197,32 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_widget</td><td>A pointer to the widget to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae0f8eeb550ee91391e72aa286629f1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f8eeb550ee91391e72aa286629f1bf">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Widget::Atlas::resize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a9b7d33188f36fb94cdde3264ccc16e20">spk::Vector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_resizeRatio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize every widget using a ratio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_resizeRatio</td><td>The ratio between the old and new screen size </td></tr>
   </table>
   </dd>
 </dl>

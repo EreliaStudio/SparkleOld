@@ -117,8 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e52c04b8a69ff177451ac4634b1dabb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a7e52c04b8a69ff177451ac4634b1dabb">Interface</a> (const std::wstring &amp;p_name)</td></tr>
 <tr class="memdesc:a7e52c04b8a69ff177451ac4634b1dabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with a specified name.  <a href="classspk_1_1Widget_1_1Interface.html#a7e52c04b8a69ff177451ac4634b1dabb">More...</a><br /></td></tr>
 <tr class="separator:a7e52c04b8a69ff177451ac4634b1dabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce8149c7413234b6779a6a2759d0fd2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#afce8149c7413234b6779a6a2759d0fd2">~Interface</a> ()</td></tr>
-<tr class="memdesc:afce8149c7413234b6779a6a2759d0fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object.  <a href="classspk_1_1Widget_1_1Interface.html#afce8149c7413234b6779a6a2759d0fd2">More...</a><br /></td></tr>
+<tr class="memitem:afce8149c7413234b6779a6a2759d0fd2"><td class="memItemLeft" align="right" valign="top"><a id="afce8149c7413234b6779a6a2759d0fd2"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#afce8149c7413234b6779a6a2759d0fd2">~Interface</a> ()</td></tr>
+<tr class="memdesc:afce8149c7413234b6779a6a2759d0fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object. <br /></td></tr>
 <tr class="separator:afce8149c7413234b6779a6a2759d0fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af82db056ab2bc738fd7869401bebab4a"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
 <tr class="memitem:af82db056ab2bc738fd7869401bebab4a"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#af82db056ab2bc738fd7869401bebab4a">addChildrenWidget</a> (Args &amp;&amp;... p_args)</td></tr>
@@ -145,6 +146,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="memItemLeft" align="right" valign="top">constexpr const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2616c3ed7ea4af5d23fe7be582c2acc7">name</a> () const</td></tr>
 <tr class="memdesc:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2616c3ed7ea4af5d23fe7be582c2acc7">More...</a><br /></td></tr>
 <tr class="separator:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bdb3ad89570fde5748f2a8510f4006c"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a6bdb3ad89570fde5748f2a8510f4006c">size</a> () const</td></tr>
+<tr class="memdesc:a6bdb3ad89570fde5748f2a8510f4006c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a6bdb3ad89570fde5748f2a8510f4006c">More...</a><br /></td></tr>
+<tr class="separator:a6bdb3ad89570fde5748f2a8510f4006c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7947a55e651a9f3e41e0c2f717783a86"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a7947a55e651a9f3e41e0c2f717783a86">anchor</a> () const</td></tr>
+<tr class="memdesc:a7947a55e651a9f3e41e0c2f717783a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the anchor value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a7947a55e651a9f3e41e0c2f717783a86">More...</a><br /></td></tr>
+<tr class="separator:a7947a55e651a9f3e41e0c2f717783a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d8fe61b839242f78acb8afbad0f2652"><td class="memItemLeft" align="right" valign="top">constexpr const float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a3d8fe61b839242f78acb8afbad0f2652">depth</a> () const</td></tr>
 <tr class="memdesc:a3d8fe61b839242f78acb8afbad0f2652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the depth value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a3d8fe61b839242f78acb8afbad0f2652">More...</a><br /></td></tr>
 <tr class="separator:a3d8fe61b839242f78acb8afbad0f2652"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,41 +282,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with a specified name. </p>
-<p>This constructor creates a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with the specified name.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_name</td><td>The name of the widget. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="afce8149c7413234b6779a6a2759d0fd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce8149c7413234b6779a6a2759d0fd2">&#9670;&nbsp;</a></span>~Interface()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">spk::Widget::Interface::~Interface </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Destroy the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object. </p>
-<p>This is the destructor for the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> class. </p>
 
 </div>
 </div>
@@ -341,7 +319,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Add a children widget to this widget. </p>
-<p>This function adds a children widget to this widget and returns a pointer to it.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">TChildrenType</td><td>The type of the children widget. </td></tr>
@@ -356,6 +333,34 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the children widget. </dd></dl>
+
+</div>
+</div>
+<a id="a7947a55e651a9f3e41e0c2f717783a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7947a55e651a9f3e41e0c2f717783a86">&#9670;&nbsp;</a></span>anchor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a>&amp; spk::Widget::Interface::anchor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the anchor value of the widget. </p>
+<dl class="section return"><dt>Returns</dt><dd>The anchor of the widget, relative to the parent of said widget. </dd></dl>
 
 </div>
 </div>
@@ -383,7 +388,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the depth value of the widget. </p>
-<p>This function returns the depth value of the widget.</p>
 <dl class="section return"><dt>Returns</dt><dd>The depth value of the widget. </dd></dl>
 
 </div>
@@ -405,7 +409,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Check if a point is inside the widget's boundaries. </p>
-<p>This function checks if a given point is inside the boundaries of the widget.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_point</td><td>The point to check. </td></tr>
@@ -433,7 +436,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Move the widget by a specific amount. </p>
-<p>This function moves the widget by a specific amount, while keeping its current size.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_anchor</td><td>The amount to move the widget by. </td></tr>
@@ -467,7 +469,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Get the name of the widget. </p>
-<p>This function returns the name of the widget.</p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the widget. </dd></dl>
 
 </div>
@@ -489,7 +490,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Place the widget at a specific anchor position. </p>
-<p>This function places the widget at a specific anchor position, while keeping its current size.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_anchor</td><td>The new anchor position of the widget. </td></tr>
@@ -516,7 +516,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Rename the widget. </p>
-<p>This function renames the widget with a new name.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_name</td><td>The new name of the widget. </td></tr>
@@ -543,7 +542,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Resize the widget to a new size. </p>
-<p>This function resizes the widget to a new size, while keeping its current anchor position.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_size</td><td>The new size of the widget. </td></tr>
@@ -570,7 +568,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Set the depth value of the widget. </p>
-<p>This function sets the depth value of the widget. Widgets with higher depth values will be rendered on top of widgets with lower depth values.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_depth</td><td>The depth value of the widget. </td></tr>
@@ -607,7 +604,6 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Set the geometry of the widget. </p>
-<p>This function sets the geometry of the widget, including the anchor position and size.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_anchor</td><td>The anchor position of the widget. </td></tr>
@@ -615,6 +611,34 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6bdb3ad89570fde5748f2a8510f4006c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bdb3ad89570fde5748f2a8510f4006c">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a>&amp; spk::Widget::Interface::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the size value of the widget. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the widget. </dd></dl>
 
 </div>
 </div>

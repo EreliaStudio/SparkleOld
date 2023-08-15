@@ -72,8 +72,8 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;input/spk_input.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;input/spk_keyboard.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;input/spk_input.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;input/spk_keyboard.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
@@ -82,15 +82,15 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">spk::Keyboard::Key</a> _key;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        spk::InputStatus _expectedStatus;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a> _expectedStatus;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> _isExecutionNeeded() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Keyboard::instance</a>()-&gt;getKey(_key) == _expectedStatus);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Keyboard::instance</a>()-&gt;inputStatus(_key) == _expectedStatus);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classspk_1_1KeyInput.html#a98d78736bce4c55f04e956b45a8dcede">   53</a></span>&#160;        <a class="code" href="classspk_1_1KeyInput.html#a98d78736bce4c55f04e956b45a8dcede">KeyInput</a>(<a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">spk::Keyboard::Key</a> p_key, spk::InputStatus p_expectedStatus, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> p_delayBetweenInput, Funct&amp;&amp; p_funct, Args&amp;&amp;... p_args) :</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classspk_1_1KeyInput.html#a0d24867d5c71ee79f10aeb804b794da6">   53</a></span>&#160;        <a class="code" href="classspk_1_1KeyInput.html#a0d24867d5c71ee79f10aeb804b794da6">KeyInput</a>(<a class="code" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">spk::Keyboard::Key</a> p_key, <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a> p_expectedStatus, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> p_delayBetweenInput, Funct&amp;&amp; p_funct, Args&amp;&amp;... p_args) :</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classspk_1_1Input.html">Input</a>(p_delayBetweenInput, std::forward&lt;Funct&gt;(p_funct), std::forward&lt;Args&gt;(p_args)...),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            _key(p_key),</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            _expectedStatus(p_expectedStatus)</div>
@@ -101,10 +101,11 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1Input_html"><div class="ttname"><a href="classspk_1_1Input.html">spk::Input</a></div><div class="ttdoc">Abstract class providing a common interface for input classes in the 'spk' library.</div><div class="ttdef"><b>Definition:</b> spk_input.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1KeyInput_html"><div class="ttname"><a href="classspk_1_1KeyInput.html">spk::KeyInput</a></div><div class="ttdoc">A concrete class derived from Input that represents keyboard input.</div><div class="ttdef"><b>Definition:</b> spk_key_input.hpp:17</div></div>
-<div class="ttc" id="aclassspk_1_1KeyInput_html_a98d78736bce4c55f04e956b45a8dcede"><div class="ttname"><a href="classspk_1_1KeyInput.html#a98d78736bce4c55f04e956b45a8dcede">spk::KeyInput::KeyInput</a></div><div class="ttdeci">KeyInput(spk::Keyboard::Key p_key, spk::InputStatus p_expectedStatus, unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</div><div class="ttdoc">Construct a new KeyInput object.</div><div class="ttdef"><b>Definition:</b> spk_key_input.hpp:53</div></div>
+<div class="ttc" id="aclassspk_1_1KeyInput_html_a0d24867d5c71ee79f10aeb804b794da6"><div class="ttname"><a href="classspk_1_1KeyInput.html#a0d24867d5c71ee79f10aeb804b794da6">spk::KeyInput::KeyInput</a></div><div class="ttdeci">KeyInput(spk::Keyboard::Key p_key, spk::InputState p_expectedStatus, unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</div><div class="ttdoc">Construct a new KeyInput object.</div><div class="ttdef"><b>Definition:</b> spk_key_input.hpp:53</div></div>
 <div class="ttc" id="aclassspk_1_1Keyboard_html_a13a0bee8478b4e4e8162d4f389134b28"><div class="ttname"><a href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">spk::Keyboard::Key</a></div><div class="ttdeci">Key</div><div class="ttdoc">Enum for representing keyboard keys.</div><div class="ttdef"><b>Definition:</b> spk_keyboard.hpp:27</div></div>
 <div class="ttc" id="aclassspk_1_1Singleton_html_a5f56bedfe0791cc1cc09d34bb3be382c"><div class="ttname"><a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt; Keyboard &gt;::instance</a></div><div class="ttdeci">static constexpr std::shared_ptr&lt; Keyboard &gt; instance()</div><div class="ttdoc">Get the singleton instance. This function returns the shared pointer to the singleton instance.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:56</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="anamespacespk_html_aed6527896d34c2628aec65a369dee252"><div class="ttname"><a href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a></div><div class="ttdeci">InputState</div><div class="ttdoc">The state of an input device like a button or key.</div><div class="ttdef"><b>Definition:</b> spk_input_status.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

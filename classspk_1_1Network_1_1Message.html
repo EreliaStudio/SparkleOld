@@ -97,12 +97,13 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acc0a360b83c5211f34ea37cbc14f4585"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#acc0a360b83c5211f34ea37cbc14f4585">Message</a> (<a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da">Header::Type</a> p_id=0)</td></tr>
-<tr class="memdesc:acc0a360b83c5211f34ea37cbc14f4585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classspk_1_1Network_1_1Message.html" title="Class encapsulating a network message.">Message</a> with specified ID.  <a href="classspk_1_1Network_1_1Message.html#acc0a360b83c5211f34ea37cbc14f4585">More...</a><br /></td></tr>
-<tr class="separator:acc0a360b83c5211f34ea37cbc14f4585"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29332a084e3d5a8b8b3df18bec6305ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a29332a084e3d5a8b8b3df18bec6305ab">createAwnser</a> (<a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da">Header::Type</a> p_id) const</td></tr>
-<tr class="memdesc:a29332a084e3d5a8b8b3df18bec6305ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an answer message with the specified ID.  <a href="classspk_1_1Network_1_1Message.html#a29332a084e3d5a8b8b3df18bec6305ab">More...</a><br /></td></tr>
-<tr class="separator:a29332a084e3d5a8b8b3df18bec6305ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b0ba6f73e9d7046abf1efd307f3f82"><td class="memTemplParams" colspan="2">template&lt;typename TMessageType  = Type&gt; </td></tr>
+<tr class="memitem:a22b0ba6f73e9d7046abf1efd307f3f82"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a22b0ba6f73e9d7046abf1efd307f3f82">Message</a> (TMessageType p_type=0)</td></tr>
+<tr class="memdesc:a22b0ba6f73e9d7046abf1efd307f3f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classspk_1_1Network_1_1Message.html" title="Class encapsulating a network message.">Message</a> with specified ID.  <a href="classspk_1_1Network_1_1Message.html#a22b0ba6f73e9d7046abf1efd307f3f82">More...</a><br /></td></tr>
+<tr class="separator:a22b0ba6f73e9d7046abf1efd307f3f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976bfb42104014ea489c94e191d59fb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Message.html">Message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a976bfb42104014ea489c94e191d59fb7">createAwnser</a> (<a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da">Header::Type</a> p_type) const</td></tr>
+<tr class="memdesc:a976bfb42104014ea489c94e191d59fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an answer message with the specified ID.  <a href="classspk_1_1Network_1_1Message.html#a976bfb42104014ea489c94e191d59fb7">More...</a><br /></td></tr>
+<tr class="separator:a976bfb42104014ea489c94e191d59fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d709139fd1b6aff2c68719973227020"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html">Header</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a1d709139fd1b6aff2c68719973227020">header</a> ()</td></tr>
 <tr class="memdesc:a1d709139fd1b6aff2c68719973227020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header of the message.  <a href="classspk_1_1Network_1_1Message.html#a1d709139fd1b6aff2c68719973227020">More...</a><br /></td></tr>
 <tr class="separator:a1d709139fd1b6aff2c68719973227020"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +119,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e7f6ac8cf1e78ba5c818eba50b5de7a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a4e7f6ac8cf1e78ba5c818eba50b5de7a">size</a> () const</td></tr>
 <tr class="memdesc:a4e7f6ac8cf1e78ba5c818eba50b5de7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the message.  <a href="classspk_1_1Network_1_1Message.html#a4e7f6ac8cf1e78ba5c818eba50b5de7a">More...</a><br /></td></tr>
 <tr class="separator:a4e7f6ac8cf1e78ba5c818eba50b5de7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9e42ec696dc3881a7daafcd20aef51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#aad9e42ec696dc3881a7daafcd20aef51">empty</a> () const</td></tr>
+<tr class="memdesc:aad9e42ec696dc3881a7daafcd20aef51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the message is empty or if there is still data to read.  <a href="classspk_1_1Network_1_1Message.html#aad9e42ec696dc3881a7daafcd20aef51">More...</a><br /></td></tr>
+<tr class="separator:aad9e42ec696dc3881a7daafcd20aef51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b44d3bd1a4e61b7aa852b6a3211d098"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a1b44d3bd1a4e61b7aa852b6a3211d098">resize</a> (const size_t &amp;p_newSize)</td></tr>
+<tr class="memdesc:a1b44d3bd1a4e61b7aa852b6a3211d098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the amount of data stored inside the message.  <a href="classspk_1_1Network_1_1Message.html#a1b44d3bd1a4e61b7aa852b6a3211d098">More...</a><br /></td></tr>
+<tr class="separator:a1b44d3bd1a4e61b7aa852b6a3211d098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5c98516bde1f32c800f5e056f47707"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#acf5c98516bde1f32c800f5e056f47707">skip</a> (const size_t &amp;p_number)</td></tr>
+<tr class="memdesc:acf5c98516bde1f32c800f5e056f47707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip a certain number of bytes inside the message.  <a href="classspk_1_1Network_1_1Message.html#acf5c98516bde1f32c800f5e056f47707">More...</a><br /></td></tr>
+<tr class="separator:acf5c98516bde1f32c800f5e056f47707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9915a880852a1f9944b1019ef18ec142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a9915a880852a1f9944b1019ef18ec142">clear</a> ()</td></tr>
+<tr class="memdesc:a9915a880852a1f9944b1019ef18ec142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the content of the message.  <a href="classspk_1_1Network_1_1Message.html#a9915a880852a1f9944b1019ef18ec142">More...</a><br /></td></tr>
+<tr class="separator:a9915a880852a1f9944b1019ef18ec142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65c04f640d8bd6c94898d399125a94a"><td class="memItemLeft" align="right" valign="top"><a id="ab65c04f640d8bd6c94898d399125a94a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#ab65c04f640d8bd6c94898d399125a94a">reset</a> ()</td></tr>
+<tr class="memdesc:ab65c04f640d8bd6c94898d399125a94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the bookmark inside the message, allowing you to re-read it from start. <br /></td></tr>
+<tr class="separator:ab65c04f640d8bd6c94898d399125a94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bce247c705d96c7838db310d2d4fbf2"><td class="memTemplParams" colspan="2">template&lt;typename OutputType &gt; </td></tr>
+<tr class="memitem:a3bce247c705d96c7838db310d2d4fbf2"><td class="memTemplItemLeft" align="right" valign="top">OutputType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a3bce247c705d96c7838db310d2d4fbf2">get</a> () const</td></tr>
+<tr class="memdesc:a3bce247c705d96c7838db310d2d4fbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve data of a specific type from the buffer.  <a href="classspk_1_1Network_1_1Message.html#a3bce247c705d96c7838db310d2d4fbf2">More...</a><br /></td></tr>
+<tr class="separator:a3bce247c705d96c7838db310d2d4fbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9a59bc67dddde7b0454f0d07378fac"><td class="memTemplParams" colspan="2">template&lt;typename InputType &gt; </td></tr>
+<tr class="memitem:a3e9a59bc67dddde7b0454f0d07378fac"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a3e9a59bc67dddde7b0454f0d07378fac">edit</a> (const size_t &amp;p_offset, const InputType &amp;p_input)</td></tr>
+<tr class="memdesc:a3e9a59bc67dddde7b0454f0d07378fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edit the buffer at a specific offset with input data.  <a href="classspk_1_1Network_1_1Message.html#a3e9a59bc67dddde7b0454f0d07378fac">More...</a><br /></td></tr>
+<tr class="separator:a3e9a59bc67dddde7b0454f0d07378fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d872d32e820dc00a57f9032cf763b0f"><td class="memTemplParams" colspan="2">template&lt;typename InputType &gt; </td></tr>
 <tr class="memitem:a2d872d32e820dc00a57f9032cf763b0f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Message.html">Message</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Message.html#a2d872d32e820dc00a57f9032cf763b0f">operator&lt;&lt;</a> (const InputType &amp;p_input)</td></tr>
 <tr class="memdesc:a2d872d32e820dc00a57f9032cf763b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization operator.  <a href="classspk_1_1Network_1_1Message.html#a2d872d32e820dc00a57f9032cf763b0f">More...</a><br /></td></tr>
@@ -137,26 +162,36 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b></td></tr>
 <div class="textblock"><p>Class encapsulating a network message. </p>
 <p>The <a class="el" href="classspk_1_1Network_1_1Message.html" title="Class encapsulating a network message.">Message</a> class encapsulates data along with a header. It supports serialization and deserialization of data. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acc0a360b83c5211f34ea37cbc14f4585"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc0a360b83c5211f34ea37cbc14f4585">&#9670;&nbsp;</a></span>Message()</h2>
+<a id="a22b0ba6f73e9d7046abf1efd307f3f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b0ba6f73e9d7046abf1efd307f3f82">&#9670;&nbsp;</a></span>Message()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename TMessageType  = Type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">spk::Network::Message::Message </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da">Header::Type</a>&#160;</td>
-          <td class="paramname"><em>p_id</em> = <code>0</code></td><td>)</td>
+          <td class="paramtype">TMessageType&#160;</td>
+          <td class="paramname"><em>p_type</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructs a new <a class="el" href="classspk_1_1Network_1_1Message.html" title="Class encapsulating a network message.">Message</a> with specified ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_id</td><td>Identifier for the new message. </td></tr>
+    <tr><td class="paramname">p_type</td><td>Identifier for the new message. </td></tr>
   </table>
   </dd>
 </dl>
@@ -164,8 +199,28 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a29332a084e3d5a8b8b3df18bec6305ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29332a084e3d5a8b8b3df18bec6305ab">&#9670;&nbsp;</a></span>createAwnser()</h2>
+<a id="a9915a880852a1f9944b1019ef18ec142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9915a880852a1f9944b1019ef18ec142">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Network::Message::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the content of the message. </p>
+<dl class="section note"><dt>Note</dt><dd>The message will have a size of zero after this method is called. You may want to check the "reset" method. </dd></dl>
+
+</div>
+</div>
+<a id="a976bfb42104014ea489c94e191d59fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976bfb42104014ea489c94e191d59fb7">&#9670;&nbsp;</a></span>createAwnser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +229,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b></td></tr>
           <td class="memname"><a class="el" href="classspk_1_1Network_1_1Message.html">Message</a> spk::Network::Message::createAwnser </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da">Header::Type</a>&#160;</td>
-          <td class="paramname"><em>p_id</em></td><td>)</td>
+          <td class="paramname"><em>p_type</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -183,7 +238,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b></td></tr>
 <p>Creates an answer message with the specified ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_id</td><td>ID of the answer message. </td></tr>
+    <tr><td class="paramname">p_type</td><td>ID of the answer message. </td></tr>
   </table>
   </dd>
 </dl>
@@ -228,6 +283,115 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Socket</b></td></tr>
 
 <p>Returns the data of the message. </p>
 <dl class="section return"><dt>Returns</dt><dd>Constant pointer to the data of the message. </dd></dl>
+
+</div>
+</div>
+<a id="a3e9a59bc67dddde7b0454f0d07378fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9a59bc67dddde7b0454f0d07378fac">&#9670;&nbsp;</a></span>edit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Network::Message::edit </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InputType &amp;&#160;</td>
+          <td class="paramname"><em>p_input</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edit the buffer at a specific offset with input data. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputType</td><td>The type of input data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_offset</td><td>Offset in the buffer where the data should be written. </td></tr>
+    <tr><td class="paramname">p_input</td><td>The data to write into the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad9e42ec696dc3881a7daafcd20aef51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9e42ec696dc3881a7daafcd20aef51">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::Network::Message::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the message is empty or if there is still data to read. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return true if there is no data left inside the message, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a3bce247c705d96c7838db310d2d4fbf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bce247c705d96c7838db310d2d4fbf2">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OutputType spk::Network::Message::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve data of a specific type from the buffer. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">OutputType</td><td>The type of data to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The retrieved data. </dd></dl>
 
 </div>
 </div>
@@ -345,6 +509,32 @@ template&lt;typename OutputType &gt; </div>
 
 </div>
 </div>
+<a id="a1b44d3bd1a4e61b7aa852b6a3211d098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b44d3bd1a4e61b7aa852b6a3211d098">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Network::Message::resize </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize the amount of data stored inside the message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_newSize</td><td>The number of bytes required inside the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4e7f6ac8cf1e78ba5c818eba50b5de7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e7f6ac8cf1e78ba5c818eba50b5de7a">&#9670;&nbsp;</a></span>size()</h2>
 
@@ -362,6 +552,32 @@ template&lt;typename OutputType &gt; </div>
 
 <p>Returns the size of the message. </p>
 <dl class="section return"><dt>Returns</dt><dd>Size of the message. </dd></dl>
+
+</div>
+</div>
+<a id="acf5c98516bde1f32c800f5e056f47707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5c98516bde1f32c800f5e056f47707">&#9670;&nbsp;</a></span>skip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Network::Message::skip </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skip a certain number of bytes inside the message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_number</td><td>The number of bytes to skip. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

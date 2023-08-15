@@ -6,7 +6,7 @@ var searchData=
   ['_5fcommandsindicator_3',['_commandsIndicator',['../classspk_1_1CommandParser.html#a7f5b59101cd26026e16dc37214db19e3',1,'spk::CommandParser']]],
   ['_5fcommandsseparator_4',['_commandsSeparator',['../classspk_1_1CommandParser.html#ac3e3f0a32694cd858256bf163c7f0bb9',1,'spk::CommandParser']]],
   ['_5fcontent_5',['_content',['../classspk_1_1ThreadSafeQueue.html#aef0eb26c9d4c8bea6249120a5a674737',1,'spk::ThreadSafeQueue']]],
-  ['_5fdotgridgradient_6',['_dotGridGradient',['../classspk_1_1IPerlin.html#a5cf9120c257fcba9cfffab64108a73a6',1,'spk::IPerlin']]],
+  ['_5fdotgridgradient_6',['_dotGridGradient',['../classspk_1_1IPerlin.html#a5cf9120c257fcba9cfffab64108a73a6',1,'spk::IPerlin::_dotGridGradient(const int &amp;ix, const int &amp;iy, const int &amp;iz, const float &amp;x, const float &amp;y, const float &amp;z) const'],['../classspk_1_1IPerlin.html#a424d0d660b52e78b798fcf07cc1d962b',1,'spk::IPerlin::_dotGridGradient(const int &amp;ix, const int &amp;iy, const float &amp;x, const float &amp;y) const'],['../classspk_1_1IPerlin.html#aa937568477a45c6f1b1ff020cb9b2c95',1,'spk::IPerlin::_dotGridGradient(const int &amp;ix, const float &amp;x) const']]],
   ['_5fexecute_7',['_execute',['../classspk_1_1Activity.html#af4c0f1fe9d2299a1c3f096e9687ed234',1,'spk::Activity']]],
   ['_5fexecutesample_8',['_executeSample',['../classspk_1_1IPerlin.html#a3a61855833853da28efedccfeb3011b9',1,'spk::IPerlin']]],
   ['_5ffrequency_9',['_frequency',['../classspk_1_1IPerlin.html#a897d183a1b59bf7004ea8ea6e43f9f20',1,'spk::IPerlin']]],
