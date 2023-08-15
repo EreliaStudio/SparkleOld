@@ -115,7 +115,6 @@ namespace spk::Network
     
 	Socket::ReadResult Socket::_waitForSelection()
 	{
-		DEBUG_LINE();
 		struct timeval timeout;
 		timeout.tv_sec = 1;
 		timeout.tv_usec = 0;
@@ -126,13 +125,11 @@ namespace spk::Network
 
 		int activity = ::select(_socket + 1, &socketFD, nullptr, nullptr, &timeout);
 
-		DEBUG_LINE();
 		if (activity == SOCKET_ERROR)
 		{
 			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}
-		spk::cout << "Activity returned :"  << activity << std::endl;
-		DEBUG_LINE();
+
 		if (activity == 0)
 		{
 			return (Socket::ReadResult::Timeout);
