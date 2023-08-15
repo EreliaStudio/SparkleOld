@@ -62,6 +62,10 @@ namespace spk::Network
          */
 		void close();
 
+        Socket::ReadResult _receiveHeader(spk::Network::Message &p_messageToFill);
+        Socket::ReadResult _waitForSelection();
+        Socket::ReadResult _receiveContent(spk::Network::Message &p_messageToFill);
+
 	public:
 		/**
          * @brief Checks whether the socket is currently connected.
@@ -69,6 +73,8 @@ namespace spk::Network
          * @return True if the socket is connected, false otherwise.
          */
 		bool isConnected();
+
+        const SOCKET& socket() const;
 
 		/**
          * @brief Sends a message over the socket.

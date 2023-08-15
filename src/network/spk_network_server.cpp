@@ -44,15 +44,20 @@ namespace spk::Network
 
 		_readingIncomingMessageContract = _socketContextWorker.addJob(L"Reading incoming message", [&]()
 			{
+				if (spk::Network::Object::maxFD() == -1)
+					return ;
+				
 				struct timeval timeout;
-				timeout.tv_sec = 5;
+				timeout.tv_sec = 1;
 				timeout.tv_usec = 0;
 
-				int activity = select(spk::Network::Object::maxFD() + 1, &spk::Network::Object::readingFDs(), &spk::Network::Object::writingFDs(), nullptr, &timeout);
+				fd_set socketToRead = spk::Network::Object::readingFDs();
+
+				int activity = ::select(spk::Network::Object::maxFD() + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == SOCKET_ERROR)
 				{
-					//In case the sockets stored in the readingFDs failed.
+					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
 				}
 				else if (activity == 0)
 				{
@@ -64,7 +69,8 @@ namespace spk::Network
 
 					for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
 					{
-						if (it->second.isConnected() == true)
+						if (it->second.isConnected() == true && 
+							FD_ISSET(it->second.socket(), &socketToRead))
 						{
 							Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
 							

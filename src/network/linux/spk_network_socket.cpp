@@ -112,6 +112,7 @@ namespace spk::Network
 		if (p_messageToFill.size() != 0)
 		{
 			bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()), p_messageToFill.size(), 0);
+
 			if (bytesRead != p_messageToFill.size())
 			{
 				spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(errno) + L"]");

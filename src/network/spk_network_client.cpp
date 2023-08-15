@@ -19,23 +19,52 @@ namespace spk::Network
 	{
 		_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&]()
 			{
-				spk::Network::Message newMessage;
+				if (spk::Network::Object::maxFD() == -1)
+					return ;
+				
+				struct timeval timeout;
+				timeout.tv_sec = 1;
+				timeout.tv_usec = 0;
 
-				if (_socket.isConnected() == true)
+				fd_set socketToRead = spk::Network::Object::readingFDs();
+
+				int activity = ::select(spk::Network::Object::maxFD() + 1, &socketToRead, nullptr, nullptr, &timeout);
+
+				if (activity == SOCKET_ERROR)
 				{
-					Socket::ReadResult readStatus = _socket.receive(newMessage);
+					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
+				}
+				else if (activity == 0)
+				{
+					return ;
+				}
+				else
+				{
+					spk::Network::Message newMessage;
 
-					switch (readStatus)
+					if (_socket.isConnected() == true && 
+						FD_ISSET(_socket.socket(), &socketToRead))
 					{
-						case Socket::ReadResult::Closed:
-							spk::cout << "Require closing socket" << std::endl;
-							_socket.close();
-							break;
-						case Socket::ReadResult::Success:
-							_messagesToTreat.push_back(newMessage);
-							break;
+						Socket::ReadResult readStatus = _socket.receive(newMessage);
+
+						switch (readStatus)
+						{
+							case Socket::ReadResult::Closed:
+								spk::cout << "Require closing socket" << std::endl;
+								_socket.close();
+								break;
+							case Socket::ReadResult::Success:
+								_messagesToTreat.push_back(newMessage);
+								break;
+						}
 					}
 				}
+
+
+
+
+
+				
 			});
 		_socketContextWorker.start();
 		_socketContextWorker.pause();
