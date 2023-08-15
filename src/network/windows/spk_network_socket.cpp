@@ -87,15 +87,15 @@ namespace spk::Network
 
 	Socket::ReadResult Socket::receive(spk::Network::Message &p_messageToFill)
 	{
-		spk::Network::Message newMessage;
 		int bytesRead = ::recv(_socket, reinterpret_cast<char *>(&(p_messageToFill.header())), sizeof(spk::Network::Message::Header), 0);
+		spk::cout << "Bytes read : " << bytesRead  << " vs header size : " << sizeof(spk::Network::Message::Header) << std::endl;
+		spk::cout << "Last error : " << WSAGetLastError() << " vs " << WSAEWOULDBLOCK << std::endl;
 
 		if (bytesRead == 0)
 		{
-			close();
 			return ReadResult::Closed;
 		}
-		else if (bytesRead < 0)
+		else if (bytesRead == SOCKET_ERROR)
 		{
 			int error = WSAGetLastError();
 			if (error != WSAEWOULDBLOCK)
@@ -108,15 +108,38 @@ namespace spk::Network
 			}
 		}
 
-		if (p_messageToFill.size() != 0)
+		DEBUG_LINE();
+		size_t totalReadedSize = 0;
+		while (totalReadedSize < p_messageToFill.size())
 		{
+		DEBUG_LINE();
 			bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()), p_messageToFill.size(), 0);
-			if (bytesRead != p_messageToFill.size())
+		DEBUG_LINE();
+
+			spk::cout << "Bytes read : " << bytesRead << " -> " << totalReadedSize << " vs size : " << p_messageToFill.size() << std::endl;
+			spk::cout << "Last error : " << WSAGetLastError() << " vs " << WSAEWOULDBLOCK << std::endl;
+
+			if (bytesRead == SOCKET_ERROR)
 			{
-				spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
+				int error = WSAGetLastError();
+				if (error != WSAEWOULDBLOCK)
+				{
+					spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(error) + L"]");
+				}
+				DEBUG_LINE();
+			}
+			else if (bytesRead == 0)
+			{
+				DEBUG_LINE();
+				return ReadResult::Closed;
+			}
+			else
+			{
+				totalReadedSize += bytesRead;
 			}
 		}
+		DEBUG_LINE();
 
-		return (ReadResult::Success);
+		return ReadResult::Success;
 	}
 }

@@ -31,7 +31,8 @@ namespace spk::Network
 		{
 			Success,
 			NothingToRead,
-			Closed
+			Closed,
+            Timeout
 		};
 
 	private:

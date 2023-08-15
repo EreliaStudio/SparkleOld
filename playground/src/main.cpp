@@ -1,23 +1,23 @@
 #include "playground.hpp"
 
-enum class Test
-{
-	A,
-	B,
-	C
-};
-
 int main()
 {
-	spk::Network::Message msg(15);
-	spk::Network::Message msg2 = spk::Network::Message(Test::B);
+	spk::Application app(L"Coucou", 400, spk::Application::Configuration(true, true));
 
-	spk::Network::Message::Type value = msg.header().type();
-	Test value1 = msg.header().typeAs<Test>();
+	spk::Widget::ServerManager *_serverManager = app.addRootWidget<spk::Widget::ServerManager>(L"ServerManager");
+	_serverManager->setServer(new spk::Network::Server());
+	_serverManager->server()->start(26500);
+	_serverManager->activate();
 
-	msg.header().setType(Test::A);
+	spk::Widget::ClientManager *_clientManager = app.addRootWidget<spk::Widget::ClientManager>(L"ClientManager");
+	_clientManager->setClient(new spk::Network::Client());
+	_clientManager->client()->connect(L"82.65.223.127", 26500);
+	_clientManager->activate();
 
-	Test value2 = msg.header().typeAs<Test>();
+	spk::Network::Message p_msg(15);
+	p_msg << std::wstring(L"Coucou");
 
-	return (0);
+	_clientManager->client()->send(p_msg);
+
+	return (app.run());
 };
