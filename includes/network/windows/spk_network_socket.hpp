@@ -21,7 +21,7 @@ namespace spk::Network
 	public:
         /**
          * @enum ReadResult
-         * @brief Enum representing the result of a read operation.
+         * @brief The result of a read operation.
          */
 		enum class ReadResult
 		{
