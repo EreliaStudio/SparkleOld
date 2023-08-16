@@ -29,7 +29,7 @@ namespace spk::Network
 		spk::ContractProvider::Contract _readingIncomingMessageContract; /**< Contract for reading incoming messages */
 
 		Acceptor _Acceptor; /**< The server socket acceptor */
-        spk::Network::Socket::FileDescriptor _maxFDs = SOCKET_ERROR;
+        spk::Network::Socket::FileDescriptor _maxFDs = Socket::SocketError;
         fd_set _readingFDs;
 
 		spk::ThreadSafeQueue<std::pair<EmiterID, spk::Network::Message>> _messagesToTreat; /**< Queue for storing incoming messages */

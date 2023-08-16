@@ -100,7 +100,7 @@ namespace spk::Network
 		{
 			return ReadResult::Closed;
 		}
-		else if (bytesRead == SOCKET_ERROR)
+		else if (bytesRead == Socket::SocketError)
 		{
 			int error = WSAGetLastError();
 			if (error != WSAEWOULDBLOCK)
@@ -127,7 +127,7 @@ namespace spk::Network
 
 		int activity = ::select(_socket + 1, &socketFD, nullptr, nullptr, &timeout);
 
-		if (activity == SOCKET_ERROR)
+		if (activity == Socket::SocketError)
 		{
 			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}
@@ -147,7 +147,7 @@ namespace spk::Network
 		{
 			int bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()) + totalReadedSize, p_messageToFill.size() - totalReadedSize, 0);
 
-			if (bytesRead == SOCKET_ERROR)
+			if (bytesRead == Socket::SocketError)
 			{
 				int error = WSAGetLastError();
 				if (error != WSAEWOULDBLOCK)

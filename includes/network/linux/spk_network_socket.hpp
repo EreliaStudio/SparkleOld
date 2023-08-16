@@ -31,6 +31,7 @@ namespace spk::Network
 		};
 
         using FileDescriptor = int; /**< A definition for socket's file descriptor*/
+        static const FileDescriptor SocketError = -1;
 
 	private:
 		int _socket = -1;  /**< The socket file descriptor */

@@ -30,8 +30,8 @@ namespace spk::Network
             Timeout        //!< Indicates the socket was timeout during reception of incoming message. */
 		};
 
-        
         using FileDescriptor = SOCKET; /**< A definition for socket's file descriptor*/
+        static const FileDescriptor SocketError = SOCKET_ERROR;
 
 	private:
 		static inline u_long BLOCKING_SOCKET = 0; /**< Constant representing a blocking socket */

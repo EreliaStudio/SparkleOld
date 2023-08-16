@@ -37,7 +37,7 @@ namespace spk::Network
 				{
 					FD_SET(newSocket.fileDescriptor(), &_readingFDs);
 					
-					if (_maxFDs == SOCKET_ERROR || newSocket.fileDescriptor() > _maxFDs)
+					if (_maxFDs == Socket::SocketError || newSocket.fileDescriptor() > _maxFDs)
 					{
 						_maxFDs = newSocket.fileDescriptor();
 					}
@@ -64,7 +64,7 @@ namespace spk::Network
 
 				int activity = ::select(_maxFDs + 1, &socketToRead, nullptr, nullptr, &timeout);
 
-				if (activity == SOCKET_ERROR)
+				if (activity == Socket::SocketError)
 				{
 					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
 				}

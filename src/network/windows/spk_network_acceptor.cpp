@@ -41,13 +41,13 @@ namespace spk::Network
 		}
 
 		int bindingListeningSocketError = ::bind(_socket, result->ai_addr, (int)result->ai_addrlen);
-		if (bindingListeningSocketError == SOCKET_ERROR)
+		if (bindingListeningSocketError == Socket::SocketError)
 		{
 			spk::throwException(L"Binding listening socket creation failed : socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}
 		freeaddrinfo(result);
 
-		if (::listen(_socket, SOMAXCONN) == SOCKET_ERROR)
+		if (::listen(_socket, SOMAXCONN) == Socket::SocketError)
 		{
 			spk::throwException(L"Error while listening : socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}

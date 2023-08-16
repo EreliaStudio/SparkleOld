@@ -17,7 +17,6 @@ namespace spk
 		friend class APIModule;
 
 	private:
-
 		Vector2Int _size; ///< Window size.
 		xcb_connection_t* _connection; ///< Connection to the X server.
 		xcb_screen_t* _screen; ///< Screen of the X server.
