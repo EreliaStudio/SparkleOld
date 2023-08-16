@@ -28,6 +28,10 @@ listSourceFiles(SOURCE_FILES SYSTEM_DEPENDENT_SOURCE_FILES)
 
 add_library(Sparkle STATIC ${SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES})
 
+if (UNIX)
+	target_link_libraries(Sparkle xcb)
+endif()
+
 target_include_directories(Sparkle
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
     INTERFACE $<INSTALL_INTERFACE:include>

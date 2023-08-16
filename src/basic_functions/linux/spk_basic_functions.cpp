@@ -20,7 +20,7 @@ namespace spk
 
 	int getLastSocketErrorValue()
 	{
-		return (strerror(errno));
+		return (errno);
 	}
 
 	void throwException(const std::wstring& p_errorLine) noexcept(false)

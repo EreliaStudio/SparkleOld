@@ -102,10 +102,9 @@ namespace spk::Network
 		}
 		else if (bytesRead == Socket::SocketError)
 		{
-			int error = WSAGetLastError();
-			if (error != WSAEWOULDBLOCK)
+			if (errno != EWOULDBLOCK && errno != EAGAIN)
 			{
-				spk::throwException(L"Error while receiving header: socket error code [" + std::to_wstring(error) + L"]");
+				spk::throwException(L"Error while receiving header: socket error code [" + std::to_wstring(errno) + L"]");
 			}
 			else
 			{
@@ -129,7 +128,7 @@ namespace spk::Network
 
 		if (activity == Socket::SocketError)
 		{
-			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
+			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(errno) + L"]");
 		}
 
 		if (activity == 0)
@@ -149,10 +148,9 @@ namespace spk::Network
 
 			if (bytesRead == Socket::SocketError)
 			{
-				int error = WSAGetLastError();
-				if (error != WSAEWOULDBLOCK)
+				if (errno != EWOULDBLOCK && errno != EAGAIN)
 				{
-					spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(error) + L"]");
+					spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(errno) + L"]");
 				}
 			}
 			else if (bytesRead == 0)
