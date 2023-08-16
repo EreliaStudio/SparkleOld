@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classspk_1_1Network_1_1Socket-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -80,46 +81,145 @@ $(function() {
  <a href="classspk_1_1Network_1_1Socket.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="linux_2spk__network__socket_8hpp_source.html">spk_network_socket.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for spk::Network::Socket:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspk_1_1Network_1_1Socket__inherit__graph.png" border="0" usemap="#aspk_1_1Network_1_1Socket_inherit__map" alt="Inheritance graph"/></div>
+<map name="aspk_1_1Network_1_1Socket_inherit__map" id="aspk_1_1Network_1_1Socket_inherit__map">
+<area shape="rect" title="The Socket class is a wrapper around a network socket." alt="" coords="5,80,164,107"/>
+<area shape="rect" href="classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources." alt="" coords="5,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for spk::Network::Socket:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspk_1_1Network_1_1Socket__coll__graph.png" border="0" usemap="#aspk_1_1Network_1_1Socket_coll__map" alt="Collaboration graph"/></div>
+<map name="aspk_1_1Network_1_1Socket_coll__map" id="aspk_1_1Network_1_1Socket_coll__map">
+<area shape="rect" title="The Socket class is a wrapper around a network socket." alt="" coords="5,80,164,107"/>
+<area shape="rect" href="classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources." alt="" coords="5,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ad2a48977a3353abca9ce6e18d4f8e781"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> { <b>Success</b>
-, <b>NothingToRead</b>
-, <b>Closed</b>
+<tr class="memitem:ad2a48977a3353abca9ce6e18d4f8e781"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> { <br />
+&#160;&#160;<a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38">Success</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0">NothingToRead</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e">Closed</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398">Timeout</a>
+, <br />
+&#160;&#160;<a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38">Success</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0">NothingToRead</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e">Closed</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398">Timeout</a>
+<br />
  }</td></tr>
 <tr class="memdesc:ad2a48977a3353abca9ce6e18d4f8e781"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of a read operation.  <a href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">More...</a><br /></td></tr>
 <tr class="separator:ad2a48977a3353abca9ce6e18d4f8e781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a48977a3353abca9ce6e18d4f8e781"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> { <br />
+&#160;&#160;<a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38">Success</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0">NothingToRead</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e">Closed</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398">Timeout</a>
+, <br />
+&#160;&#160;<a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38">Success</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0">NothingToRead</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e">Closed</a>
+, <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398">Timeout</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ad2a48977a3353abca9ce6e18d4f8e781"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of a read operation.  <a href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">More...</a><br /></td></tr>
+<tr class="separator:ad2a48977a3353abca9ce6e18d4f8e781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64382187880bcb8cb79154f05fa8be6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> = int</td></tr>
+<tr class="separator:af64382187880bcb8cb79154f05fa8be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d549773ef46263a0c24f6fb763a864"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a24d549773ef46263a0c24f6fb763a864">FileDescriptor</a> = SOCKET</td></tr>
+<tr class="separator:a24d549773ef46263a0c24f6fb763a864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae21531ebaceab04a0ec7cc7423971311"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">isConnected</a> ()</td></tr>
 <tr class="memdesc:ae21531ebaceab04a0ec7cc7423971311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the socket is currently connected.  <a href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">More...</a><br /></td></tr>
 <tr class="separator:ae21531ebaceab04a0ec7cc7423971311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b82a53e665de71d5a60257ad4e680b"><td class="memItemLeft" align="right" valign="top"><a id="ae1b82a53e665de71d5a60257ad4e680b"></a>
+const <a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ae1b82a53e665de71d5a60257ad4e680b">fileDescriptor</a> () const</td></tr>
+<tr class="memdesc:ae1b82a53e665de71d5a60257ad4e680b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the holded file descriptor from the socket. <br /></td></tr>
+<tr class="separator:ae1b82a53e665de71d5a60257ad4e680b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bc6d869b3ae0dca964eb235475d1546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">send</a> (const <a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_msg)</td></tr>
 <tr class="memdesc:a8bc6d869b3ae0dca964eb235475d1546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over the socket.  <a href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">More...</a><br /></td></tr>
 <tr class="separator:a8bc6d869b3ae0dca964eb235475d1546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b6b8614eebc657a0db477c92f4729b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a4b6b8614eebc657a0db477c92f4729b8">receive</a> (<a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill)</td></tr>
 <tr class="memdesc:a4b6b8614eebc657a0db477c92f4729b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the socket.  <a href="classspk_1_1Network_1_1Socket.html#a4b6b8614eebc657a0db477c92f4729b8">More...</a><br /></td></tr>
 <tr class="separator:a4b6b8614eebc657a0db477c92f4729b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae21531ebaceab04a0ec7cc7423971311"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">isConnected</a> ()</td></tr>
+<tr class="memdesc:ae21531ebaceab04a0ec7cc7423971311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the socket is currently connected.  <a href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">More...</a><br /></td></tr>
+<tr class="separator:ae21531ebaceab04a0ec7cc7423971311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9139f73a319e63ef9a0f761e74450fed"><td class="memItemLeft" align="right" valign="top"><a id="a9139f73a319e63ef9a0f761e74450fed"></a>
+const SOCKET &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed">fileDescriptor</a> () const</td></tr>
+<tr class="memdesc:a9139f73a319e63ef9a0f761e74450fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the holded file descriptor from the socket. <br /></td></tr>
+<tr class="separator:a9139f73a319e63ef9a0f761e74450fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc6d869b3ae0dca964eb235475d1546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">send</a> (const <a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_msg)</td></tr>
+<tr class="memdesc:a8bc6d869b3ae0dca964eb235475d1546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message over the socket.  <a href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">More...</a><br /></td></tr>
+<tr class="separator:a8bc6d869b3ae0dca964eb235475d1546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa050f856953dd60a76321ba91f2d0c0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">receive</a> (<a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill)</td></tr>
+<tr class="memdesc:aa050f856953dd60a76321ba91f2d0c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a message from the socket.  <a href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">More...</a><br /></td></tr>
+<tr class="separator:aa050f856953dd60a76321ba91f2d0c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a29267cd30dffd1a26246823a9134e685"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685">SocketError</a> = -1</td></tr>
+<tr class="separator:a29267cd30dffd1a26246823a9134e685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:ac2055578ac48afabe5af487878450f68"><td class="memItemLeft" align="right" valign="top"><a id="ac2055578ac48afabe5af487878450f68"></a>
+<tr class="memitem:a663298be6309cb283686505cd35e9094"><td class="memItemLeft" align="right" valign="top"><a id="a663298be6309cb283686505cd35e9094"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Server</b></td></tr>
-<tr class="separator:ac2055578ac48afabe5af487878450f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5db1c99e2c94b26278f3838c85cdb618"><td class="memItemLeft" align="right" valign="top"><a id="a5db1c99e2c94b26278f3838c85cdb618"></a>
+<tr class="separator:a663298be6309cb283686505cd35e9094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5156a9b8f5be467fc3145e7f746334df"><td class="memItemLeft" align="right" valign="top"><a id="a5156a9b8f5be467fc3145e7f746334df"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Client</b></td></tr>
-<tr class="separator:a5db1c99e2c94b26278f3838c85cdb618"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a356cd950fead00cc7ff194d33d9836ef"><td class="memItemLeft" align="right" valign="top"><a id="a356cd950fead00cc7ff194d33d9836ef"></a>
+<tr class="separator:a5156a9b8f5be467fc3145e7f746334df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080229a92b2504559f919256dec778f6"><td class="memItemLeft" align="right" valign="top"><a id="a080229a92b2504559f919256dec778f6"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Acceptor</b></td></tr>
-<tr class="separator:a356cd950fead00cc7ff194d33d9836ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a080229a92b2504559f919256dec778f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a> class is a wrapper around a network socket. </p>
-<p>The <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a> class is a higher-level representation of a network socket, which includes methods for establishing connections, sending messages, and receiving messages. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<p>The <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a> class encapsulates a network socket, and includes methods for establishing connections, sending messages, and receiving messages.</p>
+<p>The <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a> class is a higher-level representation of a network socket, which includes methods for establishing connections, sending messages, and receiving messages.</p>
+<p>The <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a> class extends from the <a class="el" href="classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources.">Object</a> class. The <a class="el" href="classspk_1_1Network_1_1Server.html" title="Class that manages network communications for a server.">Server</a>, <a class="el" href="classspk_1_1Network_1_1Client.html" title="The Client class encapsulates the behavior of a client in a network communication context.">Client</a>, and <a class="el" href="classspk_1_1Network_1_1Acceptor.html" title="The Acceptor class is a wrapper around a socket, intended to accept connections from clients.">Acceptor</a> classes are friends of <a class="el" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket.">Socket</a>, giving them access to its private members and methods. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="af64382187880bcb8cb79154f05fa8be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64382187880bcb8cb79154f05fa8be6">&#9670;&nbsp;</a></span>FileDescriptor <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">spk::Network::Socket::FileDescriptor</a> =  int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A definition for socket's file descriptor </p>
+
+</div>
+</div>
+<a id="a24d549773ef46263a0c24f6fb763a864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d549773ef46263a0c24f6fb763a864">&#9670;&nbsp;</a></span>FileDescriptor <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">spk::Network::Socket::FileDescriptor</a> =  SOCKET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A definition for socket's file descriptor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ad2a48977a3353abca9ce6e18d4f8e781"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2a48977a3353abca9ce6e18d4f8e781">&#9670;&nbsp;</a></span>ReadResult</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a48977a3353abca9ce6e18d4f8e781">&#9670;&nbsp;</a></span>ReadResult <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,13 +239,72 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Acceptor</b></td></t
 </div><div class="memdoc">
 
 <p>The result of a read operation. </p>
-<p>Success - The read was successful. NothingToRead - There was nothing to read from the socket. Closed - The socket was closed. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Indicates the read was successful. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0"></a>NothingToRead&#160;</td><td class="fielddoc"><p>Indicates there was nothing to read from the socket. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e"></a>Closed&#160;</td><td class="fielddoc"><p>Indicates the socket was closed. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Indicates the socket was timeout during reception of incoming message. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Indicates the read was successful. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0"></a>NothingToRead&#160;</td><td class="fielddoc"><p>Indicates there was nothing to read from the socket. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e"></a>Closed&#160;</td><td class="fielddoc"><p>Indicates the socket was closed. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Indicates the socket was timeout during reception of incoming message. *&zwj;/. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ad2a48977a3353abca9ce6e18d4f8e781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a48977a3353abca9ce6e18d4f8e781">&#9670;&nbsp;</a></span>ReadResult <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">spk::Network::Socket::ReadResult</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The result of a read operation. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Indicates the read was successful. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0"></a>NothingToRead&#160;</td><td class="fielddoc"><p>Indicates there was nothing to read from the socket. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e"></a>Closed&#160;</td><td class="fielddoc"><p>Indicates the socket was closed. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Indicates the socket was timeout during reception of incoming message. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a505a83f220c02df2f85c3810cd9ceb38"></a>Success&#160;</td><td class="fielddoc"><p>Indicates the read was successful. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0"></a>NothingToRead&#160;</td><td class="fielddoc"><p>Indicates there was nothing to read from the socket. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781a03f4a47830f97377a35321051685071e"></a>Closed&#160;</td><td class="fielddoc"><p>Indicates the socket was closed. *&zwj;/. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398"></a>Timeout&#160;</td><td class="fielddoc"><p>Indicates the socket was timeout during reception of incoming message. *&zwj;/. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae21531ebaceab04a0ec7cc7423971311"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae21531ebaceab04a0ec7cc7423971311">&#9670;&nbsp;</a></span>isConnected()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21531ebaceab04a0ec7cc7423971311">&#9670;&nbsp;</a></span>isConnected() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,8 +323,28 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Acceptor</b></td></t
 
 </div>
 </div>
+<a id="ae21531ebaceab04a0ec7cc7423971311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21531ebaceab04a0ec7cc7423971311">&#9670;&nbsp;</a></span>isConnected() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::Network::Socket::isConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the socket is currently connected. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the socket is connected, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a4b6b8614eebc657a0db477c92f4729b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b6b8614eebc657a0db477c92f4729b8">&#9670;&nbsp;</a></span>receive()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6b8614eebc657a0db477c92f4729b8">&#9670;&nbsp;</a></span>receive() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,8 +370,35 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Acceptor</b></td></t
 
 </div>
 </div>
+<a id="aa050f856953dd60a76321ba91f2d0c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa050f856953dd60a76321ba91f2d0c0f">&#9670;&nbsp;</a></span>receive() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> spk::Network::Socket::receive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_messageToFill</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receives a message from the socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_messageToFill</td><td>The message object to fill with the received data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the read operation (see ReadResult). </dd></dl>
+
+</div>
+</div>
 <a id="a8bc6d869b3ae0dca964eb235475d1546"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bc6d869b3ae0dca964eb235475d1546">&#9670;&nbsp;</a></span>send()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc6d869b3ae0dca964eb235475d1546">&#9670;&nbsp;</a></span>send() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,6 +420,56 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Acceptor</b></td></t
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8bc6d869b3ae0dca964eb235475d1546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc6d869b3ae0dca964eb235475d1546">&#9670;&nbsp;</a></span>send() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Network::Socket::send </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a message over the socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_msg</td><td>The message to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a29267cd30dffd1a26246823a9134e685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29267cd30dffd1a26246823a9134e685">&#9670;&nbsp;</a></span>SocketError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const <a class="el" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> spk::Network::Socket::SocketError = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A value indicating that the socket is in error state </p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['update_5fips_5fcounter_1084',['UPDATE_IPS_COUNTER',['../classspk_1_1Profiler.html#aff4f46bb299ee6b67ab77c19f7f7e07f',1,'spk::Profiler']]],
-  ['uv_1085',['uv',['../structspk_1_1Mesh_1_1Face_1_1Point.html#a259338e92767f8ce405b4d0e7013ada4',1,'spk::Mesh::Face::Point']]]
+  ['socketerror_1095',['SocketError',['../classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685',1,'spk::Network::Socket']]]
 ];

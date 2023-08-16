@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['running_1123',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
+  ['onenter_1136',['OnEnter',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0',1,'spk::Activity']]],
+  ['onexit_1137',['OnExit',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144',1,'spk::Activity']]]
 ];

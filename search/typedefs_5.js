@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_1101',['Type',['../classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da',1,'spk::Network::Message::Header::Type()'],['../classspk_1_1Network_1_1Message.html#af80fa1c065c83d58336d3d86be659171',1,'spk::Network::Message::Type()']]]
+  ['snapshot_1113',['Snapshot',['../classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b',1,'spk::Memento']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['abstractapplication_50',['AbstractApplication',['../classspk_1_1AbstractApplication.html#a46056c538113e4272d6d7eb23bfd9f0b',1,'spk::AbstractApplication::AbstractApplication()'],['../classspk_1_1AbstractApplication.html',1,'spk::AbstractApplication']]],
-  ['accept_51',['accept',['../classspk_1_1Network_1_1Acceptor.html#a6c8eeba2f6b9d296333b180e459f383b',1,'spk::Network::Acceptor']]],
-  ['acceptor_52',['Acceptor',['../classspk_1_1Network_1_1Acceptor.html#a24d25602fc3cda0ac68d9e23d97188d5',1,'spk::Network::Acceptor::Acceptor()'],['../classspk_1_1Network_1_1Acceptor.html',1,'spk::Network::Acceptor']]],
+  ['accept_51',['accept',['../classspk_1_1Network_1_1Acceptor.html#a6c8eeba2f6b9d296333b180e459f383b',1,'spk::Network::Acceptor::accept(Socket &amp;p_socket)'],['../classspk_1_1Network_1_1Acceptor.html#a6c8eeba2f6b9d296333b180e459f383b',1,'spk::Network::Acceptor::accept(Socket &amp;p_socket)']]],
+  ['acceptor_52',['Acceptor',['../classspk_1_1Network_1_1Acceptor.html#a24d25602fc3cda0ac68d9e23d97188d5',1,'spk::Network::Acceptor::Acceptor()'],['../classspk_1_1Network_1_1Acceptor.html#a24d25602fc3cda0ac68d9e23d97188d5',1,'spk::Network::Acceptor::Acceptor()'],['../classspk_1_1Network_1_1Acceptor.html',1,'spk::Network::Acceptor']]],
   ['activableobject_53',['ActivableObject',['../classspk_1_1ActivableObject.html#a831bce3fc7b83728edec22f6e7b07742',1,'spk::ActivableObject::ActivableObject()'],['../classspk_1_1ActivableObject.html',1,'spk::ActivableObject']]],
   ['activate_54',['activate',['../classspk_1_1ActivableObject.html#aaa7eeea62bbf4b0c9e0f92b5c477591b',1,'spk::ActivableObject']]],
   ['activity_55',['Activity',['../classspk_1_1Activity.html#a624be8721a7a7e6ab00bb0f865560eac',1,'spk::Activity::Activity()'],['../classspk_1_1Activity.html',1,'spk::Activity']]],
@@ -28,7 +28,7 @@ var searchData=
   ['addvertices_75',['addVertices',['../classspk_1_1Mesh.html#aaaa8a080cf153d8bf238d3310155f25c',1,'spk::Mesh']]],
   ['anchor_76',['anchor',['../classspk_1_1Widget_1_1Interface.html#a7947a55e651a9f3e41e0c2f717783a86',1,'spk::Widget::Interface']]],
   ['angle_77',['angle',['../structspk_1_1IVector2.html#a4c3925ad849ad4d9b1bdba9a8c0d879c',1,'spk::IVector2']]],
-  ['apimodule_78',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
+  ['apimodule_78',['APIModule',['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0',1,'spk::APIModule::APIModule()'],['../classspk_1_1APIModule.html',1,'spk::APIModule']]],
   ['append_79',['append',['../classspk_1_1JSON_1_1Object.html#ac4eaf3932e729e39cf6eafabf16c7d89',1,'spk::JSON::Object']]],
   ['application_80',['Application',['../classspk_1_1Application.html#a7fd49326eff58c3efcbbd550eae6bd82',1,'spk::Application::Application()'],['../classspk_1_1Application.html',1,'spk::Application']]],
   ['as_81',['as',['../classspk_1_1JSON_1_1File.html#a7f171a1473d5f1d74845653855e62ccd',1,'spk::JSON::File::as()'],['../classspk_1_1JSON_1_1Object.html#a4656a5e45ba6633b43dbdc1dc46d5263',1,'spk::JSON::Object::as()']]],

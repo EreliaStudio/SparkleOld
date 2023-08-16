@@ -1,5 +1,5 @@
 <map id="spk::IMessageConsumerModule" name="spk::IMessageConsumerModule">
-<area shape="rect" id="node1" title="Class for modules that consume messages." alt="" coords="235,5,464,32"/>
+<area shape="rect" id="node1" title="Class for modules that consume messages." alt="" coords="321,5,551,32"/>
 <area shape="rect" id="node2" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="5,80,168,107"/>
 <area shape="rect" id="node3" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="192,80,336,107"/>
 <area shape="rect" id="node4" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="361,80,511,107"/>

@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Network_1_1Node.html" title="Class encapsulating a node, remote or local." alt="" coords="5,31,156,57"/>
-<area shape="rect" id="node2" href="$classspk_1_1Network_1_1LocalNode.html" title="The LocalNode class extends the Node class, encapsulating the behavior of a local node in a network." alt="" coords="213,5,397,32"/>
-<area shape="rect" id="node3" href="$classspk_1_1Network_1_1RemoteNode.html" title="Class representing a remote network node." alt="" coords="204,56,405,83"/>
+<area shape="rect" id="node1" href="$classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources." alt="" coords="5,31,164,57"/>
+<area shape="rect" id="node2" href="$classspk_1_1Network_1_1Acceptor.html" title="The Acceptor class is a wrapper around a socket, intended to accept connections from clients." alt="" coords="212,5,385,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket." alt="" coords="219,56,378,83"/>
 </map>

@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['matrix4x4_797',['Matrix4x4',['../structspk_1_1Matrix4x4.html#a3d4ed1df5def9a0886e31e58301d6102',1,'spk::Matrix4x4']]],
-  ['max_798',['max',['../classspk_1_1RandomGenerator.html#ac64780f71057a7db7f87a90033d99a29',1,'spk::RandomGenerator::max()'],['../structspk_1_1IVector2.html#a452209253a7a42351fc09951297f7d4d',1,'spk::IVector2::max()']]],
-  ['members_799',['members',['../classspk_1_1JSON_1_1Object.html#af451f079690edf29f4d218bc6f72a525',1,'spk::JSON::Object']]],
-  ['mesh_800',['Mesh',['../classspk_1_1Mesh.html#a08041de6df6465e8b8a83e2b86c9c7f8',1,'spk::Mesh']]],
-  ['message_801',['Message',['../classspk_1_1Network_1_1Message.html#a22b0ba6f73e9d7046abf1efd307f3f82',1,'spk::Network::Message']]],
-  ['methodname_802',['methodName',['../namespacespk.html#a3bfb867af25d965b131886fe857d23d4',1,'spk::methodName(const std::string &amp;prettyFunction)'],['../namespacespk.html#a7220789e458bf250bb05472cd28acc6b',1,'spk::methodName(const std::wstring &amp;prettyFunction)']]],
-  ['min_803',['min',['../classspk_1_1RandomGenerator.html#a873244e578c872984ca815e396eaabb1',1,'spk::RandomGenerator::min()'],['../structspk_1_1IVector2.html#ae64ebb9cf02e5bbf329ea31d35e29841',1,'spk::IVector2::min()']]],
-  ['mouseinput_804',['MouseInput',['../classspk_1_1MouseInput.html#ac7368d01a654eb3c51d0a03a7acc226f',1,'spk::MouseInput']]],
-  ['mousemodule_805',['MouseModule',['../classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24',1,'spk::MouseModule']]],
-  ['mousemovementinput_806',['MouseMovementInput',['../classspk_1_1MouseMovementInput.html#aa0b3e3c9d7230949e8e22d5dfd7e7625',1,'spk::MouseMovementInput']]],
-  ['mousequeue_807',['mouseQueue',['../classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f',1,'spk::APIModule']]],
-  ['move_808',['move',['../classspk_1_1Widget_1_1Interface.html#a2608613321b3064b2cbf8ffcc3c5dde8',1,'spk::Widget::Interface']]]
+  ['matrix4x4_808',['Matrix4x4',['../structspk_1_1Matrix4x4.html#a3d4ed1df5def9a0886e31e58301d6102',1,'spk::Matrix4x4']]],
+  ['max_809',['max',['../classspk_1_1RandomGenerator.html#ac64780f71057a7db7f87a90033d99a29',1,'spk::RandomGenerator::max()'],['../structspk_1_1IVector2.html#a452209253a7a42351fc09951297f7d4d',1,'spk::IVector2::max()']]],
+  ['members_810',['members',['../classspk_1_1JSON_1_1Object.html#af451f079690edf29f4d218bc6f72a525',1,'spk::JSON::Object']]],
+  ['mesh_811',['Mesh',['../classspk_1_1Mesh.html#a08041de6df6465e8b8a83e2b86c9c7f8',1,'spk::Mesh']]],
+  ['message_812',['Message',['../classspk_1_1Network_1_1Message.html#a22b0ba6f73e9d7046abf1efd307f3f82',1,'spk::Network::Message']]],
+  ['methodname_813',['methodName',['../namespacespk.html#a3bfb867af25d965b131886fe857d23d4',1,'spk::methodName(const std::string &amp;prettyFunction)'],['../namespacespk.html#a7220789e458bf250bb05472cd28acc6b',1,'spk::methodName(const std::wstring &amp;prettyFunction)']]],
+  ['min_814',['min',['../classspk_1_1RandomGenerator.html#a873244e578c872984ca815e396eaabb1',1,'spk::RandomGenerator::min()'],['../structspk_1_1IVector2.html#ae64ebb9cf02e5bbf329ea31d35e29841',1,'spk::IVector2::min()']]],
+  ['mouseinput_815',['MouseInput',['../classspk_1_1MouseInput.html#ac7368d01a654eb3c51d0a03a7acc226f',1,'spk::MouseInput']]],
+  ['mousemodule_816',['MouseModule',['../classspk_1_1MouseModule.html#af36f93dd3ad1a4a53f4e9f80635f7b24',1,'spk::MouseModule']]],
+  ['mousemovementinput_817',['MouseMovementInput',['../classspk_1_1MouseMovementInput.html#aa0b3e3c9d7230949e8e22d5dfd7e7625',1,'spk::MouseMovementInput']]],
+  ['mousequeue_818',['mouseQueue',['../classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f',1,'spk::APIModule::mouseQueue()'],['../classspk_1_1APIModule.html#a61d09040e6f32afac48dded1b0c6d70f',1,'spk::APIModule::mouseQueue()']]],
+  ['move_819',['move',['../classspk_1_1Widget_1_1Interface.html#a2608613321b3064b2cbf8ffcc3c5dde8',1,'spk::Widget::Interface']]]
 ];
