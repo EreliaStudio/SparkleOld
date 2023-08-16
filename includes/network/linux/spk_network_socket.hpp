@@ -20,15 +20,14 @@ namespace spk::Network
 
 	public:
         /**
-         * @enum ReadResult
          * @brief The result of a read operation.
          */
 		enum class ReadResult
 		{
-            Success,       /**< Indicates the read was successful. */
-            NothingToRead, /**< Indicates there was nothing to read from the socket. */
-            Closed,        /**< Indicates the socket was closed. */
-            Timeout        /**< Indicates the socket was timeout during reception of incoming message. */
+            Success,       //!< Indicates the read was successful. */
+            NothingToRead, //!< Indicates there was nothing to read from the socket. */
+            Closed,        //!< Indicates the socket was closed. */
+            Timeout        //!< Indicates the socket was timeout during reception of incoming message. */
 		};
 
         using FileDescriptor = int; /**< A definition for socket's file descriptor*/
