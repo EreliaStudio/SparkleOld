@@ -16,8 +16,8 @@ namespace spk::Network
 	{
 	private:
 		static inline std::recursive_mutex _mutex; /**< Mutex for thread safety */
-		static inline size_t nb_element = 0; /**< Counter for the number of Object instances */
-		static inline WSADATA wsaData; /**< Windows Sockets API data */
+		static inline size_t _nbElement = 0; /**< Counter for the number of Object instances */
+		static inline WSADATA _wsaData; /**< Windows Sockets API data */
 
 		/**
          * @brief Initializes Windows Sockets API (WinSock) data.

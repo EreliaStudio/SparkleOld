@@ -29,6 +29,11 @@ namespace spk
 		spk::cout << "Critical exception raised : " << std::endl << p_errorLine << std::endl;
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());
 	}
+
+	int getLastSocketErrorValue()
+	{
+		return (WSAGetLastError());
+	}
 	
 	void printCallStack()
 	{

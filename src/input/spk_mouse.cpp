@@ -21,12 +21,14 @@ namespace spk
 
 	void Mouse::pressButton(const Button& p_button)
 	{
-		_buttons[static_cast<size_t>(p_button)] = InputState::Pressed;
+		if (_buttons[static_cast<size_t>(p_button)] != InputState::Down)
+			_buttons[static_cast<size_t>(p_button)] = InputState::Pressed;
 	}
 
 	void Mouse::releaseButton(const Button& p_button)
 	{
-		_buttons[static_cast<size_t>(p_button)] = InputState::Released;
+		if (_buttons[static_cast<size_t>(p_button)] != InputState::Up)
+			_buttons[static_cast<size_t>(p_button)] = InputState::Released;
 	}
 
 	void Mouse::editWheelPosition(const Vector2Int& p_delta)

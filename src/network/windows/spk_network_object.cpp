@@ -9,7 +9,7 @@ namespace spk::Network
 
 		int initializationResult;
 
-		initializationResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
+		initializationResult = WSAStartup(MAKEWORD(2, 2), &_wsaData);
 		if (initializationResult != 0)
 		{
 			spk::throwException(L"Initialization of network failed : WSAStartup error code [" + std::to_wstring(initializationResult) + L"]");
@@ -25,16 +25,16 @@ namespace spk::Network
 	void Object::_incrementCount()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
-		if (nb_element == 0)
+		if (_nbElement == 0)
 			_initializeWinSockData();
-		nb_element++;
+		_nbElement++;
 	}
 		
 	void Object::_decrementCount()
 	{
 		std::lock_guard<std::recursive_mutex> lock(_mutex);
-		nb_element--;
-		if (nb_element == 0)
+		_nbElement--;
+		if (_nbElement == 0)
 			_releaseWinSockData();
 	}
 
@@ -75,5 +75,4 @@ namespace spk::Network
 	{
 		_decrementCount();
 	}
-
 }

@@ -1,23 +1,103 @@
 #include "playground.hpp"
 
-enum class Test
+class EmiterWidget : public spk::Widget::Interface
 {
-	A,
-	B,
-	C
+private:
+	void _onGeometryChange();
+	void _onRender();
+	
+	bool _onUpdate();
+
+	spk::Network::Client* _client;
+	spk::Network::Server* _server;
+
+public:
+	EmiterWidget(const std::wstring& p_name);
+	~EmiterWidget();
+
+	void setClient(spk::Network::Client* p_client);
+	void setServer(spk::Network::Server* p_server);
 };
+
+void EmiterWidget::_onGeometryChange()
+{
+
+}
+
+void EmiterWidget::_onRender()
+{
+
+}
+
+bool EmiterWidget::_onUpdate()
+{
+	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Pressed)
+	{
+		static int nbMessage = 0;
+		spk::cout << "Sending message : " << nbMessage << std::endl;
+		spk::Network::Message p_msg(15);
+		p_msg << std::wstring(L"Ceci est un test rigolo");
+
+		nbMessage++;
+		_client->send(p_msg);
+	}
+	return (false);
+}
+
+EmiterWidget::EmiterWidget(const std::wstring& p_name) : 
+	spk::Widget::Interface(p_name)
+{
+
+}
+
+EmiterWidget::~EmiterWidget()
+{
+
+}
+
+void EmiterWidget::setClient(spk::Network::Client* p_client)
+{
+	_client = p_client;
+}
+
+void EmiterWidget::setServer(spk::Network::Server* p_server)
+{
+	_server = p_server;
+
+	_server->setOnMessageReceptionCallback(15, [&](const spk::Network::Server::EmiterID& p_emiterID, const spk::Network::Message& p_msg){
+		std::wstring messageString;
+
+		p_msg >> messageString;
+
+		spk::cout << "Message received :" << messageString << std::endl;
+
+		spk::Network::Message awnser(10);
+		awnser << messageString.size();
+		awnser << spk::Vector2Int(10, 15);
+
+		_server->sendTo(p_emiterID, awnser);
+	});
+}
 
 int main()
 {
-	spk::Network::Message msg(15);
-	spk::Network::Message msg2 = spk::Network::Message(Test::B);
+	spk::Application app(L"Coucou", 400, spk::Application::Configuration(true, true));
+	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
-	spk::Network::Message::Type value = msg.header().type();
-	Test value1 = msg.header().typeAs<Test>();
+	spk::Widget::ServerManager *_serverManager = app.addRootWidget<spk::Widget::ServerManager>(L"ServerManager");
+	_serverManager->setServer(new spk::Network::Server());
+	_serverManager->server()->start(26500);
+	_serverManager->activate();
 
-	msg.header().setType(Test::A);
+	spk::Widget::ClientManager *_clientManager = app.addRootWidget<spk::Widget::ClientManager>(L"ClientManager");
+	_clientManager->setClient(new spk::Network::Client());
+	_clientManager->client()->connect(L"82.65.223.127", 26500);
+	_clientManager->activate();
 
-	Test value2 = msg.header().typeAs<Test>();
+	EmiterWidget *_emiterWidget = app.addRootWidget<EmiterWidget>(L"ClientManager");
+	_emiterWidget->setClient(_clientManager->client());
+	_emiterWidget->setServer(_serverManager->server());
+	_emiterWidget->activate();
 
-	return (0);
+	return (app.run());
 };

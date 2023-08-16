@@ -29,10 +29,10 @@ namespace spk::Network
 
 		for (ptr = result; ptr != NULL; ptr = ptr->ai_next)
 		{
-			_socket = socket(result->ai_family, result->ai_socktype, result->ai_protocol);
+			_socket = ::socket(result->ai_family, result->ai_socktype, result->ai_protocol);
 
 			int socketConnectionError = ::connect(_socket, result->ai_addr, (int)result->ai_addrlen);
-			if (socketConnectionError == SOCKET_ERROR)
+			if (socketConnectionError == Socket::SocketError)
 			{
 				spk::throwException(L"Unable to connect to server [" + p_serverAddress + L"] at port [" + std::to_wstring(p_serverPort) + L"][" + std::to_wstring(WSAGetLastError()) + L"]");
 			}
@@ -53,7 +53,7 @@ namespace spk::Network
 	{
 
 		int shutdowningSocketError = shutdown(_socket, SD_SEND);
-		if (shutdowningSocketError == SOCKET_ERROR)
+		if (shutdowningSocketError == Socket::SocketError)
 		{
 			spk::throwException(L"ioctlsocket failed with error: " + std::to_wstring(WSAGetLastError()));
 		}
@@ -66,10 +66,15 @@ namespace spk::Network
 		return (_isConnected);
 	}
 
+    const Socket::FileDescriptor& Socket::fileDescriptor() const
+	{
+		return (_socket);
+	}
+
 	void Socket::send(const spk::Network::Message &p_msg)
 	{
 		int sendingMessageHeaderError = ::send(_socket, reinterpret_cast<const char *>(&(p_msg.header())), sizeof(spk::Network::Message::Header), 0);
-		if (sendingMessageHeaderError == SOCKET_ERROR)
+		if (sendingMessageHeaderError == Socket::SocketError)
 		{
 			spk::throwException(L"Error while sending header: socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}
@@ -78,24 +83,22 @@ namespace spk::Network
 		{
 			int sendingMessageDataError = ::send(_socket, reinterpret_cast<const char *>(p_msg.data()), p_msg.size(), 0);
 
-			if (sendingMessageHeaderError == SOCKET_ERROR)
+			if (sendingMessageHeaderError == Socket::SocketError)
 			{
 				spk::throwException(L"Error while sending data: socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
 			}
 		}
 	}
 
-	Socket::ReadResult Socket::receive(spk::Network::Message &p_messageToFill)
+    Socket::ReadResult Socket::_receiveHeader(spk::Network::Message &p_messageToFill)
 	{
-		spk::Network::Message newMessage;
 		int bytesRead = ::recv(_socket, reinterpret_cast<char *>(&(p_messageToFill.header())), sizeof(spk::Network::Message::Header), 0);
 
 		if (bytesRead == 0)
 		{
-			close();
 			return ReadResult::Closed;
 		}
-		else if (bytesRead < 0)
+		else if (bytesRead == Socket::SocketError)
 		{
 			int error = WSAGetLastError();
 			if (error != WSAEWOULDBLOCK)
@@ -107,16 +110,76 @@ namespace spk::Network
 				return ReadResult::NothingToRead;
 			}
 		}
+		return (Socket::ReadResult::Success);		
+	}
+    
+	Socket::ReadResult Socket::_waitForSelection()
+	{
+		struct timeval timeout;
+		timeout.tv_sec = 1;
+		timeout.tv_usec = 0;
 
-		if (p_messageToFill.size() != 0)
+		fd_set socketFD;
+		FD_ZERO(&socketFD);
+		FD_SET(_socket, &socketFD);
+
+		int activity = ::select(_socket + 1, &socketFD, nullptr, nullptr, &timeout);
+
+		if (activity == Socket::SocketError)
 		{
-			bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()), p_messageToFill.size(), 0);
-			if (bytesRead != p_messageToFill.size())
-			{
-				spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(WSAGetLastError()) + L"]");
-			}
+			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
 		}
 
-		return (ReadResult::Success);
+		if (activity == 0)
+		{
+			return (Socket::ReadResult::Timeout);
+		}
+		return (Socket::ReadResult::Success);
+	}
+    
+	Socket::ReadResult Socket::_receiveContent(spk::Network::Message &p_messageToFill)
+	{
+		p_messageToFill.resize(p_messageToFill.size());
+		size_t totalReadedSize = 0;
+		while (totalReadedSize < p_messageToFill.size())
+		{
+			int bytesRead = ::recv(_socket, reinterpret_cast<char *>(p_messageToFill.data()) + totalReadedSize, p_messageToFill.size() - totalReadedSize, 0);
+
+			if (bytesRead == Socket::SocketError)
+			{
+				int error = WSAGetLastError();
+				if (error != WSAEWOULDBLOCK)
+				{
+					spk::throwException(L"Error while receiving data: socket error code [" + std::to_wstring(error) + L"]");
+				}
+			}
+			else if (bytesRead == 0)
+			{
+				return ReadResult::Closed;
+			}
+			else
+			{
+				totalReadedSize += bytesRead;
+			}
+		}
+		return (Socket::ReadResult::Success);
+	}
+
+	Socket::ReadResult Socket::receive(spk::Network::Message &p_messageToFill)
+	{
+		Socket::ReadResult readingHeaderResult = _receiveHeader(p_messageToFill);
+		
+		if (readingHeaderResult != Socket::ReadResult::Success)
+			return (readingHeaderResult);
+
+		if (p_messageToFill.size() == 0)
+			return (readingHeaderResult);
+
+		Socket::ReadResult selectionResult = _waitForSelection();
+
+		if (readingHeaderResult != Socket::ReadResult::Success)
+			return (readingHeaderResult);
+
+		return (_receiveContent(p_messageToFill));
 	}
 }

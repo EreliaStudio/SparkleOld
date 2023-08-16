@@ -7,19 +7,17 @@
 namespace spk
 {
 	/**
-	 * @class Window
 	 * @brief Singleton class for window.
 	 *
 	 * Represents the window of the application, providing functionality to modify its geometry, render content, and clear its content.
 	 */
-	class Window : public spk::Singleton<Window>
+	class Window : public Singleton<Window>
 	{
-		friend class spk::Singleton<Window>;
+		friend class Singleton<Window>;
 		friend class APIModule;
 
 	private:
-
-		spk::Vector2Int _size; ///< Window size.
+		Vector2Int _size; ///< Window size.
 		xcb_connection_t* _connection; ///< Connection to the X server.
 		xcb_screen_t* _screen; ///< Screen of the X server.
 		xcb_window_t _window; ///< Window of the X server.
@@ -43,7 +41,7 @@ namespace spk
 		 * @param p_title The title of the window.
 		 * @param p_size The size of the window.
 		 */
-		Window(const std::wstring& p_title, const spk::Vector2Int& p_size);
+		Window(const std::wstring& p_title, const Vector2Int& p_size);
 
 	public:
 
@@ -57,19 +55,19 @@ namespace spk
 		 *
 		 * @param p_size The size to set for the window.
 		 */
-		void setGeometry(const spk::Vector2Int& p_size);
+		void setGeometry(const Vector2Int& p_size);
 
 		/**
 		 * @brief Resizes the window.
 		 *
 		 * @param p_size The size to set for the window.
 		 */
-		void resize(const spk::Vector2Int& p_size);
+		void resize(const Vector2Int& p_size);
 
 		/**
 		 * @brief Return the size of the window.
 		*/
-		const spk::Vector2Int& size() const;
+		const Vector2Int& size() const;
 
 		/**
 		 * @brief Renders the window.

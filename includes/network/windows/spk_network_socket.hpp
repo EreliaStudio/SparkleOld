@@ -20,25 +20,24 @@ namespace spk::Network
 
 	public:
         /**
-         * @enum ReadResult
-         * @brief Enum representing the result of a read operation.
-         *
-         * Success - The read operation was successful.
-         * NothingToRead - There was nothing to read from the socket.
-         * Closed - The socket was closed.
+         * @brief The result of a read operation.
          */
 		enum class ReadResult
 		{
-			Success,
-			NothingToRead,
-			Closed
+            Success,       //!< Indicates the read was successful. */
+            NothingToRead, //!< Indicates there was nothing to read from the socket. */
+            Closed,        //!< Indicates the socket was closed. */
+            Timeout        //!< Indicates the socket was timeout during reception of incoming message. */
 		};
+
+        using FileDescriptor = SOCKET; /**< A definition for socket's file descriptor*/
+        static const FileDescriptor SocketError = SOCKET_ERROR; /**< A value indicating that the socket is in error state*/
 
 	private:
 		static inline u_long BLOCKING_SOCKET = 0; /**< Constant representing a blocking socket */
 		static inline u_long NON_BLOCKING_SOCKET = 1; /**< Constant representing a non-blocking socket */
 
-		SOCKET _socket = SOCKET(); /**< The socket file descriptor */
+		FileDescriptor _socket = SOCKET(); /**< The socket file descriptor */
 		bool _isConnected = false; /**< Boolean representing whether the socket is currently connected */
 
 		/**
@@ -61,6 +60,34 @@ namespace spk::Network
          */
 		void close();
 
+
+        /**
+         * @brief Submethod used by the receive method to read the header
+         * @param p_messageToFill The message holding the header to read.
+         * @return The status of the reading process.
+         * If the header have been successfully readed, return Success.
+         * If the header haven't been readed correctly, return NothingToRead.
+         * If the connection have been closed by the socket or by the server, return Closed.
+        */
+        Socket::ReadResult _receiveHeader(spk::Network::Message &p_messageToFill);
+
+        /**
+         * @brief Submethod used by the receive method, to wait until the content of the message is arrived.
+         * @return The status of the selection process.
+         * If datas are availible, return Success.
+         * If no data are availible before the end of the timeout, return Timeout.
+        */
+        Socket::ReadResult _waitForSelection();
+
+        /**
+         * @brief Submethod used by the receive method to read the content
+         * @param p_messageToFill The message holding the content to read.
+         * @return The status of the reading process.
+         * If the content have been successfully readed, return Success.
+         * If the connection have been closed by the socket or by the server, return Closed.
+        */
+        Socket::ReadResult _receiveContent(spk::Network::Message &p_messageToFill);
+
 	public:
 		/**
          * @brief Checks whether the socket is currently connected.
@@ -68,6 +95,11 @@ namespace spk::Network
          * @return True if the socket is connected, false otherwise.
          */
 		bool isConnected();
+
+        /**
+         * @brief Return the holded file descriptor from the socket.
+        */
+        const SOCKET& fileDescriptor() const;
 
 		/**
          * @brief Sends a message over the socket.

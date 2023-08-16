@@ -18,6 +18,11 @@ namespace spk
 		return className(wide);
 	}
 
+	int getLastSocketErrorValue()
+	{
+		return (errno);
+	}
+
 	void throwException(const std::wstring& p_errorLine) noexcept(false)
 	{
 		throw std::runtime_error(spk::wstringToString(p_errorLine).c_str());

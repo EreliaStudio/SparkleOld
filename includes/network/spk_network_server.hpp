@@ -29,6 +29,8 @@ namespace spk::Network
 		spk::ContractProvider::Contract _readingIncomingMessageContract; /**< Contract for reading incoming messages */
 
 		Acceptor _Acceptor; /**< The server socket acceptor */
+        spk::Network::Socket::FileDescriptor _maxFDs = Socket::SocketError;
+        fd_set _readingFDs;
 
 		spk::ThreadSafeQueue<std::pair<EmiterID, spk::Network::Message>> _messagesToTreat; /**< Queue for storing incoming messages */
 
@@ -38,7 +40,7 @@ namespace spk::Network
 		std::function<void(const EmiterID&)> _onNewConnectionCallback = nullptr; /**< Callback function for new connection */
 		std::function<void(const EmiterID&)> _onConnectionDisconnectionCallback = nullptr; /**< Callback function for connection disconnection */
 		std::function<void(const EmiterID&, const spk::Network::Message&)> _onUnknownMessageTypeCallback = [&](const EmiterID& p_id, const spk::Network::Message& p_msg){
-			spk::throwException(L"Callback not defined for message id [" + std::to_wstring(p_msg.header().type()) + L"]");
+			spk::cout << L"Callback not defined for message id [" << std::to_wstring(p_msg.header().type()) << L"]" << std::endl;
 		};
 
 		void _treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg); /**< Function to process a received message */
