@@ -29,12 +29,13 @@ namespace spk::Network
          */
 		enum class ReadResult
 		{
-			Success,
-			NothingToRead,
-			Closed
+            Success,       /**< Indicates the read was successful. */
+            NothingToRead, /**< Indicates there was nothing to read from the socket. */
+            Closed,        /**< Indicates the socket was closed. */
+            Timeout        /**< Indicates the socket was timeout during reception of incoming message. */
 		};
 
-        using FileDescriptor = int;
+        using FileDescriptor = int; /**< A definition for socket's file descriptor*/
 
 	private:
 		int _socket = -1;  /**< The socket file descriptor */
@@ -59,6 +60,33 @@ namespace spk::Network
          * Closes the socket and prevents any further send or receive operations.
          */
 		void close();
+
+        /**
+         * @brief Submethod used by the receive method to read the header
+         * @param p_messageToFill The message holding the header to read.
+         * @return The status of the reading process.
+         * If the header have been successfully readed, return Success.
+         * If the header haven't been readed correctly, return NothingToRead.
+         * If the connection have been closed by the socket or by the server, return Closed.
+        */
+        Socket::ReadResult _receiveHeader(spk::Network::Message &p_messageToFill);
+
+        /**
+         * @brief Submethod used by the receive method, to wait until the content of the message is arrived.
+         * @return The status of the selection process.
+         * If datas are availible, return Success.
+         * If no data are availible before the end of the timeout, return Timeout.
+        */
+        Socket::ReadResult _waitForSelection();
+
+        /**
+         * @brief Submethod used by the receive method to read the content
+         * @param p_messageToFill The message holding the content to read.
+         * @return The status of the reading process.
+         * If the content have been successfully readed, return Success.
+         * If the connection have been closed by the socket or by the server, return Closed.
+        */
+        Socket::ReadResult _receiveContent(spk::Network::Message &p_messageToFill);
 
 	public:
         /**
