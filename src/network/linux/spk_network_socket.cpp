@@ -68,6 +68,11 @@ namespace spk::Network
 		return (_isConnected);
 	}
 
+    const Socket::FileDescriptor& Socket::fileDescriptor() const
+	{
+		return (_socket);
+	}
+
 	void Socket::send(const spk::Network::Message &p_msg)
 	{
 		int sendingMessageHeaderError = ::send(_socket, reinterpret_cast<const char *>(&(p_msg.header())), sizeof(spk::Network::Message::Header), 0);

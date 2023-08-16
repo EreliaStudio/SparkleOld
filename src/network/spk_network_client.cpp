@@ -25,9 +25,9 @@ namespace spk::Network
 
 				fd_set socketToRead;
 				FD_ZERO(&socketToRead);
-				FD_SET(_socket.socket(), &socketToRead);
+				FD_SET(_socket.fileDescriptor(), &socketToRead);
 
-				int activity = ::select(_socket.socket() + 1, &socketToRead, nullptr, nullptr, &timeout);
+				int activity = ::select(_socket.fileDescriptor() + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == SOCKET_ERROR)
 				{
@@ -42,7 +42,7 @@ namespace spk::Network
 					spk::Network::Message newMessage;
 
 					if (_socket.isConnected() == true && 
-						FD_ISSET(_socket.socket(), &socketToRead))
+						FD_ISSET(_socket.fileDescriptor(), &socketToRead))
 					{
 						Socket::ReadResult readStatus = _socket.receive(newMessage);
 

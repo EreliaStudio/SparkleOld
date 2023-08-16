@@ -29,17 +29,17 @@ namespace spk::Network
 	Server::Server() : _socketContextWorker(L"Server Socket")
 	{
 		FD_ZERO(&_readingFDs);
-		
+
 		_socketListeningContract = _socketContextWorker.addJob(L"Accepting new connection", [&]()
 			{
 				Socket newSocket;
 				if (_Acceptor.accept(newSocket) == true)
 				{
-					FD_SET(newSocket.socket(), &_readingFDs);
+					FD_SET(newSocket.fileDescriptor(), &_readingFDs);
 					
-					if (_maxFDs == SOCKET_ERROR || newSocket.socket() > _maxFDs)
+					if (_maxFDs == SOCKET_ERROR || newSocket.fileDescriptor() > _maxFDs)
 					{
-						_maxFDs = newSocket.socket();
+						_maxFDs = newSocket.fileDescriptor();
 					}
 
 					EmiterID newId = _findValidID();
@@ -79,7 +79,7 @@ namespace spk::Network
 					for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
 					{
 						if (it->second.isConnected() == true && 
-							FD_ISSET(it->second.socket(), &socketToRead))
+							FD_ISSET(it->second.fileDescriptor(), &socketToRead))
 						{
 							Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
 							

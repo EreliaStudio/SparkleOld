@@ -65,8 +65,8 @@ namespace spk::Network
 	{
 		return (_isConnected);
 	}
-	
-    const SOCKET& Socket::socket() const
+
+    const Socket::FileDescriptor& Socket::fileDescriptor() const
 	{
 		return (_socket);
 	}

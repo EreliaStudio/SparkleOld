@@ -35,11 +35,13 @@ namespace spk::Network
             Timeout
 		};
 
+        using FileDescriptor = SOCKET;
+
 	private:
 		static inline u_long BLOCKING_SOCKET = 0; /**< Constant representing a blocking socket */
 		static inline u_long NON_BLOCKING_SOCKET = 1; /**< Constant representing a non-blocking socket */
 
-		SOCKET _socket = SOCKET(); /**< The socket file descriptor */
+		FileDescriptor _socket = SOCKET(); /**< The socket file descriptor */
 		bool _isConnected = false; /**< Boolean representing whether the socket is currently connected */
 
 		/**
@@ -74,7 +76,7 @@ namespace spk::Network
          */
 		bool isConnected();
 
-        const SOCKET& socket() const;
+        const SOCKET& fileDescriptor() const;
 
 		/**
          * @brief Sends a message over the socket.

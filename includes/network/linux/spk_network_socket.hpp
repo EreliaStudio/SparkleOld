@@ -34,6 +34,8 @@ namespace spk::Network
 			Closed
 		};
 
+        using FileDescriptor = int;
+
 	private:
 		int _socket = -1;  /**< The socket file descriptor */
 		bool _isConnected = false; /**< Indicates if the socket is currently connected */
@@ -64,6 +66,8 @@ namespace spk::Network
          * @return True if the socket is connected, false otherwise.
          */
 		bool isConnected();
+
+        const FileDescriptor& fileDescriptor() const;
 
         /**
          * @brief Sends a message over the socket.
