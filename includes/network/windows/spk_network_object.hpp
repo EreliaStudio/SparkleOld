@@ -96,8 +96,5 @@ namespace spk::Network
          * This destructor is responsible for releasing any resources the Object may hold.
          */
 		~Object();
-
-        static SOCKET& maxFD();
-        static fd_set& readingFDs();
 	};
 }

@@ -22,10 +22,6 @@ namespace spk::Network
         /**
          * @enum ReadResult
          * @brief Enum representing the result of a read operation.
-         *
-         * Success - The read operation was successful.
-         * NothingToRead - There was nothing to read from the socket.
-         * Closed - The socket was closed.
          */
 		enum class ReadResult
 		{
@@ -101,6 +97,9 @@ namespace spk::Network
          */
 		bool isConnected();
 
+        /**
+         * @brief Return the holded file descriptor from the socket.
+        */
         const SOCKET& fileDescriptor() const;
 
 		/**
