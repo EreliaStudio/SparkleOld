@@ -31,7 +31,7 @@ namespace spk::Network
 
 				if (activity == Socket::SocketError)
 				{
-					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(WSAGetLastError()) + L"]");
+					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(getLastSocketErrorValue()) + L"]");
 				}
 				else if (activity == 0)
 				{
