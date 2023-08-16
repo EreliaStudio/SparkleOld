@@ -21,4 +21,4 @@ GENERATE_XML = YES
 
 WARN_LOGFILE = doxygen_warnings.log
 
-EXCLUDE_PATTERNS = */windows/*
+EXCLUDE = playground/*
