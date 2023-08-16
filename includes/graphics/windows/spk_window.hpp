@@ -7,7 +7,6 @@
 namespace spk
 {
 	/**
-	 * @class Window
 	 * @brief Singleton class for window.
 	 *
 	 * Represents the window of the application, providing functionality to modify its geometry, render content, and clear its content.
