@@ -31,7 +31,7 @@ namespace spk::Network
 		};
 
         using FileDescriptor = SOCKET; /**< A definition for socket's file descriptor*/
-        static const FileDescriptor SocketError = SOCKET_ERROR;
+        static const FileDescriptor SocketError = SOCKET_ERROR; /**< A value indicating that the socket is in error state*/
 
 	private:
 		static inline u_long BLOCKING_SOCKET = 0; /**< Constant representing a blocking socket */
