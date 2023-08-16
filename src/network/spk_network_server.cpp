@@ -28,11 +28,20 @@ namespace spk::Network
 
 	Server::Server() : _socketContextWorker(L"Server Socket")
 	{
+		FD_ZERO(&_readingFDs);
+		
 		_socketListeningContract = _socketContextWorker.addJob(L"Accepting new connection", [&]()
 			{
 				Socket newSocket;
 				if (_Acceptor.accept(newSocket) == true)
 				{
+					FD_SET(newSocket.socket(), &_readingFDs);
+					
+					if (_maxFDs == SOCKET_ERROR || newSocket.socket() > _maxFDs)
+					{
+						_maxFDs = newSocket.socket();
+					}
+
 					EmiterID newId = _findValidID();
 					_clients[newId] = std::move(newSocket);
 					if (_onNewConnectionCallback != nullptr)
@@ -44,16 +53,16 @@ namespace spk::Network
 
 		_readingIncomingMessageContract = _socketContextWorker.addJob(L"Reading incoming message", [&]()
 			{
-				if (spk::Network::Object::maxFD() == -1)
+				if (_maxFDs == -1)
 					return ;
 				
 				struct timeval timeout;
 				timeout.tv_sec = 1;
 				timeout.tv_usec = 0;
 
-				fd_set socketToRead = spk::Network::Object::readingFDs();
+				fd_set socketToRead = _readingFDs;
 
-				int activity = ::select(spk::Network::Object::maxFD() + 1, &socketToRead, nullptr, nullptr, &timeout);
+				int activity = ::select(_maxFDs + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == SOCKET_ERROR)
 				{

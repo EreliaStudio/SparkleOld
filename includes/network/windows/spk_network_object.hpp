@@ -19,9 +19,6 @@ namespace spk::Network
 		static inline size_t _nbElement = 0; /**< Counter for the number of Object instances */
 		static inline WSADATA _wsaData; /**< Windows Sockets API data */
 
-        static inline SOCKET _maxFDs = SOCKET_ERROR;
-        static inline fd_set _readingFDs;
-
 		/**
          * @brief Initializes Windows Sockets API (WinSock) data.
          *

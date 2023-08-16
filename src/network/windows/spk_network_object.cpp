@@ -9,7 +9,6 @@ namespace spk::Network
 
 		int initializationResult;
 
-		FD_ZERO(&_readingFDs);
 		initializationResult = WSAStartup(MAKEWORD(2, 2), &_wsaData);
 		if (initializationResult != 0)
 		{
@@ -75,15 +74,5 @@ namespace spk::Network
 	Object::~Object()
 	{
 		_decrementCount();
-	}
-    
-	SOCKET& Object::maxFD()
-	{
-		return (_maxFDs);
-	}
-
-    fd_set& Object::readingFDs()
-	{
-		return (_readingFDs);
 	}
 }

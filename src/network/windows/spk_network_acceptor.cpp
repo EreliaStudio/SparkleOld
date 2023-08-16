@@ -75,12 +75,6 @@ namespace spk::Network
 			}
 		}
 
-		FD_SET(newConnectionSocket, &(spk::Network::Object::readingFDs()));
-		
-		if (spk::Network::Object::maxFD() == SOCKET_ERROR || newConnectionSocket > spk::Network::Object::maxFD()) {
-			spk::Network::Object::maxFD() = newConnectionSocket;
-		}
-
 		p_socket.connect(newConnectionSocket);
 		return (true);
 	}

@@ -31,7 +31,7 @@ void EmiterWidget::_onRender()
 
 bool EmiterWidget::_onUpdate()
 {
-	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Down)
+	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Pressed)
 	{
 		static int nbMessage = 0;
 		spk::cout << "Sending message : " << nbMessage << std::endl;
@@ -70,6 +70,12 @@ void EmiterWidget::setServer(spk::Network::Server* p_server)
 		p_msg >> messageString;
 
 		spk::cout << "Message received :" << messageString << std::endl;
+
+		spk::Network::Message awnser(10);
+		awnser << messageString.size();
+		awnser << spk::Vector2Int(10, 15);
+
+		_server->sendTo(p_emiterID, awnser);
 	});
 }
 

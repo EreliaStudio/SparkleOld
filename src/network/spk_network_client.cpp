@@ -19,16 +19,15 @@ namespace spk::Network
 	{
 		_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&]()
 			{
-				if (spk::Network::Object::maxFD() == -1)
-					return ;
-				
 				struct timeval timeout;
 				timeout.tv_sec = 1;
 				timeout.tv_usec = 0;
 
-				fd_set socketToRead = spk::Network::Object::readingFDs();
+				fd_set socketToRead;
+				FD_ZERO(&socketToRead);
+				FD_SET(_socket.socket(), &socketToRead);
 
-				int activity = ::select(spk::Network::Object::maxFD() + 1, &socketToRead, nullptr, nullptr, &timeout);
+				int activity = ::select(_socket.socket() + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == SOCKET_ERROR)
 				{
