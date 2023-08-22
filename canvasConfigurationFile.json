@@ -3,7 +3,7 @@
 		"Name":"CanvasA",
 		"GridSize":{
 			"X":100,
-			"Y":40
+			"Y":100
 		}
 	},
 	"Content":{
@@ -17,17 +17,32 @@
 			},
 			"Size":{
 				"Type":"Cell",
-				"X":2.0,
-				"Y":2.0
+				"X":20.0,
+				"Y":20.0
 			}
 		},
 		"widgetInstanceB":{
 			"Type":"RegisterName",
-			"Parent":"widgetInstanceA"
+			"Parent":"widgetInstanceA",
+			"Size":{
+				"Type":"Ratio",
+				"X":1.0,
+				"Y":1.0
+			}
 		},
 		"widgetInstanceC":{
 			"Type":"AnotherRegisterName",
-			"Parent":"widgetInstanceA"
+			"Parent":"widgetInstanceA",
+			"Anchor":{
+				"Type":"Formula",
+				"X":"10 + 15 * 3 + ParentX / 10",
+				"Y":"1.0"
+			},
+			"Size":{
+				"Type":"Ratio",
+				"X":1.0,
+				"Y":1.0
+			}
 		}
 	}
 }

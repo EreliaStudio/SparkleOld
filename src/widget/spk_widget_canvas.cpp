@@ -17,7 +17,7 @@ namespace spk::Widget
 				result = p_value.value * size();
 				break;
 			case Geometry::Value::Type::Cell:
-				result = p_value.value * size() / _gridSize;
+				result = p_value.value * (size() / _gridSize);
 				break;
 			case Geometry::Value::Type::Formula:
 				result = _calcFormula(p_target, p_value.formulaValue);
@@ -38,7 +38,6 @@ namespace spk::Widget
 			spk::Vector2Int targetAnchor = _calcValue(target, value.anchor);
 			spk::Vector2Int targetSize = _calcValue(target, value.size);
 
-			spk::cout << L"Widget [" << target->name() << L"] -> anchor [" << targetAnchor << L"] / size [" << targetSize << L"]" << std::endl;
 			target->setGeometry(targetAnchor, targetSize);
 		}
 	}
