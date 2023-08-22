@@ -12,6 +12,7 @@
 #include "application/modules/spk_profiler_module.hpp"
 #include "design_pattern/spk_observer.hpp"
 #include "design_pattern/spk_singleton.hpp"
+#include "widget/spk_widget_canvas.hpp"
 
 namespace spk
 {
@@ -96,6 +97,13 @@ namespace spk
 		 */
 		~Application();
 
+		/**
+		 * @brief Load a new canvas into the application.
+		 * @param p_configurationFilePath The path to the canvas configuration file.
+		 * @return The newly created canvas widget.
+		*/
+		spk::Widget::Canvas* addCanvas(const std::filesystem::path& p_configurationFilePath);
+		
 		/**
 		 * @brief Add a new widget inside the application, with the central widget as parent.
 		 *

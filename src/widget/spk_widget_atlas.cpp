@@ -41,6 +41,19 @@ namespace spk::Widget
 			_widgets.insert(insertion_point, p_widget);
 		}
 	}
+	
+	Interface* Atlas::get(const std::wstring& p_widgetName)
+	{
+		auto tmp = std::find_if(_widgets.begin(), _widgets.end(), [&p_widgetName](Interface* widget) {
+			return (widget->name() == p_widgetName);
+		});
+
+		if (tmp != _widgets.end())
+		{
+			return *tmp;
+		}
+		return nullptr;
+	}
 
 	const Atlas::StoringContainer& Atlas::widgets() const
 	{
@@ -49,9 +62,9 @@ namespace spk::Widget
 
 	void Atlas::resize(const spk::Vector2& p_resizeRatio)
 	{
-		for (size_t i = 0; i < _widgets.size(); i++)
+		for (auto it = _widgets.rbegin(); it != _widgets.rend(); ++it)
 		{
-			_widgets[i]->setGeometry(_widgets[i]->anchor() * p_resizeRatio, _widgets[i]->size() * p_resizeRatio);
+			(*it)->setGeometry((*it)->anchor() * p_resizeRatio, (*it)->size() * p_resizeRatio);
 		}
 	}
 }

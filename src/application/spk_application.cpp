@@ -67,6 +67,15 @@ namespace spk
 
 		delete _widgetModule;
 	}
+	
+	spk::Widget::Canvas* Application::addCanvas(const std::filesystem::path& p_configurationFilePath)
+	{
+		spk::Widget::Canvas* result = new spk::Widget::Canvas(p_configurationFilePath);
+
+		result->setGeometry(spk::Vector2Int(0, 0), size());
+
+		return (result);
+	}
 
 	void Application::resize(const spk::Vector2Int &p_size)
 	{

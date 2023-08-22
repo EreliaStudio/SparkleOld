@@ -43,6 +43,13 @@ namespace spk
 			void save(const std::filesystem::path& p_filePath) const;
 
 			/**
+			 * @brief Check if the object contains an attribute named p_key 
+			 * @param p_key The key to access the JSON object or value.
+			 * @return True if the key is contained inside the object. False otherwise.
+			 */
+			bool contains(const std::wstring& p_key) const;
+
+			/**
 			 * @brief Accesses the JSON object value with the specified key.
 			 * @param p_key The key to access the JSON object value.
 			 * @return The JSON object value with the specified key.

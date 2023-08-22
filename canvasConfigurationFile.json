@@ -1,0 +1,33 @@
+{
+	"Configuration":{
+		"Name":"CanvasA",
+		"GridSize":{
+			"X":100,
+			"Y":40
+		}
+	},
+	"Content":{
+		"widgetInstanceA":{
+			"Type":"RegisterName",
+			"Parent":null,
+			"Anchor":{
+				"Type":"FixedValue",
+				"X":10,
+				"Y":10
+			},
+			"Size":{
+				"Type":"Cell",
+				"X":2.0,
+				"Y":2.0
+			}
+		},
+		"widgetInstanceB":{
+			"Type":"RegisterName",
+			"Parent":"widgetInstanceA"
+		},
+		"widgetInstanceC":{
+			"Type":"AnotherRegisterName",
+			"Parent":"widgetInstanceA"
+		}
+	}
+}

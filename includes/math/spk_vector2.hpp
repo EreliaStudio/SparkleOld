@@ -60,7 +60,7 @@ namespace spk
 		 * @param p_other The other IVector3 object.
 		 */
 		template <typename TOtherType>
-		IVector2(const IVector2<TOtherType> &p_other) : x(p_other.x), y(p_other.y) {}
+		IVector2(const IVector2<TOtherType> &p_other) : x(static_cast<TType>(p_other.x)), y(static_cast<TType>(p_other.y)) {}
 
 		/**
 		 * @brief Construct a new IVector3 object from a JSON::Object
@@ -74,13 +74,13 @@ namespace spk
 		{
 			if constexpr (std::is_floating_point<TType>::value)
 			{
-				x = p_object[L"x"].as<double>();
-				y = p_object[L"y"].as<double>();
+				x = static_cast<TType>(p_object[L"X"].as<double>());
+				y = static_cast<TType>(p_object[L"Y"].as<double>());
 			}
 			else
 			{
-				x = p_object[L"x"].as<long>();
-				y = p_object[L"y"].as<long>();
+				x = static_cast<TType>(p_object[L"X"].as<long>());
+				y = static_cast<TType>(p_object[L"Y"].as<long>());
 			}
 		}
 

@@ -56,6 +56,26 @@ namespace spk::Widget
 		});
 	}
 
+	Interface::Interface(const std::wstring& p_name, const spk::JSON::Object& p_inputObject) :
+		Interface(p_name)
+	{
+		if (p_inputObject.contains(L"Parent") == true && p_inputObject[L"Parent"].hold<std::wstring>() == true)
+		{
+			std::wstring parentName = p_inputObject[L"Parent"].as<std::wstring>();
+			Interface* parentWidget = spk::Widget::Atlas::instance()->get(parentName);
+			if (parentWidget == nullptr)
+			{
+				spk::throwException(L"Widget [" + p_name + L"] : Parent [" + parentName + L"] does not exist");
+			}
+			setParent(parentWidget);
+		}
+		if (p_inputObject.contains(L"Activation") == true)
+		{
+			bool activationState = p_inputObject[L"Activation"].as<bool>();
+			setState(activationState);
+		}
+	}
+
 	Interface::~Interface()
 	{
 		for (auto child : childrens())
@@ -63,6 +83,20 @@ namespace spk::Widget
 			delete child;
 		}	
 		Atlas::instance()->remove(this);
+	}
+
+	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
+	{
+		_anchor = p_anchor;
+		
+		_geometryEdited = true;
+	}
+
+	void Interface::setSize(const spk::Vector2Int& p_size)
+	{
+		_size = p_size;
+		
+		_geometryEdited = true;
 	}
 
 	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)

@@ -4,6 +4,7 @@
 #include "design_pattern/spk_activable_object.hpp"
 #include "math/spk_vector2.hpp"
 #include "application/modules/spk_widget_module.hpp"
+
 namespace spk::Widget
 {
 	class Atlas;
@@ -52,6 +53,13 @@ namespace spk::Widget
 		Interface(const std::wstring& p_name);
 
 		/**
+		 * @brief Construct a new Interface object with a specified name and input data.
+		 * @param p_name The name of the widget.
+		 * @param p_inputObject The JSON object provided to construct this Interface.
+		 */
+		Interface(const std::wstring& p_name, const spk::JSON::Object& p_inputObject);
+
+		/**
 		 * @brief Destroy the Interface object.
 		 */
 		virtual ~Interface();
@@ -73,6 +81,18 @@ namespace spk::Widget
 
 			return (result);
 		}
+
+		/**
+		 * @brief Set the anchor of the widget.
+		 * @param p_anchor The anchor position of the widget.
+		 */
+		void setAnchor(const spk::Vector2Int& p_anchor);
+
+		/**
+		 * @brief Set the size of the widget.
+		 * @param p_size The size of the widget.
+		 */
+		void setSize(const spk::Vector2Int& p_size);
 
 		/**
 		 * @brief Set the geometry of the widget.

@@ -5,6 +5,28 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "widget/spk_widget_interface.hpp"
 
+#define BASE_CONCATENATION_MACRO(x, y, z) x ## y ## z
+#define CONCATENATION_MACRO(x, y, z) BASE_CONCATENATION_MACRO(x, y, z)
+
+#define registerClass(RegName, ClassName)                      \
+    struct CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar   \
+    {                                                                    \
+        CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()    \
+        {                                                                \
+            spk::Widget::Atlas::classInstanciatorLambda[RegName] =      \
+                [](const std::wstring &name,                             \
+                   const spk::JSON::Object &obj) -> spk::Widget::Interface* \
+                {                                                        \
+                    return new ClassName(name, obj);                     \
+                };                                                       \
+        }                                                                \
+    };                                                                   \
+    static inline CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar \
+            CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Instance = CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()
+
+
+
+
 namespace spk::Widget
 {
 	/**
@@ -22,7 +44,12 @@ namespace spk::Widget
 	{
 		friend class spk::Singleton<Atlas>;
 
+	public:
+		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
+		static inline std::map<std::wstring, Instanciator> classInstanciatorLambda;
+
 	private:
+
 		/**
 		 * @brief A type definition for the container storing widgets.
 		 */
@@ -58,6 +85,13 @@ namespace spk::Widget
 		 * @param p_widget A pointer to the widget that provides the sorting criterion.
 		 */
 		void sort(Interface* p_widget);
+
+		/**
+		 * @brief Get the desired widget.
+		 * @param p_widgetName The target widget's name.
+		 * @return Return a pointer to the desired widget if it exist, nullptr otherwise.
+		*/
+		Interface* get(const std::wstring& p_widgetName);
 
 		/**
 		 * @brief Returns a constant reference to the collection of widgets.
