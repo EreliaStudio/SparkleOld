@@ -44,9 +44,13 @@ namespace spk::Widget
 		friend class spk::Singleton<Atlas>;
 
 	public:
-		// Type alias for the lambda function used to create instances of widget classes
+		/**
+		 * @brief Type alias for the lambda function used to create instances of widget classes.
+		 */
 		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
-		// Static map to associate widget class names with instantiation lambdas
+		/**
+		 * @brief Static map to associate widget class names with instantiation lambdas.
+		 */
 		static inline std::map<std::wstring, Instanciator> classInstanciatorLambda;
 
 	private:
