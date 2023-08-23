@@ -5,27 +5,26 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "widget/spk_widget_interface.hpp"
 
+// Macros to concatenate tokens and create unique class names for the registrar
 #define BASE_CONCATENATION_MACRO(x, y, z) x ## y ## z
 #define CONCATENATION_MACRO(x, y, z) BASE_CONCATENATION_MACRO(x, y, z)
 
-#define registerClass(RegName, ClassName)                      \
+// Macro to register a widget class by associating a creation lambda with a registration name
+#define registerClass(RegName, ClassName)                                \
     struct CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar   \
     {                                                                    \
         CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()    \
         {                                                                \
-            spk::Widget::Atlas::classInstanciatorLambda[RegName] =      \
+            spk::Widget::Atlas::classInstanciatorLambda[RegName] =       \
                 [](const std::wstring &name,                             \
                    const spk::JSON::Object &obj) -> spk::Widget::Interface* \
                 {                                                        \
-                    return new ClassName(name, obj);                     \
+                    return new ClassName(name, obj);                      \
                 };                                                       \
         }                                                                \
     };                                                                   \
     static inline CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar \
             CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Instance = CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()
-
-
-
 
 namespace spk::Widget
 {
@@ -45,7 +44,9 @@ namespace spk::Widget
 		friend class spk::Singleton<Atlas>;
 
 	public:
+		// Type alias for the lambda function used to create instances of widget classes
 		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
+		// Static map to associate widget class names with instantiation lambdas
 		static inline std::map<std::wstring, Instanciator> classInstanciatorLambda;
 
 	private:
