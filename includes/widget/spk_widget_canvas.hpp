@@ -38,6 +38,8 @@ namespace spk::Widget
 			Geometry(const spk::JSON::Object& p_object);
 		};
 
+		static inline Canvas* _activeCanvas = nullptr;
+
 		spk::Vector2Int _gridSize;
 		std::map<Interface*, Geometry> _widgetGeometries;
 

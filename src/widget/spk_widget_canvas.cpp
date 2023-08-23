@@ -135,6 +135,13 @@ namespace spk::Widget
 	Canvas::Canvas(const std::filesystem::path& p_canvasFilePath) : 
 		spk::Widget::Interface(L"FixedValueName")
 	{
+		addActivationCallback([&](){
+			if (_activeCanvas != nullptr)
+			{
+				_activeCanvas->deactivate();
+			}
+			_activeCanvas = this;
+		});
 		spk::JSON::File file = spk::JSON::File(p_canvasFilePath);
 
 		if (file.contains(L"Configuration") == false)
