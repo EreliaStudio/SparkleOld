@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_1115',['Unit',['../classspk_1_1JSON_1_1Object.html#a3c309e7bde9def6b14f8ea1eeb17b9a9',1,'spk::JSON::Object']]]
+  ['type_1145',['Type',['../classspk_1_1Network_1_1Message_1_1Header.html#a408f89e206701e7ece5d13444bcce3da',1,'spk::Network::Message::Header::Type()'],['../classspk_1_1Network_1_1Message.html#af80fa1c065c83d58336d3d86be659171',1,'spk::Network::Message::Type()']]]
 ];

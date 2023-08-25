@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['socketerror_1095',['SocketError',['../classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685',1,'spk::Network::Socket']]]
+  ['permutationtablesize_1121',['PermutationTableSize',['../classspk_1_1IPerlin.html#a508c2b883fcb9b05b749247a34a05cf9',1,'spk::IPerlin']]]
 ];

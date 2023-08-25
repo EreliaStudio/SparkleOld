@@ -95,6 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad080a2de01ae0eb62145778bb96432d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1File.html#ad080a2de01ae0eb62145778bb96432d6">save</a> (const std::filesystem::path &amp;p_filePath) const</td></tr>
 <tr class="memdesc:ad080a2de01ae0eb62145778bb96432d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the JSON file to the specified path.  <a href="classspk_1_1JSON_1_1File.html#ad080a2de01ae0eb62145778bb96432d6">More...</a><br /></td></tr>
 <tr class="separator:ad080a2de01ae0eb62145778bb96432d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62963fd5a5bfd08fef52969d744bea18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1File.html#a62963fd5a5bfd08fef52969d744bea18">contains</a> (const std::wstring &amp;p_key) const</td></tr>
+<tr class="memdesc:a62963fd5a5bfd08fef52969d744bea18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the object contains an attribute named p_key.  <a href="classspk_1_1JSON_1_1File.html#a62963fd5a5bfd08fef52969d744bea18">More...</a><br /></td></tr>
+<tr class="separator:a62963fd5a5bfd08fef52969d744bea18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd10b49b958b47f2ec344c3045662bc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1JSON_1_1File.html#a2fd10b49b958b47f2ec344c3045662bc">operator[]</a> (const std::wstring &amp;p_key) const</td></tr>
 <tr class="memdesc:a2fd10b49b958b47f2ec344c3045662bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the JSON object value with the specified key.  <a href="classspk_1_1JSON_1_1File.html#a2fd10b49b958b47f2ec344c3045662bc">More...</a><br /></td></tr>
 <tr class="separator:a2fd10b49b958b47f2ec344c3045662bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +181,33 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The root JSON object as the specified type. </dd></dl>
+
+</div>
+</div>
+<a id="a62963fd5a5bfd08fef52969d744bea18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62963fd5a5bfd08fef52969d744bea18">&#9670;&nbsp;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool spk::JSON::File::contains </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the object contains an attribute named p_key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The key to access the JSON object or value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the key is contained inside the object. False otherwise. </dd></dl>
 
 </div>
 </div>

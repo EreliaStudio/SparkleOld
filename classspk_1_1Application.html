@@ -115,6 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcd265ffb90968e0e1351bd2ca899f11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">~Application</a> ()</td></tr>
 <tr class="memdesc:abcd265ffb90968e0e1351bd2ca899f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classspk_1_1Application.html" title="Main class for managing application.">Application</a> object.  <a href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">More...</a><br /></td></tr>
 <tr class="separator:abcd265ffb90968e0e1351bd2ca899f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f42a5c1fe2aa6d02183f22d14df419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a97f42a5c1fe2aa6d02183f22d14df419">addCanvas</a> (const std::filesystem::path &amp;p_configurationFilePath)</td></tr>
+<tr class="memdesc:a97f42a5c1fe2aa6d02183f22d14df419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a new canvas into the application.  <a href="classspk_1_1Application.html#a97f42a5c1fe2aa6d02183f22d14df419">More...</a><br /></td></tr>
+<tr class="separator:a97f42a5c1fe2aa6d02183f22d14df419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b429ea88aa340b70d775deb1fb9623c"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
 <tr class="memitem:a7b429ea88aa340b70d775deb1fb9623c"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">addRootWidget</a> (Args &amp;&amp;... p_args)</td></tr>
 <tr class="memdesc:a7b429ea88aa340b70d775deb1fb9623c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new widget inside the application, with the central widget as parent.  <a href="classspk_1_1Application.html#a7b429ea88aa340b70d775deb1fb9623c">More...</a><br /></td></tr>
@@ -279,6 +282,33 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a97f42a5c1fe2aa6d02183f22d14df419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f42a5c1fe2aa6d02183f22d14df419">&#9670;&nbsp;</a></span>addCanvas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a> * spk::Application::addCanvas </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>p_configurationFilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load a new canvas into the application. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_configurationFilePath</td><td>The path to the canvas configuration file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The newly created canvas widget. </dd></dl>
 
 </div>
 </div>

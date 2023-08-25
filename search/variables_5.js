@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nb_5fbutton_1091',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]],
-  ['normal_1092',['normal',['../structspk_1_1Mesh_1_1Face_1_1Point.html#aa29f33a0592bc42a0cf29eada0f7fae4',1,'spk::Mesh::Face::Point']]]
+  ['initactivityscheduler_1115',['initActivityScheduler',['../structspk_1_1Application_1_1Configuration.html#a464e9c39b15b4d698580fd5eb9b3b6cb',1,'spk::Application::Configuration']]],
+  ['initinputgroupmanager_1116',['initInputGroupManager',['../structspk_1_1Application_1_1Configuration.html#a3eb92b67f15c397cefd78c15f850103a',1,'spk::Application::Configuration']]]
 ];

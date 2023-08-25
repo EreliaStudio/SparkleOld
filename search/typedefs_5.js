@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['snapshot_1113',['Snapshot',['../classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b',1,'spk::Memento']]]
+  ['parent_1142',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]],
+  ['permutationtable_1143',['PermutationTable',['../classspk_1_1IPerlin.html#a8a8795af4d4794840f59df17b3dbf9ea',1,'spk::IPerlin']]]
 ];

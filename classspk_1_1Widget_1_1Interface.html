@@ -84,13 +84,14 @@ Inheritance diagram for spk::Widget::Interface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Widget_1_1Interface__inherit__graph.png" border="0" usemap="#aspk_1_1Widget_1_1Interface_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1Widget_1_1Interface_inherit__map" id="aspk_1_1Widget_1_1Interface_inherit__map">
-<area shape="rect" title="Abstract base class for widgets." alt="" coords="619,187,784,214"/>
+<area shape="rect" title="Abstract base class for widgets." alt="" coords="619,162,784,189"/>
+<area shape="rect" href="classspk_1_1Widget_1_1Canvas.html" title="Represents a canvas that holds and manages widgets." alt="" coords="852,111,1007,138"/>
 <area shape="rect" href="classspk_1_1Widget_1_1NoGraphics.html" title="Class for widgets without graphics." alt="" coords="838,162,1021,189"/>
 <area shape="rect" href="classspk_1_1Widget_1_1OnlyGraphics.html" title="Class for widgets with only graphics." alt="" coords="832,213,1027,239"/>
-<area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="412,151,571,192"/>
-<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,217,569,243"/>
-<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="216,209,364,251"/>
-<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,217,168,243"/>
+<area shape="rect" href="classspk_1_1InherenceObject.html" title=" " alt="" coords="412,125,571,167"/>
+<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,191,569,218"/>
+<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="216,184,364,225"/>
+<area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,191,168,218"/>
 <area shape="rect" href="classspk_1_1Widget_1_1ActivitySchedulerManager.html" title="Class for managing scheduling of activities." alt="" coords="1089,5,1310,47"/>
 <area shape="rect" href="classspk_1_1Widget_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::Network::CentralNode." alt="" coords="1105,71,1293,112"/>
 <area shape="rect" href="classspk_1_1Widget_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphics." alt="" coords="1098,137,1301,163"/>
@@ -117,6 +118,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e52c04b8a69ff177451ac4634b1dabb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a7e52c04b8a69ff177451ac4634b1dabb">Interface</a> (const std::wstring &amp;p_name)</td></tr>
 <tr class="memdesc:a7e52c04b8a69ff177451ac4634b1dabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with a specified name.  <a href="classspk_1_1Widget_1_1Interface.html#a7e52c04b8a69ff177451ac4634b1dabb">More...</a><br /></td></tr>
 <tr class="separator:a7e52c04b8a69ff177451ac4634b1dabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d439541c46cc1f5c3dd7d0725ff1d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a70d439541c46cc1f5c3dd7d0725ff1d7">Interface</a> (const std::wstring &amp;p_name, const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;p_inputObject)</td></tr>
+<tr class="memdesc:a70d439541c46cc1f5c3dd7d0725ff1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with a specified name and input data.  <a href="classspk_1_1Widget_1_1Interface.html#a70d439541c46cc1f5c3dd7d0725ff1d7">More...</a><br /></td></tr>
+<tr class="separator:a70d439541c46cc1f5c3dd7d0725ff1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce8149c7413234b6779a6a2759d0fd2"><td class="memItemLeft" align="right" valign="top"><a id="afce8149c7413234b6779a6a2759d0fd2"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#afce8149c7413234b6779a6a2759d0fd2">~Interface</a> ()</td></tr>
 <tr class="memdesc:afce8149c7413234b6779a6a2759d0fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object. <br /></td></tr>
@@ -125,6 +129,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:af82db056ab2bc738fd7869401bebab4a"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#af82db056ab2bc738fd7869401bebab4a">addChildrenWidget</a> (Args &amp;&amp;... p_args)</td></tr>
 <tr class="memdesc:af82db056ab2bc738fd7869401bebab4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a children widget to this widget.  <a href="classspk_1_1Widget_1_1Interface.html#af82db056ab2bc738fd7869401bebab4a">More...</a><br /></td></tr>
 <tr class="separator:af82db056ab2bc738fd7869401bebab4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a3d8e966fdd3524da0ddfea46ed6d5a78">setAnchor</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memdesc:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the anchor of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a3d8e966fdd3524da0ddfea46ed6d5a78">More...</a><br /></td></tr>
+<tr class="separator:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2061ee6232b744be37f0ebe7a71b24a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2061ee6232b744be37f0ebe7a71b24a7">setSize</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
+<tr class="memdesc:a2061ee6232b744be37f0ebe7a71b24a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2061ee6232b744be37f0ebe7a71b24a7">More...</a><br /></td></tr>
+<tr class="separator:a2061ee6232b744be37f0ebe7a71b24a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4fda90f85ec330206a64286fc6bd71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2e4fda90f85ec330206a64286fc6bd71">setGeometry</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor, const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
 <tr class="memdesc:a2e4fda90f85ec330206a64286fc6bd71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the geometry of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2e4fda90f85ec330206a64286fc6bd71">More...</a><br /></td></tr>
 <tr class="separator:a2e4fda90f85ec330206a64286fc6bd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,7 +276,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <p>This class defines the interface and common functionality for widgets. It inherits from <a class="el" href="classspk_1_1InherenceObject.html" title="InherenceObject class template.">InherenceObject</a> and <a class="el" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj...">ActivableObject</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e52c04b8a69ff177451ac4634b1dabb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e52c04b8a69ff177451ac4634b1dabb">&#9670;&nbsp;</a></span>Interface()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e52c04b8a69ff177451ac4634b1dabb">&#9670;&nbsp;</a></span>Interface() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,6 +295,43 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_name</td><td>The name of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a70d439541c46cc1f5c3dd7d0725ff1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d439541c46cc1f5c3dd7d0725ff1d7">&#9670;&nbsp;</a></span>Interface() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">spk::Widget::Interface::Interface </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1JSON_1_1Object.html">spk::JSON::Object</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_inputObject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object with a specified name and input data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_name</td><td>The name of the widget. </td></tr>
+    <tr><td class="paramname">p_inputObject</td><td>The JSON object provided to construct this <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -551,6 +598,32 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
+<a id="a3d8e966fdd3524da0ddfea46ed6d5a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8e966fdd3524da0ddfea46ed6d5a78">&#9670;&nbsp;</a></span>setAnchor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Widget::Interface::setAnchor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_anchor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the anchor of the widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_anchor</td><td>The anchor position of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a32ec88cd733b646b68c7fdff508d0e1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a32ec88cd733b646b68c7fdff508d0e1f">&#9670;&nbsp;</a></span>setDepth()</h2>
 
@@ -607,6 +680,32 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_anchor</td><td>The anchor position of the widget. </td></tr>
+    <tr><td class="paramname">p_size</td><td>The size of the widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2061ee6232b744be37f0ebe7a71b24a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2061ee6232b744be37f0ebe7a71b24a7">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Widget::Interface::setSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the size of the widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">p_size</td><td>The size of the widget. </td></tr>
   </table>
   </dd>

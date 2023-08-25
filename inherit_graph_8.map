@@ -1,24 +1,25 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,263,168,290"/>
-<area shape="rect" id="node2" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="235,121,383,163"/>
-<area shape="rect" id="node13" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="219,187,399,214"/>
-<area shape="rect" id="node15" href="$classspk_1_1Observer.html" title="Observer class template." alt="" coords="216,238,403,265"/>
-<area shape="rect" id="node16" href="$classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="228,70,391,97"/>
-<area shape="rect" id="node17" href="$classspk_1_1Promise.html" title="Class for providing a promise with a value." alt="" coords="222,289,397,315"/>
-<area shape="rect" id="node18" href="$classspk_1_1StateMachine.html" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="233,340,386,381"/>
-<area shape="rect" id="node19" href="$classspk_1_1StatedObject.html" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="235,405,383,447"/>
-<area shape="rect" id="node20" href="$classspk_1_1Value.html" title="A class template for managing a value with default and custom states." alt="" coords="231,471,388,498"/>
-<area shape="rect" id="node3" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="452,130,608,157"/>
-<area shape="rect" id="node4" href="$classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="657,187,823,214"/>
-<area shape="rect" id="node5" href="$classspk_1_1Widget_1_1NoGraphics.html" title="Class for widgets without graphics." alt="" coords="877,162,1059,189"/>
-<area shape="rect" id="node12" href="$classspk_1_1Widget_1_1OnlyGraphics.html" title="Class for widgets with only graphics." alt="" coords="871,213,1065,239"/>
-<area shape="rect" id="node6" href="$classspk_1_1Widget_1_1ActivitySchedulerManager.html" title="Class for managing scheduling of activities." alt="" coords="1127,5,1349,47"/>
-<area shape="rect" id="node7" href="$classspk_1_1Widget_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::Network::CentralNode." alt="" coords="1144,71,1332,112"/>
-<area shape="rect" id="node8" href="$classspk_1_1Widget_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphics." alt="" coords="1137,137,1339,163"/>
-<area shape="rect" id="node9" href="$classspk_1_1Widget_1_1InputGroupManager.html" title="Manager class for grouping inputs." alt="" coords="1120,187,1356,214"/>
-<area shape="rect" id="node10" href="$classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1113,238,1363,265"/>
-<area shape="rect" id="node11" href="$classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1135,289,1341,315"/>
-<area shape="rect" id="node14" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="467,185,593,211"/>
-<area shape="rect" id="node21" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="451,236,609,277"/>
-<area shape="rect" id="node22" href="$classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="37,70,136,97"/>
+<area shape="rect" id="node1" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,238,168,265"/>
+<area shape="rect" id="node2" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="235,96,383,137"/>
+<area shape="rect" id="node14" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="219,162,399,189"/>
+<area shape="rect" id="node16" href="$classspk_1_1Observer.html" title="Observer class template." alt="" coords="216,213,403,239"/>
+<area shape="rect" id="node17" href="$classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="228,45,391,71"/>
+<area shape="rect" id="node18" href="$classspk_1_1Promise.html" title="Class for providing a promise with a value." alt="" coords="222,263,397,290"/>
+<area shape="rect" id="node19" href="$classspk_1_1StateMachine.html" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="233,315,386,356"/>
+<area shape="rect" id="node20" href="$classspk_1_1StatedObject.html" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="235,380,383,421"/>
+<area shape="rect" id="node21" href="$classspk_1_1Value.html" title="A class template for managing a value with default and custom states." alt="" coords="231,446,388,473"/>
+<area shape="rect" id="node3" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="452,105,608,131"/>
+<area shape="rect" id="node4" href="$classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="657,162,823,189"/>
+<area shape="rect" id="node5" href="$classspk_1_1Widget_1_1Canvas.html" title="Represents a canvas that holds and manages widgets." alt="" coords="891,111,1045,138"/>
+<area shape="rect" id="node6" href="$classspk_1_1Widget_1_1NoGraphics.html" title="Class for widgets without graphics." alt="" coords="877,162,1059,189"/>
+<area shape="rect" id="node13" href="$classspk_1_1Widget_1_1OnlyGraphics.html" title="Class for widgets with only graphics." alt="" coords="871,213,1065,239"/>
+<area shape="rect" id="node7" href="$classspk_1_1Widget_1_1ActivitySchedulerManager.html" title="Class for managing scheduling of activities." alt="" coords="1127,5,1349,47"/>
+<area shape="rect" id="node8" href="$classspk_1_1Widget_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::Network::CentralNode." alt="" coords="1144,71,1332,112"/>
+<area shape="rect" id="node9" href="$classspk_1_1Widget_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphics." alt="" coords="1137,137,1339,163"/>
+<area shape="rect" id="node10" href="$classspk_1_1Widget_1_1InputGroupManager.html" title="Manager class for grouping inputs." alt="" coords="1120,187,1356,214"/>
+<area shape="rect" id="node11" href="$classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1113,238,1363,265"/>
+<area shape="rect" id="node12" href="$classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1135,289,1341,315"/>
+<area shape="rect" id="node15" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="467,159,593,186"/>
+<area shape="rect" id="node22" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="451,211,609,252"/>
+<area shape="rect" id="node23" href="$classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="37,45,136,71"/>
 </map>

@@ -109,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c1603633d32048d3bcf7e2f50a6b1ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a8c1603633d32048d3bcf7e2f50a6b1ab">sort</a> (<a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> *p_widget)</td></tr>
 <tr class="memdesc:a8c1603633d32048d3bcf7e2f50a6b1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the widgets in the collection based on some criterion.  <a href="classspk_1_1Widget_1_1Atlas.html#a8c1603633d32048d3bcf7e2f50a6b1ab">More...</a><br /></td></tr>
 <tr class="separator:a8c1603633d32048d3bcf7e2f50a6b1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a8df123f7b12994c46dd3ee95006f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">get</a> (const std::wstring &amp;p_widgetName)</td></tr>
+<tr class="memdesc:aa4a8df123f7b12994c46dd3ee95006f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the desired widget.  <a href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">More...</a><br /></td></tr>
+<tr class="separator:aa4a8df123f7b12994c46dd3ee95006f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memItemLeft" align="right" valign="top">const StoringContainer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">widgets</a> () const</td></tr>
 <tr class="memdesc:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the collection of widgets.  <a href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">More...</a><br /></td></tr>
 <tr class="separator:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +154,33 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="classspk_1_1Widget_1_1Atlas.html" title="A singleton atlas of widgets.">Atlas</a> is a class that acts as a collection of <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> pointers. It provides methods for inserting, removing, and sorting widgets, as well as accessing the collection itself. Being a <a class="el" href="classspk_1_1Singleton.html" title="Singleton class template.">Singleton</a>, it ensures there is only one instance of this collection in the program.</p>
 <p>This class is called automaticaly by the widget when they are created or when they have their depth edited. This singleton is created inside the <a class="el" href="classspk_1_1WidgetModule.html" title="Class for managing widgets within the application.">WidgetModule</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa4a8df123f7b12994c46dd3ee95006f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a8df123f7b12994c46dd3ee95006f6">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> * spk::Widget::Atlas::get </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_widgetName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the desired widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_widgetName</td><td>The target widget's name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return a pointer to the desired widget if it exist, nullptr otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="aefb76217b61aa046653f3b343da76f30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefb76217b61aa046653f3b343da76f30">&#9670;&nbsp;</a></span>insert()</h2>
 

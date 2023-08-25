@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertex_1098',['vertex',['../structspk_1_1Mesh_1_1Face_1_1Point.html#a57b04a3443016c99bbc87934e982e055',1,'spk::Mesh::Face::Point']]]
+  ['socketerror_1123',['SocketError',['../classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685',1,'spk::Network::Socket']]]
 ];

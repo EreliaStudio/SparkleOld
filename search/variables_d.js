@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_1101',['z',['../structspk_1_1IVector3.html#a8254baecf03b5c984a6e25d7a51c095b',1,'spk::IVector3']]]
+  ['value_1127',['value',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a4666a315e367a49a8910f6538aeaa373',1,'spk::Widget::Canvas::Geometry::Value']]],
+  ['vertex_1128',['vertex',['../structspk_1_1Mesh_1_1Face_1_1Point.html#a57b04a3443016c99bbc87934e982e055',1,'spk::Mesh::Face::Point']]]
 ];
