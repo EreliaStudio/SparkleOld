@@ -124,7 +124,9 @@ namespace spk::Widget
 		for (auto item : p_object.members())
 		{
 			std::wstring classType = item.second->operator[](L"Type").as<std::wstring>();
-			spk::Widget::Atlas::Instanciator lambda = spk::Widget::Atlas::classInstanciatorLambda[classType];
+			if (spk::Widget::Canvas::classInstanciatorLambda.contains(classType) == false)
+				spk::throwException(L"Class type [" + classType + L"] isn't registered");
+			spk::Widget::Canvas::Instanciator lambda = spk::Widget::Canvas::classInstanciatorLambda[classType];
 
 			spk::Widget::Interface* newWidget = lambda(item.first, *(item.second));
 

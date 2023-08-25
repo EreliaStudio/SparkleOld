@@ -2,8 +2,8 @@
 
 class Test : public spk::Widget::Interface
 {
-	registerClass(L"RegisterName", Test);
-	registerClass(L"AnotherRegisterName", Test);
+	registerClass(Test, RegisterName);
+	registerClass(Test, AnotherRegisterName);
 
 private:
 	void _onGeometryChange()

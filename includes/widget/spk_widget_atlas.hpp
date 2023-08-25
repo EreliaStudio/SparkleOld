@@ -1,30 +1,10 @@
 #pragma once
 
+#include <string>
 #include <set>
 #include <memory>
 #include "design_pattern/spk_singleton.hpp"
 #include "widget/spk_widget_interface.hpp"
-
-#define CONCATENATE_DETAIL(x, y, z) x ## y ## z
-#define CONCATENATE(x, y, z) CONCATENATE_DETAIL(x, y, z)
-
-#define registerClass(RegName, ClassName)                                               \
-    struct CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))         \
-    {                                                                                  \
-        CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))()          \
-        {                                                                              \
-            spk::Widget::Atlas::classInstanciatorLambda[RegName] =                     \
-                [](const std::wstring &p_name,                                         \
-                   const spk::JSON::Object &p_obj) -> spk::Widget::Interface*          \
-                {                                                                      \
-                    return new ClassName(p_name, p_obj);                                \
-                };                                                                     \
-        }                                                                              \
-    };                                                                                 \
-    static inline CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar)) \
-            CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Instance)) =      \
-                CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))()
-
 
 namespace spk::Widget
 {
@@ -42,16 +22,6 @@ namespace spk::Widget
 	class Atlas : public spk::Singleton<Atlas>
 	{
 		friend class spk::Singleton<Atlas>;
-
-	public:
-		/**
-		 * @brief Type alias for the lambda function used to create instances of widget classes.
-		 */
-		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
-		/**
-		 * @brief Static map to associate widget class names with instantiation lambdas.
-		 */
-		static inline std::map<std::wstring, Instanciator> classInstanciatorLambda;
 
 	private:
 

@@ -1,6 +1,27 @@
 #pragma once
 
+#include <string>
 #include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget_atlas.hpp"
+
+#define WIDE_STRING_LITERAL(x) L ## x
+#define WSTR(x) WIDE_STRING_LITERAL(#x)
+
+#define registerClass(ClassType, RegistrationName)                                \
+struct ClassType##_##RegistrationName##_Registrar                                 \
+{                                                                                 \
+    ClassType##_##RegistrationName##_Registrar()                                  \
+    {                                                                             \
+        spk::Widget::Canvas::classInstanciatorLambda[L#RegistrationName] =        \
+            [](const std::wstring &p_name,                                        \
+               const spk::JSON::Object &p_obj) -> spk::Widget::Interface*         \
+            {                                                                     \
+                return new ClassType(p_name, p_obj);                              \
+            };                                                                    \
+    }                                                                             \
+};                                                                                \
+static inline ClassType##_##RegistrationName##_Registrar _class##RegistrationName##Registrar;
+
 
 namespace spk::Widget
 {
@@ -11,6 +32,16 @@ namespace spk::Widget
 	 */
 	class Canvas : public spk::Widget::Interface
 	{
+	public:
+		/**
+		 * @brief Type alias for the lambda function used to create instances of widget classes.
+		 */
+		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
+		/**
+		 * @brief Static map to associate widget class names with instantiation lambdas.
+		 */
+		static inline std::map<std::wstring, Instanciator> classInstanciatorLambda;
+
 	private:
 		/**
 		 * @struct Geometry
