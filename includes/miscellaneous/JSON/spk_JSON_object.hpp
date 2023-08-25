@@ -5,6 +5,7 @@
 #include <vector>
 #include <iomanip>
 #include <algorithm>
+#include <any>
 
 #include "iostream/spk_iostream.hpp"
 #include "spk_basic_functions.hpp"
@@ -156,7 +157,7 @@ namespace spk
 			 * @throw This method will throw is the object isn't a Unit object.
 			*/
 			template <typename TType>
-			bool hold()
+			bool hold() const
 			{
 				if (isUnit() == false)
 					spk::throwException(L"Can't verify the holding type of an object who isn't a Unit");

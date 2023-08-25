@@ -234,6 +234,11 @@ namespace spk
 			file << _root;
 			file.close();
 		}
+		
+		bool File::contains(const std::wstring& p_key) const
+		{
+			return (_root.contains(p_key));
+		}
 
 		const spk::JSON::Object& File::operator[](const std::wstring& p_key) const
 		{
