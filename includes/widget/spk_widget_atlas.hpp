@@ -5,26 +5,26 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "widget/spk_widget_interface.hpp"
 
-// Macros to concatenate tokens and create unique class names for the registrar
-#define BASE_CONCATENATION_MACRO(x, y, z) x ## y ## z
-#define CONCATENATION_MACRO(x, y, z) BASE_CONCATENATION_MACRO(x, y, z)
+#define CONCATENATE_DETAIL(x, y, z) x ## y ## z
+#define CONCATENATE(x, y, z) CONCATENATE_DETAIL(x, y, z)
 
-// Macro to register a widget class by associating a creation lambda with a registration name
-#define registerClass(RegName, ClassName)                                \
-    struct CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar   \
-    {                                                                    \
-        CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()    \
-        {                                                                \
-            spk::Widget::Atlas::classInstanciatorLambda[RegName] =       \
-                [](const std::wstring &name,                             \
-                   const spk::JSON::Object &obj) -> spk::Widget::Interface* \
-                {                                                        \
-                    return new ClassName(name, obj);                      \
-                };                                                       \
-        }                                                                \
-    };                                                                   \
-    static inline CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar \
-            CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Instance = CONCATENATION_MACRO(Atlas_, ClassName, __LINE__)##_Registrar()
+#define registerClass(RegName, ClassName)                                               \
+    struct CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))         \
+    {                                                                                  \
+        CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))()          \
+        {                                                                              \
+            spk::Widget::Atlas::classInstanciatorLambda[RegName] =                     \
+                [](const std::wstring &p_name,                                         \
+                   const spk::JSON::Object &p_obj) -> spk::Widget::Interface*          \
+                {                                                                      \
+                    return new ClassName(p_name, p_obj);                                \
+                };                                                                     \
+        }                                                                              \
+    };                                                                                 \
+    static inline CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar)) \
+            CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Instance)) =      \
+                CONCATENATE(Atlas_, ClassName, CONCATENATE(_, __LINE__, _Registrar))()
+
 
 namespace spk::Widget
 {
