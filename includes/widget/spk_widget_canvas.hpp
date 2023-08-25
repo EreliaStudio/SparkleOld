@@ -1,8 +1,10 @@
 #pragma once
 
 #include <string>
+#include <filesystem>
 #include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_atlas.hpp"
+#include "spk_basic_functions.hpp"
 
 #define WIDE_STRING_LITERAL(x) L ## x
 #define WSTR(x) WIDE_STRING_LITERAL(#x)
@@ -12,7 +14,7 @@ struct ClassType##_##RegistrationName##_Registrar                               
 {                                                                                 \
     ClassType##_##RegistrationName##_Registrar()                                  \
     {                                                                             \
-        spk::Widget::Canvas::classInstanciatorLambda[L#RegistrationName] =        \
+        spk::Widget::Canvas::classInstanciatorLambda[spk::stringToWString(#RegistrationName)] =        \
             [](const std::wstring &p_name,                                        \
                const spk::JSON::Object &p_obj) -> spk::Widget::Interface*         \
             {                                                                     \
