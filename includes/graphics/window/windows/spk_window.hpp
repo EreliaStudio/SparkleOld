@@ -79,6 +79,8 @@ namespace spk
 		 * @brief Destructs the Window object.
 		 */
 		~Window();
+		
+		void createSurface();
 
 		/**
 		 * @brief Resizes the window.

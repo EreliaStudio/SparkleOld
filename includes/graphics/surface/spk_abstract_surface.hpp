@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include "math/spk_vector2.hpp"
 
 namespace spk

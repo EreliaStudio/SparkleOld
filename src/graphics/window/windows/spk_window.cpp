@@ -112,7 +112,6 @@ namespace spk
 	void Window::render()
 	{
 		_surface->render();
-		UpdateWindow(_windowFrame);
 	}
 
 	void Window::clear()
