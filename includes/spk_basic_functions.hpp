@@ -68,6 +68,9 @@ namespace spk
 	 */
 	std::vector<std::wstring> getStringSplit(std::wfstream& p_file, const std::wstring& p_delim, const int& p_expectedSize = -1);
 
+	std::wstring getFileContent(const std::filesystem::path& p_filePath);
+	std::string getFileContentAsString(const std::filesystem::path& p_filePath);
+
 	/**
 	 * @brief Calculates the positive modulo of the given integer and divisor.
 	 * @param p_integer The integer value.

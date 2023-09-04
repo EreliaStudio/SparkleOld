@@ -24,6 +24,8 @@ namespace spk
 		void activateViewport(const Viewport* p_viewport);
 		void activateScissor(const Scissor* p_scissor);
 
+		spk::Vector2 convertScreenToGPU(const spk::Vector2Int& p_screenPosition);
+
 		virtual void clear() = 0;
 		virtual void resize(const spk::Vector2UInt& p_size) = 0;
 		virtual void render() = 0;

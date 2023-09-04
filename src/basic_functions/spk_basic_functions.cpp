@@ -121,6 +121,32 @@ namespace spk
 		return (result);
 	}
 
+	std::wstring getFileContent(const std::filesystem::path& p_filePath)
+	{
+		std::wifstream shaderFile(p_filePath);
+		if (shaderFile.is_open() == false) {
+			spk::throwException(L"Failed to open file [" + p_filePath.wstring() + L"]");
+		}
+
+		std::wstringstream buffer;
+		buffer << shaderFile.rdbuf();
+		std::wstring result = buffer.str();	
+		return (result);
+	}
+
+	std::string getFileContentAsString(const std::filesystem::path& p_filePath)
+	{
+		std::ifstream shaderFile(p_filePath);
+		if (shaderFile.is_open() == false) {
+			spk::throwException(L"Failed to open file [" + p_filePath.wstring() + L"]");
+		}
+
+		std::stringstream buffer;
+		buffer << shaderFile.rdbuf();
+		std::string result = buffer.str();	
+		return (result);
+	}
+
 	intmax_t positiveModulo(intmax_t p_integer, intmax_t p_dividor)
 	{
 		intmax_t result = p_integer % p_dividor;
