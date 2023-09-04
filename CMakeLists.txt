@@ -16,6 +16,7 @@ if (CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(OSBitness 64)
 endif()
 
+
 set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/archive/${ArchitectureSufix}")
