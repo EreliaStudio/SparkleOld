@@ -14,6 +14,7 @@ if (CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(OSBitness 64)
 endif()
 
+
 set(ArchitectureSufix "${CMAKE_SYSTEM_NAME}/x${OSBitness}/${CMAKE_BUILD_TYPE}")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/archive/${ArchitectureSufix}")
@@ -21,8 +22,10 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/${Architectu
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/executable/${ArchitectureSufix}")
 
 find_package(Vulkan REQUIRED)
+find_package(GLEW REQUIRED)
 
 include_directories(${Vulkan_INCLUDE_DIRS})
+include_directories(${GLEW_INCLUDE_DIRS})
 
 listSourceFiles(SOURCE_FILES SYSTEM_DEPENDENT_SOURCE_FILES)
 
