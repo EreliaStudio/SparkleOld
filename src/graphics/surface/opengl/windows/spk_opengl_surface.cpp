@@ -76,14 +76,16 @@ namespace spk::OpenGL
 		glStencilMask(0xFF);
 
 		glEnable(GL_SCISSOR_TEST);
+
+		wglSwapIntervalEXT(0);
 	}
 
 	Surface::~Surface()
 	{
 		if (_hrc)
         {
-            wglMakeCurrent(NULL, NULL);
-            wglDeleteContext(_hrc);
+            wglMakeCurrent(_hdc, NULL);
+			wglDeleteContext(_hrc);
         }
         if (_hdc)
         {
