@@ -22,6 +22,14 @@ namespace spk
 		_activeViewport = p_scissor;
 	}
 
+	spk::Vector2 AbstractSurface::convertScreenToGPU(const spk::Vector2Int& p_screenPosition)
+	{        
+		return (spk::Vector2(
+				2.0f * (static_cast<float>(p_screenPosition.x - _activeViewport->anchor().x) / _activeViewport->size().x) - 1.0f,
+				2.0f * (static_cast<float>(p_screenPosition.y - _activeViewport->anchor().y) / _activeViewport->size().y) - 1.0f
+			));
+	}
+
 	const spk::Vector2UInt& AbstractSurface::size() const
 	{
 		return (_size);

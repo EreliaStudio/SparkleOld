@@ -93,18 +93,10 @@ namespace spk::OpenGL
         }
 	}
 
-	spk::Vector2 Surface::convertScreenToOpenGL(const spk::Vector2Int& p_screenPosition)
-	{        
-		return (spk::Vector2(
-			2.0f * (static_cast<float>(p_screenPosition.x - _activeViewport->anchor().x) / _activeViewport->size().x) - 1.0f,
-			2.0f * (static_cast<float>(p_screenPosition.y - _activeViewport->anchor().y) / _activeViewport->size().y) - 1.0f
-			));
-	}
-
 	void Surface::clear()
 	{
 		glViewport(0, 0, _size.x, _size.y);
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	}
 	
