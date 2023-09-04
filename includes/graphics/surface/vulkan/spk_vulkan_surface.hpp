@@ -2,16 +2,14 @@
 
 #include "graphics/surface/spk_abstract_surface.hpp"
 
-namespace spk
+namespace spk::vulkan
 {
-	class OpenGLSurface : public AbstractSurface
+	class Surface : public AbstractSurface
 	{
 	private:
 
 	public:
-		OpenGLSurface(const std::wstring& p_title, const spk::Vector2UInt& p_size) :
-			AbstractSurface(p_title, p_size)
-		{}
+		Surface(const std::wstring& p_title, const spk::Vector2UInt& p_size);
 
 		void clear();
 		void resize(const spk::Vector2UInt& p_size);

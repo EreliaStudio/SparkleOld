@@ -1,6 +1,7 @@
 #include "graphics/spk_window.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "application/modules/spk_API_module.hpp"
+#include "graphics/surface/spk_surface.hpp"
 
 namespace spk
 {
@@ -89,17 +90,14 @@ namespace spk
 		xcb_disconnect(_connection);
 	}
 
-	void Window::setGeometry(const spk::Vector2Int& p_size)
+	void Window::resize(const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
 
 		uint32_t values[2] = { static_cast<uint32_t>(p_size.x), static_cast<uint32_t>(p_size.y) };
 		xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
-	}
-
-	void Window::resize(const spk::Vector2Int& p_size)
-	{
-		_size = p_size;
+		
+		_surface->resize(p_size);
 	}
 
 	const spk::Vector2Int& Window::size() const
@@ -119,11 +117,13 @@ namespace spk
 
 	void Window::render()
 	{
+		_surface->render();
 		xcb_flush(_connection);
 	}
 
 	void Window::clear()
 	{
+		_surface->clear();
 		xcb_clear_area(_connection, 0, _window, 0, 0, _size.x, _size.y);
 	}
 }

@@ -65,7 +65,7 @@ namespace spk
 
 	void Application::resize(const spk::Vector2Int &p_size)
 	{
-		spk::Singleton<spk::Window>::instance()->setGeometry(p_size);
+		spk::Singleton<spk::Window>::instance()->resize(p_size);
 	}
 	
 	const spk::Vector2Int& Application::size() const
