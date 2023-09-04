@@ -1,6 +1,7 @@
 #include "application/modules/spk_window_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
+#include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {
@@ -11,30 +12,16 @@ namespace spk
 			case XCB_RESIZE_REQUEST:
 			{
 				xcb_resize_request_event_t *resizeRequestEvent = reinterpret_cast<xcb_resize_request_event_t *>(p_event);
-				
+
+				spk::Vector2 ratio = spk::Vector2(
+					static_cast<float>(resizeRequestEvent->width) / Window::instance()->size().x,
+					static_cast<float>(resizeRequestEvent->height) / Window::instance()->size().y
+				);
+
 				Window::instance()->resize(spk::Vector2Int(resizeRequestEvent->width, resizeRequestEvent->height));
+				Widget::Atlas::instance()->resize(ratio);
 				break;
 			}
 		}
-	}
-
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size) : IMessageConsumerModule(p_queue)
-	{
-		Window::instanciate(p_title, p_size);
-	}
-
-	WindowModule::~WindowModule()
-	{
-		Window::release();
-	}
-
-	void WindowModule::render()
-	{
-		Window::instance()->render();
-	}
-
-	void WindowModule::clear()
-	{
-		Window::instance()->clear();
 	}
 }

@@ -1,5 +1,14 @@
 #pragma once
 
+namespace spk
+{
+	enum class GraphicalAPI
+	{
+		OpenGL,
+		Vulkan
+	};
+}
+
 #ifdef _WIN32
 	#ifndef UNICODE
 	#define UNICODE

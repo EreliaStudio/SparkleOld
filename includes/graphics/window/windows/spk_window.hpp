@@ -1,6 +1,7 @@
 #pragma once
 
 #include "design_pattern/spk_singleton.hpp"
+#include "graphics/surface/spk_abstract_surface.hpp"
 #include "math/spk_vector2.hpp"
 #include "spk_system_define.hpp"
 
@@ -26,6 +27,8 @@ namespace spk
 		WNDCLASS _windowClass;///< Window class structure.
 		DWORD _windowStyle;///< Window style.
 		DWORD _windowExStyle;///< Window extended style.
+
+		spk::AbstractSurface* _surface;
 
 		/**
 		 * @brief Converts the title to a wchar_t.
@@ -69,7 +72,7 @@ namespace spk
 		 * @param p_size The size of the window.
 		 * @param p_ptr An optional pointer (default is nullptr).
 		 */
-		Window(const std::wstring& p_title, const Vector2Int& p_size, void *p_ptr = nullptr);
+		Window(const std::wstring& p_title, const Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_ptr = nullptr);
 
 	public:
 		/**
@@ -95,6 +98,9 @@ namespace spk
 		 * @brief Return the size of the window.
 		*/
 		const Vector2Int& size() const;
+
+		AbstractSurface* surface();
+		const AbstractSurface* surface() const;
 
 		/**
 		 * @brief Renders the window.

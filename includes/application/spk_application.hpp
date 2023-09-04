@@ -26,31 +26,6 @@ namespace spk
 	 */
 	class Application : public spk::AbstractApplication
 	{
-	public:
-	/**
-	 * @struct Configuration
-	 * @brief The configuration structure for the Application.
-	 *
-	 * This structure is used to specify certain options upon the instantiation of an Application object.
-	 * The options are primarily related to the initialization of specific modules within the Application.
-	 */
-		struct Configuration
-		{
-			bool initActivityScheduler = false; ///< Should the application initialize a ActivitySchedulerManager widget
-			bool initInputGroupManager = false; ///< Should the application initialize a InputGroupManager widget
-
-			/**
-			 * @brief Construct a new Configuration object
-			 * 
-			 * @param p_initActivityScheduler Should the application initialize a ActivitySchedulerManager widget
-			 * @param p_initInputGroupManager Should the application initialize a InputGroupManager widget
-			 */
-			Configuration(bool p_initActivityScheduler = false, bool p_initInputGroupManager = false) :
-				initActivityScheduler(p_initActivityScheduler),
-				initInputGroupManager(p_initInputGroupManager)
-			{}
-		};
-
 	private:
 		spk::APIModule* _APIModule; ///< API module instance.
 
@@ -74,12 +49,6 @@ namespace spk
 		 */
 		void setupJobs();
 
-		/**
-		 * @brief Initialize default widget construction based on p_configuration provided by the user 
-		 * 
-		 * @param p_configuration a structure describing the initialization expected by the user
-		 */
-		void _initializeConfigurableValues(const Configuration& p_configuration);
 	public:
 		/**
 		 * @brief Constructs the Application object.
@@ -88,7 +57,7 @@ namespace spk
 		 * @param p_size Size of the window.
 		 * @param p_configuration a structure describing the initialization expected by the user
 		 */
-		Application(const std::wstring& p_title, const spk::Vector2Int& p_size, const Configuration& p_configuration = Configuration());
+		Application(const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI);
 
 		/**
 		 * @brief Destructs the Application object.
