@@ -64,7 +64,7 @@ namespace spk
 		return reply2;
 	}
 
-	Window::Window(const std::wstring& p_title, const spk::Vector2Int& p_size)
+	Window::Window(const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_APIModule)
 	{
 		_size = p_size;
 		_connection = xcb_connect(NULL, NULL);
@@ -105,6 +105,16 @@ namespace spk
 	const spk::Vector2Int& Window::size() const
 	{
 		return (_size);
+	}
+
+	AbstractSurface* Window::surface()
+	{
+		return (_surface);
+	}
+	
+	const AbstractSurface* Window::surface() const
+	{
+		return (_surface);
 	}
 
 	void Window::render()

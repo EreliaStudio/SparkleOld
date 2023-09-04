@@ -24,15 +24,7 @@ namespace spk
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _keyboardModule->updateKeyboard(); }));
 	}
 
-	void Application::_initializeConfigurableValues(const Application::Configuration& p_configuration)
-	{
-		if (p_configuration.initActivityScheduler == true)
-			addRootWidget<spk::Widget::ActivitySchedulerManager>(L"ActivitySchedulerManager")->activate();
-		if (p_configuration.initInputGroupManager == true)
-			addRootWidget<spk::Widget::InputGroupManager>(L"InputGroupManager")->activate();
-	}
-
-	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const Configuration& p_configuration)
+	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const GraphicalAPI& p_graphicalAPI)
 	{
 		_APIModule = new spk::APIModule();
 
@@ -40,19 +32,14 @@ namespace spk
 		_timeModule = new spk::TimeModule();
 		_profilerModule = new spk::ProfilerModule();
 
-#ifdef _WIN32
-		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, _APIModule);
-#elif __linux__
-		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size);
-#endif
+		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, p_graphicalAPI, _APIModule);
 
 		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
 
 		_widgetModule = new spk::WidgetModule();
+		
 		resize(p_size);
-
-		_initializeConfigurableValues(p_configuration);
 	}
 
 	Application::~Application()
@@ -64,7 +51,6 @@ namespace spk
 		delete _mouseModule;
 		delete _keyboardModule;
 		delete _profilerModule;
-
 		delete _widgetModule;
 	}
 	
