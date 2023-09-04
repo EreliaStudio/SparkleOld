@@ -55,6 +55,8 @@ namespace spk
 		 */
 		~Window();
 
+		void createSurface();
+
 		/**
 		 * @brief Resizes the window.
 		 *

@@ -39,6 +39,8 @@ target_include_directories(Sparkle
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
     INTERFACE $<INSTALL_INTERFACE:include>
 )
+target_link_libraries(Sparkle OpenGL32.lib)
+target_link_libraries(Sparkle GLEW::GLEW)
 
 add_subdirectory(playground)
 

@@ -81,6 +81,20 @@ namespace spk
 		_atom_wm_delete_window = _enableDestroyXCBProperty(_connection, _window);
 
 		xcb_map_window(_connection, _window);
+
+		switch (p_graphicalAPI)
+		{
+			case (GraphicalAPI::OpenGL):
+			{
+				_surface = new spk::OpenGL::Surface(p_title, p_size);
+				break;
+			}
+			case (GraphicalAPI::Vulkan):
+			{
+				_surface = new spk::vulkan::Surface(p_title, p_size);
+				break;
+			}
+		}
 	}
 
 	Window::~Window()

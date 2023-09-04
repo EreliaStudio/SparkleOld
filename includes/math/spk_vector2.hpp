@@ -12,6 +12,9 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#undef min
+#undef max
+
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 
@@ -54,15 +57,6 @@ namespace spk
 		IVector2(const TOtherType &p_x, const TOtherType &p_y) : x(static_cast<TType>(p_x)), y(static_cast<TType>(p_y)) {}
 
 		/**
-		 * @brief Constructs a new IVector3 object from another IVector3 object with potentially different value types.
-		 *
-		 * @tparam TOtherType The type of the other IVector3 object's values.
-		 * @param p_other The other IVector3 object.
-		 */
-		template <typename TOtherType>
-		IVector2(const IVector2<TOtherType> &p_other) : x(static_cast<TType>(p_other.x)), y(static_cast<TType>(p_other.y)) {}
-
-		/**
 		 * @brief Construct a new IVector3 object from a JSON::Object
 		 * @note Data must follow the following pattern :
 		 * {
@@ -92,7 +86,7 @@ namespace spk
 		 * @return An instance of IVector2 of the new type.
 		 */
 		template <typename TOtherType>
-		operator IVector2<TOtherType>()
+		operator IVector2<TOtherType>() const
 		{
 			return (IVector2<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y)));
 		}
