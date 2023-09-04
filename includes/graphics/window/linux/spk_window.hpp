@@ -56,13 +56,6 @@ namespace spk
 		~Window();
 
 		/**
-		 * @brief Sets the window geometry.
-		 *
-		 * @param p_size The size to set for the window.
-		 */
-		void setGeometry(const Vector2Int& p_size);
-
-		/**
 		 * @brief Resizes the window.
 		 *
 		 * @param p_size The size to set for the window.
