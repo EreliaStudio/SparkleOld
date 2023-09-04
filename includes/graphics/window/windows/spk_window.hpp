@@ -18,7 +18,6 @@ namespace spk
 		friend class APIModule;
 
 	private:
-		
 		Vector2Int _size;///< Window size.
 		wchar_t* _convertedTitle;///< Converted title for window.
 		HINSTANCE _hInstance;///< Instance handle.
