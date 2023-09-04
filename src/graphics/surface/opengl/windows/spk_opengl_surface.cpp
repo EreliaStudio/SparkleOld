@@ -1,7 +1,29 @@
 #include "graphics/surface/opengl/spk_opengl_surface.hpp"
+#include "graphics/spk_window.hpp"
 
 namespace spk::OpenGL
 {
+
+	void Surface::_onViewportEdition()
+	{
+		glViewport(
+				activeViewport()->anchor().x, 
+				activeViewport()->anchor().y, 
+				activeViewport()->size().x, 
+				activeViewport()->size().y
+			);
+	}
+		
+	void Surface::_onScissorEdition()
+	{
+		glScissor(
+				activeScissor()->anchor().x, 
+				activeScissor()->anchor().y, 
+				activeScissor()->size().x, 
+				activeScissor()->size().y
+			);
+	}
+
 	Surface::Surface(const std::wstring& p_title, const spk::Vector2UInt& p_size) :
 		AbstractSurface(p_title, p_size)
 	{
@@ -52,16 +74,41 @@ namespace spk::OpenGL
 		glStencilFunc(GL_ALWAYS, 0, 0xFF);
 		glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 		glStencilMask(0xFF);
+
+		glEnable(GL_SCISSOR_TEST);
+	}
+
+	Surface::~Surface()
+	{
+		if (_hrc)
+        {
+            wglMakeCurrent(NULL, NULL);
+            wglDeleteContext(_hrc);
+        }
+        if (_hdc)
+        {
+            ReleaseDC(GetForegroundWindow(), _hdc);
+        }
+	}
+
+	spk::Vector2 Surface::convertScreenToOpenGL(const spk::Vector2Int& p_screenPosition)
+	{        
+		return (spk::Vector2(
+			2.0f * (static_cast<float>(p_screenPosition.x - _activeViewport->anchor().x) / _activeViewport->size().x) - 1.0f,
+			2.0f * (static_cast<float>(p_screenPosition.y - _activeViewport->anchor().y) / _activeViewport->size().y) - 1.0f
+			));
 	}
 
 	void Surface::clear()
 	{
+		glViewport(0, 0, _size.x, _size.y);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	}
 	
 	void Surface::resize(const spk::Vector2UInt& p_size)
 	{
-
+		_size = p_size;
 	}
 
 	void Surface::render()

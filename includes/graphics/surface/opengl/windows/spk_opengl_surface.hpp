@@ -12,8 +12,14 @@ namespace spk::OpenGL
 		HDC _hdc;
 		PIXELFORMATDESCRIPTOR _pfd;
 
+		void _onViewportEdition();
+		void _onScissorEdition();
+
 	public:
 		Surface(const std::wstring& p_title, const spk::Vector2UInt& p_size);
+		~Surface();
+
+		spk::Vector2 convertScreenToOpenGL(const spk::Vector2Int& p_screenPosition);
 
 		void clear();
 		void resize(const spk::Vector2UInt& p_size);

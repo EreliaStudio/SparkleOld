@@ -7,6 +7,21 @@ namespace spk::vulkan
 	{
 
 	}
+	
+	Surface::~Surface()
+	{
+
+	}
+
+	void Surface::_onViewportEdition()
+	{
+
+	}
+		
+	void Surface::_onScissorEdition()
+	{
+
+	}
 
 	void Surface::clear()
 	{
