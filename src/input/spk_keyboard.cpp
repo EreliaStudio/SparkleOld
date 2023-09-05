@@ -174,16 +174,18 @@ namespace spk
 	void Keyboard::pressKey(const uint32_t& p_key)
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
+		spk::InputState& state = _keys[static_cast<size_t>(keyValue)];
 
-		if (_keys[static_cast<size_t>(keyValue)] != InputState::Down)
-			_keys[static_cast<size_t>(keyValue)] = InputState::Pressed;
+		if (state != InputState::Down && state != InputState::Pressed)
+			state = InputState::Pressed;
 	}
 	void Keyboard::releaseKey(const uint32_t& p_key)
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
+		spk::InputState& state = _keys[static_cast<size_t>(keyValue)];
 
-		if (_keys[static_cast<size_t>(keyValue)] != InputState::Up)
-			_keys[static_cast<size_t>(keyValue)] = InputState::Released;
+		if (state != InputState::Up && state != InputState::Released)
+			state = InputState::Released;
 	}
 
 	void Keyboard::update()

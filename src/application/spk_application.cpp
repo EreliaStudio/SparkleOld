@@ -21,7 +21,8 @@ namespace spk
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard treat message", [&]() { _keyboardModule->treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Widget update", [&]() { _widgetModule->update(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _mouseModule->updateMouse(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _keyboardModule->updateKeyboard(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Keyboard update status", [&]() { _keyboardModule->updateKeyboard(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule->increaseUpdateIPS(); }));
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const GraphicalAPI& p_graphicalAPI)

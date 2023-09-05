@@ -21,6 +21,8 @@ namespace spk
 		AbstractSurface(const std::wstring& p_title, const spk::Vector2UInt& p_size);
 		~AbstractSurface();
 
+		virtual void checkGPUError(const std::wstring& p_informationMessage) = 0;
+
 		void activateViewport(const Viewport* p_viewport);
 		void activateScissor(const Scissor* p_scissor);
 
@@ -35,3 +37,5 @@ namespace spk
 		const Scissor* activeScissor() const;
 	};
 }
+
+#define GPU_DEBUG_LINE() spk::Window::instance()->surface()->checkGPUError(__METHOD__ + L"::" + std::to_wstring(__LINE__))
