@@ -83,7 +83,8 @@
         "xlocmes": "cpp",
         "xlocmon": "cpp",
         "xloctime": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "regex": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {

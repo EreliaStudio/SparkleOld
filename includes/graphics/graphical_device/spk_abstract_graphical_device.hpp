@@ -5,15 +5,43 @@
 #include <string>
 #include <filesystem>
 #include "spk_basic_functions.hpp"
+#include "math/spk_vector2.hpp"
+#include "math/spk_vector3.hpp"
+#include "math/spk_matrix4x4.hpp"
 
 namespace spk
 {
 	class AbstractGraphicalDevice
 	{
 	public:
-		class AbstractStorage
+		class Storage
 		{
-		private:
+		public:
+			struct Element
+			{
+				enum class Type
+				{
+					Data,
+					Indexes,
+					ShaderStorage,
+					Texture
+				};
+
+				struct Attribute
+				{
+					uint32_t location;
+					size_t format;	
+					size_t offset;
+				};
+
+				Type type = Type::Data;
+				size_t stride = 0;
+				std::vector<Attribute> attributes = {};
+			};
+
+		protected:
+			Element _elementDescription;
+
 			template <typename T>
 			struct isVectorType : std::false_type
 			{
@@ -41,12 +69,21 @@ namespace spk
 			template <typename T>
 			void _addElementToDataBuffer(spk::DataBuffer &p_dataBuffer, size_t p_index, const std::vector<T> &p_vector)
 			{
-				spk::cout << "Adding data [" << p_vector[p_index] << "]" << std::endl;
 				p_dataBuffer << p_vector[p_index];
 			}
 
 		public:
-			virtual AbstractStorage *copy() const = 0;
+			Storage(const Element& p_elementDescription)
+			{
+				_elementDescription = p_elementDescription;
+			}
+
+			virtual Storage *copy() const = 0;
+
+			virtual size_t nbElement() = 0;
+
+			virtual void activate() = 0;
+			virtual void deactivate() = 0;
 
 			virtual void push(const spk::DataBuffer &p_bufferToPush) = 0;
 
@@ -71,6 +108,7 @@ namespace spk
 
 				push(dataBuffer);
 			}
+
 		};
 
 		class AbstractUniform
@@ -78,6 +116,7 @@ namespace spk
 		public:
 			enum Type
 			{
+				Error,
 				Float,
 				Int,
 				UInt,
@@ -95,39 +134,48 @@ namespace spk
 
 		private:
 			Type _type;
+			std::wstring _name;
 
 			void _checkTypeValidity(const Type &p_pushingType)
 			{
 				if (_type != p_pushingType)
-					spk::throwException(L"Error while pushing data to uniform [" + +L"] - Invalid type");
+					spk::throwException(L"Error while pushing data to uniform [" + _name + L"] - Invalid type");
 			}
 
 			virtual void _push(float p_value) = 0;
 			virtual void _push(int p_value) = 0;
 			virtual void _push(unsigned int p_value) = 0;
 
-			virtual void _push(const Vector2 &p_value) = 0;
-			virtual void _push(const Vector2Int &p_value) = 0;
-			virtual void _push(const Vector2Uint &p_value) = 0;
+			virtual void _push(const spk::Vector2 &p_value) = 0;
+			virtual void _push(const spk::Vector2Int &p_value) = 0;
+			virtual void _push(const spk::Vector2UInt &p_value) = 0;
 
-			virtual void _push(const Vector3 &p_value) = 0;
-			virtual void _push(const Vector3Int &p_value) = 0;
-			virtual void _push(const Vector3Uint &p_value) = 0;
+			virtual void _push(const spk::Vector3 &p_value) = 0;
+			virtual void _push(const spk::Vector3Int &p_value) = 0;
+			virtual void _push(const spk::Vector3UInt &p_value) = 0;
 
-			virtual void _push(const Matrix4x4 &p_value) = 0;
+			virtual void _push(const spk::Matrix4x4 &p_value) = 0;
 
 			virtual void _push(const std::vector<float> &p_values) = 0;
 			virtual void _push(const std::vector<int> &p_values) = 0;
 			virtual void _push(const std::vector<unsigned int> &p_values) = 0;
 
 		public:
-			AbstractUniform(const Type& p_type) :
-				_type(p_type)
+			AbstractUniform() :
+				_type(Type::Error),
+				_name(L"Unnamed")
 			{
 
 			}
 
-			AbstractUniform* copy() const = 0;
+			AbstractUniform(const std::wstring& p_name, const Type& p_type) :
+				_type(p_type),
+				_name(p_name)
+			{
+
+			}
+
+			virtual AbstractUniform* copy() const = 0;
 
 			void push(float p_value)
 			{
@@ -168,7 +216,7 @@ namespace spk
 				_push(p_value);
 			}
 
-			void push(const Vector2Uint &p_value)
+			void push(const Vector2UInt &p_value)
 			{
 #ifndef NDEBUG
 				_checkTypeValidity(Type::Vec2UInt);
@@ -192,7 +240,7 @@ namespace spk
 				_push(p_value);
 			}
 
-			void push(const Vector3Uint &p_value)
+			void push(const Vector3UInt &p_value)
 			{
 #ifndef NDEBUG
 				_checkTypeValidity(Type::Vec3UInt);
@@ -231,16 +279,27 @@ namespace spk
 #endif
 				_push(p_values);
 			}
+
+			const std::wstring& name() const 
+			{
+				return (_name);
+			}
 		};
 
 	protected:
-		Storage *_elementStorage;
+		Storage *_dataStorage;
 		Storage *_indexesStorage;
 		std::map<std::wstring, AbstractUniform *> _uniforms;
+
+		virtual Storage* _createStorage(const Storage::Element& p_element) = 0;
+		virtual AbstractUniform* _createUniform(const std::string& p_inputLine) = 0;
 
 		virtual void _loadDevice(
 			const std::string &p_vertexModuleName, const std::string &p_vertexModuleCode,
 			const std::string &p_fragmentModuleName, const std::string &p_fragmentModuleCode) = 0;
+
+		void _parseBuffer(const std::string& p_shaderCode);
+		void _parseUniform(const std::string& p_shaderCode);
 
 	public:
 		AbstractGraphicalDevice();
@@ -248,8 +307,11 @@ namespace spk
 		void load(const std::wstring &p_vertexShaderCode, const std::wstring &p_fragmentShaderCode);
 		void loadFromFile(const std::filesystem::path &p_vertexShaderPath, const std::filesystem::path &p_fragmentShaderPath);
 
-		AbstractStorage *elementStorage();
-		AbstractStorage *indexesStorage();
+		virtual void activate() = 0;
+		virtual void launch(const size_t& p_nbIndexes) = 0;
+
+		Storage *dataStorage();
+		Storage *indexesStorage();
 		std::map<std::wstring, AbstractUniform *> &uniforms();
 		AbstractUniform *uniform(const std::wstring &p_uniformName);
 	};

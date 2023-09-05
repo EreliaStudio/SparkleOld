@@ -15,6 +15,9 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/vulkan/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/opengl/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/vulkan/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"
@@ -33,6 +36,8 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 			"${CMAKE_SOURCE_DIR}/src/graphics/window/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/graphics/surface/vulkan/linux/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/opengl/linux/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/vulkan/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/input/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/application/modules/linux/*.cpp"
 		)
@@ -45,6 +50,8 @@ function(listSourceFiles SOURCE_FILES_VAR SYSTEM_FILES_VAR)
 			"${CMAKE_SOURCE_DIR}/src/graphics/window/windows/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/windows/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/graphics/surface/vulkan/windows/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/opengl/windows/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/graphical_device/vulkan/windows/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/input/windows/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/application/modules/windows/*.cpp"
 		)

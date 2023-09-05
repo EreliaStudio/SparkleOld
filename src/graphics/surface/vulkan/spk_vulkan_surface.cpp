@@ -7,6 +7,11 @@ namespace spk::vulkan
 	{
 
 	}
+
+	void Surface::checkGPUError(const std::wstring& p_informationMessage)
+	{
+
+	}
 	
 	Surface::~Surface()
 	{
