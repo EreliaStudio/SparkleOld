@@ -199,7 +199,7 @@ namespace spk::OpenGL
 			0
 		};
 
-		if (wglewIsSupported("WGL_ARB_create_context") == 1)
+		if (wglewIsSupported("WGL_ARB_create_context") == GL_FALSE)
 		{
 			_hrc = wglCreateContextAttribsARB(_hdc, NULL, attributes);
 			wglMakeCurrent(NULL, NULL);
@@ -231,7 +231,7 @@ namespace spk::OpenGL
 
 		glDisable(GL_SCISSOR_TEST);
 
-		//wglSwapIntervalEXT(0);
+		wglSwapIntervalEXT(0);
 	}
 
 	void Surface::checkGPUError(const std::wstring& p_informationMessage)
@@ -260,6 +260,7 @@ namespace spk::OpenGL
 	void Surface::clear()
 	{
 		glViewport(0, 0, _size.x, _size.y);
+		glScissor(0, 0, _size.x, _size.y);
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	}
