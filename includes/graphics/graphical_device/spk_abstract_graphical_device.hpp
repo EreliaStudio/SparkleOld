@@ -46,33 +46,8 @@ namespace spk
 					std::vector<Attribute> attributes;
 				};
 
-				struct Uniform
-				{	
-					enum Type
-					{
-						Error,
-						Float,
-						Int,
-						UInt,
-						Vec2,
-						Vec2Int,
-						Vec2UInt,
-						Vec3,
-						Vec3Int,
-						Vec3UInt,
-						Mat4x4,
-						FloatArray,
-						IntArray,
-						UIntArray
-					};
-
-					std::wstring name = L"Unnamed";
-					Type type = Type::Error;
-				};
-
 				Buffer dataBuffer;
 				Buffer indexesBuffer;
-				std::vector<Uniform> uniforms;
 			};
 
 			class Buffer
@@ -81,6 +56,7 @@ namespace spk
 
 			private:
 				Description::Buffer _description;
+				size_t _nbElement = 0;
 
 				template <typename... Vectors,
 						  typename std::enable_if_t<(... && spk::isVectorType<Vectors>::value), int> = 0>
@@ -113,7 +89,10 @@ namespace spk
 					return (_description);
 				}
 
-				virtual size_t nbElement() = 0;
+				virtual size_t nbElement()
+				{
+					return (_nbElement);
+				}
 
 				template <typename... Vectors,
 						  typename std::enable_if_t<(... && isVectorType<Vectors>::value), int> = 0>
@@ -122,9 +101,9 @@ namespace spk
 					_validateVectorSizes(p_vectors...);
 
 					spk::DataBuffer dataBuffer;
-					const auto size = std::get<0>(std::make_tuple(p_vectors...)).size();
+					_nbElement = std::get<0>(std::make_tuple(p_vectors...)).size();
 
-					for (size_t i = 0; i < size; ++i)
+					for (size_t i = 0; i < _nbElement; ++i)
 					{
 						auto addElementToBuffer = [&](auto &vec)
 						{
@@ -138,149 +117,13 @@ namespace spk
 				}
 			};
 
-			class Uniform
-			{
-			public:
-			private:
-				Description::Uniform _description;
-
-				void _checkTypeValidity(const Description::Uniform::Type &p_pushingType)
-				{
-					if (_description.type != p_pushingType)
-						spk::throwException(L"Error while pushing data to uniform [" + _description.name + L"] - Invalid type");
-				}
-
-				virtual void _push(float p_value) = 0;
-				virtual void _push(int p_value) = 0;
-				virtual void _push(unsigned int p_value) = 0;
-
-				virtual void _push(const spk::Vector2 &p_value) = 0;
-				virtual void _push(const spk::Vector2Int &p_value) = 0;
-				virtual void _push(const spk::Vector2UInt &p_value) = 0;
-
-				virtual void _push(const spk::Vector3 &p_value) = 0;
-				virtual void _push(const spk::Vector3Int &p_value) = 0;
-				virtual void _push(const spk::Vector3UInt &p_value) = 0;
-
-				virtual void _push(const spk::Matrix4x4 &p_value) = 0;
-
-				virtual void _push(const std::vector<float> &p_values) = 0;
-				virtual void _push(const std::vector<int> &p_values) = 0;
-				virtual void _push(const std::vector<unsigned int> &p_values) = 0;
-			public:
-				Uniform(const Description::Uniform& p_description) :
-					_description(p_description)
-				{
-
-				}
-
-				const std::wstring& name() const
-				{
-					return (_description.name);
-				}
-
-				void push(float p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Float);
-#endif
-					_push(p_value);
-				}
-				void push(int p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Int);
-#endif
-					_push(p_value);
-				}
-				void push(unsigned int p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::UInt);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector2 &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec2);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector2Int &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec2Int);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector2UInt &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec2UInt);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector3 &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec3);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector3Int &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec3Int);
-#endif
-					_push(p_value);
-				}
-				void push(const Vector3UInt &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Vec3UInt);
-#endif
-					_push(p_value);
-				}
-				void push(const Matrix4x4 &p_value)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::Mat4x4);
-#endif
-					_push(p_value);
-				}
-				void push(const std::vector<float> &p_values)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::FloatArray);
-#endif
-					_push(p_values);
-				}
-				void push(const std::vector<int> &p_values)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::IntArray);
-#endif
-					_push(p_values);
-				}
-				void push(const std::vector<unsigned int> &p_values)
-				{
-#ifndef NDEBUG
-					_checkTypeValidity(Description::Uniform::Type::UIntArray);
-#endif
-					_push(p_values);
-				}
-			};
-
 		private:
 			Description _description;
 			Buffer *_datas;
 			Buffer *_indexes;
-			std::map<std::wstring, Uniform *> _uniforms;
 
-			virtual Storage* _allocateStorage() = 0;
+			virtual Storage* _duplicate() = 0;
 			virtual Buffer* _allocateBuffer(const Description::Buffer& p_bufferDescription) = 0;
-			virtual Uniform* _allocateUniform(const Description::Uniform& p_uniformDescription) = 0;
 
 		public:
 			Storage()
@@ -291,22 +134,18 @@ namespace spk
 			void initialize(const Description &p_description)
 			{
 				_description = p_description;
+				activate();
 				_datas = _allocateBuffer(p_description.dataBuffer);
 				_indexes = _allocateBuffer(p_description.indexesBuffer);
-				for (size_t i = 0; i < p_description.uniforms.size(); i++)
-				{
-					Uniform* newUniform = _allocateUniform(p_description.uniforms[i]);
-
-					_uniforms[newUniform->name()] = newUniform;
-				}
 			}
 
 			virtual Storage *copy()
 			{
-				Storage *result = _allocateStorage();
+				Storage *result = _duplicate();
 				result->initialize(_description);
 				return (result);
 			}
+
 			virtual void activate() = 0;
 			virtual void deactivate() = 0;
 
@@ -326,16 +165,6 @@ namespace spk
 			Buffer *indexes()
 			{
 				return (_indexes);
-			}
-			std::map<std::wstring, Uniform *> &uniforms()
-			{
-				return (_uniforms);
-			}
-			Uniform *uniform(const std::wstring &p_uniformName)
-			{
-				if (_uniforms.contains(p_uniformName) == false)
-					spk::throwException(L"Uniform [" + p_uniformName + L"] does not exist");
-				return (_uniforms[p_uniformName]);
 			}
 		};
 
@@ -426,10 +255,6 @@ namespace spk
 				}
 			}
 		}
-		void _parseUniform(const std::string &p_shaderCode, Storage::Description& p_descriptionToFill)
-		{
-			
-		}
 
 		virtual void _loadDevice(
 			const std::string &p_vertexModuleName, const std::string &p_vertexModuleCode,
@@ -462,9 +287,6 @@ namespace spk
 
 			_parseBuffer(vertexShaderContent, storageDescription);
 
-			_parseUniform(vertexShaderContent, storageDescription);
-			_parseUniform(fragmentShaderContent, storageDescription);
-
 			_storage = _createStorage();
 			_storage->initialize(storageDescription);
 		}
@@ -483,14 +305,6 @@ namespace spk
 		Storage::Buffer *indexes()
 		{
 			return (_storage->indexes());
-		}
-		std::map<std::wstring, Storage::Uniform *> &uniforms()
-		{
-			return (_storage->uniforms());
-		}
-		Storage::Uniform *uniform(const std::wstring &p_uniformName)
-		{
-			return (_storage->uniform(p_uniformName));
 		}
 	};
 }

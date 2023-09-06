@@ -81,8 +81,6 @@ namespace spk::OpenGL
 					{
 						glBufferSubData(_mode, 0, p_bufferToPush.size(), p_bufferToPush.data());
 					}
-
-					glBindBuffer(_mode, 0);
 				}
 				void activate()
 				{
@@ -93,100 +91,24 @@ namespace spk::OpenGL
 				{
 					glBindBuffer(_mode, 0);
 				}
-				size_t nbElement()
-				{
-					return (_size / _description.stride);
-				}
 			};
 
-			class OpenGLUniform : public spk::AbstractGraphicalDevice::Storage::Uniform
-			{
-			private:
-				void _push(float p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(int p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(unsigned int p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-
-				void _push(const spk::Vector2 &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const spk::Vector2Int &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const spk::Vector2UInt &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-
-				void _push(const spk::Vector3 &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const spk::Vector3Int &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const spk::Vector3UInt &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-
-				void _push(const spk::Matrix4x4 &p_value)
-				{
-					spk::throwException(L"Not implemented");
-				}
-
-				void _push(const std::vector<float> &p_values)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const std::vector<int> &p_values)
-				{
-					spk::throwException(L"Not implemented");
-				}
-				void _push(const std::vector<unsigned int> &p_values)
-				{
-					spk::throwException(L"Not implemented");
-				}
-			public:
-				OpenGLUniform(const Description::Uniform& p_uniformDescription) :
-					spk::AbstractGraphicalDevice::Storage::Uniform(p_uniformDescription)
-				{
-
-				}
-
-			};
 		private:
 			GLuint _VAO;
 
+			OpenGLStorage* _duplicate()
+			{
+				return (new OpenGLStorage());
+			}
 			OpenGLBuffer* _allocateBuffer(const Description::Buffer& p_bufferDescription)
 			{
 				return (new OpenGLBuffer(p_bufferDescription));
-			}
-			OpenGLUniform* _allocateUniform(const Description::Uniform& p_uniformDescription)
-			{
-				return (new OpenGLUniform(p_uniformDescription));
-			}
-			OpenGLStorage* _allocateStorage()
-			{
-				return (new OpenGLStorage());
 			}
 
 		public:
 			OpenGLStorage()
 			{
 				glGenVertexArrays(1, &_VAO);
-				glBindVertexArray(_VAO);
 			}
 
 			void activate()
