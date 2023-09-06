@@ -5,8 +5,8 @@ class Test : public spk::Widget::Interface
 private:
 	spk::OpenGL::GraphicalDevice gdeviceA;
 
-	int selectedStorage = 0;
-	spk::OpenGL::GraphicalDevice::Storage* storages[3];
+	size_t selectedStorage = 0;
+	std::vector<spk::OpenGL::GraphicalDevice::Storage*> storages;
 
 	bool baked = false;
 
@@ -22,29 +22,32 @@ public:
 
 void Test::_onGeometryChange()
 {
-	std::vector<spk::Vector2> verticesDatas[3] = {
-		{spk::Vector2(0.5f, 0.5f), spk::Vector2(-0.5f, 0.5f), spk::Vector2(0.5f, -0.5f), spk::Vector2(-0.5f, -0.5f)},
-		{spk::Vector2(0.5f, 0.5f), spk::Vector2(-0.5f, 0.5f), spk::Vector2(0.5f, -0.5f), spk::Vector2(-0.5f, -0.5f)},
-		{spk::Vector2(0.5f, 0.5f), spk::Vector2(-0.5f, 0.5f), spk::Vector2(0.5f, -0.5f), spk::Vector2(-0.5f, -0.5f)}
-	};
-	std::vector<spk::Color> colorDatas[3] = {
-		{spk::Color(255, 255, 255), spk::Color(255, 0, 0), spk::Color(255, 0, 0), spk::Color(0, 0, 0)},
-		{spk::Color(255, 255, 255), spk::Color(0, 255, 0), spk::Color(0, 255, 0), spk::Color(0, 0, 0)},
-		{spk::Color(255, 255, 255), spk::Color(0, 0, 255), spk::Color(0, 0, 255), spk::Color(0, 0, 0)}
+	std::vector<spk::Vector2> verticesDatas = {spk::Vector2(0.5f, 0.5f), spk::Vector2(-0.5f, 0.5f), spk::Vector2(0.5f, -0.5f), spk::Vector2(-0.5f, -0.5f)};
+	std::vector<spk::Color> colors = {
+		spk::Color(255, 0, 0),
+		spk::Color(0, 255, 0),
+		spk::Color(0, 0, 255),
+		spk::Color(0, 255, 255),
+		spk::Color(255, 255, 0),
+		spk::Color(255, 0, 255)
 	};
 
 	std::vector<unsigned int> indexesData = {3, 2, 1, 1, 2, 0};
 
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < storages.size(); i++)
 	{
+		std::vector<spk::Color> colorDatas = {spk::Color(0, 0, 0), colors[i % 6], colors[i % 6], spk::Color(255, 255, 255)};
+
 		storages[i]->activate();
-		storages[i]->datas()->push(verticesDatas[i], colorDatas[i]);
+		storages[i]->datas()->push(verticesDatas, colorDatas);
 		storages[i]->indexes()->push(indexesData);
 	}
 }
 
 void Test::_onRender()
 {
+	if (selectedStorage >= storages.size())
+		return ;
 	gdeviceA.activate();
 
 	storages[selectedStorage]->activate();
@@ -58,14 +61,17 @@ bool Test::_onUpdate()
 	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Pressed)
 	{
 		selectedStorage = 0;
+		selectedStorage %= 6;
 	}
 	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Pressed)
 	{
-		selectedStorage = 1;
+		selectedStorage += 1;
+		selectedStorage %= 6;
 	}
 	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::E) == spk::InputState::Pressed)
 	{
-		selectedStorage = 2;
+		selectedStorage += 5;
+		selectedStorage %= 6;
 	}
 
 	return (false);
@@ -76,9 +82,12 @@ Test::Test(const std::wstring& p_name) :
 {
 	gdeviceA.loadFromFile(L"colorShader.vert", L"colorShader.frag");
 
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < 6; i++)
 	{
-		storages[i] = gdeviceA.storage()->copy();
+		if (i == 0)
+			storages.push_back(gdeviceA.storage());
+		else
+			storages.push_back(gdeviceA.storage()->copy());
 	}
 }
 
