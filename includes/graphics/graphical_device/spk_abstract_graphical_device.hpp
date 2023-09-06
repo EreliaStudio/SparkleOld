@@ -25,7 +25,7 @@ namespace spk
 			{
 				struct Buffer
 				{
-					enum class Type
+					enum class Mode
 					{
 						Error,
 						Data,
@@ -34,14 +34,23 @@ namespace spk
 						Texture
 					};
 
-					struct Attribute
+					enum class Type
 					{
-						uint32_t location;
-						size_t format;
-						size_t offset;
+						Error,
+						Float,
+						UInt,
+						Int
 					};
 
-					Type type = Type::Error;
+					struct Attribute
+					{
+						Type type = Type::Error;
+						uint32_t location = 0;
+						size_t format = 1;
+						size_t offset = 0;
+					};
+
+					Mode mode = Mode::Error;
 					size_t stride = 0;
 					std::vector<Attribute> attributes;
 				};
@@ -135,7 +144,9 @@ namespace spk
 			{
 				_description = p_description;
 				activate();
+				spk::cout << " --- Data buffer ---" << std::endl;
 				_datas = _allocateBuffer(p_description.dataBuffer);
+				spk::cout << " --- Indexes buffer ---" << std::endl;
 				_indexes = _allocateBuffer(p_description.indexesBuffer);
 			}
 
@@ -201,16 +212,16 @@ namespace spk
 		{
 			std::unordered_set<uint32_t> p_usedLocations;
 
-			p_descriptionToFill.dataBuffer.type = Storage::Description::Buffer::Type::Data;
+			p_descriptionToFill.dataBuffer.mode = Storage::Description::Buffer::Mode::Data;
 
-			p_descriptionToFill.indexesBuffer.type = Storage::Description::Buffer::Type::Indexes;
-			p_descriptionToFill.indexesBuffer.stride = sizeof(unsigned int);
+			p_descriptionToFill.indexesBuffer.mode = Storage::Description::Buffer::Mode::Indexes;
+			p_descriptionToFill.indexesBuffer.stride = 0;
 
-			std::unordered_map<std::string, size_t> p_glslTypeToSize = {
-				{"float", 1},
-				{"vec2", 2},
-				{"vec3", 3},
-				{"vec4", 4}
+			static const std::unordered_map<std::string, std::tuple<size_t, Storage::Description::Buffer::Type, size_t>> p_glslTypeToSize = {
+				{"float", {1, Storage::Description::Buffer::Type::Float, sizeof(float)}},
+				{"vec2", {2, Storage::Description::Buffer::Type::Float, sizeof(float)}},
+				{"vec3", {3, Storage::Description::Buffer::Type::Float, sizeof(float)}},
+				{"vec4", {4, Storage::Description::Buffer::Type::Float, sizeof(float)}}
 			};
 
 			std::vector<std::string> buffersInformations = _parseBufferInformations(p_shaderCode);
@@ -242,14 +253,16 @@ namespace spk
 					Storage::Description::Buffer::Attribute p_attribute;
 					p_attribute.location = p_location;
 
-					if (p_glslTypeToSize.find(p_type) != p_glslTypeToSize.end()) {
-						p_attribute.format = p_glslTypeToSize[p_type];
-					} else {
-						p_attribute.format = 0;
+					auto p_glslTypeToSizeIter = p_glslTypeToSize.find(p_type);
+					if (p_glslTypeToSizeIter == p_glslTypeToSize.end()) {
+						spk::throwException(L"Unsupported data type");
 					}
 
+					p_attribute.format = std::get<0>(p_glslTypeToSizeIter->second);
+					p_attribute.type = std::get<1>(p_glslTypeToSizeIter->second);
+
 					p_attribute.offset = p_descriptionToFill.dataBuffer.stride;
-					p_descriptionToFill.dataBuffer.stride += p_attribute.format * sizeof(float);
+					p_descriptionToFill.dataBuffer.stride += p_attribute.format * std::get<2>(p_glslTypeToSizeIter->second);
 
 					p_descriptionToFill.dataBuffer.attributes.push_back(p_attribute);
 				}
@@ -307,4 +320,6 @@ namespace spk
 			return (_storage->indexes());
 		}
 	};
+
+	std::wstring to_wstring(const spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type& p_input);
 }

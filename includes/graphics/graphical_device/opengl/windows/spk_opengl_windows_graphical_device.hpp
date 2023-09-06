@@ -16,31 +16,47 @@ namespace spk::OpenGL
 				spk::AbstractGraphicalDevice::Storage::Description::Buffer _description;
 				GLuint _vbo;
 				GLenum _mode;
+				GLenum _type;
 				size_t _size = 0;
 				size_t _pushedSize = 0;
+
+				GLenum _convertTypeToGLenum(const spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type& p_input)
+				{
+					switch (p_input)
+					{
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Float):
+							return (GL_FLOAT);
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::UInt):
+							return (GL_UNSIGNED_INT);
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Int):
+							return (GL_INT);
+					}
+					spk::throwException(L"Unexpected buffer type");
+					return (GL_NONE);
+				}
 
 			public:
 				OpenGLBuffer(const spk::AbstractGraphicalDevice::Storage::Description::Buffer& p_bufferDescription)
 				{
 					_description = p_bufferDescription;
-					switch (p_bufferDescription.type)
+					switch (p_bufferDescription.mode)
 					{
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Data):
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Data):
 						{
 							_mode = GL_ARRAY_BUFFER;
 							break;
 						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Indexes):
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Indexes):
 						{
 							_mode = GL_ELEMENT_ARRAY_BUFFER;
 							break;
 						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::ShaderStorage):
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::ShaderStorage):
 						{
 							_mode = GL_SHADER_STORAGE_BUFFER;
 							break;
 						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Texture):
+						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Texture):
 						{
 							_mode = GL_TEXTURE_BUFFER;
 							break;
@@ -49,17 +65,26 @@ namespace spk::OpenGL
 
 					glGenBuffers(1, &_vbo);
 					glBindBuffer(_mode, _vbo);
-					for (const auto& attribute : _description.attributes)
+					spk::cout << "Description:" << std::endl;
+					spk::cout << "	Stride   : " << _description.stride << std::endl;
+					for (size_t i = 0; i <  _description.attributes.size(); i++)
 					{
+						const auto& attribute = _description.attributes[i];
 						glEnableVertexAttribArray(attribute.location);
+
+						spk::cout << "	Attribute [" << i << "]:" << std::endl;
+						spk::cout << "		Location    : " << attribute.location << std::endl;
+						spk::cout << "		Format      : " << attribute.format << std::endl;
+						spk::cout << "		Type        : " << spk::to_wstring(attribute.type) << std::endl;
+						spk::cout << "		Offset      : " << attribute.offset << std::endl;
 
 						glVertexAttribPointer(
 							attribute.location,
 							attribute.format,
-							GL_FLOAT,
+							_convertTypeToGLenum(attribute.type),
 							GL_FALSE,
 							_description.stride,
-							(void*)(attribute.offset * sizeof(GL_FLOAT))
+							(void*)(attribute.offset)
 						);
 					}
 				}
