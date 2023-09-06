@@ -6,8 +6,7 @@ private:
 	spk::OpenGL::GraphicalDevice gdeviceA;
 
 	int selectedStorage = 1;
-	spk::OpenGL::GraphicalDevice::Storage* dataStorages[3];
-	spk::OpenGL::GraphicalDevice::Storage* indexesStorage;
+	spk::OpenGL::GraphicalDevice::Storage* storages[3];
 
 	bool baked = false;
 
@@ -38,22 +37,20 @@ void Test::_onGeometryChange()
 
 	for (size_t i = 0; i < 3; i++)
 	{
-		dataStorages[i]->push(verticesDatas[i], colorDatas[i]);
+		storages[i]->datas()->push(verticesDatas[i], colorDatas[i]);
+		storages[i]->indexes()->push(indexesData);
 	}
-	indexesStorage->push(indexesData);
 }
 
 void Test::_onRender()
 {
 	gdeviceA.activate();
 
-	dataStorages[selectedStorage]->activate();
-	indexesStorage->activate();
+	storages[selectedStorage]->activate();
 
-	gdeviceA.launch(indexesStorage->nbElement());
+	// gdeviceA.launch(storages[selectedStorage]->nbIndexes());
 
-	dataStorages[selectedStorage]->deactivate();
-	indexesStorage->deactivate();
+	storages[selectedStorage]->deactivate();
 }
 
 bool Test::_onUpdate()
@@ -81,9 +78,8 @@ Test::Test(const std::wstring& p_name) :
 
 	for (size_t i = 0; i < 3; i++)
 	{
-		dataStorages[i] = gdeviceA.dataStorage()->copy();
+		storages[i] = gdeviceA.storage()->copy();
 	}
-	indexesStorage = gdeviceA.indexesStorage()->copy();
 }
 
 Test::~Test()
