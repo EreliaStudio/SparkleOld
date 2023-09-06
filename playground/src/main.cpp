@@ -5,7 +5,7 @@ class Test : public spk::Widget::Interface
 private:
 	spk::OpenGL::GraphicalDevice gdeviceA;
 
-	int selectedStorage = 1;
+	int selectedStorage = 0;
 	spk::OpenGL::GraphicalDevice::Storage* storages[3];
 
 	bool baked = false;
@@ -37,6 +37,7 @@ void Test::_onGeometryChange()
 
 	for (size_t i = 0; i < 3; i++)
 	{
+		storages[i]->activate();
 		storages[i]->datas()->push(verticesDatas[i], colorDatas[i]);
 		storages[i]->indexes()->push(indexesData);
 	}
@@ -48,8 +49,7 @@ void Test::_onRender()
 
 	storages[selectedStorage]->activate();
 
-	// gdeviceA.launch(storages[selectedStorage]->nbIndexes());
-
+	gdeviceA.launch(storages[selectedStorage]->nbIndexes());
 	storages[selectedStorage]->deactivate();
 }
 
