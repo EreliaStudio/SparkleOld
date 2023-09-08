@@ -13,7 +13,6 @@ namespace spk::OpenGL
 			class OpenGLBuffer : public spk::AbstractGraphicalDevice::Storage::Buffer
 			{
 			private:
-				spk::AbstractGraphicalDevice::Storage::Description::Buffer _description;
 				GLuint _vbo;
 				GLenum _mode;
 				GLenum _type;
@@ -36,10 +35,10 @@ namespace spk::OpenGL
 				}
 
 			public:
-				OpenGLBuffer(const spk::AbstractGraphicalDevice::Storage::Description::Buffer& p_bufferDescription)
+				OpenGLBuffer(const spk::AbstractGraphicalDevice::Storage::Description::Buffer& p_bufferDescription) :
+					spk::AbstractGraphicalDevice::Storage::Buffer(p_bufferDescription)
 				{
-					_description = p_bufferDescription;
-					switch (p_bufferDescription.mode)
+					switch (description().mode)
 					{
 						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Data):
 						{
@@ -65,32 +64,24 @@ namespace spk::OpenGL
 
 					glGenBuffers(1, &_vbo);
 					glBindBuffer(_mode, _vbo);
-					spk::cout << "Description:" << std::endl;
-					spk::cout << "	Stride   : " << _description.stride << std::endl;
-					for (size_t i = 0; i <  _description.attributes.size(); i++)
+					for (size_t i = 0; i <  description().attributes.size(); i++)
 					{
-						const auto& attribute = _description.attributes[i];
+						const auto& attribute = description().attributes[i];
 						glEnableVertexAttribArray(attribute.location);
-
-						spk::cout << "	Attribute [" << i << "]:" << std::endl;
-						spk::cout << "		Location    : " << attribute.location << std::endl;
-						spk::cout << "		Format      : " << attribute.format << std::endl;
-						spk::cout << "		Type        : " << spk::to_wstring(attribute.type) << std::endl;
-						spk::cout << "		Offset      : " << attribute.offset << std::endl;
 
 						glVertexAttribPointer(
 							attribute.location,
 							attribute.format,
 							_convertTypeToGLenum(attribute.type),
 							GL_FALSE,
-							_description.stride,
+							description().stride,
 							(void*)(attribute.offset)
 						);
 					}
 				}
 				OpenGLBuffer* copy() const
 				{
-					return (new OpenGLBuffer(_description));
+					return (new OpenGLBuffer(description()));
 				}
 				void _pushDataBuffer(const spk::DataBuffer &p_bufferToPush)
 				{
@@ -110,7 +101,6 @@ namespace spk::OpenGL
 				void activate()
 				{
 					glBindBuffer(_mode, _vbo);
-		
 				}
 				void deactivate()
 				{
@@ -120,10 +110,11 @@ namespace spk::OpenGL
 
 		private:
 			GLuint _VAO;
+			GLuint _program;
 
 			OpenGLStorage* _duplicate()
 			{
-				return (new OpenGLStorage());
+				return (new OpenGLStorage(_program));
 			}
 			OpenGLBuffer* _allocateBuffer(const Description::Buffer& p_bufferDescription)
 			{
@@ -131,9 +122,11 @@ namespace spk::OpenGL
 			}
 
 		public:
-			OpenGLStorage()
+			OpenGLStorage(const GLuint& p_program) :
+				_program(p_program)
 			{
 				glGenVertexArrays(1, &_VAO);
+				activate();
 			}
 
 			void activate()
@@ -206,7 +199,7 @@ namespace spk::OpenGL
 
 		OpenGLStorage *_createStorage()
 		{
-			return (new OpenGLStorage());
+			return (new OpenGLStorage(_program));
 		}
 
 	public:

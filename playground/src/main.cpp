@@ -51,6 +51,7 @@ void Test::_onRender()
 	gdeviceA.activate();
 
 	storages[selectedStorage]->activate();
+	//storages[selectedStorage]->uniform(L"model_origin")->push(spk::Vector2(0, 0));
 
 	gdeviceA.launch(storages[selectedStorage]->nbIndexes());
 	storages[selectedStorage]->deactivate();
@@ -82,7 +83,7 @@ Test::Test(const std::wstring& p_name) :
 {
 	gdeviceA.loadFromFile(L"colorShader.vert", L"colorShader.frag");
 
-	for (size_t i = 0; i < 6; i++)
+	for (size_t i = 0; i < 1; i++)
 	{
 		if (i == 0)
 			storages.push_back(gdeviceA.storage());
