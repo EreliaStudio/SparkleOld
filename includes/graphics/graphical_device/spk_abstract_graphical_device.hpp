@@ -543,6 +543,10 @@ namespace spk
 				{
 					{L"float", Storage::Description::Descriptor::Uniform::Type::Float},
 					{L"int", Storage::Description::Descriptor::Uniform::Type::Int},
+					{L"sampler1D", Storage::Description::Descriptor::Uniform::Type::Int},
+					{L"sampler2D", Storage::Description::Descriptor::Uniform::Type::Int},
+					{L"sampler3D", Storage::Description::Descriptor::Uniform::Type::Int},
+					{L"samplerCube", Storage::Description::Descriptor::Uniform::Type::Int},
 					{L"uint", Storage::Description::Descriptor::Uniform::Type::UInt},
 
 					{L"vec2", Storage::Description::Descriptor::Uniform::Type::Vector2},
