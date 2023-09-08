@@ -236,14 +236,7 @@ namespace spk
 				
 				{"vec4", {4, Storage::Description::Buffer::Type::Float}},
 				{"ivec4", {4, Storage::Description::Buffer::Type::Float}},
-				{"uvec4", {4, Storage::Description::Buffer::Type::Float}},
-
-				{"mat4", {16, Storage::Description::Buffer::Type::Float}},
-
-				{"sampler1D", {1, Storage::Description::Buffer::Type::UInt}},
-				{"sampler2D", {1, Storage::Description::Buffer::Type::UInt}},
-				{"sampler3D", {1, Storage::Description::Buffer::Type::UInt}},
-				{"samplerCube", {1, Storage::Description::Buffer::Type::UInt}}
+				{"uvec4", {4, Storage::Description::Buffer::Type::Float}}
 			};
 
 			static const std::unordered_map<Storage::Description::Buffer::Type, size_t> typeToSizeMap = {
