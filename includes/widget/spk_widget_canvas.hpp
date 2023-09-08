@@ -14,7 +14,7 @@ struct ClassType##_##RegistrationName##_Registrar                               
 {                                                                                 \
     ClassType##_##RegistrationName##_Registrar()                                  \
     {                                                                             \
-        spk::Widget::Canvas::classInstanciatorLambda[spk::stringToWString(#RegistrationName)] =        \
+        spk::Widget::Canvas::classInstanciatorLambda[spk::to_wstring(#RegistrationName)] =        \
             [](const std::wstring &p_name,                                        \
                const spk::JSON::Object &p_obj) -> spk::Widget::Interface*         \
             {                                                                     \

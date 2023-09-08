@@ -171,7 +171,7 @@ namespace spk
 	/**
 	 * @brief Convert a string to a wstring
 	*/
-	std::wstring stringToWString(const std::string &s);
+	std::wstring to_wstring(const std::string &s);
 
 	
 	/**
