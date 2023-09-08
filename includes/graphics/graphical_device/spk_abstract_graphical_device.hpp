@@ -90,15 +90,21 @@ namespace spk
 				virtual void _pushDataBuffer(const spk::DataBuffer &p_bufferToPush) = 0;
 
 			public:
+				Buffer(const Description::Buffer& p_description) :
+					_description(p_description)
+				{
+
+				}
+
 				virtual void activate() = 0;
 				virtual void deactivate() = 0;
 
-				Description::Buffer description()
+				const Description::Buffer& description() const
 				{
 					return (_description);
 				}
 
-				virtual size_t nbElement()
+				virtual size_t nbElement() const
 				{
 					return (_nbElement);
 				}
@@ -144,9 +150,7 @@ namespace spk
 			{
 				_description = p_description;
 				activate();
-				spk::cout << " --- Data buffer ---" << std::endl;
 				_datas = _allocateBuffer(p_description.dataBuffer);
-				spk::cout << " --- Indexes buffer ---" << std::endl;
 				_indexes = _allocateBuffer(p_description.indexesBuffer);
 			}
 
@@ -200,8 +204,8 @@ namespace spk
 				for (; p_it != p_end; ++p_it) {
 					std::smatch p_match = *p_it;
 					
-					std::string p_inStatement = p_match.str();
-					p_result.push_back(p_inStatement);
+					std::string contact = p_match.str();
+					p_result.push_back(contact);
 				}
 			}
 
@@ -217,11 +221,35 @@ namespace spk
 			p_descriptionToFill.indexesBuffer.mode = Storage::Description::Buffer::Mode::Indexes;
 			p_descriptionToFill.indexesBuffer.stride = 0;
 
-			static const std::unordered_map<std::string, std::tuple<size_t, Storage::Description::Buffer::Type, size_t>> p_glslTypeToSize = {
-				{"float", {1, Storage::Description::Buffer::Type::Float, sizeof(float)}},
-				{"vec2", {2, Storage::Description::Buffer::Type::Float, sizeof(float)}},
-				{"vec3", {3, Storage::Description::Buffer::Type::Float, sizeof(float)}},
-				{"vec4", {4, Storage::Description::Buffer::Type::Float, sizeof(float)}}
+			static const std::unordered_map<std::string, std::tuple<size_t, Storage::Description::Buffer::Type>> glslInputToData = {
+				{"float", {1, Storage::Description::Buffer::Type::Float}},
+				{"uint", {1, Storage::Description::Buffer::Type::UInt}},
+				{"int", {1, Storage::Description::Buffer::Type::Int}},
+
+				{"vec2", {2, Storage::Description::Buffer::Type::Float}},
+				{"uvec2", {2, Storage::Description::Buffer::Type::UInt}},
+				{"ivec2", {2, Storage::Description::Buffer::Type::Int}},
+
+				{"vec3", {3, Storage::Description::Buffer::Type::Float}},
+				{"uvec3", {3, Storage::Description::Buffer::Type::UInt}},
+				{"ivec3", {3, Storage::Description::Buffer::Type::Int}},
+				
+				{"vec4", {4, Storage::Description::Buffer::Type::Float}},
+				{"ivec4", {4, Storage::Description::Buffer::Type::Float}},
+				{"uvec4", {4, Storage::Description::Buffer::Type::Float}},
+
+				{"mat4", {16, Storage::Description::Buffer::Type::Float}},
+
+				{"sampler1D", {1, Storage::Description::Buffer::Type::UInt}},
+				{"sampler2D", {1, Storage::Description::Buffer::Type::UInt}},
+				{"sampler3D", {1, Storage::Description::Buffer::Type::UInt}},
+				{"samplerCube", {1, Storage::Description::Buffer::Type::UInt}}
+			};
+
+			static const std::unordered_map<Storage::Description::Buffer::Type, size_t> typeToSizeMap = {
+				{Storage::Description::Buffer::Type::Float, sizeof(float)},
+				{Storage::Description::Buffer::Type::UInt, sizeof(unsigned int)},
+				{Storage::Description::Buffer::Type::Int, sizeof(int)}
 			};
 
 			std::vector<std::string> buffersInformations = _parseBufferInformations(p_shaderCode);
@@ -253,16 +281,16 @@ namespace spk
 					Storage::Description::Buffer::Attribute p_attribute;
 					p_attribute.location = p_location;
 
-					auto p_glslTypeToSizeIter = p_glslTypeToSize.find(p_type);
-					if (p_glslTypeToSizeIter == p_glslTypeToSize.end()) {
-						spk::throwException(L"Unsupported data type");
+					auto glslInputToDataIter = glslInputToData.find(p_type);
+					if (glslInputToDataIter == glslInputToData.end()) {
+						spk::throwException(L"Unsupported data type [" + spk::stringToWString(p_type) + L"]");
 					}
 
-					p_attribute.format = std::get<0>(p_glslTypeToSizeIter->second);
-					p_attribute.type = std::get<1>(p_glslTypeToSizeIter->second);
+					p_attribute.format = std::get<0>(glslInputToDataIter->second);
+					p_attribute.type = std::get<1>(glslInputToDataIter->second);
 
 					p_attribute.offset = p_descriptionToFill.dataBuffer.stride;
-					p_descriptionToFill.dataBuffer.stride += p_attribute.format * std::get<2>(p_glslTypeToSizeIter->second);
+					p_descriptionToFill.dataBuffer.stride += p_attribute.format * typeToSizeMap.at(p_attribute.type);
 
 					p_descriptionToFill.dataBuffer.attributes.push_back(p_attribute);
 				}
