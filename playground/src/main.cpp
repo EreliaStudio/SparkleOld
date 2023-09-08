@@ -83,7 +83,7 @@ Test::Test(const std::wstring& p_name) :
 {
 	gdeviceA.loadFromFile(L"colorShader.vert", L"colorShader.frag");
 
-	for (size_t i = 0; i < 1; i++)
+	for (size_t i = 0; i < 6; i++)
 	{
 		if (i == 0)
 			storages.push_back(gdeviceA.storage());
