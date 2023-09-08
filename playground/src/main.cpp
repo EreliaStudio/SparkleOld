@@ -51,7 +51,7 @@ void Test::_onRender()
 	gdeviceA.activate();
 
 	storages[selectedStorage]->activate();
-	//storages[selectedStorage]->uniform(L"model_origin")->push(spk::Vector2(0, 0));
+	storages[selectedStorage]->uniform(L"delta")->push(spk::Vector2(0.1f * selectedStorage, 0.0f));	
 
 	gdeviceA.launch(storages[selectedStorage]->nbIndexes());
 	storages[selectedStorage]->deactivate();

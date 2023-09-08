@@ -19,54 +19,53 @@ namespace spk::OpenGL
 				size_t _size = 0;
 				size_t _pushedSize = 0;
 
-				GLenum _convertTypeToGLenum(const spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type& p_input)
+				GLenum _convertTypeToGLenum(const spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type &p_input)
 				{
 					switch (p_input)
 					{
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Float):
-							return (GL_FLOAT);
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::UInt):
-							return (GL_UNSIGNED_INT);
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Int):
-							return (GL_INT);
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Float):
+						return (GL_FLOAT);
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::UInt):
+						return (GL_UNSIGNED_INT);
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Type::Int):
+						return (GL_INT);
 					}
 					spk::throwException(L"Unexpected buffer type");
 					return (GL_NONE);
 				}
 
 			public:
-				OpenGLBuffer(const spk::AbstractGraphicalDevice::Storage::Description::Buffer& p_bufferDescription) :
-					spk::AbstractGraphicalDevice::Storage::Buffer(p_bufferDescription)
+				OpenGLBuffer(const spk::AbstractGraphicalDevice::Storage::Description::Buffer &p_bufferDescription) : spk::AbstractGraphicalDevice::Storage::Buffer(p_bufferDescription)
 				{
 					switch (description().mode)
 					{
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Data):
-						{
-							_mode = GL_ARRAY_BUFFER;
-							break;
-						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Indexes):
-						{
-							_mode = GL_ELEMENT_ARRAY_BUFFER;
-							break;
-						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::ShaderStorage):
-						{
-							_mode = GL_SHADER_STORAGE_BUFFER;
-							break;
-						}
-						case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Texture):
-						{
-							_mode = GL_TEXTURE_BUFFER;
-							break;
-						}
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Data):
+					{
+						_mode = GL_ARRAY_BUFFER;
+						break;
+					}
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Indexes):
+					{
+						_mode = GL_ELEMENT_ARRAY_BUFFER;
+						break;
+					}
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::ShaderStorage):
+					{
+						_mode = GL_SHADER_STORAGE_BUFFER;
+						break;
+					}
+					case (spk::AbstractGraphicalDevice::Storage::Description::Buffer::Mode::Texture):
+					{
+						_mode = GL_TEXTURE_BUFFER;
+						break;
+					}
 					}
 
 					glGenBuffers(1, &_vbo);
 					glBindBuffer(_mode, _vbo);
-					for (size_t i = 0; i <  description().attributes.size(); i++)
+					for (size_t i = 0; i < description().attributes.size(); i++)
 					{
-						const auto& attribute = description().attributes[i];
+						const auto &attribute = description().attributes[i];
 						glEnableVertexAttribArray(attribute.location);
 
 						glVertexAttribPointer(
@@ -75,11 +74,10 @@ namespace spk::OpenGL
 							_convertTypeToGLenum(attribute.type),
 							GL_FALSE,
 							description().stride,
-							(void*)(attribute.offset)
-						);
+							(void *)(attribute.offset));
 					}
 				}
-				OpenGLBuffer* copy() const
+				OpenGLBuffer *copy() const
 				{
 					return (new OpenGLBuffer(description()));
 				}
@@ -108,22 +106,124 @@ namespace spk::OpenGL
 				}
 			};
 
+			class OpenGLDescriptor : public spk::AbstractGraphicalDevice::Storage::Descriptor
+			{
+			public:
+				class OpenGLUniform : public spk::AbstractGraphicalDevice::Storage::Descriptor::Uniform
+				{
+				private:
+					uint32_t _location = 0;
+
+					void _push(float p_value)
+					{
+						glUniform1f(_location, p_value);
+					}
+
+					void _push(int p_value)
+					{
+						glUniform1i(_location, p_value);
+					}
+
+					void _push(unsigned int p_value)
+					{
+						glUniform1ui(_location, p_value);
+					}
+
+					void _push(const spk::Vector2 &p_value)
+					{
+						glUniform2f(_location, p_value.x, p_value.y);
+					}
+
+					void _push(const spk::Vector2Int &p_value)
+					{
+						glUniform2i(_location, p_value.x, p_value.y);
+					}
+
+					void _push(const spk::Vector2UInt &p_value)
+					{
+						glUniform2ui(_location, p_value.x, p_value.y);
+					}
+
+					void _push(const spk::Vector3 &p_value)
+					{
+						glUniform3f(_location, p_value.x, p_value.y, p_value.z);
+					}
+
+					void _push(const spk::Vector3Int &p_value)
+					{
+						glUniform3i(_location, p_value.x, p_value.y, p_value.z);
+					}
+
+					void _push(const spk::Vector3UInt &p_value)
+					{
+						glUniform3ui(_location, p_value.x, p_value.y, p_value.z);
+					}
+
+					void _push(const spk::Color &p_value)
+					{
+						glUniform4f(_location, p_value.r, p_value.g, p_value.b, p_value.a);
+					}
+
+					void _push(const spk::Matrix4x4 &p_value)
+					{
+						glUniformMatrix4fv(_location, 1, GL_FALSE, p_value.c_ptr());
+					}
+
+				public:
+					OpenGLUniform(const GLuint &p_program, const Description::Descriptor::Uniform &p_uniformDescription) : spk::AbstractGraphicalDevice::Storage::Descriptor::Uniform(p_uniformDescription),
+																														   _location(glGetUniformLocation(p_program, spk::wstringToString(p_uniformDescription.name).c_str()))
+					{
+					}
+				};
+
+			private:
+				GLuint _program;
+
+				Descriptor *_copy() const
+				{
+					return (new OpenGLDescriptor(_program, description()));
+				}
+
+				Uniform *_allocateUniform(const Description::Descriptor::Uniform &p_description)
+				{
+					return (new OpenGLUniform(_program, p_description));
+				}
+
+			public:
+				OpenGLDescriptor(const GLuint &p_program, const Description::Descriptor &p_descriptorDescription) : spk::AbstractGraphicalDevice::Storage::Descriptor(p_descriptorDescription),
+																													_program(p_program)
+				{
+				}
+
+				void activate()
+				{
+				}
+
+				void deactivate()
+				{
+				}
+			};
+
 		private:
 			GLuint _VAO;
 			GLuint _program;
 
-			OpenGLStorage* _duplicate()
+			OpenGLStorage *_duplicate()
 			{
 				return (new OpenGLStorage(_program));
 			}
-			OpenGLBuffer* _allocateBuffer(const Description::Buffer& p_bufferDescription)
+			OpenGLBuffer *_allocateBuffer(const Description::Buffer &p_bufferDescription)
 			{
 				return (new OpenGLBuffer(p_bufferDescription));
 			}
+			OpenGLDescriptor *_allocateDescriptor(const Description::Descriptor &p_bufferDescription)
+			{
+				glUseProgram(_program);
+				return (new OpenGLDescriptor(_program, p_bufferDescription));
+			}
 
 		public:
-			OpenGLStorage(const GLuint& p_program) :
-				_program(p_program)
+			OpenGLStorage(const GLuint &p_program) : _program(p_program)
 			{
 				glGenVertexArrays(1, &_VAO);
 				activate();
@@ -133,7 +233,7 @@ namespace spk::OpenGL
 			{
 				glBindVertexArray(_VAO);
 			}
-			
+
 			void deactivate()
 			{
 				glBindVertexArray(0);
@@ -147,7 +247,7 @@ namespace spk::OpenGL
 		{
 			GLint result;
 			GLint len;
-			const char* content = p_shaderCode.c_str();
+			const char *content = p_shaderCode.c_str();
 
 			result = GL_FALSE;
 
@@ -158,9 +258,9 @@ namespace spk::OpenGL
 			if (result != GL_TRUE)
 			{
 				glGetShaderiv(p_shaderIndex, GL_INFO_LOG_LENGTH, &len);
-				char* errorMsg = new char[len + 1];
+				char *errorMsg = new char[len + 1];
 				glGetShaderInfoLog(p_shaderIndex, len, NULL, errorMsg);
-				spk::throwException(L"Error while compiling a shader :\n" + spk::stringToWString(errorMsg));
+				spk::throwException(L"Error while compiling a shader :\n" + spk::to_wstring(errorMsg));
 			}
 		}
 
@@ -207,7 +307,7 @@ namespace spk::OpenGL
 		{
 			glUseProgram(_program);
 		}
-		void launch(const size_t& p_nbIndexes)
+		void launch(const size_t &p_nbIndexes)
 		{
 			glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_nbIndexes), GL_UNSIGNED_INT, nullptr);
 		}

@@ -254,7 +254,7 @@ namespace spk
 		return (result);
 	}
 
-	std::wstring stringToWString(const std::string &s)
+	std::wstring to_wstring(const std::string &s)
 	{
 		std::wstring result(s.begin(), s.end());
 
