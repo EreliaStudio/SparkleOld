@@ -22,8 +22,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/archive/${Archit
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/${ArchitectureSufix}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/executable/${ArchitectureSufix}")
 
-createOpenGLRecipe()
-createVulkanRecipe()
+if(NOT NoOpenGL)
+    createOpenGLRecipe()
+    createExportRecipes("SparkleOpenGL")
+endif()
 
-createExportRecipes("SparkleOpenGL")
-createExportRecipes("Sparkle")
+if(NOT NoVulkan)
+    createVulkanRecipe()
+    createExportRecipes("Sparkle")
+endif()
