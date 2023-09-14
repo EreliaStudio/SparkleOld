@@ -3,12 +3,11 @@
 class Test : public spk::Widget::Interface
 {
 private:
-	spk::OpenGL::GraphicalDevice gdeviceA;
+	spk::GraphicalDevice gdeviceA;
 
-	size_t selectedStorage = 0;
-	std::vector<spk::OpenGL::GraphicalDevice::Storage*> storages;
+	spk::GraphicalDevice::Object _object;
 
-	bool baked = false;
+	float rotationValue(0);
 
 	void _onGeometryChange();
 	void _onRender();
@@ -22,59 +21,18 @@ public:
 
 void Test::_onGeometryChange()
 {
-	std::vector<spk::Vector2> verticesDatas = {spk::Vector2(0.5f, 0.5f), spk::Vector2(-0.5f, 0.5f), spk::Vector2(0.5f, -0.5f), spk::Vector2(-0.5f, -0.5f)};
-	std::vector<spk::Color> colors = {
-		spk::Color(255, 0, 0),
-		spk::Color(0, 255, 0),
-		spk::Color(0, 0, 255),
-		spk::Color(0, 255, 255),
-		spk::Color(255, 255, 0),
-		spk::Color(255, 0, 255)
-	};
-
-	std::vector<unsigned int> indexesData = {3, 2, 1, 1, 2, 0};
-
-	for (size_t i = 0; i < storages.size(); i++)
-	{
-		std::vector<spk::Color> colorDatas = {spk::Color(0, 0, 0), colors[i % 6], colors[i % 6], spk::Color(255, 255, 255)};
-
-		storages[i]->activate();
-		storages[i]->datas()->push(verticesDatas, colorDatas);
-		storages[i]->indexes()->push(indexesData);
-	}
 }
 
 void Test::_onRender()
 {
-	if (selectedStorage >= storages.size())
-		return ;
-	gdeviceA.activate();
-
-	storages[selectedStorage]->activate();
-	storages[selectedStorage]->uniform(L"delta")->push(spk::Vector2(0.1f * selectedStorage, 0.0f));	
-
-	gdeviceA.launch(storages[selectedStorage]->nbIndexes());
-	storages[selectedStorage]->deactivate();
+	_object.render();
 }
 
 bool Test::_onUpdate()
 {
-	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Pressed)
-	{
-		selectedStorage = 0;
-		selectedStorage %= 6;
-	}
-	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Pressed)
-	{
-		selectedStorage += 1;
-		selectedStorage %= 6;
-	}
-	if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::E) == spk::InputState::Pressed)
-	{
-		selectedStorage += 5;
-		selectedStorage %= 6;
-	}
-
+	rotationValue += 0.1f * TimeMetrics.delataTime();
+	
+	gdeviceA.setContext("rotation", rotationValue); 
 	return (false);
 }
 
@@ -83,13 +41,16 @@ Test::Test(const std::wstring& p_name) :
 {
 	gdeviceA.loadFromFile(L"colorShader.vert", L"colorShader.frag");
 
-	for (size_t i = 0; i < 6; i++)
-	{
-		if (i == 0)
-			storages.push_back(gdeviceA.storage());
-		else
-			storages.push_back(gdeviceA.storage()->copy());
-	}
+	_object = gdeviceA.createObject();
+	_object.setStorageSize(4);
+	
+	std::vector<Vector2> vertices;
+	std::vector<Vector3> colors;
+
+	_object.setStorage("model", vertices);
+	_object.setStorage("color", colors);
+
+	_object.setUniform("position", Vector2(0.f, 0.2f));
 }
 
 Test::~Test()
