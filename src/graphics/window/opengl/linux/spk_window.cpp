@@ -1,7 +1,6 @@
 #include "graphics/spk_window.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "application/modules/spk_API_module.hpp"
-#include "graphics/surface/spk_surface.hpp"
 
 namespace spk
 {
