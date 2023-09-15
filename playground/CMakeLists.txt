@@ -9,3 +9,7 @@ project(Playground
 find_package(Sparkle REQUIRED)
 
 add_executable(Playground "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+
+target_include_directories(Playground PRIVATE ${Sparkle_INCLUDE_DIR})
+target_link_directories(Playground PRIVATE ${Sparkle_LIBRARY_DIR})
+target_link_libraries(Playground ${Sparkle_LIBRARIES})

@@ -1,7 +1,6 @@
 #include "graphics/spk_window.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "application/modules/spk_API_module.hpp"
-#include "graphics/surface/spk_surface.hpp"
 
 namespace spk
 {
@@ -67,20 +66,6 @@ namespace spk
 		_createWindowFrame(p_APIModule, p_size);
 
 		_activateWindow();
-
-		switch (p_graphicalAPI)
-		{
-			case (GraphicalAPI::OpenGL):
-			{
-				_surface = new spk::OpenGL::Surface(p_title, p_size);
-				break;
-			}
-			case (GraphicalAPI::Vulkan):
-			{
-				_surface = new spk::vulkan::Surface(p_title, p_size);
-				break;
-			}
-		}
 	}
 
 	Window::~Window()
@@ -91,7 +76,6 @@ namespace spk
 	void Window::resize(const spk::Vector2Int& p_size)
 	{
 		_size = p_size;
-		_surface->resize(p_size);
 	}
 
 	const spk::Vector2Int& Window::size() const
@@ -99,24 +83,13 @@ namespace spk
 		return (_size);
 	}
 
-	AbstractSurface* Window::surface()
-	{
-		return (_surface);
-	}
-	
-	const AbstractSurface* Window::surface() const
-	{
-		return (_surface);
-	}
-
 	void Window::render()
 	{
-		_surface->render();
+
 	}
 
 	void Window::clear()
 	{
-		_surface->clear();
 		InvalidateRect(_windowFrame, NULL, TRUE);
 	}
 }
