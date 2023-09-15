@@ -57,7 +57,7 @@ namespace spk
 		 * @param p_size Size of the window.
 		 * @param p_configuration a structure describing the initialization expected by the user
 		 */
-		Application(const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI);
+		Application(const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 		/**
 		 * @brief Destructs the Application object.

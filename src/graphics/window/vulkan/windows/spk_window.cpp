@@ -55,7 +55,7 @@ namespace spk
 		UpdateWindow(_windowFrame);
 	}
 
-	Window::Window(const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void* p_APIModule)
+	Window::Window(const std::wstring& p_title, const spk::Vector2Int& p_size, void* p_APIModule)
 	{
 		_convertTitle(p_title);
 

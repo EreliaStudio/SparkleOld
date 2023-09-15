@@ -5,9 +5,9 @@
 
 namespace spk
 {
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_apiModule) : IMessageConsumerModule(p_queue)
+	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
 	{
-		Window::instanciate(p_title, p_size, p_graphicalAPI, p_apiModule);
+		Window::instanciate(p_title, p_size, p_apiModule);
 	}
 
 	WindowModule::~WindowModule()

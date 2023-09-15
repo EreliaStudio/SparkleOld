@@ -68,7 +68,7 @@ namespace spk
 		 * @param p_size The size of the window.
 		 * @param p_ptr An optional pointer (default is nullptr).
 		 */
-		Window(const std::wstring& p_title, const Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_ptr = nullptr);
+		Window(const std::wstring& p_title, const Vector2Int& p_size, void *p_ptr = nullptr);
 
 	public:
 		/**

@@ -61,7 +61,7 @@
 
 int main()
 {
-	spk::Application app(L"Coucou", 400, spk::GraphicalAPI::OpenGL);
+	spk::Application app(L"Coucou", 400);
 	// spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
 	// // Test* test = app.addRootWidget<Test>(L"Test");

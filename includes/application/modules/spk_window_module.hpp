@@ -31,7 +31,7 @@ namespace spk
 		 * @param p_size The size of the window.
 		 * @param p_apiModule Pointer to the API Module. (Mandatory only on windows)
 		 */
-		WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_apiModule = nullptr);
+		WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule = nullptr);
 
 		/**
 		 * @brief Destructs the WindowModule object.

@@ -43,7 +43,7 @@ namespace spk
 		 * @param p_title The title of the window.
 		 * @param p_size The size of the window.
 		 */
-		Window(const std::wstring& p_title, const Vector2Int& p_size, const GraphicalAPI& p_graphicalAPI, void *p_ptr = nullptr);
+		Window(const std::wstring& p_title, const Vector2Int& p_size, void *p_ptr = nullptr);
 
 	public:
 

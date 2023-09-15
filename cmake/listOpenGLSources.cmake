@@ -12,7 +12,7 @@ function(listOpenGLSources SOURCE_FILES_VAR)
 		)
 
 	# --- Specific Linux
-	elseif(LINUX)
+	elseif(UNIX)
 		file(GLOB OPENGL_SPECIFIC_SOURCE_FILES
 			"${CMAKE_SOURCE_DIR}/src/graphics/window/opengl/linux/*.cpp"
 		)

@@ -25,7 +25,7 @@ namespace spk
 		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule->increaseUpdateIPS(); }));
 	}
 
-	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size, const GraphicalAPI& p_graphicalAPI)
+	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size)
 	{
 		_APIModule = new spk::APIModule();
 
@@ -33,7 +33,7 @@ namespace spk
 		_timeModule = new spk::TimeModule();
 		_profilerModule = new spk::ProfilerModule();
 
-		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, p_graphicalAPI, _APIModule);
+		_windowModule = new spk::WindowModule(_APIModule->windowQueue(), p_title, p_size, _APIModule);
 
 		_mouseModule = new spk::MouseModule(_APIModule->mouseQueue());
 		_keyboardModule = new spk::KeyboardModule(_APIModule->keyboardQueue());
