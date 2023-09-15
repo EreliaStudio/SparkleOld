@@ -2,7 +2,6 @@
 
 #include "math/spk_vector2.hpp"
 #include "application/modules/spk_message_consumer_module.hpp"
-#include "graphics/surface/spk_abstract_surface.hpp"
 
 namespace spk
 {
@@ -16,7 +15,6 @@ namespace spk
 	class WindowModule : public IMessageConsumerModule
 	{
 	private:
-		AbstractSurface* _surface;
 		/**
 		 * @brief Handles a system message.
 		 * 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "design_pattern/spk_singleton.hpp"
-#include "graphics/surface/spk_abstract_surface.hpp"
 #include "math/spk_vector2.hpp"
 #include "spk_system_define.hpp"
 
@@ -25,8 +24,6 @@ namespace spk
 		xcb_screen_t* _screen; ///< Screen of the X server.
 		xcb_window_t _window; ///< Window of the X server.
 		xcb_intern_atom_reply_t* _atom_wm_delete_window; ///< Atom for the window manager to close the window.
-
-		spk::AbstractSurface* _surface;
 
 		/**
 		 * @brief Creates a window.
@@ -68,9 +65,6 @@ namespace spk
 		 * @brief Return the size of the window.
 		*/
 		const Vector2Int& size() const;
-
-		AbstractSurface* surface();
-		const AbstractSurface* surface() const;
 
 		/**
 		 * @brief Renders the window.
