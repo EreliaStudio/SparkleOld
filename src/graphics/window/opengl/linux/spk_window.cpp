@@ -81,20 +81,6 @@ namespace spk
 		_atom_wm_delete_window = _enableDestroyXCBProperty(_connection, _window);
 
 		xcb_map_window(_connection, _window);
-
-		switch (p_graphicalAPI)
-		{
-			case (GraphicalAPI::OpenGL):
-			{
-				_surface = new spk::OpenGL::Surface(p_title, p_size);
-				break;
-			}
-			case (GraphicalAPI::Vulkan):
-			{
-				_surface = new spk::vulkan::Surface(p_title, p_size);
-				break;
-			}
-		}
 	}
 
 	Window::~Window()
@@ -110,8 +96,6 @@ namespace spk
 
 		uint32_t values[2] = { static_cast<uint32_t>(p_size.x), static_cast<uint32_t>(p_size.y) };
 		xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
-		
-		_surface->resize(p_size);
 	}
 
 	const spk::Vector2Int& Window::size() const
@@ -119,25 +103,13 @@ namespace spk
 		return (_size);
 	}
 
-	AbstractSurface* Window::surface()
-	{
-		return (_surface);
-	}
-	
-	const AbstractSurface* Window::surface() const
-	{
-		return (_surface);
-	}
-
 	void Window::render()
 	{
-		_surface->render();
 		xcb_flush(_connection);
 	}
 
 	void Window::clear()
 	{
-		_surface->clear();
 		xcb_clear_area(_connection, 0, _window, 0, 0, _size.x, _size.y);
 	}
 }

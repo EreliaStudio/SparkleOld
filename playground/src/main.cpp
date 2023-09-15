@@ -62,11 +62,11 @@
 int main()
 {
 	spk::Application app(L"Coucou", 400, spk::GraphicalAPI::OpenGL);
-	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
+	// spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
-	// Test* test = app.addRootWidget<Test>(L"Test");
-	// test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
-	// test->activate();
+	// // Test* test = app.addRootWidget<Test>(L"Test");
+	// // test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
+	// // test->activate();
 
 	return (app.run());
 };

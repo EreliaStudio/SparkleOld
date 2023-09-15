@@ -22,7 +22,7 @@ function (createExportRecipes LIBRARY_NAME)
 		DESTINATION lib/cmake/${LIBRARY_NAME}
 	)
 
-	configure_file(cmake/${LIBRARY_NAME}Config.cmake.in "${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}Config.cmake")
+	configure_file(cmake/${LIBRARY_NAME}Config.cmake.in "${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}Config.cmake" @ONLY)
 	install(FILES
 		"${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}Config.cmake"
 		"${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}ConfigVersion.cmake"

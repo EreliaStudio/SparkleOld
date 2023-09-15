@@ -7,6 +7,7 @@ function(createVulkanRecipe)
 	
 	find_package(Vulkan REQUIRED)
 	include_directories(${Vulkan_INCLUDE_DIRS})
+	link_libraries(${Vulkan_LIBRARIES})
 
 	listGenericSources(SOURCE_FILES)
 	listVulkanSources(SOURCE_FILES)
