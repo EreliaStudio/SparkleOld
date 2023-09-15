@@ -1,72 +1,86 @@
 #include "sparkle.hpp"
 
-// class Test : public spk::Widget::Interface
-// {
-// private:
-// 	spk::GraphicalDevice gdeviceA;
+template<typename T, typename... Rest>
+struct UnitImpl : public UnitImpl<Rest...>
+{
+    UnitImpl(const T& p_value, const Rest&... p_rest)
+        : UnitImpl<Rest...>(p_rest...), value(p_value)
+    {
+    }
 
-// 	spk::GraphicalDevice::Object _object;
+    T value;
+};
 
-// 	float rotationValue(0);
+template<typename T>
+struct UnitImpl<T>
+{
+    UnitImpl(const T& p_value) : value(p_value)
+    {
+    }
 
-// 	void _onGeometryChange();
-// 	void _onRender();
+    T value;
+};
+
+template<typename... Types>
+class Unit : public UnitImpl<Types...>
+{
+public:
+    Unit(const Types&... p_args) : UnitImpl<Types...>(p_args...)
+    {
+    }
+};
+
+class Test : public spk::Widget::Interface
+{
+private:
+	spk::GraphicalDevice _device;
+	spk::GraphicalDevice::Object _object;
+
+	void _onGeometryChange()
+	{
+		
+	}
+
+	void _onRender()
+	{
+		_object.render();
+	}
 	
-// 	bool _onUpdate();
+	bool _onUpdate()
+	{
+		return (false);
+	}
 
-// public:
-// 	Test(const std::wstring& p_name);
-// 	~Test();
-// };
+public:
+	Test(const std::wstring& p_name) :
+		spk::Widget::Interface(p_name),
+		_device(L"ColorShaderVert.vert", L"ColorShaderFrag.frag"),
+		_object(_device.createObject())
+	{
+		std::vector<spk::GraphicalDevice::Object::Unit<spk::Vector2, spk::Color> > units = {
+			{ spk::Vector2(-0.5f, -0.5f), spk::Color(1.0f, 0.0f, 0.0f, 1.0f) },
+			{ spk::Vector2(0.5f, -0.5f), spk::Color(0.0f, 1.0f, 0.0f, 1.0f) },
+			{ spk::Vector2(0.5f, 0.5f), spk::Color(0.0f, 0.0f, 1.0f, 1.0f) },
+			{ spk::Vector2(-0.5f, 0.5f), spk::Color(1.0f, 1.0f, 1.0f, 1.0f) }
+		};
 
-// void Test::_onGeometryChange()
-// {
-// }
+		_object->setModel(units.data(), units.size());
+		_object.setAttribute("position", spk::Vector2(0.0f, 0.2f));
+	}
+	~Test()
+	{
 
-// void Test::_onRender()
-// {
-// 	_object.render();
-// }
-
-// bool Test::_onUpdate()
-// {
-// 	rotationValue += 0.1f * TimeMetrics.delataTime();
-	
-// 	gdeviceA.setContext("rotation", rotationValue); 
-// 	return (false);
-// }
-
-// Test::Test(const std::wstring& p_name) : 
-// 	spk::Widget::Interface(p_name)
-// {
-// 	gdeviceA.loadFromFile(L"colorShader.vert", L"colorShader.frag");
-
-// 	_object = gdeviceA.createObject();
-// 	_object.setStorageSize(4);
-	
-// 	std::vector<Vector2> vertices;
-// 	std::vector<Vector3> colors;
-
-// 	_object.setStorage("model", vertices);
-// 	_object.setStorage("color", colors);
-
-// 	_object.setUniform("position", Vector2(0.f, 0.2f));
-// }
-
-// Test::~Test()
-// {
-
-// }
-
+	}
+};
 
 int main()
 {
 	spk::Application app(L"Coucou", 400);
-	// spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
+	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Qwerty);
 
-	// // Test* test = app.addRootWidget<Test>(L"Test");
-	// // test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
-	// // test->activate();
+	Test* test = app.addRootWidget<Test>(L"Test");
+	test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
+	test->activate();
 
 	return (app.run());
 };
