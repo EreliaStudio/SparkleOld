@@ -7,6 +7,11 @@ function(createVulkanRecipe)
 	
 	find_package(Vulkan REQUIRED)
 	include_directories(${Vulkan_INCLUDE_DIRS})
+	if (UNIX)
+	add_definitions(-DVK_USE_PLATFORM_XCB_KHR)
+	elseif(WIN32)
+	add_definitions(-DVK_USE_PLATFORM_WIN32_KHR)
+	endif()
 	link_libraries(${Vulkan_LIBRARIES})
 
 	listGenericSources(SOURCE_FILES)

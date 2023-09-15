@@ -3,10 +3,8 @@ function (createExportRecipes LIBRARY_NAME)
 
 	install(TARGETS ${LIBRARY_NAME}
 			EXPORT ${LIBRARY_NAME}Targets
-			LIBRARY DESTINATION lib
-			ARCHIVE DESTINATION lib
-			RUNTIME DESTINATION bin
-			INCLUDES DESTINATION includeTest
+			LIBRARY DESTINATION lib/${LIBRARY_NAME}
+			ARCHIVE DESTINATION lib/${LIBRARY_NAME}
 			)
 
 	include(CMakePackageConfigHelpers)
@@ -30,6 +28,6 @@ function (createExportRecipes LIBRARY_NAME)
 	)
 
 	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/includes/
-			DESTINATION include
+			DESTINATION include/${LIBRARY_NAME}
 			FILES_MATCHING PATTERN "*.hpp")
 endfunction()

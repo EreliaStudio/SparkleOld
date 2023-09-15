@@ -13,3 +13,7 @@ add_executable(Playground "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 target_include_directories(Playground PRIVATE ${Sparkle_INCLUDE_DIR})
 target_link_directories(Playground PRIVATE ${Sparkle_LIBRARY_DIR})
 target_link_libraries(Playground ${Sparkle_LIBRARIES})
+
+message(STATUS "Sparkle_INCLUDE_DIR: ${Sparkle_INCLUDE_DIR}")
+message(STATUS "Sparkle_LIBRARY_DIR: ${Sparkle_LIBRARY_DIR}")
+message(STATUS "Sparkle_LIBRARIES: ${Sparkle_LIBRARIES}")

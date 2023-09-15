@@ -32,7 +32,7 @@ function(listGenericSources SOURCE_FILES_VAR)
 		)
 
 	# --- Specific Linux
-	elseif(LINUX)
+	elseif(UNIX)
 		file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
 			"${CMAKE_SOURCE_DIR}/src/basic_functions/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/network/linux/*.cpp"
