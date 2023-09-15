@@ -32,4 +32,4 @@ if(NOT NoVulkan)
     createExportRecipes("Sparkle")
 endif()
 
-add_subdirectory(Playground)
+add_subdirectory(playground)
