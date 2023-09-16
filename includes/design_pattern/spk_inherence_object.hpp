@@ -18,8 +18,9 @@ namespace spk
 	class InherenceObject
 	{
 	public:
-		using Parent = TType*;						   /**< The type of the parent object. */
-		using Child = TType*;							/**< The type of the child objects. */
+		using Parent = std::shared_ptr<TType>;		   /**< The type of the parent object. */
+		using Child = std::unique_ptr<TType>;							/**< The type of the child objects. */
+		using ChildReference = std::shared_ptr<TType>;				  /**< The type of the child objects. */
 		using ChildContainer = std::vector<Child>;		  /**< The type of child container used by InherenceObject to store them*/
 		using Callback = std::function<void(Child)>;	 /**< The type of the callback function. */
 
@@ -89,12 +90,12 @@ namespace spk
 		void setParent(Parent parent)
 		{
 			if (_parent != nullptr)
-				_parent->_removeChild(static_cast<Child>(this));
+				_parent->_removeChild(this);
 
 			_parent = parent;
 
 			if (_parent != nullptr)
-				_parent->_addChild(static_cast<Child>(this));
+				_parent->_addChild(this);
 		}
 
 		/**
@@ -105,9 +106,10 @@ namespace spk
 		 *
 		 * @param child The child object to add.
 		 */
-		void addChild(Child child)
+		ChildReference addChild(Child child)
 		{
-			child->setParent(static_cast<Parent>(this));
+			child->setParent(this);
+			return (std::make_shared<TType>(child));
 		}
 
 		/**
@@ -171,6 +173,9 @@ namespace spk
 		{
 			return _childrens;
 		}
+
+		InherenceObject(InherenceObject&&) = default;
+		InherenceObject& operator=(InherenceObject&&) = default;
 
 		/**
 		 * @brief Deleted copy constructor.

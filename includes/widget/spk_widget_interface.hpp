@@ -41,8 +41,6 @@ namespace spk::Widget
 
 		virtual bool _update();
 
-		void addChild(Child child);
-
 		void _setOperationnal();
 
 	public:
@@ -72,11 +70,11 @@ namespace spk::Widget
 		 * @return Pointer to the children widget.
 		 */
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addChildrenWidget(Args&& ... p_args)
+		ChildReference addChildrenWidget(Args&& ... p_args)
 		{
-			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
+			auto newChild = std::make_unique<TChildrenType>(std::forward<Args>(p_args)...);
 
-			addChild(result);
+			auto result = addChild(std::move(newChild));
 			result->setDepth(depth() + 1);
 
 			return (result);
