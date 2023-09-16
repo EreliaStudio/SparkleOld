@@ -5,11 +5,6 @@
 
 namespace spk::Widget
 {
-	void Interface::addChild(Child child)
-	{
-		InherenceObject<Interface>::addChild(child);
-	}
-
 	void Interface::_render()
 	{
 		if (isActive() == false)
