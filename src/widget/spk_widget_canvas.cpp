@@ -133,6 +133,7 @@ namespace spk::Widget
 
 			spk::Widget::Interface::Child newWidget = lambda(name, inputObject);
 			spk::Widget::Interface::ChildReference newWidgetReference;
+			spk::Widget::Interface::Parent parent = this->shared_from_this();
 
 			if (inputObject.contains(L"Parent") == true && inputObject[L"Parent"].hold<std::wstring>() == true)
 			{
@@ -142,13 +143,11 @@ namespace spk::Widget
 				{
 					spk::throwException(L"Widget [" + name + L"] : Parent [" + parentName + L"] does not exist");
 				}
-				newWidgetReference =  parentWidget->addChild(std::move(newWidget));
+				parent = parentWidget;
 			}
-			else
-			{
-				newWidgetReference = std::make_shared<Interface>(newWidget);
-			}
-			_widgetGeometries[newWidgetReference] = Geometry(*(item.second));
+			newWidgetReference = parent->addChild(std::move(newWidget));
+
+			_widgetGeometries[newWidgetReference] = Geometry(inputObject);
 		}
 	}
 
