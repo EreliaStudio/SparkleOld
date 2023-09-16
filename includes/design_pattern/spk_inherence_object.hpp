@@ -32,11 +32,11 @@ namespace spk
 		Callback _deathCallback;						 /**< The death callback function. */
 		Callback _orphanageCallback;					 /**< The orphanage callback function. */
 
-		ChildReference _addChild(Child p_child)
+		ChildReference _addChild(Child child)
 		{
-			_childrens.push_back(std::move(p_child));
+			_childrens.push_back(child);
 
-    		std::shared_ptr<TType> result(_childrens.back().get(), [](TType*)->void {});
+			auto result = std::make_shared<TType>(_childrens.back());
 			if (_birthCallback != nullptr)
 				_birthCallback(result);
 			return (result);
