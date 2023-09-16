@@ -33,6 +33,7 @@ namespace spk
 		Callback _orphanageCallback;					 /**< The orphanage callback function. */
 
 		ChildReference _addChild(Child p_child)
+<<<<<<< HEAD
 		{
 			_childrens.push_back(std::move(p_child));
 
@@ -41,6 +42,16 @@ namespace spk
 				_birthCallback(result);
 			return (result);
 		}
+=======
+        {
+            _childrens.push_back(std::move(p_child));
+
+            std::shared_ptr<TType> result(_childrens.back().get(), [](TType*)->void {});
+            if (_birthCallback != nullptr)
+                _birthCallback(result);
+            return (result);
+        }
+>>>>>>> a653da6ae6e8a826d15a26319d45c35b06b34304
 
 		Child _removeChild(ChildReference p_child)
 		{
