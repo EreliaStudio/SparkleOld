@@ -16,9 +16,9 @@ struct ClassType##_##RegistrationName##_Registrar                               
     {                                                                             \
         spk::Widget::Canvas::classInstanciatorLambda[spk::to_wstring(#RegistrationName)] =        \
             [](const std::wstring &p_name,                                        \
-               const spk::JSON::Object &p_obj) -> spk::Widget::Interface*         \
+               const spk::JSON::Object &p_obj) -> spk::Widget::Interface::Child   \
             {                                                                     \
-                return new ClassType(p_name, p_obj);                              \
+                return std::make_unique<spk::Widget::Interface>(new ClassType(p_name, p_obj));   \
             };                                                                    \
     }                                                                             \
 };                                                                                \
@@ -38,7 +38,7 @@ namespace spk::Widget
 		/**
 		 * @brief Type alias for the lambda function used to create instances of widget classes.
 		 */
-		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
+		using Instanciator = std::function<Interface::Child(const std::wstring&, const spk::JSON::Object&)>;
 		/**
 		 * @brief Static map to associate widget class names with instantiation lambdas.
 		 */
@@ -93,7 +93,7 @@ namespace spk::Widget
 		static inline Canvas* _activeCanvas = nullptr; ///< The currently active canvas.
 
 		spk::Vector2Int _gridSize;                     ///< The size of the grid.
-		std::map<Interface*, Geometry> _widgetGeometries; ///< Map of widgets and their geometries.
+		std::map<Interface::ChildReference, Geometry> _widgetGeometries; ///< Map of widgets and their geometries.
 
 		/**
 		 * @brief Calculates the value based on a given formula.
@@ -101,7 +101,7 @@ namespace spk::Widget
 		 * @param p_formula The formula.
 		 * @return Calculated value.
 		 */
-		spk::Vector2Int _calcFormula(Interface* p_target, const spk::IVector2<std::wstring>& p_formula);
+		spk::Vector2Int _calcFormula(Interface::ChildReference p_target, const spk::IVector2<std::wstring>& p_formula);
 
 		/**
 		 * @brief Calculates the value based on a given geometric value.
@@ -109,7 +109,7 @@ namespace spk::Widget
 		 * @param p_value The geometric value.
 		 * @return Calculated value.
 		 */
-		spk::Vector2Int _calcValue(Interface* p_target, const Geometry::Value& p_value);
+		spk::Vector2Int _calcValue(Interface::ChildReference p_target, const Geometry::Value& p_value);
 
 		/**
 		 * @brief Callback for when geometry changes.

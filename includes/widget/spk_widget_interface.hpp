@@ -77,6 +77,7 @@ namespace spk::Widget
 			auto result = addChild(std::move(newChild));
 			result->setDepth(depth() + 1);
 
+
 			return (result);
 		}
 

@@ -54,16 +54,6 @@ namespace spk::Widget
 	Interface::Interface(const std::wstring& p_name, const spk::JSON::Object& p_inputObject) :
 		Interface(p_name)
 	{
-		if (p_inputObject.contains(L"Parent") == true && p_inputObject[L"Parent"].hold<std::wstring>() == true)
-		{
-			std::wstring parentName = p_inputObject[L"Parent"].as<std::wstring>();
-			std::shared_ptr<Interface> parentWidget = spk::Widget::Atlas::instance()->get(parentName);
-			if (parentWidget == nullptr)
-			{
-				spk::throwException(L"Widget [" + p_name + L"] : Parent [" + parentName + L"] does not exist");
-			}
-			setParent(parentWidget);
-		}
 		if (p_inputObject.contains(L"Activation") == true)
 		{
 			bool activationState = p_inputObject[L"Activation"].as<bool>();
