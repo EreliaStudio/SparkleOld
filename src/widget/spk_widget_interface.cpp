@@ -31,7 +31,7 @@ namespace spk::Widget
 	{
 		_isOperationnal = isActive() && (parent() == nullptr ? true : parent()->_isOperationnal);
 
-		for (auto children : childrens())
+		for (auto& children : childrens())
 		{
 			children->_setOperationnal();
 		}
@@ -40,7 +40,7 @@ namespace spk::Widget
 	Interface::Interface(const std::wstring& p_name) :
 		_name(p_name)
 	{
-		Atlas::instance()->insert(this);
+		Atlas::instance()->insert(this->shared_from_this());
 
 		_activationCallback = ActivableObject::addActivationCallback([&](){
 			_setOperationnal();
@@ -57,7 +57,7 @@ namespace spk::Widget
 		if (p_inputObject.contains(L"Parent") == true && p_inputObject[L"Parent"].hold<std::wstring>() == true)
 		{
 			std::wstring parentName = p_inputObject[L"Parent"].as<std::wstring>();
-			Interface* parentWidget = spk::Widget::Atlas::instance()->get(parentName);
+			std::shared_ptr<Interface> parentWidget = spk::Widget::Atlas::instance()->get(parentName);
 			if (parentWidget == nullptr)
 			{
 				spk::throwException(L"Widget [" + p_name + L"] : Parent [" + parentName + L"] does not exist");
@@ -73,11 +73,7 @@ namespace spk::Widget
 
 	Interface::~Interface()
 	{
-		for (auto child : childrens())
-		{
-			delete child;
-		}	
-		Atlas::instance()->remove(this);
+		Atlas::instance()->remove(this->shared_from_this());
 	}
 
 	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
@@ -122,9 +118,9 @@ namespace spk::Widget
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
-		Atlas::instance()->sort(this);
+		Atlas::instance()->sort(this->shared_from_this());
 		
-		for (auto child : childrens())
+		for (auto& child : childrens())
 		{
 			child->setDepth(child->depth() + delta);
 		}

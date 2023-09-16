@@ -15,7 +15,7 @@ namespace spk
 	 * @tparam TType The type of the object.
 	 */
 	template <typename TType>
-	class InherenceObject
+	class InherenceObject : public std::enable_shared_from_this<TType>
 	{
 	public:
 		using Parent = std::shared_ptr<TType>;		   /**< The type of the parent object. */
@@ -30,18 +30,18 @@ namespace spk
 		Callback _birthCallback;						 /**< The birth callback function. */
 		Callback _deathCallback;						 /**< The death callback function. */
 
-		void _addChild(Child child)
+		void _addChild(ChildReference child)
 		{
 			_childrens.push_back(child);
 			if (_birthCallback != nullptr)
 				_birthCallback(child);
 		}
 
-		void _removeChild(Child child)
+		void _removeChild(ChildReference child)
 		{
 			if (_deathCallback != nullptr)
 				_deathCallback(child);
-			for (auto it = _childrens.begin(); it != _childrens.end(); ++it)
+			for (auto& it = _childrens.begin(); it != _childrens.end(); ++it)
 			{
 				if (*it == child)
 				{
@@ -74,8 +74,8 @@ namespace spk
 		~InherenceObject()
 		{
 			if (_parent != nullptr)
-				_parent->_removeChild(static_cast<Child>(this));
-			for (auto child : _childrens)
+				_parent->_removeChild(this->shared_from_this());
+			for (auto& child : _childrens)
 				child->_parent = nullptr;
 		}
 
@@ -90,12 +90,12 @@ namespace spk
 		void setParent(Parent parent)
 		{
 			if (_parent != nullptr)
-				_parent->_removeChild(this);
+				_parent->_removeChild(this->shared_from_this());
 
 			_parent = parent;
 
 			if (_parent != nullptr)
-				_parent->_addChild(this);
+				_parent->_addChild(this->shared_from_this());
 		}
 
 		/**
@@ -108,7 +108,7 @@ namespace spk
 		 */
 		ChildReference addChild(Child child)
 		{
-			child->setParent(this);
+			child->setParent(this->shared_from_this());
 			return (std::make_shared<TType>(child));
 		}
 
