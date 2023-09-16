@@ -7,13 +7,13 @@ namespace spk::Widget
 
 	}
 
-	void Atlas::insert(Interface* p_widget)
+	void Atlas::insert(std::shared_ptr<Interface> p_widget)
 	{
 		_widgets.push_back(p_widget);
 		sort(p_widget);
 	}
 
-	void Atlas::remove(Interface* p_widget)
+	void Atlas::remove(std::shared_ptr<Interface> p_widget)
 	{
 		auto it = std::find(_widgets.begin(), _widgets.end(), p_widget);
 		
@@ -22,7 +22,7 @@ namespace spk::Widget
 		}
 	}
 
-	void Atlas::sort(Interface* p_widget)
+	void Atlas::sort(std::shared_ptr<Interface> p_widget)
 	{
 		auto it = std::find(_widgets.begin(), _widgets.end(), p_widget);
 		
@@ -30,7 +30,7 @@ namespace spk::Widget
 			_widgets.erase(it);
 			
 			auto const insertion_point =
-				std::upper_bound(_widgets.begin(), _widgets.end(), p_widget, [](const Interface* lhs, const Interface* rhs)
+				std::upper_bound(_widgets.begin(), _widgets.end(), p_widget, [](const std::shared_ptr<Interface> lhs, const std::shared_ptr<Interface> rhs)
 				{
 					if (lhs->depth() == rhs->depth()) {
 						return lhs < rhs;
@@ -42,9 +42,9 @@ namespace spk::Widget
 		}
 	}
 	
-	Interface* Atlas::get(const std::wstring& p_widgetName)
+	std::shared_ptr<Interface> Atlas::get(const std::wstring& p_widgetName)
 	{
-		auto tmp = std::find_if(_widgets.begin(), _widgets.end(), [&p_widgetName](Interface* widget) {
+		auto tmp = std::find_if(_widgets.begin(), _widgets.end(), [&p_widgetName](std::shared_ptr<Interface> widget) {
 			return (widget->name() == p_widgetName);
 		});
 

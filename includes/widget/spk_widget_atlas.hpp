@@ -28,7 +28,7 @@ namespace spk::Widget
 		/**
 		 * @brief A type definition for the container storing widgets.
 		 */
-		using StoringContainer = std::vector<Interface*>;
+		using StoringContainer = std::vector<std::shared_ptr<Interface>>;
 		/**
 		 * @brief Collection of Interface pointers.
 		 */
@@ -45,28 +45,28 @@ namespace spk::Widget
 		 *
 		 * @param p_widget A pointer to the widget to be added.
 		 */
-		void insert(Interface* p_widget);
+		void insert(std::shared_ptr<Interface> p_widget);
 
 		/**
 		 * @brief Removes a widget from the collection.
 		 *
 		 * @param p_widget A pointer to the widget to be removed.
 		 */
-		void remove(Interface* p_widget);
+		void remove(std::shared_ptr<Interface> p_widget);
 
 		/**
 		 * @brief Sorts the widgets in the collection based on some criterion.
 		 *
 		 * @param p_widget A pointer to the widget that provides the sorting criterion.
 		 */
-		void sort(Interface* p_widget);
+		void sort(std::shared_ptr<Interface> p_widget);
 
 		/**
 		 * @brief Get the desired widget.
 		 * @param p_widgetName The target widget's name.
 		 * @return Return a pointer to the desired widget if it exist, nullptr otherwise.
 		*/
-		Interface* get(const std::wstring& p_widgetName);
+		std::shared_ptr<Interface> get(const std::wstring& p_widgetName);
 
 		/**
 		 * @brief Returns a constant reference to the collection of widgets.
