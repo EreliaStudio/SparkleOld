@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <functional>
+#include <cassert>
 
 namespace spk
 {
@@ -22,33 +23,37 @@ namespace spk
 		using Child = std::unique_ptr<TType>;							/**< The type of the child objects. */
 		using ChildReference = std::shared_ptr<TType>;				  /**< The type of the child objects. */
 		using ChildContainer = std::vector<Child>;		  /**< The type of child container used by InherenceObject to store them*/
-		using Callback = std::function<void(Child)>;	 /**< The type of the callback function. */
+		using Callback = std::function<void(ChildReference)>;	 /**< The type of the callback function. */
 
 	private:
 		Parent _parent;								 /**< The parent object. */
 		ChildContainer _childrens;				   /**< The vector of child objects. */
 		Callback _birthCallback;						 /**< The birth callback function. */
 		Callback _deathCallback;						 /**< The death callback function. */
+		Callback _orphanageCallback;					 /**< The orphanage callback function. */
 
-		void _addChild(ChildReference child)
+		ChildReference _addChild(Child child)
 		{
 			_childrens.push_back(child);
+
+			auto result = std::make_shared<TType>(_childrens.back());
 			if (_birthCallback != nullptr)
-				_birthCallback(child);
+				_birthCallback(result);
+			return (result);
 		}
 
-		void _removeChild(ChildReference child)
+		Child _removeChild(ChildReference child)
 		{
-			if (_deathCallback != nullptr)
-				_deathCallback(child);
 			for (auto& it = _childrens.begin(); it != _childrens.end(); ++it)
 			{
 				if (*it == child)
 				{
+					Child result = std::move(*it);
 					_childrens.erase(it);
-					break;
+					return result;
 				}
 			}
+			return nullptr;
 		}
 
 	public:
@@ -59,43 +64,18 @@ namespace spk
 		 */
 		InherenceObject() :
 			_parent(nullptr),
-			_childrens(),
+			_childrens(nullptr),
 			_birthCallback(nullptr),
-			_deathCallback(nullptr)
+			_deathCallback(nullptr),
+			_orphanageCallback(nullptr)
 		{
 
 		}
 
-		/**
-		 * @brief Destructor for InherenceObject.
-		 *
-		 * This destructor removes the object from its parent's children list and sets the parent of all its children to nullptr.
-		 */
 		~InherenceObject()
 		{
-			if (_parent != nullptr)
-				_parent->_removeChild(this->shared_from_this());
-			for (auto& child : _childrens)
-				child->_parent = nullptr;
-		}
-
-		/**
-		 * @brief Set the parent object.
-		 *
-		 * This function sets the parent object of the current object.
-		 * It removes the object from its current parent's children list and adds it to the new parent's children list.
-		 *
-		 * @param parent The parent object to set.
-		 */
-		void setParent(Parent parent)
-		{
-			if (_parent != nullptr)
-				_parent->_removeChild(this->shared_from_this());
-
-			_parent = parent;
-
-			if (_parent != nullptr)
-				_parent->_addChild(this->shared_from_this());
+			if (_deathCallback != nullptr)
+				_deathCallback(this->shared_from_this());
 		}
 
 		/**
@@ -108,8 +88,21 @@ namespace spk
 		 */
 		ChildReference addChild(Child child)
 		{
-			child->setParent(this->shared_from_this());
-			return (std::make_shared<TType>(child));
+			assert(child->_parent == nullptr && "Child already has a parent");
+
+			auto result = _addChild(std::move(child));
+			result->_parent = this->shared_from_this();
+			return (result);
+		}
+
+		Child removeChild(ChildReference child)
+		{
+			Child result = _removeChild(child);
+			assert(result != nullptr && "Child not found");
+			result->_parent = nullptr;
+			if (_orphanageCallback != nullptr)
+				_orphanageCallback(result);
+			return result;
 		}
 
 		/**
@@ -136,6 +129,11 @@ namespace spk
 		void setDeathCallback(std::function<void(Child)> callback)
 		{
 			_deathCallback = callback;
+		}
+
+		void setOrphanageCallback(std::function<void(Child)> callback)
+		{
+			_orphanageCallback = callback;
 		}
 
 		/**

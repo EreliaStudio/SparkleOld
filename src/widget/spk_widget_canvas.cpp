@@ -4,27 +4,27 @@
 
 namespace spk::Widget
 {
-	spk::Vector2Int Canvas::_calcValue(Interface* p_target, const Geometry::Value& p_value)
+	spk::Vector2Int Canvas::_calcValue(Interface::ChildReference p_target, const Geometry::Value& p_value)
 	{
 		spk::Vector2Int result;
 
 		switch (p_value.type)
 		{
-			case Geometry::Value::Type::FixedValue:
-				result = p_value.value;
-				break;
-			case Geometry::Value::Type::Ratio:
-				result = p_value.value * size();
-				break;
-			case Geometry::Value::Type::Cell:
-				result = p_value.value * (size() / _gridSize);
-				break;
-			case Geometry::Value::Type::Formula:
-				result = _calcFormula(p_target, p_value.formulaValue);
-				break;
-			default:
+		case Geometry::Value::Type::FixedValue:
+			result = p_value.value;
+			break;
+		case Geometry::Value::Type::Ratio:
+			result = p_value.value * size();
+			break;
+		case Geometry::Value::Type::Cell:
+			result = p_value.value * (size() / _gridSize);
+			break;
+		case Geometry::Value::Type::Formula:
+			result = _calcFormula(p_target, p_value.formulaValue);
+			break;
+		default:
 
-				break;
+			break;
 		}
 		return (result);
 	}
@@ -33,7 +33,7 @@ namespace spk::Widget
 	{
 		for (auto item : _widgetGeometries)
 		{
-			Interface* target = item.first;
+			Interface::ChildReference target = item.first;
 			Geometry& value = item.second;
 			spk::Vector2Int targetAnchor = _calcValue(target, value.anchor);
 			spk::Vector2Int targetSize = _calcValue(target, value.size);
@@ -93,8 +93,8 @@ namespace spk::Widget
 		else if (typeString == L"Formula")
 		{
 			type = Type::Formula;
-			formulaValue.x = p_object[L"X"].as<std::wstring>();	
-			formulaValue.y = p_object[L"Y"].as<std::wstring>();	
+			formulaValue.x = p_object[L"X"].as<std::wstring>();
+			formulaValue.y = p_object[L"Y"].as<std::wstring>();
 		}
 		else
 		{
@@ -128,22 +128,40 @@ namespace spk::Widget
 				spk::throwException(L"Class type [" + classType + L"] isn't registered");
 			spk::Widget::Canvas::Instanciator lambda = spk::Widget::Canvas::classInstanciatorLambda[classType];
 
-			spk::Widget::Interface* newWidget = lambda(item.first, *(item.second));
+			std::wstring name = item.first;
+			const spk::JSON::Object inputObject = *(item.second);
 
-			_widgetGeometries[newWidget] = Geometry(*(item.second));
+			spk::Widget::Interface::Child newWidget = lambda(name, inputObject);
+			spk::Widget::Interface::ChildReference newWidgetReference;
+
+			if (inputObject.contains(L"Parent") == true && inputObject[L"Parent"].hold<std::wstring>() == true)
+			{
+				std::wstring parentName = inputObject[L"Parent"].as<std::wstring>();
+				std::shared_ptr<Interface> parentWidget = spk::Widget::Atlas::instance()->get(parentName);
+				if (parentWidget == nullptr)
+				{
+					spk::throwException(L"Widget [" + name + L"] : Parent [" + parentName + L"] does not exist");
+				}
+				newWidgetReference =  parentWidget->addChild(std::move(newWidget));
+			}
+			else
+			{
+				newWidgetReference = std::make_shared<Interface>(newWidget);
+			}
+			_widgetGeometries[newWidgetReference] = Geometry(*(item.second));
 		}
 	}
 
-	Canvas::Canvas(const std::filesystem::path& p_canvasFilePath) : 
+	Canvas::Canvas(const std::filesystem::path& p_canvasFilePath) :
 		spk::Widget::Interface(L"FixedValueName")
 	{
-		addActivationCallback([&](){
+		addActivationCallback([&]() {
 			if (_activeCanvas != nullptr)
 			{
 				_activeCanvas->deactivate();
 			}
 			_activeCanvas = this;
-		});
+			});
 		spk::JSON::File file = spk::JSON::File(p_canvasFilePath);
 
 		if (file.contains(L"Configuration") == false)

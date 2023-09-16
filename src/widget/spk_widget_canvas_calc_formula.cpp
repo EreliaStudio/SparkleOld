@@ -93,7 +93,7 @@ namespace spk::Widget
         return values.top();
     }
 
-	spk::Vector2Int Canvas::_calcFormula(Interface* p_target, const spk::IVector2<std::wstring>& p_formula)
+	spk::Vector2Int Canvas::_calcFormula(Interface::ChildReference p_target, const spk::IVector2<std::wstring>& p_formula)
 	{
 		std::wstring xFormula = p_formula.x;
 		std::wstring yFormula = p_formula.y;
