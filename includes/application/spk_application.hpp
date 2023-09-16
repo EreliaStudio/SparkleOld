@@ -4,7 +4,7 @@
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_system_module.hpp"
 #include "application/modules/spk_time_module.hpp"
-#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "graphics/spk_window.hpp"
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
@@ -31,7 +31,7 @@ namespace spk
 
 		spk::SystemModule _systemModule; ///< System module instance.
 		spk::TimeModule _timeModule; ///< Time module instance.
-		spk::WindowModule _windowModule; ///< Window module instance.
+		spk::GraphicalAPIModule _windowModule; ///< Window module instance.
 		spk::MouseModule _mouseModule; ///< Mouse module instance.
 		spk::KeyboardModule _keyboardModule; ///< Keyboard module instance.
 		spk::ProfilerModule _profilerModule; ///< Profiler module instance.

@@ -89,5 +89,9 @@
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-      }
+      },
+    "cmake.configureArgs": [
+        "-DGraphicalAPI=Both",
+        "-DBuildPlayground=OFF"
+    ],
 }

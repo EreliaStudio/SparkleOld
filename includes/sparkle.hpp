@@ -58,7 +58,7 @@
 
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_time_module.hpp"
-#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 

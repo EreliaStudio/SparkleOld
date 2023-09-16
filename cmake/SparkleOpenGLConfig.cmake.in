@@ -6,8 +6,8 @@ find_package(GLEW REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(Sparkle_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include")
-set(Sparkle_LIBRARY_DIR "@CMAKE_INSTALL_PREFIX@/lib")
+set(Sparkle_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include/SparkleOpenGL/")
+set(Sparkle_LIBRARY_DIR "@CMAKE_INSTALL_PREFIX@/lib/SparkleOpenGL/")
 
 if(UNIX)
   set(Sparkle_LIBRARIES "libSparkleOpenGL.a")

@@ -6,13 +6,13 @@
 namespace spk
 {
 	/**
-	 * @class WindowModule
+	 * @class GraphicalAPIModule
 	 * @brief Class for managing the application window.
 	 * 
 	 * This class manages the application window, including handling system messages related to the window,
 	 * rendering the window, and clearing the window.
 	 */
-	class WindowModule : public IMessageConsumerModule
+	class GraphicalAPIModule : public IMessageConsumerModule
 	{
 	private:
 		/**
@@ -24,19 +24,19 @@ namespace spk
 
 	public:
 		/**
-		 * @brief Constructs the WindowModule object.
+		 * @brief Constructs the GraphicalAPIModule object.
 		 * 
 		 * @param p_queue The thread-safe queue for window system messages.
 		 * @param p_title The title of the window.
 		 * @param p_size The size of the window.
 		 * @param p_apiModule Pointer to the API Module. (Mandatory only on windows)
 		 */
-		WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule = nullptr);
+		GraphicalAPIModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule = nullptr);
 
 		/**
-		 * @brief Destructs the WindowModule object.
+		 * @brief Destructs the GraphicalAPIModule object.
 		 */
-		~WindowModule();
+		~GraphicalAPIModule();
 
 		/**
 		 * @brief Renders the window.

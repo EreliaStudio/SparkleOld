@@ -22,12 +22,16 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/archive/${Archit
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/${ArchitectureSufix}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/executable/${ArchitectureSufix}")
 
-if(NOT NoOpenGL)
+if (NOT (GraphicalAPI STREQUAL "OpenGL" OR GraphicalAPI STREQUAL "Vulkan" OR GraphicalAPI STREQUAL "Both"))
+    message(FATAL_ERROR "Invalid -DGraphicalAPI argument.\nAccepted values: [Vulkan], [OpenGL], [Both]")
+endif()
+
+if(GraphicalAPI STREQUAL "OpenGL" OR GraphicalAPI STREQUAL "Both")
     createOpenGLRecipe()
     createExportRecipes("SparkleOpenGL")
 endif()
 
-if(NOT NoVulkan)
+if(GraphicalAPI STREQUAL "Vulkan" OR GraphicalAPI STREQUAL "Both")
     createVulkanRecipe()
     createExportRecipes("Sparkle")
 endif()
