@@ -1,26 +1,26 @@
-#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
 #include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {
-	WindowModule::WindowModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
+	GraphicalAPIModule::GraphicalAPIModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
 	{
 		Window::instanciate(p_title, p_size, p_apiModule);
 	}
 
-	WindowModule::~WindowModule()
+	GraphicalAPIModule::~GraphicalAPIModule()
 	{
 		Window::release();
 	}
 
-	void WindowModule::render()
+	void GraphicalAPIModule::render()
 	{
 		Window::instance()->render();
 	}
 
-	void WindowModule::clear()
+	void GraphicalAPIModule::clear()
 	{
 		Window::instance()->clear();
 	}

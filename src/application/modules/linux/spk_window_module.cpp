@@ -1,11 +1,11 @@
-#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
 #include "widget/spk_widget_atlas.hpp"
 
 namespace spk
 {
-	void WindowModule::_handleMessage(SystemMessage& p_event)
+	void GraphicalAPIModule::_handleMessage(SystemMessage& p_event)
 	{
 		switch (p_event->response_type & ~0x80)
 		{
