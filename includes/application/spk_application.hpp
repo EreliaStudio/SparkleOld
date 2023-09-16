@@ -27,16 +27,16 @@ namespace spk
 	class Application : public spk::AbstractApplication
 	{
 	private:
-		spk::APIModule* _APIModule; ///< API module instance.
+		spk::APIModule _APIModule; ///< API module instance.
 
-		spk::SystemModule* _systemModule; ///< System module instance.
-		spk::TimeModule* _timeModule; ///< Time module instance.
-		spk::WindowModule* _windowModule; ///< Window module instance.
-		spk::MouseModule* _mouseModule; ///< Mouse module instance.
-		spk::KeyboardModule* _keyboardModule; ///< Keyboard module instance.
-		spk::ProfilerModule* _profilerModule; ///< Profiler module instance.
+		spk::SystemModule _systemModule; ///< System module instance.
+		spk::TimeModule _timeModule; ///< Time module instance.
+		spk::WindowModule _windowModule; ///< Window module instance.
+		spk::MouseModule _mouseModule; ///< Mouse module instance.
+		spk::KeyboardModule _keyboardModule; ///< Keyboard module instance.
+		spk::ProfilerModule _profilerModule; ///< Profiler module instance.
 
-		spk::WidgetModule* _widgetModule; ///< Widget module instance.
+		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
 		std::vector<Contract> _renderContracts; ///< Contracts related to the Render jobs
 		std::vector<Contract> _updateContracts; ///< Contracts related to the Update jobs
@@ -71,8 +71,8 @@ namespace spk
 		 * @param p_configurationFilePath The path to the canvas configuration file.
 		 * @return The newly created canvas widget.
 		*/
-		spk::Widget::Canvas* addCanvas(const std::filesystem::path& p_configurationFilePath);
-		
+		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath);
+
 		/**
 		 * @brief Add a new widget inside the application, with the central widget as parent.
 		 *
@@ -82,9 +82,9 @@ namespace spk
 		 * @return Pointer to the children widget.
 		 */
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addRootWidget(Args&& ... p_args)
+		std::shared_ptr<TChildrenType> addRootWidget(Args&& ... p_args)
 		{
-			TChildrenType* result = new TChildrenType(std::forward<Args>(p_args)...);
+			auto result = std::make_shared<TChildrenType>(std::forward<Args>(p_args)...);
 
 			result->setDepth(0);
 
