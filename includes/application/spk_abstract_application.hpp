@@ -12,7 +12,7 @@ namespace spk
 	 *
 	 * This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses.
 	 */
-	class AbstractApplication : public spk::ContractProvider
+	class AbstractApplication : public spk::ContractProvider, public std::enable_shared_from_this<AbstractApplication>
 	{
 	public:
 		/**
@@ -24,7 +24,7 @@ namespace spk
 		/**
 		 * @brief Map of persistent worker names to pointers.
 		 */
-		std::map<std::wstring, spk::PersistentWorker *> _workers;
+		std::map<std::wstring, std::unique_ptr<spk::PersistentWorker>> _workers;
 		
 		/**
 		 * @brief Vector of jobs to be performed.

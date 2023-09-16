@@ -19,7 +19,7 @@ namespace spk
 		}
 	}
 
-	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, spk::AbstractApplication* p_applicationToManage) : IMessageConsumerModule(p_queue),
+	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, std::shared_ptr<spk::AbstractApplication> p_applicationToManage) : IMessageConsumerModule(p_queue),
 		_applicationToManage(p_applicationToManage)
 	{
 

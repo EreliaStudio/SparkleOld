@@ -28,7 +28,7 @@ namespace spk
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size) :
 		spk::AbstractApplication(),
 		_APIModule(),
-		_systemModule(_APIModule.systemQueue(), this),
+		_systemModule(_APIModule.systemQueue(), this->shared_from_this()),
 		_windowModule(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
