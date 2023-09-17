@@ -84,7 +84,8 @@
         "xlocmes": "cpp",
         "xlocmon": "cpp",
         "xloctime": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "*.rh": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {
