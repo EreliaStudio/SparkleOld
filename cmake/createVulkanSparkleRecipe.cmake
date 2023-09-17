@@ -27,5 +27,6 @@ function(createVulkanRecipe)
 		PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
 		INTERFACE $<INSTALL_INTERFACE:include>
 	)
+	target_compile_definitions(${ProductName} PUBLIC GRAPHICAL_API=1)
 	
 endfunction()
