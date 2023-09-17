@@ -1,4 +1,4 @@
-function (createExportVulkanRecipe)
+function (createExportVulkanSparkleRecipe)
 	message(STATUS "Creating export rules")
 
 	include(cmake/listGenericIncludes.cmake)
@@ -38,13 +38,13 @@ function (createExportVulkanRecipe)
 	listVulkanIncludes(INCLUDE_LIST)
 
 	foreach(INCLUDE_FILE ${INCLUDE_LIST})
-		string(REPLACE ";" "\;" INCLUDE_FILE ${INCLUDE_FILE})
+		string(REPLACE " - " ";" INCLUDE_FILE ${INCLUDE_FILE})
 		list(GET INCLUDE_FILE 0 INPUT)
 		list(GET INCLUDE_FILE 1 OUTPUT)
 
 		if(NOT "${OUTPUT}" STREQUAL "NOT_COPIED")
-			install(FILES ${CMAKE_SOURCE_DIR}/${INPUT}
-					DESTINATION include/Sparkle/${OUTPUT})
+			install(FILES ${INPUT}
+					DESTINATION includes/Sparkle/${OUTPUT})
 		endif()
 	endforeach()
 endfunction()

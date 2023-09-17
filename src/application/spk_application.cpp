@@ -55,7 +55,7 @@ namespace spk
 		spk::Singleton<spk::Window>::instance()->resize(p_size);
 	}
 	
-	const spk::Vector2Int& Application::size() const
+	const spk::Vector2UInt& Application::size() const
 	{
 		return (spk::Window::instance()->size());
 	}
