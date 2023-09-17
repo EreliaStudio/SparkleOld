@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.0.0)
 
 include(cmake/createOpenGLSparkleRecipe.cmake)
 include(cmake/createVulkanSparkleRecipe.cmake)
-include(cmake/createExportRecipes.cmake)
+include(cmake/createExportOpenGLSparkleRecipe.cmake)
+include(cmake/createExportVulkanSparkleRecipe.cmake)
 
 project(Sparkle
     VERSION 1.0
@@ -28,12 +29,12 @@ endif()
 
 if(GraphicalAPI STREQUAL "OpenGL" OR GraphicalAPI STREQUAL "Both")
     createOpenGLRecipe()
-    createExportRecipes("SparkleOpenGL")
+    createExportOpenGLSparkleRecipe()
 endif()
 
 if(GraphicalAPI STREQUAL "Vulkan" OR GraphicalAPI STREQUAL "Both")
     createVulkanRecipe()
-    createExportRecipes("Sparkle")
+    createExportVulkanSparkleRecipe()
 endif()
 
 add_subdirectory(playground)
