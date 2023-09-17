@@ -21,7 +21,8 @@ function(createOpenGLRecipe)
 		PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/includes>
 		INTERFACE $<INSTALL_INTERFACE:include>
 	)
-
+	
+	target_compile_definitions(${ProductName} PUBLIC GRAPHICAL_API=0)
 	target_link_libraries(${ProductName} OpenGL32.lib)
 	target_link_libraries(${ProductName} GLEW::GLEW)
 
