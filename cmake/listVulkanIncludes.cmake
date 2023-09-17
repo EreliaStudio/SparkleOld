@@ -5,16 +5,14 @@ function(listVulkanIncludes INCLUDES_TABLE_VAR)
 	# --- Specific Windows
 	if (WIN32)
 		set(VULKAN_SYSTEM_DEPENDENT_INCLUDES_FILES
-		"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\vulkan;includes/graphics\surface\windows\vulkan"
-		"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\vulkan\spk_graphical_api_surface.hpp;includes/graphics\surface\windows\vulkan\spk_graphical_api_surface.hpp"
-		)
+				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/vulkan/spk_graphical_api_surface.hpp;includes/graphics/surface/windows/vulkan/spk_graphical_api_surface.hpp"
+			)
 
 	# --- Specific Linux
 	elseif(UNIX)
 		set(VULKAN_SYSTEM_DEPENDENT_INCLUDES_FILES
-		"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\vulkan;includes/graphics\surface\linux\vulkan"
-		"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\vulkan\spk_graphical_api_surface.hpp;includes/graphics\surface\linux\vulkan\spk_graphical_api_surface.hpp"
-		)
+				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/linux/vulkan/spk_graphical_api_surface.hpp;includes/graphics/surface/linux/vulkan/spk_graphical_api_surface.hpp"
+			)
 
 	endif()
 

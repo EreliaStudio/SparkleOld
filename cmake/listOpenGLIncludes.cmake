@@ -5,15 +5,13 @@ function(listOpenGLIncludes INCLUDES_TABLE_VAR)
 	# --- Specific Windows
 	if (WIN32)
 		set(OPENGL_SYSTEM_DEPENDENT_INCLUDES_FILES
-				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/opengl;includes/graphics/surface/windows/opengl"
 				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/opengl/spk_graphical_api_surface.hpp;includes/graphics/surface/windows/opengl/spk_graphical_api_surface.hpp"
 			)
 
 	# --- Specific Linux
 	elseif(UNIX)
 		set(OPENGL_SYSTEM_DEPENDENT_INCLUDES_FILES
-			"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\opengl;includes/graphics\surface\linux\opengl"
-			"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\opengl\spk_graphical_api_surface.hpp;includes/graphics\surface\linux\opengl\spk_graphical_api_surface.hpp"
+				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/linux/opengl/spk_graphical_api_surface.hpp;includes/graphics/surface/linux/opengl/spk_graphical_api_surface.hpp"
 			)
 
 	endif()
