@@ -3,7 +3,7 @@
 
 namespace spk
 {
-	LRESULT CALLBACK APIModule::WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)
+	LRESULT CALLBACK WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)
 	{
 		static APIModule *pThis = NULL;
 
@@ -16,7 +16,7 @@ namespace spk
 
 		if (pThis != NULL)
 		{
-			return pThis->_handleMessage(p_hwnd, p_uMsg, p_wParam, p_lParam);
+			return pThis->handleMessage(p_hwnd, p_uMsg, p_wParam, p_lParam);
 		}
 		else
 		{
@@ -24,7 +24,7 @@ namespace spk
 		}
 	}
 
-	LRESULT APIModule::_handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam)
+	LRESULT APIModule::handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam)
 	{
 		MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
 
