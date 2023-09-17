@@ -101,7 +101,7 @@ namespace spk
 		/**
 		 * @brief Return the current size of the Window.
 		*/
-		const spk::Vector2Int& size() const;
+		const spk::Vector2UInt& size() const;
 	};
 
 }

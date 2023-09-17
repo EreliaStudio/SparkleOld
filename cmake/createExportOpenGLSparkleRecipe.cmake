@@ -1,4 +1,4 @@
-function (createExportVulkanRecipe)
+function (createExportOpenGLSparkleRecipe)
 
 	include(cmake/listGenericIncludes.cmake)
 	include(cmake/listOpenGLIncludes.cmake)
@@ -39,13 +39,13 @@ function (createExportVulkanRecipe)
 	listOpenGLIncludes(INCLUDE_LIST)
 
 	foreach(INCLUDE_FILE ${INCLUDE_LIST})
-		string(REPLACE ";" "\;" INCLUDE_FILE ${INCLUDE_FILE})
-		list(GET INCLUDE_FILE 0 INPUT)
-		list(GET INCLUDE_FILE 1 OUTPUT)
+		string(REPLACE " - " ";" CONVERTED_INCLUDE_FILE ${INCLUDE_FILE})
+		list(GET CONVERTED_INCLUDE_FILE 0 INPUT)
+		list(GET CONVERTED_INCLUDE_FILE 1 OUTPUT)
 
 		if(NOT "${OUTPUT}" STREQUAL "NOT_COPIED")
-			install(FILES ${CMAKE_SOURCE_DIR}/${INPUT}
-					DESTINATION include/SparkleOpenGL/${OUTPUT})
+			install(FILES ${INPUT}
+					DESTINATION includes/SparkleOpenGL/${dir})
 		endif()
 	endforeach()
 endfunction()
