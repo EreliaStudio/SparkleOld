@@ -31,7 +31,7 @@ namespace spk
 
 		spk::SystemModule _systemModule; ///< System module instance.
 		spk::TimeModule _timeModule; ///< Time module instance.
-		spk::GraphicalAPIModule _windowModule; ///< Window module instance.
+		spk::GraphicalAPIModule _GAPIM; ///< Window module instance.
 		spk::MouseModule _mouseModule; ///< Mouse module instance.
 		spk::KeyboardModule _keyboardModule; ///< Keyboard module instance.
 		spk::ProfilerModule _profilerModule; ///< Profiler module instance.

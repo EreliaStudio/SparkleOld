@@ -17,14 +17,15 @@ namespace spk
 	void APIModule::pullMessage()
 	{
 		xcb_generic_event_t *event;
+		auto window = spk::Window::instance();
 
-		while ((event = xcb_poll_for_event(spk::Window::instance()->frame().connection())))
+		while ((event = xcb_poll_for_event(window->frame().connection())))
 		{
 			switch (event->response_type & ~0x80)
 			{
 			case XCB_CLIENT_MESSAGE:
 				if(((xcb_client_message_event_t*)event)->data.data32[0] ==
-					spk::Window::instance()->frame().atom_wm_delete_window())
+					window->frame().atomWmDeleteWindow())
 					event->response_type = XCB_DESTROY_NOTIFY;
 				_systemQueue.push_back(event);
 				break;
@@ -43,7 +44,7 @@ namespace spk
 				_keyboardQueue.push_back(event);
 				break;
 			default:
-				spk::cout << L"APIModule::update() : Unhandled event {" << std::hex << int(event->response_type & ~0x80) << L'}' << std::endl;
+				spk::cout << L"APIModule::update() : Unhandled event {" << int(event->response_type & ~0x80) << L'}' << std::endl;
 				break;
 			}
 		}

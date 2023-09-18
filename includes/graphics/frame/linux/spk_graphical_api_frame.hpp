@@ -4,6 +4,7 @@
 #include "math/spk_vector2.hpp"
 #include "spk_system_define.hpp"
 #include "graphics/frame/spk_graphical_api_abstract_frame.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk::GraphicalAPI
 {
@@ -15,7 +16,7 @@ namespace spk::GraphicalAPI
 		{
 			_connection = xcb_connect(NULL, NULL);
 			if (xcb_connection_has_error(_connection))
-				throw std::runtime_error("Cannot open connection to the X server");
+				spk::throwException(L"Cannot open connection to the X server");
 
 			_screen = xcb_setup_roots_iterator(xcb_get_setup(_connection)).data;
 			_window = xcb_generate_id(_connection);
@@ -35,6 +36,9 @@ namespace spk::GraphicalAPI
 			xcb_disconnect(_connection);
 		}
 
+		Frame(const Frame&) = delete;
+		Frame& operator=(const Frame&) = delete;
+
 		const spk::Vector2UInt& size() const
 		{
 			return (_size);
@@ -52,10 +56,16 @@ namespace spk::GraphicalAPI
 
 		xcb_connection_t* connection() const { return (_connection); }
 
-		xcb_atom_t atom_wm_delete_window() const { return (_atom_wm_delete_window->atom); }
+		xcb_atom_t atomWmDeleteWindow() const { return (_atom_wm_delete_window->atom); }
+
+		void setSize(const spk::Vector2UInt& p_size)
+		{
+			_size = p_size;
+		}
 
 	private:
 		spk::Vector2UInt _size;
+
 		xcb_connection_t* _connection;
 		xcb_screen_t* _screen;
 		xcb_window_t _window;
@@ -65,20 +75,20 @@ namespace spk::GraphicalAPI
 		{
 			uint32_t mask = XCB_CW_EVENT_MASK;
 			uint32_t values[2] = {
-				XCB_EVENT_MASK_KEY_PRESS |
-					XCB_EVENT_MASK_KEY_RELEASE |
-					XCB_EVENT_MASK_BUTTON_PRESS |
-					XCB_EVENT_MASK_BUTTON_RELEASE |
-					XCB_EVENT_MASK_ENTER_WINDOW |
-					XCB_EVENT_MASK_LEAVE_WINDOW |
-					XCB_EVENT_MASK_POINTER_MOTION |
-					XCB_EVENT_MASK_BUTTON_1_MOTION |
-					XCB_EVENT_MASK_BUTTON_2_MOTION |
-					XCB_EVENT_MASK_BUTTON_3_MOTION |
-					XCB_EVENT_MASK_BUTTON_4_MOTION |
-					XCB_EVENT_MASK_BUTTON_5_MOTION |
-					XCB_EVENT_MASK_RESIZE_REDIRECT,
-				0 };
+			XCB_EVENT_MASK_KEY_PRESS |
+			XCB_EVENT_MASK_KEY_RELEASE |
+			XCB_EVENT_MASK_BUTTON_PRESS |
+			XCB_EVENT_MASK_BUTTON_RELEASE |
+			XCB_EVENT_MASK_ENTER_WINDOW |
+			XCB_EVENT_MASK_LEAVE_WINDOW |
+			XCB_EVENT_MASK_POINTER_MOTION |
+			XCB_EVENT_MASK_BUTTON_1_MOTION |
+			XCB_EVENT_MASK_BUTTON_2_MOTION |
+			XCB_EVENT_MASK_BUTTON_3_MOTION |
+			XCB_EVENT_MASK_BUTTON_4_MOTION |
+			XCB_EVENT_MASK_BUTTON_5_MOTION |
+			XCB_EVENT_MASK_STRUCTURE_NOTIFY,
+			0 };
 
 			xcb_create_window(
 				_connection,
