@@ -3,7 +3,8 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/sparkle.hpp - ."
 			"${CMAKE_SOURCE_DIR}/includes/spk_basic_functions.hpp - ."
 			"${CMAKE_SOURCE_DIR}/includes/spk_system_define.hpp - ."
-			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_API_module.hpp - application/modules"
+
+			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_API_module.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_graphical_api_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_keyboard_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_message_consumer_module.hpp - application/modules"
@@ -12,11 +13,15 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_system_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_time_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_widget_module.hpp - application/modules"
+
 			"${CMAKE_SOURCE_DIR}/includes/application/spk_abstract_application.hpp - application"
 			"${CMAKE_SOURCE_DIR}/includes/application/spk_application.hpp - application"
+
 			"${CMAKE_SOURCE_DIR}/includes/data_structure/spk_data_buffer.hpp - data_structure"
 			"${CMAKE_SOURCE_DIR}/includes/data_structure/spk_pool.hpp - data_structure"
+
 			"${CMAKE_SOURCE_DIR}/includes/debug/spk_profiler.hpp - debug"
+
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_activable_object.hpp - design_pattern"
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_activity.hpp - design_pattern"
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_activity_scheduler.hpp - design_pattern"
@@ -30,14 +35,17 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_stated_object.hpp - design_pattern"
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_state_machine.hpp - design_pattern"
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_value.hpp - design_pattern"
+
+			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_graphical_api_frame.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_graphical_api_abstract_frame.hpp - graphics/frame"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_graphical_api_frame.hpp - graphics/frame"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/surface/spk_graphical_api_abstract_surface.hpp - graphics/surface"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/surface/spk_graphical_api_surface.hpp - graphics/surface"
+			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_graphical_api_frame.hpp - NOT_COPIED"
+
+			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_graphical_api_surface.hpp - NOT_COPIED"
+			"${CMAKE_SOURCE_DIR}/includes/graphics/surface/spk_graphical_api_abstract_surface.hpp - graphics/surface/"
+			"${CMAKE_SOURCE_DIR}/includes/graphics/surface/spk_graphical_api_surface.hpp - NOT_COPIED"
+
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_area.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_color.hpp - graphics"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_graphical_api_frame.hpp - graphics"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_graphical_api_surface.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_mesh.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_window.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/input/spk_input.hpp - input"
@@ -64,16 +72,18 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_is_container.hpp - miscellaneous"
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_is_vector.hpp - miscellaneous"
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_translation_atlas.hpp - miscellaneous"
-			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_acceptor.hpp - network"
+
+			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_acceptor.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_central_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_client.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_local_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_message.hpp - network"
-			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_network_object.hpp - network"
+			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_network_object.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_remote_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_server.hpp - network"
-			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_socket.hpp - network"
+			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_socket.hpp - NOT_COPIED"
+
 			"${CMAKE_SOURCE_DIR}/includes/system/spk_chronometer.hpp - system"
 			"${CMAKE_SOURCE_DIR}/includes/system/spk_timer.hpp - system"
 			"${CMAKE_SOURCE_DIR}/includes/system/spk_time_metrics.hpp - system"
@@ -96,22 +106,23 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 	# --- Specific Windows
 	if (WIN32)
 		set(GENERIC_SYSTEM_DEPENDENT_INCLUDES_FILES
-				"${CMAKE_SOURCE_DIR}/includes/application/modules/windows/spk_API_module.hpp - application/modules/windows"
-				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/windows/spk_graphical_api_frame.hpp - graphics/frame/windows"
-				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/spk_graphical_api_surface.hpp - graphics/surface/windows"
-				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_acceptor.hpp - network/windows"
-				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_object.hpp - network/windows"
-				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_socket.hpp - network/windows"
+				"${CMAKE_SOURCE_DIR}/includes/application/modules/windows/spk_API_module.hpp - application/modules"
+				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/windows/spk_graphical_api_frame.hpp - graphics"
+				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/spk_graphical_api_surface.hpp - NOT_COPIED"
+				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_acceptor.hpp - network"
+				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_network_object.hpp - network"
+				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_socket.hpp - network"
 			)
 
 	# --- Specific Linux
 	elseif(UNIX)
 		set(GENERIC_SYSTEM_DEPENDENT_INCLUDES_FILES
-				"${CMAKE_SOURCE_DIR}/includes/application/modules/linux/spk_API_module.hpp - application/modules/linux"
-				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/linux/spk_graphical_api_frame.hpp - graphics/frame/linux"
-				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/linux/spk_graphical_api_surface.hpp - graphics/surface/linux"
-				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_acceptor.hpp - network/linux"
-				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_socket.hpp - network/linux"
+				"${CMAKE_SOURCE_DIR}/includes/application/modules/linux/spk_API_module.hpp - application/modules"
+				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/linux/spk_graphical_api_frame.hpp - graphics"
+				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/linux/spk_graphical_api_surface.hpp - NOT_COPIED"
+				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_acceptor.hpp - network"
+				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_network_object.hpp - network"
+				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_socket.hpp - network"
 			)
 
 	endif()

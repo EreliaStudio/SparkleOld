@@ -45,7 +45,7 @@ function (createExportOpenGLSparkleRecipe)
 
 		if(NOT "${OUTPUT}" STREQUAL "NOT_COPIED")
 			install(FILES ${INPUT}
-					DESTINATION includes/SparkleOpenGL/${dir})
+					DESTINATION includes/SparkleOpenGL/${OUTPUT})
 		endif()
 	endforeach()
 endfunction()
