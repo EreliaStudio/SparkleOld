@@ -58,6 +58,7 @@ namespace spk::GraphicalAPI
 		}
 
 		xcb_connection_t* connection() const { return (_connection); }
+		xcb_window_t window() const { return (_window); }
 
 		xcb_atom_t atomWmDeleteWindow() const { return (_atom_wm_delete_window->atom); }
 

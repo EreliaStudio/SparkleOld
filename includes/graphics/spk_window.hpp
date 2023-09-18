@@ -15,7 +15,7 @@ namespace spk
 
 		Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr) :
 			_frame(p_title, p_size, p_ptr),
-			_surface(p_size)
+			_surface(p_size, _frame)
 		{
 
 		}

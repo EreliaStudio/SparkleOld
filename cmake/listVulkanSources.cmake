@@ -15,6 +15,7 @@ function(listVulkanSources SOURCE_FILES_VAR)
 	elseif(UNIX)
 		file(GLOB VULKAN_SPECIFIC_SOURCE_FILES
 			"${CMAKE_SOURCE_DIR}/src/graphics/window/vulkan/linux/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/vulkan/*.cpp"
 		)
 
 	endif()

@@ -130,7 +130,7 @@ namespace spk
 
 		std::wstringstream buffer;
 		buffer << shaderFile.rdbuf();
-		std::wstring result = buffer.str();	
+		std::wstring result = buffer.str();
 		return (result);
 	}
 
@@ -143,7 +143,7 @@ namespace spk
 
 		std::stringstream buffer;
 		buffer << shaderFile.rdbuf();
-		std::string result = buffer.str();	
+		std::string result = buffer.str();
 		return (result);
 	}
 
@@ -254,7 +254,7 @@ namespace spk
 		return (result);
 	}
 
-	std::wstring to_wstring(const std::string &s)
+	std::wstring to_wstring(const std::string& s)
 	{
 		std::wstring result(s.begin(), s.end());
 
