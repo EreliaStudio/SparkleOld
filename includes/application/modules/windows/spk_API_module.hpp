@@ -79,7 +79,6 @@ namespace spk
 		 * @return Thread-safe queue for keyboard system messages.
 		 */
 		spk::ThreadSafeQueue<SystemMessage> &keyboardQueue() { return _keyboardQueue; }
-
 	};
 	/**
 	 * @brief Processes messages sent to a window.
