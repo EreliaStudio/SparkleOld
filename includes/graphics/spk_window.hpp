@@ -44,5 +44,10 @@ namespace spk
 		{
 			return (_frame.size());
 		}
+
+		const spk::GraphicalAPI::Frame& frame() const
+		{
+			return (_frame);
+		}
 	};
 }
