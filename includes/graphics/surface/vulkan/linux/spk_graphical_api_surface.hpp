@@ -1,6 +1,7 @@
 #pragma once
 
 #include "graphics/surface/spk_graphical_api_abstract_surface.hpp"
+#include "graphics/surface/vulkan/linux/spk_graphical_api_device.hpp"
 
 namespace spk::GraphicalAPI
 {
