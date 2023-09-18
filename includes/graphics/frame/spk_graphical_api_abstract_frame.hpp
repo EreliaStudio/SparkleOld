@@ -28,7 +28,7 @@ namespace spk::GraphicalAPI
 			_onResize();
 		}
 
-		const Vector2Int &size() const
+		const Vector2UInt &size() const
         {
             return (_size);
         }

@@ -18,13 +18,13 @@ namespace spk
 	{
 		xcb_generic_event_t *event;
 
-		while ((event = xcb_poll_for_event(spk::Window::instance()->_connection)))
+		while ((event = xcb_poll_for_event(spk::Window::instance()->frame().connection())))
 		{
 			switch (event->response_type & ~0x80)
 			{
 			case XCB_CLIENT_MESSAGE:
 				if(((xcb_client_message_event_t*)event)->data.data32[0] ==
-					spk::Window::instance()->_atom_wm_delete_window->atom)
+					spk::Window::instance()->frame().atom_wm_delete_window())
 					event->response_type = XCB_DESTROY_NOTIFY;
 				_systemQueue.push_back(event);
 				break;
