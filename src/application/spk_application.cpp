@@ -8,15 +8,15 @@ namespace spk
 	{
 		_renderContracts.push_back(addJob(L"Render IPS increment", [&]() { _profilerModule.increaseRenderIPS(); }));
 		_renderContracts.push_back(addJob(L"API message pulling", [&]() { _APIModule.pullMessage(); }));
-		_renderContracts.push_back(addJob(L"Window clearing", [&]() { _windowModule.clear(); }));
+		_renderContracts.push_back(addJob(L"Window clearing", [&]() { _GAPIM.clear(); }));
 		_renderContracts.push_back(addJob(L"Widget rendering", [&]() { _widgetModule.render(); }));
-		_renderContracts.push_back(addJob(L"Window rendering", [&]() { _windowModule.render(); }));
+		_renderContracts.push_back(addJob(L"Window rendering", [&]() { _GAPIM.render(); }));
 
 		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule.increaseUpdateIPS(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"System message treatement", [&]() { _systemModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Time metrics update", [&]() { _timeModule.updateTimeMetrics(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Profiler update data", [&]() { _profilerModule.updateData(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Window treat message", [&]() { _windowModule.treatMessage(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Window treat message", [&]() { _GAPIM.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse treat message", [&]() { _mouseModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard treat message", [&]() { _keyboardModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Widget update", [&]() { _widgetModule.update(); }));
@@ -29,7 +29,7 @@ namespace spk
 		spk::AbstractApplication(),
 		_APIModule(),
 		_systemModule(_APIModule.systemQueue(), std::shared_ptr<AbstractApplication>(this, [](auto& tmp){})),
-		_windowModule(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
+		_GAPIM(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
 		_widgetModule()

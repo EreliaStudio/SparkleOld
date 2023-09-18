@@ -34,6 +34,12 @@ namespace spk
 			_surface.render();
 		}
 
+		void setSize(const spk::Vector2UInt& p_size)
+		{
+			_frame.setSize(p_size);
+			_surface.resize(p_size);
+		}
+
 		void resize(const spk::Vector2UInt& p_size)
 		{
 			_frame.resize(p_size);

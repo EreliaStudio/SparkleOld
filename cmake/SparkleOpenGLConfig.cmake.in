@@ -10,7 +10,7 @@ set(Sparkle_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/includes/SparkleOpenGL/")
 set(Sparkle_LIBRARY_DIR "@CMAKE_INSTALL_PREFIX@/lib/SparkleOpenGL/")
 
 if(UNIX)
-  set(Sparkle_LIBRARIES "libSparkleOpenGL.a")
+  set(Sparkle_LIBRARIES "SparkleOpenGL")
 else()
   set(Sparkle_LIBRARIES "SparkleOpenGL.lib")
 endif()
