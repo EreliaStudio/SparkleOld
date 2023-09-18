@@ -1,6 +1,6 @@
 @PACKAGE_INIT@
 
-include("${CMAKE_INSTALL_PREFIX}/lib/cmake/@LIBRARY_NAME@/@LIBRARY_NAME@Targets.cmake")
+include("${CMAKE_INSTALL_PREFIX}/lib/cmake/SparkleOpenGL/SparkleOpenGLTargets.cmake")
 
 find_package(GLEW REQUIRED)
 
