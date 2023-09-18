@@ -11,7 +11,7 @@ namespace spk::GraphicalAPI
 	class Frame : public spk::GraphicalAPI::AbstractFrame
 	{
 	public:
-		Frame(const std::wstring& p_title, const spk::Vector2Int& p_size, void* p_ptr = nullptr) :
+		Frame(const std::wstring& p_title, const spk::Vector2UInt& p_size, void* p_ptr = nullptr) :
 			spk::GraphicalAPI::AbstractFrame(p_size)
 		{
 			_connection = xcb_connect(NULL, NULL);
@@ -39,6 +39,9 @@ namespace spk::GraphicalAPI
 		Frame(const Frame&) = delete;
 		Frame& operator=(const Frame&) = delete;
 
+		Frame(Frame&&) = default;
+		Frame& operator=(Frame&&) = default;
+
 		const spk::Vector2UInt& size() const
 		{
 			return (_size);
@@ -64,8 +67,6 @@ namespace spk::GraphicalAPI
 		}
 
 	private:
-		spk::Vector2UInt _size;
-
 		xcb_connection_t* _connection;
 		xcb_screen_t* _screen;
 		xcb_window_t _window;

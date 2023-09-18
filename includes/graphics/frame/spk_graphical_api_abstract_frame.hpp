@@ -7,7 +7,7 @@ namespace spk::GraphicalAPI
 {
 	class AbstractFrame
 	{
-	private:
+	protected:
 		spk::Vector2UInt _size;
 
 		virtual void _onResize() = 0;

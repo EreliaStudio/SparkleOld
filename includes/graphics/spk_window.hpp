@@ -13,14 +13,19 @@ namespace spk
 		spk::GraphicalAPI::Frame _frame;
 		spk::GraphicalAPI::Surface _surface;
 
-		Window(const std::wstring &p_title, const Vector2Int &p_size, void *p_ptr = nullptr) :
+		Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr) :
 			_frame(p_title, p_size, p_ptr),
 			_surface(p_size)
 		{
 
 		}
-
 	public:
+
+		Window(const Window&) = delete;
+		Window& operator=(const Window&) = delete;
+
+		Window(Window&&) = default;
+		Window& operator=(Window&&) = default;
 
 		void clear()
 		{
