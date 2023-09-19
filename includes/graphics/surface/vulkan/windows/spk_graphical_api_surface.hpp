@@ -8,17 +8,17 @@ namespace spk::GraphicalAPI
 	{
 	private:
 
-        void _onResize()
-        {
-
-        }
-
 	public:
-		Surface(const spk::Vector2UInt& p_size) :
-			spk::GraphicalAPI::AbstractSurface(p_size)
+		Surface(const spk::GraphicalAPI::AbstractFrame& p_frame) :
+			spk::GraphicalAPI::AbstractSurface(p_frame)
 		{
 
 		}
+
+        void resize()
+        {
+
+        }
 
 		void clear()
 		{

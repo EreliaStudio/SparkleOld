@@ -10,18 +10,18 @@ namespace spk::GraphicalAPI
 	private:
 		Device _device;
 
-        void _onResize()
-        {
-
-        }
-
 	public:
-		Surface(const spk::Vector2UInt& p_size, Frame& p_frame) :
-			spk::GraphicalAPI::AbstractSurface(p_size),
-			_device(p_frame)
+		Surface(const spk::GraphicalAPI::AbstractFrame* p_frame) :
+			spk::GraphicalAPI::AbstractSurface(p_frame),
+			_device(*p_frame)
 		{
 
 		}
+
+        void resize()
+        {
+
+        }
 
 		void clear()
 		{
