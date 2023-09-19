@@ -61,7 +61,7 @@ namespace spk::GraphicalAPI
 		const bool enableValidationLayers = true;
 #endif
 
-		Device(Frame& p_frame);
+		Device(const Frame* p_frame);
 		~Device();
 
 		// Not copyable
@@ -100,7 +100,7 @@ namespace spk::GraphicalAPI
 	private:
 		void _createInstance();
 		void _setupDebugMessenger();
-		void _createSurface(Frame& p_frame);
+		void _createSurface(const Frame* p_frame);
 		void _pickPhysicalDevice();
 		void _createLogicalDevice();
 		void _createCommandPool();
