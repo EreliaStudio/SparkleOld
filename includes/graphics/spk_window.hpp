@@ -29,14 +29,14 @@ namespace spk
 
 		void clear()
 		{
-			_frame.clear();
 			_surface.clear();
+			_frame.clear();
 		}
 
 		void render()
 		{
-			_frame.render();
 			_surface.render();
+			_frame.render();
 		}
 
 		void setSize(const spk::Vector2UInt& p_size)

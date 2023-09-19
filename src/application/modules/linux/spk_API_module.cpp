@@ -29,7 +29,7 @@ namespace spk
 					event->response_type = XCB_DESTROY_NOTIFY;
 				_systemQueue.push_back(event);
 				break;
-			case XCB_RESIZE_REQUEST:
+			case XCB_CONFIGURE_NOTIFY:
 				_windowQueue.push_back(event);
 				break;
 			case XCB_ENTER_NOTIFY:

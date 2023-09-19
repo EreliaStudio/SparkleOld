@@ -21,10 +21,15 @@ namespace spk::GraphicalAPI
 
 		}
 
-        void resize()
-        {
+		~Surface()
+		{
+			_device.device().waitIdle();
+		};
 
-        }
+		void resize()
+		{
+
+		}
 
 		void clear()
 		{
@@ -33,7 +38,14 @@ namespace spk::GraphicalAPI
 
 		void render()
 		{
+			vk::CommandBuffer commandBuffer = _renderer.beginFrame();
 
+			if (commandBuffer == vk::CommandBuffer(nullptr))
+				return;
+			_renderer.beginSwapChainRenderPass(commandBuffer);
+
+			_renderer.endSwapChainRenderPass(commandBuffer);
+			_renderer.endFrame();
 		}
 	};
 }
