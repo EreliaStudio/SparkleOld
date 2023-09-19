@@ -10,4 +10,4 @@ add_executable(Playground "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 
 target_include_directories(Playground PRIVATE "${CMAKE_SOURCE_DIR}/includes")
 target_link_directories(Playground PRIVATE "${CMAKE_SOURCE_DIR}/archive")
-target_link_libraries(Playground Sparkle)
+target_link_libraries(Playground SparkleOpenGL)

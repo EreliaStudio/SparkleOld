@@ -2,19 +2,19 @@ function(listOpenGLSources SOURCE_FILES_VAR)
 
 	# --- Common to both Linux and Windows
 	file(GLOB OPENGL_COMMON_SOURCE_FILES 
-		"graphics/frame/opengl/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/*.cpp"
 	)
 
 	# --- Specific Windows
 	if (WIN32)
 		file(GLOB OPENGL_SPECIFIC_SOURCE_FILES
-			"graphics/frame/opengl/windows/*.cpp"
+			"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/windows/*.cpp"
 		)
 
 	# --- Specific Linux
 	elseif(UNIX)
 		file(GLOB OPENGL_SPECIFIC_SOURCE_FILES
-		"graphics/frame/opengl/linux/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/linux/*.cpp"
 		)
 
 	endif()
