@@ -46,7 +46,7 @@ namespace spk::GraphicalAPI
 
 		_device.device().destroySwapchainKHR(_swapChain, nullptr);
 
-		for (int i = 0; i < _depthImages.size(); ++i)
+		for (size_t i = 0; i < _depthImages.size(); ++i)
 		{
 			_device.device().destroyImageView(_depthImageViews[i], nullptr);
 			_device.device().destroyImage(_depthImages[i], nullptr);
@@ -287,7 +287,7 @@ namespace spk::GraphicalAPI
 		_depthImageMemories.resize(imageCount());
 		_depthImageViews.resize(imageCount());
 
-		for (int i(0); i < _depthImages.size(); ++i)
+		for (size_t i = 0; i < _depthImages.size(); ++i)
 		{
 			vk::ImageCreateInfo imageInfo(
 				vk::ImageCreateFlags(),
@@ -334,9 +334,10 @@ namespace spk::GraphicalAPI
 		_imagesInFlight.resize(imageCount(), VK_NULL_HANDLE);
 
 		vk::SemaphoreCreateInfo semaphoreInfo = {};
-		vk::FenceCreateInfo fenceInfo(vk::FenceCreateFlags(vk::FenceCreateFlagBits::eSignaled));
+		vk::FenceCreateFlags createFlags = vk::FenceCreateFlags(vk::FenceCreateFlagBits::eSignaled);
+		vk::FenceCreateInfo fenceInfo(createFlags);
 
-		for (size_t i(0); i < MAX_FRAMES_IN_FLIGHT; ++i)
+		for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; ++i)
 		{
 			if (_device.device().createSemaphore(&semaphoreInfo, nullptr, &_imageAvailableSemaphores[i]) != vk::Result::eSuccess ||
 				_device.device().createSemaphore(&semaphoreInfo, nullptr, &_renderFinishedSemaphores[i]) != vk::Result::eSuccess ||

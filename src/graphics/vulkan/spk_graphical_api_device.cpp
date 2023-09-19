@@ -278,8 +278,8 @@ namespace spk::GraphicalAPI
 #elif _WIN32
 		vk::Win32SurfaceCreateInfoKHR createInfo(
 			vk::Win32SurfaceCreateFlagsKHR(),
-			_window._hInstance,
-			_window._hWnd
+			p_frame->hInstance(),
+			p_frame->windowFrame()
 		);
 
 		if (_instance.createWin32SurfaceKHR(&createInfo, nullptr, &_surface) != vk::Result::eSuccess)
@@ -383,7 +383,7 @@ namespace spk::GraphicalAPI
 			VkBool32 presentSupport = false;
 			if (p_physicalDevice.getSurfaceSupportKHR(i, _surface, &presentSupport) != vk::Result::eSuccess)
 				spk::throwException(L"failed to get surface support");
-			if (queueFamily.queueCount > 0 && presentSupport == true) {
+			if (queueFamily.queueCount > 0 && presentSupport == static_cast<VkBool32>(true)) {
 				indices.presentFamily = i;
 				indices.presentFamilyHasValue = true;
 			}

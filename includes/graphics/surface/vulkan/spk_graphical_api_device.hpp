@@ -1,5 +1,6 @@
 #pragma once
 
+#include "spk_system_define.hpp"
 #include <vulkan/vulkan.hpp>
 #include <string>
 #include <vector>
@@ -122,7 +123,7 @@ namespace spk::GraphicalAPI
 		Dispatcher _dispatcher;
 		vk::Instance _instance;
 		vk::DebugUtilsMessengerEXT _debugMessenger;
-		vk::PhysicalDevice _physicalDevice = VK_NULL_HANDLE;
+		vk::PhysicalDevice _physicalDevice;
 		vk::CommandPool _commandPool;
 
 		vk::Device _device;
