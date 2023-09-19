@@ -17,7 +17,7 @@ namespace spk::GraphicalAPI
 	class Renderer
 	{
 	public:
-		Renderer(Frame& p_frame, Device& p_device);
+		Renderer(const Frame* p_frame, Device& p_device);
 		~Renderer();
 
 		Renderer(const Renderer&) = delete;
@@ -52,7 +52,7 @@ namespace spk::GraphicalAPI
 		void _freeCommandBuffers();
 		void _recreateSwapChain();
 
-		Frame& _frame;
+		const Frame* _frame;
 		Device& _device;
 		std::unique_ptr<SwapChain> _swapChain;
 		std::vector<vk::CommandBuffer> _commandBuffers;

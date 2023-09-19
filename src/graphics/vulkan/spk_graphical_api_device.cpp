@@ -81,7 +81,7 @@ namespace spk::GraphicalAPI
 	}
 
 	// class member functions
-	Device::Device(Frame& p_frame)
+	Device::Device(const Frame* p_frame)
 	{
 		_createInstance();
 		_setupDebugMessenger();
@@ -264,13 +264,13 @@ namespace spk::GraphicalAPI
 			spk::throwException(L"failed to create command pool");
 	}
 
-	void Device::_createSurface(Frame& p_frame)
+	void Device::_createSurface(const Frame* p_frame)
 	{
 #ifdef __linux__
 		vk::XcbSurfaceCreateInfoKHR createInfo(
 			vk::XcbSurfaceCreateFlagsKHR(),
-			p_frame.connection(),
-			p_frame.window()
+			p_frame->connection(),
+			p_frame->window()
 		);
 
 		if (_instance.createXcbSurfaceKHR(&createInfo, nullptr, &_surface) != vk::Result::eSuccess)
