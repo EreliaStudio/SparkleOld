@@ -20,6 +20,12 @@ namespace spk::GraphicalAPI
 
 		}
 
+		AbstractFrame(const AbstractFrame&) = delete;
+		AbstractFrame& operator=(const AbstractFrame&) = delete;
+
+		AbstractFrame(AbstractFrame&&) = default;
+		AbstractFrame& operator=(AbstractFrame&&) = default;
+
 		virtual void clear() = 0;
 		virtual void render() = 0;
 
