@@ -93,6 +93,6 @@
       },
     "cmake.configureArgs": [
         "-DGraphicalAPI=Both",
-        "-DBuildPlayground=OFF"
+        "-DBuildPlayground=ON"
     ],
 }

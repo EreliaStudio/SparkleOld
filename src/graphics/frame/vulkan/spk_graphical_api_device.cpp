@@ -383,11 +383,13 @@ namespace spk::GraphicalAPI
 			VkBool32 presentSupport = false;
 			if (p_physicalDevice.getSurfaceSupportKHR(i, _surface, &presentSupport) != vk::Result::eSuccess)
 				spk::throwException(L"failed to get surface support");
-			if (queueFamily.queueCount > 0 && presentSupport == static_cast<VkBool32>(true)) {
+			if (queueFamily.queueCount > 0 && presentSupport == static_cast<VkBool32>(true))
+			{
 				indices.presentFamily = i;
 				indices.presentFamilyHasValue = true;
 			}
-			if (indices.isComplete()) {
+			if (indices.isComplete())
+			{
 				break;
 			}
 
