@@ -2,31 +2,24 @@
 
 #include <string>
 #include "math/spk_vector2.hpp"
+#include "graphics/frame/spk_graphical_api_abstract_frame.hpp"
 
 namespace spk::GraphicalAPI
 {
 	class AbstractSurface
 	{
-	private:
-		spk::Vector2UInt _size;
-
-		virtual void _onResize() = 0;
+	protected:
+		const spk::GraphicalAPI::AbstractFrame* _frame;
 
 	public:
-		AbstractSurface(const spk::Vector2UInt& p_size) :
-			_size(p_size)
+		AbstractSurface(const spk::GraphicalAPI::AbstractFrame* p_frame) :
+			_frame(p_frame)
 		{
 
 		}
-		
-		void resize(const spk::Vector2UInt& p_size)
-		{
-			_size = p_size;
-			_onResize();
-		}
 
+		virtual void resize() = 0;
 		virtual void clear() = 0;
 		virtual void render() = 0;
-
 	};
 }

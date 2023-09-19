@@ -11,6 +11,7 @@ namespace spk::GraphicalAPI
 		spk::Vector2UInt _size;
 
 		virtual void _onResize() = 0;
+		virtual void _onSetSize() = 0;
 
 	public:
 		AbstractFrame(const spk::Vector2UInt& p_size) :
@@ -26,6 +27,12 @@ namespace spk::GraphicalAPI
 		{
 			_size = p_size;
 			_onResize();
+		}
+
+		void setSize(const spk::Vector2UInt& p_size)
+		{
+			_size = p_size;
+			_onSetSize();
 		}
 
 		const Vector2UInt &size() const

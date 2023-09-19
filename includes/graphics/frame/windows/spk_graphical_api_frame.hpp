@@ -85,6 +85,11 @@ namespace spk::GraphicalAPI
 
         }
 
+		void _onSetSize()
+		{
+
+		}
+
     public:
         Frame(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr) :
             spk::GraphicalAPI::AbstractFrame(p_size)
@@ -103,11 +108,6 @@ namespace spk::GraphicalAPI
         ~Frame()
         {
             delete _convertedTitle;
-        }
-
-        const Vector2UInt &size() const
-        {
-            return (_size);
         }
 
         void render()
