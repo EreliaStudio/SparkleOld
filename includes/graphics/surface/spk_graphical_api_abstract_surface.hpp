@@ -18,6 +18,12 @@ namespace spk::GraphicalAPI
 
 		}
 
+		AbstractSurface(const AbstractSurface&) = delete;
+		AbstractSurface& operator=(const AbstractSurface&) = delete;
+
+		AbstractSurface(AbstractSurface&&) = default;
+		AbstractSurface& operator=(AbstractSurface&&) = default;
+
 		virtual void resize() = 0;
 		virtual void clear() = 0;
 		virtual void render() = 0;

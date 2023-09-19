@@ -117,12 +117,6 @@ namespace spk::GraphicalAPI
 			xcb_disconnect(_connection);
 		}
 
-		Frame(const Frame&) = delete;
-		Frame& operator=(const Frame&) = delete;
-
-		Frame(Frame&&) = default;
-		Frame& operator=(Frame&&) = default;
-
 		/**
 		 * @brief Tells whether the window was resized.
 		 * 
