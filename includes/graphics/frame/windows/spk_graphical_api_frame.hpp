@@ -26,6 +26,8 @@ namespace spk::GraphicalAPI
         DWORD _windowStyle;
         DWORD _windowExStyle;
 
+		bool _wasResized = false;
+
         void _convertTitle(const std::wstring &p_title)
         {
             _convertedTitle = new wchar_t[p_title.size() + 1];
@@ -81,12 +83,12 @@ namespace spk::GraphicalAPI
 
         void _onResize()
         {
-
+            
         }
 
 		void _onSetSize()
 		{
-
+			_wasResized = true;
 		}
 
     public:
@@ -108,6 +110,26 @@ namespace spk::GraphicalAPI
         {
             delete _convertedTitle;
         }
+        
+        HINSTANCE hInstance() const
+        {
+            return (_hInstance);
+        }
+        
+        HWND windowFrame() const
+        {
+            return (_windowFrame);
+        }
+
+		bool wasResized() const
+		{
+			return (_wasResized);
+		};
+
+		void resizeHandled()
+		{
+			_wasResized = false;
+		}
 
         void render()
         {

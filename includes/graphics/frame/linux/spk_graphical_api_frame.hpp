@@ -117,17 +117,15 @@ namespace spk::GraphicalAPI
 			xcb_disconnect(_connection);
 		}
 
-		/**
-		 * @brief Tells whether the window was resized.
-		 * 
-		 * @return true If the window was resized and not yet handled. False otherwise.
-		 */
-		bool wasResized() const { return _wasResized; }; ///< Whether the window was resized.
+		bool wasResized() const
+		{
+			return _wasResized;
+		};
 
-		/**
-		 * @brief Tells the window the resize was handled. Reset the bit.
-		 */
-		void resizeHandled() { _wasResized = false; }
+		void resizeHandled()
+		{
+			_wasResized = false;
+		}
 
 		const spk::Vector2UInt& size() const
 		{
