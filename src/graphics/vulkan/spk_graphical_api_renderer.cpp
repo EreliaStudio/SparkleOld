@@ -7,7 +7,7 @@ namespace spk::GraphicalAPI
 		return vk::Extent2D(p_size.x, p_size.y);
 	}
 
-	Renderer::Renderer(const Frame* p_frame, Device& p_device)
+	Renderer::Renderer(Frame* p_frame, Device& p_device)
 		: _frame(p_frame), _device(p_device),
 		_swapChain(std::make_unique<SwapChain>(_device, toExtend2D(_frame->size()))),
 		_currentFrameIndex(0),
@@ -95,11 +95,10 @@ namespace spk::GraphicalAPI
 
 		vk::Result result = _swapChain->submitCommandBuffers(&commandBuffer, &_currentImageIndex);
 
-		// if (result == vk::Result::eErrorOutOfDateKHR || result == vk::Result::eSuboptimalKHR ||
-		// 	_frame->wasResized() == true)
-		if (result == vk::Result::eErrorOutOfDateKHR || result == vk::Result::eSuboptimalKHR)
+		if (result == vk::Result::eErrorOutOfDateKHR || result == vk::Result::eSuboptimalKHR ||
+			_frame->wasResized() == true)
 		{
-			// _frame->resizeHandled();
+			_frame->resizeHandled();
 			_recreateSwapChain();
 		}
 		else if (result != vk::Result::eSuccess)

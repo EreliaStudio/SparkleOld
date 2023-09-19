@@ -13,6 +13,8 @@ namespace spk::GraphicalAPI
 		friend class APIModule;
 
 	private:
+		bool _wasResized = {false}; ///< Whether the window was resized.
+
 		xcb_connection_t* _connection;
 		xcb_screen_t* _screen;
 		xcb_window_t _window;
@@ -82,11 +84,12 @@ namespace spk::GraphicalAPI
 		{
 			uint32_t values[2] = { static_cast<uint32_t>(_size.x), static_cast<uint32_t>(_size.y) };
 			xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
+			_wasResized = true;
 		}
 
 		void _onSetSize()
 		{
-
+			_wasResized = true;
 		}
 
 	public:
@@ -120,6 +123,18 @@ namespace spk::GraphicalAPI
 
 		Frame(Frame&&) = default;
 		Frame& operator=(Frame&&) = default;
+
+		/**
+		 * @brief Tells whether the window was resized.
+		 * 
+		 * @return true If the window was resized and not yet handled. False otherwise.
+		 */
+		bool wasResized() const { return _wasResized; }; ///< Whether the window was resized.
+
+		/**
+		 * @brief Tells the window the resize was handled. Reset the bit.
+		 */
+		void resizeHandled() { _wasResized = false; }
 
 		const spk::Vector2UInt& size() const
 		{

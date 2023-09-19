@@ -13,18 +13,23 @@ namespace spk::GraphicalAPI
 		Renderer _renderer;
 
 	public:
-		Surface(const Frame* p_frame) :
+		Surface(AbstractFrame* p_frame) :
 			AbstractSurface(p_frame),
-			_device(p_frame),
-			_renderer(p_frame, _device)
+			_device(static_cast<Frame*>(p_frame)),
+			_renderer(static_cast<Frame*>(p_frame), _device)
 		{
 
 		}
 
-        void resize()
-        {
+		~Surface()
+		{
+			_device.device().waitIdle();
+		};
 
-        }
+		void resize()
+		{
+
+		}
 
 		void clear()
 		{
@@ -33,7 +38,14 @@ namespace spk::GraphicalAPI
 
 		void render()
 		{
+			vk::CommandBuffer commandBuffer = _renderer.beginFrame();
 
+			if (commandBuffer == vk::CommandBuffer(nullptr))
+				return;
+			_renderer.beginSwapChainRenderPass(commandBuffer);
+
+			_renderer.endSwapChainRenderPass(commandBuffer);
+			_renderer.endFrame();
 		}
 	};
 }
