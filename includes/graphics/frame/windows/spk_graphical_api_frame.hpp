@@ -12,7 +12,6 @@ namespace spk
 
 namespace spk::GraphicalAPI
 {
-
     class Frame : public spk::GraphicalAPI::AbstractFrame
     {
         friend class APIModule;

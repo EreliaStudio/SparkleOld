@@ -37,4 +37,6 @@ if(GraphicalAPI STREQUAL "Vulkan" OR GraphicalAPI STREQUAL "Both")
     createExportVulkanSparkleRecipe()
 endif()
 
-add_subdirectory(playground)
+if (BuildPlayground STREQUAL "ON")
+    add_subdirectory(playground)
+endif()
