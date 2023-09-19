@@ -525,4 +525,53 @@ namespace spk::GraphicalAPI
 
 		endSingleTimeCommands(commandBuffer);
 	}
+
+	void Device::copyBufferToImage(vk::Buffer p_buffer, vk::Image p_image,
+		uint32_t p_width, uint32_t p_height, uint32_t p_layerCount)
+	{
+		vk::CommandBuffer commandBuffer = beginSingleTimeCommands();
+
+		vk::BufferImageCopy region(
+			0,
+			0,
+			0,
+			vk::ImageSubresourceLayers(
+				vk::ImageAspectFlagBits::eColor,
+				0,
+				0,
+				p_layerCount
+			),
+			vk::Offset3D(0, 0, 0),
+			vk::Extent3D(p_width, p_height, 1)
+		);
+
+		commandBuffer.copyBufferToImage(
+			p_buffer,
+			p_image,
+			vk::ImageLayout::eTransferDstOptimal,
+			1,
+			&region);
+		endSingleTimeCommands(commandBuffer);
+	}
+
+	void Device::createImageWithInfo(
+		const vk::ImageCreateInfo& p_imageInfo,
+		vk::MemoryPropertyFlags p_properties,
+		vk::Image& p_image,
+		vk::DeviceMemory& p_imageMemory)
+	{
+		if (_device.createImage(&p_imageInfo, nullptr, &p_image) != vk::Result::eSuccess)
+			spk::throwException(L"failed to create image");
+
+		vk::MemoryRequirements memRequirements(_device.getImageMemoryRequirements(p_image));
+
+		vk::MemoryAllocateInfo allocInfo(
+			memRequirements.size,
+			findMemoryType(memRequirements.memoryTypeBits, p_properties)
+		);
+
+		if (_device.allocateMemory(&allocInfo, nullptr, &p_imageMemory) != vk::Result::eSuccess)
+			spk::throwException(L"failed to allocate image memory");
+		_device.bindImageMemory(p_image, p_imageMemory, 0);
+	}
 }
