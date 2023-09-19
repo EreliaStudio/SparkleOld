@@ -2,6 +2,7 @@
 
 #include "graphics/surface/spk_graphical_api_abstract_surface.hpp"
 #include "graphics/surface/vulkan/spk_graphical_api_device.hpp"
+#include "graphics/surface/vulkan/spk_graphical_api_renderer.hpp"
 
 namespace spk::GraphicalAPI
 {
@@ -9,6 +10,7 @@ namespace spk::GraphicalAPI
 	{
 	private:
 		Device _device;
+		Renderer _renderer;
 
         void _onResize()
         {
@@ -18,7 +20,8 @@ namespace spk::GraphicalAPI
 	public:
 		Surface(const spk::Vector2UInt& p_size, Frame& p_frame) :
 			spk::GraphicalAPI::AbstractSurface(p_size),
-			_device(p_frame)
+			_device(p_frame),
+			_renderer(p_frame, _device)
 		{
 
 		}

@@ -61,7 +61,6 @@ namespace spk::GraphicalAPI
 		const bool enableValidationLayers = true;
 #endif
 
-		//! Device(spk::Window& window);
 		Device(Frame& p_frame);
 		~Device();
 
@@ -83,6 +82,15 @@ namespace spk::GraphicalAPI
 		// Buffer Helper Functions
 		void createBuffer(vk::DeviceSize p_size, vk::BufferUsageFlags p_usage, vk::MemoryPropertyFlags p_properties, vk::Buffer& p_buffer, vk::DeviceMemory& p_bufferMemory);
 		void copyBuffer(vk::Buffer p_srcBuffer, vk::Buffer p_dstBuffer, vk::DeviceSize p_size);
+		void copyBufferToImage(
+			vk::Buffer p_buffer, vk::Image p_image,
+			uint32_t p_width, uint32_t p_height, uint32_t p_layerCount);
+
+		void createImageWithInfo(
+			const vk::ImageCreateInfo& p_imageInfo,
+			vk::MemoryPropertyFlags p_properties,
+			vk::Image& p_image,
+			vk::DeviceMemory& p_imageMemory);
 
 		vk::CommandBuffer beginSingleTimeCommands();
 		void endSingleTimeCommands(vk::CommandBuffer p_commandBuffer);
@@ -115,7 +123,6 @@ namespace spk::GraphicalAPI
 		vk::Instance _instance;
 		vk::DebugUtilsMessengerEXT _debugMessenger;
 		vk::PhysicalDevice _physicalDevice = VK_NULL_HANDLE;
-		//! spk::Window& _window;
 		vk::CommandPool _commandPool;
 
 		vk::Device _device;
