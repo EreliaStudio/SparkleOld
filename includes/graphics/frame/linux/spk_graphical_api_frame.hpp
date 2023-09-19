@@ -10,62 +10,7 @@ namespace spk::GraphicalAPI
 {
 	class Frame : public spk::GraphicalAPI::AbstractFrame
 	{
-	public:
-		Frame(const std::wstring& p_title, const spk::Vector2UInt& p_size, void* p_ptr = nullptr) :
-			spk::GraphicalAPI::AbstractFrame(p_size)
-		{
-			_connection = xcb_connect(NULL, NULL);
-			if (xcb_connection_has_error(_connection))
-				spk::throwException(L"Cannot open connection to the X server");
-
-			_screen = xcb_setup_roots_iterator(xcb_get_setup(_connection)).data;
-			_window = xcb_generate_id(_connection);
-
-			_createFrame();
-			_nameFrame(p_title);
-
-			_atom_wm_delete_window = _enableDestroyXCBProperty(_connection, _window);
-
-			xcb_map_window(_connection, _window);
-		}
-
-		~Frame()
-		{
-			free(_atom_wm_delete_window);
-			xcb_destroy_window(_connection, _window);
-			xcb_disconnect(_connection);
-		}
-
-		Frame(const Frame&) = delete;
-		Frame& operator=(const Frame&) = delete;
-
-		Frame(Frame&&) = default;
-		Frame& operator=(Frame&&) = default;
-
-		const spk::Vector2UInt& size() const
-		{
-			return (_size);
-		}
-
-		void render()
-		{
-			xcb_flush(_connection);
-		}
-
-		void clear()
-		{
-			xcb_clear_area(_connection, 0, _window, 0, 0, _size.x, _size.y);
-		}
-
-		xcb_connection_t* connection() const { return (_connection); }
-		xcb_window_t window() const { return (_window); }
-
-		xcb_atom_t atomWmDeleteWindow() const { return (_atom_wm_delete_window->atom); }
-
-		void setSize(const spk::Vector2UInt& p_size)
-		{
-			_size = p_size;
-		}
+		friend class APIModule;
 
 	private:
 		xcb_connection_t* _connection;
@@ -139,6 +84,62 @@ namespace spk::GraphicalAPI
 			xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
 		}
 
-		friend class APIModule;
+		void _onSetSize()
+		{
+
+		}
+
+	public:
+		Frame(const std::wstring& p_title, const spk::Vector2UInt& p_size, void* p_ptr = nullptr) :
+			spk::GraphicalAPI::AbstractFrame(p_size)
+		{
+			_connection = xcb_connect(NULL, NULL);
+			if (xcb_connection_has_error(_connection))
+				spk::throwException(L"Cannot open connection to the X server");
+
+			_screen = xcb_setup_roots_iterator(xcb_get_setup(_connection)).data;
+			_window = xcb_generate_id(_connection);
+
+			_createFrame();
+			_nameFrame(p_title);
+
+			_atom_wm_delete_window = _enableDestroyXCBProperty(_connection, _window);
+
+			xcb_map_window(_connection, _window);
+		}
+
+		~Frame()
+		{
+			free(_atom_wm_delete_window);
+			xcb_destroy_window(_connection, _window);
+			xcb_disconnect(_connection);
+		}
+
+		Frame(const Frame&) = delete;
+		Frame& operator=(const Frame&) = delete;
+
+		Frame(Frame&&) = default;
+		Frame& operator=(Frame&&) = default;
+
+		const spk::Vector2UInt& size() const
+		{
+			return (_size);
+		}
+
+		void render()
+		{
+			xcb_flush(_connection);
+		}
+
+		void clear()
+		{
+			xcb_clear_area(_connection, 0, _window, 0, 0, _size.x, _size.y);
+		}
+
+		xcb_connection_t* connection() const { return (_connection); }
+		xcb_window_t window() const { return (_window); }
+
+		xcb_atom_t atomWmDeleteWindow() const { return (_atom_wm_delete_window->atom); }
+
 	};
 }
