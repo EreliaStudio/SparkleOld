@@ -24,7 +24,7 @@ namespace spk::GraphicalAPI
 		~Surface()
 		{
 			_device.device().waitIdle();
-		};
+		}
 
 		void resize()
 		{

@@ -84,7 +84,6 @@ namespace spk::GraphicalAPI
 		{
 			uint32_t values[2] = { static_cast<uint32_t>(_size.x), static_cast<uint32_t>(_size.y) };
 			xcb_configure_window(_connection, _window, XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT, values);
-			_wasResized = true;
 		}
 
 		void _onSetSize()
