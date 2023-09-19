@@ -1,5 +1,8 @@
 function(listVulkanIncludes INCLUDES_TABLE_VAR)
 	set(VULKAN_INCLUDES_FILES
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_device.hpp - graphics/surface/vulkan"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_swapchain.hpp - graphics/surface/vulkan"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_renderer.hpp - graphics/surface/vulkan"
 	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_surface.hpp - graphics")
 
 	# --- Specific Windows
