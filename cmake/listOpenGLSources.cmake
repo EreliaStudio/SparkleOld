@@ -15,6 +15,7 @@ function(listOpenGLSources SOURCE_FILES_VAR)
 	elseif(UNIX)
 		file(GLOB OPENGL_SPECIFIC_SOURCE_FILES
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/linux/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/linux/*.cpp"
 		)
 
 	endif()
