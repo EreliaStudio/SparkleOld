@@ -2,11 +2,11 @@
 
 namespace spk::GraphicalAPI
 {
-	class AbstractGraphicalDevice
+	class AbstractPipeline
 	{
 	private:
 
 	public:
-		virtual void test() = 0;
+	
 	};
 }

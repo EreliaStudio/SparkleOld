@@ -4,7 +4,7 @@ function(listVulkanIncludes INCLUDES_TABLE_VAR)
 	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_swapchain.hpp - graphics/surface/vulkan"
 	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_renderer.hpp - graphics/surface/vulkan"
 	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_surface.hpp - graphics"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/graphical_device/vulkan/spk_graphical_api_graphical_device.hpp - graphics")
+	"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/vulkan/spk_graphical_api_pipeline.hpp - graphics")
 
 	# --- Specific Windows
 	if (WIN32)
