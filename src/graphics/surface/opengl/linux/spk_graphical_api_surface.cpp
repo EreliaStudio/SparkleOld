@@ -43,7 +43,6 @@ namespace spk::GraphicalAPI
 
 	void Surface::resize()
 	{
-
 	}
 
 	void Surface::clear()
