@@ -26,6 +26,60 @@ namespace spk::GraphicalAPI
 
 	class Device
 	{
+	public:
+		class Pipeline
+		{
+		public:
+			struct ConfigInfo
+			{
+				ConfigInfo() = default;
+				ConfigInfo(const ConfigInfo&) = delete;
+				ConfigInfo& operator=(const ConfigInfo&) = delete;
+
+				std::vector<vk::VertexInputBindingDescription> bindingDescriptions;
+				std::vector<vk::VertexInputAttributeDescription> attributeDescriptions;
+				vk::PipelineViewportStateCreateInfo viewportInfo;
+				vk::PipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
+				vk::PipelineRasterizationStateCreateInfo rasterizationInfo;
+				vk::PipelineMultisampleStateCreateInfo multisampleInfo;
+				vk::PipelineColorBlendAttachmentState colorBlendAttachment;
+				vk::PipelineColorBlendStateCreateInfo colorBlendInfo;
+				vk::PipelineDepthStencilStateCreateInfo depthStencilInfo;
+				std::vector<vk::DynamicState> dynamicStateEnables;
+				vk::PipelineDynamicStateCreateInfo dynamicStateInfo;
+				vk::PipelineLayout pipelineLayout;
+				vk::RenderPass renderPass;
+				uint32_t subpass{ 0 };
+			};
+
+			Pipeline(Device& p_device,
+				const std::filesystem::path& p_vertexShaderPath,
+				const std::filesystem::path& p_fragmentShaderPath,
+				const ConfigInfo& p_configInfo);
+
+			~Pipeline();
+
+			Pipeline(const Pipeline&) = delete;
+			Pipeline& operator=(const Pipeline&) = delete;
+
+			static void defaultPipelineConfigInfo(ConfigInfo& p_configInfo);
+
+			void bind(vk::CommandBuffer p_commandBuffer);
+
+		private:
+
+			static std::vector<char> _readFile(const std::filesystem::path& p_filePath);
+
+			void _createGraphicsPipeline(const std::filesystem::path& p_vertexShaderPath,
+				const std::filesystem::path& p_fragmentShaderPath, const ConfigInfo& p_configInfo);
+
+			void _createShaderModule(const std::vector<char>& p_code, vk::ShaderModule* p_shaderModule);
+
+			Device& _device;
+			vk::Pipeline _graphicsPipeline;
+			vk::ShaderModule _vertexShaderModule;
+			vk::ShaderModule _fragmentShaderModule;
+		}; //? class Pipeline
 	private:
 		class Dispatcher
 		{
@@ -49,11 +103,8 @@ namespace spk::GraphicalAPI
 
 			~Dispatcher() = default;
 
-			vk::DispatchLoaderDynamic& dynamicDispatcher()
-			{
-				return _dynamicDispatcher;
-			}
-		};
+			vk::DispatchLoaderDynamic& dynamicDispatcher() { return _dynamicDispatcher; }
+		}; //? class Dispatcher
 
 	public:
 #ifdef NDEBUG
@@ -83,15 +134,9 @@ namespace spk::GraphicalAPI
 		// Buffer Helper Functions
 		void createBuffer(vk::DeviceSize p_size, vk::BufferUsageFlags p_usage, vk::MemoryPropertyFlags p_properties, vk::Buffer& p_buffer, vk::DeviceMemory& p_bufferMemory);
 		void copyBuffer(vk::Buffer p_srcBuffer, vk::Buffer p_dstBuffer, vk::DeviceSize p_size);
-		void copyBufferToImage(
-			vk::Buffer p_buffer, vk::Image p_image,
-			uint32_t p_width, uint32_t p_height, uint32_t p_layerCount);
+		void copyBufferToImage(vk::Buffer p_buffer, vk::Image p_image, uint32_t p_width, uint32_t p_height, uint32_t p_layerCount);
 
-		void createImageWithInfo(
-			const vk::ImageCreateInfo& p_imageInfo,
-			vk::MemoryPropertyFlags p_properties,
-			vk::Image& p_image,
-			vk::DeviceMemory& p_imageMemory);
+		void createImageWithInfo(const vk::ImageCreateInfo& p_imageInfo, vk::MemoryPropertyFlags p_properties, vk::Image& p_image, vk::DeviceMemory& p_imageMemory);
 
 		vk::CommandBuffer beginSingleTimeCommands();
 		void endSingleTimeCommands(vk::CommandBuffer p_commandBuffer);
