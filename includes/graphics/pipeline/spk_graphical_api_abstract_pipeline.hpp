@@ -1,5 +1,12 @@
 #pragma once
 
+#include <map>
+#include <string>
+#include <filesystem>
+
+#include "data_structure/spk_data_buffer.hpp"
+#include "spk_basic_functions.hpp"
+
 namespace spk::GraphicalAPI
 {
 	class AbstractPipeline
@@ -69,17 +76,21 @@ namespace spk::GraphicalAPI
 				template <typename... Types>
 				Storage &operator<<(const Unit<Types...> &p_unit)
 				{
-					if (sizeof(p_unit) != _config.totalSize)
+					if (sizeof(p_unit) != _configuration.totalSize)
 						spk::throwException(L"Unexpected unit size");
 					_content.append(&p_unit, sizeof(p_unit));
+
+					return (*this);
 				}
 
 				template <typename... Types>
 				Storage &operator<<(const std::vector<Unit<Types...>> &p_unitVector)
 				{
-					if (sizeof(p_unit) != _config.totalSize)
+					if (sizeof(p_unitVector[0]) != _configuration.totalSize)
 						spk::throwException(L"Unexpected unit size");
 					_content.append(p_unitVector.data(), sizeof(Unit<Types...>) * p_unitVector.size());
+					
+					return (*this);
 				}
 
 				const void *data() const
