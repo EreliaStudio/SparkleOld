@@ -40,7 +40,7 @@ namespace spk::Widget
 	Interface::Interface(const std::wstring& p_name) :
 		_name(p_name)
 	{
-		Atlas::instance()->insert(this->shared_from_this());
+		Atlas::instance()->insert(std::shared_ptr<Interface>(this, [](Interface*){}));
 
 		_activationCallback = ActivableObject::addActivationCallback([&](){
 			_setOperationnal();
