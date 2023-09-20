@@ -78,6 +78,10 @@ int main()
 	spk::Application app(L"Coucou", 400);
 	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Qwerty);
 
+	spk::GraphicalAPI::GraphicalDevice test;
+
+	test.test();
+
 	// Test* test = app.addRootWidget<Test>(L"Test");
 	// test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
 	// test->activate();

@@ -1,6 +1,8 @@
 function(listOpenGLIncludes INCLUDES_TABLE_VAR)
 	set(OPENGL_INCLUDES_FILES
-		"")
+		"${CMAKE_SOURCE_DIR}/includes/graphics/surface/opengl/windows/spk_graphical_api_surface.hpp - graphics"
+		"${CMAKE_SOURCE_DIR}/includes/graphics/graphical_device/opengl/spk_graphical_api_graphical_device.hpp - graphics"
+		)
 
 	# --- Specific Windows
 	if (WIN32)
