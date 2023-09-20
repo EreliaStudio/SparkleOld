@@ -8,6 +8,7 @@ function(listGenericSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
