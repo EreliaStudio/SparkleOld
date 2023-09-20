@@ -4,7 +4,7 @@
 
 namespace spk::GraphicalAPI
 {
-	class Pipeline : public spk::GraphicalAPI::Pipeline
+	class Pipeline : public spk::GraphicalAPI::AbstractPipeline
 	{
 	private:
 
