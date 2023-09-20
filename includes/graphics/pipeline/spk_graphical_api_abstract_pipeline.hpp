@@ -4,9 +4,187 @@ namespace spk::GraphicalAPI
 {
 	class AbstractPipeline
 	{
+	public:
+		class Object
+		{
+			friend class AbstractPipeline;
+
+		public:
+			struct Storage
+			{
+			public:
+				struct Configuration
+				{
+					struct Value
+					{
+						size_t location;
+						size_t offset;
+						size_t size;
+					};
+					std::map<std::wstring, Value> values;
+					size_t totalSize;
+				};
+
+			private:
+				template <typename T, typename... Rest>
+				struct UnitImpl : public UnitImpl<Rest...>
+				{
+					UnitImpl(const T &p_value, const Rest &...p_rest)
+						: UnitImpl<Rest...>(p_rest...), value(p_value)
+					{
+					}
+
+					T value;
+				};
+
+				template <typename T>
+				struct UnitImpl<T>
+				{
+					UnitImpl(const T &p_value) : value(p_value)
+					{
+					}
+
+					T value;
+				};
+
+			public:
+				template <typename... Types>
+				struct Unit : public UnitImpl<Types...>
+				{
+				public:
+					Unit(const Types &...p_args) : UnitImpl<Types...>(p_args...)
+					{
+					}
+				};
+
+			private:
+				spk::DataBuffer _content;
+				const Configuration &_configuration;
+
+			public:
+				Storage(const Storage::Configuration &p_storageConfiguration) : _configuration(p_storageConfiguration)
+				{
+				}
+
+				template <typename... Types>
+				Storage &operator<<(const Unit<Types...> &p_unit)
+				{
+					if (sizeof(p_unit) != _config.totalSize)
+						spk::throwException(L"Unexpected unit size");
+					_content.append(&p_unit, sizeof(p_unit));
+				}
+
+				template <typename... Types>
+				Storage &operator<<(const std::vector<Unit<Types...>> &p_unitVector)
+				{
+					if (sizeof(p_unit) != _config.totalSize)
+						spk::throwException(L"Unexpected unit size");
+					_content.append(p_unitVector.data(), sizeof(Unit<Types...>) * p_unitVector.size());
+				}
+
+				const void *data() const
+				{
+					return (_content.data());
+				}
+
+				const size_t size() const
+				{
+					return (_content.size());
+				}
+			};
+
+		private:
+			AbstractPipeline *_owner;
+			Storage _storage;
+
+			Object(AbstractPipeline *p_owner, const Storage::Configuration &p_storageConfiguration) : _owner(p_owner),
+																									  _storage(p_storageConfiguration)
+			{
+			}
+
+		public:
+			Object(const Object &p_other) = delete;
+			Object &operator=(const Object &p_other) = delete;
+
+			Object(Object &&p_other) = default;
+			Object &operator=(Object &&p_other) = default;
+
+			void activate()
+			{
+				_owner->_activateObject(this);
+			}
+
+			void deactivate()
+			{
+				_owner->_activateObject(this);
+			}
+
+			void push()
+			{
+				_owner->_pushStorageData(_storage.data(), _storage.size());
+			}
+
+			void render()
+			{
+				_owner->_renderObject(this);
+			}
+
+			Storage &storage()
+			{
+				return (_storage);
+			}
+		};
+
 	private:
+		Object::Storage::Configuration _storageConfiguration;
+
+		virtual void _loadProgram(
+			const std::string &p_vertexName, const std::string &p_vertexCode,
+			const std::string &p_fragmentName, const std::string &p_fragmentCode) = 0;
+
+		virtual void _pushStorageData(const void *p_data, const size_t &p_dataSize) = 0;
+
+		virtual void _renderObject(Object *p_object) = 0;
+
+		virtual void _activateObject(Object *p_object) = 0;
+		virtual void _deactivateObject(Object *p_object) = 0;
+
+		Object::Storage::Configuration _parseStorageBuffers(const std::string &p_vertexModuleCode)
+		{
+			Object::Storage::Configuration result;
+
+			return (result);
+		}
+
+		void _loadAbstractPipeline(
+			const std::string &p_vertexName, const std::string &p_vertexCode,
+			const std::string &p_fragmentName, const std::string &p_fragmentCode)
+		{
+			_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
+
+			_storageConfiguration = _parseStorageBuffers(p_vertexCode);
+		}
 
 	public:
-	
+		AbstractPipeline(const std::string &p_vertexName, const std::string &p_vertexCode, const std::string &p_fragmentName, const std::string &p_fragmentCode)
+		{
+			_loadAbstractPipeline(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
+		}
+
+		AbstractPipeline(const std::filesystem::path &p_vertexShaderPath, const std::filesystem::path &p_fragmentShaderPath)
+		{
+			std::string vertexName = p_vertexShaderPath.filename().string();
+			std::string vertexCode = spk::getFileContentAsString(p_vertexShaderPath);
+
+			std::string fragmentName = p_fragmentShaderPath.filename().string();
+			std::string fragmentCode = spk::getFileContentAsString(p_fragmentShaderPath);
+
+			_loadAbstractPipeline(vertexName, vertexCode, fragmentName, fragmentCode);
+		}
+
+		Object createObject()
+		{
+			return (Object(this, _storageConfiguration));
+		}
 	};
 }
