@@ -3,6 +3,7 @@ function(listVulkanSources SOURCE_FILES_VAR)
 	# --- Common to both Linux and Windows
 	file(GLOB VULKAN_COMMON_SOURCE_FILES 
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/vulkan/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/surface/vulkan/*.cpp"
 	)
 
 	# --- Specific Windows

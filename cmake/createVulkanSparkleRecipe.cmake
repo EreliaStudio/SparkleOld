@@ -20,7 +20,7 @@ function(createVulkanRecipe)
 	add_library(${ProductName} STATIC ${SOURCE_FILES})
 
 	if (UNIX)
-		target_link_libraries(${ProductName} xcb)
+		target_link_libraries(${ProductName} xcb X11 X11-xcb)
 	endif()
 	
 	target_include_directories(${ProductName}
