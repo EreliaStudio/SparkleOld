@@ -24,12 +24,44 @@ namespace spk::GraphicalAPI
 				{
 					struct Value
 					{
-						size_t location;
-						size_t offset;
-						size_t size;
+						enum class Type
+						{
+							Float,
+							Int,
+							UInt
+						};
+
+						Type type = Type::Float;
+						size_t location = 0;
+						size_t offset = 0;
+						size_t size = 0;
 					};
 					std::map<std::wstring, Value> values;
-					size_t totalSize;
+					size_t totalSize = 0;
+
+					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config)
+					{
+						p_out << L"Total size: " << p_config.totalSize << std::endl;
+
+						for (const auto& value : p_config.values) {
+							p_out << L"Value [" << value.first << L"]:" << std::endl;
+							p_out << L"    Location: " << value.second.location << std::endl;
+							p_out << L"    Offset: " << value.second.offset << std::endl;
+							p_out << L"    Type: " << [&]() -> std::wstring {
+								switch (value.second.type) {
+									case Value::Type::Float:
+										return L"Float";
+									case Value::Type::Int:
+										return L"Int";
+									case Value::Type::UInt:
+										return L"UInt";
+								}
+								return L"Unknown"; // This should never happen
+							}() << std::endl;
+							p_out << L"    Size: " << value.second.size << std::endl;
+						}
+						return p_out;
+					}
 				}; //? struct Configuration
 
 			private:
@@ -116,7 +148,7 @@ namespace spk::GraphicalAPI
 			Storage& storage();
 		}; //? class Object
 
-	private:
+	protected:
 		Object::Storage::Configuration _storageConfiguration;
 
 		virtual void _loadProgram(
@@ -137,8 +169,10 @@ namespace spk::GraphicalAPI
 			const std::string& p_fragmentName, const std::string& p_fragmentCode);
 
 	public:
-		AbstractPipeline(const std::string& p_vertexName, const std::string& p_vertexCode, const std::string& p_fragmentName, const std::string& p_fragmentCode);
-		AbstractPipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);
+		AbstractPipeline();
+
+		void loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode);
+		void loadFromFile(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);
 
 		Object createObject();
 	}; //? class AbstractPipeline

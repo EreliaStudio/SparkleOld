@@ -84,10 +84,13 @@ namespace spk
 		template <typename TChildrenType, typename ... Args>
 		std::shared_ptr<TChildrenType> addRootWidget(Args&& ... p_args)
 		{
+		DEBUG_LINE();
 			auto result = std::make_shared<TChildrenType>(std::forward<Args>(p_args)...);
 
+		DEBUG_LINE();
 			result->setDepth(0);
 
+		DEBUG_LINE();
 			return (result);
 		}
 

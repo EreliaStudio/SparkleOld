@@ -40,7 +40,7 @@ namespace spk::Widget
 	Interface::Interface(const std::wstring& p_name) :
 		_name(p_name)
 	{
-		Atlas::instance()->insert(this->shared_from_this());
+		Atlas::instance()->insert(std::shared_ptr<Interface>(this, [](Interface*){}));
 
 		_activationCallback = ActivableObject::addActivationCallback([&](){
 			_setOperationnal();
@@ -63,7 +63,7 @@ namespace spk::Widget
 
 	Interface::~Interface()
 	{
-		Atlas::instance()->remove(this->shared_from_this());
+		Atlas::instance()->remove(std::shared_ptr<Interface>(this, [](Interface*){}));
 	}
 
 	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
@@ -108,7 +108,7 @@ namespace spk::Widget
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
-		Atlas::instance()->sort(this->shared_from_this());
+		Atlas::instance()->sort(std::shared_ptr<Interface>(this, [](Interface*){}));
 		
 		for (auto& child : childrens())
 		{
