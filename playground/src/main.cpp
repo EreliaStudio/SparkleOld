@@ -1,8 +1,47 @@
 #include "sparkle.hpp"
 
+class TestPipeline : public spk::GraphicalAPI::AbstractPipeline
+{
+private:
+	void _loadProgram(
+			const std::string& p_vertexName, const std::string& p_vertexCode,
+			const std::string& p_fragmentName, const std::string& p_fragmentCode)
+	{
+
+	}
+
+	void _pushStorageData(const void* p_data, const size_t& p_dataSize)
+	{
+
+	}
+
+	void _renderObject(Object* p_object)
+	{
+
+	}
+
+	void _activateObject(Object* p_object)
+	{
+
+	}
+	void _deactivateObject(Object* p_object)
+	{
+
+	}
+
+public: 
+	TestPipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath) :
+		spk::GraphicalAPI::AbstractPipeline()
+	{
+		loadFromFile(p_vertexShaderPath, p_fragmentShaderPath);
+	}
+};
+
 class Test : public spk::Widget::Interface
 {
 private:
+	TestPipeline _pipeline;
+
 	void _onGeometryChange()
 	{
 		
@@ -20,7 +59,8 @@ private:
 
 public:
 	Test(const std::wstring& p_name) :
-		spk::Widget::Interface(p_name)
+		spk::Widget::Interface(p_name),
+		_pipeline(L"colorShader.vert", L"colorShader.frag")
 	{
 
 	}
