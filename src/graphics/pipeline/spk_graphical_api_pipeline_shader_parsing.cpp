@@ -36,13 +36,13 @@ namespace spk::GraphicalAPI
 	std::unordered_set<uint32_t> usedLocations;
 	uint32_t nextAvailableLocation = 0;
 
-	size_t compileLocationValue(const std::string& p_locationValue)
+	size_t compileLocationAttribute(const std::string& p_locationAttribute)
 	{
 		size_t result;
 
-		if (p_locationValue.length() > 0)
+		if (p_locationAttribute.length() > 0)
 		{
-			result = std::stoi(p_locationValue);
+			result = std::stoi(p_locationAttribute);
 			usedLocations.insert(result);
 		}
 		else
@@ -65,24 +65,26 @@ namespace spk::GraphicalAPI
 
 		AbstractPipeline::Object::Storage::Configuration result;
 
+		result.mode = AbstractPipeline::Object::Storage::Configuration::Mode::Data;
+
 		std::vector<std::string> bufferInfos = parseBufferCode(p_vertexModuleCode);
 
-		static const std::unordered_map<std::string, std::tuple<size_t, AbstractPipeline::Object::Storage::Configuration::Value::Type, size_t>> glslInputToData = {
-			{"float", {1, AbstractPipeline::Object::Storage::Configuration::Value::Type::Float, sizeof(float)}},
-			{"uint", {1, AbstractPipeline::Object::Storage::Configuration::Value::Type::UInt, sizeof(unsigned int)}},
-			{"int", {1, AbstractPipeline::Object::Storage::Configuration::Value::Type::Int, sizeof(int)}},
+		static const std::unordered_map<std::string, std::tuple<size_t, AbstractPipeline::Object::Storage::Configuration::Attribute::Type, size_t>> glslInputToData = {
+			{"float", {1, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)}},
+			{"uint", {1, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)}},
+			{"int", {1, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}},
 
-			{"vec2", {2, AbstractPipeline::Object::Storage::Configuration::Value::Type::Float, sizeof(float)}},
-			{"uvec2", {2, AbstractPipeline::Object::Storage::Configuration::Value::Type::UInt, sizeof(unsigned int)}},
-			{"ivec2", {2, AbstractPipeline::Object::Storage::Configuration::Value::Type::Int, sizeof(int)}},
+			{"vec2", {2, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)}},
+			{"uvec2", {2, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)}},
+			{"ivec2", {2, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}},
 
-			{"vec3", {3, AbstractPipeline::Object::Storage::Configuration::Value::Type::Float, sizeof(float)}},
-			{"uvec3", {3, AbstractPipeline::Object::Storage::Configuration::Value::Type::UInt, sizeof(unsigned int)}},
-			{"ivec3", {3, AbstractPipeline::Object::Storage::Configuration::Value::Type::Int, sizeof(int)}},
+			{"vec3", {3, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)}},
+			{"uvec3", {3, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)}},
+			{"ivec3", {3, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}},
 
-			{"vec4", {4, AbstractPipeline::Object::Storage::Configuration::Value::Type::Float, sizeof(float)}},
-			{"ivec4", {4, AbstractPipeline::Object::Storage::Configuration::Value::Type::UInt, sizeof(unsigned int)}},
-			{"uvec4", {4, AbstractPipeline::Object::Storage::Configuration::Value::Type::Int, sizeof(int)}}
+			{"vec4", {4, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)}},
+			{"ivec4", {4, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)}},
+			{"uvec4", {4, AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}}
 		};
 
 		for (size_t i = 0; i < bufferInfos.size(); i++)
@@ -92,17 +94,17 @@ namespace spk::GraphicalAPI
 
 			if (std::regex_search(bufferInfos[i], match, p_varPattern))
 			{
-				AbstractPipeline::Object::Storage::Configuration::Value newValue;
+				AbstractPipeline::Object::Storage::Configuration::Attribute newAttribute;
 
-				newValue.location = compileLocationValue(match[1]);
-				newValue.offset = result.totalSize;
+				newAttribute.location = compileLocationAttribute(match[1]);
+				newAttribute.offset = result.stride;
 
 				auto& glslType = glslInputToData.at(match[2]);
-				newValue.size = std::get<0>(glslType);
-				newValue.type = std::get<1>(glslType);
-				result.totalSize += std::get<2>(glslType) * newValue.size;
+				newAttribute.size = std::get<0>(glslType);
+				newAttribute.type = std::get<1>(glslType);
+				result.stride += std::get<2>(glslType) * newAttribute.size;
 
-				result.values[spk::to_wstring(match[3])] = newValue;
+				result.attributes[spk::to_wstring(match[3])] = newAttribute;
 			}
 		}
 

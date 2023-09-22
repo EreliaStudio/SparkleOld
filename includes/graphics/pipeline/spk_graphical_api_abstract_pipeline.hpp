@@ -11,6 +11,8 @@ namespace spk::GraphicalAPI
 {
 	class AbstractPipeline
 	{
+		friend class Object;
+
 	public:
 		class Object
 		{
@@ -23,7 +25,16 @@ namespace spk::GraphicalAPI
 			public:
 				struct Configuration
 				{
-					struct Value
+					enum class Mode
+					{
+						Error,
+						Data,
+						Indexes,
+						ShaderStorage,
+						Texture
+					};
+
+					struct Attribute
 					{
 						enum class Type
 						{
@@ -37,31 +48,53 @@ namespace spk::GraphicalAPI
 						size_t offset = 0;
 						size_t size = 0;
 					};
-					std::map<std::wstring, Value> values;
-					size_t totalSize = 0;
+					Mode mode = Mode::Error;
+					size_t stride = 0;
+					std::map<std::wstring, Attribute> attributes;
 
 					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config)
 					{
-						p_out << L"Total size: " << p_config.totalSize << std::endl;
+						p_out << L"Stride: " << p_config.stride << std::endl;
 
-						for (const auto& value : p_config.values) {
-							p_out << L"Value [" << value.first << L"]:" << std::endl;
-							p_out << L"    Location: " << value.second.location << std::endl;
-							p_out << L"    Offset: " << value.second.offset << std::endl;
+						for (const auto& attribute : p_config.attributes) {
+							p_out << L"Attribute [" << attribute.first << L"]:" << std::endl;
+							p_out << L"    Location: " << attribute.second.location << std::endl;
+							p_out << L"    Offset: " << attribute.second.offset << std::endl;
 							p_out << L"    Type: " << [&]() -> std::wstring {
-								switch (value.second.type) {
-									case Value::Type::Float:
+								switch (attribute.second.type) {
+									case Attribute::Type::Float:
 										return L"Float";
-									case Value::Type::Int:
+									case Attribute::Type::Int:
 										return L"Int";
-									case Value::Type::UInt:
+									case Attribute::Type::UInt:
 										return L"UInt";
 								}
 								return L"Unknown"; // This should never happen
 							}() << std::endl;
-							p_out << L"    Size: " << value.second.size << std::endl;
+							p_out << L"    Size: " << attribute.second.size << std::endl;
 						}
 						return p_out;
+					}
+
+					Configuration()
+					{
+
+					}
+
+					Configuration(const Mode& p_mode)
+					{
+						mode = p_mode;
+						stride = 0;
+					}
+
+					Configuration(const Mode& p_mode, const std::map<std::wstring, Attribute>& p_attributes)
+					{
+						mode = p_mode;
+						for (const auto& attribute : p_attributes)
+						{
+							stride += attribute.second.size;
+						}
+						attributes = p_attributes;
 					}
 				}; //? struct Configuration
 
@@ -69,22 +102,22 @@ namespace spk::GraphicalAPI
 				template <typename T, typename... Rest>
 				struct UnitImpl : public UnitImpl<Rest...>
 				{
-					UnitImpl(const T& p_value, const Rest &...p_rest)
-						: UnitImpl<Rest...>(p_rest...), value(p_value)
+					UnitImpl(const T& p_attribute, const Rest &...p_rest)
+						: UnitImpl<Rest...>(p_rest...), attribute(p_attribute)
 					{
 					}
 
-					T value;
+					T attribute;
 				};
 
 				template <typename T>
 				struct UnitImpl<T>
 				{
-					UnitImpl(const T& p_value) : value(p_value)
+					UnitImpl(const T& p_attribute) : attribute(p_attribute)
 					{
 					}
 
-					T value;
+					T attribute;
 				};
 
 			public:
@@ -104,10 +137,12 @@ namespace spk::GraphicalAPI
 			public:
 				Storage(const Storage::Configuration& p_storageConfiguration);
 
+				void clear();
+
 				template <typename... Types>
 				Storage& operator<<(const Unit<Types...>& p_unit)
 				{
-					if (sizeof(p_unit) != _configuration.totalSize)
+					if (sizeof(p_unit) != _configuration.stride)
 						spk::throwException(L"Unexpected unit size");
 					_content.append(&p_unit, sizeof(p_unit));
 
@@ -117,7 +152,7 @@ namespace spk::GraphicalAPI
 				template <typename... Types>
 				Storage& operator<<(const std::vector<Unit<Types...>>& p_unitVector)
 				{
-					if (sizeof(p_unitVector[0]) != _configuration.totalSize)
+					if (sizeof(p_unitVector[0]) != _configuration.stride)
 						spk::throwException(L"Unexpected unit size");
 					_content.append(p_unitVector.data(), sizeof(Unit<Types...>) * p_unitVector.size());
 
@@ -129,19 +164,71 @@ namespace spk::GraphicalAPI
 				const size_t size() const { return (_content.size()); }
 			}; //? struct Storage
 
+			struct Indexes
+			{
+			public:
+				using Index = unsigned int;
+
+			private:
+				std::vector<Index> _content;
+
+			public:
+				Indexes()
+				{
+
+				}
+
+				void clear()
+				{
+					_content.clear();
+				}
+
+				Indexes &operator<<(const Index &p_index)
+				{
+					_content.push_back(p_index);
+					return *this;
+				}
+
+				Indexes &operator<<(const std::vector<Index> &p_indexes)
+				{
+					_content.insert(_content.end(), p_indexes.begin(), p_indexes.end());
+					return *this;
+				}
+
+				void insert(const Index* p_indexes, size_t p_size)
+				{
+					_content.insert(_content.end(), p_indexes, p_indexes + p_size);
+				}
+
+				const void* data() const { return (_content.data()); }
+
+				const size_t size() const { return (_content.size()); }
+			};
+
 		private:
 			AbstractPipeline* _owner;
 			Storage _storage;
-
+			Indexes _indexes;
 
 		public:
 			Object(AbstractPipeline* p_owner, const Storage::Configuration& p_storageConfiguration);
 
 			virtual void push() = 0;
-			
-			virtual void render() = 0;
+
+			virtual void activate() = 0;
+			virtual void deactivate() = 0;
+
+			void render()
+			{
+				_owner->activate();
+				activate();
+				_owner->launch(_indexes.size());
+				deactivate();
+				_owner->deactivate();
+			}
 
 			Storage& storage();
+			Indexes& indexes();
 		}; //? class Object
 
 	protected:
@@ -159,6 +246,10 @@ namespace spk::GraphicalAPI
 
 	public:
 		AbstractPipeline();
+
+		virtual void activate() = 0;
+		virtual void deactivate() = 0;
+		virtual void launch(const size_t &p_nbIndexes) = 0;
 
 		void loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode);
 		void loadFromFile(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);

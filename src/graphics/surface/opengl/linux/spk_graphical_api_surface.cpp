@@ -17,7 +17,6 @@ namespace spk::GraphicalAPI
 		if (vi == nullptr)
 			spk::throwException(L"No appropriate visual found");
 
-
 		_glxContext = glXCreateContext(_display, vi, NULL, GL_TRUE);
 		glXMakeCurrent(_display, _window, _glxContext);
 
@@ -49,7 +48,7 @@ namespace spk::GraphicalAPI
 	{
 		glViewport(0, 0, _frame->size().x, _frame->size().y);
 		glScissor(0, 0, _frame->size().x, _frame->size().y);
-		glClearColor(0.1f, 0.1f, 0.0f, 1.0f);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	}
 
