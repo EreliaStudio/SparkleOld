@@ -1,8 +1,28 @@
 #include "sparkle.hpp"
 
-class TestPipeline : public spk::GraphicalAPI::AbstractPipeline
+class OpenGLPipeline : public spk::GraphicalAPI::AbstractPipeline
 {
 private:
+	class OpenGLObject : public spk::GraphicalAPI::AbstractPipeline::Object
+	{
+	public:
+		OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner, const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration) :
+			spk::GraphicalAPI::AbstractPipeline::Object(p_owner, p_storageConfiguration)
+		{
+
+		}
+
+		void push()
+		{
+			DEBUG_LINE();
+		}
+
+		void render()
+		{
+			DEBUG_LINE();
+		}
+	};
+
 	void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
 			const std::string& p_fragmentName, const std::string& p_fragmentCode)
@@ -10,46 +30,39 @@ private:
 
 	}
 
-	void _pushStorageData(const void* p_data, const size_t& p_dataSize)
-	{
-
-	}
-
-	void _renderObject(Object* p_object)
-	{
-
-	}
-
-	void _activateObject(Object* p_object)
-	{
-
-	}
-	void _deactivateObject(Object* p_object)
-	{
-
-	}
-
 public: 
-	TestPipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath) :
+	OpenGLPipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath) :
 		spk::GraphicalAPI::AbstractPipeline()
 	{
 		loadFromFile(p_vertexShaderPath, p_fragmentShaderPath);
+	}
+	
+	std::shared_ptr<Object> createObject()
+	{
+		std::shared_ptr<OpenGLObject> result = std::make_shared<OpenGLObject>(this, _storageConfiguration);
+
+		return (result);
 	}
 };
 
 class Test : public spk::Widget::Interface
 {
 private:
-	TestPipeline _pipeline;
+	OpenGLPipeline _pipeline;
+	std::shared_ptr<OpenGLPipeline::Object> _object;
 
 	void _onGeometryChange()
-	{
-		
+	{		
+		/*
+			Fill the object
+		*/
+
+		_object->push();
 	}
 
 	void _onRender()
 	{
-
+		_object->render();
 	}
 	
 	bool _onUpdate()
@@ -60,7 +73,8 @@ private:
 public:
 	Test(const std::wstring& p_name) :
 		spk::Widget::Interface(p_name),
-		_pipeline(L"colorShader.vert", L"colorShader.frag")
+		_pipeline(L"colorShader.vert", L"colorShader.frag"),
+		_object(_pipeline.createObject())
 	{
 
 	}

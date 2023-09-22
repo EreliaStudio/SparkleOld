@@ -31,9 +31,4 @@ namespace spk::GraphicalAPI
 
 		_loadAbstractPipeline(vertexName, vertexCode, fragmentName, fragmentCode);
 	}
-
-	AbstractPipeline::Object AbstractPipeline::createObject()
-	{
-		return (Object(this, _storageConfiguration));
-	}
 }
