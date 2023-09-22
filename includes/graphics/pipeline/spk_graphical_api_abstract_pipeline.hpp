@@ -14,6 +14,7 @@ namespace spk::GraphicalAPI
 	public:
 		class Object
 		{
+			friend class std::shared_ptr<Object>;
 			friend class AbstractPipeline;
 
 		public:
@@ -132,19 +133,14 @@ namespace spk::GraphicalAPI
 			AbstractPipeline* _owner;
 			Storage _storage;
 
-			Object(AbstractPipeline* p_owner, const Storage::Configuration& p_storageConfiguration);
 
 		public:
-			Object(const Object& p_other) = delete;
-			Object& operator=(const Object& p_other) = delete;
+			Object(AbstractPipeline* p_owner, const Storage::Configuration& p_storageConfiguration);
 
-			Object(Object&& p_other) = default;
-			Object& operator=(Object&& p_other) = default;
+			virtual void push() = 0;
+			
+			virtual void render() = 0;
 
-			void activate();
-			void deactivate();
-			void push();
-			void render();
 			Storage& storage();
 		}; //? class Object
 
@@ -154,13 +150,6 @@ namespace spk::GraphicalAPI
 		virtual void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
 			const std::string& p_fragmentName, const std::string& p_fragmentCode) = 0;
-
-		virtual void _pushStorageData(const void* p_data, const size_t& p_dataSize) = 0;
-
-		virtual void _renderObject(Object* p_object) = 0;
-
-		virtual void _activateObject(Object* p_object) = 0;
-		virtual void _deactivateObject(Object* p_object) = 0;
 
 		Object::Storage::Configuration _parseStorageBuffers(const std::string& p_vertexModuleCode);
 
@@ -174,6 +163,6 @@ namespace spk::GraphicalAPI
 		void loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode);
 		void loadFromFile(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);
 
-		Object createObject();
-	}; //? class AbstractPipeline
+		virtual std::shared_ptr<Object> createObject() = 0;
+	};
 }

@@ -9,6 +9,6 @@ namespace spk::GraphicalAPI
 	private:
 
 	public:
-	
+
 	};
 }

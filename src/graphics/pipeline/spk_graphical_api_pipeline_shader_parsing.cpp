@@ -106,9 +106,6 @@ namespace spk::GraphicalAPI
 			}
 		}
 
-		spk::cout << "Buffer info :" << std::endl;
-		spk::cout << result << std::endl;
-
 		return (result);
 	}
 }
