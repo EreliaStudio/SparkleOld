@@ -6,14 +6,14 @@ public:
 	class OpenGLObject : public spk::GraphicalAPI::AbstractPipeline::Object
 	{
 	private:
-		class BufferAggregator
+		class Aggregator
 		{
 		private:
 			spk::GraphicalAPI::AbstractPipeline* _owner;
 			GLuint _VAO;
 
 		public:
-			BufferAggregator(spk::GraphicalAPI::AbstractPipeline* p_owner) :
+			Aggregator(spk::GraphicalAPI::AbstractPipeline* p_owner) :
 				_owner(p_owner)
 			{
 				_owner->activate();
@@ -37,7 +37,6 @@ public:
 		private:
 			GLuint _vbo;
 			GLenum _mode;
-			GLenum _type;
 			size_t _size = 0;
 			size_t _pushedSize = 0;
 
@@ -89,6 +88,16 @@ public:
 				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			}
 
+			template<typename T>
+			std::vector<T> get()
+			{
+				std::vector<T> result(_size / sizeof(T));
+
+				glGetNamedBufferSubData(_vbo, 0, _size, &result[0]);
+
+				return (result);
+			}
+
 			void activate()
 			{
 				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
@@ -104,18 +113,16 @@ public:
 			}
 		};
 
-		BufferAggregator _aggregator;
+		Aggregator _aggregator;
 		Buffer _modelBuffer;
-		spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration _indexesBufferConfiguration;
 		Buffer _indexesBuffer;
 
 	public:
 		OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner, const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration) :
 			spk::GraphicalAPI::AbstractPipeline::Object(p_owner, p_storageConfiguration),
 			_aggregator(p_owner),
-			_indexesBufferConfiguration(spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Indexes),
 			_modelBuffer(p_storageConfiguration),
-			_indexesBuffer(_indexesBufferConfiguration)
+			_indexesBuffer(spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Indexes)
 		{
 			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		}
@@ -125,7 +132,7 @@ public:
 			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			_aggregator.activate();
 			_modelBuffer.push(storage().data(), storage().size());
-			_indexesBuffer.push(indexes().data(), indexes().size());
+			_indexesBuffer.push(indexes().data(), indexes().size() * sizeof(unsigned int));
 			_aggregator.deactivate();
 			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		}
@@ -137,6 +144,27 @@ public:
 			_modelBuffer.activate();
 			_indexesBuffer.activate();
 			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
+
+			std::vector<spk::Vector2> data = _modelBuffer.get<spk::Vector2>();
+			std::vector<unsigned int> indexes = _indexesBuffer.get<unsigned int>();
+		
+			spk::cout << "Data [" << data.size() << "]: ";
+			for (size_t i = 0; i < data.size(); i++)
+			{
+				if (i != 0)
+					spk::cout << " - ";
+				spk::cout << "[" << data[i] << "]";
+			}
+			spk::cout << std::endl;
+		
+			spk::cout << "Indexes [" << indexes.size() << "]: ";
+			for (size_t i = 0; i < indexes.size(); i++)
+			{
+				if (i != 0)
+					spk::cout << " - ";
+				spk::cout << "[" << indexes[i] << "]";
+			}
+			spk::cout << std::endl;
 		}
 		
 		void deactivate()
@@ -188,9 +216,9 @@ public:
 
 	void launch(const size_t &p_nbIndexes)
 	{
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
+		spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_nbIndexes), GL_UNSIGNED_INT, nullptr);
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
+		spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 	}
 	
 	std::shared_ptr<Object> createObject()
