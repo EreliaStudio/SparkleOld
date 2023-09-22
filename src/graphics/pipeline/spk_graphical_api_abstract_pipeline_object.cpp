@@ -13,4 +13,9 @@ namespace spk::GraphicalAPI
 	{
 		return (_storage);
 	}
+	
+	AbstractPipeline::Object::Indexes& AbstractPipeline::Object::indexes()
+	{
+		return (_indexes);
+	}
 }

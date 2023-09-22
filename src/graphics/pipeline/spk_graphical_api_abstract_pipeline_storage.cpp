@@ -5,6 +5,11 @@ namespace spk::GraphicalAPI
 	AbstractPipeline::Object::Storage::Storage(const Storage::Configuration& p_storageConfiguration) :
 		_configuration(p_storageConfiguration)
 	{
+		
 	}
 
+	void AbstractPipeline::Object::Storage::clear()
+	{
+		_content.clear();
+	}
 }
