@@ -45,13 +45,10 @@ public:
 			{
 				_mode = spk::GraphicalAPI::convertModeToGLenum(p_configuration.mode);
 
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				glGenBuffers(1, &_vbo);
 				glBindBuffer(_mode, _vbo);
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				for (const auto& attribute : p_configuration.attributes)
 				{
-					spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 					glEnableVertexAttribArray(attribute.second.location);
 
 					glVertexAttribPointer(
@@ -61,55 +58,34 @@ public:
 						GL_FALSE,
 						p_configuration.stride,
 						(void *)(attribute.second.offset));
-					spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				}
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			}
 
 			void push(const void *data, const size_t dataSize)
 			{
 				activate();
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				_size = dataSize;
 				glBindBuffer(_mode, _vbo);
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 
 				if (_pushedSize < dataSize)
 				{
-					spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 					glBufferData(_mode, dataSize, data, GL_DYNAMIC_DRAW);
 					_pushedSize = dataSize;
 				}
 				else
 				{
-					spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 					glBufferSubData(_mode, 0, dataSize, data);
 				}
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
-			}
-
-			template<typename T>
-			std::vector<T> get()
-			{
-				std::vector<T> result(_size / sizeof(T));
-
-				glGetNamedBufferSubData(_vbo, 0, _size, &result[0]);
-
-				return (result);
 			}
 
 			void activate()
 			{
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				glBindBuffer(_mode, _vbo);
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			}
 
 			void deactivate()
 			{
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 				glBindBuffer(_mode, 0);
-				spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			}
 		};
 
@@ -124,56 +100,28 @@ public:
 			_modelBuffer(p_storageConfiguration),
 			_indexesBuffer(spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Indexes)
 		{
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		}
 
 		void push()
 		{
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			_aggregator.activate();
 			_modelBuffer.push(storage().data(), storage().size());
 			_indexesBuffer.push(indexes().data(), indexes().size() * sizeof(unsigned int));
 			_aggregator.deactivate();
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		}
 
 		void activate()
 		{
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			_aggregator.activate();
 			_modelBuffer.activate();
 			_indexesBuffer.activate();
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
-
-			std::vector<spk::Vector2> data = _modelBuffer.get<spk::Vector2>();
-			std::vector<unsigned int> indexes = _indexesBuffer.get<unsigned int>();
-		
-			spk::cout << "Data [" << data.size() << "]: ";
-			for (size_t i = 0; i < data.size(); i++)
-			{
-				if (i != 0)
-					spk::cout << " - ";
-				spk::cout << "[" << data[i] << "]";
-			}
-			spk::cout << std::endl;
-		
-			spk::cout << "Indexes [" << indexes.size() << "]: ";
-			for (size_t i = 0; i < indexes.size(); i++)
-			{
-				if (i != 0)
-					spk::cout << " - ";
-				spk::cout << "[" << indexes[i] << "]";
-			}
-			spk::cout << std::endl;
 		}
 		
 		void deactivate()
 		{
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 			_aggregator.deactivate();
 			_modelBuffer.deactivate();
 			_indexesBuffer.deactivate();
-			spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		}
 	};
 
@@ -241,10 +189,7 @@ private:
 		std::vector<Pipeline::Object::Storage::Unit<spk::Vector2>> datas = {
 			{spk::Vector2( 0.0f,  1.0f)},
 			{spk::Vector2(-1.0f, -1.0f)},
-			{spk::Vector2( 1.0f, -1.0f)},
-			{spk::Vector2( 0.0f, -1.0f)},
-			{spk::Vector2(-1.0f,  1.0f)},
-			{spk::Vector2( 1.0f,  1.0f)}
+			{spk::Vector2( 1.0f, -1.0f)}
 		};
 		// std::vector<Pipeline::Object::Storage::Unit<spk::Vector2, spk::Color>> datas = {
 		// 	{spk::Vector2( 0.0f,  1.0f), spk::Color(255, 0, 0)},
@@ -252,7 +197,7 @@ private:
 		// 	{spk::Vector2( 1.0f, -1.0f), spk::Color(0, 0, 255)}
 		// };
 		std::vector<unsigned int> indexes = {
-			0, 1, 2, 3, 4, 5
+			0, 1, 2
 		};
 		
 		_object->storage() << datas;
