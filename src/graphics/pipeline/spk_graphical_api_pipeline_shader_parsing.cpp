@@ -96,17 +96,20 @@ namespace spk::GraphicalAPI
 			{
 				AbstractPipeline::Object::Storage::Configuration::Attribute newAttribute;
 
-				newAttribute.location = compileLocationAttribute(match[1]);
-				newAttribute.offset = result.stride;
-
 				auto& glslType = glslInputToData.at(match[2]);
-				newAttribute.size = std::get<0>(glslType);
-				newAttribute.type = std::get<1>(glslType);
-				result.stride += std::get<2>(glslType) * newAttribute.size;
 
+				newAttribute.location = compileLocationAttribute(match[1]);
+				newAttribute.format = std::get<0>(glslType);
+				newAttribute.type = std::get<1>(glslType);
+				newAttribute.offset = result.stride;
+				newAttribute.unitSize = std::get<2>(glslType);
+
+				result.stride += std::get<2>(glslType) * newAttribute.format;
 				result.attributes[spk::to_wstring(match[3])] = newAttribute;
 			}
 		}
+
+		result.inverseOffset();
 
 		return (result);
 	}

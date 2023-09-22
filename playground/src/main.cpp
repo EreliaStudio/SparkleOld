@@ -53,7 +53,7 @@ public:
 
 					glVertexAttribPointer(
 						attribute.second.location,
-						attribute.second.size,
+						attribute.second.format,
 						spk::GraphicalAPI::convertTypeToGLenum(attribute.second.type),
 						GL_FALSE,
 						p_configuration.stride,
@@ -106,7 +106,7 @@ public:
 		{
 			_aggregator.activate();
 			_modelBuffer.push(storage().data(), storage().size());
-			_indexesBuffer.push(indexes().data(), indexes().size() * sizeof(unsigned int));
+			_indexesBuffer.push(indexes().data(), indexes().size());
 			_aggregator.deactivate();
 		}
 
@@ -164,9 +164,7 @@ public:
 
 	void launch(const size_t &p_nbIndexes)
 	{
-		spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_nbIndexes), GL_UNSIGNED_INT, nullptr);
-		spk::GraphicalAPI::checkOpengl(__METHOD__ + std::to_wstring(__LINE__));
 	}
 	
 	std::shared_ptr<Object> createObject()
@@ -182,20 +180,12 @@ private:
 	std::shared_ptr<Pipeline::Object> _object;
 
 	void _onGeometryChange()
-	{		
-		/*
-			Fill the object
-		*/
-		std::vector<Pipeline::Object::Storage::Unit<spk::Vector2>> datas = {
-			{spk::Vector2( 0.0f,  1.0f)},
-			{spk::Vector2(-1.0f, -1.0f)},
-			{spk::Vector2( 1.0f, -1.0f)}
+	{
+		std::vector<Pipeline::Object::Storage::Unit<spk::Vector2, spk::Color>> datas = {
+			{spk::Vector2( 0.0f,  1.0f), spk::Color(255, 0, 0)},
+			{spk::Vector2(-1.0f, -1.0f), spk::Color(0, 255, 0)},
+			{spk::Vector2( 1.0f, -1.0f), spk::Color(0, 0, 255)}
 		};
-		// std::vector<Pipeline::Object::Storage::Unit<spk::Vector2, spk::Color>> datas = {
-		// 	{spk::Vector2( 0.0f,  1.0f), spk::Color(255, 0, 0)},
-		// 	{spk::Vector2(-1.0f, -1.0f), spk::Color(0, 255, 0)},
-		// 	{spk::Vector2( 1.0f, -1.0f), spk::Color(0, 0, 255)}
-		// };
 		std::vector<unsigned int> indexes = {
 			0, 1, 2
 		};
