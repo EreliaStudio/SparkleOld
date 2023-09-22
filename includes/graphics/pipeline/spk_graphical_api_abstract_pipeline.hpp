@@ -46,7 +46,8 @@ namespace spk::GraphicalAPI
 						Type type = Type::Float;
 						size_t location = 0;
 						size_t offset = 0;
-						size_t size = 0;
+						size_t format = 0;
+						size_t unitSize = 0;
 					};
 					Mode mode = Mode::Error;
 					size_t stride = 0;
@@ -60,7 +61,7 @@ namespace spk::GraphicalAPI
 							p_out << L"Attribute [" << attribute.first << L"]:" << std::endl;
 							p_out << L"    Location: " << attribute.second.location << std::endl;
 							p_out << L"    Offset: " << attribute.second.offset << std::endl;
-							p_out << L"    Type: " << [&]() -> std::wstring {
+							p_out << L"    Unit: " << [&]() -> std::wstring {
 								switch (attribute.second.type) {
 									case Attribute::Type::Float:
 										return L"Float";
@@ -71,7 +72,7 @@ namespace spk::GraphicalAPI
 								}
 								return L"Unknown"; // This should never happen
 							}() << std::endl;
-							p_out << L"    Size: " << attribute.second.size << std::endl;
+							p_out << L"    Format: " << attribute.second.format << " unit(s)" << std::endl;
 						}
 						return p_out;
 					}
@@ -89,12 +90,26 @@ namespace spk::GraphicalAPI
 
 					Configuration(const Mode& p_mode, const std::map<std::wstring, Attribute>& p_attributes)
 					{
+						static const std::map<AbstractPipeline::Object::Storage::Configuration::Attribute::Type, size_t> typeToSize = {
+							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)},
+							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)},
+							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}
+						}; 
+						
 						mode = p_mode;
 						for (const auto& attribute : p_attributes)
 						{
-							stride += attribute.second.size;
+							stride += attribute.second.format * typeToSize.at(attribute.second.type);
 						}
 						attributes = p_attributes;
+					}
+
+					void inverseOffset()
+					{
+						for (auto& attribute : attributes)
+						{
+							attribute.second.offset = stride - attribute.second.offset - attribute.second.format * attribute.second.unitSize;
+						}
 					}
 				}; //? struct Configuration
 
@@ -143,7 +158,7 @@ namespace spk::GraphicalAPI
 				Storage& operator<<(const Unit<Types...>& p_unit)
 				{
 					if (sizeof(p_unit) != _configuration.stride)
-						spk::throwException(L"Unexpected unit size");
+						spk::throwException(L"Unexpected unit size [" + std::to_wstring(sizeof(p_unit)) + L"] vs expected [" + std::to_wstring(_configuration.stride) + L"]");
 					_content.append(&p_unit, sizeof(p_unit));
 
 					return (*this);
@@ -153,7 +168,7 @@ namespace spk::GraphicalAPI
 				Storage& operator<<(const std::vector<Unit<Types...>>& p_unitVector)
 				{
 					if (sizeof(p_unitVector[0]) != _configuration.stride)
-						spk::throwException(L"Unexpected unit size");
+						spk::throwException(L"Unexpected unit size [" + std::to_wstring(sizeof(p_unitVector[0])) + L"] vs expected [" + std::to_wstring(_configuration.stride) + L"]");
 					_content.append(p_unitVector.data(), sizeof(Unit<Types...>) * p_unitVector.size());
 
 					return (*this);
@@ -202,7 +217,7 @@ namespace spk::GraphicalAPI
 
 				const void* data() const { return (_content.data()); }
 
-				const size_t size() const { return (_content.size()); }
+				const size_t size() const { return (_content.size() * sizeof(unsigned int)); }
 			};
 
 		private:
