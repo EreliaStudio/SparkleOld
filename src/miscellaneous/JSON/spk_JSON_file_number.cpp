@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cwctype>
 #include <cfenv>
+#include <cmath>
 
 namespace spk
 {
