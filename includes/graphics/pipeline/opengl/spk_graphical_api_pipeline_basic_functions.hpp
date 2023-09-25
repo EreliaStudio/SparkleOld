@@ -1,8 +1,7 @@
 #pragma once
 
-#include <gl/glew.h>
-#include <gl/wglew.h>
 #include <string>
+#include "spk_system_define.hpp"
 #include "graphics/pipeline/spk_graphical_api_abstract_pipeline.hpp"
 
 namespace spk::GraphicalAPI

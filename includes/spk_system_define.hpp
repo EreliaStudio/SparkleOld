@@ -1,6 +1,15 @@
 #pragma once
 
+#if GRAPHICAL_API == 0
+	#include <GL/glew.h>
+#endif
+
 #ifdef _WIN32
+
+	#if GRAPHICAL_API == 0
+		#include <GL/wglew.h>
+	#endif
+
 	#ifndef UNICODE
 	#define UNICODE
 	#endif
