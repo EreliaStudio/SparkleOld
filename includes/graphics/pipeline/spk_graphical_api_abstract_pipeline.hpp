@@ -53,29 +53,7 @@ namespace spk::GraphicalAPI
 					size_t stride = 0;
 					std::map<std::wstring, Attribute> attributes;
 
-					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config)
-					{
-						p_out << L"Stride: " << p_config.stride << std::endl;
-
-						for (const auto& attribute : p_config.attributes) {
-							p_out << L"Attribute [" << attribute.first << L"]:" << std::endl;
-							p_out << L"    Location: " << attribute.second.location << std::endl;
-							p_out << L"    Offset: " << attribute.second.offset << std::endl;
-							p_out << L"    Unit: " << [&]() -> std::wstring {
-								switch (attribute.second.type) {
-									case Attribute::Type::Float:
-										return L"Float";
-									case Attribute::Type::Int:
-										return L"Int";
-									case Attribute::Type::UInt:
-										return L"UInt";
-								}
-								return L"Unknown"; // This should never happen
-							}() << std::endl;
-							p_out << L"    Format: " << attribute.second.format << " unit(s)" << std::endl;
-						}
-						return p_out;
-					}
+					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config);
 
 					Configuration()
 					{
