@@ -2,6 +2,20 @@
 layout(location = 0) in vec2 model_space;
 layout(location = 1) in vec4 model_color;
 
+struct PointLight
+{
+    vec3 position;
+    float intensity;
+    vec3 color;
+};
+
+struct TotalyNotPointLight
+{
+    vec2 position;
+    vec4 color;
+	mat4 matrix;
+};
+
 out vec4 fragmentColor;
 
 void main()
