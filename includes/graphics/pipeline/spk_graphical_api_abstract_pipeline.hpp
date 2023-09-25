@@ -216,7 +216,7 @@ namespace spk::GraphicalAPI
 				}
 
 				const void* data() const { return (_content.data()); }
-
+				const size_t nbIndexes() const { return (_content.size());}
 				const size_t size() const { return (_content.size() * sizeof(unsigned int)); }
 			};
 
@@ -237,7 +237,7 @@ namespace spk::GraphicalAPI
 			{
 				_owner->activate();
 				activate();
-				_owner->launch(_indexes.size());
+				_owner->launch(_indexes.nbIndexes());
 				deactivate();
 				_owner->deactivate();
 			}
