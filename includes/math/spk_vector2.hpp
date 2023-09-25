@@ -1,5 +1,7 @@
 #pragma once
 
+#include "spk_system_define.hpp"
+
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES
 #endif
@@ -14,7 +16,6 @@
 #include <algorithm>
 #undef min
 #undef max
-
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 
@@ -527,9 +528,10 @@ namespace spk
 		 * @param p_max The second vector.
 		 * @return The vector with the minimum coordinates.
 		 */
-		static IVector2 min(const IVector2 &p_min, const IVector2 &p_max)
+		template<typename TPrimaryType, typename TSecondaryType>
+		static inline IVector2<TType> min(const IVector2<TPrimaryType> &p_min, const IVector2<TSecondaryType> &p_max)
 		{
-			return (IVector2(std::min(p_min.x, p_max.x), std::min(p_min.y, p_max.y)));
+			return (IVector2<TType>(std::min(p_min.x, p_max.x), std::min(p_min.y, p_max.y)));
 		}
 
 		/**
@@ -540,9 +542,10 @@ namespace spk
 		 * @param p_max The second vector.
 		 * @return The vector with the maximum coordinates.
 		 */
-		static IVector2 max(const IVector2 &p_min, const IVector2 &p_max)
+		template<typename TPrimaryType, typename TSecondaryType>
+		static inline IVector2<TType> max(const IVector2<TPrimaryType> &p_min, const IVector2<TSecondaryType> &p_max)
 		{
-			return (IVector2(std::max(p_min.x, p_max.x), std::max(p_min.y, p_max.y)));
+			return (IVector2<TType>(std::max(p_min.x, p_max.x), std::max(p_min.y, p_max.y)));
 		}
 
 		/**
@@ -554,10 +557,11 @@ namespace spk
 		 * @param p_cornerB The second corner point of the rectangle.
 		 * @return True if the point is inside the rectangle, false otherwise.
 		 */
-		static bool isInsideRectangle(const IVector2 &p_point, const IVector2 &p_cornerA, const IVector2 &p_cornerB)
+		template<typename TPrimaryType, typename TSecondaryType, typename TTerciaryType>
+		static bool isInsideRectangle(const IVector2<TPrimaryType> &p_point, const IVector2<TSecondaryType> &p_cornerA, const IVector2<TTerciaryType> &p_cornerB)
 		{
-			IVector2 tmpMin = IVector2::min(p_cornerA, p_cornerB);
-			IVector2 tmpMax = IVector2::max(p_cornerA, p_cornerB);
+			IVector2<TPrimaryType> tmpMin = IVector2<TPrimaryType>::min(p_cornerA, p_cornerB);
+			IVector2<TPrimaryType> tmpMax = IVector2<TPrimaryType>::max(p_cornerA, p_cornerB);
 
 			if (p_point.x < tmpMin.x || p_point.y < tmpMin.y ||
 				p_point.x > tmpMax.x || p_point.y > tmpMax.y)
@@ -574,9 +578,9 @@ namespace spk
 		 * @param t The interpolation parameter, ranging from 0 (start point) to 1 (end point). For values outside this range, the function extrapolates.
 		 * @return The interpolated vector.
 		 */
-		static IVector2 lerp(const IVector2 &p_startingPoint, const IVector2 &p_endingPoint, float t)
+		static IVector2<TType> lerp(const IVector2<TType> &p_startingPoint, const IVector2<TType> &p_endingPoint, float t)
 		{
-			return IVector2(
+			return IVector2<TType>(
 				p_startingPoint.x + (p_endingPoint.x - p_startingPoint.x) * t,
 				p_startingPoint.y + (p_endingPoint.y - p_startingPoint.y) * t);
 		}
