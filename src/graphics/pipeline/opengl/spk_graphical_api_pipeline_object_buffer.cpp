@@ -5,6 +5,7 @@ namespace spk::GraphicalAPI
 {
 	Pipeline::OpenGLObject::Buffer::Buffer(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_configuration)
 	{
+		spk::cout << L"Creating buffer with configuration:" << p_configuration << std::endl;
 		_mode = spk::GraphicalAPI::convertModeToGLenum(p_configuration.mode);
 
 		glGenBuffers(1, &_vbo);
