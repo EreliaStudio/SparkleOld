@@ -2,30 +2,6 @@
 
 namespace spk::GraphicalAPI
 {
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Object::Storage::Configuration& p_config)
-	{
-		p_out << L"Stride: " << p_config.stride << std::endl;
-
-		for (const auto& attribute : p_config.attributes) {
-			p_out << L"Attribute [" << attribute.first << L"]:" << std::endl;
-			p_out << L"    Location: " << attribute.second.location << std::endl;
-			p_out << L"    Offset: " << attribute.second.offset << std::endl;
-			p_out << L"    Unit: " << [&]() -> std::wstring {
-				switch (attribute.second.type) {
-				case AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float:
-					return L"Float";
-				case AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int:
-					return L"Int";
-				case AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt:
-					return L"UInt";
-				}
-				return L"Unknown"; // This should never happen
-				}() << std::endl;
-				p_out << L"    Format: " << attribute.second.format << " unit(s)" << std::endl;
-		}
-		return p_out;
-	}
-
 	void AbstractPipeline::_loadAbstractPipeline(
 		const std::string& p_vertexName, const std::string& p_vertexCode,
 		const std::string& p_fragmentName, const std::string& p_fragmentCode)
