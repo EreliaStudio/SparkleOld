@@ -3,34 +3,32 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include <csignal>
-
 namespace spk::GraphicalAPI
 {
 	std::vector<std::string> parseBufferCode(const std::string &p_shaderSource)
 	{
-		std::vector<std::string> p_result;
+		std::vector<std::string> result;
 
-		std::stringstream p_stream(p_shaderSource);
-		std::string p_line;
+		std::stringstream stream(p_shaderSource);
+		std::string line;
 
-		std::regex p_pattern("(layout\\(.*\\)\\s+)?in\\s+\\w+\\s+\\w+");
+		std::regex pattern("(layout\\(.*\\)\\s+)?in\\s+\\w+\\s+\\w+");
 
-		while (std::getline(p_stream, p_line, ';'))
+		while (std::getline(stream, line, ';'))
 		{
-			std::sregex_iterator p_it(p_line.begin(), p_line.end(), p_pattern);
-			std::sregex_iterator p_end;
+			std::sregex_iterator it(line.begin(), line.end(), pattern);
+			std::sregex_iterator end;
 
-			for (; p_it != p_end; ++p_it)
+			for (; it != end; ++it)
 			{
-				std::smatch match = *p_it;
+				std::smatch match = *it;
 
 				std::string contact = match.str();
-				p_result.push_back(contact);
+				result.push_back(contact);
 			}
 		}
 
-		return p_result;
+		return result;
 	}
 
 	std::unordered_set<uint32_t> usedLocations;
