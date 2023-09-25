@@ -56,40 +56,11 @@ namespace spk::GraphicalAPI
 
 					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config);
 
-					Configuration()
-					{
+					Configuration();
+					Configuration(const Mode& p_mode);
+					Configuration(const Mode& p_mode, const std::map<std::wstring, Configuration::Attribute>& p_attributes);
 
-					}
-
-					Configuration(const Mode& p_mode)
-					{
-						mode = p_mode;
-						stride = 0;
-					}
-
-					Configuration(const Mode& p_mode, const std::map<std::wstring, Configuration::Attribute>& p_attributes)
-					{
-						static const std::map<AbstractPipeline::Object::Storage::Configuration::Attribute::Type, size_t> typeToSize = {
-							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)},
-							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt, sizeof(unsigned int)},
-							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int, sizeof(int)}
-						}; 
-						
-						mode = p_mode;
-						for (const auto& attribute : p_attributes)
-						{
-							stride += attribute.second.format * typeToSize.at(attribute.second.type);
-						}
-						attributes = p_attributes;
-					}
-
-					void inverseOffset()
-					{
-						for (auto& attribute : attributes)
-						{
-							attribute.second.offset = stride - attribute.second.offset - attribute.second.format * attribute.second.unitSize;
-						}
-					}
+					void inverseOffset();
 				}; //? struct Configuration
 
 			private:
@@ -133,6 +104,9 @@ namespace spk::GraphicalAPI
 
 				void clear();
 
+				const void* data() const;
+				const size_t size() const;
+
 				template <typename... Types>
 				Storage& operator<<(const Unit<Types...>& p_unit)
 				{
@@ -152,10 +126,6 @@ namespace spk::GraphicalAPI
 
 					return (*this);
 				}
-
-				const void* data() const { return (_content.data()); }
-
-				const size_t size() const { return (_content.size()); }
 			}; //? struct Storage
 
 			struct Indexes
@@ -167,36 +137,18 @@ namespace spk::GraphicalAPI
 				std::vector<Index> _content;
 
 			public:
-				Indexes()
-				{
+				Indexes();
 
-				}
+				void clear();
 
-				void clear()
-				{
-					_content.clear();
-				}
+				Indexes &operator<<(const Index &p_index);
+				Indexes &operator<<(const std::vector<Index> &p_indexes);
 
-				Indexes &operator<<(const Index &p_index)
-				{
-					_content.push_back(p_index);
-					return *this;
-				}
+				void insert(const Index* p_indexes, size_t p_size);
 
-				Indexes &operator<<(const std::vector<Index> &p_indexes)
-				{
-					_content.insert(_content.end(), p_indexes.begin(), p_indexes.end());
-					return *this;
-				}
-
-				void insert(const Index* p_indexes, size_t p_size)
-				{
-					_content.insert(_content.end(), p_indexes, p_indexes + p_size);
-				}
-
-				const void* data() const { return (_content.data()); }
-				const size_t nbIndexes() const { return (_content.size());}
-				const size_t size() const { return (_content.size() * sizeof(unsigned int)); }
+				const void* data() const;
+				const size_t nbIndexes() const;
+				const size_t size() const;
 			};
 
 			struct Constants
@@ -219,101 +171,23 @@ namespace spk::GraphicalAPI
 							size_t unitSize;
 							size_t offset;
 
-							Attribute()
-							{
-
-							}
-
-							Attribute(const size_t& p_format, const Type& p_type, const size_t& p_unitSize, const size_t& p_offset) :
-								format(p_format),
-								type(p_type),
-								unitSize(p_unitSize),
-								offset(p_offset)
-							{}
+							Attribute();
+							Attribute(const size_t& p_format, const Type& p_type, const size_t& p_unitSize, const size_t& p_offset);
 						};		
 
 						size_t size;
 						std::unordered_map<std::string, Structure::Attribute> attributes;		
 
-						Structure()
-						{
-
-						}
-
-						Structure(const Structure::Attribute& p_attribute)
-						{
-							size = p_attribute.unitSize * p_attribute.format;
-							attributes[""] = p_attribute;
-						}
+						Structure();
+						Structure(const Structure::Attribute& p_attribute);
 					};
 
-					size_t stride = 0;
-					std::unordered_map<std::string, Structure> structures = {
-						{"int", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"uint", Structure::Attribute(1, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
-						{"float", Structure::Attribute(1, Structure::Attribute::Type::Float, sizeof(float), 0)},
-						
-						{"ivec2", Structure::Attribute(2, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"uvec2", Structure::Attribute(2, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
-						{"vec2", Structure::Attribute(2, Structure::Attribute::Type::Float, sizeof(float), 0)},
-						
-						{"ivec3", Structure::Attribute(3, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"uvec3", Structure::Attribute(3, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
-						{"vec3", Structure::Attribute(3, Structure::Attribute::Type::Float, sizeof(float), 0)},
-						
-						{"ivec4", Structure::Attribute(4, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"uvec4", Structure::Attribute(4, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
-						{"vec4", Structure::Attribute(4, Structure::Attribute::Type::Float, sizeof(float), 0)},
-						
-						{"mat4", Structure::Attribute(16, Structure::Attribute::Type::Float, sizeof(float), 0)},
-						
-						{"sampler1D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"sampler2D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"sampler3D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
-						{"samplerCube", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
-					};
+					size_t stride;
+					std::unordered_map<std::string, Structure> structures;
 				
+					Configuration();
 					
-					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config)
-					{
-						p_out << L"Stride: " << p_config.stride << std::endl;
-
-						for (const auto& structurePair : p_config.structures) 
-						{
-							const auto& structureName = structurePair.first;
-							const auto& structure = structurePair.second;
-							
-							p_out << L"\tStructure [" << spk::to_wstring(structureName) << L"]:" << std::endl;
-							p_out << L"\t\tSize [" << structure.size << L"]:" << std::endl;
-							for (const auto& attributePair : structure.attributes) 
-							{
-								const auto& attributeName = attributePair.first;
-								const auto& attribute = attributePair.second;
-								
-								p_out << L"\t\tAttribute [" << spk::to_wstring(attributeName) << L"]:" << std::endl;
-								p_out << L"\t\t\tFormat: " << attribute.format << std::endl;
-								p_out << L"\t\t\tType: ";
-
-								switch(attribute.type)
-								{
-									case Configuration::Structure::Attribute::Type::Int:
-										p_out << L"Int";
-										break;
-									case Configuration::Structure::Attribute::Type::UInt:
-										p_out << L"UInt";
-										break;
-									case Configuration::Structure::Attribute::Type::Float:
-										p_out << L"Float";
-										break;
-								}
-								p_out << std::endl;
-
-								p_out << L"\t\t\tUnit Size: " << attribute.unitSize << std::endl;
-								p_out << L"\t\t\tOffset: " << attribute.offset << std::endl;
-							}
-						}
-						return p_out;
-					}
+					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config);
 				};
 			};
 
