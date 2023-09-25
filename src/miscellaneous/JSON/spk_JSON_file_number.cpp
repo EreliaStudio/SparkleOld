@@ -3,8 +3,7 @@
 #include <fstream>
 #include <algorithm>
 #include <cwctype>
-
-#include "spk_basic_functions.hpp"
+#include <cfenv>
 
 namespace spk
 {
@@ -74,9 +73,10 @@ namespace spk
 			if (p_decimalPos == std::wstring::npos && p_exponentPos == false)
 				return false;
 			return (p_decimalPos != std::wstring::npos || (p_hasExponent == true &&
-				p_exponent > spk::numberLength(std::numeric_limits<long>::max()) ||
-				p_exponentPos - p_isNegative > spk::numberLength(std::numeric_limits<long>::max()) ||
-				p_exponentPos - p_isNegative + p_exponent <= 0));
+					p_exponent > spk::numberLength(std::numeric_limits<long>::max()) ||
+					p_exponentPos - p_isNegative > spk::numberLength(std::numeric_limits<long>::max()) ||
+					p_exponentPos - p_isNegative + p_exponent <= 0)
+				);
 		}
 
 		/**

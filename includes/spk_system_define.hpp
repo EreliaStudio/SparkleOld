@@ -1,5 +1,19 @@
 #pragma once
 
+#ifdef _WIN32
+	#ifndef UNICODE
+	#define UNICODE
+	#endif
+
+	#ifndef STRICT
+	#define STRICT
+	#endif
+	
+	#ifndef NOMINMAX
+	#define NOMINMAX
+	#endif
+#endif
+
 #if GRAPHICAL_API == 0
 	#include <GL/glew.h>
 #endif
@@ -9,20 +23,13 @@
 	#if GRAPHICAL_API == 0
 		#include <GL/wglew.h>
 	#endif
-
-	#ifndef UNICODE
-	#define UNICODE
-	#endif
-
-	#ifndef NOMINMAX
-	#define NOMINMAX
-	#endif
 	
 	#include <winsock2.h>
 	#include <ws2tcpip.h>
 	#include <iphlpapi.h>
-	
+
 	#include <windows.h>
+
 
 	#pragma comment(lib, "Ws2_32.lib")
 

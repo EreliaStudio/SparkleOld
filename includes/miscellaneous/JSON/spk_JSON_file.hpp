@@ -1,10 +1,11 @@
 #pragma once
 
+#include "spk_system_define.hpp"
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
-#include "spk_basic_functions.hpp"
-#include <filesystem>
-#include <cfenv>
-#include <cmath>
+// #include "spk_basic_functions.hpp"
+// #include <filesystem>
+// #include <cfenv>
+// #include <cmath>
 
 namespace spk
 {

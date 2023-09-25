@@ -22,7 +22,7 @@ namespace spk::GraphicalAPI
         HINSTANCE _hInstance;
         HWND _windowFrame;
         RECT _windowSize;
-        WNDCLASS _frameClass;
+        WNDCLASSW _frameClass;
         DWORD _windowStyle;
         DWORD _windowExStyle;
 
@@ -56,7 +56,7 @@ namespace spk::GraphicalAPI
             _frameClass.lpszMenuName = NULL;
             _frameClass.lpszClassName = _convertedTitle;
 
-            RegisterClass(&_frameClass);
+            RegisterClassW(&_frameClass);
         }
 
         void _createWindowFrame(void *p_APIModule, const Vector2UInt &p_size)
