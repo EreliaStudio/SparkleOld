@@ -9,6 +9,7 @@ namespace spk::GraphicalAPI
 		_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
 
 		_storageConfiguration = _parseStorageBuffers(p_vertexCode);
+		_constantsConfiguration = _parseConstants(p_vertexCode, p_fragmentCode);
 	}
 
 	AbstractPipeline::AbstractPipeline()

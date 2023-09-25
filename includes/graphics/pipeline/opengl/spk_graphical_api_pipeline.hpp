@@ -7,7 +7,7 @@ namespace spk::GraphicalAPI
 {
 	class Pipeline : public spk::GraphicalAPI::AbstractPipeline
 	{
-	public:
+	private:
 		class OpenGLObject : public spk::GraphicalAPI::AbstractPipeline::Object
 		{
 		private:
@@ -54,7 +54,6 @@ namespace spk::GraphicalAPI
 			void deactivate();
 		};
 
-	private:
 		GLuint _program;
 
 		void _loadProgram(

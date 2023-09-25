@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include <filesystem>
+#include <unordered_map>
 
 #include "data_structure/spk_data_buffer.hpp"
 #include "spk_basic_functions.hpp"
@@ -88,7 +89,7 @@ namespace spk::GraphicalAPI
 						stride = 0;
 					}
 
-					Configuration(const Mode& p_mode, const std::map<std::wstring, Attribute>& p_attributes)
+					Configuration(const Mode& p_mode, const std::map<std::wstring, Configuration::Attribute>& p_attributes)
 					{
 						static const std::map<AbstractPipeline::Object::Storage::Configuration::Attribute::Type, size_t> typeToSize = {
 							{AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float, sizeof(float)},
@@ -220,6 +221,124 @@ namespace spk::GraphicalAPI
 				const size_t size() const { return (_content.size() * sizeof(unsigned int)); }
 			};
 
+			struct Constants
+			{
+				struct Configuration
+				{
+					struct Structure
+					{
+						struct Attribute
+						{
+							enum class Type
+							{
+								Int, 
+								UInt,
+								Float
+							};
+
+							size_t format;
+							Type type;
+							size_t unitSize;
+							size_t offset;
+
+							Attribute()
+							{
+
+							}
+
+							Attribute(const size_t& p_format, const Type& p_type, const size_t& p_unitSize, const size_t& p_offset) :
+								format(p_format),
+								type(p_type),
+								unitSize(p_unitSize),
+								offset(p_offset)
+							{}
+						};		
+
+						size_t size;
+						std::unordered_map<std::string, Structure::Attribute> attributes;		
+
+						Structure()
+						{
+
+						}
+
+						Structure(const Structure::Attribute& p_attribute)
+						{
+							size = p_attribute.unitSize * p_attribute.format;
+							attributes[""] = p_attribute;
+						}
+					};
+
+					size_t stride = 0;
+					std::unordered_map<std::string, Structure> structures = {
+						{"int", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"uint", Structure::Attribute(1, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
+						{"float", Structure::Attribute(1, Structure::Attribute::Type::Float, sizeof(float), 0)},
+						
+						{"ivec2", Structure::Attribute(2, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"uvec2", Structure::Attribute(2, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
+						{"vec2", Structure::Attribute(2, Structure::Attribute::Type::Float, sizeof(float), 0)},
+						
+						{"ivec3", Structure::Attribute(3, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"uvec3", Structure::Attribute(3, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
+						{"vec3", Structure::Attribute(3, Structure::Attribute::Type::Float, sizeof(float), 0)},
+						
+						{"ivec4", Structure::Attribute(4, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"uvec4", Structure::Attribute(4, Structure::Attribute::Type::UInt, sizeof(unsigned int), 0)},
+						{"vec4", Structure::Attribute(4, Structure::Attribute::Type::Float, sizeof(float), 0)},
+						
+						{"mat4", Structure::Attribute(16, Structure::Attribute::Type::Float, sizeof(float), 0)},
+						
+						{"sampler1D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"sampler2D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"sampler3D", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
+						{"samplerCube", Structure::Attribute(1, Structure::Attribute::Type::Int, sizeof(int), 0)},
+					};
+				
+					
+					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config)
+					{
+						p_out << L"Stride: " << p_config.stride << std::endl;
+
+						for (const auto& structurePair : p_config.structures) 
+						{
+							const auto& structureName = structurePair.first;
+							const auto& structure = structurePair.second;
+							
+							p_out << L"\tStructure [" << spk::to_wstring(structureName) << L"]:" << std::endl;
+							p_out << L"\t\tSize [" << structure.size << L"]:" << std::endl;
+							for (const auto& attributePair : structure.attributes) 
+							{
+								const auto& attributeName = attributePair.first;
+								const auto& attribute = attributePair.second;
+								
+								p_out << L"\t\tAttribute [" << spk::to_wstring(attributeName) << L"]:" << std::endl;
+								p_out << L"\t\t\tFormat: " << attribute.format << std::endl;
+								p_out << L"\t\t\tType: ";
+
+								switch(attribute.type)
+								{
+									case Configuration::Structure::Attribute::Type::Int:
+										p_out << L"Int";
+										break;
+									case Configuration::Structure::Attribute::Type::UInt:
+										p_out << L"UInt";
+										break;
+									case Configuration::Structure::Attribute::Type::Float:
+										p_out << L"Float";
+										break;
+								}
+								p_out << std::endl;
+
+								p_out << L"\t\t\tUnit Size: " << attribute.unitSize << std::endl;
+								p_out << L"\t\t\tOffset: " << attribute.offset << std::endl;
+							}
+						}
+						return p_out;
+					}
+				};
+			};
+
 		private:
 			AbstractPipeline* _owner;
 			Storage _storage;
@@ -248,12 +367,14 @@ namespace spk::GraphicalAPI
 
 	protected:
 		Object::Storage::Configuration _storageConfiguration;
+		Object::Constants::Configuration _constantsConfiguration;
 
 		virtual void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
 			const std::string& p_fragmentName, const std::string& p_fragmentCode) = 0;
 
 		Object::Storage::Configuration _parseStorageBuffers(const std::string& p_vertexModuleCode);
+		Object::Constants::Configuration _parseConstants(const std::string& p_vertexModuleCode, const std::string& p_fragmentModuleCode);
 
 		void _loadAbstractPipeline(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
