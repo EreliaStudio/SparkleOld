@@ -11,7 +11,7 @@ namespace spk::GraphicalAPI
 
 	void Pipeline::VulkanObject::push()
 	{
-
+		// Copy buffer data to buffer, then buffer to device memory
 	}
 
 	void Pipeline::VulkanObject::activate()
