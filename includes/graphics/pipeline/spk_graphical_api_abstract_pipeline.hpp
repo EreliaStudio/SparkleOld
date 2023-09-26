@@ -182,8 +182,22 @@ namespace spk::GraphicalAPI
 						Structure(const Structure::Attribute& p_attribute);
 					};
 
+					struct Section
+					{
+						struct Attribute
+						{
+							const Structure& structure;
+							size_t offset;
+						};
+
+						std::map<std::string, Attribute> attributes;
+						size_t size;
+					};
+
 					size_t stride;
 					std::unordered_map<std::string, Structure> structures;
+					
+					std::unordered_map<std::string, Section> constants;
 				
 					Configuration();
 					

@@ -31,26 +31,17 @@ namespace spk::GraphicalAPI
 		return result;
 	}
 
-	std::unordered_set<uint32_t> usedLocations;
-	uint32_t nextAvailableLocation = 0;
-
-	size_t compileLocationAttribute(const std::string& p_locationAttribute)
+	size_t compileLocationAttribute(const std::string& p_locationAttribute, const std::wstring& p_attributeName)
 	{
 		size_t result;
 
 		if (p_locationAttribute.length() > 0)
 		{
 			result = std::stoi(p_locationAttribute);
-			usedLocations.insert(result);
 		}
 		else
 		{
-			while (usedLocations.find(nextAvailableLocation) != usedLocations.end())
-			{
-				++nextAvailableLocation;
-			}
-			result = nextAvailableLocation;
-			usedLocations.insert(nextAvailableLocation);
+			spk::throwException(L"Buffer [" + p_attributeName + L"] must be explicitly located");
 		}
 
 		return (result);
@@ -58,9 +49,6 @@ namespace spk::GraphicalAPI
 
 	AbstractPipeline::Object::Storage::Configuration AbstractPipeline::_parseStorageBuffers(const std::string& p_vertexModuleCode)
 	{
-		usedLocations.clear();
-		nextAvailableLocation = 0;
-
 		AbstractPipeline::Object::Storage::Configuration result;
 
 		result.mode = AbstractPipeline::Object::Storage::Configuration::Mode::Data;
@@ -96,7 +84,7 @@ namespace spk::GraphicalAPI
 
 				auto& glslType = glslInputToData.at(match[2]);
 
-				newAttribute.location = compileLocationAttribute(match[1]);
+				newAttribute.location = compileLocationAttribute(match[1], spk::to_wstring(match[3]));
 				newAttribute.format = std::get<0>(glslType);
 				newAttribute.type = std::get<1>(glslType);
 				newAttribute.offset = result.stride;
