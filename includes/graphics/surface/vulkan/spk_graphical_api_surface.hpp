@@ -13,39 +13,13 @@ namespace spk::GraphicalAPI
 		Renderer _renderer;
 
 	public:
-		Surface(AbstractFrame* p_frame) :
-			AbstractSurface(p_frame),
-			_device(static_cast<Frame*>(p_frame)),
-			_renderer(static_cast<Frame*>(p_frame), _device)
-		{
+		Surface(AbstractFrame* p_frame);
 
-		}
+		~Surface();
 
-		~Surface()
-		{
-			_device.device().waitIdle();
-		}
+		void resize();
 
-		void resize()
-		{
-
-		}
-
-		void clear()
-		{
-
-		}
-
-		void render()
-		{
-			vk::CommandBuffer commandBuffer = _renderer.beginFrame();
-
-			if (commandBuffer == vk::CommandBuffer(nullptr))
-				return;
-			_renderer.beginSwapChainRenderPass(commandBuffer);
-
-			_renderer.endSwapChainRenderPass(commandBuffer);
-			_renderer.endFrame();
-		}
+		void clear();
+		void render();
 	};
 }

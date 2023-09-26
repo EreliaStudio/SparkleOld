@@ -6,6 +6,7 @@
 #include <set>
 #include <unordered_set>
 #include "spk_basic_functions.hpp"
+#include "graphics/pipeline/vulkan/spk_graphical_api_pipeline_basic_functions.hpp"
 
 namespace spk::GraphicalAPI
 {
@@ -89,10 +90,12 @@ namespace spk::GraphicalAPI
 		_pickPhysicalDevice();
 		_createLogicalDevice();
 		_createCommandPool();
+		SpirvHelper::init();
 	}
 
 	Device::~Device()
 	{
+		SpirvHelper::finalize();
 		_device.destroyCommandPool(_commandPool);
 		_device.destroy();
 
