@@ -26,7 +26,7 @@ namespace spk::GraphicalAPI
 
 	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
 	{
-		return (std::make_shared<OpenGLObject>(this, _storageConfiguration));
+		return (std::make_shared<OpenGLObject>(this));
 	}
 
 	void Pipeline::_loadProgram(

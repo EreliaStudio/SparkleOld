@@ -3,11 +3,11 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner, const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration) :
-		spk::GraphicalAPI::AbstractPipeline::Object(p_owner, p_storageConfiguration),
+	Pipeline::OpenGLObject::OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner) :
+		spk::GraphicalAPI::AbstractPipeline::Object(p_owner),
 		_aggregator(p_owner),
-		_modelBuffer(p_storageConfiguration),
-		_indexesBuffer(spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Indexes)
+		_modelBuffer(Pipeline::OpenGLObject::Buffer::Mode::Data, p_owner->configuration().storage),
+		_indexesBuffer(Pipeline::OpenGLObject::Buffer::Mode::Indexes)
 	{
 	}
 
