@@ -6,8 +6,7 @@ namespace spk::GraphicalAPI
 		const std::string& p_vertexName, const std::string& p_vertexCode,
 		const std::string& p_fragmentName, const std::string& p_fragmentCode)
 	{
-		_storageConfiguration = _parseStorageBuffers(p_vertexCode);
-		_constantsConfiguration = _parseConstants(p_vertexCode, p_fragmentCode);
+		_configuration = AbstractPipeline::Configuration(p_vertexCode, p_fragmentCode);
 
 		_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
 	}
@@ -15,6 +14,11 @@ namespace spk::GraphicalAPI
 	AbstractPipeline::AbstractPipeline()
 	{
 
+	}
+	
+	const AbstractPipeline::Configuration& AbstractPipeline::configuration() const
+	{
+		return (_configuration);
 	}
 
 	void AbstractPipeline::loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode)
