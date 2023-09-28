@@ -85,7 +85,7 @@ namespace spk::GraphicalAPI
 	 * @param offset (Optional) Byte offset from beginning of mapped region
 	 *
 	 */
-	void Buffer::writeToBuffer(void* p_data, vk::DeviceSize p_size, vk::DeviceSize p_offset)
+	void Buffer::writeToBuffer(const void* p_data, vk::DeviceSize p_size, vk::DeviceSize p_offset)
 	{
 		assert(_mapped && "Cannot copy to unmapped buffer");
 
