@@ -5,6 +5,7 @@
 #include "graphics/surface/vulkan/spk_graphical_api_renderer.hpp"
 #include <filesystem>
 #include "graphics/pipeline/spk_graphical_api_abstract_pipeline.hpp"
+#include "graphics/surface/vulkan/spk_graphical_api_buffer.hpp"
 
 namespace spk::GraphicalAPI
 {
@@ -71,7 +72,8 @@ namespace spk::GraphicalAPI
 		class VulkanObject : public spk::GraphicalAPI::AbstractPipeline::Object
 		{
 		public:
-			VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner);
+			VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner,
+				Device* p_linkedDevice, const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
 
 			void push();
 
@@ -81,6 +83,20 @@ namespace spk::GraphicalAPI
 			static std::vector<vk::VertexInputBindingDescription> bindingDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
 			static std::vector<vk::VertexInputAttributeDescription> attributeDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
 
+		private:
+
+			void _createVertexBuffers();
+			void _createIndexBuffers();
+
+			Device* _linkedDevice;
+			AbstractPipeline::Configuration _configuration;
+
+			std::unique_ptr<Buffer> _vertexBuffer;
+			uint32_t _vertexCount;
+
+			bool _hasIndexBuffer;
+			std::unique_ptr<Buffer> _indexBuffer;
+			uint32_t _indexCount;
 		}; // class VulkanObject
 
 		static inline Device* _linkedDevice = nullptr;
@@ -88,7 +104,7 @@ namespace spk::GraphicalAPI
 		vk::PipelineLayout _pipelineLayout;
 		VulkanHandle::ConfigInfo _configInfo;
 		std::unique_ptr<VulkanHandle> _vulkanHandle;
-		
+
 		void _createPipelineLayout(/*vk::DescriptorSetLayout p_descriptorSetLayout*/);
 
 		void _loadProgram(

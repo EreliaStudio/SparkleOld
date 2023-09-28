@@ -3,14 +3,18 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::VulkanObject::VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner)
-		: spk::GraphicalAPI::AbstractPipeline::Object(p_owner)
+	Pipeline::VulkanObject::VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner,
+		Device* p_linkedDevice, const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration) :
+		spk::GraphicalAPI::AbstractPipeline::Object(p_owner),
+		_linkedDevice(p_linkedDevice), _configuration(p_configuration)
 	{
 	}
 
 	void Pipeline::VulkanObject::push()
 	{
-		// Copy buffer data to buffer, then buffer to device memory
+		_createVertexBuffers();
+		if (indexes().size() > 0)
+			_createIndexBuffers();
 	}
 
 	void Pipeline::VulkanObject::activate()
@@ -41,7 +45,7 @@ namespace spk::GraphicalAPI
 		std::vector<vk::VertexInputAttributeDescription> attributeDescriptions;
 		attributeDescriptions.reserve(p_storageConfiguration.fields.size());
 
-		for (const auto &field: p_storageConfiguration.fields)
+		for (const auto& field : p_storageConfiguration.fields)
 		{
 			attributeDescriptions.push_back(vk::VertexInputAttributeDescription(
 				field.location, ///< Location
@@ -51,5 +55,65 @@ namespace spk::GraphicalAPI
 			));
 		}
 		return (attributeDescriptions);
+	}
+
+	void Pipeline::VulkanObject::_createVertexBuffers()
+	{
+		_vertexCount = static_cast<uint32_t>(storage().size() / _configuration.storage.stride);
+		assert(_vertexCount >= 3 && "Vertex count must be at least 3");
+
+		vk::DeviceSize bufferSize = storage().size();
+		uint32_t vertexSize = _configuration.storage.stride;
+
+		Buffer stagingBuffer(
+			*_linkedDevice,
+			vertexSize,
+			_vertexCount,
+			vk::BufferUsageFlagBits::eTransferSrc,
+			vk::MemoryPropertyFlagBits::eHostVisible | vk::MemoryPropertyFlagBits::eHostCoherent
+		);
+
+		stagingBuffer.map();
+		stagingBuffer.writeToBuffer(storage().data());
+
+		_vertexBuffer = std::make_unique<Buffer>(
+			*_linkedDevice,
+			vertexSize,
+			_vertexCount,
+			vk::BufferUsageFlagBits::eTransferDst | vk::BufferUsageFlagBits::eVertexBuffer,
+			vk::MemoryPropertyFlagBits::eDeviceLocal
+		);
+
+		_linkedDevice->copyBuffer(stagingBuffer.buffer(), _vertexBuffer->buffer(), bufferSize);
+	}
+
+	void Pipeline::VulkanObject::_createIndexBuffers()
+	{
+		_indexCount = static_cast<uint32_t>(indexes().nbIndexes());
+		assert(_indexCount >= 3 && "Index count must be at least 3");
+
+		vk::DeviceSize bufferSize = indexes().size();
+		uint32_t indexSize = bufferSize / _indexCount;
+
+		Buffer stagingBuffer(
+			*_linkedDevice,
+			indexSize,
+			_indexCount,
+			vk::BufferUsageFlagBits::eTransferSrc,
+			vk::MemoryPropertyFlagBits::eHostVisible | vk::MemoryPropertyFlagBits::eHostCoherent
+		);
+
+		stagingBuffer.map();
+		stagingBuffer.writeToBuffer(indexes().data());
+
+		_indexBuffer = std::make_unique<Buffer>(
+			*_linkedDevice,
+			indexSize,
+			_indexCount,
+			vk::BufferUsageFlagBits::eTransferDst | vk::BufferUsageFlagBits::eIndexBuffer,
+			vk::MemoryPropertyFlagBits::eDeviceLocal
+		);
+
+		_linkedDevice->copyBuffer(stagingBuffer.buffer(), _indexBuffer->buffer(), bufferSize);
 	}
 }

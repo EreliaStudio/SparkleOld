@@ -24,7 +24,7 @@ namespace spk::GraphicalAPI
 
 		vk::DescriptorBufferInfo descriptorInfo(vk::DeviceSize p_size = VK_WHOLE_SIZE, vk::DeviceSize p_offset = 0);
 
-		void writeToBuffer(void* p_data, vk::DeviceSize p_size = VK_WHOLE_SIZE, vk::DeviceSize p_offset = 0);
+		void writeToBuffer(const void* p_data, vk::DeviceSize p_size = VK_WHOLE_SIZE, vk::DeviceSize p_offset = 0);
 		vk::Result flush(vk::DeviceSize p_size = VK_WHOLE_SIZE, vk::DeviceSize p_offset = 0);
 		vk::Result invalidate(vk::DeviceSize p_size = VK_WHOLE_SIZE, vk::DeviceSize p_offset = 0);
 

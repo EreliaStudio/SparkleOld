@@ -34,7 +34,7 @@ namespace spk::GraphicalAPI
 
 	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
 	{
-		return (std::make_shared<VulkanObject>(this));
+		return (std::make_shared<VulkanObject>(this, _linkedDevice, _configuration));
 	}
 
 	void Pipeline::_createPipelineLayout()
