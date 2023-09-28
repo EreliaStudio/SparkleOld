@@ -16,6 +16,18 @@ struct TotalyNotPointLight
 	mat4 matrix;
 };
 
+layout(push_constant) uniform PushConstant
+{
+    PointLight light;
+    TotalyNotPointLight notLight;
+} pushConstant;
+
+layout(set = 0, binding = 0) uniform UniformBlockA
+{
+    vec2 test;
+    vec4 color;
+} uniformA;
+
 layout(location = 0) out vec4 fragmentColor;
 
 void main()

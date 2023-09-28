@@ -2,6 +2,17 @@
 
 namespace spk::GraphicalAPI
 {
+
+	AbstractPipeline::Configuration::StorageLayout::Field::Field()
+	{
+		
+	}
+	
+	AbstractPipeline::Configuration::StorageLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_location, const size_t& p_offset)
+	{
+
+	}
+
 	AbstractPipeline::Configuration::StorageLayout::StorageLayout()
 	{
 		stride = 0;
@@ -12,10 +23,10 @@ namespace spk::GraphicalAPI
 	{
 		for(auto field : p_fields)
 		{
-			field.attribute.offset = stride;
+			field.offset = stride;
 			fields.push_back(field);
 		
-			stride += field.attribute.format * field.attribute.unitSize;
+			stride += field.attribute.size;
 		}
 	}
 }

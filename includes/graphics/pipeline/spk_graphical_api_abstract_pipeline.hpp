@@ -17,22 +17,12 @@ namespace spk::GraphicalAPI
 	public:
 		struct Configuration
 		{
-			struct Attribute
+			struct Data
 			{
-				enum class Type
-				{
-					Int, 
-					UInt,
-					Float
-				};
+				size_t size = 0;
 
-				size_t format;
-				Type type;
-				size_t unitSize;
-				size_t offset;
-
-				Attribute();
-				Attribute(const size_t& format, const Type& type);
+				Data();
+				Data(const size_t& p_size);
 			};
 
 			struct StorageLayout
@@ -40,10 +30,11 @@ namespace spk::GraphicalAPI
 				struct Field
 				{
 					size_t location = 0;
-					Attribute attribute;
+					size_t offset = 0;
+					Data attribute;
 
 					Field();
-					Field(const size_t& format, const Attribute::Type& type);
+					Field(const Data& p_dataType, const size_t& p_location, const size_t& p_offset);
 				};
 
 				size_t stride;
@@ -53,23 +44,15 @@ namespace spk::GraphicalAPI
 				StorageLayout(const std::vector<Field> &p_fields);
 			};
 
-			struct Structure
-			{
-				size_t stride = 0;
-				std::vector<Attribute> attributes;
-
-				Structure();
-				Structure(const std::vector<Attribute> &p_attributes);
-
-				void inverseOffset();
-			};
-
 			struct PushConstantLayout
 			{
 				struct Field
 				{
-					Structure structure;
-					size_t offset;
+					size_t offset = 0;
+					Data attribute;
+
+					Field();
+					Field(const Data& p_dataType, const size_t& p_offset);
 				};
 
 				size_t size;
@@ -80,15 +63,18 @@ namespace spk::GraphicalAPI
 			{
 				struct Field
 				{
-					Structure structure;
-					size_t offset;
+					size_t offset = 0;
+					Data attribute;
+
+					Field();
+					Field(const Data& p_dataType, const size_t& p_offset);
 				};
 
 				size_t size;
 				std::vector<Field> attributes;
 			};
 
-			std::map<std::string, Structure> structures;
+			std::map<std::string, Data> dataTypes;
 
 			StorageLayout storage;
 			std::vector<UniformBlockLayout> uniforms;
