@@ -174,9 +174,9 @@ namespace spk::GraphicalAPI
 		return (true);
 	}
 	
-	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute& p_attribute)
+	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute& p_attribute)
 	{
-		if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float)
+		if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Float)
 		{
 			switch (p_attribute.format)
 			{
@@ -192,7 +192,7 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int)
+		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Int)
 		{
 			switch (p_attribute.format)
 			{
@@ -208,7 +208,7 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt)
+		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::UInt)
 		{
 			switch (p_attribute.format)
 			{

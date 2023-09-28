@@ -46,15 +46,6 @@ namespace spk::GraphicalAPI
 		vk::DeviceSize bufferSize() const { return _bufferSize; }
 
 	private:
-		/**
-		 * Returns the minimum instance size required to be compatible with devices minOffsetAlignment
-		 *
-		 * @param instanceSize The size of an instance
-		 * @param minOffsetAlignment The minimum required alignment, in bytes, for the offset member (eg
-		 * minUniformBufferOffsetAlignment)
-		 *
-		 * @return VkResult of the buffer mapping call
-		 */
 		static vk::DeviceSize _alignment(vk::DeviceSize p_instanceSize, vk::DeviceSize p_minOffsetAlignment);
 
 		Device& _device;
