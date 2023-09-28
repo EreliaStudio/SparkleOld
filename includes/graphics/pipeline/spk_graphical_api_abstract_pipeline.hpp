@@ -66,8 +66,11 @@ namespace spk::GraphicalAPI
 					Field(const Data& p_dataType, const size_t& p_offset);
 				};
 
-				size_t size;
-				std::vector<Field> attributes;
+				size_t stride;
+				std::vector<Field> fields;
+
+				PushConstantLayout();
+				PushConstantLayout(const std::vector<Field> &p_fields);
 			};
 
 			struct UniformBlockLayout
@@ -81,8 +84,11 @@ namespace spk::GraphicalAPI
 					Field(const Data& p_dataType, const size_t& p_offset);
 				};
 
-				size_t size;
-				std::vector<Field> attributes;
+				size_t stride;
+				std::vector<Field> fields;
+
+				UniformBlockLayout();
+				UniformBlockLayout(const std::vector<Field> &p_fields);
 			};
 
 			std::map<std::string, Data> dataTypes;
