@@ -9,6 +9,8 @@ namespace spk::GraphicalAPI
 				spk::throwException(L"Data type [" + spk::to_wstring(p_structureName) + L"] already defined");
 
 		AbstractPipeline::Configuration::Data newData;
+		newData.type = AbstractPipeline::Configuration::Data::Type::Complex;
+		newData.format = 1;
 		size_t currentOffset = 0;
 
 		std::regex fieldRegex(R"((\w+)\s+(\w+)\s*;)");
@@ -26,7 +28,7 @@ namespace spk::GraphicalAPI
 
 			const AbstractPipeline::Configuration::Data& field = p_configuration.dataTypes[fieldType];
 
-			newData.size += field.size;
+			newData.size += field.format * field.size;
 
 			searchStart = match.suffix().first;
 		}

@@ -18,8 +18,9 @@ struct TotalyNotPointLight
 
 layout(push_constant) uniform PushConstant
 {
+    //Structure to describe our point light
     PointLight light;
-    TotalyNotPointLight notLight;
+    TotalyNotPointLight notLight;// Totaly not used structure
 } pushConstant;
 
 layout(set = 0, binding = 0) uniform UniformBlockA
