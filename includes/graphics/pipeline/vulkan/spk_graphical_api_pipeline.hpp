@@ -71,16 +71,15 @@ namespace spk::GraphicalAPI
 		class VulkanObject : public spk::GraphicalAPI::AbstractPipeline::Object
 		{
 		public:
-			VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner,
-				const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration);
+			VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner);
 
 			void push();
 
 			void activate();
 			void deactivate();
 
-			static std::vector<vk::VertexInputBindingDescription> bindingDescriptions(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration);
-			static std::vector<vk::VertexInputAttributeDescription> attributeDescriptions(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration);
+			static std::vector<vk::VertexInputBindingDescription> bindingDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
+			static std::vector<vk::VertexInputAttributeDescription> attributeDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
 
 		}; // class VulkanObject
 

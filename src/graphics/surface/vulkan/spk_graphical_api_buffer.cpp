@@ -1,11 +1,20 @@
 #include "graphics/surface/vulkan/spk_graphical_api_buffer.hpp"
 
- // std
+// std
 #include <cassert>
 #include <cstring>
 
 namespace spk::GraphicalAPI
 {
+	/**
+	 * Returns the minimum instance size required to be compatible with devices minOffsetAlignment
+	 *
+	 * @param instanceSize The size of an instance
+	 * @param minOffsetAlignment The minimum required alignment, in bytes, for the offset member (eg
+	 * minUniformBufferOffsetAlignment)
+	 *
+	 * @return VkResult of the buffer mapping call
+	 */
 	vk::DeviceSize Buffer::_alignment(vk::DeviceSize instanceSize, vk::DeviceSize minOffsetAlignment)
 	{
 		if (minOffsetAlignment > 0)
