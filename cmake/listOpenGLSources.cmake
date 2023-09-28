@@ -5,6 +5,7 @@ function(listOpenGLSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/opengl/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/configuration/*.cpp"
 	)
 
 	# --- Specific Windows
