@@ -2,11 +2,17 @@
 
 namespace spk::GraphicalAPI
 {
-	AbstractPipeline::Object::Object(AbstractPipeline* p_owner, const Storage::Configuration& p_storageConfiguration) :
+	AbstractPipeline::Object::Object(AbstractPipeline* p_owner) :
 		_owner(p_owner),
-		_storage(p_storageConfiguration)
+		_storage(p_owner->configuration().storage),
+		_indexes()
 	{
 		
+	}
+
+	void AbstractPipeline::Object::render()
+	{
+
 	}
 
 	AbstractPipeline::Object::Storage& AbstractPipeline::Object::storage()

@@ -2,32 +2,15 @@
 
 namespace spk::GraphicalAPI
 {
-	GLenum convertModeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode &p_input)
+	GLenum convertTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type &p_input)
 	{
 		switch (p_input)
 		{
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Data):
-			return (GL_ARRAY_BUFFER);
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Indexes):
-			return (GL_ELEMENT_ARRAY_BUFFER);
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::ShaderStorage):
-			return (GL_SHADER_STORAGE_BUFFER);
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Mode::Texture):
-			return (GL_TEXTURE_BUFFER);
-		}
-		spk::throwException(L"Unexpected buffer mode [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
-		return (GL_NONE);
-	}
-
-	GLenum convertTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type &p_input)
-	{
-		switch (p_input)
-		{
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Float):
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Float):
 			return (GL_FLOAT);
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::UInt):
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::UInt):
 			return (GL_UNSIGNED_INT);
-		case (spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration::Attribute::Type::Int):
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Int):
 			return (GL_INT);
 		}
 		spk::throwException(L"Unexpected buffer type [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");

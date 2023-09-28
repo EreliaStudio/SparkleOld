@@ -15,6 +15,89 @@ namespace spk::GraphicalAPI
 		friend class Object;
 
 	public:
+		struct Configuration
+		{
+			struct Attribute
+			{
+				enum class Type
+				{
+					Int, 
+					UInt,
+					Float
+				};
+
+				size_t format;
+				Type type;
+				size_t unitSize;
+				size_t offset;
+
+				Attribute();
+				Attribute(const size_t& format, const Type& type);
+			};
+
+			struct StorageLayout
+			{
+				struct Field
+				{
+					size_t location = 0;
+					Attribute attribute;
+
+					Field();
+					Field(const size_t& format, const Attribute::Type& type);
+				};
+
+				size_t stride;
+				std::vector<Field> fields;
+
+				StorageLayout();
+				StorageLayout(const std::vector<Field> &p_fields);
+			};
+
+			struct Structure
+			{
+				size_t stride = 0;
+				std::vector<Attribute> attributes;
+
+				Structure();
+				Structure(const std::vector<Attribute> &p_attributes);
+
+				void inverseOffset();
+			};
+
+			struct PushConstantLayout
+			{
+				struct Field
+				{
+					Structure structure;
+					size_t offset;
+				};
+
+				size_t size;
+				std::vector<Field> attributes;
+			};
+
+			struct UniformBlockLayout
+			{
+				struct Field
+				{
+					Structure structure;
+					size_t offset;
+				};
+
+				size_t size;
+				std::vector<Field> attributes;
+			};
+
+			std::map<std::string, Structure> structures;
+
+			StorageLayout storage;
+			std::vector<UniformBlockLayout> uniforms;
+			PushConstantLayout constants;
+
+			Configuration();
+			Configuration(const std::string& p_vertexCode, const std::string& p_fragmentCode);
+		};
+		
 		class Object
 		{
 			friend class std::shared_ptr<Object>;
@@ -23,46 +106,6 @@ namespace spk::GraphicalAPI
 		public:
 			struct Storage
 			{
-			public:
-				struct Configuration
-				{
-					enum class Mode
-					{
-						Error,
-						Data,
-						Indexes,
-						ShaderStorage,
-						Texture
-					};
-
-					struct Attribute
-					{
-						enum class Type
-						{
-							Float,
-							Int,
-							UInt
-						};
-
-						Type type = Type::Float;
-						size_t location = 0;
-						size_t offset = 0;
-						size_t format = 0;
-						size_t unitSize = 0;
-					};
-					Mode mode = Mode::Error;
-					size_t stride = 0;
-					std::map<std::wstring, Attribute> attributes;
-
-					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config);
-
-					Configuration();
-					Configuration(const Mode& p_mode);
-					Configuration(const Mode& p_mode, const std::map<std::wstring, Configuration::Attribute>& p_attributes);
-
-					void inverseOffset();
-				}; //? struct Configuration
-
 			private:
 				template <typename T, typename... Rest>
 				struct UnitImpl : public UnitImpl<Rest...>
@@ -97,10 +140,10 @@ namespace spk::GraphicalAPI
 
 			private:
 				spk::DataBuffer _content;
-				const Configuration& _configuration;
+				const AbstractPipeline::Configuration::StorageLayout& _configuration;
 
 			public:
-				Storage(const Storage::Configuration& p_storageConfiguration);
+				Storage(const AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
 
 				void clear();
 
@@ -151,96 +194,31 @@ namespace spk::GraphicalAPI
 				const size_t size() const;
 			};
 
-			struct Constants
-			{
-				struct Configuration
-				{
-					struct Structure
-					{
-						struct Attribute
-						{
-							enum class Type
-							{
-								Int, 
-								UInt,
-								Float
-							};
-
-							size_t format;
-							Type type;
-							size_t unitSize;
-							size_t offset;
-
-							Attribute();
-							Attribute(const size_t& p_format, const Type& p_type, const size_t& p_unitSize, const size_t& p_offset);
-						};		
-
-						size_t size;
-						std::unordered_map<std::string, Structure::Attribute> attributes;		
-
-						Structure();
-						Structure(const Structure::Attribute& p_attribute);
-					};
-
-					struct Section
-					{
-						struct Attribute
-						{
-							const Structure& structure;
-							size_t offset;
-						};
-
-						std::map<std::string, Attribute> attributes;
-						size_t size;
-					};
-
-					size_t stride;
-					std::unordered_map<std::string, Structure> structures;
-					
-					std::unordered_map<std::string, Section> constants;
-				
-					Configuration();
-					
-					friend std::wostream& operator<<(std::wostream& p_out, const Configuration& p_config);
-				};
-			};
-
 		private:
 			AbstractPipeline* _owner;
 			Storage _storage;
 			Indexes _indexes;
 
 		public:
-			Object(AbstractPipeline* p_owner, const Storage::Configuration& p_storageConfiguration);
+			Object(AbstractPipeline* p_owner);
 
 			virtual void push() = 0;
 
 			virtual void activate() = 0;
 			virtual void deactivate() = 0;
 
-			void render()
-			{
-				_owner->activate();
-				activate();
-				_owner->launch(_indexes.nbIndexes());
-				deactivate();
-				_owner->deactivate();
-			}
+			void render();
 
 			Storage& storage();
 			Indexes& indexes();
-		}; //? class Object
+		};
 
 	protected:
-		Object::Storage::Configuration _storageConfiguration;
-		Object::Constants::Configuration _constantsConfiguration;
+		Configuration _configuration;
 
 		virtual void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
 			const std::string& p_fragmentName, const std::string& p_fragmentCode) = 0;
-
-		Object::Storage::Configuration _parseStorageBuffers(const std::string& p_vertexModuleCode);
-		Object::Constants::Configuration _parseConstants(const std::string& p_vertexModuleCode, const std::string& p_fragmentModuleCode);
 
 		void _loadAbstractPipeline(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
@@ -248,6 +226,8 @@ namespace spk::GraphicalAPI
 
 	public:
 		AbstractPipeline();
+
+		const Configuration& configuration() const;
 
 		virtual void activate() = 0;
 		virtual void deactivate() = 0;

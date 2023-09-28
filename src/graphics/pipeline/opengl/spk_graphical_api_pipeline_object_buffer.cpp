@@ -3,24 +3,41 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::Buffer::Buffer(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_configuration)
+	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode)
 	{
-		spk::cout << L"Creating buffer with configuration:" << p_configuration << std::endl;
-		_mode = spk::GraphicalAPI::convertModeToGLenum(p_configuration.mode);
+		
+	}
+
+	GLenum Pipeline::OpenGLObject::Buffer::_convertModeToGLenum(const spk::GraphicalAPI::Pipeline::OpenGLObject::Buffer::Mode &p_input)
+	{
+		switch (p_input)
+		{
+		case (Mode::Data):
+			return (GL_ARRAY_BUFFER);
+		case (Mode::Indexes):
+			return (GL_ELEMENT_ARRAY_BUFFER);
+		}
+		spk::throwException(L"Unexpected buffer mode [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
+		return (GL_NONE);
+	}
+
+	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_configuration)
+	{
+		_mode = _convertModeToGLenum(p_mode);
 
 		glGenBuffers(1, &_vbo);
 		glBindBuffer(_mode, _vbo);
-		for (const auto& attribute : p_configuration.attributes)
+		for (const auto& field : p_configuration.fields)
 		{
-			glEnableVertexAttribArray(attribute.second.location);
+			glEnableVertexAttribArray(field.location);
 
 			glVertexAttribPointer(
-				attribute.second.location,
-				attribute.second.format,
-				spk::GraphicalAPI::convertTypeToGLenum(attribute.second.type),
+				field.location,
+				field.attribute.format,
+				spk::GraphicalAPI::convertTypeToGLenum(field.attribute.type),
 				GL_FALSE,
 				p_configuration.stride,
-				(void*)(attribute.second.offset));
+				(void*)(field.attribute.offset));
 		}
 	}
 

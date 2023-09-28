@@ -26,14 +26,23 @@ namespace spk::GraphicalAPI
 
 			class Buffer
 			{
+			public:
+				enum class Mode
+				{
+					Data,
+					Indexes
+				};
+
 			private:
 				GLuint _vbo;
 				GLenum _mode;
 				size_t _size = 0;
 				size_t _pushedSize = 0;
 
+				GLenum _convertModeToGLenum(const Mode &p_input);
 			public:
-				Buffer(const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_configuration);
+				Buffer(const Mode& p_mode);
+				Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);
 
 				void push(const void* data, const size_t dataSize);
 
@@ -46,7 +55,7 @@ namespace spk::GraphicalAPI
 			Buffer _indexesBuffer;
 
 		public:
-			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner, const spk::GraphicalAPI::AbstractPipeline::Object::Storage::Configuration& p_storageConfiguration);
+			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner);
 
 			void push();
 
