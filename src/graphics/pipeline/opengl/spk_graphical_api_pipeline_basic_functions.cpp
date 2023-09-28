@@ -2,21 +2,6 @@
 
 namespace spk::GraphicalAPI
 {
-	GLenum convertTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type &p_input)
-	{
-		switch (p_input)
-		{
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Float):
-			return (GL_FLOAT);
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::UInt):
-			return (GL_UNSIGNED_INT);
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Int):
-			return (GL_INT);
-		}
-		spk::throwException(L"Unexpected buffer type [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
-		return (GL_NONE);
-	}
-
 	void compileShaderModule(GLuint p_shaderIndex, std::string p_shaderCode)
 	{
 		GLint result;

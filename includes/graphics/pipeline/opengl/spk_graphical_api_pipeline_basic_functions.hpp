@@ -7,8 +7,6 @@
 
 namespace spk::GraphicalAPI
 {
-	GLenum convertTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type &p_input);
-
 	void compileShaderModule(GLuint p_shaderIndex, std::string p_shaderCode);
 	void compileProgram(GLuint p_programID, GLuint p_vertexID, GLuint p_fragmentID);
 

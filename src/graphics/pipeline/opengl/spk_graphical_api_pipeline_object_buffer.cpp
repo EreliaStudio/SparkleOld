@@ -33,11 +33,11 @@ namespace spk::GraphicalAPI
 
 			glVertexAttribPointer(
 				field.location,
-				field.attribute.format,
-				spk::GraphicalAPI::convertTypeToGLenum(field.attribute.type),
+				field.attribute.size,
+				GL_UNSIGNED_BYTE,
 				GL_FALSE,
 				p_configuration.stride,
-				(void*)(field.attribute.offset));
+				(void*)(field.offset));
 		}
 	}
 
