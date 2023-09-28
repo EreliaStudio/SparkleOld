@@ -34,7 +34,7 @@ namespace spk::GraphicalAPI
 
 	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
 	{
-		return (std::make_shared<VulkanObject>(this, _storageConfiguration));
+		return (std::make_shared<VulkanObject>(this));
 	}
 
 	void Pipeline::_createPipelineLayout()
@@ -63,8 +63,8 @@ namespace spk::GraphicalAPI
 			spk::throwException(L"Failed to convert fragment shader to SPIR-V");
 
 		VulkanHandle::defaultConfigInfo(_configInfo);
-		_configInfo.bindingDescriptions = VulkanObject::bindingDescriptions(_storageConfiguration);
-		_configInfo.attributeDescriptions = VulkanObject::attributeDescriptions(_storageConfiguration);
+		_configInfo.bindingDescriptions = VulkanObject::bindingDescriptions(_configuration.storage);
+		_configInfo.attributeDescriptions = VulkanObject::attributeDescriptions(_configuration.storage);
 		_configInfo.pipelineLayout = _pipelineLayout;
 		_configInfo.renderPass = _linkedRenderer->renderPass();
 
