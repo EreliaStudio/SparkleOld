@@ -19,9 +19,20 @@ namespace spk::GraphicalAPI
 		{
 			struct Data
 			{
-				size_t size = 0;
+				enum class Type
+				{
+					Error,
+					Int,
+					UInt,
+					Float,
+					Complex
+				};
+				Type type;
+				size_t format;
+				size_t size;
 
 				Data();
+				Data(const size_t& p_format, const Type& p_type);
 				Data(const size_t& p_size);
 			};
 

@@ -40,6 +40,8 @@ namespace spk::GraphicalAPI
 				size_t _pushedSize = 0;
 
 				GLenum _convertModeToGLenum(const Mode &p_input);
+				GLenum _convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input);
+				
 			public:
 				Buffer(const Mode& p_mode);
 				Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);

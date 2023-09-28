@@ -11,16 +11,11 @@ namespace spk::GraphicalAPI
 		}
 		AbstractPipeline::Configuration::Data dataType = it->second;
 
-		size_t newOffset = 0;
-		for (const auto& field : p_configuration.storage.fields) {
-			newOffset += field.attribute.size;
-		}
-
-		AbstractPipeline::Configuration::StorageLayout::Field newField(dataType, std::stoi(p_locationInput), newOffset);
+		AbstractPipeline::Configuration::StorageLayout::Field newField(dataType, std::stoi(p_locationInput), p_configuration.storage.stride);
 
 		p_configuration.storage.fields.push_back(newField);
 
-		p_configuration.storage.stride += dataType.size;
+		p_configuration.storage.stride += dataType.size * dataType.format;
 	}
 
 	void parseShaderStorageBuffers(AbstractPipeline::Configuration& p_configuration, const std::string& p_shaderCode)
@@ -47,6 +42,11 @@ namespace spk::GraphicalAPI
 
             searchStart = match.suffix().first;
         }
+
+		for (auto& bufferUnit : p_configuration.storage.fields)
+		{
+			bufferUnit.offset = p_configuration.storage.stride - bufferUnit.offset - bufferUnit.attribute.format * bufferUnit.attribute.size;
+		}
     }
 
 	void parseShaderStructureBody(AbstractPipeline::Configuration& p_configuration, const std::string& p_structureName, const std::string& p_structureBody)
@@ -77,7 +77,6 @@ namespace spk::GraphicalAPI
 			searchStart = match.suffix().first;
 		}
 
-		spk::cout << "New structure [" << spk::to_wstring(p_structureName) << L"] of size " << newData.size << std::endl;
 		p_configuration.dataTypes[p_structureName] = newData;
 	}
 
@@ -110,28 +109,28 @@ namespace spk::GraphicalAPI
 
 	AbstractPipeline::Configuration::Configuration() :
 		dataTypes({
-			{"int", Data(sizeof(int))},
-			{"uint", Data(sizeof(unsigned int))},
-			{"float", Data(sizeof(float))},
+			{"int", Data(1, Data::Type::Int)},
+			{"uint", Data(1, Data::Type::UInt)},
+			{"float", Data(1, Data::Type::Float)},
 			
-			{"ivec2", Data(sizeof(int) * 2)},
-			{"uvec2", Data(sizeof(unsigned int) * 2)},
-			{"vec2", Data(sizeof(float) * 2)},
+			{"ivec2", Data(2, Data::Type::Int)},
+			{"uvec2", Data(2, Data::Type::UInt)},
+			{"vec2", Data(2, Data::Type::Float)},
 			
-			{"ivec3", Data(sizeof(int) * 3)},
-			{"uvec3", Data(sizeof(unsigned int) * 3)},
-			{"vec3", Data(sizeof(float) * 3)},
+			{"ivec3", Data(3, Data::Type::Int)},
+			{"uvec3", Data(3, Data::Type::UInt)},
+			{"vec3", Data(3, Data::Type::Float)},
 			
-			{"ivec4", Data(sizeof(int) * 4)},
-			{"uvec4", Data(sizeof(unsigned int) * 4)},
-			{"vec4", Data(sizeof(float) * 4)},
+			{"ivec4", Data(4, Data::Type::Int)},
+			{"uvec4", Data(4, Data::Type::UInt)},
+			{"vec4", Data(4, Data::Type::Float)},
 			
-			{"mat4", Data(sizeof(float) * 16)},
+			{"mat4", Data(16, Data::Type::Float)},
 			
-			{"sampler1D", Data(sizeof(int) * 1)},
-			{"sampler2D", Data(sizeof(int) * 1)},
-			{"sampler3D", Data(sizeof(int) * 1)},
-			{"samplerCube", Data(sizeof(int) * 1)},
+			{"sampler1D", Data(1, Data::Type::Int)},
+			{"sampler2D", Data(1, Data::Type::Int)},
+			{"sampler3D", Data(1, Data::Type::Int)},
+			{"samplerCube", Data(1, Data::Type::Int)},
 		})
 	{
 

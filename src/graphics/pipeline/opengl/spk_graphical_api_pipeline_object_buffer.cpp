@@ -3,7 +3,8 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode)
+	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode) :
+		_mode(_convertModeToGLenum(p_mode))
 	{
 		
 	}
@@ -21,6 +22,23 @@ namespace spk::GraphicalAPI
 		return (GL_NONE);
 	}
 
+	GLenum Pipeline::OpenGLObject::Buffer::_convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input)
+	{
+		switch (p_input)
+		{
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Int):
+			return (GL_INT);
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::UInt):
+			return (GL_UNSIGNED_BYTE);
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Float):
+			return (GL_FLOAT);
+		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Complex):
+			return (GL_UNSIGNED_BYTE);
+		}
+		spk::throwException(L"Unexpected data type [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
+		return (GL_NONE);
+	}
+
 	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_configuration)
 	{
 		_mode = _convertModeToGLenum(p_mode);
@@ -33,8 +51,8 @@ namespace spk::GraphicalAPI
 
 			glVertexAttribPointer(
 				field.location,
-				field.attribute.size,
-				GL_UNSIGNED_BYTE,
+				field.attribute.format,
+				_convertAttributeTypeToGLenum(field.attribute.type),
 				GL_FALSE,
 				p_configuration.stride,
 				(void*)(field.offset));

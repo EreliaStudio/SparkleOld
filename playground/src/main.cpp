@@ -1,4 +1,5 @@
 #include "sparkle.hpp"
+#include "graphics/pipeline/opengl/spk_graphical_api_pipeline_basic_functions.hpp"
 
 class Test : public spk::Widget::Interface
 {
@@ -39,7 +40,7 @@ public:
 		_pipeline(L"colorShader.vert", L"colorShader.frag"),
 		_object(_pipeline.createObject())
 	{
-
+	
 	}
 	~Test()
 	{

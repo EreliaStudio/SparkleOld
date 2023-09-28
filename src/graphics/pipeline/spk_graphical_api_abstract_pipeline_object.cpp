@@ -1,4 +1,5 @@
 #include "graphics/pipeline/spk_graphical_api_abstract_pipeline.hpp"
+#include "graphics/pipeline/opengl/spk_graphical_api_pipeline_basic_functions.hpp"
 
 namespace spk::GraphicalAPI
 {
@@ -7,12 +8,15 @@ namespace spk::GraphicalAPI
 		_storage(p_owner->configuration().storage),
 		_indexes()
 	{
-		
 	}
 
 	void AbstractPipeline::Object::render()
 	{
-
+		_owner->activate();
+		activate();
+		_owner->launch(_indexes.nbIndexes());
+		deactivate();
+		_owner->deactivate();
 	}
 
 	AbstractPipeline::Object::Storage& AbstractPipeline::Object::storage()

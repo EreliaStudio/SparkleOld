@@ -3,14 +3,19 @@
 namespace spk::GraphicalAPI
 {
 
-	AbstractPipeline::Configuration::StorageLayout::Field::Field()
-	{
-		
-	}
-	
-	AbstractPipeline::Configuration::StorageLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_location, const size_t& p_offset)
+	AbstractPipeline::Configuration::StorageLayout::Field::Field() :
+		location(0),
+		offset(0),
+		attribute()
 	{
 
+	}
+	
+	AbstractPipeline::Configuration::StorageLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_location, const size_t& p_offset) :
+		location(p_location),
+		offset(p_offset),
+		attribute(p_dataType)
+	{ 
 	}
 
 	AbstractPipeline::Configuration::StorageLayout::StorageLayout()
