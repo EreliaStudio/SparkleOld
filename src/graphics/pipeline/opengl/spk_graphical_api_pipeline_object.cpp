@@ -9,7 +9,7 @@ namespace spk::GraphicalAPI
 		_aggregator(p_owner),
 		_modelBuffer(Pipeline::OpenGLObject::Buffer::Mode::Data, p_owner->configuration().storage),
 		_indexesBuffer(Pipeline::OpenGLObject::Buffer::Mode::Indexes),
-		_pushConstantBuffer(Pipeline::OpenGLObject::Buffer::Mode::PushConstant)
+		_pushConstantBuffer(static_cast<Pipeline*>(p_owner)->program(), p_owner->configuration().constants.type, p_owner->configuration().constants.binding)
 	{
 		
 	}
@@ -19,6 +19,13 @@ namespace spk::GraphicalAPI
 		_aggregator.activate();
 		_modelBuffer.push(storage().data(), storage().size());
 		_indexesBuffer.push(indexes().data(), indexes().size());
+		_aggregator.deactivate();
+	}
+
+	void Pipeline::OpenGLObject::updateConstants()
+	{
+		_aggregator.activate();
+		_pushConstantBuffer.push(pushConstants().data(), pushConstants().size());
 		_aggregator.deactivate();
 	}
 

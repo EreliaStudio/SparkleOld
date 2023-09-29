@@ -20,12 +20,14 @@ private:
 		_object->storage() << datas;
 		_object->indexes() << indexes;
 
+		_object->pushConstants()[L"color"] << spk::Color(255, 255, 255);
+
 		_object->push();
 	}
 
 	void _onRender()
 	{
-		_object->pushConstants()[L"color"] << spk::Color(255, 255, 255);
+		_object->updateConstants();
 		_object->render();
 	}
 	

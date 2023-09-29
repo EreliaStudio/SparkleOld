@@ -45,9 +45,9 @@ namespace spk::GraphicalAPI
 		parseShaderStructures(*this, p_vertexCode);
 		parseShaderStructures(*this, p_fragmentCode);
 	
-		parseShaderPushConstants(*this, p_vertexCode);
-	
 		parseShaderUniforms(*this, p_vertexCode);
 		parseShaderUniforms(*this, p_fragmentCode);
+
+		parseShaderPushConstants(*this, p_vertexCode);
 	}
 }
