@@ -30,7 +30,8 @@ namespace spk::GraphicalAPI
 				enum class Mode
 				{
 					Data,
-					Indexes
+					Indexes,
+					PushConstant
 				};
 
 			private:
@@ -55,6 +56,7 @@ namespace spk::GraphicalAPI
 			Aggregator _aggregator;
 			Buffer _modelBuffer;
 			Buffer _indexesBuffer;
+			Buffer _pushConstantBuffer;
 
 		public:
 			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner);

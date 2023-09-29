@@ -26,6 +26,7 @@ private:
 
 	void _onRender()
 	{
+		_object->pushConstants()[L"color"] << spk::Color(255, 255, 255);
 		_object->render();
 	}
 	

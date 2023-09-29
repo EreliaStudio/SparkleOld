@@ -17,6 +17,8 @@ namespace spk::GraphicalAPI
 			return (GL_ARRAY_BUFFER);
 		case (Mode::Indexes):
 			return (GL_ELEMENT_ARRAY_BUFFER);
+		case (Mode::PushConstant):
+			return (GL_UNIFORM_BUFFER);
 		}
 		spk::throwException(L"Unexpected buffer mode [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
 		return (GL_NONE);

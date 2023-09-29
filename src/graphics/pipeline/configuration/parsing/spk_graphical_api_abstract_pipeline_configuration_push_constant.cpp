@@ -48,12 +48,15 @@ namespace spk::GraphicalAPI
 			if (splitDeclaration(line, dataType, varName) == false)
 				spk::throwException(L"Invalid push_constant definition : [" + spk::to_wstring(line) + L"]");
 
+			varName = trimWhitespace(varName.substr(0, varName.find_last_of(";")));
+
 			AbstractPipeline::Configuration::PushConstantLayout::Field field;
 			auto it = p_configuration.dataTypes.find(dataType);
 			if (it == p_configuration.dataTypes.end())
 				spk::throwException(L"Structure [" + spk::to_wstring(dataType) + L"] not found");
 
 			field.attribute = it->second;
+			field.name = spk::to_wstring(varName);
 			field.offset = p_configuration.constants.stride;
 			p_configuration.constants.fields.push_back(field);
 			p_configuration.constants.stride += field.attribute.format * field.attribute.size;

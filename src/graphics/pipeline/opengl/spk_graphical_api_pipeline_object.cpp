@@ -8,8 +8,10 @@ namespace spk::GraphicalAPI
 		spk::GraphicalAPI::AbstractPipeline::Object(p_owner),
 		_aggregator(p_owner),
 		_modelBuffer(Pipeline::OpenGLObject::Buffer::Mode::Data, p_owner->configuration().storage),
-		_indexesBuffer(Pipeline::OpenGLObject::Buffer::Mode::Indexes)
+		_indexesBuffer(Pipeline::OpenGLObject::Buffer::Mode::Indexes),
+		_pushConstantBuffer(Pipeline::OpenGLObject::Buffer::Mode::PushConstant)
 	{
+		
 	}
 
 	void Pipeline::OpenGLObject::push()
