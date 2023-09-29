@@ -69,11 +69,5 @@ AbstractPipeline::Configuration::UniformBlockLayout::Block parseShaderUniformBod
 
 			++iter;
 		}
-
-		for (auto& blockKey : p_configuration.uniformBlocks.uniformKeys)
-		{
-			spk::cout << "Block [" << blockKey.first << "] - Set [" << blockKey.second.set << "] / binding [" << blockKey.second.binding << "]" << std::endl;
-			spk::cout << p_configuration.uniformBlocks.uniforms[blockKey.second] << std::endl;
-		}
 	}
 }

@@ -9,10 +9,10 @@ private:
 
 	void _onGeometryChange()
 	{
-		std::vector<spk::GraphicalAPI::Pipeline::Object::Storage::Unit<spk::Vector2, spk::Color>> datas = {
-			{spk::Vector2( 0.0f,  1.0f), spk::Color(255, 0, 0)},
-			{spk::Vector2(-1.0f, -1.0f), spk::Color(0, 255, 0)},
-			{spk::Vector2( 1.0f, -1.0f), spk::Color(0, 0, 255)}
+		std::vector<spk::GraphicalAPI::Pipeline::Object::Storage::Unit<spk::Vector2>> datas = {
+			{spk::Vector2( 0.0f,  1.0f)},
+			{spk::Vector2(-1.0f, -1.0f)},
+			{spk::Vector2( 1.0f, -1.0f)}
 		};
 		std::vector<unsigned int> indexes = {
 			0, 1, 2
