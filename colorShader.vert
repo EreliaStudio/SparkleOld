@@ -25,8 +25,10 @@ layout(push_constant) uniform PushConstant
 
 layout(set = 0, binding = 0) uniform UniformBlockA
 {
+    //Comment to ignore
     vec2 test;
-    vec4 color;
+    vec4 color; //Comment to ignore
+    PointLight pointLight;
 } uniformA;
 
 layout(location = 0) out vec4 fragmentColor;

@@ -108,7 +108,7 @@ namespace spk
 		 * @param p_self The IVector3 object to be printed.
 		 * @return The modified output stream.
 		 */
-		friend std::ostream &operator<<(std::ostream &p_os, const IVector3 &p_self)
+		friend std::wostream &operator<<(std::wostream &p_os, const IVector3 &p_self)
 		{
 			p_os << p_self.x << " / " << p_self.y << " / " << p_self.z;
 			return (p_os);

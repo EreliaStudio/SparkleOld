@@ -15,8 +15,9 @@ namespace spk::GraphicalAPI
 		friend class Object;
 
 	public:
-		struct Configuration
+		class Configuration
 		{
+		public:
 			struct Data
 			{
 				enum class Type
@@ -32,20 +33,23 @@ namespace spk::GraphicalAPI
 				size_t size;
 
 				Data();
-				Data(const size_t& p_format, const Type& p_type);
-				Data(const size_t& p_size);
+				Data(const size_t &p_format, const Type &p_type);
+				Data(const size_t &p_size);
+				friend std::wostream &operator<<(std::wostream &os, const Type &p_type);
+				friend std::wostream &operator<<(std::wostream &os, const Data &p_data);
 			};
 
 			struct StorageLayout
 			{
 				struct Field
 				{
-					size_t location = 0;
-					size_t offset = 0;
+					size_t location;
+					size_t offset;
 					Data attribute;
 
 					Field();
-					Field(const Data& p_dataType, const size_t& p_location, const size_t& p_offset);
+					Field(const Data &p_dataType, const size_t &p_location, const size_t &p_offset);
+					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
 				size_t stride;
@@ -59,11 +63,12 @@ namespace spk::GraphicalAPI
 			{
 				struct Field
 				{
-					size_t offset = 0;
+					size_t offset;
 					Data attribute;
 
 					Field();
-					Field(const Data& p_dataType, const size_t& p_offset);
+					Field(const Data &p_dataType, const size_t &p_offset);
+					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
 				size_t stride;
@@ -75,32 +80,50 @@ namespace spk::GraphicalAPI
 
 			struct UniformBlockLayout
 			{
-				struct Field
+				struct Block
 				{
-					size_t offset = 0;
-					Data attribute;
+					struct Key
+					{
+						size_t set;
+						size_t binding;
 
-					Field();
-					Field(const Data& p_dataType, const size_t& p_offset);
+						bool operator<(const Key &other) const;
+						friend std::wostream &operator<<(std::wostream &os, const Key &p_key);
+					};
+
+					struct Field
+					{
+						size_t offset;
+						std::wstring name;
+						Data attribute;
+
+						Field();
+						Field(const Data &p_dataType, const size_t &p_offset);
+						friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
+					};
+
+					size_t stride;
+					std::vector<Field> fields;
+
+					Block();
+					Block(const std::vector<Field> &p_fields);
+					friend std::wostream &operator<<(std::wostream &os, const Block &p_block);
 				};
 
-				size_t stride;
-				std::vector<Field> fields;
-
-				UniformBlockLayout();
-				UniformBlockLayout(const std::vector<Field> &p_fields);
+				std::map<Block::Key, Block> uniforms;
+				std::map<std::wstring, Block::Key> uniformKeys;
 			};
 
 			std::map<std::string, Data> dataTypes;
 
 			StorageLayout storage;
-			std::vector<UniformBlockLayout> uniforms;
 			PushConstantLayout constants;
+			UniformBlockLayout uniformBlocks;
 
 			Configuration();
-			Configuration(const std::string& p_vertexCode, const std::string& p_fragmentCode);
+			Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode);
 		};
-		
+
 		class Object
 		{
 			friend class std::shared_ptr<Object>;
@@ -113,7 +136,7 @@ namespace spk::GraphicalAPI
 				template <typename T, typename... Rest>
 				struct UnitImpl : public UnitImpl<Rest...>
 				{
-					UnitImpl(const T& p_attribute, const Rest &...p_rest)
+					UnitImpl(const T &p_attribute, const Rest &...p_rest)
 						: UnitImpl<Rest...>(p_rest...), attribute(p_attribute)
 					{
 					}
@@ -124,7 +147,7 @@ namespace spk::GraphicalAPI
 				template <typename T>
 				struct UnitImpl<T>
 				{
-					UnitImpl(const T& p_attribute) : attribute(p_attribute)
+					UnitImpl(const T &p_attribute) : attribute(p_attribute)
 					{
 					}
 
@@ -143,18 +166,18 @@ namespace spk::GraphicalAPI
 
 			private:
 				spk::DataBuffer _content;
-				const AbstractPipeline::Configuration::StorageLayout& _configuration;
+				const AbstractPipeline::Configuration::StorageLayout &_configuration;
 
 			public:
-				Storage(const AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
+				Storage(const AbstractPipeline::Configuration::StorageLayout &p_storageConfiguration);
 
 				void clear();
 
-				const void* data() const;
+				const void *data() const;
 				const size_t size() const;
 
 				template <typename... Types>
-				Storage& operator<<(const Unit<Types...>& p_unit)
+				Storage &operator<<(const Unit<Types...> &p_unit)
 				{
 					if (sizeof(p_unit) != _configuration.stride)
 						spk::throwException(L"Unexpected unit size [" + std::to_wstring(sizeof(p_unit)) + L"] vs expected [" + std::to_wstring(_configuration.stride) + L"]");
@@ -164,7 +187,7 @@ namespace spk::GraphicalAPI
 				}
 
 				template <typename... Types>
-				Storage& operator<<(const std::vector<Unit<Types...>>& p_unitVector)
+				Storage &operator<<(const std::vector<Unit<Types...>> &p_unitVector)
 				{
 					if (sizeof(p_unitVector[0]) != _configuration.stride)
 						spk::throwException(L"Unexpected unit size [" + std::to_wstring(sizeof(p_unitVector[0])) + L"] vs expected [" + std::to_wstring(_configuration.stride) + L"]");
@@ -190,20 +213,20 @@ namespace spk::GraphicalAPI
 				Indexes &operator<<(const Index &p_index);
 				Indexes &operator<<(const std::vector<Index> &p_indexes);
 
-				void insert(const Index* p_indexes, size_t p_size);
+				void insert(const Index *p_indexes, size_t p_size);
 
-				const void* data() const;
+				const void *data() const;
 				const size_t nbIndexes() const;
 				const size_t size() const;
 			};
 
 		private:
-			AbstractPipeline* _owner;
+			AbstractPipeline *_owner;
 			Storage _storage;
 			Indexes _indexes;
 
 		public:
-			Object(AbstractPipeline* p_owner);
+			Object(AbstractPipeline *p_owner);
 
 			virtual void push() = 0;
 
@@ -212,32 +235,32 @@ namespace spk::GraphicalAPI
 
 			void render();
 
-			Storage& storage();
-			Indexes& indexes();
+			Storage &storage();
+			Indexes &indexes();
 		};
 
 	protected:
 		Configuration _configuration;
 
 		virtual void _loadProgram(
-			const std::string& p_vertexName, const std::string& p_vertexCode,
-			const std::string& p_fragmentName, const std::string& p_fragmentCode) = 0;
+			const std::string &p_vertexName, const std::string &p_vertexCode,
+			const std::string &p_fragmentName, const std::string &p_fragmentCode) = 0;
 
 		void _loadAbstractPipeline(
-			const std::string& p_vertexName, const std::string& p_vertexCode,
-			const std::string& p_fragmentName, const std::string& p_fragmentCode);
+			const std::string &p_vertexName, std::string& p_vertexCode,
+			const std::string &p_fragmentName, std::string& p_fragmentCode);
 
 	public:
 		AbstractPipeline();
 
-		const Configuration& configuration() const;
+		const Configuration &configuration() const;
 
 		virtual void activate() = 0;
 		virtual void deactivate() = 0;
 		virtual void launch(const size_t &p_nbIndexes) = 0;
 
-		void loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode);
-		void loadFromFile(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);
+		void loadFromCode(std::string p_vertexCode, std::string p_fragmentCode);
+		void loadFromFile(const std::filesystem::path &p_vertexShaderPath, const std::filesystem::path &p_fragmentShaderPath);
 
 		virtual std::shared_ptr<Object> createObject() = 0;
 	};

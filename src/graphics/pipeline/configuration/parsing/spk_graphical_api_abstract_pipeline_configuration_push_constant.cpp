@@ -50,17 +50,13 @@ namespace spk::GraphicalAPI
 
 			AbstractPipeline::Configuration::PushConstantLayout::Field field;
 			auto it = p_configuration.dataTypes.find(dataType);
-			if (it != p_configuration.dataTypes.end())
-			{
-				field.attribute = it->second;
-				field.offset = p_configuration.constants.stride;
-				p_configuration.constants.fields.push_back(field);
-				p_configuration.constants.stride += field.attribute.format * field.attribute.size;
-			}
-			else
-			{
+			if (it == p_configuration.dataTypes.end())
 				spk::throwException(L"Structure [" + spk::to_wstring(dataType) + L"] not found");
-			}
+
+			field.attribute = it->second;
+			field.offset = p_configuration.constants.stride;
+			p_configuration.constants.fields.push_back(field);
+			p_configuration.constants.stride += field.attribute.format * field.attribute.size;
 		}
 	}
 

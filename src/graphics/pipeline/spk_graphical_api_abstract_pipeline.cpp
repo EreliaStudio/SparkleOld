@@ -2,12 +2,17 @@
 
 namespace spk::GraphicalAPI
 {
+	void convertVulkanToOpenglCompatibleGLSLCode(std::string& p_vertexCode, std::string& p_fragmentCode);
+
 	void AbstractPipeline::_loadAbstractPipeline(
-		const std::string& p_vertexName, const std::string& p_vertexCode,
-		const std::string& p_fragmentName, const std::string& p_fragmentCode)
+		const std::string& p_vertexName, std::string& p_vertexCode,
+		const std::string& p_fragmentName, std::string& p_fragmentCode)
 	{
 		_configuration = AbstractPipeline::Configuration(p_vertexCode, p_fragmentCode);
 
+#if GraphicalAPI == 0
+		convertVulkanToOpenglCompatibleGLSLCode(p_vertexCode, p_fragmentCode);
+#endif
 		_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
 	}
 
@@ -21,7 +26,7 @@ namespace spk::GraphicalAPI
 		return (_configuration);
 	}
 
-	void AbstractPipeline::loadFromCode(const std::string& p_vertexCode, const std::string& p_fragmentCode)
+	void AbstractPipeline::loadFromCode(std::string p_vertexCode, std::string p_fragmentCode)
 	{
 		_loadAbstractPipeline("VertexModule", p_vertexCode, "FragmentModule", p_fragmentCode);
 	}
