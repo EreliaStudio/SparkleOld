@@ -10,9 +10,10 @@ namespace spk::GraphicalAPI
 	{
 		_configuration = AbstractPipeline::Configuration(p_vertexCode, p_fragmentCode);
 
-#if GraphicalAPI == 0
+#if GRAPHICAL_API == 0
 		convertVulkanToOpenglCompatibleGLSLCode(p_vertexCode, p_fragmentCode);
 #endif
+
 		_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
 	}
 
