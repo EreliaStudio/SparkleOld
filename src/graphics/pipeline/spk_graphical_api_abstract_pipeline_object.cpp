@@ -1,5 +1,7 @@
 #include "graphics/pipeline/spk_graphical_api_abstract_pipeline.hpp"
 
+#include "graphics/pipeline/spk_graphical_api_pipeline_basic_functions.hpp"
+
 namespace spk::GraphicalAPI
 {
 	AbstractPipeline::Object::Object(AbstractPipeline* p_owner) :

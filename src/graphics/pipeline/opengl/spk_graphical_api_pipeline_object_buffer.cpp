@@ -65,7 +65,6 @@ namespace spk::GraphicalAPI
 	{
 		activate();
 		_size = dataSize;
-		glBindBuffer(_mode, _vbo);
 
 		if (_pushedSize < dataSize)
 		{

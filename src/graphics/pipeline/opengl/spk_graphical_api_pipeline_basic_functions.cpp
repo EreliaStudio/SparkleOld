@@ -53,8 +53,6 @@ namespace spk::GraphicalAPI
 		case GL_STACK_UNDERFLOW: return (L"Stack underflow");
 		case GL_STACK_OVERFLOW: return (L"Stack overflow");
 
-		case GL_ELEMENT_ARRAY_BUFFER: return (L"GL_ELEMENT_ARRAY_BUFFER");
-		case GL_ARRAY_BUFFER: return (L"GL_ARRAY_BUFFER");
 		case GL_BYTE: return (L"GLbyte");
 		case GL_UNSIGNED_BYTE: return (L"GLubyte");
 		case GL_UNSIGNED_SHORT: return (L"GLushort");
@@ -168,6 +166,20 @@ namespace spk::GraphicalAPI
 		case 	GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY: return (L"uimage2DMSArray");
 		case 	GL_UNSIGNED_INT_ATOMIC_COUNTER: return (L"atomic_uint");
 
+ 		case GL_ARRAY_BUFFER: return L"Vertex attributes";
+        case GL_ATOMIC_COUNTER_BUFFER: return L"Atomic counter storage";
+        case GL_COPY_READ_BUFFER: return L"Buffer copy source";
+        case GL_COPY_WRITE_BUFFER: return L"Buffer copy destination";
+        case GL_DISPATCH_INDIRECT_BUFFER: return L"Indirect compute dispatch commands";
+        case GL_DRAW_INDIRECT_BUFFER: return L"Indirect command arguments";
+        case GL_ELEMENT_ARRAY_BUFFER: return L"Vertex array indices";
+        case GL_PIXEL_PACK_BUFFER: return L"Pixel read target";
+        case GL_PIXEL_UNPACK_BUFFER: return L"Texture data source";
+        case GL_QUERY_BUFFER: return L"Query result buffer";
+        case GL_SHADER_STORAGE_BUFFER: return L"Read-write storage for shaders";
+        case GL_TEXTURE_BUFFER: return L"Texture data buffer";
+        case GL_TRANSFORM_FEEDBACK_BUFFER: return L"Transform feedback buffer";
+        case GL_UNIFORM_BUFFER: return L"Uniform block storage";
 
 		default: return (L"not a GLenum type");
 		}
@@ -179,6 +191,10 @@ namespace spk::GraphicalAPI
 		if (err != GL_NO_ERROR)
 		{
 			spk::throwException(msg + L" : type [" + convertGLEnumToWString(err) + L"]");
+		}
+		else
+		{
+			spk::cout << msg << std::endl;
 		}
 	}
 }

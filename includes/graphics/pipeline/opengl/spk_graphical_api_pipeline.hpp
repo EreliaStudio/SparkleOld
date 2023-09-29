@@ -47,7 +47,7 @@ namespace spk::GraphicalAPI
 				Buffer(const Mode& p_mode);
 				Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);
 
-				void push(const void* data, const size_t dataSize);
+				virtual void push(const void* data, const size_t dataSize);
 
 				virtual void activate();
 				virtual void deactivate();
@@ -61,6 +61,8 @@ namespace spk::GraphicalAPI
 
 			public:
 				UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
+
+				void push(const void* data, const size_t dataSize);
 
 				void activate();
 				void deactivate();
