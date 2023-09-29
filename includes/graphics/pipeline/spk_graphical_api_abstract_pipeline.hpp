@@ -64,10 +64,11 @@ namespace spk::GraphicalAPI
 				struct Field
 				{
 					size_t offset;
+					std::wstring name;
 					Data attribute;
 
 					Field();
-					Field(const Data &p_dataType, const size_t &p_offset);
+					Field(const std::wstring& p_name, const Data &p_dataType, const size_t &p_offset);
 					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
@@ -220,10 +221,77 @@ namespace spk::GraphicalAPI
 				const size_t size() const;
 			};
 
+			class PushConstants
+			{
+			public:
+				class Field
+				{
+					friend class PushConstants;
+
+				private:
+					void *data;
+					size_t size;
+
+					Field(void *p_data, const size_t& p_size) :
+						data(p_data),
+						size(p_size)
+					{
+
+					}
+				public:
+					Field() :
+						data(nullptr),
+						size(0)
+					{
+
+					}
+
+					template <typename TType>
+					Field& operator << (const TType& p_newValue)
+					{
+						if (sizeof(TType) != size)
+							spk::throwException(L"Field expected a size of [" + std::to_wstring(size) + L"] but user provided a data of size [" + std::to_wstring(sizeof(TType)) + L"]");
+						std::memcpy(data, &p_newValue, size);
+						return (*this);
+					}
+				};
+			
+			private:
+				spk::DataBuffer _data;
+				std::map<std::wstring, Field> _fields;
+
+			public:
+				PushConstants(const Configuration::PushConstantLayout& p_layout)
+				{
+					_data.resize(p_layout.stride);
+					for (auto& field : p_layout.fields)
+					{
+						_fields[field.name] = Field(_data.data() + field.offset, field.attribute.size * field.attribute.format);
+					}
+				}
+
+				Field& operator[](const std::wstring& p_name)
+				{
+					if (_fields.contains(p_name) == false)
+						spk::throwException(L"PushConstants named [" + p_name + L"] doesn't exist");
+					return (_fields[p_name]);
+				}
+
+				const void *data() const
+				{
+					return (_data.data());
+				}
+				const size_t size() const
+				{
+					return (_data.size());
+				}
+			};
+
 		private:
 			AbstractPipeline *_owner;
 			Storage _storage;
 			Indexes _indexes;
+			PushConstants _pushConstants;
 
 		public:
 			Object(AbstractPipeline *p_owner);
@@ -237,6 +305,7 @@ namespace spk::GraphicalAPI
 
 			Storage &storage();
 			Indexes &indexes();
+			PushConstants &pushConstants();
 		};
 
 	protected:

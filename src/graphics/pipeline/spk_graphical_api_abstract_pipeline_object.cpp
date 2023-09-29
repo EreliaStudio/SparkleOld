@@ -6,8 +6,10 @@ namespace spk::GraphicalAPI
 	AbstractPipeline::Object::Object(AbstractPipeline* p_owner) :
 		_owner(p_owner),
 		_storage(p_owner->configuration().storage),
-		_indexes()
+		_indexes(),
+		_pushConstants(p_owner->configuration().constants)
 	{
+
 	}
 
 	void AbstractPipeline::Object::render()
@@ -27,5 +29,10 @@ namespace spk::GraphicalAPI
 	AbstractPipeline::Object::Indexes& AbstractPipeline::Object::indexes()
 	{
 		return (_indexes);
+	}
+
+	AbstractPipeline::Object::PushConstants &AbstractPipeline::Object::pushConstants()
+	{
+		return (_pushConstants);
 	}
 }
