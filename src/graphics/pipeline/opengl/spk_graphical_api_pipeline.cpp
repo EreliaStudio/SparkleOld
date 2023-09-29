@@ -29,6 +29,11 @@ namespace spk::GraphicalAPI
 		return (std::make_shared<OpenGLObject>(this));
 	}
 
+	const GLuint& Pipeline::program() const
+	{
+		return (_program);
+	}
+
 	void Pipeline::_loadProgram(
 		const std::string& p_vertexName, const std::string& p_vertexCode,
 		const std::string& p_fragmentName, const std::string& p_fragmentCode)

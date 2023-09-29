@@ -72,6 +72,8 @@ namespace spk::GraphicalAPI
 					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
+				std::wstring type;
+				size_t binding;
 				size_t stride;
 				std::vector<Field> fields;
 
@@ -306,6 +308,7 @@ namespace spk::GraphicalAPI
 			Object(AbstractPipeline *p_owner);
 
 			virtual void push() = 0;
+			virtual void updateConstants() = 0;
 
 			virtual void activate() = 0;
 			virtual void deactivate() = 0;

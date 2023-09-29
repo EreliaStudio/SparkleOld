@@ -33,11 +33,12 @@ namespace spk::GraphicalAPI
 		return true;
 	}
 
-	void parseShaderPushConstantsBody(AbstractPipeline::Configuration &p_configuration, const std::string &p_pushConstantBody)
+	void parseShaderPushConstantsBody(AbstractPipeline::Configuration &p_configuration, const std::string & p_blockName, const std::string &p_pushConstantBody)
 	{
 		std::stringstream ss(p_pushConstantBody);
 		std::string line;
 
+		p_configuration.constants.type = spk::to_wstring(p_blockName);
 		while (std::getline(ss, line))
 		{
 			line = trimWhitespace(removeComments(line));
@@ -74,7 +75,13 @@ namespace spk::GraphicalAPI
 			std::string contents = match[2];
 			std::string instanceName = match[3];
 
-			parseShaderPushConstantsBody(p_configuration, contents);
+			parseShaderPushConstantsBody(p_configuration, blockName, contents);
+		}
+
+		p_configuration.constants.binding = 0;
+		while (p_configuration.uniformBlocks.uniforms.contains({0, p_configuration.constants.binding}) == true) 
+		{
+			p_configuration.constants.binding++;
 		}
 	}
 }

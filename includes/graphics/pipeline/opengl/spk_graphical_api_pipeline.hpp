@@ -34,7 +34,7 @@ namespace spk::GraphicalAPI
 					PushConstant
 				};
 
-			private:
+			protected:
 				GLuint _vbo;
 				GLenum _mode;
 				size_t _size = 0;
@@ -49,6 +49,19 @@ namespace spk::GraphicalAPI
 
 				void push(const void* data, const size_t dataSize);
 
+				virtual void activate();
+				virtual void deactivate();
+			};
+
+			class UniformBuffer : public Buffer
+			{
+			protected:
+				GLuint _blockIndex;
+				size_t _blockBinding;
+
+			public:
+				UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
+
 				void activate();
 				void deactivate();
 			};
@@ -56,12 +69,13 @@ namespace spk::GraphicalAPI
 			Aggregator _aggregator;
 			Buffer _modelBuffer;
 			Buffer _indexesBuffer;
-			Buffer _pushConstantBuffer;
+			UniformBuffer _pushConstantBuffer;
 
 		public:
 			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner);
 
 			void push();
+			void updateConstants();
 
 			void activate();
 			void deactivate();
@@ -80,6 +94,8 @@ namespace spk::GraphicalAPI
 		void deactivate();
 
 		void launch(const size_t& p_nbIndexes);
+
+		const GLuint& program() const;
 
 		std::shared_ptr<Object> createObject();
 	};
