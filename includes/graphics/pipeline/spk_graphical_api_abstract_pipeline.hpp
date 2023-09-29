@@ -285,6 +285,15 @@ namespace spk::GraphicalAPI
 				{
 					return (_data.size());
 				}
+
+				template <typename TType>
+				PushConstants& operator << (const TType& p_newValue)
+				{
+					if (sizeof(TType) != size)
+						spk::throwException(L"PushConstants expected a size of [" + std::to_wstring(size) + L"] but user provided a data of size [" + std::to_wstring(sizeof(TType)) + L"]");
+					std::memcpy(_data.data(), &p_newValue, _data.size());
+					return (*this);
+				}
 			};
 
 		private:
