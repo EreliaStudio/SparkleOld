@@ -1,5 +1,4 @@
 #include "graphics/pipeline/spk_graphical_api_abstract_pipeline.hpp"
-#include "graphics/pipeline/opengl/spk_graphical_api_pipeline_basic_functions.hpp"
 
 namespace spk::GraphicalAPI
 {

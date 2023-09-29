@@ -174,11 +174,11 @@ namespace spk::GraphicalAPI
 		return (true);
 	}
 	
-	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute& p_attribute)
+	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data& p_data)
 	{
-		if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Float)
+		if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Float)
 		{
-			switch (p_attribute.format)
+			switch (p_data.format)
 			{
 			case 1:
 				return (vk::Format::eR32Sfloat);
@@ -192,9 +192,9 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::Int)
+		else if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Int)
 		{
-			switch (p_attribute.format)
+			switch (p_data.format)
 			{
 			case 1:
 				return (vk::Format::eR32Sint);
@@ -208,9 +208,9 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_attribute.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Attribute::Type::UInt)
+		else if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::UInt)
 		{
-			switch (p_attribute.format)
+			switch (p_data.format)
 			{
 			case 1:
 				return (vk::Format::eR32Uint);

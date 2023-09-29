@@ -51,7 +51,7 @@ namespace spk::GraphicalAPI
 				field.location, ///< Location
 				0, ///< Binding
 				attributeFormat(field.attribute), ///< Format
-				field.attribute.offset ///< Offset
+				field.offset ///< Offset
 			));
 		}
 		return (attributeDescriptions);

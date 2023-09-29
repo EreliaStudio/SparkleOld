@@ -78,6 +78,8 @@
 	const int Button5 = 5;
 	#undef Success
 	const int Success = 0;
+	#undef Complex
+	const int Complex = 0;
 
 	using SystemMessage = xcb_generic_event_t *;
 #else

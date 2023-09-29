@@ -1,5 +1,4 @@
 #include "sparkle.hpp"
-#include "graphics/pipeline/opengl/spk_graphical_api_pipeline_basic_functions.hpp"
 
 class Test : public spk::Widget::Interface
 {
