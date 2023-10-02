@@ -2,22 +2,6 @@
 
 namespace spk::GraphicalAPI
 {
-	bool AbstractPipeline::Configuration::UniformBlockLayout::Key::operator<(const Key& other) const
-	{
-		if (set < other.set)
-		{
-			return true;
-		}
-		else if (set == other.set)
-		{
-			if (binding < other.binding)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-
 	AbstractPipeline::Configuration::UniformBlockLayout::Field::Field() :
 		offset(0),
 		attribute()

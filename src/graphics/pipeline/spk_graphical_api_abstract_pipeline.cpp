@@ -17,11 +17,25 @@ namespace spk::GraphicalAPI
 #endif
 
 		_loadProgram(p_vertexName, p_vertexCode, p_fragmentName, p_fragmentCode);
+
+		for( size_t i = 0; i < _configuration.uniformBlocks.size(); i++)
+		{
+			std::wstring uniformName = _configuration.uniformBlocks[i].name;
+
+			_uniformBlocks[uniformName] = _createUniformBlock(_configuration.uniformBlocks[i]);
+		}
 	}
 
 	AbstractPipeline::AbstractPipeline()
 	{
 
+	}
+	
+	std::unique_ptr<AbstractPipeline::UniformBlock>& AbstractPipeline::uniformBlock(const std::wstring& p_name)
+	{
+		if (_uniformBlocks.contains(p_name) == false)
+			spk::throwException(L"Uniform block named [" + p_name + L"] doesn't exist");
+		return (_uniformBlocks[p_name]);
 	}
 	
 	const AbstractPipeline::Configuration& AbstractPipeline::configuration() const

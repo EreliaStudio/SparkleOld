@@ -82,15 +82,6 @@ namespace spk::GraphicalAPI
 
 			struct UniformBlockLayout
 			{
-				struct Key
-				{
-					size_t set;
-					size_t binding;
-
-					bool operator<(const Key &other) const;
-					friend std::wostream &operator<<(std::wostream &os, const Key &p_key);
-				};
-
 				struct Field
 				{
 					size_t offset;
@@ -102,6 +93,10 @@ namespace spk::GraphicalAPI
 					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
+				std::wstring name;
+				std::wstring type;
+				size_t set;
+				size_t binding;
 				size_t stride;
 				std::vector<Field> fields;
 
@@ -114,9 +109,7 @@ namespace spk::GraphicalAPI
 
 			StorageLayout storage;
 			PushConstantLayout constants;
-			
-			std::map<UniformBlockLayout::Key, UniformBlockLayout> uniforms;
-			std::map<std::wstring, UniformBlockLayout::Key> uniformKeys;
+			std::vector<UniformBlockLayout> uniformBlocks;
 
 			Configuration();
 			Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode);
@@ -315,8 +308,105 @@ namespace spk::GraphicalAPI
 			PushConstants &pushConstants();
 		};
 
+		class UniformBlock
+		{
+		public:
+			class Field
+			{
+				friend class UniformBlock;
+
+			private:
+				std::wstring name;
+				void *data;
+				size_t size;
+
+				Field(void *p_data, const size_t& p_size) :
+					data(p_data),
+					size(p_size)
+				{
+
+				}
+			public:
+				Field() :
+					name(L""),
+					data(nullptr),
+					size(0)
+				{
+
+				}
+
+				Field(const std::wstring& p_name) :
+					name(p_name),
+					data(nullptr),
+					size(0)
+				{
+
+				}
+
+				template <typename TType>
+				Field& operator << (const TType& p_newValue)
+				{
+					if (sizeof(TType) != size)
+						spk::throwException(L"UniformBlock::Field [" + name + L"] expected a size of [" + std::to_wstring(size) + L"] but user provided a data of size [" + std::to_wstring(sizeof(TType)) + L"]");
+					std::memcpy(data, &p_newValue, size);
+					return (*this);
+				}
+			};
+		
+		private:
+			spk::DataBuffer _data;
+			std::wstring _name;
+			std::map<std::wstring, Field> _fields;
+
+		public:
+			UniformBlock(const Configuration::UniformBlockLayout& p_layout)
+			{
+				_name = p_layout.name;
+				_data.resize(p_layout.stride);
+				for (auto& field : p_layout.fields)
+				{
+					_fields[field.name] = Field(_data.data() + field.offset, field.attribute.size * field.attribute.format);
+				}
+			}
+
+			Field& operator[](const std::wstring& p_name)
+			{
+				if (_fields.contains(p_name) == false)
+					spk::throwException(L"Field [" + p_name + L"] inside UniformBlock [" + _name + L"] doesn't exist");
+				return (_fields[p_name]);
+			}
+
+			const void *data() const
+			{
+				return (_data.data());
+			}
+			const size_t size() const
+			{
+				return (_data.size());
+			}
+
+			template <typename TType>
+			UniformBlock& operator << (const TType& p_newValue)
+			{
+				this->push(p_newValue);
+				return (*this);
+			}
+
+			template <typename TType>
+			void push(const TType& p_newValue)
+			{
+				if (sizeof(TType) != _data.size())
+					spk::throwException(L"UniformBlock [" + _name + L"] expected a size of [" + std::to_wstring(_data.size()) + L"] but user provided a data of size [" + std::to_wstring(sizeof(TType)) + L"]");
+				std::memcpy(_data.data(), static_cast<const void*>(&p_newValue), _data.size());
+			}
+
+			virtual void update() = 0;
+		};
+
 	protected:
 		Configuration _configuration;
+
+		std::map<std::wstring, std::unique_ptr<UniformBlock>> _uniformBlocks;
 
 		virtual void _loadProgram(
 			const std::string &p_vertexName, const std::string &p_vertexCode,
@@ -325,6 +415,8 @@ namespace spk::GraphicalAPI
 		void _loadAbstractPipeline(
 			const std::string &p_vertexName, std::string& p_vertexCode,
 			const std::string &p_fragmentName, std::string& p_fragmentCode);
+
+		virtual std::unique_ptr<UniformBlock> _createUniformBlock(const Configuration::UniformBlockLayout& p_layout) = 0;
 
 	public:
 		AbstractPipeline();
@@ -338,6 +430,7 @@ namespace spk::GraphicalAPI
 		void loadFromCode(std::string p_vertexCode, std::string p_fragmentCode);
 		void loadFromFile(const std::filesystem::path &p_vertexShaderPath, const std::filesystem::path &p_fragmentShaderPath);
 
-		virtual std::shared_ptr<Object> createObject() = 0;
+		std::unique_ptr<UniformBlock>& uniformBlock(const std::wstring& p_name);
+		virtual std::unique_ptr<Object> createObject() = 0;
 	};
 }

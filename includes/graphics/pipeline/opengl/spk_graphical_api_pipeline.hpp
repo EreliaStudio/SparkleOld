@@ -76,7 +76,7 @@ namespace spk::GraphicalAPI
 			size_t _findFirstBindingAvailible(const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
 
 		public:
-			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner);
+			OpenGLObject(Pipeline* p_owner);
 
 			void push();
 			void updateConstants();
@@ -85,11 +85,32 @@ namespace spk::GraphicalAPI
 			void deactivate();
 		};
 
+		class OpenGLUniformBlock : public spk::GraphicalAPI::AbstractPipeline::UniformBlock
+		{
+		private:
+			UniformBuffer _buffer;
+
+		public:
+			OpenGLUniformBlock(Pipeline* p_owner, const Configuration::UniformBlockLayout& p_layout) :
+				spk::GraphicalAPI::AbstractPipeline::UniformBlock(p_layout),
+				_buffer(p_owner->program(), p_layout.type, p_layout.binding)
+			{	
+				
+			}
+
+			void update()
+			{
+				_buffer.push(data(), size());
+			}
+		};
+
 		GLuint _program;
 
 		void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
 			const std::string& p_fragmentName, const std::string& p_fragmentCode);
+
+		std::unique_ptr<UniformBlock> _createUniformBlock(const Configuration::UniformBlockLayout& p_layout);
 
 	public:
 		Pipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath);
@@ -101,6 +122,6 @@ namespace spk::GraphicalAPI
 
 		const GLuint& program() const;
 
-		std::shared_ptr<Object> createObject();
+		std::unique_ptr<Object> createObject();
 	};
 }
