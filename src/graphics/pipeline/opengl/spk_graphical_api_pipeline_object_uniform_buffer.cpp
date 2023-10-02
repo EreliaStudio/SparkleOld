@@ -3,8 +3,8 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::UniformBuffer::UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding) : 
-		Pipeline::OpenGLObject::Buffer(Pipeline::OpenGLObject::Buffer::Mode::PushConstant),
+	Pipeline::UniformBuffer::UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding) : 
+		Pipeline::Buffer(Pipeline::Buffer::Mode::PushConstant),
 		_blockBinding(p_blockBinding)
 	{
 		if (p_uniformType == L"")
@@ -24,7 +24,7 @@ namespace spk::GraphicalAPI
 		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, _blockIndex);
 	}
 	
-	void Pipeline::OpenGLObject::UniformBuffer::push(const void* data, const size_t dataSize)
+	void Pipeline::UniformBuffer::push(const void* data, const size_t dataSize)
 	{
 		activate();
 		_size = dataSize;
@@ -40,13 +40,13 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void Pipeline::OpenGLObject::UniformBuffer::activate()
+	void Pipeline::UniformBuffer::activate()
 	{
 		glBindBuffer(GL_UNIFORM_BUFFER, _vbo);
 		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, _vbo);
 	}
 	
-	void Pipeline::OpenGLObject::UniformBuffer::deactivate()
+	void Pipeline::UniformBuffer::deactivate()
 	{
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, 0);

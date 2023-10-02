@@ -7,16 +7,12 @@ namespace spk::GraphicalAPI
 	std::string removeComments(const std::string& line);
 	bool splitDeclaration(const std::string &line, std::string &outDataType, std::string &outVarName);
 
-AbstractPipeline::Configuration::UniformBlockLayout::Block parseShaderUniformBody(
-    AbstractPipeline::Configuration& p_configuration, 
-    const std::string& p_contents, 
-    unsigned int p_set, 
-    unsigned int p_binding)
+	AbstractPipeline::Configuration::UniformBlockLayout parseShaderUniformBody(AbstractPipeline::Configuration& p_configuration, const std::string& p_contents)
 	{
+		AbstractPipeline::Configuration::UniformBlockLayout result;
 		std::stringstream ss(p_contents);
 		std::string line;
-		AbstractPipeline::Configuration::UniformBlockLayout::Block newBlock;
-		newBlock.stride = 0;
+		result.stride = 0;
 
 		while (std::getline(ss, line))
 		{
@@ -28,19 +24,19 @@ AbstractPipeline::Configuration::UniformBlockLayout::Block parseShaderUniformBod
 			if (splitDeclaration(line, dataType, varName) == false)
 				spk::throwException(L"Invalid uniform block definition: [" + spk::to_wstring(line) + L"]");
 
-			AbstractPipeline::Configuration::UniformBlockLayout::Block::Field field;
+			AbstractPipeline::Configuration::UniformBlockLayout::Field field;
 			auto it = p_configuration.dataTypes.find(dataType);
 			if (it == p_configuration.dataTypes.end())
 				spk::throwException(L"Data type [" + spk::to_wstring(dataType) + L"] not found");
 
 			field.attribute = it->second;
-			field.offset = newBlock.stride;
+			field.offset = result.stride;
 			field.name = spk::to_wstring(varName);
-			newBlock.fields.push_back(field);
-			newBlock.stride += field.attribute.format * field.attribute.size;
+			result.fields.push_back(field);
+			result.stride += field.attribute.format * field.attribute.size;
 		}
 
-		return newBlock;
+		return result;
 	}
 
 	void parseShaderUniforms(AbstractPipeline::Configuration& p_configuration, const std::string& p_shaderCode)
@@ -60,12 +56,12 @@ AbstractPipeline::Configuration::UniformBlockLayout::Block parseShaderUniformBod
 			std::string contents = match[4];
 			std::string instanceName = match[5];
 
-			AbstractPipeline::Configuration::UniformBlockLayout::Block newBlock = parseShaderUniformBody(p_configuration, contents, set, binding);
+			AbstractPipeline::Configuration::UniformBlockLayout newBlock = parseShaderUniformBody(p_configuration, contents);
 
-			AbstractPipeline::Configuration::UniformBlockLayout::Block::Key key { set, binding };
+			AbstractPipeline::Configuration::UniformBlockLayout::Key key { set, binding };
 
-			p_configuration.uniformBlocks.uniforms[key] = newBlock;
-			p_configuration.uniformBlocks.uniformKeys[spk::to_wstring(instanceName)] = key;
+			p_configuration.uniforms[key] = newBlock;
+			p_configuration.uniformKeys[spk::to_wstring(instanceName)] = key;
 
 			++iter;
 		}

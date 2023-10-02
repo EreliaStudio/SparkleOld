@@ -3,13 +3,13 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode) :
+	Pipeline::Buffer::Buffer(const Pipeline::Buffer::Mode& p_mode) :
 		_mode(_convertModeToGLenum(p_mode))
 	{
 		
 	}
 
-	GLenum Pipeline::OpenGLObject::Buffer::_convertModeToGLenum(const spk::GraphicalAPI::Pipeline::OpenGLObject::Buffer::Mode &p_input)
+	GLenum Pipeline::Buffer::_convertModeToGLenum(const spk::GraphicalAPI::Pipeline::Buffer::Mode &p_input)
 	{
 		switch (p_input)
 		{
@@ -24,7 +24,7 @@ namespace spk::GraphicalAPI
 		return (GL_NONE);
 	}
 
-	GLenum Pipeline::OpenGLObject::Buffer::_convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input)
+	GLenum Pipeline::Buffer::_convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input)
 	{
 		switch (p_input)
 		{
@@ -41,7 +41,7 @@ namespace spk::GraphicalAPI
 		return (GL_NONE);
 	}
 
-	Pipeline::OpenGLObject::Buffer::Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_configuration)
+	Pipeline::Buffer::Buffer(const Pipeline::Buffer::Mode& p_mode, const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_configuration)
 	{
 		_mode = _convertModeToGLenum(p_mode);
 
@@ -61,7 +61,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void Pipeline::OpenGLObject::Buffer::push(const void* data, const size_t dataSize)
+	void Pipeline::Buffer::push(const void* data, const size_t dataSize)
 	{
 		activate();
 		_size = dataSize;
@@ -77,12 +77,12 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void Pipeline::OpenGLObject::Buffer::activate()
+	void Pipeline::Buffer::activate()
 	{
 		glBindBuffer(_mode, _vbo);
 	}
 
-	void Pipeline::OpenGLObject::Buffer::deactivate()
+	void Pipeline::Buffer::deactivate()
 	{
 		glBindBuffer(_mode, 0);
 	}

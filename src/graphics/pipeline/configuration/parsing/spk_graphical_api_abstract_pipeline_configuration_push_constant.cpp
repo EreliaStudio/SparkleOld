@@ -77,11 +77,5 @@ namespace spk::GraphicalAPI
 
 			parseShaderPushConstantsBody(p_configuration, blockName, contents);
 		}
-
-		p_configuration.constants.binding = 0;
-		while (p_configuration.uniformBlocks.uniforms.contains({0, p_configuration.constants.binding}) == true) 
-		{
-			p_configuration.constants.binding++;
-		}
 	}
 }

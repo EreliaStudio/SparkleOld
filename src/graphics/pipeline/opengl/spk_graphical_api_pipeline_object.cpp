@@ -4,12 +4,23 @@
 
 namespace spk::GraphicalAPI
 {
+	size_t Pipeline::OpenGLObject::_findFirstBindingAvailible(const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration)
+	{
+		size_t result = 0;
+		while (p_configuration.uniforms.contains({0, result}) == true) 
+		{
+			result++;
+		}
+
+		return (0);
+	}
+
 	Pipeline::OpenGLObject::OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner) :
 		spk::GraphicalAPI::AbstractPipeline::Object(p_owner),
 		_aggregator(p_owner),
-		_modelBuffer(Pipeline::OpenGLObject::Buffer::Mode::Data, p_owner->configuration().storage),
-		_indexesBuffer(Pipeline::OpenGLObject::Buffer::Mode::Indexes),
-		_pushConstantBuffer(static_cast<Pipeline*>(p_owner)->program(), p_owner->configuration().constants.type, p_owner->configuration().constants.binding)
+		_modelBuffer(Pipeline::Buffer::Mode::Data, p_owner->configuration().storage),
+		_indexesBuffer(Pipeline::Buffer::Mode::Indexes),
+		_pushConstantBuffer(static_cast<Pipeline*>(p_owner)->program(), p_owner->configuration().constants.type, _findFirstBindingAvailible(p_owner->configuration()))
 	{
 		
 	}
