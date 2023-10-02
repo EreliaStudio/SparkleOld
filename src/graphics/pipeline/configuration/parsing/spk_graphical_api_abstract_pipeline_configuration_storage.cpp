@@ -19,33 +19,26 @@ namespace spk::GraphicalAPI
 	}
 
 	void parseShaderStorageBuffers(AbstractPipeline::Configuration& p_configuration, const std::string& p_shaderCode)
-    {
-        std::regex bufferRegex(R"(^.*layout\s*\(\s*location\s*=\s*(\d+)\s*\)\s*in\s+(\w+)\s+\w+\s*;.*$)", std::regex_constants::ECMAScript | std::regex_constants::icase);
-        std::regex inVariableRegex(R"(^.*\bin\b.*$)", std::regex_constants::ECMAScript | std::regex_constants::icase);
+	{
+		std::regex bufferRegex(R"(layout\s*\(\s*location\s*=\s*(\d+)\s*\)\s*in\s+(\w+)\s+(\w+)\s*;)", std::regex_constants::ECMAScript | std::regex_constants::icase);
 
-        std::smatch match;
-        
-        std::string::const_iterator searchStart = p_shaderCode.cbegin();
+		std::smatch match;
+		std::string::const_iterator searchStart = p_shaderCode.cbegin();
 
-        while (std::regex_search(searchStart, p_shaderCode.cend(), match, inVariableRegex)) 
-        {
-            std::string matchedLine = match[0].str();
-            std::smatch bufferMatch;
+		while (std::regex_search(searchStart, p_shaderCode.cend(), match, bufferRegex))
+		{
+			std::string locationValue = match[1].str();
+			std::string typeValue = match[2].str();
+			// std::string bufferName = match[3].str(); 
 
-            if (!std::regex_search(matchedLine, bufferMatch, bufferRegex)) 
-                spk::throwException(L"Input variable in line [" + spk::to_wstring(matchedLine) + L"] lacks a layout location");
-
-			std::string locationValue = bufferMatch[1].str();
-			std::string typeValue = bufferMatch[2].str();
-			            
 			loadShaderStorageBufferUnit(p_configuration, locationValue, typeValue);
 
-            searchStart = match.suffix().first;
-        }
+			searchStart = match.suffix().first;
+		}
 
 		for (auto& bufferUnit : p_configuration.storage.fields)
 		{
 			bufferUnit.offset = p_configuration.storage.stride - bufferUnit.offset - bufferUnit.attribute.format * bufferUnit.attribute.size;
 		}
-    }
+	}
 }
