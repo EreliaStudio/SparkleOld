@@ -24,12 +24,6 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::UniformBlockLayout::Key& p_key)
-	{
-	p_os << L"Key{set: " << p_key.set << L", binding: " << p_key.binding << L"}";
-	return p_os;
-	}
-
 	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::UniformBlockLayout::Field& p_field)
 	{
 	p_os << L"\t\tName : " << p_field.name << std::endl;
@@ -40,6 +34,8 @@ namespace spk::GraphicalAPI
 
 	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::UniformBlockLayout& p_block)
 	{
+	p_os << L"\tname: " << p_block.name << std::endl;
+	p_os << L"\tkey: " << p_block.set << L" / " << p_block.binding << std::endl;
 	p_os << L"\tstride: " << p_block.stride << std::endl;
 	p_os << L"\tfields:" << std::endl;
 

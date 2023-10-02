@@ -25,6 +25,7 @@ namespace spk::GraphicalAPI
 				spk::throwException(L"Invalid uniform block definition: [" + spk::to_wstring(line) + L"]");
 
 			AbstractPipeline::Configuration::UniformBlockLayout::Field field;
+
 			auto it = p_configuration.dataTypes.find(dataType);
 			if (it == p_configuration.dataTypes.end())
 				spk::throwException(L"Data type [" + spk::to_wstring(dataType) + L"] not found");
@@ -32,6 +33,7 @@ namespace spk::GraphicalAPI
 			field.attribute = it->second;
 			field.offset = result.stride;
 			field.name = spk::to_wstring(varName);
+			
 			result.fields.push_back(field);
 			result.stride += field.attribute.format * field.attribute.size;
 		}
@@ -58,10 +60,12 @@ namespace spk::GraphicalAPI
 
 			AbstractPipeline::Configuration::UniformBlockLayout newBlock = parseShaderUniformBody(p_configuration, contents);
 
-			AbstractPipeline::Configuration::UniformBlockLayout::Key key { set, binding };
+			newBlock.binding = binding;
+			newBlock.set = set;
+			newBlock.name = spk::to_wstring(instanceName);
+			newBlock.type = spk::to_wstring(blockName);
 
-			p_configuration.uniforms[key] = newBlock;
-			p_configuration.uniformKeys[spk::to_wstring(instanceName)] = key;
+			p_configuration.uniformBlocks.push_back(newBlock);
 
 			++iter;
 		}

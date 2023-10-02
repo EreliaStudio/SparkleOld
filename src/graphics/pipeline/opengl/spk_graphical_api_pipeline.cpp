@@ -24,9 +24,14 @@ namespace spk::GraphicalAPI
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_nbIndexes), GL_UNSIGNED_INT, nullptr);
 	}
 
-	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
+	std::unique_ptr<Pipeline::UniformBlock> Pipeline::_createUniformBlock(const Pipeline::Configuration::UniformBlockLayout& p_layout)
 	{
-		return (std::make_shared<OpenGLObject>(this));
+		return (std::make_unique<OpenGLUniformBlock>(this, p_layout));
+	}
+
+	std::unique_ptr<Pipeline::Object> Pipeline::createObject()
+	{
+		return (std::make_unique<OpenGLObject>(this));
 	}
 
 	const GLuint& Pipeline::program() const

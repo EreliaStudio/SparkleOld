@@ -22,14 +22,13 @@ private:
 		_object->storage() << datas;
 		_object->indexes() << indexes;
 
-		_object->pushConstants()[L"color"] << spk::Color(255, 255, 255);
 
 		_object->push();
 	}
 
 	void _onRender()
 	{
-		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
+		_pipeline.uniformBlock(L"uniformData")->update();
 		_object->updateConstants();
 		_object->render();
 	}
@@ -37,6 +36,8 @@ private:
 	bool _onUpdate()
 	{
 		rotation += spk::TimeMetrics::instance()->deltaTime();
+
+		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
 
 		return (false);
 	}
@@ -47,6 +48,7 @@ public:
 		_pipeline(L"colorShader.vert", L"colorShader.frag"),
 		_object(_pipeline.createObject())
 	{
+		_pipeline.uniformBlock(L"uniformData")->push(spk::Color(255, 0, 255, 255));
 	}
 	~Test()
 	{
