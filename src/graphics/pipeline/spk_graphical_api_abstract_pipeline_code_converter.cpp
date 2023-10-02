@@ -15,6 +15,13 @@ namespace spk::GraphicalAPI
 		}
 	}
 
+	
+	void addCustomStructuresToCode(std::string& p_vertexCode, std::string& p_fragmentCode)
+	{
+		insertPredefinedStructures(p_vertexCode);
+	    insertPredefinedStructures(p_fragmentCode);
+	}
+
 	void replacePushConstantsWithUniforms(std::string &p_shaderCode)
 	{
 		std::regex pushConstantRegex("layout\\(push_constant\\) uniform ([\\w_]+)\\s*\\{([\\s\\S]*?)\\}\\s*([\\w_]+);");
@@ -34,8 +41,6 @@ namespace spk::GraphicalAPI
 
 	void convertVulkanToOpenglCompatibleGLSLCode(std::string &p_vertexCode, std::string &p_fragmentCode)
 	{
-		insertPredefinedStructures(p_vertexCode);
-	    insertPredefinedStructures(p_fragmentCode);
 
 		replacePushConstantsWithUniforms(p_vertexCode);
         replacePushConstantsWithUniforms(p_fragmentCode);

@@ -2,6 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
+	void addCustomStructuresToCode(std::string& p_vertexCode, std::string& p_fragmentCode);
 	void convertVulkanToOpenglCompatibleGLSLCode(std::string& p_vertexCode, std::string& p_fragmentCode);
 
 	void AbstractPipeline::_loadAbstractPipeline(
@@ -10,6 +11,7 @@ namespace spk::GraphicalAPI
 	{
 		_configuration = AbstractPipeline::Configuration(p_vertexCode, p_fragmentCode);
 
+		addCustomStructuresToCode(p_vertexCode, p_fragmentCode);
 #if GRAPHICAL_API == 0
 		convertVulkanToOpenglCompatibleGLSLCode(p_vertexCode, p_fragmentCode);
 #endif
