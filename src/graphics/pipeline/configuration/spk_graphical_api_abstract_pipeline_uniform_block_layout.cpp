@@ -2,7 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
-	bool AbstractPipeline::Configuration::UniformBlockLayout::Block::Key::operator<(const Key& other) const
+	bool AbstractPipeline::Configuration::UniformBlockLayout::Key::operator<(const Key& other) const
 	{
 		if (set < other.set)
 		{
@@ -18,26 +18,26 @@ namespace spk::GraphicalAPI
 		return false;
 	}
 
-	AbstractPipeline::Configuration::UniformBlockLayout::Block::Field::Field() :
+	AbstractPipeline::Configuration::UniformBlockLayout::Field::Field() :
 		offset(0),
 		attribute()
 	{
 
 	}
 	
-	AbstractPipeline::Configuration::UniformBlockLayout::Block::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_offset) :
+	AbstractPipeline::Configuration::UniformBlockLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_offset) :
 		offset(p_offset),
 		attribute(p_dataType)
 	{ 
 	}
 
-	AbstractPipeline::Configuration::UniformBlockLayout::Block::Block()
+	AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout()
 	{
 		stride = 0;
 	}
 
-	AbstractPipeline::Configuration::UniformBlockLayout::Block::Block(const std::vector<Field> &p_fields) :
-		Block()
+	AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout(const std::vector<Field> &p_fields) :
+		UniformBlockLayout()
 	{
 		for(auto field : p_fields)
 		{

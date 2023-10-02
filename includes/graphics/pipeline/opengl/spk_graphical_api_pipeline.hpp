@@ -8,70 +8,72 @@ namespace spk::GraphicalAPI
 	class Pipeline : public spk::GraphicalAPI::AbstractPipeline
 	{
 	private:
+		class Aggregator
+		{
+		private:
+			spk::GraphicalAPI::AbstractPipeline* _owner;
+			GLuint _VAO;
+
+		public:
+			Aggregator(spk::GraphicalAPI::AbstractPipeline* p_owner);
+
+			void activate();
+			void deactivate();
+		};
+
+		class Buffer
+		{
+		public:
+			enum class Mode
+			{
+				Data,
+				Indexes,
+				PushConstant
+			};
+
+		protected:
+			GLuint _vbo;
+			GLenum _mode;
+			size_t _size = 0;
+			size_t _pushedSize = 0;
+
+			GLenum _convertModeToGLenum(const Mode &p_input);
+			GLenum _convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input);
+			
+		public:
+			Buffer(const Mode& p_mode);
+			Buffer(const Pipeline::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);
+
+			virtual void push(const void* data, const size_t dataSize);
+
+			virtual void activate();
+			virtual void deactivate();
+		};
+
+		class UniformBuffer : public Buffer
+		{
+		protected:
+			GLuint _blockIndex;
+			size_t _blockBinding;
+
+		public:
+			UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
+
+			void push(const void* data, const size_t dataSize);
+
+			void activate();
+			void deactivate();
+		};
+
 		class OpenGLObject : public spk::GraphicalAPI::AbstractPipeline::Object
 		{
 		private:
-			class Aggregator
-			{
-			private:
-				spk::GraphicalAPI::AbstractPipeline* _owner;
-				GLuint _VAO;
-
-			public:
-				Aggregator(spk::GraphicalAPI::AbstractPipeline* p_owner);
-
-				void activate();
-				void deactivate();
-			};
-
-			class Buffer
-			{
-			public:
-				enum class Mode
-				{
-					Data,
-					Indexes,
-					PushConstant
-				};
-
-			protected:
-				GLuint _vbo;
-				GLenum _mode;
-				size_t _size = 0;
-				size_t _pushedSize = 0;
-
-				GLenum _convertModeToGLenum(const Mode &p_input);
-				GLenum _convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input);
-				
-			public:
-				Buffer(const Mode& p_mode);
-				Buffer(const Pipeline::OpenGLObject::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);
-
-				virtual void push(const void* data, const size_t dataSize);
-
-				virtual void activate();
-				virtual void deactivate();
-			};
-
-			class UniformBuffer : public Buffer
-			{
-			protected:
-				GLuint _blockIndex;
-				size_t _blockBinding;
-
-			public:
-				UniformBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
-
-				void push(const void* data, const size_t dataSize);
-
-				void activate();
-				void deactivate();
-			};
-
 			Aggregator _aggregator;
 			Buffer _modelBuffer;
 			Buffer _indexesBuffer;
 			UniformBuffer _pushConstantBuffer;
+
+			size_t _findFirstBindingAvailible(const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
 
 		public:
 			OpenGLObject(spk::GraphicalAPI::AbstractPipeline* p_owner);

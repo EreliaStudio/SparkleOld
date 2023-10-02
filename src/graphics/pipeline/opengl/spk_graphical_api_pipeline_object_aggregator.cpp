@@ -2,7 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
-	Pipeline::OpenGLObject::Aggregator::Aggregator(spk::GraphicalAPI::AbstractPipeline* p_owner) :
+	Pipeline::Aggregator::Aggregator(spk::GraphicalAPI::AbstractPipeline* p_owner) :
 		_owner(p_owner)
 	{
 		_owner->activate();
@@ -10,12 +10,12 @@ namespace spk::GraphicalAPI
 		activate();
 	}
 
-	void Pipeline::OpenGLObject::Aggregator::activate()
+	void Pipeline::Aggregator::activate()
 	{
 		glBindVertexArray(_VAO);
 	}
 
-	void Pipeline::OpenGLObject::Aggregator::deactivate()
+	void Pipeline::Aggregator::deactivate()
 	{
 		glBindVertexArray(0);
 	}

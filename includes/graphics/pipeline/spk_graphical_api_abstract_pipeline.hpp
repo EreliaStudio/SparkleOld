@@ -73,7 +73,6 @@ namespace spk::GraphicalAPI
 				};
 
 				std::wstring type;
-				size_t binding;
 				size_t stride;
 				std::vector<Field> fields;
 
@@ -83,45 +82,41 @@ namespace spk::GraphicalAPI
 
 			struct UniformBlockLayout
 			{
-				struct Block
+				struct Key
 				{
-					struct Key
-					{
-						size_t set;
-						size_t binding;
+					size_t set;
+					size_t binding;
 
-						bool operator<(const Key &other) const;
-						friend std::wostream &operator<<(std::wostream &os, const Key &p_key);
-					};
-
-					struct Field
-					{
-						size_t offset;
-						std::wstring name;
-						Data attribute;
-
-						Field();
-						Field(const Data &p_dataType, const size_t &p_offset);
-						friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
-					};
-
-					size_t stride;
-					std::vector<Field> fields;
-
-					Block();
-					Block(const std::vector<Field> &p_fields);
-					friend std::wostream &operator<<(std::wostream &os, const Block &p_block);
+					bool operator<(const Key &other) const;
+					friend std::wostream &operator<<(std::wostream &os, const Key &p_key);
 				};
 
-				std::map<Block::Key, Block> uniforms;
-				std::map<std::wstring, Block::Key> uniformKeys;
+				struct Field
+				{
+					size_t offset;
+					std::wstring name;
+					Data attribute;
+
+					Field();
+					Field(const Data &p_dataType, const size_t &p_offset);
+					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
+				};
+
+				size_t stride;
+				std::vector<Field> fields;
+
+				UniformBlockLayout();
+				UniformBlockLayout(const std::vector<Field> &p_fields);
+				friend std::wostream &operator<<(std::wostream &os, const UniformBlockLayout &p_block);
 			};
 
 			std::map<std::string, Data> dataTypes;
 
 			StorageLayout storage;
 			PushConstantLayout constants;
-			UniformBlockLayout uniformBlocks;
+			
+			std::map<UniformBlockLayout::Key, UniformBlockLayout> uniforms;
+			std::map<std::wstring, UniformBlockLayout::Key> uniformKeys;
 
 			Configuration();
 			Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode);
