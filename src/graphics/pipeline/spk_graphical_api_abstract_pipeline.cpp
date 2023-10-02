@@ -2,6 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
+	void createOneLinerCode(std::string& p_vertexCode);
 	void addCustomStructuresToCode(std::string& p_vertexCode, std::string& p_fragmentCode);
 	void convertVulkanToOpenglCompatibleGLSLCode(std::string& p_vertexCode, std::string& p_fragmentCode);
 
@@ -55,6 +56,12 @@ namespace spk::GraphicalAPI
 
 		std::string fragmentName = p_fragmentShaderPath.filename().string();
 		std::string fragmentCode = spk::getFileContentAsString(p_fragmentShaderPath);
+
+		createOneLinerCode(vertexCode);
+		createOneLinerCode(fragmentCode);
+
+		spk::cout << "One liner vertex : " << spk::to_wstring(vertexCode) << std::endl;
+		spk::cout << "One liner fragment : " << spk::to_wstring(fragmentCode) << std::endl;
 
 		_loadAbstractPipeline(vertexName, vertexCode, fragmentName, fragmentCode);
 	}
