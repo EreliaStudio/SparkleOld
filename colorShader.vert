@@ -8,6 +8,16 @@ layout(push_constant) uniform PushConstant
 	mat4 rotation;
 } totallyNotTheSameAsStruct;
 
+void functionTest()
+{
+	
+}
+
+struct Test{
+	vec2 position;
+	vec4 color;
+};
+
 // This is an inline comment
 void main()
 {

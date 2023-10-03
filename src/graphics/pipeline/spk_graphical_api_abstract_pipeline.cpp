@@ -60,9 +60,6 @@ namespace spk::GraphicalAPI
 		createOneLinerCode(vertexCode);
 		createOneLinerCode(fragmentCode);
 
-		spk::cout << "One liner vertex : " << spk::to_wstring(vertexCode) << std::endl;
-		spk::cout << "One liner fragment : " << spk::to_wstring(fragmentCode) << std::endl;
-
 		_loadAbstractPipeline(vertexName, vertexCode, fragmentName, fragmentCode);
 	}
 }

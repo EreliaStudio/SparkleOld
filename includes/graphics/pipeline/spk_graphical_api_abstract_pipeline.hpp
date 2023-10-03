@@ -111,9 +111,19 @@ namespace spk::GraphicalAPI
 			PushConstantLayout constants;
 			std::vector<UniformBlockLayout> uniformBlocks;
 
+			bool isPushConstantUniformInstruction(const std::string &p_instruction);
 			bool isUniformLayoutInstruction(const std::string &p_instruction);
+			
+			void parseLayoutUniformInstruction_layoutInfo(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
+			void parseLayoutUniformInstruction_blockType(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
+			void parseLayoutUniformInstruction_content(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
+			void parseLayoutUniformInstruction_instanceName(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
 			void parseLayoutUniformInstruction(const std::string &p_instruction);
+
+			void parseLayoutPushConstantInstruction(const std::string &p_instruction);
+			
 			void parseLayoutBufferInstruction(const std::string &p_instruction);
+			
 			void parseLayoutInstruction(const std::string &p_instruction);
 
 			void parseStructInstruction(const std::string &p_instruction);
