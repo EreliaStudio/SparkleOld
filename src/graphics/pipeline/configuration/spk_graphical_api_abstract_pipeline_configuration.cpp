@@ -361,7 +361,7 @@ namespace spk::GraphicalAPI
 			std::string structName = match[1].str();
 			std::string innerData = match[2].str();
 
-			size_t structureSize;
+			size_t structureSize = 0;
 
 			std::regex re2(R"((\w+)\s+(\w+)\s*;)");
 			std::string::const_iterator searchStart(innerData.cbegin());
