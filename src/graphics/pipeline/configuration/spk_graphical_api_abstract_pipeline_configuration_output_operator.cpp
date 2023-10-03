@@ -20,7 +20,9 @@ namespace spk::GraphicalAPI
 
 	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::StorageLayout::Field& p_field)
 	{
-	p_os << L"Field{location: " << p_field.location << L", offset: " << p_field.offset << L", attribute: " << p_field.attribute << L"}";
+	p_os << L"\t\tLocation : " << p_field.location << std::endl;
+	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
+	p_os << L"\t\tAttribute : " << p_field.attribute;
 	return p_os;
 	}
 
@@ -38,11 +40,13 @@ namespace spk::GraphicalAPI
 	p_os << L"\ttype: " << p_block.type << std::endl;
 	p_os << L"\tkey: " << p_block.set << L" / " << p_block.binding << std::endl;
 	p_os << L"\tstride: " << p_block.stride << std::endl;
-	p_os << L"\tfields:" << std::endl;
+	p_os << L"\tfields:[" << std::endl;
 
 	for (auto it = p_block.fields.begin(); it != p_block.fields.end(); ++it)
 	{
-		p_os << L"" << *it << std::endl;
+		if (it != p_block.fields.begin())
+			p_os << std::endl;
+		p_os << *it << std::endl;
 	}
 
 	p_os << L"\t]\n";
@@ -52,7 +56,45 @@ namespace spk::GraphicalAPI
 
 	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::PushConstantLayout::Field& p_field)
 	{
-	p_os << L"Field{offset: " << p_field.offset << L", attribute: " << p_field.attribute << L"}";
+	p_os << L"\t\tName : " << p_field.name << std::endl;
+	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
+	p_os << L"\t\tAttribute : " << p_field.attribute;
 	return p_os;
+	}
+	
+	std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configuration::PushConstantLayout &p_pushConstantLayout)
+	{
+		p_os << L"\tname: " << p_pushConstantLayout.name << std::endl;
+		p_os << L"\ttype: " << p_pushConstantLayout.type << std::endl;
+		p_os << L"\tstride: " << p_pushConstantLayout.stride << std::endl;
+		p_os << L"\tfields:[" << std::endl;
+
+		for (auto it = p_pushConstantLayout.fields.begin(); it != p_pushConstantLayout.fields.end(); ++it)
+		{
+			if (it != p_pushConstantLayout.fields.begin())
+				p_os << std::endl;
+			p_os << *it << std::endl;
+		}
+
+		p_os << L"\t]\n";
+		p_os << L"}";
+		return p_os;
+	}
+	
+	std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configuration::StorageLayout &p_storageLayout)
+	{
+		p_os << L"\tstride: " << p_storageLayout.stride << std::endl;
+		p_os << L"\tfields:[" << std::endl;
+
+		for (auto it = p_storageLayout.fields.begin(); it != p_storageLayout.fields.end(); ++it)
+		{
+			if (it != p_storageLayout.fields.begin())
+				p_os << std::endl;
+			p_os << *it << std::endl;
+		}
+
+		p_os << L"\t]\n";
+		p_os << L"}";
+		return p_os;
 	}
 }

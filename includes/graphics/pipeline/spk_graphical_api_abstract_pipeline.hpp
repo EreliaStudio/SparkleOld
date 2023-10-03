@@ -57,6 +57,7 @@ namespace spk::GraphicalAPI
 
 				StorageLayout();
 				StorageLayout(const std::vector<Field> &p_fields);
+				friend std::wostream &operator<<(std::wostream &os, const StorageLayout &p_storageLayout);
 			};
 
 			struct PushConstantLayout
@@ -65,6 +66,7 @@ namespace spk::GraphicalAPI
 				{
 					size_t offset;
 					std::wstring name;
+					std::wstring type;
 					Data attribute;
 
 					Field();
@@ -72,12 +74,14 @@ namespace spk::GraphicalAPI
 					friend std::wostream &operator<<(std::wostream &os, const Field &p_field);
 				};
 
+				std::wstring name;
 				std::wstring type;
 				size_t stride;
 				std::vector<Field> fields;
 
 				PushConstantLayout();
 				PushConstantLayout(const std::vector<Field> &p_fields);
+				friend std::wostream &operator<<(std::wostream &os, const PushConstantLayout &p_pushConstantLayout);
 			};
 
 			struct UniformBlockLayout
@@ -113,6 +117,7 @@ namespace spk::GraphicalAPI
 
 			bool isPushConstantUniformInstruction(const std::string &p_instruction);
 			bool isUniformLayoutInstruction(const std::string &p_instruction);
+			bool isLayoutBufferInInstruction(const std::string &p_instruction);
 			
 			void parseLayoutUniformInstruction_layoutInfo(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
 			void parseLayoutUniformInstruction_blockType(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
@@ -120,6 +125,9 @@ namespace spk::GraphicalAPI
 			void parseLayoutUniformInstruction_instanceName(UniformBlockLayout& p_uniformBlockToFill, const std::string &p_instruction);
 			void parseLayoutUniformInstruction(const std::string &p_instruction);
 
+			void parseLayoutPushConstantInstruction_blockType(const std::string &p_instruction);
+			void parseLayoutPushConstantInstruction_content(const std::string &p_instruction);
+			void parseLayoutPushConstantInstruction_instanceName(const std::string &p_instruction);
 			void parseLayoutPushConstantInstruction(const std::string &p_instruction);
 			
 			void parseLayoutBufferInstruction(const std::string &p_instruction);
