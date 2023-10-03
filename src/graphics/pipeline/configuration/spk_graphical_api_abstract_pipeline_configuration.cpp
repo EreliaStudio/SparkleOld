@@ -143,7 +143,6 @@ namespace spk::GraphicalAPI
 
 				p_uniformBlockToFill.fields.push_back(field);
 
-				// Update the offset based on the type size
 				p_uniformBlockToFill.stride += fieldData.format * fieldData.size;
 			}
 			else
@@ -187,7 +186,7 @@ namespace spk::GraphicalAPI
 		if (std::regex_search(p_instruction, matchResults, blockTypeRegex)) {
 			constants.type = spk::to_wstring(matchResults[1]);
 		} else {
-			std::cout << "Block type not found" << std::endl;
+			spk::throwException(L"Block type not found for instruction [" + spk::to_wstring(p_instruction) + L"]");
 		}
 	}
 	
@@ -208,10 +207,13 @@ namespace spk::GraphicalAPI
 			newField.type = spk::to_wstring(dataType);
 			newField.name = spk::to_wstring(variableName);
 			newField.offset = constants.stride;
-			if (dataTypes.find(dataType) != dataTypes.end()) {
+			if (dataTypes.find(dataType) != dataTypes.end())
+			{
 				newField.attribute = dataTypes[dataType];
-			} else {
-				std::cout << "Invalid data type: " << dataType << std::endl;
+			}
+			else
+			{
+				spk::throwException(L"Invalid data type [" + spk::to_wstring(dataType) + L"] for instruction [" + spk::to_wstring(p_instruction) + L"]");
 			}
 			constants.fields.push_back(newField);
 			constants.stride += newField.attribute.format * newField.attribute.size;
@@ -223,11 +225,14 @@ namespace spk::GraphicalAPI
 		std::regex instanceNameRegex(R"(\}\s*(\w+)\s*)");
         std::smatch matchResults;
 
-        if (std::regex_search(p_instruction, matchResults, instanceNameRegex)) {
+        if (std::regex_search(p_instruction, matchResults, instanceNameRegex))
+		{
 			constants.name = spk::to_wstring(matchResults[1]);
-        } else {
-            std::cout << "Instance name not found" << std::endl;
         }
+		else
+		{
+			spk::throwException(L"Instance name not found for instruction [" + spk::to_wstring(p_instruction) + L"]");
+		}
 	}
 
 	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction(const std::string &p_instruction)
@@ -242,7 +247,6 @@ namespace spk::GraphicalAPI
 		std::regex bufferRegex("layout\\s*(?:\\(location\\s*=\\s*(\\d+)\\))?\\s*in\\s*(\\w+)\\s*(\\w+)");
 		std::smatch bufferMatch;
 
-		// Use regex to find matches
 		if (std::regex_search(p_instruction, bufferMatch, bufferRegex))
 		{
 			std::string locationStr = bufferMatch[1].str();
@@ -272,7 +276,7 @@ namespace spk::GraphicalAPI
 				}
 				else
 				{
-				spk::throwException(L"Unrecognized data type: " + spk::to_wstring(dataTypeStr));
+					spk::throwException(L"Unrecognized data type: " + spk::to_wstring(dataTypeStr));
 				}
 			}
 		}
@@ -349,7 +353,36 @@ namespace spk::GraphicalAPI
 
 	void AbstractPipeline::Configuration::parseStructInstruction(const std::string &p_instruction)
 	{
-		spk::cout << "Parsing Struct instruction [" << spk::to_wstring(p_instruction) << "]" << std::endl;
+		std::string input = "struct Test{vec2 position;vec4 color;}";
+		std::regex re(R"(struct\s+(\w+)\s*\{([^\}]+)\})");
+		std::smatch match;
+
+		if (std::regex_search(input, match, re)) {
+			std::string structName = match[1].str();
+			std::string innerData = match[2].str();
+
+			size_t structureSize;
+
+			std::regex re2(R"((\w+)\s+(\w+)\s*;)");
+			std::string::const_iterator searchStart(innerData.cbegin());
+			while (std::regex_search(searchStart, innerData.cend(), match, re2)) {
+				std::string type = match[1];
+				std::string varName = match[2];
+
+				if (dataTypes.contains(type) == false)
+				{
+					spk::throwException(L"Structure [" + spk::to_wstring(type) + L"] not recognized");
+				}
+
+				auto& data = dataTypes.at(type);
+
+				structureSize += data.size * data.format;
+
+				searchStart = match.suffix().first;
+			}
+
+			dataTypes[structName] = Data(structureSize);
+		}
 	}
 
 	void AbstractPipeline::Configuration::parseShaderInstruction(const std::string &p_instruction)

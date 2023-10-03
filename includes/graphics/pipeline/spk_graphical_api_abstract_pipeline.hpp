@@ -135,6 +135,7 @@ namespace spk::GraphicalAPI
 			void parseLayoutInstruction(const std::string &p_instruction);
 
 			void parseStructInstruction(const std::string &p_instruction);
+			
 			void parseShaderInstruction(const std::string &p_instruction);
 			void parseShaderCode(const std::string &p_vertexCode);
 			Configuration();
