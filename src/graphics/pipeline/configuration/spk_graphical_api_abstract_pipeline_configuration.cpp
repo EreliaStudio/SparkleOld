@@ -125,7 +125,7 @@ namespace spk::GraphicalAPI
 		std::smatch fieldMatch;
 		std::string::const_iterator searchStart(p_instruction.cbegin());
 
-		size_t currentOffset = 0; // Initialize offset
+		p_uniformBlockToFill.stride = 0;
 
 		while (std::regex_search(searchStart, p_instruction.cend(), fieldMatch, fieldRegex))
 		{
@@ -139,12 +139,12 @@ namespace spk::GraphicalAPI
 				UniformBlockLayout::Field field;
 				field.name = spk::to_wstring(fieldName);
 				field.attribute = fieldData;
-				field.offset = currentOffset;
+				field.offset = p_uniformBlockToFill.stride;
 
 				p_uniformBlockToFill.fields.push_back(field);
 
 				// Update the offset based on the type size
-				currentOffset += fieldData.size;
+				p_uniformBlockToFill.stride += fieldData.format * fieldData.size;
 			}
 			else
 			{
@@ -179,14 +179,107 @@ namespace spk::GraphicalAPI
 		uniformBlocks.push_back(newUniformBlock);
 	}
 
+	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_blockType(const std::string &p_instruction)
+	{
+		std::regex blockTypeRegex(R"(layout\s*\(push_constant\)\s*uniform\s*(\w+))");
+		std::smatch matchResults;
+
+		if (std::regex_search(p_instruction, matchResults, blockTypeRegex)) {
+			constants.type = spk::to_wstring(matchResults[1]);
+		} else {
+			std::cout << "Block type not found" << std::endl;
+		}
+	}
+	
+	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_content(const std::string &p_instruction)
+	{
+		std::regex contentRegex(R"(\{\s*(\w+)\s+(\w+)\s*;\s*\})");
+		auto contentBegin = std::sregex_iterator(p_instruction.begin(), p_instruction.end(), contentRegex);
+		auto contentEnd = std::sregex_iterator();
+
+		constants.stride = 0;
+		for (std::sregex_iterator i = contentBegin; i != contentEnd; ++i) {
+			PushConstantLayout::Field newField;
+
+			std::smatch contentMatch = *i;
+			std::string dataType = contentMatch[1];
+			std::string variableName = contentMatch[2];
+
+			newField.type = spk::to_wstring(dataType);
+			newField.name = spk::to_wstring(variableName);
+			newField.offset = constants.stride;
+			if (dataTypes.find(dataType) != dataTypes.end()) {
+				newField.attribute = dataTypes[dataType];
+			} else {
+				std::cout << "Invalid data type: " << dataType << std::endl;
+			}
+			constants.fields.push_back(newField);
+			constants.stride += newField.attribute.format * newField.attribute.size;
+		}
+	}
+	
+	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_instanceName(const std::string &p_instruction)
+	{
+		std::regex instanceNameRegex(R"(\}\s*(\w+)\s*)");
+        std::smatch matchResults;
+
+        if (std::regex_search(p_instruction, matchResults, instanceNameRegex)) {
+			constants.name = spk::to_wstring(matchResults[1]);
+        } else {
+            std::cout << "Instance name not found" << std::endl;
+        }
+	}
+
 	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction(const std::string &p_instruction)
 	{
-		spk::cout << "Parsing PushConstant instruction [" << spk::to_wstring(p_instruction) << "]" << std::endl;
+		parseLayoutPushConstantInstruction_blockType(p_instruction);
+		parseLayoutPushConstantInstruction_content(p_instruction);
+		parseLayoutPushConstantInstruction_instanceName(p_instruction);
 	}
 
 	void AbstractPipeline::Configuration::parseLayoutBufferInstruction(const std::string &p_instruction)
 	{
-		spk::cout << "Parsing Buffer instruction [" << spk::to_wstring(p_instruction) << "]" << std::endl;
+		std::regex bufferRegex("layout\\s*(?:\\(location\\s*=\\s*(\\d+)\\))?\\s*in\\s*(\\w+)\\s*(\\w+)");
+		std::smatch bufferMatch;
+
+		// Use regex to find matches
+		if (std::regex_search(p_instruction, bufferMatch, bufferRegex))
+		{
+			std::string locationStr = bufferMatch[1].str();
+			std::string dataTypeStr = bufferMatch[2].str();
+			std::string variableName = bufferMatch[3].str();
+
+			if (locationStr.empty())
+			{
+				spk::throwException(L"Location is not set for: " + spk::to_wstring(variableName));
+			}
+			else
+			{
+				size_t location = static_cast<size_t>(std::stoi(locationStr));
+
+				if (dataTypes.find(dataTypeStr) != dataTypes.end())
+				{
+					Data fieldData = dataTypes[dataTypeStr];
+
+					StorageLayout::Field newField;
+					newField.location = location;
+					newField.attribute = fieldData;
+					newField.offset = storage.stride;
+
+					storage.fields.push_back(newField);
+
+					storage.stride += fieldData.format * fieldData.size;
+				}
+				else
+				{
+				spk::throwException(L"Unrecognized data type: " + spk::to_wstring(dataTypeStr));
+				}
+			}
+		}
+		else
+		{
+			spk::throwException(L"Invalid buffer instruction: " + spk::to_wstring(p_instruction));
+		}
 	}
 
 	bool AbstractPipeline::Configuration::isUniformLayoutInstruction(const std::string &p_instruction)
@@ -203,6 +296,22 @@ namespace spk::GraphicalAPI
 		}
 
 		return true;
+	}
+
+	bool AbstractPipeline::Configuration::isLayoutBufferInInstruction(const std::string &p_instruction)
+	{
+		std::istringstream iss(p_instruction);
+		std::string word;
+
+		while (iss >> word)
+		{
+			if (word == "in")
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	bool AbstractPipeline::Configuration::isPushConstantUniformInstruction(const std::string &p_instruction)
@@ -232,7 +341,7 @@ namespace spk::GraphicalAPI
 				parseLayoutUniformInstruction(p_instruction);
 			}
 		}
-		else
+		else if (isLayoutBufferInInstruction(p_instruction) == true)
 		{
 			parseLayoutBufferInstruction(p_instruction);
 		}
@@ -269,17 +378,21 @@ namespace spk::GraphicalAPI
 			parseShaderInstruction(instructions[i]);
 		}
 
-		spk::cout << "Uniform blocks :" << std::endl;
-		for (size_t i = 0; i < uniformBlocks.size(); i++)
-		{
-			spk::cout << uniformBlocks[i] << std::endl;
-		}
 	}
 
 	AbstractPipeline::Configuration::Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode) : Configuration()
 	{
 		parseShaderCode(p_vertexCode.substr(p_vertexCode.find_first_of("\n") + 1));
 		parseShaderCode(p_fragmentCode.substr(p_fragmentCode.find_first_of("\n") + 1));
+
+		spk::cout << L"Configuration : " << std::endl;
+		spk::cout << L"Storage : " << std::endl << storage << std::endl;
+		spk::cout << L"PushConstant : " << std::endl << constants << std::endl;
+		spk::cout << L"Uniforms : " << std::endl;
+		for (size_t i = 0; i < uniformBlocks.size(); i++)
+		{
+			spk::cout << uniformBlocks[i] << std::endl;
+		}
 
 		exit(1);
 	}
