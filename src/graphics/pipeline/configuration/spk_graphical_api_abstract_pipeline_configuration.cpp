@@ -403,11 +403,6 @@ namespace spk::GraphicalAPI
 
 		for (size_t i = 0; i < instructions.size(); i++)
 		{
-			spk::cout << "Instruction [" << i << "] - [" << spk::to_wstring(instructions[i]) << "]" << std::endl;
-		}
-
-		for (size_t i = 0; i < instructions.size(); i++)
-		{
 			parseShaderInstruction(instructions[i]);
 		}
 
@@ -417,16 +412,5 @@ namespace spk::GraphicalAPI
 	{
 		parseShaderCode(p_vertexCode.substr(p_vertexCode.find_first_of("\n") + 1));
 		parseShaderCode(p_fragmentCode.substr(p_fragmentCode.find_first_of("\n") + 1));
-
-		spk::cout << L"Configuration : " << std::endl;
-		spk::cout << L"Storage : " << std::endl << storage << std::endl;
-		spk::cout << L"PushConstant : " << std::endl << constants << std::endl;
-		spk::cout << L"Uniforms : " << std::endl;
-		for (size_t i = 0; i < uniformBlocks.size(); i++)
-		{
-			spk::cout << uniformBlocks[i] << std::endl;
-		}
-
-		exit(1);
 	}
 }
