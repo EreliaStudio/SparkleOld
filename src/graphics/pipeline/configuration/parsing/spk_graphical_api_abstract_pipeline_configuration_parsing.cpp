@@ -88,6 +88,25 @@ namespace spk::GraphicalAPI
 
 		return false;
 	}
+	
+	void AbstractPipeline::Configuration::parseLayoutInstruction(const std::string &p_instruction)
+	{
+		if (isUniformLayoutInstruction(p_instruction) == true)
+		{
+			if (isPushConstantUniformInstruction(p_instruction) == true)
+			{
+				parseLayoutPushConstantInstruction(p_instruction);
+			}
+			else
+			{
+				parseLayoutUniformInstruction(p_instruction);
+			}
+		}
+		else if (isLayoutBufferInInstruction(p_instruction) == true)
+		{
+			parseLayoutBufferInstruction(p_instruction);
+		}
+	}
 
 	void AbstractPipeline::Configuration::parseShaderInstruction(const std::string &p_instruction)
 	{
