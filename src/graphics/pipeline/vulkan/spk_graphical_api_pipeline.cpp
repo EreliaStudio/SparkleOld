@@ -7,7 +7,6 @@ namespace spk::GraphicalAPI
 	Pipeline::Pipeline(const std::filesystem::path& p_vertexShaderPath, const std::filesystem::path& p_fragmentShaderPath) :
 		spk::GraphicalAPI::AbstractPipeline()
 	{
-		_createPipelineLayout();
 		loadFromFile(p_vertexShaderPath, p_fragmentShaderPath);
 	}
 
@@ -32,13 +31,19 @@ namespace spk::GraphicalAPI
 		// _linkedRenderer->currentCommandBuffer().drawIndexed(static_cast<uint32_t>(p_nbIndexes), 1, 0, 0, 0);
 	}
 
-	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
+	std::unique_ptr<Pipeline::Object> Pipeline::createObject()
 	{
-		return (std::make_shared<VulkanObject>(this, _linkedDevice, _configuration));
+		return (std::make_unique<VulkanObject>(this, _linkedDevice, _configuration));
 	}
 
 	void Pipeline::_createPipelineLayout()
 	{
+		vk::PushConstantRange pushConstantRange(
+			vk::ShaderStageFlagBits::eAll,
+			0,
+			_configuration.constants.stride
+		);
+
 		std::vector<vk::DescriptorSetLayout> descriptorSetLayouts = { };
 
 		vk::PipelineLayoutCreateInfo pipelineLayoutInfo(
@@ -46,14 +51,26 @@ namespace spk::GraphicalAPI
 			static_cast<uint32_t>(descriptorSetLayouts.size()), descriptorSetLayouts.data(),
 			0, nullptr ///< Push constant
 		);
+		if (_configuration.constants.stride > 0)
+		{
+			pipelineLayoutInfo.pushConstantRangeCount = 1;
+			pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+		}
 		if (_linkedDevice->device().createPipelineLayout(&pipelineLayoutInfo, nullptr, &_pipelineLayout) != vk::Result::eSuccess)
 			spk::throwException(L"Failed to create pipeline layout");
+	}
+
+	std::unique_ptr<Pipeline::UniformBlock> Pipeline::_createUniformBlock(const Configuration::UniformBlockLayout& p_layout)
+	{
+
 	}
 
 	void Pipeline::_loadProgram(
 		const std::string& p_vertexName, const std::string& p_vertexCode,
 		const std::string& p_fragmentName, const std::string& p_fragmentCode)
 	{
+		_createPipelineLayout();
+
 		std::vector<unsigned int> vertexSPIRVCode;
 		std::vector<unsigned int> fragmentSPIRVCode;
 
