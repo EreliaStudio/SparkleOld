@@ -76,6 +76,7 @@ namespace spk::GraphicalAPI
 				Device* p_linkedDevice, const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
 
 			void push();
+			void updateConstants();
 
 			void activate();
 			void deactivate();
@@ -106,6 +107,7 @@ namespace spk::GraphicalAPI
 		std::unique_ptr<VulkanHandle> _vulkanHandle;
 
 		void _createPipelineLayout(/*vk::DescriptorSetLayout p_descriptorSetLayout*/);
+		std::unique_ptr<UniformBlock> _createUniformBlock(const Configuration::UniformBlockLayout& p_layout);
 
 		void _loadProgram(
 			const std::string& p_vertexName, const std::string& p_vertexCode,
@@ -123,6 +125,6 @@ namespace spk::GraphicalAPI
 
 		void launch(const size_t& p_nbIndexes);
 
-		std::shared_ptr<Pipeline::Object> createObject();
+		std::unique_ptr<Pipeline::Object> createObject();
 	}; // class Pipeline
 } // namespace spk::GraphicalAPI
