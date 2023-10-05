@@ -89,7 +89,7 @@ namespace spk::GraphicalAPI
 		return false;
 	}
 	
-	void AbstractPipeline::Configuration::parseLayoutInstruction(const std::string &p_instruction)
+	void AbstractPipeline::Configuration::parseLayoutInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
 	{
 		if (isUniformLayoutInstruction(p_instruction) == true)
 		{
@@ -102,17 +102,17 @@ namespace spk::GraphicalAPI
 				parseLayoutUniformInstruction(p_instruction);
 			}
 		}
-		else if (isLayoutBufferInInstruction(p_instruction) == true)
+		else if (isLayoutBufferInInstruction(p_instruction) == true && p_bufferParsingMode == true)
 		{
 			parseLayoutBufferInstruction(p_instruction);
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseShaderInstruction(const std::string &p_instruction)
+	void AbstractPipeline::Configuration::parseShaderInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
 	{
 		if (p_instruction.find("layout") == 0)
 		{
-			parseLayoutInstruction(p_instruction);
+			parseLayoutInstruction(p_instruction, p_bufferParsingMode);
 		}
 		else if (p_instruction.find("struct") == 0)
 		{
@@ -120,13 +120,13 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseShaderCode(const std::string &p_shaderCode)
+	void AbstractPipeline::Configuration::parseShaderCode(const std::string &p_shaderCode, const bool& p_bufferParsingMode)
 	{
 		std::vector<std::string> instructions = splitShaderCodeIntoInstruction(p_shaderCode);
 
 		for (size_t i = 0; i < instructions.size(); i++)
 		{
-			parseShaderInstruction(instructions[i]);
+			parseShaderInstruction(instructions[i], p_bufferParsingMode);
 		}
 	}
 }

@@ -30,43 +30,9 @@ namespace spk::GraphicalAPI
 	{
 	}
 
-	void AbstractPipeline::Configuration::parseStructInstruction(const std::string &p_instruction)
-	{
-		std::string input = "struct Test{vec2 position;vec4 color;}";
-		std::regex re(R"(struct\s+(\w+)\s*\{([^\}]+)\})");
-		std::smatch match;
-
-		if (std::regex_search(input, match, re)) {
-			std::string structName = match[1].str();
-			std::string innerData = match[2].str();
-
-			size_t structureSize = 0;
-
-			std::regex re2(R"((\w+)\s+(\w+)\s*;)");
-			std::string::const_iterator searchStart(innerData.cbegin());
-			while (std::regex_search(searchStart, innerData.cend(), match, re2)) {
-				std::string type = match[1];
-				std::string varName = match[2];
-
-				if (dataTypes.contains(type) == false)
-				{
-					spk::throwException(L"Structure [" + spk::to_wstring(type) + L"] not recognized");
-				}
-
-				auto& data = dataTypes.at(type);
-
-				structureSize += data.size * data.format;
-
-				searchStart = match.suffix().first;
-			}
-
-			dataTypes[structName] = Data(structureSize);
-		}
-	}
-
 	AbstractPipeline::Configuration::Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode) : Configuration()
 	{
-		parseShaderCode(p_vertexCode.substr(p_vertexCode.find_first_of("\n") + 1));
-		parseShaderCode(p_fragmentCode.substr(p_fragmentCode.find_first_of("\n") + 1));
+		parseShaderCode(p_vertexCode.substr(p_vertexCode.find_first_of("\n") + 1), true);
+		parseShaderCode(p_fragmentCode.substr(p_fragmentCode.find_first_of("\n") + 1), false);
 	}
 }
