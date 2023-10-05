@@ -32,9 +32,9 @@ namespace spk::GraphicalAPI
 		// _linkedRenderer->currentCommandBuffer().drawIndexed(static_cast<uint32_t>(p_nbIndexes), 1, 0, 0, 0);
 	}
 
-	std::shared_ptr<Pipeline::Object> Pipeline::createObject()
+	std::unique_ptr<Pipeline::Object> Pipeline::createObject()
 	{
-		return (std::make_shared<VulkanObject>(this, _linkedDevice, _configuration));
+		return (std::make_unique<VulkanObject>(this, _linkedDevice, _configuration));
 	}
 
 	void Pipeline::_createPipelineLayout()
@@ -48,6 +48,11 @@ namespace spk::GraphicalAPI
 		);
 		if (_linkedDevice->device().createPipelineLayout(&pipelineLayoutInfo, nullptr, &_pipelineLayout) != vk::Result::eSuccess)
 			spk::throwException(L"Failed to create pipeline layout");
+	}
+
+	std::unique_ptr<Pipeline::UniformBlock> Pipeline::_createUniformBlock(const Configuration::UniformBlockLayout& p_layout)
+	{
+
 	}
 
 	void Pipeline::_loadProgram(

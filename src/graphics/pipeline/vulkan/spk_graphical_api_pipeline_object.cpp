@@ -17,6 +17,11 @@ namespace spk::GraphicalAPI
 			_createIndexBuffers();
 	}
 
+	void Pipeline::VulkanObject::updateConstants()
+	{
+
+	}
+	
 	void Pipeline::VulkanObject::activate()
 	{
 
