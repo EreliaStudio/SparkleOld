@@ -55,7 +55,7 @@ public:
 			InstructionSet(const Input &p_input);
 			const std::vector<Instruction>& instructions() const;
 		};
-		
+
 		struct Data
 		{
 			enum class Type
@@ -93,6 +93,16 @@ public:
 
 		class ConfigurationLayout
 		{
+		public:
+			struct Field
+			{
+				Data data;
+				size_t location;
+				size_t offset;
+
+				Field(const Data& p_data, const size_t& p_offset);
+				Field(const Data& p_data, const size_t& p_location, const size_t& p_offset);
+			};
 		protected:
 			const std::map<std::string, Data>& structures;
 			const std::map<std::string, Data>& standaloneStructures;
@@ -106,14 +116,6 @@ public:
 		class StorageBufferLayout : public ConfigurationLayout
 		{
 		public:
-			struct Field
-			{
-				Data data;
-				size_t location;
-				size_t offset;
-
-				Field(const Data& p_data = Data(), const size_t& p_location = 0, const size_t& p_offset = 0);
-			};
 
 		private:
 			size_t _stride;
