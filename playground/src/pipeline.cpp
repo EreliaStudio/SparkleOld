@@ -320,29 +320,22 @@ const AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayou
 }
 
 AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockCollection(const StructureLayout& p_structureLayout) :
-	ConfigurationLayout(p_structureLayout)
+	_structureLayout(p_structureLayout)
 {
 }
 
 void AbstractPipeline::Configuration::UniformBlockCollection::treat(const ShaderModule::Instruction &p_instruction)
 {
-	UniformBlockLayout newUniformBlockLayout(structureLayout);
+	UniformBlockLayout newUniformBlockLayout(_structureLayout);
 
 	newUniformBlockLayout.treat(p_instruction);
 
-	if (UniformBlockLayouts.contains(newUniformBlockLayout.key()) == true)
-	{
-		const auto &oldBlock = UniformBlockLayouts.at(newUniformBlockLayout.key());
-		if (oldBlock.stride() != newUniformBlockLayout.stride())
-		{
-			spk::throwException(L"Instruction [" + spk::to_wstring(p_instruction.code) + L"}\n - Uniform block [set = " + std::to_wstring(newUniformBlockLayout.key().set) + L" / binding = " + std::to_wstring(newUniformBlockLayout.key().binding) + L"] already exist and have a different composition");
-		}
-	}
+	_uniformBlockLayouts.push_back(newUniformBlockLayout);
 }
 
-const std::vector<AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Key> &AbstractPipeline::Configuration::UniformBlockCollection::subscribedUniformBlockLayouts() const
+const std::vector<AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout> &AbstractPipeline::Configuration::UniformBlockCollection::uniformBlockLayouts() const
 {
-	return (_subscribedUniformBlockLayouts);
+	return (_uniformBlockLayouts);
 }
 
 void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
