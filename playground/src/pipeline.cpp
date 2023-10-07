@@ -2,55 +2,71 @@
 
 #include <regex>
 
-void AbstractPipeline::Input::checkCodeValidity()
+void ShaderModule::_checkCodeValidity()
 {
 }
 
-AbstractPipeline::Input::Input(const std::filesystem::path &p_filePath) : Input(p_filePath.filename().string(), spk::getFileContentAsString(p_filePath))
+ShaderModule::ShaderModule(const std::filesystem::path &p_filePath) : ShaderModule::ShaderModule(p_filePath.filename().string(), spk::getFileContentAsString(p_filePath))
 {}
 
-AbstractPipeline::Input::Input(const std::string &p_name, const std::string &p_code) :
-	name(p_name),
-	code(p_code)
+ShaderModule::ShaderModule(const std::string &p_name, const std::string &p_code) :
+	_name(p_name),
+	_code(p_code)
 {
-	checkCodeValidity();
+	_checkCodeValidity();
+	_parseInstructions(_compactify(p_code));
 }
 
-AbstractPipeline::Configuration::InstructionSet::Instruction::Instruction(const AbstractPipeline::Configuration::InstructionSet::Instruction::Type &p_type, const std::string &p_code) :
+const std::string& ShaderModule::name() const
+{
+	return (_name);
+}
+
+const std::string& ShaderModule::code() const
+{
+	return (_code);
+}
+
+const ShaderModule::InstructionSet& ShaderModule::instructions() const
+{
+	return (_instructions);
+}
+
+ShaderModule::Instruction::Instruction(const ShaderModule::Instruction::Type &p_type, const std::string &p_code) :
 	type(p_type),
 	code(p_code)
 {
 }
 
-std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configuration::InstructionSet::Instruction::Type &p_type)
+std::wostream &operator<<(std::wostream &p_os, const ShaderModule::Instruction::Type &p_type)
 {
 	switch (p_type)
 	{
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::StorageBuffer:
+	case ShaderModule::Instruction::Type::StorageBuffer:
 		p_os << L"StorageBuffer";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::OutputBuffer:
+	case ShaderModule::Instruction::Type::OutputBuffer:
 		p_os << L"OutputBuffer";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::UniformBlock:
+	case ShaderModule::Instruction::Type::UniformBlock:
 		p_os << L"UniformBlock";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::SamplerUniform:
+	case ShaderModule::Instruction::Type::SamplerUniform:
 		p_os << L"SamplerUniform";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::PushConstant:
+	case ShaderModule::Instruction::Type::PushConstant:
 		p_os << L"PushConstant";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::Function:
+	case ShaderModule::Instruction::Type::Function:
 		p_os << L"Function";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::Structure:
+	case ShaderModule::Instruction::Type::Structure:
 		p_os << L"Structure";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::Version:
+	case ShaderModule::Instruction::Type::Version:
 		p_os << L"Version";
 		break;
-	case AbstractPipeline::Configuration::InstructionSet::Instruction::Type::Error:
+	case ShaderModule::Instruction::Type::Error:
 		p_os << L"Error";
 		break;
 	default:
@@ -60,7 +76,7 @@ std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configura
 	return (p_os);
 }
 
-std::string AbstractPipeline::Configuration::InstructionSet::compactify(const std::string &p_code)
+std::string ShaderModule::_compactify(const std::string &p_code)
 {
 	std::string firstLine = p_code.substr(0, p_code.find('\n') + 1);
 	std::string restOfTheCode = p_code.substr(p_code.find('\n') + 1);
@@ -82,7 +98,7 @@ std::string AbstractPipeline::Configuration::InstructionSet::compactify(const st
 	return (firstLine + restOfTheCode);
 }
 
-void AbstractPipeline::Configuration::InstructionSet::parseInstructions(const std::string &p_code)
+void ShaderModule::_parseInstructions(const std::string &p_code)
 {
 	int braceCount = 0;
 	bool requiresSemicolon = false;
@@ -113,7 +129,7 @@ void AbstractPipeline::Configuration::InstructionSet::parseInstructions(const st
 
 		if ((c == ';' || ((c == '}' || c == '\n') && !requiresSemicolon)) && braceCount == 0)
 		{
-			_instructions.emplace_back(determineInstructionType(newInstruction), newInstruction);
+			_instructions.emplace_back(_determineInstructionType(newInstruction), newInstruction);
 
 			newInstruction.clear();
 			requiresSemicolon = false;
@@ -121,7 +137,7 @@ void AbstractPipeline::Configuration::InstructionSet::parseInstructions(const st
 	}
 }
 
-AbstractPipeline::Configuration::InstructionSet::Instruction::Type AbstractPipeline::Configuration::InstructionSet::determineInstructionType(const std::string &p_instruction)
+ShaderModule::Instruction::Type ShaderModule::_determineInstructionType(const std::string &p_instruction)
 {
 	std::vector<std::pair<std::regex, Instruction::Type>> rules = {
 		{std::regex(R"(#version\s+\d+)"), Instruction::Type::Version},
@@ -141,16 +157,6 @@ AbstractPipeline::Configuration::InstructionSet::Instruction::Type AbstractPipel
 		}
 	}
 	return Instruction::Type::Error;
-}
-
-AbstractPipeline::Configuration::InstructionSet::InstructionSet(const Input &p_input)
-{
-	parseInstructions(compactify(p_input.code));
-}
-
-const std::vector<AbstractPipeline::Configuration::InstructionSet::Instruction> &AbstractPipeline::Configuration::InstructionSet::instructions() const
-{
-	return (_instructions);
 }
 
 AbstractPipeline::Configuration::Data::Data(const Type &p_type, const size_t &p_format, const size_t &p_size) : type(p_type),
@@ -199,7 +205,7 @@ void AbstractPipeline::Configuration::StructureLayout::reset()
 	};
 }
 
-void AbstractPipeline::Configuration::StructureLayout::treat(const AbstractPipeline::Configuration::InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::StructureLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 }
 
@@ -241,7 +247,7 @@ AbstractPipeline::Configuration::StorageBufferLayout::StorageBufferLayout(const 
 {
 }
 
-void AbstractPipeline::Configuration::StorageBufferLayout::treat(const AbstractPipeline::Configuration::InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::StorageBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 	spk::cout << "Parsing StorageBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
@@ -263,7 +269,7 @@ AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(
 {
 }
 
-void AbstractPipeline::Configuration::PushConstantLayout::treat(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::PushConstantLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 	spk::cout << "Parsing PushConstant instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
@@ -300,7 +306,7 @@ AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::UniformBlock(
 {
 }
 
-void AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::treat(const AbstractPipeline::Configuration::InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::treat(const ShaderModule::Instruction &p_instruction)
 {
 	spk::cout << "Parsing UniformBlock instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
@@ -330,7 +336,7 @@ AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout(const st
 {
 }
 
-void AbstractPipeline::Configuration::UniformBlockLayout::treat(const AbstractPipeline::Configuration::InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::UniformBlockLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 	UniformBlock newUniformBlock;
 
@@ -362,7 +368,7 @@ AbstractPipeline::Configuration::OutputBufferLayout::OutputBufferLayout(const st
 {
 }
 
-void AbstractPipeline::Configuration::OutputBufferLayout::treat(const AbstractPipeline::Configuration::InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::OutputBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 	spk::cout << "Parsing OutputBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
@@ -377,50 +383,50 @@ const std::vector<AbstractPipeline::Configuration::OutputBufferLayout::Field> &A
 	return (_fields);
 }
 
-void AbstractPipeline::Configuration::_parseVersion(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
 {
 	// Do nothing
 }
 
-void AbstractPipeline::Configuration::_parseStorageBuffer(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseStorageBuffer(const ShaderModule::Instruction &p_instruction)
 {
 	_storageBufferLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseOutputBuffer(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseOutputBuffer(const ShaderModule::Instruction &p_instruction)
 {
 	_outputBufferLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parsePushConstant(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parsePushConstant(const ShaderModule::Instruction &p_instruction)
 {
 	_pushConstantLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseUniformBlock(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseUniformBlock(const ShaderModule::Instruction &p_instruction)
 {
 	_uniformBlockLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseStructure(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseStructure(const ShaderModule::Instruction &p_instruction)
 {
 	_structureLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseFunction(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseFunction(const ShaderModule::Instruction &p_instruction)
 {
 	// Do nothing
 }
 
-void AbstractPipeline::Configuration::_parseError(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseError(const ShaderModule::Instruction &p_instruction)
 {
 	spk::throwException(L"A non-recognized instruction detected :\n- [" + spk::to_wstring(p_instruction.code) + L"]");
 }
 
-void AbstractPipeline::Configuration::_parseInstruction(const InstructionSet::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseInstruction(const ShaderModule::Instruction &p_instruction)
 {
 	// Declare an array of member function pointers, make sure the order is correct.
-	void (AbstractPipeline::Configuration::*handlerArray[])(const InstructionSet::Instruction &) = {
+	void (AbstractPipeline::Configuration::*handlerArray[])(const ShaderModule::Instruction &) = {
 		&AbstractPipeline::Configuration::_parseVersion,		 // 0b0000000000000001
 		&AbstractPipeline::Configuration::_parseStorageBuffer, // 0b0000000000000010
 		&AbstractPipeline::Configuration::_parseOutputBuffer,	 // 0b0000000000000100
@@ -439,10 +445,10 @@ void AbstractPipeline::Configuration::_parseInstruction(const InstructionSet::In
 	(this->*(handlerArray[index]))(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseInstructionSet(const InstructionSet &p_instructionSet, const int &p_typeMask)
+void AbstractPipeline::Configuration::_parseInstructionSet(const ShaderModule::InstructionSet &p_instructionSet, const int &p_typeMask)
 {
 	_structureLayout.reset();
-	for (const auto &instruction : p_instructionSet.instructions())
+	for (const auto &instruction : p_instructionSet)
 	{
 		if (p_typeMask & static_cast<int>(instruction.type))
 		{
@@ -451,18 +457,19 @@ void AbstractPipeline::Configuration::_parseInstructionSet(const InstructionSet 
 	}
 }
 
-AbstractPipeline::Configuration::Configuration(const Input &p_vertexInput, const Input &p_fragmentInput) :
+AbstractPipeline::Configuration::Configuration(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) :
 	_structureLayout(),
 	_storageBufferLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
 	_outputBufferLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
 	_pushConstantLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
 	_uniformBlockLayout(_structureLayout.structures(), _structureLayout.standaloneStructures())
 {
-	_parseInstructionSet(InstructionSet(p_vertexInput), _vertexTypeMask);
-	_parseInstructionSet(InstructionSet(p_fragmentInput), _fragmentTypeMask);
+	_parseInstructionSet(p_vertexInput.instructions(), _vertexTypeMask);
+	_parseInstructionSet(p_fragmentInput.instructions(), _fragmentTypeMask);
 }
 
-void AbstractPipeline::_loadPipeline(const Input &p_vertexInput, const Input &p_fragmentInput)
+void AbstractPipeline::_loadPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput)
 {
-	_loadProgram(Configuration(p_vertexInput, p_fragmentInput), p_vertexInput, p_fragmentInput);
+	Configuration configuration = Configuration(p_vertexInput, p_fragmentInput);
+	_loadProgram(configuration, p_vertexInput, p_fragmentInput);
 }

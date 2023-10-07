@@ -2,60 +2,58 @@
 
 #include "sparkle.hpp"
 
+class ShaderModule
+{
+public:
+	class Instruction
+	{
+	public:
+		enum class Type
+		{
+			Version = 0b0000000000000001,
+			StorageBuffer = 0b0000000000000010,
+			OutputBuffer = 0b0000000000000100,
+			PushConstant = 0b0000000000001000,
+			SamplerUniform = 0b0000000000010000,
+			UniformBlock = 0b0000000000100000,
+			Structure = 0b0000000001000000,
+			Function = 0b0000000010000000,
+			Error = 0b0000000100000000
+		};
+
+		Type type;
+		std::string code;
+
+		Instruction(const Type &p_type, const std::string &p_code);
+		friend std::wostream &operator<<(std::wostream &p_os, const Type &p_type);
+	};
+	using InstructionSet = std::vector<Instruction>;
+
+private:
+	std::string _name;
+	std::string _code;
+	InstructionSet _instructions;
+
+	void _checkCodeValidity();
+	std::string _compactify(const std::string &p_code);
+	Instruction::Type _determineInstructionType(const std::string &p_instruction);
+	void _parseInstructions(const std::string &p_code);
+
+public:
+	ShaderModule(const std::filesystem::path &p_filePath);
+	ShaderModule(const std::string &p_name, const std::string &p_code);
+
+	const std::string& name() const;
+	const std::string& code() const;
+	const InstructionSet& instructions() const;
+};
+
 class AbstractPipeline
 {
 public:
-	struct Input
-	{
-		std::string name;
-		std::string code;
-
-		void checkCodeValidity();
-		Input(const std::filesystem::path &p_filePath);
-		Input(const std::string &p_name, const std::string &p_code);
-	};
-
 	class Configuration
 	{
 	public:
-		class InstructionSet
-		{
-		public:
-			class Instruction
-			{
-			public:
-				enum class Type
-				{
-					Version = 0b0000000000000001,
-					StorageBuffer = 0b0000000000000010,
-					OutputBuffer = 0b0000000000000100,
-					PushConstant = 0b0000000000001000,
-					SamplerUniform = 0b0000000000010000,
-					UniformBlock = 0b0000000000100000,
-					Structure = 0b0000000001000000,
-					Function = 0b0000000010000000,
-					Error = 0b0000000100000000
-				};
-
-				Type type;
-				std::string code;
-
-				Instruction(const Type &p_type, const std::string &p_code);
-				friend std::wostream &operator<<(std::wostream &p_os, const Type &p_type);
-			};
-
-		private:
-			std::vector<Instruction> _instructions;
-
-			std::string compactify(const std::string &p_code);
-			Instruction::Type determineInstructionType(const std::string &p_instruction);
-			void parseInstructions(const std::string &p_code);
-
-		public:
-			InstructionSet(const Input &p_input);
-			const std::vector<Instruction>& instructions() const;
-		};
-
 		struct Data
 		{
 			enum class Type
@@ -85,7 +83,7 @@ public:
 			StructureLayout();
 			void reset();
 
-			void treat(const InstructionSet::Instruction &p_instruction);
+			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const std::map<std::string, Data>& structures() const;
 			const std::map<std::string, Data>& standaloneStructures() const;
@@ -110,7 +108,7 @@ public:
 		public:
 			ConfigurationLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-			virtual void treat(const InstructionSet::Instruction &p_instruction) = 0;
+			virtual void treat(const ShaderModule::Instruction &p_instruction) = 0;
 		};
 
 		class StorageBufferLayout : public ConfigurationLayout
@@ -124,7 +122,7 @@ public:
 		public:
 			StorageBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-			void treat(const InstructionSet::Instruction &p_instruction);
+			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const size_t& stride() const;
 			const std::vector<Field>& fields() const ;
@@ -148,7 +146,7 @@ public:
 		public:
 			PushConstantLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-			void treat(const InstructionSet::Instruction &p_instruction);
+			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const size_t& stride() const;
 			const std::vector<Field>& fields() const ;
@@ -193,7 +191,7 @@ public:
 			public:
 				UniformBlock();
 
-				void treat(const InstructionSet::Instruction &p_instruction);
+				void treat(const ShaderModule::Instruction &p_instruction);
 
 				const Key& key() const;
 				const Mode& mode() const;
@@ -210,7 +208,7 @@ public:
 		public:
 			UniformBlockLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-			void treat(const InstructionSet::Instruction &p_instruction);
+			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const std::vector<UniformBlock::Key>& subscribedUniformBlocks() const;
 		};
@@ -234,26 +232,26 @@ public:
 		public:
 			OutputBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-			void treat(const InstructionSet::Instruction &p_instruction);
+			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const size_t& stride() const;
 			const std::vector<Field>& fields() const;
 		};
 
 	private:
-		int _vertexTypeMask = static_cast<int>(InstructionSet::Instruction::Type::Version) |
-							  static_cast<int>(InstructionSet::Instruction::Type::Structure) |
-							  static_cast<int>(InstructionSet::Instruction::Type::PushConstant) |
-							  static_cast<int>(InstructionSet::Instruction::Type::SamplerUniform) |
-							  static_cast<int>(InstructionSet::Instruction::Type::StorageBuffer) |
-							  static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
+		int _vertexTypeMask = static_cast<int>(ShaderModule::Instruction::Type::Version) |
+							  static_cast<int>(ShaderModule::Instruction::Type::Structure) |
+							  static_cast<int>(ShaderModule::Instruction::Type::PushConstant) |
+							  static_cast<int>(ShaderModule::Instruction::Type::SamplerUniform) |
+							  static_cast<int>(ShaderModule::Instruction::Type::StorageBuffer) |
+							  static_cast<int>(ShaderModule::Instruction::Type::UniformBlock);
 
-		int _fragmentTypeMask = static_cast<int>(InstructionSet::Instruction::Type::Version) |
-								static_cast<int>(InstructionSet::Instruction::Type::Structure) |
-								static_cast<int>(InstructionSet::Instruction::Type::PushConstant) |
-								static_cast<int>(InstructionSet::Instruction::Type::SamplerUniform) |
-								static_cast<int>(InstructionSet::Instruction::Type::OutputBuffer) |
-								static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
+		int _fragmentTypeMask = static_cast<int>(ShaderModule::Instruction::Type::Version) |
+								static_cast<int>(ShaderModule::Instruction::Type::Structure) |
+								static_cast<int>(ShaderModule::Instruction::Type::PushConstant) |
+								static_cast<int>(ShaderModule::Instruction::Type::SamplerUniform) |
+								static_cast<int>(ShaderModule::Instruction::Type::OutputBuffer) |
+								static_cast<int>(ShaderModule::Instruction::Type::UniformBlock);
 
 		StructureLayout _structureLayout;
 		StorageBufferLayout _storageBufferLayout;
@@ -261,26 +259,26 @@ public:
 		PushConstantLayout _pushConstantLayout;
 		UniformBlockLayout _uniformBlockLayout;
 
-		void _parseVersion(const InstructionSet::Instruction& p_instruction);
-		void _parseStorageBuffer(const InstructionSet::Instruction& p_instruction);
-		void _parseOutputBuffer(const InstructionSet::Instruction& p_instruction);
-		void _parsePushConstant(const InstructionSet::Instruction& p_instruction);
-		void _parseUniformBlock(const InstructionSet::Instruction& p_instruction);
-		void _parseStructure(const InstructionSet::Instruction& p_instruction);
-		void _parseFunction(const InstructionSet::Instruction& p_instruction);
-		void _parseError(const InstructionSet::Instruction& p_instruction);
+		void _parseVersion(const ShaderModule::Instruction& p_instruction);
+		void _parseStorageBuffer(const ShaderModule::Instruction& p_instruction);
+		void _parseOutputBuffer(const ShaderModule::Instruction& p_instruction);
+		void _parsePushConstant(const ShaderModule::Instruction& p_instruction);
+		void _parseUniformBlock(const ShaderModule::Instruction& p_instruction);
+		void _parseStructure(const ShaderModule::Instruction& p_instruction);
+		void _parseFunction(const ShaderModule::Instruction& p_instruction);
+		void _parseError(const ShaderModule::Instruction& p_instruction);
 		
-		void _parseInstruction(const InstructionSet::Instruction& p_instruction);
-		void _parseInstructionSet(const InstructionSet &p_instructionSet, const int &p_typeMask);
+		void _parseInstruction(const ShaderModule::Instruction& p_instruction);
+		void _parseInstructionSet(const ShaderModule::InstructionSet &p_instructionSet, const int &p_typeMask);
 
 	public:
-		Configuration(const Input &p_vertexInput, const Input &p_fragmentInput);
+		Configuration(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
 	};
 
 protected:
-	virtual void _loadProgram(const Configuration &p_configuration, const Input &p_vertexInput, const Input &p_fragmentInput) = 0;
+	virtual void _loadProgram(const Configuration &p_configuration, const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) = 0;
 
-	void _loadPipeline(const Input &p_vertexInput, const Input &p_fragmentInput);
+	void _loadPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
 
 public:
 };

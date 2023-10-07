@@ -8,13 +8,13 @@ class Pipeline : public AbstractPipeline
 private:
 	void _loadProgram(
 		const Configuration &p_configuration,
-		const Input &p_vertexInput,
-		const Input &p_fragmentInput) override
+		const ShaderModule &p_vertexInput,
+		const ShaderModule &p_fragmentInput) override
 	{
 	}
 
 public:
-	Pipeline(const Input &p_vertexInput, const Input &p_fragmentInput)
+	Pipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput)
 	{
 		_loadPipeline(p_vertexInput, p_fragmentInput);
 	}
@@ -41,7 +41,7 @@ private:
 
 public:
 	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-									   _pipeline(Pipeline::Input("colorShader.vert"), Pipeline::Input("colorShader.frag"))
+									   _pipeline(ShaderModule("colorShader.vert"), ShaderModule("colorShader.frag"))
 	{
 	}
 	~Test()
