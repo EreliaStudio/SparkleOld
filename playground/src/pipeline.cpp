@@ -213,17 +213,27 @@ const std::map<std::string, AbstractPipeline::Configuration::Data> &AbstractPipe
 	return (_standaloneStructures);
 }
 
+AbstractPipeline::Configuration::ConfigurationLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_data, const size_t& p_offset) :
+	data(p_data),
+	offset(p_offset),
+	location(0)
+{
+
+}
+
+AbstractPipeline::Configuration::ConfigurationLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_data, const size_t& p_location, const size_t& p_offset) :
+	data(p_data),
+	offset(p_offset),
+	location(p_location)
+{
+
+}
+
 AbstractPipeline::Configuration::ConfigurationLayout::ConfigurationLayout(
 	const std::map<std::string, AbstractPipeline::Configuration::Data> &p_structures,
 	const std::map<std::string, AbstractPipeline::Configuration::Data> &p_standaloneStructures) :
 	structures(p_structures),
 	standaloneStructures(p_standaloneStructures)
-{
-}
-
-AbstractPipeline::Configuration::StorageBufferLayout::Field::Field(const Data &p_data, const size_t &p_location, const size_t &p_offset) : data(p_data),
-	 location(p_location),
-	 offset(p_offset)
 {
 }
 
@@ -244,12 +254,6 @@ const size_t &AbstractPipeline::Configuration::StorageBufferLayout::stride() con
 const std::vector<AbstractPipeline::Configuration::StorageBufferLayout::Field> &AbstractPipeline::Configuration::StorageBufferLayout::fields() const
 {
 	return (_fields);
-}
-
-AbstractPipeline::Configuration::PushConstantLayout::Field::Field(const AbstractPipeline::Configuration::Data &p_data, const size_t &p_offset) :
-	data(p_data),
-	offset(p_offset)
-{
 }
 
 AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(
@@ -290,11 +294,6 @@ bool AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::Key::ope
 		return set < p_other.set;
 	}
 	return false;
-}
-
-AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::Field::Field(const AbstractPipeline::Configuration::Data &p_data, const size_t &p_offset) : data(p_data),
-																										  offset(p_offset)
-{
 }
 
 AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::UniformBlock()
