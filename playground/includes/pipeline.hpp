@@ -140,51 +140,36 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class UniformBlockCollection
-		{	
+		class UniformBlockLayout : public ConfigurationLayout
+		{
 		public:
-			class UniformBlockLayout : public ConfigurationLayout
+			struct Key
 			{
-			public:
-				struct Key
-				{
-					size_t binding;
-					size_t set;
+				size_t binding;
+				size_t set;
 
-					Key(size_t p_set = 0, size_t p_binding = 0);
+				Key(size_t p_set = 0, size_t p_binding = 0);
 
-					bool operator<(const Key &p_other) const;
-				};
+				bool operator<(const Key &p_other) const;
+			};
 
-				enum class Mode
-				{
-					Block,
-					Sampler
-				};
-
-			private:
-				Mode _mode;
-				Key _key;
-
-			public:
-				UniformBlockLayout(const StructureLayout& p_structureLayout);
-
-				void treat(const ShaderModule::Instruction &p_instruction);
-
-				const Key& key() const;
-				const Mode& mode() const;
+			enum class Mode
+			{
+				Block,
+				Sampler
 			};
 
 		private:
-			const StructureLayout& _structureLayout;
-			std::vector<UniformBlockLayout> _uniformBlockLayouts;
+			Mode _mode;
+			Key _key;
 
 		public:
-			UniformBlockCollection(const StructureLayout& p_structureLayout);
+			UniformBlockLayout(const StructureLayout& p_structureLayout);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 
-			const std::vector<UniformBlockLayout>& uniformBlockLayouts() const;
+			const Key& key() const;
+			const Mode& mode() const;
 		};
 
 	private:
@@ -206,7 +191,7 @@ public:
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
 		PushConstantLayout _pushConstantLayout;
-		UniformBlockCollection _UniformBlockCollection;
+		std::vector<UniformBlockLayout> _uniformBlocks;
 
 		void _parseVersion(const ShaderModule::Instruction& p_instruction);
 		void _parseStorageBuffer(const ShaderModule::Instruction& p_instruction);
@@ -222,6 +207,11 @@ public:
 
 	public:
 		Configuration(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
+
+		const StorageBufferLayout& storageBufferLayout() const;
+		const OutputBufferLayout& outputBufferLayout() const;
+		const PushConstantLayout& pushConstantLayout() const;
+		const std::vector<UniformBlockLayout>& uniformBlocks() const;
 	};
 
 protected:
