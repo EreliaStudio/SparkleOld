@@ -451,7 +451,9 @@ public:
 								static_cast<int>(InstructionSet::Instruction::Type::OutputBuffer) |
 								static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
 
-		std::map<std::string, Data> _acceptableData;
+		std::map<std::string, Data> _structures;
+		std::map<std::string, Data> _standaloneStructures;
+
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
 		PushConstantLayout _pushConstantLayout;
@@ -532,7 +534,33 @@ public:
 		}
 
 	public:
-		Configuration(const Input &p_vertexInput, const Input &p_fragmentInput)
+		Configuration(const Input &p_vertexInput, const Input &p_fragmentInput) :
+			_structures({
+				{"float", 	Data(Data::Type::Float, 1, sizeof(float))},
+				{"int", 	Data(Data::Type::Int, 1, sizeof(int))},
+				{"uint", 	Data(Data::Type::UInt, 1, sizeof(unsigned int))},
+				
+				{"vec2", 	Data(Data::Type::Float, 2, sizeof(float))},
+				{"ivec2", 	Data(Data::Type::Int, 2, sizeof(int))},
+				{"uvec2", 	Data(Data::Type::UInt, 2, sizeof(unsigned int))},
+				
+				{"vec3", 	Data(Data::Type::Float, 3, sizeof(float))},
+				{"ivec3", 	Data(Data::Type::Int, 3, sizeof(int))},
+				{"uvec3", 	Data(Data::Type::UInt, 3, sizeof(unsigned int))},
+				
+				{"vec4", 	Data(Data::Type::Float, 4, sizeof(float))},
+				{"ivec4", 	Data(Data::Type::Int, 4, sizeof(int))},
+				{"uvec4", 	Data(Data::Type::UInt, 4, sizeof(unsigned int))},
+				
+				{"mat4", 	Data(Data::Type::Float, 16, sizeof(float))},
+			}),
+			
+			_standaloneStructures({
+				{"sampler1D", 		Data(Data::Type::Int, 1, sizeof(int))},
+				{"sampler2D", 		Data(Data::Type::Int, 1, sizeof(int))},
+				{"sampler3D", 		Data(Data::Type::Int, 1, sizeof(int))},
+				{"samplerCube", 	Data(Data::Type::Int, 1, sizeof(int))},
+			})
 		{
 			_parseInstructionSet(InstructionSet(p_vertexInput), _vertexTypeMask);
 			_parseInstructionSet(InstructionSet(p_fragmentInput), _fragmentTypeMask);
