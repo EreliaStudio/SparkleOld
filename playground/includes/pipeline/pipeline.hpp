@@ -53,9 +53,6 @@ public:
 				Data data;
 				size_t location;
 				size_t offset;
-
-				Field(const Data& p_data);
-				Field(const Data& p_data, const size_t& p_location);
 			};
 		private:
 			size_t _stride;

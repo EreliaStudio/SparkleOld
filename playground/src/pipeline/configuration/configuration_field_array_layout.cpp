@@ -1,21 +1,5 @@
 #include "pipeline/pipeline.hpp"
 
-AbstractPipeline::Configuration::FieldArrayLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_data) :
-	data(p_data),
-	offset(0),
-	location(0)
-{
-
-}
-
-AbstractPipeline::Configuration::FieldArrayLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_data, const size_t& p_location) :
-	data(p_data),
-	offset(0),
-	location(p_location)
-{
-
-}
-
 AbstractPipeline::Configuration::FieldArrayLayout::FieldArrayLayout(const StructureLayout& p_structureLayout) :
 	structureLayout(p_structureLayout)
 {
@@ -24,8 +8,10 @@ AbstractPipeline::Configuration::FieldArrayLayout::FieldArrayLayout(const Struct
 
 void AbstractPipeline::Configuration::FieldArrayLayout::insert(const Data& p_data, const size_t& p_location)
 {
-	Field newField = Field(p_data, p_location);
+	Field newField;
 
+	newField.data = p_data;
+	newField.location = p_location;
 	newField.offset = stride();
 
 	_fields.push_back(newField);
