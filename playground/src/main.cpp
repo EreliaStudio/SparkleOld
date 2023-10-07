@@ -224,7 +224,82 @@ public:
 			}
 		};
 
-		class StorageBufferLayout
+		class StructureLayout
+		{
+		private:
+			std::map<std::string, Data> _structures;
+			std::map<std::string, Data> _standaloneStructures;
+
+		public:
+			StructureLayout()
+			{
+
+			}
+
+			void reset()
+			{
+				_structures = {
+					{"float", 	Data(Data::Type::Float, 1, sizeof(float))},
+					{"int", 	Data(Data::Type::Int, 1, sizeof(int))},
+					{"uint", 	Data(Data::Type::UInt, 1, sizeof(unsigned int))},
+					
+					{"vec2", 	Data(Data::Type::Float, 2, sizeof(float))},
+					{"ivec2", 	Data(Data::Type::Int, 2, sizeof(int))},
+					{"uvec2", 	Data(Data::Type::UInt, 2, sizeof(unsigned int))},
+					
+					{"vec3", 	Data(Data::Type::Float, 3, sizeof(float))},
+					{"ivec3", 	Data(Data::Type::Int, 3, sizeof(int))},
+					{"uvec3", 	Data(Data::Type::UInt, 3, sizeof(unsigned int))},
+					
+					{"vec4", 	Data(Data::Type::Float, 4, sizeof(float))},
+					{"ivec4", 	Data(Data::Type::Int, 4, sizeof(int))},
+					{"uvec4", 	Data(Data::Type::UInt, 4, sizeof(unsigned int))},
+					
+					{"mat4", 	Data(Data::Type::Float, 16, sizeof(float))},
+				};
+				
+				_standaloneStructures = {
+					{"sampler1D", 		Data(Data::Type::Int, 1, sizeof(int))},
+					{"sampler2D", 		Data(Data::Type::Int, 1, sizeof(int))},
+					{"sampler3D", 		Data(Data::Type::Int, 1, sizeof(int))},
+					{"samplerCube", 	Data(Data::Type::Int, 1, sizeof(int))},
+				};
+			}
+
+			void treat(const InstructionSet::Instruction &p_instruction)
+			{
+
+			}
+
+			const std::map<std::string, Data>& structures() const
+			{
+				return (_structures);
+			}
+
+			const std::map<std::string, Data>& standaloneStructures() const 
+			{
+				return (_standaloneStructures);
+			}
+		};
+
+		class ConfigurationLayout
+		{
+		protected:
+			const std::map<std::string, Data>& structures;
+			const std::map<std::string, Data>& standaloneStructures;
+
+		public:
+			ConfigurationLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures) :
+				structures(p_structures),
+				standaloneStructures(p_standaloneStructures)
+			{
+
+			}
+
+			virtual void treat(const InstructionSet::Instruction &p_instruction) = 0;
+		};
+
+		class StorageBufferLayout : public ConfigurationLayout
 		{
 		public:
 			struct Field
@@ -247,7 +322,8 @@ public:
 			std::vector<Field> _fields;
 
 		public:
-			StorageBufferLayout()
+			StorageBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures) :
+				ConfigurationLayout(p_structures, p_standaloneStructures)
 			{
 			}
 
@@ -267,7 +343,7 @@ public:
 			}
 		};
 
-		class PushConstantLayout
+		class PushConstantLayout : public ConfigurationLayout
 		{
 		public:
 			struct Field
@@ -288,7 +364,8 @@ public:
 			std::vector<Field> _fields;
 
 		public:
-			PushConstantLayout()
+			PushConstantLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures) :
+				ConfigurationLayout(p_structures, p_standaloneStructures)
 			{
 			}
 
@@ -308,92 +385,129 @@ public:
 			}
 		};
 
-		class UniformBlockLayout
-		{
+		class UniformBlockLayout : public ConfigurationLayout
+		{	
 		public:
-			struct Key
+			class UniformBlock
 			{
-				size_t binding;
-				size_t set;
-
-				Key(size_t p_set = 0, size_t p_binding = 0)
-					: binding(p_binding), set(p_set)
+			public:
+				struct Key
 				{
-				}
+					size_t binding;
+					size_t set;
 
-				// Overloading the < operator for std::map
-				bool operator<(const Key &p_other) const
-				{
-					if (binding < p_other.binding)
+					Key(size_t p_set = 0, size_t p_binding = 0)
+						: binding(p_binding), set(p_set)
 					{
-						return true;
 					}
-					else if (binding == p_other.binding)
+
+					bool operator<(const Key &p_other) const
 					{
-						return set < p_other.set;
+						if (binding < p_other.binding)
+						{
+							return true;
+						}
+						else if (binding == p_other.binding)
+						{
+							return set < p_other.set;
+						}
+						return false;
 					}
-					return false;
-				}
-			};
+				};
 
-			enum class Mode
-			{
-				Block,
-				Sampler
-			};
+				enum class Mode
+				{
+					Block,
+					Sampler
+				};
 
-			struct Field
-			{
-				Data data;
-				size_t offset;
+				struct Field
+				{
+					Data data;
+					size_t offset;
 
-				Field(const Data& p_data = Data(), const size_t& p_offset = 0) :
-					data(p_data),
-					offset(p_offset)
+					Field(const Data& p_data = Data(), const size_t& p_offset = 0) :
+						data(p_data),
+						offset(p_offset)
+					{
+
+					}
+				};
+
+			private:
+				Mode _mode;
+				Key _key;
+				size_t _stride;
+				std::vector<Field> _fields;
+
+			public:
+				UniformBlock()
 				{
 
 				}
+
+				void treat(const InstructionSet::Instruction &p_instruction)
+				{
+					spk::cout << "Parsing UniformBlock instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
+				}
+
+				const Key& key() const
+				{
+					return (_key);
+				}
+
+				const Mode& mode() const
+				{
+					return (_mode);
+				}
+
+				const size_t& stride() const
+				{
+					return (_stride);
+				}
+
+				const std::vector<Field>& fields() const 
+				{
+					return (_fields);
+				}
 			};
+
+			static inline std::map<UniformBlock::Key, UniformBlock> uniformBlocks;
+			static inline std::map<std::wstring, UniformBlock::Key> uniformBlockKeys;
 
 		private:
-			Mode _mode;
-			Key _key;
-			size_t _stride;
-			std::vector<Field> _fields;
+			std::vector<UniformBlock::Key> _subscribedUniformBlocks;
 
 		public:
-			UniformBlockLayout()
+			UniformBlockLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures) :
+				ConfigurationLayout(p_structures, p_standaloneStructures)
 			{
 
 			}
 
 			void treat(const InstructionSet::Instruction &p_instruction)
 			{
-				spk::cout << "Parsing UniformBlock instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
+				UniformBlock newUniformBlock;
+
+				newUniformBlock.treat(p_instruction);
+
+				if (uniformBlocks.contains(newUniformBlock.key()) == true)
+				{
+					const auto& oldBlock = uniformBlocks.at(newUniformBlock.key());
+					if (oldBlock.stride() != newUniformBlock.stride())
+					{
+						spk::throwException(L"Instruction [" + spk::to_wstring(p_instruction.code) + L"}\n - Uniform block [set = " + std::to_wstring(newUniformBlock.key().set) + L" / binding = " + std::to_wstring(newUniformBlock.key().binding) + L"] already exist and have a different composition");
+					}
+				}
 			}
 
-			const Key& key() const
+			const std::vector<UniformBlock::Key>& subscribedUniformBlocks() const 
 			{
-				return (_key);
-			}
-
-			const Mode& mode() const
-			{
-				return (_mode);
-			}
-
-			const size_t& stride() const
-			{
-				return (_stride);
-			}
-
-			const std::vector<Field>& fields() const 
-			{
-				return (_fields);
+				return (_subscribedUniformBlocks);
 			}
 		};
 
-		class OutputBufferLayout
+		class OutputBufferLayout : public ConfigurationLayout
 		{
 		public:
 			struct Field
@@ -416,7 +530,8 @@ public:
 			std::vector<Field> _fields;
 
 		public:
-			OutputBufferLayout()
+			OutputBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures) :
+				ConfigurationLayout(p_structures, p_standaloneStructures)
 			{
 			}
 
@@ -451,43 +566,40 @@ public:
 								static_cast<int>(InstructionSet::Instruction::Type::OutputBuffer) |
 								static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
 
-		std::map<std::string, Data> _structures;
-		std::map<std::string, Data> _standaloneStructures;
-
+		StructureLayout _structureLayout;
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
 		PushConstantLayout _pushConstantLayout;
-		static std::map<UniformBlockLayout::Key, UniformBlockLayout> _uniformBlocks;
-		static std::map<std::wstring, UniformBlockLayout::Key> _uniformBlockKeys;
+		UniformBlockLayout _uniformBlockLayout;
 
 		void _parseVersion(const InstructionSet::Instruction& p_instruction)
 		{
-
+			//Do nothing
 		}
 		
 		void _parseStorageBuffer(const InstructionSet::Instruction& p_instruction)
 		{
-
+			_storageBufferLayout.treat(p_instruction);
 		}
 		
 		void _parseOutputBuffer(const InstructionSet::Instruction& p_instruction)
 		{
-
+			_outputBufferLayout.treat(p_instruction);
 		}
 		
 		void _parsePushConstant(const InstructionSet::Instruction& p_instruction)
 		{
-
+			_pushConstantLayout.treat(p_instruction);
 		}
 		
 		void _parseUniformBlock(const InstructionSet::Instruction& p_instruction)
 		{
-
+			_uniformBlockLayout.treat(p_instruction);
 		}
 		
 		void _parseStructure(const InstructionSet::Instruction& p_instruction)
 		{
-
+			_structureLayout.treat(p_instruction);
 		}
 		
 		void _parseFunction(const InstructionSet::Instruction& p_instruction)
@@ -524,6 +636,7 @@ public:
 
 		void _parseInstructionSet(const InstructionSet &p_instructionSet, const int &p_typeMask)
 		{
+			_structureLayout.reset();
 			for (const auto& instruction : p_instructionSet.instructions())
 			{
 				if (p_typeMask & static_cast<int>(instruction.type))
@@ -535,32 +648,11 @@ public:
 
 	public:
 		Configuration(const Input &p_vertexInput, const Input &p_fragmentInput) :
-			_structures({
-				{"float", 	Data(Data::Type::Float, 1, sizeof(float))},
-				{"int", 	Data(Data::Type::Int, 1, sizeof(int))},
-				{"uint", 	Data(Data::Type::UInt, 1, sizeof(unsigned int))},
-				
-				{"vec2", 	Data(Data::Type::Float, 2, sizeof(float))},
-				{"ivec2", 	Data(Data::Type::Int, 2, sizeof(int))},
-				{"uvec2", 	Data(Data::Type::UInt, 2, sizeof(unsigned int))},
-				
-				{"vec3", 	Data(Data::Type::Float, 3, sizeof(float))},
-				{"ivec3", 	Data(Data::Type::Int, 3, sizeof(int))},
-				{"uvec3", 	Data(Data::Type::UInt, 3, sizeof(unsigned int))},
-				
-				{"vec4", 	Data(Data::Type::Float, 4, sizeof(float))},
-				{"ivec4", 	Data(Data::Type::Int, 4, sizeof(int))},
-				{"uvec4", 	Data(Data::Type::UInt, 4, sizeof(unsigned int))},
-				
-				{"mat4", 	Data(Data::Type::Float, 16, sizeof(float))},
-			}),
-			
-			_standaloneStructures({
-				{"sampler1D", 		Data(Data::Type::Int, 1, sizeof(int))},
-				{"sampler2D", 		Data(Data::Type::Int, 1, sizeof(int))},
-				{"sampler3D", 		Data(Data::Type::Int, 1, sizeof(int))},
-				{"samplerCube", 	Data(Data::Type::Int, 1, sizeof(int))},
-			})
+			_structureLayout(),
+			_storageBufferLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
+			_outputBufferLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
+			_pushConstantLayout(_structureLayout.structures(), _structureLayout.standaloneStructures()),
+			_uniformBlockLayout(_structureLayout.structures(), _structureLayout.standaloneStructures())
 		{
 			_parseInstructionSet(InstructionSet(p_vertexInput), _vertexTypeMask);
 			_parseInstructionSet(InstructionSet(p_fragmentInput), _fragmentTypeMask);
