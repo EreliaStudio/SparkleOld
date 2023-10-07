@@ -192,9 +192,60 @@ public:
 		};
 
 	public:
+		struct Data
+		{
+			enum class Type
+			{
+				Int,
+				UInt,
+				Float,
+				Structure,
+				Error
+			};
+
+			Type type;
+			size_t format;
+			size_t size;
+
+			Data(const Type& p_type = Type::Error, const size_t& p_format = 0, const size_t& p_size = 0) :
+				type(p_type),
+				format(p_format),
+				size(p_size)
+			{
+
+			}
+
+			Data(const size_t& p_size) :
+				type(Type::Structure),
+				format(1),
+				size(p_size)
+			{
+
+			}
+		};
+
 		class StorageBufferLayout
 		{
+		public:
+			struct Field
+			{
+				Data data;
+				size_t location;
+				size_t offset;
+
+				Field(const Data& p_data = Data(), const size_t& p_location = 0, const size_t& p_offset = 0) :
+					data(p_data),
+					location(p_location),
+					offset(p_offset)
+				{
+
+				}
+			};
+
 		private:
+			size_t _stride;
+			std::vector<Field> _fields;
+
 		public:
 			StorageBufferLayout()
 			{
@@ -204,11 +255,38 @@ public:
 			{
 				spk::cout << "Parsing StorageBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 			}
+
+			const size_t& stride() const
+			{
+				return (_stride);
+			}
+
+			const std::vector<Field>& fields() const 
+			{
+				return (_fields);
+			}
 		};
 
 		class PushConstantLayout
 		{
+		public:
+			struct Field
+			{
+				Data data;
+				size_t offset;
+
+				Field(const Data& p_data = Data(), const size_t& p_offset = 0) :
+					data(p_data),
+					offset(p_offset)
+				{
+
+				}
+			};
+
 		private:
+			size_t _stride;
+			std::vector<Field> _fields;
+
 		public:
 			PushConstantLayout()
 			{
@@ -217,6 +295,16 @@ public:
 			void treat(const InstructionSet::Instruction &p_instruction)
 			{
 				spk::cout << "Parsing PushConstant instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
+			}
+
+			const size_t& stride() const
+			{
+				return (_stride);
+			}
+
+			const std::vector<Field>& fields() const 
+			{
+				return (_fields);
 			}
 		};
 
@@ -254,23 +342,79 @@ public:
 				Sampler
 			};
 
+			struct Field
+			{
+				Data data;
+				size_t offset;
+
+				Field(const Data& p_data = Data(), const size_t& p_offset = 0) :
+					data(p_data),
+					offset(p_offset)
+				{
+
+				}
+			};
+
 		private:
 			Mode _mode;
+			Key _key;
+			size_t _stride;
+			std::vector<Field> _fields;
 
 		public:
 			UniformBlockLayout()
 			{
+
 			}
 
 			void treat(const InstructionSet::Instruction &p_instruction)
 			{
 				spk::cout << "Parsing UniformBlock instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 			}
+
+			const Key& key() const
+			{
+				return (_key);
+			}
+
+			const Mode& mode() const
+			{
+				return (_mode);
+			}
+
+			const size_t& stride() const
+			{
+				return (_stride);
+			}
+
+			const std::vector<Field>& fields() const 
+			{
+				return (_fields);
+			}
 		};
 
 		class OutputBufferLayout
 		{
+		public:
+			struct Field
+			{
+				Data data;
+				size_t location;
+				size_t offset;
+
+				Field(const Data& p_data = Data(), const size_t& p_location = 0, const size_t& p_offset = 0) :
+					data(p_data),
+					location(p_location),
+					offset(p_offset)
+				{
+
+				}
+			};
+
 		private:
+			size_t _stride;
+			std::vector<Field> _fields;
+
 		public:
 			OutputBufferLayout()
 			{
@@ -280,21 +424,34 @@ public:
 			{
 				spk::cout << "Parsing OutputBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 			}
+
+			const size_t& stride() const
+			{
+				return (_stride);
+			}
+
+			const std::vector<Field>& fields() const 
+			{
+				return (_fields);
+			}
 		};
 
 	private:
 		int _vertexTypeMask = static_cast<int>(InstructionSet::Instruction::Type::Version) |
+							  static_cast<int>(InstructionSet::Instruction::Type::Structure) |
 							  static_cast<int>(InstructionSet::Instruction::Type::PushConstant) |
 							  static_cast<int>(InstructionSet::Instruction::Type::SamplerUniform) |
 							  static_cast<int>(InstructionSet::Instruction::Type::StorageBuffer) |
 							  static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
 
 		int _fragmentTypeMask = static_cast<int>(InstructionSet::Instruction::Type::Version) |
+								static_cast<int>(InstructionSet::Instruction::Type::Structure) |
 								static_cast<int>(InstructionSet::Instruction::Type::PushConstant) |
 								static_cast<int>(InstructionSet::Instruction::Type::SamplerUniform) |
 								static_cast<int>(InstructionSet::Instruction::Type::OutputBuffer) |
 								static_cast<int>(InstructionSet::Instruction::Type::UniformBlock);
 
+		std::map<std::string, Data> _acceptableData;
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
 		PushConstantLayout _pushConstantLayout;
@@ -333,12 +490,12 @@ public:
 		
 		void _parseFunction(const InstructionSet::Instruction& p_instruction)
 		{
-
+			//Do nothing
 		}
 		
 		void _parseError(const InstructionSet::Instruction& p_instruction)
 		{
-
+			spk::throwException(L"A non-recognized instruction detected :\n- [" + spk::to_wstring(p_instruction.code) + L"]");
 		}
 		
 		void _parseInstruction(const InstructionSet::Instruction& p_instruction)
