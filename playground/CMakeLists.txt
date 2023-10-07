@@ -6,9 +6,10 @@ project(Playground
 	DESCRIPTION "A template for Project using Sparkle library."
 	LANGUAGES CXX)
 
-add_executable(Playground "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+file(GLOB_RECURSE SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+add_executable(Playground ${SRC_FILES})
 
-target_include_directories(Playground PRIVATE "${CMAKE_SOURCE_DIR}/includes")
+target_include_directories(Playground PRIVATE "${CMAKE_SOURCE_DIR}/includes" "${CMAKE_CURRENT_SOURCE_DIR}/includes")
 target_link_directories(Playground PRIVATE "${CMAKE_SOURCE_DIR}/archive")
 
 if(GraphicalAPI STREQUAL "OpenGL")
