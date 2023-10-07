@@ -2,7 +2,7 @@
 
 #include "sparkle.hpp"
 
-#include "shader_module.hpp"
+#include "pipeline/shader_module.hpp"
 
 class AbstractPipeline
 {
@@ -54,10 +54,10 @@ public:
 				size_t location;
 				size_t offset;
 
-				Field(const Data& p_data, const size_t& p_offset);
-				Field(const Data& p_data, const size_t& p_location, const size_t& p_offset);
+				Field(const Data& p_data);
+				Field(const Data& p_data, const size_t& p_location);
 			};
-		protected:
+		private:
 			size_t _stride;
 			std::vector<Field> _fields;
 			
@@ -65,6 +65,8 @@ public:
 
 		public:
 			FieldArrayLayout(const StructureLayout& p_structureLayout);
+
+			void insert(const Data& p_data, const size_t& p_location = 0);
 
 			virtual void treat(const ShaderModule::Instruction &p_instruction) = 0;
 

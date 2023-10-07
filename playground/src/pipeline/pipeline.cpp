@@ -1,4 +1,4 @@
-#include "pipeline.hpp"
+#include "pipeline/pipeline.hpp"
 
 void AbstractPipeline::_loadPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput)
 {

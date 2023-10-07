@@ -1,4 +1,4 @@
-#include "pipeline.hpp"
+#include "pipeline/pipeline.hpp"
 
 void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
 {

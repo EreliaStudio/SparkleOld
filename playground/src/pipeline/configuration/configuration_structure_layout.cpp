@@ -1,4 +1,4 @@
-#include "pipeline.hpp"
+#include "pipeline/pipeline.hpp"
 
 AbstractPipeline::Configuration::StructureLayout::StructureLayout()
 {
