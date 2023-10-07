@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 AbstractPipeline::Configuration::UniformBlockLayout::Key::Key(size_t p_set, size_t p_binding)
 	: binding(p_binding), set(p_set)
 {

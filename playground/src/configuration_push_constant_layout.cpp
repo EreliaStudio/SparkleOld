@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(const StructureLayout& p_structureLayout) :
 	FieldArrayLayout(p_structureLayout)
 {

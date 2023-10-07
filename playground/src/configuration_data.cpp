@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 AbstractPipeline::Configuration::Data::Data(const Type &p_type, const size_t &p_format, const size_t &p_size) : type(p_type),
 																									 format(p_format),
 																									 size(p_size)
