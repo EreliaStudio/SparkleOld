@@ -5,9 +5,8 @@
 class ShaderModule
 {
 public:
-	class Instruction
+	struct Instruction
 	{
-	public:
 		enum class Type
 		{
 			Version = 0b0000000000000001,
@@ -89,7 +88,7 @@ public:
 			const std::map<std::string, Data>& standaloneStructures() const;
 		};
 
-		class ConfigurationLayout
+		class FieldArrayLayout
 		{
 		public:
 			struct Field
@@ -108,7 +107,7 @@ public:
 			const StructureLayout& structureLayout;
 
 		public:
-			ConfigurationLayout(const StructureLayout& p_structureLayout);
+			FieldArrayLayout(const StructureLayout& p_structureLayout);
 
 			virtual void treat(const ShaderModule::Instruction &p_instruction) = 0;
 
@@ -116,7 +115,7 @@ public:
 			const std::vector<Field>& fields() const ;
 		};
 
-		class StorageBufferLayout : public ConfigurationLayout
+		class StorageBufferLayout : public FieldArrayLayout
 		{
 		public:
 			StorageBufferLayout(const StructureLayout& p_structureLayout);
@@ -124,7 +123,7 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class OutputBufferLayout : public ConfigurationLayout
+		class OutputBufferLayout : public FieldArrayLayout
 		{
 		public:
 			OutputBufferLayout(const StructureLayout& p_structureLayout);
@@ -132,7 +131,7 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class PushConstantLayout : public ConfigurationLayout
+		class PushConstantLayout : public FieldArrayLayout
 		{
 		public:
 			PushConstantLayout(const StructureLayout& p_structureLayout);
@@ -140,7 +139,7 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class UniformBlockLayout : public ConfigurationLayout
+		class UniformBlockLayout : public FieldArrayLayout
 		{
 		public:
 			struct Key
