@@ -111,45 +111,41 @@ public:
 			virtual void treat(const ShaderModule::Instruction &p_instruction) = 0;
 		};
 
-		class StorageBufferLayout : public ConfigurationLayout
+		class FieldArrayLayout : public ConfigurationLayout
 		{
-		public:
-
-		private:
+		protected:
 			size_t _stride;
 			std::vector<Field> _fields;
 
 		public:
-			StorageBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
-
-			void treat(const ShaderModule::Instruction &p_instruction);
+			FieldArrayLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
 			const size_t& stride() const;
 			const std::vector<Field>& fields() const ;
 		};
 
-		class PushConstantLayout : public ConfigurationLayout
+		class StorageBufferLayout : public FieldArrayLayout
 		{
 		public:
-			struct Field
-			{
-				Data data;
-				size_t offset;
+			StorageBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
-				Field(const Data& p_data = Data(), const size_t& p_offset = 0);
-			};
+			void treat(const ShaderModule::Instruction &p_instruction);
+		};
 
-		private:
-			size_t _stride;
-			std::vector<Field> _fields;
+		class OutputBufferLayout : public FieldArrayLayout
+		{
+		public:
+			OutputBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
+			void treat(const ShaderModule::Instruction &p_instruction);
+		};
+
+		class PushConstantLayout : public FieldArrayLayout
+		{
 		public:
 			PushConstantLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
-
-			const size_t& stride() const;
-			const std::vector<Field>& fields() const ;
 		};
 
 		class UniformBlockLayout : public ConfigurationLayout
@@ -211,31 +207,6 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const std::vector<UniformBlock::Key>& subscribedUniformBlocks() const;
-		};
-
-		class OutputBufferLayout : public ConfigurationLayout
-		{
-		public:
-			struct Field
-			{
-				Data data;
-				size_t location;
-				size_t offset;
-
-				Field(const Data& p_data = Data(), const size_t& p_location = 0, const size_t& p_offset = 0);
-			};
-
-		private:
-			size_t _stride;
-			std::vector<Field> _fields;
-
-		public:
-			OutputBufferLayout(const std::map<std::string, Data>& p_structures, const std::map<std::string, Data>& p_standaloneStructures);
-
-			void treat(const ShaderModule::Instruction &p_instruction);
-
-			const size_t& stride() const;
-			const std::vector<Field>& fields() const;
 		};
 
 	private:

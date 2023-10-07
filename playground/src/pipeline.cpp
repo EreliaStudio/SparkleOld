@@ -243,7 +243,22 @@ AbstractPipeline::Configuration::ConfigurationLayout::ConfigurationLayout(
 {
 }
 
-AbstractPipeline::Configuration::StorageBufferLayout::StorageBufferLayout(const std::map<std::string, Data> &p_structures, const std::map<std::string, Data> &p_standaloneStructures) : ConfigurationLayout(p_structures, p_standaloneStructures)
+AbstractPipeline::Configuration::FieldArrayLayout::FieldArrayLayout(const std::map<std::string, Data> &p_structures, const std::map<std::string, Data> &p_standaloneStructures) : ConfigurationLayout(p_structures, p_standaloneStructures)
+{
+}
+
+const size_t &AbstractPipeline::Configuration::FieldArrayLayout::stride() const
+{
+	return (_stride);
+}
+
+const std::vector<AbstractPipeline::Configuration::FieldArrayLayout::Field> &AbstractPipeline::Configuration::FieldArrayLayout::fields() const
+{
+	return (_fields);
+}
+
+AbstractPipeline::Configuration::StorageBufferLayout::StorageBufferLayout(const std::map<std::string, Data> &p_structures, const std::map<std::string, Data> &p_standaloneStructures) :
+	FieldArrayLayout(p_structures, p_standaloneStructures)
 {
 }
 
@@ -252,20 +267,10 @@ void AbstractPipeline::Configuration::StorageBufferLayout::treat(const ShaderMod
 	spk::cout << "Parsing StorageBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
 
-const size_t &AbstractPipeline::Configuration::StorageBufferLayout::stride() const
-{
-	return (_stride);
-}
-
-const std::vector<AbstractPipeline::Configuration::StorageBufferLayout::Field> &AbstractPipeline::Configuration::StorageBufferLayout::fields() const
-{
-	return (_fields);
-}
-
 AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(
 		const std::map<std::string, AbstractPipeline::Configuration::Data> &p_structures,
 		const std::map<std::string, AbstractPipeline::Configuration::Data> &p_standaloneStructures) :
-	ConfigurationLayout(p_structures, p_standaloneStructures)
+	FieldArrayLayout(p_structures, p_standaloneStructures)
 {
 }
 
@@ -274,15 +279,16 @@ void AbstractPipeline::Configuration::PushConstantLayout::treat(const ShaderModu
 	spk::cout << "Parsing PushConstant instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
 
-const size_t &AbstractPipeline::Configuration::PushConstantLayout::stride() const
+AbstractPipeline::Configuration::OutputBufferLayout::OutputBufferLayout(const std::map<std::string, Data> &p_structures, const std::map<std::string, Data> &p_standaloneStructures) :
+	FieldArrayLayout(p_structures, p_standaloneStructures)
 {
-	return (_stride);
 }
 
-const std::vector<AbstractPipeline::Configuration::PushConstantLayout::Field> &AbstractPipeline::Configuration::PushConstantLayout::fields() const
+void AbstractPipeline::Configuration::OutputBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
-	return (_fields);
+	spk::cout << "Parsing OutputBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
+
 
 AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::Key::Key(size_t p_set, size_t p_binding)
 	: binding(p_binding), set(p_set)
@@ -355,32 +361,6 @@ void AbstractPipeline::Configuration::UniformBlockLayout::treat(const ShaderModu
 const std::vector<AbstractPipeline::Configuration::UniformBlockLayout::UniformBlock::Key> &AbstractPipeline::Configuration::UniformBlockLayout::subscribedUniformBlocks() const
 {
 	return (_subscribedUniformBlocks);
-}
-
-AbstractPipeline::Configuration::OutputBufferLayout::Field::Field(const Data &p_data, const size_t &p_location, const size_t &p_offset) :
-	data(p_data),
-	location(p_location),
-	offset(p_offset)
-{
-}
-
-AbstractPipeline::Configuration::OutputBufferLayout::OutputBufferLayout(const std::map<std::string, Data> &p_structures, const std::map<std::string, Data> &p_standaloneStructures) : ConfigurationLayout(p_structures, p_standaloneStructures)
-{
-}
-
-void AbstractPipeline::Configuration::OutputBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
-{
-	spk::cout << "Parsing OutputBuffer instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
-}
-
-const size_t &AbstractPipeline::Configuration::OutputBufferLayout::stride() const
-{
-	return (_stride);
-}
-
-const std::vector<AbstractPipeline::Configuration::OutputBufferLayout::Field> &AbstractPipeline::Configuration::OutputBufferLayout::fields() const
-{
-	return (_fields);
 }
 
 void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
