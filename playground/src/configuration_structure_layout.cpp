@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 AbstractPipeline::Configuration::StructureLayout::StructureLayout()
 {
 }

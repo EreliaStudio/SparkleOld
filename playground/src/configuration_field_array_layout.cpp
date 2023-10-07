@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 AbstractPipeline::Configuration::FieldArrayLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_data, const size_t& p_offset) :
 	data(p_data),
 	offset(p_offset),

@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
 {
 	// Do nothing

@@ -1,7 +1,5 @@
 #include "pipeline.hpp"
 
-#include <regex>
-
 void AbstractPipeline::Configuration::_parseInstruction(const ShaderModule::Instruction &p_instruction)
 {
 	// Declare an array of member function pointers, make sure the order is correct.
