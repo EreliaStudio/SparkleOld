@@ -1,7 +1,4 @@
-#include "sparkle.hpp"
-#include "pipeline.hpp"
-
-#include <regex>
+#include "playground.hpp"
 
 class Pipeline : public AbstractPipeline
 {

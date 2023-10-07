@@ -2,4 +2,4 @@
 
 #include "sparkle.hpp"
 
-#include "pipeline.hpp"
+#include "pipeline/pipeline.hpp"

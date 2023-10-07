@@ -1,4 +1,4 @@
-#include "pipeline.hpp"
+#include "pipeline/pipeline.hpp"
 
 AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(const StructureLayout& p_structureLayout) :
 	FieldArrayLayout(p_structureLayout)
