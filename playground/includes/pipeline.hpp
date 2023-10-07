@@ -140,7 +140,7 @@ public:
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class UniformBlockCollection : public ConfigurationLayout
+		class UniformBlockCollection
 		{	
 		public:
 			class UniformBlockLayout : public ConfigurationLayout
@@ -175,18 +175,16 @@ public:
 				const Mode& mode() const;
 			};
 
-			static inline std::map<UniformBlockLayout::Key, UniformBlockLayout> UniformBlockLayouts;
-			static inline std::map<std::wstring, UniformBlockLayout::Key> UniformBlockLayoutKeys;
-
 		private:
-			std::vector<UniformBlockLayout::Key> _subscribedUniformBlockLayouts;
+			const StructureLayout& _structureLayout;
+			std::vector<UniformBlockLayout> _uniformBlockLayouts;
 
 		public:
 			UniformBlockCollection(const StructureLayout& p_structureLayout);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 
-			const std::vector<UniformBlockLayout::Key>& subscribedUniformBlockLayouts() const;
+			const std::vector<UniformBlockLayout>& uniformBlockLayouts() const;
 		};
 
 	private:
