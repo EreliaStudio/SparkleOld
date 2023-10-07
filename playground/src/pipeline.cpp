@@ -281,12 +281,12 @@ void AbstractPipeline::Configuration::OutputBufferLayout::treat(const ShaderModu
 }
 
 
-AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Key::Key(size_t p_set, size_t p_binding)
+AbstractPipeline::Configuration::UniformBlockLayout::Key::Key(size_t p_set, size_t p_binding)
 	: binding(p_binding), set(p_set)
 {
 }
 
-bool AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Key::operator<(const AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Key &p_other) const
+bool AbstractPipeline::Configuration::UniformBlockLayout::Key::operator<(const AbstractPipeline::Configuration::UniformBlockLayout::Key &p_other) const
 {
 	if (binding < p_other.binding)
 	{
@@ -299,43 +299,24 @@ bool AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout
 	return false;
 }
 
-AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::UniformBlockLayout(const StructureLayout& p_structureLayout) :
+AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout(const StructureLayout& p_structureLayout) :
 	ConfigurationLayout(p_structureLayout)
 {
 }
 
-void AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::treat(const ShaderModule::Instruction &p_instruction)
+void AbstractPipeline::Configuration::UniformBlockLayout::treat(const ShaderModule::Instruction &p_instruction)
 {
 	spk::cout << "Parsing UniformBlockLayout instruction [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 }
 
-const AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Key &AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::key() const
+const AbstractPipeline::Configuration::UniformBlockLayout::Key &AbstractPipeline::Configuration::UniformBlockLayout::key() const
 {
 	return (_key);
 }
 
-const AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::Mode &AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout::mode() const
+const AbstractPipeline::Configuration::UniformBlockLayout::Mode &AbstractPipeline::Configuration::UniformBlockLayout::mode() const
 {
 	return (_mode);
-}
-
-AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockCollection(const StructureLayout& p_structureLayout) :
-	_structureLayout(p_structureLayout)
-{
-}
-
-void AbstractPipeline::Configuration::UniformBlockCollection::treat(const ShaderModule::Instruction &p_instruction)
-{
-	UniformBlockLayout newUniformBlockLayout(_structureLayout);
-
-	newUniformBlockLayout.treat(p_instruction);
-
-	_uniformBlockLayouts.push_back(newUniformBlockLayout);
-}
-
-const std::vector<AbstractPipeline::Configuration::UniformBlockCollection::UniformBlockLayout> &AbstractPipeline::Configuration::UniformBlockCollection::uniformBlockLayouts() const
-{
-	return (_uniformBlockLayouts);
 }
 
 void AbstractPipeline::Configuration::_parseVersion(const ShaderModule::Instruction &p_instruction)
@@ -360,7 +341,11 @@ void AbstractPipeline::Configuration::_parsePushConstant(const ShaderModule::Ins
 
 void AbstractPipeline::Configuration::_parseUniformBlockLayout(const ShaderModule::Instruction &p_instruction)
 {
-	_UniformBlockCollection.treat(p_instruction);
+	UniformBlockLayout newUniformBlockLayout(_structureLayout);
+
+	newUniformBlockLayout.treat(p_instruction);
+
+	_uniformBlocks.push_back(newUniformBlockLayout);
 }
 
 void AbstractPipeline::Configuration::_parseStructure(const ShaderModule::Instruction &p_instruction)
@@ -416,11 +401,30 @@ AbstractPipeline::Configuration::Configuration(const ShaderModule &p_vertexInput
 	_structureLayout(),
 	_storageBufferLayout(_structureLayout),
 	_outputBufferLayout(_structureLayout),
-	_pushConstantLayout(_structureLayout),
-	_UniformBlockCollection(_structureLayout)
+	_pushConstantLayout(_structureLayout)
 {
 	_parseInstructionSet(p_vertexInput.instructions(), _vertexTypeMask);
 	_parseInstructionSet(p_fragmentInput.instructions(), _fragmentTypeMask);
+}
+
+const AbstractPipeline::Configuration::StorageBufferLayout& AbstractPipeline::Configuration::storageBufferLayout() const
+{	
+	return (_storageBufferLayout);
+}
+
+const AbstractPipeline::Configuration::OutputBufferLayout& AbstractPipeline::Configuration::outputBufferLayout() const
+{
+	return (_outputBufferLayout);
+}
+
+const AbstractPipeline::Configuration::PushConstantLayout& AbstractPipeline::Configuration::pushConstantLayout() const
+{
+	return (_pushConstantLayout);
+}
+
+const std::vector<AbstractPipeline::Configuration::UniformBlockLayout>& AbstractPipeline::Configuration::uniformBlocks() const
+{
+	return (_uniformBlocks);
 }
 
 void AbstractPipeline::_loadPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput)
