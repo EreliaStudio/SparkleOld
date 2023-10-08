@@ -1,4 +1,4 @@
-#include "pipeline/pipeline.hpp"
+#include "pipeline/spk_abstract_pipeline.hpp"
 
 AbstractPipeline::Configuration::Data::Data(const Type &p_type, const size_t &p_format, const size_t &p_size) : type(p_type),
 																												format(p_format),

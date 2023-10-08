@@ -2,7 +2,7 @@
 
 #include "sparkle.hpp"
 
-#include "pipeline/shader_module.hpp"
+#include "pipeline/spk_shader_module.hpp"
 
 class AbstractPipeline
 {
