@@ -33,7 +33,8 @@ public:
 		{
 		private:
 			std::map<std::string, Data> _structures;
-			std::map<std::string, Data> _standaloneStructures;
+			std::map<std::string, Data> _singleUniformStructures;
+			std::wstring _acceptedSingleUniformTypeString;
 
 		public:
 			StructureLayout();
@@ -41,8 +42,9 @@ public:
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 
+			const std::wstring& acceptedSingleUniformTypeString() const;
 			const std::map<std::string, Data>& structures() const;
-			const std::map<std::string, Data>& standaloneStructures() const;
+			const std::map<std::string, Data>& singleUniformStructures() const;
 		};
 
 		class FieldArrayLayout
@@ -50,6 +52,7 @@ public:
 		public:
 			struct Field
 			{
+				std::string name;
 				Data data;
 				size_t location;
 				size_t offset;
@@ -58,12 +61,14 @@ public:
 			size_t _stride;
 			std::vector<Field> _fields;
 			
+		protected:
 			const StructureLayout& structureLayout;
 
 		public:
+
 			FieldArrayLayout(const StructureLayout& p_structureLayout);
 
-			void insert(const Data& p_data, const size_t& p_location = 0);
+			void insert(const std::string& p_name, const Data& p_data, const size_t& p_location = 0);
 
 			virtual void treat(const ShaderModule::Instruction &p_instruction) = 0;
 
@@ -89,13 +94,17 @@ public:
 
 		class PushConstantLayout : public FieldArrayLayout
 		{
+		private:
+			std::wstring _type;
+			std::wstring _name;
+
 		public:
 			PushConstantLayout(const StructureLayout& p_structureLayout);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class UniformBlockLayout : public FieldArrayLayout
+		class UniformBlock : public FieldArrayLayout
 		{
 		public:
 			struct Key
@@ -111,15 +120,18 @@ public:
 			enum class Mode
 			{
 				Block,
-				Sampler
+				Single
 			};
 
 		private:
 			Mode _mode;
 			Key _key;
 
+			void _treatSingleUniform(const ShaderModule::Instruction &p_instruction);
+			void _treatUniformBlock(const ShaderModule::Instruction &p_instruction);
+
 		public:
-			UniformBlockLayout(const StructureLayout& p_structureLayout);
+			UniformBlock(const StructureLayout& p_structureLayout);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 
@@ -131,28 +143,28 @@ public:
 		int _vertexTypeMask = static_cast<int>(ShaderModule::Instruction::Type::Version) |
 							  static_cast<int>(ShaderModule::Instruction::Type::Structure) |
 							  static_cast<int>(ShaderModule::Instruction::Type::PushConstant) |
-							  static_cast<int>(ShaderModule::Instruction::Type::SamplerUniform) |
+							  static_cast<int>(ShaderModule::Instruction::Type::SingleUniform) |
 							  static_cast<int>(ShaderModule::Instruction::Type::StorageBuffer) |
-							  static_cast<int>(ShaderModule::Instruction::Type::UniformBlockLayout);
+							  static_cast<int>(ShaderModule::Instruction::Type::UniformBlock);
 
 		int _fragmentTypeMask = static_cast<int>(ShaderModule::Instruction::Type::Version) |
 								static_cast<int>(ShaderModule::Instruction::Type::Structure) |
 								static_cast<int>(ShaderModule::Instruction::Type::PushConstant) |
-								static_cast<int>(ShaderModule::Instruction::Type::SamplerUniform) |
+								static_cast<int>(ShaderModule::Instruction::Type::SingleUniform) |
 								static_cast<int>(ShaderModule::Instruction::Type::OutputBuffer) |
-								static_cast<int>(ShaderModule::Instruction::Type::UniformBlockLayout);
+								static_cast<int>(ShaderModule::Instruction::Type::UniformBlock);
 
 		StructureLayout _structureLayout;
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
 		PushConstantLayout _pushConstantLayout;
-		std::vector<UniformBlockLayout> _uniformBlocks;
+		std::vector<UniformBlock> _uniformBlocks;
 
 		void _parseVersion(const ShaderModule::Instruction& p_instruction);
 		void _parseStorageBuffer(const ShaderModule::Instruction& p_instruction);
 		void _parseOutputBuffer(const ShaderModule::Instruction& p_instruction);
 		void _parsePushConstant(const ShaderModule::Instruction& p_instruction);
-		void _parseUniformBlockLayout(const ShaderModule::Instruction& p_instruction);
+		void _parseUniformBlock(const ShaderModule::Instruction& p_instruction);
 		void _parseStructure(const ShaderModule::Instruction& p_instruction);
 		void _parseFunction(const ShaderModule::Instruction& p_instruction);
 		void _parseError(const ShaderModule::Instruction& p_instruction);
@@ -166,7 +178,7 @@ public:
 		const StorageBufferLayout& storageBufferLayout() const;
 		const OutputBufferLayout& outputBufferLayout() const;
 		const PushConstantLayout& pushConstantLayout() const;
-		const std::vector<UniformBlockLayout>& uniformBlocks() const;
+		const std::vector<UniformBlock>& uniformBlocks() const;
 	};
 
 protected:

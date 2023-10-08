@@ -48,11 +48,11 @@ std::wostream &operator<<(std::wostream &p_os, const ShaderModule::Instruction::
 	case ShaderModule::Instruction::Type::OutputBuffer:
 		p_os << L"OutputBuffer";
 		break;
-	case ShaderModule::Instruction::Type::UniformBlockLayout:
-		p_os << L"UniformBlockLayout";
+	case ShaderModule::Instruction::Type::UniformBlock:
+		p_os << L"UniformBlock";
 		break;
-	case ShaderModule::Instruction::Type::SamplerUniform:
-		p_os << L"SamplerUniform";
+	case ShaderModule::Instruction::Type::SingleUniform:
+		p_os << L"SingleUniform";
 		break;
 	case ShaderModule::Instruction::Type::PushConstant:
 		p_os << L"PushConstant";
@@ -144,10 +144,11 @@ ShaderModule::Instruction::Type ShaderModule::_determineInstructionType(const st
 		{std::regex(R"(layout\(location\s*=\s*\d+\)\s+in)"), Instruction::Type::StorageBuffer},
 		{std::regex(R"(layout\(location\s*=\s*\d+\)\s+out)"), Instruction::Type::OutputBuffer},
 		{std::regex(R"(layout\(push_constant\)\s+uniform)"), Instruction::Type::PushConstant},
-		{std::regex(R"(layout\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+(?!sampler))"), Instruction::Type::UniformBlockLayout},
-		{std::regex(R"(layout\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+sampler)"), Instruction::Type::SamplerUniform},
+        {std::regex(R"(layout\s*\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+\w+\s*\{)"), Instruction::Type::UniformBlock},
+        {std::regex(R"(layout\s*\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+\w+\s+\w+\s*;)"), Instruction::Type::SingleUniform},
 		{std::regex(R"(struct\s+\w+\s*\{[^\}]+\})"), Instruction::Type::Structure},
-		{std::regex(R"(\w+\s+\w+\s*\([^)]*\)\s*\{)"), Instruction::Type::Function}};
+		{std::regex(R"(\w+\s+\w+\s*\([^)]*\)\s*\{)"), Instruction::Type::Function}
+	};
 
 	for (auto &rule : rules)
 	{

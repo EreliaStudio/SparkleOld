@@ -13,8 +13,8 @@ public:
 			StorageBuffer = 0b0000000000000010,
 			OutputBuffer = 0b0000000000000100,
 			PushConstant = 0b0000000000001000,
-			SamplerUniform = 0b0000000000010000,
-			UniformBlockLayout = 0b0000000000100000,
+			SingleUniform = 0b0000000000010000,
+			UniformBlock = 0b0000000000100000,
 			Structure = 0b0000000001000000,
 			Function = 0b0000000010000000,
 			Error = 0b0000000100000000

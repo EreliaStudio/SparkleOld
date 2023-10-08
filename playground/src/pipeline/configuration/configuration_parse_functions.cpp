@@ -20,13 +20,13 @@ void AbstractPipeline::Configuration::_parsePushConstant(const ShaderModule::Ins
 	_pushConstantLayout.treat(p_instruction);
 }
 
-void AbstractPipeline::Configuration::_parseUniformBlockLayout(const ShaderModule::Instruction &p_instruction)
+void AbstractPipeline::Configuration::_parseUniformBlock(const ShaderModule::Instruction &p_instruction)
 {
-	UniformBlockLayout newUniformBlockLayout(_structureLayout);
+	UniformBlock newUniformBlock(_structureLayout);
 
-	newUniformBlockLayout.treat(p_instruction);
+	newUniformBlock.treat(p_instruction);
 
-	_uniformBlocks.push_back(newUniformBlockLayout);
+	_uniformBlocks.push_back(newUniformBlock);
 }
 
 void AbstractPipeline::Configuration::_parseStructure(const ShaderModule::Instruction &p_instruction)
