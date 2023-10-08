@@ -8,9 +8,8 @@ struct TestStructure
 	vec4 color;
 };
 
-
 //Single line comment
-layout(push_constant) uniform PushConstant { mat4 rotation; TestStructure struct;} totallyNotTheSameAsStruct;
+layout(push_constant) uniform PushConstant { mat4 rotation; TestStructure structData;} totallyNotTheSameAsStruct;
 
 
 void main()

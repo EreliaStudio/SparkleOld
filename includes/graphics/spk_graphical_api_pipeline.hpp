@@ -1,3 +1,3 @@
 #pragma once
 
-#include "pipeline/spk_graphical_api_pipeline.hpp"
+#include "pipeline/spk_pipeline.hpp"
