@@ -1,4 +1,4 @@
-#include "pipeline/pipeline.hpp"
+#include "pipeline/spk_abstract_pipeline.hpp"
 
 AbstractPipeline::Configuration::FieldArrayLayout::FieldArrayLayout(const StructureLayout &p_structureLayout) : structureLayout(p_structureLayout)
 {
