@@ -25,10 +25,11 @@ namespace spk
 
 	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::FieldArrayLayout::Field& p_field)
 	{
-		p_out << L"\t\t\tName: " << spk::to_wstring(p_field.name) << std::endl
-			  << L"\t\t\tData: " << p_field.data << std::endl
-			  << L"\t\t\tLocation: " << p_field.location << std::endl
-			  << L"\t\t\tOffset: " << p_field.offset << std::endl;
+		p_out << L"\t\t\tName: " << spk::to_wstring(p_field.name) << std::endl;
+		p_out << L"\t\t\tData: " << p_field.data << std::endl;
+		if (p_field.location != -1)
+		p_out << L"\t\t\tLocation: " << p_field.location << std::endl;
+		p_out << L"\t\t\tOffset: " << p_field.offset << std::endl;
 		return p_out;
 	}
 

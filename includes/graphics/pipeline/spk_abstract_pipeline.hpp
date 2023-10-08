@@ -60,7 +60,7 @@ namespace spk
 				{
 					std::string name;
 					Data data;
-					size_t location;
+					int location = -1;
 					size_t offset;
 
 					friend std::wostream& operator<<(std::wostream& p_out, const Field& p_layout);

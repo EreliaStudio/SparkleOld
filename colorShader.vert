@@ -1,5 +1,6 @@
 #version 450 core
 layout(location = 0) in vec2 model_space;
+layout(location = 1) in vec4 model_color;
 
 
 struct TestStructure

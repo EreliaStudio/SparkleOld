@@ -30,7 +30,7 @@ namespace spk
 			if (it != structureLayout.singleUniformStructures().end())
 			{
 				Data pushConstantData = it->second;
-				insert("", pushConstantData, 0);
+				insert("", pushConstantData, -1);
 			}
 			else
 			{
@@ -74,7 +74,7 @@ namespace spk
 				if (it != structureLayout.structures().end())
 				{
 					Data pushConstantData = it->second;
-					insert(variableName, pushConstantData, 0);
+					insert(variableName, pushConstantData, -1);
 				}
 				else
 				{
