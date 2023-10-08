@@ -2,4 +2,4 @@
 
 #include "sparkle.hpp"
 
-#include "pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_abstract_pipeline.hpp"

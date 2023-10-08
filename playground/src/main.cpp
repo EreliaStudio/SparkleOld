@@ -1,17 +1,17 @@
 #include "playground.hpp"
 
-class Pipeline : public AbstractPipeline
+class Pipeline : public spk::AbstractPipeline
 {
 private:
 	void _loadProgram(
 		const Configuration &p_configuration,
-		const ShaderModule &p_vertexInput,
-		const ShaderModule &p_fragmentInput) override
+		const spk::ShaderModule &p_vertexInput,
+		const spk::ShaderModule &p_fragmentInput) override
 	{
 	}
 
 public:
-	Pipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput)
+	Pipeline(const spk::ShaderModule &p_vertexInput, const spk::ShaderModule &p_fragmentInput)
 	{
 		_loadPipeline(p_vertexInput, p_fragmentInput);
 	}
@@ -38,7 +38,7 @@ private:
 
 public:
 	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-									   _pipeline(ShaderModule("colorShader.vert"), ShaderModule("colorShader.frag"))
+									   _pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag"))
 	{
 	}
 	~Test()
