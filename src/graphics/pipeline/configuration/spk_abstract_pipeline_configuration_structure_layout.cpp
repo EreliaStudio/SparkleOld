@@ -65,7 +65,7 @@ namespace spk
                 auto it = _structures.find(dataType);
                 if (it != _structures.end())
                 {
-                    totalStride += it->second.size;
+                    totalStride += it->second.size * it->second.format;
                 }
                 else
                 {
