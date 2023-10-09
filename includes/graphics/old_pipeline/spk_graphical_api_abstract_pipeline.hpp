@@ -184,10 +184,10 @@ namespace spk::GraphicalAPI
 
 			private:
 				spk::DataBuffer _content;
-				const AbstractPipeline::Configuration::StorageLayout &_configuration;
+				const ShaderLayout::StorageLayout &_configuration;
 
 			public:
-				Storage(const AbstractPipeline::Configuration::StorageLayout &p_storageConfiguration);
+				Storage(const ShaderLayout::StorageLayout &p_storageConfiguration);
 
 				void clear();
 

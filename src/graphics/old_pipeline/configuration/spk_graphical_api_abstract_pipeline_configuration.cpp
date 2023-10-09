@@ -3,7 +3,7 @@
 
 namespace spk::GraphicalAPI
 {
-	AbstractPipeline::Configuration::Configuration() : dataTypes({
+	ShaderLayout::Configuration() : dataTypes({
 														   {"int", Data(1, Data::Type::Int)},
 														   {"uint", Data(1, Data::Type::UInt)},
 														   {"float", Data(1, Data::Type::Float)},
@@ -30,7 +30,7 @@ namespace spk::GraphicalAPI
 	{
 	}
 
-	AbstractPipeline::Configuration::Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode) : Configuration()
+	ShaderLayout::Configuration(const std::string &p_vertexCode, const std::string &p_fragmentCode) : Configuration()
 	{
 		parseShaderCode(p_vertexCode.substr(p_vertexCode.find_first_of("\n") + 1), true);
 		parseShaderCode(p_fragmentCode.substr(p_fragmentCode.find_first_of("\n") + 1), false);

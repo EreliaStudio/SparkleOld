@@ -4,7 +4,7 @@
 namespace spk::GraphicalAPI
 {
 	Pipeline::VulkanObject::VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner,
-		Device* p_linkedDevice, const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration) :
+		Device* p_linkedDevice, const spk::GraphicalAPI::ShaderLayout& p_configuration) :
 		spk::GraphicalAPI::AbstractPipeline::Object(p_owner),
 		_linkedDevice(p_linkedDevice), _configuration(p_configuration)
 	{
@@ -31,7 +31,7 @@ namespace spk::GraphicalAPI
 
 	}
 
-	std::vector<vk::VertexInputBindingDescription> Pipeline::VulkanObject::bindingDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration)
+	std::vector<vk::VertexInputBindingDescription> Pipeline::VulkanObject::bindingDescriptions(const spk::GraphicalAPI::ShaderLayout::StorageLayout& p_storageConfiguration)
 	{
 		std::vector<vk::VertexInputBindingDescription> bindingDescriptions;
 		bindingDescriptions.reserve(1);
@@ -45,7 +45,7 @@ namespace spk::GraphicalAPI
 		return (bindingDescriptions);
 	}
 
-	std::vector<vk::VertexInputAttributeDescription> Pipeline::VulkanObject::attributeDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration)
+	std::vector<vk::VertexInputAttributeDescription> Pipeline::VulkanObject::attributeDescriptions(const spk::GraphicalAPI::ShaderLayout::StorageLayout& p_storageConfiguration)
 	{
 		std::vector<vk::VertexInputAttributeDescription> attributeDescriptions;
 		attributeDescriptions.reserve(p_storageConfiguration.fields.size());

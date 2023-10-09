@@ -43,7 +43,7 @@ namespace spk::GraphicalAPI
 		return result;
 	}
 
-	bool AbstractPipeline::Configuration::isUniformLayoutInstruction(const std::string &p_instruction)
+	bool ShaderLayout::isUniformLayoutInstruction(const std::string &p_instruction)
 	{
 		std::istringstream iss(p_instruction);
 		std::string word;
@@ -59,7 +59,7 @@ namespace spk::GraphicalAPI
 		return true;
 	}
 
-	bool AbstractPipeline::Configuration::isLayoutBufferInInstruction(const std::string &p_instruction)
+	bool ShaderLayout::isLayoutBufferInInstruction(const std::string &p_instruction)
 	{
 		std::istringstream iss(p_instruction);
 		std::string word;
@@ -75,7 +75,7 @@ namespace spk::GraphicalAPI
 		return false;
 	}
 
-	bool AbstractPipeline::Configuration::isPushConstantUniformInstruction(const std::string &p_instruction)
+	bool ShaderLayout::isPushConstantUniformInstruction(const std::string &p_instruction)
 	{
 		std::regex layoutRegex("layout\\s*\\(([^\\)]+)\\)");
 		std::smatch match;
@@ -89,7 +89,7 @@ namespace spk::GraphicalAPI
 		return false;
 	}
 	
-	void AbstractPipeline::Configuration::parseLayoutInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
+	void ShaderLayout::parseLayoutInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
 	{
 		if (isUniformLayoutInstruction(p_instruction) == true)
 		{
@@ -108,7 +108,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseShaderInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
+	void ShaderLayout::parseShaderInstruction(const std::string &p_instruction, const bool& p_bufferParsingMode)
 	{
 		if (p_instruction.find("layout") == 0)
 		{
@@ -120,7 +120,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseShaderCode(const std::string &p_shaderCode, const bool& p_bufferParsingMode)
+	void ShaderLayout::parseShaderCode(const std::string &p_shaderCode, const bool& p_bufferParsingMode)
 	{
 		std::vector<std::string> instructions = splitShaderCodeIntoInstruction(p_shaderCode);
 

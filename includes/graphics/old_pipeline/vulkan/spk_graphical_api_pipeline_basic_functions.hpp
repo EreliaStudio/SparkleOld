@@ -20,5 +20,5 @@ namespace spk::GraphicalAPI
 		static bool GLSLtoSPV(const vk::ShaderStageFlagBits shader_type, const char* pshader, std::vector<unsigned int>& spirv);
 	};
 
-	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data& p_data);
+	vk::Format attributeFormat(const spk::GraphicalAPI::ShaderLayout::Data& p_data);
 }

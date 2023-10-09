@@ -4,7 +4,7 @@ class Pipeline : public spk::AbstractPipeline
 {
 private:
 	void _loadProgram(
-		const Configuration &p_configuration,
+		const spk::ShaderLayout &p_configuration,
 		const spk::ShaderModule &p_vertexInput,
 		const spk::ShaderModule &p_fragmentInput) override
 	{

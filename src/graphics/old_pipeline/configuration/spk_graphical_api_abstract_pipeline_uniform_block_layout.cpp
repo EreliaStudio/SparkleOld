@@ -2,25 +2,25 @@
 
 namespace spk::GraphicalAPI
 {
-	AbstractPipeline::Configuration::UniformBlockLayout::Field::Field() :
+	ShaderLayout::UniformBlockLayout::Field::Field() :
 		offset(0),
 		attribute()
 	{
 
 	}
 	
-	AbstractPipeline::Configuration::UniformBlockLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_offset) :
+	ShaderLayout::UniformBlockLayout::Field::Field(const ShaderLayout::Data& p_dataType, const size_t& p_offset) :
 		offset(p_offset),
 		attribute(p_dataType)
 	{ 
 	}
 
-	AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout()
+	ShaderLayout::UniformBlockLayout::UniformBlockLayout()
 	{
 		stride = 0;
 	}
 
-	AbstractPipeline::Configuration::UniformBlockLayout::UniformBlockLayout(const std::vector<Field> &p_fields) :
+	ShaderLayout::UniformBlockLayout::UniformBlockLayout(const std::vector<Field> &p_fields) :
 		UniformBlockLayout()
 	{
 		for(auto field : p_fields)
