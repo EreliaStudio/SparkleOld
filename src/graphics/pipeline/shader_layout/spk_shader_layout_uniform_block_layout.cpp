@@ -1,4 +1,4 @@
-#include "graphics/pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_shader_layout.hpp"
 
 #include <regex>
 
@@ -6,11 +6,11 @@
 
 namespace spk
 {
-	AbstractPipeline::Configuration::UniformBlock::UniformBlock(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
+	ShaderLayout::UniformBlock::UniformBlock(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
 	{
 	}
 
-	void AbstractPipeline::Configuration::UniformBlock::_treatSingleUniform(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlock::_treatSingleUniform(const ShaderModule::Instruction &p_instruction)
 	{
 		spk::cout << "Parsing single unfirom [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 		// Regex for single uniform
@@ -43,7 +43,7 @@ namespace spk
 		}
 	}
 
-	void AbstractPipeline::Configuration::UniformBlock::_treatUniformBlock(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlock::_treatUniformBlock(const ShaderModule::Instruction &p_instruction)
 	{
 		_mode = Mode::Block;
 		std::regex blockUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s*\\{([^\\}]*)\\}\\s+(\\w+);");
@@ -88,7 +88,7 @@ namespace spk
 		}
 	}
 
-	void AbstractPipeline::Configuration::UniformBlock::treat(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlock::treat(const ShaderModule::Instruction &p_instruction)
 	{
 		if (p_instruction.type == ShaderModule::Instruction::Type::SingleUniform)
 		{
@@ -100,12 +100,12 @@ namespace spk
 		}
 	}
 
-	AbstractPipeline::Configuration::UniformBlock::Key::Key(size_t p_set, size_t p_binding)
+	ShaderLayout::UniformBlock::Key::Key(size_t p_set, size_t p_binding)
 		: binding(p_binding), set(p_set)
 	{
 	}
 
-	bool AbstractPipeline::Configuration::UniformBlock::Key::operator<(const AbstractPipeline::Configuration::UniformBlock::Key &p_other) const
+	bool ShaderLayout::UniformBlock::Key::operator<(const ShaderLayout::UniformBlock::Key &p_other) const
 	{
 		if (binding < p_other.binding)
 		{
@@ -118,14 +118,14 @@ namespace spk
 		return false;
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::UniformBlock::Mode& p_mode)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock::Mode& p_mode)
 	{
 		switch (p_mode)
 		{
-			case AbstractPipeline::Configuration::UniformBlock::Mode::Block:
+			case ShaderLayout::UniformBlock::Mode::Block:
 				p_out << L"UniformBlock";
 				break;
-			case AbstractPipeline::Configuration::UniformBlock::Mode::Single:
+			case ShaderLayout::UniformBlock::Mode::Single:
 				p_out << L"SamplerUniform";
 				break;
 			default:
@@ -135,27 +135,27 @@ namespace spk
 		return (p_out);
 	}
 	
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::UniformBlock::Key& p_key)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock::Key& p_key)
 	{
 		p_out << L"Set : " << p_key.set << " / Binding : " << p_key.binding;
 		return (p_out);
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::UniformBlock& p_block)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock& p_block)
 	{
 		p_out << "\t\t" << "Name : " << p_block._name << std::endl;
 		p_out << "\t\t" << "Mode : " << p_block._mode << std::endl;
 		p_out << "\t\t" << "Key : " << p_block._key << std::endl;
-        p_out << static_cast<const AbstractPipeline::Configuration::FieldArrayLayout&>(p_block);
+        p_out << static_cast<const ShaderLayout::FieldArrayLayout&>(p_block);
 		return p_out;
 	}
 
-	const AbstractPipeline::Configuration::UniformBlock::Key &AbstractPipeline::Configuration::UniformBlock::key() const
+	const ShaderLayout::UniformBlock::Key &ShaderLayout::UniformBlock::key() const
 	{
 		return (_key);
 	}
 
-	const AbstractPipeline::Configuration::UniformBlock::Mode &AbstractPipeline::Configuration::UniformBlock::mode() const
+	const ShaderLayout::UniformBlock::Mode &ShaderLayout::UniformBlock::mode() const
 	{
 		return (_mode);
 	}

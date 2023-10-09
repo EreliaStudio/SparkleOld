@@ -3,7 +3,7 @@
 namespace spk::GraphicalAPI
 {
 
-	AbstractPipeline::Configuration::StorageLayout::Field::Field() :
+	ShaderLayout::StorageLayout::Field::Field() :
 		location(0),
 		offset(0),
 		attribute()
@@ -11,19 +11,19 @@ namespace spk::GraphicalAPI
 
 	}
 	
-	AbstractPipeline::Configuration::StorageLayout::Field::Field(const AbstractPipeline::Configuration::Data& p_dataType, const size_t& p_location, const size_t& p_offset) :
+	ShaderLayout::StorageLayout::Field::Field(const ShaderLayout::Data& p_dataType, const size_t& p_location, const size_t& p_offset) :
 		location(p_location),
 		offset(p_offset),
 		attribute(p_dataType)
 	{ 
 	}
 
-	AbstractPipeline::Configuration::StorageLayout::StorageLayout()
+	ShaderLayout::StorageLayout::StorageLayout()
 	{
 		stride = 0;
 	}
 
-	AbstractPipeline::Configuration::StorageLayout::StorageLayout(const std::vector<Field> &p_fields) :
+	ShaderLayout::StorageLayout::StorageLayout(const std::vector<Field> &p_fields) :
 		StorageLayout()
 	{
 		for(auto field : p_fields)

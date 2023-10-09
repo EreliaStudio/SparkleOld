@@ -38,11 +38,11 @@ namespace spk::GraphicalAPI
 			size_t _pushedSize = 0;
 
 			GLenum _convertModeToGLenum(const Mode &p_input);
-			GLenum _convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input);
+			GLenum _convertAttributeTypeToGLenum(const spk::GraphicalAPI::ShaderLayout::Data::Type &p_input);
 			
 		public:
 			Buffer(const Mode& p_mode);
-			Buffer(const Pipeline::Buffer::Mode& p_mode, const AbstractPipeline::Configuration::StorageLayout& p_configuration);
+			Buffer(const Pipeline::Buffer::Mode& p_mode, const ShaderLayout::StorageLayout& p_configuration);
 
 			virtual void push(const void* data, const size_t dataSize);
 
@@ -73,7 +73,7 @@ namespace spk::GraphicalAPI
 			Buffer _indexesBuffer;
 			UniformBuffer _pushConstantBuffer;
 
-			size_t _findFirstBindingAvailible(const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
+			size_t _findFirstBindingAvailible(const spk::GraphicalAPI::ShaderLayout& p_configuration);
 
 		public:
 			OpenGLObject(Pipeline* p_owner);

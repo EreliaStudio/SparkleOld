@@ -24,24 +24,24 @@ namespace spk::GraphicalAPI
 		return (GL_NONE);
 	}
 
-	GLenum Pipeline::Buffer::_convertAttributeTypeToGLenum(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type &p_input)
+	GLenum Pipeline::Buffer::_convertAttributeTypeToGLenum(const spk::GraphicalAPI::ShaderLayout::Data::Type &p_input)
 	{
 		switch (p_input)
 		{
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Int):
+		case (spk::GraphicalAPI::ShaderLayout::Data::Type::Int):
 			return (GL_INT);
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::UInt):
+		case (spk::GraphicalAPI::ShaderLayout::Data::Type::UInt):
 			return (GL_UNSIGNED_BYTE);
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Float):
+		case (spk::GraphicalAPI::ShaderLayout::Data::Type::Float):
 			return (GL_FLOAT);
-		case (spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Complex):
+		case (spk::GraphicalAPI::ShaderLayout::Data::Type::Complex):
 			return (GL_UNSIGNED_BYTE);
 		}
 		spk::throwException(L"Unexpected data type [" + std::to_wstring(static_cast<size_t>(p_input)) + L"]");
 		return (GL_NONE);
 	}
 
-	Pipeline::Buffer::Buffer(const Pipeline::Buffer::Mode& p_mode, const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_configuration)
+	Pipeline::Buffer::Buffer(const Pipeline::Buffer::Mode& p_mode, const spk::GraphicalAPI::ShaderLayout::StorageLayout& p_configuration)
 	{
 		_mode = _convertModeToGLenum(p_mode);
 

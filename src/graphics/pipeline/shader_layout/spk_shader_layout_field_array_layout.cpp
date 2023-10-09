@@ -1,16 +1,16 @@
-#include "graphics/pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_shader_layout.hpp"
 
 #include "spk_basic_functions.hpp"
 
 namespace spk
 {
-	AbstractPipeline::Configuration::FieldArrayLayout::FieldArrayLayout(const StructureLayout &p_structureLayout) :
+	ShaderLayout::FieldArrayLayout::FieldArrayLayout(const StructureLayout &p_structureLayout) :
 		structureLayout(p_structureLayout),
 		_stride(0)
 	{
 	}
 
-	void AbstractPipeline::Configuration::FieldArrayLayout::insert(const std::string &p_name, const Data &p_data, const size_t &p_location)
+	void ShaderLayout::FieldArrayLayout::insert(const std::string &p_name, const Data &p_data, const size_t &p_location)
 	{
 		Field newField;
 
@@ -23,7 +23,7 @@ namespace spk
 		_stride += newField.data.format * newField.data.size;
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::FieldArrayLayout::Field& p_field)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::FieldArrayLayout::Field& p_field)
 	{
 		p_out << L"\t\t\tName: " << spk::to_wstring(p_field.name) << std::endl;
 		p_out << L"\t\t\tData: " << p_field.data << std::endl;
@@ -33,7 +33,7 @@ namespace spk
 		return p_out;
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::FieldArrayLayout& p_layout)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::FieldArrayLayout& p_layout)
 	{
 		p_out << "\t\tStride : " << p_layout._stride << std::endl;
 		p_out << "\t\tFields : " << std::endl;
@@ -46,12 +46,12 @@ namespace spk
 		return p_out;
 	}
 
-	const size_t &AbstractPipeline::Configuration::FieldArrayLayout::stride() const
+	const size_t &ShaderLayout::FieldArrayLayout::stride() const
 	{
 		return (_stride);
 	}
 
-	const std::vector<AbstractPipeline::Configuration::FieldArrayLayout::Field> &AbstractPipeline::Configuration::FieldArrayLayout::fields() const
+	const std::vector<ShaderLayout::FieldArrayLayout::Field> &ShaderLayout::FieldArrayLayout::fields() const
 	{
 		return (_fields);
 	}

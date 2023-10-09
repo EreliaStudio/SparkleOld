@@ -1,4 +1,4 @@
-#include "graphics/pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_shader_layout.hpp"
 
 #include <regex>
 
@@ -6,7 +6,7 @@
 
 namespace spk
 {
-    AbstractPipeline::Configuration::StructureLayout::StructureLayout()
+    ShaderLayout::StructureLayout::StructureLayout()
     {
         _singleUniformStructures = {
             {"sampler1D", Data(Data::Type::Int, 1, sizeof(int))},
@@ -18,7 +18,7 @@ namespace spk
         _acceptedSingleUniformTypeString = L"sampler1D, sampler2D, sampler3D, samplerCube";
     }
 
-    void AbstractPipeline::Configuration::StructureLayout::reset()
+    void ShaderLayout::StructureLayout::reset()
     {
         _structures = {
             {"float", Data(Data::Type::Float, 1, sizeof(float))},
@@ -42,7 +42,7 @@ namespace spk
     }
 
 
-    void AbstractPipeline::Configuration::StructureLayout::treat(const ShaderModule::Instruction &p_instruction)
+    void ShaderLayout::StructureLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
         std::regex re(R"(struct\s+(\w+)\s+\{\s*(.*)\s*\};)");
         std::smatch match;
@@ -85,28 +85,33 @@ namespace spk
         }
     }
 
-    std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::StructureLayout& p_layout)
+    std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::StructureLayout& p_layout)
     {
-        p_out << "StructureLayout {\n";
+        p_out << "\t\tStructures: " << std::endl;
         for (const auto& pair : p_layout.structures())
         {
-            p_out << "\t" << spk::to_wstring(pair.first) << ": " << pair.second << '\n';
+            p_out << "\t\t\t" << spk::to_wstring(pair.first) << ": " << pair.second << std::endl;
         }
-        p_out << "}";
+        
+        p_out << "\t\tSingleUniformStructures: " << std::endl;
+        for (const auto& pair : p_layout.singleUniformStructures())
+        {
+            p_out << "\t\t\t" << spk::to_wstring(pair.first) << ": " << pair.second << std::endl;
+        }
         return p_out;
     }
 
-    const std::wstring& AbstractPipeline::Configuration::StructureLayout::acceptedSingleUniformTypeString() const
+    const std::wstring& ShaderLayout::StructureLayout::acceptedSingleUniformTypeString() const
     {
         return (_acceptedSingleUniformTypeString);
     }
 
-    const std::map<std::string, AbstractPipeline::Configuration::Data> &AbstractPipeline::Configuration::StructureLayout::structures() const
+    const std::map<std::string, ShaderLayout::Data> &ShaderLayout::StructureLayout::structures() const
     {
         return (_structures);
     }
 
-    const std::map<std::string, AbstractPipeline::Configuration::Data> &AbstractPipeline::Configuration::StructureLayout::singleUniformStructures() const
+    const std::map<std::string, ShaderLayout::Data> &ShaderLayout::StructureLayout::singleUniformStructures() const
     {
         return (_singleUniformStructures);
     }

@@ -2,7 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
-	AbstractPipeline::Object::Storage::Storage(const AbstractPipeline::Configuration::StorageLayout& p_configuration) :
+	AbstractPipeline::Object::Storage::Storage(const ShaderLayout::StorageLayout& p_configuration) :
 		_configuration(p_configuration)
 	{
 		

@@ -3,7 +3,7 @@
 
 namespace spk::GraphicalAPI
 {
-	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_blockType(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutPushConstantInstruction_blockType(const std::string &p_instruction)
 	{
 		std::regex blockTypeRegex(R"(layout\s*\(push_constant\)\s*uniform\s*(\w+))");
 		std::smatch matchResults;
@@ -15,7 +15,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 	
-	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_content(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutPushConstantInstruction_content(const std::string &p_instruction)
 	{
 		std::regex contentRegex(R"(\{\s*(\w+)\s+(\w+)\s*;\s*\})");
 		auto contentBegin = std::sregex_iterator(p_instruction.begin(), p_instruction.end(), contentRegex);
@@ -45,7 +45,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 	
-	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction_instanceName(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutPushConstantInstruction_instanceName(const std::string &p_instruction)
 	{
 		std::regex instanceNameRegex(R"(\}\s*(\w+)\s*)");
         std::smatch matchResults;
@@ -60,7 +60,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseLayoutPushConstantInstruction(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutPushConstantInstruction(const std::string &p_instruction)
 	{
 		parseLayoutPushConstantInstruction_blockType(p_instruction);
 		parseLayoutPushConstantInstruction_content(p_instruction);

@@ -1,4 +1,4 @@
-#include "graphics/pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_shader_layout.hpp"
 
 #include <regex>
 
@@ -6,12 +6,12 @@
 
 namespace spk
 {
-    AbstractPipeline::Configuration::StorageBufferLayout::StorageBufferLayout(const StructureLayout& p_structureLayout) :
+    ShaderLayout::StorageBufferLayout::StorageBufferLayout(const StructureLayout& p_structureLayout) :
         FieldArrayLayout(p_structureLayout)
     {
     }
 
-    void AbstractPipeline::Configuration::StorageBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
+    void ShaderLayout::StorageBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
         std::regex re(R"(layout\(location=(\d+)\)\s+in\s+(\w+)\s+(\w+);)");
         std::smatch match;

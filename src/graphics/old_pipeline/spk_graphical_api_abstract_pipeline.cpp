@@ -10,7 +10,7 @@ namespace spk::GraphicalAPI
 		const std::string& p_vertexName, std::string& p_vertexCode,
 		const std::string& p_fragmentName, std::string& p_fragmentCode)
 	{
-		_configuration = AbstractPipeline::Configuration(p_vertexCode, p_fragmentCode);
+		_configuration = ShaderLayout(p_vertexCode, p_fragmentCode);
 
 		addCustomStructuresToCode(p_vertexCode, p_fragmentCode);
 #if GRAPHICAL_API == 0
@@ -39,7 +39,7 @@ namespace spk::GraphicalAPI
 		return (_uniformBlocks[p_name]);
 	}
 	
-	const AbstractPipeline::Configuration& AbstractPipeline::configuration() const
+	const ShaderLayout& ShaderLayout() const
 	{
 		return (_configuration);
 	}

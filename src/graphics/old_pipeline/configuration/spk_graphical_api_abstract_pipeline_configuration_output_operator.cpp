@@ -2,23 +2,23 @@
 
 namespace spk::GraphicalAPI
 {
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::Data::Type& p_type)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::Data::Type& p_type)
 	{
-	p_os << (p_type == AbstractPipeline::Configuration::Data::Type::Error  ? L"Error"  :
-			p_type == AbstractPipeline::Configuration::Data::Type::Int	? L"Int":
-			p_type == AbstractPipeline::Configuration::Data::Type::UInt   ? L"UInt"   :
-			p_type == AbstractPipeline::Configuration::Data::Type::Float  ? L"Float"  :
+	p_os << (p_type == ShaderLayout::Data::Type::Error  ? L"Error"  :
+			p_type == ShaderLayout::Data::Type::Int	? L"Int":
+			p_type == ShaderLayout::Data::Type::UInt   ? L"UInt"   :
+			p_type == ShaderLayout::Data::Type::Float  ? L"Float"  :
 	  L"Complex");
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::Data& p_data)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::Data& p_data)
 	{
 	p_os << L"Data{type: " << p_data.type << L", format: " << p_data.format << L", size: " << p_data.size << L"}";
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::StorageLayout::Field& p_field)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::StorageLayout::Field& p_field)
 	{
 	p_os << L"\t\tLocation : " << p_field.location << std::endl;
 	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
@@ -26,7 +26,7 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::UniformBlockLayout::Field& p_field)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::UniformBlockLayout::Field& p_field)
 	{
 	p_os << L"\t\tName : " << p_field.name << std::endl;
 	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
@@ -34,7 +34,7 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::UniformBlockLayout& p_block)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::UniformBlockLayout& p_block)
 	{
 	p_os << L"\tname: " << p_block.name << std::endl;
 	p_os << L"\ttype: " << p_block.type << std::endl;
@@ -54,7 +54,7 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const AbstractPipeline::Configuration::PushConstantLayout::Field& p_field)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::PushConstantLayout::Field& p_field)
 	{
 	p_os << L"\t\tName : " << p_field.name << std::endl;
 	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
@@ -62,7 +62,7 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 	
-	std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configuration::PushConstantLayout &p_pushConstantLayout)
+	std::wostream &operator<<(std::wostream &p_os, const ShaderLayout::PushConstantLayout &p_pushConstantLayout)
 	{
 		p_os << L"\tname: " << p_pushConstantLayout.name << std::endl;
 		p_os << L"\ttype: " << p_pushConstantLayout.type << std::endl;
@@ -81,7 +81,7 @@ namespace spk::GraphicalAPI
 		return p_os;
 	}
 	
-	std::wostream &operator<<(std::wostream &p_os, const AbstractPipeline::Configuration::StorageLayout &p_storageLayout)
+	std::wostream &operator<<(std::wostream &p_os, const ShaderLayout::StorageLayout &p_storageLayout)
 	{
 		p_os << L"\tstride: " << p_storageLayout.stride << std::endl;
 		p_os << L"\tfields:[" << std::endl;

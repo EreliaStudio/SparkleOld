@@ -3,7 +3,7 @@
 
 namespace spk::GraphicalAPI
 {
-	void AbstractPipeline::Configuration::parseLayoutBufferInstruction(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutBufferInstruction(const std::string &p_instruction)
 	{
 		std::regex bufferRegex("layout\\s*(?:\\(location\\s*=\\s*(\\d+)\\))?\\s*in\\s*(\\w+)\\s*(\\w+)");
 		std::smatch bufferMatch;

@@ -3,7 +3,7 @@
 
 namespace spk::GraphicalAPI
 {
-	void AbstractPipeline::Configuration::parseLayoutUniformInstruction_layoutInfo(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
+	void ShaderLayout::parseLayoutUniformInstruction_layoutInfo(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
 	{
 		std::regex layoutRegex("layout\\s*\\(([^\\)]+)\\)");
 		std::smatch match;
@@ -40,7 +40,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseLayoutUniformInstruction_blockType(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
+	void ShaderLayout::parseLayoutUniformInstruction_blockType(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
 	{
 		std::regex blockTypeRegex("uniform\\s+(\\w+)\\s*\\{");
 		std::smatch blockTypeMatch;
@@ -52,7 +52,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseLayoutUniformInstruction_content(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
+	void ShaderLayout::parseLayoutUniformInstruction_content(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
 	{
 		std::regex fieldRegex("(\\w+)\\s+(\\w+);");
 		std::smatch fieldMatch;
@@ -87,7 +87,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseLayoutUniformInstruction_instanceName(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
+	void ShaderLayout::parseLayoutUniformInstruction_instanceName(UniformBlockLayout &p_uniformBlockToFill, const std::string &p_instruction)
 	{
 		std::regex instanceNameRegex("\\}\\s*(\\w+)");
 		std::smatch instanceNameMatch;
@@ -99,7 +99,7 @@ namespace spk::GraphicalAPI
 		}
 	}
 
-	void AbstractPipeline::Configuration::parseLayoutUniformInstruction(const std::string &p_instruction)
+	void ShaderLayout::parseLayoutUniformInstruction(const std::string &p_instruction)
 	{
 		UniformBlockLayout newUniformBlock;
 

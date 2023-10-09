@@ -4,7 +4,7 @@
 
 namespace spk::GraphicalAPI
 {
-	size_t Pipeline::OpenGLObject::_findFirstBindingAvailible(const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration)
+	size_t Pipeline::OpenGLObject::_findFirstBindingAvailible(const spk::GraphicalAPI::ShaderLayout& p_configuration)
 	{
 		size_t result = 0;
 		

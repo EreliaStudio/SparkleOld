@@ -73,7 +73,7 @@ namespace spk::GraphicalAPI
 		{
 		public:
 			VulkanObject(spk::GraphicalAPI::AbstractPipeline* p_owner,
-				Device* p_linkedDevice, const spk::GraphicalAPI::AbstractPipeline::Configuration& p_configuration);
+				Device* p_linkedDevice, const spk::GraphicalAPI::ShaderLayout& p_configuration);
 
 			void push();
 			void updateConstants();
@@ -81,8 +81,8 @@ namespace spk::GraphicalAPI
 			void activate();
 			void deactivate();
 
-			static std::vector<vk::VertexInputBindingDescription> bindingDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
-			static std::vector<vk::VertexInputAttributeDescription> attributeDescriptions(const spk::GraphicalAPI::AbstractPipeline::Configuration::StorageLayout& p_storageConfiguration);
+			static std::vector<vk::VertexInputBindingDescription> bindingDescriptions(const spk::GraphicalAPI::ShaderLayout::StorageLayout& p_storageConfiguration);
+			static std::vector<vk::VertexInputAttributeDescription> attributeDescriptions(const spk::GraphicalAPI::ShaderLayout::StorageLayout& p_storageConfiguration);
 
 		private:
 
@@ -90,7 +90,7 @@ namespace spk::GraphicalAPI
 			void _createIndexBuffers();
 
 			Device* _linkedDevice;
-			AbstractPipeline::Configuration _configuration;
+			ShaderLayout _configuration;
 
 			std::unique_ptr<Buffer> _vertexBuffer;
 			uint32_t _vertexCount;

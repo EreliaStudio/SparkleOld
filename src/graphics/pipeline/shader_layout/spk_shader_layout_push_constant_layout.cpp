@@ -1,4 +1,4 @@
-#include "graphics/pipeline/spk_abstract_pipeline.hpp"
+#include "graphics/pipeline/spk_shader_layout.hpp"
 
 #include <regex>
 
@@ -6,12 +6,12 @@
 
 namespace spk
 {
-    AbstractPipeline::Configuration::PushConstantLayout::PushConstantLayout(const StructureLayout& p_structureLayout) :
+    ShaderLayout::PushConstantLayout::PushConstantLayout(const StructureLayout& p_structureLayout) :
         FieldArrayLayout(p_structureLayout)
     {
     }
 
-    void AbstractPipeline::Configuration::PushConstantLayout::treat(const ShaderModule::Instruction &p_instruction)
+    void ShaderLayout::PushConstantLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
         std::regex outer_re(R"(layout\(push_constant\) uniform (.*?) \{(.*?)\} (.*?);)");
         std::smatch outer_match;
@@ -51,11 +51,11 @@ namespace spk
         }
     }
 
-    std::wostream& operator<<(std::wostream& p_out, const AbstractPipeline::Configuration::PushConstantLayout& p_layout)
+    std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::PushConstantLayout& p_layout)
     {
         p_out << "\t\tDataType : " << p_layout._type << std::endl
               << "\t\tName : " << p_layout._name << std::endl
-              << static_cast<const AbstractPipeline::Configuration::FieldArrayLayout&>(p_layout);
+              << static_cast<const ShaderLayout::FieldArrayLayout&>(p_layout);
         return p_out;
     }
 }

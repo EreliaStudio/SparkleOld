@@ -174,9 +174,9 @@ namespace spk::GraphicalAPI
 		return (true);
 	}
 	
-	vk::Format attributeFormat(const spk::GraphicalAPI::AbstractPipeline::Configuration::Data& p_data)
+	vk::Format attributeFormat(const spk::GraphicalAPI::ShaderLayout::Data& p_data)
 	{
-		if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Float)
+		if (p_data.type == spk::GraphicalAPI::ShaderLayout::Data::Type::Float)
 		{
 			switch (p_data.format)
 			{
@@ -192,7 +192,7 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::Int)
+		else if (p_data.type == spk::GraphicalAPI::ShaderLayout::Data::Type::Int)
 		{
 			switch (p_data.format)
 			{
@@ -208,7 +208,7 @@ namespace spk::GraphicalAPI
 				return (vk::Format::eUndefined);
 			}
 		}
-		else if (p_data.type == spk::GraphicalAPI::AbstractPipeline::Configuration::Data::Type::UInt)
+		else if (p_data.type == spk::GraphicalAPI::ShaderLayout::Data::Type::UInt)
 		{
 			switch (p_data.format)
 			{

@@ -4,7 +4,7 @@
 namespace spk::GraphicalAPI
 {
 
-	void AbstractPipeline::Configuration::parseStructInstruction(const std::string &p_instruction)
+	void ShaderLayout::parseStructInstruction(const std::string &p_instruction)
 	{
 		std::string input = "struct Test{vec2 position;vec4 color;}";
 		std::regex re(R"(struct\s+(\w+)\s*\{([^\}]+)\})");
