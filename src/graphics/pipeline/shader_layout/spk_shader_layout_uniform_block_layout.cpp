@@ -6,13 +6,12 @@
 
 namespace spk
 {
-	ShaderLayout::UniformBlock::UniformBlock(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
+	ShaderLayout::UniformBlockLayout::UniformBlockLayout(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
 	{
 	}
 
-	void ShaderLayout::UniformBlock::_treatSingleUniform(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlockLayout::_treatSingleUniform(const ShaderModule::Instruction &p_instruction)
 	{
-		spk::cout << "Parsing single unfirom [" << spk::to_wstring(p_instruction.code) << "]" << std::endl;
 		// Regex for single uniform
 		_mode = Mode::Single;
 		std::regex singleUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s+(\\w+);");
@@ -43,7 +42,7 @@ namespace spk
 		}
 	}
 
-	void ShaderLayout::UniformBlock::_treatUniformBlock(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlockLayout::_treatUniformBlock(const ShaderModule::Instruction &p_instruction)
 	{
 		_mode = Mode::Block;
 		std::regex blockUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s*\\{([^\\}]*)\\}\\s+(\\w+);");
@@ -78,17 +77,17 @@ namespace spk
 				}
 				else
 				{
-					spk::throwException(L"Unexpected UniformBlock type [" + spk::to_wstring(dataType) + L"] inside [" + spk::to_wstring(p_instruction.code) + L"]");
+					spk::throwException(L"Unexpected UniformBlockLayout type [" + spk::to_wstring(dataType) + L"] inside [" + spk::to_wstring(p_instruction.code) + L"]");
 				}
 			}
 		}
 		else
 		{
-			spk::throwException(L"Unexpected UniformBlock instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [PushConstantStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [PushConstantName];");
+			spk::throwException(L"Unexpected UniformBlockLayout instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [PushConstantStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [PushConstantName];");
 		}
 	}
 
-	void ShaderLayout::UniformBlock::treat(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlockLayout::treat(const ShaderModule::Instruction &p_instruction)
 	{
 		if (p_instruction.type == ShaderModule::Instruction::Type::SingleUniform)
 		{
@@ -100,32 +99,42 @@ namespace spk
 		}
 	}
 
-	ShaderLayout::UniformBlock::Key::Key(size_t p_set, size_t p_binding)
+	ShaderLayout::UniformBlockLayout::Key::Key(size_t p_set, size_t p_binding)
 		: binding(p_binding), set(p_set)
 	{
 	}
 
-	bool ShaderLayout::UniformBlock::Key::operator<(const ShaderLayout::UniformBlock::Key &p_other) const
+	bool ShaderLayout::UniformBlockLayout::Key::operator<(const ShaderLayout::UniformBlockLayout::Key &p_other) const
 	{
 		if (binding < p_other.binding)
 		{
-			return true;
+			return (true);
 		}
 		else if (binding == p_other.binding)
 		{
-			return set < p_other.set;
+			return (set < p_other.set);
 		}
-		return false;
+		return (false);
+	}
+	
+	bool ShaderLayout::UniformBlockLayout::Key::operator==(const ShaderLayout::UniformBlockLayout::Key &p_other) const
+	{
+		return (binding == p_other.binding && set == p_other.set);
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock::Mode& p_mode)
+	bool ShaderLayout::UniformBlockLayout::Key::operator!=(const ShaderLayout::UniformBlockLayout::Key &p_other) const
+	{
+		return (binding != p_other.binding || set != p_other.set);
+	}
+
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlockLayout::Mode& p_mode)
 	{
 		switch (p_mode)
 		{
-			case ShaderLayout::UniformBlock::Mode::Block:
-				p_out << L"UniformBlock";
+			case ShaderLayout::UniformBlockLayout::Mode::Block:
+				p_out << L"UniformBlockLayout";
 				break;
-			case ShaderLayout::UniformBlock::Mode::Single:
+			case ShaderLayout::UniformBlockLayout::Mode::Single:
 				p_out << L"SamplerUniform";
 				break;
 			default:
@@ -135,13 +144,13 @@ namespace spk
 		return (p_out);
 	}
 	
-	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock::Key& p_key)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlockLayout::Key& p_key)
 	{
 		p_out << L"Set : " << p_key.set << " / Binding : " << p_key.binding;
 		return (p_out);
 	}
 
-	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlock& p_block)
+	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::UniformBlockLayout& p_block)
 	{
 		p_out << "\t\t" << "Name : " << p_block._name << std::endl;
 		p_out << "\t\t" << "Mode : " << p_block._mode << std::endl;
@@ -150,12 +159,17 @@ namespace spk
 		return p_out;
 	}
 
-	const ShaderLayout::UniformBlock::Key &ShaderLayout::UniformBlock::key() const
+	const std::wstring &ShaderLayout::UniformBlockLayout::name() const
+	{
+		return (_name);
+	}
+
+	const ShaderLayout::UniformBlockLayout::Key &ShaderLayout::UniformBlockLayout::key() const
 	{
 		return (_key);
 	}
 
-	const ShaderLayout::UniformBlock::Mode &ShaderLayout::UniformBlock::mode() const
+	const ShaderLayout::UniformBlockLayout::Mode &ShaderLayout::UniformBlockLayout::mode() const
 	{
 		return (_mode);
 	}

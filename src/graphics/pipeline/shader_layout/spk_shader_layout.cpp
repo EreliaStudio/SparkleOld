@@ -35,13 +35,15 @@ namespace spk
 	}
 
 	ShaderLayout::ShaderLayout(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) :
+		_vertexModule(p_vertexInput),
+		_fragmentModule(p_fragmentInput),
 		_structureLayout(),
 		_storageBufferLayout(_structureLayout),
 		_outputBufferLayout(_structureLayout),
 		_pushConstantLayout(_structureLayout)
 	{
-		_parseInstructionSet(p_vertexInput.instructions(), _vertexTypeMask);
-		_parseInstructionSet(p_fragmentInput.instructions(), _fragmentTypeMask);
+		_parseInstructionSet(_vertexModule.instructions(), _vertexTypeMask);
+		_parseInstructionSet(_fragmentModule.instructions(), _fragmentTypeMask);
 	}
 
 	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout& p_config)
@@ -53,14 +55,24 @@ namespace spk
 		p_out << "\tPushConstantLayout: \n" << p_config.pushConstantLayout() << std::endl;
 		
 		p_out << "\tUniformBlocks: [" << std::endl;
-		for (const auto& block : p_config.uniformBlocks())
+		for (const auto& blockLayout : p_config.uniformBlockLayouts())
 		{
-			p_out << block << std::endl;
+			p_out << blockLayout << std::endl;
 		}
 		p_out << "\t]\n";
 		
 		p_out << "}";
 		return p_out;
+	}
+
+	const ShaderModule &ShaderLayout::vertexModule() const
+	{
+		return (_vertexModule);
+	}
+		
+	const ShaderModule &ShaderLayout::fragmentModule() const
+	{
+		return (_fragmentModule);
 	}
 
 	const ShaderLayout::StructureLayout &ShaderLayout::structureLayout() const
@@ -83,8 +95,8 @@ namespace spk
 		return (_pushConstantLayout);
 	}
 
-	const std::vector<ShaderLayout::UniformBlock> &ShaderLayout::uniformBlocks() const
+	const std::vector<ShaderLayout::UniformBlockLayout> &ShaderLayout::uniformBlockLayouts() const
 	{
-		return (_uniformBlocks);
+		return (_uniformBlocksLayout);
 	}
 }

@@ -26,11 +26,11 @@ namespace spk
 
 	void ShaderLayout::_parseUniformBlock(const ShaderModule::Instruction &p_instruction)
 	{
-		UniformBlock newUniformBlock(_structureLayout);
+		UniformBlockLayout newUniformBlock(_structureLayout);
 
 		newUniformBlock.treat(p_instruction);
 
-		_uniformBlocks.push_back(newUniformBlock);
+		_uniformBlocksLayout.push_back(newUniformBlock);
 	}
 
 	void ShaderLayout::_parseStructure(const ShaderModule::Instruction &p_instruction)
