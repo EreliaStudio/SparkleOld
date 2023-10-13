@@ -35,6 +35,11 @@ namespace spk
 		DataBuffer();
 
 		/**
+		 * @brief Constructor with a pre-defined sized data buffer
+		 */
+		DataBuffer(size_t p_dataSize);
+
+		/**
 		 * @brief Return the content of the DataBuffer as a raw bytes array
 		 * 
 		 * @return The content of the DataBuffer as raw bytes
