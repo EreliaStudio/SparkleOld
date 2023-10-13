@@ -55,11 +55,42 @@ public:
 		}
 	};
 
+	class OpenGLSamplerUniform : public spk::AbstractPipeline::SamplerUniform
+	{
+	private:
+		void _updateSamplerID(int p_samplerID)
+		{
+
+		}
+
+	public:
+		OpenGLSamplerUniform(const spk::ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
+			spk::AbstractPipeline::SamplerUniform(p_uniformBlockLayout)
+		{
+
+		}
+
+		void activate()
+		{
+
+		}
+
+		void deactivate()
+		{
+
+		}
+	};
+
 private:
 	
 	std::shared_ptr<UniformBlock> _loadUniformBlock(const spk::ShaderLayout::UniformBlockLayout& p_uniformBlockLayout)
 	{
 		return (std::make_shared<OpenGLUniformBlock>(p_uniformBlockLayout));
+	}
+	
+	std::shared_ptr<SamplerUniform> _loadSamplerUniform(const spk::ShaderLayout::UniformBlockLayout& p_uniformBlockLayout)
+	{
+		return (std::make_shared<OpenGLSamplerUniform>(p_uniformBlockLayout));
 	}
 
 	std::shared_ptr<Object> _loadObject(const spk::ShaderLayout::StorageBufferLayout& p_storageLayout, const spk::ShaderLayout::PushConstantLayout& p_pushConstantsLayout)
