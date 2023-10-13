@@ -170,14 +170,40 @@ namespace spk
 			PushConstants& pushConstants();
 		};
 
-		class UniformBlock : public FieldMap
+		class Uniform
+		{
+		private:
+
+		public:
+			virtual void update() = 0;
+		};
+
+		class UniformBlock : public Uniform, public FieldMap
 		{
 		private:
 			virtual void _updateData(const void* p_data, size_t p_dataSize) = 0;
 
 		public:
-			UniformBlock(const spk::ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+			UniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 			void update();
+
+			virtual void activate() = 0;
+			virtual void deactivate() = 0;
+		};
+
+		class SamplerUniform : public Uniform
+		{
+		private:
+			int _samplerID;
+
+			virtual void _updateSamplerID(int p_samplerID) = 0;
+
+		public:
+			SamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+			void update();
+
+			SamplerUniform& operator=(int p_samplerID);
+			void set(int p_samplerID);
 
 			virtual void activate() = 0;
 			virtual void deactivate() = 0;
@@ -186,12 +212,13 @@ namespace spk
 	protected:
 		ShaderLayout _shaderLayout;
 
-		static inline std::map<ShaderLayout::UniformBlockLayout::Key, std::shared_ptr<UniformBlock>> _uniformBlocks;
+		static inline std::map<ShaderLayout::UniformBlockLayout::Key, std::shared_ptr<Uniform>> _uniformBlocks;
 		static inline std::map<std::wstring, ShaderLayout::UniformBlockLayout::Key> _uniformBlocksKeys;
 		
 		void addUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 
 		virtual std::shared_ptr<UniformBlock> _loadUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) = 0;
+		virtual std::shared_ptr<SamplerUniform> _loadSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) = 0;
 		virtual std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantLayout& p_pushConstantsLayout) = 0;
 
 		virtual void _loadProgram(const ShaderLayout& p_shaderLayout) = 0;
@@ -201,6 +228,6 @@ namespace spk
 		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
 
 		std::shared_ptr<Object> createObject();
-		std::shared_ptr<UniformBlock> getUniformBlock(const std::wstring& p_uniformBlockName);
+		std::shared_ptr<Uniform> getUniform(const std::wstring& p_uniformBlockName);
 	};
 }

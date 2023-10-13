@@ -33,10 +33,15 @@ namespace spk
 		_uniformBlocksKeys[p_uniformBlockLayout.name()] = p_uniformBlockLayout.key();
 
 		if (_uniformBlocks.contains(p_uniformBlockLayout.key()) == false)
-			_uniformBlocks[p_uniformBlockLayout.key()] = _loadUniformBlock(p_uniformBlockLayout);
+		{
+			if (p_uniformBlockLayout.mode() == ShaderLayout::UniformBlockLayout::Mode::Block)
+				_uniformBlocks[p_uniformBlockLayout.key()] = _loadUniformBlock(p_uniformBlockLayout);
+			else
+				_uniformBlocks[p_uniformBlockLayout.key()] = _loadSamplerUniform(p_uniformBlockLayout);
+		}
 	}
 
-	std::shared_ptr<AbstractPipeline::UniformBlock> AbstractPipeline::getUniformBlock(const std::wstring& p_uniformBlockName)
+	std::shared_ptr<AbstractPipeline::Uniform> AbstractPipeline::getUniform(const std::wstring& p_uniformBlockName)
 	{
 		if (_uniformBlocksKeys.contains(p_uniformBlockName) == false)
 			spk::throwException(L"Uniform block named [" + p_uniformBlockName + L"] doesn't exist");
