@@ -47,7 +47,7 @@
 
 #include "graphics/spk_color.hpp"
 #include "graphics/spk_window.hpp"
-#include "graphics/spk_graphical_api_pipeline.hpp"
+#include "graphics/spk_pipeline.hpp"
 
 #include "network/spk_network_message.hpp"
 #include "network/spk_network_client.hpp"

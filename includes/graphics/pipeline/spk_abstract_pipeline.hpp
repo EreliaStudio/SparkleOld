@@ -135,6 +135,21 @@ namespace spk
 				size_t size() const;
 			};
 
+			class Indexes
+			{
+			private:
+				std::vector<size_t> _data;
+
+			public:
+				Indexes();
+				void clear();
+
+				Indexes& operator << (const std::vector<size_t>& p_indexes);
+
+				const void* data() const;
+				size_t size() const;
+			};
+
 			class PushConstants : public FieldMap
 			{
 			private:
@@ -146,10 +161,13 @@ namespace spk
 		protected:
 			AbstractPipeline *_owner;
 			Storage _storage;
+			Indexes _indexes;
 			PushConstants _pushConstants;
 
 			virtual void _pushStorageDatas(const void *p_data, size_t p_size) = 0;
+			virtual void _pushIndexesDatas(const void *p_data, size_t p_size) = 0;
 			virtual void _pushConstantsDatas(const void *p_data, size_t p_size) = 0;
+			virtual void _onRender() = 0;
 
 			Object(AbstractPipeline *p_owner, const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantLayout& p_pushConstantsLayout);
 
@@ -161,12 +179,13 @@ namespace spk
 			Object(Object&& p_other) noexcept;
 			Object& operator=(Object&& p_other) noexcept;
 
-			virtual void render() = 0;
+			void render();
 
 			void updateStorage();
 			void updateConstants();
 
 			Storage& storage();
+			Indexes& indexes();
 			PushConstants& pushConstants();
 		};
 
@@ -226,6 +245,11 @@ namespace spk
 
 	public:
 		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
+
+		virtual void launch(const size_t& p_nbVertex) = 0;
+
+		virtual void activate() = 0;
+		virtual void deactivate() = 0;
 
 		std::shared_ptr<Object> createObject();
 		std::shared_ptr<Uniform> getUniform(const std::wstring& p_uniformBlockName);
