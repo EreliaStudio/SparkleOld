@@ -1,19 +1,12 @@
 #version 450 core
 layout(location = 0) in vec2 model_space;
-layout(location = 1) in vec4 model_color;
 
-
-struct TestStructure
+layout(push_constant) uniform PushConstant
 {
-	vec2 test;
-	vec4 color;
-};
-
-//Single line comment
-layout(push_constant) uniform PushConstant { mat4 rotation; TestStructure structData;} totallyNotTheSameAsStruct;
-
+	mat4 rotation;
+} pushConstantsValues;
 
 void main()
 {
-	gl_Position = totallyNotTheSameAsStruct.rotation * vec4(model_space, 0.0f, 1.0f);
+	gl_Position = pushConstantsValues.rotation * vec4(model_space, 0.0f, 1.0f);
 }

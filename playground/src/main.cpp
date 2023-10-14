@@ -7,15 +7,16 @@ private:
 
 	void _onGeometryChange()
 	{
+		
 	}
 
 	void _onRender()
 	{
+
 	}
 
 	bool _onUpdate()
 	{
-
 		return (false);
 	}
 
@@ -23,8 +24,9 @@ public:
 	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
 		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag"))
 	{
-
+		
 	}
+	
 	~Test()
 	{
 
