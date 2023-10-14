@@ -26,6 +26,12 @@ namespace spk
 		}
 		return (*this);
 	}
+	
+	void AbstractPipeline::Object::render()
+	{
+		_onRender();
+		_owner->launch(_indexes.size());
+	}
 
 	void AbstractPipeline::Object::updateStorage()
 	{
