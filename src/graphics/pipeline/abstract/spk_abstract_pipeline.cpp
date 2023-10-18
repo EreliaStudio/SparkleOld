@@ -4,15 +4,5 @@
 
 namespace spk
 {
-	void AbstractPipeline::_loadPipeline()
-	{
-		_loadProgram(_shaderLayout);
-	}
-
-	AbstractPipeline::AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) :
-		_shaderLayout(p_vertexInput, p_fragmentInput)
-	{
-
-	}
-
+	
 }

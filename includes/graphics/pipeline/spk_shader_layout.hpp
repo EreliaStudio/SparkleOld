@@ -99,18 +99,18 @@ namespace spk
 			void treat(const ShaderModule::Instruction &p_instruction);
 		};
 
-		class PushConstantLayout : public FieldArrayLayout
+		class PushConstantsLayout : public FieldArrayLayout
 		{
 		private:
 			std::wstring _type;
 			std::wstring _name;
 
 		public:
-			PushConstantLayout(const StructureLayout& p_structureLayout);
+			PushConstantsLayout(const StructureLayout& p_structureLayout);
 
 			void treat(const ShaderModule::Instruction &p_instruction);
 
-			friend std::wostream& operator<<(std::wostream& p_out, const PushConstantLayout& p_layout);
+			friend std::wostream& operator<<(std::wostream& p_out, const PushConstantsLayout& p_layout);
 		};
 
 		class UniformBlockLayout : public FieldArrayLayout
@@ -177,7 +177,7 @@ namespace spk
 		StructureLayout _structureLayout;
 		StorageBufferLayout _storageBufferLayout;
 		OutputBufferLayout _outputBufferLayout;
-		PushConstantLayout _pushConstantLayout;
+		PushConstantsLayout _pushConstantsLayout;
 		std::vector<UniformBlockLayout> _uniformBlocksLayout;
 
 		void _parseVersion(const ShaderModule::Instruction& p_instruction);
@@ -201,7 +201,7 @@ namespace spk
 		const StructureLayout &structureLayout() const;
 		const StorageBufferLayout& storageBufferLayout() const;
 		const OutputBufferLayout& outputBufferLayout() const;
-		const PushConstantLayout& pushConstantLayout() const;
+		const PushConstantsLayout& pushConstantsLayout() const;
 		const std::vector<UniformBlockLayout>& uniformBlockLayouts() const;
 
 		friend std::wostream& operator<<(std::wostream& p_out, const ShaderLayout& p_config);

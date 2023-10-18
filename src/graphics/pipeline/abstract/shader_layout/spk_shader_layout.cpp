@@ -40,7 +40,7 @@ namespace spk
 		_structureLayout(),
 		_storageBufferLayout(_structureLayout),
 		_outputBufferLayout(_structureLayout),
-		_pushConstantLayout(_structureLayout)
+		_pushConstantsLayout(_structureLayout)
 	{
 		_parseInstructionSet(_vertexModule.instructions(), _vertexTypeMask);
 		_parseInstructionSet(_fragmentModule.instructions(), _fragmentTypeMask);
@@ -52,7 +52,7 @@ namespace spk
 		p_out << "\tStructure: \n" << p_config.structureLayout() << std::endl;
 		p_out << "\tStorageBufferLayout: \n" << p_config.storageBufferLayout() << std::endl;
 		p_out << "\tOutputBufferLayout: \n" << p_config.outputBufferLayout() << std::endl;
-		p_out << "\tPushConstantLayout: \n" << p_config.pushConstantLayout() << std::endl;
+		p_out << "\tPushConstantsLayout: \n" << p_config.pushConstantsLayout() << std::endl;
 		
 		p_out << "\tUniformBlocks: [" << std::endl;
 		for (const auto& blockLayout : p_config.uniformBlockLayouts())
@@ -90,9 +90,9 @@ namespace spk
 		return (_outputBufferLayout);
 	}
 
-	const ShaderLayout::PushConstantLayout &ShaderLayout::pushConstantLayout() const
+	const ShaderLayout::PushConstantsLayout &ShaderLayout::pushConstantsLayout() const
 	{
-		return (_pushConstantLayout);
+		return (_pushConstantsLayout);
 	}
 
 	const std::vector<ShaderLayout::UniformBlockLayout> &ShaderLayout::uniformBlockLayouts() const

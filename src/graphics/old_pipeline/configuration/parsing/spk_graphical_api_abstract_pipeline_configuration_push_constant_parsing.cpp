@@ -23,7 +23,7 @@ namespace spk::GraphicalAPI
 
 		constants.stride = 0;
 		for (std::sregex_iterator i = contentBegin; i != contentEnd; ++i) {
-			PushConstantLayout::Field newField;
+			PushConstantsLayout::Field newField;
 
 			std::smatch contentMatch = *i;
 			std::string dataType = contentMatch[1];

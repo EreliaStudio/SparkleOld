@@ -4,25 +4,46 @@ class Test : public spk::Widget::Interface
 {
 private:
 	spk::Pipeline _pipeline;
+	std::shared_ptr<spk::Pipeline::Object> _object;
+
+	float rotation = 0;
 
 	void _onGeometryChange()
 	{
+		std::vector<spk::Vector2> datas = {
+			spk::Vector2( 0.0f,  1.0f),
+			spk::Vector2(-1.0f, -1.0f),
+			spk::Vector2( 1.0f, -1.0f)
+		};
+		std::vector<unsigned int> indexes = {
+			0, 1, 2
+		};
 		
+		_object->storage().vertices() << datas;
+		_object->updateVertices();
+
+		_object->storage().indexes() << indexes;
+		_object->updateIndexes();
 	}
 
 	void _onRender()
 	{
-
+		_object->render();
 	}
-
+	
 	bool _onUpdate()
 	{
+		rotation += spk::TimeMetrics::instance()->deltaTime();
+
+		//_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
+
 		return (false);
 	}
 
 public:
 	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag"))
+		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
+		_object(_pipeline.createObject())
 	{
 		
 	}

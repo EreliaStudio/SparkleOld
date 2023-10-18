@@ -54,7 +54,7 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 
-	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::PushConstantLayout::Field& p_field)
+	std::wostream& operator<<(std::wostream& p_os, const ShaderLayout::PushConstantsLayout::Field& p_field)
 	{
 	p_os << L"\t\tName : " << p_field.name << std::endl;
 	p_os << L"\t\tOffset : " << p_field.offset << std::endl;
@@ -62,16 +62,16 @@ namespace spk::GraphicalAPI
 	return p_os;
 	}
 	
-	std::wostream &operator<<(std::wostream &p_os, const ShaderLayout::PushConstantLayout &p_pushConstantLayout)
+	std::wostream &operator<<(std::wostream &p_os, const ShaderLayout::PushConstantsLayout &p_PushConstantsLayout)
 	{
-		p_os << L"\tname: " << p_pushConstantLayout.name << std::endl;
-		p_os << L"\ttype: " << p_pushConstantLayout.type << std::endl;
-		p_os << L"\tstride: " << p_pushConstantLayout.stride << std::endl;
+		p_os << L"\tname: " << p_PushConstantsLayout.name << std::endl;
+		p_os << L"\ttype: " << p_PushConstantsLayout.type << std::endl;
+		p_os << L"\tstride: " << p_PushConstantsLayout.stride << std::endl;
 		p_os << L"\tfields:[" << std::endl;
 
-		for (auto it = p_pushConstantLayout.fields.begin(); it != p_pushConstantLayout.fields.end(); ++it)
+		for (auto it = p_PushConstantsLayout.fields.begin(); it != p_PushConstantsLayout.fields.end(); ++it)
 		{
-			if (it != p_pushConstantLayout.fields.begin())
+			if (it != p_PushConstantsLayout.fields.begin())
 				p_os << std::endl;
 			p_os << *it << std::endl;
 		}

@@ -2,7 +2,7 @@
 
 namespace spk::GraphicalAPI
 {
-	ShaderLayout::PushConstantLayout::Field::Field() :
+	ShaderLayout::PushConstantsLayout::Field::Field() :
 		offset(0),
 		name(L"Unnamed uniform"),
 		attribute()
@@ -10,20 +10,20 @@ namespace spk::GraphicalAPI
 
 	}
 	
-	ShaderLayout::PushConstantLayout::Field::Field(const std::wstring& p_name, const ShaderLayout::Data& p_dataType, const size_t& p_offset) :
+	ShaderLayout::PushConstantsLayout::Field::Field(const std::wstring& p_name, const ShaderLayout::Data& p_dataType, const size_t& p_offset) :
 		offset(p_offset),
 		name(p_name),
 		attribute(p_dataType)
 	{ 
 	}
 
-	ShaderLayout::PushConstantLayout::PushConstantLayout()
+	ShaderLayout::PushConstantsLayout::PushConstantsLayout()
 	{
 		stride = 0;
 	}
 
-	ShaderLayout::PushConstantLayout::PushConstantLayout(const std::vector<Field> &p_fields) :
-		PushConstantLayout()
+	ShaderLayout::PushConstantsLayout::PushConstantsLayout(const std::vector<Field> &p_fields) :
+		PushConstantsLayout()
 	{
 		for(auto field : p_fields)
 		{
