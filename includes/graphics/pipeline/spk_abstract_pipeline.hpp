@@ -11,18 +11,255 @@ namespace spk
 {
 	class AbstractPipeline
 	{
+	public:
+		class Object
+		{
+		public:
+			class Storage
+			{
+			public:
+				class Buffer
+				{
+				private:
+					std::wstring _name;
+					size_t _unitSize;
+					spk::DataBuffer _data;
+
+				public:
+					Buffer(const std::wstring &p_name, size_t p_unitSize) : _unitSize(p_unitSize),
+																			_name(p_name)
+					{
+					}
+
+					template <typename TType>
+					Buffer &operator<<(const TType &p_data)
+					{
+						if (_unitSize != sizeof(TType))
+						{
+							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
+						}
+						_data << p_data;
+						return (*this);
+					}
+
+					template <typename TType>
+					Buffer &operator<<(const std::vector<TType> &p_data)
+					{
+						if (_unitSize != sizeof(TType))
+						{
+							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
+						}
+						_data.append(p_data.data(), p_data.size() * sizeof(TType));
+						return (*this);
+					}
+
+					const uint8_t *data() const
+					{
+						return (_data.data());
+					}
+
+					size_t size() const
+					{
+						return (_data.size());
+					}
+				};
+
+			private:
+				Buffer _vertices;
+				Buffer _indexes;
+
+			public:
+				Storage(const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout) :
+					_vertices(L"Vertices", p_storageBufferLayout.stride()),
+					_indexes(L"Indexes", sizeof(size_t))
+				{
+				}
+
+				Buffer &vertices()
+				{
+					return (_vertices);
+				}
+
+				Buffer &indexes()
+				{
+					return (_indexes);
+				}
+			};
+
+			class PushConstants
+			{
+			public:
+				struct Field
+				{
+					std::wstring name;
+					uint8_t* data;
+					size_t offset;
+					size_t size;
+				
+					Field() :
+						name(L"Unnamed"),
+						data(nullptr),
+						offset(0),
+						size(0)
+					{
+
+					}
+
+					Field(const std::wstring& p_name, uint8_t* p_data, size_t p_offset, size_t p_size) :
+						name(p_name),
+						data(p_data),
+						offset(p_offset),
+						size(p_size)
+					{
+
+					}
+
+					template <typename TType>
+					Field& operator << (const TType& p_value)
+					{
+						if (data == nullptr)
+							spk::throwException(L"Try to push data into un-initialized push constants field");
+
+						if (sizeof(TType) != _data.size())
+						{
+							spk::throwException(L"Field [" + name + L"] expected a size of [" + std::to_wstring(size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+						}
+						std::memcpy(data, &p_value, sizeof(TType));
+						return (*this);
+					}
+				};
+
+			private:
+				spk::DataBuffer _data;
+				std::map<std::wstring, Field> _fields;
+
+				void insertNewField(const std::wstring& p_fieldName, size_t p_offset, size_t p_size)
+				{
+					_fields[p_fieldName] = Field(p_fieldName, _data.data(), p_offset, p_size);
+				}
+
+			public:
+				PushConstants(const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout)
+				{
+					for (const auto& field : p_pushConstantsLayout.fields())
+					{
+						insertNewField(spk::to_wstring(field.name), field.offset, field.data.size * field.data.format);
+					}
+				}
+
+				template <typename TType>
+				PushConstants& operator << (const TType& p_value)
+				{
+					if (sizeof(TType) != _data.size())
+					{
+						spk::throwException(L"Unexpected structure size to push inside a PushConstants\nExpected a size of [" + std::to_wstring(_data.size()) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+					}
+					std::memcpy(_data.data(), &p_value, sizeof(TType));
+					return *this;
+				}
+
+				Field& field(const std::wstring& p_fieldName)
+				{
+					if (_fields.contains(p_fieldName) == false)
+						spk::throwException(L"Field [" + p_fieldName + L"] doesn't exist in PushConstants");
+					return (_fields[p_fieldName]);
+				}
+
+				const uint8_t* data() const
+				{
+					return (_data.data());
+				}
+
+				size_t size() const
+				{
+					return (_data.size());
+				}
+			};
+
+		private:
+			AbstractPipeline* _owner;
+			Storage _storage;
+			size_t _nbIndexesPushed;
+			PushConstants _pushConstants;
+
+			virtual void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize) = 0;
+			virtual void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize) = 0;
+			virtual void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize) = 0;
+			virtual void _onRender() = 0;
+
+		public:
+			Object(AbstractPipeline* p_owner, const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) :
+				_owner(p_owner),
+				_storage(p_storageBufferLayout),
+				_pushConstants(p_pushConstantsLayout),
+				_nbIndexesPushed(0)
+			{
+
+			}
+
+			void updateVertices()
+			{
+				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
+			}
+
+			void updateIndexes()
+			{
+				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
+				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
+			}
+
+			void updatePushConstants()
+			{
+				_pushPushConstantsData(_pushConstants.data(), _pushConstants.size());
+			}
+
+			void render()
+			{
+				_owner->activate();
+
+				_onRender();
+
+				_owner->launch(_nbIndexesPushed);
+
+				_owner->deactivate();
+			}
+
+			Storage& storage()
+			{
+				return (_storage);
+			}
+
+			PushConstants& pushConstants()
+			{
+				return (_pushConstants);
+			}
+		};
+
 	protected:
 		ShaderLayout _shaderLayout;
 
-		virtual void _loadProgram(const ShaderLayout& p_shaderLayout) = 0;
-		void _loadPipeline();
+		virtual void _loadProgram(const ShaderLayout &p_shaderLayout) = 0;
+		void _loadPipeline()
+		{
+			_loadProgram(_shaderLayout);
+		}
+
+		virtual std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) = 0;
 
 	public:
-		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
+		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) : _shaderLayout(p_vertexInput, p_fragmentInput)
+		{
 
-		virtual void launch(const size_t& p_nbVertex) = 0;
+		}
+
+		virtual void launch(const size_t &p_nbVertex) = 0;
 
 		virtual void activate() = 0;
 		virtual void deactivate() = 0;
+
+		std::shared_ptr<Object> createObject()
+		{
+			return (_loadObject(_shaderLayout.storageBufferLayout(), _shaderLayout.pushConstantsLayout()));
+		}
 	};
 }

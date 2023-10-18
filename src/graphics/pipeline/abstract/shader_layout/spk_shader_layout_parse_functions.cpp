@@ -21,7 +21,7 @@ namespace spk
 
 	void ShaderLayout::_parsePushConstant(const ShaderModule::Instruction &p_instruction)
 	{
-		_pushConstantLayout.treat(p_instruction);
+		_pushConstantsLayout.treat(p_instruction);
 	}
 
 	void ShaderLayout::_parseUniformBlock(const ShaderModule::Instruction &p_instruction)

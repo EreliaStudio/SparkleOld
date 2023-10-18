@@ -60,7 +60,7 @@ namespace spk::GraphicalAPI
 				friend std::wostream &operator<<(std::wostream &os, const StorageLayout &p_storageLayout);
 			};
 
-			struct PushConstantLayout
+			struct PushConstantsLayout
 			{
 				struct Field
 				{
@@ -79,9 +79,9 @@ namespace spk::GraphicalAPI
 				size_t stride;
 				std::vector<Field> fields;
 
-				PushConstantLayout();
-				PushConstantLayout(const std::vector<Field> &p_fields);
-				friend std::wostream &operator<<(std::wostream &os, const PushConstantLayout &p_pushConstantLayout);
+				PushConstantsLayout();
+				PushConstantsLayout(const std::vector<Field> &p_fields);
+				friend std::wostream &operator<<(std::wostream &os, const PushConstantsLayout &p_PushConstantsLayout);
 			};
 
 			struct UniformBlockLayout
@@ -112,7 +112,7 @@ namespace spk::GraphicalAPI
 			std::map<std::string, Data> dataTypes;
 
 			StorageLayout storage;
-			PushConstantLayout constants;
+			PushConstantsLayout constants;
 			std::vector<UniformBlockLayout> uniformBlocks;
 
 			bool isPushConstantUniformInstruction(const std::string &p_instruction);
@@ -278,7 +278,7 @@ namespace spk::GraphicalAPI
 				std::map<std::wstring, Field> _fields;
 
 			public:
-				PushConstants(const Configuration::PushConstantLayout& p_layout)
+				PushConstants(const Configuration::PushConstantsLayout& p_layout)
 				{
 					_data.resize(p_layout.stride);
 					for (auto& field : p_layout.fields)
