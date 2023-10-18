@@ -8,9 +8,9 @@ namespace spk
 		_loadPipeline();
 	}
 
-	void Pipeline::launch(const size_t &p_nbVertex)
+	void Pipeline::launch(const size_t &p_nbIndexes)
 	{
-
+		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_nbIndexes), GL_UNSIGNED_INT, nullptr);
 	}
 
 	void Pipeline::activate()

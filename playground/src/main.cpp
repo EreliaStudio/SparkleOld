@@ -33,9 +33,9 @@ private:
 	
 	bool _onUpdate()
 	{
-		rotation += spk::TimeMetrics::instance()->deltaTime();
+		// rotation += spk::TimeMetrics::instance()->deltaTime();
 
-		//_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
+		// _object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
 
 		return (false);
 	}

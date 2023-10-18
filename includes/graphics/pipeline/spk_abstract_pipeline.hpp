@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data_structure/spk_data_buffer.hpp"
+#include "data_structure/spk_field_map.hpp"
 #include "graphics/pipeline/spk_shader_module.hpp"
 #include "graphics/pipeline/spk_shader_layout.hpp"
 #include <map>
@@ -86,93 +87,16 @@ namespace spk
 				}
 			};
 
-			class PushConstants
+			class PushConstants : public spk::FieldMap
 			{
 			public:
-				struct Field
-				{
-					std::wstring name;
-					uint8_t* data;
-					size_t offset;
-					size_t size;
-				
-					Field() :
-						name(L"Unnamed"),
-						data(nullptr),
-						offset(0),
-						size(0)
-					{
-
-					}
-
-					Field(const std::wstring& p_name, uint8_t* p_data, size_t p_offset, size_t p_size) :
-						name(p_name),
-						data(p_data),
-						offset(p_offset),
-						size(p_size)
-					{
-
-					}
-
-					template <typename TType>
-					Field& operator << (const TType& p_value)
-					{
-						if (data == nullptr)
-							spk::throwException(L"Try to push data into un-initialized push constants field");
-
-						if (sizeof(TType) != _data.size())
-						{
-							spk::throwException(L"Field [" + name + L"] expected a size of [" + std::to_wstring(size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
-						}
-						std::memcpy(data, &p_value, sizeof(TType));
-						return (*this);
-					}
-				};
-
-			private:
-				spk::DataBuffer _data;
-				std::map<std::wstring, Field> _fields;
-
-				void insertNewField(const std::wstring& p_fieldName, size_t p_offset, size_t p_size)
-				{
-					_fields[p_fieldName] = Field(p_fieldName, _data.data(), p_offset, p_size);
-				}
-
-			public:
-				PushConstants(const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout)
+				PushConstants(const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) :
+					FieldMap(p_pushConstantsLayout.stride())
 				{
 					for (const auto& field : p_pushConstantsLayout.fields())
 					{
 						insertNewField(spk::to_wstring(field.name), field.offset, field.data.size * field.data.format);
 					}
-				}
-
-				template <typename TType>
-				PushConstants& operator << (const TType& p_value)
-				{
-					if (sizeof(TType) != _data.size())
-					{
-						spk::throwException(L"Unexpected structure size to push inside a PushConstants\nExpected a size of [" + std::to_wstring(_data.size()) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
-					}
-					std::memcpy(_data.data(), &p_value, sizeof(TType));
-					return *this;
-				}
-
-				Field& field(const std::wstring& p_fieldName)
-				{
-					if (_fields.contains(p_fieldName) == false)
-						spk::throwException(L"Field [" + p_fieldName + L"] doesn't exist in PushConstants");
-					return (_fields[p_fieldName]);
-				}
-
-				const uint8_t* data() const
-				{
-					return (_data.data());
-				}
-
-				size_t size() const
-				{
-					return (_data.size());
 				}
 			};
 
@@ -252,7 +176,7 @@ namespace spk
 
 		}
 
-		virtual void launch(const size_t &p_nbVertex) = 0;
+		virtual void launch(const size_t &p_nbIndexes) = 0;
 
 		virtual void activate() = 0;
 		virtual void deactivate() = 0;
