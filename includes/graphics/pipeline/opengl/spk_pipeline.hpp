@@ -12,8 +12,7 @@ namespace spk
 		{
 		private:
 			GPU::Aggregator _aggregator;
-			GPU::Buffer _verticesBuffer;
-			GPU::Buffer _indexesBuffer;
+			GPU::StorageBuffer _storageBuffer;
 
 			void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
 			void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize);

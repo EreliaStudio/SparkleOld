@@ -4,12 +4,12 @@ namespace spk
 {
 	void Pipeline::OpenGLObject::_pushVerticesData(const uint8_t* p_data, size_t p_dataSize)
 	{
-		_verticesBuffer.push(p_data, p_dataSize);
+		_storageBuffer.pushVerticesData(p_data, p_dataSize);
 	}
 
 	void Pipeline::OpenGLObject::_pushIndexesData(const uint8_t* p_data, size_t p_dataSize)
 	{
-		_indexesBuffer.push(p_data, p_dataSize);
+		_storageBuffer.pushIndexesData(p_data, p_dataSize);
 	}
 
 	void Pipeline::OpenGLObject::_pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize)
@@ -20,8 +20,7 @@ namespace spk
 	void Pipeline::OpenGLObject::_onRender()
 	{
 		_aggregator.activate();
-		_verticesBuffer.activate();
-		_indexesBuffer.activate();
+		_storageBuffer.activate();
 	}
 			
 	static GLenum convertAttributeTypeToGLenum(const ShaderLayout::Data::Type &p_input)
@@ -43,26 +42,23 @@ namespace spk
 
 	void Pipeline::OpenGLObject::_configureVerticesBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout)
 	{
-		_verticesBuffer.activate();
+		_storageBuffer.activate();
 		for (const auto& field : p_storageBufferLayout.fields())
 		{
-			glEnableVertexAttribArray(field.location);
-
-			glVertexAttribPointer(
-				field.location,
-				field.data.format,
-				convertAttributeTypeToGLenum(field.data.type),
-				GL_FALSE,
-				p_storageBufferLayout.stride(),
-				(void*)(field.offset));
+			_storageBuffer.addStorageAttribute(
+					field.location,
+					field.data.format,
+					convertAttributeTypeToGLenum(field.data.type),
+					field.offset,
+					p_storageBufferLayout.stride()
+				);
 		}
 	}
 	
 	Pipeline::OpenGLObject::OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) : 
 		Object(p_owner, p_storageBufferLayout, p_pushConstantsLayout),
 		_aggregator(),
-		_verticesBuffer(GPU::Buffer::Mode::Vertices),
-		_indexesBuffer(GPU::Buffer::Mode::Indexes)
+		_storageBuffer()
 	{
 		_configureVerticesBuffer(p_storageBufferLayout);
 	}
