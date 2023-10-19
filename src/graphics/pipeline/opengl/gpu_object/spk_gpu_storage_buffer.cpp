@@ -35,11 +35,13 @@ namespace spk::GPU
 
 	void StorageBuffer::activate()
 	{
-		
+		_verticesBuffer.activate();
+		_indexesBuffer.activate();
 	}
 
 	void StorageBuffer::deactivate()
 	{
-		
+		_verticesBuffer.deactivate();
+		_indexesBuffer.deactivate();
 	}
 }
