@@ -24,7 +24,7 @@ namespace spk::GPU
 		{
 			Vertices,
 			Indexes,
-			PushConstant
+			UniformBlock
 		};
 
 	protected:
@@ -38,9 +38,27 @@ namespace spk::GPU
 	public:
 		Buffer(const Mode &p_mode);
 
-		virtual void push(const void *data, const size_t dataSize);
+		void push(const void *data, const size_t dataSize);
 
-		virtual void activate();
-		virtual void deactivate();
+		void activate();
+		void deactivate();
+	};
+
+	class StorageBuffer
+	{
+	private:
+		GPU::Buffer _verticesBuffer;
+		GPU::Buffer _indexesBuffer;
+
+	public:
+		StorageBuffer();
+
+		void addStorageAttribute(const GLint& p_location, const GLint& p_format, const GLenum& p_type, const size_t& p_offset, const size_t& p_stride);
+
+		void pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
+		void pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
+
+		void activate();
+		void deactivate();
 	};
 }
