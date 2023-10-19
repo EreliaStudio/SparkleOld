@@ -26,7 +26,7 @@ namespace spk::GraphicalAPI
 		public:
 			enum class Mode
 			{
-				Data,
+				Vertices,
 				Indexes,
 				PushConstant
 			};
