@@ -58,4 +58,14 @@ namespace spk
               << static_cast<const ShaderLayout::FieldArrayLayout&>(p_layout);
         return p_out;
     }
+
+    const std::wstring& ShaderLayout::PushConstantsLayout::type() const
+    {
+        return (_type);
+    }
+    
+    const std::wstring& ShaderLayout::PushConstantsLayout::name() const
+    {
+        return (_name);
+    }
 }

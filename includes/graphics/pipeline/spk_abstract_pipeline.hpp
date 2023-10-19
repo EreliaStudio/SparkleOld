@@ -22,6 +22,8 @@ namespace spk
 				class Buffer
 				{
 				private:
+					typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
+					bool _needUpdate;
 					std::wstring _name;
 					size_t _unitSize;
 					spk::DataBuffer _data;
@@ -54,6 +56,21 @@ namespace spk
 						return (*this);
 					}
 
+					Buffer& operator<<(wostream& (*func)(wostream&)) {
+						_needUpdate = true;
+						return *this;
+					}
+
+					void setUpdateStatus(bool p_state)
+					{
+						_needUpdate = p_state;
+					}
+
+					bool needUpdate() const
+					{
+						return (_needUpdate);
+					}
+
 					const uint8_t *data() const
 					{
 						return (_data.data());
@@ -74,6 +91,7 @@ namespace spk
 					_vertices(L"Vertices", p_storageBufferLayout.stride()),
 					_indexes(L"Indexes", sizeof(size_t))
 				{
+
 				}
 
 				Buffer &vertices()
@@ -111,6 +129,22 @@ namespace spk
 			virtual void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize) = 0;
 			virtual void _onRender() = 0;
 
+			void _updateVertices()
+			{
+				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
+			}
+
+			void _updateIndexes()
+			{
+				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
+				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
+			}
+
+			void _updatePushConstants()
+			{
+				_pushPushConstantsData(_pushConstants.data(), _pushConstants.size());
+			}
+
 		public:
 			Object(AbstractPipeline* p_owner, const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) :
 				_owner(p_owner),
@@ -121,25 +155,16 @@ namespace spk
 
 			}
 
-			void updateVertices()
-			{
-				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
-			}
-
-			void updateIndexes()
-			{
-				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
-				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
-			}
-
-			void updatePushConstants()
-			{
-				_pushPushConstantsData(_pushConstants.data(), _pushConstants.size());
-			}
-
 			void render()
 			{
 				_owner->activate();
+
+				if (_storage.vertices().needUpdate() == true)
+					_updateVertices();
+				if (_storage.indexes().needUpdate() == true)
+					_updateIndexes();
+				if (_pushConstants.needUpdate() == true)
+					_updatePushConstants();
 
 				_onRender();
 

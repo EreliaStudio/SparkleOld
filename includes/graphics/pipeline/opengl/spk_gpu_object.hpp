@@ -40,8 +40,8 @@ namespace spk::GPU
 
 		void push(const void *data, const size_t dataSize);
 
-		void activate();
-		void deactivate();
+		virtual void activate();
+		virtual void deactivate();
 	};
 
 	class StorageBuffer
@@ -60,5 +60,17 @@ namespace spk::GPU
 
 		void activate();
 		void deactivate();
+	};
+
+	class UniformBlockBuffer : public GPU::Buffer
+	{
+	private:
+		GLuint _blockIndex;
+		size_t _blockBinding;
+
+	public:
+		UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
+		void activate() override;
+		void deactivate() override;
 	};
 }

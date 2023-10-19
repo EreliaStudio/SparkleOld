@@ -13,6 +13,7 @@ namespace spk
 		private:
 			GPU::Aggregator _aggregator;
 			GPU::StorageBuffer _storageBuffer;
+			GPU::UniformBlockBuffer _pushConstantBuffer;
 
 			void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
 			void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
