@@ -1,4 +1,5 @@
 #include "graphics/pipeline/spk_pipeline.hpp"
+#include <functional>
 
 namespace spk
 {
@@ -14,13 +15,14 @@ namespace spk
 
 	void Pipeline::OpenGLObject::_pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize)
 	{
-
+		_pushConstantBuffer.push(p_data, p_dataSize);
 	}
 
 	void Pipeline::OpenGLObject::_onRender()
 	{
 		_aggregator.activate();
 		_storageBuffer.activate();
+		_pushConstantBuffer.activate();
 	}
 			
 	static GLenum convertAttributeTypeToGLenum(const ShaderLayout::Data::Type &p_input)
@@ -55,10 +57,33 @@ namespace spk
 		}
 	}
 	
+	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout)
+	{
+		size_t result = 0;
+		
+		auto searchLambda = [](size_t p_target, const std::vector<spk::ShaderLayout::UniformBlockLayout>& p_uniformBlockVector) -> bool
+		{
+			for (const auto& uniformBlock : p_uniformBlockVector)
+			{
+				if (uniformBlock.key().binding == p_target)
+					return (false);
+			}
+			return (true);
+		};
+
+		while (searchLambda(result, p_shaderLayout.uniformBlockLayouts()) == false)
+		{
+			result++;
+		}
+
+		return result;
+	}
+
 	Pipeline::OpenGLObject::OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) : 
 		Object(p_owner, p_storageBufferLayout, p_pushConstantsLayout),
 		_aggregator(),
-		_storageBuffer()
+		_storageBuffer(),
+		_pushConstantBuffer(static_cast<Pipeline*>(p_owner)->_program, p_pushConstantsLayout.type(), findFirstBindingAvailable(static_cast<Pipeline*>(p_owner)->_shaderLayout))
 	{
 		_configureStorageBuffer(p_storageBufferLayout);
 	}

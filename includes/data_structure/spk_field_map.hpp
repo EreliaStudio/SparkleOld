@@ -17,41 +17,55 @@ namespace spk
 			friend class FieldMap;
 
 		private:
-			std::wstring name;
-			uint8_t *data;
-			size_t offset;
-			size_t size;
+			typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
+			
+			bool* _needUpdate;
+			std::wstring _name;
+			uint8_t *_data;
+			size_t _offset;
+			size_t _size;
 
 		public:
 			Field() :
-				name(L"Unnamed"),
-				data(nullptr),
-				offset(0),
-				size(0)
+				_needUpdate(nullptr),
+				_name(L"Unnamed"),
+				_data(nullptr),
+				_offset(0),
+				_size(0)
 			{
 			}
 
-			Field(const std::wstring &p_name, uint8_t *p_data, size_t p_offset, size_t p_size) :
-				name(p_name),
-				data(p_data),
-				offset(p_offset),
-				size(p_size)
+			Field(const std::wstring &p_name, bool* p_needUpdate, uint8_t *p_data, size_t p_offset, size_t p_size) :
+				_needUpdate(p_needUpdate),
+				_name(p_name),
+				_data(p_data),
+				_offset(p_offset),
+				_size(p_size)
 			{
 			}
 
 			template <typename TType>
 			Field &operator<<(const TType &p_value)
 			{
-				if (sizeof(TType) != size)
+				if (sizeof(TType) != _size)
 				{
-					spk::throwException(L"Field [" + name + L"] expected a size of [" + std::to_wstring(size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+					spk::throwException(L"Field [" + _name + L"] expected a size of [" + std::to_wstring(_size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
 				}
-				std::memcpy(data, &p_value, sizeof(TType));
+				std::memcpy(_data, &p_value, sizeof(TType));
 				return (*this);
+			}
+
+			Field& operator<<(wostream& (*func)(wostream&)) {
+				if (_needUpdate != nullptr)
+					*_needUpdate = true;
+				return *this;
 			}
 		};
 
 	private:
+		typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
+			
+		bool _needUpdate;
 		spk::DataBuffer _data;
 		std::map<std::wstring, Field> _fields;
 
@@ -63,7 +77,17 @@ namespace spk
 
 		void insertNewField(const std::wstring &p_fieldName, size_t p_offset, size_t p_size)
 		{
-			_fields[p_fieldName] = Field(p_fieldName, _data.data(), p_offset, p_size);
+			_fields[p_fieldName] = Field(p_fieldName, &_needUpdate, _data.data(), p_offset, p_size);
+		}
+
+		bool needUpdate() const
+		{
+			return (_needUpdate);
+		}
+
+		void setUpdateStatus(bool p_state)
+		{
+			_needUpdate = p_state;
 		}
 
 		template <typename TType>
@@ -74,6 +98,11 @@ namespace spk
 				spk::throwException(L"Unexpected structure size to push inside a FieldMap\nExpected a size of [" + std::to_wstring(_data.size()) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
 			}
 			std::memcpy(_data.data(), &p_value, sizeof(TType));
+			return *this;
+		}
+
+		FieldMap& operator<<(wostream& (*func)(wostream&)) {
+			_needUpdate = true;
 			return *this;
 		}
 

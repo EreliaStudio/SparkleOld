@@ -111,6 +111,9 @@ namespace spk
 			void treat(const ShaderModule::Instruction &p_instruction);
 
 			friend std::wostream& operator<<(std::wostream& p_out, const PushConstantsLayout& p_layout);
+
+			const std::wstring& type() const;
+			const std::wstring& name() const;
 		};
 
 		class UniformBlockLayout : public FieldArrayLayout

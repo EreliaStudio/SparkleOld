@@ -19,11 +19,8 @@ private:
 			0, 1, 2
 		};
 		
-		_object->storage().vertices() << datas;
-		_object->updateVertices();
-
-		_object->storage().indexes() << indexes;
-		_object->updateIndexes();
+		_object->storage().vertices() << datas << std::endl;
+		_object->storage().indexes() << indexes << std::endl;
 	}
 
 	void _onRender()
@@ -33,9 +30,9 @@ private:
 	
 	bool _onUpdate()
 	{
-		// rotation += spk::TimeMetrics::instance()->deltaTime();
+		rotation += spk::TimeMetrics::instance()->deltaTime();
 
-		// _object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000));
+		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
 
 		return (false);
 	}
@@ -45,7 +42,7 @@ public:
 		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
 		_object(_pipeline.createObject())
 	{
-		
+
 	}
 	
 	~Test()
