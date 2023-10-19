@@ -19,7 +19,7 @@ namespace spk
 			void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize);
 			void _onRender();
 
-			void _configureVerticesBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout);
+			void _configureStorageBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout);
 			
 		public:
 			OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);

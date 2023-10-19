@@ -40,7 +40,7 @@ namespace spk
 		return (GL_NONE);
 	}
 
-	void Pipeline::OpenGLObject::_configureVerticesBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout)
+	void Pipeline::OpenGLObject::_configureStorageBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout)
 	{
 		_storageBuffer.activate();
 		for (const auto& field : p_storageBufferLayout.fields())
@@ -60,7 +60,7 @@ namespace spk
 		_aggregator(),
 		_storageBuffer()
 	{
-		_configureVerticesBuffer(p_storageBufferLayout);
+		_configureStorageBuffer(p_storageBufferLayout);
 	}
 
 	std::shared_ptr<Pipeline::Object> Pipeline::_loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout)
