@@ -26,11 +26,45 @@ namespace spk
 			OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
 		};
 
+		class OpenGLUniformBlock : public UniformBlock
+		{
+		private:
+			void _pushData()
+			{
+				
+			}
+
+		public:
+			OpenGLUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
+				UniformBlock(p_uniformBlockLayout)
+			{
+
+			}
+		};
+
+		class OpenGLSamplerUniform : public SamplerUniform
+		{
+		private:
+			void _pushData()
+			{
+
+			}
+
+		public:
+			OpenGLSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
+				SamplerUniform(p_uniformBlockLayout)
+			{
+
+			}
+		};
+
 	private:
 		GLuint _program;
 		
 		void _loadProgram(const ShaderLayout& p_shaderLayout);
 
+		std::shared_ptr<UniformBlock> _loadUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+		std::shared_ptr<SamplerUniform> _loadSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 		std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
 
 	public:

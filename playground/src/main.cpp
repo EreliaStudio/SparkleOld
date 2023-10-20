@@ -42,7 +42,7 @@ public:
 		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
 		_object(_pipeline.createObject())
 	{
-
+		_pipeline.uniform(L"colorUniformBlock") << spk::Color(255, 0, 0) << std::endl;
 	}
 	
 	~Test()
