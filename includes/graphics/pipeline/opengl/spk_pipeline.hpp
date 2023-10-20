@@ -29,33 +29,21 @@ namespace spk
 		class OpenGLUniformBlock : public UniformBlock
 		{
 		private:
-			void _pushData()
-			{
-				
-			}
+			GPU::UniformBlockBuffer _buffer;
+
+			void _pushData();
 
 		public:
-			OpenGLUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
-				UniformBlock(p_uniformBlockLayout)
-			{
-
-			}
+			OpenGLUniformBlock(Pipeline* p_pipeline, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 		};
 
 		class OpenGLSamplerUniform : public SamplerUniform
 		{
 		private:
-			void _pushData()
-			{
-
-			}
+			void _pushData();
 
 		public:
-			OpenGLSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
-				SamplerUniform(p_uniformBlockLayout)
-			{
-
-			}
+			OpenGLSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 		};
 
 	private:

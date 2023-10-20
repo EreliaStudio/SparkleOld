@@ -15,6 +15,7 @@ private:
 			spk::Vector2(-1.0f, -1.0f),
 			spk::Vector2( 1.0f, -1.0f)
 		};
+		
 		std::vector<unsigned int> indexes = {
 			0, 1, 2
 		};
