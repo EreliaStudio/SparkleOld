@@ -1,11 +1,11 @@
 function(listVulkanIncludes INCLUDES_TABLE_VAR)
 	set(VULKAN_INCLUDES_FILES
-	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_device.hpp - graphics/surface/vulkan"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_swapchain.hpp - graphics/surface/vulkan"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_renderer.hpp - graphics/surface/vulkan"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_graphical_api_surface.hpp - graphics"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/vulkan/spk_graphical_api_pipeline.hpp - graphics"
-	"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/vulkan/spk_graphical_api_pipeline_basic_functions.hpp - graphics")
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_device.hpp - graphics/surface/vulkan"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_swapchain.hpp - graphics/surface/vulkan"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_renderer.hpp - graphics/surface/vulkan"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/surface/vulkan/spk_surface.hpp - graphics"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/vulkan/spk_pipeline.hpp - graphics"
+	"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/vulkan/spk_pipeline_basic_functions.hpp - graphics")
 
 	# --- Specific Windows
 	if (WIN32)
