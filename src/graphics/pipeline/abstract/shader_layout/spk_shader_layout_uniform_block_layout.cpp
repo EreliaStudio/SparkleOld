@@ -23,6 +23,7 @@ namespace spk
 			int binding = std::stoi(match[2]);
 			_key = Key(set, binding);
 			std::string dataType = match[3];
+			_type = spk::to_wstring(dataType);
 			_name = spk::to_wstring(match[4]);
 
 			auto it = structureLayout.singleUniformStructures().find(dataType);
@@ -55,6 +56,7 @@ namespace spk
 			_key = Key(set, binding);
 			std::string type = match[3];
 			std::string content = match[4];
+			_type = spk::to_wstring(type);
 			_name = spk::to_wstring(match[5]);
 
 			std::regex fieldRegex("(\\w+)\\s+(\\w+);");
@@ -162,6 +164,11 @@ namespace spk
 	const std::wstring &ShaderLayout::UniformBlockLayout::name() const
 	{
 		return (_name);
+	}
+
+	const std::wstring &ShaderLayout::UniformBlockLayout::type() const
+	{
+		return (_type);
 	}
 
 	const ShaderLayout::UniformBlockLayout::Key &ShaderLayout::UniformBlockLayout::key() const

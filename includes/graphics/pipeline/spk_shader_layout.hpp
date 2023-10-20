@@ -139,6 +139,7 @@ namespace spk
 
 		private:
 			std::wstring _name;
+			std::wstring _type;
 			Mode _mode;
 			Key _key;
 
@@ -151,6 +152,7 @@ namespace spk
 			void treat(const ShaderModule::Instruction &p_instruction);
 
 			const std::wstring& name() const;
+			const std::wstring& type() const;
 			const Key& key() const;
 			const Mode& mode() const;
 
