@@ -6,16 +6,22 @@ private:
 	spk::Pipeline _pipeline;
 	std::shared_ptr<spk::Pipeline::Object> _object;
 
+	struct Unit
+	{
+		spk::Vector2 position;
+		spk::Vector2 uvs;
+	};
+
 	float rotation = 0;
 
 	void _onGeometryChange()
 	{
-		std::vector<spk::Vector2> datas = {
-			spk::Vector2( 0.0f,  1.0f),
-			spk::Vector2(-1.0f, -1.0f),
-			spk::Vector2( 1.0f, -1.0f)
+		std::vector<Unit> datas = {
+			{spk::Vector2( 0.0f,  1.0f), spk::Vector2( 0.0f,  0.0f)},
+			{spk::Vector2(-1.0f, -1.0f), spk::Vector2( 1.0f,  0.0f)},
+			{spk::Vector2( 1.0f, -1.0f), spk::Vector2( 0.0f,  1.0f)}
 		};
-		
+
 		std::vector<unsigned int> indexes = {
 			0, 1, 2
 		};
@@ -43,7 +49,7 @@ public:
 		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
 		_object(_pipeline.createObject())
 	{
-		_pipeline.uniform(L"colorUniformBlock") << spk::Color(255, 0, 0) << std::endl;
+		_pipeline.uniform(L"textureID") << 0 << std::endl;
 	}
 	
 	~Test()

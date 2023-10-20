@@ -1,7 +1,7 @@
 #pragma once
 
-#include "graphics/spk_graphical_api_frame.hpp"
-#include "graphics/spk_graphical_api_surface.hpp"
+#include "graphics/spk_frame.hpp"
+#include "graphics/spk_surface.hpp"
 
 namespace spk
 {
@@ -10,8 +10,8 @@ namespace spk
 		friend class spk::Singleton<Window>;
 
 	private:
-		spk::GraphicalAPI::Frame _frame;
-		spk::GraphicalAPI::Surface _surface;
+		spk::Frame _frame;
+		spk::Surface _surface;
 
 		Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr) :
 			_frame(p_title, p_size, p_ptr),
@@ -56,7 +56,7 @@ namespace spk
 			return (_frame.size());
 		}
 
-		const spk::GraphicalAPI::Frame& frame() const
+		const spk::Frame& frame() const
 		{
 			return (_frame);
 		}

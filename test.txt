@@ -2,9 +2,9 @@ General - Windows
 "${CMAKE_SOURCE_DIR}/includes/application\modules\windows;includes/application\modules\windows"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\windows\spk_API_module.hpp;includes/application\modules\windows\spk_API_module.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\frame\windows;includes/graphics\frame\windows"
-"${CMAKE_SOURCE_DIR}/includes/graphics\frame\windows\spk_graphical_api_frame.hpp;includes/graphics\frame\windows\spk_graphical_api_frame.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\frame\windows\spk_frame.hpp;includes/graphics\frame\windows\spk_frame.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows;includes/graphics\surface\windows"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\spk_graphical_api_surface.hpp;includes/graphics\surface\windows\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\spk_surface.hpp;includes/graphics\surface\windows\spk_surface.hpp"
 "${CMAKE_SOURCE_DIR}/includes/network\windows;includes/network\windows"
 "${CMAKE_SOURCE_DIR}/includes/network\windows\spk_network_acceptor.hpp;includes/network\windows\spk_network_acceptor.hpp"
 "${CMAKE_SOURCE_DIR}/includes/network\windows\spk_network_object.hpp;includes/network\windows\spk_network_object.hpp"
@@ -14,9 +14,9 @@ General - Linux
 "${CMAKE_SOURCE_DIR}/includes/application\modules\linux;includes/application\modules\linux"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\linux\spk_API_module.hpp;includes/application\modules\linux\spk_API_module.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\frame\linux;includes/graphics\frame\linux"
-"${CMAKE_SOURCE_DIR}/includes/graphics\frame\linux\spk_graphical_api_frame.hpp;includes/graphics\frame\linux\spk_graphical_api_frame.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\frame\linux\spk_frame.hpp;includes/graphics\frame\linux\spk_frame.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux;includes/graphics\surface\linux"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\spk_graphical_api_surface.hpp;includes/graphics\surface\linux\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\spk_surface.hpp;includes/graphics\surface\linux\spk_surface.hpp"
 "${CMAKE_SOURCE_DIR}/includes/network\linux;includes/network\linux"
 "${CMAKE_SOURCE_DIR}/includes/network\linux\spk_network_acceptor.hpp;includes/network\linux\spk_network_acceptor.hpp"
 "${CMAKE_SOURCE_DIR}/includes/network\linux\spk_network_socket.hpp;includes/network\linux\spk_network_socket.hpp"
@@ -25,7 +25,7 @@ General - Other
 "${CMAKE_SOURCE_DIR}/includes/application;includes/application"
 "${CMAKE_SOURCE_DIR}/includes/application\modules;includes/application\modules"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\spk_API_module.hpp;includes/application\modules\spk_API_module.hpp"
-"${CMAKE_SOURCE_DIR}/includes/application\modules\spk_graphical_api_module.hpp;includes/application\modules\spk_graphical_api_module.hpp"
+"${CMAKE_SOURCE_DIR}/includes/application\modules\spk_module.hpp;includes/application\modules\spk_module.hpp"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\spk_keyboard_module.hpp;includes/application\modules\spk_keyboard_module.hpp"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\spk_message_consumer_module.hpp;includes/application\modules\spk_message_consumer_module.hpp"
 "${CMAKE_SOURCE_DIR}/includes/application\modules\spk_mouse_module.hpp;includes/application\modules\spk_mouse_module.hpp"
@@ -56,15 +56,15 @@ General - Other
 "${CMAKE_SOURCE_DIR}/includes/design_pattern\spk_value.hpp;includes/design_pattern\spk_value.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics;includes/graphics"
 "${CMAKE_SOURCE_DIR}/includes/graphics\frame;includes/graphics\frame"
-"${CMAKE_SOURCE_DIR}/includes/graphics\frame\spk_graphical_api_abstract_frame.hpp;includes/graphics\frame\spk_graphical_api_abstract_frame.hpp"
-"${CMAKE_SOURCE_DIR}/includes/graphics\frame\spk_graphical_api_frame.hpp;includes/graphics\frame\spk_graphical_api_frame.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\frame\spk_abstract_frame.hpp;includes/graphics\frame\spk_abstract_frame.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\frame\spk_frame.hpp;includes/graphics\frame\spk_frame.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface;includes/graphics\surface"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\spk_graphical_api_abstract_surface.hpp;includes/graphics\surface\spk_graphical_api_abstract_surface.hpp"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\spk_graphical_api_surface.hpp;includes/graphics\surface\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\spk_abstract_surface.hpp;includes/graphics\surface\spk_abstract_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\spk_surface.hpp;includes/graphics\surface\spk_surface.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\spk_area.hpp;includes/graphics\spk_area.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\spk_color.hpp;includes/graphics\spk_color.hpp"
-"${CMAKE_SOURCE_DIR}/includes/graphics\spk_graphical_api_frame.hpp;includes/graphics\spk_graphical_api_frame.hpp"
-"${CMAKE_SOURCE_DIR}/includes/graphics\spk_graphical_api_surface.hpp;includes/graphics\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\spk_frame.hpp;includes/graphics\spk_frame.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\spk_surface.hpp;includes/graphics\spk_surface.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\spk_mesh.hpp;includes/graphics\spk_mesh.hpp"
 "${CMAKE_SOURCE_DIR}/includes/graphics\spk_window.hpp;includes/graphics\spk_window.hpp"
 "${CMAKE_SOURCE_DIR}/includes/input;includes/input"
@@ -135,18 +135,18 @@ General - Other
 
 OpenGL - Windows
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\opengl;includes/graphics\surface\windows\opengl"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\opengl\spk_graphical_api_surface.hpp;includes/graphics\surface\windows\opengl\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\opengl\spk_surface.hpp;includes/graphics\surface\windows\opengl\spk_surface.hpp"
 
 OpenGL - Linux
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\opengl;includes/graphics\surface\linux\opengl"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\opengl\spk_graphical_api_surface.hpp;includes/graphics\surface\linux\opengl\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\opengl\spk_surface.hpp;includes/graphics\surface\linux\opengl\spk_surface.hpp"
 
 OpenGL - Other
 
 Vulkan - Windows
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\vulkan;includes/graphics\surface\windows\vulkan"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\vulkan\spk_graphical_api_surface.hpp;includes/graphics\surface\windows\vulkan\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\windows\vulkan\spk_surface.hpp;includes/graphics\surface\windows\vulkan\spk_surface.hpp"
 
 Vulkan - Linux
 "${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\vulkan;includes/graphics\surface\linux\vulkan"
-"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\vulkan\spk_graphical_api_surface.hpp;includes/graphics\surface\linux\vulkan\spk_graphical_api_surface.hpp"
+"${CMAKE_SOURCE_DIR}/includes/graphics\surface\linux\vulkan\spk_surface.hpp;includes/graphics\surface\linux\vulkan\spk_surface.hpp"
