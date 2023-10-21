@@ -43,6 +43,8 @@ private:
 
 		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
 
+		GPU_DEBUG_LINE();
+
 		return (false);
 	}
 
