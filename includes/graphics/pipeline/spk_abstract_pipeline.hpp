@@ -30,9 +30,12 @@ namespace spk
 					spk::DataBuffer _data;
 
 				public:
-					Buffer(const std::wstring &p_name, size_t p_unitSize) : _unitSize(p_unitSize),
-																			_name(p_name)
+					Buffer(const std::wstring &p_name, size_t p_unitSize) :
+						_unitSize(p_unitSize),
+						_name(p_name),
+						_needUpdate(false)
 					{
+						
 					}
 
 					void clear()
