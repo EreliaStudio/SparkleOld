@@ -11,7 +11,7 @@ namespace spk
 		result = GL_FALSE;
 
 		glShaderSource(p_shaderIndex, 1, &content, NULL);
-		glCompileShader(p_shaderIndex);
+		glCompileShader(p_shaderIndex); //! X bytes in 1 blocks are possibly lost
 		glGetShaderiv(p_shaderIndex, GL_COMPILE_STATUS, &result);
 
 		if (result != GL_TRUE)
@@ -30,14 +30,14 @@ namespace spk
 		result = GL_FALSE;
 		glAttachShader(p_programID, p_vertexID);
 		glAttachShader(p_programID, p_fragmentID);
-		glLinkProgram(p_programID);
+		glLinkProgram(p_programID); //! X bytes in 1 blocks are possibly lost
 		glGetProgramiv(p_programID, GL_LINK_STATUS, &result);
 		if (result != GL_TRUE)
 		{
 			spk::throwException(L"Error while linking a program");
 		}
 		glDetachShader(p_programID, p_vertexID);
-		glDetachShader(p_programID, p_fragmentID);
+		glDetachShader(p_programID, p_fragmentID); //! X bytes in 1 blocks are possibly lost
 	}
 
 	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout);
@@ -61,7 +61,7 @@ namespace spk
 	
 	void Pipeline::_loadProgram(const spk::ShaderLayout& p_shaderLayout)
 	{
-		_program = glCreateProgram();
+		_program = glCreateProgram(); //! X bytes in 1 blocks are possibly lost
 		GLuint _vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 		GLuint _fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
