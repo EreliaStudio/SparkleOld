@@ -36,6 +36,9 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_state_machine.hpp - design_pattern"
 			"${CMAKE_SOURCE_DIR}/includes/design_pattern/spk_value.hpp - design_pattern"
 
+			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_pipeline.hpp - NOT_COPIED"
+			"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/spk_abstract_pipeline.hpp - graphics/pipeline"
+
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_frame.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_abstract_frame.hpp - graphics/frame"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_frame.hpp - NOT_COPIED"

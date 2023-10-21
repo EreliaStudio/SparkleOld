@@ -2,6 +2,7 @@
 
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_field_map.hpp"
+#include "graphics/pipeline/spk_pipeline_basic_functions.hpp"
 #include "graphics/pipeline/spk_shader_module.hpp"
 #include "graphics/pipeline/spk_shader_layout.hpp"
 #include <map>

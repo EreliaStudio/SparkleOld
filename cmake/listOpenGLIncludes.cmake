@@ -4,6 +4,7 @@ function(listOpenGLIncludes INCLUDES_TABLE_VAR)
 		"${CMAKE_SOURCE_DIR}/includes/graphics/image/opengl/spk_image.hpp - graphics"
 
 		"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/opengl/spk_pipeline.hpp - graphics"
+		"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/opengl/spk_pipeline_basic_function.hpp - graphics/pipeline"
 		)
 
 	# --- Specific Windows
