@@ -5,6 +5,14 @@
 
 namespace spk
 {
+	void GLAPIENTRY MessageOpenGLCallback(GLenum source,
+										  GLenum type,
+										  GLuint id,
+										  GLenum severity,
+										  GLsizei length,
+										  const GLchar *message,
+										  const void *userParam);
+
 	Surface::Surface(spk::Frame* p_frame) :
 		spk::AbstractSurface(p_frame)
 	{
@@ -24,6 +32,13 @@ namespace spk
 		glXMakeCurrent(_display, _window, _glxContext);
 
 		GLenum p_glewInitResult = glewInit();
+
+		if (glDebugMessageCallback)
+		{
+			glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+			glDebugMessageCallback(spk::MessageOpenGLCallback, nullptr);
+			glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
+		}
 
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
