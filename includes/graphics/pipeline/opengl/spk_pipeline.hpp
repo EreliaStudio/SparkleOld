@@ -42,8 +42,10 @@ namespace spk
 		private:
 			void _pushData();
 
+			GLint _location;		
+
 		public:
-			OpenGLSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+			OpenGLSamplerUniform(Pipeline* p_owner, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 		};
 
 	private:

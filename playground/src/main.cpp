@@ -33,7 +33,7 @@ private:
 
 	void _onRender()
 	{
-		_image.bind(0);
+		_image.bind(1);
 		_object->render();
 	}
 	
@@ -52,7 +52,7 @@ public:
 		_object(_pipeline.createObject()),
 		_image(L"imageTest.png")
 	{
-		_pipeline.uniform(L"textureID") << 0 << std::endl;
+		_pipeline.uniform(L"textureID") << 1 << std::endl;
 	}
 	
 	~Test()
