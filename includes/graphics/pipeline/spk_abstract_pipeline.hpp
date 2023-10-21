@@ -145,7 +145,7 @@ namespace spk
 			void _updateIndexes()
 			{
 				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
-				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
+				_nbIndexesPushed = _storage.indexes().size() / sizeof(uint32_t);
 				_storage.indexes().clear();
 				_storage.indexes().setUpdateStatus(false);
 			}
@@ -179,7 +179,6 @@ namespace spk
 
 				_onRender();
 
-				spk::cout << "NbIndexPushed : " << _nbIndexesPushed << std::endl;
 				_owner->launch(_nbIndexesPushed);
 
 				_owner->deactivate();
