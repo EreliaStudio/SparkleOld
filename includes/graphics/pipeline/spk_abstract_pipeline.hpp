@@ -89,7 +89,7 @@ namespace spk
 			public:
 				Storage(const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout) :
 					_vertices(L"Vertices", p_storageBufferLayout.stride()),
-					_indexes(L"Indexes", sizeof(size_t))
+					_indexes(L"Indexes", sizeof(uint32_t))
 				{
 
 				}
