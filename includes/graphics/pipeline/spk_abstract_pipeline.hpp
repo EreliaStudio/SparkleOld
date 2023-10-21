@@ -139,6 +139,7 @@ namespace spk
 			{
 				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
 				_storage.vertices().clear();
+				_storage.vertices().setUpdateStatus(false);
 			}
 
 			void _updateIndexes()
@@ -146,11 +147,13 @@ namespace spk
 				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
 				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
 				_storage.indexes().clear();
+				_storage.indexes().setUpdateStatus(false);
 			}
 
 			void _updatePushConstants()
 			{
 				_pushPushConstantsData(_pushConstants.data(), _pushConstants.size());
+				_pushConstants.setUpdateStatus(false);
 			}
 
 		public:
@@ -176,6 +179,7 @@ namespace spk
 
 				_onRender();
 
+				spk::cout << "NbIndexPushed : " << _nbIndexesPushed << std::endl;
 				_owner->launch(_nbIndexesPushed);
 
 				_owner->deactivate();
