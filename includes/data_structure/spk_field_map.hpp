@@ -70,7 +70,7 @@ namespace spk
 		std::map<std::wstring, Field> _fields;
 
 	public:
-		FieldMap(size_t p_bufferSize) : _data(p_bufferSize)
+		FieldMap(size_t p_bufferSize) : _needUpdate(false), _data(p_bufferSize)
 		{
 
 		}
