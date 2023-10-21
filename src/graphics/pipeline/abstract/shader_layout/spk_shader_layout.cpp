@@ -1,4 +1,5 @@
 #include "graphics/pipeline/spk_shader_layout.hpp"
+#include <cmath>
 
 namespace spk
 {
