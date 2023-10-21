@@ -35,6 +35,11 @@ namespace spk
 					{
 					}
 
+					void clear()
+					{
+						_data.clear();
+					}
+
 					template <typename TType>
 					Buffer &operator<<(const TType &p_data)
 					{
@@ -133,12 +138,14 @@ namespace spk
 			void _updateVertices()
 			{
 				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
+				_storage.vertices().clear();
 			}
 
 			void _updateIndexes()
 			{
 				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
 				_nbIndexesPushed = _storage.indexes().size() / sizeof(size_t);
+				_storage.indexes().clear();
 			}
 
 			void _updatePushConstants()
