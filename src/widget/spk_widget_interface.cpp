@@ -38,7 +38,8 @@ namespace spk::Widget
 	}
 
 	Interface::Interface(const std::wstring& p_name) :
-		_name(p_name)
+		_name(p_name),
+		_geometryEdited(false)
 	{
 		Atlas::instance()->insert(std::shared_ptr<Interface>(this, [](Interface*){}));
 
