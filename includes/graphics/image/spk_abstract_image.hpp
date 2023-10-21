@@ -36,6 +36,8 @@ namespace spk
 		Wrap _wrap;
 		Mipmap _mipmap;
 
+		void _releaseImage();
+
 	public:
 		AbstractImage(const std::filesystem::path& p_filePath, Filtering p_filtering = Filtering::Nearest, Wrap p_wrap = Wrap::Repeat, Mipmap p_mipmap = Mipmap::Disable);
 		AbstractImage(const std::filesystem::path& p_filePath, Mipmap p_mipmap, Filtering p_filtering = Filtering::Nearest, Wrap p_wrap = Wrap::Repeat);
