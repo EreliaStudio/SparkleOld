@@ -1,6 +1,5 @@
-#include "graphics/surface/opengl/windows/spk_surface.hpp"
-#include <GL/glew.h>
-#include <GL/wglew.h>
+#include "spk_system_define.hpp"
+#include <string>
 
 namespace spk
 {
