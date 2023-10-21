@@ -6,6 +6,7 @@ namespace spk
 		AbstractImage(p_filePath, p_filtering, p_wrap, p_mipmap)
 	{
 		uploadToGPU();
+		_releaseImage();
 	}
 
 	Image::Image(const std::filesystem::path& p_filePath, Mipmap p_mipmap, Filtering p_filtering, Wrap p_wrap) :
@@ -70,9 +71,6 @@ namespace spk
 		}
 
 		glBindTexture(GL_TEXTURE_2D, 0);
-		
-		delete[] _imageData;
-		_imageData = nullptr;
 	}
 
 	void Image::bind(int p_textureIndex) {

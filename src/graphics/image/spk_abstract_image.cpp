@@ -21,7 +21,15 @@ namespace spk
 
 	AbstractImage::~AbstractImage()
 	{
+		_releaseImage();
+	}
 
+	void AbstractImage::_releaseImage()
+	{
+		if (_imageData == nullptr)
+			return;
+		stbi_image_free(_imageData);
+		_imageData = nullptr;
 	}
 
 	void AbstractImage::loadFromFile(const std::filesystem::path& p_filePath)
