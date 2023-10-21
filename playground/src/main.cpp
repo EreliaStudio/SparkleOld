@@ -4,6 +4,7 @@ class Test : public spk::Widget::Interface
 {
 private:
 	spk::Pipeline _pipeline;
+	spk::Image _image;
 	std::shared_ptr<spk::Pipeline::Object> _object;
 
 	struct Unit
@@ -32,6 +33,7 @@ private:
 
 	void _onRender()
 	{
+		_image.bind(0);
 		_object->render();
 	}
 	
@@ -47,7 +49,8 @@ private:
 public:
 	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
 		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
-		_object(_pipeline.createObject())
+		_object(_pipeline.createObject()),
+		_image(L"imageTest.png")
 	{
 		_pipeline.uniform(L"textureID") << 0 << std::endl;
 	}
