@@ -18,13 +18,7 @@ namespace spk
 	 * @param p_message The actual debug message string.
 	 * @param p_userParam A user-defined parameter.
 	 */
-	void GLAPIENTRY MessageOpenGLCallback(GLenum p_source,
-										GLenum p_type,
-										GLuint p_id,
-										GLenum p_severity,
-										GLsizei p_length,
-										const GLchar *p_message,
-										const void *p_userParam)
+	void GLAPIENTRY MessageOpenGLCallback(GLenum p_source, GLenum p_type, GLuint p_id, GLenum p_severity, GLsizei p_length, const GLchar *p_message, const void *p_userParam)
 	{
 		// Check if the message is of a high severity level
 		if (p_severity == GL_DEBUG_TYPE_ERROR || p_severity == GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR || p_severity == GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR ||

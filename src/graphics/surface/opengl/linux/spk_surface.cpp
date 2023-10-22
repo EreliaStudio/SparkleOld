@@ -5,13 +5,7 @@
 
 namespace spk
 {
-	void GLAPIENTRY MessageOpenGLCallback(GLenum source,
-										  GLenum type,
-										  GLuint id,
-										  GLenum severity,
-										  GLsizei length,
-										  const GLchar *message,
-										  const void *userParam);
+	void GLAPIENTRY MessageOpenGLCallback(GLenum p_source, GLenum p_type, GLuint p_id, GLenum p_severity, GLsizei p_length, const GLchar *p_message, const void *p_userParam)
 
 	Surface::Surface(spk::Frame* p_frame) :
 		spk::AbstractSurface(p_frame)
