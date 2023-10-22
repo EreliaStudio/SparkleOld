@@ -42,6 +42,17 @@ namespace spk
 		glDetachShader(p_programID, p_fragmentID); //! X bytes in 1 blocks are possibly lost
 	}
 
+	/**
+	 * @brief Converts shader code from Vulkan to OpenGL by replacing specific layout qualifiers.
+	 *
+	 * Specifically, this function replaces the Vulkan-specific `layout(push_constant)` qualifier
+	 * with the OpenGL-compatible `layout(binding = n)` qualifier, where `n` is the first available
+	 * binding slot in the provided ShaderLayout.
+	 *
+	 * @param p_shaderLayout The ShaderLayout used to find the first available binding slot.
+	 * @param p_code The original Vulkan shader code.
+	 * @return Modified shader code that is OpenGL compatible.
+	 */
 	std::string convertCodeToOpenGL(const spk::ShaderLayout& p_shaderLayout, const std::string& p_code)
 	{
 		std::string result = p_code;
