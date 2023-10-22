@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-#include "math/spk_vector2.hpp"
 #include "graphics/frame/spk_abstract_frame.hpp"
 
 namespace spk
@@ -24,10 +22,7 @@ namespace spk
          * 
          * @param p_frame A pointer to the frame to be associated with this surface.
          */
-		AbstractSurface(const spk::AbstractFrame* p_frame) :
-			_frame(p_frame)
-		{
-		}
+		AbstractSurface(const spk::AbstractFrame* p_frame);
 
         // Deleted copy constructor and copy assignment operator
 		AbstractSurface(const AbstractSurface&) = delete;

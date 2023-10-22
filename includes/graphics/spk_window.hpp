@@ -24,13 +24,38 @@ namespace spk
         Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr);
 
     public:
-        // Deleting the copy constructor and copy assignment operator.
+        /**
+         * @brief Deleted copy constructor.
+         *
+         * Copying instances of this class is not allowed to ensure that resources
+         * managed by the Window are not duplicated or improperly managed.
+         */
         Window(const Window&) = delete;
+
+        /**
+         * @brief Deleted copy assignment operator.
+         *
+         * Copy assignment is not allowed to ensure that resources managed by the
+         * Window are not duplicated or improperly managed.
+         */
         Window& operator=(const Window&) = delete;
 
-        // Default move constructor and move assignment operator.
+        /**
+         * @brief Default move constructor.
+         *
+         * Moving instances of this class is allowed. Resources are transferred from
+         * the source instance to the new instance.
+         */
         Window(Window&&) = default;
+
+        /**
+         * @brief Default move assignment operator.
+         *
+         * Move assignment is allowed. Resources are transferred from the source
+         * instance to the this instance, replacing the current resources.
+         */
         Window& operator=(Window&&) = default;
+
 
         /**
          * Clears the window's frame and surface.

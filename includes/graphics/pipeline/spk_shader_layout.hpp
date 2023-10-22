@@ -61,7 +61,7 @@ namespace spk
 			 * @brief Overloaded output stream operator for Type enum.
 			 * 
 			 * @param p_out The output stream.
-			 * @param p_data The data type to output.
+			 * @param p_type The data type to output.
 			 * @return The output stream.
 			 */
 			friend std::wostream& operator<<(std::wostream& p_out, const Type& p_type);
