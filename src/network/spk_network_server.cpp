@@ -62,7 +62,7 @@ namespace spk::Network
 
 				fd_set socketToRead = _readingFDs;
 
-				int activity = ::select(_maxFDs + 1, &socketToRead, nullptr, nullptr, &timeout);
+				int activity = ::select(static_cast<int>(_maxFDs) + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == Socket::SocketError)
 				{

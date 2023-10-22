@@ -7,6 +7,17 @@ function(listGenericSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/input/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/system/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/image/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/frame/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/surface/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/shader_layout/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/uniform/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/object/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/object/push_constants/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/abstract/object/storage/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
@@ -31,7 +42,7 @@ function(listGenericSources SOURCE_FILES_VAR)
 		)
 
 	# --- Specific Linux
-	elseif(LINUX)
+	elseif(UNIX)
 		file(GLOB SYSTEM_DEPENDENT_SOURCE_FILES
 			"${CMAKE_SOURCE_DIR}/src/basic_functions/linux/*.cpp"
 			"${CMAKE_SOURCE_DIR}/src/network/linux/*.cpp"
@@ -41,7 +52,6 @@ function(listGenericSources SOURCE_FILES_VAR)
 
 	endif()
 	
-	set(${SOURCE_FILES_VAR} ${COMMON_SOURCE_FILES} PARENT_SCOPE)
-	list(APPEND ${SOURCE_FILES_VAR} ${SYSTEM_DEPENDENT_SOURCE_FILES})
+	set(${SOURCE_FILES_VAR} ${${SOURCE_FILES_VAR}} ${COMMON_SOURCE_FILES} ${SYSTEM_DEPENDENT_SOURCE_FILES} PARENT_SCOPE)
 
 endfunction()

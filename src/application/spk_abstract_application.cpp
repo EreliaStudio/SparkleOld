@@ -6,7 +6,7 @@ namespace spk
 	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_WorkerName, const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
 		if (_workers.find(p_WorkerName) == _workers.end())
-			_workers[p_WorkerName] = new spk::PersistentWorker(p_WorkerName);
+			_workers[p_WorkerName] = std::make_unique<spk::PersistentWorker>(p_WorkerName);
 		return (std::move(_workers[p_WorkerName]->addJob(p_jobName, p_job)));
 	}
 
@@ -29,9 +29,6 @@ namespace spk
 	AbstractApplication::~AbstractApplication()
 	{
 		_isRunning = false;
-
-		for (auto& worker : _workers)
-			delete worker.second;
 	}
 
 	int AbstractApplication::run()

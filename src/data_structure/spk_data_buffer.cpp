@@ -8,6 +8,13 @@ namespace spk
 	{
 	}
 	
+	DataBuffer::DataBuffer(size_t p_dataSize) :
+		_data(p_dataSize),
+		_bookmark(0)
+	{
+
+	}
+	
 	void DataBuffer::resize(const size_t &p_newSize)
 	{
 		_data.resize(p_newSize);

@@ -35,6 +35,11 @@ namespace spk
 		DataBuffer();
 
 		/**
+		 * @brief Constructor with a pre-defined sized data buffer
+		 */
+		DataBuffer(size_t p_dataSize);
+
+		/**
 		 * @brief Return the content of the DataBuffer as a raw bytes array
 		 * 
 		 * @return The content of the DataBuffer as raw bytes
@@ -138,6 +143,26 @@ namespace spk
 		}
 
 		/**
+		 * @brief Edits a portion of the data buffer starting at a specified offset.
+		 *
+		 * This function copies data from the source to the internal data buffer,
+		 * starting at a given offset. The size of the data to copy is also specified.
+		 * If the sum of the offset and data size exceeds the size of the internal buffer,
+		 * a runtime error is thrown.
+		 *
+		 * @param p_offset The starting offset in the internal data buffer.
+		 * @param p_data The pointer to the source data to copy.
+		 * @param p_dataSize The size of the data to copy, in bytes.
+		 * @throws std::runtime_error If the sum of p_offset and p_dataSize exceeds the internal buffer size.
+		 */
+		void edit(const size_t& p_offset, const void* p_data, const size_t& p_dataSize)
+		{
+			if (p_offset + p_dataSize > size())
+				throw std::runtime_error("Unable to edit, offset is out of bound.");
+			memcpy(_data.data() + p_offset, p_data, p_dataSize);
+		}
+
+		/**
 		 * @brief Insert data into the buffer.
 		 *
 		 * This template function handles all non-container types.
@@ -222,6 +247,22 @@ namespace spk
 				*this >> *it;
 			}
 			return *this;
+		}
+
+		/**
+		 * @brief Appends data to the end of the existing internal buffer.
+		 *
+		 * This function enlarges the internal data buffer by the size of the new data to be added.
+		 * It then copies the new data into the buffer, starting at the point where the old data ends.
+		 *
+		 * @param p_data Pointer to the source data to append.
+		 * @param p_dataSize The size of the data to append, in bytes.
+		 */
+		void append(const void* p_data, const size_t& p_dataSize)
+		{
+			size_t oldSize = size();
+			resize(size() + p_dataSize);
+			edit(oldSize, p_data, p_dataSize);
 		}
 	};
 }
