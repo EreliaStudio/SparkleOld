@@ -1,0 +1,4 @@
+<map id="spk::AbstractImage" name="spk::AbstractImage">
+<area shape="rect" id="node1" title="Abstract class for managing images." alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Image.html" title="Concrete implementation of the AbstractImage class for OpenGL." alt="" coords="32,80,127,107"/>
+</map>

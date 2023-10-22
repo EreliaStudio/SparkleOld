@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1APIModule.html" title="Class for managing the API interactions." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractPipeline.html" title="Abstract base class for handling different types of shader pipelines." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Pipeline.html" title=" " alt="" coords="212,5,317,32"/>
 </map>

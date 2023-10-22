@@ -1,0 +1,5 @@
+<map id="spk::AbstractPipeline::SamplerUniform" name="spk::AbstractPipeline::SamplerUniform">
+<area shape="rect" id="node1" title="A class derived from Uniform to manage sampler uniforms." alt="" coords="5,185,164,227"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout." alt="" coords="5,95,164,136"/>
+<area shape="rect" id="node3" href="$classspk_1_1DataBuffer.html" title="Class for managing data buffers." alt="" coords="23,5,146,32"/>
+</map>

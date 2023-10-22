@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['inputstate_1154',['InputState',['../namespacespk.html#aed6527896d34c2628aec65a369dee252',1,'spk']]],
-  ['interpolation_1155',['Interpolation',['../classspk_1_1IPerlin.html#a3266c3dd973db71cfd0f81a6b8ff4540',1,'spk::IPerlin']]]
+  ['filtering_1454',['Filtering',['../classspk_1_1AbstractImage.html#abe472a81910b118bef774cb4f3d0db65',1,'spk::AbstractImage']]]
 ];

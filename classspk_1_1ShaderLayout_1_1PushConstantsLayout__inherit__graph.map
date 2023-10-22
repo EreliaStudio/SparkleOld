@@ -1,0 +1,4 @@
+<map id="spk::ShaderLayout::PushConstantsLayout" name="spk::ShaderLayout::PushConstantsLayout">
+<area shape="rect" id="node1" title="Class to manage the layout of push constants." alt="" coords="5,95,168,136"/>
+<area shape="rect" id="node2" href="$classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array." alt="" coords="11,5,162,47"/>
+</map>

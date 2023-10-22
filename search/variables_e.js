@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_1129',['x',['../structspk_1_1IVector2.html#a7aef6e160a85e33668c18c5e743127ef',1,'spk::IVector2::x()'],['../structspk_1_1IVector3.html#a147778b8b9736f2edb095d0102d48d43',1,'spk::IVector3::x()']]]
+  ['type_1423',['type',['../structspk_1_1ShaderLayout_1_1Data.html#a7a1daed4b36ebfd17228d5f91cb66eca',1,'spk::ShaderLayout::Data::type()'],['../structspk_1_1ShaderModule_1_1Instruction.html#abcf74681b43a71ed39832c593603661e',1,'spk::ShaderModule::Instruction::type()'],['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#ab9d1aa0c05c9463583d6c7b79a629ca5',1,'spk::Widget::Canvas::Geometry::Value::type()']]]
 ];

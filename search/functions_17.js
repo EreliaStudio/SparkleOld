@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['wait_1036',['wait',['../classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b',1,'spk::ThreadSafeQueue']]],
-  ['wheel_1037',['wheel',['../classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994',1,'spk::Mouse']]],
-  ['widgetmodule_1038',['WidgetModule',['../classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c',1,'spk::WidgetModule']]],
-  ['widgets_1039',['widgets',['../classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76',1,'spk::Widget::Atlas']]],
-  ['windowmodule_1040',['WindowModule',['../classspk_1_1WindowModule.html#a9a94140d19b729c855dcd8431de38bac',1,'spk::WindowModule::WindowModule(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size)'],['../classspk_1_1WindowModule.html#a36706fa4088182a2c3b03536d3300809',1,'spk::WindowModule::WindowModule(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size, void *p_apiModule)']]],
-  ['windowproc_1041',['WindowProc',['../classspk_1_1APIModule.html#accd975c587a58847bebacf503643a943',1,'spk::APIModule']]],
-  ['windowqueue_1042',['windowQueue',['../classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b',1,'spk::APIModule::windowQueue()'],['../classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b',1,'spk::APIModule::windowQueue()']]],
-  ['worker_1043',['Worker',['../classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64',1,'spk::Worker']]],
-  ['workerpool_1044',['WorkerPool',['../classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a',1,'spk::WorkerPool::WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)'],['../classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d',1,'spk::WorkerPool::WorkerPool(const WorkerPool &amp;p_other)=delete']]],
-  ['wstringtostring_1045',['wstringToString',['../namespacespk.html#af968ab2db5e30a212aa373cddf7016d5',1,'spk']]]
+  ['wait_1305',['wait',['../classspk_1_1ThreadSafeQueue.html#a75768d4042460537d331f670a798ce1b',1,'spk::ThreadSafeQueue']]],
+  ['wasresized_1306',['wasResized',['../classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22',1,'spk::Frame::wasResized() const'],['../classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22',1,'spk::Frame::wasResized() const']]],
+  ['wheel_1307',['wheel',['../classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994',1,'spk::Mouse']]],
+  ['widgetmodule_1308',['WidgetModule',['../classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c',1,'spk::WidgetModule']]],
+  ['widgets_1309',['widgets',['../classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76',1,'spk::Widget::Atlas']]],
+  ['window_1310',['window',['../classspk_1_1Frame.html#a1ae77afec932caf244660560b0f49e8d',1,'spk::Frame']]],
+  ['windowframe_1311',['windowFrame',['../classspk_1_1Frame.html#ac69cb9e01bc521099cd3bf0cff6d91a5',1,'spk::Frame']]],
+  ['windowproc_1312',['WindowProc',['../namespacespk.html#a35c88ea124c5bf25cfd51823d719a92b',1,'spk']]],
+  ['windowqueue_1313',['windowQueue',['../classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b',1,'spk::APIModule::windowQueue()'],['../classspk_1_1APIModule.html#ac99489e2893d8b07a4b59ee458e97f5b',1,'spk::APIModule::windowQueue()']]],
+  ['worker_1314',['Worker',['../classspk_1_1Worker.html#ad63fdc3010d478f7e03124269377dc64',1,'spk::Worker']]],
+  ['workerpool_1315',['WorkerPool',['../classspk_1_1WorkerPool.html#a839f0676de4aa4d8584fbbb1e899b08a',1,'spk::WorkerPool::WorkerPool(const std::wstring &amp;p_poolName, const size_t &amp;p_nbWorker)'],['../classspk_1_1WorkerPool.html#a480e86565f57a29db1b390530632545d',1,'spk::WorkerPool::WorkerPool(const WorkerPool &amp;p_other)=delete']]],
+  ['wrap_1316',['wrap',['../classspk_1_1AbstractImage.html#a3bdbca860ee00e9470d3932cd0acf82d',1,'spk::AbstractImage']]],
+  ['writetobuffer_1317',['writeToBuffer',['../classspk_1_1Buffer.html#a9380dd5b2d3149c65adbb3e8b1215e78',1,'spk::Buffer']]],
+  ['writetoindex_1318',['writeToIndex',['../classspk_1_1Buffer.html#a33c944f66a436a604b61b12657ddba1c',1,'spk::Buffer']]],
+  ['wstringtostring_1319',['wstringToString',['../namespacespk.html#af968ab2db5e30a212aa373cddf7016d5',1,'spk']]]
 ];

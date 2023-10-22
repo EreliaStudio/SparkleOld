@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1ThreadSafeQueue.html" title=" " alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node1" href="$classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources." alt="" coords="5,31,164,57"/>
+<area shape="rect" id="node2" href="$classspk_1_1Network_1_1Acceptor.html" title="The Acceptor class is a wrapper around a socket, intended to accept connections from clients." alt="" coords="212,5,385,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket." alt="" coords="219,56,378,83"/>
 </map>

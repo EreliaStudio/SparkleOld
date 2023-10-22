@@ -72,11 +72,44 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">    #include &quot;windows/spk_window.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#elif __linux__</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">    #include &quot;linux/spk_window.hpp&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_frame.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_surface.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Window.html">Window</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;Window&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;<a class="code" href="classspk_1_1Window.html">Window</a>&gt;;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classspk_1_1Frame.html">spk::Frame</a> _frame;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classspk_1_1Surface.html">spk::Surface</a> _surface;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>(<span class="keyword">const</span> std::wstring &amp;p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2UInt</a> &amp;p_size, <span class="keywordtype">void</span> *p_ptr = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Window.html">Window</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classspk_1_1Window.html">Window</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>(<a class="code" href="classspk_1_1Window.html">Window</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>&amp; operator=(<a class="code" href="classspk_1_1Window.html">Window</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> clear();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> render();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> setSize(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; p_size);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> resize(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; p_size);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; size() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Frame.html">spk::Frame</a>&amp; frame() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Frame_html"><div class="ttname"><a href="classspk_1_1Frame.html">spk::Frame</a></div><div class="ttdoc">Concrete implementation of a frame using XCB for Linux platforms.</div><div class="ttdef"><b>Definition:</b> spk_frame.hpp:19</div></div>
+<div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
+<div class="ttc" id="aclassspk_1_1Surface_html"><div class="ttname"><a href="classspk_1_1Surface.html">spk::Surface</a></div><div class="ttdoc">Derived class for creating and managing a GLX-based surface.</div><div class="ttdef"><b>Definition:</b> spk_surface.hpp:16</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html"><div class="ttname"><a href="classspk_1_1Window.html">spk::Window</a></div><div class="ttdef"><b>Definition:</b> spk_window.hpp:9</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; unsigned int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

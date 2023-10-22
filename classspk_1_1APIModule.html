@@ -68,7 +68,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classspk_1_1APIModule-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::APIModule Class Reference</div>  </div>
@@ -105,6 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a97f46238074160fc7b8d1f32d7a5add8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#a97f46238074160fc7b8d1f32d7a5add8">keyboardQueue</a> ()</td></tr>
 <tr class="memdesc:a97f46238074160fc7b8d1f32d7a5add8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the thread-safe queue for keyboard system messages.  <a href="classspk_1_1APIModule.html#a97f46238074160fc7b8d1f32d7a5add8">More...</a><br /></td></tr>
 <tr class="separator:a97f46238074160fc7b8d1f32d7a5add8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac55ff0b47d92045226945604bb1a7b39"><td class="memItemLeft" align="right" valign="top">LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#ac55ff0b47d92045226945604bb1a7b39">handleMessage</a> (const HWND &amp;p_hwnd, const UINT &amp;p_uMsg, const WPARAM &amp;p_wParam, const LPARAM &amp;p_lParam)</td></tr>
+<tr class="memdesc:ac55ff0b47d92045226945604bb1a7b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a system message.  <a href="classspk_1_1APIModule.html#ac55ff0b47d92045226945604bb1a7b39">More...</a><br /></td></tr>
+<tr class="separator:ac55ff0b47d92045226945604bb1a7b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae82aac58db25ad6745ef7aee7a832cd0"><td class="memItemLeft" align="right" valign="top"><a id="ae82aac58db25ad6745ef7aee7a832cd0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#ae82aac58db25ad6745ef7aee7a832cd0">APIModule</a> ()</td></tr>
 <tr class="memdesc:ae82aac58db25ad6745ef7aee7a832cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classspk_1_1APIModule.html" title="Class for managing the API interactions.">APIModule</a> object. <br /></td></tr>
@@ -129,18 +131,64 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a97f46238074160fc7b8d1f32d7a5add8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; SystemMessage &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#a97f46238074160fc7b8d1f32d7a5add8">keyboardQueue</a> ()</td></tr>
 <tr class="memdesc:a97f46238074160fc7b8d1f32d7a5add8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the thread-safe queue for keyboard system messages.  <a href="classspk_1_1APIModule.html#a97f46238074160fc7b8d1f32d7a5add8">More...</a><br /></td></tr>
 <tr class="separator:a97f46238074160fc7b8d1f32d7a5add8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:accd975c587a58847bebacf503643a943"><td class="memItemLeft" align="right" valign="top">static LRESULT CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1APIModule.html#accd975c587a58847bebacf503643a943">WindowProc</a> (HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)</td></tr>
-<tr class="memdesc:accd975c587a58847bebacf503643a943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes messages sent to a window.  <a href="classspk_1_1APIModule.html#accd975c587a58847bebacf503643a943">More...</a><br /></td></tr>
-<tr class="separator:accd975c587a58847bebacf503643a943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for managing the API interactions. </p>
 <p>This class handles the API interactions and updates for the window, mouse and keyboard. It uses thread-safe queues to ensure safe multi-threaded operations.</p>
 <p>This class handles the API interactions and updates for system, window, mouse, and keyboard. It uses a pool of <a class="el" href="classspk_1_1DataBuffer.html" title="Class for managing data buffers.">DataBuffer</a> as a singleton instance and thread-safe queues to ensure safe multi-threaded operations. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac55ff0b47d92045226945604bb1a7b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac55ff0b47d92045226945604bb1a7b39">&#9670;&nbsp;</a></span>handleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT spk::APIModule::handleMessage </td>
+          <td>(</td>
+          <td class="paramtype">const HWND &amp;&#160;</td>
+          <td class="paramname"><em>p_hwnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const UINT &amp;&#160;</td>
+          <td class="paramname"><em>p_uMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const WPARAM &amp;&#160;</td>
+          <td class="paramname"><em>p_wParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const LPARAM &amp;&#160;</td>
+          <td class="paramname"><em>p_lParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles a system message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_hwnd</td><td>Handle to the window. </td></tr>
+    <tr><td class="paramname">p_uMsg</td><td>The message. </td></tr>
+    <tr><td class="paramname">p_wParam</td><td>Additional message-specific information. </td></tr>
+    <tr><td class="paramname">p_lParam</td><td>Additional message-specific information. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the message processing and depends on the message sent. </dd></dl>
+
+</div>
+</div>
 <a id="a97f46238074160fc7b8d1f32d7a5add8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97f46238074160fc7b8d1f32d7a5add8">&#9670;&nbsp;</a></span>keyboardQueue() <span class="overload">[1/2]</span></h2>
 
@@ -326,66 +374,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the thread-safe queue for system messages. </p>
 <dl class="section return"><dt>Returns</dt><dd>Thread-safe queue for system messages. </dd></dl>
-
-</div>
-</div>
-<a id="accd975c587a58847bebacf503643a943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accd975c587a58847bebacf503643a943">&#9670;&nbsp;</a></span>WindowProc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">LRESULT CALLBACK spk::APIModule::WindowProc </td>
-          <td>(</td>
-          <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>p_hwnd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UINT&#160;</td>
-          <td class="paramname"><em>p_uMsg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">WPARAM&#160;</td>
-          <td class="paramname"><em>p_wParam</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">LPARAM&#160;</td>
-          <td class="paramname"><em>p_lParam</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Processes messages sent to a window. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_hwnd</td><td>Handle to the window. </td></tr>
-    <tr><td class="paramname">p_uMsg</td><td>The message. </td></tr>
-    <tr><td class="paramname">p_wParam</td><td>Additional message-specific information. </td></tr>
-    <tr><td class="paramname">p_lParam</td><td>Additional message-specific information. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The result of the message processing and depends on the message sent. </dd></dl>
 
 </div>
 </div>

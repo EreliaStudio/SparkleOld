@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1ActivityScheduler.html" title="Allows activitee to follow each other." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractImage.html" title="Abstract class for managing images." alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Image.html" title="Concrete implementation of the AbstractImage class for OpenGL." alt="" coords="201,5,296,32"/>
 </map>

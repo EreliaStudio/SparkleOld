@@ -66,7 +66,8 @@ $(function() {
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>Object()
-: <a class="el" href="classspk_1_1JSON_1_1Object.html#a945d176bd294d6a4a3da430aa1eb6371">spk::JSON::Object</a>
+: <a class="el" href="classspk_1_1AbstractPipeline_1_1Object.html#aefb4538c922b5685bf740c8b860dde30">spk::AbstractPipeline::Object</a>
+, <a class="el" href="classspk_1_1JSON_1_1Object.html#a945d176bd294d6a4a3da430aa1eb6371">spk::JSON::Object</a>
 , <a class="el" href="classspk_1_1Network_1_1Object.html#a888d1f482e61f912a5ec8c0a99c82ee9">spk::Network::Object</a>
 , <a class="el" href="classspk_1_1Pool_1_1Object.html#a1f83127b5f78cbe9752cc4b6419a53bd">spk::Pool&lt; TType &gt;::Object</a>
 </li>
@@ -97,6 +98,7 @@ $(function() {
 : <a class="el" href="structspk_1_1IVector2.html#a8a7d7e368595e4a4db1580995d7df6f6">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#a5fe52f8e10e8cc546dbbff5bc4289fb6">spk::IVector3&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1Matrix4x4.html#a8ae6e667b3e83576be4c27371ab45195">spk::Matrix4x4</a>
+, <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html#a90f9a2f1750674c870ce788531d3d5eb">spk::ShaderLayout::UniformBlockLayout::Key</a>
 </li>
 <li>operator()()
 : <a class="el" href="classspk_1_1Pool_1_1Object.html#ab235caeb032b6b9c2f3a5ed481287eb9">spk::Pool&lt; TType &gt;::Object</a>
@@ -104,15 +106,16 @@ $(function() {
 <li>operator*()
 : <a class="el" href="structspk_1_1IVector2.html#a409c7ef14a15f0e7bee9e781ea3f029c">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#acea21497ee4afc37edb45f1c5fb4330f">spk::IVector3&lt; TType &gt;</a>
-, <a class="el" href="structspk_1_1Matrix4x4.html#aefe093f2daf01e75279a06bc51b04e7a">spk::Matrix4x4</a>
-, <a class="el" href="classspk_1_1Pool_1_1Object.html#a978235e7c6d322d8c00d0ca39e06896f">spk::Pool&lt; TType &gt;::Object</a>
+, <a class="el" href="structspk_1_1Matrix4x4.html#aa927e6e0ee3b173ef707d697235b9f14">spk::Matrix4x4</a>
+, <a class="el" href="classspk_1_1Pool_1_1Object.html#a31fc7bcf5596dbceddf9a938f36a5fc8">spk::Pool&lt; TType &gt;::Object</a>
 </li>
 <li>operator*=()
 : <a class="el" href="structspk_1_1IVector2.html#a0609e1b115b35f3293a19e9f1b3aa91c">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#a554c4b94a4eff189e05f7fa81a8de409">spk::IVector3&lt; TType &gt;</a>
 </li>
 <li>operator+()
-: <a class="el" href="structspk_1_1IVector2.html#a9d6df11d0dea89825de285227208b4e8">spk::IVector2&lt; TType &gt;</a>
+: <a class="el" href="structspk_1_1Color.html#a3d9356dc7b806d549dbd6c7a978ab430">spk::Color</a>
+, <a class="el" href="structspk_1_1IVector2.html#a9d6df11d0dea89825de285227208b4e8">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#a09d2efd6d44b16c57695701070ae5db9">spk::IVector3&lt; TType &gt;</a>
 </li>
 <li>operator+=()
@@ -120,7 +123,8 @@ $(function() {
 , <a class="el" href="structspk_1_1IVector3.html#a6c440077f89aaf8a2b0e4943aefd4fa1">spk::IVector3&lt; TType &gt;</a>
 </li>
 <li>operator-()
-: <a class="el" href="structspk_1_1IVector2.html#a93181e2a39090202e764fe87e5a6d1c5">spk::IVector2&lt; TType &gt;</a>
+: <a class="el" href="structspk_1_1Color.html#ad593405f1907ade11781ac8659e911ec">spk::Color</a>
+, <a class="el" href="structspk_1_1IVector2.html#a93181e2a39090202e764fe87e5a6d1c5">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#a2f4474b57b5d0be6013cf80bc2a8e9f5">spk::IVector3&lt; TType &gt;</a>
 </li>
 <li>operator-=()
@@ -141,9 +145,13 @@ $(function() {
 <li>operator&lt;()
 : <a class="el" href="structspk_1_1IVector2.html#a50ee09f391a89938f95501f6f830818d">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#ad24172f419e35774c2dc4c05f516a847">spk::IVector3&lt; TType &gt;</a>
+, <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html#a47a62a931d690d2b159c7769c27f2f75">spk::ShaderLayout::UniformBlockLayout::Key</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="classspk_1_1DataBuffer.html#adf549d489c5f326e781e4408d550e7e0">spk::DataBuffer</a>
+: <a class="el" href="classspk_1_1AbstractPipeline_1_1Object_1_1Storage_1_1Buffer.html#a75905e80389b5e98acb86a6f449b773f">spk::AbstractPipeline::Object::Storage::Buffer</a>
+, <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#ae2f622f6bb713e7934c9643b3e5c0877">spk::AbstractPipeline::Uniform</a>
+, <a class="el" href="classspk_1_1AbstractPipeline_1_1UniformBlock_1_1Field.html#a8efd7436a6df9469aea6200de5ab5511">spk::AbstractPipeline::UniformBlock::Field</a>
+, <a class="el" href="classspk_1_1DataBuffer.html#adf549d489c5f326e781e4408d550e7e0">spk::DataBuffer</a>
 , <a class="el" href="classspk_1_1Network_1_1Message.html#a2d872d32e820dc00a57f9032cf763b0f">spk::Network::Message</a>
 </li>
 <li>operator&lt;=()
@@ -151,20 +159,22 @@ $(function() {
 , <a class="el" href="structspk_1_1IVector3.html#a8cd7c15e740a43489015a93e1022b687">spk::IVector3&lt; TType &gt;</a>
 </li>
 <li>operator=()
-: <a class="el" href="classspk_1_1ContextManager.html#a047985b77178329613b01e1b1338d568">spk::ContextManager&lt; TContextType &gt;</a>
+: <a class="el" href="classspk_1_1AbstractFrame.html#a58e1c0becf22c40fa17ad466f78fca22">spk::AbstractFrame</a>
+, <a class="el" href="classspk_1_1ContextManager.html#a047985b77178329613b01e1b1338d568">spk::ContextManager&lt; TContextType &gt;</a>
 , <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html#a5d710e9926005abee47e31d96becfa40">spk::ContractProvider::Contract</a>
 , <a class="el" href="classspk_1_1InherenceObject.html#a0f80475dd4e0633e93b2e009b34e6536">spk::InherenceObject&lt; TType &gt;</a>
-, <a class="el" href="classspk_1_1Network_1_1Object.html#a26aece59b74d2c982f5b12bba414e0a6">spk::Network::Object</a>
+, <a class="el" href="classspk_1_1Network_1_1Object.html#a4fb5b5f6d5bd58b452249def05f5d6e9">spk::Network::Object</a>
 , <a class="el" href="classspk_1_1Promise.html#a0560e9b5ba7802bb42716220619d0d89">spk::Promise&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1StandardType.html#a4cfaaa7966d8cde38e3b9a37e96b296a">spk::StandardType&lt; TType, typename &gt;</a>
 , <a class="el" href="classspk_1_1TranslationAtlas.html#afc58a92e90a3a257eb3b8d698c1f95be">spk::TranslationAtlas</a>
-, <a class="el" href="classspk_1_1Value_1_1Default.html#a74711a987126d215a51581db6ee99679">spk::Value&lt; TType &gt;::Default</a>
-, <a class="el" href="classspk_1_1Value.html#a169179d9efc16fe961c246bfe8c567e6">spk::Value&lt; TType &gt;</a>
+, <a class="el" href="classspk_1_1Value_1_1Default.html#a76f914d497757411cff7499ec53ba41d">spk::Value&lt; TType &gt;::Default</a>
+, <a class="el" href="classspk_1_1Value.html#a3ad908815c627f2b2fee96f5ce40ed32">spk::Value&lt; TType &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="structspk_1_1IVector2.html#a19a45be30c1cb18600add47dddd15ce1">spk::IVector2&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1IVector3.html#aebd6cca762ca14ae011d342d8fbeecc6">spk::IVector3&lt; TType &gt;</a>
 , <a class="el" href="structspk_1_1Matrix4x4.html#ae94eb7753a39f1f076f2ef04bb763bfa">spk::Matrix4x4</a>
+, <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html#a5b12e0fe0f4d0b6d35ed9063965ea940">spk::ShaderLayout::UniformBlockLayout::Key</a>
 </li>
 <li>operator&gt;()
 : <a class="el" href="structspk_1_1IVector2.html#ab1b6a3babc24fbb384fde2327590f4ef">spk::IVector2&lt; TType &gt;</a>
@@ -179,9 +189,16 @@ $(function() {
 , <a class="el" href="classspk_1_1Network_1_1Message.html#a34eb0325e4117cac102fc850090e50c4">spk::Network::Message</a>
 </li>
 <li>operator[]()
-: <a class="el" href="classspk_1_1JSON_1_1File.html#a2fd10b49b958b47f2ec344c3045662bc">spk::JSON::File</a>
+: <a class="el" href="classspk_1_1AbstractPipeline_1_1UniformBlock.html#ab8fb52437f171ba94b6cf8bb02ac3dfe">spk::AbstractPipeline::UniformBlock</a>
+, <a class="el" href="classspk_1_1JSON_1_1File.html#a2fd10b49b958b47f2ec344c3045662bc">spk::JSON::File</a>
 , <a class="el" href="classspk_1_1JSON_1_1Object.html#a2b52eff7794d917e59edd6b6d81ff292">spk::JSON::Object</a>
 , <a class="el" href="classspk_1_1ThreadSafeQueue.html#a3f339b2424b4697100d4bb3a501c4bdc">spk::ThreadSafeQueue&lt; T &gt;</a>
+</li>
+<li>outputBufferLayout()
+: <a class="el" href="classspk_1_1ShaderLayout.html#a9105180c34e861a621566bb8d9983368">spk::ShaderLayout</a>
+</li>
+<li>OutputBufferLayout()
+: <a class="el" href="classspk_1_1ShaderLayout_1_1OutputBufferLayout.html#a21dfd26e028cee73097b8e8687ff9227">spk::ShaderLayout::OutputBufferLayout</a>
 </li>
 </ul>
 </div><!-- contents -->
