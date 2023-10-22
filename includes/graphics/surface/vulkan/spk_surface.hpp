@@ -1,25 +1,8 @@
 #pragma once
 
-#include "graphics/surface/spk_abstract_surface.hpp"
-#include "graphics/surface/vulkan/spk_device.hpp"
-#include "graphics/surface/vulkan/spk_renderer.hpp"
+#ifdef _WIN32
+	#include "windows/spk_surface.hpp"
+#elif __linux__
+	#include "linux/spk_surface.hpp"
 
-namespace spk
-{
-	class Surface : public spk::AbstractSurface
-	{
-	private:
-		Device _device;
-		Renderer _renderer;
-
-	public:
-		Surface(AbstractFrame* p_frame);
-
-		~Surface();
-
-		void resize();
-
-		void clear();
-		void render();
-	};
-}
+#endif
