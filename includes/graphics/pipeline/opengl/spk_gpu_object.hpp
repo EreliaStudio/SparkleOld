@@ -5,72 +5,144 @@
 
 namespace spk::GPU
 {
-	class Aggregator
-	{
-	private:
-		GLuint _VAO;
+    /**
+     * Manages the activation and deactivation of the Aggregator for OpenGL.
+     */
+    class Aggregator
+    {
+    private:
+        GLuint _VAO; /**< Vertex Array Object */
 
-	public:
-		Aggregator();
+    public:
+        /**
+         * Default constructor.
+         */
+        Aggregator();
 
-		void activate();
-		void deactivate();
-	};
+        /**
+         * Activates the Aggregator.
+         */
+        void activate();
 
-	class Buffer
-	{
-	public:
-		enum class Mode
-		{
-			Vertices,
-			Indexes,
-			UniformBlock
-		};
+        /**
+         * Deactivates the Aggregator.
+         */
+        void deactivate();
+    };
 
-	protected:
-		GLuint _vbo;
-		GLenum _mode;
-		size_t _size = 0;
-		size_t _pushedSize = 0;
+    /**
+     * Class representing an OpenGL buffer.
+     */
+    class Buffer
+    {
+    public:
+        /**
+         * Possible modes for the Buffer.
+         */
+        enum class Mode
+        {
+            Vertices, /**< Vertex Buffer */
+            Indexes, /**< Index Buffer */
+            UniformBlock /**< Uniform Block Buffer */
+        };
 
-		GLenum _convertModeToGLenum(const Mode &p_input);
+    protected:
+        GLuint _vbo; /**< Buffer Object */
+        GLenum _mode; /**< Buffer mode (GL_ARRAY_BUFFER, GL_ELEMENT_ARRAY_BUFFER, etc.) */
+        size_t _size = 0; /**< Size of the buffer */
+        size_t _pushedSize = 0; /**< Size of the data pushed into the buffer */
 
-	public:
-		Buffer(const Mode &p_mode);
+        /**
+         * Converts the Mode into GLenum for OpenGL.
+         */
+        GLenum _convertModeToGLenum(const Mode &p_input);
 
-		void push(const void *data, const size_t dataSize);
+    public:
+        /**
+         * Constructor.
+         */
+        Buffer(const Mode &p_mode);
 
-		virtual void activate();
-		virtual void deactivate();
-	};
+        /**
+         * Pushes data into the buffer.
+         */
+        void push(const void *data, const size_t dataSize);
 
-	class StorageBuffer
-	{
-	private:
-		GPU::Buffer _verticesBuffer;
-		GPU::Buffer _indexesBuffer;
+        /**
+         * Activates the buffer.
+         */
+        virtual void activate();
 
-	public:
-		StorageBuffer();
+        /**
+         * Deactivates the buffer.
+         */
+        virtual void deactivate();
+    };
 
-		void addStorageAttribute(const GLint& p_location, const GLint& p_format, const GLenum& p_type, const size_t& p_offset, const size_t& p_stride);
+    /**
+     * Manages StorageBuffers for OpenGL.
+     */
+    class StorageBuffer
+    {
+    private:
+        GPU::Buffer _verticesBuffer; /**< Vertex Buffer */
+        GPU::Buffer _indexesBuffer; /**< Index Buffer */
 
-		void pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
-		void pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
+    public:
+        /**
+         * Default constructor.
+         */
+        StorageBuffer();
 
-		void activate();
-		void deactivate();
-	};
+        /**
+         * Adds a storage attribute.
+         */
+        void addStorageAttribute(const GLint& p_location, const GLint& p_format, const GLenum& p_type, const size_t& p_offset, const size_t& p_stride);
 
-	class UniformBlockBuffer : public GPU::Buffer
-	{
-	private:
-		GLuint _blockIndex;
-		size_t _blockBinding;
+        /**
+         * Pushes vertex data into the buffer.
+         */
+        void pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
 
-	public:
-		UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
-		void activate() override;
-		void deactivate() override;
-	};
+        /**
+         * Pushes index data into the buffer.
+         */
+        void pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
+
+        /**
+         * Activates the StorageBuffers.
+         */
+        void activate();
+
+        /**
+         * Deactivates the StorageBuffers.
+         */
+        void deactivate();
+    };
+
+    /**
+     * Manages an UniformBlockBuffer for OpenGL.
+     */
+    class UniformBlockBuffer : public GPU::Buffer
+    {
+    private:
+        GLuint _blockIndex; /**< Uniform block index */
+        size_t _blockBinding; /**< Uniform block binding */
+
+    public:
+        /**
+         * Constructor.
+         */
+        UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
+
+        /**
+         * Activates the UniformBlockBuffer.
+         */
+        void activate() override;
+
+        /**
+         * Deactivates the UniformBlockBuffer.
+         */
+        void deactivate() override;
+    };
 }

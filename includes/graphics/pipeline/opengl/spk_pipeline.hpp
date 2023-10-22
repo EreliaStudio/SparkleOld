@@ -5,64 +5,136 @@
 
 namespace spk
 {
-	class Pipeline : public spk::AbstractPipeline
-	{
-	public:
-		class OpenGLObject : public Object
-		{
-		private:
-			GPU::Aggregator _aggregator;
-			GPU::StorageBuffer _storageBuffer;
-			GPU::UniformBlockBuffer _pushConstantBuffer;
+    /**
+     * Derived class from AbstractPipeline specialized for OpenGL.
+     */
+    class Pipeline : public spk::AbstractPipeline
+    {
+    public:
+        /**
+         * Class representing an OpenGL Object.
+         */
+        class OpenGLObject : public Object
+        {
+        private:
+            GPU::Aggregator _aggregator; /**< Aggregator for OpenGL */
+            GPU::StorageBuffer _storageBuffer; /**< Storage buffer for vertex and index data */
+            GPU::UniformBlockBuffer _pushConstantBuffer; /**< Buffer for push constants */
 
-			void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
-			void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
-			void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize);
-			void _onRender();
+            /**
+             * Internal function to push vertex data into the buffer.
+             */
+            void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
 
-			void _configureStorageBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout);
-			
-		public:
-			OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
-		};
+            /**
+             * Internal function to push index data into the buffer.
+             */
+            void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
 
-		class OpenGLUniformBlock : public UniformBlock
-		{
-		private:
-			GPU::UniformBlockBuffer _buffer;
+            /**
+             * Internal function to push push constant data into the buffer.
+             */
+            void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize);
 
-			void _pushData();
+            /**
+             * Internal function to handle rendering.
+             */
+            void _onRender();
 
-		public:
-			OpenGLUniformBlock(Pipeline* p_pipeline, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
-		};
+            /**
+             * Configures the storage buffer.
+             */
+            void _configureStorageBuffer(const ShaderLayout::StorageBufferLayout& p_storageBufferLayout);
+            
+        public:
+            /**
+             * Constructor for OpenGLObject.
+             */
+            OpenGLObject(AbstractPipeline* p_owner, const ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
+        };
 
-		class OpenGLSamplerUniform : public SamplerUniform
-		{
-		private:
-			void _pushData();
+        /**
+         * Class representing an OpenGL Uniform Block.
+         */
+        class OpenGLUniformBlock : public UniformBlock
+        {
+        private:
+            GPU::UniformBlockBuffer _buffer; /**< Buffer for uniform data */
 
-			GLint _location;		
+            /**
+             * Internal function to push uniform data into the buffer.
+             */
+            void _pushData();
 
-		public:
-			OpenGLSamplerUniform(Pipeline* p_owner, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
-		};
+        public:
+            /**
+             * Constructor for OpenGLUniformBlock.
+             */
+            OpenGLUniformBlock(Pipeline* p_pipeline, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+        };
 
-	private:
-		GLuint _program;
-		
-		void _loadProgram(const ShaderLayout& p_shaderLayout);
+        /**
+         * Class representing an OpenGL Sampler Uniform.
+         */
+        class OpenGLSamplerUniform : public SamplerUniform
+        {
+        private:
+            /**
+             * Internal function to push sampler data.
+             */
+            void _pushData();
 
-		std::shared_ptr<UniformBlock> _loadUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
-		std::shared_ptr<SamplerUniform> _loadSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
-		std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
+            GLint _location; /**< Location of the sampler in the shader program */
 
-	public:
-		Pipeline(const spk::ShaderModule &p_vertexInput, const spk::ShaderModule &p_fragmentInput);
+        public:
+            /**
+             * Constructor for OpenGLSamplerUniform.
+             */
+            OpenGLSamplerUniform(Pipeline* p_owner, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+        };
 
-		void launch(const size_t& p_nbIndexes);
+    private:
+        GLuint _program; /**< Shader program handle */
 
-		void activate();
-		void deactivate();
-	};
+        /**
+         * Load a shader program.
+         */
+        void _loadProgram(const ShaderLayout& p_shaderLayout);
+
+        /**
+         * Load a uniform block.
+         */
+        std::shared_ptr<UniformBlock> _loadUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+
+        /**
+         * Load a sampler uniform.
+         */
+        std::shared_ptr<SamplerUniform> _loadSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
+
+        /**
+         * Load an object for rendering.
+         */
+        std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
+
+    public:
+        /**
+         * Constructor for Pipeline.
+         */
+        Pipeline(const spk::ShaderModule &p_vertexInput, const spk::ShaderModule &p_fragmentInput);
+
+        /**
+         * Launch the rendering operation.
+         */
+        void launch(const size_t& p_nbIndexes);
+
+        /**
+         * Activate the pipeline.
+         */
+        void activate();
+
+        /**
+         * Deactivate the pipeline.
+         */
+        void deactivate();
+    };
 }
