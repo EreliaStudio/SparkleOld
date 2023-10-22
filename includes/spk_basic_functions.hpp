@@ -69,7 +69,20 @@ namespace spk
 	 */
 	std::vector<std::wstring> getStringSplit(std::wfstream& p_file, const std::wstring& p_delim, const int& p_expectedSize = -1);
 
+	/**
+     * @brief Reads the content of a file and returns it as a std::wstring.
+     *
+     * @param p_filePath Path to the file that should be read.
+     * @return The content of the file as a std::wstring.
+     */
 	std::wstring getFileContent(const std::filesystem::path& p_filePath);
+
+	/**
+     * @brief Reads the content of a file and returns it as a std::string.
+     *
+     * @param p_filePath Path to the file that should be read.
+     * @return The content of the file as a std::string.
+     */
 	std::string getFileContentAsString(const std::filesystem::path& p_filePath);
 
 	/**

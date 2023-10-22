@@ -76,7 +76,19 @@ namespace spk
 		}
 	};
 
-    // Aliases for the Area class.
-	using Viewport = Area;
-	using Scissor = Area;
+    /**
+     * @brief Alias for Area, used to represent a rendering viewport.
+     * 
+     * The Viewport is the rectangular area where the rendering output will be displayed.
+     * It is defined in terms of an anchor point and a size, just like an Area.
+     */
+    using Viewport = Area;
+
+    /**
+     * @brief Alias for Area, used to represent a scissor region for rendering.
+     * 
+     * The Scissor is a rectangular area where rendering will be limited to.
+     * Outside this area, no pixels will be affected. It also uses an anchor point and a size.
+     */
+    using Scissor = Area;
 }
