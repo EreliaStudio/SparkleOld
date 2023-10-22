@@ -25,15 +25,15 @@ namespace spk
              */
 			enum class Type
 			{
-				Version, ///< Represents the version information of the shader.
-				StorageBuffer, ///< Represents a shader storage buffer object (SSBO).
-				OutputBuffer, ///< Represents an output buffer, where the shader writes its results.
-				PushConstant, ///< Represents a push constant, a small, fast constant data storage.
-				SamplerUniform, ///< Represents a sampler uniform variable.
-				UniformBlock, ///< Represents a uniform block, a set of uniforms grouped together.
-				Structure, ///< Represents a custom data structure within the shader.
-				Function, ///< Represents a function within the shader.
-				Error ///< Represents an error or invalid instruction.
+				Version = 		 0b0000000000000001, ///< Represents the version information of the shader.
+				StorageBuffer =  0b0000000000000010, ///< Represents a shader storage buffer object (SSBO).
+				OutputBuffer = 	 0b0000000000000100, ///< Represents an output buffer, where the shader writes its results.
+				PushConstant = 	 0b0000000000001000, ///< Represents a push constant, a small, fast constant data storage.
+				SamplerUniform = 0b0000000000010000, ///< Represents a sampler uniform variable.
+				UniformBlock = 	 0b0000000000100000, ///< Represents a uniform block, a set of uniforms grouped together.
+				Structure = 	 0b0000000001000000, ///< Represents a custom data structure within the shader.
+				Function = 		 0b0000000010000000, ///< Represents a function within the shader.
+				Error = 		 0b0000000100000000 ///< Represents an error or invalid instruction.
 			};
 
             /**

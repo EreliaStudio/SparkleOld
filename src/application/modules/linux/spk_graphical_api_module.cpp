@@ -1,4 +1,4 @@
-#include "application/modules/spk_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
 #include "widget/spk_widget_atlas.hpp"

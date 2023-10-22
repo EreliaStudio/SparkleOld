@@ -5,7 +5,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/spk_system_define.hpp - ."
 
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_API_module.hpp - NOT_COPIED"
-			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_keyboard_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_message_consumer_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_mouse_module.hpp - application/modules"
@@ -80,7 +79,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/JSON/spk_JSON_file.hpp - miscellaneous/JSON"
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/JSON/spk_JSON_object.hpp - miscellaneous/JSON"
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_is_container.hpp - miscellaneous"
-			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_is_vector.hpp - miscellaneous"
 			"${CMAKE_SOURCE_DIR}/includes/miscellaneous/spk_translation_atlas.hpp - miscellaneous"
 
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_acceptor.hpp - NOT_COPIED"
@@ -88,7 +86,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_client.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_local_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_message.hpp - network"
-			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_network_object.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_remote_node.hpp - network"
 			"${CMAKE_SOURCE_DIR}/includes/network/spk_network_server.hpp - network"
@@ -122,7 +119,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/windows/spk_frame.hpp - graphics"
 				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/windows/spk_surface.hpp - NOT_COPIED"
 				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_acceptor.hpp - network"
-				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_network_object.hpp - network"
 				"${CMAKE_SOURCE_DIR}/includes/network/windows/spk_network_socket.hpp - network"
 			)
 
@@ -133,7 +129,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 				"${CMAKE_SOURCE_DIR}/includes/graphics/frame/linux/spk_frame.hpp - graphics"
 				"${CMAKE_SOURCE_DIR}/includes/graphics/surface/linux/spk_surface.hpp - NOT_COPIED"
 				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_acceptor.hpp - network"
-				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_network_object.hpp - network"
 				"${CMAKE_SOURCE_DIR}/includes/network/linux/spk_network_socket.hpp - network"
 			)
 
