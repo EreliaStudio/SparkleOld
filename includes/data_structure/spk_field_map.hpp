@@ -9,41 +9,64 @@
 
 namespace spk
 {
+    /**
+    * Class that manages a map of fields.
+    */
 	class FieldMap
 	{
 	public:
+        /**
+        * Nested class that represents an individual field within the FieldMap.
+        */
 		class Field
 		{
 			friend class FieldMap;
 
 		private:
+            /**
+            * Alias for wide character output stream.
+            */
 			typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
-			
+
+            /**
+            * Flag indicating whether this field needs to be updated.
+            */
 			bool* _needUpdate;
+
+            /**
+            * Name of the field.
+            */
 			std::wstring _name;
+
+            /**
+            * Raw data for this field.
+            */
 			uint8_t *_data;
+
+            /**
+            * Offset where this field's data starts.
+            */
 			size_t _offset;
+
+            /**
+            * Size of this field.
+            */
 			size_t _size;
 
 		public:
-			Field() :
-				_needUpdate(nullptr),
-				_name(L"Unnamed"),
-				_data(nullptr),
-				_offset(0),
-				_size(0)
-			{
-			}
+            /**
+            * Default constructor.
+            */
+			Field();
 
-			Field(const std::wstring &p_name, bool* p_needUpdate, uint8_t *p_data, size_t p_offset, size_t p_size) :
-				_needUpdate(p_needUpdate),
-				_name(p_name),
-				_data(p_data),
-				_offset(p_offset),
-				_size(p_size)
-			{
-			}
+            /**
+            * Overloaded constructor.
+            */
+			Field(const std::wstring &p_name, bool* p_needUpdate, uint8_t *p_data, size_t p_offset, size_t p_size);
 
+            /**
+            * Overload insertion operator to insert typed data into this field.
+            */
 			template <typename TType>
 			Field &operator<<(const TType &p_value)
 			{
@@ -55,41 +78,57 @@ namespace spk
 				return (*this);
 			}
 
-			Field& operator<<(wostream& (*func)(wostream&)) {
-				if (_needUpdate != nullptr)
-					*_needUpdate = true;
-				return *this;
-			}
+            /**
+            * Overload insertion operator for functions.
+            */
+			Field& operator<<(wostream& (*func)(wostream&));
 		};
 
 	private:
+        /**
+        * Alias for wide character output stream.
+        */
 		typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
-			
+
+        /**
+        * Flag indicating whether this FieldMap needs to be updated.
+        */
 		bool _needUpdate;
+
+        /**
+        * Buffer that contains the data for all fields.
+        */
 		spk::DataBuffer _data;
+
+        /**
+        * Map of field names to Field objects.
+        */
 		std::map<std::wstring, Field> _fields;
 
 	public:
-		FieldMap(size_t p_bufferSize) : _needUpdate(false), _data(p_bufferSize)
-		{
+        /**
+        * Constructor that initializes the buffer size.
+        */
+		FieldMap(size_t p_bufferSize);
 
-		}
+        /**
+        * Inserts a new field into the map.
+        */
+		void insertNewField(const std::wstring &p_fieldName, size_t p_offset, size_t p_size);
 
-		void insertNewField(const std::wstring &p_fieldName, size_t p_offset, size_t p_size)
-		{
-			_fields[p_fieldName] = Field(p_fieldName, &_needUpdate, _data.data(), p_offset, p_size);
-		}
+        /**
+        * Check whether this FieldMap needs to be updated.
+        */
+		bool needUpdate() const;
 
-		bool needUpdate() const
-		{
-			return (_needUpdate);
-		}
+        /**
+        * Sets the update status of this FieldMap.
+        */
+		void setUpdateStatus(bool p_state);
 
-		void setUpdateStatus(bool p_state)
-		{
-			_needUpdate = p_state;
-		}
-
+        /**
+        * Overload insertion operator to insert typed data into the FieldMap.
+        */
 		template <typename TType>
 		FieldMap &operator<<(const TType &p_value)
 		{
@@ -101,31 +140,29 @@ namespace spk
 			return *this;
 		}
 
-		FieldMap& operator<<(wostream& (*func)(wostream&)) {
-			_needUpdate = true;
-			return *this;
-		}
+        /**
+        * Overload insertion operator for functions.
+        */
+		FieldMap& operator<<(wostream& (*func)(wostream&));
 
-		Field &field(const std::wstring &p_fieldName)
-		{
-			if (_fields.contains(p_fieldName) == false)
-				spk::throwException(L"Field [" + p_fieldName + L"] doesn't exist in FieldMap");
-			return (_fields[p_fieldName]);
-		}
+        /**
+        * Returns a reference to a field given its name.
+        */
+		Field &field(const std::wstring &p_fieldName);
 
-		Field &operator[](const std::wstring &p_fieldName)
-		{
-			return (this->field(p_fieldName));
-		}
+        /**
+        * Overload of subscript operator for convenient field access.
+        */
+		Field &operator[](const std::wstring &p_fieldName);
 
-		const uint8_t *data() const
-		{
-			return (_data.data());
-		}
+        /**
+        * Returns a pointer to the raw data of the FieldMap.
+        */
+		const uint8_t *data() const;
 
-		size_t size() const
-		{
-			return (_data.size());
-		}
+        /**
+        * Returns the total size of the FieldMap's data.
+        */
+		size_t size() const;
 	};
 }
