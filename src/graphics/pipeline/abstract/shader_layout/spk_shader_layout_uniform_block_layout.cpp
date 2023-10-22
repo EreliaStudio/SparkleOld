@@ -10,14 +10,14 @@ namespace spk
 	{
 	}
 
-	void ShaderLayout::UniformBlockLayout::_treatSingleUniform(const ShaderModule::Instruction &p_instruction)
+	void ShaderLayout::UniformBlockLayout::_treatSamplerUniform(const ShaderModule::Instruction &p_instruction)
 	{
 		// Regex for single uniform
 		_mode = Mode::Single;
-		std::regex singleUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s+(\\w+);");
+		std::regex SamplerUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s+(\\w+);");
 		std::smatch match;
 
-		if (std::regex_search(p_instruction.code, match, singleUniformRegex))
+		if (std::regex_search(p_instruction.code, match, SamplerUniformRegex))
 		{
 			int set = (match[1].length() > 0) ? std::stoi(match[1]) : -1;
 			int binding = std::stoi(match[2]);
@@ -26,20 +26,20 @@ namespace spk
 			_type = spk::to_wstring(dataType);
 			_name = spk::to_wstring(match[4]);
 
-			auto it = structureLayout.singleUniformStructures().find(dataType);
-			if (it != structureLayout.singleUniformStructures().end())
+			auto it = structureLayout.SamplerUniformStructures().find(dataType);
+			if (it != structureLayout.SamplerUniformStructures().end())
 			{
 				Data pushConstantData = it->second;
 				insert("", pushConstantData, -1);
 			}
 			else
 			{
-				spk::throwException(L"Unexpected SingleUniform type [" + spk::to_wstring(dataType) + L"] inside [" + spk::to_wstring(p_instruction.code) + L"]\nOnly accept the following types : " + structureLayout.acceptedSingleUniformTypeString());
+				spk::throwException(L"Unexpected SamplerUniform type [" + spk::to_wstring(dataType) + L"] inside [" + spk::to_wstring(p_instruction.code) + L"]\nOnly accept the following types : " + structureLayout.acceptedSamplerUniformTypeString());
 			}
 		}
 		else
 		{
-			spk::throwException(L"Unexpected SingleUniform instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [ValueType] [PushConstantName];");
+			spk::throwException(L"Unexpected SamplerUniform instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [ValueType] [PushConstantName];");
 		}
 	}
 
@@ -91,9 +91,9 @@ namespace spk
 
 	void ShaderLayout::UniformBlockLayout::treat(const ShaderModule::Instruction &p_instruction)
 	{
-		if (p_instruction.type == ShaderModule::Instruction::Type::SingleUniform)
+		if (p_instruction.type == ShaderModule::Instruction::Type::SamplerUniform)
 		{
-			_treatSingleUniform(p_instruction);
+			_treatSamplerUniform(p_instruction);
 		}
 		else
 		{
