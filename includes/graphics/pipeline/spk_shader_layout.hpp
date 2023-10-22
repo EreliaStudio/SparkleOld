@@ -64,7 +64,7 @@ namespace spk
 			 * @param p_data The data type to output.
 			 * @return The output stream.
 			 */
-			friend std::wostream& operator<<(std::wostream& p_out, const Type& p_data);
+			friend std::wostream& operator<<(std::wostream& p_out, const Type& p_type);
 
 			/**
 			 * @brief Overloaded output stream operator for Data struct.
@@ -180,10 +180,10 @@ namespace spk
 				 * @brief Overloaded output stream operator for Field.
 				 * 
 				 * @param p_out The output stream.
-				 * @param p_layout The Field to output.
+				 * @param p_field The Field to output.
 				 * @return The output stream.
 				 */
-				friend std::wostream& operator<<(std::wostream& p_out, const Field& p_layout);
+				friend std::wostream& operator<<(std::wostream& p_out, const Field& p_field);
 			};
 
 		private:
