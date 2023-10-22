@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['set_1419',['set',['../structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html#a6950c14dce6bf21ede0294227fc427ab',1,'spk::ShaderLayout::UniformBlockLayout::Key']]],
-  ['size_1420',['size',['../structspk_1_1ShaderLayout_1_1Data.html#adb51e292f256bc110b4dcd3bf8682959',1,'spk::ShaderLayout::Data']]],
-  ['socketerror_1421',['SocketError',['../classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685',1,'spk::Network::Socket']]],
-  ['structurelayout_1422',['structureLayout',['../classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#ab0458e1ae0de41b959b8f2b5f2d9d561',1,'spk::ShaderLayout::FieldArrayLayout']]]
+  ['value_1127',['value',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a4666a315e367a49a8910f6538aeaa373',1,'spk::Widget::Canvas::Geometry::Value']]],
+  ['vertex_1128',['vertex',['../structspk_1_1Mesh_1_1Face_1_1Point.html#a57b04a3443016c99bbc87934e982e055',1,'spk::Mesh::Face::Point']]]
 ];

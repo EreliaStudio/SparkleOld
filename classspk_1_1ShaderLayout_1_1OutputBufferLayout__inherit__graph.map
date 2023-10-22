@@ -1,4 +1,0 @@
-<map id="spk::ShaderLayout::OutputBufferLayout" name="spk::ShaderLayout::OutputBufferLayout">
-<area shape="rect" id="node1" title="Class to manage the layout of output buffers." alt="" coords="5,95,156,136"/>
-<area shape="rect" id="node2" href="$classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array." alt="" coords="5,5,156,47"/>
-</map>

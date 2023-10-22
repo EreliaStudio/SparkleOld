@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['g_236',['g',['../structspk_1_1Color.html#a9941ab3dea75e7cd1d1e6b0cbc9d9eb5',1,'spk::Color']]],
-  ['get_237',['get',['../classspk_1_1DataBuffer.html#a62775fb5a5cc3ef25dd87d41976b978f',1,'spk::DataBuffer::get()'],['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html#a4e4ae1455b0adfa700fa3d1de7f8de79',1,'spk::ContextManager::ReadWriteAccessor::get()'],['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html#abf5a06f279dda5d46546e0a29077215b',1,'spk::ContextManager::ReadOnlyAccessor::get()'],['../classspk_1_1TranslationAtlas.html#a8ce13ddd0d65df4f5d2168b5a86ab601',1,'spk::TranslationAtlas::get()'],['../classspk_1_1Network_1_1Message.html#a3bce247c705d96c7838db310d2d4fbf2',1,'spk::Network::Message::get()'],['../classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6',1,'spk::Widget::Atlas::get()']]],
-  ['getchar_238',['getChar',['../namespacespk.html#af1da86df753aa08c134375767f1fd4b1',1,'spk']]],
-  ['getid_239',['getId',['../classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0',1,'spk::Thread']]],
-  ['getlastsocketerrorvalue_240',['getLastSocketErrorValue',['../namespacespk.html#aafb349b37a810952084392e9c7cc6f14',1,'spk']]],
-  ['getstr_241',['getStr',['../namespacespk.html#ae9f2918180da54f142029f041b9d1fa3',1,'spk']]],
-  ['getstringsplit_242',['getStringSplit',['../namespacespk.html#a1254ad34752aba2c1362dedb3b3c2175',1,'spk']]],
-  ['graphicalapimodule_243',['GraphicalAPIModule',['../classspk_1_1GraphicalAPIModule.html#a9e3453d085218bf9cc21f07cc070b932',1,'spk::GraphicalAPIModule::GraphicalAPIModule()'],['../classspk_1_1GraphicalAPIModule.html',1,'spk::GraphicalAPIModule']]]
+  ['get_176',['get',['../classspk_1_1DataBuffer.html#a62775fb5a5cc3ef25dd87d41976b978f',1,'spk::DataBuffer::get()'],['../classspk_1_1ContextManager_1_1ReadWriteAccessor.html#a4e4ae1455b0adfa700fa3d1de7f8de79',1,'spk::ContextManager::ReadWriteAccessor::get()'],['../classspk_1_1ContextManager_1_1ReadOnlyAccessor.html#abf5a06f279dda5d46546e0a29077215b',1,'spk::ContextManager::ReadOnlyAccessor::get()'],['../classspk_1_1TranslationAtlas.html#a8ce13ddd0d65df4f5d2168b5a86ab601',1,'spk::TranslationAtlas::get()'],['../classspk_1_1Network_1_1Message.html#a3bce247c705d96c7838db310d2d4fbf2',1,'spk::Network::Message::get()'],['../classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6',1,'spk::Widget::Atlas::get()']]],
+  ['getchar_177',['getChar',['../namespacespk.html#af1da86df753aa08c134375767f1fd4b1',1,'spk']]],
+  ['getid_178',['getId',['../classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0',1,'spk::Thread']]],
+  ['getlastsocketerrorvalue_179',['getLastSocketErrorValue',['../namespacespk.html#aafb349b37a810952084392e9c7cc6f14',1,'spk']]],
+  ['getstr_180',['getStr',['../namespacespk.html#ae9f2918180da54f142029f041b9d1fa3',1,'spk']]],
+  ['getstringsplit_181',['getStringSplit',['../namespacespk.html#a1254ad34752aba2c1362dedb3b3c2175',1,'spk']]]
 ];

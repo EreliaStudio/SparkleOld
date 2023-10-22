@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readresult_1462',['ReadResult',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781',1,'spk::Network::Socket::ReadResult()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781',1,'spk::Network::Socket::ReadResult()']]]
+  ['type_1162',['Type',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a184cef251747aff52f6a393fe0173e77',1,'spk::Widget::Canvas::Geometry::Value']]]
 ];

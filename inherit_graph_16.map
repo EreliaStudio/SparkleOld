@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1CommandParser.html" title="The CommandParser class is responsible for parsing and processing commands." alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1IPerlin.html" title="Provides functionality related to Perlin noise generation." alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Perlin1D.html" title="A Perlin noise generator for one&#45;dimensional input." alt="" coords="148,5,256,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1Perlin2D.html" title="A Perlin noise generator for two&#45;dimensional input." alt="" coords="304,5,412,32"/>
+<area shape="rect" id="node4" href="$classspk_1_1Perlin3D.html" title="A Perlin noise generator for three&#45;dimensional input." alt="" coords="460,5,568,32"/>
 </map>

@@ -1,4 +1,0 @@
-<map id="spk::Pipeline" name="spk::Pipeline">
-<area shape="rect" id="node1" title=" " alt="" coords="32,80,137,107"/>
-<area shape="rect" id="node2" href="$classspk_1_1AbstractPipeline.html" title="Abstract base class for handling different types of shader pipelines." alt="" coords="5,5,164,32"/>
-</map>

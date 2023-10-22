@@ -1,5 +1,0 @@
-<map id="spk::Image" name="spk::Image">
-<area shape="rect" id="node1" title="Concrete implementation of the AbstractImage class for OpenGL." alt="" coords="35,171,129,197"/>
-<area shape="rect" id="node2" href="$classspk_1_1AbstractImage.html" title="Abstract class for managing images." alt="" coords="8,95,156,121"/>
-<area shape="rect" id="node3" href="$structspk_1_1IVector2.html" title=" " alt="" coords="5,5,159,32"/>
-</map>

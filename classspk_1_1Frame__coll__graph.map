@@ -1,5 +1,0 @@
-<map id="spk::Frame" name="spk::Frame">
-<area shape="rect" id="node1" title="Concrete implementation of a frame using XCB for Linux platforms." alt="" coords="48,185,143,212"/>
-<area shape="rect" id="node2" href="$classspk_1_1AbstractFrame.html" title="Abstract base class for frames." alt="" coords="21,109,169,136"/>
-<area shape="rect" id="node3" href="$structspk_1_1IVector2.html" title=" " alt="" coords="5,5,185,47"/>
-</map>

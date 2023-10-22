@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nothingtoread_1478',['NothingToRead',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()']]]
+  ['onenter_1171',['OnEnter',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0',1,'spk::Activity']]],
+  ['onexit_1172',['OnExit',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144',1,'spk::Activity']]]
 ];

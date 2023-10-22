@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structspk_1_1Mesh_1_1Face_1_1Point.html" title="Rrepresenting vertex, normal and uv indexes." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1Singleton.html" title=" " alt="" coords="5,5,231,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1TimeMetrics.html" title="Class for recording time&#45;related metrics in the application." alt="" coords="279,5,413,32"/>
 </map>

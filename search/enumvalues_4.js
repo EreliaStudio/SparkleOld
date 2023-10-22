@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linear_1477',['Linear',['../classspk_1_1IPerlin.html#a3266c3dd973db71cfd0f81a6b8ff4540a32a843da6ea40ab3b17a3421ccdf671b',1,'spk::IPerlin']]]
+  ['nothingtoread_1170',['NothingToRead',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()']]]
 ];
