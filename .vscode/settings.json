@@ -68,6 +68,10 @@
         "random": "cpp",
         "ranges": "cpp",
         "ratio": "cpp",
+<<<<<<< HEAD
+=======
+        "regex": "cpp",
+>>>>>>> 96dbbca7726830e517e34594a981d19fd24dcf9e
         "set": "cpp",
         "span": "cpp",
         "sstream": "cpp",
