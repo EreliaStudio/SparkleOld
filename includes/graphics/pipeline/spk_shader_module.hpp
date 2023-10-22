@@ -45,6 +45,8 @@ namespace spk
              * @param p_code The shader code for the instruction.
              */
 			Instruction(const Type &p_type, const std::string &p_code);
+
+			/// Operator overloads to provide formatted output of the Instruction type.
 			friend std::wostream &operator<<(std::wostream &p_os, const Type &p_type);
 		};
 

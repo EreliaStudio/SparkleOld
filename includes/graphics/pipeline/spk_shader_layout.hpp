@@ -510,9 +510,11 @@ namespace spk
 			 */
 			const Mode& mode() const;
 
-			/// Operator overloads to provide formatted output of the uniform block layout.
+			/// Operator overloads to provide formatted output of the uniform block layout mode.
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout::Mode& p_mode);
+			/// Operator overloads to provide formatted output of the uniform block layout key.
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout::Key& p_key);
+			/// Operator overloads to provide formatted output of the uniform block layout.
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout& p_block);
 		};
 

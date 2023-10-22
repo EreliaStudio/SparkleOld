@@ -20,6 +20,12 @@ namespace spk
 		releaseGPUResources();
 	}
 
+    /**
+     * @brief Converts AbstractImage::Filtering enum to corresponding OpenGL constant.
+     *
+     * @param p_filtering The AbstractImage::Filtering enum value to be converted.
+     * @return Corresponding OpenGL constant for image filtering.
+     */
 	GLint toOpenGLFiltering(AbstractImage::Filtering p_filtering)
 	{
 		switch(p_filtering)
@@ -32,7 +38,13 @@ namespace spk
 				return GL_NEAREST;
 		}
 	}
-
+	
+    /**
+     * @brief Converts AbstractImage::Wrap enum to corresponding OpenGL constant.
+     *
+     * @param p_wrap The AbstractImage::Wrap enum value to be converted.
+     * @return Corresponding OpenGL constant for texture wrapping.
+     */
 	GLint toOpenGLWrap(AbstractImage::Wrap p_wrap)
 	{
 		switch(p_wrap)
