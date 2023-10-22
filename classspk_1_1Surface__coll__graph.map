@@ -1,0 +1,6 @@
+<map id="spk::Surface" name="spk::Surface">
+<area shape="rect" id="node1" title="Derived class for creating and managing a GLX&#45;based surface." alt="" coords="44,275,147,301"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractSurface.html" title="An abstract class representing a surface for rendering." alt="" coords="17,199,173,225"/>
+<area shape="rect" id="node3" href="$classspk_1_1AbstractFrame.html" title="Abstract base class for frames." alt="" coords="21,109,169,136"/>
+<area shape="rect" id="node4" href="$structspk_1_1IVector2.html" title=" " alt="" coords="5,5,185,47"/>
+</map>

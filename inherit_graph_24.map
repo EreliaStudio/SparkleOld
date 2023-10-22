@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1JSON_1_1File.html" title="Represents a JSON file and provides methods to load and access its contents." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1GPU_1_1Buffer.html" title=" " alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1GPU_1_1UniformBlockBuffer.html" title=" " alt="" coords="181,5,399,32"/>
 </map>

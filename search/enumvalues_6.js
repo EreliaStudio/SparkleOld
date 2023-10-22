@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ratio_1173',['Ratio',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a184cef251747aff52f6a393fe0173e77a8334a158298fbcf163f4dcb4a387d150',1,'spk::Widget::Canvas::Geometry::Value']]],
-  ['running_1174',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
+  ['onenter_1502',['OnEnter',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0',1,'spk::Activity']]],
+  ['onexit_1503',['OnExit',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144',1,'spk::Activity']]],
+  ['outputbuffer_1504',['OutputBuffer',['../structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34a5fec1b04ee91ba122ecc7789c3a14dcf',1,'spk::ShaderModule::Instruction']]]
 ];

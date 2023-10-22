@@ -72,11 +72,60 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">    #include &quot;windows/spk_window.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#elif __linux__</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">    #include &quot;linux/spk_window.hpp&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_frame.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_surface.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Window.html">Window</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;Window&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">// Allow the Singleton to access Window&#39;s private constructor.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;<a class="code" href="classspk_1_1Window.html">Window</a>&gt;;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classspk_1_1Frame.html">spk::Frame</a> _frame;  </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classspk_1_1Surface.html">spk::Surface</a> _surface;  </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>(<span class="keyword">const</span> std::wstring &amp;p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2UInt</a> &amp;p_size, <span class="keywordtype">void</span> *p_ptr = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html#ab35db4fe91b944d37f9fe13833a3e1b8">   33</a></span>&#160;        <a class="code" href="classspk_1_1Window.html#ab35db4fe91b944d37f9fe13833a3e1b8">Window</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Window.html">Window</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html#afd4e32fa3fb9997b5b69a789394a084e">   41</a></span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>&amp; <a class="code" href="classspk_1_1Window.html#afd4e32fa3fb9997b5b69a789394a084e">operator=</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Window.html">Window</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html#acba32708dec99c7782088b161d8757b0">   49</a></span>&#160;        <a class="code" href="classspk_1_1Window.html#acba32708dec99c7782088b161d8757b0">Window</a>(<a class="code" href="classspk_1_1Window.html">Window</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classspk_1_1Window.html#a1475c89317832264f4f17c4d01c5f924">   57</a></span>&#160;        <a class="code" href="classspk_1_1Window.html">Window</a>&amp; <a class="code" href="classspk_1_1Window.html#a1475c89317832264f4f17c4d01c5f924">operator=</a>(<a class="code" href="classspk_1_1Window.html">Window</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Window.html#a43fad77a06224e751ef80ab7d0093282">clear</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Window.html#ad04c6c9d3a12e8792eddf8a8a733bc70">render</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Window.html#ae763c9383a3e027aa67bd15175eb8779">setSize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; p_size);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Window.html#ac2dce9a9a8f6ac09efeddb8ff06e28e4">resize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; p_size);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; <a class="code" href="classspk_1_1Window.html#ad6988398a4a1119748ee66c0eb60215d">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Frame.html">spk::Frame</a>&amp; <a class="code" href="classspk_1_1Window.html#a91c8bd5093a8d920486fedc244e29d54">frame</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    };</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Frame_html"><div class="ttname"><a href="classspk_1_1Frame.html">spk::Frame</a></div><div class="ttdoc">Concrete implementation of a frame using XCB for Linux platforms.</div><div class="ttdef"><b>Definition:</b> spk_frame.hpp:19</div></div>
+<div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
+<div class="ttc" id="aclassspk_1_1Surface_html"><div class="ttname"><a href="classspk_1_1Surface.html">spk::Surface</a></div><div class="ttdoc">Derived class for creating and managing a GLX-based surface.</div><div class="ttdef"><b>Definition:</b> spk_surface.hpp:16</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html"><div class="ttname"><a href="classspk_1_1Window.html">spk::Window</a></div><div class="ttdef"><b>Definition:</b> spk_window.hpp:12</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_a1475c89317832264f4f17c4d01c5f924"><div class="ttname"><a href="classspk_1_1Window.html#a1475c89317832264f4f17c4d01c5f924">spk::Window::operator=</a></div><div class="ttdeci">Window &amp; operator=(Window &amp;&amp;)=default</div><div class="ttdoc">Default move assignment operator.</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_a43fad77a06224e751ef80ab7d0093282"><div class="ttname"><a href="classspk_1_1Window.html#a43fad77a06224e751ef80ab7d0093282">spk::Window::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:12</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_a91c8bd5093a8d920486fedc244e29d54"><div class="ttname"><a href="classspk_1_1Window.html#a91c8bd5093a8d920486fedc244e29d54">spk::Window::frame</a></div><div class="ttdeci">const spk::Frame &amp; frame() const</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:41</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_ab35db4fe91b944d37f9fe13833a3e1b8"><div class="ttname"><a href="classspk_1_1Window.html#ab35db4fe91b944d37f9fe13833a3e1b8">spk::Window::Window</a></div><div class="ttdeci">Window(const Window &amp;)=delete</div><div class="ttdoc">Deleted copy constructor.</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_ac2dce9a9a8f6ac09efeddb8ff06e28e4"><div class="ttname"><a href="classspk_1_1Window.html#ac2dce9a9a8f6ac09efeddb8ff06e28e4">spk::Window::resize</a></div><div class="ttdeci">void resize(const spk::Vector2UInt &amp;p_size)</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:30</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_acba32708dec99c7782088b161d8757b0"><div class="ttname"><a href="classspk_1_1Window.html#acba32708dec99c7782088b161d8757b0">spk::Window::Window</a></div><div class="ttdeci">Window(Window &amp;&amp;)=default</div><div class="ttdoc">Default move constructor.</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_ad04c6c9d3a12e8792eddf8a8a733bc70"><div class="ttname"><a href="classspk_1_1Window.html#ad04c6c9d3a12e8792eddf8a8a733bc70">spk::Window::render</a></div><div class="ttdeci">void render()</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:18</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_ad6988398a4a1119748ee66c0eb60215d"><div class="ttname"><a href="classspk_1_1Window.html#ad6988398a4a1119748ee66c0eb60215d">spk::Window::size</a></div><div class="ttdeci">const spk::Vector2UInt &amp; size() const</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:36</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_ae763c9383a3e027aa67bd15175eb8779"><div class="ttname"><a href="classspk_1_1Window.html#ae763c9383a3e027aa67bd15175eb8779">spk::Window::setSize</a></div><div class="ttdeci">void setSize(const spk::Vector2UInt &amp;p_size)</div><div class="ttdef"><b>Definition:</b> spk_window.cpp:24</div></div>
+<div class="ttc" id="aclassspk_1_1Window_html_afd4e32fa3fb9997b5b69a789394a084e"><div class="ttname"><a href="classspk_1_1Window.html#afd4e32fa3fb9997b5b69a789394a084e">spk::Window::operator=</a></div><div class="ttdeci">Window &amp; operator=(const Window &amp;)=delete</div><div class="ttdoc">Deleted copy assignment operator.</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; unsigned int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

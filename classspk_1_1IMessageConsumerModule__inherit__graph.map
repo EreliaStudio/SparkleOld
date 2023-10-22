@@ -1,7 +1,7 @@
 <map id="spk::IMessageConsumerModule" name="spk::IMessageConsumerModule">
-<area shape="rect" id="node1" title="Class for modules that consume messages." alt="" coords="321,5,551,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="5,80,168,107"/>
-<area shape="rect" id="node3" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="192,80,336,107"/>
-<area shape="rect" id="node4" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="361,80,511,107"/>
-<area shape="rect" id="node5" href="$classspk_1_1WindowModule.html" title="Class for managing the application window." alt="" coords="535,80,689,107"/>
+<area shape="rect" id="node1" title="Class for modules that consume messages." alt="" coords="268,5,497,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1GraphicalAPIModule.html" title="Class for managing the application window." alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="213,80,376,107"/>
+<area shape="rect" id="node4" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="400,80,544,107"/>
+<area shape="rect" id="node5" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="569,80,719,107"/>
 </map>

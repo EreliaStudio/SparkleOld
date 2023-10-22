@@ -85,6 +85,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#a716866b679b1a1b6d7046a5bb65347ec">DataBuffer</a> ()</td></tr>
 <tr class="memdesc:a716866b679b1a1b6d7046a5bb65347ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1DataBuffer.html" title="Class for managing data buffers.">DataBuffer</a> class. <br /></td></tr>
 <tr class="separator:a716866b679b1a1b6d7046a5bb65347ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e3ef2003ed2b5598b5eb3c7c807e72"><td class="memItemLeft" align="right" valign="top"><a id="a85e3ef2003ed2b5598b5eb3c7c807e72"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#a85e3ef2003ed2b5598b5eb3c7c807e72">DataBuffer</a> (size_t p_dataSize)</td></tr>
+<tr class="memdesc:a85e3ef2003ed2b5598b5eb3c7c807e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with a pre-defined sized data buffer. <br /></td></tr>
+<tr class="separator:a85e3ef2003ed2b5598b5eb3c7c807e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7a73cc703c98ed3e4d679ece91685fe"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#aa7a73cc703c98ed3e4d679ece91685fe">data</a> ()</td></tr>
 <tr class="memdesc:aa7a73cc703c98ed3e4d679ece91685fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the content of the <a class="el" href="classspk_1_1DataBuffer.html" title="Class for managing data buffers.">DataBuffer</a> as a raw bytes array.  <a href="classspk_1_1DataBuffer.html#aa7a73cc703c98ed3e4d679ece91685fe">More...</a><br /></td></tr>
 <tr class="separator:aa7a73cc703c98ed3e4d679ece91685fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +129,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:ac90c23dd9a031995ecb8f28ded1251b7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#ac90c23dd9a031995ecb8f28ded1251b7">edit</a> (const size_t &amp;p_offset, const InputType &amp;p_input)</td></tr>
 <tr class="memdesc:ac90c23dd9a031995ecb8f28ded1251b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edit the buffer at a specific offset with input data.  <a href="classspk_1_1DataBuffer.html#ac90c23dd9a031995ecb8f28ded1251b7">More...</a><br /></td></tr>
 <tr class="separator:ac90c23dd9a031995ecb8f28ded1251b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c08e910637dc3808dd0870c9223788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#a02c08e910637dc3808dd0870c9223788">edit</a> (const size_t &amp;p_offset, const void *p_data, const size_t &amp;p_dataSize)</td></tr>
+<tr class="memdesc:a02c08e910637dc3808dd0870c9223788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edits a portion of the data buffer starting at a specified offset.  <a href="classspk_1_1DataBuffer.html#a02c08e910637dc3808dd0870c9223788">More...</a><br /></td></tr>
+<tr class="separator:a02c08e910637dc3808dd0870c9223788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf549d489c5f326e781e4408d550e7e0"><td class="memTemplParams" colspan="2">template&lt;typename InputType , typename std::enable_if_t&lt;!spk::IsContainer&lt; InputType &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:adf549d489c5f326e781e4408d550e7e0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1DataBuffer.html">DataBuffer</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#adf549d489c5f326e781e4408d550e7e0">operator&lt;&lt;</a> (const InputType &amp;p_input)</td></tr>
 <tr class="memdesc:adf549d489c5f326e781e4408d550e7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert data into the buffer.  <a href="classspk_1_1DataBuffer.html#adf549d489c5f326e781e4408d550e7e0">More...</a><br /></td></tr>
@@ -141,6 +148,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af94fe4daf3b1d0a9720ea9e19394915b"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1DataBuffer.html">DataBuffer</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b">operator&gt;&gt;</a> (OutputType &amp;p_output) const</td></tr>
 <tr class="memdesc:af94fe4daf3b1d0a9720ea9e19394915b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract container data from the buffer.  <a href="classspk_1_1DataBuffer.html#af94fe4daf3b1d0a9720ea9e19394915b">More...</a><br /></td></tr>
 <tr class="separator:af94fe4daf3b1d0a9720ea9e19394915b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3800f8eceaa598549a52dcf4aab300e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DataBuffer.html#ad3800f8eceaa598549a52dcf4aab300e">append</a> (const void *p_data, const size_t &amp;p_dataSize)</td></tr>
+<tr class="memdesc:ad3800f8eceaa598549a52dcf4aab300e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends data to the end of the existing internal buffer.  <a href="classspk_1_1DataBuffer.html#ad3800f8eceaa598549a52dcf4aab300e">More...</a><br /></td></tr>
+<tr class="separator:ad3800f8eceaa598549a52dcf4aab300e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for managing data buffers. </p>
@@ -148,6 +158,52 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>The class provides a set of utility methods and operator overloads for reading from and</p>
 <p>writing to the buffer, as well as for managing the internal state of the buffer. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad3800f8eceaa598549a52dcf4aab300e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3800f8eceaa598549a52dcf4aab300e">&#9670;&nbsp;</a></span>append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::DataBuffer::append </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>p_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_dataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends data to the end of the existing internal buffer. </p>
+<p>This function enlarges the internal data buffer by the size of the new data to be added. It then copies the new data into the buffer, starting at the point where the old data ends.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_data</td><td>Pointer to the source data to append. </td></tr>
+    <tr><td class="paramname">p_dataSize</td><td>The size of the data to append, in bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1441a1c3abc6a4f5c55a2a66798be379"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1441a1c3abc6a4f5c55a2a66798be379">&#9670;&nbsp;</a></span>bookmark()</h2>
 
@@ -233,7 +289,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <a id="ac90c23dd9a031995ecb8f28ded1251b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac90c23dd9a031995ecb8f28ded1251b7">&#9670;&nbsp;</a></span>edit()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac90c23dd9a031995ecb8f28ded1251b7">&#9670;&nbsp;</a></span>edit() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,6 +335,65 @@ template&lt;typename InputType &gt; </div>
   <table class="params">
     <tr><td class="paramname">p_offset</td><td>Offset in the buffer where the data should be written. </td></tr>
     <tr><td class="paramname">p_input</td><td>The data to write into the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02c08e910637dc3808dd0870c9223788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c08e910637dc3808dd0870c9223788">&#9670;&nbsp;</a></span>edit() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::DataBuffer::edit </td>
+          <td>(</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>p_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_dataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edits a portion of the data buffer starting at a specified offset. </p>
+<p>This function copies data from the source to the internal data buffer, starting at a given offset. The size of the data to copy is also specified. If the sum of the offset and data size exceeds the size of the internal buffer, a runtime error is thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_offset</td><td>The starting offset in the internal data buffer. </td></tr>
+    <tr><td class="paramname">p_data</td><td>The pointer to the source data to copy. </td></tr>
+    <tr><td class="paramname">p_dataSize</td><td>The size of the data to copy, in bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the sum of p_offset and p_dataSize exceeds the internal buffer size. </td></tr>
   </table>
   </dd>
 </dl>

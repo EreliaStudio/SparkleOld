@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['cerr_1108',['cerr',['../namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d',1,'spk']]],
-  ['classinstanciatorlambda_1109',['classInstanciatorLambda',['../classspk_1_1Widget_1_1Canvas.html#abcad41a8da6996d90277fe9eedc49cb9',1,'spk::Widget::Canvas']]],
-  ['content_1110',['content',['../classspk_1_1Mesh_1_1Face.html#a9c0979a2979e61c3d4760340849904b3',1,'spk::Mesh::Face']]],
-  ['cout_1111',['cout',['../namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680',1,'spk']]],
-  ['cvblocking_1112',['cvBlocking',['../classspk_1_1ThreadSafeQueue.html#af85dcfbf85ff17055581432602a3fca2',1,'spk::ThreadSafeQueue']]]
+  ['b_1417',['b',['../structspk_1_1Color.html#a3b6792ad83c4563b0d9634ab52a96a36',1,'spk::Color']]],
+  ['binding_1418',['binding',['../structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html#a5c813f6774ac5050aa7705509e45b260',1,'spk::ShaderLayout::UniformBlockLayout::Key']]]
 ];
