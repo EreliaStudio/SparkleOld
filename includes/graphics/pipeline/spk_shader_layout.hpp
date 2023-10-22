@@ -364,7 +364,13 @@ namespace spk
 			 */
 			const std::wstring& name() const;
 
-			/// Operator overload to provide a formatted output of the push constant layout.
+			/**
+			 * @brief Operator overload for formatted output of PushConstantsLayout.
+			 *
+			 * @param p_out The wide output stream where the formatted text will be written to.
+			 * @param p_layout The PushConstantsLayout object to be formatted and outputted.
+			 * @return Reference to the output stream.
+			 */
 			friend std::wostream& operator<<(std::wostream& p_out, const PushConstantsLayout& p_layout);
 		};
 
@@ -510,11 +516,31 @@ namespace spk
 			 */
 			const Mode& mode() const;
 
-			/// Operator overloads to provide formatted output of the uniform block layout mode.
+			/**
+			 * @brief Operator overload for formatted output of UniformBlockLayout::Mode.
+			 *
+			 * @param p_out The wide output stream where the formatted text will be written to.
+			 * @param p_mode The UniformBlockLayout::Mode object to be formatted and outputted.
+			 * @return Reference to the output stream.
+			 */
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout::Mode& p_mode);
-			/// Operator overloads to provide formatted output of the uniform block layout key.
+
+			/**
+			 * @brief Operator overload for formatted output of UniformBlockLayout::Key.
+			 *
+			 * @param p_out The wide output stream where the formatted text will be written to.
+			 * @param p_key The UniformBlockLayout::Key object to be formatted and outputted.
+			 * @return Reference to the output stream.
+			 */
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout::Key& p_key);
-			/// Operator overloads to provide formatted output of the uniform block layout.
+
+			/**
+			 * @brief Operator overload for formatted output of UniformBlockLayout.
+			 *
+			 * @param p_out The wide output stream where the formatted text will be written to.
+			 * @param p_block The UniformBlockLayout object to be formatted and outputted.
+			 * @return Reference to the output stream.
+			 */
 			friend std::wostream& operator<<(std::wostream& p_out, const UniformBlockLayout& p_block);
 		};
 
