@@ -91,7 +91,15 @@ namespace spk
 					 * @return Reference to the Buffer object.
 					 */
 					template <typename TType>
-					Buffer &operator<<(const TType &p_data);
+					Buffer &operator<<(const TType &p_data)
+					{
+						if (_unitSize != sizeof(TType))
+						{
+							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
+						}
+						_data << p_data;
+						return (*this);
+					}
 
 					/**
 					 * @brief Overload for the insertion operator for std::vector.
@@ -102,7 +110,15 @@ namespace spk
 					 * @return Reference to the Buffer object.
 					 */
 					template <typename TType>
-					Buffer &operator<<(const std::vector<TType> &p_data);
+					Buffer &operator<<(const std::vector<TType> &p_data)
+					{
+						if (_unitSize != sizeof(TType))
+						{
+							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
+						}
+						_data.append(p_data.data(), p_data.size() * sizeof(TType));
+						return (*this);
+					}
 
 					/**
 					 * @brief Overload for insertion operator for wostream manipulators.

@@ -13,12 +13,7 @@ namespace spk
 		spk::Frame _frame;
 		spk::Surface _surface;
 
-		Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr) :
-			_frame(p_title, p_size, p_ptr),
-			_surface(&_frame)
-		{
-
-		}
+		Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr);
 	public:
 
 		Window(const Window&) = delete;
@@ -27,38 +22,13 @@ namespace spk
 		Window(Window&&) = default;
 		Window& operator=(Window&&) = default;
 
-		void clear()
-		{
-			_surface.clear();
-			_frame.clear();
-		}
+		void clear();
+		void render();
 
-		void render()
-		{
-			_surface.render();
-			_frame.render();
-		}
+		void setSize(const spk::Vector2UInt& p_size);
+		void resize(const spk::Vector2UInt& p_size);
 
-		void setSize(const spk::Vector2UInt& p_size)
-		{
-			_frame.setSize(p_size);
-			_surface.resize();
-		}
-
-		void resize(const spk::Vector2UInt& p_size)
-		{
-			_frame.resize(p_size);
-			_surface.resize();
-		}
-
-		const spk::Vector2UInt& size() const 
-		{
-			return (_frame.size());
-		}
-
-		const spk::Frame& frame() const
-		{
-			return (_frame);
-		}
+		const spk::Vector2UInt& size() const;
+		const spk::Frame& frame() const;
 	};
 }
