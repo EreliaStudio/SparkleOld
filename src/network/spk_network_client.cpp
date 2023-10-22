@@ -27,7 +27,7 @@ namespace spk::Network
 				FD_ZERO(&socketToRead);
 				FD_SET(_socket.fileDescriptor(), &socketToRead);
 
-				int activity = ::select(_socket.fileDescriptor() + 1, &socketToRead, nullptr, nullptr, &timeout);
+				int activity = ::select(static_cast<int>(_socket.fileDescriptor()) + 1, &socketToRead, nullptr, nullptr, &timeout);
 
 				if (activity == Socket::SocketError)
 				{

@@ -25,6 +25,7 @@ namespace spk
 		spk::ThreadSafeQueue<SystemMessage> _mouseQueue; ///< Thread-safe queue for mouse system messages.
 		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue; ///< Thread-safe queue for keyboard system messages.
 
+	public:
 		/**
 		 * @brief Handles a system message.
 		 * 
@@ -34,9 +35,8 @@ namespace spk
 		 * @param p_lParam Additional message-specific information.
 		 * @return The result of the message processing and depends on the message sent.
 		 */
-		LRESULT _handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam);
+		LRESULT handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam);
 
-	public:
 		/**
 		 * @brief Constructs the APIModule object.
 		 */
@@ -79,16 +79,16 @@ namespace spk
 		 * @return Thread-safe queue for keyboard system messages.
 		 */
 		spk::ThreadSafeQueue<SystemMessage> &keyboardQueue() { return _keyboardQueue; }
-
-		/**
-		 * @brief Processes messages sent to a window.
-		 * 
-		 * @param p_hwnd Handle to the window.
-		 * @param p_uMsg The message.
-		 * @param p_wParam Additional message-specific information.
-		 * @param p_lParam Additional message-specific information.
-		 * @return The result of the message processing and depends on the message sent.
-		 */
-		static LRESULT CALLBACK WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam);
 	};
+	/**
+	 * @brief Processes messages sent to a window.
+	 * 
+	 * @param p_hwnd Handle to the window.
+	 * @param p_uMsg The message.
+	 * @param p_wParam Additional message-specific information.
+	 * @param p_lParam Additional message-specific information.
+	 * @return The result of the message processing and depends on the message sent.
+	 */
+	LRESULT CALLBACK WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam);
+	
 }

@@ -4,7 +4,7 @@
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_system_module.hpp"
 #include "application/modules/spk_time_module.hpp"
-#include "application/modules/spk_window_module.hpp"
+#include "application/modules/spk_graphical_api_module.hpp"
 #include "graphics/spk_window.hpp"
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
@@ -26,42 +26,17 @@ namespace spk
 	 */
 	class Application : public spk::AbstractApplication
 	{
-	public:
-	/**
-	 * @struct Configuration
-	 * @brief The configuration structure for the Application.
-	 *
-	 * This structure is used to specify certain options upon the instantiation of an Application object.
-	 * The options are primarily related to the initialization of specific modules within the Application.
-	 */
-		struct Configuration
-		{
-			bool initActivityScheduler = false; ///< Should the application initialize a ActivitySchedulerManager widget
-			bool initInputGroupManager = false; ///< Should the application initialize a InputGroupManager widget
-
-			/**
-			 * @brief Construct a new Configuration object
-			 * 
-			 * @param p_initActivityScheduler Should the application initialize a ActivitySchedulerManager widget
-			 * @param p_initInputGroupManager Should the application initialize a InputGroupManager widget
-			 */
-			Configuration(bool p_initActivityScheduler = false, bool p_initInputGroupManager = false) :
-				initActivityScheduler(p_initActivityScheduler),
-				initInputGroupManager(p_initInputGroupManager)
-			{}
-		};
-
 	private:
-		spk::APIModule* _APIModule; ///< API module instance.
+		spk::APIModule _APIModule; ///< API module instance.
 
-		spk::SystemModule* _systemModule; ///< System module instance.
-		spk::TimeModule* _timeModule; ///< Time module instance.
-		spk::WindowModule* _windowModule; ///< Window module instance.
-		spk::MouseModule* _mouseModule; ///< Mouse module instance.
-		spk::KeyboardModule* _keyboardModule; ///< Keyboard module instance.
-		spk::ProfilerModule* _profilerModule; ///< Profiler module instance.
+		spk::SystemModule _systemModule; ///< System module instance.
+		spk::TimeModule _timeModule; ///< Time module instance.
+		spk::GraphicalAPIModule _GAPIM; ///< Window module instance.
+		spk::MouseModule _mouseModule; ///< Mouse module instance.
+		spk::KeyboardModule _keyboardModule; ///< Keyboard module instance.
+		spk::ProfilerModule _profilerModule; ///< Profiler module instance.
 
-		spk::WidgetModule* _widgetModule; ///< Widget module instance.
+		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
 		std::vector<Contract> _renderContracts; ///< Contracts related to the Render jobs
 		std::vector<Contract> _updateContracts; ///< Contracts related to the Update jobs
@@ -74,12 +49,6 @@ namespace spk
 		 */
 		void setupJobs();
 
-		/**
-		 * @brief Initialize default widget construction based on p_configuration provided by the user 
-		 * 
-		 * @param p_configuration a structure describing the initialization expected by the user
-		 */
-		void _initializeConfigurableValues(const Configuration& p_configuration);
 	public:
 		/**
 		 * @brief Constructs the Application object.
@@ -88,7 +57,7 @@ namespace spk
 		 * @param p_size Size of the window.
 		 * @param p_configuration a structure describing the initialization expected by the user
 		 */
-		Application(const std::wstring& p_title, const spk::Vector2Int& p_size, const Configuration& p_configuration = Configuration());
+		Application(const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 		/**
 		 * @brief Destructs the Application object.
@@ -102,8 +71,8 @@ namespace spk
 		 * @param p_configurationFilePath The path to the canvas configuration file.
 		 * @return The newly created canvas widget.
 		*/
-		spk::Widget::Canvas* addCanvas(const std::filesystem::path& p_configurationFilePath);
-		
+		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath);
+
 		/**
 		 * @brief Add a new widget inside the application, with the central widget as parent.
 		 *
@@ -113,9 +82,9 @@ namespace spk
 		 * @return Pointer to the children widget.
 		 */
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addRootWidget(Args&& ... p_args)
+		std::shared_ptr<TChildrenType> addRootWidget(Args&& ... p_args)
 		{
-			TChildrenType* result = new TChildrenType(std::forward<Args>(p_args)...);
+			auto result = std::make_shared<TChildrenType>(std::forward<Args>(p_args)...);
 
 			result->setDepth(0);
 
@@ -132,7 +101,7 @@ namespace spk
 		/**
 		 * @brief Return the current size of the Window.
 		*/
-		const spk::Vector2Int& size() const;
+		const spk::Vector2UInt& size() const;
 	};
 
 }

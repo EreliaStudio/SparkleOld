@@ -35,6 +35,11 @@ namespace spk
 		DataBuffer();
 
 		/**
+		 * @brief Constructor with a pre-defined sized data buffer
+		 */
+		DataBuffer(size_t p_dataSize);
+
+		/**
 		 * @brief Return the content of the DataBuffer as a raw bytes array
 		 * 
 		 * @return The content of the DataBuffer as raw bytes
@@ -137,6 +142,13 @@ namespace spk
 			memcpy(_data.data() + p_offset, &p_input, sizeof(InputType));
 		}
 
+		void edit(const size_t& p_offset, const void* p_data, const size_t& p_dataSize)
+		{
+			if (p_offset + p_dataSize > size())
+				throw std::runtime_error("Unable to edit, offset is out of bound.");
+			memcpy(_data.data() + p_offset, p_data, p_dataSize);
+		}
+
 		/**
 		 * @brief Insert data into the buffer.
 		 *
@@ -222,6 +234,13 @@ namespace spk
 				*this >> *it;
 			}
 			return *this;
+		}
+
+		void append(const void* p_data, const size_t& p_dataSize)
+		{
+			size_t oldSize = size();
+			resize(size() + p_dataSize);
+			edit(oldSize, p_data, p_dataSize);
 		}
 	};
 }
