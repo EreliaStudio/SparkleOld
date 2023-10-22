@@ -11,219 +11,327 @@
 
 namespace spk
 {
+	/**
+	 * @class AbstractPipeline
+	 * @brief Abstract base class for handling different types of shader pipelines.
+	 *
+	 * AbstractPipeline serves as a base for managing shader programs and their associated uniform blocks,
+	 * sampler uniforms, and objects. Derived classes must implement the virtual methods to offer platform-specific
+	 * functionalities.
+	 */
 	class AbstractPipeline
 	{
 	public:
+		/**
+		 * @class Object
+		 * @brief A class representing a graphical object in a rendering pipeline.
+		 *
+		 * The Object class encapsulates all the essential components for rendering a graphical object,
+		 * including storage buffers for vertices and indexes, as well as push constants for the associated shader.
+		 */
 		class Object
 		{
 		public:
+			/**
+			 * @class Storage
+			 * @brief A class to manage storage buffers associated with a shader layout.
+			 *
+			 * The Storage class serves to manage storage buffers specifically designed for vertices and indexes.
+			 * This class encapsulates Buffer objects for vertices and indexes, providing an interface for
+			 * managing these Buffer objects.
+			 */
 			class Storage
 			{
 			public:
+				/**
+				 * @class Buffer
+				 * @brief A class to handle data buffering operations.
+				 *
+				 * The Buffer class provides an abstraction for data storage and manipulation
+				 * with various methods to interact with the underlying buffer. 
+				 */
 				class Buffer
 				{
 				private:
+					/// Typedef for wide character output streams
 					typedef std::basic_ostream<wchar_t, std::char_traits<wchar_t>> wostream;
+
+					/// Flag to indicate whether the buffer needs to be updated.
 					bool _needUpdate;
+
+					/// The name of the buffer for identification.
 					std::wstring _name;
+
+					/// The size of each unit in the buffer.
 					size_t _unitSize;
+
+					/// The underlying data storage.
 					spk::DataBuffer _data;
 
 				public:
-					Buffer(const std::wstring &p_name, size_t p_unitSize) :
-						_unitSize(p_unitSize),
-						_name(p_name),
-						_needUpdate(false)
-					{
-						
-					}
+					/**
+					 * @brief Constructor for the Buffer class.
+					 *
+					 * @param p_name The name of the buffer.
+					 * @param p_unitSize The size of each unit in the buffer.
+					 */
+					Buffer(const std::wstring &p_name, size_t p_unitSize);
 
-					void clear()
-					{
-						_data.clear();
-					}
+					/**
+					 * @brief Clears the buffer.
+					 */
+					void clear();
 
+					/**
+					 * @brief Overload for the insertion operator.
+					 *
+					 * Inserts a given data item into the buffer.
+					 *
+					 * @param p_data The data item to be inserted.
+					 * @return Reference to the Buffer object.
+					 */
 					template <typename TType>
-					Buffer &operator<<(const TType &p_data)
-					{
-						if (_unitSize != sizeof(TType))
-						{
-							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
-						}
-						_data << p_data;
-						return (*this);
-					}
+					Buffer &operator<<(const TType &p_data);
 
+					/**
+					 * @brief Overload for the insertion operator for std::vector.
+					 *
+					 * Appends a vector of data items to the buffer.
+					 *
+					 * @param p_data The vector of data items to be inserted.
+					 * @return Reference to the Buffer object.
+					 */
 					template <typename TType>
-					Buffer &operator<<(const std::vector<TType> &p_data)
-					{
-						if (_unitSize != sizeof(TType))
-						{
-							spk::throwException(L"Pushing a unit of size [" + std::to_wstring(sizeof(TType)) + L"] into a " + _name + L" buffer of unit size [" + std::to_wstring(_unitSize) + L"]");
-						}
-						_data.append(p_data.data(), p_data.size() * sizeof(TType));
-						return (*this);
-					}
+					Buffer &operator<<(const std::vector<TType> &p_data);
 
-					Buffer& operator<<(wostream& (*func)(wostream&)) {
-						_needUpdate = true;
-						return *this;
-					}
+					/**
+					 * @brief Overload for insertion operator for wostream manipulators.
+					 *
+					 * Allows the use of wostream manipulators with the Buffer object.
+					 *
+					 * @param func The wostream manipulator function.
+					 * @return Reference to the Buffer object.
+					 */
+					Buffer& operator<<(wostream& (*func)(wostream&));
 
-					void setUpdateStatus(bool p_state)
-					{
-						_needUpdate = p_state;
-					}
+					/**
+					 * @brief Sets the update status of the buffer.
+					 *
+					 * @param p_state The new update state.
+					 */
+					void setUpdateStatus(bool p_state);
 
-					bool needUpdate() const
-					{
-						return (_needUpdate);
-					}
+					/**
+					 * @brief Checks if the buffer needs to be updated.
+					 *
+					 * @return True if the buffer needs to be updated, false otherwise.
+					 */
+					bool needUpdate() const;
 
-					const uint8_t *data() const
-					{
-						return (_data.data());
-					}
+					/**
+					 * @brief Retrieves the raw data from the buffer.
+					 *
+					 * @return Pointer to the underlying data.
+					 */
+					const uint8_t *data() const;
 
-					size_t size() const
-					{
-						return (_data.size());
-					}
+					/**
+					 * @brief Retrieves the size of the buffer.
+					 *
+					 * @return The size of the buffer in bytes.
+					 */
+					size_t size() const;
 				};
 
+
 			private:
+				/// Buffer to hold vertex data.
 				Buffer _vertices;
+
+				/// Buffer to hold index data.
 				Buffer _indexes;
 
 			public:
-				Storage(const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout) :
-					_vertices(L"Vertices", p_storageBufferLayout.stride()),
-					_indexes(L"Indexes", sizeof(uint32_t))
-				{
+				/**
+				 * @brief Constructor for the Storage class.
+				 *
+				 * Initializes the Storage object based on a given StorageBufferLayout from a shader layout.
+				 *
+				 * @param p_storageBufferLayout Reference to the StorageBufferLayout from a spk::ShaderLayout object.
+				 */
+				Storage(const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout);
 
-				}
+				/**
+				 * @brief Accessor for the vertex buffer.
+				 *
+				 * @return Reference to the Buffer object containing vertex data.
+				 */
+				Buffer &vertices();
 
-				Buffer &vertices()
-				{
-					return (_vertices);
-				}
-
-				Buffer &indexes()
-				{
-					return (_indexes);
-				}
+				/**
+				 * @brief Accessor for the index buffer.
+				 *
+				 * @return Reference to the Buffer object containing index data.
+				 */
+				Buffer &indexes();
 			};
 
+			/**
+			 * @class PushConstants
+			 * @brief A class to handle Push Constants within a shader layout.
+			 *
+			 * The PushConstants class serves as an extension of the spk::FieldMap. It is designed
+			 * to work with push constants in the context of a shader layout, allowing for more
+			 * streamlined management of these constants.
+			 *
+			 * @note This class is derived from spk::FieldMap.
+			 */
 			class PushConstants : public spk::FieldMap
 			{
 			public:
-				PushConstants(const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) :
-					FieldMap(p_pushConstantsLayout.stride())
-				{
-					for (const auto& field : p_pushConstantsLayout.fields())
-					{
-						insertNewField(spk::to_wstring(field.name), field.offset, field.data.size * field.data.format);
-					}
-				}
+				/**
+				 * @brief Constructor for the PushConstants class.
+				 *
+				 * Initializes the PushConstants object based on a given PushConstantsLayout from a shader layout.
+				 *
+				 * @param p_pushConstantsLayout Reference to the PushConstantsLayout from a spk::ShaderLayout object.
+				 */
+				PushConstants(const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
 			};
 
 		private:
+			/// Pointer to the pipeline that owns this Object.
 			AbstractPipeline* _owner;
+
+			/// Storage buffer for holding vertex and index data.
 			Storage _storage;
+
+			/// Number of indexes that have been pushed to the index buffer.
 			size_t _nbIndexesPushed;
+
+			/// Push constants associated with this Object.
 			PushConstants _pushConstants;
 
+			/**
+			 * @brief Abstract method for pushing vertex data.
+			 *
+			 * @param p_data Pointer to the vertex data.
+			 * @param p_dataSize Size of the vertex data.
+			 */
 			virtual void _pushVerticesData(const uint8_t* p_data, size_t p_dataSize) = 0;
+
+			/**
+			 * @brief Abstract method for pushing index data.
+			 *
+			 * @param p_data Pointer to the index data.
+			 * @param p_dataSize Size of the index data.
+			 */
 			virtual void _pushIndexesData(const uint8_t* p_data, size_t p_dataSize) = 0;
+
+			/**
+			 * @brief Abstract method for pushing push constants data.
+			 *
+			 * @param p_data Pointer to the push constants data.
+			 * @param p_dataSize Size of the push constants data.
+			 */
 			virtual void _pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize) = 0;
+
+			/**
+			 * @brief Abstract method called during rendering.
+			 */
 			virtual void _onRender() = 0;
 
-			void _updateVertices()
-			{
-				_pushVerticesData(_storage.vertices().data(), _storage.vertices().size());
-				_storage.vertices().clear();
-				_storage.vertices().setUpdateStatus(false);
-			}
+			/// Updates the vertex buffer.
+			void _updateVertices();
 
-			void _updateIndexes()
-			{
-				_pushIndexesData(_storage.indexes().data(), _storage.indexes().size());
-				_nbIndexesPushed = _storage.indexes().size() / sizeof(uint32_t);
-				_storage.indexes().clear();
-				_storage.indexes().setUpdateStatus(false);
-			}
+			/// Updates the index buffer.
+			void _updateIndexes();
 
-			void _updatePushConstants()
-			{
-				_pushPushConstantsData(_pushConstants.data(), _pushConstants.size());
-				_pushConstants.setUpdateStatus(false);
-			}
+			/// Updates the push constants.
+			void _updatePushConstants();
 
 		public:
-			Object(AbstractPipeline* p_owner, const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) :
-				_owner(p_owner),
-				_storage(p_storageBufferLayout),
-				_pushConstants(p_pushConstantsLayout),
-				_nbIndexesPushed(0)
-			{
+			/**
+			 * @brief Constructor for the Object class.
+			 *
+			 * @param p_owner Pointer to the AbstractPipeline that owns this Object.
+			 * @param p_storageBufferLayout Reference to the storage buffer layout from a spk::ShaderLayout object.
+			 * @param p_pushConstantsLayout Reference to the push constants layout from a spk::ShaderLayout object.
+			 */
+			Object(AbstractPipeline* p_owner, const spk::ShaderLayout::StorageBufferLayout& p_storageBufferLayout, const spk::ShaderLayout::PushConstantsLayout& p_pushConstantsLayout);
 
-			}
+			/**
+			 * @brief Executes the rendering of this Object.
+			 */
+			void render();
 
-			void render()
-			{
-				_owner->activate();
+			/**
+			 * @brief Accessor for the storage buffer associated with this Object.
+			 *
+			 * @return Reference to the Storage object.
+			 */
+			Storage& storage();
 
-				if (_storage.vertices().needUpdate() == true)
-					_updateVertices();
-				if (_storage.indexes().needUpdate() == true)
-					_updateIndexes();
-				if (_pushConstants.needUpdate() == true)
-					_updatePushConstants();
-
-				_onRender();
-
-				_owner->launch(_nbIndexesPushed);
-
-				_owner->deactivate();
-			}
-
-			Storage& storage()
-			{
-				return (_storage);
-			}
-
-			PushConstants& pushConstants()
-			{
-				return (_pushConstants);
-			}
+			/**
+			 * @brief Accessor for the push constants associated with this Object.
+			 *
+			 * @return Reference to the PushConstants object.
+			 */
+			PushConstants& pushConstants();
 		};
 
+		/**
+		 * @class Uniform
+		 * @brief A class to manage uniform blocks within a shader layout.
+		 *
+		 * The Uniform class serves to manage uniform data blocks associated with a shader layout.
+		 * It contains a data buffer to store the actual uniform data and provides a method to push
+		 * this data to the associated shader.
+		 */
 		class Uniform
 		{
 		protected:
+			/// The name of the uniform block.
 			std::wstring _name;
+
+			/// Data buffer to hold the uniform data.
 			spk::DataBuffer _data;
 
+			/**
+			 * @brief Abstract method to push the uniform data to the shader.
+			 */
 			virtual void _pushData() = 0;
 
 		public:
-			Uniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
-				_data(p_uniformBlockLayout.stride()),
-				_name(p_uniformBlockLayout.name())
-			{
+			/**
+			 * @brief Constructor for the Uniform class.
+			 *
+			 * Initializes the Uniform object based on a given UniformBlockLayout from a shader layout.
+			 *
+			 * @param p_uniformBlockLayout Reference to the UniformBlockLayout from a ShaderLayout object.
+			 */
+			Uniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 
-			}
+			/**
+			 * @brief Accessor for the uniform data.
+			 *
+			 * @return Pointer to the uniform data.
+			 */
+			const uint8_t *data() const;
 
-			const uint8_t *data() const
-			{
-				return (_data.data());
-			}
+			/**
+			 * @brief Accessor for the size of the uniform data.
+			 *
+			 * @return Size of the uniform data.
+			 */
+			size_t size() const;
 
-			size_t size() const
-			{
-				return (_data.size());
-			}
-			
+			/**
+			 * @brief Overloaded << operator to push data into the uniform buffer.
+			 *
+			 * @param p_data The data to push into the buffer.
+			 * @return Reference to this Uniform object.
+			 */
 			template <typename TType>
 			Uniform &operator<<(const TType &p_data)
 			{
@@ -235,43 +343,72 @@ namespace spk
 				return (*this);
 			}
 
-			Uniform& operator<<(std::wostream& (*func)(std::wostream&)) {
-				_pushData();
-				return *this;
-			}
+			/**
+			 * @brief Overloaded << operator to work with wostream manipulators.
+			 *
+			 * @param func wostream manipulator function.
+			 * @return Reference to this Uniform object.
+			 */
+			Uniform& operator<<(std::wostream& (*func)(std::wostream&));
 		};
 
+		/**
+		 * @class UniformBlock
+		 * @brief A class derived from Uniform to manage uniform blocks with multiple fields.
+		 *
+		 * The UniformBlock class extends the functionality of the Uniform class by allowing uniform
+		 * blocks to contain multiple fields. Each field can be individually updated.
+		 */
 		class UniformBlock : public Uniform
 		{
 		public:
+
+			/**
+			 * @class Field
+			 * @brief Inner class representing an individual field within a UniformBlock.
+			 *
+			 * The Field class is responsible for managing the data for an individual field
+			 * inside a UniformBlock.
+			 */
 			class Field
 			{
 			private:
+				/// The name of the field.
 				std::wstring _name;
+
+				/// Pointer to the UniformBlock that owns this Field.
 				UniformBlock *_owner;
+
+				/// Pointer to the data for this Field.
 				void* _data;
+
+				/// Offset of this Field within the UniformBlock.
 				size_t _offset;
+
+				/// Size of this Field.
 				size_t _size;
 
 			public:
-				Field() :
-					_owner(nullptr),
-					_name(L"Unnamed"),
-					_data(nullptr),
-					_offset(0),
-					_size(0)
-				{
-				}
+				/// Default constructor.
+				Field();
 
-				Field(const std::wstring& p_name, UniformBlock *p_owner, uint8_t *p_data, size_t p_offset, size_t p_size) :
-					_name(p_name),
-					_owner(p_owner),
-					_data(p_data),
-					_offset(p_offset),
-					_size(p_size)
-				{
-				}
+				/**
+				 * @brief Constructor for the Field class.
+				 *
+				 * @param p_name Name of the Field.
+				 * @param p_owner Pointer to the owning UniformBlock.
+				 * @param p_data Pointer to the data.
+				 * @param p_offset Offset of the Field in the UniformBlock.
+				 * @param p_size Size of the Field.
+				 */
+				Field(const std::wstring& p_name, UniformBlock *p_owner, uint8_t *p_data, size_t p_offset, size_t p_size);
 
+				/**
+				 * @brief Overloaded << operator to push data into the Field.
+				 *
+				 * @param p_data Data to be pushed.
+				 * @return Reference to this Field object.
+				 */
 				template <typename TType>
 				Field& operator<<(const TType& p_data)
 				{
@@ -283,139 +420,159 @@ namespace spk
 					std::memcpy(static_cast<uint8_t*>(_data) + _offset, &p_data, _size);
 					return *this;
 				}
-					
-				Field& operator<<(std::wostream& (*func)(std::wostream&))
-				{
-					if (_owner != nullptr)
-						_owner->_launchPushData();
-					return *this;
-				}
+
+				/**
+				 * @brief Overloaded << operator for wostream manipulators.
+				 *
+				 * @param func wostream manipulator function.
+				 * @return Reference to this Field object.
+				 */
+				Field& operator<<(std::wostream& (*func)(std::wostream&));
 			};
 
 		private:
-    		std::map<std::wstring, Field> _fields;
+			/// Map to hold the fields within this UniformBlock.
+			std::map<std::wstring, Field> _fields;
 
-			void _launchPushData()
-			{
-				_pushData();
-			}
+			/**
+			 * @brief Private method to actually push the data for all fields.
+			 */
+			void _launchPushData();
 
 		public:
-			UniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
-				Uniform(p_uniformBlockLayout)
-			{
-				for (const auto& field : p_uniformBlockLayout.fields())
-				{
-					_fields.emplace(
-						spk::to_wstring(field.name),
-						Field(
-							p_uniformBlockLayout.name() + L"::" + spk::to_wstring(field.name),
-							this,
-							_data.data(),
-							field.offset,
-							field.data.format * field.data.size
-						)
-					);
-				}
-			}
+			/**
+			 * @brief Constructor for the UniformBlock class.
+			 *
+			 * @param p_uniformBlockLayout Reference to a UniformBlockLayout from a ShaderLayout object.
+			 */
+			UniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 
-			Field &field(const std::wstring &p_fieldName)
-			{
-				if (_fields.contains(p_fieldName) == false)
-					spk::throwException(L"Field [" + p_fieldName + L"] doesn't exist in FieldMap");
-				return (_fields[p_fieldName]);
-			}
+			/**
+			 * @brief Accessor method to get a Field by its name.
+			 *
+			 * @param p_fieldName Name of the field to be accessed.
+			 * @return Reference to the corresponding Field object.
+			 */
+			Field &field(const std::wstring &p_fieldName);
 
-			Field &operator[](const std::wstring &p_fieldName)
-			{
-				return (this->field(p_fieldName));
-			}
+			/**
+			 * @brief Overloaded [] operator to get a Field by its name.
+			 *
+			 * @param p_fieldName Name of the field to be accessed.
+			 * @return Reference to the corresponding Field object.
+			 */
+			Field &operator[](const std::wstring &p_fieldName);
 		};
 
+
+		/**
+		 * @class SamplerUniform
+		 * @brief A class derived from Uniform to manage sampler uniforms.
+		 *
+		 * The SamplerUniform class extends the functionality of the Uniform class
+		 * to provide specialized handling for sampler uniform types.
+		 */
 		class SamplerUniform : public Uniform
 		{
 		private:
+			// Currently, there are no additional private members for SamplerUniform.
 
 		public:
-			SamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
-				Uniform(p_uniformBlockLayout)
-			{
-
-			}
+			/**
+			 * @brief Constructor for the SamplerUniform class.
+			 *
+			 * Initializes a SamplerUniform instance with the layout specified
+			 * by the UniformBlockLayout from a ShaderLayout object.
+			 *
+			 * @param p_uniformBlockLayout Reference to a UniformBlockLayout from a ShaderLayout object.
+			 */
+			SamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 		};
 
 	protected:
-		ShaderLayout _shaderLayout;
+		ShaderLayout _shaderLayout; ///< Layout of the associated shader program.
 
+		/// Static map to hold shared pointers to Uniform objects, keyed by UniformBlockLayout::Key.
 		static inline std::map<ShaderLayout::UniformBlockLayout::Key, std::shared_ptr<Uniform>> _uniformMap;
+
+		/// Map to store keys for accessing Uniform objects in _uniformMap, keyed by uniform name.
 		std::map<std::wstring, ShaderLayout::UniformBlockLayout::Key> _uniformKeys;
 
+		/**
+		 * @brief Pure virtual function to load a shader program.
+		 * @param p_shaderLayout The layout of the shader program to load.
+		 */
 		virtual void _loadProgram(const ShaderLayout &p_shaderLayout) = 0;
 
-		std::shared_ptr<Uniform> _loadUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout)
-		{
-			switch (p_uniformBlockLayout.mode())
-			{
-			case ShaderLayout::UniformBlockLayout::Mode::Block:
-				return (_loadUniformBlock(p_uniformBlockLayout));
-			case ShaderLayout::UniformBlockLayout::Mode::Single:
-				return (_loadSamplerUniform(p_uniformBlockLayout));
-			}
-			return (nullptr);
-		}
+		/**
+		 * @brief Load a uniform into the pipeline.
+		 * @param p_uniformBlockLayout The layout of the uniform block containing the uniform.
+		 * @return A shared pointer to the loaded Uniform object.
+		 */
+		std::shared_ptr<Uniform> _loadUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout);
 
-		void _loadPipeline()
-		{
-			_loadProgram(_shaderLayout);
+		/**
+		 * @brief Load the pipeline configurations.
+		 */
+		void _loadPipeline();
 
-			for (const auto& uniformBlockLayout : _shaderLayout.uniformBlockLayouts())
-			{
-				if (_uniformMap.contains(uniformBlockLayout.key()) == false)
-				{
-					std::shared_ptr<Uniform> newUniform = _loadUniform(uniformBlockLayout);
-
-					_uniformMap[uniformBlockLayout.key()] = newUniform;
-				}
-
-				std::shared_ptr<Uniform> targetUniform = _uniformMap[uniformBlockLayout.key()];
-
-				if (targetUniform->size() != uniformBlockLayout.stride())
-					spk::throwException(L"Uniform named [" + uniformBlockLayout.name() + L"] collide with an existing uniform of different size, at set [" + std::to_wstring(uniformBlockLayout.key().set) + L"] and binding [" + std::to_wstring(uniformBlockLayout.key().binding) + L"]");
-				
-				_uniformKeys[uniformBlockLayout.name()] = uniformBlockLayout.key();
-			}
-		}
-
+		/**
+		 * @brief Pure virtual function to load a uniform block.
+		 * @param p_uniformBlockLayout The layout of the uniform block to load.
+		 * @return A shared pointer to the loaded UniformBlock object.
+		 */
 		virtual std::shared_ptr<UniformBlock> _loadUniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) = 0;
+
+		/**
+		 * @brief Pure virtual function to load a sampler uniform.
+		 * @param p_uniformBlockLayout The layout of the uniform block containing the sampler uniform.
+		 * @return A shared pointer to the loaded SamplerUniform object.
+		 */
 		virtual std::shared_ptr<SamplerUniform> _loadSamplerUniform(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) = 0;
+
+		/**
+		 * @brief Pure virtual function to load an Object.
+		 * @param p_storageLayout The storage buffer layout for the Object.
+		 * @param p_pushConstantsLayout The push constants layout for the Object.
+		 * @return A shared pointer to the loaded Object.
+		 */
 		virtual std::shared_ptr<Object> _loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout) = 0;
 
 	public:
-		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput) : _shaderLayout(p_vertexInput, p_fragmentInput)
-		{
+		/**
+		 * @brief Constructor for AbstractPipeline.
+		 * @param p_vertexInput The vertex shader module.
+		 * @param p_fragmentInput The fragment shader module.
+		 */
+		AbstractPipeline(const ShaderModule &p_vertexInput, const ShaderModule &p_fragmentInput);
 
-		}
-
+		/**
+		 * @brief Pure virtual function to launch the pipeline.
+		 * @param p_nbIndexes The number of indexes to be processed.
+		 */
 		virtual void launch(const size_t &p_nbIndexes) = 0;
 
+		/**
+		 * @brief Pure virtual function to activate the pipeline.
+		 */
 		virtual void activate() = 0;
+
+		/**
+		 * @brief Pure virtual function to deactivate the pipeline.
+		 */
 		virtual void deactivate() = 0;
 
-		Uniform& uniform(const std::wstring& p_uniformName)
-		{
-			if (_uniformKeys.contains(p_uniformName) == false)
-				spk::throwException(L"Uniform named [" + p_uniformName + L"] doesn't exist.");
-			ShaderLayout::UniformBlockLayout::Key uniformKey = _uniformKeys[p_uniformName];
+		/**
+		 * @brief Retrieve a reference to a Uniform object.
+		 * @param p_uniformName The name of the uniform.
+		 * @return Reference to the corresponding Uniform object.
+		 */
+		Uniform& uniform(const std::wstring& p_uniformName);
 
-			if (_uniformMap.contains(uniformKey) == false)
-				spk::throwException(L"Uniform named [" + p_uniformName + L"] doesn't link to an existing key [" + std::to_wstring(uniformKey.set) + L" / " + std::to_wstring(uniformKey.binding) + L"].");
-		
-			return (*(_uniformMap[uniformKey]));
-		}
-
-		std::shared_ptr<Object> createObject()
-		{
-			return (_loadObject(_shaderLayout.storageBufferLayout(), _shaderLayout.pushConstantsLayout()));
-		}
+		/**
+		 * @brief Create a new Object.
+		 * @return A shared pointer to the newly created Object.
+		 */
+		std::shared_ptr<Object> createObject();
 	};
 }

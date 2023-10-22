@@ -8,14 +8,14 @@ namespace spk
 {
     ShaderLayout::StructureLayout::StructureLayout()
     {
-        _singleUniformStructures = {
+        _SamplerUniformStructures = {
             {"sampler1D", Data(Data::Type::Int, 1, sizeof(int))},
             {"sampler2D", Data(Data::Type::Int, 1, sizeof(int))},
             {"sampler3D", Data(Data::Type::Int, 1, sizeof(int))},
             {"samplerCube", Data(Data::Type::Int, 1, sizeof(int))},
         };
 
-        _acceptedSingleUniformTypeString = L"sampler1D, sampler2D, sampler3D, samplerCube";
+        _acceptedSamplerUniformTypeString = L"sampler1D, sampler2D, sampler3D, samplerCube";
     }
 
     void ShaderLayout::StructureLayout::reset()
@@ -93,17 +93,17 @@ namespace spk
             p_out << "\t\t\t" << spk::to_wstring(pair.first) << ": " << pair.second << std::endl;
         }
         
-        p_out << "\t\tSingleUniformStructures: " << std::endl;
-        for (const auto& pair : p_layout.singleUniformStructures())
+        p_out << "\t\tSamplerUniformStructures: " << std::endl;
+        for (const auto& pair : p_layout.SamplerUniformStructures())
         {
             p_out << "\t\t\t" << spk::to_wstring(pair.first) << ": " << pair.second << std::endl;
         }
         return p_out;
     }
 
-    const std::wstring& ShaderLayout::StructureLayout::acceptedSingleUniformTypeString() const
+    const std::wstring& ShaderLayout::StructureLayout::acceptedSamplerUniformTypeString() const
     {
-        return (_acceptedSingleUniformTypeString);
+        return (_acceptedSamplerUniformTypeString);
     }
 
     const std::map<std::string, ShaderLayout::Data> &ShaderLayout::StructureLayout::structures() const
@@ -111,8 +111,8 @@ namespace spk
         return (_structures);
     }
 
-    const std::map<std::string, ShaderLayout::Data> &ShaderLayout::StructureLayout::singleUniformStructures() const
+    const std::map<std::string, ShaderLayout::Data> &ShaderLayout::StructureLayout::SamplerUniformStructures() const
     {
-        return (_singleUniformStructures);
+        return (_SamplerUniformStructures);
     }
 }
