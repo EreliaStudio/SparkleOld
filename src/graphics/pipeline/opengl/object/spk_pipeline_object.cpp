@@ -57,6 +57,12 @@ namespace spk
 		}
 	}
 	
+	/**
+	 * @brief Finds the first available binding slot for a UniformBlock in a given ShaderLayout.
+	 * 
+	 * @param p_shaderLayout The ShaderLayout to search within.
+	 * @return The first available binding slot.
+	 */
 	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout)
 	{
 		size_t result = 0;

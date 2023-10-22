@@ -2,6 +2,8 @@
 #include <regex>
 namespace spk
 {
+	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout);
+
 	void compileShaderModule(GLuint p_shaderIndex, std::string p_shaderCode)
 	{
 		GLint result;
@@ -39,8 +41,6 @@ namespace spk
 		glDetachShader(p_programID, p_vertexID);
 		glDetachShader(p_programID, p_fragmentID); //! X bytes in 1 blocks are possibly lost
 	}
-
-	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout);
 
 	std::string convertCodeToOpenGL(const spk::ShaderLayout& p_shaderLayout, const std::string& p_code)
 	{
