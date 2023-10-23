@@ -7,6 +7,9 @@
 
 namespace spk
 {
+	/**
+	 * @brief A string/string map storing every structure type Sparkle will insert inside GLSL provided by users.
+	*/
 	std::map<std::string, std::string> structuresMap = {
 			// {"StructA", "struct StructA{vec4 color;};"},
 			// {"StructB", "struct StructB{float ratio; vec2 position;};"}

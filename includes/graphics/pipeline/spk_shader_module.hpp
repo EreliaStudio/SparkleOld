@@ -97,12 +97,12 @@ namespace spk
         bool _checkStructureNameCollision();
 
         /**
-         * @brief Calculate the end of the #version line, where Sparkle should insert the predefined structure used by it.
+         * @brief Calculate the end of the `#version` line, where Sparkle should insert the predefined structure used by it.
         */
         size_t _findInsertionPoint();
 
         /**
-         * @brief Insert the predefined Sparkle GLSL Structures inside the shader code, after the #version line
+         * @brief Insert the predefined Sparkle GLSL Structures inside the shader code, after the `#version` line
         */
 		void _insertStructuresLines();
 
