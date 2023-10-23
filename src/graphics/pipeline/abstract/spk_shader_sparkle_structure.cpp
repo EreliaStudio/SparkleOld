@@ -8,14 +8,8 @@
 namespace spk
 {
 	std::map<std::string, std::string> structuresMap = {
-			{"StructA", 
-R"(struct StructA { vec4 color; };)"},
-{"StructB", 
-R"(struct StructB
-{
-	float ratio;
-	vec2 position;
-};)"}
+			// {"StructA", "struct StructA{vec4 color;};"},
+			// {"StructB", "struct StructB{float ratio; vec2 position;};"}
 		};
 
 	bool ShaderModule::_checkStructureNameCollision()
