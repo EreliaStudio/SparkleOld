@@ -3,57 +3,28 @@
 class Test : public spk::Widget::Interface
 {
 private:
-	spk::Pipeline _pipeline;
-	spk::Image _image;
-	std::shared_ptr<spk::Pipeline::Object> _object;
-
-	struct Unit
-	{
-		spk::Vector2 position;
-		spk::Vector2 uvs;
-	};
-
-	float rotation = 0;
+	spk::WidgetComponent::Box _box;
 
 	void _onGeometryChange()
 	{
-		std::vector<Unit> datas = {
-			{spk::Vector2( 0.0f,  1.0f), spk::Vector2( 0.0f,  0.0f)},
-			{spk::Vector2(-1.0f, -1.0f), spk::Vector2( 1.0f,  0.0f)},
-			{spk::Vector2( 1.0f, -1.0f), spk::Vector2( 0.0f,  1.0f)}
-		};
-
-		std::vector<unsigned int> indexes = {
-			0, 1, 2
-		};
-		
-		_object->storage().vertices() << datas << std::endl;
-		_object->storage().indexes() << indexes << std::endl;
+		_box.setGeometry(area());
+		_box.setDepth(1.0f);
 	}
 
 	void _onRender()
 	{		
-		_image.bind(1);
-		
-		_object->render();
+		_box.render();
 	}
 	
 	bool _onUpdate()
 	{
-		rotation += spk::TimeMetrics::instance()->deltaTime();
-
-		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
-
 		return (false);
 	}
 
 public:
-	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
-		_object(_pipeline.createObject()),
-		_image(L"imageTest.png")
+	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name)
 	{
-		_pipeline.uniform(L"textureID") << 1 << std::endl;
+
 	}
 	
 	~Test()

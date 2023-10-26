@@ -58,4 +58,14 @@ namespace spk
 	{
 		return (_pushConstants);
 	}
+
+	AbstractPipeline::Object::PushConstants::Field& AbstractPipeline::Object::pushConstants(const std::wstring& p_fieldName)
+	{
+		return (_pushConstants[p_fieldName]);
+	}
+
+	const size_t& AbstractPipeline::Object::nbIndexes() const
+	{
+		return (_nbIndexesPushed);
+	}
 }

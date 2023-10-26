@@ -87,43 +87,49 @@ namespace spk::Widget
 
 	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
 	{
-		_anchor = p_anchor;
+		_area.setAnchor(p_anchor);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::setSize(const spk::Vector2Int& p_size)
 	{
-		_size = p_size;
+		_area.setSize(p_size);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
 	{
-		_anchor = p_anchor;
-		_size = p_size;
+		_area = spk::Area(p_anchor, p_size);
+		
+		_geometryEdited = true;
+	}
+	
+	void Interface::setGeometry(const spk::Area& p_area)
+	{
+		_area = p_area;
 		
 		_geometryEdited = true;
 	}
 	
 	void Interface::place(const spk::Vector2Int& p_anchor)
 	{
-		_anchor = p_anchor;
+		_area.setAnchor(p_anchor);
 		
 		_geometryEdited = true;
 	}
 	
-	void Interface::move(const spk::Vector2Int& p_anchor)
+	void Interface::move(const spk::Vector2Int& p_delta)
 	{
-		_anchor += p_anchor;
+		_area.move(p_delta);
 		
 		_geometryEdited = true;
 	}
 
-	void Interface::resize(const spk::Vector2Int& p_size)
+	void Interface::resize(const spk::Vector2UInt& p_size)
 	{
-		_size = p_size;
+		_area.setSize(p_size);
 		
 		_geometryEdited = true;
 	}
@@ -148,6 +154,6 @@ namespace spk::Widget
 
 	bool Interface::isPointed(const spk::Vector2Int& p_point)
 	{
-		return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
+		return (_area.isInside(p_point));
 	}
 };
