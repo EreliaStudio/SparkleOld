@@ -41,6 +41,7 @@ namespace spk::GPU
          */
         enum class Mode
         {
+            Error, /**< Default state, related to an uninitialized buffer*/
             Vertices, /**< Vertex Buffer */
             Indexes, /**< Index Buffer */
             UniformBlock /**< Uniform Block Buffer */
@@ -130,6 +131,11 @@ namespace spk::GPU
         size_t _blockBinding; /**< Uniform block binding */
 
     public:
+        /**
+         * @brief Default constructor
+        */
+        UniformBlockBuffer();
+
         /**
          * Constructor.
          */

@@ -89,8 +89,12 @@ namespace spk
 		Object(p_owner, p_storageBufferLayout, p_pushConstantsLayout),
 		_aggregator(),
 		_storageBuffer(),
-		_pushConstantBuffer(static_cast<Pipeline*>(p_owner)->_program, p_pushConstantsLayout.type(), findFirstBindingAvailable(static_cast<Pipeline*>(p_owner)->_shaderLayout))
+		_pushConstantBuffer()
 	{
+		if (p_pushConstantsLayout.type() != L"")
+		{
+			_pushConstantBuffer = GPU::UniformBlockBuffer(static_cast<Pipeline*>(p_owner)->_program, p_pushConstantsLayout.type(), findFirstBindingAvailable(static_cast<Pipeline*>(p_owner)->_shaderLayout));
+		}
 		_configureStorageBuffer(p_storageBufferLayout);
 	}
 

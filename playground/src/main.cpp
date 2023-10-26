@@ -10,7 +10,6 @@ private:
 	struct Unit
 	{
 		spk::Vector2 position;
-		spk::Vector2 uvs;
 	};
 
 	float rotation = 0;
@@ -18,9 +17,9 @@ private:
 	void _onGeometryChange()
 	{
 		std::vector<Unit> datas = {
-			{spk::Vector2( 0.0f,  1.0f), spk::Vector2( 0.0f,  0.0f)},
-			{spk::Vector2(-1.0f, -1.0f), spk::Vector2( 1.0f,  0.0f)},
-			{spk::Vector2( 1.0f, -1.0f), spk::Vector2( 0.0f,  1.0f)}
+			{spk::Vector2( 0.0f,  1.0f)},
+			{spk::Vector2(-1.0f, -1.0f)},
+			{spk::Vector2( 1.0f, -1.0f)}
 		};
 
 		std::vector<unsigned int> indexes = {
@@ -42,7 +41,7 @@ private:
 	{
 		rotation += spk::TimeMetrics::instance()->deltaTime();
 
-		_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
+		//_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
 
 		return (false);
 	}
@@ -53,7 +52,7 @@ public:
 		_object(_pipeline.createObject()),
 		_image(L"imageTest.png")
 	{
-		_pipeline.uniform(L"textureID") << 1 << std::endl;
+		// _pipeline.uniform(L"textureID") << 1 << std::endl;
 	}
 	
 	~Test()
