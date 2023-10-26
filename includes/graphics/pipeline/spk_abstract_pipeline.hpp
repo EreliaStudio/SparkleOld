@@ -294,6 +294,17 @@ namespace spk
 			 * @return Reference to the PushConstants object.
 			 */
 			PushConstants& pushConstants();
+
+			/**
+			 * @brief Retrieve the field corresponding to the provided name
+			 * @param p_fieldName The name of the targeted field.
+			*/
+			PushConstants::Field& pushConstants(const std::wstring& p_fieldName);
+
+			/**
+			 * @brief Return the number of indexes stored inside the object
+			*/
+			const size_t& nbIndexes() const;
 		};
 
 		/**

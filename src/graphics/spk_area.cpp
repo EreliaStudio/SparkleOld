@@ -8,6 +8,13 @@ namespace spk
 	{
 	}
 
+    Area::Area(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)  :
+		_anchor(p_anchor),
+		_size(p_size)
+    {
+
+    }
+
 	void Area::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
 	{
 		_anchor = p_anchor;

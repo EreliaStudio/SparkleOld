@@ -2,32 +2,35 @@
 
 struct Foo
 {
-    int x;
-  
-    Foo(int p_val) : x(p_val)
-    {
-        spk::cout << "Foo constructor. x = " << x << std::endl;
-    }
+private:
+	spk::WidgetComponent::Box _box;
 
-    Foo(const Foo &p_other) : x(p_other.x)
-    {
-        spk::cout << "Foo copy constructor. x = " << x << std::endl;
-    }
+	void _onGeometryChange()
+	{
+		_box.setGeometry(area());
+		_box.setDepth(1.0f);
+	}
 
-    Foo &operator=(const Foo &p_other)
-    {
-        spk::cout << "Foo copy assignment operator. x = " << p_other.x << std::endl;
-        if (this != &p_other)
-        {
-            x = p_other.x;
-        }
-        return *this;
-    }
+	void _onRender()
+	{		
+		_box.render();
+	}
+	
+	bool _onUpdate()
+	{
+		return (false);
+	}
 
-    ~Foo()
-    {
-        spk::cout << "Foo destructor. x = " << x << std::endl;
-    }
+public:
+	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name)
+	{
+
+	}
+	
+	~Test()
+	{
+
+	}
 };
 
 void testObjectDestruction(spk::Pool<Foo> &p_pool)

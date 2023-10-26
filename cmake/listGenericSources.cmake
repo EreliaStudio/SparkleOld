@@ -22,6 +22,7 @@ function(listGenericSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/miscellaneous/JSON/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/application/modules/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/widget/widget_component/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/widget/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/data_structure/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/design_pattern/*.cpp"

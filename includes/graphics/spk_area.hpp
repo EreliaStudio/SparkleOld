@@ -27,6 +27,11 @@ namespace spk
 		Area();
 
         /**
+         * @brief Constructor with anchor and size.
+        */
+        Area(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size);
+
+        /**
          * @brief Sets the geometry of the area.
          * 
          * @param p_anchor The new anchor point for the area.
@@ -42,18 +47,18 @@ namespace spk
 		void setAnchor(const spk::Vector2Int& p_anchor);
 
         /**
-         * @brief Moves the anchor point by a delta.
-         * 
-         * @param p_delta The delta by which the anchor point should be moved.
-         */
-		void move(const spk::Vector2Int& p_delta);
-
-        /**
          * @brief Sets the size of the area.
          * 
          * @param p_size The new size for the area.
          */
 		void setSize(const spk::Vector2UInt& p_size);
+
+        /**
+         * @brief Moves the anchor point by a delta.
+         * 
+         * @param p_delta The delta by which the anchor point should be moved.
+         */
+		void move(const spk::Vector2Int& p_delta);
 
         /**
          * @brief Gets the anchor point of the area.
@@ -74,6 +79,12 @@ namespace spk
 		{
 			return (_size);
 		}
+
+        template <typename TType>
+        bool isInside(const spk::IVector2<TType>& p_point) const
+        {
+            return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
+        }
 	};
 
     /**

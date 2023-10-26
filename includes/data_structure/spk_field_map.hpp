@@ -77,6 +77,22 @@ namespace spk
 				std::memcpy(_data, &p_value, sizeof(TType));
 				return (*this);
 			}
+            
+            /**
+            * Overload insertion operator to insert typed data into this field.
+            */
+			template <typename TType>
+			Field &operator = (const TType &p_value)
+			{
+				if (sizeof(TType) != _size)
+				{
+					spk::throwException(L"Field [" + _name + L"] expected a size of [" + std::to_wstring(_size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+				}
+				std::memcpy(_data, &p_value, sizeof(TType));
+                if (_needUpdate != nullptr)
+                    *_needUpdate = true;
+				return (*this);
+			}
 
             /**
             * Overload insertion operator for functions.
@@ -137,6 +153,21 @@ namespace spk
 				spk::throwException(L"Unexpected structure size to push inside a FieldMap\nExpected a size of [" + std::to_wstring(_data.size()) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
 			}
 			std::memcpy(_data.data(), &p_value, sizeof(TType));
+			return *this;
+		}
+
+        /**
+        * Overload insertion operator to insert typed data into the FieldMap.
+        */
+		template <typename TType>
+		FieldMap &operator = (const TType &p_value)
+		{
+			if (sizeof(TType) != _data.size())
+			{
+				spk::throwException(L"Unexpected structure size to push inside a FieldMap\nExpected a size of [" + std::to_wstring(_data.size()) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+			}
+			std::memcpy(_data.data(), &p_value, sizeof(TType));
+            _needUpdate = true;
 			return *this;
 		}
 
