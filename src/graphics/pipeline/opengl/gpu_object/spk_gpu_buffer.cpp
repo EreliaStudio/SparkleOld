@@ -13,6 +13,8 @@ namespace spk::GPU
 	{
 		switch (p_input)
 		{
+		case (Mode::Error):
+			return (GL_NONE);
 		case (Mode::Vertices):
 			return (GL_ARRAY_BUFFER);
 		case (Mode::Indexes):

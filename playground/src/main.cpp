@@ -3,7 +3,7 @@
 struct Foo
 {
     int x;
-
+  
     Foo(int p_val) : x(p_val)
     {
         spk::cout << "Foo constructor. x = " << x << std::endl;

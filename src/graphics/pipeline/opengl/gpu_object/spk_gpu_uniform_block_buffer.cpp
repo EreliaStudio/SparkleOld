@@ -3,6 +3,13 @@
 
 namespace spk::GPU
 { 
+    UniformBlockBuffer::UniformBlockBuffer() : 
+		Buffer(Buffer::Mode::Error),
+		_blockBinding(0)
+	{
+
+	}
+
 	UniformBlockBuffer::UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding) : 
 		Buffer(Buffer::Mode::UniformBlock),
 		_blockBinding(p_blockBinding)
