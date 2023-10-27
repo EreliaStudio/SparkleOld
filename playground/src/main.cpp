@@ -1,74 +1,66 @@
 #include "playground.hpp"
 
-class Test : public spk::Widget::Interface
+struct Foo
 {
-private:
-	spk::Pipeline _pipeline;
-	spk::Image _image;
-	std::shared_ptr<spk::Pipeline::Object> _object;
+    int x;
+  
+    Foo(int p_val) : x(p_val)
+    {
+        spk::cout << "Foo constructor. x = " << x << std::endl;
+    }
 
-	struct Unit
-	{
-		spk::Vector2 position;
-	};
+    Foo(const Foo &p_other) : x(p_other.x)
+    {
+        spk::cout << "Foo copy constructor. x = " << x << std::endl;
+    }
 
-	float rotation = 0;
+    Foo &operator=(const Foo &p_other)
+    {
+        spk::cout << "Foo copy assignment operator. x = " << p_other.x << std::endl;
+        if (this != &p_other)
+        {
+            x = p_other.x;
+        }
+        return *this;
+    }
 
-	void _onGeometryChange()
-	{
-		std::vector<Unit> datas = {
-			{spk::Vector2( 0.0f,  1.0f)},
-			{spk::Vector2(-1.0f, -1.0f)},
-			{spk::Vector2( 1.0f, -1.0f)}
-		};
-
-		std::vector<unsigned int> indexes = {
-			0, 1, 2
-		};
-		
-		_object->storage().vertices() << datas << std::endl;
-		_object->storage().indexes() << indexes << std::endl;
-	}
-
-	void _onRender()
-	{		
-		_image.bind(1);
-		
-		_object->render();
-	}
-	
-	bool _onUpdate()
-	{
-		rotation += spk::TimeMetrics::instance()->deltaTime();
-
-		//_object->pushConstants()[L"rotation"] << spk::Matrix4x4::rotationMatrix(spk::Vector3(0, 0, rotation / 1000)) << std::endl;
-
-		return (false);
-	}
-
-public:
-	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-		_pipeline(spk::ShaderModule("colorShader.vert"), spk::ShaderModule("colorShader.frag")),
-		_object(_pipeline.createObject()),
-		_image(L"imageTest.png")
-	{
-		// _pipeline.uniform(L"textureID") << 1 << std::endl;
-	}
-	
-	~Test()
-	{
-
-	}
+    ~Foo()
+    {
+        spk::cout << "Foo destructor. x = " << x << std::endl;
+    }
 };
+
+void testObjectDestruction(spk::Pool<Foo> &p_pool)
+{
+    spk::cout << "Entering testObjectDestruction." << std::endl;
+	spk::cout << "Pool size: " << p_pool.size() << std::endl;
+    auto obj = p_pool.obtain(3);
+    spk::cout << "Inside testObjectDestruction, obj x: " << (*obj).x << std::endl;
+	spk::cout << "Pool size: " << p_pool.size() << std::endl;
+    spk::cout << "Exiting testObjectDestruction." << std::endl;
+	spk::cout << "Pool size: " << p_pool.size() << std::endl;
+}
 
 int main()
 {
-	spk::Application app(L"Coucou", 400);
-	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Qwerty);
+    spk::Pool<Foo> myPool;
 
-	std::shared_ptr<Test> test = app.addRootWidget<Test>(L"Test");
-	test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
-	test->activate();
+    myPool.reserve(3, 0);
 
-	return (app.run());
-};
+    spk::cout << "After reserve, pool size: " << myPool.size() << std::endl;
+
+    auto obj1 = myPool.obtain(1);
+    auto obj2 = myPool.obtain(2);
+
+    spk::cout << "After obtaining two objects, pool size: " << myPool.size() << std::endl;
+    spk::cout << "obj1 x: " << (*obj1).x << std::endl;
+    spk::cout << "obj2 x: " << (*obj2).x << std::endl;
+
+    testObjectDestruction(myPool);
+
+	spk::cout << "Outside function pool size: " << myPool.size() << std::endl;
+
+    spk::cout << "Exiting main function." << std::endl;
+
+    return 0;
+}
