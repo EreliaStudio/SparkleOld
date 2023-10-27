@@ -92,6 +92,28 @@ namespace spk
 		void _checkCodeValidity();
 
         /**
+         * @brief Check if there is a name collision between predefined structures of Sparkle and user defined ones.
+        */
+        bool _checkStructureNameCollision();
+
+        /**
+         * @brief Calculate the end of the `#version` line, where Sparkle should insert the predefined structure used by it.
+        */
+        size_t _findInsertionPoint();
+
+        /**
+         * @brief Insert the predefined Sparkle GLSL Structures inside the shader code, after the `#version` line
+        */
+		void _insertStructuresLines();
+
+        /**
+         * @brief Insert the structures natives to Sparkle directly inside the code.
+         * 
+         * @throw Will throw an exception if a structure defined by the user have the same name as one of the native structure.
+         */
+		void _insertSparkleStructuresDefinition();
+
+        /**
          * @brief Compacts shader code to a standardized format.
          * 
          * @param p_code The shader code to be compactified.

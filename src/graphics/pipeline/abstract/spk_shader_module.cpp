@@ -8,18 +8,22 @@ namespace spk
 {
 	void ShaderModule::_checkCodeValidity()
 	{
+	
 	}
 
 	ShaderModule::ShaderModule(const std::filesystem::path &p_filePath) :
 		ShaderModule::ShaderModule(p_filePath.filename().string(), spk::getFileContentAsString(p_filePath))
-	{}
+	{
+		
+	}
 
 	ShaderModule::ShaderModule(const std::string &p_name, const std::string &p_code) :
 		_name(p_name),
 		_code(p_code)
 	{
 		_checkCodeValidity();
-		_parseInstructions(_compactify(p_code));
+		_insertSparkleStructuresDefinition();
+		_parseInstructions(_compactify(_code));
 	}
 
 	const std::string& ShaderModule::name() const
