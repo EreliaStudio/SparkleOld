@@ -11,11 +11,10 @@ namespace spk::WidgetComponent
 		_borderColor(_defaultBorderColor)
 	{
 		if (_renderingPipeline == nullptr)
-		{
 			_renderingPipeline = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule, boxComponentFragmentShaderModule);
-		}
-		_renderingObjects[0] = _renderingPipeline->createObject();
-		_renderingObjects[1] = _renderingPipeline->createObject();
+			
+		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
+		_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
 	}
 
 	void Box::setBackgroundColor(const spk::Color& p_backgroundColor)
@@ -65,15 +64,15 @@ namespace spk::WidgetComponent
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Vector2(-0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Vector2(0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Vector2(-0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Vector2(0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
 		{
-			0, 1, 2
+			0, 1, 2, 2, 1, 3
 		};
 
 		_renderingObjects[BackgroundIndex]->storage().vertices() << points << std::endl;
@@ -87,15 +86,15 @@ namespace spk::WidgetComponent
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Vector2(-1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Vector2(1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Vector2(-1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Vector2(1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
 		{
-			0, 1, 2
+			0, 1, 2, 2, 1, 3
 		};
 
 		_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
@@ -141,17 +140,19 @@ namespace spk::WidgetComponent
 	{
 		if (_area.needUpdate == true)
 			_updateArea();
+
 		if (_depth.needUpdate == true)
 			_updateDepth();
+
 		if (_backgroundColor.needUpdate == true)
 			_updateBackgroundColor();
+
 		if (_borderColor.needUpdate == true)
 			_updateBorderColor();
+
 		if (_borderSize.needUpdate == true)
 			_updateBorderSize();
 
-		spk::cout << "Border     - Nb indexes : " << _renderingObjects[BorderIndex]->nbIndexes() << std::endl;
-		spk::cout << "Background - Nb indexes : " << _renderingObjects[BackgroundIndex]->nbIndexes() << std::endl;
 		_renderingObjects[BorderIndex]->render();
 		_renderingObjects[BackgroundIndex]->render();
 	}

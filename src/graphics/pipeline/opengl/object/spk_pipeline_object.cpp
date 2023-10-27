@@ -5,16 +5,19 @@ namespace spk
 {
 	void Pipeline::OpenGLObject::_pushVerticesData(const uint8_t* p_data, size_t p_dataSize)
 	{
+		_aggregator.activate();
 		_storageBuffer.pushVerticesData(p_data, p_dataSize);
 	}
 
 	void Pipeline::OpenGLObject::_pushIndexesData(const uint8_t* p_data, size_t p_dataSize)
 	{
+		_aggregator.activate();
 		_storageBuffer.pushIndexesData(p_data, p_dataSize);
 	}
 
 	void Pipeline::OpenGLObject::_pushPushConstantsData(const uint8_t* p_data, size_t p_dataSize)
 	{
+		_aggregator.activate();
 		_pushConstantBuffer.push(p_data, p_dataSize);
 	}
 
@@ -22,7 +25,9 @@ namespace spk
 	{
 		_aggregator.activate();
 		_storageBuffer.activate();
-		_pushConstantBuffer.activate();
+
+		if (_pushConstantBuffer.isValid() == true)
+			_pushConstantBuffer.activate();
 	}
 			
 	static GLenum convertAttributeTypeToGLenum(const ShaderLayout::Data::Type &p_input)
@@ -55,6 +60,7 @@ namespace spk
 					p_storageBufferLayout.stride()
 				);
 		}
+		_storageBuffer.deactivate();
 	}
 	
 	/**
@@ -96,6 +102,8 @@ namespace spk
 			_pushConstantBuffer = GPU::UniformBlockBuffer(static_cast<Pipeline*>(p_owner)->_program, p_pushConstantsLayout.type(), findFirstBindingAvailable(static_cast<Pipeline*>(p_owner)->_shaderLayout));
 		}
 		_configureStorageBuffer(p_storageBufferLayout);
+
+		_aggregator.deactivate();
 	}
 
 	std::shared_ptr<Pipeline::Object> Pipeline::_loadObject(const ShaderLayout::StorageBufferLayout& p_storageLayout, const ShaderLayout::PushConstantsLayout& p_pushConstantsLayout)

@@ -92,14 +92,14 @@ namespace spk::Widget
 		_geometryEdited = true;
 	}
 
-	void Interface::setSize(const spk::Vector2Int& p_size)
+	void Interface::setSize(const spk::Vector2UInt& p_size)
 	{
 		_area.setSize(p_size);
 		
 		_geometryEdited = true;
 	}
 
-	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size)
+	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
 	{
 		_area = spk::Area(p_anchor, p_size);
 		

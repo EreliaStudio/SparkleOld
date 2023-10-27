@@ -91,14 +91,14 @@ namespace spk::Widget
 		 * @brief Set the size of the widget.
 		 * @param p_size The size of the widget.
 		 */
-		void setSize(const spk::Vector2Int& p_size);
+		void setSize(const spk::Vector2UInt& p_size);
 
 		/**
 		 * @brief Set the geometry of the widget.
 		 * @param p_anchor The anchor position of the widget.
 		 * @param p_size The size of the widget.
 		 */
-		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size);
+		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size);
 
 		/**
 		 * @brief Set the geometry of the widget.

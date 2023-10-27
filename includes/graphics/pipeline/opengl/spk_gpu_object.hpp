@@ -28,6 +28,8 @@ namespace spk::GPU
          * Deactivates the Aggregator.
          */
         void deactivate();
+
+        GLuint vao() const;
     };
 
     /**
@@ -64,6 +66,14 @@ namespace spk::GPU
          */
         Buffer(const Mode &p_mode);
 
+        GLuint vbo() const;
+
+        /**
+         * @brief Check the buffer type, to certify its validity
+         * @return True if the buffer mode is different from Error, false if it's equal.
+        */
+        bool isValid() const;
+
         /**
          * Pushes data into the buffer.
          */
@@ -94,6 +104,9 @@ namespace spk::GPU
          * Default constructor.
          */
         StorageBuffer();
+
+        const GPU::Buffer& verticesBuffer() const;
+        const GPU::Buffer& indexesBuffer() const;
 
         /**
          * Adds a storage attribute.

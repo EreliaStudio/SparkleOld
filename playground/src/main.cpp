@@ -1,14 +1,17 @@
 #include "playground.hpp"
 
-struct Foo
+class Test : public spk::Widget::Interface
 {
 private:
 	spk::WidgetComponent::Box _box;
 
 	void _onGeometryChange()
 	{
+        DEBUG_LINE();
 		_box.setGeometry(area());
+        DEBUG_LINE();
 		_box.setDepth(1.0f);
+        DEBUG_LINE();
 	}
 
 	void _onRender()
@@ -33,37 +36,14 @@ public:
 	}
 };
 
-void testObjectDestruction(spk::Pool<Foo> &p_pool)
-{
-    spk::cout << "Entering testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    auto obj = p_pool.obtain(3);
-    spk::cout << "Inside testObjectDestruction, obj x: " << (*obj).x << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    spk::cout << "Exiting testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-}
-
 int main()
 {
-    spk::Pool<Foo> myPool;
+	spk::Application app(L"Playground", 400);
+	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
-    myPool.reserve(3, 0);
+	std::shared_ptr<Test> test = app.addRootWidget<Test>(L"Test");
+	test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
+	test->activate();
 
-    spk::cout << "After reserve, pool size: " << myPool.size() << std::endl;
-
-    auto obj1 = myPool.obtain(1);
-    auto obj2 = myPool.obtain(2);
-
-    spk::cout << "After obtaining two objects, pool size: " << myPool.size() << std::endl;
-    spk::cout << "obj1 x: " << (*obj1).x << std::endl;
-    spk::cout << "obj2 x: " << (*obj2).x << std::endl;
-
-    testObjectDestruction(myPool);
-
-	spk::cout << "Outside function pool size: " << myPool.size() << std::endl;
-
-    spk::cout << "Exiting main function." << std::endl;
-
-    return 0;
-}
+	return (app.run());
+};

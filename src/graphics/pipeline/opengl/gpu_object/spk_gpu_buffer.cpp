@@ -1,12 +1,26 @@
 #include "graphics/pipeline/opengl/spk_gpu_object.hpp"
 #include "spk_basic_functions.hpp"
+#include "graphics/pipeline/spk_pipeline_basic_functions.hpp"
 
 namespace spk::GPU
 {
 	Buffer::Buffer(const Buffer::Mode& p_mode) :
 		_mode(_convertModeToGLenum(p_mode))
 	{
-		glGenBuffers(1, &_vbo);
+		if (isValid() == true)
+		{
+			glGenBuffers(1, &_vbo);
+		}
+	}
+
+	GLuint Buffer::vbo() const
+	{
+		return (_vbo);
+	}
+	
+	bool Buffer::isValid() const
+	{
+		return (_mode != GL_NONE);
 	}
 
 	GLenum Buffer::_convertModeToGLenum(const Buffer::Mode &p_input)
@@ -28,7 +42,11 @@ namespace spk::GPU
 
 	void Buffer::push(const void* data, const size_t dataSize)
 	{
+		if (isValid() == false)
+			spk::throwException(L"Can't push an uninitialized buffer");
+
 		activate();
+
 		_size = dataSize;
 
 		if (_pushedSize < dataSize)
@@ -44,11 +62,17 @@ namespace spk::GPU
 
 	void Buffer::activate()
 	{
+		if (isValid() == false)
+			spk::throwException(L"Can't activate an uninitialized buffer");
+
 		glBindBuffer(_mode, _vbo);
 	}
 
 	void Buffer::deactivate()
 	{
+		if (isValid() == false)
+			spk::throwException(L"Can't deactivate an uninitialized buffer");
+
 		glBindBuffer(_mode, 0);
 	}
 }

@@ -13,6 +13,7 @@ namespace spk::WidgetComponent
 		static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
 		static inline const size_t BackgroundIndex = 0;
 		static inline const size_t BorderIndex = 1;
+		
 		std::shared_ptr<spk::Pipeline::Object> _renderingObjects[2];
 
 		static inline spk::Value<Area>::Default _defaultArea = spk::Area(0, 0);

@@ -17,4 +17,9 @@ namespace spk::GPU
 	{
 		glBindVertexArray(0);
 	}
+
+    GLuint Aggregator::vao() const
+	{
+		return (_VAO);
+	}
 }
