@@ -8,10 +8,10 @@ var searchData=
   ['fieldmap_221',['FieldMap',['../classspk_1_1FieldMap.html#ace43264b188db7c61a4275744967f39e',1,'spk::FieldMap::FieldMap()'],['../classspk_1_1FieldMap.html',1,'spk::FieldMap']]],
   ['fields_222',['fields',['../classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#ac503c62ea4cc16953da7e4a3c8e137d9',1,'spk::ShaderLayout::FieldArrayLayout']]],
   ['file_223',['File',['../classspk_1_1JSON_1_1File.html#a448f3a4b90930b87408c35d9b2b3cb53',1,'spk::JSON::File::File()'],['../classspk_1_1JSON_1_1File.html#ae33058d0101c9fb12709d51c5a8ec655',1,'spk::JSON::File::File(const std::filesystem::path &amp;p_filePath)'],['../classspk_1_1JSON_1_1File.html',1,'spk::JSON::File']]],
-  ['filedescriptor_224',['FileDescriptor',['../classspk_1_1Network_1_1Socket.html#a24d549773ef46263a0c24f6fb763a864',1,'spk::Network::Socket']]],
-  ['filedescriptor_225',['fileDescriptor',['../classspk_1_1Network_1_1Socket.html#ae1b82a53e665de71d5a60257ad4e680b',1,'spk::Network::Socket']]],
-  ['filedescriptor_226',['FileDescriptor',['../classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6',1,'spk::Network::Socket']]],
-  ['filedescriptor_227',['fileDescriptor',['../classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed',1,'spk::Network::Socket']]],
+  ['filedescriptor_224',['fileDescriptor',['../classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed',1,'spk::Network::Socket']]],
+  ['filedescriptor_225',['FileDescriptor',['../classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6',1,'spk::Network::Socket']]],
+  ['filedescriptor_226',['fileDescriptor',['../classspk_1_1Network_1_1Socket.html#ae1b82a53e665de71d5a60257ad4e680b',1,'spk::Network::Socket']]],
+  ['filedescriptor_227',['FileDescriptor',['../classspk_1_1Network_1_1Socket.html#a24d549773ef46263a0c24f6fb763a864',1,'spk::Network::Socket']]],
   ['filtering_228',['filtering',['../classspk_1_1AbstractImage.html#a48f93a153d55fbe69f4994c0564d991f',1,'spk::AbstractImage']]],
   ['filtering_229',['Filtering',['../classspk_1_1AbstractImage.html#abe472a81910b118bef774cb4f3d0db65',1,'spk::AbstractImage']]],
   ['findfirstbindingavailable_230',['findFirstBindingAvailable',['../namespacespk.html#accca98d92e095c0e4bac94f5c8bad561',1,'spk']]],
@@ -22,8 +22,9 @@ var searchData=
   ['formula_235',['Formula',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a184cef251747aff52f6a393fe0173e77a313a6a3d25aa041ee3dc3cbd65d4f22b',1,'spk::Widget::Canvas::Geometry::Value']]],
   ['formulavalue_236',['formulaValue',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#aea082ab2c61e36cd3c8d0821976e44d8',1,'spk::Widget::Canvas::Geometry::Value']]],
   ['fragmentmodule_237',['fragmentModule',['../classspk_1_1ShaderLayout.html#a5e13caac7f06ef00b21b9c7cacbd9eec',1,'spk::ShaderLayout']]],
-  ['frame_238',['frame',['../classspk_1_1Window.html#a91c8bd5093a8d920486fedc244e29d54',1,'spk::Window']]],
-  ['frame_239',['Frame',['../classspk_1_1Frame.html#a5d541fcfc68be26580d3df8c95ad14a6',1,'spk::Frame::Frame(const std::wstring &amp;p_title, const spk::Vector2UInt &amp;p_size, void *p_ptr=nullptr)'],['../classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649',1,'spk::Frame::Frame(const std::wstring &amp;p_title, const Vector2UInt &amp;p_size, void *p_ptr=nullptr)'],['../classspk_1_1Frame.html',1,'spk::Frame']]],
-  ['front_240',['front',['../classspk_1_1ThreadSafeQueue.html#acffc6621639cde4e29248fec8db7722e',1,'spk::ThreadSafeQueue::front()'],['../classspk_1_1ThreadSafeQueue.html#abdb4b57746427a0f8b7f4e8aff55eff4',1,'spk::ThreadSafeQueue::front() const']]],
-  ['function_241',['Function',['../structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34a86408593c34af77fdd90df932f8b5261',1,'spk::ShaderModule::Instruction']]]
+  ['frame_238',['Frame',['../classspk_1_1Frame.html#a5d541fcfc68be26580d3df8c95ad14a6',1,'spk::Frame::Frame(const std::wstring &amp;p_title, const spk::Vector2UInt &amp;p_size, void *p_ptr=nullptr)'],['../classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649',1,'spk::Frame::Frame(const std::wstring &amp;p_title, const Vector2UInt &amp;p_size, void *p_ptr=nullptr)']]],
+  ['frame_239',['frame',['../classspk_1_1Window.html#a91c8bd5093a8d920486fedc244e29d54',1,'spk::Window']]],
+  ['frame_240',['Frame',['../classspk_1_1Frame.html',1,'spk']]],
+  ['front_241',['front',['../classspk_1_1ThreadSafeQueue.html#acffc6621639cde4e29248fec8db7722e',1,'spk::ThreadSafeQueue::front()'],['../classspk_1_1ThreadSafeQueue.html#abdb4b57746427a0f8b7f4e8aff55eff4',1,'spk::ThreadSafeQueue::front() const']]],
+  ['function_242',['Function',['../structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34a86408593c34af77fdd90df932f8b5261',1,'spk::ShaderModule::Instruction']]]
 ];

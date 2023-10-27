@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['permutationtablesize_1436',['PermutationTableSize',['../classspk_1_1IPerlin.html#a508c2b883fcb9b05b749247a34a05cf9',1,'spk::IPerlin']]]
+  ['permutationtablesize_1440',['PermutationTableSize',['../classspk_1_1IPerlin.html#a508c2b883fcb9b05b749247a34a05cf9',1,'spk::IPerlin']]]
 ];
