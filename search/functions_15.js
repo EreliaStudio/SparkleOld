@@ -5,7 +5,7 @@ var searchData=
   ['uniform_1303',['uniform',['../classspk_1_1AbstractPipeline.html#aadb3b6e42136edaa85b12b0f91a4951b',1,'spk::AbstractPipeline']]],
   ['uniform_1304',['Uniform',['../classspk_1_1AbstractPipeline_1_1Uniform.html#afc2877788484a3d0458718159d189db6',1,'spk::AbstractPipeline::Uniform']]],
   ['uniformblock_1305',['UniformBlock',['../classspk_1_1AbstractPipeline_1_1UniformBlock.html#aa80fa97c8859b424e0f45655560b9994',1,'spk::AbstractPipeline::UniformBlock']]],
-  ['uniformblockbuffer_1306',['UniformBlockBuffer',['../classspk_1_1GPU_1_1UniformBlockBuffer.html#af4db25b0db5a15222643787b0f350073',1,'spk::GPU::UniformBlockBuffer']]],
+  ['uniformblockbuffer_1306',['UniformBlockBuffer',['../classspk_1_1GPU_1_1UniformBlockBuffer.html#a037c330271d63600e35f4b27d27f966e',1,'spk::GPU::UniformBlockBuffer::UniformBlockBuffer()'],['../classspk_1_1GPU_1_1UniformBlockBuffer.html#af4db25b0db5a15222643787b0f350073',1,'spk::GPU::UniformBlockBuffer::UniformBlockBuffer(const GLuint &amp;p_program, const std::wstring &amp;p_uniformType, const size_t &amp;p_blockBinding)']]],
   ['uniformblocklayout_1307',['UniformBlockLayout',['../classspk_1_1ShaderLayout_1_1UniformBlockLayout.html#a19cdcf3e03cccf1d34ca267c21526409',1,'spk::ShaderLayout::UniformBlockLayout']]],
   ['uniformblocklayouts_1308',['uniformBlockLayouts',['../classspk_1_1ShaderLayout.html#a2e245ee31b2ef2d90c7f92df9d71c69d',1,'spk::ShaderLayout']]],
   ['universalcodedecoder_1309',['universalCodeDecoder',['../namespacespk.html#a736875e1ee6b20eb1e2dd997ba8d354e',1,'spk']]],
