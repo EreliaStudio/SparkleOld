@@ -72,7 +72,11 @@ namespace spk
 				(*_referenceCount)--;
 
 				if (*_referenceCount == 0)
+				{
+					_content->~TType();
 					_source->push_back(_content);
+				}
+
 			}
 
 			/**
