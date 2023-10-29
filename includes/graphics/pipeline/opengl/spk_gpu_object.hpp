@@ -154,6 +154,8 @@ namespace spk::GPU
          */
         UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
 
+        const GLuint& blockIndex() const;
+
         /**
          * Activates the UniformBlockBuffer.
          */

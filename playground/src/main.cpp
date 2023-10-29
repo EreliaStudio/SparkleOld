@@ -7,11 +7,8 @@ private:
 
 	void _onGeometryChange()
 	{
-        DEBUG_LINE();
 		_box.setGeometry(area());
-        DEBUG_LINE();
 		_box.setDepth(1.0f);
-        DEBUG_LINE();
 	}
 
 	void _onRender()

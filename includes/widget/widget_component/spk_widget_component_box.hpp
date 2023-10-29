@@ -11,10 +11,12 @@ namespace spk::WidgetComponent
 	{
 	private:
 		static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
+		static inline std::shared_ptr<spk::Pipeline> _renderingPipelines[4] = {nullptr, nullptr, nullptr, nullptr};
 		static inline const size_t BackgroundIndex = 0;
 		static inline const size_t BorderIndex = 1;
 		
 		std::shared_ptr<spk::Pipeline::Object> _renderingObjects[2];
+		std::shared_ptr<spk::Pipeline::Object> _renderingObjects2[4];
 
 		static inline spk::Value<Area>::Default _defaultArea = spk::Area(0, 0);
 		static inline spk::Value<float>::Default _defaultDepth = 0.0f;

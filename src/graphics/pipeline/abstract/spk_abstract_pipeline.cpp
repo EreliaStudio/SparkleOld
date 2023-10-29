@@ -33,6 +33,7 @@ namespace spk
 				spk::throwException(L"Uniform named [" + uniformBlockLayout.name() + L"] collide with an existing uniform of different size, at set [" + std::to_wstring(uniformBlockLayout.key().set) + L"] and binding [" + std::to_wstring(uniformBlockLayout.key().binding) + L"]");
 			
 			_uniformKeys[uniformBlockLayout.name()] = uniformBlockLayout.key();
+			_uniformKeys[uniformBlockLayout.type()] = uniformBlockLayout.key();
 		}
 	}
 

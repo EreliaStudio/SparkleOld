@@ -30,6 +30,11 @@ namespace spk::GPU
 		deactivate();
 	}
 
+    const GLuint& UniformBlockBuffer::blockIndex() const
+	{
+		return (_blockIndex);
+	}
+
 	void UniformBlockBuffer::activate()
 	{
 		glBindBuffer(_mode, _vbo);

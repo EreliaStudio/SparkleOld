@@ -6,7 +6,8 @@
 
 namespace spk
 {
-    ShaderLayout::OutputBufferLayout::OutputBufferLayout(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
+    ShaderLayout::OutputBufferLayout::OutputBufferLayout(const StructureLayout &p_structureLayout) :
+        FieldArrayLayout(p_structureLayout, 1 * sizeof(float))
     {
     }
 

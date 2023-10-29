@@ -2,7 +2,7 @@
 
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"
-#include "graphics/spk_area.hpp"
+#include "graphics/spk_viewport.hpp"
 #include "application/modules/spk_widget_module.hpp"
 
 namespace spk::Widget

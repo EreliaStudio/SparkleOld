@@ -7,13 +7,13 @@
 namespace spk
 {
     ShaderLayout::PushConstantsLayout::PushConstantsLayout(const StructureLayout& p_structureLayout) :
-        FieldArrayLayout(p_structureLayout)
+        FieldArrayLayout(p_structureLayout, 4 * sizeof(float))
     {
     }
 
     void ShaderLayout::PushConstantsLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
-        std::regex outer_re(R"(layout\(push_constant\) uniform (.*?) \{(.*?)\} (.*?);)");
+        std::regex outer_re(R"(layout\(push_constant\) uniform (.*?) \{(.*?)\}(?:\s*(\w+))?;)");
         std::smatch outer_match;
 
         if (std::regex_search(p_instruction.code, outer_match, outer_re))
@@ -49,6 +49,7 @@ namespace spk
         {
             spk::throwException(L"Unexpected PushConstant instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout(push_constant) uniform [PushConstantStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [PushConstantName];");
         }
+        DEBUG_LINE();
     }
 
     std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::PushConstantsLayout& p_layout)

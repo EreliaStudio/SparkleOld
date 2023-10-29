@@ -11,10 +11,30 @@ namespace spk::WidgetComponent
 		_borderColor(_defaultBorderColor)
 	{
 		if (_renderingPipeline == nullptr)
+		{
 			_renderingPipeline = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule, boxComponentFragmentShaderModule);
-			
+			_renderingPipelines[0] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule1, boxComponentFragmentShaderModule1);
+			_renderingPipelines[1] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule2, boxComponentFragmentShaderModule2);
+			_renderingPipelines[2] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule3, boxComponentFragmentShaderModule3);
+			_renderingPipelines[3] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule4, boxComponentFragmentShaderModule4);
+		}
+
+		spk::cout << " --- Base" << std::endl;
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
-		_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
+		spk::cout << std::endl;
+		spk::cout << " --- Swap A" << std::endl;
+		_renderingObjects2[0] = _renderingPipelines[0]->createObject();
+		spk::cout << std::endl;
+		spk::cout << " --- Swap B" << std::endl;
+		_renderingObjects2[1] = _renderingPipelines[1]->createObject();
+		spk::cout << std::endl;
+		spk::cout << " --- Swap C" << std::endl;
+		_renderingObjects2[2] = _renderingPipelines[2]->createObject();
+		spk::cout << std::endl;
+		spk::cout << " --- Swap D" << std::endl;
+		_renderingObjects2[3] = _renderingPipelines[3]->createObject();
+		spk::cout << std::endl;
+		//_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
 	}
 
 	void Box::setBackgroundColor(const spk::Color& p_backgroundColor)
@@ -97,8 +117,8 @@ namespace spk::WidgetComponent
 			0, 1, 2, 2, 1, 3
 		};
 
-		_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
-		_renderingObjects[BorderIndex]->storage().indexes() << indexes << std::endl;
+		//_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
+		//_renderingObjects[BorderIndex]->storage().indexes() << indexes << std::endl;
 	}
 
 	
@@ -112,8 +132,8 @@ namespace spk::WidgetComponent
 	
 	void Box::_updateDepth()
 	{
-		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() + 0.01f;
-		_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
+		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() + 0.000001f;
+		//_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
 
 		_depth.needUpdate = false;
 	}
@@ -126,7 +146,7 @@ namespace spk::WidgetComponent
 	
 	void Box::_updateBorderColor()
 	{
-		_renderingObjects[BorderIndex]->pushConstants(L"color") = _borderColor.value.value();
+		//_renderingObjects[BorderIndex]->pushConstants(L"color") = _borderColor.value.value();
 		_borderColor.needUpdate = false;
 	}
 
@@ -153,7 +173,8 @@ namespace spk::WidgetComponent
 		if (_borderSize.needUpdate == true)
 			_updateBorderSize();
 
-		_renderingObjects[BorderIndex]->render();
+		// spk::cout << L"Color : " << _backgroundColor.value.value() << std::endl;
+		//_renderingObjects[BorderIndex]->render();
 		_renderingObjects[BackgroundIndex]->render();
 	}
 }

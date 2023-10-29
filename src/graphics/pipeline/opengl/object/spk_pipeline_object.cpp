@@ -101,6 +101,37 @@ namespace spk
 		{
 			_pushConstantBuffer = GPU::UniformBlockBuffer(static_cast<Pipeline*>(p_owner)->_program, p_pushConstantsLayout.type(), findFirstBindingAvailable(static_cast<Pipeline*>(p_owner)->_shaderLayout));
 		}
+
+		std::vector<const GLchar*> fieldNames;
+		for (const auto& field : p_pushConstantsLayout.fields())
+		{ 
+			fieldNames.push_back(field.name.c_str());
+		}
+
+		GLint numUniforms;
+		glGetActiveUniformBlockiv(static_cast<Pipeline*>(p_owner)->_program, _pushConstantBuffer.blockIndex(), GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS, &numUniforms);
+
+		GLint uniformNameLength;
+		glGetActiveUniformBlockiv(static_cast<Pipeline*>(p_owner)->_program, _pushConstantBuffer.blockIndex(), GL_UNIFORM_BLOCK_NAME_LENGTH, &uniformNameLength);
+
+		spk::cout << "Uniform block name : " << uniformNameLength << std::endl;
+
+		std::vector<GLint> uniformIndices(numUniforms);
+		glGetActiveUniformBlockiv(static_cast<Pipeline*>(p_owner)->_program, _pushConstantBuffer.blockIndex(), GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES, uniformIndices.data());
+
+		std::vector<GLint> uniformOffsets(numUniforms);
+		glGetActiveUniformsiv(static_cast<Pipeline*>(p_owner)->_program, numUniforms, reinterpret_cast<GLuint*>(uniformIndices.data()), GL_UNIFORM_OFFSET, uniformOffsets.data());
+
+		for (size_t i = 0; i < uniformOffsets.size(); ++i)
+		{
+			spk::cout << "Field ["
+				<< std::setw(10) << spk::to_wstring(fieldNames[i]) << "]["
+				<< std::setw(3) << (p_pushConstantsLayout.fields()[i].data.format * p_pushConstantsLayout.fields()[i].data.size)<< " bytes][Indice : "
+				<< std::setw(2) << uniformIndices[i] << "] : Opengl ["
+				<< std::setw(3) << uniformOffsets[i] << "] / Me ["
+				<< std::setw(3) << p_pushConstantsLayout.fields()[i].offset << "]" << std::endl;
+		}
+
 		_configureStorageBuffer(p_storageBufferLayout);
 
 		_aggregator.deactivate();

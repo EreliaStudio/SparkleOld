@@ -188,6 +188,11 @@ namespace spk
 
 		private:
 			/**
+			 * @brief The minimum size of bytes required to defined a "unit" of memory padding
+			*/
+			size_t _paddingSize;
+
+			/**
 			 * @brief The stride size of the field array.
 			 */
 			size_t _stride;
@@ -209,7 +214,7 @@ namespace spk
 			 * 
 			 * @param p_structureLayout Reference to the associated StructureLayout.
 			 */
-			FieldArrayLayout(const StructureLayout& p_structureLayout);
+			FieldArrayLayout(const StructureLayout& p_structureLayout, const size_t& p_paddingSize);
 
 			/**
 			 * @brief Inserts a new field into the layout.
