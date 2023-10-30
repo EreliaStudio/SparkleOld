@@ -17,11 +17,8 @@ layout(push_constant) uniform PushConstant
 out vec4 fragmentColor;
 
 void main() {
-    gl_Position = vec4(inPosition, 0.0f, 1.0);
-	if (pushConstants.color == vec4(0.0,0.0,0.0,0.0))
-		fragmentColor = vec4(1.0, 0.0, 0.0, 1.0);
-	else
-		fragmentColor = vec4(0.0, 1.0, 0.0, 1.0);
+    gl_Position = vec4(inPosition, pushConstants.depth, 1.0);
+	fragmentColor = pushConstants.color;
 })");
 
 	spk::ShaderModule boxComponentFragmentShaderModule = spk::ShaderModule(

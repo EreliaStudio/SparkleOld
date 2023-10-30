@@ -74,25 +74,27 @@ namespace spk
 				{
 					spk::throwException(L"Field [" + _name + L"] expected a size of [" + std::to_wstring(_size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
 				}
-				std::memcpy(_data, &p_value, sizeof(TType));
+				std::memcpy(_data + _offset, &p_value, sizeof(TType));
 				return (*this);
 			}
             
             /**
             * Overload insertion operator to insert typed data into this field.
             */
-			template <typename TType>
-			Field &operator = (const TType &p_value)
-			{
-				if (sizeof(TType) != _size)
-				{
-					spk::throwException(L"Field [" + _name + L"] expected a size of [" + std::to_wstring(_size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
-				}
-				std::memcpy(_data, &p_value, sizeof(TType));
+            template <typename TType>
+            Field &operator = (const TType &p_value)
+            {
+                if (sizeof(TType) != _size)
+                {
+                    spk::throwException(L"Field [" + _name + L"] expected a size of [" + std::to_wstring(_size) + L"] and been provided with a structure of size [" + std::to_wstring(sizeof(TType)) + L"]");
+                }
+                std::memcpy(_data + _offset, &p_value, sizeof(TType));
                 if (_needUpdate != nullptr)
+                {
                     *_needUpdate = true;
-				return (*this);
-			}
+                }
+                return (*this);
+            }
 
             /**
             * Overload insertion operator for functions.

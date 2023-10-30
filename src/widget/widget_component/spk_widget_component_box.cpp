@@ -16,7 +16,7 @@ namespace spk::WidgetComponent
 		}
 
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
-		//_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
+		_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
 	}
 
 	void Box::setBackgroundColor(const spk::Color& p_backgroundColor)
@@ -66,10 +66,10 @@ namespace spk::WidgetComponent
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(0.9, -0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(0.9, 0.9), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Vector2(-0.9, -0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Vector2(0.9, -0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Vector2(-0.9, 0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Vector2(0.9, 0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
@@ -88,10 +88,10 @@ namespace spk::WidgetComponent
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(1, -1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(1, 1), // spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Vector2(-1, -1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Vector2(1, -1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Vector2(-1, 1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Vector2(1, 1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
@@ -99,8 +99,8 @@ namespace spk::WidgetComponent
 			0, 1, 2, 2, 1, 3
 		};
 
-		//_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
-		//_renderingObjects[BorderIndex]->storage().indexes() << indexes << std::endl;
+		_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
+		_renderingObjects[BorderIndex]->storage().indexes() << indexes << std::endl;
 	}
 
 	
@@ -114,8 +114,8 @@ namespace spk::WidgetComponent
 	
 	void Box::_updateDepth()
 	{
-		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() + 0.000001f;
-		//_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
+		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() - 0.000001f;
+		_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
 
 		_depth.needUpdate = false;
 	}
@@ -123,13 +123,12 @@ namespace spk::WidgetComponent
 	void Box::_updateBackgroundColor()
 	{
 		_renderingObjects[BackgroundIndex]->pushConstants(L"color") = _backgroundColor.value.value();
-		spk::cout << "Pushing color [" << _backgroundColor.value.value() << "]" << std::endl;
 		_backgroundColor.needUpdate = false;
 	}
 	
 	void Box::_updateBorderColor()
 	{
-		//_renderingObjects[BorderIndex]->pushConstants(L"color") = _borderColor.value.value();
+		_renderingObjects[BorderIndex]->pushConstants(L"color") = _borderColor.value.value();
 		_borderColor.needUpdate = false;
 	}
 
@@ -156,8 +155,7 @@ namespace spk::WidgetComponent
 		if (_borderSize.needUpdate == true)
 			_updateBorderSize();
 
-		// spk::cout << L"Color : " << _backgroundColor.value.value() << std::endl;
-		//_renderingObjects[BorderIndex]->render();
+		_renderingObjects[BorderIndex]->render();
 		_renderingObjects[BackgroundIndex]->render();
 	}
 }
