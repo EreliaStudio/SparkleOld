@@ -77,7 +77,7 @@ namespace spk::GPU
         /**
          * Pushes data into the buffer.
          */
-        void push(const void *data, const size_t dataSize);
+        void push(const void *p_data, const size_t p_dataSize);
 
         /**
          * Activates the buffer.

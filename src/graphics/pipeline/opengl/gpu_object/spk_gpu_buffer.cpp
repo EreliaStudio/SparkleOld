@@ -40,23 +40,23 @@ namespace spk::GPU
 		return (GL_NONE);
 	}
 
-	void Buffer::push(const void* data, const size_t dataSize)
+	void Buffer::push(const void* p_data, const size_t p_dataSize)
 	{
 		if (isValid() == false)
 			spk::throwException(L"Can't push an uninitialized buffer");
 
 		activate();
 
-		_size = dataSize;
+		_size = p_dataSize;
 
-		if (_pushedSize < dataSize)
+		if (_pushedSize < p_dataSize)
 		{
-			glBufferData(_mode, dataSize, data, GL_DYNAMIC_DRAW);
-			_pushedSize = dataSize;
+			glBufferData(_mode, p_dataSize, p_data, GL_DYNAMIC_DRAW);
+			_pushedSize = p_dataSize;
 		}
 		else
 		{
-			glBufferSubData(_mode, 0, dataSize, data);
+			glBufferSubData(_mode, 0, p_dataSize, p_data);
 		}
 	}
 

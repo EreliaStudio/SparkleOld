@@ -123,6 +123,7 @@ namespace spk::WidgetComponent
 	void Box::_updateBackgroundColor()
 	{
 		_renderingObjects[BackgroundIndex]->pushConstants(L"color") = _backgroundColor.value.value();
+		spk::cout << "Pushing color [" << _backgroundColor.value.value() << "]" << std::endl;
 		_backgroundColor.needUpdate = false;
 	}
 	
