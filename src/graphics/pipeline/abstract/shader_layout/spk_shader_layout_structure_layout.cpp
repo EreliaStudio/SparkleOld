@@ -9,10 +9,10 @@ namespace spk
     ShaderLayout::StructureLayout::StructureLayout()
     {
         _SamplerUniformStructures = {
-            {"sampler1D", Data(Data::Type::Int, 1, sizeof(int))},
-            {"sampler2D", Data(Data::Type::Int, 1, sizeof(int))},
-            {"sampler3D", Data(Data::Type::Int, 1, sizeof(int))},
-            {"samplerCube", Data(Data::Type::Int, 1, sizeof(int))},
+            {"sampler1D", Data(Data::Type::Int, 1, sizeof(int), 1)},
+            {"sampler2D", Data(Data::Type::Int, 1, sizeof(int), 1)},
+            {"sampler3D", Data(Data::Type::Int, 1, sizeof(int), 1)},
+            {"samplerCube", Data(Data::Type::Int, 1, sizeof(int), 1)},
         };
 
         _acceptedSamplerUniformTypeString = L"sampler1D, sampler2D, sampler3D, samplerCube";
@@ -21,23 +21,24 @@ namespace spk
     void ShaderLayout::StructureLayout::reset()
     {
         _structures = {
-            {"float", Data(Data::Type::Float, 1, sizeof(float))},
-            {"int", Data(Data::Type::Int, 1, sizeof(int))},
-            {"uint", Data(Data::Type::UInt, 1, sizeof(unsigned int))},
+            {"float", Data(Data::Type::Float, 1,   sizeof(float),        4)},
+            {"int",   Data(Data::Type::Int,   1,   sizeof(int),          4)}, 
+            {"uint",  Data(Data::Type::UInt,  1,   sizeof(unsigned int), 4)},
 
-            {"vec2", Data(Data::Type::Float, 2, sizeof(float))},
-            {"ivec2", Data(Data::Type::Int, 2, sizeof(int))},
-            {"uvec2", Data(Data::Type::UInt, 2, sizeof(unsigned int))},
+            {"vec2",  Data(Data::Type::Float, 2,   sizeof(float),        8)},
+            {"ivec2", Data(Data::Type::Int,   2,   sizeof(int),          8)},
+            {"uvec2", Data(Data::Type::UInt,  2,   sizeof(unsigned int), 8)},
 
-            {"vec3", Data(Data::Type::Float, 3, sizeof(float))},
-            {"ivec3", Data(Data::Type::Int, 3, sizeof(int))},
-            {"uvec3", Data(Data::Type::UInt, 3, sizeof(unsigned int))},
+            {"vec3",  Data(Data::Type::Float, 3,   sizeof(float),        16)},
+            {"ivec3", Data(Data::Type::Int,   3,   sizeof(int),          16)},
+            {"uvec3", Data(Data::Type::UInt,  3,   sizeof(unsigned int), 16)},
 
-            {"vec4", Data(Data::Type::Float, 4, sizeof(float))},
-            {"ivec4", Data(Data::Type::Int, 4, sizeof(int))},
-            {"uvec4", Data(Data::Type::UInt, 4, sizeof(unsigned int))},
+            {"vec4",  Data(Data::Type::Float, 4,   sizeof(float),        16)},
+            {"ivec4", Data(Data::Type::Int,   4,   sizeof(int),          16)},
+            {"uvec4", Data(Data::Type::UInt,  4,   sizeof(unsigned int), 16)},
 
-            {"mat4", Data(Data::Type::Float, 16, sizeof(float))},
+            {"mat3",  Data(Data::Type::Float, 9,   sizeof(float),        16)},
+            {"mat4",  Data(Data::Type::Float, 16,  sizeof(float),        16)},
         };
     }
 
@@ -75,7 +76,7 @@ namespace spk
                 searchStart = field_match.suffix().first;
             }
 
-            Data structData(Data::Type::Structure, 1, totalStride);
+            Data structData(Data::Type::Structure, 1, totalStride, 1);
             
             _structures[structName] = structData;
         }

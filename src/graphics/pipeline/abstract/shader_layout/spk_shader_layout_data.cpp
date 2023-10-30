@@ -2,18 +2,29 @@
 
 namespace spk
 {
-	ShaderLayout::Data::Data(const Type &p_type, const size_t &p_format, const size_t &p_size) :
+	ShaderLayout::Data::Data() :
+		type(Type::Error),
+		format(1),
+		size(0),
+		paddingFormat(1)
+	{
+		
+	}
+
+	ShaderLayout::Data::Data(const Type &p_type, const size_t &p_format, const size_t &p_size, const size_t& p_paddingFormat) :
 		type(p_type),
 		format(p_format),
-		size(p_size)
+		size(p_size),
+		paddingFormat(p_paddingFormat)
 	{
 
 	}
 
-	ShaderLayout::Data::Data(const size_t &p_size) : 
+	ShaderLayout::Data::Data(const size_t &p_size, const size_t& p_paddingFormat) : 
 		type(Type::Structure),
 		format(1),
-		size(p_size)
+		size(p_size),
+		paddingFormat(p_paddingFormat)
 	{
 
 	}

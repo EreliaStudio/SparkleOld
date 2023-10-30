@@ -13,27 +13,9 @@ namespace spk::WidgetComponent
 		if (_renderingPipeline == nullptr)
 		{
 			_renderingPipeline = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule, boxComponentFragmentShaderModule);
-			_renderingPipelines[0] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule1, boxComponentFragmentShaderModule1);
-			_renderingPipelines[1] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule2, boxComponentFragmentShaderModule2);
-			_renderingPipelines[2] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule3, boxComponentFragmentShaderModule3);
-			_renderingPipelines[3] = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule4, boxComponentFragmentShaderModule4);
 		}
 
-		spk::cout << " --- Base" << std::endl;
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
-		spk::cout << std::endl;
-		spk::cout << " --- Swap A" << std::endl;
-		_renderingObjects2[0] = _renderingPipelines[0]->createObject();
-		spk::cout << std::endl;
-		spk::cout << " --- Swap B" << std::endl;
-		_renderingObjects2[1] = _renderingPipelines[1]->createObject();
-		spk::cout << std::endl;
-		spk::cout << " --- Swap C" << std::endl;
-		_renderingObjects2[2] = _renderingPipelines[2]->createObject();
-		spk::cout << std::endl;
-		spk::cout << " --- Swap D" << std::endl;
-		_renderingObjects2[3] = _renderingPipelines[3]->createObject();
-		spk::cout << std::endl;
 		//_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
 	}
 

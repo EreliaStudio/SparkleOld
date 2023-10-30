@@ -4,10 +4,11 @@
 
 namespace spk
 {
-	ShaderLayout::FieldArrayLayout::FieldArrayLayout(const StructureLayout &p_structureLayout, const size_t& p_paddingSize) :
+	ShaderLayout::FieldArrayLayout::FieldArrayLayout(const StructureLayout &p_structureLayout, const size_t& p_stridePadding) :
 		structureLayout(p_structureLayout),
 		_stride(0),
-		_paddingSize(p_paddingSize)
+		_currentOffset(0),
+		_stridePadding(p_stridePadding)
 	{
 	}
 
@@ -20,10 +21,20 @@ namespace spk
 		newField.data = p_data;
 		newField.location = p_location;
 
-		newField.offset = stride();
+		if ((_currentOffset % p_data.paddingFormat) != 0)
+		{
+			_currentOffset += (p_data.paddingFormat - (_currentOffset % p_data.paddingFormat));
+		}
+
+		newField.offset = _currentOffset;
 
 		_fields.push_back(newField);
-		_stride += (fieldSize > _paddingSize ? fieldSize : _paddingSize);
+		_currentOffset += fieldSize;
+		
+		while (_currentOffset > _stride)
+		{
+			_stride += _stridePadding;
+		}
 	}
 
 	std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::FieldArrayLayout::Field& p_field)
