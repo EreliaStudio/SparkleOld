@@ -28,7 +28,7 @@ namespace spk::Widget
 	{
 		if (isActive() == false)
 			return false;
-		
+
 		return (_onUpdate());
 	}
 
@@ -87,55 +87,56 @@ namespace spk::Widget
 
 	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
 	{
-		_area.setAnchor(p_anchor);
+		_viewport.setAnchor(p_anchor);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::setSize(const spk::Vector2UInt& p_size)
 	{
-		_area.setSize(p_size);
+		_viewport.setSize(p_size);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
 	{
-		_area = spk::Area(p_anchor, p_size);
+		_viewport.setGeometry(spk::Area(p_anchor, p_size));
 		
 		_geometryEdited = true;
 	}
 	
 	void Interface::setGeometry(const spk::Area& p_area)
 	{
-		_area = p_area;
+		_viewport.setGeometry(p_area);
 		
 		_geometryEdited = true;
 	}
 	
 	void Interface::place(const spk::Vector2Int& p_anchor)
 	{
-		_area.setAnchor(p_anchor);
+		_viewport.setAnchor(p_anchor);
 		
 		_geometryEdited = true;
 	}
 	
 	void Interface::move(const spk::Vector2Int& p_delta)
 	{
-		_area.move(p_delta);
+		_viewport.setAnchor(_viewport.area().anchor() + p_delta);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::resize(const spk::Vector2UInt& p_size)
 	{
-		_area.setSize(p_size);
+		_viewport.setSize(p_size);
 		
 		_geometryEdited = true;
 	}
 
 	void Interface::setDepth(const float& p_depth)
 	{
+		spk::cout << "Setting widget [" << _name << "] depth to [" << p_depth << "]" << std::endl;
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;
@@ -154,6 +155,6 @@ namespace spk::Widget
 
 	bool Interface::isPointed(const spk::Vector2Int& p_point)
 	{
-		return (_area.isInside(p_point));
+		return (_viewport.isInside(p_point));
 	}
 };

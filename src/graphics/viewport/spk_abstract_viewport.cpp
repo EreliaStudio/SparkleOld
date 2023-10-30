@@ -2,18 +2,18 @@
 
 namespace spk
 {
-	spk::Area AbstractViewport::_computeActiveAbstractViewport()
+	Area AbstractViewport::_computeActiveAbstractViewport() const
 	{
-		spk::Area currentArea = _area;
+		Area currentArea = _area;
 
 		AbstractViewport* p_currentParent = parent();
 		while (p_currentParent != nullptr)
 		{
-			spk::Area parentArea = p_currentParent->_area;
+			Area parentArea = p_currentParent->_area;
 
-			spk::Vector2Int constrainedAnchor = spk::Vector2Int::min(spk::Vector2Int::max(currentArea.anchor(), parentArea.anchor()), parentArea.anchor() + parentArea.size());
+			Vector2Int constrainedAnchor = Vector2Int::min(Vector2Int::max(currentArea.anchor(), parentArea.anchor()), parentArea.anchor() + parentArea.size());
 
-			spk::Vector2UInt constrainedSize = spk::Vector2UInt::min(currentArea.size(), parentArea.size() - (constrainedAnchor - parentArea.anchor()));
+			Vector2UInt constrainedSize = Vector2UInt::min(currentArea.size(), parentArea.size() - (constrainedAnchor - parentArea.anchor()));
 
 			currentArea.setAnchor(constrainedAnchor);
 			currentArea.setSize(constrainedSize);
@@ -29,28 +29,49 @@ namespace spk
 		
 	}
 
-	constexpr const spk::Area& AbstractViewport::area() const
-	{
-		return _area;
-	}
-
-	void AbstractViewport::setGeometry(const spk::Area& p_area)
+	void AbstractViewport::setGeometry(const Area& p_area)
 	{
 		_area = p_area;
 	}
 
-	void AbstractViewport::activate()
+	void AbstractViewport::setAnchor(const Vector2Int& p_anchor)
+	{
+		_area.setAnchor(p_anchor);
+	}
+	
+	void AbstractViewport::setSize(const Vector2UInt& p_size)
+	{
+		_area.setSize(p_size);
+	}
+
+	void AbstractViewport::activate() const
 	{
 		_activeViewport = _computeActiveAbstractViewport();
 
 		_onActivation(_activeViewport);
 	}
 
-	spk::Vector2 AbstractViewport::convertScreenToGPUCoordinates(const spk::Vector2Int& p_screenPosition)
+	bool AbstractViewport::isInside(const Vector2Int& p_position)
 	{
-		return spk::Vector2(
+		return (_computeActiveAbstractViewport().isInside(p_position));
+	}
+
+	const spk::Area& AbstractViewport::activeViewport()
+	{
+		return (_activeViewport);
+	}
+	
+	void AbstractViewport::resetViewport(const spk::Vector2UInt& p_baseViewportSize)
+	{
+		_activeViewport.setAnchor(0);
+		_activeViewport.setSize(p_baseViewportSize);
+	}
+
+	Vector2 AbstractViewport::convertScreenToGPUCoordinates(const Vector2Int& p_screenPosition)
+	{
+		return Vector2(
 			2.0f * static_cast<float>(p_screenPosition.x) / static_cast<float>(_activeViewport.size().x) - 1.0f,
-			2.0f * static_cast<float>(p_screenPosition.y) / static_cast<float>(_activeViewport.size().y) - 1.0f
+			(2.0f * static_cast<float>(p_screenPosition.y) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
 		);
 	}
 }

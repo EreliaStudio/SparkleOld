@@ -1,5 +1,6 @@
 #include "widget/widget_component/spk_widget_component_box.hpp"
 #include "graphics/pipeline/spk_default_shader.hpp"
+#include "graphics/spk_viewport.hpp"
 
 namespace spk::WidgetComponent
 {
@@ -61,15 +62,16 @@ namespace spk::WidgetComponent
 		_renderingObjects[BackgroundIndex]->storage().vertices().clear();
 		_renderingObjects[BackgroundIndex]->storage().indexes().clear();
 
-		spk::Vector2Int anchor = _area.value.value().anchor();
-		spk::Vector2UInt size = _area.value.value().size();
+		spk::Vector2UInt borderSize = _borderSize.value.value();
+		spk::Vector2Int anchor = _area.value.value().anchor() + borderSize;
+		spk::Vector2UInt size = _area.value.value().size() - borderSize * spk::Vector2UInt(2, 2);
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-0.9, -0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(0.9, -0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-0.9, 0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(0.9, 0.9),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
@@ -88,10 +90,10 @@ namespace spk::WidgetComponent
 
 		std::vector<spk::Vector2> points
 		{
-			spk::Vector2(-1, -1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Vector2(1, -1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Vector2(-1, 1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Vector2(1, 1),  //spk::convertScreenToGPUCoordinate(anchor + size * spk::Vector2UInt(1, 1)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 0)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 1)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 0)),
+			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
 		std::vector<unsigned int> indexes = 
@@ -114,6 +116,7 @@ namespace spk::WidgetComponent
 	
 	void Box::_updateDepth()
 	{
+		spk::cout << "Pushing depth [" << _depth.value.value() << "]" << std::endl;
 		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() - 0.000001f;
 		_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
 

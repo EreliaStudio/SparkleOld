@@ -85,6 +85,64 @@ namespace spk
         {
             return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
         }
+
+        Area operator+(const Area& p_other) const
+        {
+            return Area(_anchor + p_other._anchor, _size + p_other._size);
+        }
+
+        Area& operator+=(const Area& p_other)
+        {
+            _anchor += p_other._anchor;
+            _size += p_other._size;
+            return *this;
+        }
+
+        Area operator-(const Area& p_other) const
+        {
+            return Area(_anchor - p_other._anchor, _size - p_other._size);
+        }
+
+        Area& operator-=(const Area& p_other)
+        {
+            _anchor -= p_other._anchor;
+            _size -= p_other._size;
+            return *this;
+        }
+
+        Area operator*(const Area& p_other) const
+        {
+            return Area(_anchor * p_other._anchor, _size * p_other._size);
+        }
+
+        Area& operator*=(const Area& p_other)
+        {
+            _anchor *= p_other._anchor;
+            _size *= p_other._size;
+            return *this;
+        }
+
+        Area operator/(const Area& p_other) const
+        {
+            return Area(_anchor / p_other._anchor, _size / p_other._size);
+        }
+
+        Area& operator/=(const Area& p_other)
+        {
+            _anchor /= p_other._anchor;
+            _size /= p_other._size;
+            return *this;
+        }
+
+        bool operator!=(const Area& p_other) const
+        {
+            return (_anchor != p_other._anchor) || (_size != p_other._size);
+        }
+
+        bool operator==(const Area& p_other) const
+        {
+            return (_anchor == p_other._anchor) && (_size == p_other._size);
+        }
 	};
 
     /**
