@@ -18,6 +18,11 @@ struct MyStruct
 	vec4 F;
 	vec2 G;
 	vec4 H;
+	float W;
+	float X;
+	float Y;
+	float Z;
+	float ZA;
 };
 
 layout(push_constant) uniform PushConstant
