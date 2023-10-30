@@ -57,6 +57,7 @@ namespace spk
             std::smatch field_match;
             std::string::const_iterator searchStart(fields.cbegin());
 
+            size_t currentOffset = 0;
             size_t totalStride = 0;
 
             while (std::regex_search(searchStart, fields.cend(), field_match, field_re))
@@ -66,7 +67,13 @@ namespace spk
                 auto it = _structures.find(dataType);
                 if (it != _structures.end())
                 {
-                    totalStride += it->second.size * it->second.format;
+                    if ((currentOffset % it->second.paddingFormat) != 0)
+                        currentOffset += (it->second.paddingFormat - (currentOffset % it->second.paddingFormat));
+
+                    currentOffset += it->second.format * it->second.size;
+                    
+                    while (currentOffset > totalStride)
+                        totalStride += 16;
                 }
                 else
                 {
@@ -76,7 +83,7 @@ namespace spk
                 searchStart = field_match.suffix().first;
             }
 
-            Data structData(Data::Type::Structure, 1, totalStride, 1);
+            Data structData(Data::Type::Structure, 1, totalStride, 16);
             
             _structures[structName] = structData;
         }

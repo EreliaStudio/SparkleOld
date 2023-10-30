@@ -10,13 +10,20 @@ layout(location = 0) in vec2 inPosition;
 
 struct MyStruct
 {
-	float A;
-	vec2 Z;	
+	vec2 A;
+	vec4 B;
+	vec2 C;
+	vec4 D;
+	vec2 E;
+	vec4 F;
+	vec2 G;
+	vec4 H;
 };
 
 layout(push_constant) uniform PushConstant
 {
 	float A;
+	MyStruct B;
 	float C;
 	mat4 D;
 	float E;
