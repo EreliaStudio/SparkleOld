@@ -80,25 +80,98 @@ namespace spk
 			return (_size);
 		}
 
+        /**
+         *  @brief Checks if a point lies inside this area.
+         *  
+         *  @tparam TType The numerical type of the point coordinates.
+         *  @param p_point The point to check, specified as a vector.
+         *  
+         *  @return True if the point lies inside the area, False otherwise.
+         */
         template <typename TType>
         bool isInside(const spk::IVector2<TType>& p_point) const
         {
             return (spk::Vector2Int::isInsideRectangle(p_point ,_anchor, _anchor + _size));
         }
 
+        /**
+         *  @brief Adds two Areas together.
+         *  
+         *  @param p_other The other Area to add.
+         *  @return A new Area that is the sum of this and the other Area.
+         */
         Area operator+(const Area& p_other) const;
+
+        /**
+         *  @brief Adds another Area to this Area.
+         *  
+         *  @param p_other The other Area to add.
+         *  @return The modified Area after addition.
+         */
         Area& operator+=(const Area& p_other);
 
+        /**
+         *  @brief Subtracts another Area from this Area.
+         *  
+         *  @param p_other The other Area to subtract.
+         *  @return A new Area that is the result of the subtraction.
+         */
         Area operator-(const Area& p_other) const;
+
+        /**
+         *  @brief Subtracts another Area from this Area and stores the result in this Area.
+         *  
+         *  @param p_other The other Area to subtract.
+         *  @return The modified Area after subtraction.
+         */
         Area& operator-=(const Area& p_other);
 
+        /**
+         *  @brief Multiplies two Areas together.
+         *  
+         *  @param p_other The other Area to multiply.
+         *  @return A new Area that is the product of this and the other Area.
+         */
         Area operator*(const Area& p_other) const;
+
+        /**
+         *  @brief Multiplies another Area with this Area and stores the result in this Area.
+         *  
+         *  @param p_other The other Area to multiply.
+         *  @return The modified Area after multiplication.
+         */
         Area& operator*=(const Area& p_other);
 
+        /**
+         *  @brief Divides this Area by another Area.
+         *  
+         *  @param p_other The other Area to divide by.
+         *  @return A new Area that is the quotient of this and the other Area.
+         */
         Area operator/(const Area& p_other) const;
+
+        /**
+         *  @brief Divides this Area by another Area and stores the result in this Area.
+         *  
+         *  @param p_other The other Area to divide by.
+         *  @return The modified Area after division.
+         */
         Area& operator/=(const Area& p_other);
 
+        /**
+         *  @brief Compares if this Area is not equal to another Area.
+         *  
+         *  @param p_other The other Area to compare against.
+         *  @return True if the Areas are not equal, False otherwise.
+         */
         bool operator!=(const Area& p_other) const;
+
+        /**
+         *  @brief Compares if this Area is equal to another Area.
+         *  
+         *  @param p_other The other Area to compare against.
+         *  @return True if the Areas are equal, False otherwise.
+         */
         bool operator==(const Area& p_other) const;
 	};
 
