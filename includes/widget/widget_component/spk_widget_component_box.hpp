@@ -54,14 +54,27 @@ namespace spk::WidgetComponent
              *  @brief Constructor initializing the attribute with a default value.
              *  @param p_defaultValue The default value for the attribute.
              */
-            Attribute(const typename AttributeType::Default& p_defaultValue);
+            Attribute(const typename AttributeType::Default& p_defaultValue) :
+				needUpdate(true),
+				value(p_defaultValue),
+				contract(value.subscribe([&](){
+						std::lock_guard<std::recursive_mutex> lockGuard(mutex);
+						needUpdate = true;
+					}))
+			{
+
+			}
 
             /**
              *  @brief Assignment operator for setting attribute values.
              *  @param p_value The value to set.
              *  @return Reference to this Attribute.
              */
-            Attribute& operator=(const TType& p_value);
+			Attribute& operator = (const TType& p_value)
+			{
+				value = p_value;
+				return (*this);
+			}
         };
 
         /**

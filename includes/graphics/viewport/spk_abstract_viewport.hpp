@@ -8,7 +8,6 @@ namespace spk
     /**
      *  @class AbstractViewport
      *  @brief An abstract base class for handling viewports within the Sparkle library.
-     *  @extends spk::InherenceObject<AbstractViewport>
      */
 	class AbstractViewport : public spk::InherenceObject<AbstractViewport>
 	{

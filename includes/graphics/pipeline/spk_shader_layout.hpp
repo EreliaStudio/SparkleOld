@@ -61,6 +61,7 @@ namespace spk
 			 * @brief Overloaded constructor to initialize only the size.
 			 * 
 			 * @param p_size The size of the data in bytes.
+			 * @param p_paddingFormat The padding of the data in bytes.
 			 */
 			Data(const size_t& p_size, const size_t& p_paddingFormat);
 
@@ -226,6 +227,7 @@ namespace spk
 			 * @brief Constructor for FieldArrayLayout.
 			 * 
 			 * @param p_structureLayout Reference to the associated StructureLayout.
+			 * @param p_stridePadding The padding of the stride requested in bytes.
 			 */
 			FieldArrayLayout(const StructureLayout& p_structureLayout, const size_t& p_stridePadding);
 
