@@ -14,10 +14,7 @@ private:
 
 	void _onRender()
 	{		
-		if (count == 0)
-		spk::cout << "Rendering [" << name() << "]" << std::endl;
 		_box.render();
-		count++;
 	}
 	
 	bool _onUpdate()
@@ -44,23 +41,38 @@ public:
 
 int main()
 {
-	spk::Application app(L"Playground", 400);
-	spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
+    spk::Application app(L"Playground", 800);
+    spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
-	std::shared_ptr<Test> test = app.addRootWidget<Test>(L"Test");
-	test->setColors(spk::Color(180, 20, 20, 255), spk::Color(100, 20, 20, 255));
-	test->setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(400, 400));
-	test->activate();
+    // Create main widget
+    std::shared_ptr<Test> mainWidget = app.addRootWidget<Test>(L"MainWidget");
+    mainWidget->setColors(spk::Color(210, 25, 25, 255), spk::Color(180, 25, 25, 255));
+    mainWidget->setGeometry(spk::Vector2Int(0, 0), app.size());
+    mainWidget->activate();
 
-	std::shared_ptr<Test> test2 = test->addChildrenWidget<Test>(L"TestChildren");
-	test2->setColors(spk::Color(20, 20, 180, 255), spk::Color(20, 20, 100, 255));
-	test2->setGeometry(spk::Vector2Int(30, 30), spk::Vector2UInt(340, 340));
-	test2->activate();
+	for (size_t i = 0; i < 4; i++)
+	{
+		std::shared_ptr<Test> parentWidget = mainWidget->addChildrenWidget<Test>(L"Widget Parent [" + std::to_wstring(i) + L"]");
+		parentWidget->setColors(spk::Color(25, 25, 210, 255), spk::Color(25, 25, 180, 255));
 
-	std::shared_ptr<Test> test3 = test2->addChildrenWidget<Test>(L"TestChildren2");
-	test3->setColors(spk::Color(20, 180, 20, 255), spk::Color(20, 100, 20, 255));
-	test3->setGeometry(spk::Vector2Int(130, 30), spk::Vector2UInt(280, 280));
-	test3->activate();
+		spk::Vector2Int anchor = spk::Vector2Int(app.size().x / 8 + (app.size().x / 2) * (i / 2), app.size().y / 8 + (app.size().y / 2) * (i % 2));
+		spk::Vector2UInt size = spk::Vector2Int(app.size().x / 4, app.size().y / 4);
 
-	return (app.run());
-};
+		parentWidget->setGeometry(anchor, size);
+		parentWidget->activate();
+
+		for (size_t j = 0; j < 4; j++)
+		{
+			std::shared_ptr<Test> childrenWidget = parentWidget->addChildrenWidget<Test>(L"Widget Children [" + std::to_wstring(i) + L"]");
+			childrenWidget->setColors(spk::Color(25, 210, 25, 255), spk::Color(25, 180, 25, 255));
+			
+			spk::Vector2Int anchor = spk::Vector2Int(-static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().x * (j / 2), -static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().y * (j % 2));
+			spk::Vector2UInt size = spk::Vector2UInt(parentWidget->size().x / 2, parentWidget->size().y / 2);
+
+			childrenWidget->setGeometry(anchor, size);
+			childrenWidget->activate();
+		}
+	}
+
+    return (app.run());
+}

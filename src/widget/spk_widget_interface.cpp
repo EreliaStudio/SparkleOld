@@ -136,7 +136,6 @@ namespace spk::Widget
 
 	void Interface::setDepth(const float& p_depth)
 	{
-		spk::cout << "Setting widget [" << _name << "] depth to [" << p_depth << "]" << std::endl;
 		float delta(p_depth - _depth);
 
 		_depth = p_depth;

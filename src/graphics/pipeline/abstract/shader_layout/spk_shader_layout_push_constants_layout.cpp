@@ -49,7 +49,6 @@ namespace spk
         {
             spk::throwException(L"Unexpected PushConstant instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout(push_constant) uniform [PushConstantStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [PushConstantName];");
         }
-        DEBUG_LINE();
     }
 
     std::wostream& operator<<(std::wostream& p_out, const ShaderLayout::PushConstantsLayout& p_layout)

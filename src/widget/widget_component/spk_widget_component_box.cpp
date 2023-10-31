@@ -116,7 +116,6 @@ namespace spk::WidgetComponent
 	
 	void Box::_updateDepth()
 	{
-		spk::cout << "Pushing depth [" << _depth.value.value() << "]" << std::endl;
 		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() - 0.000001f;
 		_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
 
