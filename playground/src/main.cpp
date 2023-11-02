@@ -1,66 +1,71 @@
 #include "playground.hpp"
 
-struct Foo
+class Test : public spk::Widget::Interface
 {
-    int x;
-  
-    Foo(int p_val) : x(p_val)
+private:
+
+    struct Unit
     {
-        spk::cout << "Foo constructor. x = " << x << std::endl;
+        spk::Vector2 position;
+        spk::Vector2 uv;
+    };
+
+    spk::Pipeline _pipeline;
+    std::shared_ptr<spk::Pipeline::Object> _object;
+    spk::Image _image;  
+
+    void _onGeometryChange()
+    {
+        std::vector<Unit> units = {
+            {spk::Vector2(-1,  1), spk::Vector2(0, 0)},
+            {spk::Vector2( 1,  1), spk::Vector2(1, 0)},
+            {spk::Vector2(-1, -1), spk::Vector2(0, 1)},
+            {spk::Vector2( 1, -1), spk::Vector2(1, 1)},
+        };
+
+        std::vector<unsigned int> indexes = {
+            0, 2, 3, 3, 1, 0
+        };
+
+        _object->storage().vertices() << units << std::endl;
+        _object->storage().indexes() << indexes << std::endl;
+    }
+    void _onRender()
+    {
+        _image.bind(0);
+        _pipeline.uniform(L"textureID") << 0 << std::endl;
+        _object->render();
+        _image.unbind();
     }
 
-    Foo(const Foo &p_other) : x(p_other.x)
+    bool _onUpdate()
     {
-        spk::cout << "Foo copy constructor. x = " << x << std::endl;
+        return (false);
     }
 
-    Foo &operator=(const Foo &p_other)
+public:
+    Test(const std::wstring &p_name) :
+        spk::Widget::Interface(p_name),
+        _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
+        _object(_pipeline.createObject()),
+        _image(L"imageTest.png")
     {
-        spk::cout << "Foo copy assignment operator. x = " << p_other.x << std::endl;
-        if (this != &p_other)
-        {
-            x = p_other.x;
-        }
-        return *this;
+
     }
 
-    ~Foo()
+    ~Test()
     {
-        spk::cout << "Foo destructor. x = " << x << std::endl;
+
     }
 };
 
-void testObjectDestruction(spk::Pool<Foo> &p_pool)
-{
-    spk::cout << "Entering testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    auto obj = p_pool.obtain(3);
-    spk::cout << "Inside testObjectDestruction, obj x: " << (*obj).x << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    spk::cout << "Exiting testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-}
-
 int main()
 {
-    spk::Pool<Foo> myPool;
+    spk::Application app(L"Playground", 800);
 
-    myPool.reserve(3, 0);
+    std::shared_ptr<Test> test = app.addRootWidget<Test>(L"MainWidget");
+    test->setGeometry(spk::Vector2Int(0, 0), app.size());
+    test->activate();
 
-    spk::cout << "After reserve, pool size: " << myPool.size() << std::endl;
-
-    auto obj1 = myPool.obtain(1);
-    auto obj2 = myPool.obtain(2);
-
-    spk::cout << "After obtaining two objects, pool size: " << myPool.size() << std::endl;
-    spk::cout << "obj1 x: " << (*obj1).x << std::endl;
-    spk::cout << "obj2 x: " << (*obj2).x << std::endl;
-
-    testObjectDestruction(myPool);
-
-	spk::cout << "Outside function pool size: " << myPool.size() << std::endl;
-
-    spk::cout << "Exiting main function." << std::endl;
-
-    return 0;
+    return (app.run());
 }

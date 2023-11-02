@@ -4,7 +4,7 @@ function(listOpenGLSources SOURCE_FILES_VAR)
 	file(GLOB OPENGL_COMMON_SOURCE_FILES 
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/opengl/*.cpp"
-		"${CMAKE_SOURCE_DIR}/src/graphics/image/opengl/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/texture/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/opengl/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/opengl/object/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/opengl/uniform/*.cpp"
