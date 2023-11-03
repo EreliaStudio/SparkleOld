@@ -1,7 +1,6 @@
 function(listOpenGLIncludes INCLUDES_TABLE_VAR)
 	set(OPENGL_INCLUDES_FILES
 		"${CMAKE_SOURCE_DIR}/includes/graphics/surface/opengl/windows/spk_surface.hpp - graphics"
-		"${CMAKE_SOURCE_DIR}/includes/graphics/image/opengl/spk_image.hpp - graphics"
 
 		"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/opengl/spk_pipeline.hpp - graphics"
 		"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/opengl/spk_pipeline_basic_functions.hpp - graphics/pipeline"
