@@ -46,13 +46,12 @@ namespace spk
 				{
 					size_t index = (currentX) + (currentY)*p_atlasSize.x;
 
-					//spk::cout << "Index [" << index << "]" << currentX << " / " << currentY << " -> Image size : " << p_atlasSize << " / buffer size " << p_atlasData.size() << std::endl;
-
 					if (p_atlasData.at(index) != 0x00)
 					{
-						if (p_atlasData.at(index) > std::max(std::abs(i), std::abs(j)))
+						int maxValue = std::max(std::abs(i), std::abs(j));
+						if (p_atlasData.at(index) > maxValue)
 						{
-							p_atlasData[index] = std::max(std::abs(i), std::abs(j));
+							p_atlasData[index] = maxValue;
 						}
 					}
 				}
