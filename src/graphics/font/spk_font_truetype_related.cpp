@@ -47,7 +47,7 @@ namespace spk
 		context.padding = p_key.outlineSize * 2;
 
 		stbtt_PackSetOversampling(&context, 1, 1);
-		int packingFontRange = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), 0, p_fontConfiguration.nbGlyph(), charInformation);
+		int packingFontRange = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), 0, 256, charInformation);
 		if (packingFontRange == 0)
 		{
 			stbtt_PackEnd(&context);
@@ -64,18 +64,18 @@ namespace spk
 	{
 		std::vector<uint8_t> atlasData;
 		spk::Vector2Int atlasSize = spk::Vector2Int(32, 32);
-		stbtt_packedchar *charInformation = new stbtt_packedchar[p_fontConfiguration.nbGlyph()];
+		stbtt_packedchar *charInformation = new stbtt_packedchar[256];
 
 		while (_executePackingOperation(p_fontData,p_fontConfiguration,p_key, atlasData, atlasSize, charInformation) == false)
 		{
 			atlasSize *= spk::Vector2Int(2, 2);
 		}
 
-		_glyphDatas.resize(p_fontConfiguration.nbGlyph());
+		_glyphDatas.resize(256);
 
 		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(atlasSize)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
 
-		for (wchar_t i = L' '; i < p_fontConfiguration.nbGlyph(); i++)
+		for (wchar_t i = L' '; i < 256; i++)
 		{
 			GlyphData &data = _glyphDatas[i];
 
