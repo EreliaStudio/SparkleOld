@@ -348,6 +348,12 @@ namespace spk
 		{
 			return (static_cast<float>(std::sqrt(pow(p_other.x - x, 2) + pow(p_other.y - y, 2))));
 		}
+		
+		template <typename TOtherType>
+		TType distanceSquared(const IVector2<TOtherType> &p_other) const
+		{
+			return (static_cast<TType>(pow(p_other.x - x, 2) + pow(p_other.y - y, 2)));
+		}
 
 		/**
 		 * @brief Normalizes this vector.

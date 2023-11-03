@@ -9,6 +9,7 @@ function(listGenericSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/network/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/texture/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/font/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/*.cpp"
