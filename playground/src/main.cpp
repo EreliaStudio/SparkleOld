@@ -19,7 +19,7 @@ private:
 
     void _onGeometryChange()
     {
-        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(L'!');
+        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(L'M');
 
         std::vector<Unit> units = {
             {spk::Vector2(-0.9, 0.9), glyphData.uvs[0]},
@@ -70,7 +70,7 @@ public:
                                        _object(_pipeline.createObject()),
                                        _font(L"Minecraft.ttf"),
                                        //_font(L"BloodMoon-Regular.ttf"),
-                                       _fontAtlas(_font[spk::Font::Key(10, 2, spk::Font::OutlineType::SharpEdge)]),
+                                       _fontAtlas(_font[spk::Font::Key(100, 10, spk::Font::OutlineType::SharpEdge)]),
                                        _image(L"imageTest.png")
     {
     }

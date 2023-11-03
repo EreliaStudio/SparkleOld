@@ -50,8 +50,10 @@ namespace spk
 
 					if (p_atlasData.at(index) != 0x00)
 					{
-						if (p_atlasData.at(index) > std::min(i, j))
-							p_atlasData[index] = std::min(i, j);
+						if (p_atlasData.at(index) > std::max(std::abs(i), std::abs(j)))
+						{
+							p_atlasData[index] = std::max(std::abs(i), std::abs(j));
+						}
 					}
 				}
 			}
