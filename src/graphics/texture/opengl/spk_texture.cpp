@@ -15,7 +15,9 @@ namespace spk
 			case AbstractTexture::Format::BGRA: 
 				return GL_BGRA;
 			case AbstractTexture::Format::R: 
-				return GL_R;
+				return GL_RED;
+			case AbstractTexture::Format::GreyLevel:
+				return GL_RED;
 			default:
 				return GL_RGBA;
 		}
@@ -57,26 +59,45 @@ namespace spk
 
 	Texture::Texture(const uint8_t* p_textureData, const spk::Vector2UInt& p_textureSize,
 		const Format& p_format, const Filtering& p_filtering,
-		const Wrap& p_wrap, const Mipmap& p_mipmap)
+		const Wrap& p_wrap, const Mipmap& p_mipmap) :
+		_loaded(false)
 	{
-		load(p_textureData, p_textureSize, p_format, p_filtering, p_wrap, p_mipmap);
+		uploadToGPU(p_textureData, p_textureSize, p_format, p_filtering, p_wrap, p_mipmap);
 	}
 
 	Texture::~Texture()
 	{
-		if (_loaded == true)
-		{
-			glDeleteTextures(1, &_textureID);
-			_loaded = false;
-		}
+		releaseGPUMemory();
 	}
 
-	void Texture::load(const uint8_t* p_textureData, const spk::Vector2UInt& p_textureSize,
+	void Texture::uploadToGPU(const uint8_t* p_textureData, const spk::Vector2UInt& p_textureSize,
 		const Format& p_format, const Filtering& p_filtering,
 		const Wrap& p_wrap, const Mipmap& p_mipmap)
 	{
+		if (_loaded == true)
+			releaseGPUMemory();
+
 		glGenTextures(1, &_textureID);
 		glBindTexture(GL_TEXTURE_2D, _textureID);
+
+		switch (p_format) 
+		{
+			case Format::R:
+			case Format::GreyLevel:
+				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+				break;
+
+			case Format::RGB:
+			case Format::BGR:
+				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+				break;
+
+			case Format::RGBA:
+			case Format::BGRA:
+			default:
+				glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+				break;
+		}
 
 		glTexImage2D(GL_TEXTURE_2D, 0, toOpenGLFormat(p_format), p_textureSize.x, p_textureSize.y, 0, toOpenGLFormat(p_format), GL_UNSIGNED_BYTE, p_textureData);
 
@@ -94,16 +115,27 @@ namespace spk
 		}
 
 		glBindTexture(GL_TEXTURE_2D, 0);
+		glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+		
 		_loaded = true;
 	}
 
-	void Texture::bind(int p_textureIndex)
+	void Texture::releaseGPUMemory()
+	{
+		if (_loaded == true)
+		{
+			glDeleteTextures(1, &_textureID);
+			_loaded = false;
+		}
+	}
+
+	void Texture::bind(int p_textureIndex) const
 	{  
 		glActiveTexture(GL_TEXTURE0 + p_textureIndex);
 		glBindTexture(GL_TEXTURE_2D, _textureID);
 	}
 
-	void Texture::unbind()
+	void Texture::unbind() const
 	{
 		glActiveTexture(0);
 		glBindTexture(GL_TEXTURE_2D, 0);

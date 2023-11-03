@@ -14,7 +14,7 @@ namespace spk
 
 		_textureData = stbi_load(p_path.string().c_str(), &_size.x, &_size.y, &_channels, 0);
 
-		load(_textureData, _size, (_channels == 3 ? Texture::Format::RGB : Texture::Format::RGBA),
+		uploadToGPU(_textureData, _size, (_channels == 3 ? Texture::Format::RGB : Texture::Format::RGBA),
 			Texture::Filtering::Nearest,
 			Texture::Wrap::Repeat,
 			Texture::Mipmap::Disable);

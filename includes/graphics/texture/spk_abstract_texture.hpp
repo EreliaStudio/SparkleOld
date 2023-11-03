@@ -13,7 +13,8 @@ namespace spk
 			RGBA,
 			BGR,
 			BGRA,
-			R
+			R,
+			GreyLevel
 		};
 
 		enum class Filtering
@@ -40,9 +41,12 @@ namespace spk
 	private:
 
 	public:
+		AbstractTexture() = default;
+		AbstractTexture(const AbstractTexture& p_other) = delete;
+		AbstractTexture& operator = (const AbstractTexture& p_other) = delete;
 
-		virtual void bind(int p_textureIndex) = 0;
-		virtual void unbind() = 0;
+		virtual void bind(int p_textureIndex) const = 0;
+		virtual void unbind() const = 0;
 
 		friend std::wostream& operator << (std::wostream& p_os, const Format& p_format);
 		friend std::wostream& operator << (std::wostream& p_os, const Filtering& p_format);

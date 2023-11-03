@@ -19,11 +19,12 @@ namespace spk
 			const Wrap& p_wrap, const Mipmap& p_mipmap);
 		~Texture();
 
-		void load(const uint8_t* p_textureData, const spk::Vector2UInt& p_textureSize,
+		void uploadToGPU(const uint8_t* p_textureData, const spk::Vector2UInt& p_textureSize,
 			const Format& p_format, const Filtering& p_filtering,
 			const Wrap& p_wrap, const Mipmap& p_mipmap);
+		void releaseGPUMemory();
 
-		void bind(int p_textureIndex = 0);
-		void unbind();
+		void bind(int p_textureIndex = 0) const;
+		void unbind() const;
 	};
 }
