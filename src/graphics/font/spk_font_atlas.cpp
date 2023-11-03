@@ -8,9 +8,9 @@ namespace spk
 
 	const Font::Atlas::GlyphData &Font::Atlas::glyph(const wchar_t &p_char) const
 	{
-		if (_glyphDatas.size() < static_cast<size_t>(p_char))
+		if (_glyphDatas.size() < static_cast<size_t>(p_char - L' '))
 			spk::throwException(L"Char [" + std::wstring(1, p_char) + L"](dec : " + std::to_wstring(static_cast<size_t>(p_char)) + L") cannot be rendered : it doesn't exist in Font [" + _fontConfiguration.fileName() + L"]");
-		return (_glyphDatas[static_cast<size_t>(p_char)]);
+		return (_glyphDatas[static_cast<size_t>(p_char - L' ')]);
 	}
 
 	const Texture &Font::Atlas::texture() const

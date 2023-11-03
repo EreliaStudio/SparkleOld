@@ -58,7 +58,7 @@ namespace spk
 
 		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(atlasSize)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
 
-		for (wchar_t i = L' '; i < p_fontConfiguration.nbGlyph(); i++)
+		for (size_t i = 0; i < p_fontConfiguration.nbGlyph(); i++)
 		{
 			GlyphData &data = _glyphDatas[i];
 
