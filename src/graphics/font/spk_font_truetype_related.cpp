@@ -7,27 +7,17 @@ namespace spk
 {
 	size_t Font::Configuration::_countNbChar(const std::vector<uint8_t> &p_fontData)
 	{
-		size_t result = 0;
-		int numFonts = stbtt_GetNumberOfFonts(p_fontData.data());
+		stbtt_fontinfo fontInfo;
+		stbtt_InitFont(&fontInfo, p_fontData.data(), 0);
 
-		if (numFonts == 0)
+		int nbGlyph = 0;
+		for (wchar_t i = L' '; i < 0xFFFF; i++)
 		{
-			throw std::runtime_error("No fonts found in the provided font data.");
+			if (stbtt_FindGlyphIndex(&fontInfo, i) != 0)
+				nbGlyph++;
 		}
 
-		for (int fontIndex = 0; fontIndex < numFonts; ++fontIndex)
-		{
-			stbtt_fontinfo fontInfo;
-
-			if (!stbtt_InitFont(&fontInfo, p_fontData.data(), stbtt_GetFontOffsetForIndex(p_fontData.data(), fontIndex)))
-			{
-				spk::throwException(L"Can't initiate font from file [" + _fileName + L"]");
-			}
-
-			result += fontInfo.numGlyphs;
-		}
-
-		return (result);
+		return (nbGlyph);
 	}
 
 	bool _executePackingOperation(
@@ -41,41 +31,34 @@ namespace spk
 		atlasData.resize(atlasSize.x * atlasSize.y);
 
 		stbtt_pack_context context;
-		int startingPackError = stbtt_PackBegin(&context, atlasData.data(), atlasSize.x, atlasSize.y, 0, 1, nullptr);
-		if (startingPackError == 0)
-			spk::throwException(L"Failed to start the packing process for font [" + p_fontConfiguration.fileName() + L"] with error [" + std::to_wstring(startingPackError) + L"]");
-		context.padding = p_key.outlineSize * 2;
+		int errorCode;
 
+		errorCode = stbtt_PackBegin(&context, atlasData.data(), atlasSize.x, atlasSize.y, 0, 1, nullptr);
+		if (errorCode == 0)
+			spk::throwException(L"Failed to start the packing process for font [" + p_fontConfiguration.fileName() + L"] with error [" + std::to_wstring(errorCode) + L"]");
+		context.padding = p_key.outlineSize * 2;
 		stbtt_PackSetOversampling(&context, 1, 1);
-		int packingFontRange = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), 0, 256, charInformation);
-		if (packingFontRange == 0)
-		{
-			stbtt_PackEnd(&context);
-			return (false);
-		}
-		else
-		{
-			stbtt_PackEnd(&context);
-			return (true);
-		}
+		errorCode = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), L' ', p_fontConfiguration.nbGlyph(), charInformation);
+		stbtt_PackEnd(&context);
+		return (errorCode != 0);
 	}
 
 	Font::Atlas::Atlas(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key)
 	{
 		std::vector<uint8_t> atlasData;
 		spk::Vector2Int atlasSize = spk::Vector2Int(32, 32);
-		stbtt_packedchar *charInformation = new stbtt_packedchar[256];
+		stbtt_packedchar *charInformation = new stbtt_packedchar[p_fontConfiguration.nbGlyph()];
 
 		while (_executePackingOperation(p_fontData,p_fontConfiguration,p_key, atlasData, atlasSize, charInformation) == false)
 		{
 			atlasSize *= spk::Vector2Int(2, 2);
 		}
 
-		_glyphDatas.resize(256);
+		_glyphDatas.resize(p_fontConfiguration.nbGlyph());
 
 		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(atlasSize)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
 
-		for (wchar_t i = L' '; i < 256; i++)
+		for (wchar_t i = L' '; i < p_fontConfiguration.nbGlyph(); i++)
 		{
 			GlyphData &data = _glyphDatas[i];
 
