@@ -66,10 +66,6 @@ namespace spk
             std::vector<GlyphData> _glyphDatas;
             Texture _texture;
 
-            void _normalizeAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize);
-            void _revertAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize);
-            void _applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const Key &p_key);
-
 	        BuildData _computeBuildData(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key);
 
         public:
