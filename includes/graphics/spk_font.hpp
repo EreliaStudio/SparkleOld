@@ -55,12 +55,22 @@ namespace spk
                 spk::Vector2Int step;
             };
 
+            struct BuildData
+            {
+                std::vector<uint8_t> buffer;
+                spk::Vector2Int size = spk::Vector2Int(32, 32);
+            };
+
         private:
             Configuration _fontConfiguration;
             std::vector<GlyphData> _glyphDatas;
             Texture _texture;
 
+            void _normalizeAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize);
+            void _revertAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize);
             void _applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const Key &p_key);
+
+	        BuildData _computeBuildData(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key);
 
         public:
             Atlas();

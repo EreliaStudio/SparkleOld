@@ -19,20 +19,16 @@ private:
 
     void _onGeometryChange()
     {
-        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(L'M');
+        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(L'j');
 
         std::vector<Unit> units = {
-            {spk::Vector2(-1, 1), spk::Vector2(0, 0)},
-            {spk::Vector2(1, 1), spk::Vector2(1, 0)},
-            {spk::Vector2(-1, -1), spk::Vector2(0, 1)},
-            {spk::Vector2(1, -1), spk::Vector2(1, 1)},
             {spk::Vector2(0.0f, -0.0f), glyphData.uvs[0]},
             {spk::Vector2(0.9f, -0.0f), glyphData.uvs[1]},
             {spk::Vector2(0.0f, -0.9f), glyphData.uvs[2]},
             {spk::Vector2(0.9f, -0.9f), glyphData.uvs[3]}};
 
         std::vector<unsigned int> indexes = {
-            0, 2, 3, 3, 1, 0, 4, 6, 7, 7, 5, 4};
+            0, 2, 3, 3, 1, 0};
 
         _object->storage().vertices() << units << std::endl;
         _object->storage().indexes() << indexes << std::endl;
@@ -73,7 +69,7 @@ public:
                                        _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
                                        _object(_pipeline.createObject()),
                                        _font(L"Minecraft.ttf"),
-                                       _fontAtlas(_font[spk::Font::Key(100, 7, spk::Font::OutlineType::Standard)]),
+                                       _fontAtlas(_font[spk::Font::Key(40, 2, spk::Font::OutlineType::Standard)]),
                                        _image(L"imageTest.png")
     {
     }

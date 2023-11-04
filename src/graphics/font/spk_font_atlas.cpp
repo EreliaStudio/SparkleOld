@@ -6,6 +6,22 @@ namespace spk
 	{
 	}
 
+	Font::Atlas::Atlas(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key) :
+		_glyphDatas(p_fontConfiguration.nbGlyph())
+	{
+		Font::Atlas::BuildData buildData = _computeBuildData(p_fontData, p_fontConfiguration, p_key);
+
+		_normalizeAtlasData(buildData.buffer, buildData.size);
+
+		if (p_key.outlineSize != 0)
+			_applyOutline(buildData.buffer, buildData.size, p_key);
+
+		_texture.uploadToGPU(
+			buildData.buffer.data(), buildData.size,
+			Texture::Format::R, Texture::Filtering::Nearest,
+			Texture::Wrap::Repeat, Texture::Mipmap::Disable);
+	}
+
 	const Font::Atlas::GlyphData &Font::Atlas::glyph(const wchar_t &p_char) const
 	{
 		if (_glyphDatas.size() < static_cast<size_t>(p_char - L' '))

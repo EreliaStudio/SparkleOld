@@ -17,7 +17,7 @@ namespace spk
 
 		for (size_t i = 0; i < 4; i++)
 		{
-			for (size_t count = 0; count < p_key.outlineSize; count++)
+			for (uint8_t count = 0; count < p_key.outlineSize; count++)
 			{
 				int currentX = p_x + positionDelta[i].x * count;
 				int currentY = p_y + positionDelta[i].y * count;
@@ -78,13 +78,13 @@ namespace spk
 				currentX < p_atlasSize.x && currentY < p_atlasSize.y)
 			{
 				size_t index = (currentX) + (currentY)*p_atlasSize.x;
-				if (p_atlasData[index] > p_atlasData[baseIndex] + 1)
+				if (p_atlasData[index] >= p_atlasData[baseIndex] + 1)
 				{
 					int distance = static_cast<int>(std::ceil(spk::Vector2Int(index % p_atlasSize.x, index / p_atlasSize.x).distanceSquared(p_pixelOrigin)));
-
+					
 					if (distance <= static_cast<int>(p_key.outlineSizeSquared))
 					{
-						p_atlasData[index] = std::sqrt(distance);
+						p_atlasData[index] = static_cast<uint8_t>(std::sqrt(distance));
 
 						_placePixelStandard(p_atlasData, p_atlasSize, p_pixelOrigin, currentX, currentY, p_key);
 					}
@@ -123,55 +123,22 @@ namespace spk
 		}
 	}
 
-	void spk::Font::Atlas::_applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const Key &p_key)
+	void spk::Font::Atlas::_normalizeAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize)
 	{
-		for (size_t i = 0; i < static_cast<size_t>(p_atlasSize.x * p_atlasSize.y); i++)
+		size_t maxIndex = static_cast<size_t>(p_atlasSize.x * p_atlasSize.y);
+		for (size_t i = 0; i < maxIndex; i++)
 		{
 			if (p_atlasData[i] != 0xFF)
-				p_atlasData[i] = 0xFF;
-			else
 				p_atlasData[i] = 0x00;
+			else
+				p_atlasData[i] = 0xFF;
 		}
+	}
 
-		std::function<void(std::vector<uint8_t> &, const spk::Vector2Int &, const spk::Vector2Int&, const int &, const int &, const Key &)> placePixelFunction;
-		switch (p_key.outlineType)
-		{
-		case OutlineType::Pixelized:
-			placePixelFunction = _placePixelPixelized;
-			break;
-		case OutlineType::SharpEdge:
-			placePixelFunction = _placePixelSharpEdge;
-			break;
-		case OutlineType::Standard:
-			placePixelFunction = _placePixelStandard;
-			break;
-		case OutlineType::Manhattan:
-			placePixelFunction = _placePixelManhattan;
-			break;
-		}
-
-		for (int index = 0; index < p_atlasSize.x * p_atlasSize.y; index++)
-		{
-			// only call placePixelFunction if the pixel is 0x00 and at least one neighbor is not 0x00
-			if (p_atlasData[index] == 0x00
-				&& (p_atlasData[index + 1] != 0x00
-				|| p_atlasData[index - 1] != 0x00
-				|| p_atlasData[index + p_atlasSize.y] != 0x00
-				|| p_atlasData[index - p_atlasSize.y] != 0x00)
-			)
-			{
-				placePixelFunction(
-					p_atlasData,
-					p_atlasSize,
-					spk::Vector2Int(index % p_atlasSize.x, index / p_atlasSize.x),
-					index % p_atlasSize.x,
-					index / p_atlasSize.x,
-					p_key
-				);
-			}
-		}
-
-		for (size_t i = 0; i < static_cast<size_t>(p_atlasSize.x * p_atlasSize.y); i++)
+	void spk::Font::Atlas::_revertAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize)
+	{
+		size_t maxIndex = static_cast<size_t>(p_atlasSize.x * p_atlasSize.y);
+		for (size_t i = 0; i < maxIndex; i++)
 		{
 			if (p_atlasData[i] == 0xFF)
 				p_atlasData[i] = 0x00;
@@ -179,8 +146,71 @@ namespace spk
 				p_atlasData[i] = 0xFF;
 			else
 			{
-				p_atlasData[i] = static_cast<float>(p_atlasData[i] * 256) / static_cast<float>(p_key.outlineSize);
+				p_atlasData[i] = 0x7F;
 			}
 		}
+	}
+
+	using PlacePixelFunction = std::function<void(std::vector<uint8_t> &, const spk::Vector2Int &, const spk::Vector2Int&, const spk::Font::Key &)>;
+
+	PlacePixelFunction _requestPlacePixelFunction(const spk::Font::OutlineType& p_outlineType)
+	{
+		PlacePixelFunction result = nullptr;
+		switch (p_outlineType)
+		{
+		case spk::Font::OutlineType::Pixelized:
+			result = [](std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_originPixel, const spk::Font::Key &p_key){
+				_placePixelPixelized(p_atlasData, p_atlasSize, p_originPixel, p_originPixel.x, p_originPixel.y, p_key);
+			};
+			break;
+		case spk::Font::OutlineType::SharpEdge:
+			result = [](std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_originPixel, const spk::Font::Key &p_key){
+				_placePixelSharpEdge(p_atlasData, p_atlasSize, p_originPixel, p_originPixel.x, p_originPixel.y, p_key);
+			};
+			break;
+		case spk::Font::OutlineType::Standard:
+			result = [](std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_originPixel, const spk::Font::Key &p_key){
+				_placePixelStandard(p_atlasData, p_atlasSize, p_originPixel, p_originPixel.x, p_originPixel.y, p_key);
+			};
+			break;
+		case spk::Font::OutlineType::Manhattan:
+			result = [](std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_originPixel, const spk::Font::Key &p_key){
+				_placePixelManhattan(p_atlasData, p_atlasSize, p_originPixel, p_originPixel.x, p_originPixel.y, p_key);
+			};
+			break;
+		}
+		return (result);
+	}
+
+	bool _isPixelOnBorder(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const size_t& p_index)
+	{
+		return (p_atlasData[p_index] == 0x00 && (p_atlasData[p_index + 1] != 0x00 || p_atlasData[p_index - 1] != 0x00 || p_atlasData[p_index + p_atlasSize.y] != 0x00 || p_atlasData[p_index - p_atlasSize.y] != 0x00));
+	}
+
+	void spk::Font::Atlas::_applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const Key &p_key)
+	{
+		_revertAtlasData(p_atlasData, p_atlasSize);
+
+		PlacePixelFunction placePixelFunction = _requestPlacePixelFunction(p_key.outlineType);
+			
+		if (placePixelFunction != nullptr)
+		{
+			size_t maxIndex = static_cast<size_t>(p_atlasSize.x * p_atlasSize.y);
+			for (size_t index = 0; index < maxIndex; index++)
+			{
+				if (_isPixelOnBorder(p_atlasData, p_atlasSize, index) == true)
+				{
+					placePixelFunction(
+						p_atlasData,
+						p_atlasSize,
+						spk::Vector2Int(index % p_atlasSize.x, index / p_atlasSize.x),
+						p_key
+					);
+				}
+			}
+			
+		}
+
+		_revertAtlasData(p_atlasData, p_atlasSize);
 	}
 }

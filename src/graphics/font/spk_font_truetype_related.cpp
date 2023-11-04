@@ -36,53 +36,53 @@ namespace spk
 		errorCode = stbtt_PackBegin(&context, atlasData.data(), atlasSize.x, atlasSize.y, 0, 1, nullptr);
 		if (errorCode == 0)
 			spk::throwException(L"Failed to start the packing process for font [" + p_fontConfiguration.fileName() + L"] with error [" + std::to_wstring(errorCode) + L"]");
-		context.padding = p_key.outlineSize * 2;
+		
+		if (p_key.outlineSize != 0)
+			context.padding = p_key.outlineSize * 2;
+
 		stbtt_PackSetOversampling(&context, 1, 1);
 		errorCode = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), L' ', p_fontConfiguration.nbGlyph(), charInformation);
 		stbtt_PackEnd(&context);
 		return (errorCode != 0);
 	}
 
-	Font::Atlas::Atlas(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key)
+	void _computeCharGlyphData(const wchar_t& p_char, spk::Font::Atlas::GlyphData &p_data, const stbtt_packedchar *p_charInformation, const spk::Vector2Int& p_atlasSize, const spk::Vector2& outlineOffset)
 	{
-		std::vector<uint8_t> atlasData;
-		spk::Vector2Int atlasSize = spk::Vector2Int(32, 32);
+		stbtt_aligned_quad quad;
+		spk::Vector2 quadStep;
+		stbtt_GetPackedQuad(p_charInformation, p_atlasSize.x, p_atlasSize.y, p_char, &quadStep.x, &quadStep.y, &quad, 1);
+
+		p_data.uvs[0] = {quad.s0 + outlineOffset.x * -1, quad.t0 + outlineOffset.y * -1};
+		p_data.uvs[1] = {quad.s1 + outlineOffset.x * +1, quad.t0 + outlineOffset.y * -1};
+		p_data.uvs[2] = {quad.s0 + outlineOffset.x * -1, quad.t1 + outlineOffset.y * +1};
+		p_data.uvs[3] = {quad.s1 + outlineOffset.x * +1, quad.t1 + outlineOffset.y * +1};
+
+		p_data.position[0] = spk::Vector2Int(quad.x0 * p_atlasSize.x, quad.y0 * p_atlasSize.y);
+		p_data.position[1] = spk::Vector2Int(quad.x1 * p_atlasSize.x, quad.y0 * p_atlasSize.y);
+		p_data.position[2] = spk::Vector2Int(quad.x0 * p_atlasSize.x, quad.y1 * p_atlasSize.y);
+		p_data.position[3] = spk::Vector2Int(quad.x1 * p_atlasSize.x, quad.y1 * p_atlasSize.y);
+
+		p_data.step = quadStep * p_atlasSize;
+	}
+
+	Font::Atlas::BuildData Font::Atlas::_computeBuildData(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key)
+	{
+		BuildData buildData;
+
 		stbtt_packedchar *charInformation = new stbtt_packedchar[p_fontConfiguration.nbGlyph()];
 
-		while (_executePackingOperation(p_fontData,p_fontConfiguration,p_key, atlasData, atlasSize, charInformation) == false)
+		while (_executePackingOperation(p_fontData,p_fontConfiguration,p_key, buildData.buffer, buildData.size, charInformation) == false)
 		{
-			atlasSize *= spk::Vector2Int(2, 2);
+			buildData.size *= spk::Vector2Int(2, 2);
 		}
 
-		_glyphDatas.resize(p_fontConfiguration.nbGlyph());
+		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(buildData.size)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
 
-		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(atlasSize)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
-
-		for (size_t i = 0; i < p_fontConfiguration.nbGlyph(); i++)
+		for (wchar_t i = 0; i < p_fontConfiguration.nbGlyph(); i++)
 		{
-			GlyphData &data = _glyphDatas[i];
-
-			stbtt_aligned_quad quad;
-			spk::Vector2 quadStep;
-			stbtt_GetPackedQuad(charInformation, atlasSize.x, atlasSize.y, i, &quadStep.x, &quadStep.y, &quad, 1);
-
-			data.uvs[0] = {quad.s0 + outlineOffset.x * -1, quad.t0 + outlineOffset.y * -1};
-			data.uvs[1] = {quad.s1 + outlineOffset.x * +1, quad.t0 + outlineOffset.y * -1};
-			data.uvs[2] = {quad.s0 + outlineOffset.x * -1, quad.t1 + outlineOffset.y * +1};
-			data.uvs[3] = {quad.s1 + outlineOffset.x * +1, quad.t1 + outlineOffset.y * +1};
-
-			data.position[0] = spk::Vector2Int(quad.x0 * atlasSize.x, quad.y0 * atlasSize.y);
-			data.position[1] = spk::Vector2Int(quad.x1 * atlasSize.x, quad.y0 * atlasSize.y);
-			data.position[2] = spk::Vector2Int(quad.x0 * atlasSize.x, quad.y1 * atlasSize.y);
-			data.position[3] = spk::Vector2Int(quad.x1 * atlasSize.x, quad.y1 * atlasSize.y);
-
-			data.step = quadStep * atlasSize;
+			_computeCharGlyphData(i, _glyphDatas[i], charInformation, buildData.size, outlineOffset);
 		}
 
-		_applyOutline(atlasData, atlasSize, p_key);
-
-		_texture.uploadToGPU(atlasData.data(), atlasSize,
-								Texture::Format::R, Texture::Filtering::Nearest,
-								Texture::Wrap::Repeat, Texture::Mipmap::Disable);
+		return (buildData);
 	}
 }
