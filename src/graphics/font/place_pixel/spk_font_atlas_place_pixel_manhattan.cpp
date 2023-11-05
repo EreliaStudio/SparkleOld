@@ -22,11 +22,11 @@ namespace spk
 				currentX < p_atlasSize.x && currentY < p_atlasSize.y)
 			{
 				size_t index = (currentX) + (currentY)*p_atlasSize.x;
-				if (p_atlasData[index] > (p_atlasData[baseIndex] + 1))
+				if (p_atlasData[index] < (p_atlasData[baseIndex] - 1))
 				{
-					p_atlasData[index] = p_atlasData[baseIndex] + 1;
+					p_atlasData[index] = p_atlasData[baseIndex] - 1;
 
-					if (p_atlasData[index] < p_key.outlineSize)
+					if (p_atlasData[index] > p_key.inverseOutlineSize)
 						_placePixelManhattan(p_atlasData, p_atlasSize, p_pixelOrigin, currentX, currentY, p_key);
 				}
 			}

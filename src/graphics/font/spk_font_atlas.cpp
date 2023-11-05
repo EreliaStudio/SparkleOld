@@ -27,8 +27,16 @@ namespace spk
 
 		_normalizeAtlasData(buildData.buffer, buildData.size);
 
+
 		if (p_key.outlineSize != 0)
+		{		
+			if (p_key.outlineType == Font::OutlineType::Standard)
+			{
+				(const_cast<Key*>(&p_key))->computeCircle(buildData.size);
+			}
+		
 			_applyOutline(buildData.buffer, buildData.size, p_key);
+		}
 
 		_texture.uploadToGPU(
 			buildData.buffer.data(), buildData.size,

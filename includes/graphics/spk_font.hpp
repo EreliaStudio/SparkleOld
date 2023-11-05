@@ -8,6 +8,9 @@ namespace spk
     class Font
     {
     public:
+        static const uint8_t CHAR_PIXEL = 0xFF;
+        static const uint8_t EMPTY_PIXEL = 0x00;
+
         enum class OutlineType
         {
             Pixelized,
@@ -38,11 +41,14 @@ namespace spk
         {
             size_t fontSize;
             size_t outlineSize;
+            size_t inverseOutlineSize;
             size_t outlineSizeSquared;
             OutlineType outlineType;
+            std::vector<int> circleIndexes;
 
             Key(const size_t &p_fontSize, const size_t &p_outlineSize, const OutlineType &p_outlineType = OutlineType::Standard);
             bool operator<(const Key &p_other) const;
+            void computeCircle(const spk::Vector2Int& p_atlasSize);
         };
 
         class Atlas

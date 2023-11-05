@@ -70,17 +70,20 @@ private:
     }
 
 public:
-    Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
-                                       _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
-                                       _object(_pipeline.createObject()),
-                                       _font(L"Roboto-Regular.ttf"),
-                                       _fontAtlas(_font[spk::Font::Key(100, 10, spk::Font::OutlineType::SharpEdge)]),
-                                       _image(L"imageTest.png")
+    Test(const std::wstring &p_name) :
+        spk::Widget::Interface(p_name),
+        _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
+        _object(_pipeline.createObject()),
+        _font(L"Roboto-Regular.ttf"),
+        _fontAtlas(_font[spk::Font::Key(100, 10, spk::Font::OutlineType::Standard)]),
+        _image(L"imageTest.png")
     {
+
     }
 
     ~Test()
     {
+
     }
 };
 

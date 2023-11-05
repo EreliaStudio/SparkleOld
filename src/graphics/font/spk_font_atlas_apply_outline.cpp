@@ -43,29 +43,16 @@ namespace spk
 
 	bool _isPixelOnBorder(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const size_t& p_index)
 	{
-		return (p_atlasData[p_index] == 0x00 && (p_atlasData[p_index + 1] != 0x00 || p_atlasData[p_index - 1] != 0x00 || p_atlasData[p_index + p_atlasSize.y] != 0x00 || p_atlasData[p_index - p_atlasSize.y] != 0x00));
-	}
-
-	void _revertAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize)
-	{
-		size_t maxIndex = static_cast<size_t>(p_atlasSize.x * p_atlasSize.y);
-		for (size_t i = 0; i < maxIndex; i++)
-		{
-			if (p_atlasData[i] == 0xFF)
-				p_atlasData[i] = 0x00;
-			else if (p_atlasData[i] == 0x00)
-				p_atlasData[i] = 0xFF;
-			else
-			{
-				p_atlasData[i] = 0x7F;
-			}
-		}
+		return (p_atlasData[p_index] == Font::CHAR_PIXEL &&
+			(p_atlasData[p_index + 1] != Font::CHAR_PIXEL ||
+			 p_atlasData[p_index - 1] != Font::CHAR_PIXEL ||
+			 p_atlasData[p_index + p_atlasSize.y] != Font::CHAR_PIXEL ||
+			 p_atlasData[p_index - p_atlasSize.y] != Font::CHAR_PIXEL)
+		);
 	}
 
 	void _applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Font::Key &p_key)
 	{
-		_revertAtlasData(p_atlasData, p_atlasSize);
-
 		PlacePixelFunction placePixelFunction = _requestPlacePixelFunction(p_key.outlineType);
 			
 		if (placePixelFunction != nullptr)
@@ -83,9 +70,6 @@ namespace spk
 					);
 				}
 			}
-			
 		}
-
-		_revertAtlasData(p_atlasData, p_atlasSize);
 	}
 }

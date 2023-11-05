@@ -17,10 +17,10 @@ namespace spk
 				{
 					size_t index = (currentX) + (currentY)*p_atlasSize.x;
 
-					if (p_atlasData.at(index) != 0x00)
+					if (p_atlasData.at(index) != Font::CHAR_PIXEL)
 					{
 						int maxValue = std::max(std::abs(i), std::abs(j));
-						if (p_atlasData.at(index) > maxValue)
+						if (p_atlasData.at(index) < maxValue)
 						{
 							p_atlasData[index] = maxValue;
 						}

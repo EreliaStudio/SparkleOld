@@ -21,9 +21,9 @@ namespace spk
 				int currentY = p_y + positionDelta[i].y * count;
 
 				size_t index = (currentX) + (currentY)*p_atlasSize.x;
-				if (p_atlasData[index] != 0x00)
+				if (p_atlasData[index] != Font::CHAR_PIXEL)
 				{
-					if (p_atlasData[index] > count)
+					if (p_atlasData[index] < count)
 						p_atlasData[index] = count;
 				}
 			}

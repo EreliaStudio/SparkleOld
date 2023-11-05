@@ -11,5 +11,8 @@ void main()
 	color = texture(textureID, uvs);
 	if (color.r == 0)
 		discard;
-	color = vec4(color.r, color.r, color.r, 1.0f);
+	if (color.r == 1)
+		color = vec4(1.0, 1.0, 1.0, 1.0f);
+	else
+		color = vec4(1.0, 0, 0, 1);
 }
