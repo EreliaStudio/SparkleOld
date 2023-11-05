@@ -21,7 +21,7 @@ namespace spk
 	}
 	
 	Font::Atlas::Atlas(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key) :
-		_glyphDatas(p_fontConfiguration.nbGlyph())
+		_glyphDatas(p_fontConfiguration.validGlyphs().back() + 1)
 	{
 		Font::Atlas::BuildData buildData = _computeBuildData(p_fontData, p_fontConfiguration, p_key);
 

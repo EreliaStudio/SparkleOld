@@ -21,16 +21,16 @@ namespace spk
         {
         private:
             std::wstring _fileName;
-            size_t _nbGlyph;
+            std::vector<wchar_t> _validGlyphs;
 
-            size_t _countNbChar(const std::vector<uint8_t> &p_fontData);
+            void _computeGlyphInformation(const std::vector<uint8_t> &p_fontData);
 
         public:
             Configuration();
             Configuration(const std::wstring &p_fileName, const std::vector<uint8_t> &p_fontData);
 
             const std::wstring &fileName() const;
-            const size_t &nbGlyph() const;
+            const std::vector<wchar_t>& validGlyphs() const;
         };
 
     public:

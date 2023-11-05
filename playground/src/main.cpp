@@ -19,16 +19,21 @@ private:
 
     void _onGeometryChange()
     {
-        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(L'j');
+        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(0xC9);
 
         std::vector<Unit> units = {
+            {spk::Vector2(-1.0f, 1.0f), spk::Vector2(0, 0)},
+            {spk::Vector2( 1.0f, 1.0f), spk::Vector2(1, 0)},
+            {spk::Vector2(-1.0f, -1.0f), spk::Vector2(0, 1)},
+            {spk::Vector2( 1.0f, -1.0f), spk::Vector2(1, 1)},
             {spk::Vector2(0.0f, -0.0f), glyphData.uvs[0]},
             {spk::Vector2(0.9f, -0.0f), glyphData.uvs[1]},
             {spk::Vector2(0.0f, -0.9f), glyphData.uvs[2]},
-            {spk::Vector2(0.9f, -0.9f), glyphData.uvs[3]}};
+            {spk::Vector2(0.9f, -0.9f), glyphData.uvs[3]}
+        };
 
         std::vector<unsigned int> indexes = {
-            0, 2, 3, 3, 1, 0};
+            0, 2, 3, 3, 1, 0, 4, 6, 7, 7, 5, 4};
 
         _object->storage().vertices() << units << std::endl;
         _object->storage().indexes() << indexes << std::endl;
@@ -68,8 +73,8 @@ public:
     Test(const std::wstring &p_name) : spk::Widget::Interface(p_name),
                                        _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
                                        _object(_pipeline.createObject()),
-                                       _font(L"Minecraft.ttf"),
-                                       _fontAtlas(_font[spk::Font::Key(40, 2, spk::Font::OutlineType::Standard)]),
+                                       _font(L"Roboto-Regular.ttf"),
+                                       _fontAtlas(_font[spk::Font::Key(100, 10, spk::Font::OutlineType::SharpEdge)]),
                                        _image(L"imageTest.png")
     {
     }

@@ -5,19 +5,28 @@
 
 namespace spk
 {
-	size_t Font::Configuration::_countNbChar(const std::vector<uint8_t> &p_fontData)
+	std::vector<wchar_t> getCodepointsInFont(const stbtt_fontinfo* p_fontInfo)
+	{
+		std::vector<wchar_t> result;
+
+		wchar_t i = 0;
+		while (i < static_cast<wchar_t>(0xFFFF))
+		{
+			if (stbtt_FindGlyphIndex(p_fontInfo, i) != 0)
+				result.push_back(i);
+
+			i++;
+		}
+
+		return result;
+	}
+
+	void Font::Configuration::_computeGlyphInformation(const std::vector<uint8_t> &p_fontData)
 	{
 		stbtt_fontinfo fontInfo;
 		stbtt_InitFont(&fontInfo, p_fontData.data(), 0);
 
-		int nbGlyph = 0;
-		for (wchar_t i = L' '; i < 0xFFFF; i++)
-		{
-			if (stbtt_FindGlyphIndex(&fontInfo, i) != 0)
-				nbGlyph++;
-		}
-
-		return (nbGlyph);
+		_validGlyphs = getCodepointsInFont(&fontInfo);
 	}
 
 	bool _executePackingOperation(
@@ -41,8 +50,9 @@ namespace spk
 			context.padding = p_key.outlineSize * 2;
 
 		stbtt_PackSetOversampling(&context, 1, 1);
-		errorCode = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), L' ', p_fontConfiguration.nbGlyph(), charInformation);
+		errorCode = stbtt_PackFontRange(&context, p_fontData.data(), 0, static_cast<float>(p_key.fontSize), L' ', p_fontConfiguration.validGlyphs().back() + 1, charInformation);
 		stbtt_PackEnd(&context);
+
 		return (errorCode != 0);
 	}
 
@@ -50,6 +60,7 @@ namespace spk
 	{
 		stbtt_aligned_quad quad;
 		spk::Vector2 quadStep;
+
 		stbtt_GetPackedQuad(p_charInformation, p_atlasSize.x, p_atlasSize.y, p_char, &quadStep.x, &quadStep.y, &quad, 1);
 
 		p_data.uvs[0] = {quad.s0 + outlineOffset.x * -1, quad.t0 + outlineOffset.y * -1};
@@ -69,7 +80,7 @@ namespace spk
 	{
 		BuildData buildData;
 
-		stbtt_packedchar *charInformation = new stbtt_packedchar[p_fontConfiguration.nbGlyph()];
+		static stbtt_packedchar *charInformation = new stbtt_packedchar[0xFFFF];
 
 		while (_executePackingOperation(p_fontData,p_fontConfiguration,p_key, buildData.buffer, buildData.size, charInformation) == false)
 		{
@@ -78,9 +89,9 @@ namespace spk
 
 		spk::Vector2 outlineOffset = (spk::Vector2(1.0f, 1.0f) / static_cast<spk::Vector2>(buildData.size)) * spk::Vector2(p_key.outlineSize, p_key.outlineSize);
 
-		for (wchar_t i = 0; i < p_fontConfiguration.nbGlyph(); i++)
+		for (size_t i = 0; i < p_fontConfiguration.validGlyphs().size(); i++)
 		{
-			_computeCharGlyphData(i, _glyphDatas[i], charInformation, buildData.size, outlineOffset);
+			_computeCharGlyphData( p_fontConfiguration.validGlyphs()[i], _glyphDatas[p_fontConfiguration.validGlyphs()[i]], charInformation, buildData.size, outlineOffset);
 		}
 
 		return (buildData);
