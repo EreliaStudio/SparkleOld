@@ -7,7 +7,7 @@
 namespace spk
 {
 	ShaderLayout::UniformBlockLayout::UniformBlockLayout(const StructureLayout &p_structureLayout) :
-		FieldArrayLayout(p_structureLayout, 4 * sizeof(float))
+		FieldArrayLayout(p_structureLayout, 1 * sizeof(float))
 	{
 	}
 
