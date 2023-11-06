@@ -44,7 +44,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_frame.hpp - NOT_COPIED"
 
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_image.hpp - NOT_COPIED"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/image/spk_abstract_image.hpp - graphics/image"
 
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_surface.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/surface/spk_abstract_surface.hpp - graphics/surface/"

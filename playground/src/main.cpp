@@ -3,76 +3,98 @@
 class Test : public spk::Widget::Interface
 {
 private:
-	int count = 0;
-	spk::WidgetComponent::Box _box;
+    struct Unit
+    {
+        spk::Vector2 position;
+        spk::Vector2 uv;
+    };
 
-	void _onGeometryChange()
-	{
-		_box.setGeometry(area(), 10);
-		_box.setDepth(depth());
-	}
+    spk::Pipeline _pipeline;
+    std::shared_ptr<spk::Pipeline::Object> _object;
+    spk::Font _font;
+    std::shared_ptr<spk::Font::Atlas> _fontAtlas;
+    spk::Image _image;
 
-	void _onRender()
-	{		
-		_box.render();
-	}
-	
-	bool _onUpdate()
-	{
-		return (false);
-	}
+    int value = 0;
+
+    void _onGeometryChange()
+    {
+        spk::Font::Atlas::GlyphData glyphData = _fontAtlas->glyph(0xC9);
+
+        std::vector<Unit> units = {
+            {spk::Vector2(-1.0f, 1.0f), spk::Vector2(0, 0)},
+            {spk::Vector2( 1.0f, 1.0f), spk::Vector2(1, 0)},
+            {spk::Vector2(-1.0f, -1.0f), spk::Vector2(0, 1)},
+            {spk::Vector2( 1.0f, -1.0f), spk::Vector2(1, 1)},
+            {spk::Vector2(0.0f, -0.0f), glyphData.uvs[0]},
+            {spk::Vector2(0.9f, -0.0f), glyphData.uvs[1]},
+            {spk::Vector2(0.0f, -0.9f), glyphData.uvs[2]},
+            {spk::Vector2(0.9f, -0.9f), glyphData.uvs[3]}
+        };
+
+        std::vector<unsigned int> indexes = {
+            0, 2, 3, 3, 1, 0, 4, 6, 7, 7, 5, 4};
+
+        _object->storage().vertices() << units << std::endl;
+        _object->storage().indexes() << indexes << std::endl;
+    }
+    void _onRender()
+    {
+        if (value == 0)
+            _fontAtlas->texture().bind(0);
+        else
+            _image.bind(0);
+
+        _pipeline.uniform(L"textureID") << 0 << std::endl;
+        _object->render();
+
+        if (value == 0)
+            _fontAtlas->texture().unbind();
+        else
+            _image.unbind();
+    }
+
+    bool _onUpdate()
+    {
+        if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Pressed)
+        {
+            value = 0;
+        }
+
+        if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::Z) == spk::InputState::Pressed)
+        {
+            value = 1;
+        }
+
+        return (false);
+    }
 
 public:
-	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name)
-	{
+    Test(const std::wstring &p_name) :
+        spk::Widget::Interface(p_name),
+        _pipeline(spk::ShaderModule(L"colorShader.vert"), spk::ShaderModule(L"colorShader.frag")),
+        _object(_pipeline.createObject()),
+        _font(L"Roboto-Regular.ttf"),
+        _fontAtlas(_font[spk::Font::Key(100, 10, spk::Font::OutlineType::Standard)]),
+        _image(L"imageTest.png")
+    {
 
-	}
+    }
 
-	void setColors(spk::Color p_colorA, spk::Color p_colorB)
-	{
-		_box.setColors(p_colorA, p_colorB);
-	}
-	
-	~Test()
-	{
+    ~Test()
+    {
 
-	}
+    }
 };
 
 int main()
 {
     spk::Application app(L"Playground", 800);
     spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
-
-    // Create main widget
-    std::shared_ptr<Test> mainWidget = app.addRootWidget<Test>(L"MainWidget");
-    mainWidget->setColors(spk::Color(210, 25, 25, 255), spk::Color(180, 25, 25, 255));
-    mainWidget->setGeometry(spk::Vector2Int(0, 0), app.size());
-    mainWidget->activate();
-
-	for (size_t i = 0; i < 4; i++)
-	{
-		std::shared_ptr<Test> parentWidget = mainWidget->addChildrenWidget<Test>(L"Widget Parent [" + std::to_wstring(i) + L"]");
-		parentWidget->setColors(spk::Color(25, 25, 210, 255), spk::Color(25, 25, 180, 255));
-
-		spk::Vector2Int anchor = spk::Vector2Int(app.size().x / 8 + (app.size().x / 2) * (i / 2), app.size().y / 8 + (app.size().y / 2) * (i % 2));
-		spk::Vector2UInt size = spk::Vector2Int(app.size().x / 4, app.size().y / 4);
-
-		parentWidget->setGeometry(anchor, size);
-		parentWidget->activate();
-
-		for (size_t j = 0; j < 4; j++)
-		{
-			std::shared_ptr<Test> childrenWidget = parentWidget->addChildrenWidget<Test>(L"Widget Children [" + std::to_wstring(i) + L"]");
-			childrenWidget->setColors(spk::Color(25, 210, 25, 255), spk::Color(25, 180, 25, 255));
-			
-			spk::Vector2Int anchor = spk::Vector2Int(-static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().x * (j / 2), -static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().y * (j % 2));
-			spk::Vector2UInt size = spk::Vector2UInt(parentWidget->size().x / 2, parentWidget->size().y / 2);
-
-			childrenWidget->setGeometry(anchor, size);
-			childrenWidget->activate();
-		}
-	}
+  
+    std::shared_ptr<Test> test = app.addRootWidget<Test>(L"MainWidget");
+    test->setGeometry(spk::Vector2Int(0, 0), app.size());
+    test->activate();
 
     return (app.run());
 }
