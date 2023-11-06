@@ -8,15 +8,27 @@ namespace spk
 	{
 	}
 
+	/**
+	 * @brief Normalizes the atlas data.
+	 *
+	 * This function iterates through all pixels in the atlas and normalizes 
+	 * their values. Any pixel not representing a character (`Font::CHAR_PIXEL`) 
+	 * is set to be empty (`Font::EMPTY_PIXEL`). Pixels representing characters 
+	 * remain unchanged. This ensures the atlas data contains only distinct 
+	 * values corresponding to character pixels and empty pixels.
+	 *
+	 * @param p_atlasData The atlas data where pixels are stored.
+	 * @param p_atlasSize The dimensions of the atlas.
+	 */
 	void _normalizeAtlasData(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize)
 	{
 		size_t maxIndex = static_cast<size_t>(p_atlasSize.x * p_atlasSize.y);
 		for (size_t i = 0; i < maxIndex; i++)
 		{
-			if (p_atlasData[i] != 0xFF)
-				p_atlasData[i] = 0x00;
+			if (p_atlasData[i] != Font::CHAR_PIXEL)
+				p_atlasData[i] = Font::EMPTY_PIXEL;
 			else
-				p_atlasData[i] = 0xFF;
+				p_atlasData[i] = Font::CHAR_PIXEL;
 		}
 	}
 	

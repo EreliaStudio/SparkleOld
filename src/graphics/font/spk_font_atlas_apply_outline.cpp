@@ -3,15 +3,58 @@
 
 namespace spk
 {
-	size_t nbPlacePixel = 0;
-
+	/**
+     * @brief Places a pixel with the Pixelized outline type.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_pixelOrigin The origin of the pixel.
+     * @param p_x X-coordinate.
+     * @param p_y Y-coordinate.
+     * @param p_key Font key information.
+     */
 	void _placePixelPixelized(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
+	
+	/**
+     * @brief Places a pixel with the SharpEdge outline type.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_pixelOrigin The origin of the pixel.
+     * @param p_x X-coordinate.
+     * @param p_y Y-coordinate.
+     * @param p_key Font key information.
+     */
 	void _placePixelSharpEdge(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
+	
+	/**
+     * @brief Places a pixel with the Standard outline type.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_pixelOrigin The origin of the pixel.
+     * @param p_x X-coordinate.
+     * @param p_y Y-coordinate.
+     * @param p_key Font key information.
+     */
 	void _placePixelStandard(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
+	
+	/**
+     * @brief Places a pixel with the Manhattan outline type.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_pixelOrigin The origin of the pixel.
+     * @param p_x X-coordinate.
+     * @param p_y Y-coordinate.
+     * @param p_key Font key information.
+     */
 	void _placePixelManhattan(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
 
+	//! Type alias for the pixel placement function.
 	using PlacePixelFunction = std::function<void(std::vector<uint8_t> &, const spk::Vector2Int &, const spk::Vector2Int&, const spk::Font::Key &)>;
 
+	/**
+     * @brief Requests the appropriate pixel placement function based on outline type.
+     * @param p_outlineType The type of outline.
+     * @return The appropriate pixel placement function.
+     */
 	PlacePixelFunction _requestPlacePixelFunction(const spk::Font::OutlineType& p_outlineType)
 	{
 		PlacePixelFunction result = nullptr;
@@ -41,6 +84,13 @@ namespace spk
 		return (result);
 	}
 
+	/**
+     * @brief Checks if a pixel is on the border.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_index Index of the pixel.
+     * @return True if the pixel is on the border, false otherwise.
+     */
 	bool _isPixelOnBorder(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const size_t& p_index)
 	{
 		return (p_atlasData[p_index] == Font::CHAR_PIXEL &&
@@ -51,6 +101,12 @@ namespace spk
 		);
 	}
 
+	/**
+     * @brief Applies the appropriate outline to the atlas data.
+     * @param p_atlasData The atlas data.
+     * @param p_atlasSize Size of the atlas.
+     * @param p_key Font key information.
+     */
 	void _applyOutline(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Font::Key &p_key)
 	{
 		PlacePixelFunction placePixelFunction = _requestPlacePixelFunction(p_key.outlineType);

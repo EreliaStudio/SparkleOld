@@ -3,6 +3,20 @@
 
 namespace spk
 {
+	/**
+     * @brief Places a pixel using the Manhattan distance metric.
+     *
+     * This function modifies the atlas data based on the Manhattan distance 
+     * from a given pixel. It inspects adjacent pixels and updates their values 
+     * according to the Manhattan distance calculation.
+     *
+     * @param p_atlasData The atlas data where pixels are stored.
+     * @param p_atlasSize The dimensions of the atlas.
+     * @param p_pixelOrigin The origin of the pixel (usually its top-left corner).
+     * @param p_x The x-coordinate of the current pixel.
+     * @param p_y The y-coordinate of the current pixel.
+     * @param p_key Font key containing information like outline size, etc.
+     */
 	void _placePixelManhattan(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key)
 	{
 		size_t baseIndex = p_x + p_y * p_atlasSize.x;

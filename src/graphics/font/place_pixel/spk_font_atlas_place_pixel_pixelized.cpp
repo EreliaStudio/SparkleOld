@@ -3,6 +3,22 @@
 
 namespace spk
 {
+	/**
+	 * @brief Places a pixel using a pixelized outline method.
+	 *
+	 * This function modifies the atlas data to apply a pixelized outline 
+	 * around characters. It updates pixel values based on their distance 
+	 * from the base pixel and their alignment with the original pixel of
+	 * the font, creating a blocky appearance characteristic of pixelized
+	 * fonts.
+	 *
+	 * @param p_atlasData The atlas data where pixels are stored.
+	 * @param p_atlasSize The dimensions of the atlas.
+	 * @param p_pixelOrigin The origin of the pixel (usually its top-left corner).
+	 * @param p_x The x-coordinate of the current pixel.
+	 * @param p_y The y-coordinate of the current pixel.
+	 * @param p_key Font key containing information like outline size, etc.
+	 */
 	void _placePixelPixelized(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key)
 	{
 		size_t baseIndex = p_x + p_y * p_atlasSize.x;
