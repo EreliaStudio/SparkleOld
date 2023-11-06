@@ -3,48 +3,9 @@
 
 namespace spk
 {
-	/**
-     * @brief Places a pixel with the Pixelized outline type.
-     * @param p_atlasData The atlas data.
-     * @param p_atlasSize Size of the atlas.
-     * @param p_pixelOrigin The origin of the pixel.
-     * @param p_x X-coordinate.
-     * @param p_y Y-coordinate.
-     * @param p_key Font key information.
-     */
 	void _placePixelPixelized(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
-	
-	/**
-     * @brief Places a pixel with the SharpEdge outline type.
-     * @param p_atlasData The atlas data.
-     * @param p_atlasSize Size of the atlas.
-     * @param p_pixelOrigin The origin of the pixel.
-     * @param p_x X-coordinate.
-     * @param p_y Y-coordinate.
-     * @param p_key Font key information.
-     */
 	void _placePixelSharpEdge(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
-	
-	/**
-     * @brief Places a pixel with the Standard outline type.
-     * @param p_atlasData The atlas data.
-     * @param p_atlasSize Size of the atlas.
-     * @param p_pixelOrigin The origin of the pixel.
-     * @param p_x X-coordinate.
-     * @param p_y Y-coordinate.
-     * @param p_key Font key information.
-     */
 	void _placePixelStandard(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
-	
-	/**
-     * @brief Places a pixel with the Manhattan outline type.
-     * @param p_atlasData The atlas data.
-     * @param p_atlasSize Size of the atlas.
-     * @param p_pixelOrigin The origin of the pixel.
-     * @param p_x X-coordinate.
-     * @param p_y Y-coordinate.
-     * @param p_key Font key information.
-     */
 	void _placePixelManhattan(std::vector<uint8_t> &p_atlasData, const spk::Vector2Int &p_atlasSize, const spk::Vector2Int& p_pixelOrigin, const int &p_x, const int &p_y, const spk::Font::Key &p_key);
 
 	//! Type alias for the pixel placement function.
