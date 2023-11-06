@@ -87,24 +87,9 @@ namespace spk
 		 */
 		virtual void unbind() const = 0;
 
-		/**
-		 * @brief Friend functions to allow printing of Format enum to a wide output stream.
-		 */
 		friend std::wostream& operator << (std::wostream& p_os, const Format& p_format);
-
-		/**
-		 * @brief Friend functions to allow printing of Filtering enum to a wide output stream.
-		 */
-		friend std::wostream& operator << (std::wostream& p_os, const Filtering& p_format);
-
-		/**
-		 * @brief Friend functions to allow printing of Wrap enum to a wide output stream.
-		 */
-		friend std::wostream& operator << (std::wostream& p_os, const Wrap& p_format);
-
-		/**
-		 * @brief Friend functions to allow printing of Mipmap enum to a wide output stream.
-		 */
-		friend std::wostream& operator << (std::wostream& p_os, const Mipmap& p_format);
+		friend std::wostream& operator << (std::wostream& p_os, const Filtering& p_filtering);
+		friend std::wostream& operator << (std::wostream& p_os, const Wrap& p_wrap);
+		friend std::wostream& operator << (std::wostream& p_os, const Mipmap& p_mipmap);
 	};
 }
