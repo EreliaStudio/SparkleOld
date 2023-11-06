@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['location_1490',['location',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a57a1ee8ebb11f07aca02f53334642658',1,'spk::ShaderLayout::FieldArrayLayout::Field']]]
+  ['g_1549',['g',['../structspk_1_1Color.html#a9941ab3dea75e7cd1d1e6b0cbc9d9eb5',1,'spk::Color']]]
 ];

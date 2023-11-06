@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['ratio_1568',['Ratio',['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#a184cef251747aff52f6a393fe0173e77a8334a158298fbcf163f4dcb4a387d150',1,'spk::Widget::Canvas::Geometry::Value']]],
-  ['running_1569',['Running',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca5bda814c4aedb126839228f1a3d92f09',1,'spk::Activity::Running()'],['../classspk_1_1Timer.html#a68d5c57fd3cd82f4f97fe8a34bc227a0a5bda814c4aedb126839228f1a3d92f09',1,'spk::Timer::Running()']]]
+  ['nearest_1641',['Nearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a60494f02d440f316319dd0fad40ad007',1,'spk::AbstractTexture']]],
+  ['nearestmipmapnearest_1642',['NearestMipmapNearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a35d97e4a37fa3a0d76c692f3e318599b',1,'spk::AbstractTexture']]],
+  ['nothingtoread_1643',['NothingToRead',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()']]]
 ];

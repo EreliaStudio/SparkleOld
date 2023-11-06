@@ -1,6 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1IPerlin.html" title="Provides functionality related to Perlin noise generation." alt="" coords="5,5,100,32"/>
-<area shape="rect" id="node2" href="$classspk_1_1Perlin1D.html" title="A Perlin noise generator for one&#45;dimensional input." alt="" coords="148,5,256,32"/>
-<area shape="rect" id="node3" href="$classspk_1_1Perlin2D.html" title="A Perlin noise generator for two&#45;dimensional input." alt="" coords="304,5,412,32"/>
-<area shape="rect" id="node4" href="$classspk_1_1Perlin3D.html" title="A Perlin noise generator for three&#45;dimensional input." alt="" coords="460,5,568,32"/>
+<area shape="rect" id="node1" href="$classspk_1_1IMessageConsumerModule.html" title="Class for modules that consume messages." alt="" coords="5,81,235,108"/>
+<area shape="rect" id="node2" href="$classspk_1_1GraphicalAPIModule.html" title="Class for managing the application window." alt="" coords="283,5,467,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1KeyboardModule.html" title="Class for managing the keyboard interactions." alt="" coords="293,56,456,83"/>
+<area shape="rect" id="node4" href="$classspk_1_1MouseModule.html" title="Class for managing the mouse interactions." alt="" coords="303,107,447,133"/>
+<area shape="rect" id="node5" href="$classspk_1_1SystemModule.html" title="Class for managing system&#45;level interactions." alt="" coords="299,157,450,184"/>
 </map>

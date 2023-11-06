@@ -72,7 +72,26 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;image/spk_image.hpp&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_texture.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1Image.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Image.html">Image</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Texture.html">Texture</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        uint8_t *_textureData; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a> _size; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> _channels; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classspk_1_1Image.html#a337bb053ef8644753894ccc187e055a4">Image</a>(<span class="keyword">const</span> std::filesystem::path&amp; p_path);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Image_html"><div class="ttname"><a href="classspk_1_1Image.html">spk::Image</a></div><div class="ttdoc">Represents an image which is a specialized type of texture.</div><div class="ttdef"><b>Definition:</b> spk_image.hpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1Image_html_a337bb053ef8644753894ccc187e055a4"><div class="ttname"><a href="classspk_1_1Image.html#a337bb053ef8644753894ccc187e055a4">spk::Image::Image</a></div><div class="ttdeci">Image(const std::filesystem::path &amp;p_path)</div><div class="ttdoc">Constructs the Image object and loads the image from the specified path.</div><div class="ttdef"><b>Definition:</b> spk_image.cpp:8</div></div>
+<div class="ttc" id="aclassspk_1_1Texture_html"><div class="ttname"><a href="classspk_1_1Texture.html">spk::Texture</a></div><div class="ttdoc">Represents a concrete implementation of a texture in OpenGL framework.</div><div class="ttdef"><b>Definition:</b> spk_texture.hpp:16</div></div>
+<div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

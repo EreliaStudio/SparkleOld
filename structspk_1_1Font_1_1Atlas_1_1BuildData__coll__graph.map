@@ -1,0 +1,4 @@
+<map id="spk::Font::Atlas::BuildData" name="spk::Font::Atlas::BuildData">
+<area shape="rect" id="node1" title="Data used for building the font atlas." alt="" coords="5,95,200,121"/>
+<area shape="rect" id="node2" href="$structspk_1_1IVector2.html" title=" " alt="" coords="26,5,179,32"/>
+</map>

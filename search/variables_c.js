@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['r_1499',['r',['../structspk_1_1Color.html#aae5f0e0ffcfc279a6be0c7436df4f0da',1,'spk::Color']]],
-  ['render_5fips_5fcounter_1500',['RENDER_IPS_COUNTER',['../classspk_1_1Profiler.html#ab4d0edd93a8934bd0c844fe4942791d2',1,'spk::Profiler']]]
+  ['offset_1557',['offset',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a212184a0f7b712002b03d1043ba90b73',1,'spk::ShaderLayout::FieldArrayLayout::Field']]],
+  ['outlinesize_1558',['outlineSize',['../structspk_1_1Font_1_1Key.html#ab91874c31bfc91b9ad494b1fb06f097b',1,'spk::Font::Key']]],
+  ['outlinesizesquared_1559',['outlineSizeSquared',['../structspk_1_1Font_1_1Key.html#a536789303ace0684816045e14721af1b',1,'spk::Font::Key']]],
+  ['outlinetype_1560',['outlineType',['../structspk_1_1Font_1_1Key.html#af1c8f5fb96895899f194caf2dc588e41',1,'spk::Font::Key']]]
 ];

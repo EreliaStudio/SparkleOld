@@ -1,0 +1,4 @@
+<map id="spk::Texture" name="spk::Texture">
+<area shape="rect" id="node1" title="Represents a concrete implementation of a texture in OpenGL framework." alt="" coords="32,80,133,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractTexture.html" title="Represents an abstract texture in the Sparkle framework. This class serves as the base class for all ..." alt="" coords="5,5,160,32"/>
+</map>

@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1AbstractPipeline_1_1Object_1_1Storage_1_1Buffer.html" title="A class to handle data buffering operations." alt="" coords="5,5,183,47"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout." alt="" coords="5,39,164,80"/>
+<area shape="rect" id="node2" href="$classspk_1_1AbstractPipeline_1_1SamplerUniform.html" title="A class derived from Uniform to manage sampler uniforms." alt="" coords="212,5,371,47"/>
+<area shape="rect" id="node4" href="$classspk_1_1AbstractPipeline_1_1UniformBlock.html" title="A class derived from Uniform to manage uniform blocks with multiple fields." alt="" coords="212,71,371,112"/>
+<area shape="rect" id="node3" href="$classspk_1_1Pipeline_1_1OpenGLSamplerUniform.html" title=" " alt="" coords="419,5,637,47"/>
+<area shape="rect" id="node5" href="$classspk_1_1Pipeline_1_1OpenGLUniformBlock.html" title=" " alt="" coords="419,71,637,112"/>
 </map>

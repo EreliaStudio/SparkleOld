@@ -1,0 +1,5 @@
+<map id="spk::Font::Atlas::GlyphData" name="spk::Font::Atlas::GlyphData">
+<area shape="rect" id="node1" title="Data for each glyph in the atlas." alt="" coords="81,109,279,136"/>
+<area shape="rect" id="node2" href="$structspk_1_1IVector2.html" title=" " alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node3" href="$structspk_1_1IVector2.html" title=" " alt="" coords="195,5,349,32"/>
+</map>

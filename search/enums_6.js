@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readresult_1546',['ReadResult',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781',1,'spk::Network::Socket::ReadResult()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781',1,'spk::Network::Socket::ReadResult()']]]
+  ['outlinetype_1615',['OutlineType',['../classspk_1_1Font.html#ad6aea176b2688e771c0b34525a12bdc8',1,'spk::Font']]]
 ];
