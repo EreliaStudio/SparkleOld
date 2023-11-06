@@ -11,7 +11,7 @@ namespace spk
      * @param p_type The GLenum value to convert.
      * @return The wide string representation of the GLenum.
      */
-    std::wstring convertGLEnumToWString(const GLenum& p_type);
+    std::wstring to_wstring(const GLenum& p_type);
 
     /**
      * Checks for OpenGL errors and logs them along with a provided message.

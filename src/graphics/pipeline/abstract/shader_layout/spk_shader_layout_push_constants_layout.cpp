@@ -7,13 +7,13 @@
 namespace spk
 {
     ShaderLayout::PushConstantsLayout::PushConstantsLayout(const StructureLayout& p_structureLayout) :
-        FieldArrayLayout(p_structureLayout)
+        FieldArrayLayout(p_structureLayout, 4 * sizeof(float))
     {
     }
 
     void ShaderLayout::PushConstantsLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
-        std::regex outer_re(R"(layout\(push_constant\) uniform (.*?) \{(.*?)\} (.*?);)");
+        std::regex outer_re(R"(layout\(push_constant\) uniform (.*?) \{(.*?)\}(?:\s*(\w+))?;)");
         std::smatch outer_match;
 
         if (std::regex_search(p_instruction.code, outer_match, outer_re))

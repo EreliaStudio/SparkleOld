@@ -67,6 +67,7 @@
 #include "application/modules/spk_widget_module.hpp"
 
 #include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget_components.hpp"
 #include "widget/spk_widget_atlas.hpp"
 #include "widget/spk_widget_canvas.hpp"
 

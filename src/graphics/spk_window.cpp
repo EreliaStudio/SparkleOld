@@ -1,4 +1,5 @@
 #include "graphics/spk_window.hpp"
+#include "graphics/spk_viewport.hpp"
 
 namespace spk
 {

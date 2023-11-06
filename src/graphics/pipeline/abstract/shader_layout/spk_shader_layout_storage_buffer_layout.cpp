@@ -7,7 +7,7 @@
 namespace spk
 {
     ShaderLayout::StorageBufferLayout::StorageBufferLayout(const StructureLayout& p_structureLayout) :
-        FieldArrayLayout(p_structureLayout)
+        FieldArrayLayout(p_structureLayout, 1 * sizeof(float))
     {
     }
 

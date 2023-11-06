@@ -1,66 +1,78 @@
 #include "playground.hpp"
 
-struct Foo
+class Test : public spk::Widget::Interface
 {
-    int x;
-  
-    Foo(int p_val) : x(p_val)
-    {
-        spk::cout << "Foo constructor. x = " << x << std::endl;
-    }
+private:
+	int count = 0;
+	spk::WidgetComponent::Box _box;
 
-    Foo(const Foo &p_other) : x(p_other.x)
-    {
-        spk::cout << "Foo copy constructor. x = " << x << std::endl;
-    }
+	void _onGeometryChange()
+	{
+		_box.setGeometry(area(), 10);
+		_box.setDepth(depth());
+	}
 
-    Foo &operator=(const Foo &p_other)
-    {
-        spk::cout << "Foo copy assignment operator. x = " << p_other.x << std::endl;
-        if (this != &p_other)
-        {
-            x = p_other.x;
-        }
-        return *this;
-    }
+	void _onRender()
+	{		
+		_box.render();
+	}
+	
+	bool _onUpdate()
+	{
+		return (false);
+	}
 
-    ~Foo()
-    {
-        spk::cout << "Foo destructor. x = " << x << std::endl;
-    }
+public:
+	Test(const std::wstring &p_name) : spk::Widget::Interface(p_name)
+	{
+
+	}
+
+	void setColors(spk::Color p_colorA, spk::Color p_colorB)
+	{
+		_box.setColors(p_colorA, p_colorB);
+	}
+	
+	~Test()
+	{
+
+	}
 };
-
-void testObjectDestruction(spk::Pool<Foo> &p_pool)
-{
-    spk::cout << "Entering testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    auto obj = p_pool.obtain(3);
-    spk::cout << "Inside testObjectDestruction, obj x: " << (*obj).x << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-    spk::cout << "Exiting testObjectDestruction." << std::endl;
-	spk::cout << "Pool size: " << p_pool.size() << std::endl;
-}
 
 int main()
 {
-    spk::Pool<Foo> myPool;
+    spk::Application app(L"Playground", 800);
+    spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
 
-    myPool.reserve(3, 0);
+    // Create main widget
+    std::shared_ptr<Test> mainWidget = app.addRootWidget<Test>(L"MainWidget");
+    mainWidget->setColors(spk::Color(210, 25, 25, 255), spk::Color(180, 25, 25, 255));
+    mainWidget->setGeometry(spk::Vector2Int(0, 0), app.size());
+    mainWidget->activate();
 
-    spk::cout << "After reserve, pool size: " << myPool.size() << std::endl;
+	for (size_t i = 0; i < 4; i++)
+	{
+		std::shared_ptr<Test> parentWidget = mainWidget->addChildrenWidget<Test>(L"Widget Parent [" + std::to_wstring(i) + L"]");
+		parentWidget->setColors(spk::Color(25, 25, 210, 255), spk::Color(25, 25, 180, 255));
 
-    auto obj1 = myPool.obtain(1);
-    auto obj2 = myPool.obtain(2);
+		spk::Vector2Int anchor = spk::Vector2Int(app.size().x / 8 + (app.size().x / 2) * (i / 2), app.size().y / 8 + (app.size().y / 2) * (i % 2));
+		spk::Vector2UInt size = spk::Vector2Int(app.size().x / 4, app.size().y / 4);
 
-    spk::cout << "After obtaining two objects, pool size: " << myPool.size() << std::endl;
-    spk::cout << "obj1 x: " << (*obj1).x << std::endl;
-    spk::cout << "obj2 x: " << (*obj2).x << std::endl;
+		parentWidget->setGeometry(anchor, size);
+		parentWidget->activate();
 
-    testObjectDestruction(myPool);
+		for (size_t j = 0; j < 4; j++)
+		{
+			std::shared_ptr<Test> childrenWidget = parentWidget->addChildrenWidget<Test>(L"Widget Children [" + std::to_wstring(i) + L"]");
+			childrenWidget->setColors(spk::Color(25, 210, 25, 255), spk::Color(25, 180, 25, 255));
+			
+			spk::Vector2Int anchor = spk::Vector2Int(-static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().x * (j / 2), -static_cast<int>(parentWidget->size().x / 4) + parentWidget->size().y * (j % 2));
+			spk::Vector2UInt size = spk::Vector2UInt(parentWidget->size().x / 2, parentWidget->size().y / 2);
 
-	spk::cout << "Outside function pool size: " << myPool.size() << std::endl;
+			childrenWidget->setGeometry(anchor, size);
+			childrenWidget->activate();
+		}
+	}
 
-    spk::cout << "Exiting main function." << std::endl;
-
-    return 0;
+    return (app.run());
 }
