@@ -2,6 +2,12 @@
 
 namespace spk
 {
+	/**
+	 * @brief Converts a Sparkle texture format to its equivalent OpenGL format.
+	 *
+	 * @param p_format The Sparkle texture format.
+	 * @return The equivalent OpenGL texture format.
+	 */
 	GLenum toOpenGLFormat(const AbstractTexture::Format& p_format)
 	{
 		switch(p_format)
@@ -23,6 +29,12 @@ namespace spk
 		}
 	}
 
+	/**
+	 * @brief Converts a Sparkle texture filtering type to its equivalent OpenGL filtering type.
+	 *
+	 * @param p_filtering The Sparkle texture filtering type.
+	 * @return The equivalent OpenGL texture filtering type.
+	 */
 	GLint toOpenGLFiltering(const AbstractTexture::Filtering& p_filtering)
 	{
 		switch(p_filtering)
@@ -36,6 +48,12 @@ namespace spk
 		}
 	}
 
+	/**
+	 * @brief Converts a Sparkle texture wrapping mode to its equivalent OpenGL wrapping mode.
+	 *
+	 * @param p_wrap The Sparkle texture wrapping mode.
+	 * @return The equivalent OpenGL texture wrapping mode.
+	 */
 	GLint toOpenGLWrap(const AbstractTexture::Wrap& p_wrap)
 	{
 		switch(p_wrap)

@@ -5,6 +5,15 @@
 
 namespace spk
 {
+	/**
+	 * @brief Retrieves the codepoints present in the font.
+	 *
+	 * Iterates through the range of valid wchar_t values and identifies 
+	 * which ones have valid glyphs in the given font.
+	 *
+	 * @param p_fontInfo Pointer to the font information structure.
+	 * @return A vector containing the valid codepoints for the font.
+	 */
 	std::vector<wchar_t> getCodepointsInFont(const stbtt_fontinfo* p_fontInfo)
 	{
 		std::vector<wchar_t> result;
@@ -29,6 +38,19 @@ namespace spk
 		_validGlyphs = getCodepointsInFont(&fontInfo);
 	}
 
+	/**
+	 * @brief Executes the packing operation for the font.
+	 *
+	 * Uses stbtt to pack the glyphs of a font into an atlas.
+	 * 
+	 * @param p_fontData The font data vector.
+	 * @param p_fontConfiguration The font configuration.
+	 * @param p_key The key which defines the font characteristics.
+	 * @param atlasData The resulting atlas data after packing.
+	 * @param atlasSize The dimensions of the atlas.
+	 * @param charInformation The packed character information after packing.
+	 * @return True if the packing operation is successful, false otherwise.
+	 */
 	bool _executePackingOperation(
 		const std::vector<uint8_t> &p_fontData,
 		const Font::Configuration &p_fontConfiguration,
@@ -56,6 +78,18 @@ namespace spk
 		return (errorCode != 0);
 	}
 
+	/**
+	 * @brief Computes glyph data for a character.
+	 *
+	 * Using the packed character information, this function extracts the 
+	 * UVs and positions for the character's glyph, considering an outline offset.
+	 * 
+	 * @param p_char The character for which the glyph data is needed.
+	 * @param p_data The resulting glyph data.
+	 * @param p_charInformation The packed character information.
+	 * @param p_atlasSize The dimensions of the atlas.
+	 * @param outlineOffset The offset for the outline.
+	 */
 	void _computeCharGlyphData(const wchar_t& p_char, spk::Font::Atlas::GlyphData &p_data, const stbtt_packedchar *p_charInformation, const spk::Vector2Int& p_atlasSize, const spk::Vector2& outlineOffset)
 	{
 		stbtt_aligned_quad quad;
