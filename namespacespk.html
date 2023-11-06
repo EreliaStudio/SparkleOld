@@ -210,6 +210,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractSurface.html">AbstractSurface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract class representing a surface for rendering.  <a href="classspk_1_1AbstractSurface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Viewport.html">Viewport</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A concrete implementation of the <a class="el" href="classspk_1_1AbstractViewport.html" title="An abstract base class for handling viewports within the Sparkle library.">spk::AbstractViewport</a> class.  <a href="classspk_1_1Viewport.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractViewport.html">AbstractViewport</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract base class for handling viewports within the Sparkle library.  <a href="classspk_1_1AbstractViewport.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Input.html">Input</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class providing a common interface for input classes in the 'spk' library.  <a href="classspk_1_1Input.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,9 +305,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4a4bb648f3468f8b3b62fba87c87c1e0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a4a4bb648f3468f8b3b62fba87c87c1e0">Viewport</a> = <a class="el" href="classspk_1_1Area.html">Area</a></td></tr>
-<tr class="memdesc:a4a4bb648f3468f8b3b62fba87c87c1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>, used to represent a rendering viewport.  <a href="namespacespk.html#a4a4bb648f3468f8b3b62fba87c87c1e0">More...</a><br /></td></tr>
-<tr class="separator:a4a4bb648f3468f8b3b62fba87c87c1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec5e8bd08055e02d096facc84619ed06"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#aec5e8bd08055e02d096facc84619ed06">Scissor</a> = <a class="el" href="classspk_1_1Area.html">Area</a></td></tr>
 <tr class="memdesc:aec5e8bd08055e02d096facc84619ed06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>, used to represent a scissor region for rendering.  <a href="namespacespk.html#aec5e8bd08055e02d096facc84619ed06">More...</a><br /></td></tr>
 <tr class="separator:aec5e8bd08055e02d096facc84619ed06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,8 +348,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a35c88ea124c5bf25cfd51823d719a92b"><td class="memItemLeft" align="right" valign="top">LRESULT CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a35c88ea124c5bf25cfd51823d719a92b">WindowProc</a> (HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)</td></tr>
 <tr class="memdesc:a35c88ea124c5bf25cfd51823d719a92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes messages sent to a window.  <a href="namespacespk.html#a35c88ea124c5bf25cfd51823d719a92b">More...</a><br /></td></tr>
 <tr class="separator:a35c88ea124c5bf25cfd51823d719a92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa64fb6df16a558cf354f6f6879c4922d"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#aa64fb6df16a558cf354f6f6879c4922d">convertGLEnumToWString</a> (const GLenum &amp;p_type)</td></tr>
-<tr class="separator:aa64fb6df16a558cf354f6f6879c4922d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b79166d0f6923f9730d6d359d9622b3"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">to_wstring</a> (const GLenum &amp;p_type)</td></tr>
+<tr class="separator:a4b79166d0f6923f9730d6d359d9622b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4db08bac60928ed2e27eb9d9f0975591"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a4db08bac60928ed2e27eb9d9f0975591">checkOpengl</a> (const std::wstring &amp;msg)</td></tr>
 <tr class="separator:a4db08bac60928ed2e27eb9d9f0975591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba">to_wstring</a> (const <a class="el" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> &amp;p_status)</td></tr>
@@ -491,12 +494,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="names
 <tr class="separator:addb5801f7bcf70cc6b726033f9ff429c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0da50a9ba3d3e85ca37ca8b78d0ce7c0"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a0da50a9ba3d3e85ca37ca8b78d0ce7c0">operator&lt;&lt;</a> (std::wostream &amp;p_out, const <a class="el" href="classspk_1_1ShaderLayout_1_1StructureLayout.html">ShaderLayout::StructureLayout</a> &amp;p_layout)</td></tr>
 <tr class="separator:a0da50a9ba3d3e85ca37ca8b78d0ce7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c9c575a202ed88db6aec106374a1d6"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#ad7c9c575a202ed88db6aec106374a1d6">operator&lt;&lt;</a> (std::wostream &amp;p_out, const <a class="el" href="classspk_1_1ShaderLayout_1_1UniformBlockLayout.html#a7b19cf44e3a2b809284bf6dce4136268">ShaderLayout::UniformBlockLayout::Mode</a> &amp;p_mode)</td></tr>
-<tr class="separator:ad7c9c575a202ed88db6aec106374a1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b91e1adaa35d6c35fd7c84337dc242"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a42b91e1adaa35d6c35fd7c84337dc242">operator&lt;&lt;</a> (std::wostream &amp;p_out, const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;p_key)</td></tr>
-<tr class="separator:a42b91e1adaa35d6c35fd7c84337dc242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad40e76bbabfb5e708d772cc68522f4f6"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#ad40e76bbabfb5e708d772cc68522f4f6">operator&lt;&lt;</a> (std::wostream &amp;p_out, const <a class="el" href="classspk_1_1ShaderLayout_1_1UniformBlockLayout.html">ShaderLayout::UniformBlockLayout</a> &amp;p_block)</td></tr>
-<tr class="separator:ad40e76bbabfb5e708d772cc68522f4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9599eec12355d40afbb699f241458cd4"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a9599eec12355d40afbb699f241458cd4">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34">ShaderModule::Instruction::Type</a> &amp;p_type)</td></tr>
 <tr class="separator:a9599eec12355d40afbb699f241458cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accca98d92e095c0e4bac94f5c8bad561"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#accca98d92e095c0e4bac94f5c8bad561">findFirstBindingAvailable</a> (const <a class="el" href="classspk_1_1ShaderLayout.html">spk::ShaderLayout</a> &amp;p_shaderLayout)</td></tr>
@@ -517,6 +514,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="names
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:abb99ecdf47f36dba0ebd7b338ec78017"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#abb99ecdf47f36dba0ebd7b338ec78017">boxComponentVertexShaderModule</a></td></tr>
+<tr class="memdesc:abb99ecdf47f36dba0ebd7b338ec78017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Vertex Shader Module of the Box Component.  <a href="namespacespk.html#abb99ecdf47f36dba0ebd7b338ec78017">More...</a><br /></td></tr>
+<tr class="separator:abb99ecdf47f36dba0ebd7b338ec78017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2e1b87e99d6da0389f36943856c436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a8f2e1b87e99d6da0389f36943856c436">boxComponentFragmentShaderModule</a></td></tr>
+<tr class="memdesc:a8f2e1b87e99d6da0389f36943856c436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Fragment Shader Module of the Box Component.  <a href="namespacespk.html#a8f2e1b87e99d6da0389f36943856c436">More...</a><br /></td></tr>
+<tr class="separator:a8f2e1b87e99d6da0389f36943856c436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a6a5cbca57b40e3f41c1c143eb09680"><td class="memItemLeft" align="right" valign="top"><a id="a7a6a5cbca57b40e3f41c1c143eb09680"></a>
 thread_local <a class="el" href="classspk_1_1IOStream.html">spk::IOStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">cout</a> = <a class="el" href="classspk_1_1IOStream.html">IOStream</a>(std::wcout)</td></tr>
 <tr class="memdesc:a7a6a5cbca57b40e3f41c1c143eb09680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread-local instances of <a class="el" href="classspk_1_1IOStream.html" title="An output stream with a custom prefix, suitable for logging or debugging.">IOStream</a> for standard output. <br /></td></tr>
@@ -546,23 +549,6 @@ thread_local <a class="el" href="classspk_1_1IOStream.html">spk::IOStream</a>&#1
 
 <p>Alias for <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>, used to represent a scissor region for rendering. </p>
 <p>The Scissor is a rectangular area where rendering will be limited to. Outside this area, no pixels will be affected. It also uses an anchor point and a size. </p>
-
-</div>
-</div>
-<a id="a4a4bb648f3468f8b3b62fba87c87c1e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a4bb648f3468f8b3b62fba87c87c1e0">&#9670;&nbsp;</a></span>Viewport</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacespk.html#a4a4bb648f3468f8b3b62fba87c87c1e0">spk::Viewport</a> = typedef <a class="el" href="classspk_1_1Area.html">Area</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Alias for <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>, used to represent a rendering viewport. </p>
-<p>The Viewport is the rectangular area where the rendering output will be displayed. It is defined in terms of an anchor point and a size, just like an <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>. </p>
 
 </div>
 </div>
@@ -773,32 +759,6 @@ thread_local <a class="el" href="classspk_1_1IOStream.html">spk::IOStream</a>&#1
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Modified shader code that is OpenGL compatible. </dd></dl>
-
-</div>
-</div>
-<a id="aa64fb6df16a558cf354f6f6879c4922d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa64fb6df16a558cf354f6f6879c4922d">&#9670;&nbsp;</a></span>convertGLEnumToWString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wstring spk::convertGLEnumToWString </td>
-          <td>(</td>
-          <td class="paramtype">const GLenum &amp;&#160;</td>
-          <td class="paramname"><em>p_type</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Converts a GLenum value to its corresponding wide string representation.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_type</td><td>The GLenum value to convert. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The wide string representation of the GLenum. </dd></dl>
 
 </div>
 </div>
@@ -1597,7 +1557,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="aacba30e91fdc2a6f20d31e9fdbb6c059"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacba30e91fdc2a6f20d31e9fdbb6c059">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aacba30e91fdc2a6f20d31e9fdbb6c059">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1633,7 +1593,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a9599eec12355d40afbb699f241458cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9599eec12355d40afbb699f241458cd4">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9599eec12355d40afbb699f241458cd4">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1669,7 +1629,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a2a5871b92a2419c920588de2f0449fa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a5871b92a2419c920588de2f0449fa6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5871b92a2419c920588de2f0449fa6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1706,7 +1666,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a767f427d0bb2fa60e359bd675906da25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a767f427d0bb2fa60e359bd675906da25">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a767f427d0bb2fa60e359bd675906da25">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1742,7 +1702,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a0af7677e8cb7ce3ffdce0ae61d53b1c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0af7677e8cb7ce3ffdce0ae61d53b1c1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af7677e8cb7ce3ffdce0ae61d53b1c1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1778,7 +1738,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="abc569ea956f7ba847cf5560f1ebd810a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc569ea956f7ba847cf5560f1ebd810a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[6/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc569ea956f7ba847cf5560f1ebd810a">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1814,7 +1774,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a5cd33df9019cf4c85fab84cb702b30d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cd33df9019cf4c85fab84cb702b30d6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[7/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cd33df9019cf4c85fab84cb702b30d6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1850,7 +1810,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="addb5801f7bcf70cc6b726033f9ff429c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addb5801f7bcf70cc6b726033f9ff429c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[8/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#addb5801f7bcf70cc6b726033f9ff429c">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1886,7 +1846,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="a0da50a9ba3d3e85ca37ca8b78d0ce7c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da50a9ba3d3e85ca37ca8b78d0ce7c0">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[9/12]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da50a9ba3d3e85ca37ca8b78d0ce7c0">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1918,114 +1878,6 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The output stream. </dd></dl>
-
-</div>
-</div>
-<a id="ad40e76bbabfb5e708d772cc68522f4f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad40e76bbabfb5e708d772cc68522f4f6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[10/12]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wostream&amp; spk::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wostream &amp;&#160;</td>
-          <td class="paramname"><em>p_out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classspk_1_1ShaderLayout_1_1UniformBlockLayout.html">ShaderLayout::UniformBlockLayout</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_block</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_out</td><td>The wide output stream where the formatted text will be written to. </td></tr>
-    <tr><td class="paramname">p_block</td><td>The UniformBlockLayout object to be formatted and outputted. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the output stream. </dd></dl>
-
-</div>
-</div>
-<a id="a42b91e1adaa35d6c35fd7c84337dc242"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42b91e1adaa35d6c35fd7c84337dc242">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[11/12]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wostream&amp; spk::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wostream &amp;&#160;</td>
-          <td class="paramname"><em>p_out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_out</td><td>The wide output stream where the formatted text will be written to. </td></tr>
-    <tr><td class="paramname">p_key</td><td>The UniformBlockLayout::Key object to be formatted and outputted. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the output stream. </dd></dl>
-
-</div>
-</div>
-<a id="ad7c9c575a202ed88db6aec106374a1d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7c9c575a202ed88db6aec106374a1d6">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[12/12]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::wostream&amp; spk::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wostream &amp;&#160;</td>
-          <td class="paramname"><em>p_out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classspk_1_1ShaderLayout_1_1UniformBlockLayout.html#a7b19cf44e3a2b809284bf6dce4136268">ShaderLayout::UniformBlockLayout::Mode</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_mode</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_out</td><td>The wide output stream where the formatted text will be written to. </td></tr>
-    <tr><td class="paramname">p_mode</td><td>The UniformBlockLayout::Mode object to be formatted and outputted. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the output stream. </dd></dl>
 
 </div>
 </div>
@@ -2176,8 +2028,34 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 
 </div>
 </div>
+<a id="a4b79166d0f6923f9730d6d359d9622b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b79166d0f6923f9730d6d359d9622b3">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring spk::to_wstring </td>
+          <td>(</td>
+          <td class="paramtype">const GLenum &amp;&#160;</td>
+          <td class="paramname"><em>p_type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Converts a GLenum value to its corresponding wide string representation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_type</td><td>The GLenum value to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The wide string representation of the GLenum. </dd></dl>
+
+</div>
+</div>
 <a id="a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bd1fa9ce6e3e0ed5fd7489fdf7a0ba">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2205,7 +2083,7 @@ template&lt;typename TType , typename TValueType , typename  = std::enable_if_t&
 </div>
 </div>
 <a id="aa420d958f7152d62c0f50b806c26a0ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa420d958f7152d62c0f50b806c26a0ff">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa420d958f7152d62c0f50b806c26a0ff">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2240,7 +2118,7 @@ template&lt;typename TType &gt; </div>
 </div>
 </div>
 <a id="a49a7d505764b6392380bf9d30d007dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49a7d505764b6392380bf9d30d007dba">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a7d505764b6392380bf9d30d007dba">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2275,7 +2153,7 @@ template&lt;typename TType &gt; </div>
 </div>
 </div>
 <a id="a98695e9de44684d6aaecc705564cd6d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98695e9de44684d6aaecc705564cd6d8">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a98695e9de44684d6aaecc705564cd6d8">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2302,7 +2180,7 @@ template&lt;typename TType &gt; </div>
 </div>
 </div>
 <a id="a8b0d135246aecf232855d7d804bb55bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b0d135246aecf232855d7d804bb55bd">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b0d135246aecf232855d7d804bb55bd">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2329,7 +2207,7 @@ template&lt;typename TType &gt; </div>
 </div>
 </div>
 <a id="a542066c55ed7a3bca5a973af1e8bf8cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a542066c55ed7a3bca5a973af1e8bf8cd">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a542066c55ed7a3bca5a973af1e8bf8cd">&#9670;&nbsp;</a></span>to_wstring() <span class="overload">[7/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2546,6 +2424,69 @@ template&lt;typename TType &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a8f2e1b87e99d6da0389f36943856c436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f2e1b87e99d6da0389f36943856c436">&#9670;&nbsp;</a></span>boxComponentFragmentShaderModule</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::boxComponentFragmentShaderModule</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
+<div class="line"><span class="stringliteral">&quot;BoxComponentFragmentShader&quot;</span>, </div>
+<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">in vec4 fragmentColor;</span></div>
+<div class="line"><span class="stringliteral">layout(location = 0) out vec4 outColor;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">void main() {</span></div>
+<div class="line"><span class="stringliteral">    outColor = fragmentColor;</span></div>
+<div class="line"><span class="stringliteral">})&quot;)</span></div>
+<div class="ttc" id="aclassspk_1_1ShaderModule_html"><div class="ttname"><a href="classspk_1_1ShaderModule.html">spk::ShaderModule</a></div><div class="ttdoc">Represents a shader module containing shader instructions.</div><div class="ttdef"><b>Definition:</b> spk_shader_module.hpp:14</div></div>
+</div><!-- fragment -->
+<p>Extern declaration for the Fragment Shader Module of the Box Component. </p>
+<p>This shader module is intended to handle the fragment shading logic specific to rendering a Box Component in the graphics pipeline. </p>
+
+</div>
+</div>
+<a id="abb99ecdf47f36dba0ebd7b338ec78017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb99ecdf47f36dba0ebd7b338ec78017">&#9670;&nbsp;</a></span>boxComponentVertexShaderModule</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::boxComponentVertexShaderModule</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
+<div class="line"><span class="stringliteral">&quot;BoxComponentVertexShader&quot;</span>,</div>
+<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">layout(location = 0) in vec2 inPosition;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">layout(push_constant) uniform PushConstant</span></div>
+<div class="line"><span class="stringliteral">{</span></div>
+<div class="line"><span class="stringliteral">    float depth;</span></div>
+<div class="line"><span class="stringliteral">    vec4 color;</span></div>
+<div class="line"><span class="stringliteral">} pushConstants;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">out vec4 fragmentColor;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">void main() {</span></div>
+<div class="line"><span class="stringliteral">    gl_Position = vec4(inPosition, pushConstants.depth, 1.0);</span></div>
+<div class="line"><span class="stringliteral">    fragmentColor = pushConstants.color;</span></div>
+<div class="line"><span class="stringliteral">})&quot;)</span></div>
+</div><!-- fragment -->
+<p>Extern declaration for the Vertex Shader Module of the Box Component. </p>
+<p>This shader module is intended to handle the vertex shading logic specific to rendering a Box Component in the graphics pipeline. </p>
+
+</div>
+</div>
 <a id="a7557b886748ad0f2c9bc16d1028e8f9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7557b886748ad0f2c9bc16d1028e8f9f">&#9670;&nbsp;</a></span>structuresMap</h2>
 

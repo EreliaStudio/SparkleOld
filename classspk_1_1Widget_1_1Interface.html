@@ -125,28 +125,31 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#afce8149c7413234b6779a6a2759d0fd2">~Interface</a> ()</td></tr>
 <tr class="memdesc:afce8149c7413234b6779a6a2759d0fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets.">Interface</a> object. <br /></td></tr>
 <tr class="separator:afce8149c7413234b6779a6a2759d0fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af82db056ab2bc738fd7869401bebab4a"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
-<tr class="memitem:af82db056ab2bc738fd7869401bebab4a"><td class="memTemplItemLeft" align="right" valign="top">TChildrenType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#af82db056ab2bc738fd7869401bebab4a">addChildrenWidget</a> (Args &amp;&amp;... p_args)</td></tr>
-<tr class="memdesc:af82db056ab2bc738fd7869401bebab4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a children widget to this widget.  <a href="classspk_1_1Widget_1_1Interface.html#af82db056ab2bc738fd7869401bebab4a">More...</a><br /></td></tr>
-<tr class="separator:af82db056ab2bc738fd7869401bebab4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af110a2e9a05a9358e5f3fb529d43a7d9"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
+<tr class="memitem:af110a2e9a05a9358e5f3fb529d43a7d9"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; TChildrenType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#af110a2e9a05a9358e5f3fb529d43a7d9">addChildrenWidget</a> (Args &amp;&amp;... p_args)</td></tr>
+<tr class="memdesc:af110a2e9a05a9358e5f3fb529d43a7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a children widget to this widget.  <a href="classspk_1_1Widget_1_1Interface.html#af110a2e9a05a9358e5f3fb529d43a7d9">More...</a><br /></td></tr>
+<tr class="separator:af110a2e9a05a9358e5f3fb529d43a7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a3d8e966fdd3524da0ddfea46ed6d5a78">setAnchor</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
 <tr class="memdesc:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the anchor of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a3d8e966fdd3524da0ddfea46ed6d5a78">More...</a><br /></td></tr>
 <tr class="separator:a3d8e966fdd3524da0ddfea46ed6d5a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2061ee6232b744be37f0ebe7a71b24a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2061ee6232b744be37f0ebe7a71b24a7">setSize</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
-<tr class="memdesc:a2061ee6232b744be37f0ebe7a71b24a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2061ee6232b744be37f0ebe7a71b24a7">More...</a><br /></td></tr>
-<tr class="separator:a2061ee6232b744be37f0ebe7a71b24a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e4fda90f85ec330206a64286fc6bd71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2e4fda90f85ec330206a64286fc6bd71">setGeometry</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor, const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
-<tr class="memdesc:a2e4fda90f85ec330206a64286fc6bd71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the geometry of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2e4fda90f85ec330206a64286fc6bd71">More...</a><br /></td></tr>
-<tr class="separator:a2e4fda90f85ec330206a64286fc6bd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d627901eb9f5fac36f1d6b86fb69ee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a4d627901eb9f5fac36f1d6b86fb69ee4">setSize</a> (const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;p_size)</td></tr>
+<tr class="memdesc:a4d627901eb9f5fac36f1d6b86fb69ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a4d627901eb9f5fac36f1d6b86fb69ee4">More...</a><br /></td></tr>
+<tr class="separator:a4d627901eb9f5fac36f1d6b86fb69ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14df153aad15a3f95378a8454dd5aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#aa14df153aad15a3f95378a8454dd5aef">setGeometry</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor, const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;p_size)</td></tr>
+<tr class="memdesc:aa14df153aad15a3f95378a8454dd5aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the geometry of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#aa14df153aad15a3f95378a8454dd5aef">More...</a><br /></td></tr>
+<tr class="separator:aa14df153aad15a3f95378a8454dd5aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0276ba960ee99b1ee39106a94ed9f9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a0276ba960ee99b1ee39106a94ed9f9ee">setGeometry</a> (const <a class="el" href="classspk_1_1Area.html">spk::Area</a> &amp;p_area)</td></tr>
+<tr class="memdesc:a0276ba960ee99b1ee39106a94ed9f9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the geometry of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a0276ba960ee99b1ee39106a94ed9f9ee">More...</a><br /></td></tr>
+<tr class="separator:a0276ba960ee99b1ee39106a94ed9f9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86e28afa1e3d5611e928ce1c22de81a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a86e28afa1e3d5611e928ce1c22de81a1">place</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
 <tr class="memdesc:a86e28afa1e3d5611e928ce1c22de81a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place the widget at a specific anchor position.  <a href="classspk_1_1Widget_1_1Interface.html#a86e28afa1e3d5611e928ce1c22de81a1">More...</a><br /></td></tr>
 <tr class="separator:a86e28afa1e3d5611e928ce1c22de81a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2608613321b3064b2cbf8ffcc3c5dde8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2608613321b3064b2cbf8ffcc3c5dde8">move</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
-<tr class="memdesc:a2608613321b3064b2cbf8ffcc3c5dde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the widget by a specific amount.  <a href="classspk_1_1Widget_1_1Interface.html#a2608613321b3064b2cbf8ffcc3c5dde8">More...</a><br /></td></tr>
-<tr class="separator:a2608613321b3064b2cbf8ffcc3c5dde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acae8f83653abac5f886a43f7d572ad0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#acae8f83653abac5f886a43f7d572ad0f">resize</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
-<tr class="memdesc:acae8f83653abac5f886a43f7d572ad0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the widget to a new size.  <a href="classspk_1_1Widget_1_1Interface.html#acae8f83653abac5f886a43f7d572ad0f">More...</a><br /></td></tr>
-<tr class="separator:acae8f83653abac5f886a43f7d572ad0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85770b24b03bd8914f9d1c40e5b7aeac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a85770b24b03bd8914f9d1c40e5b7aeac">move</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_delta)</td></tr>
+<tr class="memdesc:a85770b24b03bd8914f9d1c40e5b7aeac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the widget by a specific amount.  <a href="classspk_1_1Widget_1_1Interface.html#a85770b24b03bd8914f9d1c40e5b7aeac">More...</a><br /></td></tr>
+<tr class="separator:a85770b24b03bd8914f9d1c40e5b7aeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4103e9350e3256ddeaf46e947f48bc9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a4103e9350e3256ddeaf46e947f48bc9f">resize</a> (const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;p_size)</td></tr>
+<tr class="memdesc:a4103e9350e3256ddeaf46e947f48bc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the widget to a new size.  <a href="classspk_1_1Widget_1_1Interface.html#a4103e9350e3256ddeaf46e947f48bc9f">More...</a><br /></td></tr>
+<tr class="separator:a4103e9350e3256ddeaf46e947f48bc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ec88cd733b646b68c7fdff508d0e1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a32ec88cd733b646b68c7fdff508d0e1f">setDepth</a> (const float &amp;p_depth)</td></tr>
 <tr class="memdesc:a32ec88cd733b646b68c7fdff508d0e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the depth value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a32ec88cd733b646b68c7fdff508d0e1f">More...</a><br /></td></tr>
 <tr class="separator:a32ec88cd733b646b68c7fdff508d0e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,9 +159,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="memItemLeft" align="right" valign="top">constexpr const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2616c3ed7ea4af5d23fe7be582c2acc7">name</a> () const</td></tr>
 <tr class="memdesc:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2616c3ed7ea4af5d23fe7be582c2acc7">More...</a><br /></td></tr>
 <tr class="separator:a2616c3ed7ea4af5d23fe7be582c2acc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bdb3ad89570fde5748f2a8510f4006c"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a6bdb3ad89570fde5748f2a8510f4006c">size</a> () const</td></tr>
-<tr class="memdesc:a6bdb3ad89570fde5748f2a8510f4006c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a6bdb3ad89570fde5748f2a8510f4006c">More...</a><br /></td></tr>
-<tr class="separator:a6bdb3ad89570fde5748f2a8510f4006c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb51892291761321903f7eb143d5451a"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classspk_1_1Viewport.html">spk::Viewport</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#aeb51892291761321903f7eb143d5451a">viewport</a> () const</td></tr>
+<tr class="memdesc:aeb51892291761321903f7eb143d5451a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the viewport of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#aeb51892291761321903f7eb143d5451a">More...</a><br /></td></tr>
+<tr class="separator:aeb51892291761321903f7eb143d5451a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8381fadcc482f3556f1dedd4ca6c49d8"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classspk_1_1Area.html">spk::Area</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a8381fadcc482f3556f1dedd4ca6c49d8">area</a> () const</td></tr>
+<tr class="memdesc:a8381fadcc482f3556f1dedd4ca6c49d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the area value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a8381fadcc482f3556f1dedd4ca6c49d8">More...</a><br /></td></tr>
+<tr class="separator:a8381fadcc482f3556f1dedd4ca6c49d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2751f69ef986cc752297b159ef44f9d4"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a2751f69ef986cc752297b159ef44f9d4">size</a> () const</td></tr>
+<tr class="memdesc:a2751f69ef986cc752297b159ef44f9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a2751f69ef986cc752297b159ef44f9d4">More...</a><br /></td></tr>
+<tr class="separator:a2751f69ef986cc752297b159ef44f9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7947a55e651a9f3e41e0c2f717783a86"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Interface.html#a7947a55e651a9f3e41e0c2f717783a86">anchor</a> () const</td></tr>
 <tr class="memdesc:a7947a55e651a9f3e41e0c2f717783a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the anchor value of the widget.  <a href="classspk_1_1Widget_1_1Interface.html#a7947a55e651a9f3e41e0c2f717783a86">More...</a><br /></td></tr>
 <tr class="separator:a7947a55e651a9f3e41e0c2f717783a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,8 +348,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af82db056ab2bc738fd7869401bebab4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af82db056ab2bc738fd7869401bebab4a">&#9670;&nbsp;</a></span>addChildrenWidget()</h2>
+<a id="af110a2e9a05a9358e5f3fb529d43a7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af110a2e9a05a9358e5f3fb529d43a7d9">&#9670;&nbsp;</a></span>addChildrenWidget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +360,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TChildrenType* spk::Widget::Interface::addChildrenWidget </td>
+          <td class="memname">std::shared_ptr&lt;TChildrenType&gt; spk::Widget::Interface::addChildrenWidget </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>p_args</em></td><td>)</td>
@@ -411,6 +420,34 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
+<a id="a8381fadcc482f3556f1dedd4ca6c49d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8381fadcc482f3556f1dedd4ca6c49d8">&#9670;&nbsp;</a></span>area()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="classspk_1_1Area.html">spk::Area</a>&amp; spk::Widget::Interface::area </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the area value of the widget. </p>
+<dl class="section return"><dt>Returns</dt><dd>The area of the widget. </dd></dl>
+
+</div>
+</div>
 <a id="a3d8fe61b839242f78acb8afbad0f2652"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d8fe61b839242f78acb8afbad0f2652">&#9670;&nbsp;</a></span>depth()</h2>
 
@@ -466,8 +503,8 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
-<a id="a2608613321b3064b2cbf8ffcc3c5dde8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2608613321b3064b2cbf8ffcc3c5dde8">&#9670;&nbsp;</a></span>move()</h2>
+<a id="a85770b24b03bd8914f9d1c40e5b7aeac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85770b24b03bd8914f9d1c40e5b7aeac">&#9670;&nbsp;</a></span>move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,7 +513,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
           <td class="memname">void spk::Widget::Interface::move </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_anchor</em></td><td>)</td>
+          <td class="paramname"><em>p_delta</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -485,7 +522,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 <p>Move the widget by a specific amount. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_anchor</td><td>The amount to move the widget by. </td></tr>
+    <tr><td class="paramname">p_delta</td><td>The amount to move the widget by. </td></tr>
   </table>
   </dd>
 </dl>
@@ -572,8 +609,8 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
-<a id="acae8f83653abac5f886a43f7d572ad0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acae8f83653abac5f886a43f7d572ad0f">&#9670;&nbsp;</a></span>resize()</h2>
+<a id="a4103e9350e3256ddeaf46e947f48bc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4103e9350e3256ddeaf46e947f48bc9f">&#9670;&nbsp;</a></span>resize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,7 +618,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
         <tr>
           <td class="memname">void spk::Widget::Interface::resize </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td>
           <td class="paramname"><em>p_size</em></td><td>)</td>
           <td></td>
         </tr>
@@ -650,8 +687,34 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
-<a id="a2e4fda90f85ec330206a64286fc6bd71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e4fda90f85ec330206a64286fc6bd71">&#9670;&nbsp;</a></span>setGeometry()</h2>
+<a id="a0276ba960ee99b1ee39106a94ed9f9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0276ba960ee99b1ee39106a94ed9f9ee">&#9670;&nbsp;</a></span>setGeometry() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Widget::Interface::setGeometry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Area.html">spk::Area</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_area</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the geometry of the widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_area</td><td>The area in which the widget should render itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa14df153aad15a3f95378a8454dd5aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa14df153aad15a3f95378a8454dd5aef">&#9670;&nbsp;</a></span>setGeometry() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +728,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td>
           <td class="paramname"><em>p_size</em>&#160;</td>
         </tr>
         <tr>
@@ -687,8 +750,8 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
-<a id="a2061ee6232b744be37f0ebe7a71b24a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2061ee6232b744be37f0ebe7a71b24a7">&#9670;&nbsp;</a></span>setSize()</h2>
+<a id="a4d627901eb9f5fac36f1d6b86fb69ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d627901eb9f5fac36f1d6b86fb69ee4">&#9670;&nbsp;</a></span>setSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -696,7 +759,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
         <tr>
           <td class="memname">void spk::Widget::Interface::setSize </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td>
           <td class="paramname"><em>p_size</em></td><td>)</td>
           <td></td>
         </tr>
@@ -713,8 +776,8 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 </div>
 </div>
-<a id="a6bdb3ad89570fde5748f2a8510f4006c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bdb3ad89570fde5748f2a8510f4006c">&#9670;&nbsp;</a></span>size()</h2>
+<a id="a2751f69ef986cc752297b159ef44f9d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2751f69ef986cc752297b159ef44f9d4">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -723,7 +786,7 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a>&amp; spk::Widget::Interface::size </td>
+          <td class="memname">constexpr const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a>&amp; spk::Widget::Interface::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -738,6 +801,34 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 
 <p>Get the size value of the widget. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size of the widget. </dd></dl>
+
+</div>
+</div>
+<a id="aeb51892291761321903f7eb143d5451a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb51892291761321903f7eb143d5451a">&#9670;&nbsp;</a></span>viewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="classspk_1_1Viewport.html">spk::Viewport</a>&amp; spk::Widget::Interface::viewport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the viewport of the widget. </p>
+<dl class="section return"><dt>Returns</dt><dd>The viewport of the widget, relative to its parent. </dd></dl>
 
 </div>
 </div>

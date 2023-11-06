@@ -1,0 +1,5 @@
+<map id="spk::AbstractViewport" name="spk::AbstractViewport">
+<area shape="rect" id="node1" title="An abstract base class for handling viewports within the Sparkle library." alt="" coords="5,95,171,121"/>
+<area shape="rect" id="node3" href="$classspk_1_1Viewport.html" title="A concrete implementation of the spk::AbstractViewport class." alt="" coords="33,169,143,196"/>
+<area shape="rect" id="node2" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="6,5,170,47"/>
+</map>

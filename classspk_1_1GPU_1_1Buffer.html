@@ -77,14 +77,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class representing an OpenGL buffer.  
+ <a href="classspk_1_1GPU_1_1Buffer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="spk__gpu__object_8hpp_source.html">spk_gpu_object.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for spk::GPU::Buffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1GPU_1_1Buffer__inherit__graph.png" border="0" usemap="#aspk_1_1GPU_1_1Buffer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1GPU_1_1Buffer_inherit__map" id="aspk_1_1GPU_1_1Buffer_inherit__map">
-<area shape="rect" title=" " alt="" coords="50,5,178,32"/>
-<area shape="rect" href="classspk_1_1GPU_1_1UniformBlockBuffer.html" title=" " alt="" coords="5,80,223,107"/>
+<area shape="rect" title="Class representing an OpenGL buffer." alt="" coords="50,5,178,32"/>
+<area shape="rect" href="classspk_1_1GPU_1_1UniformBlockBuffer.html" title="Manages an UniformBlockBuffer for OpenGL." alt="" coords="5,80,223,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,22 +98,39 @@ Public Types</h2></td></tr>
 , <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08facd27b3ae7db40e9849a1412e04b889b0">Indexes</a>
 , <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08fa9022452d77d9545e352e90c78b8a6285">UniformBlock</a>
  }</td></tr>
+<tr class="memdesc:a535311e97468d6f2724a088370d4f08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible modes for the <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a>.  <a href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">More...</a><br /></td></tr>
 <tr class="separator:a535311e97468d6f2724a088370d4f08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abb52bbbdc728490856c0d4fbf03e96e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#abb52bbbdc728490856c0d4fbf03e96e4">Buffer</a> (const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;p_mode)</td></tr>
+<tr class="memitem:abb52bbbdc728490856c0d4fbf03e96e4"><td class="memItemLeft" align="right" valign="top"><a id="abb52bbbdc728490856c0d4fbf03e96e4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#abb52bbbdc728490856c0d4fbf03e96e4">Buffer</a> (const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;p_mode)</td></tr>
+<tr class="memdesc:abb52bbbdc728490856c0d4fbf03e96e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
 <tr class="separator:abb52bbbdc728490856c0d4fbf03e96e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4761a62f8587208e4fee894fcbec9624"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a4761a62f8587208e4fee894fcbec9624">push</a> (const void *data, const size_t dataSize)</td></tr>
-<tr class="separator:a4761a62f8587208e4fee894fcbec9624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a897504a9e3f20c9ce0aaba975c57f1de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a897504a9e3f20c9ce0aaba975c57f1de">activate</a> ()</td></tr>
+<tr class="memitem:ae9aa83514c0bf4954c64f0fef61a4c78"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#ae9aa83514c0bf4954c64f0fef61a4c78">vbo</a> () const</td></tr>
+<tr class="memdesc:ae9aa83514c0bf4954c64f0fef61a4c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> Object identifier.  <a href="classspk_1_1GPU_1_1Buffer.html#ae9aa83514c0bf4954c64f0fef61a4c78">More...</a><br /></td></tr>
+<tr class="separator:ae9aa83514c0bf4954c64f0fef61a4c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df68e77b3196d2f68c1213ef938af16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a4df68e77b3196d2f68c1213ef938af16">isValid</a> () const</td></tr>
+<tr class="memdesc:a4df68e77b3196d2f68c1213ef938af16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the buffer type, to certify its validity.  <a href="classspk_1_1GPU_1_1Buffer.html#a4df68e77b3196d2f68c1213ef938af16">More...</a><br /></td></tr>
+<tr class="separator:a4df68e77b3196d2f68c1213ef938af16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e5766c32d6957a59c9b31b975f78794"><td class="memItemLeft" align="right" valign="top"><a id="a9e5766c32d6957a59c9b31b975f78794"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a9e5766c32d6957a59c9b31b975f78794">push</a> (const void *p_data, const size_t p_dataSize)</td></tr>
+<tr class="memdesc:a9e5766c32d6957a59c9b31b975f78794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes data into the buffer. <br /></td></tr>
+<tr class="separator:a9e5766c32d6957a59c9b31b975f78794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897504a9e3f20c9ce0aaba975c57f1de"><td class="memItemLeft" align="right" valign="top"><a id="a897504a9e3f20c9ce0aaba975c57f1de"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a897504a9e3f20c9ce0aaba975c57f1de">activate</a> ()</td></tr>
+<tr class="memdesc:a897504a9e3f20c9ce0aaba975c57f1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the buffer. <br /></td></tr>
 <tr class="separator:a897504a9e3f20c9ce0aaba975c57f1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3411b4ed9ac40755f7fd8ec76dda988"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#aa3411b4ed9ac40755f7fd8ec76dda988">deactivate</a> ()</td></tr>
+<tr class="memitem:aa3411b4ed9ac40755f7fd8ec76dda988"><td class="memItemLeft" align="right" valign="top"><a id="aa3411b4ed9ac40755f7fd8ec76dda988"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#aa3411b4ed9ac40755f7fd8ec76dda988">deactivate</a> ()</td></tr>
+<tr class="memdesc:aa3411b4ed9ac40755f7fd8ec76dda988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivates the buffer. <br /></td></tr>
 <tr class="separator:aa3411b4ed9ac40755f7fd8ec76dda988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a2bc6c7a734996bf93cc35a73a147a46a"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a2bc6c7a734996bf93cc35a73a147a46a">_convertModeToGLenum</a> (const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;p_input)</td></tr>
+<tr class="memitem:a2bc6c7a734996bf93cc35a73a147a46a"><td class="memItemLeft" align="right" valign="top"><a id="a2bc6c7a734996bf93cc35a73a147a46a"></a>
+GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GPU_1_1Buffer.html#a2bc6c7a734996bf93cc35a73a147a46a">_convertModeToGLenum</a> (const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;p_input)</td></tr>
+<tr class="memdesc:a2bc6c7a734996bf93cc35a73a147a46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the Mode into GLenum for OpenGL. <br /></td></tr>
 <tr class="separator:a2bc6c7a734996bf93cc35a73a147a46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -146,150 +166,59 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Possible modes for the <a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a>. </p>
+
+<p>Possible modes for the <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08fa902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"><p>Default state, related to an uninitialized buffer </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08fae4bb6129669488aedeeb0ae27bb91770"></a>Vertices&#160;</td><td class="fielddoc"><p>Vertex <a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a> </p>
+<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08fae4bb6129669488aedeeb0ae27bb91770"></a>Vertices&#160;</td><td class="fielddoc"><p>Vertex <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08facd27b3ae7db40e9849a1412e04b889b0"></a>Indexes&#160;</td><td class="fielddoc"><p>Index <a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a> </p>
+<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08facd27b3ae7db40e9849a1412e04b889b0"></a>Indexes&#160;</td><td class="fielddoc"><p>Index <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08fa9022452d77d9545e352e90c78b8a6285"></a>UniformBlock&#160;</td><td class="fielddoc"><p>Uniform Block <a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a> </p>
+<tr><td class="fieldname"><a id="a535311e97468d6f2724a088370d4f08fa9022452d77d9545e352e90c78b8a6285"></a>UniformBlock&#160;</td><td class="fielddoc"><p>Uniform Block <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> </p>
 </td></tr>
 </table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abb52bbbdc728490856c0d4fbf03e96e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb52bbbdc728490856c0d4fbf03e96e4">&#9670;&nbsp;</a></span>Buffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">spk::GPU::Buffer::Buffer </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Constructor. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2bc6c7a734996bf93cc35a73a147a46a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bc6c7a734996bf93cc35a73a147a46a">&#9670;&nbsp;</a></span>_convertModeToGLenum()</h2>
+<a id="a4df68e77b3196d2f68c1213ef938af16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df68e77b3196d2f68c1213ef938af16">&#9670;&nbsp;</a></span>isValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GLenum spk::GPU::Buffer::_convertModeToGLenum </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classspk_1_1GPU_1_1Buffer.html#a535311e97468d6f2724a088370d4f08f">Mode</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Converts the Mode into GLenum for OpenGL. </p>
-
-</div>
-</div>
-<a id="a897504a9e3f20c9ce0aaba975c57f1de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a897504a9e3f20c9ce0aaba975c57f1de">&#9670;&nbsp;</a></span>activate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::GPU::Buffer::activate </td>
+          <td class="memname">bool spk::GPU::Buffer::isValid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Activates the buffer. </p>
 
-<p>Reimplemented in <a class="el" href="classspk_1_1GPU_1_1UniformBlockBuffer.html#a5af66287c8242201f515cbfed9cf5c53">spk::GPU::UniformBlockBuffer</a>.</p>
+<p>Check the buffer type, to certify its validity. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the buffer mode is different from Error, false if it's equal. </dd></dl>
 
 </div>
 </div>
-<a id="aa3411b4ed9ac40755f7fd8ec76dda988"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3411b4ed9ac40755f7fd8ec76dda988">&#9670;&nbsp;</a></span>deactivate()</h2>
+<a id="ae9aa83514c0bf4954c64f0fef61a4c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9aa83514c0bf4954c64f0fef61a4c78">&#9670;&nbsp;</a></span>vbo()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::GPU::Buffer::deactivate </td>
+          <td class="memname">GLuint spk::GPU::Buffer::vbo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Deactivates the buffer. </p>
-
-<p>Reimplemented in <a class="el" href="classspk_1_1GPU_1_1UniformBlockBuffer.html#a7b8b1809b50664a13001822f48b35212">spk::GPU::UniformBlockBuffer</a>.</p>
-
-</div>
-</div>
-<a id="a4761a62f8587208e4fee894fcbec9624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4761a62f8587208e4fee894fcbec9624">&#9670;&nbsp;</a></span>push()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::GPU::Buffer::push </td>
-          <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>dataSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pushes data into the buffer. </p>
+
+<p>Gets the <a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> Object identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>The VBO of the buffer. </dd></dl>
 
 </div>
 </div>
@@ -313,7 +242,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a> mode (GL_ARRAY_BUFFER, GL_ELEMENT_ARRAY_BUFFER, etc.) </p>
+<p><a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> mode (GL_ARRAY_BUFFER, GL_ELEMENT_ARRAY_BUFFER, etc.) </p>
 
 </div>
 </div>
@@ -382,7 +311,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classspk_1_1GPU_1_1Buffer.html">Buffer</a> Object </p>
+<p><a class="el" href="classspk_1_1GPU_1_1Buffer.html" title="Class representing an OpenGL buffer.">Buffer</a> Object </p>
 
 </div>
 </div>

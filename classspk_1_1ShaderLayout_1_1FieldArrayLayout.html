@@ -111,9 +111,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a83f3f4e716ba6b22a15ea454e762eccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#a83f3f4e716ba6b22a15ea454e762eccf">FieldArrayLayout</a> (const <a class="el" href="classspk_1_1ShaderLayout_1_1StructureLayout.html">StructureLayout</a> &amp;p_structureLayout)</td></tr>
-<tr class="memdesc:a83f3f4e716ba6b22a15ea454e762eccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array.">FieldArrayLayout</a>.  <a href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#a83f3f4e716ba6b22a15ea454e762eccf">More...</a><br /></td></tr>
-<tr class="separator:a83f3f4e716ba6b22a15ea454e762eccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a5856602b61770ee4c3cc346093045"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#ab9a5856602b61770ee4c3cc346093045">FieldArrayLayout</a> (const <a class="el" href="classspk_1_1ShaderLayout_1_1StructureLayout.html">StructureLayout</a> &amp;p_structureLayout, const size_t &amp;p_stridePadding)</td></tr>
+<tr class="memdesc:ab9a5856602b61770ee4c3cc346093045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array.">FieldArrayLayout</a>.  <a href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#ab9a5856602b61770ee4c3cc346093045">More...</a><br /></td></tr>
+<tr class="separator:ab9a5856602b61770ee4c3cc346093045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e97f4547caa7dfa9313051e96416f21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#a1e97f4547caa7dfa9313051e96416f21">insert</a> (const std::string &amp;p_name, const <a class="el" href="structspk_1_1ShaderLayout_1_1Data.html">Data</a> &amp;p_data, const size_t &amp;p_location=0)</td></tr>
 <tr class="memdesc:a1e97f4547caa7dfa9313051e96416f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new field into the layout.  <a href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html#a1e97f4547caa7dfa9313051e96416f21">More...</a><br /></td></tr>
 <tr class="separator:a1e97f4547caa7dfa9313051e96416f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,8 +144,8 @@ Friends</h2></td></tr>
 <div class="textblock"><p>Class to manage the layout of a field array. </p>
 <p>The <a class="el" href="classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array.">FieldArrayLayout</a> class is responsible for managing and storing the layout of field arrays used in the shader. It holds the stride and fields and provides methods for inserting and treating instructions. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a83f3f4e716ba6b22a15ea454e762eccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83f3f4e716ba6b22a15ea454e762eccf">&#9670;&nbsp;</a></span>FieldArrayLayout()</h2>
+<a id="ab9a5856602b61770ee4c3cc346093045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a5856602b61770ee4c3cc346093045">&#9670;&nbsp;</a></span>FieldArrayLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,8 +154,18 @@ Friends</h2></td></tr>
           <td class="memname">spk::ShaderLayout::FieldArrayLayout::FieldArrayLayout </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classspk_1_1ShaderLayout_1_1StructureLayout.html">StructureLayout</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_structureLayout</em></td><td>)</td>
+          <td class="paramname"><em>p_structureLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_stridePadding</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,6 +174,7 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_structureLayout</td><td>Reference to the associated <a class="el" href="classspk_1_1ShaderLayout_1_1StructureLayout.html" title="Class to handle structure layout configurations.">StructureLayout</a>. </td></tr>
+    <tr><td class="paramname">p_stridePadding</td><td>The padding of the stride requested in bytes. </td></tr>
   </table>
   </dd>
 </dl>

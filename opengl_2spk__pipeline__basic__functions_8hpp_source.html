@@ -77,15 +77,15 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::wstring <a class="code" href="namespacespk.html#aa64fb6df16a558cf354f6f6879c4922d">convertGLEnumToWString</a>(<span class="keyword">const</span> GLenum&amp; p_type);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::wstring <a class="code" href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">to_wstring</a>(<span class="keyword">const</span> GLenum&amp; p_type);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacespk.html#a4db08bac60928ed2e27eb9d9f0975591">checkOpengl</a>(<span class="keyword">const</span> std::wstring&amp; msg);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define GPU_DEBUG_LINE() spk::checkOpengl(__CLASS__ + L&quot;::&quot;</span> + __METHOD__ + L&quot;::&quot; + std::to_wstring(__LINE__))</div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
+<div class="ttc" id="anamespacespk_html_a4b79166d0f6923f9730d6d359d9622b3"><div class="ttname"><a href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">spk::to_wstring</a></div><div class="ttdeci">std::wstring to_wstring(const GLenum &amp;p_type)</div><div class="ttdef"><b>Definition:</b> spk_pipeline_basic_functions.cpp:6</div></div>
 <div class="ttc" id="anamespacespk_html_a4db08bac60928ed2e27eb9d9f0975591"><div class="ttname"><a href="namespacespk.html#a4db08bac60928ed2e27eb9d9f0975591">spk::checkOpengl</a></div><div class="ttdeci">void checkOpengl(const std::wstring &amp;msg)</div><div class="ttdef"><b>Definition:</b> spk_pipeline_basic_functions.cpp:151</div></div>
-<div class="ttc" id="anamespacespk_html_aa64fb6df16a558cf354f6f6879c4922d"><div class="ttname"><a href="namespacespk.html#aa64fb6df16a558cf354f6f6879c4922d">spk::convertGLEnumToWString</a></div><div class="ttdeci">std::wstring convertGLEnumToWString(const GLenum &amp;p_type)</div><div class="ttdef"><b>Definition:</b> spk_pipeline_basic_functions.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
