@@ -349,6 +349,15 @@ namespace spk
 			return (static_cast<float>(std::sqrt(pow(p_other.x - x, 2) + pow(p_other.y - y, 2))));
 		}
 		
+
+		/**
+		 * @brief Calculates the squared distance between this vector and another vector.
+		 *
+		 * This method calculates the squared distance between this vector and another vector. The squared distance is the sum of the squares of differences in each coordinate.
+		 * @tparam TOtherType The type of the other vector.
+		 * @param p_other The other IVector2 object to compute the distance to.
+		 * @return The squared distance between this vector and the other vector.
+		 */
 		template <typename TOtherType>
 		TType distanceSquared(const IVector2<TOtherType> &p_other) const
 		{
