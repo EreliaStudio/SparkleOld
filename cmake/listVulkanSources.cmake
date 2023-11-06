@@ -5,6 +5,8 @@ function(listVulkanSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/graphics/surface/vulkan/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/frame/vulkan/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/texture/vulkan/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/image/vulkan/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/graphics/viewport/vulkan/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/graphics/pipeline/vulkan/*.cpp"
 	)
 

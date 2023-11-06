@@ -3,7 +3,7 @@
 
 namespace spk
 {
-	std::wstring convertGLEnumToWString(const GLenum& p_type)
+	std::wstring to_wstring(const GLenum& p_type)
 	{
 		switch (p_type)
 		{
@@ -153,7 +153,7 @@ namespace spk
 		GLenum err = glGetError();
 		if (err != GL_NO_ERROR)
 		{
-			spk::throwException(msg + L" : type [" + convertGLEnumToWString(err) + L"]");
+			spk::throwException(msg + L" : type [" + spk::to_wstring(err) + L"]");
 		}
 		else
 		{

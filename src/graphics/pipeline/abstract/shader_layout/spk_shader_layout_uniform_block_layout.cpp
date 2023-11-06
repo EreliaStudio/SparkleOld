@@ -6,7 +6,8 @@
 
 namespace spk
 {
-	ShaderLayout::UniformBlockLayout::UniformBlockLayout(const StructureLayout &p_structureLayout) : FieldArrayLayout(p_structureLayout)
+	ShaderLayout::UniformBlockLayout::UniformBlockLayout(const StructureLayout &p_structureLayout) :
+		FieldArrayLayout(p_structureLayout, 4 * sizeof(float))
 	{
 	}
 
@@ -14,7 +15,7 @@ namespace spk
 	{
 		// Regex for single uniform
 		_mode = Mode::Single;
-		std::regex SamplerUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s+(\\w+);");
+		std::regex SamplerUniformRegex(R"(layout\s*\((?:set=(\d+),\s*)?binding=(\d+)\)\s*uniform\s+(\w+)\s+(\w+);)");
 		std::smatch match;
 
 		if (std::regex_search(p_instruction.code, match, SamplerUniformRegex))
@@ -46,7 +47,7 @@ namespace spk
 	void ShaderLayout::UniformBlockLayout::_treatUniformBlock(const ShaderModule::Instruction &p_instruction)
 	{
 		_mode = Mode::Block;
-		std::regex blockUniformRegex("layout\\s*\\((?:set=(\\d+),\\s*)?binding=(\\d+)\\)\\s*uniform\\s+(\\w+)\\s*\\{([^\\}]*)\\}\\s+(\\w+);");
+		std::regex blockUniformRegex(R"(layout\s*\((?:set=(\d+),\s*)?binding=(\d+)\)\s*uniform\s+(\w+)\s*\{([^\}]*)\}(?:\s*(\w+))?;)");
 		std::smatch match;
 
 		if (std::regex_search(p_instruction.code, match, blockUniformRegex))
@@ -59,7 +60,7 @@ namespace spk
 			_type = spk::to_wstring(type);
 			_name = spk::to_wstring(match[5]);
 
-			std::regex fieldRegex("(\\w+)\\s+(\\w+);");
+			std::regex fieldRegex(R"((\w+)\s+(\w+);)");
 
 			// Search through content using the field regex
 			auto words_begin = std::sregex_iterator(content.begin(), content.end(), fieldRegex);
@@ -85,7 +86,7 @@ namespace spk
 		}
 		else
 		{
-			spk::throwException(L"Unexpected UniformBlockLayout instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [PushConstantStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [PushConstantName];");
+			spk::throwException(L"Unexpected UniformBlockLayout instruction [" + spk::to_wstring(p_instruction.code) + L"]\nExpected format :\nlayout([OPTIONAL]set = [SetValue], binding = [BindingValue]) uniform [UniformBlockStructure] \n{\n    [ValueType] [ValueName];\n    [Repeat for each attribute];\n} [[OPTIONAL]UniformBlockName];");
 		}
 	}
 

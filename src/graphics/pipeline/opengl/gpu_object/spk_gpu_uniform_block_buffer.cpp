@@ -14,8 +14,8 @@ namespace spk::GPU
 		Buffer(Buffer::Mode::UniformBlock),
 		_blockBinding(p_blockBinding)
 	{
-		if (p_uniformType == L"")
-			spk::throwException(L"Uniform block can't have a blank name");
+		if (isValid() == false)
+			spk::throwException(L"Can't push an uninitialized uniform buffer");
 
 		_blockIndex = glGetUniformBlockIndex(p_program, spk::wstringToString(p_uniformType).c_str());
 		if (_blockIndex == GL_INVALID_INDEX)
@@ -27,15 +27,23 @@ namespace spk::GPU
 
 		activate();
 		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, _vbo);
+		deactivate();
+	}
+
+    const GLuint& UniformBlockBuffer::blockIndex() const
+	{
+		return (_blockIndex);
 	}
 
 	void UniformBlockBuffer::activate()
 	{
 		glBindBuffer(_mode, _vbo);
+		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, _vbo);
 	}
 	
 	void UniformBlockBuffer::deactivate()
 	{
 		glBindBuffer(_mode, 0);
+		glBindBufferBase(GL_UNIFORM_BUFFER, _blockBinding, _vbo);
 	}
 }

@@ -37,6 +37,7 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_pipeline.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/spk_abstract_pipeline.hpp - graphics/pipeline"
+			"${CMAKE_SOURCE_DIR}/includes/graphics/pipeline/spk_default_shader.hpp - graphics/pipeline"
 
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_frame.hpp - NOT_COPIED"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/frame/spk_abstract_frame.hpp - graphics/frame"
@@ -109,6 +110,8 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/widget/spk_widget_interface.hpp - widget"
 			"${CMAKE_SOURCE_DIR}/includes/widget/spk_widget_remote_node_manager.hpp - widget"
 			"${CMAKE_SOURCE_DIR}/includes/widget/spk_widget_server_manager.hpp - widget"
+			
+			"${CMAKE_SOURCE_DIR}/includes/widget/widget_component/spk_widget_component_box.hpp - widget/widget_component"
 		)
 
 	# --- Specific Windows

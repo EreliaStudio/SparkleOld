@@ -2,7 +2,7 @@
 
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"
-#include "math/spk_vector2.hpp"
+#include "graphics/spk_viewport.hpp"
 #include "application/modules/spk_widget_module.hpp"
 
 namespace spk::Widget
@@ -34,8 +34,7 @@ namespace spk::Widget
 		std::wstring _name;
 		bool _geometryEdited;
 		float _depth = 0;
-		spk::Vector2Int _anchor;
-		spk::Vector2Int _size;
+		spk::Viewport _viewport;
 		
 		virtual void _render();
 
@@ -72,14 +71,14 @@ namespace spk::Widget
 		 * @return Pointer to the children widget.
 		 */
 		template <typename TChildrenType, typename ... Args>
-		TChildrenType* addChildrenWidget(Args&& ... p_args)
+		std::shared_ptr<TChildrenType> addChildrenWidget(Args&& ... p_args)
 		{
 			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
 
 			addChild(result);
-			result->setDepth(depth() + 1);
+			result->setDepth(depth() - 0.025f);
 
-			return (result);
+			return (std::shared_ptr<TChildrenType>(result, [](TChildrenType*) {}));
 		}
 
 		/**
@@ -92,14 +91,20 @@ namespace spk::Widget
 		 * @brief Set the size of the widget.
 		 * @param p_size The size of the widget.
 		 */
-		void setSize(const spk::Vector2Int& p_size);
+		void setSize(const spk::Vector2UInt& p_size);
 
 		/**
 		 * @brief Set the geometry of the widget.
 		 * @param p_anchor The anchor position of the widget.
 		 * @param p_size The size of the widget.
 		 */
-		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2Int& p_size);
+		void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size);
+
+		/**
+		 * @brief Set the geometry of the widget.
+		 * @param p_area The area in which the widget should render itself.
+		 */
+		void setGeometry(const spk::Area& p_area);
 		
 		/**
 		 * @brief Place the widget at a specific anchor position.
@@ -109,15 +114,15 @@ namespace spk::Widget
 		
 		/**
 		 * @brief Move the widget by a specific amount.
-		 * @param p_anchor The amount to move the widget by.
+		 * @param p_delta The amount to move the widget by.
 		 */
-		void move(const spk::Vector2Int& p_anchor);
+		void move(const spk::Vector2Int& p_delta);
 
 		/**
 		 * @brief Resize the widget to a new size.
 		 * @param p_size The new size of the widget.
 		 */
-		void resize(const spk::Vector2Int& p_size);
+		void resize(const spk::Vector2UInt& p_size);
 
 
 		/**
@@ -139,16 +144,28 @@ namespace spk::Widget
 		constexpr const std::wstring& name() const {return (_name);}
 
 		/**
+		 * @brief Get the viewport of the widget
+		 * @return The viewport of the widget, relative to its parent.
+		*/
+		constexpr const spk::Viewport& viewport() const { return (_viewport);}
+
+		/**
+		 * @brief Get the area value of the widget.
+		 * @return The area of the widget.
+		 */
+		constexpr const spk::Area& area() const { return (_viewport.area());	}
+
+		/**
 		 * @brief Get the size value of the widget.
 		 * @return The size of the widget.
 		 */
-		constexpr const spk::Vector2Int& size() const { return (_size);	}
+		constexpr const spk::Vector2UInt& size() const { return (_viewport.area().size());	}
 
 		/**
 		 * @brief Get the anchor value of the widget.
 		 * @return The anchor of the widget, relative to the parent of said widget.
 		 */
-		constexpr const spk::Vector2Int& anchor() const { return (_anchor);	}
+		constexpr const spk::Vector2Int& anchor() const { return (_viewport.area().anchor());	}
 
 		/**
 		 * @brief Get the depth value of the widget.

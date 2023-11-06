@@ -37,9 +37,15 @@ namespace spk
 				Error       ///< Error or unknown type
 			};
 
-			Type type;      ///< The actual type of the data.
-			size_t format;  ///< The format of the data (e.g., how many components like vec3 or vec4).
-			size_t size;    ///< The size of the data in bytes.
+			Type type;      	  ///< The actual type of the data.
+			size_t format;  	  ///< The format of the data (e.g., how many components like vec3 or vec4).
+			size_t paddingFormat; ///< The size of the padding for such structure, in bytes.
+			size_t size;    	  ///< The size of the data in bytes.
+
+			/**
+			 * @brief Default constructor.
+			 */
+			Data();
 
 			/**
 			 * @brief Constructor to initialize all attributes.
@@ -47,15 +53,17 @@ namespace spk
 			 * @param p_type The type of the data (default is Error).
 			 * @param p_format The format of the data (default is 0).
 			 * @param p_size The size of the data in bytes (default is 0).
+			 * @param p_paddingFormat The padding of the data in bytes (default is 0).
 			 */
-			Data(const Type& p_type = Type::Error, const size_t& p_format = 0, const size_t& p_size = 0);
+			Data(const Type& p_type, const size_t& p_format, const size_t& p_size, const size_t& p_paddingFormat);
 
 			/**
 			 * @brief Overloaded constructor to initialize only the size.
 			 * 
 			 * @param p_size The size of the data in bytes.
+			 * @param p_paddingFormat The padding of the data in bytes.
 			 */
-			Data(const size_t& p_size);
+			Data(const size_t& p_size, const size_t& p_paddingFormat);
 
 			/**
 			 * @brief Overloaded output stream operator for Type enum.
@@ -187,10 +195,21 @@ namespace spk
 			};
 
 		private:
+
 			/**
 			 * @brief The stride size of the field array.
 			 */
 			size_t _stride;
+
+			/**
+			 * @brief The padding who must be followed by the buffer to garentee the correct alignement inside GPU memory
+			*/
+			size_t _stridePadding;
+
+			/**
+			 * @brief Utils to field composition. Represent the current offset of the next field. May differ from _stride.
+			 */
+			size_t _currentOffset;
 
 			/**
 			 * @brief Vector to store the fields.
@@ -208,8 +227,9 @@ namespace spk
 			 * @brief Constructor for FieldArrayLayout.
 			 * 
 			 * @param p_structureLayout Reference to the associated StructureLayout.
+			 * @param p_stridePadding The padding of the stride requested in bytes.
 			 */
-			FieldArrayLayout(const StructureLayout& p_structureLayout);
+			FieldArrayLayout(const StructureLayout& p_structureLayout, const size_t& p_stridePadding);
 
 			/**
 			 * @brief Inserts a new field into the layout.

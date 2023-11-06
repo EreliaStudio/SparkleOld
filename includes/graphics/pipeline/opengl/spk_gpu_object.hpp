@@ -6,7 +6,7 @@
 namespace spk::GPU
 {
     /**
-     * Manages the activation and deactivation of the Aggregator for OpenGL.
+     * @brief Manages the activation and deactivation of the Aggregator for OpenGL.
      */
     class Aggregator
     {
@@ -15,29 +15,34 @@ namespace spk::GPU
 
     public:
         /**
-         * Default constructor.
+         * @brief Default constructor.
          */
         Aggregator();
 
         /**
-         * Activates the Aggregator.
+         * @brief Activates the Aggregator.
          */
         void activate();
 
         /**
-         * Deactivates the Aggregator.
+         * @brief Deactivates the Aggregator.
          */
         void deactivate();
+
+        /**
+         * @brief Gets the Vertex Array Object identifier
+        */
+        GLuint vao() const;
     };
 
     /**
-     * Class representing an OpenGL buffer.
+     * @brief Class representing an OpenGL buffer.
      */
     class Buffer
     {
     public:
         /**
-         * Possible modes for the Buffer.
+         * @brief Possible modes for the Buffer.
          */
         enum class Mode
         {
@@ -54,34 +59,46 @@ namespace spk::GPU
         size_t _pushedSize = 0; /**< Size of the data pushed into the buffer */
 
         /**
-         * Converts the Mode into GLenum for OpenGL.
+         * @brief Converts the Mode into GLenum for OpenGL.
          */
         GLenum _convertModeToGLenum(const Mode &p_input);
 
     public:
         /**
-         * Constructor.
+         * @brief Constructor.
          */
         Buffer(const Mode &p_mode);
+        
+        /**
+         * @brief Gets the Buffer Object identifier.
+         * @return The VBO of the buffer.
+        */
+        GLuint vbo() const;
 
         /**
-         * Pushes data into the buffer.
+         * @brief Check the buffer type, to certify its validity
+         * @return True if the buffer mode is different from Error, false if it's equal.
+        */
+        bool isValid() const;
+
+        /**
+         * @brief Pushes data into the buffer.
          */
-        void push(const void *data, const size_t dataSize);
+        void push(const void *p_data, const size_t p_dataSize);
 
         /**
-         * Activates the buffer.
+         * @brief Activates the buffer.
          */
         virtual void activate();
 
         /**
-         * Deactivates the buffer.
+         * @brief Deactivates the buffer.
          */
         virtual void deactivate();
     };
 
     /**
-     * Manages StorageBuffers for OpenGL.
+     * @brief Manages StorageBuffers for OpenGL.
      */
     class StorageBuffer
     {
@@ -91,38 +108,49 @@ namespace spk::GPU
 
     public:
         /**
-         * Default constructor.
+         * @brief Default constructor.
          */
         StorageBuffer();
 
         /**
-         * Adds a storage attribute.
+         * @brief Gets the vertices Buffer.
+         */
+        const GPU::Buffer& verticesBuffer() const;
+
+
+        /**
+         * @brief Gets the indexes Buffer.
+         */
+        const GPU::Buffer& indexesBuffer() const;
+
+        /**
+         * @brief Adds a storage attribute.
          */
         void addStorageAttribute(const GLint& p_location, const GLint& p_format, const GLenum& p_type, const size_t& p_offset, const size_t& p_stride);
 
         /**
-         * Pushes vertex data into the buffer.
+         * @brief Pushes vertex data into the buffer.
          */
         void pushVerticesData(const uint8_t* p_data, size_t p_dataSize);
 
         /**
-         * Pushes index data into the buffer.
+         * @brief Pushes index data into the buffer.
          */
         void pushIndexesData(const uint8_t* p_data, size_t p_dataSize);
 
         /**
-         * Activates the StorageBuffers.
+         * @brief Activates the StorageBuffers.
          */
         void activate();
 
         /**
-         * Deactivates the StorageBuffers.
+         * @brief Deactivates the StorageBuffers.
          */
         void deactivate();
     };
 
     /**
-     * Manages an UniformBlockBuffer for OpenGL.
+     * @brief Manages an UniformBlockBuffer for OpenGL.
      */
     class UniformBlockBuffer : public GPU::Buffer
     {
@@ -137,17 +165,22 @@ namespace spk::GPU
         UniformBlockBuffer();
 
         /**
-         * Constructor.
+         * @brief Constructor.
          */
         UniformBlockBuffer(const GLuint& p_program, const std::wstring& p_uniformType, const size_t& p_blockBinding);
 
         /**
-         * Activates the UniformBlockBuffer.
+         * @brief Gets the index of the uniform block.
+        */
+        const GLuint& blockIndex() const;
+
+        /**
+         * @brief Activates the UniformBlockBuffer.
          */
         void activate() override;
 
         /**
-         * Deactivates the UniformBlockBuffer.
+         * @brief Deactivates the UniformBlockBuffer.
          */
         void deactivate() override;
     };
