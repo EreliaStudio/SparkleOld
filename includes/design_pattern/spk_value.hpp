@@ -43,7 +43,7 @@ namespace spk
 			 *
 			 * @param p_subscriber The subscriber to add.
 			 */
-			void subscribe(Value<TType>* p_subscriber)
+			void _subscribe(Value<TType>* p_subscriber)
 			{
 				_subscribers.push_back(p_subscriber);
 			}
@@ -55,7 +55,7 @@ namespace spk
 			 *
 			 * @param p_subscriber The subscriber to remove.
 			 */
-			void unsubscribe(Value<TType>* p_subscriber)
+			void _unsubscribe(Value<TType>* p_subscriber)
 			{
 				_subscribers.erase(std::remove(_subscribers.begin(), _subscribers.end(), p_subscriber), _subscribers.end());
 			}
@@ -66,7 +66,7 @@ namespace spk
 			 * This function triggers the edition callbacks for all the subscribers
 			 * whose state is Default.
 			 */
-			void _triggerSubscriberEditionCallbacks()
+			void _triggerSubscriberEditionCallbacks() const
 			{
 				for (size_t i = 0; i < _subscribers.size(); i++)
 				{
@@ -167,9 +167,9 @@ namespace spk
 		};
 
 		CallbackContainer _onEditionCallbacks;  /**< The callbacks to trigger when the value is edited. */
-		State _state;						   /**< The state of the value (Default or Custom). */
-		Default* _default;					  /**< A pointer to the Default object. */
-		TType _value;						   /**< The value in the custom state. */
+		State _state;						    /**< The state of the value (Default or Custom). */
+		std::shared_ptr<const Default> _default;/**< A pointer to the Default object. */
+		TType _value;						    /**< The value in the custom state. */
 
 		/**
 		 * @brief Trigger edition callbacks for subscribers.
@@ -191,7 +191,7 @@ namespace spk
 		 *
 		 * @param p_defaultValue The default value for the Value object.
 		 */
-		Value(const Default& p_defaultValue) :
+		Value(std::shared_ptr<const Default> p_defaultValue) :
 			_default(nullptr),
 			_value(),
 			_state(State::Default)
@@ -207,7 +207,7 @@ namespace spk
 		 * @param p_args The arguments to initialize the value in the custom state.
 		 */
 		template <typename... Args>
-		Value(const Default& p_defaultValue, Args&&... p_args) :
+		Value(std::shared_ptr<const Default> p_defaultValue, Args&&... p_args) :
 			_default(nullptr),
 			_value(std::forward<Args>(p_args)...),
 			_state(State::Custom)
@@ -221,11 +221,11 @@ namespace spk
 		 * @param p_other The Value object to copy.
 		 */
 		Value(const Value& p_other) :
-			_default(p_other._default),
+			_default(nullptr),
 			_value(p_other._value),
 			_state(p_other._state)
 		{
-			_default->subscribe(this);
+			setDefaultValue(p_other._default);
 		}
 
 		/**
@@ -233,7 +233,7 @@ namespace spk
 		 */
 		~Value()
 		{
-			_default->unsubscribe(this);
+			setDefaultValue(nullptr);
 		}
 
 		/**
@@ -268,15 +268,13 @@ namespace spk
 		 *
 		 * @param p_defaultValue The new default value.
 		 */
-		void setDefaultValue(const Default& p_defaultValue)
+		void setDefaultValue(std::shared_ptr<const Default> p_defaultValue)
 		{
-			Default* tmp = const_cast<Default*>(&p_defaultValue);
-
 			if (_default != nullptr)
-				_default->unsubscribe(this);
-			_default = tmp;
+				const_cast<Default*>(_default.get())->_unsubscribe(this);
+			_default = p_defaultValue;
 			if (_default != nullptr)
-				_default->subscribe(this);
+				const_cast<Default*>(_default.get())->_subscribe(this);
 		}
 
 		/**
@@ -290,7 +288,7 @@ namespace spk
 		 */
 		Value& operator=(const Value& p_other)
 		{
-			setDefaultValue(*p_other._default);
+			setDefaultValue(p_other._default);
 			_value = p_other._value;
 			_state = p_other._state;
 			_triggerEditionCallback();
@@ -347,5 +345,59 @@ namespace spk
 			else
 				return (*_default);
 		}
+	};
+
+	template <typename T>
+	class ValueWrapper
+	{
+	public:
+		using Default = typename Value<T>::Default;
+		
+	private:
+		bool _needUpdate;
+		Value<T> _value;
+		Value<T>::Contract _contract;
+
+		std::recursive_mutex _mutex;
+
+	public:
+		ValueWrapper(const std::shared_ptr<const Default>& p_defaultValue) :
+			_needUpdate(true),
+			_value(p_defaultValue),
+			_contract(_value.subscribe([&](){
+				std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+				_needUpdate = true;
+			}))
+		{
+
+		}
+
+		operator T() const { return (_value.value()); }
+		T& operator->() { return (_value.value()); }
+		const T& operator->() const { return (_value.value()); }
+		
+		ValueWrapper<T>& operator= (const T& p_rhs)
+		{
+			{
+				std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+				_value = p_rhs;
+				_needUpdate = true;
+			}
+			return *this;
+		}
+
+		bool needUpdate() const { return (_needUpdate); }
+
+		void resetUpdateFlag() { 
+			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+			_needUpdate = false; 
+		}
+
+		Value<T>& operator()() { return (_value); }
+		
+		Value<T>& value() { return (_value); }
+		const Value<T>& value() const { return (_value); }
+		
+		const T& get() const { return (_value.value()); }
 	};
 }
