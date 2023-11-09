@@ -37,20 +37,29 @@ namespace spk::WidgetComponent
 			Unit(spk::Vector2 p_position, spk::Vector2 p_uvs) : position(p_position), uvs(p_uvs){}
 		};
 
-		std::vector<Unit> _units;
-
+		std::vector<Unit> units;
+		std::vector<unsigned int> indexes;
+		static unsigned int indexesValues[6] = {0, 2, 3, 3, 1, 0};
 		for (size_t i = 0; i < _text.get().size(); i++)
 		{
 			const Font::Atlas::GlyphData& glyphData = atlas->glyph(_text.get()[i]);
 
+			size_t baseIndexesValue = units.size();
 			for (size_t j = 0; j < 4; j++)
 			{
-				_units.push_back(Unit(
+				units.push_back(Unit(
 						spk::Viewport::convertScreenToGPUCoordinates(_anchor.get() + glyphData.position[j]),
 						glyphData.uvs[j]
 					));
 			}
+			for (size_t j = 0; j < 6; j++)
+			{
+				indexes.push_back(indexesValues[j] + baseIndexesValue);
+			}
 		}
+
+		_renderingObject->storage().indexes() << units << std::endl;
+		_renderingObject->storage().indexes() << indexes << std::endl;
 
 		_font.resetUpdateFlag();
 		_text.resetUpdateFlag();
