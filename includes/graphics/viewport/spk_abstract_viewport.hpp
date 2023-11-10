@@ -14,6 +14,7 @@ namespace spk
 	private:
         /// Static variable to hold the active viewport area
 		static inline Area _activeViewport;
+        static inline const float _maxDepth = 10000.0f;
 
         /// The area covered by this viewport
 		Area _area;
@@ -98,5 +99,7 @@ namespace spk
          *  @return The corresponding GPU coordinates.
          */
 		static spk::Vector2 convertScreenToGPUCoordinates(const spk::Vector2Int& p_screenPosition);
+
+        static float convertDepth(float p_screenDepth);
 	};
 }

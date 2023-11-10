@@ -34,15 +34,15 @@ namespace spk::WidgetComponent
 
 	void Box::_updateDepth()
 	{
-		_renderingObjects[FrontgroundIndex]->pushConstants(L"depth") = _depth.get();
-		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.get() + 0.0001f;
+		_renderingObjects[FrontgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get() + 0.1f);
+		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get());
 		_depth.resetUpdateFlag();
 	}
     
-	void Box::_updateFrontgroundVertices()
+	void Box::_updateBackgroundVertices()
 	{
-		_renderingObjects[FrontgroundIndex]->storage().vertices().clear();
-		_renderingObjects[FrontgroundIndex]->storage().indexes().clear();
+		_renderingObjects[BackgroundIndex]->storage().vertices().clear();
+		_renderingObjects[BackgroundIndex]->storage().indexes().clear();
 
 		spk::Vector2Int anchor = _area.get().anchor();
 		spk::Vector2UInt size = _area.get().size();
@@ -60,14 +60,14 @@ namespace spk::WidgetComponent
 			0, 1, 2, 2, 1, 3
 		};
 
-		_renderingObjects[FrontgroundIndex]->storage().vertices() << points << std::endl;
-		_renderingObjects[FrontgroundIndex]->storage().indexes() << indexes << std::endl;
+		_renderingObjects[BackgroundIndex]->storage().vertices() << points << std::endl;
+		_renderingObjects[BackgroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 	
-	void Box::_updateBackgroundVertices()
+	void Box::_updateFrontgroundVertices()
 	{
-		_renderingObjects[BackgroundIndex]->storage().vertices().clear();
-		_renderingObjects[BackgroundIndex]->storage().indexes().clear();
+		_renderingObjects[FrontgroundIndex]->storage().vertices().clear();
+		_renderingObjects[FrontgroundIndex]->storage().indexes().clear();
 
 		spk::Vector2Int anchor = _area.get().anchor() + spk::Vector2Int(_borderSize.get(), _borderSize.get());
 		spk::Vector2UInt size = _area.get().size() - spk::Vector2UInt(2 * _borderSize.get(), 2 * _borderSize.get());
@@ -83,8 +83,8 @@ namespace spk::WidgetComponent
 			0, 1, 2, 2, 1, 3
 		};
 
-		_renderingObjects[BackgroundIndex]->storage().vertices() << points << std::endl;
-		_renderingObjects[BackgroundIndex]->storage().indexes() << indexes << std::endl;
+		_renderingObjects[FrontgroundIndex]->storage().vertices() << points << std::endl;
+		_renderingObjects[FrontgroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 
 	void Box::_updateVertices()

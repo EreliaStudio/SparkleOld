@@ -24,6 +24,16 @@ namespace spk
             Standard,
             Manhattan
         };
+        
+		enum class VerticalAlignment
+		{
+            Top, Middle, Down
+        };
+        
+        enum class HorizontalAlignment
+		{
+            Left, Middle, Right
+        };
 
     public:
         /**

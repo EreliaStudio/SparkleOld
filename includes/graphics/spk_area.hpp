@@ -173,6 +173,12 @@ namespace spk
          *  @return True if the Areas are equal, False otherwise.
          */
         bool operator==(const Area& p_other) const;
+
+		friend std::wostream &operator<<(std::wostream &p_os, const Area &p_self)
+		{
+			p_os << L"Anchor : " << p_self._anchor << L" / Size : " << p_self._size;
+			return p_os;
+		}
 	};
 
     /**
