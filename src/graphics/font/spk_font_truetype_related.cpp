@@ -102,12 +102,12 @@ namespace spk
 		p_data.uvs[2] = {quad.s0 + outlineOffset.x * -1, quad.t1 + outlineOffset.y * +1};
 		p_data.uvs[3] = {quad.s1 + outlineOffset.x * +1, quad.t1 + outlineOffset.y * +1};
 
-		p_data.position[0] = spk::Vector2Int(quad.x0 * p_atlasSize.x, quad.y0 * p_atlasSize.y);
-		p_data.position[1] = spk::Vector2Int(quad.x1 * p_atlasSize.x, quad.y0 * p_atlasSize.y);
-		p_data.position[2] = spk::Vector2Int(quad.x0 * p_atlasSize.x, quad.y1 * p_atlasSize.y);
-		p_data.position[3] = spk::Vector2Int(quad.x1 * p_atlasSize.x, quad.y1 * p_atlasSize.y);
+		p_data.position[0] = spk::Vector2Int(quad.x0, quad.y0);
+		p_data.position[1] = spk::Vector2Int(quad.x1, quad.y0);
+		p_data.position[2] = spk::Vector2Int(quad.x0, quad.y1);
+		p_data.position[3] = spk::Vector2Int(quad.x1, quad.y1);
 
-		p_data.step = quadStep * p_atlasSize;
+		p_data.step = quadStep;
 	}
 
 	Font::Atlas::BuildData Font::Atlas::_computeBuildData(const std::vector<uint8_t> &p_fontData, const Configuration &p_fontConfiguration, const Key &p_key)

@@ -4,8 +4,9 @@
 
 namespace spk::WidgetComponent
 {
-	TextLabel::TextLabel():
+	TextLabel::TextLabel() :
 		_font(std::shared_ptr<const ValueWrapper<std::shared_ptr<Font>>::Default>(&defaultFont, [](const ValueWrapper<std::shared_ptr<Font>>::Default* p_value){})),
+		_fontAtlas(nullptr),
 		_text(std::shared_ptr<const ValueWrapper<std::wstring>::Default>(&defaultText, [](const ValueWrapper<std::wstring>::Default* p_value){})),
 		_verticalAlignment(std::shared_ptr<const ValueWrapper<VerticalAlignment>::Default>(&defaultVerticalAlignment, [](const ValueWrapper<VerticalAlignment>::Default* p_value){})),
 		_horizontalAlignment(std::shared_ptr<const ValueWrapper<HorizontalAlignment>::Default>(&defaultHorizontalAlignment, [](const ValueWrapper<HorizontalAlignment>::Default* p_value){})),
@@ -14,8 +15,7 @@ namespace spk::WidgetComponent
 		_outlineType(std::shared_ptr<const ValueWrapper<Font::OutlineType>::Default>(&defaultOutlineType, [](const ValueWrapper<Font::OutlineType>::Default* p_value){})),
 		_outlineColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultOutlineColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
 		_outlineSize(std::shared_ptr<const ValueWrapper<size_t>::Default>(&defaultOutlineSize, [](const ValueWrapper<size_t>::Default* p_value){})),
-		_anchor(std::shared_ptr<const ValueWrapper<spk::Vector2Int>::Default>(&defaultAnchor, [](const ValueWrapper<spk::Vector2Int>::Default* p_value){})),
-		_fontAtlas(nullptr)
+		_anchor(std::shared_ptr<const ValueWrapper<spk::Vector2Int>::Default>(&defaultAnchor, [](const ValueWrapper<spk::Vector2Int>::Default* p_value){}))
 	{
 		if (_renderingPipeline == nullptr)
 		{
@@ -40,7 +40,10 @@ namespace spk::WidgetComponent
 
 		std::vector<Unit> units;
 		std::vector<unsigned int> indexes;
+
 		static const unsigned int indexesValues[6] = {0, 2, 3, 3, 1, 0};
+
+		spk::Vector2Int stringOffset = 0;
 		for (size_t i = 0; i < _text.get().size(); i++)
 		{
 			const Font::Atlas::GlyphData& glyphData = _fontAtlas->glyph(_text.get()[i]);
@@ -49,10 +52,11 @@ namespace spk::WidgetComponent
 			for (size_t j = 0; j < 4; j++)
 			{
 				units.push_back(Unit(
-						spk::Viewport::convertScreenToGPUCoordinates(_anchor.get() + glyphData.position[j]),
+						spk::Viewport::convertScreenToGPUCoordinates(_anchor.get() + stringOffset + glyphData.position[j]),
 						glyphData.uvs[j]
 					));
 			}
+			stringOffset += glyphData.step;
 
 			for (size_t j = 0; j < 6; j++)
 			{
@@ -60,7 +64,7 @@ namespace spk::WidgetComponent
 			}
 		}
 
-		_renderingObject->storage().indexes() << units << std::endl;
+		_renderingObject->storage().vertices() << units << std::endl;
 		_renderingObject->storage().indexes() << indexes << std::endl;
 
 		_font.resetUpdateFlag();
@@ -87,6 +91,9 @@ namespace spk::WidgetComponent
 
 	void TextLabel::render()
 	{
+		if (_font.get() == nullptr)
+			spk::throwException(L"Can't render a textLabel without font. Please setup default font and/or single ");
+
 		if (_font.needUpdate() == true ||
 			_text.needUpdate() == true ||
 			_verticalAlignment.needUpdate() == true ||
@@ -112,7 +119,7 @@ namespace spk::WidgetComponent
 		if (_fontAtlas != nullptr)
 		{
 			_fontAtlas->texture().bind(0);
-			_renderingPipeline->uniform(L"textureID") = 0;
+			_renderingPipeline->uniform(L"textureID") << 0 << std::endl;
 		}
 		_renderingObject->render();
 

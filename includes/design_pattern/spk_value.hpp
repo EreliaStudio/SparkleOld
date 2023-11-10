@@ -369,7 +369,6 @@ namespace spk
 				_needUpdate = true;
 			}))
 		{
-
 		}
 
 		operator T() const { return (_value.value()); }
@@ -378,11 +377,9 @@ namespace spk
 		
 		ValueWrapper<T>& operator= (const T& p_rhs)
 		{
-			{
-				std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
-				_value = p_rhs;
-				_needUpdate = true;
-			}
+			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+			_value = p_rhs;
+			_needUpdate = true;
 			return *this;
 		}
 

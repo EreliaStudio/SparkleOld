@@ -20,7 +20,6 @@ namespace spk
      */
     extern spk::ShaderModule boxComponentFragmentShaderModule;
 
-    
     /**
      *  @brief Extern declaration for the Vertex Shader Module of the TextLabel Component.
      *
