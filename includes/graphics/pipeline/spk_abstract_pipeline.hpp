@@ -377,6 +377,13 @@ namespace spk
 			 * @return Reference to this Uniform object.
 			 */
 			Uniform& operator<<(std::wostream& (*func)(std::wostream&));
+
+			template <typename TType>
+			Uniform& operator = (const TType& p_data)
+			{
+				*this << p_data << std::endl;
+				return (*this);
+			}
 		};
 
 		/**

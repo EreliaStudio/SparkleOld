@@ -14,7 +14,8 @@ namespace spk::WidgetComponent
 		_outlineType(std::shared_ptr<const ValueWrapper<Font::OutlineType>::Default>(&defaultOutlineType, [](const ValueWrapper<Font::OutlineType>::Default* p_value){})),
 		_outlineColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultOutlineColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
 		_outlineSize(std::shared_ptr<const ValueWrapper<size_t>::Default>(&defaultOutlineSize, [](const ValueWrapper<size_t>::Default* p_value){})),
-		_anchor(std::shared_ptr<const ValueWrapper<spk::Vector2Int>::Default>(&defaultAnchor, [](const ValueWrapper<spk::Vector2Int>::Default* p_value){}))
+		_anchor(std::shared_ptr<const ValueWrapper<spk::Vector2Int>::Default>(&defaultAnchor, [](const ValueWrapper<spk::Vector2Int>::Default* p_value){})),
+		_fontAtlas(nullptr)
 	{
 		if (_renderingPipeline == nullptr)
 		{
@@ -26,7 +27,7 @@ namespace spk::WidgetComponent
 
 	void TextLabel::_updateVertices()
 	{
-		std::shared_ptr<spk::Font::Atlas> atlas = _font.get()->atlas(spk::Font::Key(_textSize.get(), _outlineSize.get(), _outlineType.get()));
+		_fontAtlas = _font.get()->atlas(spk::Font::Key(_textSize.get(), _outlineSize.get(), _outlineType.get()));
 
 		struct Unit
 		{
@@ -39,10 +40,10 @@ namespace spk::WidgetComponent
 
 		std::vector<Unit> units;
 		std::vector<unsigned int> indexes;
-		static unsigned int indexesValues[6] = {0, 2, 3, 3, 1, 0};
+		static const unsigned int indexesValues[6] = {0, 2, 3, 3, 1, 0};
 		for (size_t i = 0; i < _text.get().size(); i++)
 		{
-			const Font::Atlas::GlyphData& glyphData = atlas->glyph(_text.get()[i]);
+			const Font::Atlas::GlyphData& glyphData = _fontAtlas->glyph(_text.get()[i]);
 
 			size_t baseIndexesValue = units.size();
 			for (size_t j = 0; j < 4; j++)
@@ -52,6 +53,7 @@ namespace spk::WidgetComponent
 						glyphData.uvs[j]
 					));
 			}
+
 			for (size_t j = 0; j < 6; j++)
 			{
 				indexes.push_back(indexesValues[j] + baseIndexesValue);
@@ -73,13 +75,13 @@ namespace spk::WidgetComponent
 
 	void TextLabel::_updateTextColor()
 	{
-
+		_renderingObject->pushConstants(L"textColor") = _textColor.get();
 		_textColor.resetUpdateFlag();
 	}
 	
 	void TextLabel::_updateOutlineColor()
 	{
-
+		_renderingObject->pushConstants(L"outlineColor") = _outlineColor.get();
 		_outlineColor.resetUpdateFlag();
 	}
 
@@ -107,6 +109,16 @@ namespace spk::WidgetComponent
 			_updateOutlineColor();
 		}
 
+		if (_fontAtlas != nullptr)
+		{
+			_fontAtlas->texture().bind(0);
+			_renderingPipeline->uniform(L"textureID") = 0;
+		}
 		_renderingObject->render();
+
+		if (_fontAtlas != nullptr)
+		{
+			_fontAtlas->texture().unbind();
+		}
 	}
 }

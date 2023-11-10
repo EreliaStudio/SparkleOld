@@ -25,6 +25,7 @@ namespace spk::WidgetComponent
         std::shared_ptr<spk::Pipeline::Object> _renderingObject;
 
         ValueWrapper<std::shared_ptr<Font>> _font;
+        std::shared_ptr<Font::Atlas> _fontAtlas;
         ValueWrapper<std::wstring> _text;
         ValueWrapper<VerticalAlignment> _verticalAlignment;
         ValueWrapper<HorizontalAlignment> _horizontalAlignment;
