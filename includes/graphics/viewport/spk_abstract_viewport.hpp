@@ -12,8 +12,9 @@ namespace spk
 	class AbstractViewport : public spk::InherenceObject<AbstractViewport>
 	{
 	private:
-        /// Static variable to hold the active viewport area
+        /// @brief Static variable to hold the active viewport area
 		static inline Area _activeViewport;
+        /// @brief The maximum depth acceptable for the sparkle library
         static inline const float _maxDepth = 10000.0f;
 
         /// The area covered by this viewport
@@ -100,6 +101,22 @@ namespace spk
          */
 		static spk::Vector2 convertScreenToGPUCoordinates(const spk::Vector2Int& p_screenPosition);
 
+        /**
+         * @brief Converts a depth value from screen space to a normalized depth used in the GPU.
+         * 
+         * This function transforms a depth value from screen space into a normalized depth value
+         * for GPU processing. The conversion inverts the depth such that a value of 0 represents
+         * the farthest point in the depth range, and higher values indicate closer points.
+         * This is based on the maximum depth value, ensuring that the depth is appropriately
+         * scaled and inverted for GPU rendering.
+         * 
+         * @param p_screenDepth The depth value in screen space. This value typically represents
+         *        the distance from the viewer or camera in a 3D space, where a value of 0
+         *        would mean the farthest possible point, and higher values represent closer points.
+         * @return float The normalized and inverted depth value, suitable for GPU calculations. 
+         *         The method scales the depth between 0 and 1, where 0 now represents the farthest
+         *         point, and values closer to 1 represent points nearer to the viewer or camera.
+         */
         static float convertDepth(float p_screenDepth);
 	};
 }
