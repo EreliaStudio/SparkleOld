@@ -347,20 +347,47 @@ namespace spk
 		}
 	};
 
+	/**
+	 * @brief A wrapper class for managing a value with automatic update notifications.
+	 * 
+	 * @tparam T The type of the value being wrapped.
+	 */
 	template <typename T>
 	class ValueWrapper
 	{
 	public:
+		/**
+		 * @brief Alias for the default value type of the wrapped value.
+		 */
 		using Default = typename Value<T>::Default;
 		
 	private:
+		/**
+		 * @brief Flag to indicate whether the value needs an update.
+		 */
 		bool _needUpdate;
+
+		/**
+		 * @brief The actual value being wrapped.
+		 */
 		Value<T> _value;
+
+		/**
+		 * @brief Contract for subscription updates.
+		 */
 		Value<T>::Contract _contract;
 
+		/**
+		 * @brief Mutex for thread-safe access.
+		 */
 		std::recursive_mutex _mutex;
 
 	public:
+		/**
+		 * @brief Constructs a new Value Wrapper object.
+		 * 
+		 * @param p_defaultValue The default value to initialize the wrapper with.
+		 */
 		ValueWrapper(const std::shared_ptr<const Default>& p_defaultValue) :
 			_needUpdate(true),
 			_value(p_defaultValue),
@@ -371,10 +398,33 @@ namespace spk
 		{
 		}
 
+		/**
+		 * @brief Converts the wrapped value to its underlying type.
+		 * 
+		 * @return T The current value.
+		 */
 		operator T() const { return (_value.value()); }
+
+		/**
+		 * @brief Provides access to the wrapped value.
+		 * 
+		 * @return T& Reference to the current value.
+		 */
 		T& operator->() { return (_value.value()); }
+
+		/**
+		 * @brief Provides const access to the wrapped value.
+		 * 
+		 * @return const T& Const reference to the current value.
+		 */
 		const T& operator->() const { return (_value.value()); }
 		
+		/**
+		 * @brief Assigns a new value to the wrapper.
+		 * 
+		 * @param p_rhs The right-hand side value to assign.
+		 * @return ValueWrapper<T>& Reference to the updated object.
+		 */
 		ValueWrapper<T>& operator= (const T& p_rhs)
 		{
 			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
@@ -383,18 +433,48 @@ namespace spk
 			return *this;
 		}
 
+		/**
+		 * @brief Checks if the value needs an update.
+		 * 
+		 * @return bool True if the value needs an update.
+		 */
 		bool needUpdate() const { return (_needUpdate); }
 
+		/**
+		 * @brief Resets the update flag to false.
+		 */
 		void resetUpdateFlag() { 
 			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
 			_needUpdate = false; 
 		}
 
+		/**
+		 * @brief Provides access to the wrapped Value object.
+		 * 
+		 * @return Value<T>& Reference to the wrapped value.
+		 */
 		Value<T>& operator()() { return (_value); }
 		
+		/**
+		 * @brief Provides access to the wrapped value.
+		 * 
+		 * @return Value<T>& Reference to the wrapped value.
+		 */
 		Value<T>& value() { return (_value); }
+
+		/**
+		 * @brief Provides const access to the wrapped value.
+		 * 
+		 * @return const Value<T>& Const reference to the wrapped value.
+		 */
 		const Value<T>& value() const { return (_value); }
 		
+		/**
+		 * @brief Gets the current value.
+		 * 
+		 * @return const T& Const reference to the current value.
+		 */
 		const T& get() const { return (_value.value()); }
 	};
+
 }
