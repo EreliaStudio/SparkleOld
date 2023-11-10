@@ -7,32 +7,62 @@ namespace spk
 {
     /**
      * @brief Represents a font, which can be used for rendering text.
+     * 
+     * This class encapsulates the properties and behaviors of a font in a graphical
+     * context, providing the necessary functionality for rendering text with different
+     * outline styles and alignments.
      */
     class Font
     {
     public:
-        static const uint8_t CHAR_PIXEL = 0xFF;    ///< Pixel value representing a character.
-        static const uint8_t EMPTY_PIXEL = 0x00;   ///< Pixel value representing empty space.
+        /**
+         * @brief Pixel value representing a character in the font texture.
+         */
+        static const uint8_t CHAR_PIXEL = 0xFF;
+
+        /**
+         * @brief Pixel value representing empty space in the font texture.
+         */
+        static const uint8_t EMPTY_PIXEL = 0x00;
 
         /**
          * @brief Types of outlines available for the font.
+         * 
+         * This enumeration defines various styles of outlines that can be applied to text,
+         * ranging from pixelized to smooth edges.
          */
         enum class OutlineType
         {
-            Pixelized,
-            SharpEdge,
-            Standard,
-            Manhattan
+            Pixelized,  ///< Outline with a pixelized effect.
+            SharpEdge,  ///< Outline with sharp edges.
+            Standard,   ///< Standard outline.
+            Manhattan   ///< Outline with a Manhattan distance effect.
         };
         
+        /**
+         * @brief Vertical alignment options for text rendering.
+         * 
+         * This enumeration defines the vertical positioning of text within a given space,
+         * such as top, middle, or bottom alignment.
+         */
 		enum class VerticalAlignment
 		{
-            Top, Middle, Down
+            Top,    ///< Align text to the top.
+            Middle, ///< Align text to the middle.
+            Down    ///< Align text to the bottom.
         };
         
+        /**
+         * @brief Horizontal alignment options for text rendering.
+         * 
+         * This enumeration defines the horizontal positioning of text, which includes left,
+         * center, or right alignment.
+         */
         enum class HorizontalAlignment
 		{
-            Left, Middle, Right
+            Left,   ///< Align text to the left.
+            Middle, ///< Align text to the center.
+            Right   ///< Align text to the right.
         };
 
     public:

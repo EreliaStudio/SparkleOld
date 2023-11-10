@@ -371,13 +371,19 @@ namespace spk
 			}
 
 			/**
-			 * @brief Overloaded << operator to work with wostream manipulators.
+			 * @brief Overloaded << operator to indicate the emition of the data.
 			 *
 			 * @param func wostream manipulator function.
 			 * @return Reference to this Uniform object.
 			 */
 			Uniform& operator<<(std::wostream& (*func)(std::wostream&));
 
+			/**
+			 * @brief Overloaded = operator to push data into the uniform buffer and emit the data.
+			 *
+			 * @param p_data The data to push into the buffer.
+			 * @return Reference to this Uniform object.
+			 */
 			template <typename TType>
 			Uniform& operator = (const TType& p_data)
 			{

@@ -174,6 +174,14 @@ namespace spk
          */
         bool operator==(const Area& p_other) const;
 
+		/**
+		 * @brief Overload of << operator for output stream.
+		 *
+		 * This operator is used to output the content of an Area object.
+		 * @param p_os The output stream.
+		 * @param p_self The Area object to output.
+		 * @return The output stream.
+		 */
 		friend std::wostream &operator<<(std::wostream &p_os, const Area &p_self)
 		{
 			p_os << L"Anchor : " << p_self._anchor << L" / Size : " << p_self._size;
