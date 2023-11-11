@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filedescriptor_1588',['FileDescriptor',['../classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6',1,'spk::Network::Socket::FileDescriptor()'],['../classspk_1_1Network_1_1Socket.html#a24d549773ef46263a0c24f6fb763a864',1,'spk::Network::Socket::FileDescriptor()']]]
+  ['emiterid_1681',['EmiterID',['../classspk_1_1Network_1_1Message_1_1Header.html#a493542b841695845bebd0efdbbba32de',1,'spk::Network::Message::Header::EmiterID()'],['../classspk_1_1Network_1_1Server.html#abed6ab3a9b2f5eff9eea8d32a5df49cf',1,'spk::Network::Server::EmiterID()']]]
 ];

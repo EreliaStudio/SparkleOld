@@ -173,6 +173,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a468e8374be3058176e19ca2ac3c8348c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacespk.html#a9b7d33188f36fb94cdde3264ccc16e20">spk::Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractViewport.html#a468e8374be3058176e19ca2ac3c8348c">convertScreenToGPUCoordinates</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_screenPosition)</td></tr>
 <tr class="memdesc:a468e8374be3058176e19ca2ac3c8348c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert screen coordinates to GPU coordinates.  <a href="classspk_1_1AbstractViewport.html#a468e8374be3058176e19ca2ac3c8348c">More...</a><br /></td></tr>
 <tr class="separator:a468e8374be3058176e19ca2ac3c8348c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af721b09fae1b1cf82986c36d07f945d2"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractViewport.html#af721b09fae1b1cf82986c36d07f945d2">convertDepth</a> (float p_screenDepth)</td></tr>
+<tr class="memdesc:af721b09fae1b1cf82986c36d07f945d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a depth value from screen space to a normalized depth used in the GPU.  <a href="classspk_1_1AbstractViewport.html#af721b09fae1b1cf82986c36d07f945d2">More...</a><br /></td></tr>
+<tr class="separator:af721b09fae1b1cf82986c36d07f945d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -270,6 +273,42 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the area covered by this viewport (const overload). </p>
 <dl class="section return"><dt>Returns</dt><dd>A constant reference to the area. </dd></dl>
+
+</div>
+</div>
+<a id="af721b09fae1b1cf82986c36d07f945d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af721b09fae1b1cf82986c36d07f945d2">&#9670;&nbsp;</a></span>convertDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float spk::AbstractViewport::convertDepth </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>p_screenDepth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a depth value from screen space to a normalized depth used in the GPU. </p>
+<p>This function transforms a depth value from screen space into a normalized depth value for GPU processing. The conversion inverts the depth such that a value of 0 represents the farthest point in the depth range, and higher values indicate closer points. This is based on the maximum depth value, ensuring that the depth is appropriately scaled and inverted for GPU rendering.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_screenDepth</td><td>The depth value in screen space. This value typically represents the distance from the viewer or camera in a 3D space, where a value of 0 would mean the farthest possible point, and higher values represent closer points. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The normalized and inverted depth value, suitable for GPU calculations. The method scales the depth between 0 and 1, where 0 now represents the farthest point, and values closer to 1 represent points nearer to the viewer or camera. </dd></dl>
 
 </div>
 </div>

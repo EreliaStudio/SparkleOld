@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nearest_1641',['Nearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a60494f02d440f316319dd0fad40ad007',1,'spk::AbstractTexture']]],
-  ['nearestmipmapnearest_1642',['NearestMipmapNearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a35d97e4a37fa3a0d76c692f3e318599b',1,'spk::AbstractTexture']]],
-  ['nothingtoread_1643',['NothingToRead',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()']]]
+  ['manhattan_1739',['Manhattan',['../classspk_1_1Font.html#ad6aea176b2688e771c0b34525a12bdc8a1834cdf9bf35ea1d737c15eef72e18c7',1,'spk::Font']]],
+  ['middle_1740',['Middle',['../classspk_1_1Font.html#a9748810294acaab304a125b964d62186ab1ca34f82e83c52b010f86955f264e05',1,'spk::Font::Middle()'],['../classspk_1_1Font.html#a774beea95f666be7554603a08d04d58dab1ca34f82e83c52b010f86955f264e05',1,'spk::Font::Middle()']]]
 ];

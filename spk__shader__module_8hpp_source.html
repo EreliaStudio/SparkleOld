@@ -114,34 +114,38 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classspk_1_1ShaderModule.html#ae640052e435f010462e9616a8e7113bc">InstructionSet</a> _instructions;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> _checkCodeValidity();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">bool</span> _checkStructureNameCollision();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">size_t</span> _findInsertionPoint();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> _insertStructuresLines();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> _insertSparkleStructuresDefinition();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> std::vector&lt;std::string&gt; structuresArray = {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            R<span class="stringliteral">&quot;(struct Area {ivec2 anchor;uvec2 size;};)&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral">        };</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral">        </span><span class="keywordtype">void</span> _checkCodeValidity();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">bool</span> _checkStructureNameCollision();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">size_t</span> _findInsertionPoint();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> _insertStructuresLines();</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::string _compactify(<span class="keyword">const</span> std::string &amp;p_code);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34">Instruction::Type</a> _determineInstructionType(<span class="keyword">const</span> std::string &amp;p_instruction);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> _parseInstructions(<span class="keyword">const</span> std::string &amp;p_code);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">void</span> _insertSparkleStructuresDefinition();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::string _compactify(<span class="keyword">const</span> std::string &amp;p_code);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34">Instruction::Type</a> _determineInstructionType(<span class="keyword">const</span> std::string &amp;p_instruction);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="classspk_1_1ShaderModule.html#a3e361f6cd8b1f573e42eb0bffee63464">ShaderModule</a>(<span class="keyword">const</span> std::filesystem::path &amp;p_filePath);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="classspk_1_1ShaderModule.html#a3e361f6cd8b1f573e42eb0bffee63464">ShaderModule</a>(<span class="keyword">const</span> std::string &amp;p_name, <span class="keyword">const</span> std::string &amp;p_code);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">const</span> std::string&amp; <a class="code" href="classspk_1_1ShaderModule.html#a506a9c2c89d782000808e423fe563f87">name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">void</span> _parseInstructions(<span class="keyword">const</span> std::string &amp;p_code);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="classspk_1_1ShaderModule.html#a3e361f6cd8b1f573e42eb0bffee63464">ShaderModule</a>(<span class="keyword">const</span> std::filesystem::path &amp;p_filePath);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="classspk_1_1ShaderModule.html#a3e361f6cd8b1f573e42eb0bffee63464">ShaderModule</a>(<span class="keyword">const</span> std::string &amp;p_name, <span class="keyword">const</span> std::string &amp;p_code);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> std::string&amp; <a class="code" href="classspk_1_1ShaderModule.html#a625452784862708d61b78f5780ce5c72">code</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">const</span> std::string&amp; <a class="code" href="classspk_1_1ShaderModule.html#a506a9c2c89d782000808e423fe563f87">name</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1ShaderModule.html#ae640052e435f010462e9616a8e7113bc">InstructionSet</a>&amp; <a class="code" href="classspk_1_1ShaderModule.html#ac310b0c15b53def79de290467fe12be8">instructions</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    };</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> std::string&amp; <a class="code" href="classspk_1_1ShaderModule.html#a625452784862708d61b78f5780ce5c72">code</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1ShaderModule.html#ae640052e435f010462e9616a8e7113bc">InstructionSet</a>&amp; <a class="code" href="classspk_1_1ShaderModule.html#ac310b0c15b53def79de290467fe12be8">instructions</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    };</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1ShaderModule_html"><div class="ttname"><a href="classspk_1_1ShaderModule.html">spk::ShaderModule</a></div><div class="ttdoc">Represents a shader module containing shader instructions.</div><div class="ttdef"><b>Definition:</b> spk_shader_module.hpp:14</div></div>
 <div class="ttc" id="aclassspk_1_1ShaderModule_html_a3e361f6cd8b1f573e42eb0bffee63464"><div class="ttname"><a href="classspk_1_1ShaderModule.html#a3e361f6cd8b1f573e42eb0bffee63464">spk::ShaderModule::ShaderModule</a></div><div class="ttdeci">ShaderModule(const std::filesystem::path &amp;p_filePath)</div><div class="ttdoc">Constructs a ShaderModule from a file.</div><div class="ttdef"><b>Definition:</b> spk_shader_module.cpp:14</div></div>
 <div class="ttc" id="aclassspk_1_1ShaderModule_html_a506a9c2c89d782000808e423fe563f87"><div class="ttname"><a href="classspk_1_1ShaderModule.html#a506a9c2c89d782000808e423fe563f87">spk::ShaderModule::name</a></div><div class="ttdeci">const std::string &amp; name() const</div><div class="ttdoc">Returns the name of the shader module.</div><div class="ttdef"><b>Definition:</b> spk_shader_module.cpp:29</div></div>

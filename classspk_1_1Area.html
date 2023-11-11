@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classspk_1_1Area-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::Area Class Reference</div>  </div>
@@ -140,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7729be04472bc0ba1d11f1be3bb6be06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Area.html#a7729be04472bc0ba1d11f1be3bb6be06">operator==</a> (const <a class="el" href="classspk_1_1Area.html">Area</a> &amp;p_other) const</td></tr>
 <tr class="memdesc:a7729be04472bc0ba1d11f1be3bb6be06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares if this <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a> is equal to another <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a>.  <a href="classspk_1_1Area.html#a7729be04472bc0ba1d11f1be3bb6be06">More...</a><br /></td></tr>
 <tr class="separator:a7729be04472bc0ba1d11f1be3bb6be06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a69ca8430159932f61d3c1c5d42937c29"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Area.html#a69ca8430159932f61d3c1c5d42937c29">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="classspk_1_1Area.html">Area</a> &amp;p_self)</td></tr>
+<tr class="memdesc:a69ca8430159932f61d3c1c5d42937c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of &lt;&lt; operator for output stream.  <a href="classspk_1_1Area.html#a69ca8430159932f61d3c1c5d42937c29">More...</a><br /></td></tr>
+<tr class="separator:a69ca8430159932f61d3c1c5d42937c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a 2D area in terms of an anchor point and size. </p>
@@ -647,6 +654,53 @@ template&lt;typename TType &gt; </div>
 
 <p>Gets the size of the area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current size. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a69ca8430159932f61d3c1c5d42937c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ca8430159932f61d3c1c5d42937c29">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Area.html">Area</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_self</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload of &lt;&lt; operator for output stream. </p>
+<p>This operator is used to output the content of an <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">p_self</td><td>The <a class="el" href="classspk_1_1Area.html" title="A class representing a 2D area in terms of an anchor point and size.">Area</a> object to output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream. </dd></dl>
 
 </div>
 </div>

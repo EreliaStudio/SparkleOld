@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['onenter_1644',['OnEnter',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aecad26d8f96861fe247a1885391d562bef0',1,'spk::Activity']]],
-  ['onexit_1645',['OnExit',['../classspk_1_1Activity.html#a1fa844e585a28ff096c43b924a4d0aeca401b0572a5e3b960959886516846a144',1,'spk::Activity']]],
-  ['outputbuffer_1646',['OutputBuffer',['../structspk_1_1ShaderModule_1_1Instruction.html#ad56deea84138da71568fd38db90b5d34a5fec1b04ee91ba122ecc7789c3a14dcf',1,'spk::ShaderModule::Instruction']]]
+  ['nearest_1741',['Nearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a60494f02d440f316319dd0fad40ad007',1,'spk::AbstractTexture']]],
+  ['nearestmipmapnearest_1742',['NearestMipmapNearest',['../classspk_1_1AbstractTexture.html#a787fcde7373f2fc8ce0963ced09de4e2a35d97e4a37fa3a0d76c692f3e318599b',1,'spk::AbstractTexture']]],
+  ['nothingtoread_1743',['NothingToRead',['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()'],['../classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0',1,'spk::Network::Socket::NothingToRead()']]]
 ];

@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['data_1544',['data',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#afd70d6a5833fdf69227b4647f1313ca8',1,'spk::ShaderLayout::FieldArrayLayout::Field::data()'],['../structspk_1_1Matrix4x4.html#a1300d9d8bebad4e73adb1c15d6e28cd8',1,'spk::Matrix4x4::data()']]]
+  ['data_1621',['data',['../structspk_1_1Matrix4x4.html#a1300d9d8bebad4e73adb1c15d6e28cd8',1,'spk::Matrix4x4::data()'],['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#afd70d6a5833fdf69227b4647f1313ca8',1,'spk::ShaderLayout::FieldArrayLayout::Field::data()']]],
+  ['defaultanchor_1622',['defaultAnchor',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a20c9852f7518444dc1aa72a2c6cad8a0',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultarea_1623',['defaultArea',['../classspk_1_1WidgetComponent_1_1Box.html#aa34fc1f513827138e5210a86dadf6734',1,'spk::WidgetComponent::Box']]],
+  ['defaultbackgroundcolor_1624',['defaultBackgroundColor',['../classspk_1_1WidgetComponent_1_1Box.html#a941d4252180becaaa416854a69814589',1,'spk::WidgetComponent::Box']]],
+  ['defaultbordersize_1625',['defaultBorderSize',['../classspk_1_1WidgetComponent_1_1Box.html#a0e2036c744db7a2201997c73eb227833',1,'spk::WidgetComponent::Box']]],
+  ['defaultdepth_1626',['defaultDepth',['../classspk_1_1WidgetComponent_1_1Box.html#a9c4d3898095e16d650e09b49f6fbf618',1,'spk::WidgetComponent::Box::defaultDepth()'],['../classspk_1_1WidgetComponent_1_1TextLabel.html#a6d9d4ea8c4c80610bfcb32f8f21ca00f',1,'spk::WidgetComponent::TextLabel::defaultDepth()']]],
+  ['defaultfont_1627',['defaultFont',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a61613a70be129f63e22be835f4e7dc8c',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultfrontgroundcolor_1628',['defaultFrontgroundColor',['../classspk_1_1WidgetComponent_1_1Box.html#ae19633274cd44add0689d0dea1cac6e8',1,'spk::WidgetComponent::Box']]],
+  ['defaulthorizontalalignment_1629',['defaultHorizontalAlignment',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a20c3b2aa72db7237ddab8c847539f8fe',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultoutlinecolor_1630',['defaultOutlineColor',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a481d6fb883d471c783e02f592ffe6735',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultoutlinesize_1631',['defaultOutlineSize',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a246e796b7b2bbe5263c72d8039e1d1bb',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultoutlinetype_1632',['defaultOutlineType',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a9639cdaaf799b365d441f603ef7e7965',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaulttext_1633',['defaultText',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a90a7243e44b8144537dec00e48d59623',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaulttextcolor_1634',['defaultTextColor',['../classspk_1_1WidgetComponent_1_1TextLabel.html#a0e1c5b98818d82ed94104fe6d1e964d8',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaulttextsize_1635',['defaultTextSize',['../classspk_1_1WidgetComponent_1_1TextLabel.html#aae062760362d0acd9676cb95d29d5f71',1,'spk::WidgetComponent::TextLabel']]],
+  ['defaultverticalalignment_1636',['defaultVerticalAlignment',['../classspk_1_1WidgetComponent_1_1TextLabel.html#aff893a8198d70288e5fa7cb13096f22a',1,'spk::WidgetComponent::TextLabel']]]
 ];

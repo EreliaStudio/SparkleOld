@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['inputstate_1608',['InputState',['../namespacespk.html#aed6527896d34c2628aec65a369dee252',1,'spk']]],
-  ['interpolation_1609',['Interpolation',['../classspk_1_1IPerlin.html#a3266c3dd973db71cfd0f81a6b8ff4540',1,'spk::IPerlin']]]
+  ['horizontalalignment_1702',['HorizontalAlignment',['../classspk_1_1Font.html#a774beea95f666be7554603a08d04d58d',1,'spk::Font']]]
 ];
