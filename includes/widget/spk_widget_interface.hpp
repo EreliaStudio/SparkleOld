@@ -47,7 +47,7 @@ namespace spk::Widget
 		void _setOperationnal();
 
 		void _computeResizeRatio();
-		void resize();
+		void _applyResizeOperation();
 
 	public:
 		/**
@@ -81,7 +81,7 @@ namespace spk::Widget
 			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
 
 			addChild(result);
-			result->setDepth(depth() - 0.025f);
+			result->setDepth(depth() + 1);
 
 			return (std::shared_ptr<TChildrenType>(result, [](TChildrenType*) {}));
 		}

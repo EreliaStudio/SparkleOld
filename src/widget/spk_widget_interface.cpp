@@ -90,19 +90,17 @@ namespace spk::Widget
 		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
 		
 		_anchorRatio = spk::Vector2(
-			(anchor().x != 0 ? areaSize.x / anchor().x : 0),
-			(anchor().y != 0 ? areaSize.y / anchor().y : 0)
+			(anchor().x != 0 ? anchor().x / static_cast<float>(areaSize.x) : 0),
+			(anchor().y != 0 ? anchor().y / static_cast<float>(areaSize.y) : 0)
 		);
 
 		_sizeRatio = spk::Vector2(
-			(size().x != 0 ? areaSize.x / size().x : 0),
-			(size().y != 0 ? areaSize.y / size().y : 0)
+			(size().x != 0 ? size().x / static_cast<float>(areaSize.x) : 0),
+			(size().y != 0 ? size().y / static_cast<float>(areaSize.y) : 0)
 		);
-
-		spk::cout << "Widget [" << name() << "] ratio -> Anchor : " << _anchorRatio << " / Size : " << _sizeRatio << std::endl;
 	}
 
-	void Interface::resize()
+	void Interface::_applyResizeOperation()
 	{
 		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
 		
@@ -141,8 +139,7 @@ namespace spk::Widget
 	{
 		_viewport.setGeometry(p_area);
 
-		_anchorRatio = parent()->viewport().area().size() / anchor();
-		_sizeRatio = parent()->viewport().area().size() / size();
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}
@@ -150,6 +147,8 @@ namespace spk::Widget
 	void Interface::place(const spk::Vector2Int& p_anchor)
 	{
 		_viewport.setAnchor(p_anchor);
+
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}
@@ -157,6 +156,8 @@ namespace spk::Widget
 	void Interface::move(const spk::Vector2Int& p_delta)
 	{
 		_viewport.setAnchor(_viewport.area().anchor() + p_delta);
+
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}

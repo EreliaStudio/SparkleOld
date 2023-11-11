@@ -64,7 +64,7 @@ namespace spk::Widget
 	{
 		for (auto it = _widgets.rbegin(); it != _widgets.rend(); ++it)
 		{
-			(*it)->resize();
+			(*it)->_applyResizeOperation();
 		}
 	}
 }
