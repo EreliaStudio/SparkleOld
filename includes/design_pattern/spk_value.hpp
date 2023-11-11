@@ -4,6 +4,8 @@
 
 #include "iostream/spk_iostream.hpp"
 
+#include <memory>
+
 namespace spk
 {
 	/**
