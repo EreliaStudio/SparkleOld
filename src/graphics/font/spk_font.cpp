@@ -51,6 +51,7 @@ namespace spk
 
 	std::shared_ptr<Font::Atlas> Font::operator[](const Font::Key &p_fontAtlasKey)
 	{
+
 		if (_fontAtlas.contains(p_fontAtlasKey) == false)
 		{
 			_fontAtlas.emplace(p_fontAtlasKey, std::make_shared<Atlas>(_fontData, _fontConfiguration, p_fontAtlasKey));

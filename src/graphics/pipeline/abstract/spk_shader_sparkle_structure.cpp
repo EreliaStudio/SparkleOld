@@ -3,28 +3,27 @@
 #include "spk_basic_functions.hpp"
 
 #include <regex>
-#include <map>
 
 namespace spk
 {
-	/**
-	 * @brief A string/string map storing every structure type Sparkle will insert inside GLSL provided by users.
-	*/
-	std::map<std::string, std::string> structuresMap = {
-			// {"StructA", "struct StructA{vec4 color;};"},
-			// {"StructB", "struct StructB{float ratio; vec2 position;};"}
-		};
 
 	bool ShaderModule::_checkStructureNameCollision()
 	{
-		for (const auto& structure : structuresMap)
+		std::smatch matches;
+		for (const auto& structure : structuresArray)
 		{
-			std::regex collisionRegex("struct\\s+" + structure.first + "\\s*;");
-			if (std::regex_search(_code, collisionRegex)) {
-				return (true);
+			std::regex firstRegex(R"(^(.*?)\{)");
+			if (std::regex_search(structure, matches, firstRegex))
+			{
+				std::string structureName = matches[1].str();
+				std::regex collisionRegex(structureName);
+				if (std::regex_search(_code, collisionRegex))
+				{
+					return true;
+				}
 			}
 		}
-		return (false);
+		return false;
 	}
 
 	size_t ShaderModule::_findInsertionPoint()
@@ -37,9 +36,9 @@ namespace spk
 		size_t nbStructInserted = 0;
 		size_t insertionPoint = _findInsertionPoint();
 
-		for (const auto& structure : structuresMap)
+		for (const auto& structure : structuresArray)
 		{
-			_code.insert(insertionPoint, "\n" + structure.second + "\n");
+			_code.insert(insertionPoint, "\n" + structure + "\n");
 		}
 	}
 

@@ -74,4 +74,9 @@ namespace spk
 			(2.0f * static_cast<float>(p_screenPosition.y) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
 		);
 	}
+
+    float AbstractViewport::convertDepth(float p_screenDepth)
+	{
+		return (1 - (p_screenDepth / _maxDepth));
+	}
 }

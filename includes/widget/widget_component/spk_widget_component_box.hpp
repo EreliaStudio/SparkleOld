@@ -8,222 +8,258 @@
 namespace spk::WidgetComponent
 {
     /**
-     *  @class Box
-     *  @brief Class for managing box-shaped widget components.
-     *  
-     *  This class handles the rendering, geometry, and colors associated with a box-shaped widget.
+ * @brief Class representing a graphical box element.
+ * 
+ * This class manages the graphical properties and rendering of a box, including
+ * its color, size, depth, and border size. It uses a pipeline for rendering and
+ * handles updates to its properties.
+ */
+class Box
+{
+private:
+    /**
+     * @brief Shared pointer to the rendering pipeline used by all Box instances.
      */
-    class Box
-    {
-    private:
-        static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr; ///< Shared pipeline for rendering all Box objects
+    static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
 
-        static inline const size_t BackgroundIndex = 0; ///< Index for background rendering objects
-        static inline const size_t BorderIndex = 1; ///< Index for border rendering objects
+    /**
+     * @brief Index for background in the rendering objects array.
+     */
+    static const size_t BackgroundIndex = 0;
 
-        std::shared_ptr<spk::Pipeline::Object> _renderingObjects[2]; ///< Rendering objects for the background and the border
+    /**
+     * @brief Index for frontground in the rendering objects array.
+     */
+    static const size_t FrontgroundIndex = 1;
 
-        static inline spk::Value<Area>::Default _defaultArea = spk::Area(0, 0); ///< Default attribute area
-        static inline spk::Value<float>::Default _defaultDepth = 0.0f; ///< Default attribute depth
-        static inline spk::Value<spk::Color>::Default _defaultBackgroundColor = spk::Color(120, 120, 120); ///< Default attribute background color
-        static inline spk::Value<spk::Color>::Default _defaultBorderColor = spk::Color(150, 150, 150); ///< Default attribute border color
-        static inline spk::Value<size_t>::Default _defaultBorderSize = 5; ///< Default attribute border size
+    /**
+     * @brief Array of rendering objects for the background and frontground.
+     */
+    std::shared_ptr<spk::Pipeline::Object> _renderingObjects[2];
 
-        /**
-         *  @struct Attribute
-         *  @brief Templated structure for managing attributes and their updates.
-         *  @tparam TType The type of the attribute.
-         */
-        template<typename TType>
-        struct Attribute
-        {
-            using AttributeType = spk::Value<TType>;
+    /**
+     * @brief Wrapper for the color of the frontground.
+     */
+    ValueWrapper<spk::Color> _frontgroundColor;
 
-            ///< Mutex for thread-safe attribute updates
-            std::recursive_mutex mutex;
+    /**
+     * @brief Wrapper for the color of the background.
+     */
+    ValueWrapper<spk::Color> _backgroundColor;
 
-            ///< Flag indicating whether the attribute needs an update
-            bool needUpdate;
+    /**
+     * @brief Wrapper for the border size of the box.
+     */
+    ValueWrapper<size_t> _borderSize;
 
-            ///< The attribute value
-            AttributeType value;
-            ///< The attribute contract
-            AttributeType::Contract contract;
+    /**
+     * @brief Wrapper for the depth of the box.
+     */
+    ValueWrapper<float> _depth;
 
-            /**
-             *  @brief Constructor initializing the attribute with a default value.
-             *  @param p_defaultValue The default value for the attribute.
-             */
-            Attribute(const typename AttributeType::Default& p_defaultValue) :
-				needUpdate(true),
-				value(p_defaultValue),
-				contract(value.subscribe([&](){
-						std::lock_guard<std::recursive_mutex> lockGuard(mutex);
-						needUpdate = true;
-					}))
-			{
+    /**
+     * @brief Wrapper for the area of the box.
+     */
+    ValueWrapper<spk::Area> _area;
 
-			}
+    /**
+     * @brief Updates the background color of the box.
+     * 
+     * This function is responsible for handling changes in the background color
+     * of the box. It typically gets called when the background color value changes.
+     * It ensures that the new color is applied to the box's background.
+     */
+    void _updateBackgroundColor();
 
-            /**
-             *  @brief Assignment operator for setting attribute values.
-             *  @param p_value The value to set.
-             *  @return Reference to this Attribute.
-             */
-			Attribute& operator = (const TType& p_value)
-			{
-				value = p_value;
-				return (*this);
-			}
-        };
+    /**
+     * @brief Updates the frontground color of the box.
+     * 
+     * This function handles the updates to the frontground color. It is invoked
+     * whenever there is a change in the frontground color value. The function
+     * ensures the box's frontground reflects the new color appropriately.
+     */
+    void _updateFrontgroundColor();
 
-        /**
-         *  @brief Attribute object for managing the area dimensions of the box.
-         *  
-         *  This attribute holds the geometric area dimensions of the box, including position and size.
-         *  Whenever the area is updated, the `_updateArea()` method should be called.
-         */
-        Attribute<Area> _area;
+    /**
+     * @brief Updates the depth of the box.
+     * 
+     * The depth update function adjusts the box's depth property. It is called
+     * when there's a change in the depth value. This function ensures that the 
+     * box's depth is set to the new value, affecting its rendering.
+     */
+    void _updateDepth();
 
-        /**
-         *  @brief Attribute object for managing the rendering depth of the box.
-         *  
-         *  This attribute determines the depth at which the box will be rendered.
-         *  If the depth is updated, `_updateDepth()` method should be called.
-         */
-        Attribute<float> _depth;
+    /**
+     * @brief Updates the vertices for the frontground of the box.
+     * 
+     * This function recalculates the vertices for the frontground of the box.
+     * It is typically called when there's a change in the box's properties that
+     * affects its frontground shape or position.
+     */
+    void _updateFrontgroundVertices();
 
-        /**
-         *  @brief Attribute object for managing the background color of the box.
-         *  
-         *  This attribute holds the RGB/RGBA color information for the background of the box.
-         *  If the background color changes, `_updateBackgroundColor()` should be called.
-         */
-        Attribute<Color> _backgroundColor;
+    /**
+     * @brief Updates the vertices for the background of the box.
+     * 
+     * Similar to the frontground vertices update, this function recalculates
+     * the vertices for the background of the box. It is invoked when changes
+     * in the box's properties affect the background's geometry.
+     */
+    void _updateBackgroundVertices();
 
-        /**
-         *  @brief Attribute object for managing the border color of the box.
-         *  
-         *  This attribute holds the RGB/RGBA color information for the border of the box.
-         *  If the border color changes, `_updateBorderColor()` should be called.
-         */
-        Attribute<Color> _borderColor;
+    /**
+     * @brief General function to update the vertices of the box.
+     * 
+     * This function is a more general vertex update function. It calls the
+     * specific frontground and background vertex update functions. It's used
+     * when there is a need to update all vertices of the box, such as during
+     * a complete redraw or significant property change.
+     */
+    void _updateVertices();
 
-        /**
-         *  @brief Attribute object for managing the border size of the box.
-         *  
-         *  This attribute holds the size information for the border of the box.
-         *  If the border size changes, `_updateBorderSize()` should be called.
-         */
-        Attribute<size_t> _borderSize;
 
-        /**
-         *  @brief Composes the geometry for the background rendering object.
-         *  
-         *  This method computes and sets the vertices, indices, and other geometric data
-         *  for the background of the box based on its current area dimensions.
-         */
-        void _composeBackgroundObjectGeometry();
+public:
+    /**
+     * @brief Constructs a new Box object with default properties.
+     */
+    Box();
 
-        /**
-         *  @brief Composes the geometry for the border rendering object.
-         *  
-         *  This method computes and sets the vertices, indices, and other geometric data
-         *  for the border of the box based on its current border size and area dimensions.
-         */
-        void _composeBorderObjectGeometry();
+    /**
+     * @brief Renders the box using the specified pipeline.
+     */
+    void render();
 
-        /**
-         *  @brief Updates the area dimensions.
-         *  
-         *  This method updates the area-related aspects of the box, such as repositioning
-         *  and resizing. It's called whenever `_area` attribute is updated.
-         */
-        void _updateArea();
+    /**
+     * @brief Default frontground color for all Box instances.
+     * 
+     * This static value sets the default frontground color used when creating
+     * new Box instances, unless specified otherwise.
+     */
+    static inline ValueWrapper<spk::Color>::Default defaultFrontgroundColor = spk::Color(180, 180, 180, 255);
 
-        /**
-         *  @brief Updates the rendering depth.
-         *  
-         *  This method updates the depth at which the box is rendered.
-         *  It's called whenever `_depth` attribute is updated.
-         */
-        void _updateDepth();
+    /**
+     * @brief Default background color for all Box instances.
+     * 
+     * Similar to the default frontground color, this static value sets the
+     * default background color for new Box instances.
+     */
+    static inline ValueWrapper<spk::Color>::Default defaultBackgroundColor = spk::Color(120, 120, 120, 255);
 
-        /**
-         *  @brief Updates the background color.
-         *  
-         *  This method updates the background color of the box.
-         *  It's called whenever `_backgroundColor` attribute is updated.
-         */
-        void _updateBackgroundColor();
+    /**
+     * @brief Default border size for all Box instances.
+     * 
+     * Sets the default border size for Box instances, defining the thickness
+     * of the border around the box.
+     */
+    static inline ValueWrapper<size_t>::Default defaultBorderSize = 1;
 
-        /**
-         *  @brief Updates the border color.
-         *  
-         *  This method updates the border color of the box.
-         *  It's called whenever `_borderColor` attribute is updated.
-         */
-        void _updateBorderColor();
+    /**
+     * @brief Default depth for all Box instances.
+     * 
+     * Specifies the default depth value for new Box instances, affecting
+     * how the box is rendered in a 3D space.
+     */
+    static inline ValueWrapper<float>::Default defaultDepth = 1.0f;
 
-        /**
-         *  @brief Updates the border size.
-         *  
-         *  This method updates the size of the border around the box.
-         *  It's called whenever `_borderSize` attribute is updated.
-         */
-        void _updateBorderSize();
+    /**
+     * @brief Default area for all Box instances.
+     * 
+     * Defines the default area (size and position) for new Box instances,
+     * with a starting point of (0, 0) and a default size of 100x100 units.
+     */
+    static inline ValueWrapper<spk::Area>::Default defaultArea = { spk::Vector2Int(0, 0), spk::Vector2UInt(100, 100) };
 
-    public:
-        /// Default constructor
-        Box();
+    // Member functions to access and manipulate box properties
 
-        /**
-         *  @brief Sets the background color.
-         *  @param p_backgroundColor The new background color.
-         */
-        void setBackgroundColor(const spk::Color& p_backgroundColor);
+    /**
+     * @brief Provides access to the current frontground color.
+     * 
+     * @return Value<spk::Color>& Reference to the frontground color value.
+     */
+    Value<spk::Color>& frontgroundColor() { return (_frontgroundColor.value()); }
 
-        /**
-         *  @brief Sets the border color.
-         *  @param p_borderColor The new border color.
-         */
-        void setBorderColor(const spk::Color& p_borderColor);
+    /**
+     * @brief Provides access to the current background color.
+     * 
+     * @return Value<spk::Color>& Reference to the background color value.
+     */
+    Value<spk::Color>& backgroundColor() { return (_backgroundColor.value()); }
 
-        /**
-         *  @brief Sets both the background and border colors.
-         *  @param p_backgroundColor The new background color.
-         *  @param p_borderColor The new border color.
-         */
-        void setColors(const spk::Color& p_backgroundColor, const spk::Color& p_borderColor);
+    /**
+     * @brief Provides access to the current border size.
+     * 
+     * @return Value<size_t>& Reference to the border size value.
+     */
+    Value<size_t>& borderSize() { return (_borderSize.value()); }
 
-        /**
-         *  @brief Sets the geometry based on the area.
-         *  @param p_area The new area.
-         */
-        void setGeometry(const spk::Area& p_area);
+    /**
+     * @brief Provides access to the current depth of the box.
+     * 
+     * @return Value<float>& Reference to the depth value.
+     */
+    Value<float>& depth() { return (_depth.value()); }
 
-        /**
-         *  @brief Sets the geometry based on the border size.
-         *  @param p_borderSize The new border size.
-         */
-        void setGeometry(const size_t& p_borderSize);
+    /**
+     * @brief Provides access to the current area of the box.
+     * 
+     * @return Value<spk::Area>& Reference to the area value.
+     */
+    Value<spk::Area>& area() { return (_area.value()); }
 
-        /**
-         *  @brief Sets both the area and border size for the geometry.
-         *  @param p_area The new area.
-         *  @param p_borderSize The new border size.
-         */
-        void setGeometry(const spk::Area& p_area, const size_t& p_borderSize);
+    /**
+     * @brief Provides const access to the current frontground color.
+     * 
+     * This function returns a constant reference to the frontground color
+     * of the box. It's used in contexts where the box's state should not be
+     * modified.
+     * 
+     * @return const Value<spk::Color>& Const reference to the frontground color value.
+     */
+    const Value<spk::Color>& frontgroundColor() const { return (_frontgroundColor.value()); }
 
-        /**
-         *  @brief Sets the depth for rendering.
-         *  @param p_depth The new depth.
-         */
-        void setDepth(const float& p_depth);
+    /**
+     * @brief Provides const access to the current background color.
+     * 
+     * Similar to the frontground color access, this function returns a constant
+     * reference to the background color. It's used where the box is constant and
+     * its state should not be altered.
+     * 
+     * @return const Value<spk::Color>& Const reference to the background color value.
+     */
+    const Value<spk::Color>& backgroundColor() const { return (_backgroundColor.value()); }
 
-        /**
-         *  @brief Method to render the box component
-         */
-        void render();
-    };
+    /**
+     * @brief Provides const access to the current border size.
+     * 
+     * This function returns a constant reference to the border size of the box.
+     * It's particularly useful in read-only contexts where the box's border size
+     * needs to be accessed without modifying it.
+     * 
+     * @return const Value<size_t>& Const reference to the border size value.
+     */
+    const Value<size_t>& borderSize() const { return (_borderSize.value()); }
+
+    /**
+     * @brief Provides const access to the current depth of the box.
+     * 
+     * Returns a constant reference to the depth property of the box. This function
+     * is used when the depth needs to be accessed in a read-only manner.
+     * 
+     * @return const Value<float>& Const reference to the depth value.
+     */
+    const Value<float>& depth() const { return (_depth.value()); }
+
+    /**
+     * @brief Provides const access to the current area of the box.
+     * 
+     * This function offers a constant reference to the box's area, allowing it
+     * to be accessed in contexts where the box is treated as constant and its
+     * properties should not be modified.
+     * 
+     * @return const Value<spk::Area>& Const reference to the area value.
+     */
+    const Value<spk::Area>& area() const { return (_area.value()); }
+
+};
+
 }

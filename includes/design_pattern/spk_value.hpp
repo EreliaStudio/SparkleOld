@@ -4,6 +4,8 @@
 
 #include "iostream/spk_iostream.hpp"
 
+#include <memory>
+
 namespace spk
 {
 	/**
@@ -43,7 +45,7 @@ namespace spk
 			 *
 			 * @param p_subscriber The subscriber to add.
 			 */
-			void subscribe(Value<TType>* p_subscriber)
+			void _subscribe(Value<TType>* p_subscriber)
 			{
 				_subscribers.push_back(p_subscriber);
 			}
@@ -55,7 +57,7 @@ namespace spk
 			 *
 			 * @param p_subscriber The subscriber to remove.
 			 */
-			void unsubscribe(Value<TType>* p_subscriber)
+			void _unsubscribe(Value<TType>* p_subscriber)
 			{
 				_subscribers.erase(std::remove(_subscribers.begin(), _subscribers.end(), p_subscriber), _subscribers.end());
 			}
@@ -66,7 +68,7 @@ namespace spk
 			 * This function triggers the edition callbacks for all the subscribers
 			 * whose state is Default.
 			 */
-			void _triggerSubscriberEditionCallbacks()
+			void _triggerSubscriberEditionCallbacks() const
 			{
 				for (size_t i = 0; i < _subscribers.size(); i++)
 				{
@@ -167,9 +169,9 @@ namespace spk
 		};
 
 		CallbackContainer _onEditionCallbacks;  /**< The callbacks to trigger when the value is edited. */
-		State _state;						   /**< The state of the value (Default or Custom). */
-		Default* _default;					  /**< A pointer to the Default object. */
-		TType _value;						   /**< The value in the custom state. */
+		State _state;						    /**< The state of the value (Default or Custom). */
+		std::shared_ptr<const Default> _default;/**< A pointer to the Default object. */
+		TType _value;						    /**< The value in the custom state. */
 
 		/**
 		 * @brief Trigger edition callbacks for subscribers.
@@ -191,7 +193,7 @@ namespace spk
 		 *
 		 * @param p_defaultValue The default value for the Value object.
 		 */
-		Value(const Default& p_defaultValue) :
+		Value(std::shared_ptr<const Default> p_defaultValue) :
 			_default(nullptr),
 			_value(),
 			_state(State::Default)
@@ -207,7 +209,7 @@ namespace spk
 		 * @param p_args The arguments to initialize the value in the custom state.
 		 */
 		template <typename... Args>
-		Value(const Default& p_defaultValue, Args&&... p_args) :
+		Value(std::shared_ptr<const Default> p_defaultValue, Args&&... p_args) :
 			_default(nullptr),
 			_value(std::forward<Args>(p_args)...),
 			_state(State::Custom)
@@ -221,11 +223,11 @@ namespace spk
 		 * @param p_other The Value object to copy.
 		 */
 		Value(const Value& p_other) :
-			_default(p_other._default),
+			_default(nullptr),
 			_value(p_other._value),
 			_state(p_other._state)
 		{
-			_default->subscribe(this);
+			setDefaultValue(p_other._default);
 		}
 
 		/**
@@ -233,7 +235,7 @@ namespace spk
 		 */
 		~Value()
 		{
-			_default->unsubscribe(this);
+			setDefaultValue(nullptr);
 		}
 
 		/**
@@ -268,15 +270,13 @@ namespace spk
 		 *
 		 * @param p_defaultValue The new default value.
 		 */
-		void setDefaultValue(const Default& p_defaultValue)
+		void setDefaultValue(std::shared_ptr<const Default> p_defaultValue)
 		{
-			Default* tmp = const_cast<Default*>(&p_defaultValue);
-
 			if (_default != nullptr)
-				_default->unsubscribe(this);
-			_default = tmp;
+				const_cast<Default*>(_default.get())->_unsubscribe(this);
+			_default = p_defaultValue;
 			if (_default != nullptr)
-				_default->subscribe(this);
+				const_cast<Default*>(_default.get())->_subscribe(this);
 		}
 
 		/**
@@ -290,7 +290,7 @@ namespace spk
 		 */
 		Value& operator=(const Value& p_other)
 		{
-			setDefaultValue(*p_other._default);
+			setDefaultValue(p_other._default);
 			_value = p_other._value;
 			_state = p_other._state;
 			_triggerEditionCallback();
@@ -348,4 +348,135 @@ namespace spk
 				return (*_default);
 		}
 	};
+
+	/**
+	 * @brief A wrapper class for managing a value with automatic update notifications.
+	 * 
+	 * @tparam T The type of the value being wrapped.
+	 */
+	template <typename T>
+	class ValueWrapper
+	{
+	public:
+		/**
+		 * @brief Alias for the default value type of the wrapped value.
+		 */
+		using Default = typename Value<T>::Default;
+		
+	private:
+		/**
+		 * @brief Flag to indicate whether the value needs an update.
+		 */
+		bool _needUpdate;
+
+		/**
+		 * @brief The actual value being wrapped.
+		 */
+		Value<T> _value;
+
+		/**
+		 * @brief Contract for subscription updates.
+		 */
+		Value<T>::Contract _contract;
+
+		/**
+		 * @brief Mutex for thread-safe access.
+		 */
+		std::recursive_mutex _mutex;
+
+	public:
+		/**
+		 * @brief Constructs a new Value Wrapper object.
+		 * 
+		 * @param p_defaultValue The default value to initialize the wrapper with.
+		 */
+		ValueWrapper(const std::shared_ptr<const Default>& p_defaultValue) :
+			_needUpdate(true),
+			_value(p_defaultValue),
+			_contract(_value.subscribe([&](){
+				std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+				_needUpdate = true;
+			}))
+		{
+		}
+
+		/**
+		 * @brief Converts the wrapped value to its underlying type.
+		 * 
+		 * @return T The current value.
+		 */
+		operator T() const { return (_value.value()); }
+
+		/**
+		 * @brief Provides access to the wrapped value.
+		 * 
+		 * @return T& Reference to the current value.
+		 */
+		T& operator->() { return (_value.value()); }
+
+		/**
+		 * @brief Provides const access to the wrapped value.
+		 * 
+		 * @return const T& Const reference to the current value.
+		 */
+		const T& operator->() const { return (_value.value()); }
+		
+		/**
+		 * @brief Assigns a new value to the wrapper.
+		 * 
+		 * @param p_rhs The right-hand side value to assign.
+		 * @return ValueWrapper<T>& Reference to the updated object.
+		 */
+		ValueWrapper<T>& operator= (const T& p_rhs)
+		{
+			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+			_value = p_rhs;
+			_needUpdate = true;
+			return *this;
+		}
+
+		/**
+		 * @brief Checks if the value needs an update.
+		 * 
+		 * @return bool True if the value needs an update.
+		 */
+		bool needUpdate() const { return (_needUpdate); }
+
+		/**
+		 * @brief Resets the update flag to false.
+		 */
+		void resetUpdateFlag() { 
+			std::lock_guard<std::recursive_mutex> lockGuard(_mutex);
+			_needUpdate = false; 
+		}
+
+		/**
+		 * @brief Provides access to the wrapped Value object.
+		 * 
+		 * @return Value<T>& Reference to the wrapped value.
+		 */
+		Value<T>& operator()() { return (_value); }
+		
+		/**
+		 * @brief Provides access to the wrapped value.
+		 * 
+		 * @return Value<T>& Reference to the wrapped value.
+		 */
+		Value<T>& value() { return (_value); }
+
+		/**
+		 * @brief Provides const access to the wrapped value.
+		 * 
+		 * @return const Value<T>& Const reference to the wrapped value.
+		 */
+		const Value<T>& value() const { return (_value); }
+		
+		/**
+		 * @brief Gets the current value.
+		 * 
+		 * @return const T& Const reference to the current value.
+		 */
+		const T& get() const { return (_value.value()); }
+	};
+
 }

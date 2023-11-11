@@ -4,12 +4,12 @@
 
 namespace spk::WidgetComponent
 {
-	Box::Box() :
-		_area(_defaultArea),
-		_depth(_defaultDepth),
-		_borderSize(_defaultBorderSize),
-		_backgroundColor(_defaultBackgroundColor),
-		_borderColor(_defaultBorderColor)
+	Box::Box():
+		_frontgroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultFrontgroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
+		_backgroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultBackgroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
+		_borderSize(std::shared_ptr<const ValueWrapper<size_t>::Default>(&defaultBorderSize, [](const ValueWrapper<size_t>::Default* p_value){})),
+    	_area(std::shared_ptr<const ValueWrapper<spk::Area>::Default>(&defaultArea, [](const ValueWrapper<spk::Area>::Default* p_value){})),
+    	_depth(std::shared_ptr<const ValueWrapper<float>::Default>(&defaultDepth, [](const ValueWrapper<float>::Default* p_value){}))
 	{
 		if (_renderingPipeline == nullptr)
 		{
@@ -17,54 +17,35 @@ namespace spk::WidgetComponent
 		}
 
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
-		_renderingObjects[BorderIndex] = _renderingPipeline->createObject();
+		_renderingObjects[FrontgroundIndex] = _renderingPipeline->createObject();
 	}
 
-	void Box::setBackgroundColor(const spk::Color& p_backgroundColor)
+	void Box::_updateBackgroundColor()
 	{
-		_backgroundColor = p_backgroundColor;
-	}
-		
-	void Box::setBorderColor(const spk::Color& p_borderColor)
-	{
-		_borderColor = p_borderColor;
-	}
-
-	void Box::setColors(const spk::Color& p_backgroundColor, const spk::Color& p_borderColor)
-	{
-		setBackgroundColor(p_backgroundColor);
-		setBorderColor(p_borderColor);
-	}
-
-	void Box::setGeometry(const spk::Area& p_area)
-	{
-		_area = p_area;
+		_renderingObjects[BackgroundIndex]->pushConstants(L"color") = _backgroundColor.get();
+		_backgroundColor.resetUpdateFlag();
 	}
 	
-	void Box::setGeometry(const size_t& p_borderSize)
+	void Box::_updateFrontgroundColor()
 	{
-		_borderSize = p_borderSize;
+		_renderingObjects[FrontgroundIndex]->pushConstants(L"color") = _frontgroundColor.get();
+		_frontgroundColor.resetUpdateFlag();
 	}
 
-	void Box::setGeometry(const spk::Area& p_area, const size_t& p_borderSize)
+	void Box::_updateDepth()
 	{
-		setGeometry(p_area);
-		setGeometry(p_borderSize);
+		_renderingObjects[FrontgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get() + 0.1f);
+		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get());
+		_depth.resetUpdateFlag();
 	}
-
-	void Box::setDepth(const float& p_depth)
-	{
-		_depth = p_depth;
-	}
-
-	void Box::_composeBackgroundObjectGeometry()
+    
+	void Box::_updateBackgroundVertices()
 	{
 		_renderingObjects[BackgroundIndex]->storage().vertices().clear();
 		_renderingObjects[BackgroundIndex]->storage().indexes().clear();
 
-		spk::Vector2UInt borderSize = _borderSize.value.value();
-		spk::Vector2Int anchor = _area.value.value().anchor() + borderSize;
-		spk::Vector2UInt size = _area.value.value().size() - borderSize * spk::Vector2UInt(2, 2);
+		spk::Vector2Int anchor = _area.get().anchor();
+		spk::Vector2UInt size = _area.get().size();
 
 		std::vector<spk::Vector2> points
 		{
@@ -83,81 +64,50 @@ namespace spk::WidgetComponent
 		_renderingObjects[BackgroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 	
-	void Box::_composeBorderObjectGeometry()
+	void Box::_updateFrontgroundVertices()
 	{
-		spk::Vector2Int anchor = _area.value.value().anchor();
-		spk::Vector2UInt size = _area.value.value().size();
+		_renderingObjects[FrontgroundIndex]->storage().vertices().clear();
+		_renderingObjects[FrontgroundIndex]->storage().indexes().clear();
 
-		std::vector<spk::Vector2> points
-		{
+		spk::Vector2Int anchor = _area.get().anchor() + spk::Vector2Int(_borderSize.get(), _borderSize.get());
+		spk::Vector2UInt size = _area.get().size() - spk::Vector2UInt(2 * _borderSize.get(), 2 * _borderSize.get());
+
+		std::vector<spk::Vector2> points = {
 			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 0)),
 			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 1)),
 			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 0)),
 			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 1)),
 		};
 		
-		std::vector<unsigned int> indexes = 
-		{
+		std::vector<unsigned int> indexes = {
 			0, 1, 2, 2, 1, 3
 		};
 
-		_renderingObjects[BorderIndex]->storage().vertices() << points << std::endl;
-		_renderingObjects[BorderIndex]->storage().indexes() << indexes << std::endl;
+		_renderingObjects[FrontgroundIndex]->storage().vertices() << points << std::endl;
+		_renderingObjects[FrontgroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 
-	
-	void Box::_updateArea()
+	void Box::_updateVertices()
 	{
-		_composeBackgroundObjectGeometry();
-		_composeBorderObjectGeometry();
+		_updateFrontgroundVertices();
+		_updateBackgroundVertices();
 
-		_area.needUpdate = false;
-	}
-	
-	void Box::_updateDepth()
-	{
-		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = _depth.value.value() - 0.000001f;
-		_renderingObjects[BorderIndex]->pushConstants(L"depth") = _depth.value.value();
-
-		_depth.needUpdate = false;
-	}
-	
-	void Box::_updateBackgroundColor()
-	{
-		_renderingObjects[BackgroundIndex]->pushConstants(L"color") = _backgroundColor.value.value();
-		_backgroundColor.needUpdate = false;
-	}
-	
-	void Box::_updateBorderColor()
-	{
-		_renderingObjects[BorderIndex]->pushConstants(L"color") = _borderColor.value.value();
-		_borderColor.needUpdate = false;
-	}
-
-	void Box::_updateBorderSize()
-	{
-		_composeBackgroundObjectGeometry();
-		_borderSize.needUpdate = false;
+		_borderSize.resetUpdateFlag();
+		_area.resetUpdateFlag();
 	}
 
 	void Box::render()
 	{
-		if (_area.needUpdate == true)
-			_updateArea();
-
-		if (_depth.needUpdate == true)
-			_updateDepth();
-
-		if (_backgroundColor.needUpdate == true)
+        if (_backgroundColor.needUpdate() == true)
 			_updateBackgroundColor();
+        if (_frontgroundColor.needUpdate() == true)
+			_updateFrontgroundColor();
+        if (_depth.needUpdate() == true)
+			_updateDepth();
+		if (_borderSize.needUpdate() == true || _area.needUpdate() == true)
+			_updateVertices();
 
-		if (_borderColor.needUpdate == true)
-			_updateBorderColor();
-
-		if (_borderSize.needUpdate == true)
-			_updateBorderSize();
-
-		_renderingObjects[BorderIndex]->render();
+		_renderingObjects[FrontgroundIndex]->render();
 		_renderingObjects[BackgroundIndex]->render();
 	}
 }
