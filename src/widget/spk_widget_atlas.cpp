@@ -60,11 +60,11 @@ namespace spk::Widget
 		return _widgets;
 	}
 
-	void Atlas::resize(const spk::Vector2& p_resizeRatio)
+	void Atlas::resize()
 	{
 		for (auto it = _widgets.rbegin(); it != _widgets.rend(); ++it)
 		{
-			(*it)->setGeometry((*it)->anchor() * p_resizeRatio, (*it)->size() * p_resizeRatio);
+			(*it)->resize();
 		}
 	}
 }

@@ -35,6 +35,8 @@ namespace spk::Widget
 		bool _geometryEdited;
 		float _depth = 0;
 		spk::Viewport _viewport;
+		spk::Vector2 _anchorRatio;
+		spk::Vector2 _sizeRatio;
 		
 		virtual void _render();
 
@@ -43,6 +45,9 @@ namespace spk::Widget
 		void addChild(Child child);
 
 		void _setOperationnal();
+
+		void _computeResizeRatio();
+		void resize();
 
 	public:
 		/**

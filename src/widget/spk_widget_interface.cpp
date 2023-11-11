@@ -1,6 +1,6 @@
 #include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_atlas.hpp"
-
+#include "graphics/spk_window.hpp"
 #include "iostream/spk_iostream.hpp"
 
 namespace spk::Widget
@@ -85,9 +85,36 @@ namespace spk::Widget
 		Atlas::instance()->remove(this);
 	}
 
+	void Interface::_computeResizeRatio()
+	{
+		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
+		
+		_anchorRatio = spk::Vector2(
+			(anchor().x != 0 ? areaSize.x / anchor().x : 0),
+			(anchor().y != 0 ? areaSize.y / anchor().y : 0)
+		);
+
+		_sizeRatio = spk::Vector2(
+			(size().x != 0 ? areaSize.x / size().x : 0),
+			(size().y != 0 ? areaSize.y / size().y : 0)
+		);
+
+		spk::cout << "Widget [" << name() << "] ratio -> Anchor : " << _anchorRatio << " / Size : " << _sizeRatio << std::endl;
+	}
+
+	void Interface::resize()
+	{
+		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
+		
+		_viewport.setGeometry(spk::Area(areaSize * _anchorRatio, areaSize * _sizeRatio));
+		_geometryEdited = true;
+	}
+
 	void Interface::setAnchor(const spk::Vector2Int& p_anchor)
 	{
 		_viewport.setAnchor(p_anchor);
+
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}
@@ -95,6 +122,8 @@ namespace spk::Widget
 	void Interface::setSize(const spk::Vector2UInt& p_size)
 	{
 		_viewport.setSize(p_size);
+
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}
@@ -102,6 +131,8 @@ namespace spk::Widget
 	void Interface::setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
 	{
 		_viewport.setGeometry(spk::Area(p_anchor, p_size));
+
+		_computeResizeRatio();
 		
 		_geometryEdited = true;
 	}
@@ -109,6 +140,9 @@ namespace spk::Widget
 	void Interface::setGeometry(const spk::Area& p_area)
 	{
 		_viewport.setGeometry(p_area);
+
+		_anchorRatio = parent()->viewport().area().size() / anchor();
+		_sizeRatio = parent()->viewport().area().size() / size();
 		
 		_geometryEdited = true;
 	}
