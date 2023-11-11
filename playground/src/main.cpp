@@ -8,7 +8,7 @@ private:
 
     void _onGeometryChange()
     {
-        _box.area() = spk::Area(anchor(), size());
+        _box.area() = spk::Area(0, size());
         _box.depth() = depth();
     }
     void _onRender()
@@ -45,8 +45,8 @@ private:
 
     void _onGeometryChange()
     {
-        _grandChildrenWidget->setGeometry(spk::Vector2Int(50, 50), size() - spk::Vector2UInt(100, 100));
-        _box.area() = spk::Area(anchor(), size());
+        _grandChildrenWidget->setGeometry(spk::Vector2Int(0, 100), size() - spk::Vector2UInt(0, 100));
+        _box.area() = spk::Area(0, size());
         _box.depth() = depth();
     }
     void _onRender()
@@ -86,9 +86,9 @@ private:
 
     void _onGeometryChange()
     {
-        _childrenWidget->setGeometry(spk::Vector2Int(50, 50), size() - spk::Vector2UInt(100, 100));
+        _childrenWidget->setGeometry(spk::Vector2Int(0, 0), size() - spk::Vector2UInt(100, 100));
 
-        _box.area() = spk::Area(anchor(), size());
+        _box.area() = spk::Area(0, size());
         _box.depth() = depth();
     }
     void _onRender()
