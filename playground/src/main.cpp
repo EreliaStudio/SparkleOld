@@ -26,8 +26,8 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
-        _box.backgroundColor() = spk::Color(255, 255, 255, 255);
-        _box.frontgroundColor() = spk::Color(180, 180, 180, 255);
+        _box.backgroundColor() = spk::Color(255, 0, 0, 255);
+        _box.frontgroundColor() = spk::Color(180, 0, 0, 255);
         _box.borderSize() = 5;
     }
 
@@ -65,8 +65,8 @@ public:
         _box()
     {
         _box.borderSize() = 5;
-        _box.backgroundColor() = spk::Color(255, 255, 255, 255);
-        _box.frontgroundColor() = spk::Color(180, 180, 180, 255);
+        _box.backgroundColor() = spk::Color(0, 255, 0, 255);
+        _box.frontgroundColor() = spk::Color(0, 180, 0, 255);
 
         _grandChildrenWidget = addChildrenWidget<GrandChildrenWidget>(L"GrandChildrenWidget");
         _grandChildrenWidget->activate();
@@ -106,8 +106,8 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
-        _box.backgroundColor() = spk::Color(255, 255, 255, 255);
-        _box.frontgroundColor() = spk::Color(180, 180, 180, 255);
+        _box.backgroundColor() = spk::Color(0, 0, 255, 255);
+        _box.frontgroundColor() = spk::Color(0, 0, 180, 255);
         _box.borderSize() = 5;
 
         _childrenWidget = addChildrenWidget<ChildrenWidget>(L"ChildrenWidget");
