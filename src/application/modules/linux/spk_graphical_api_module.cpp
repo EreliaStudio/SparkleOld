@@ -14,8 +14,8 @@ namespace spk
 			xcb_configure_notify_event_t* configureNotifyEvent = reinterpret_cast<xcb_configure_notify_event_t*>(p_event);
 
 			spk::Vector2 ratio = spk::Vector2(
-				static_cast<float>(configureNotifyEvent->width) / Window::instance()->size().x,
-				static_cast<float>(configureNotifyEvent->height) / Window::instance()->size().y
+				static_cast<float>(configureNotifyEvent->width) / static_cast<float>(Window::instance()->size().x),
+				static_cast<float>(configureNotifyEvent->height) / static_cast<float>(Window::instance()->size().y)
 			);
 
 			if (Window::instance()->size().x != configureNotifyEvent->width || Window::instance()->size().y != configureNotifyEvent->height)

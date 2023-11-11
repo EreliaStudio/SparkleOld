@@ -20,8 +20,8 @@ namespace spk
 			*p_event >> height;
 
 			spk::Vector2 ratio = spk::Vector2(
-				static_cast<float>(width) / Window::instance()->size().x,
-				static_cast<float>(height) / Window::instance()->size().y
+				static_cast<float>(width) / static_cast<float>(Window::instance()->size().x),
+				static_cast<float>(height) / static_cast<float>(Window::instance()->size().y)
 			);
 
 			Window::instance()->resize(spk::Vector2Int(width, height));
