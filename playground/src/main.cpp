@@ -1,14 +1,13 @@
 #include "playground.hpp"
 
-
-class GrandChildrenWidget : public spk::Widget::Interface
+class WidgetC : public spk::Widget::Interface
 {
 private:
     spk::WidgetComponent::Box _box;
 
     void _onGeometryChange()
     {
-        _box.area() = spk::Area(0, size());
+        _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
     }
     void _onRender()
@@ -22,31 +21,32 @@ private:
     }
 
 public:
-    GrandChildrenWidget(const std::wstring &p_name) :
+    WidgetC(const std::wstring &p_name) :
         spk::Widget::Interface(p_name),
         _box()
     {
+        _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(255, 0, 0, 255);
         _box.frontgroundColor() = spk::Color(180, 0, 0, 255);
-        _box.borderSize() = 5;
     }
 
-    ~GrandChildrenWidget()
+    ~WidgetC()
     {
 
     }
 };
 
-class ChildrenWidget : public spk::Widget::Interface
+class WidgetB : public spk::Widget::Interface
 {
 private:
-    std::shared_ptr<GrandChildrenWidget> _grandChildrenWidget;
+    std::shared_ptr<WidgetC> widgetC;
     spk::WidgetComponent::Box _box;
 
     void _onGeometryChange()
     {
-        _grandChildrenWidget->setGeometry(spk::Vector2Int(0, 100), size() - spk::Vector2UInt(0, 100));
-        _box.area() = spk::Area(0, size());
+        widgetC->setGeometry(spk::Vector2Int(100, 100), size() - spk::Vector2UInt(200, 200));
+
+        _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
     }
     void _onRender()
@@ -60,35 +60,35 @@ private:
     }
 
 public:
-    ChildrenWidget(const std::wstring &p_name) :
+    WidgetB(const std::wstring &p_name) :
         spk::Widget::Interface(p_name),
         _box()
     {
+        widgetC = addChildrenWidget<WidgetC>(L"WidgetC");
+        widgetC->activate();
+
         _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(0, 255, 0, 255);
         _box.frontgroundColor() = spk::Color(0, 180, 0, 255);
-
-        _grandChildrenWidget = addChildrenWidget<GrandChildrenWidget>(L"GrandChildrenWidget");
-        _grandChildrenWidget->activate();
     }
 
-    ~ChildrenWidget()
+    ~WidgetB()
     {
 
     }
 };
 
-class MainWidget : public spk::Widget::Interface
+class WidgetA : public spk::Widget::Interface
 {
 private:
-    std::shared_ptr<ChildrenWidget> _childrenWidget;
+    std::shared_ptr<WidgetB> widgetB;
     spk::WidgetComponent::Box _box;
 
     void _onGeometryChange()
     {
-        _childrenWidget->setGeometry(spk::Vector2Int(0, 0), size() - spk::Vector2UInt(100, 100));
+        widgetB->setGeometry(spk::Vector2Int(100, 100), size() - spk::Vector2UInt(100, 100));
 
-        _box.area() = spk::Area(0, size());
+        _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
     }
     void _onRender()
@@ -102,7 +102,7 @@ private:
     }
 
 public:
-    MainWidget(const std::wstring &p_name) :
+    WidgetA(const std::wstring &p_name) :
         spk::Widget::Interface(p_name),
         _box()
     {
@@ -110,11 +110,11 @@ public:
         _box.frontgroundColor() = spk::Color(0, 0, 180, 255);
         _box.borderSize() = 5;
 
-        _childrenWidget = addChildrenWidget<ChildrenWidget>(L"ChildrenWidget");
-        _childrenWidget->activate();
+        widgetB = addChildrenWidget<WidgetB>(L"WidgetB");
+        widgetB->activate();
     }
 
-    ~MainWidget()
+    ~WidgetA()
     {
 
     }
@@ -125,7 +125,7 @@ int main()
     spk::Application app(L"Playground", 800);
     spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
   
-    std::shared_ptr<MainWidget> mainWidget = app.addRootWidget<MainWidget>(L"MainWidget");
+    std::shared_ptr<WidgetA> mainWidget = app.addRootWidget<WidgetA>(L"WidgetA");
     mainWidget->setGeometry(spk::Vector2Int(0, 0), app.size());
     mainWidget->activate();
 

@@ -46,9 +46,11 @@ namespace spk
 
 	void AbstractViewport::activate() const
 	{
-		_activeViewport = _computeActiveAbstractViewport();
+		spk::Area newArea = _computeActiveAbstractViewport();
 
-		_onActivation(_activeViewport);
+		_onActivation(newArea);
+
+		_activeViewport = newArea;
 	}
 
 	bool AbstractViewport::isInside(const Vector2Int& p_position)
