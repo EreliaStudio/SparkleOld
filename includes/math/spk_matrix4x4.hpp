@@ -74,6 +74,37 @@ namespace spk
          */
 		static Matrix4x4 rotateAroundAxis(const Vector3& p_axis, const float& p_rotationAngle);
 
+        /**
+         * @brief Creates a perspective projection matrix.
+         * 
+         * This function constructs a perspective transformation matrix defined by
+         * a field of view, aspect ratio, and the near and far clipping planes.
+         *
+         * @param fov Field of view in radians.
+         * @param aspectRatio Aspect ratio of the viewport (width / height).
+         * @param nearPlane Distance to the near clipping plane.
+         * @param farPlane Distance to the far clipping plane.
+         * @return Matrix4x4 The perspective projection matrix.
+         */
+        static Matrix4x4 perspective(float fov, float aspectRatio, float nearPlane, float farPlane);
+
+        /**
+         * @brief Creates an orthographic projection matrix.
+         * 
+         * This function constructs an orthographic projection matrix defined by the
+         * coordinates of the planes defining the viewing volume: left, right, bottom,
+         * top, near, and far.
+         *
+         * @param left Coordinate for the left vertical clipping plane.
+         * @param right Coordinate for the right vertical clipping plane.
+         * @param bottom Coordinate for the bottom horizontal clipping plane.
+         * @param top Coordinate for the top horizontal clipping plane.
+         * @param nearPlane Distance to the near depth clipping plane.
+         * @param farPlane Distance to the far depth clipping plane.
+         * @return Matrix4x4 The orthographic projection matrix.
+         */
+        static Matrix4x4 ortho(float left, float right, float bottom, float top, float nearPlane, float farPlane);
+
 		/**
          * @brief Checks matrix equality.
          * @param other The other matrix.

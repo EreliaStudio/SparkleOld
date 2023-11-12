@@ -139,6 +139,36 @@ namespace spk
 		return result;
 	}
 
+	Matrix4x4 Matrix4x4::perspective(float fov, float aspectRatio, float nearPlane, float farPlane)
+	{
+		Matrix4x4 result;
+		const float tanHalfFOV = std::tan(fov / 2.0f);
+		const float zRange = nearPlane - farPlane;
+
+		result.data[0][0] = 1.0f / (tanHalfFOV * aspectRatio);
+		result.data[1][1] = 1.0f / tanHalfFOV;
+		result.data[2][2] = (-nearPlane - farPlane) / zRange;
+		result.data[2][3] = 2.0f * farPlane * nearPlane / zRange;
+		result.data[3][2] = 1.0f;
+		result.data[3][3] = 0.0f;
+
+		return result;
+	}
+
+	Matrix4x4 Matrix4x4::ortho(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	{
+		Matrix4x4 result;
+
+		result.data[0][0] = 2.0f / (right - left);
+		result.data[1][1] = 2.0f / (top - bottom);
+		result.data[2][2] = -2.0f / (farPlane - nearPlane);
+		result.data[3][0] = -(right + left) / (right - left);
+		result.data[3][1] = -(top + bottom) / (top - bottom);
+		result.data[3][2] = -(farPlane + nearPlane) / (farPlane - nearPlane);
+
+		return result;
+	}
+
 	bool Matrix4x4::operator==(const Matrix4x4 &other) const
 	{
 		for (int i = 0; i < 4; ++i)
