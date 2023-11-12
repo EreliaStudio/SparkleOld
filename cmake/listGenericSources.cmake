@@ -35,6 +35,8 @@ function(listGenericSources SOURCE_FILES_VAR)
 		"${CMAKE_SOURCE_DIR}/src/math/perlin/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/threading/*.cpp"
 		"${CMAKE_SOURCE_DIR}/src/debug/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/engine/*.cpp"
+		"${CMAKE_SOURCE_DIR}/src/engine/component/*.cpp"
 	)
 
 	# --- Specific Windows

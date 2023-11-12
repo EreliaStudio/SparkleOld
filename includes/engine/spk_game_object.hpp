@@ -1,5 +1,10 @@
 #pragma once
 
+#include <vector>
+#include <string>
+#include "design_pattern/spk_activable_object.hpp"
+#include "design_pattern/spk_inherence_object.hpp"
+
 namespace spk
 {
 	class GameObject : public spk::ActivableObject, public spk::InherenceObject<GameObject>

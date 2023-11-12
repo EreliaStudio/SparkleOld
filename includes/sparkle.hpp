@@ -91,3 +91,7 @@
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 #include "miscellaneous/JSON/spk_JSON_file.hpp"
 #include "miscellaneous/spk_translation_atlas.hpp"
+
+#include "engine/spk_components.hpp"
+#include "engine/spk_game_object.hpp"
+#include "engine/spk_game_engine.hpp"
