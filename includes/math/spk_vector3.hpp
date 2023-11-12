@@ -528,6 +528,38 @@ namespace spk
 		{
 			return (IVector3(-x, -y, -z));
 		}
+
+		/**
+		 * @brief Converts a vector of angles from radians to degrees.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in radians.
+		 *
+		 * @param radians A IVector3 representing angles in radians.
+		 * @return Vector3 A IVector3 with angles in degrees.
+		 */
+		static IVector3 radianToDegree(const IVector3& radians) {
+			return IVector3(
+				radians.x * (180.0f / M_PI),
+				radians.y * (180.0f / M_PI),
+				radians.z * (180.0f / M_PI));
+		}
+
+		/**
+		 * @brief Converts a vector of angles from degrees to radians.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in degrees.
+		 *
+		 * @param degrees A IVector3 representing angles in degrees.
+		 * @return Vector3 A IVector3 with angles in radians.
+		 */
+		static IVector3 degreeToRadian(const IVector3& degrees) {
+			return IVector3(
+				degrees.x * (M_PI / 180.0f),
+				degrees.y * (M_PI / 180.0f),
+				degrees.z * (M_PI / 180.0f));
+		}
 	};
 
 	/**

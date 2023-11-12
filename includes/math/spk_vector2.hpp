@@ -601,6 +601,36 @@ namespace spk
 				p_startingPoint.x + (p_endingPoint.x - p_startingPoint.x) * t,
 				p_startingPoint.y + (p_endingPoint.y - p_startingPoint.y) * t);
 		}
+
+		/**
+		 * @brief Converts a 2D vector of angles from radians to degrees.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in radians.
+		 *
+		 * @param radians A IVector2 representing angles in radians.
+		 * @return Vector2 A IVector2 with angles in degrees.
+		 */
+		static IVector2 radianToDegree(const IVector2& radians) {
+			return IVector2(
+				radians.x * (180.0f / M_PI),
+				radians.y * (180.0f / M_PI));
+		}
+
+		/**
+		 * @brief Converts a 2D vector of angles from degrees to radians.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in degrees.
+		 *
+		 * @param degrees A IVector2 representing angles in degrees.
+		 * @return Vector2 A IVector2 with angles in radians.
+		 */
+		static IVector2 degreeToRadian(const IVector2& degrees) {
+			return IVector2(
+				degrees.x * (M_PI / 180.0f),
+				degrees.y * (M_PI / 180.0f));
+		}
 	};
 
 	/**
