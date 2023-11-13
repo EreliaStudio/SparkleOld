@@ -11,7 +11,7 @@ namespace spk
 		{
 			Area parentArea = p_currentParent->_area;
 
-			Vector2Int constrainedAnchor = Vector2Int::min(Vector2Int::max(currentArea.anchor(), parentArea.anchor()), parentArea.anchor() + parentArea.size());
+			Vector2Int constrainedAnchor = currentArea.anchor() + parentArea.anchor();
 
 			Vector2UInt constrainedSize = Vector2UInt::min(currentArea.size(), parentArea.size() - (constrainedAnchor - parentArea.anchor()));
 

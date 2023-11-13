@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <functional>
+#include <iostream>
 
 namespace spk
 {
@@ -21,7 +22,7 @@ namespace spk
 		using Parent = TType*;						   /**< The type of the parent object. */
 		using Child = TType*;							/**< The type of the child objects. */
 		using ChildContainer = std::vector<Child>;		  /**< The type of child container used by InherenceObject to store them*/
-		using Callback = std::function<void(Child)>;	 /**< The type of the callback function. */
+		using Callback = std::function<void(Parent)>;	 /**< The type of the callback function. */
 
 	private:
 		Parent _parent;								 /**< The parent object. */
@@ -32,8 +33,10 @@ namespace spk
 		void _addChild(Child child)
 		{
 			_childrens.push_back(child);
-			if (_birthCallback != nullptr)
-				_birthCallback(child);
+			if (child->_birthCallback != nullptr)
+			{
+				child->_birthCallback((TType*)(this));
+			}
 		}
 
 		void _removeChild(Child child)
@@ -118,7 +121,7 @@ namespace spk
 		 *
 		 * @param callback The birth callback function to set.
 		 */
-		void setBirthCallback(std::function<void(Child)> callback)
+		void setBirthCallback(std::function<void(Parent)> callback)
 		{
 			_birthCallback = callback;
 		}

@@ -152,6 +152,12 @@ namespace spk::Widget
 		 * @brief Get the viewport of the widget
 		 * @return The viewport of the widget, relative to its parent.
 		*/
+		constexpr spk::Viewport& viewport() { return (_viewport);}
+		
+		/**
+		 * @brief Get the viewport of the widget
+		 * @return The viewport of the widget, relative to its parent.
+		*/
 		constexpr const spk::Viewport& viewport() const { return (_viewport);}
 
 		/**

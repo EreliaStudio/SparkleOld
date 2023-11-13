@@ -8,9 +8,10 @@ private:
 
     void _onGeometryChange()
     {
+        spk::cout << "Widget printing : " << name() << std::endl;
+
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
-		spk::cout << L"GrandGrandGrandChildrenWidget::onGeometryChange() [" << _box.area() << L"]" << std::endl;
     }
 
     void _onRender()
@@ -47,11 +48,12 @@ private:
 
     void _onGeometryChange()
     {
-		_grandGrandGrandChildrenWidget->setGeometry(0, size() - spk::Vector2UInt(100, 100));
-
+        spk::cout << "Widget printing : " << name() << std::endl;
+        
+		_grandGrandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
+        
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
-		spk::cout << L"GrandGrandChildrenWidget::onGeometryChange() [" << _box.area() << L"]" << std::endl;
     }
 
     void _onRender()
@@ -91,11 +93,12 @@ private:
 
     void _onGeometryChange()
     {
-        _grandGrandChildrenWidget->setGeometry(0, size() - spk::Vector2UInt(100, 100));
+        spk::cout << "Widget printing : " << name() << std::endl;
+
+        _grandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
-		spk::cout << L"GrandChildrenWidget::onGeometryChange() [" << _box.area() << L"]" << std::endl;
     }
     void _onRender()
     {
@@ -134,11 +137,12 @@ private:
 
     void _onGeometryChange()
     {
-        _grandChildrenWidget->setGeometry(0, size() - spk::Vector2UInt(100, 100));
-        // _grandChildrenWidget->setGeometry(spk::Vector2Int(50, 550), size() - spk::Vector2UInt(100, 100));
+        spk::cout << "Widget printing : " << name() << std::endl;
+
+        _grandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
+
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
-		spk::cout << L"ChildrenWidget::onGeometryChange() [" << _box.area() << L"]" << std::endl;
     }
     void _onRender()
     {
@@ -177,8 +181,8 @@ private:
 
     void _onGeometryChange()
     {
-        _childrenWidget->setGeometry(0, size() - spk::Vector2UInt(100, 100));
-        // _childrenWidget->setGeometry(spk::Vector2Int(50, 50), size() - spk::Vector2UInt(100, 100));
+        spk::cout << "Widget printing : " << name() << std::endl;
+        _childrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();

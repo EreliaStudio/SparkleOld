@@ -47,6 +47,10 @@ namespace spk::Widget
 	{
 		Atlas::instance()->insert(this);
 
+		setBirthCallback([&](Parent p_parent){
+			_viewport.setParent(&(p_parent->viewport()));
+		});
+
 		_activationCallback = ActivableObject::addActivationCallback([&](){
 			_setOperationnal();
 		});
