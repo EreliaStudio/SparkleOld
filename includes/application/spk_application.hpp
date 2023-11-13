@@ -85,7 +85,7 @@ namespace spk
 		{
 			auto result = std::make_shared<TChildrenType>(std::forward<Args>(p_args)...);
 
-			result->setDepth(1);
+			result->setDepth(0);
 
 			return (result);
 		}

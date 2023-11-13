@@ -40,9 +40,9 @@ namespace spk
 		glEnable(GL_CULL_FACE);
 		glFrontFace(GL_CCW);
 
-		glDisable(GL_DEPTH_TEST);
+		glEnable(GL_DEPTH_TEST);
 		glClearDepth(1.0f);
-		glDepthFunc(GL_ALWAYS);
+		glDepthFunc(GL_LEQUAL);
 
 		glDisable(GL_STENCIL_TEST);
 		glStencilFunc(GL_ALWAYS, 0, 0xFF);

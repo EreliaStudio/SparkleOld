@@ -35,6 +35,8 @@ namespace spk::Widget
 		bool _geometryEdited;
 		float _depth = 0;
 		spk::Viewport _viewport;
+		spk::Vector2 _anchorRatio;
+		spk::Vector2 _sizeRatio;
 		
 		virtual void _render();
 
@@ -43,6 +45,9 @@ namespace spk::Widget
 		void addChild(Child child);
 
 		void _setOperationnal();
+
+		void _computeResizeRatio();
+		void _applyResizeOperation();
 
 	public:
 		/**
@@ -76,7 +81,7 @@ namespace spk::Widget
 			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
 
 			addChild(result);
-			result->setDepth(depth() - 0.025f);
+			result->setDepth(depth() + 1);
 
 			return (std::shared_ptr<TChildrenType>(result, [](TChildrenType*) {}));
 		}
@@ -143,6 +148,12 @@ namespace spk::Widget
 		 */
 		constexpr const std::wstring& name() const {return (_name);}
 
+		/**
+		 * @brief Get the viewport of the widget
+		 * @return The viewport of the widget, relative to its parent.
+		*/
+		constexpr spk::Viewport& viewport() { return (_viewport);}
+		
 		/**
 		 * @brief Get the viewport of the widget
 		 * @return The viewport of the widget, relative to its parent.
