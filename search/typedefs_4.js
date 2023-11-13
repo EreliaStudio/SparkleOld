@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['instanciator_1683',['Instanciator',['../classspk_1_1Widget_1_1Canvas.html#ae94fd769fc581c7746abca66ec40dfbd',1,'spk::Widget::Canvas']]],
-  ['instructionset_1684',['InstructionSet',['../classspk_1_1ShaderModule.html#ae640052e435f010462e9616a8e7113bc',1,'spk::ShaderModule']]]
+  ['instanciator_1676',['Instanciator',['../classspk_1_1Widget_1_1Canvas.html#ae94fd769fc581c7746abca66ec40dfbd',1,'spk::Widget::Canvas']]],
+  ['instructionset_1677',['InstructionSet',['../classspk_1_1ShaderModule.html#ae640052e435f010462e9616a8e7113bc',1,'spk::ShaderModule']]]
 ];

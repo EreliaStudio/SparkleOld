@@ -88,8 +88,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a769d0e2ea8e7635c993671ec9b1a494b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb38a23ee0e49f56d6635bc9b08d347d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#abb38a23ee0e49f56d6635bc9b08d347d">ChildContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> &gt;</td></tr>
 <tr class="separator:abb38a23ee0e49f56d6635bc9b08d347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976e2e85b113a15220e094ff9d7afd38"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td></tr>
-<tr class="separator:a976e2e85b113a15220e094ff9d7afd38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc98f5a500fd8f8d7f736a69cf26cde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a4fc98f5a500fd8f8d7f736a69cf26cde">Callback</a> = std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a>)&gt;</td></tr>
+<tr class="separator:a4fc98f5a500fd8f8d7f736a69cf26cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,9 +105,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af21959de7950ed4d656d8cc318fc9712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">addChild</a> (<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a> child)</td></tr>
 <tr class="memdesc:af21959de7950ed4d656d8cc318fc9712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a child object.  <a href="classspk_1_1InherenceObject.html#af21959de7950ed4d656d8cc318fc9712">More...</a><br /></td></tr>
 <tr class="separator:af21959de7950ed4d656d8cc318fc9712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1ecc043e2414e9731195021d28a77e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e">setBirthCallback</a> (std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt; callback)</td></tr>
-<tr class="memdesc:a4d1ecc043e2414e9731195021d28a77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the birth callback.  <a href="classspk_1_1InherenceObject.html#a4d1ecc043e2414e9731195021d28a77e">More...</a><br /></td></tr>
-<tr class="separator:a4d1ecc043e2414e9731195021d28a77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae64cbf2c17720cc28784dfb719415d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#acae64cbf2c17720cc28784dfb719415d">setBirthCallback</a> (std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a>)&gt; callback)</td></tr>
+<tr class="memdesc:acae64cbf2c17720cc28784dfb719415d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the birth callback.  <a href="classspk_1_1InherenceObject.html#acae64cbf2c17720cc28784dfb719415d">More...</a><br /></td></tr>
+<tr class="separator:acae64cbf2c17720cc28784dfb719415d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d05c5f0a43a7b58ad4e08a9790f23a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a">setDeathCallback</a> (std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt; callback)</td></tr>
 <tr class="memdesc:a69d05c5f0a43a7b58ad4e08a9790f23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the death callback.  <a href="classspk_1_1InherenceObject.html#a69d05c5f0a43a7b58ad4e08a9790f23a">More...</a><br /></td></tr>
 <tr class="separator:a69d05c5f0a43a7b58ad4e08a9790f23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,8 +140,8 @@ class spk::InherenceObject&lt; TType &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a976e2e85b113a15220e094ff9d7afd38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a976e2e85b113a15220e094ff9d7afd38">&#9670;&nbsp;</a></span>Callback</h2>
+<a id="a4fc98f5a500fd8f8d7f736a69cf26cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc98f5a500fd8f8d7f736a69cf26cde">&#9670;&nbsp;</a></span>Callback</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +149,7 @@ class spk::InherenceObject&lt; TType &gt;</h3>
 template&lt;typename TType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::<a class="el" href="classspk_1_1InherenceObject.html#a976e2e85b113a15220e094ff9d7afd38">Callback</a> =  std::function&lt;void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;</td>
+          <td class="memname">using <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::<a class="el" href="classspk_1_1InherenceObject.html#a4fc98f5a500fd8f8d7f736a69cf26cde">Callback</a> =  std::function&lt;void(<a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a>)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -462,8 +462,8 @@ template&lt;typename TType &gt; </div>
 
 </div>
 </div>
-<a id="a4d1ecc043e2414e9731195021d28a77e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1ecc043e2414e9731195021d28a77e">&#9670;&nbsp;</a></span>setBirthCallback()</h2>
+<a id="acae64cbf2c17720cc28784dfb719415d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae64cbf2c17720cc28784dfb719415d">&#9670;&nbsp;</a></span>setBirthCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,7 +476,7 @@ template&lt;typename TType &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classspk_1_1InherenceObject.html">spk::InherenceObject</a>&lt; TType &gt;::setBirthCallback </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a769d0e2ea8e7635c993671ec9b1a494b">Child</a>)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b">Parent</a>)&gt;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
