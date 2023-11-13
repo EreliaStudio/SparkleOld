@@ -86,6 +86,7 @@ namespace spk
 	{
 		_activeViewport.setAnchor(0);
 		_activeViewport.setSize(p_baseViewportSize);
+		_activeViewportAnchorOffset = 0;
 	}
 
 	Vector2 AbstractViewport::convertScreenToGPUCoordinates(const Vector2Int& p_screenPosition)
