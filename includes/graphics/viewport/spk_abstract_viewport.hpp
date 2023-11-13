@@ -77,7 +77,14 @@ namespace spk
         /// Activate this viewport
 		void activate() const;
 
+        /**
+         * @brief Return the computation status of the viewport
+        */
         bool needComputation();
+
+        /**
+         * @brief Execute the computation of the viewport area/offset definition
+        */
         void compute();
 
         /**
