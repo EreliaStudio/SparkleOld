@@ -30,8 +30,8 @@ public:
         _box()
     {
         _box.borderSize() = 5;
-        _box.backgroundColor() = spk::Color(100, 100, 100, 255);
-        _box.frontgroundColor() = spk::Color(20, 20, 20, 255);
+        _box.backgroundColor() = spk::Color(0, 0, 255, 255);
+        _box.frontgroundColor() = spk::Color(0, 0, 80, 255);
     }
 
     ~GrandGrandGrandChildrenWidget()
@@ -50,7 +50,7 @@ private:
     {
         spk::cout << "Widget printing : " << name() << std::endl;
         
-		_grandGrandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
+		_grandGrandGrandChildrenWidget->setGeometry({25, 250}, size());
         
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
@@ -95,7 +95,8 @@ private:
     {
         spk::cout << "Widget printing : " << name() << std::endl;
 
-        _grandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
+        _grandGrandChildrenWidget->setGeometry(spk::Vector2Int(-10000, -10000), spk::Vector2UInt(20000, 20000));
+
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
@@ -107,6 +108,8 @@ private:
 
     bool _onUpdate()
     {
+		// if (spk::TimeMetrics::instance()->time() % 1000 == 0)
+		// 	_grandGrandChildrenWidget->setGeometry(spk::Vector2Int(rand() % 500 - 250, rand() % 500 - 250), size() - spk::Vector2UInt(100, 100));
         return (false);
     }
 
@@ -139,7 +142,7 @@ private:
     {
         spk::cout << "Widget printing : " << name() << std::endl;
 
-        _grandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
+        _grandChildrenWidget->setGeometry({25, 0}, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
