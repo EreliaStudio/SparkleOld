@@ -32,25 +32,36 @@ namespace spk
 	void AbstractViewport::setGeometry(const Area& p_area)
 	{
 		_area = p_area;
+		_needComputation = true;
 	}
 
 	void AbstractViewport::setAnchor(const Vector2Int& p_anchor)
 	{
 		_area.setAnchor(p_anchor);
+		_needComputation = true;
 	}
 	
 	void AbstractViewport::setSize(const Vector2UInt& p_size)
 	{
 		_area.setSize(p_size);
+		_needComputation = true;
+	}
+
+	bool AbstractViewport::needComputation()
+	{
+		return (_needComputation);
+	}
+	
+	void AbstractViewport::compute()
+	{
+		_computedArea = _computeActiveAbstractViewport();
+		_needComputation = false;
 	}
 
 	void AbstractViewport::activate() const
 	{
-		spk::Area newArea = _computeActiveAbstractViewport();
-
-		_onActivation(newArea);
-
-		_activeViewport = newArea;
+		_onActivation(_computedArea);
+		_activeViewport = _computedArea;
 	}
 
 	bool AbstractViewport::isInside(const Vector2Int& p_position)

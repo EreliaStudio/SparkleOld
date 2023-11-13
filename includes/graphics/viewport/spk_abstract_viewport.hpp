@@ -19,6 +19,10 @@ namespace spk
 
         /// The area covered by this viewport
 		Area _area;
+		/// @brief Area relative to absolute position
+		Area _computedArea;
+        /// @brief Boolean indicating if the viewport need to be calculated
+        bool _needComputation;
 
         /**
          *  @brief Virtual function to handle viewport activation.
@@ -74,6 +78,9 @@ namespace spk
 
         /// Activate this viewport
 		void activate() const;
+
+        bool needComputation();
+        void compute();
 
         /**
          *  @brief Check if a given position is inside the viewport.
