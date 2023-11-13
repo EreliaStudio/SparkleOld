@@ -107,7 +107,7 @@ namespace spk
 		 */
 		friend std::wostream &operator<<(std::wostream &p_os, const IVector2 &p_self)
 		{
-			p_os << p_self.x << " / " << p_self.y;
+			p_os << std::setprecision(12) << p_self.x << " / " << std::setprecision(12) << p_self.y;
 			return p_os;
 		}
 

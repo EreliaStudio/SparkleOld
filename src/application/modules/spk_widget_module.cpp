@@ -45,7 +45,11 @@ namespace spk
 		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
 		{
 			if ((*it)->parent() != nullptr)
+			{
+				if ((*it)->parent()->viewport().needComputation() == true)
+					(*it)->parent()->viewport().compute();
 				(*it)->parent()->viewport().activate();
+			}
 			else
 				Viewport::resetViewport(spk::Window::instance()->size());
 			if ((*it)->_isOperationnal == true)

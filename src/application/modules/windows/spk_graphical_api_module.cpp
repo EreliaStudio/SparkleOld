@@ -19,13 +19,8 @@ namespace spk
 			*p_event >> width;
 			*p_event >> height;
 
-			spk::Vector2 ratio = spk::Vector2(
-				static_cast<float>(width) / Window::instance()->size().x,
-				static_cast<float>(height) / Window::instance()->size().y
-			);
-
 			Window::instance()->resize(spk::Vector2Int(width, height));
-			Widget::Atlas::instance()->resize(ratio);
+			Widget::Atlas::instance()->resize();
 
 			break;
 		}
