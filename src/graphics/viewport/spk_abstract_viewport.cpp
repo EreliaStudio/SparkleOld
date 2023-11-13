@@ -2,28 +2,6 @@
 
 namespace spk
 {
-	Area AbstractViewport::_computeActiveAbstractViewport() const
-	{
-		Area currentArea = _area;
-
-		AbstractViewport* p_currentParent = parent();
-		while (p_currentParent != nullptr)
-		{
-			Area parentArea = p_currentParent->_area;
-
-			Vector2Int constrainedAnchor = currentArea.anchor() + parentArea.anchor();
-
-			Vector2UInt constrainedSize = Vector2UInt::min(currentArea.size(), parentArea.size() - (constrainedAnchor - parentArea.anchor()));
-
-			currentArea.setAnchor(constrainedAnchor);
-			currentArea.setSize(constrainedSize);
-
-			p_currentParent = p_currentParent->parent();
-		}
-
-		return currentArea;
-	}
-
 	AbstractViewport::AbstractViewport() : _area()
 	{
 		
@@ -54,7 +32,20 @@ namespace spk
 	
 	void AbstractViewport::compute()
 	{
-		_computedArea = _computeActiveAbstractViewport();
+		spk::Vector2Int cumulatedAnchor = _area.anchor();
+
+		for (AbstractViewport* currentParent = parent(); currentParent != nullptr; currentParent = currentParent->parent())
+		{
+			cumulatedAnchor += currentParent->area().anchor();
+		}
+
+		const spk::Area& parentComputedArea = (parent() != nullptr ? parent()->_computedArea : _activeViewport);
+
+		_computedArea.setAnchor(spk::Vector2Int::max(parentComputedArea.anchor(), cumulatedAnchor));
+		_computedArea.setSize(spk::Vector2Int::min(parentComputedArea.size(), _area.size() + cumulatedAnchor));
+
+		_activeViewportAnchorOffset = cumulatedAnchor - _computedArea.anchor();
+
 		_needComputation = false;
 	}
 
@@ -66,7 +57,7 @@ namespace spk
 
 	bool AbstractViewport::isInside(const Vector2Int& p_position)
 	{
-		return (_computeActiveAbstractViewport().isInside(p_position));
+		return (_activeViewport.isInside(p_position));
 	}
 
 	const spk::Area& AbstractViewport::activeViewport()
@@ -83,8 +74,8 @@ namespace spk
 	Vector2 AbstractViewport::convertScreenToGPUCoordinates(const Vector2Int& p_screenPosition)
 	{
 		return Vector2(
-			2.0f * static_cast<float>(p_screenPosition.x) / static_cast<float>(_activeViewport.size().x) - 1.0f,
-			(2.0f * static_cast<float>(p_screenPosition.y) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
+			2.0f * static_cast<float>(p_screenPosition.x + _activeViewportAnchorOffset.x) / static_cast<float>(_activeViewport.size().x) - 1.0f,
+			(2.0f * static_cast<float>(p_screenPosition.y + _activeViewportAnchorOffset.x) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
 		);
 	}
 

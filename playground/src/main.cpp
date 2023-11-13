@@ -8,10 +8,10 @@ private:
 
     void _onGeometryChange()
     {
-        spk::cout << "Widget printing : " << name() << std::endl;
-
+        DEBUG_LINE();
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
+        DEBUG_LINE();
     }
 
     void _onRender()
@@ -29,9 +29,11 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
+        DEBUG_LINE();
         _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(0, 0, 255, 255);
         _box.frontgroundColor() = spk::Color(0, 0, 80, 255);
+        DEBUG_LINE();
     }
 
     ~GrandGrandGrandChildrenWidget()
@@ -48,12 +50,12 @@ private:
 
     void _onGeometryChange()
     {
-        spk::cout << "Widget printing : " << name() << std::endl;
-        
-		_grandGrandGrandChildrenWidget->setGeometry({25, 250}, size());
+        DEBUG_LINE();
+		_grandGrandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
         
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
+        DEBUG_LINE();
     }
 
     void _onRender()
@@ -71,12 +73,14 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
+        DEBUG_LINE();
         _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(255, 255, 255, 255);
         _box.frontgroundColor() = spk::Color(50, 50, 50, 255);
 
 		_grandGrandGrandChildrenWidget = addChildrenWidget<GrandGrandGrandChildrenWidget>(L"GrandGrandGrandChildrenWidget");
 		_grandGrandGrandChildrenWidget->activate();
+        DEBUG_LINE();
     }
 
     ~GrandGrandChildrenWidget()
@@ -93,13 +97,12 @@ private:
 
     void _onGeometryChange()
     {
-        spk::cout << "Widget printing : " << name() << std::endl;
-
-        _grandGrandChildrenWidget->setGeometry(spk::Vector2Int(-10000, -10000), spk::Vector2UInt(20000, 20000));
-
+        DEBUG_LINE();
+        _grandGrandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
+        DEBUG_LINE();
     }
     void _onRender()
     {
@@ -118,12 +121,14 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
+        DEBUG_LINE();
         _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(255, 0, 0, 255);
         _box.frontgroundColor() = spk::Color(50, 0, 0, 255);
 
         _grandGrandChildrenWidget = addChildrenWidget<GrandGrandChildrenWidget>(L"GrandChildrenWidget");
         _grandGrandChildrenWidget->activate();
+        DEBUG_LINE();
     }
 
     ~GrandChildrenWidget()
@@ -140,12 +145,12 @@ private:
 
     void _onGeometryChange()
     {
-        spk::cout << "Widget printing : " << name() << std::endl;
-
-        _grandChildrenWidget->setGeometry({25, 0}, size() - spk::Vector2UInt(100, 100));
+        DEBUG_LINE();
+        _grandChildrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
+        DEBUG_LINE();
     }
     void _onRender()
     {
@@ -162,12 +167,14 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
+        DEBUG_LINE();
         _box.borderSize() = 5;
         _box.backgroundColor() = spk::Color(0, 255, 0, 255);
         _box.frontgroundColor() = spk::Color(0, 50, 0, 255);
 
         _grandChildrenWidget = addChildrenWidget<GrandChildrenWidget>(L"GrandChildrenWidget");
         _grandChildrenWidget->activate();
+        DEBUG_LINE();
     }
 
     ~ChildrenWidget()
@@ -184,11 +191,12 @@ private:
 
     void _onGeometryChange()
     {
-        spk::cout << "Widget printing : " << name() << std::endl;
+        DEBUG_LINE();
         _childrenWidget->setGeometry(25, size() - spk::Vector2UInt(100, 100));
 
         _box.area() = spk::Area(anchor(), size());
         _box.depth() = depth();
+        DEBUG_LINE();
     }
     void _onRender()
     {
@@ -205,12 +213,14 @@ public:
         spk::Widget::Interface(p_name),
         _box()
     {
+        DEBUG_LINE();
         _box.backgroundColor() = spk::Color(0, 0, 255, 255);
         _box.frontgroundColor() = spk::Color(0, 0, 50, 255);
         _box.borderSize() = 5;
 
         _childrenWidget = addChildrenWidget<ChildrenWidget>(L"ChildrenWidget");
         _childrenWidget->activate();
+        DEBUG_LINE();
     }
 
     ~MainWidget()

@@ -14,6 +14,7 @@ namespace spk
 	private:
         /// @brief Static variable to hold the active viewport area
 		static inline Area _activeViewport;
+        static inline spk::Vector2Int _activeViewportAnchorOffset;
         /// @brief The maximum depth acceptable for the sparkle library
         static inline const float _maxDepth = 10000.0f;
 
@@ -29,12 +30,6 @@ namespace spk
          *  @param p_area The area to activate.
          */
 		virtual void _onActivation(const Area& p_area) const = 0;
-
-        /**
-         *  @brief Computes the active abstract viewport.
-         *  @return The computed active viewport area.
-         */
-		Area _computeActiveAbstractViewport() const;
 
 	public:
         /// Default constructor
