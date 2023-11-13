@@ -1,4 +1,5 @@
 #include "engine/component/spk_camera_component.hpp"
+#include "engine/spk_game_object.hpp"
 
 namespace spk
 {
@@ -44,6 +45,11 @@ namespace spk
 		updateProjectionMatrix();
 	}
 
+	std::shared_ptr<Camera> Camera::mainCamera()
+	{
+		return (std::shared_ptr<Camera>(_mainCamera, [](Camera* p_camera){}));
+	}
+
 	void Camera::setAsMainCamera()
 	{
 		_mainCamera = this;
@@ -74,13 +80,13 @@ namespace spk
 		}
 	}
 
-	spk::Matrix4x4 Camera::getMVPMatrix(const spk::Matrix4x4& modelMatrix) const
+	spk::Matrix4x4 Camera::MVP() const
 	{
 		auto viewMatrix = spk::Matrix4x4::lookAt(
 				owner()->transform()->position,
 				owner()->transform()->position + owner()->transform()->rotation,
 				spk::Vector3(0, 1, 0)
 			);
-		return (_projectionMatrix * viewMatrix * modelMatrix);
+		return (_projectionMatrix * viewMatrix * spk::Matrix4x4());
 	}
 }

@@ -51,7 +51,15 @@ namespace spk
 		if (_uniformMap.contains(uniformKey) == false)
 			spk::throwException(L"Uniform named [" + p_uniformName + L"] doesn't link to an existing key [" + std::to_wstring(uniformKey.set) + L" / " + std::to_wstring(uniformKey.binding) + L"].");
 	
-		return (*(_uniformMap[uniformKey]));
+		return (*_uniformMap[uniformKey]);
+	}
+
+	AbstractPipeline::Uniform& AbstractPipeline::uniform(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey)
+	{
+		if (_uniformMap.contains(p_uniformKey) == false)
+			spk::throwException(L"Uniform keyed [" + std::to_wstring(p_uniformKey.set) + L" / " + std::to_wstring(p_uniformKey.binding) + L"] don't exist.");
+	
+		return (*_uniformMap[p_uniformKey]);
 	}
 
 	std::shared_ptr<AbstractPipeline::Object> AbstractPipeline::createObject()

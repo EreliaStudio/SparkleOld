@@ -317,6 +317,9 @@ namespace spk
 		 */
 		class Uniform
 		{
+		public:
+			using Key = ShaderLayout::UniformBlockLayout::Key;
+
 		protected:
 			/// The name of the uniform block.
 			std::wstring _name;
@@ -461,6 +464,12 @@ namespace spk
 					return *this;
 				}
 
+				template <typename TType>
+				Field& operator = (const TType& p_data)
+				{
+					return ((*this) << p_data << std::endl);
+				}
+
 				/**
 				 * @brief Overloaded << operator for wostream manipulators.
 				 *
@@ -603,11 +612,18 @@ namespace spk
 		virtual void deactivate() = 0;
 
 		/**
-		 * @brief Retrieve a reference to a Uniform object.
+		 * @brief Retrieve a shared pointer to a Uniform object.
 		 * @param p_uniformName The name of the uniform.
-		 * @return Reference to the corresponding Uniform object.
+		 * @return Shared pointer to the corresponding Uniform object.
 		 */
 		Uniform& uniform(const std::wstring& p_uniformName);
+
+		/**
+		 * @brief Retrieve a shared pointer to a Uniform object.
+		 * @param p_uniformKey The key of the uniform.
+		 * @return Shared pointer to the corresponding Uniform object.
+		 */
+		static Uniform& uniform(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
 
 		/**
 		 * @brief Create a new Object.

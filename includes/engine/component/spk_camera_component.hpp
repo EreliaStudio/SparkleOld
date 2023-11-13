@@ -38,10 +38,12 @@ namespace spk
 	public:
 		Camera(std::shared_ptr<GameObject> p_owner, CameraType p_type = CameraType::Perspective);
 
+		static std::shared_ptr<Camera> mainCamera();
+
 		void setAsMainCamera();
 		void setType(CameraType p_type);
 		void setPerspectiveParameters(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane);
 		void setOrthographicParameters(const spk::Vector2& p_size, float p_nearPlane, float p_farPlane);
-		spk::Matrix4x4 getMVPMatrix(const spk::Matrix4x4& modelMatrix) const;
+		spk::Matrix4x4 MVP() const;
 	};
 }

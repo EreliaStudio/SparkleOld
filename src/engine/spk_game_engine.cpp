@@ -1,4 +1,6 @@
 #include "engine/spk_game_engine.hpp"
+#include "engine/component/spk_camera_component.hpp"
+#include "graphics/spk_pipeline.hpp"
 
 namespace spk
 {
@@ -19,6 +21,13 @@ namespace spk
 
 	void GameEngine::render()
 	{
+		if (spk::Camera::mainCamera() == nullptr)
+			spk::throwException(L"Can't render a game engine without MainCamera defined");
+		
+		spk::Pipeline::UniformBlock& cameraUniformBlock = dynamic_cast<spk::Pipeline::UniformBlock&>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+		spk::Matrix4x4 MVP = spk::Camera::mainCamera()->MVP();
+		cameraUniformBlock.field(L"MVP") = MVP;
+
 		for (size_t i = 0; i < _ownedGameObjects.size(); i++)
 		{
 			if (_ownedGameObjects[i]->isActive() == true)

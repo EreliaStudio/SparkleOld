@@ -4,6 +4,7 @@
 #include <string>
 #include "design_pattern/spk_activable_object.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
+#include "engine/spk_components.hpp"
 
 namespace spk
 {
