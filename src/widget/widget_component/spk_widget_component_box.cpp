@@ -47,14 +47,19 @@ namespace spk::WidgetComponent
 		spk::Vector2Int anchor = _area.get().anchor();
 		spk::Vector2UInt size = _area.get().size();
 
-		std::vector<spk::Vector2> points
-		{
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 1)),
+		spk::Vector2UInt offsets[4] = {
+			spk::Vector2UInt(0, 0),
+			spk::Vector2UInt(0, 1),
+			spk::Vector2UInt(1, 0),
+			spk::Vector2UInt(1, 1)
 		};
-		
+		std::vector<spk::Vector2> points;
+
+		for (size_t i = 0; i < 4; i++)
+		{
+			points.push_back(spk::Viewport::convertScreenToGPUCoordinates(anchor + size * offsets[i]));
+		}
+
 		std::vector<unsigned int> indexes = 
 		{
 			0, 1, 2, 2, 1, 3
@@ -72,12 +77,18 @@ namespace spk::WidgetComponent
 		spk::Vector2Int anchor = _area.get().anchor() + spk::Vector2Int(_borderSize.get(), _borderSize.get());
 		spk::Vector2UInt size = _area.get().size() - spk::Vector2UInt(2 * _borderSize.get(), 2 * _borderSize.get());
 
-		std::vector<spk::Vector2> points = {
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 0)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(0, 1)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 0)),
-			spk::Viewport::convertScreenToGPUCoordinates(anchor + size * spk::Vector2UInt(1, 1)),
+		spk::Vector2UInt offsets[4] = {
+			spk::Vector2UInt(0, 0),
+			spk::Vector2UInt(0, 1),
+			spk::Vector2UInt(1, 0),
+			spk::Vector2UInt(1, 1)
 		};
+		std::vector<spk::Vector2> points;
+
+		for (size_t i = 0; i < 4; i++)
+		{
+			points.push_back(spk::Viewport::convertScreenToGPUCoordinates(anchor + size * offsets[i]));
+		}
 		
 		std::vector<unsigned int> indexes = {
 			0, 1, 2, 2, 1, 3

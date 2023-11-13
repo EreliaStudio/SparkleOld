@@ -22,6 +22,7 @@ namespace spk
 		Area _area;
 		/// @brief Area relative to absolute position
 		Area _computedArea;
+		Vector2Int _computedViewportAnchorOffset;
         /// @brief Boolean indicating if the viewport need to be calculated
         bool _needComputation;
 
@@ -30,6 +31,8 @@ namespace spk
          *  @param p_area The area to activate.
          */
 		virtual void _onActivation(const Area& p_area) const = 0;
+
+        spk::Vector2Int _computeAbsoluteAnchor();
 
 	public:
         /// Default constructor

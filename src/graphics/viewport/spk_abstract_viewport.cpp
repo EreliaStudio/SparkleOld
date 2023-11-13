@@ -1,4 +1,5 @@
 #include "graphics/viewport/spk_abstract_viewport.hpp"
+#include "graphics/spk_window.hpp"
 
 namespace spk
 {
@@ -30,21 +31,36 @@ namespace spk
 		return (_needComputation);
 	}
 	
-	void AbstractViewport::compute()
+	spk::Vector2Int AbstractViewport::_computeAbsoluteAnchor()
 	{
-		spk::Vector2Int cumulatedAnchor = _area.anchor();
+		spk::Vector2Int result = _area.anchor();
 
 		for (AbstractViewport* currentParent = parent(); currentParent != nullptr; currentParent = currentParent->parent())
 		{
-			cumulatedAnchor += currentParent->area().anchor();
+			result += currentParent->area().anchor();
 		}
 
-		const spk::Area& parentComputedArea = (parent() != nullptr ? parent()->_computedArea : _activeViewport);
+		return (result);
+	}
 
-		_computedArea.setAnchor(spk::Vector2Int::max(parentComputedArea.anchor(), cumulatedAnchor));
-		_computedArea.setSize(spk::Vector2Int::min(parentComputedArea.size(), _area.size() + cumulatedAnchor));
+	void AbstractViewport::compute()
+	{
+		spk::Vector2Int targetTopLeft = _computeAbsoluteAnchor();
+		spk::Vector2Int targetDownRight = targetTopLeft + _area.size();
 
-		_activeViewportAnchorOffset = cumulatedAnchor - _computedArea.anchor();
+		const spk::Area& parentActiveArea = (parent() != nullptr ? parent()->_computedArea : spk::Area(0, spk::Window::instance()->size()));
+		spk::Vector2Int parentTopLeft = parentActiveArea.anchor();
+		spk::Vector2Int parentDownRight = parentTopLeft + parentActiveArea.size();
+
+		spk::Vector2Int resultTopLeft = spk::Vector2Int::max(targetTopLeft, parentTopLeft);
+		spk::Vector2Int resultDownRight = spk::Vector2Int(
+			std::min(targetDownRight.x, parentDownRight.x),
+			std::min(targetDownRight.y, parentDownRight.y)
+		);
+
+		_computedArea.setAnchor(resultTopLeft);
+		_computedArea.setSize(resultDownRight - resultTopLeft);
+		_computedViewportAnchorOffset = targetTopLeft - resultTopLeft;
 
 		_needComputation = false;
 	}
@@ -53,6 +69,7 @@ namespace spk
 	{
 		_onActivation(_computedArea);
 		_activeViewport = _computedArea;
+		_activeViewportAnchorOffset = _computedViewportAnchorOffset;
 	}
 
 	bool AbstractViewport::isInside(const Vector2Int& p_position)
@@ -75,7 +92,7 @@ namespace spk
 	{
 		return Vector2(
 			2.0f * static_cast<float>(p_screenPosition.x + _activeViewportAnchorOffset.x) / static_cast<float>(_activeViewport.size().x) - 1.0f,
-			(2.0f * static_cast<float>(p_screenPosition.y + _activeViewportAnchorOffset.x) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
+			(2.0f * static_cast<float>(p_screenPosition.y + _activeViewportAnchorOffset.y) / static_cast<float>(_activeViewport.size().y) - 1.0f) * -1
 		);
 	}
 
