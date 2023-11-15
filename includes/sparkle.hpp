@@ -95,3 +95,4 @@
 #include "engine/spk_components.hpp"
 #include "engine/spk_game_object.hpp"
 #include "engine/spk_game_engine.hpp"
+#include "engine/spk_mesh_primitive.hpp"

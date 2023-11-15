@@ -362,6 +362,7 @@ namespace spk
 		 * @brief Alias for the default value type of the wrapped value.
 		 */
 		using Default = typename Value<T>::Default;
+		using Contract = typename Value<T>::Contract;
 		
 	private:
 		/**

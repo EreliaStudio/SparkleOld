@@ -4,7 +4,7 @@ namespace spk
 {
 	size_t findFirstBindingAvailable(const spk::ShaderLayout& p_shaderLayout);
 
-	void compileShaderModule(GLuint p_shaderIndex, std::string p_shaderCode)
+	void compileShaderModule(GLuint p_shaderIndex, std::string p_shaderName, std::string p_shaderCode)
 	{
 		GLint result;
 		GLint len;
@@ -21,7 +21,7 @@ namespace spk
 			glGetShaderiv(p_shaderIndex, GL_INFO_LOG_LENGTH, &len);
 			char *errorMsg = new char[len + 1];
 			glGetShaderInfoLog(p_shaderIndex, len, NULL, errorMsg);
-			spk::throwException(L"Error while compiling a shader :\n" + spk::to_wstring(errorMsg));
+			spk::throwException(L"Error while compiling shader [" + spk::to_wstring(p_shaderName) + L"] :\n" + spk::to_wstring(errorMsg));
 		}
 	}
 
@@ -76,8 +76,8 @@ namespace spk
 		GLuint _vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 		GLuint _fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
-		compileShaderModule(_vertexShaderID, convertCodeToOpenGL(p_shaderLayout, p_shaderLayout.vertexModule().code()));
-		compileShaderModule(_fragmentShaderID, convertCodeToOpenGL(p_shaderLayout, p_shaderLayout.fragmentModule().code()));
+		compileShaderModule(_vertexShaderID, p_shaderLayout.vertexModule().name(), convertCodeToOpenGL(p_shaderLayout, p_shaderLayout.vertexModule().code()));
+		compileShaderModule(_fragmentShaderID, p_shaderLayout.fragmentModule().name(), convertCodeToOpenGL(p_shaderLayout, p_shaderLayout.fragmentModule().code()));
 		compileProgram(_program, _vertexShaderID, _fragmentShaderID);
 
 		glDeleteShader(_vertexShaderID);

@@ -5,7 +5,7 @@
 namespace spk::WidgetComponent
 {
 	Box::Box():
-		_frontgroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultFrontgroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
+		_foregroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultForegroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
 		_backgroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultBackgroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
 		_borderSize(std::shared_ptr<const ValueWrapper<size_t>::Default>(&defaultBorderSize, [](const ValueWrapper<size_t>::Default* p_value){})),
     	_area(std::shared_ptr<const ValueWrapper<spk::Area>::Default>(&defaultArea, [](const ValueWrapper<spk::Area>::Default* p_value){})),
@@ -17,7 +17,7 @@ namespace spk::WidgetComponent
 		}
 
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();
-		_renderingObjects[FrontgroundIndex] = _renderingPipeline->createObject();
+		_renderingObjects[ForegroundIndex] = _renderingPipeline->createObject();
 	}
 
 	void Box::_updateBackgroundColor()
@@ -26,15 +26,16 @@ namespace spk::WidgetComponent
 		_backgroundColor.resetUpdateFlag();
 	}
 	
-	void Box::_updateFrontgroundColor()
+	void Box::_updateForegroundColor()
 	{
-		_renderingObjects[FrontgroundIndex]->pushConstants(L"color") = _frontgroundColor.get();
-		_frontgroundColor.resetUpdateFlag();
+		_renderingObjects[ForegroundIndex]->pushConstants(L"color") = _foregroundColor.get();
+		_foregroundColor.resetUpdateFlag();
 	}
 
 	void Box::_updateDepth()
 	{
-		_renderingObjects[FrontgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get() + 0.1f);
+		spk::cout << "Updating depth of box to " << spk::Viewport::convertDepth(_depth.get()) << std::endl;
+		_renderingObjects[ForegroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get() + 0.1f);
 		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get());
 		_depth.resetUpdateFlag();
 	}
@@ -69,10 +70,10 @@ namespace spk::WidgetComponent
 		_renderingObjects[BackgroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 	
-	void Box::_updateFrontgroundVertices()
+	void Box::_updateForegroundVertices()
 	{
-		_renderingObjects[FrontgroundIndex]->storage().vertices().clear();
-		_renderingObjects[FrontgroundIndex]->storage().indexes().clear();
+		_renderingObjects[ForegroundIndex]->storage().vertices().clear();
+		_renderingObjects[ForegroundIndex]->storage().indexes().clear();
 
 		spk::Vector2Int anchor = _area.get().anchor() + spk::Vector2Int(_borderSize.get(), _borderSize.get());
 		spk::Vector2UInt size = _area.get().size() - spk::Vector2UInt(2 * _borderSize.get(), 2 * _borderSize.get());
@@ -94,13 +95,13 @@ namespace spk::WidgetComponent
 			0, 1, 2, 2, 1, 3
 		};
 
-		_renderingObjects[FrontgroundIndex]->storage().vertices() << points << std::endl;
-		_renderingObjects[FrontgroundIndex]->storage().indexes() << indexes << std::endl;
+		_renderingObjects[ForegroundIndex]->storage().vertices() << points << std::endl;
+		_renderingObjects[ForegroundIndex]->storage().indexes() << indexes << std::endl;
 	}
 
 	void Box::_updateVertices()
 	{
-		_updateFrontgroundVertices();
+		_updateForegroundVertices();
 		_updateBackgroundVertices();
 
 		_borderSize.resetUpdateFlag();
@@ -111,14 +112,14 @@ namespace spk::WidgetComponent
 	{
         if (_backgroundColor.needUpdate() == true)
 			_updateBackgroundColor();
-        if (_frontgroundColor.needUpdate() == true)
-			_updateFrontgroundColor();
+        if (_foregroundColor.needUpdate() == true)
+			_updateForegroundColor();
         if (_depth.needUpdate() == true)
 			_updateDepth();
 		if (_borderSize.needUpdate() == true || _area.needUpdate() == true)
 			_updateVertices();
 
-		_renderingObjects[FrontgroundIndex]->render();
+		_renderingObjects[ForegroundIndex]->render();
 		_renderingObjects[BackgroundIndex]->render();
 	}
 }

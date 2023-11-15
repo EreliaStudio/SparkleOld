@@ -8,7 +8,7 @@ namespace spk
 {
 	class Mesh
 	{
-	private:
+	public:
 		struct Vertex
 		{
 			spk::Vector3 pos;
@@ -19,12 +19,15 @@ namespace spk
 			Vertex(const spk::Vector3& p_pos, const spk::Vector2& p_uv, const spk::Vector3& p_normal);
 		};
 
+	private:
 		std::vector<spk::Vector3> _points;
 		std::vector<spk::Vector2> _uvs;
 		std::vector<spk::Vector3> _normals;
 
 		std::vector<Vertex> _vertices;
 		std::vector<unsigned int> _indexes;
+
+		bool _needUpdate = false;
 
 	public:
 		Mesh();
@@ -45,5 +48,8 @@ namespace spk
 		void addFace(const unsigned int& p_vertexIndexA, const unsigned int& p_vertexIndexB, const unsigned int& p_vertexIndexC);
 		void addFace(const unsigned int& p_vertexIndexA, const unsigned int& p_vertexIndexB, const unsigned int& p_vertexIndexC, const unsigned int& p_vertexIndexD);
 
+		bool needUpdate() const;
+		void setNeedUpdateFlag(bool p_state);
+		void resetNeedUpdateFlag();
 	};
 }

@@ -34,7 +34,7 @@ namespace spk
 	{
 		Matrix4x4 result;
 
-		Vector3 forward = (p_from - p_to).normalize();
+		Vector3 forward  = (p_from - p_to).normalize();
 		Vector3 right = p_up.cross(forward).normalize();
 		Vector3 up = forward.cross(right).normalize();
 
@@ -139,32 +139,32 @@ namespace spk
 		return result;
 	}
 
-	Matrix4x4 Matrix4x4::perspective(float fov, float aspectRatio, float nearPlane, float farPlane)
+	Matrix4x4 Matrix4x4::perspective(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane)
 	{
 		Matrix4x4 result;
-		const float tanHalfFOV = std::tan(fov / 2.0f);
-		const float zRange = nearPlane - farPlane;
+		const float tanHalfFOV = std::tan(p_fov / 2.0f);
+		const float zRange = p_nearPlane - p_farPlane;
 
-		result.data[0][0] = 1.0f / (tanHalfFOV * aspectRatio);
+		result.data[0][0] = 1.0f / (p_aspectRatio * tanHalfFOV);
 		result.data[1][1] = 1.0f / tanHalfFOV;
-		result.data[2][2] = (-nearPlane - farPlane) / zRange;
-		result.data[2][3] = 2.0f * farPlane * nearPlane / zRange;
-		result.data[3][2] = 1.0f;
+		result.data[2][2] = p_farPlane / (p_farPlane - p_nearPlane);
+		result.data[2][3] = 1.0f;
+		result.data[3][2] = -p_farPlane * p_nearPlane / (p_farPlane - p_nearPlane);
 		result.data[3][3] = 0.0f;
 
 		return result;
 	}
 
-	Matrix4x4 Matrix4x4::ortho(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	Matrix4x4 Matrix4x4::ortho(float p_left, float p_right, float p_bottom, float p_top, float p_nearPlane, float p_farPlane)
 	{
 		Matrix4x4 result;
 
-		result.data[0][0] = 2.0f / (right - left);
-		result.data[1][1] = 2.0f / (top - bottom);
-		result.data[2][2] = -2.0f / (farPlane - nearPlane);
-		result.data[3][0] = -(right + left) / (right - left);
-		result.data[3][1] = -(top + bottom) / (top - bottom);
-		result.data[3][2] = -(farPlane + nearPlane) / (farPlane - nearPlane);
+		result.data[0][0] = 2.0f / (p_right - p_left);
+		result.data[1][1] = 2.0f / (p_top - p_bottom);
+		result.data[2][2] = -2.0f / (p_farPlane - p_nearPlane);
+		result.data[3][0] = -(p_right + p_left) / (p_right - p_left);
+		result.data[3][1] = -(p_top + p_bottom) / (p_top - p_bottom);
+		result.data[3][2] = -(p_farPlane + p_nearPlane) / (p_farPlane - p_nearPlane);
 
 		return result;
 	}

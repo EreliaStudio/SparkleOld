@@ -21,6 +21,7 @@ namespace spk::WidgetComponent
          * @brief Shared pointer to the rendering pipeline used by all TextLabel instances.
          */
         static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
+        static inline std::shared_ptr<spk::Pipeline::SamplerUniform> _renderingPipelineTextureIDUniform = nullptr;
 
         /**
          * @brief Shared pointer to the rendering object for this particular text label.

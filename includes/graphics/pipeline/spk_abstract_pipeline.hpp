@@ -616,14 +616,16 @@ namespace spk
 		 * @param p_uniformName The name of the uniform.
 		 * @return Shared pointer to the corresponding Uniform object.
 		 */
-		Uniform& uniform(const std::wstring& p_uniformName);
+		std::shared_ptr<Uniform> uniform(const std::wstring& p_uniformName);
 
 		/**
 		 * @brief Retrieve a shared pointer to a Uniform object.
 		 * @param p_uniformKey The key of the uniform.
 		 * @return Shared pointer to the corresponding Uniform object.
 		 */
-		static Uniform& uniform(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
+		static std::shared_ptr<Uniform> uniform(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
+
+		static bool contain(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
 
 		/**
 		 * @brief Create a new Object.

@@ -2,7 +2,8 @@
 
 namespace spk
 {
-	GameObject::GameObject(const std::wstring& p_name)
+	GameObject::GameObject(const std::wstring& p_name) : 
+		_name(p_name)
 	{
 		_transform = addComponent<Transform>(std::shared_ptr<GameObject>(this, [](GameObject*){}));
 	}

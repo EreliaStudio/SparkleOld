@@ -22,6 +22,23 @@ namespace spk
 		/// Default constructor.
 		Matrix4x4();
 
+        friend std::wostream& operator << (std::wostream& p_os, const Matrix4x4& p_matrix)
+        {
+            p_os << std::endl;
+            for (size_t i = 0; i < 4; i++)
+            {
+                for (size_t j = 0; j < 4; j++)
+                {
+                    if (j != 0)
+                        p_os << " ";
+                    p_os << p_matrix.data[i][j];
+                }
+                p_os << std::endl;
+            }
+            
+            return (p_os);
+        }
+
 		/**
          * @brief Multiplies matrix with a Vector3.
          * @param v The Vector3 to multiply with.

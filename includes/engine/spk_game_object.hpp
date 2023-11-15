@@ -22,7 +22,7 @@ namespace spk
 		std::shared_ptr<TComponentType> addComponent(Args&&... p_args)
 		{
 			std::shared_ptr<TComponentType> result = std::make_shared<TComponentType>(std::forward<Args>(p_args)...);
-
+			_components.push_back(result);
 			return (result);
 		}
 

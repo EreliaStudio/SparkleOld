@@ -209,7 +209,10 @@ namespace spk::WidgetComponent
 		if (_fontAtlas != nullptr)
 		{
 			_fontAtlas->texture().bind(0);
-			_renderingPipeline->uniform(L"textureID") << 0 << std::endl;
+			if (_renderingPipelineTextureIDUniform == nullptr)
+				_renderingPipelineTextureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
+
+			(*_renderingPipelineTextureIDUniform) << 0 << std::endl;
 		}
 		_renderingObject->render();
 

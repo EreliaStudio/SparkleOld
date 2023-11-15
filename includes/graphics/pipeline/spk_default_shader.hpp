@@ -35,4 +35,8 @@ namespace spk
      *  specific to rendering a TextLabel Component in the graphics pipeline.
      */
     extern spk::ShaderModule textLabelComponentFragmentShaderModule;
+
+    extern spk::ShaderModule meshRendererComponentVertexShaderModule;
+
+    extern spk::ShaderModule meshRendererComponentFragmentShaderModule;
 }

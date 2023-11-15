@@ -5,7 +5,7 @@ namespace spk
 {
 	void Camera::updateProjectionMatrix()
 	{
-		if (_type == CameraType::Perspective)
+		if (_type == Type::Perspective)
 		{
 			_projectionMatrix = spk::Matrix4x4::perspective(
 				spk::degreeToRadian(_fov),
@@ -36,13 +36,32 @@ namespace spk
 		
 	}
 
-	Camera::Camera(std::shared_ptr<GameObject> p_owner, CameraType p_type) :
-		Component(p_owner),
-		_type(p_type)
+	void Camera::_updateMVP()
+	{
+		auto viewMatrix = spk::Matrix4x4::lookAt(
+				owner()->transform()->translation(),
+				owner()->transform()->translation() + owner()->transform()->forward(),
+				spk::Vector3(0, 1, 0)
+			);
+		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4());
+	}
+
+	Camera::Camera(std::shared_ptr<GameObject> p_owner, Type p_type) :
+		Component(p_owner, L"Camera"),
+		_type(p_type),
+		_translationContract(p_owner->transform()->subscribeOnTranslation([&](){
+			_updateMVP();
+		})),
+		_rotationContract(p_owner->transform()->subscribeOnRotation([&](){
+			_updateMVP();
+		}))
 	{
 		setPerspectiveParameters(45.0f, 1.33f, 0.1f, 100.0f);
 		setOrthographicParameters(spk::Vector2(20, 20), 0.1f, 100.0f);
 		updateProjectionMatrix();
+
+		if (_mainCamera == nullptr)
+			setAsMainCamera();
 	}
 
 	std::shared_ptr<Camera> Camera::mainCamera()
@@ -55,7 +74,7 @@ namespace spk
 		_mainCamera = this;
 	}
 
-	void Camera::setType(CameraType p_type) {
+	void Camera::setType(Type p_type) {
 		_type = p_type;
 		updateProjectionMatrix();
 	}
@@ -66,7 +85,7 @@ namespace spk
 		_aspectRatio = p_aspectRatio;
 		_nearPlane = p_nearPlane;
 		_farPlane = p_farPlane;
-		if (_type == CameraType::Perspective) {
+		if (_type == Type::Perspective) {
 			updateProjectionMatrix();
 		}
 	}
@@ -75,18 +94,13 @@ namespace spk
 		_size = p_size;
 		_nearPlane = p_nearPlane;
 		_farPlane = p_farPlane;
-		if (_type == CameraType::Orthographic) {
+		if (_type == Type::Orthographic) {
 			updateProjectionMatrix();
 		}
 	}
 
 	spk::Matrix4x4 Camera::MVP() const
 	{
-		auto viewMatrix = spk::Matrix4x4::lookAt(
-				owner()->transform()->position,
-				owner()->transform()->position + owner()->transform()->rotation,
-				spk::Vector3(0, 1, 0)
-			);
-		return (_projectionMatrix * viewMatrix * spk::Matrix4x4());
+		return (_MVP);
 	}
 }

@@ -4,21 +4,25 @@
 #include "engine/component/spk_component.hpp"
 #include "math/spk_vector2.hpp"
 #include "math/spk_matrix4x4.hpp"
+#include "engine/component/spk_transform_component.hpp"
 
 namespace spk
 {
 	class Camera : public Component
 	{
 	public:
-		enum class CameraType {
+		enum class Type {
 			Perspective,
 			Orthographic
 		};
 
 	private:
 		static inline Camera* _mainCamera = nullptr;
-		CameraType _type;
+		Type _type;
 		spk::Matrix4x4 _projectionMatrix;
+		spk::Matrix4x4 _MVP;
+		Transform::TranslationType::Contract _translationContract;
+		Transform::RotationType::Contract _rotationContract;
 
 		// --- Perspective camera attributes
 		float _fov;
@@ -31,17 +35,19 @@ namespace spk
 
 		void updateProjectionMatrix();
 
+		void _updateMVP();
+
 	protected:
 		virtual bool _onUpdate() override;
 		virtual void _onRender() override;
 
 	public:
-		Camera(std::shared_ptr<GameObject> p_owner, CameraType p_type = CameraType::Perspective);
+		Camera(std::shared_ptr<GameObject> p_owner, Type p_type = Type::Perspective);
 
 		static std::shared_ptr<Camera> mainCamera();
 
 		void setAsMainCamera();
-		void setType(CameraType p_type);
+		void setType(Type p_type);
 		void setPerspectiveParameters(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane);
 		void setOrthographicParameters(const spk::Vector2& p_size, float p_nearPlane, float p_farPlane);
 		spk::Matrix4x4 MVP() const;

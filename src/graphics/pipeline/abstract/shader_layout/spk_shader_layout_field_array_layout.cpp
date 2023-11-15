@@ -25,7 +25,7 @@ namespace spk
 		{
 			_currentOffset += (p_data.paddingFormat - (_currentOffset % p_data.paddingFormat));
 		}
-
+		
 		newField.offset = _currentOffset;
 
 		_fields.push_back(newField);
