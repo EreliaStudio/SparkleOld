@@ -10,9 +10,10 @@ namespace spk
 	{
 		float w = data[3][0] * v.x + data[3][1] * v.y + data[3][2] * v.z + data[3][3];
 		return Vector3(
-			(data[0][0] * v.x + data[0][1] * v.y + data[0][2] * v.z + data[0][3]) / w,
-			(data[1][0] * v.x + data[1][1] * v.y + data[1][2] * v.z + data[1][3]) / w,
-			(data[2][0] * v.x + data[2][1] * v.y + data[2][2] * v.z + data[2][3]) / w);
+				(data[0][0] * v.x + data[0][1] * v.y + data[0][2] * v.z + data[0][3]) / w,
+				(data[1][0] * v.x + data[1][1] * v.y + data[1][2] * v.z + data[1][3]) / w,
+				(data[2][0] * v.x + data[2][1] * v.y + data[2][2] * v.z + data[2][3]) / w
+			);
 	}
 
 	Matrix4x4 Matrix4x4::operator*(const Matrix4x4 &other) const
@@ -142,8 +143,8 @@ namespace spk
 	Matrix4x4 Matrix4x4::perspective(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane)
 	{
 		Matrix4x4 result;
+
 		const float tanHalfFOV = std::tan(p_fov / 2.0f);
-		const float zRange = p_nearPlane - p_farPlane;
 
 		result.data[0][0] = 1.0f / (p_aspectRatio * tanHalfFOV);
 		result.data[1][1] = 1.0f / tanHalfFOV;

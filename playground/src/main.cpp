@@ -72,6 +72,9 @@ private:
     
     void _onRender()
     {
+        if (_cameraInformationBlock == nullptr)
+            _cameraInformationBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(_renderingPipeline->uniform(L"CameraInformation"));
+
         _cameraInformationBlock->field(L"MVP") = _MVP;
         _renderingObject->render();
     }
@@ -81,29 +84,57 @@ private:
         return (false);
     }
 
+    void testMVPValue(const float& p_near, const float& p_far)
+    {
+        const spk::Vector3 position = spk::Vector3(0, 0, 0);
+        const spk::Vector3 direction = spk::Vector3(0, 0, 1);
+        std::vector<spk::Vector3> tmpPoints;
+
+        for (float value = 0.001f / p_far; value <= p_far * 100; value *= 10)
+        {
+            tmpPoints.push_back(spk::Vector3(0, 0, value));
+        }
+
+        auto projectionMatrix = spk::Matrix4x4::perspective(
+				90.0f,
+				1.0f,
+				p_near,
+				p_far
+			);
+
+        auto viewMatrix = spk::Matrix4x4::lookAt(
+				position,
+				position + direction * p_far,
+				spk::Vector3(0, 1, 0)
+			);
+
+		spk::Matrix4x4 tmp = (projectionMatrix * viewMatrix * spk::Matrix4x4());
+
+        spk::cout << "Matrix Near = " << p_near << " / Far = " << p_far << " / Pos = " << position << " / Direction = " << direction << " :"  << tmp << std::endl;
+        for (size_t i = 0; i < tmpPoints.size(); i++)
+        {
+            spk::cout << "Point [" << std::setw(2) << i << "] : [" << tmpPoints[i] << "]   ->   [" << tmp * tmpPoints[i] << "]" << std::endl;
+        }
+
+        spk::cout << std::endl << std::endl;
+    }
+
     void _initializeMVP()
     {
-        auto projectionMatrix = spk::Matrix4x4::perspective(
+        spk::Matrix4x4 projectionMatrix = spk::Matrix4x4::perspective(
 				90.0f,
 				1.0f,
 				0.1f,
 				100.0f
 			);
-
-        auto viewMatrix = spk::Matrix4x4::lookAt(
-				spk::Vector3(0, 0, 10),
+            
+        spk::Matrix4x4 viewMatrix = spk::Matrix4x4::lookAt(
+				spk::Vector3(0, 0, 8),
 				spk::Vector3(0, 0, -1),
 				spk::Vector3(0, 1, 0)
 			);
 
 		_MVP = (projectionMatrix * viewMatrix * spk::Matrix4x4());
-
-        _cameraInformationBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(_renderingPipeline->uniform(L"CameraInformation"));
-
-        for (size_t i = 0; i < _mesh->points().size(); i++)
-        {
-            spk::cout << "Point [" << i << "] : " << _mesh->points()[i] << " -> " << _MVP * _mesh->points()[i] << std::endl;
-        }
     }
 
     void _initializeMesh()
@@ -154,6 +185,13 @@ public:
         _initializeRenderData();
 
         _initializeMVP();
+    
+        testMVPValue(0.1f, 1.0f);
+        testMVPValue(0.1f, 10.0f);
+        testMVPValue(0.1f, 100.0f);
+        testMVPValue(0.1f, 1000.0f);
+        testMVPValue(0.1f, 10000.0f);
+    
     }
 
     ~GameEngineRendererWidget()

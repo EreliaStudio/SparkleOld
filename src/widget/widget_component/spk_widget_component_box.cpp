@@ -34,7 +34,6 @@ namespace spk::WidgetComponent
 
 	void Box::_updateDepth()
 	{
-		spk::cout << "Updating depth of box to " << spk::Viewport::convertDepth(_depth.get()) << std::endl;
 		_renderingObjects[ForegroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get() + 0.1f);
 		_renderingObjects[BackgroundIndex]->pushConstants(L"depth") = spk::Viewport::convertDepth(_depth.get());
 		_depth.resetUpdateFlag();

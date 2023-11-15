@@ -86,7 +86,8 @@
         "xtree": "cpp",
         "regex": "cpp",
         "*.rh": "cpp",
-        "csignal": "cpp"
+        "csignal": "cpp",
+        "cstdarg": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {
