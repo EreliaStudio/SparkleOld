@@ -1,8 +1,5 @@
 #include "playground.hpp"
 
-#include "external_libraries/glm/glm.hpp"
-#include "external_libraries/glm/gtc/matrix_transform.hpp"
-
 class WitnessWidget : public spk::Widget::Interface
 {
 private:
@@ -94,7 +91,7 @@ private:
 			);
 
         auto viewMatrix = spk::Matrix4x4::lookAt(
-				spk::Vector3(0, 0, 13),
+				spk::Vector3(0, 0, 10),
 				spk::Vector3(0, 0, -1),
 				spk::Vector3(0, 1, 0)
 			);
