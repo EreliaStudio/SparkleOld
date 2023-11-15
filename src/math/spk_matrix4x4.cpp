@@ -144,13 +144,13 @@ namespace spk
 	{
 		Matrix4x4 result;
 
-		const float tanHalfFOV = std::tan(p_fov / 2.0f);
+		float scalePointCoefficiant = 1 / (std::tan(p_fov / 2.0f));
 
-		result.data[0][0] = 1.0f / (p_aspectRatio * tanHalfFOV);
-		result.data[1][1] = 1.0f / tanHalfFOV;
-		result.data[2][2] = p_farPlane / (p_farPlane - p_nearPlane);
-		result.data[2][3] = 1.0f;
-		result.data[3][2] = -p_farPlane * p_nearPlane / (p_farPlane - p_nearPlane);
+		result.data[0][0] = scalePointCoefficiant;
+		result.data[1][1] = scalePointCoefficiant;
+		result.data[2][2] = -(p_farPlane / (p_farPlane - p_nearPlane));
+		result.data[2][3] = -((p_farPlane * p_nearPlane) / (p_farPlane - p_nearPlane));
+		result.data[3][2] = -1.0f;
 		result.data[3][3] = 0.0f;
 
 		return result;

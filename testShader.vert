@@ -6,6 +6,11 @@ layout (location = 2) in vec3 model_normal;
 
 layout (location = 0) out vec2 fragmentUV;
 
+layout(push_constant) uniform PushConstants
+{
+	vec3 translation;
+} pushConstants;
+
 layout(binding = 0) uniform CameraInformation
 {
 	mat4 MVP;
@@ -13,6 +18,6 @@ layout(binding = 0) uniform CameraInformation
 
 void main()
 {
-	gl_Position = cameraInformation.MVP * vec4(model_space, 1.0f);
+	gl_Position = cameraInformation.MVP * vec4(pushConstants.translation + model_space, 1.0f);
 	fragmentUV = model_uv;
 }
