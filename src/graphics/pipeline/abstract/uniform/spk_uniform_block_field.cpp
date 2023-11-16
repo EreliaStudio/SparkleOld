@@ -19,11 +19,4 @@ namespace spk
 		_size(p_size)
 	{
 	}
-		
-	AbstractPipeline::UniformBlock::Field& AbstractPipeline::UniformBlock::Field::operator<<(std::wostream& (*func)(std::wostream&))
-	{
-		if (_owner != nullptr)
-			_owner->_launchPushData();
-		return *this;
-	}
 }

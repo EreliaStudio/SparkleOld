@@ -2,11 +2,6 @@
 
 namespace spk
 {
-	void AbstractPipeline::UniformBlock::_launchPushData()
-	{
-		_pushData();
-	}
-
 	AbstractPipeline::UniformBlock::UniformBlock(const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
 		Uniform(p_uniformBlockLayout)
 	{

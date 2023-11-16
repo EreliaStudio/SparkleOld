@@ -331,6 +331,7 @@ namespace spk
 			 * @brief Abstract method to push the uniform data to the shader.
 			 */
 			virtual void _pushData() = 0;
+			virtual void _bindUniform() = 0;
 
 		public:
 			/**
@@ -363,23 +364,14 @@ namespace spk
 			 * @return Reference to this Uniform object.
 			 */
 			template <typename TType>
-			Uniform &operator<<(const TType &p_data)
+			void set(const TType &p_data)
 			{
 				if (_data.size() != sizeof(TType))
 				{
 					spk::throwException(L"Pushing an unexpected data with size [" + std::to_wstring(sizeof(TType)) + L"] into a uniform named [" + _name + L"] of size [" + std::to_wstring(_data.size()) + L"]");
 				}
 				_data.edit(0, p_data);
-				return (*this);
 			}
-
-			/**
-			 * @brief Overloaded << operator to indicate the emition of the data.
-			 *
-			 * @param func wostream manipulator function.
-			 * @return Reference to this Uniform object.
-			 */
-			Uniform& operator<<(std::wostream& (*func)(std::wostream&));
 
 			/**
 			 * @brief Overloaded = operator to push data into the uniform buffer and emit the data.
@@ -390,9 +382,12 @@ namespace spk
 			template <typename TType>
 			Uniform& operator = (const TType& p_data)
 			{
-				*this << p_data << std::endl;
+				*this << p_data;
 				return (*this);
 			}
+
+			void update();
+			void bind();
 		};
 
 		/**
@@ -453,7 +448,7 @@ namespace spk
 				 * @return Reference to this Field object.
 				 */
 				template <typename TType>
-				Field& operator<<(const TType& p_data)
+				void set(const TType& p_data)
 				{
 					if (_size != sizeof(TType))
 					{
@@ -461,32 +456,19 @@ namespace spk
 					}
 
 					std::memcpy(static_cast<uint8_t*>(_data) + _offset, &p_data, _size);
-					return *this;
 				}
 
 				template <typename TType>
 				Field& operator = (const TType& p_data)
 				{
-					return ((*this) << p_data << std::endl);
+					set(p_data);
+					return (*this);
 				}
-
-				/**
-				 * @brief Overloaded << operator for wostream manipulators.
-				 *
-				 * @param func wostream manipulator function.
-				 * @return Reference to this Field object.
-				 */
-				Field& operator<<(std::wostream& (*func)(std::wostream&));
 			};
 
 		private:
 			/// Map to hold the fields within this UniformBlock.
 			std::map<std::wstring, Field> _fields;
-
-			/**
-			 * @brief Private method to actually push the data for all fields.
-			 */
-			void _launchPushData();
 
 		public:
 			/**
@@ -524,7 +506,7 @@ namespace spk
 		class SamplerUniform : public Uniform
 		{
 		private:
-			// Currently, there are no additional private members for SamplerUniform.
+			void _bindUniform();
 
 		public:
 			/**

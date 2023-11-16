@@ -6,6 +6,11 @@ namespace spk
 	{
 		_buffer.push(_data.data(), _data.size());
 	}
+    
+	void Pipeline::OpenGLUniformBlock::_bindUniform()
+	{
+		_buffer.activate();
+	}
 
 	Pipeline::OpenGLUniformBlock::OpenGLUniformBlock(Pipeline* p_pipeline, const ShaderLayout::UniformBlockLayout& p_uniformBlockLayout) :
 		UniformBlock(p_uniformBlockLayout),

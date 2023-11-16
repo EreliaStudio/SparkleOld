@@ -24,6 +24,9 @@ namespace spk::WidgetComponent
 		}
 
 		_renderingObject = _renderingPipeline->createObject();
+		_renderingPipelineTextureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
+
+		_renderingPipelineTextureIDUniform->set(0);
 	}
 	
     TextLabel::RenderData TextLabel::_computeRenderData()
@@ -209,10 +212,8 @@ namespace spk::WidgetComponent
 		if (_fontAtlas != nullptr)
 		{
 			_fontAtlas->texture().bind(0);
-			if (_renderingPipelineTextureIDUniform == nullptr)
-				_renderingPipelineTextureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
+			_renderingPipelineTextureIDUniform->bind();
 
-			(*_renderingPipelineTextureIDUniform) << 0 << std::endl;
 		}
 		_renderingObject->render();
 

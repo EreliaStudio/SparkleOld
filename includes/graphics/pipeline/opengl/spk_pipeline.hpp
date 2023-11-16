@@ -65,6 +65,7 @@ namespace spk
              * Internal function to push uniform data into the buffer.
              */
             void _pushData();
+            void _bindUniform();
 
         public:
             /**

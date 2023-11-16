@@ -13,11 +13,14 @@ layout(push_constant) uniform PushConstants
 
 layout(binding = 0) uniform CameraInformation
 {
+	float depth;
 	mat4 MVP;
 } cameraInformation;
 
 void main()
 {
 	gl_Position = cameraInformation.MVP * vec4(pushConstants.translation + model_space, 1.0f);
+	//if (cameraInformation.depth == 0)
+	//	gl_Position = vec4(0, 0, 0, 0);
 	fragmentUV = model_uv;
 }

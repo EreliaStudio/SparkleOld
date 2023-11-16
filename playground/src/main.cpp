@@ -1,8 +1,5 @@
 #include "playground.hpp"
 
-#include "external_libraries/glm/matrix.hpp"
-#include "external_libraries/glm/gtc/matrix_transform.hpp"
-
 class WitnessWidget : public spk::Widget::Interface
 {
 private:
@@ -142,18 +139,25 @@ class GameEngineRendererWidget : public spk::Widget::Interface
 {
 private:
     static inline std::shared_ptr<spk::Pipeline::UniformBlock> _cameraInformationBlock = nullptr;
+    static inline bool _cameraInformationBlockNeedUpdate = false;
 
     std::shared_ptr<WitnessWidget> _witnessWidget;
 
+    spk::Vector3 _position = spk::Vector3(0, 0, 0);
+    spk::Vector3 _forward = spk::Vector3(0, 0, 1);
+    spk::Vector3 _right = spk::Vector3(1, 0, 0);
+
     std::vector<MeshRenderer> _objects;
-
-    spk::Matrix4x4 _MVP;
-
-    bool state = false;
 
     void _onGeometryChange()
     {
         _witnessWidget->setGeometry(spk::Vector2Int(10, 10), spk::Vector2UInt(800, 150));
+
+        if (_cameraInformationBlock == nullptr)
+            _cameraInformationBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+            
+        _cameraInformationBlock->field(L"depth") = 1;
+        _cameraInformationBlockNeedUpdate = true;
     }
     
     void _onRender()
@@ -161,31 +165,67 @@ private:
         if (_cameraInformationBlock == nullptr)
             _cameraInformationBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
 
-        _cameraInformationBlock->field(L"MVP") = _MVP;
+        if (_cameraInformationBlockNeedUpdate == true)
+        {
+            DEBUG_LINE();
+            _cameraInformationBlock->update();
+            _cameraInformationBlockNeedUpdate = false;
+        }
+        _cameraInformationBlock->bind();
 
         for (size_t i = 0; i < _objects.size(); i++)
         {
             _objects[i].render();
         }
-
-        if (state == false)
-        {
-            for (size_t i = 0; i < _objects.size(); i++)
-            {
-                if (i != 0)
-                    spk::cout << std::endl << std::endl;
-                for (size_t j = 0; j < _objects[i].mesh()->points().size(); j++)
-                {
-                    spk::cout << "Point [" << (_objects[i].mesh()->points()[j] + _objects[i].position()) << "] = [" << _MVP * (_objects[i].mesh()->points()[j] + _objects[i].position()) << "]" << std::endl;
-                }
-            }
-            
-            state = true;
-        }
     }
     
     bool _onUpdate()
     {
+        spk::Keyboard::Key keys[6] = {
+            spk::Keyboard::Z,
+            spk::Keyboard::Q,
+            spk::Keyboard::S,
+            spk::Keyboard::D,
+            spk::Keyboard::X,
+            spk::Keyboard::W
+        };
+        spk::Vector3 deltaPosition[6] = {
+            _forward * 0.25f,
+            _right * 0.25f,
+            _forward * -0.25f,
+            _right * -0.25f,
+            spk::Vector3(0, 0.25f, 0),
+            spk::Vector3(0, -0.25f, 0)
+        };
+
+        for (size_t i = 0; i < 6; i++)
+        {
+            if (spk::Keyboard::instance()->inputStatus(keys[i]) == spk::InputState::Pressed)
+            {
+                _position += deltaPosition[i];
+                _initializeMVP();
+            }
+        }
+
+        spk::Keyboard::Key keysAngle[2] = {
+            spk::Keyboard::A,
+            spk::Keyboard::E
+        };
+        float deltaAngle[2] = {
+            5.0f,
+            -5.0f
+        };
+
+        for (size_t i = 0; i < 2; i++)
+        {
+            if (spk::Keyboard::instance()->inputStatus(keysAngle[i]) == spk::InputState::Pressed)
+            {
+                _forward = _forward.rotate(spk::Vector3(0, deltaAngle[i], 0));
+                _right = _right.rotate(spk::Vector3(0, deltaAngle[i], 0));
+                _initializeMVP();
+            }
+        }
+
         return (false);
     }
 
@@ -199,12 +239,15 @@ private:
 			);
             
         spk::Matrix4x4 viewMatrix = spk::Matrix4x4::lookAt(
-				spk::Vector3(0, 0, -1),
-				spk::Vector3(0, 0, 0),
+				_position,
+				_position + _forward,
 				spk::Vector3(0, 1, 0)
 			);
             
-		_MVP = (projectionMatrix * viewMatrix * spk::Matrix4x4());
+        if (_cameraInformationBlock == nullptr)
+            _cameraInformationBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+        _cameraInformationBlock->field(L"MVP") = projectionMatrix * viewMatrix * spk::Matrix4x4();
+        _cameraInformationBlockNeedUpdate = true;
     }
 
 public:
@@ -214,11 +257,12 @@ public:
         _witnessWidget = addChildrenWidget<WitnessWidget>(L"WitnessWidget");
         _witnessWidget->activate();
 
-        _initializeMVP();    
+        _objects.emplace_back(spk::Vector3(0, 0, 3));
+        _objects.emplace_back(spk::Vector3(2, 0, 4));
+        _objects.emplace_back(spk::Vector3(-1, 0, 5));
+        _objects.emplace_back(spk::Vector3(0, 3, 6));
 
-        //_objects.emplace_back(spk::Vector3(0, 0, 1));
-        _objects.emplace_back(spk::Vector3(2, 0, 5));
-        _objects.emplace_back(spk::Vector3(0, 0, 10));
+        _initializeMVP();    
     }
 
     ~GameEngineRendererWidget()
