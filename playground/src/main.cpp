@@ -1,5 +1,8 @@
 #include "playground.hpp"
 
+#include "external_libraries/glm/matrix.hpp"
+#include "external_libraries/glm/gtc/matrix_transform.hpp"
+
 class WitnessWidget : public spk::Widget::Interface
 {
 private:
@@ -162,7 +165,6 @@ private:
 
         for (size_t i = 0; i < _objects.size(); i++)
         {
-            
             _objects[i].render();
         }
 
@@ -201,7 +203,7 @@ private:
 				spk::Vector3(0, 0, 0),
 				spk::Vector3(0, 1, 0)
 			);
-
+            
 		_MVP = (projectionMatrix * viewMatrix * spk::Matrix4x4());
     }
 
@@ -214,8 +216,8 @@ public:
 
         _initializeMVP();    
 
-        _objects.emplace_back(spk::Vector3(0, 0, 0));
-        _objects.emplace_back(spk::Vector3(0, 0, 5));
+        //_objects.emplace_back(spk::Vector3(0, 0, 1));
+        _objects.emplace_back(spk::Vector3(2, 0, 5));
         _objects.emplace_back(spk::Vector3(0, 0, 10));
     }
 

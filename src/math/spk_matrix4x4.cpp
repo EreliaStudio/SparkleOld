@@ -24,7 +24,11 @@ namespace spk
 		{
 			for (int j = 0; j < 4; ++j)
 			{
-				result.data[i][j] = data[i][0] * other.data[0][j] + data[i][1] * other.data[1][j] + data[i][2] * other.data[2][j] + data[i][3] * other.data[3][j];
+				result.data[i][j] =
+					other.data[i][0] * data[0][j] +
+					other.data[i][1] * data[1][j] +
+					other.data[i][2] * data[2][j] +
+					other.data[i][3] * data[3][j];
 			}
 		}
 
@@ -33,31 +37,24 @@ namespace spk
 
 	Matrix4x4 Matrix4x4::lookAt(const Vector3 &p_from, const Vector3 &p_to, const Vector3 &p_up)
 	{
+		const spk::Vector3 forward((p_to - p_from).normalize());
+		const spk::Vector3 right((forward.cross(p_up)).normalize());
+		const spk::Vector3 up(right.cross(forward));
+
 		Matrix4x4 result;
 
-		Vector3 forward  = (p_from - p_to).normalize();
-		Vector3 right = p_up.cross(forward).normalize();
-		Vector3 up = forward.cross(right).normalize();
-
 		result.data[0][0] = right.x;
-		result.data[0][1] = right.y;
-		result.data[0][2] = right.z;
-		result.data[0][3] = -right.dot(p_from);
-
-		result.data[1][0] = up.x;
+		result.data[1][0] = right.y;
+		result.data[2][0] = right.z;
+		result.data[0][1] = up.x;
 		result.data[1][1] = up.y;
-		result.data[1][2] = up.z;
-		result.data[1][3] = -up.dot(p_from);
-
-		result.data[2][0] = forward.x;
-		result.data[2][1] = forward.y;
-		result.data[2][2] = forward.z;
-		result.data[2][3] = -forward.dot(p_from);
-
-		result.data[3][0] = 0.0f;
-		result.data[3][1] = 0.0f;
-		result.data[3][2] = 0.0f;
-		result.data[3][3] = 1.0f;
+		result.data[2][1] = up.z;
+		result.data[0][2] =-forward.x;
+		result.data[1][2] =-forward.y;
+		result.data[2][2] =-forward.z;
+		result.data[3][0] =-right.dot(p_from);
+		result.data[3][1] =-up.dot(p_from);
+		result.data[3][2] = forward.dot(p_from);
 
 		return result;
 	}
@@ -144,13 +141,13 @@ namespace spk
 	{
 		Matrix4x4 result;
 
-		float scalePointCoefficiant = 1 / (std::tan(p_fov / 2.0f));
+		const float tanHalfFovY = tan(spk::degreeToRadian(p_fov) / 2.0f);
 
-		result.data[0][0] = scalePointCoefficiant;
-		result.data[1][1] = scalePointCoefficiant;
-		result.data[2][2] = -(p_farPlane / (p_farPlane - p_nearPlane));
-		result.data[2][3] = -((p_farPlane * p_nearPlane) / (p_farPlane - p_nearPlane));
-		result.data[3][2] = -1.0f;
+		result.data[0][0] = 1.0f / (p_aspectRatio * tanHalfFovY);
+		result.data[1][1] = 1.0f / tanHalfFovY;
+		result.data[2][2] = -(p_farPlane + p_nearPlane) / (p_farPlane - p_nearPlane);
+		result.data[2][3] = -1.0f;
+		result.data[3][2] = -(2 * p_farPlane * p_nearPlane) / (p_farPlane - p_nearPlane);
 		result.data[3][3] = 0.0f;
 
 		return result;
