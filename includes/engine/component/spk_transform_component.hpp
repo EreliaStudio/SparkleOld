@@ -15,10 +15,10 @@ namespace spk
 
 	protected:
 
-		static inline TranslationType::Default _defaultPosition = 0;
+		static inline TranslationType::Default _defaultTranslation = 0;
 		TranslationType _translation;
 
-		static inline ScaleType::Default _defaultSize = 0;
+		static inline ScaleType::Default _defaultScale = spk::Vector3(1, 1, 1);
 		ScaleType _scale;
 
 		static inline RotationType::Default _defaultRotation = 0;

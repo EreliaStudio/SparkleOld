@@ -113,7 +113,6 @@ namespace spk
 
 	void Camera::pushMVP(AbstractPipeline::UniformBlock::Field & p_uniformField)
 	{
-		DEBUG_LINE();
 		p_uniformField = spk::Camera::mainCamera()->MVP();
 		_MVPEdited = false;
 	}

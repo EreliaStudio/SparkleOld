@@ -159,6 +159,11 @@ namespace spk
 			{
 				return (_value);
 			}
+
+			const TType& get() const
+			{
+				return (_value);
+			}
 		};
 
 	private:
@@ -262,6 +267,11 @@ namespace spk
 			_triggerEditionCallback();
 		}
 
+		std::shared_ptr<const Default> defaultValue() const
+		{
+			return (_default);
+		}
+
 		/**
 		 * @brief Set the default value for the Value object.
 		 *
@@ -343,9 +353,13 @@ namespace spk
 		const TType& value() const
 		{
 			if (_state == State::Custom)
+			{
 				return (_value);
+			}
 			else
+			{
 				return (*_default);
+			}
 		}
 	};
 
@@ -391,7 +405,7 @@ namespace spk
 		 * 
 		 * @param p_defaultValue The default value to initialize the wrapper with.
 		 */
-		ValueWrapper(const std::shared_ptr<const Default>& p_defaultValue) :
+		ValueWrapper(std::shared_ptr<const Default> p_defaultValue) :
 			_needUpdate(true),
 			_value(p_defaultValue),
 			_contract(_value.subscribe([&](){
@@ -399,6 +413,7 @@ namespace spk
 				_needUpdate = true;
 			}))
 		{
+			const Default tmp = *p_defaultValue;
 		}
 
 		/**

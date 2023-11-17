@@ -5,8 +5,8 @@ namespace spk
 {
 	Transform::Transform() :
 		Component(L"Transform"),
-		_translation(std::shared_ptr<TranslationType::Default>(&_defaultRotation, [](TranslationType::Default*){})),
-		_scale(std::shared_ptr<ScaleType::Default>(&_defaultRotation, [](ScaleType::Default*){})),
+		_translation(std::shared_ptr<TranslationType::Default>(&_defaultTranslation, [](TranslationType::Default*){})),
+		_scale(std::shared_ptr<ScaleType::Default>(&_defaultScale, [](ScaleType::Default*){})),
 		_rotation(std::shared_ptr<RotationType::Default>(&_defaultRotation, [](RotationType::Default*){}))
 	{
 		_forward = spk::Vector3(0, 0, 1);
@@ -17,7 +17,6 @@ namespace spk
 	
 	void Transform::_computeDirections()
 	{
-		spk::cout << "[" << owner()->name() << "] B Rotation : " << _rotation << std::endl;
 		float pitch = spk::degreeToRadian(_rotation.get().x);
 		float yaw = spk::degreeToRadian(_rotation.get().y);
 		float roll = spk::degreeToRadian(_rotation.get().z);
@@ -33,8 +32,6 @@ namespace spk
 
 		_up = _forward.cross(_right);
 		_up.normalize();
-		
-		spk::cout << "Producing a forward of :" << _forward << std::endl;
 
 		_rotation.resetUpdateFlag();
 	}
@@ -64,10 +61,7 @@ namespace spk
 		_right = p_up.cross(_forward).normalize();
 		_up = _forward.cross(_right);
 
-		spk::cout << "Transform during lookAt : [" << _forward << "] - [" << _right << "] - [" << _up << "]" << std::endl;
-
 		_rotation = _calculateRotationFromVectors(_right, _up, _forward);
-		spk::cout << "[" << owner()->name() << "] A Rotation : " << _rotation << std::endl;
 	}
 	
 	Transform::TranslationType::Contract Transform::subscribeOnTranslation(const std::function<void()> p_function)

@@ -9,13 +9,13 @@ namespace spk
 		_mesh(nullptr),
 		_texture(nullptr),
 		_translationContract(owner()->transform()->subscribeOnTranslation([&](){
-			_renderingObject->pushConstants(L"translation") = owner()->transform()->translation();
+			_updateTransform = true;	
 		})),
 		_scaleContract(owner()->transform()->subscribeOnScaling([&](){
-			_renderingObject->pushConstants(L"scale") = owner()->transform()->scale();
+			_updateTransform = true;	
 		})),
 		_rotationContract(owner()->transform()->subscribeOnRotation([&](){
-			_renderingObject->pushConstants(L"rotation") = owner()->transform()->rotation();
+			_updateTransform = true;	
 		}))
 	{
 		if (_renderingPipeline == nullptr)
@@ -34,6 +34,14 @@ namespace spk
 
 	bool MeshRenderer::_onUpdate()
 	{
+		if (_updateTransform == true)
+		{
+			_renderingObject->pushConstants(L"translation") = owner()->transform()->translation();
+			_renderingObject->pushConstants(L"scale") = owner()->transform()->scale();
+			_renderingObject->pushConstants(L"rotation") = owner()->transform()->rotation();
+			_updateTransform = false;	
+		}
+
 		return (false);
 	}
 
@@ -57,7 +65,6 @@ namespace spk
 		{
 			_updateMeshModelData();
 		}
-		
 		// _texture->bind(0);
 		// _renderingPipeline->uniform(L"textureID") = 0;
 		_renderingObject->render();
@@ -68,6 +75,7 @@ namespace spk
 	{
 		_mesh = p_mesh;
 		_mesh->setNeedUpdateFlag(true);
+		
 	}
 	
 	std::shared_ptr<spk::Mesh> MeshRenderer::mesh()

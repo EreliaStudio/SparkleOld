@@ -105,7 +105,9 @@ layout(binding = 0) uniform CameraInformation
 
 void main()
 {
-	gl_Position = cameraInformation.MVP * vec4(pushConstants.translation + model_space, 1.0f);
+	vec3 rotatedPosition = model_space;
+	vec3 scaledPosition = pushConstants.translation + rotatedPosition * pushConstants.scale;
+	gl_Position = cameraInformation.MVP * vec4(scaledPosition, 1.0f);
 	fragmentUV = model_uv;
 })");
 

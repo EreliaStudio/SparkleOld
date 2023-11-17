@@ -15,6 +15,7 @@ namespace spk
 		std::shared_ptr<spk::Pipeline::Object> _renderingObject;
 
 		std::shared_ptr<spk::Texture> _texture;
+		bool _updateTransform = true;
 
 		Transform::TranslationType::Contract _translationContract;
 		Transform::ScaleType::Contract _scaleContract;

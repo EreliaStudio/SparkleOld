@@ -38,6 +38,27 @@ namespace spk
             Standard,   ///< Standard outline.
             Manhattan   ///< Outline with a Manhattan distance effect.
         };
+
+        friend std::wostream& operator << (std::wostream& p_os, const OutlineType& p_outlineType)
+        {
+            switch (p_outlineType)
+            {
+                case OutlineType::Pixelized:
+                    p_os << (L"Pixelized");
+                    return (p_os);
+                case OutlineType::SharpEdge:
+                    p_os << (L"SharpEdge");
+                    return (p_os);
+                case OutlineType::Standard:
+                    p_os << (L"Standard");
+                    return (p_os);
+                case OutlineType::Manhattan:
+                    p_os << (L"Manhattan");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
         
         /**
          * @brief Vertical alignment options for text rendering.
@@ -51,6 +72,24 @@ namespace spk
             Middle, ///< Align text to the middle.
             Down    ///< Align text to the bottom.
         };
+
+        friend std::wostream& operator << (std::wostream& p_os, const VerticalAlignment& p_verticalAlignment)
+        {
+            switch (p_verticalAlignment)
+            {
+                case VerticalAlignment::Top:
+                    p_os << (L"Top");
+                    return (p_os);
+                case VerticalAlignment::Middle:
+                    p_os << (L"Middle");
+                    return (p_os);
+                case VerticalAlignment::Down:
+                    p_os << (L"Down");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
         
         /**
          * @brief Horizontal alignment options for text rendering.
@@ -64,6 +103,25 @@ namespace spk
             Middle, ///< Align text to the center.
             Right   ///< Align text to the right.
         };
+
+        friend std::wostream& operator << (std::wostream& p_os, const HorizontalAlignment& p_horizontalAlignment)
+        {
+            switch (p_horizontalAlignment)
+            {
+                case HorizontalAlignment::Left:
+                    p_os << (L"Left");
+                    return (p_os);
+                case HorizontalAlignment::Middle:
+                    p_os << (L"Middle");
+                    return (p_os);
+                case HorizontalAlignment::Right:
+                    p_os << (L"Right");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
+
 
     public:
         /**

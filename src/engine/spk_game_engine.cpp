@@ -29,7 +29,6 @@ namespace spk
 		
 		if (spk::Camera::mainCamera()->MVPEdited() == true)
 		{
-			spk::cout << "Owner forward : " << spk::Camera::mainCamera()->owner()->transform()->forward() << std::endl;
 			spk::Camera::mainCamera()->pushMVP(_cameraUniformBlock->field(L"MVP"));
 			_cameraUniformBlock->update();
 		}
