@@ -1,24 +1,26 @@
 #include "engine/component/spk_transform_component.hpp"
+#include "engine/spk_game_object.hpp"
 
 namespace spk
 {
-	Transform::Transform(std::shared_ptr<GameObject> p_owner) :
-		Component(p_owner, L"Transform"),
+	Transform::Transform() :
+		Component(L"Transform"),
 		_translation(std::shared_ptr<TranslationType::Default>(&_defaultRotation, [](TranslationType::Default*){})),
 		_scale(std::shared_ptr<ScaleType::Default>(&_defaultRotation, [](ScaleType::Default*){})),
-		_rotation(std::shared_ptr<RotationType::Default>(&_defaultRotation, [](RotationType::Default*){})),
-		_forward(1, 0, 0),
-		_right(0, 1, 0),
-		_up(0, 0, 1)
+		_rotation(std::shared_ptr<RotationType::Default>(&_defaultRotation, [](RotationType::Default*){}))
 	{
-		
+		_forward = spk::Vector3(0, 0, 1);
+		_right = spk::Vector3(1, 0, 0);
+		_up = spk::Vector3(0, 1, 0);
+		_computeDirections();
 	}
 	
 	void Transform::_computeDirections()
 	{
-		float pitch = _rotation.get().x * (static_cast<float>(M_PI) / 180.0f);
-		float yaw = _rotation.get().y * (static_cast<float>(M_PI) / 180.0f);
-		float roll = _rotation.get().z * (static_cast<float>(M_PI) / 180.0f);
+		spk::cout << "[" << owner()->name() << "] B Rotation : " << _rotation << std::endl;
+		float pitch = spk::degreeToRadian(_rotation.get().x);
+		float yaw = spk::degreeToRadian(_rotation.get().y);
+		float roll = spk::degreeToRadian(_rotation.get().z);
 
 		_forward.x = cos(yaw) * cos(pitch);
 		_forward.y = sin(pitch);
@@ -31,15 +33,14 @@ namespace spk
 
 		_up = _forward.cross(_right);
 		_up.normalize();
+		
+		spk::cout << "Producing a forward of :" << _forward << std::endl;
 
 		_rotation.resetUpdateFlag();
 	}
 
 	bool Transform::_onUpdate()
 	{
-		if (_rotation.needUpdate() == true)
-			_computeDirections();
-
 		return (false);
 	}
 
@@ -51,9 +52,9 @@ namespace spk
 	spk::Vector3 Transform::_calculateRotationFromVectors(const spk::Vector3& p_right, const spk::Vector3& p_up, const spk::Vector3& p_forward)
 	{
 		return(spk::Vector3(
-			std::atan2(_forward.x, _forward.z),
-			std::atan2(-_forward.y, std::sqrt(_forward.x * _forward.x + _forward.z * _forward.z)),
-			std::atan2(_right.y, _up.y)
+			spk::radianToDegree(std::atan2(_forward.x, _forward.z)),
+			spk::radianToDegree(std::atan2(-_forward.y, std::sqrt(_forward.x * _forward.x + _forward.z * _forward.z))),
+			spk::radianToDegree(std::atan2(_right.y, _up.y))
 		));
 	}
 
@@ -63,7 +64,10 @@ namespace spk
 		_right = p_up.cross(_forward).normalize();
 		_up = _forward.cross(_right);
 
+		spk::cout << "Transform during lookAt : [" << _forward << "] - [" << _right << "] - [" << _up << "]" << std::endl;
+
 		_rotation = _calculateRotationFromVectors(_right, _up, _forward);
+		spk::cout << "[" << owner()->name() << "] A Rotation : " << _rotation << std::endl;
 	}
 	
 	Transform::TranslationType::Contract Transform::subscribeOnTranslation(const std::function<void()> p_function)
@@ -114,11 +118,13 @@ namespace spk
 	void Transform::setRotation(const spk::Vector3& p_rotation)
 	{
 		_rotation = p_rotation;
+		_computeDirections();
 	}
 
 	void Transform::rotate(const spk::Vector3& p_deltaRotation)
 	{
 		_rotation = _rotation.get() + p_deltaRotation;
+		_computeDirections();
 	}
 
 	const spk::Vector3& Transform::rotation() const

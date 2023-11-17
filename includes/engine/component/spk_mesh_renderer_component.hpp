@@ -28,7 +28,8 @@ namespace spk
 		void _updateMeshModelData();
 
 	public:
-		MeshRenderer(std::shared_ptr<GameObject> p_owner);
+		MeshRenderer();
+		MeshRenderer(std::shared_ptr<spk::Mesh> p_mesh, std::shared_ptr<spk::Texture> p_texture);
 	
 		void setMesh(std::shared_ptr<spk::Mesh> p_mesh);
 		std::shared_ptr<spk::Mesh> mesh();

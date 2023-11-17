@@ -110,8 +110,8 @@ namespace spk
 		_indexes.emplace_back(p_vertexIndexA);        
 		_indexes.emplace_back(p_vertexIndexB);        
 		_indexes.emplace_back(p_vertexIndexC);        
+		_indexes.emplace_back(p_vertexIndexA);        
 		_indexes.emplace_back(p_vertexIndexC);        
-		_indexes.emplace_back(p_vertexIndexB);        
 		_indexes.emplace_back(p_vertexIndexD);    
 		
 		_needUpdate = true;    

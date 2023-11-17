@@ -10,7 +10,10 @@ namespace spk
 {
 	class GameObject : public spk::ActivableObject, public spk::InherenceObject<GameObject>
 	{
+		friend class Component;
 	private:
+		static inline GameObject* _insertingGameObject = nullptr;
+
 		std::wstring _name;
 		std::vector<std::shared_ptr<Component>> _components;
 		std::shared_ptr<Transform> _transform;
@@ -21,7 +24,9 @@ namespace spk
 		template <typename TComponentType, typename... Args>
 		std::shared_ptr<TComponentType> addComponent(Args&&... p_args)
 		{
+			_insertingGameObject = this;
 			std::shared_ptr<TComponentType> result = std::make_shared<TComponentType>(std::forward<Args>(p_args)...);
+			_insertingGameObject = nullptr;
 			_components.push_back(result);
 			return (result);
 		}

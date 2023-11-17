@@ -3,11 +3,16 @@
 
 namespace spk
 {
-	Component::Component(std::shared_ptr<GameObject> p_owner, const std::wstring& p_name) :
-		_owner(p_owner),
+	Component::Component(const std::wstring& p_name) :
+		_owner(std::shared_ptr<spk::GameObject>(spk::GameObject::_insertingGameObject, [](spk::GameObject*){})),
 		_name(p_name)
 	{
 
+	}
+
+	std::shared_ptr<GameObject> Component::owner()
+	{
+		return (_owner);
 	}
 
 	std::shared_ptr<const GameObject> Component::owner() const

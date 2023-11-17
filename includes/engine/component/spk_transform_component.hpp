@@ -36,8 +36,7 @@ namespace spk
 		void _computeDirections();
 
 	public:
-
-		Transform(std::shared_ptr<GameObject> p_owner);
+		Transform();
 
 		void lookAt(const spk::Vector3& p_target, const spk::Vector3& p_up = spk::Vector3(0, 1, 0));
 

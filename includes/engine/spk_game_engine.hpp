@@ -3,12 +3,15 @@
 #include <string>
 #include <vector>
 #include "engine/spk_game_object.hpp"
+#include "graphics/spk_pipeline.hpp"
 
 namespace spk
 {
 	class GameEngine
 	{
 	private:
+		static inline std::shared_ptr<spk::Pipeline::UniformBlock> _cameraUniformBlock = nullptr;
+		
 		std::vector<std::shared_ptr<GameObject>> _ownedGameObjects;
 
 	public:

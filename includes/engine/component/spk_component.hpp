@@ -16,9 +16,11 @@ namespace spk
 		virtual void _onRender() = 0;
 
 	public:
-		Component(std::shared_ptr<GameObject> p_owner, const std::wstring& p_name);
+		Component(const std::wstring& p_name);
 
+		std::shared_ptr<GameObject> owner();
 		std::shared_ptr<const GameObject> owner() const;
+		
 		const std::wstring& name() const;
 
 		std::wstring fullname() const;

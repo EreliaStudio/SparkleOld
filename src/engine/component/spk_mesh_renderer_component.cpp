@@ -4,17 +4,18 @@
 
 namespace spk
 {
-	MeshRenderer::MeshRenderer(std::shared_ptr<GameObject> p_owner) :
-		Component(p_owner, L"MeshRenderer"),
+	MeshRenderer::MeshRenderer() :
+		Component(L"MeshRenderer"),
 		_mesh(nullptr),
-		_translationContract(p_owner->transform()->subscribeOnTranslation([&](){
-			_renderingObject->pushConstants(L"translation") = p_owner->transform()->translation();
+		_texture(nullptr),
+		_translationContract(owner()->transform()->subscribeOnTranslation([&](){
+			_renderingObject->pushConstants(L"translation") = owner()->transform()->translation();
 		})),
-		_scaleContract(p_owner->transform()->subscribeOnScaling([&](){
-			_renderingObject->pushConstants(L"scale") = p_owner->transform()->scale();
+		_scaleContract(owner()->transform()->subscribeOnScaling([&](){
+			_renderingObject->pushConstants(L"scale") = owner()->transform()->scale();
 		})),
-		_rotationContract(p_owner->transform()->subscribeOnRotation([&](){
-			_renderingObject->pushConstants(L"rotation") = p_owner->transform()->rotation();
+		_rotationContract(owner()->transform()->subscribeOnRotation([&](){
+			_renderingObject->pushConstants(L"rotation") = owner()->transform()->rotation();
 		}))
 	{
 		if (_renderingPipeline == nullptr)
@@ -22,6 +23,13 @@ namespace spk
 			_renderingPipeline = std::make_shared<spk::Pipeline>(meshRendererComponentVertexShaderModule, meshRendererComponentFragmentShaderModule);
 		}
 		_renderingObject = _renderingPipeline->createObject();
+	}
+
+	MeshRenderer::MeshRenderer(std::shared_ptr<spk::Mesh> p_mesh, std::shared_ptr<spk::Texture> p_texture) :
+		MeshRenderer()
+	{
+		setMesh(p_mesh);
+		setTexture(p_texture);
 	}
 
 	bool MeshRenderer::_onUpdate()
@@ -42,18 +50,18 @@ namespace spk
 		if (_mesh == nullptr)
 			return ;
 
-		if (_texture == nullptr)
-			spk::throwException(L"Can't render a MeshRenderer without texture");
+		// if (_texture == nullptr)
+		// 	spk::throwException(L"Can't render a MeshRenderer without texture");
 		
 		if (_mesh->needUpdate() == true)
 		{
 			_updateMeshModelData();
 		}
-
-		_texture->bind(0);
-		_renderingPipeline->uniform(L"textureID") = 0;
+		
+		// _texture->bind(0);
+		// _renderingPipeline->uniform(L"textureID") = 0;
 		_renderingObject->render();
-		_texture->unbind();
+		// _texture->unbind();
 	} 
 	
 	void MeshRenderer::setMesh(std::shared_ptr<spk::Mesh> p_mesh)

@@ -5,6 +5,7 @@
 #include "math/spk_vector2.hpp"
 #include "math/spk_matrix4x4.hpp"
 #include "engine/component/spk_transform_component.hpp"
+#include "graphics/spk_pipeline.hpp"
 
 namespace spk
 {
@@ -21,6 +22,8 @@ namespace spk
 		Type _type;
 		spk::Matrix4x4 _projectionMatrix;
 		spk::Matrix4x4 _MVP;
+		bool _positionEdited = false;
+		bool _MVPEdited = false;
 		Transform::TranslationType::Contract _translationContract;
 		Transform::RotationType::Contract _rotationContract;
 
@@ -33,7 +36,7 @@ namespace spk
 		// --- Orthographic camera attributes
 		spk::Vector2 _size;
 
-		void updateProjectionMatrix();
+		void _updateProjectionMatrix();
 
 		void _updateMVP();
 
@@ -42,7 +45,7 @@ namespace spk
 		virtual void _onRender() override;
 
 	public:
-		Camera(std::shared_ptr<GameObject> p_owner, Type p_type = Type::Perspective);
+		Camera(Type p_type = Type::Perspective);
 
 		static std::shared_ptr<Camera> mainCamera();
 
@@ -50,6 +53,10 @@ namespace spk
 		void setType(Type p_type);
 		void setPerspectiveParameters(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane);
 		void setOrthographicParameters(const spk::Vector2& p_size, float p_nearPlane, float p_farPlane);
-		spk::Matrix4x4 MVP() const;
+
+		bool MVPEdited() const;
+		void pushMVP(AbstractPipeline::UniformBlock::Field & p_uniformField);
+
+		const spk::Matrix4x4& MVP() const;
 	};
 }

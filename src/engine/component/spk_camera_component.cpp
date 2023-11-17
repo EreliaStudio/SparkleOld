@@ -3,12 +3,12 @@
 
 namespace spk
 {
-	void Camera::updateProjectionMatrix()
+	void Camera::_updateProjectionMatrix()
 	{
 		if (_type == Type::Perspective)
 		{
 			_projectionMatrix = spk::Matrix4x4::perspective(
-				spk::degreeToRadian(_fov),
+				_fov,
 				_aspectRatio,
 				_nearPlane,
 				_farPlane
@@ -24,11 +24,17 @@ namespace spk
 				_nearPlane, _farPlane
 			);
 		}
+		_updateMVP();
 	}
 
 	bool Camera::_onUpdate()
 	{
-		return true;
+		if (_positionEdited == true)
+		{
+			_updateMVP();
+			_positionEdited = false;
+		}
+		return (false);
 	}
 
 	void Camera::_onRender()
@@ -43,22 +49,27 @@ namespace spk
 				owner()->transform()->translation() + owner()->transform()->forward(),
 				spk::Vector3(0, 1, 0)
 			);
-		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4());
+		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4()); 
+		_MVPEdited = true;
 	}
 
-	Camera::Camera(std::shared_ptr<GameObject> p_owner, Type p_type) :
-		Component(p_owner, L"Camera"),
+	Camera::Camera(Type p_type) :
+		Component(L"Camera"),
 		_type(p_type),
-		_translationContract(p_owner->transform()->subscribeOnTranslation([&](){
-			_updateMVP();
+		_translationContract(owner()->transform()->subscribeOnTranslation([&](){
+			_positionEdited = true;
 		})),
-		_rotationContract(p_owner->transform()->subscribeOnRotation([&](){
-			_updateMVP();
-		}))
+		_rotationContract(owner()->transform()->subscribeOnRotation([&](){
+			_positionEdited = true;
+		})),
+		_fov(90.0f),
+		_size(20, 20),
+		_aspectRatio(1.33f),
+		_nearPlane(0.1f),
+		_farPlane(100.0f)
+		
 	{
-		setPerspectiveParameters(45.0f, 1.33f, 0.1f, 100.0f);
-		setOrthographicParameters(spk::Vector2(20, 20), 0.1f, 100.0f);
-		updateProjectionMatrix();
+		_updateProjectionMatrix();
 
 		if (_mainCamera == nullptr)
 			setAsMainCamera();
@@ -76,7 +87,7 @@ namespace spk
 
 	void Camera::setType(Type p_type) {
 		_type = p_type;
-		updateProjectionMatrix();
+		_updateProjectionMatrix();
 	}
 
 	void Camera::setPerspectiveParameters(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane)
@@ -85,21 +96,29 @@ namespace spk
 		_aspectRatio = p_aspectRatio;
 		_nearPlane = p_nearPlane;
 		_farPlane = p_farPlane;
-		if (_type == Type::Perspective) {
-			updateProjectionMatrix();
-		}
+		_updateProjectionMatrix();
 	}
 	void Camera::setOrthographicParameters(const spk::Vector2& p_size, float p_nearPlane, float p_farPlane)
 	{
 		_size = p_size;
 		_nearPlane = p_nearPlane;
 		_farPlane = p_farPlane;
-		if (_type == Type::Orthographic) {
-			updateProjectionMatrix();
-		}
+		_updateProjectionMatrix();
 	}
 
-	spk::Matrix4x4 Camera::MVP() const
+	bool Camera::MVPEdited() const
+	{
+		return (_MVPEdited);
+	}
+
+	void Camera::pushMVP(AbstractPipeline::UniformBlock::Field & p_uniformField)
+	{
+		DEBUG_LINE();
+		p_uniformField = spk::Camera::mainCamera()->MVP();
+		_MVPEdited = false;
+	}
+
+	const spk::Matrix4x4& Camera::MVP() const
 	{
 		return (_MVP);
 	}

@@ -24,10 +24,17 @@ namespace spk
 		if (spk::Camera::mainCamera() == nullptr)
 			spk::throwException(L"Can't render a game engine without MainCamera defined");
 		
-		std::shared_ptr<spk::Pipeline::UniformBlock> cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+		if (_cameraUniformBlock == nullptr)
+			_cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
 		
-		spk::Matrix4x4 MVP = spk::Camera::mainCamera()->MVP();
-		cameraUniformBlock->field(L"MVP") = MVP;
+		if (spk::Camera::mainCamera()->MVPEdited() == true)
+		{
+			spk::cout << "Owner forward : " << spk::Camera::mainCamera()->owner()->transform()->forward() << std::endl;
+			spk::Camera::mainCamera()->pushMVP(_cameraUniformBlock->field(L"MVP"));
+			_cameraUniformBlock->update();
+		}
+
+		_cameraUniformBlock->bind();
 		
 		for (size_t i = 0; i < _ownedGameObjects.size(); i++)
 		{
