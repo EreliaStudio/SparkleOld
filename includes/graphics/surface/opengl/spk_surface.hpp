@@ -4,5 +4,6 @@
 	#include "windows/spk_surface.hpp"
 #elif __linux__
 	#include "linux/spk_surface.hpp"
-
+#else
+    #error "Invalid value for PLATFORM"
 #endif

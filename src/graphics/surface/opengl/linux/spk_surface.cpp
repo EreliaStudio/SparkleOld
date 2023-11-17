@@ -15,8 +15,6 @@ namespace spk
 		_window = p_frame->window();
 		
 		GLint attributes[] = {
-		GLX_CONTEXT_MAJOR_VERSION_ARB, 4,
-		GLX_CONTEXT_MINOR_VERSION_ARB, 0,
 		GLX_RGBA, GLX_DEPTH_SIZE, 24, GLX_DOUBLEBUFFER, None };
 		XVisualInfo* vi = glXChooseVisual(_display, p_frame->defaultScreen(), attributes);
 		if (vi == nullptr)

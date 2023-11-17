@@ -14,7 +14,7 @@ function(createOpenGLRecipe)
 	add_library(${ProductName} STATIC ${SOURCE_FILES})
 
 	if(UNIX)
-		target_link_libraries(${ProductName} GL xcb X11 X11-xcb)
+		target_link_libraries(${ProductName} GL xcb X11 X11-xcb -lpthread)
 	endif()
 
 	target_include_directories(${ProductName}
