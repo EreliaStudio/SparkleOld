@@ -133,8 +133,8 @@ mat4 createRotationMatrix(vec3 angles)
 void main()
 {
 	mat4 rotationMatrix = createRotationMatrix(pushConstants.rotation);
-    vec3 rotatedPosition = (rotationMatrix * vec4(model_space, 1.0)).xyz;
-	vec3 scaledPosition = pushConstants.translation + rotatedPosition * pushConstants.scale;
+    vec3 rotatedPosition = (rotationMatrix * vec4(model_space * pushConstants.scale, 1.0)).xyz;
+	vec3 scaledPosition = pushConstants.translation + rotatedPosition;
 	gl_Position = cameraInformation.MVP * vec4(scaledPosition, 1.0f);
 	fragmentUV = model_uv;
 })");
