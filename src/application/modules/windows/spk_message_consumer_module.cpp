@@ -12,7 +12,7 @@ namespace spk
 		while (_queue.empty() == false)
 		{
 			SystemMessage event(_queue.pop_front());
-			
+					
 			event->reset();
 
 			_handleMessage(event);

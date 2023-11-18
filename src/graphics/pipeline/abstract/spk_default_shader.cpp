@@ -103,9 +103,37 @@ layout(binding = 0) uniform CameraInformation
 	mat4 MVP;
 } cameraInformation;
 
+mat4 createRotationMatrix(vec3 angles)
+{
+    float c1 = cos(angles.x);
+    float s1 = sin(angles.x);
+    float c2 = cos(angles.y);
+    float s2 = sin(angles.y);
+    float c3 = cos(angles.z);
+    float s3 = sin(angles.z);
+
+    mat4 rotationX = mat4(1.0f, 0.0f, 0.0f, 0.0f,
+                          0.0f,   c1,   s1, 0.0f,
+                          0.0f,  -s1,   c1, 0.0f,
+                          0.0f, 0.0f, 0.0f, 1.0f);
+
+    mat4 rotationY = mat4(  c2, 0.0f,  -s2, 0.0f,
+                          0.0f, 1.0f, 0.0f, 0.0f,
+                            s2, 0.0f,   c2, 0.0f,
+                          0.0f, 0.0f, 0.0f, 1.0f);
+
+    mat4 rotationZ = mat4(  c3,   s3, 0.0f, 0.0f,
+                           -s3,   c3, 0.0f, 0.0f,
+                          0.0f, 0.0f, 1.0f, 0.0f,
+                          0.0f, 0.0f, 0.0f, 1.0f);
+
+    return rotationZ * rotationY * rotationX;
+}
+
 void main()
 {
-	vec3 rotatedPosition = model_space;
+	mat4 rotationMatrix = createRotationMatrix(pushConstants.rotation);
+    vec3 rotatedPosition = (rotationMatrix * vec4(model_space, 1.0)).xyz;
 	vec3 scaledPosition = pushConstants.translation + rotatedPosition * pushConstants.scale;
 	gl_Position = cameraInformation.MVP * vec4(scaledPosition, 1.0f);
 	fragmentUV = model_uv;

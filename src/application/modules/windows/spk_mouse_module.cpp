@@ -5,6 +5,7 @@ namespace spk
 {
 	void MouseModule::_handleMessage(SystemMessage& p_event)
 	{
+
 		unsigned int messageId;
 		*p_event >> messageId;
 
@@ -99,9 +100,10 @@ namespace spk
 		case WM_MOUSEMOVE:
 		{
 			int newPosX, newPosY;
+		
 			*p_event >> newPosX;
 			*p_event >> newPosY;
-
+		
 			Singleton<Mouse>::instance()->setMousePosition(Vector2Int(newPosX, newPosY));
 
 			break;

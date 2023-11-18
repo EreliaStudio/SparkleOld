@@ -1,6 +1,8 @@
 #pragma once
 
 #include <vector>
+#include <mutex>
+#include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
@@ -169,6 +171,9 @@ namespace spk
 			}
 		};
 
+	private:
+		std::recursive_mutex _mutex;
+
 	public:
 		/**
 		 * @brief Default constructor for the Pool class.
@@ -190,6 +195,7 @@ namespace spk
 		template <typename... Args>
 		void reserve(size_t p_nbElement, Args &&...p_args)
 		{
+			std::lock_guard<std::recursive_mutex> _lock(_mutex);
 			size_t currentSize = _allocatedObjects.size();
 
 			_allocatedObjects.resize(currentSize + p_nbElement);
@@ -219,10 +225,11 @@ namespace spk
 			}
 			else
 			{
+				std::lock_guard<std::recursive_mutex> _lock(_mutex);
 				TType *data = _allocatedObjects.back();
 				_allocatedObjects.pop_back();
 
-				*data = TType(std::forward<Args>(p_args)...);
+				//*data = TType(std::forward<Args>(p_args)...);
 
 				Object result = Object(&_allocatedObjects, data);
 				return (result);

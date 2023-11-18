@@ -25,6 +25,9 @@ namespace spk
         friend class APIModule;  ///< Allow APIModule class to access private members.
 
     private:
+        /// Frame anchor in unsigned integers.
+        Vector2Int _anchor;
+
         /// Frame size in unsigned integers.
         Vector2UInt _size;
 

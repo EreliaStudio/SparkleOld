@@ -1,8 +1,65 @@
 #include "playground.hpp"
 
+class PlayerManager : public spk::Widget::Interface
+{
+private:
+    std::shared_ptr<spk::GameObject> _playerObject;
+    spk::KeyInput _inputs[4];
+    spk::MouseMovementInput _mouseInput;
+
+    void _onGeometryChange()
+    {
+
+    }
+
+    void _onRender()
+    {
+
+    }
+
+    bool _onUpdate()
+    {
+
+        for (size_t i = 0; i < 4; i++)
+        {
+            _inputs[i].update();
+        }
+        _mouseInput.update();
+        return (false);
+    }
+
+public:
+    PlayerManager(std::shared_ptr<spk::GameObject> p_playerObject, const std::wstring& p_name) : 
+        spk::Widget::Interface(p_name),
+        _playerObject(p_playerObject),
+        _inputs{
+            spk::KeyInput(spk::Keyboard::Z, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->forward() * 0.2f);}),
+            spk::KeyInput(spk::Keyboard::Q, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->right() * 0.2f);}),
+            spk::KeyInput(spk::Keyboard::S, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->forward() * -0.2f);}),
+            spk::KeyInput(spk::Keyboard::D, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->right() * -0.2f);}),
+        },
+        _mouseInput(1, [&](){
+                _playerObject->transform()->rotate(spk::Vector3(spk::Mouse::instance()->deltaPosition().y, spk::Mouse::instance()->deltaPosition().x, 0));
+                spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
+            })
+    {
+
+    }
+
+    ~PlayerManager()
+    {
+
+    }
+};
+
+
+
+
 class GameEngineManager : public spk::Widget::Interface
 {
 private:
+    std::shared_ptr<PlayerManager> _playerManager;
+
     std::shared_ptr<spk::GameEngine> _gameEngine = nullptr;
     std::shared_ptr<spk::GameObject> _playerObject = nullptr;
     std::shared_ptr<spk::Camera> _cameraComponent = nullptr;
@@ -28,6 +85,7 @@ private:
 
         if (_gameEngine != nullptr)
             _gameEngine->update();
+
         return (false);
     }
         
@@ -36,8 +94,8 @@ private:
         _playerObject = std::make_shared<spk::GameObject>(L"Player");
 
         _cameraComponent = _playerObject->addComponent<spk::Camera>(spk::Camera::Type::Perspective);
-        _playerObject->transform()->place(spk::Vector3(-2, 2, -2));
-        _playerObject->transform()->lookAt(spk::Vector3(0, 0, 0));
+        _playerObject->transform()->place(spk::Vector3(-2, 0, -2));
+        _playerObject->transform()->lookAt(spk::Vector3(2.5f, 0, 2.5f));
         _playerObject->activate();
 
         _gameEngine->subscribe(_playerObject);
@@ -74,6 +132,9 @@ public:
         _gameEngine = std::make_shared<spk::GameEngine>();
         loadPlayer();
         loadCubes();
+
+        _playerManager = addChildrenWidget<PlayerManager>(_playerObject, L"PlayerManager");
+        _playerManager->activate();
     }
 
     ~GameEngineManager()

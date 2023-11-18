@@ -34,10 +34,11 @@ namespace spk
 		static const size_t NB_BUTTON = 5; ///< Number of buttons on a mouse.
 
 	private:
+		Vector2Int INITIAL_DELTA_POSITION = spk::Vector2Int(-10000, -10000);
 		InputState _buttons[NB_BUTTON]; ///< Array storing the state of each button.
 
 		Vector2Int _position; ///< Current position of the mouse.
-		Vector2Int _deltaPosition; ///< Change in position of the mouse.
+		Vector2Int _deltaPosition = spk::Vector2Int(-1, -1); ///< Change in position of the mouse.
 		Vector2Int _wheel; ///< Mouse wheel movement.
 
 	private:

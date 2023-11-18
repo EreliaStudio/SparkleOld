@@ -77,6 +77,10 @@ namespace spk
          */
         void resize(const spk::Vector2UInt& p_size);
 
+        void place(const spk::Vector2Int& p_anchor);
+
+        const spk::Vector2Int& anchor() const;
+
         /**
          * Retrieves the current size of the window.
          */

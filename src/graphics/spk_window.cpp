@@ -34,6 +34,16 @@ namespace spk
 		_surface.resize();
 	}
 
+	void Window::place(const spk::Vector2Int& p_anchor)
+	{
+		_frame.place(p_anchor);
+	}
+
+    const spk::Vector2Int& Window::anchor() const
+	{
+		return (_frame.anchor());
+	}
+
 	const spk::Vector2UInt& Window::size() const 
 	{
 		return (_frame.size());

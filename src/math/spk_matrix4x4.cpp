@@ -37,9 +37,13 @@ namespace spk
 
 	Matrix4x4 Matrix4x4::lookAt(const Vector3 &p_from, const Vector3 &p_to, const Vector3 &p_up)
 	{
+		//spk::cout << "From : " << p_from << " / to : " << p_to << " / up : " << p_up << std::endl;
 		const spk::Vector3 forward((p_to - p_from).normalize());
+		//spk::cout << "Forward : " << forward << std::endl;
 		const spk::Vector3 right((forward.cross(p_up)).normalize());
+		//spk::cout << "Right : " << right << std::endl;
 		const spk::Vector3 up(right.cross(forward));
+		//spk::cout << "Up : " << up << std::endl;
 
 		Matrix4x4 result;
 

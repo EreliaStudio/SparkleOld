@@ -524,7 +524,7 @@ namespace spk
 		 * @brief Returns the inverse (negation) of the vector.
 		 * @return The inverse of the vector.
 		 */
-		IVector3 inverse()
+		IVector3 inverse() const
 		{
 			return (IVector3(-x, -y, -z));
 		}
