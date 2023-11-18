@@ -20,6 +20,12 @@ private:
     
     bool _onUpdate()
     {
+        if (spk::TimeMetrics::instance()->time() % 1000 == 0)
+        {
+            spk::cout << "FPS : " << spk::Profiler::instance()->FPS() << std::endl;
+            spk::cout << "UPS : " << spk::Profiler::instance()->UPS() << std::endl;
+        }
+
         if (_gameEngine != nullptr)
             _gameEngine->update();
         return (false);
@@ -41,37 +47,23 @@ private:
     {
         std::shared_ptr<spk::GameObject> cubeObject = std::make_shared<spk::GameObject>(L"Cube Zero");
 
-        auto tmp = cubeObject->addComponent<spk::MeshRenderer>();
-        tmp->setMesh(std::make_shared<spk::Cube>());
-        cubeObject->transform()->place(spk::Vector3(0, 0, 0));
-        cubeObject->transform()->setScale(spk::Vector3(1, 0.5, 1));
-        cubeObject->transform()->setRotation(spk::Vector3(0, 45, 0));
-        cubeObject->activate();
-
         _gameEngine->subscribe(cubeObject);
 
-        for (size_t i = 0; i < 4; i++)
+        for (size_t i = 0; i < 5; i++)
         {
-            cubeObject = std::make_shared<spk::GameObject>(L"Cube x[" + std::to_wstring(i) + L"]");
+            for (size_t j = 0; j < 5; j++)
+            {
+                cubeObject = std::make_shared<spk::GameObject>(L"Cube x[" + std::to_wstring(i) + L"]");
 
-            auto tmp = cubeObject->addComponent<spk::MeshRenderer>();
-            tmp->setMesh(std::make_shared<spk::Cube>());
-            cubeObject->transform()->setScale(spk::Vector3(1, 0.5 + 0.4 * (i + 1), 1));
-            cubeObject->transform()->setRotation(spk::Vector3(1, 10 * (i + 1), 1));
-            cubeObject->transform()->place(spk::Vector3(2 + i * 2, 0, 0));
-            cubeObject->activate();
+                auto tmp = cubeObject->addComponent<spk::MeshRenderer>();
+                tmp->setMesh(std::make_shared<spk::Cube>());
+                cubeObject->transform()->setScale(spk::Vector3(1, 0.5 + 0.4 * (i + 1 + j), 1));
+                cubeObject->transform()->setRotation(spk::Vector3(1, 10 * (i + 1), 1));
+                cubeObject->transform()->place(spk::Vector3(i * 2, 0, j * 2));
+                cubeObject->activate();
 
-            _gameEngine->subscribe(cubeObject);
-            
-            cubeObject = std::make_shared<spk::GameObject>(L"Cube z[" + std::to_wstring(i) + L"]");
-
-            tmp = cubeObject->addComponent<spk::MeshRenderer>();
-            tmp->setMesh(std::make_shared<spk::Cube>());
-            cubeObject->transform()->setScale(spk::Vector3(1, 0.5 + 0.4 * (i + 1), 1));
-            cubeObject->transform()->place(spk::Vector3(0, 0, 2 + i * 2));
-            cubeObject->activate();
-
-            _gameEngine->subscribe(cubeObject);
+                _gameEngine->subscribe(cubeObject);
+            }
         }
     }
 

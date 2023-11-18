@@ -3,45 +3,37 @@
 
 namespace spk
 {
-	ProfilerModule::ProfilerModule()
+	ProfilerModule::ProfilerModule() :
+		_counterTimer(250)
 	{
 		spk::Profiler::instanciate();
-
-		_oneSecondTime.setDuration(250);
-		_resetCounter();
 	}
 
 	ProfilerModule::~ProfilerModule()
 	{
 		spk::Profiler::release();
 	}
-	
-	void ProfilerModule::_resetCounter()
+
+	void ProfilerModule::updateFPS()
 	{
-		_renderIPSCounter = 0;
-		_updateIPSCounter = 0;
+		spk::Profiler::instance()->_fpsCounter++;
+	}
+	
+	void ProfilerModule::updateUPS()
+	{
+		spk::Profiler::instance()->_upsCounter++;
 	}
 
-	void ProfilerModule::updateData()
+	void ProfilerModule::updateCounters()
 	{
-		if (_oneSecondTime.isRunning() == false)
+		if (_counterTimer.isRunning() == false)
 		{
-			spk::Profiler::instance()->setCounter(Profiler::RENDER_IPS_COUNTER, _renderIPSCounter * 4);
-			spk::Profiler::instance()->setCounter(Profiler::UPDATE_IPS_COUNTER, _updateIPSCounter * 4);
-
-			_resetCounter();
-
-			_oneSecondTime.start();
+			spk::Profiler::instance()->_normalizedFPS = spk::Profiler::instance()->_fpsCounter * 4;
+			spk::Profiler::instance()->_normalizedUPS = spk::Profiler::instance()->_upsCounter * 4;
+			
+			spk::Profiler::instance()->_fpsCounter = 0;
+			spk::Profiler::instance()->_upsCounter = 0;
+			_counterTimer.start();
 		}
-	}
-
-	void ProfilerModule::increaseRenderIPS()
-	{
-		_renderIPSCounter++;
-	}
-	
-	void ProfilerModule::increaseUpdateIPS()
-	{
-		_updateIPSCounter++;
 	}
 }

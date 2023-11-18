@@ -9,6 +9,8 @@
 
 namespace spk
 {
+	class ProfilerModule;
+
 	/**
 	 * \class Profiler
 	 * \brief A singleton class that handles profiling using various chronometers.
@@ -20,10 +22,8 @@ namespace spk
 	class Profiler : public spk::Singleton<Profiler>
 	{
 		friend class spk::Singleton<Profiler>;
+		friend class ProfilerModule;
 	public:
-		static inline const std::wstring RENDER_IPS_COUNTER = L"RenderIPS"; ///< The key representing the counter to the Render thread Iteration Per Second
-		static inline const std::wstring UPDATE_IPS_COUNTER = L"UpdateIPS"; ///< The key representing the counter to the Update thread Iteration Per Second
-
 
 	private:
 		/**
@@ -35,6 +35,11 @@ namespace spk
 		 * \brief A map that associates each counter with a unique name.
 		 */
 		std::map<std::wstring, size_t> _counters;
+
+		size_t _fpsCounter;
+		size_t _upsCounter;
+		size_t _normalizedFPS;
+		size_t _normalizedUPS;
 
 		/**
 		 * \brief Private constructor to implement the Singleton pattern.
@@ -138,5 +143,8 @@ namespace spk
 		 * \throw std::runtime_error if no chronometer exists with the given name.
 		 */
 		const size_t& counter(const std::wstring& p_key) const;
+
+		const size_t& FPS() const;
+		const size_t& UPS() const;
 	};
 }

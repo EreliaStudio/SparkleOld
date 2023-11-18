@@ -89,4 +89,13 @@ namespace spk
 		return (_counters.at(p_key));
 	}
 	
+	const size_t& Profiler::FPS() const
+	{
+		return (_normalizedFPS);
+	}
+	
+	const size_t& Profiler::UPS() const
+	{
+		return (_normalizedUPS);
+	}
 }

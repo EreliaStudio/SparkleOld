@@ -6,23 +6,22 @@ namespace spk
 {
 	void Application::setupJobs()
 	{
-		_renderContracts.push_back(addJob(L"Render IPS increment", [&]() { _profilerModule.increaseRenderIPS(); }));
+		_renderContracts.push_back(addJob(L"Render IPS increment", [&]() { _profilerModule.updateFPS(); }));
 		_renderContracts.push_back(addJob(L"API message pulling", [&]() { _APIModule.pullMessage(); }));
 		_renderContracts.push_back(addJob(L"Window clearing", [&]() { _GAPIM.clear(); }));
 		_renderContracts.push_back(addJob(L"Widget rendering", [&]() { _widgetModule.render(); }));
 		_renderContracts.push_back(addJob(L"Window rendering", [&]() { _GAPIM.render(); }));
 
-		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule.increaseUpdateIPS(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule.updateUPS(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"System message treatement", [&]() { _systemModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Time metrics update", [&]() { _timeModule.updateTimeMetrics(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Profiler update data", [&]() { _profilerModule.updateData(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Profiler update counter", [&]() { _profilerModule.updateCounters(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Window treat message", [&]() { _GAPIM.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse treat message", [&]() { _mouseModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard treat message", [&]() { _keyboardModule.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Widget update", [&]() { _widgetModule.update(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _mouseModule.updateMouse(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard update status", [&]() { _keyboardModule.updateKeyboard(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule.increaseUpdateIPS(); }));
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size) :
