@@ -38,7 +38,7 @@ namespace spk
 		InputState _buttons[NB_BUTTON]; ///< Array storing the state of each button.
 
 		Vector2Int _position; ///< Current position of the mouse.
-		Vector2Int _deltaPosition = spk::Vector2Int(-1, -1); ///< Change in position of the mouse.
+		Vector2Int _deltaPosition = INITIAL_DELTA_POSITION; ///< Change in position of the mouse.
 		Vector2Int _wheel; ///< Mouse wheel movement.
 
 	private:

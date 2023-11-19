@@ -560,6 +560,15 @@ namespace spk
 				degrees.y * (M_PI / 180.0f),
 				degrees.z * (M_PI / 180.0f));
 		}
+
+		IVector3 clamp(const IVector3& p_lowerValue, const IVector3& p_higherValue)
+		{
+			return (IVector3(
+				std::clamp(x, p_lowerValue.x, p_higherValue.x), 
+				std::clamp(y, p_lowerValue.y, p_higherValue.y), 
+				std::clamp(z, p_lowerValue.z, p_higherValue.z)
+			));
+		}
 	};
 
 	/**

@@ -31,8 +31,11 @@ namespace spk
 	{
 		if (_positionEdited == true)
 		{
+			DEBUG_LINE();
 			_updateMVP();
-			_positionEdited = false;
+			DEBUG_LINE();
+			_positionEdited = false;	
+			DEBUG_LINE();		
 		}
 		return (false);
 	}
@@ -44,13 +47,18 @@ namespace spk
 
 	void Camera::_updateMVP()
 	{
-		auto viewMatrix = spk::Matrix4x4::lookAt(
-				owner()->transform()->translation(),
-				owner()->transform()->translation() + owner()->transform()->forward(),
-				spk::Vector3(0, 1, 0)
-			);
+		DEBUG_LINE();
+		spk::Matrix4x4 viewMatrix = spk::Matrix4x4::lookAt(
+			owner()->transform()->translation(),
+			owner()->transform()->translation() + owner()->transform()->forward(),
+			spk::Vector3(0, 1, 0)
+		);
+
+		DEBUG_LINE();
 		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4()); 
+		DEBUG_LINE();
 		_MVPEdited = true;
+		DEBUG_LINE();
 	}
 
 	Camera::Camera(Type p_type) :

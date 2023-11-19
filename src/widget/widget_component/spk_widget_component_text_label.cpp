@@ -39,7 +39,7 @@ namespace spk::WidgetComponent
 		for (size_t i = 0; i < _text.get().size(); i++)
 		{
 			const Font::Atlas::GlyphData& glyphData = _fontAtlas->glyph(_text.get()[i]);
-
+			
 			if (result.topLeftCorner.y > glyphData.position[0].y)
 				result.topLeftCorner.y = glyphData.position[0].y;
 

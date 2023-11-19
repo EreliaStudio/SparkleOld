@@ -17,23 +17,29 @@ namespace spk
 	
 	void Transform::_computeDirections()
 	{
+		DEBUG_LINE();
 		float pitch = spk::degreeToRadian(_rotation.get().x);
 		float yaw = spk::degreeToRadian(_rotation.get().y);
 		float roll = spk::degreeToRadian(_rotation.get().z);
 
+		DEBUG_LINE();
 		_forward.x = cos(yaw) * cos(pitch);
 		_forward.y = sin(pitch);
 		_forward.z = sin(yaw) * cos(pitch);
 		_forward.normalize();
 
+		DEBUG_LINE();
 		spk::Vector3 globalUp = spk::Vector3(0, 1, 0);
 		_right = globalUp.cross(_forward);
 		_right.normalize();
 
+		DEBUG_LINE();
 		_up = _forward.cross(_right);
 		_up.normalize();
 
+		DEBUG_LINE();
 		_rotation.resetUpdateFlag();
+		DEBUG_LINE();
 	}
 
 	bool Transform::_onUpdate()
@@ -48,6 +54,7 @@ namespace spk
 
 	spk::Vector3 Transform::_calculateRotationFromVectors(const spk::Vector3& p_right, const spk::Vector3& p_up, const spk::Vector3& p_forward)
 	{
+		DEBUG_LINE();
 		return(spk::Vector3(
 			spk::radianToDegree(std::atan2(_forward.x, _forward.z)),
 			spk::radianToDegree(std::atan2(-_forward.y, std::sqrt(_forward.x * _forward.x + _forward.z * _forward.z))),
@@ -57,11 +64,14 @@ namespace spk
 
 	void Transform::lookAt(const spk::Vector3& p_target, const spk::Vector3& p_up)
 	{
+		DEBUG_LINE();
 		_forward = (p_target - _translation).normalize();
 		_right = p_up.cross(_forward).normalize();
 		_up = _forward.cross(_right);
 
+		DEBUG_LINE();
 		_rotation = _calculateRotationFromVectors(_right, _up, _forward);
+		DEBUG_LINE();
 	}
 	
 	Transform::TranslationType::Contract Transform::subscribeOnTranslation(const std::function<void()> p_function)
@@ -117,7 +127,11 @@ namespace spk
 
 	void Transform::rotate(const spk::Vector3& p_deltaRotation)
 	{
-		_rotation = _rotation.get() + p_deltaRotation;
+		spk::Vector3 tmp = _rotation.get() + p_deltaRotation;
+
+		tmp.x = std::clamp(tmp.x, -89.5f, 89.5f);
+
+		_rotation = tmp;
 		_computeDirections();
 	}
 

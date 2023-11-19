@@ -36,10 +36,15 @@ namespace spk
 	{
 		if (_updateTransform == true)
 		{
+			DEBUG_LINE();
 			_renderingObject->pushConstants(L"translation") = owner()->transform()->translation();
+			DEBUG_LINE();
 			_renderingObject->pushConstants(L"scale") = owner()->transform()->scale();
+			DEBUG_LINE();
 			_renderingObject->pushConstants(L"rotation") = owner()->transform()->rotation();
+			DEBUG_LINE();
 			_updateTransform = false;	
+			DEBUG_LINE();
 		}
 
 		return (false);
@@ -63,6 +68,7 @@ namespace spk
 		
 		if (_mesh->needUpdate() == true)
 		{
+			DEBUG_LINE();
 			_updateMeshModelData();
 		}
 		// _texture->bind(0);
