@@ -80,6 +80,7 @@ public:
 class PlayerManager : public spk::Widget::Interface
 {
 private:
+    spk::Vector3 _requestedDeltaPosition;
     std::shared_ptr<spk::GameObject> _playerObject;
     std::vector<std::shared_ptr<spk::Input>> _inputs;
     bool _cameraRotationEnable = true;
@@ -96,10 +97,14 @@ private:
 
     bool _onUpdate()
     {
-
         for (size_t i = 0; i < _inputs.size(); i++)
         {
             _inputs[i]->update();
+        }
+        if (_requestedDeltaPosition != spk::Vector3(0, 0, 0))
+        {
+            _playerObject->transform()->move(_requestedDeltaPosition.normalize() * 0.2f);
+            _requestedDeltaPosition = spk::Vector3(0, 0, 0);
         }
         return (false);
     }
@@ -109,11 +114,26 @@ public:
         spk::Widget::Interface(p_name),
         _playerObject(p_playerObject),
         _inputs{
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Z, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->forward() * 0.2f);}),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Q, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->right() * 0.2f);}),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::S, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->forward() * -0.2f);}),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::D, spk::InputState::Down, 10, [&](){_playerObject->transform()->move(_playerObject->transform()->right() * -0.2f);}),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Escape, spk::InputState::Pressed, 0, [&](){_cameraRotationEnable = !_cameraRotationEnable;
+            std::make_shared<spk::KeyInput>(spk::Keyboard::Z, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (_playerObject->transform()->forward());
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::Q, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (_playerObject->transform()->right());
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::S, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (-_playerObject->transform()->forward());
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::D, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (-_playerObject->transform()->right());
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::Space, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (spk::Vector3(0, 1, 0));
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::LeftShift, spk::InputState::Down, 10, [&](){
+                    _requestedDeltaPosition += (spk::Vector3(0, -1, 0));
+                }),
+            std::make_shared<spk::KeyInput>(spk::Keyboard::Escape, spk::InputState::Pressed, 0, [&](){
+                _cameraRotationEnable = !_cameraRotationEnable;
                 if (_cameraRotationEnable == true)
                     spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
             }),
@@ -172,7 +192,7 @@ private:
         _playerObject = std::make_shared<spk::GameObject>(L"Player");
 
         _cameraComponent = _playerObject->addComponent<spk::Camera>(spk::Camera::Type::Perspective);
-        _playerObject->transform()->place(spk::Vector3(-2, 5, -2));
+        _playerObject->transform()->place(spk::Vector3(-4, -5, -4));
         _playerObject->transform()->lookAt(spk::Vector3(2.5f, 0, 2.5f));
         _playerObject->activate();
 

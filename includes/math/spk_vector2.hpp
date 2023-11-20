@@ -97,6 +97,11 @@ namespace spk
 			return (IVector2<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y)));
 		}
 
+		IVector2 operator-() const
+		{
+        	return (IVector2(-x, -y));
+    	}
+
 		/**
 		 * @brief Overload of << operator for output stream.
 		 *

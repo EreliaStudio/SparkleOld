@@ -102,6 +102,11 @@ namespace spk
 			return (IVector3<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y), static_cast<TOtherType>(z)));
 		}
 
+		IVector3 operator-() const
+		{
+        	return (IVector3(-x, -y, -z));
+    	}
+
 		/**
 		 * @brief Overloaded insertion operator for printing the vector to an output stream.
 		 * @param p_os The output stream.
