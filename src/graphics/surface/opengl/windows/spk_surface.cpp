@@ -1,6 +1,7 @@
 #include "graphics/surface/opengl/windows/spk_surface.hpp"
 #include <GL/glew.h>
 #include <GL/wglew.h>
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
@@ -90,6 +91,8 @@ namespace spk
 
 	void Surface::render()
 	{
+		spk::Profiler::instance()->startChronometer(L"Surface::Render");
 		SwapBuffers(_hdc);
+		spk::Profiler::instance()->stopChronometer(L"Surface::Render");
 	}
 }

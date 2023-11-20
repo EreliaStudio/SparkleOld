@@ -1,5 +1,6 @@
 #include "application/spk_abstract_application.hpp"
 #include "spk_basic_functions.hpp"
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
@@ -14,7 +15,9 @@ namespace spk
 	{
 		std::function<void()> funct = [this, p_jobName, p_job]() {
 			_activeJobName = &p_jobName;
+			spk::Profiler::instance()->startChronometer(p_jobName);
 			p_job();
+			spk::Profiler::instance()->stopChronometer(p_jobName);
 			_activeJobName = nullptr;
 			};
 		return (std::move(ContractProvider::subscribe(_jobs, funct)));
@@ -66,6 +69,8 @@ namespace spk
 
 		for (auto& worker : _workers)
 			worker.second->stop();
+
+		spk::cout.setPrefix(L"");
 
 		return _errorCode;
 	}

@@ -4,6 +4,10 @@
 
 namespace spk
 {
+	void Profiler::ChronometerResult::computeTotalTime()
+	{
+		cumulatedTotalTime += std::accumulate(durations.begin(), durations.end(), 0LL);
+	}
 	void Profiler::ChronometerResult::compute()
 	{
 		if (durations.empty()) {
@@ -11,19 +15,13 @@ namespace spk
             return;
         }
 
-		for (size_t i = 0; i < durations.size(); i++)
-		{
-			if (i != 0)
-				spk::cout << " - ";
-			spk::cout << durations[i];
-		}
-		spk::cout << std::endl;
-
         max = *std::max_element(durations.begin(), durations.end());
         min = *std::min_element(durations.begin(), durations.end());
 
-        long long sum = std::accumulate(durations.begin(), durations.end(), 0LL);
-        average = sum / durations.size();
+        totalTime = std::accumulate(durations.begin(), durations.end(), 0LL);
+        average = totalTime / durations.size();
+
+		cpuUsage = (totalTime / static_cast<double>(cumulatedTotalTime)) * 100;
 	}
 
 	Profiler::Profiler()
@@ -36,6 +34,8 @@ namespace spk
 
 	Profiler::~Profiler()
 	{
+		spk::cout << "Final FPS : " << _normalizedFPS << std::endl;
+		spk::cout << "Final UPS : " << _normalizedUPS << std::endl;
 		for (const auto& counter : _counters)
         {
             spk::cout << "Counter [" << counter.first << "] - " << counter.second << " trigger(s)" << std::endl;
@@ -49,13 +49,30 @@ namespace spk
 
 		for (auto& chronoResult : _chronometerResults)
 		{
+			chronoResult.second.computeTotalTime();
+		}
+		
+		for (auto& chronoResult : _chronometerResults)
+		{
+			chronoResult.second.name = chronoResult.first;
 			chronoResult.second.compute();
+		}
 
-			spk::cout << "Chronometer [" << chronoResult.first << "]:" << std::endl;
-			spk::cout << "  - Length  : " << chronoResult.second.durations.size() << " values" << std::endl;
-			spk::cout << "  - Min     : " << chronoResult.second.min << " microseconds" << std::endl;
-			spk::cout << "  - Max     : " << chronoResult.second.max << " microseconds" << std::endl;
-			spk::cout << "  - Average : " << chronoResult.second.average << " microseconds" << std::endl;
+		std::map<long long, ChronometerResult> sortedChronoResults;
+		for (auto& chronoResult : _chronometerResults)
+		{
+			sortedChronoResults[chronoResult.second.totalTime] = chronoResult.second;
+		}
+
+		for (auto& chronoResult : sortedChronoResults)
+		{
+			spk::cout << "Chronometer [" << chronoResult.second.name << "]:" << std::endl;
+			spk::cout << "  - Length    : " << chronoResult.second.durations.size() << " values" << std::endl;
+			spk::cout << "  - Total     : " << chronoResult.second.totalTime << " microseconds" << std::endl;
+			spk::cout << "  - CPU usage : " << chronoResult.second.cpuUsage << "%" << std::endl;
+			spk::cout << "  - Average   : " << chronoResult.second.average << " microseconds" << std::endl;
+			spk::cout << "  - Min       : " << chronoResult.second.min << " microseconds" << std::endl;
+			spk::cout << "  - Max       : " << chronoResult.second.max << " microseconds" << std::endl;
 		}
 	}
 
@@ -107,7 +124,6 @@ namespace spk
 			throw std::runtime_error("This Chronometer does not exist ");
 		}
 		long long result = _chronometers[p_key].stop();
-		spk::cout << "Duration : " << result << std::endl;
 		_chronometerResults[p_key].durations.push_back(result);
 		return (result);
 	}

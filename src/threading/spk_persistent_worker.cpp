@@ -1,5 +1,6 @@
 #include "threading/spk_persistent_worker.hpp"
 #include "spk_basic_functions.hpp"
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
@@ -38,7 +39,9 @@ namespace spk
 	{
 		std::function<void()> funct = [this, p_jobName, p_job](){
 			_activeJobName = &p_jobName;
+			spk::Profiler::instance()->startChronometer(p_jobName);
 			p_job();
+			spk::Profiler::instance()->stopChronometer(p_jobName);
 			_activeJobName = nullptr;
 		};
 		return (std::move(ContractProvider::subscribe(_jobs, funct)));

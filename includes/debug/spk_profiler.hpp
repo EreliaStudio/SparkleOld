@@ -28,12 +28,17 @@ namespace spk
 	private:
 		struct ChronometerResult
 		{
+			std::wstring name;
 			std::vector<long long> durations;
 			long long max;
 			long long min;
 			long long average;
+			long long totalTime;
+			double cpuUsage;
+			static inline long long cumulatedTotalTime = 0;
 
 			void compute();
+			void computeTotalTime();
 		};
 
 		/**
