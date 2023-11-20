@@ -26,7 +26,6 @@ namespace spk
 
 	LRESULT APIModule::handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam)
 	{
-		
 		switch (p_uMsg)
 		{
 		case WM_DESTROY:

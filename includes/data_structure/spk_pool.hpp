@@ -43,7 +43,7 @@ namespace spk
 			friend class Pool;
 
 		private:
-			Container *_source;
+			Pool *_source;
 			size_t *_referenceCount;
 			TType *_content;
 
@@ -56,7 +56,7 @@ namespace spk
 			 * @param p_source Pointer to the container of allocated objects.
 			 * @param p_content Pointer to the content object managed by the `Object` instance.
 			 */
-			Object(Container *p_source, TType *p_content) : _source(p_source),
+			Object(Pool *p_source, TType *p_content) : _source(p_source),
 															_content(p_content),
 															_referenceCount(new size_t(1))
 			{
@@ -76,7 +76,7 @@ namespace spk
 				if (*_referenceCount == 0)
 				{
 					_content->~TType();
-					_source->push_back(_content);
+					_source->_insertBack(_content);
 				}
 
 			}
@@ -174,6 +174,12 @@ namespace spk
 	private:
 		std::recursive_mutex _mutex;
 
+		void _insertBack(TType* p_data)
+		{
+			std::lock_guard<std::recursive_mutex> _lock(_mutex);
+			_allocatedObjects.push_back(p_data);
+		}
+
 	public:
 		/**
 		 * @brief Default constructor for the Pool class.
@@ -220,7 +226,7 @@ namespace spk
 		{
 			if (_allocatedObjects.size() == 0)
 			{
-				Object result = Object(&_allocatedObjects, new TType(std::forward<Args>(p_args)...));
+				Object result = Object(this, new TType(std::forward<Args>(p_args)...));
 				return (result);
 			}
 			else
@@ -229,9 +235,9 @@ namespace spk
 				TType *data = _allocatedObjects.back();
 				_allocatedObjects.pop_back();
 
-				//*data = TType(std::forward<Args>(p_args)...);
+				*data = TType(std::forward<Args>(p_args)...);
 
-				Object result = Object(&_allocatedObjects, data);
+				Object result = Object(this, data);
 				return (result);
 			}
 		}
