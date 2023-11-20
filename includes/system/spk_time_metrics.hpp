@@ -27,6 +27,7 @@ namespace spk
 		 * It is updated every frame.
 		 */
 		long long _time;
+		long long _timeMicro;
 
 		/**
 		 * @brief The time elapsed between the last two frames.
@@ -61,6 +62,8 @@ namespace spk
 		 * @return The total time since the application started in milliseconds.
 		 */
 		constexpr const long long& time() const { return (_time); }
+
+		constexpr const long long& timeMicro() const { return (_timeMicro); }
 
 		/**
 		 * @brief Get the time elapsed between the last two frames.

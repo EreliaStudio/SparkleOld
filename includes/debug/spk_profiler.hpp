@@ -26,10 +26,21 @@ namespace spk
 	public:
 
 	private:
+		struct ChronometerResult
+		{
+			std::vector<long long> durations;
+			long long max;
+			long long min;
+			long long average;
+
+			void compute();
+		};
+
 		/**
 		 * \brief A map that associates each chronometer with a unique name.
 		 */
 		std::map<std::wstring, spk::Chronometer> _chronometers;
+		std::map<std::wstring, ChronometerResult> _chronometerResults;
 
 		/**
 		 * \brief A map that associates each counter with a unique name.
@@ -50,6 +61,10 @@ namespace spk
 		Profiler();
 
 	public:
+		~Profiler();
+
+		void createChronometer(const std::wstring &p_key);
+
 		/**
 		 * \brief Retrieves the chronometer associated with a specific name.
 		 * \param p_key The name of the chronometer.
@@ -85,6 +100,8 @@ namespace spk
 		 * \return The time elapsed since the chronometer was started.
 		 */
 		const long long stopChronometer(const std::wstring &p_key);
+
+		const std::map<std::wstring, size_t>& counters() const;
 
 		/**
 		 * \brief Create a new counter, named p_key
@@ -148,3 +165,6 @@ namespace spk
 		const size_t& UPS() const;
 	};
 }
+
+#define INCREASE_COUNTER() spk::Profiler::instance()->increaseCounter(spk::to_wstring(__FUNCTION__) + L"::" + std::to_wstring(__LINE__))
+#define INCREASE_NAMED_COUNTER(name) spk::Profiler::instance()->increaseCounter(name)

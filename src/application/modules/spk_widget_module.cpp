@@ -25,6 +25,7 @@ namespace spk
 		{
 			try
 			{
+				
 				if ((*it)->_isOperationnal == true)
 					(*it)->_update();
 			}

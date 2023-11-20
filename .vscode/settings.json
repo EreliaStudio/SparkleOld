@@ -87,7 +87,8 @@
         "regex": "cpp",
         "*.rh": "cpp",
         "csignal": "cpp",
-        "cstdarg": "cpp"
+        "cstdarg": "cpp",
+        "numeric": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {
