@@ -67,6 +67,8 @@ namespace spk
 
 		void _renameThread(const std::wstring& p_threadName);
 
+		bool isRunning() const;
+
 	public:
 		/**
 		 * @brief Constructs the AbstractApplication object.

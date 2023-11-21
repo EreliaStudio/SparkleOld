@@ -4,7 +4,7 @@
 namespace spk
 {
 	ProfilerModule::ProfilerModule() :
-		_counterTimer(250)
+		_counterTimer(100)
 	{
 		spk::Profiler::instanciate();
 		_counterTimer.start();
@@ -29,6 +29,9 @@ namespace spk
 	{
 		if (_counterTimer.isRunning() == false)
 		{
+			spk::Profiler::instance()->fpsCounter().set(spk::Profiler::instance()->fpsCounter().value() * 10);
+			spk::Profiler::instance()->upsCounter().set(spk::Profiler::instance()->upsCounter().value() * 10);
+
 			spk::Profiler::instance()->fpsCounter().reset();
 			spk::Profiler::instance()->upsCounter().reset();
 			_counterTimer.start();

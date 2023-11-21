@@ -74,7 +74,7 @@ namespace spk
 
 			bool isStarted() const
 			{
-				return (_chrono.hasBeenStarted());
+				return (_chrono.isRunning());
 			}
 
 			void start()
@@ -125,11 +125,21 @@ namespace spk
 				_value = 0;
 			}
 
+			const size_t& value() const
+			{
+				return (_value);
+			}
+
+			void set(size_t p_newValue)
+			{
+				_value = p_newValue;
+			}
+
 			friend std::wostream& operator << (std::wostream& p_os, const CounterMetric& p_counter)
 			{
-				p_os << "    - Min         : " << p_counter._min << std::endl;
-				p_os << "    - Max         : " << p_counter._max << std::endl;
-				p_os << "    - Average     : " << p_counter._average << std::endl;
+				p_os << "    - Min         : " << p_counter._min << " trigger(s)" << std::endl;
+				p_os << "    - Max         : " << p_counter._max << " trigger(s)" << std::endl;
+				p_os << "    - Average     : " << p_counter._average << " trigger(s)" << std::endl;
 				p_os << "    - Cardinality : " << p_counter._values.size() << std::endl;
 				return (p_os);
 			}
@@ -264,7 +274,6 @@ namespace spk
 		{
 			if (_fpsCounterPointer == nullptr)
 			{
-				DEBUG_LINE();
 				_fpsCounterPointer = &(createCounterMetric(FPS_COUNTER_NAME));
 			}
 			return (*_fpsCounterPointer);
@@ -274,7 +283,6 @@ namespace spk
 		{
 			if (_upsCounterPointer == nullptr)
 			{
-				DEBUG_LINE();
 				_upsCounterPointer = &(createCounterMetric(UPS_COUNTER_NAME));
 			}
 			return (*_upsCounterPointer);

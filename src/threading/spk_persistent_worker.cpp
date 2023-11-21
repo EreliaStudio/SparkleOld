@@ -6,34 +6,25 @@ namespace spk
 	PersistentWorker::PersistentWorker(const std::wstring &p_name) :
 		Thread(LaunchMethod::Delayed, p_name, [&]()
 		{
-			spk::Profiler::TimeConsuptionMetric& encapsulatingMetrics = spk::Profiler::instance()->createTimeConsumptionMetric(L"Encapsulating metrics");
-			spk::Profiler::TimeConsuptionMetric& jobMetrics = spk::Profiler::instance()->createTimeConsumptionMetric(L"Executing job metrics");
-			spk::Profiler::TimeConsuptionMetric& tryMetrics = spk::Profiler::instance()->createTimeConsumptionMetric(L"Encapsulating try/catch metrics");
-			
-			encapsulatingMetrics.start();
 			while (_isRunning)
 			{
 				if (_isPaused == true)
 					continue;
-				for (auto &job : _jobs)
+
+				for (const auto &job : _jobs)
 				{
-					tryMetrics.start();
 					try 
 					{
-						jobMetrics.start();
 						if (job != nullptr)
 							job();
-						jobMetrics.stop();
 					}
 					catch (std::exception& e)
 					{
 						redirectException(e, _activeJobName);
 						_isRunning = false;
 					}
-					tryMetrics.stop();
 				}
 			}
-			encapsulatingMetrics.stop();
 		}),
 		_jobs(),
 		_isRunning(false),

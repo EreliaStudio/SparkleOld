@@ -37,6 +37,11 @@ namespace spk
 		spk::cout.setPrefix(p_threadName);
 		spk::Profiler::instance()->defineThreadName(p_threadName);
 	}
+		
+	bool AbstractApplication::isRunning() const
+	{
+		return (_isRunning);
+	}
 
 	int AbstractApplication::run()
 	{

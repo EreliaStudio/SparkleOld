@@ -50,12 +50,12 @@ namespace spk
 		 * @tparam Funct The type of the thread function.
 		 * @tparam Args The types of the arguments of the thread function.
 		 * @param p_threadName The name of the thread.
-		 * @param p_func The thread function.
+		 * @param p_funct The thread function.
 		 * @param p_args The arguments of the thread function.
 		 */
 		template <typename Funct, typename... Args>
-		Thread(const std::wstring& p_threadName, Funct &&p_func, Args &&...p_args) :
-			_funct(std::bind(std::forward<Funct>(p_func), std::forward<Args>(p_args)...)),
+		Thread(const std::wstring& p_threadName, Funct &&p_funct, Args &&...p_args) :
+			_funct(std::bind(std::forward<Funct>(p_funct), std::forward<Args>(p_args)...)),
 			_starterSignal()
 		{
 			auto wrapper = [&](const std::wstring& threadName)
@@ -79,12 +79,12 @@ namespace spk
 		 * @tparam Args The types of the arguments of the thread function.
 		 * @param p_launchMethod The launch method of the thread.
 		 * @param p_threadName The name of the thread.
-		 * @param p_func The thread function.
+		 * @param p_funct The thread function.
 		 * @param p_args The arguments of the thread function.
 		 */
 		template <typename Funct, typename... Args>
-		Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &&p_func, Args &&...p_args) :
-			Thread(p_threadName, p_func, p_args...)
+		Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &&p_funct, Args &&...p_args) :
+			Thread(p_threadName, p_funct, p_args...)
 		{
 			if (p_launchMethod == LaunchMethod::Immediate)
 			{
