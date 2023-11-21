@@ -65,6 +65,8 @@ namespace spk
 		 */
 		virtual void setupJobs() = 0;
 
+		void _renameThread(const std::wstring& p_threadName);
+
 	public:
 		/**
 		 * @brief Constructs the AbstractApplication object.

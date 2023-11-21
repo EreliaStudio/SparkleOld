@@ -5,6 +5,7 @@ namespace spk
 {
 	PersistentWorker::PersistentWorker(const std::wstring & p_name) :
 		Thread(LaunchMethod::Delayed, p_name, [&]() {
+			
 			while (_isRunning)
 			{
 				if (_isPaused == true)

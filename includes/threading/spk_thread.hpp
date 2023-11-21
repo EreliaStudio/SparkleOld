@@ -6,6 +6,7 @@
 #include <future>
 
 #include "iostream/spk_iostream.hpp"
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
@@ -61,6 +62,7 @@ namespace spk
 			{
 				spk::cout.setPrefix(threadName);
 				spk::cerr.setPrefix(threadName);
+				spk::Profiler::instance()->defineThreadName(threadName);
 				_starterSignal.get_future().wait();
 				_funct();
 			};

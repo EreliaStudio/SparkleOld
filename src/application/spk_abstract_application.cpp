@@ -14,9 +14,9 @@ namespace spk
 	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
 		std::function<void()> funct = [this, p_jobName, p_job]() {
-			_activeJobName = &p_jobName;
-			p_job();
-			_activeJobName = nullptr;
+				_activeJobName = &p_jobName;
+				p_job();
+				_activeJobName = nullptr;
 			};
 		return (std::move(ContractProvider::subscribe(_jobs, funct)));
 	}
@@ -32,6 +32,12 @@ namespace spk
 		_isRunning = false;
 	}
 
+	void AbstractApplication::_renameThread(const std::wstring& p_threadName)
+	{
+		spk::cout.setPrefix(p_threadName);
+		spk::Profiler::instance()->defineThreadName(p_threadName);
+	}
+
 	int AbstractApplication::run()
 	{
 		setupJobs();
@@ -41,7 +47,8 @@ namespace spk
 		for (auto& worker : _workers)
 			worker.second->start();
 
-		spk::cout.setPrefix(L"Renderer");
+		_renameThread(L"Renderer");
+
 		while (_isRunning)
 		{
 			for (auto& worker : _workers)

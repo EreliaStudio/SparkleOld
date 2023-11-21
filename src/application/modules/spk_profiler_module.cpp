@@ -7,6 +7,7 @@ namespace spk
 		_counterTimer(250)
 	{
 		spk::Profiler::instanciate();
+		_counterTimer.start();
 	}
 
 	ProfilerModule::~ProfilerModule()
@@ -16,16 +17,21 @@ namespace spk
 
 	void ProfilerModule::updateFPS()
 	{
-
+		spk::Profiler::instance()->fpsCounter().trigger();
 	}
 	
 	void ProfilerModule::updateUPS()
 	{
-
+		spk::Profiler::instance()->upsCounter().trigger();
 	}
 
 	void ProfilerModule::updateCounters()
 	{
-		
+		if (_counterTimer.isRunning() == false)
+		{
+			spk::Profiler::instance()->fpsCounter().reset();
+			spk::Profiler::instance()->upsCounter().reset();
+			_counterTimer.start();
+		}
 	}
 }

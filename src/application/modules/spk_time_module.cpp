@@ -6,6 +6,7 @@ namespace spk
 	TimeModule::TimeModule()
 	{
 		spk::Singleton<spk::TimeMetrics>::instanciate();
+		updateTimeMetrics();
 	}
 
 	TimeModule::~TimeModule()

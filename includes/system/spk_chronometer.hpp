@@ -1,7 +1,6 @@
 #pragma once
 
 #include "system/spk_time_metrics.hpp"
-#include "threading/spk_persistent_worker.hpp"
 
 namespace spk
 {

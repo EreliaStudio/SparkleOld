@@ -28,11 +28,13 @@ namespace spk
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size) :
 		spk::AbstractApplication(),
 		_APIModule(),
+		_timeModule(),
 		_systemModule(_APIModule.systemQueue(), std::shared_ptr<AbstractApplication>(this, [](auto& tmp){})),
 		_GAPIM(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
-		_widgetModule()
+		_widgetModule(),
+		_profilerModule()
 	{		
 		resize(p_size);
 	}

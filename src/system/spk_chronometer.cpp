@@ -1,5 +1,6 @@
 #include "system/spk_chronometer.hpp"
 #include <stdexcept>
+#include <chrono>
 
 const int UNINITIALIZED = -1;
 
