@@ -1,6 +1,7 @@
 #pragma once
 
 #include "system/spk_time_metrics.hpp"
+#include <chrono>
 
 namespace spk
 {
@@ -11,9 +12,13 @@ namespace spk
 	class Chronometer
 	{
 	private:
-		long long _start; ///< Start time.
-		mutable long long _duration; ///< Current duration.
-		mutable long long _totalDuration; ///< Total duration.
+		using Clock = std::chrono::high_resolution_clock;
+        using TimePoint = std::chrono::time_point<Clock>;
+        using Duration = std::chrono::nanoseconds;
+
+		TimePoint _start; ///< Start time.
+		mutable Duration _duration; ///< Current duration.
+		mutable Duration _totalDuration; ///< Total duration.
 		bool _isRunning; ///< True if chronometer is running, false otherwise.
 
 	public:
@@ -67,6 +72,6 @@ namespace spk
 		 * @throws std::runtime_error if the chronometer is already stopped.
 		 * @return The total duration in milliseconds. If the chronometer is already stopped, a runtime_error is thrown.
 		 */
-		const long long& stop();
+		long long stop();
 	};
 }

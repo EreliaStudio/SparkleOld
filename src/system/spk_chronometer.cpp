@@ -1,15 +1,15 @@
 #include "system/spk_chronometer.hpp"
 #include <stdexcept>
-#include <chrono>
+#include "iostream/spk_iostream.hpp"
 
 const int UNINITIALIZED = -1;
 
 namespace spk
 {
 	Chronometer::Chronometer():
-		_start(UNINITIALIZED),
-		_duration(0),
-		_totalDuration(0),
+		_start(Clock::now()),
+        _duration(Duration::zero()),
+        _totalDuration(Duration::zero()),
 		_isRunning(false)
 	{
 		if (spk::TimeMetrics::instance() == nullptr)
@@ -27,9 +27,9 @@ namespace spk
 		if (hasBeenStarted() == false)
 			throw std::runtime_error("Can't reset a never used chronometer");
 
-		_start = UNINITIALIZED;
-		_duration = 0;
-		_totalDuration = 0;
+		_start = Clock::now();
+        _duration = Duration::zero();
+        _totalDuration = Duration::zero();
 		_isRunning = false;
 	}
 
@@ -38,9 +38,9 @@ namespace spk
 		if (isRunning() == true)
 			throw std::runtime_error("Can't start an already started chronometer");
 
-		_start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-		_duration = 0;
-		_totalDuration = 0;
+		_start = Clock::now();
+        _duration = Duration::zero();
+        _totalDuration = Duration::zero();
 		_isRunning = true;
 	}
 
@@ -51,13 +51,13 @@ namespace spk
 		if (hasBeenStarted() == false)
 			throw std::runtime_error("Can't resume a chronometer that haven't been launched previously");
 
-		_start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		_start = Clock::now() - _totalDuration;
 		_isRunning = true;
 	}
 
 	bool Chronometer::hasBeenStarted() const
 	{
-		return (_start != UNINITIALIZED);
+		return (_start.time_since_epoch() != Duration::zero());
 	}
 
 	bool Chronometer::isRunning() const
@@ -67,21 +67,21 @@ namespace spk
 
 	long long Chronometer::duration() const
 	{
-		if (isRunning() == true)
-		{
-			_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - _start;
-		}
-		return (_duration + _totalDuration);
+		if (isRunning())
+        {
+            _duration = std::chrono::duration_cast<Duration>(Clock::now() - _start);
+        }
+        return ((_duration + _totalDuration).count());
 	}
 
-	const long long& Chronometer::stop()
+	long long Chronometer::stop()
 	{
 		if (isRunning() == false)
 			throw std::runtime_error("Can't stop an already stopped chronometer");
 
-		_totalDuration = duration();
-		_start = 0;
-		_isRunning = false;
-		return (_totalDuration);
+		_totalDuration += std::chrono::duration_cast<Duration>(Clock::now() - _start);
+        _duration = Duration::zero();
+        _isRunning = false;
+        return (_totalDuration.count());
 	}
 }

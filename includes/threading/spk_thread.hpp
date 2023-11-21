@@ -63,11 +63,8 @@ namespace spk
 				spk::cout.setPrefix(threadName);
 				spk::cerr.setPrefix(threadName);
 				spk::Profiler::instance()->defineThreadName(threadName);
-				auto& metric = spk::Profiler::instance()->createTimeConsumptionMetric(threadName + L" lifetime");
 				_starterSignal.get_future().wait();
-				metric.start();
 				_funct();
-				metric.stop();
 			};
 			_thread = std::thread(wrapper, p_threadName);
 		}
