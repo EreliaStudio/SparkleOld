@@ -55,8 +55,6 @@ namespace spk
 			{
 				_buttons[i] = InputState::Up;
 			}
-
-			// spk::cout << "Button " << to_wstring(Button(i)) << " -> " << to_wstring(_buttons[i]) << std::endl;
 		}
 	}
 

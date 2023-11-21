@@ -22,20 +22,18 @@ namespace spk
 		template <typename TMetricType>
 		class IMetric
 		{
+			friend class Profiler;
 		protected:
 			std::vector<TMetricType> _values;
 			TMetricType _min;
 			TMetricType _max;
 			TMetricType _average;
 
-			virtual void _additionnalComputation() = 0;
-
 			void addValue(const TMetricType& p_value)
 			{
 				_values.push_back(p_value);
 			}
 
-		public:
 			void compute()
 			{
 				if (_values.empty() == true)
@@ -47,24 +45,36 @@ namespace spk
 				_min = *(std::min_element(_values.begin(), _values.end()));
 				_max = *(std::max_element(_values.begin(), _values.end()));
 				_average = (_values.empty()? TMetricType() : std::accumulate(_values.begin(), _values.end(), TMetricType())) / _values.size();
-				_additionnalComputation();
 			}
+
+		public:
 		};
 
 	public:
 		class TimeConsuptionMetric : public IMetric<long long>
 		{
+		public:
+			long long executionDuration;
+
 		private:
 			spk::Chronometer _chrono;
-			void _additionnalComputation()
-			{
-
-			}
+			double _cpuUsage;
 
 		public:
 			TimeConsuptionMetric()
 			{
 
+			}
+
+			void compute(const long long& p_totalProgramDuration)
+			{
+				IMetric<long long>::compute();
+				_cpuUsage = static_cast<double>(std::reduce(_values.begin(), _values.end())) / static_cast<double>(p_totalProgramDuration) * 100.0;
+			}
+
+			bool isStarted() const
+			{
+				return (_chrono.hasBeenStarted());
 			}
 
 			void start()
@@ -79,6 +89,11 @@ namespace spk
 
 			friend std::wostream& operator << (std::wostream& p_os, const TimeConsuptionMetric& p_counter)
 			{
+				p_os << "    - Min         : " << p_counter._min << std::endl;
+				p_os << "    - Max         : " << p_counter._max << std::endl;
+				p_os << "    - Average     : " << p_counter._average << std::endl;
+				p_os << "    - CPU usage   : " << p_counter._cpuUsage << " %" << std::endl;
+				p_os << "    - Cardinality : " << p_counter._values.size() << std::endl;
 				return (p_os);
 			}
 		};
@@ -87,11 +102,6 @@ namespace spk
 		{
 		private:
 			size_t _value;
-
-			void _additionnalComputation()
-			{
-
-			}
 
 		public:
 			CounterMetric()
@@ -128,6 +138,8 @@ namespace spk
 		static inline const std::wstring UPS_COUNTER_NAME = L"UPS";
 
 	private:
+		long long _startProgramTime;
+
 		std::map<std::thread::id, std::wstring> _threadNames;
 		std::map<std::thread::id, std::map<std::wstring, TimeConsuptionMetric>> _timeConsuptionMetrics;
 		std::map<std::thread::id, std::map<std::wstring, CounterMetric>> _triggerMetrics;
@@ -140,6 +152,7 @@ namespace spk
 			spk::cout << "  TimeComsuption :" << std::endl;
 			if (p_timeMetrics.size() == 0)
 				spk::cout << "  - No metrics" << std::endl;
+
 			for (const auto& timeConsuptionMetric : p_timeMetrics)
 			{
 				spk::cout << "  - " << timeConsuptionMetric.first << std::endl;
@@ -167,11 +180,13 @@ namespace spk
 
 		void computeResults()
 		{
+			long long programTotalDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - _startProgramTime;
+
 			for (auto& threadEntry : _timeConsuptionMetrics)
 			{
 				for (auto& metricEntry : threadEntry.second)
 				{
-					metricEntry.second.compute();
+					metricEntry.second.compute(programTotalDuration);
 				}
 			}
 
@@ -185,7 +200,8 @@ namespace spk
 		}
 
 	public:
-		Profiler()
+		Profiler() :
+			_startProgramTime(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count())
 		{
 
 		}

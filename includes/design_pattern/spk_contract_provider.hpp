@@ -15,7 +15,7 @@ namespace spk
 	{
 	public:
 		using Callback = std::function<void()>; //!< Type of data representing a callback function.
-		using CallbackContainer = std::deque<Callback>; //!< Type of container for storing callback functions.
+		using CallbackContainer = std::vector<Callback>; //!< Type of container for storing callback functions.
 
 		/**
 		 * @brief  Represent the ownership of a callback and allow users to interact with it.
