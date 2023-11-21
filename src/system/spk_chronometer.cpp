@@ -37,7 +37,7 @@ namespace spk
 		if (isRunning() == true)
 			throw std::runtime_error("Can't start an already started chronometer");
 
-		_start = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		_start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 		_duration = 0;
 		_totalDuration = 0;
 		_isRunning = true;
@@ -50,7 +50,7 @@ namespace spk
 		if (hasBeenStarted() == false)
 			throw std::runtime_error("Can't resume a chronometer that haven't been launched previously");
 
-		_start = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		_start = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 		_isRunning = true;
 	}
 
@@ -68,7 +68,7 @@ namespace spk
 	{
 		if (isRunning() == true)
 		{
-			_duration = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - _start;
+			_duration = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - _start;
 		}
 		return (_duration + _totalDuration);
 	}

@@ -1,6 +1,7 @@
 #include "application/spk_application.hpp"
 #include "widget/spk_widget_activity_scheduler_manager.hpp"
 #include "widget/spk_widget_input_group_manager.hpp"
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {

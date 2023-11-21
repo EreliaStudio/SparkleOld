@@ -6,8 +6,8 @@ namespace spk
 {
 	void TimeMetrics::_updateMetrics()
 	{
-		long long now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 		long long nowMicro = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		long long now = nowMicro / 1000;
 
 		_deltaTime = now - _time;
 		_time = now;
@@ -21,8 +21,8 @@ namespace spk
 	{
 		std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
 
-		_time = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
 		_timeMicro = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		_time = _timeMicro / 1000;
 
 		_updateMetrics();
 	}

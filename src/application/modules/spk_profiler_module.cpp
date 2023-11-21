@@ -16,24 +16,16 @@ namespace spk
 
 	void ProfilerModule::updateFPS()
 	{
-		spk::Profiler::instance()->_fpsCounter++;
+
 	}
 	
 	void ProfilerModule::updateUPS()
 	{
-		spk::Profiler::instance()->_upsCounter++;
+
 	}
 
 	void ProfilerModule::updateCounters()
 	{
-		if (_counterTimer.isRunning() == false)
-		{
-			spk::Profiler::instance()->_normalizedFPS = spk::Profiler::instance()->_fpsCounter * 4;
-			spk::Profiler::instance()->_normalizedUPS = spk::Profiler::instance()->_upsCounter * 4;
-			
-			spk::Profiler::instance()->_fpsCounter = 0;
-			spk::Profiler::instance()->_upsCounter = 0;
-			_counterTimer.start();
-		}
+		
 	}
 }

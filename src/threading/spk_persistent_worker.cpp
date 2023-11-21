@@ -1,6 +1,5 @@
 #include "threading/spk_persistent_worker.hpp"
 #include "spk_basic_functions.hpp"
-#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
