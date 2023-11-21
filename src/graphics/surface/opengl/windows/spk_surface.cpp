@@ -91,8 +91,6 @@ namespace spk
 
 	void Surface::render()
 	{
-		spk::Profiler::instance()->startChronometer(L"Surface::Render");
 		SwapBuffers(_hdc);
-		spk::Profiler::instance()->stopChronometer(L"Surface::Render");
 	}
 }
