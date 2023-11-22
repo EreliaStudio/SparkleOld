@@ -17,9 +17,9 @@ namespace spk
 		std::shared_ptr<spk::Texture> _texture;
 		bool _updateTransform = true;
 
-		Transform::TranslationType::Contract _translationContract;
-		Transform::ScaleType::Contract _scaleContract;
-		Transform::RotationType::Contract _rotationContract;
+		std::shared_ptr<Transform::TranslationType::Contract> _translationContract;
+		std::shared_ptr<Transform::ScaleType::Contract> _scaleContract;
+		std::shared_ptr<Transform::RotationType::Contract> _rotationContract;
 
 		virtual bool _onUpdate() override;
 		virtual void _onRender() override;

@@ -38,8 +38,8 @@ namespace spk
 
 		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
-		std::vector<Contract> _renderContracts; ///< Contracts related to the Render jobs
-		std::vector<Contract> _updateContracts; ///< Contracts related to the Update jobs
+		std::vector<std::shared_ptr<Contract>> _renderContracts; ///< Contracts related to the Render jobs
+		std::vector<std::shared_ptr<Contract>> _updateContracts; ///< Contracts related to the Update jobs
 
 	protected:
 		/**
@@ -63,7 +63,7 @@ namespace spk
 		 *
 		 * This will delete all modules.
 		 */
-		~Application();
+		virtual ~Application();
 
 		/**
 		 * @brief Load a new canvas into the application.

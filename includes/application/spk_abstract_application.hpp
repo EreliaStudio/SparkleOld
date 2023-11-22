@@ -50,7 +50,7 @@ namespace spk
 		 * @param p_jobName The name of the new job to be added.
 		 * @param p_job The job to be added.
 		 */
-		Contract addJob(const std::wstring &p_WorkerName, const std::wstring &p_jobName, const Job& p_job);
+		std::shared_ptr<Contract> addJob(const std::wstring &p_WorkerName, const std::wstring &p_jobName, const Job& p_job);
 
 		/**
 		 * @brief Adds a job to the application.
@@ -58,7 +58,7 @@ namespace spk
 		 * @param p_jobName The name of the new job to be added.
 		 * @param p_job The job to be added.
 		 */
-		Contract addJob(const std::wstring &p_jobName, const Job& p_job);
+		std::shared_ptr<Contract> addJob(const std::wstring &p_jobName, const Job& p_job);
 
 		/**
 		 * @brief Virtual function to setup jobs, to be implemented by subclasses.
@@ -78,7 +78,7 @@ namespace spk
 		/**
 		 * @brief Destructs the AbstractApplication object.
 		 */
-		~AbstractApplication();
+		virtual ~AbstractApplication();
 
 		/**
 		 * @brief Runs the application.

@@ -37,7 +37,7 @@ namespace spk
 		stop();
 	}
 
-	ContractProvider::Contract PersistentWorker::addJob(const std::wstring &p_jobName, const PersistentWorker::Job &p_job)
+	std::shared_ptr<ContractProvider::Contract> PersistentWorker::addJob(const std::wstring &p_jobName, const PersistentWorker::Job &p_job)
 	{
 		std::function<void()> funct = [this, p_jobName, p_job]()
 		{
@@ -45,7 +45,7 @@ namespace spk
 			p_job();
 			_activeJobName = nullptr;
 		};
-		return (std::move(ContractProvider::subscribe(_jobs, funct)));
+		return (ContractProvider::subscribe(_jobs, funct));
 	}
 
 	/**

@@ -40,9 +40,9 @@ namespace spk
 
 		void lookAt(const spk::Vector3& p_target, const spk::Vector3& p_up = spk::Vector3(0, 1, 0));
 
-		TranslationType::Contract subscribeOnTranslation(const std::function<void()> p_function);
-		ScaleType::Contract subscribeOnScaling(const std::function<void()> p_function);
-		RotationType::Contract subscribeOnRotation(const std::function<void()> p_function);
+		std::shared_ptr<TranslationType::Contract> subscribeOnTranslation(const std::function<void()> p_function);
+		std::shared_ptr<ScaleType::Contract> subscribeOnScaling(const std::function<void()> p_function);
+		std::shared_ptr<RotationType::Contract> subscribeOnRotation(const std::function<void()> p_function);
 
 		void place(const spk::Vector3& p_newPosition);
 		void move(const spk::Vector3& p_translation);

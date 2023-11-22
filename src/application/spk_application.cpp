@@ -42,6 +42,7 @@ namespace spk
 
 	Application::~Application()
 	{
+		
 	}
 	
 	std::shared_ptr<spk::Widget::Canvas> Application::addCanvas(const std::filesystem::path& p_configurationFilePath)

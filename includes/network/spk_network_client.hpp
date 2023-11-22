@@ -21,7 +21,7 @@ namespace spk::Network
 	{
 	public:
 		spk::PersistentWorker _socketContextWorker; /**< A worker object that handles tasks related to the socket context */
-		spk::ContractProvider::Contract _readingSocketDataContract; /**< A contract object used for reading data from the socket */
+		std::shared_ptr<spk::ContractProvider::Contract> _readingSocketDataContract; /**< A contract object used for reading data from the socket */
 
 		spk::Network::Socket _socket; /**< The socket object used for network communication */
 		spk::ThreadSafeQueue<spk::Network::Message> _messagesToTreat; /**< A thread-safe queue that stores messages to be processed */

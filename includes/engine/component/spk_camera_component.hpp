@@ -24,8 +24,8 @@ namespace spk
 		spk::Matrix4x4 _MVP;
 		bool _positionEdited = false;
 		bool _MVPEdited = false;
-		Transform::TranslationType::Contract _translationContract;
-		Transform::RotationType::Contract _rotationContract;
+		std::shared_ptr<Transform::TranslationType::Contract> _translationContract;
+		std::shared_ptr<Transform::RotationType::Contract> _rotationContract;
 
 		// --- Perspective camera attributes
 		float _fov;
@@ -46,6 +46,7 @@ namespace spk
 
 	public:
 		Camera(Type p_type = Type::Perspective);
+		~Camera();
 
 		static std::shared_ptr<Camera> mainCamera();
 

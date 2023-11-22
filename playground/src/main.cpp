@@ -6,7 +6,7 @@ private:
     spk::Vector3 _requestedDeltaPosition;
     std::shared_ptr<spk::GameObject> _playerObject;
     std::vector<std::shared_ptr<spk::Input>> _inputs;
-    bool _cameraRotationEnable = true;
+    bool _cameraRotationEnable = false;
 
     void _onGeometryChange()
     {
@@ -27,10 +27,10 @@ private:
 
         if (_requestedDeltaPosition != spk::Vector3(0, 0, 0))
         {
-            _playerObject->transform()->move(_requestedDeltaPosition.normalize());
+            _playerObject->transform()->move(_requestedDeltaPosition.normalize() * 0.5f);
             _requestedDeltaPosition = spk::Vector3(0, 0, 0);
         }
-        
+
         return (false);
     }
 
@@ -65,7 +65,7 @@ public:
             std::make_shared<spk::MouseMovementInput>(1, [&](){
                 if (_cameraRotationEnable == true)
                 {
-                    _playerObject->transform()->rotate(spk::Vector3(-spk::Mouse::instance()->deltaPosition().y, spk::Mouse::instance()->deltaPosition().x, 0) * 0.1f);
+                    _playerObject->transform()->rotate(spk::Vector3(-spk::Mouse::instance()->deltaPosition().y, spk::Mouse::instance()->deltaPosition().x, 0) * 0.2f);
                     spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
                 }
             })
@@ -102,10 +102,10 @@ private:
     
     bool _onUpdate()
     {
-        // for (auto& cubeObject : _cubeObjects)
-        // {
-        //     cubeObject->transform()->rotate(spk::Vector3(0, 0.0001f, 0));
-        // }
+        for (auto& cubeObject : _cubeObjects)
+        {
+            cubeObject->transform()->rotate(spk::Vector3(0, 0.001f, 0) * spk::TimeMetrics::instance()->deltaTime());
+        }
 
         if (_gameEngine != nullptr)
             _gameEngine->update();

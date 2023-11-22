@@ -4,21 +4,21 @@
 
 namespace spk
 {
-	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_WorkerName, const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
+	std::shared_ptr<ContractProvider::Contract> AbstractApplication::addJob(const std::wstring& p_WorkerName, const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
 		if (_workers.find(p_WorkerName) == _workers.end())
 			_workers[p_WorkerName] = std::make_unique<spk::PersistentWorker>(p_WorkerName);
 		return (std::move(_workers[p_WorkerName]->addJob(p_jobName, p_job)));
 	}
 
-	ContractProvider::Contract AbstractApplication::addJob(const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
+	std::shared_ptr<ContractProvider::Contract> AbstractApplication::addJob(const std::wstring& p_jobName, const AbstractApplication::Job& p_job)
 	{
 		std::function<void()> funct = [this, p_jobName, p_job]() {
 				_activeJobName = &p_jobName;
 				p_job();
 				_activeJobName = nullptr;
 			};
-		return (std::move(ContractProvider::subscribe(_jobs, funct)));
+		return (ContractProvider::subscribe(_jobs, funct));
 	}
 
 	AbstractApplication::AbstractApplication() :

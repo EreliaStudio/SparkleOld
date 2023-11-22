@@ -20,6 +20,7 @@ namespace spk
 
 	public:
 		GameObject(const std::wstring& p_name);
+		~GameObject();
 
 		template <typename TComponentType, typename... Args>
 		std::shared_ptr<TComponentType> addComponent(Args&&... p_args)

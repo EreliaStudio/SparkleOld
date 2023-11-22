@@ -38,11 +38,9 @@ namespace spk
 		 * @param p_callback The callback function to be registered.
 		 * @return A contract representing the subscription.
 		 */
-		Contract subscribe(TEvent p_event, const Callback& p_callback)
+		std::shared_ptr<Contract> subscribe(TEvent p_event, const Callback& p_callback)
 		{
-			Contract result = ContractProvider::subscribe(_callbacks[p_event], p_callback);
-
-			return std::move(result);
+			return (ContractProvider::subscribe(_callbacks[p_event], p_callback));
 		}
 
 		/**

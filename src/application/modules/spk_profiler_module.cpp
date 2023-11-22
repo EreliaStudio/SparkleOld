@@ -7,7 +7,6 @@ namespace spk
 		_counterTimer(100),
 		_counterRatio(1000.0f / static_cast<float>(_counterTimer.duration()))
 	{
-
 		spk::Profiler::instanciate();
 		_counterTimer.start();
 	}

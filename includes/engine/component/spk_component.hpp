@@ -17,6 +17,7 @@ namespace spk
 
 	public:
 		Component(const std::wstring& p_name);
+		~Component();
 
 		std::shared_ptr<GameObject> owner();
 		std::shared_ptr<const GameObject> owner() const;

@@ -76,6 +76,11 @@ namespace spk
 			setAsMainCamera();
 	}
 
+	Camera::~Camera()
+	{
+		
+	}
+
 	std::shared_ptr<Camera> Camera::mainCamera()
 	{
 		return (std::shared_ptr<Camera>(_mainCamera, [](Camera* p_camera){}));

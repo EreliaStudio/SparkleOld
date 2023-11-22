@@ -4,6 +4,7 @@
 #include <deque>
 #include <cstddef>
 #include <stdexcept>
+#include <memory>
 
 namespace spk
 {
@@ -47,6 +48,7 @@ namespace spk
 			 *  false if has been resign or constructed by move else it's true.
 			 */
 			bool isOriginal();
+			bool isValid();
 
 		public:
 			/**
@@ -89,6 +91,8 @@ namespace spk
 		};
 
 	private:
+		std::vector<std::shared_ptr<Contract>> _contracts;
+
 	protected:
 		/**
 		 * @brief Add the callback inside the container and create a Contract representing it.
@@ -97,6 +101,8 @@ namespace spk
 		 * @param p_callback The function to register in the Contract.
 		 * @return Contract 
 		 */
-		Contract subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback);
+		std::shared_ptr<Contract> subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback);
+
+		~ContractProvider();
 	};
 }

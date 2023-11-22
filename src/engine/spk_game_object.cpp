@@ -8,6 +8,11 @@ namespace spk
 		_transform = addComponent<Transform>();
 	}
 
+	GameObject::~GameObject()
+	{
+		
+	}
+
 	std::shared_ptr<GameObject> GameObject::addChildrenGameObject(const std::wstring& p_childrenName)
 	{
 		std::shared_ptr<GameObject> result = std::make_shared<GameObject>(p_childrenName);

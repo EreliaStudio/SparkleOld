@@ -105,9 +105,9 @@ namespace spk
          * @param p_callback The callback to be set.
          * @return Contract The Contract object representing the ownership of the callback.
          */
-        Contract setOnUnknowStateTransition(const Callback &p_callback)
+        std::shared_ptr<Contract> setOnUnknowStateTransition(const Callback &p_callback)
         {
-            return (std::move(ContractProvider::subscribe(_unknownTransitionCallback, p_callback)));
+            return (ContractProvider::subscribe(_unknownTransitionCallback, p_callback));
         }
 
         /**
@@ -116,9 +116,9 @@ namespace spk
          * @param p_callback The callback to be set.
          * @return Contract The Contract object representing the ownership of the callback.
          */
-        Contract setOnUnknowStateExecution(const Callback &p_callback)
+        std::shared_ptr<Contract> setOnUnknowStateExecution(const Callback &p_callback)
         {
-            return (std::move(ContractProvider::subscribe(_unknownExecutionCallback, p_callback)));
+            return (ContractProvider::subscribe(_unknownExecutionCallback, p_callback));
         }
 
         /**
@@ -129,9 +129,9 @@ namespace spk
          * @param p_callback The callback to be set.
          * @return Contract The Contract object representing the ownership of the callback.
          */
-        Contract setStateTransitionCallback(const TState &p_initialState, const TState &p_targetState, const Callback &p_callback)
+        std::shared_ptr<Contract> setStateTransitionCallback(const TState &p_initialState, const TState &p_targetState, const Callback &p_callback)
         {
-            return (std::move(ContractProvider::subscribe(_transitionCallbacks[{p_initialState, p_targetState}], p_callback)));
+            return (ContractProvider::subscribe(_transitionCallbacks[{p_initialState, p_targetState}], p_callback));
         }
 
         /**
@@ -141,9 +141,9 @@ namespace spk
          * @param p_callback The callback to be set.
          * @return Contract The Contract object representing the ownership of the callback.
          */
-        Contract setStateExecutionCallback(const TState &p_state, const Callback &p_callback)
+        std::shared_ptr<Contract> setStateExecutionCallback(const TState &p_state, const Callback &p_callback)
         {
-            return (std::move(ContractProvider::subscribe(_executionCallbacks[p_state], p_callback)));
+            return (ContractProvider::subscribe(_executionCallbacks[p_state], p_callback));
         }
     };
 }

@@ -251,9 +251,9 @@ namespace spk
 		 * @param p_callback The callback function to subscribe.
 		 * @return A Contract object representing the subscription.
 		 */
-		Contract subscribe(const Callback& p_callback)
+		std::shared_ptr<ContractProvider::Contract> subscribe(const Callback& p_callback)
 		{
-			return (std::move(ContractProvider::subscribe(_onEditionCallbacks, p_callback)));
+			return (ContractProvider::subscribe(_onEditionCallbacks, p_callback));
 		}
 
 		/**
@@ -392,7 +392,7 @@ namespace spk
 		/**
 		 * @brief Contract for subscription updates.
 		 */
-		Value<T>::Contract _contract;
+		std::shared_ptr<Contract> _contract;
 
 		/**
 		 * @brief Mutex for thread-safe access.

@@ -57,7 +57,7 @@ namespace spk
 		 * @param p_job The job to be added.
 		 * @return A contract representing the job.
 		 */
-		Contract addJob(const std::wstring& p_jobName, const Job& p_job);
+		std::shared_ptr<ContractProvider::Contract> addJob(const std::wstring& p_jobName, const Job& p_job);
 
 		/**
 		 * @brief Check if the worker is running.

@@ -10,6 +10,11 @@ namespace spk
 
 	}
 
+	Component::~Component()
+	{
+		
+	}
+
 	std::shared_ptr<GameObject> Component::owner()
 	{
 		return (_owner);

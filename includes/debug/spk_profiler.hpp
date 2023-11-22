@@ -61,31 +61,12 @@ namespace spk
 			double _cpuUsage;
 
 		public:
-			TimeConsuptionMetric()
-			{
+			TimeConsuptionMetric();
+			void compute(const long long& p_totalProgramDuration);
 
-			}
-
-			void compute(const long long& p_totalProgramDuration)
-			{
-				IMetric<long long>::compute();
-				_cpuUsage = static_cast<double>(std::reduce(_values.begin(), _values.end())) / static_cast<double>(p_totalProgramDuration) * 100.0;
-			}
-
-			bool isStarted() const
-			{
-				return (_chrono.isRunning());
-			}
-
-			void start()
-			{
-				_chrono.start();
-			}
-
-			void stop()
-			{
-				addValue(_chrono.stop());
-			}
+			bool isStarted() const;
+			void start();
+			void stop();
 
 			friend std::wostream& operator << (std::wostream& p_os, const TimeConsuptionMetric& p_counter)
 			{
@@ -104,41 +85,14 @@ namespace spk
 			size_t _value;
 
 		public:
-			CounterMetric()
-			{
-				_value = 0;
-			}
+			CounterMetric();
 
-			void trigger()
-			{
-				_value++;
-			}
-
-			void save()
-			{
-				addValue(_value);
-			}
-
-			void insert(const size_t& p_value)
-			{
-				addValue(p_value);
-			}
-
-			void reset()
-			{
-				save();
-				_value = 0;
-			}
-
-			const size_t& value() const
-			{
-				return (_value);
-			}
-
-			void set(size_t p_newValue)
-			{
-				_value = p_newValue;
-			}
+			void trigger();
+			void save();
+			void insert(const size_t& p_value);
+			void reset();
+			const size_t& value() const;
+			void set(size_t p_newValue);
 
 			friend std::wostream& operator << (std::wostream& p_os, const CounterMetric& p_counter)
 			{
@@ -162,117 +116,21 @@ namespace spk
 		CounterMetric* _fpsCounterPointer = nullptr;
 		CounterMetric* _upsCounterPointer = nullptr;
 		
-		void _outputTimeConsuptionMetrics(const std::map<std::wstring, TimeConsuptionMetric>& p_timeMetrics)
-		{
-			spk::cout << "  TimeComsuption :" << std::endl;
-			if (p_timeMetrics.size() == 0)
-				spk::cout << "  - No metrics" << std::endl;
-
-			for (const auto& timeConsuptionMetric : p_timeMetrics)
-			{
-				spk::cout << "  - " << timeConsuptionMetric.first << std::endl;
-				spk::cout << timeConsuptionMetric.second << std::endl;
-			}
-		}
-		void _outputCounterMetricMetrics(const std::map<std::wstring, CounterMetric>& p_counterMetrics)
-		{
-			spk::cout << "  Counters :" << std::endl;
-			if (p_counterMetrics.size() == 0)
-				spk::cout << "  - No metrics" << std::endl;
-			for (auto& threadCounterMetricMetrics : p_counterMetrics) 
-			{
-				spk::cout << "  - " << threadCounterMetricMetrics.first<< std::endl;
-				spk::cout << threadCounterMetricMetrics.second << std::endl;
-			}
-		}
-
-		void _printThreadMetrics(const std::thread::id& p_threadID)
-		{
-			spk::cout << "Thread ID [" << _threadNames[p_threadID] << "]" << std::endl;
-			_outputTimeConsuptionMetrics(_timeConsuptionMetrics[p_threadID]);
-			_outputCounterMetricMetrics(_counterMetrics[p_threadID]);
-		}
-
-		void computeResults()
-		{
-			long long programTotalDuration = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - _startProgramTime;
-
-			for (auto& threadEntry : _timeConsuptionMetrics)
-			{
-				for (auto& metricEntry : threadEntry.second)
-				{
-					metricEntry.second.compute(programTotalDuration);
-				}
-			}
-
-			for (auto& threadEntry : _counterMetrics)
-			{
-				for (auto& metricEntry : threadEntry.second)
-				{
-					metricEntry.second.compute();
-				}
-			}
-		}
+		void _outputTimeConsuptionMetrics(const std::map<std::wstring, TimeConsuptionMetric>& p_timeMetrics);
+		void _outputCounterMetricMetrics(const std::map<std::wstring, CounterMetric>& p_counterMetrics);
+		void _printThreadMetrics(const std::thread::id& p_threadID);
+		void computeResults();
 
 	public:
-		Profiler() :
-			_startProgramTime(std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count())
-		{
+		Profiler();
+		~Profiler();
 
-		}
-
-		~Profiler()
-		{
-			computeResults();
-			for (auto& threadInfo : _threadNames)
-			{
-				_printThreadMetrics(threadInfo.first);
-			}
-		}
-
-		void defineThreadName(const std::wstring& p_threadName)
-		{
-			_threadNames[std::this_thread::get_id()] = p_threadName;
-		}
-
-		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName)
-		{
-			if (_threadNames.contains(std::this_thread::get_id()) == false)
-				_threadNames[std::this_thread::get_id()] = L"Unnamed";
-
-			if (_timeConsuptionMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
-				_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName] = TimeConsuptionMetric();
-
-			return (_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName]);
-		}
+		void defineThreadName(const std::wstring& p_threadName);
 		
-		CounterMetric& counterMetric(const std::wstring& p_metricName)
-		{
-			if (_threadNames.contains(std::this_thread::get_id()) == false)
-				_threadNames[std::this_thread::get_id()] = L"Unnamed";
+		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName);
+		CounterMetric& counterMetric(const std::wstring& p_metricName);
 
-			if (_counterMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
-				_counterMetrics[std::this_thread::get_id()][p_metricName] = CounterMetric();
-
-			return (_counterMetrics[std::this_thread::get_id()][p_metricName]);
-		}
-		
-		CounterMetric& fpsCounter()
-		{
-			if (_fpsCounterPointer == nullptr)
-			{
-				_fpsCounterPointer = &(counterMetric(FPS_COUNTER_NAME));
-			}
-			return (*_fpsCounterPointer);
-		}
-
-		CounterMetric& upsCounter()
-		{
-			if (_upsCounterPointer == nullptr)
-			{
-				_upsCounterPointer = &(counterMetric(UPS_COUNTER_NAME));
-			}
-			return (*_upsCounterPointer);
-		}
+		CounterMetric& fpsCounter();
+		CounterMetric& upsCounter();
 	};
 }

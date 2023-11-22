@@ -64,19 +64,19 @@ namespace spk
 		_rotation = _calculateRotationFromVectors(_right, _up, _forward);
 	}
 	
-	Transform::TranslationType::Contract Transform::subscribeOnTranslation(const std::function<void()> p_function)
+	std::shared_ptr<Transform::TranslationType::Contract> Transform::subscribeOnTranslation(const std::function<void()> p_function)
 	{
-		return (std::move(_translation.value().subscribe(p_function)));
+		return (_translation.value().subscribe(p_function));
 	}
 	
-	Transform::ScaleType::Contract Transform::subscribeOnScaling(const std::function<void()> p_function)
+	std::shared_ptr<Transform::ScaleType::Contract> Transform::subscribeOnScaling(const std::function<void()> p_function)
 	{
-		return (std::move(_scale.value().subscribe(p_function)));
+		return (_scale.value().subscribe(p_function));
 	}
 	
-	Transform::RotationType::Contract Transform::subscribeOnRotation(const std::function<void()> p_function)
+	std::shared_ptr<Transform::RotationType::Contract> Transform::subscribeOnRotation(const std::function<void()> p_function)
 	{
-		return (std::move(_rotation.value().subscribe(p_function)));
+		return (_rotation.value().subscribe(p_function));
 	}
 
 	void Transform::place(const spk::Vector3& p_newPosition)
@@ -117,6 +117,9 @@ namespace spk
 
 	void Transform::rotate(const spk::Vector3& p_deltaRotation)
 	{
+		if (p_deltaRotation == 0)
+			return ;
+			
 		spk::Vector3 tmp = _rotation.get() + p_deltaRotation;
 
 		tmp.x = std::clamp(tmp.x, -89.5f, 89.5f);
