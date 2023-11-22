@@ -43,8 +43,6 @@
 #include "system/spk_timer.hpp"
 #include "system/spk_time_metrics.hpp"
 
-#include "application/spk_abstract_application.hpp"
-
 #include "graphics/spk_color.hpp"
 #include "graphics/spk_texture.hpp"
 #include "graphics/spk_image.hpp"

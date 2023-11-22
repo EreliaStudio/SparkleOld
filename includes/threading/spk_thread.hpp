@@ -36,6 +36,7 @@ namespace spk
 		};
 
 	private:
+		bool _isActive = false;
 		std::function<void()> _funct;
 		std::thread _thread;
 		std::promise<void> _starterSignal;
@@ -60,11 +61,13 @@ namespace spk
 		{
 			auto wrapper = [&](const std::wstring& threadName)
 			{
+				_isActive = true;
 				spk::cout.setPrefix(threadName);
 				spk::cerr.setPrefix(threadName);
 				spk::Profiler::instance()->defineThreadName(threadName);
 				_starterSignal.get_future().wait();
 				_funct();
+				_isActive = false;
 			};
 			_thread = std::thread(wrapper, p_threadName);
 		}
@@ -84,7 +87,7 @@ namespace spk
 		 */
 		template <typename Funct, typename... Args>
 		Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &&p_funct, Args &&...p_args) :
-			Thread(p_threadName, p_funct, p_args...)
+			Thread(p_threadName, std::forward<Funct>(p_funct), std::forward<Args>(p_args)...)
 		{
 			if (p_launchMethod == LaunchMethod::Immediate)
 			{
@@ -99,6 +102,11 @@ namespace spk
 		 * It joins the thread if its still running.
 		 */
 		~Thread();
+
+		bool isActive() const 
+		{
+			return (_isActive);
+		}
 
 		/**
 		 * @brief Get the ID of the thread.

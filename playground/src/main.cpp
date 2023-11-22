@@ -193,9 +193,9 @@ int main()
     spk::Application app(L"Playground", 900);
     spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
   
-    std::shared_ptr<GameEngineManager> gameEngineManager = app.addRootWidget<GameEngineManager>(L"GameEngineManager");
-    gameEngineManager->setGeometry(0, app.size());
-    gameEngineManager->activate();
+    // std::shared_ptr<GameEngineManager> gameEngineManager = app.addRootWidget<GameEngineManager>(L"GameEngineManager");
+    // gameEngineManager->setGeometry(0, app.size());
+    // gameEngineManager->activate();
 
     return (app.run());
 }

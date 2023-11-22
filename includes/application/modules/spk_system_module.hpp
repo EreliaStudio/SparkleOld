@@ -1,10 +1,11 @@
 #pragma once
 
 #include "application/modules/spk_message_consumer_module.hpp"
-#include "application/spk_abstract_application.hpp"
 
 namespace spk
 {
+	class Application;
+	
 	/**
 	 * @class SystemModule
 	 * @brief Class for managing system-level interactions.
@@ -17,7 +18,7 @@ namespace spk
 		/**
 		 * @brief Pointer to the application this module is managing.
 		 */
-		std::shared_ptr<spk::AbstractApplication> _applicationToManage;
+		spk::Application* _applicationToManage;
 
 		/**
 		 * @brief Handles a system message.
@@ -33,7 +34,7 @@ namespace spk
 		 * @param p_queue The thread-safe queue for system messages.
 		 * @param p_applicationToManage Pointer to the application this module will manage.
 		 */
-		SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, std::shared_ptr<spk::AbstractApplication> p_applicationToManage);
+		SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, spk::Application* p_applicationToManage);
 		
 		/**
 		 * @brief Destructs the SystemModule object.
