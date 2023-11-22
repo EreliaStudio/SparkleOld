@@ -119,6 +119,11 @@ namespace spk
 				addValue(_value);
 			}
 
+			void save(const size_t& p_value)
+			{
+				addValue(p_value);
+			}
+
 			void reset()
 			{
 				save();
@@ -152,7 +157,7 @@ namespace spk
 
 		std::map<std::thread::id, std::wstring> _threadNames;
 		std::map<std::thread::id, std::map<std::wstring, TimeConsuptionMetric>> _timeConsuptionMetrics;
-		std::map<std::thread::id, std::map<std::wstring, CounterMetric>> _triggerMetrics;
+		std::map<std::thread::id, std::map<std::wstring, CounterMetric>> _counterMetrics;
 
 		CounterMetric* _fpsCounterPointer = nullptr;
 		CounterMetric* _upsCounterPointer = nullptr;
@@ -185,7 +190,7 @@ namespace spk
 		{
 			spk::cout << "Thread ID [" << _threadNames[p_threadID] << "]" << std::endl;
 			_outputTimeConsuptionMetrics(_timeConsuptionMetrics[p_threadID]);
-			_outputCounterMetricMetrics(_triggerMetrics[p_threadID]);
+			_outputCounterMetricMetrics(_counterMetrics[p_threadID]);
 		}
 
 		void computeResults()
@@ -200,7 +205,7 @@ namespace spk
 				}
 			}
 
-			for (auto& threadEntry : _triggerMetrics)
+			for (auto& threadEntry : _counterMetrics)
 			{
 				for (auto& metricEntry : threadEntry.second)
 				{
@@ -230,51 +235,33 @@ namespace spk
 			_threadNames[std::this_thread::get_id()] = p_threadName;
 		}
 
-		TimeConsuptionMetric& createTimeConsumptionMetric(const std::wstring& p_metricName)
+		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName)
 		{
 			if (_threadNames.contains(std::this_thread::get_id()) == false)
 				_threadNames[std::this_thread::get_id()] = L"Unnamed";
 
-			if (_timeConsuptionMetrics[std::this_thread::get_id()].contains(p_metricName) == true)
-				spk::throwException(L"TimeComsuptionMetric [" + p_metricName + L"] already exist");
-
-			_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName] = TimeConsuptionMetric();
+			if (_timeConsuptionMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
+				_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName] = TimeConsuptionMetric();
 
 			return (_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName]);
 		}
 		
-		CounterMetric& createCounterMetric(const std::wstring& p_metricName)
+		CounterMetric& counterMetric(const std::wstring& p_metricName)
 		{
 			if (_threadNames.contains(std::this_thread::get_id()) == false)
 				_threadNames[std::this_thread::get_id()] = L"Unnamed";
 
-			if (_triggerMetrics[std::this_thread::get_id()].contains(p_metricName) == true)
-				spk::throwException(L"CounterMetric [" + p_metricName + L"] already exist");
+			if (_counterMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
+				_counterMetrics[std::this_thread::get_id()][p_metricName] = CounterMetric();
 
-			_triggerMetrics[std::this_thread::get_id()][p_metricName] = CounterMetric();
-
-			return (_triggerMetrics[std::this_thread::get_id()][p_metricName]);
+			return (_counterMetrics[std::this_thread::get_id()][p_metricName]);
 		}
-
-		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName)
-		{
-			if (_timeConsuptionMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
-				spk::throwException(L"TimeComsuptionMetric [" + p_metricName + L"] doesn't exist");
-			return (_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName]);
-		}
-
-		CounterMetric& triggerMetric(const std::wstring& p_metricName)
-		{
-			if (_triggerMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
-				spk::throwException(L"CounterMetric [" + p_metricName + L"] doesn't exist");
-			return (_triggerMetrics[std::this_thread::get_id()][p_metricName]);
-		}
-
+		
 		CounterMetric& fpsCounter()
 		{
 			if (_fpsCounterPointer == nullptr)
 			{
-				_fpsCounterPointer = &(createCounterMetric(FPS_COUNTER_NAME));
+				_fpsCounterPointer = &(counterMetric(FPS_COUNTER_NAME));
 			}
 			return (*_fpsCounterPointer);
 		}
@@ -283,7 +270,7 @@ namespace spk
 		{
 			if (_upsCounterPointer == nullptr)
 			{
-				_upsCounterPointer = &(createCounterMetric(UPS_COUNTER_NAME));
+				_upsCounterPointer = &(counterMetric(UPS_COUNTER_NAME));
 			}
 			return (*_upsCounterPointer);
 		}

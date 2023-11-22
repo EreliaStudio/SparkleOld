@@ -29,5 +29,7 @@ namespace spk
 		 * Will update the TimeMetrics
 		 */
 		void updateTimeMetrics();
+
+		void wait();
 	};
 }

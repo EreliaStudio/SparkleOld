@@ -12,10 +12,11 @@ namespace spk
 		_renderContracts.push_back(addJob(L"Window clearing", [&]() { _GAPIM.clear(); }));
 		_renderContracts.push_back(addJob(L"Widget rendering", [&]() { _widgetModule.render(); }));
 		_renderContracts.push_back(addJob(L"Window rendering", [&]() { _GAPIM.render(); }));
+		_renderContracts.push_back(addJob(L"Waiting process", [&]() { _timeModule.wait(); }));
 
+		_updateContracts.push_back(addJob(L"Updater", L"Time metrics update", [&]() { _timeModule.updateTimeMetrics(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Update IPS increment", [&]() { _profilerModule.updateUPS(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"System message treatement", [&]() { _systemModule.treatMessage(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Time metrics update", [&]() { _timeModule.updateTimeMetrics(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Profiler update counter", [&]() { _profilerModule.updateCounters(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Window treat message", [&]() { _GAPIM.treatMessage(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse treat message", [&]() { _mouseModule.treatMessage(); }));
@@ -23,6 +24,7 @@ namespace spk
 		_updateContracts.push_back(addJob(L"Updater", L"Widget update", [&]() { _widgetModule.update(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _mouseModule.updateMouse(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard update status", [&]() { _keyboardModule.updateKeyboard(); }));
+		_updateContracts.push_back(addJob(L"Updater", L"Waiting process", [&]() { _timeModule.wait(); }));
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size) :

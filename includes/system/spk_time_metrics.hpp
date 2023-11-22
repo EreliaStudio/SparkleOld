@@ -3,7 +3,6 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "application/modules/spk_time_module.hpp"
 
-
 namespace spk
 {
 	/**
@@ -27,7 +26,6 @@ namespace spk
 		 * It is updated every frame.
 		 */
 		long long _time;
-		long long _timeMicro;
 
 		/**
 		 * @brief The time elapsed between the last two frames.
@@ -54,6 +52,8 @@ namespace spk
 		TimeMetrics();
 
 	public:
+		static long long currentTime();
+
 		/**
 		 * @brief Get the total time since the application started.
 		 * 
@@ -62,8 +62,6 @@ namespace spk
 		 * @return The total time since the application started in milliseconds.
 		 */
 		constexpr const long long& time() const { return (_time); }
-
-		constexpr const long long& timeMicro() const { return (_timeMicro); }
 
 		/**
 		 * @brief Get the time elapsed between the last two frames.
@@ -78,6 +76,6 @@ namespace spk
 		 * \brief Function to put the current thread to sleep for at least the specified duration.
 		 * \param p_millisecond The minimum number of milliseconds the thread should sleep.
 		 */
-		void sleepAtLeast(size_t p_millisecond);
+		static void sleepAtLeast(long long p_millisecond);
 	};
 }
