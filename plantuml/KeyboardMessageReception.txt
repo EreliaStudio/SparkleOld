@@ -1,0 +1,13 @@
+@startuml$
+box "Updater thread" #Gainsboro
+participant KeyboardModule
+end box
+box "SharedRessources" #Azure
+participant KeyboardMessagePool
+end box
+
+title Uppon Message reception
+KeyboardModule -> KeyboardMessagePool : Check pool emptiness
+KeyboardMessagePool --> KeyboardModule : Return bool
+KeyboardModule -> KeyboardModule : Execute command
+@enduml

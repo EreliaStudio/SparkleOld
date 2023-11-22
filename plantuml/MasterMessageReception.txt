@@ -1,0 +1,25 @@
+@startuml$
+box "Main thread" #LightBlue
+participant Kernel
+participant Application
+participant APIModule
+end box
+box "SharedRessources" #Azure
+participant SystemMessagePool
+participant KeyboardMessagePool
+participant MouseMessagePool
+participant WindowMessagePool
+end box
+
+title Uppon Kernel Event
+Kernel -> APIModule : Generate message
+alt Message System
+APIModule -> SystemMessagePool : Insert message + message info
+else Message Keyboard
+APIModule -> KeyboardMessagePool : Insert message + message info
+else Message Mouse
+APIModule -> MouseMessagePool : Insert message + message info
+else Window Mouse
+APIModule -> WindowMessagePool : Insert message + message info
+end
+@enduml
