@@ -24,7 +24,6 @@ namespace spk
 		_updateContracts.push_back(addJob(L"Updater", L"Widget update", [&]() { _widgetModule.update(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Mouse update status", [&]() { _mouseModule.updateMouse(); }));
 		_updateContracts.push_back(addJob(L"Updater", L"Keyboard update status", [&]() { _keyboardModule.updateKeyboard(); }));
-		_updateContracts.push_back(addJob(L"Updater", L"Waiting process", [&]() { _timeModule.wait(); }));
 	}
 
 	Application::Application(const std::wstring &p_title, const spk::Vector2Int &p_size) :

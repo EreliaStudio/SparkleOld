@@ -37,6 +37,7 @@ namespace spk
 		 * @brief Updates the mouse state.
 		 */
 		void updateMouse();
+		void updateMouseDeltaPosition();
 	};
 
 }
