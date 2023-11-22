@@ -101,6 +101,8 @@ namespace spk
 		 * @brief Return the current size of the Window.
 		*/
 		const spk::Vector2UInt& size() const;
+
+		void setMaxFPS(const size_t& p_maxFPS);
 	};
 
 }

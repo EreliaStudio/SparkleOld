@@ -4,8 +4,10 @@
 namespace spk
 {
 	ProfilerModule::ProfilerModule() :
-		_counterTimer(100)
+		_counterTimer(100),
+		_counterRatio(1000.0f / static_cast<float>(_counterTimer.duration()))
 	{
+
 		spk::Profiler::instanciate();
 		_counterTimer.start();
 	}
@@ -29,8 +31,8 @@ namespace spk
 	{
 		if (_counterTimer.isRunning() == false)
 		{
-			spk::Profiler::instance()->fpsCounter().set(spk::Profiler::instance()->fpsCounter().value() * 10);
-			spk::Profiler::instance()->upsCounter().set(spk::Profiler::instance()->upsCounter().value() * 10);
+			spk::Profiler::instance()->fpsCounter().set(static_cast<size_t>(spk::Profiler::instance()->fpsCounter().value() * _counterRatio));
+			spk::Profiler::instance()->upsCounter().set(static_cast<size_t>(spk::Profiler::instance()->upsCounter().value() * _counterRatio));
 
 			spk::Profiler::instance()->fpsCounter().reset();
 			spk::Profiler::instance()->upsCounter().reset();

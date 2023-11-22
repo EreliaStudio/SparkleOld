@@ -15,6 +15,7 @@ namespace spk
 	{
 	private:
 		spk::Timer _counterTimer;
+		float _counterRatio;
 
 	public:
 		/**

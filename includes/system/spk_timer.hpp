@@ -66,6 +66,8 @@ namespace spk
 		 */
 		Timer(const long long& p_duration = 0);
 
+		const long long& duration() const;
+
 		/**
 		 * @brief Sets the duration of the timer.
 		 * 

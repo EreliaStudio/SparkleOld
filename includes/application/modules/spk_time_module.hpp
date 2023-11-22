@@ -11,6 +11,8 @@ namespace spk
 	 */
 	class TimeModule
 	{
+	private:
+		size_t _msPerFrame;
 	public:
 		/**
 		 * @brief Constructs the TimeModule object.
@@ -29,6 +31,8 @@ namespace spk
 		 * Will update the TimeMetrics
 		 */
 		void updateTimeMetrics();
+
+		void setMaxFPS(const size_t& p_nbFPSPerSecond);
 
 		void wait();
 	};

@@ -63,4 +63,9 @@ namespace spk
 	{
 		return (spk::Window::instance()->size());
 	}
+
+	void Application::setMaxFPS(const size_t& p_maxFPS)
+	{
+		_timeModule.setMaxFPS(p_maxFPS);
+	}
 }

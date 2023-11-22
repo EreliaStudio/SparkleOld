@@ -14,6 +14,11 @@ namespace spk
 		}
 	}
 
+	const long long& Timer::duration() const
+	{
+		return (_duration);
+	}
+
 	void Timer::setDuration(const long long& p_duration)
 	{
 		if (_status == State::Running)

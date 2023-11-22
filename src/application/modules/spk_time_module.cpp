@@ -8,6 +8,7 @@ namespace spk
 {
 	TimeModule::TimeModule()
 	{
+		setMaxFPS(60);
 		spk::Singleton<spk::TimeMetrics>::instanciate();
 		updateTimeMetrics();
 	}
@@ -22,14 +23,19 @@ namespace spk
 		spk::Singleton<spk::TimeMetrics>::instance()->_updateMetrics();
 	}
 	
+	void TimeModule::setMaxFPS(const size_t& p_nbFPSPerSecond)
+	{
+		_msPerFrame = 1000 / p_nbFPSPerSecond;
+	}
+
 	void TimeModule::wait()
 	{
-		static thread_local long long nextFrame = spk::TimeMetrics::currentTime() + 16;
+		static thread_local long long nextFrame = spk::TimeMetrics::currentTime() + _msPerFrame;
 
 		long long currentTime = spk::TimeMetrics::currentTime();
 
 		if (nextFrame > currentTime)
 			spk::TimeMetrics::sleepAtLeast(nextFrame - currentTime);
-		nextFrame += 16;
+		nextFrame += _msPerFrame;
 	}
 }

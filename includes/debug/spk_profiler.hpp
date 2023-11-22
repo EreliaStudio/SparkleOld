@@ -119,7 +119,7 @@ namespace spk
 				addValue(_value);
 			}
 
-			void save(const size_t& p_value)
+			void insert(const size_t& p_value)
 			{
 				addValue(p_value);
 			}
