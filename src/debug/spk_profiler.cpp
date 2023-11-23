@@ -141,6 +141,7 @@ namespace spk
 
 	Profiler::TimeConsuptionMetric& Profiler::timeConsumptionMetric(const std::wstring& p_metricName)
 	{
+		std::scoped_lock<std::recursive_mutex> lock(_mutex);
 		if (_threadNames.contains(std::this_thread::get_id()) == false)
 			_threadNames[std::this_thread::get_id()] = L"Unnamed";
 
@@ -150,15 +151,38 @@ namespace spk
 		return (_timeConsuptionMetrics[std::this_thread::get_id()][p_metricName]);
 	}
 	
+	bool Profiler::containTimeConsumptionMetric(const std::wstring& p_metricName) const
+	{
+		std::scoped_lock<std::recursive_mutex> lock(_mutex);
+		if (_threadNames.contains(std::this_thread::get_id()) == false ||
+			_timeConsuptionMetrics.at(std::this_thread::get_id()).contains(p_metricName) == false)
+			return (false);
+		return (true);
+	}
+	
 	Profiler::CounterMetric& Profiler::counterMetric(const std::wstring& p_metricName)
 	{
+		std::scoped_lock<std::recursive_mutex> lock(_mutex);
 		if (_threadNames.contains(std::this_thread::get_id()) == false)
 			_threadNames[std::this_thread::get_id()] = L"Unnamed";
 
 		if (_counterMetrics[std::this_thread::get_id()].contains(p_metricName) == false)
+		{
 			_counterMetrics[std::this_thread::get_id()][p_metricName] = CounterMetric();
+		}
 
 		return (_counterMetrics[std::this_thread::get_id()][p_metricName]);
+	}
+	
+	bool Profiler::containCounterMetric(const std::wstring& p_metricName) const
+	{
+		std::scoped_lock<std::recursive_mutex> lock(_mutex);
+		if (_threadNames.contains(std::this_thread::get_id()) == false ||
+			_counterMetrics.at(std::this_thread::get_id()).contains(p_metricName) == false)
+		{
+			return (false);
+		}
+		return (true);
 	}
 	
 	Profiler::CounterMetric& Profiler::fpsCounter()

@@ -61,11 +61,11 @@ namespace spk
 		{
 			auto wrapper = [&](const std::wstring& threadName)
 			{
-				_isActive = true;
 				spk::cout.setPrefix(threadName);
 				spk::cerr.setPrefix(threadName);
 				spk::Profiler::instance()->defineThreadName(threadName);
 				_starterSignal.get_future().wait();
+				_isActive = true;
 				_funct();
 				_isActive = false;
 			};

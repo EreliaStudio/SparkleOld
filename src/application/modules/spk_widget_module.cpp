@@ -4,6 +4,7 @@
 #include "spk_basic_functions.hpp"
 #include "graphics/spk_window.hpp"
 #include <cstring>
+#include "debug/spk_profiler.hpp"
 
 namespace spk
 {
@@ -20,12 +21,11 @@ namespace spk
 	void WidgetModule::update()
 	{
 		auto &widgetSet = spk::Widget::Atlas::instance()->widgets();
-
+		
 		for (auto it = widgetSet.rbegin(); it != widgetSet.rend(); ++it)
 		{
 			try
-			{
-				
+			{	
 				if ((*it)->_isOperationnal == true)
 					(*it)->_update();
 			}
@@ -36,7 +36,6 @@ namespace spk
 				spk::throwException(L"Error during update [" + (*it)->name() + L"] : " + oldError);
 			}
 		}
-		
 	}
 
 	void WidgetModule::render()

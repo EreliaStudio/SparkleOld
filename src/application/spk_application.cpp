@@ -43,13 +43,13 @@ namespace spk
 		_errorCode = 0;
 		_isRunning = true;
 
-		spk::Thread updaterThread(spk::Thread::LaunchMethod::Immediate, L"Updater", [&](){
+		spk::Thread updaterThread(spk::Thread::LaunchMethod::Delayed, L"Updater", [&](){
 			while (_isRunning == true)
 			{
 				_timeModule.updateTimeMetrics();
 				_profilerModule.updateUPS();
-				_systemModule.treatMessage();
 				_profilerModule.updateCounters();
+				_systemModule.treatMessage();
 				_GAPIM.treatMessage();
 				_mouseModule.treatMessage();
 				_keyboardModule.treatMessage();
@@ -60,7 +60,8 @@ namespace spk
 		});
 
 		_renameThread(L"Renderer");
-
+		spk::Profiler::instance()->fpsCounter();
+		updaterThread.start();
 		while (_isRunning)
 		{
 			if (updaterThread.isActive() == false)

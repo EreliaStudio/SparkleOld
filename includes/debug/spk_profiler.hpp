@@ -109,6 +109,7 @@ namespace spk
 	private:
 		long long _startProgramTime;
 
+		static inline std::recursive_mutex _mutex;
 		std::map<std::thread::id, std::wstring> _threadNames;
 		std::map<std::thread::id, std::map<std::wstring, TimeConsuptionMetric>> _timeConsuptionMetrics;
 		std::map<std::thread::id, std::map<std::wstring, CounterMetric>> _counterMetrics;
@@ -128,7 +129,9 @@ namespace spk
 		void defineThreadName(const std::wstring& p_threadName);
 		
 		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName);
+		bool containTimeConsumptionMetric(const std::wstring& p_metricName) const;
 		CounterMetric& counterMetric(const std::wstring& p_metricName);
+		bool containCounterMetric(const std::wstring& p_metricName) const;
 
 		CounterMetric& fpsCounter();
 		CounterMetric& upsCounter();
