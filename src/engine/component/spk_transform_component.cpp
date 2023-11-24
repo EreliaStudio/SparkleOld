@@ -24,7 +24,7 @@ namespace spk
         _forward.y = sin(pitch);
         _forward.z = sin(yaw) * cos(pitch);
 
-		_right = _forward.cross(spk::Vector3(0, 0, 0));
+		_right = _forward.cross(spk::Vector3(0, -1, 0));
 
 		_up = _forward.cross(_right);
 	}
