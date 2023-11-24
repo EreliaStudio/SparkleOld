@@ -5,6 +5,7 @@ class MainWidget : public spk::Widget::Interface
 private:
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
 
+    std::shared_ptr<spk::Texture> _cubeTexture = nullptr;
     std::shared_ptr<spk::GameEngine> _engine;
 
     void _onGeometryChange()
@@ -35,9 +36,10 @@ private:
 
     std::shared_ptr<spk::GameObject> createCube(const spk::Vector3& p_position)
     {
-        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Cube", p_position);
+        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Cube [" + spk::to_wstring(p_position) + L"]", p_position);
         std::shared_ptr<spk::MeshRenderer> meshRenderer = result->addComponent<spk::MeshRenderer>();
         meshRenderer->setMesh(std::make_shared<spk::Cube>());
+        meshRenderer->setTexture(_cubeTexture);
 
         return (result);
     }
@@ -46,12 +48,14 @@ public:
     MainWidget(const std::wstring& p_name) : 
         spk::Widget::Interface(p_name)
     {
+        _cubeTexture = std::make_shared<spk::Image>(L"cubeTexture.png");
+
         _engine = std::make_shared<spk::GameEngine>();
         _engine->addGameObject(createPlayer(spk::Vector3(-2, 2, -2), spk::Vector3(0, 0, 0)));
 
-        for (size_t i = 0; i < 10; i++)
+        for (size_t i = 0; i < 2; i++)
         {
-            for (size_t j = 0; j < 10; j++)
+            for (size_t j = 0; j < 2; j++)
             {
                 _engine->addGameObject(createCube(spk::Vector3(i * 1.5f, 0, j * 1.5f)));
             }

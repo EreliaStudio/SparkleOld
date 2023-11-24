@@ -58,17 +58,23 @@ namespace spk
 		if (_mesh == nullptr)
 			return ;
 
-		// if (_texture == nullptr)
-		// 	spk::throwException(L"Can't render a MeshRenderer without texture");
+		if (_texture == nullptr)
+			spk::throwException(L"Can't render a MeshRenderer without texture");
 		
 		if (_mesh->needUpdate() == true)
 		{
 			_updateMeshModelData();
 		}
-		// _texture->bind(0);
-		// _renderingPipeline->uniform(L"textureID") = 0;
+		_texture->bind(0);
+		if (_textureIDUniform == nullptr)
+		{
+			_textureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
+			_textureIDUniform->set(0);
+		}
+		_textureIDUniform->bind();
+
 		_renderingObject->render();
-		// _texture->unbind();
+		_texture->unbind();
 	} 
 	
 	void MeshRenderer::setMesh(std::shared_ptr<spk::Mesh> p_mesh)

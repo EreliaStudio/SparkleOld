@@ -13,6 +13,7 @@ namespace spk
 	protected:
     	static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
 		std::shared_ptr<spk::Pipeline::Object> _renderingObject;
+		std::shared_ptr<spk::Pipeline::SamplerUniform> _textureIDUniform;
 
 		std::shared_ptr<spk::Texture> _texture;
 		bool _updateTransform = true;
