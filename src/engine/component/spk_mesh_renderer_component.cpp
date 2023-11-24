@@ -23,6 +23,8 @@ namespace spk
 			_renderingPipeline = std::make_shared<spk::Pipeline>(meshRendererComponentVertexShaderModule, meshRendererComponentFragmentShaderModule);
 		}
 		_renderingObject = _renderingPipeline->createObject();
+		_textureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
+		_textureIDUniform->set(0);
 	}
 
 	MeshRenderer::MeshRenderer(std::shared_ptr<spk::Mesh> p_mesh, std::shared_ptr<spk::Texture> p_texture) :
@@ -66,11 +68,6 @@ namespace spk
 			_updateMeshModelData();
 		}
 		_texture->bind(0);
-		if (_textureIDUniform == nullptr)
-		{
-			_textureIDUniform = dynamic_pointer_cast<spk::Pipeline::SamplerUniform>(_renderingPipeline->uniform(L"textureID"));
-			_textureIDUniform->set(0);
-		}
 		_textureIDUniform->bind();
 
 		_renderingObject->render();
