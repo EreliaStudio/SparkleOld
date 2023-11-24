@@ -1,16 +1,15 @@
 #include "playground.hpp"
 
-class PlayerManager : public spk::Widget::Interface
+class MainWidget : public spk::Widget::Interface
 {
 private:
-    spk::Vector3 _requestedDeltaPosition;
-    std::shared_ptr<spk::GameObject> _playerObject;
-    std::vector<std::shared_ptr<spk::Input>> _inputs;
-    bool _cameraRotationEnable = false;
+    std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
+
+    std::shared_ptr<spk::GameEngine> _engine;
 
     void _onGeometryChange()
     {
-
+        _gameEngineManager->setGeometry(0, size());
     }
 
     void _onRender()
@@ -20,182 +19,64 @@ private:
 
     bool _onUpdate()
     {
-        for (size_t i = 0; i < _inputs.size(); i++)
-        {
-            _inputs[i]->update();
-        }
-
-        if (_requestedDeltaPosition != spk::Vector3(0, 0, 0))
-        {
-            _playerObject->transform()->move(_requestedDeltaPosition.normalize() * 0.5f);
-            _requestedDeltaPosition = spk::Vector3(0, 0, 0);
-        }
-
         return (false);
     }
 
-public:
-    PlayerManager(std::shared_ptr<spk::GameObject> p_playerObject, const std::wstring& p_name) : 
-        spk::Widget::Interface(p_name),
-        _playerObject(p_playerObject),
-        _inputs{
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Z, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (_playerObject->transform()->forward());
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Q, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (_playerObject->transform()->right());
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::S, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (-_playerObject->transform()->forward());
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::D, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (-_playerObject->transform()->right());
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Space, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (spk::Vector3(0, 1, 0));
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::LeftShift, spk::InputState::Down, 10, [&](){
-                    _requestedDeltaPosition += (spk::Vector3(0, -1, 0));
-                }),
-            std::make_shared<spk::KeyInput>(spk::Keyboard::Escape, spk::InputState::Pressed, 0, [&](){
-                _cameraRotationEnable = !_cameraRotationEnable;
-                if (_cameraRotationEnable == true)
-                    spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
-            }),
-            std::make_shared<spk::MouseMovementInput>(1, [&](){
-                if (_cameraRotationEnable == true)
-                {
-                    _playerObject->transform()->rotate(spk::Vector3(-spk::Mouse::instance()->deltaPosition().y, spk::Mouse::instance()->deltaPosition().x, 0) * 0.2f);
-                    spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
-                }
-            })
-            }
+    std::shared_ptr<spk::GameObject> createPlayer(const spk::Vector3& p_position, const spk::Vector3& p_playerTarget)
     {
-        spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
+        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Player", p_position);
+        result->transform()->lookAt(p_playerTarget);
+        result->addComponent<spk::Camera>();
+        auto fpsController = result->addComponent<spk::FirstPersonController>();
+        fpsController->setMouseControl(spk::FirstPersonController::MouseControl::PressedLeft);
+
+        return (result);
     }
 
-    ~PlayerManager()
+    std::shared_ptr<spk::GameObject> createCube(const spk::Vector3& p_position)
     {
+        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Cube", p_position);
+        std::shared_ptr<spk::MeshRenderer> meshRenderer = result->addComponent<spk::MeshRenderer>();
+        meshRenderer->setMesh(std::make_shared<spk::Cube>());
 
-    }
-};
-
-class GameEngineManager : public spk::Widget::Interface
-{
-private:
-    std::shared_ptr<PlayerManager> _playerManager;
-
-    std::shared_ptr<spk::GameEngine> _gameEngine = nullptr;
-    std::shared_ptr<spk::GameObject> _playerObject = nullptr;
-    std::vector<std::shared_ptr<spk::GameObject>> _cubeObjects;
-
-    void _onGeometryChange()
-    {
-		spk::Camera::mainCamera()->setPerspectiveParameters(90.0f, static_cast<float>(size().x) / static_cast<float>(size().y), 0.1f, 100.0f);
-    }
-    
-    void _onRender()
-    {
-        if (_gameEngine != nullptr)
-            _gameEngine->render();
-    }
-    
-    bool _onUpdate()
-    {
-        for (auto& cubeObject : _cubeObjects)
-        {
-            cubeObject->transform()->rotate(spk::Vector3(0, 0.001f, 0) * spk::TimeMetrics::instance()->deltaTime());
-        }
-
-        if (_gameEngine != nullptr)
-            _gameEngine->update();
-
-        return (false);
-    }
-        
-    void loadPlayer()
-    {
-        _playerObject = std::make_shared<spk::GameObject>(L"Player");
-
-        _playerObject->addComponent<spk::Camera>(spk::Camera::Type::Perspective);
-        _playerObject->transform()->place(spk::Vector3(-4, -5, -4));
-        _playerObject->transform()->lookAt(spk::Vector3(2.5f, 0, 2.5f));
-        _playerObject->activate();
-
-        _gameEngine->subscribe(_playerObject);
-    }
-
-    void loadCubes()
-    {
-        std::shared_ptr<spk::GameObject> cubeObject = std::make_shared<spk::GameObject>(L"Cube Zero");
-
-        _gameEngine->subscribe(cubeObject);
-
-        for (size_t i = 0; i < 5; i++)
-        {
-            for (size_t j = 0; j < 5; j++)
-            {
-                cubeObject = std::make_shared<spk::GameObject>(L"Cube x[" + std::to_wstring(i) + L"]");
-
-                auto tmp = cubeObject->addComponent<spk::MeshRenderer>();
-                tmp->setMesh(std::make_shared<spk::Cube>());
-                cubeObject->transform()->setScale(spk::Vector3(1, 0.5 + 0.4 * (i + 1 + j), 1));
-                cubeObject->transform()->setRotation(spk::Vector3(0, 1 * (i + 1), 0));
-                cubeObject->transform()->place(spk::Vector3(i * 2, 0, j * 2));
-                cubeObject->activate();
-
-                _gameEngine->subscribe(cubeObject);
-
-                _cubeObjects.push_back(cubeObject);
-            }
-        }
-
-        for (size_t i = 0; i < 5; i++)
-        {
-            for (size_t j = 0; j < 5; j++)
-            {
-                cubeObject = std::make_shared<spk::GameObject>(L"Cube x[" + std::to_wstring(i) + L"]");
-
-                auto tmp = cubeObject->addComponent<spk::MeshRenderer>();
-                tmp->setMesh(std::make_shared<spk::Cube>());
-                cubeObject->transform()->setScale(spk::Vector3(1, 0.5 + 0.4 * (i + 1 + j), 1));
-                cubeObject->transform()->setRotation(spk::Vector3(0, 1 * (i + 1), 0));
-                cubeObject->transform()->place(spk::Vector3(i * 2, 10, j * 2));
-                cubeObject->activate();
-
-                _gameEngine->subscribe(cubeObject);
-
-                _cubeObjects.push_back(cubeObject);
-            }
-        }
+        return (result);
     }
 
 public:
-    GameEngineManager(const std::wstring& p_name) : 
+    MainWidget(const std::wstring& p_name) : 
         spk::Widget::Interface(p_name)
     {
-        _gameEngine = std::make_shared<spk::GameEngine>();
-        loadPlayer();
-        loadCubes();
+        _engine = std::make_shared<spk::GameEngine>();
+        _engine->addGameObject(createPlayer(spk::Vector3(-2, 2, -2), spk::Vector3(0, 0, 0)));
 
-        _playerManager = addChildrenWidget<PlayerManager>(_playerObject, L"PlayerManager");
-        _playerManager->activate();
+        for (size_t i = 0; i < 10; i++)
+        {
+            for (size_t j = 0; j < 10; j++)
+            {
+                _engine->addGameObject(createCube(spk::Vector3(i * 1.5f, 0, j * 1.5f)));
+            }
+        }
+
+        _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");
+        _gameEngineManager->setGameEngine(_engine);
+        _gameEngineManager->activate();
     }
 
-    ~GameEngineManager()
+    ~MainWidget()
     {
 
     }
 };
+
 
 int main()
 {
     spk::Application app(L"Playground", 900);
     spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
-  
-    // std::shared_ptr<GameEngineManager> gameEngineManager = app.addRootWidget<GameEngineManager>(L"GameEngineManager");
-    // gameEngineManager->setGeometry(0, app.size());
-    // gameEngineManager->activate();
+
+    std::shared_ptr<MainWidget> mainWidget = app.addRootWidget<MainWidget>(L"MainWidget");
+    mainWidget->setGeometry(0, app.size());
+    mainWidget->activate();
 
     return (app.run());
 }

@@ -20,6 +20,7 @@ namespace spk
 
 	public:
 		GameObject(const std::wstring& p_name);
+		GameObject(const std::wstring& p_name, const spk::Vector3& p_position);
 		~GameObject();
 
 		template <typename TComponentType, typename... Args>

@@ -2,26 +2,20 @@
 
 #include "engine/component/spk_component.hpp"
 #include "math/spk_vector3.hpp"
-#include "design_pattern/spk_value.hpp"
+#include "design_pattern/spk_observable_value.hpp"
 
 namespace spk
 {
 	class Transform : public Component
 	{
 	public:
-		using TranslationType = ValueWrapper<spk::Vector3>;
-		using ScaleType = ValueWrapper<spk::Vector3>;
-		using RotationType = ValueWrapper<spk::Vector3>;
+		using TranslationType = ObservableValue<spk::Vector3>;
+		using ScaleType = ObservableValue<spk::Vector3>;
+		using RotationType = ObservableValue<spk::Vector3>;
 
 	protected:
-
-		static inline TranslationType::Default _defaultTranslation = 0;
 		TranslationType _translation;
-
-		static inline ScaleType::Default _defaultScale = spk::Vector3(1, 1, 1);
 		ScaleType _scale;
-
-		static inline RotationType::Default _defaultRotation = 0;
 		RotationType _rotation;
 
 		spk::Vector3 _forward;
@@ -30,8 +24,6 @@ namespace spk
 		
 		virtual bool _onUpdate() override;
 		virtual void _onRender() override;
-
-		spk::Vector3 _calculateRotationFromVectors(const spk::Vector3& p_right, const spk::Vector3& p_up, const spk::Vector3& p_forward);
 
 		void _computeDirections();
 
@@ -44,8 +36,8 @@ namespace spk
 		std::shared_ptr<ScaleType::Contract> subscribeOnScaling(const std::function<void()> p_function);
 		std::shared_ptr<RotationType::Contract> subscribeOnRotation(const std::function<void()> p_function);
 
-		void place(const spk::Vector3& p_newPosition);
-		void move(const spk::Vector3& p_translation);
+		void place(const spk::Vector3& p_newTranslation);
+		void move(const spk::Vector3& p_deltaTranslation);
 		const spk::Vector3& translation() const;
 
 		void setScale(const spk::Vector3& p_newScale);

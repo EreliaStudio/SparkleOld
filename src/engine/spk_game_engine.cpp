@@ -44,14 +44,14 @@ namespace spk
 		}
 	}
 
-	std::shared_ptr<GameObject> GameEngine::subscribe(std::shared_ptr<GameObject> p_objectToAdd)
+	std::shared_ptr<GameObject> GameEngine::addGameObject(std::shared_ptr<GameObject> p_objectToAdd)
 	{
 		_ownedGameObjects.push_back(p_objectToAdd);
 
 		return (p_objectToAdd);
 	}
 
-	void GameEngine::unsubscribe(std::shared_ptr<GameObject> p_objectToRemove)
+	void GameEngine::removeGameObject(std::shared_ptr<GameObject> p_objectToRemove)
 	{
 		for (auto it = _ownedGameObjects.begin(); it != _ownedGameObjects.end(); ++it)
 		{
@@ -63,7 +63,7 @@ namespace spk
 		}
 	}
 
-	void GameEngine::unsubscribe(const std::wstring& p_objectName)
+	void GameEngine::removeGameObject(const std::wstring& p_objectName)
 	{
 		for (auto it = _ownedGameObjects.begin(); it != _ownedGameObjects.end(); ++it)
 		{

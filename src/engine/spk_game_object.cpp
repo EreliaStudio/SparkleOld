@@ -6,6 +6,13 @@ namespace spk
 		_name(p_name)
 	{
 		_transform = addComponent<Transform>();
+		activate();
+	}
+
+	GameObject::GameObject(const std::wstring& p_name, const spk::Vector3& p_position) :
+		GameObject(p_name)
+	{
+		transform()->place(p_position);
 	}
 
 	GameObject::~GameObject()

@@ -20,8 +20,8 @@ namespace spk
 		bool update();
 		void render();
 		
-		std::shared_ptr<GameObject> subscribe(std::shared_ptr<GameObject> p_objectToAdd);
-		void unsubscribe(std::shared_ptr<GameObject> p_objectToRemove);
-		void unsubscribe(const std::wstring& p_objectName);
+		std::shared_ptr<GameObject> addGameObject(std::shared_ptr<GameObject> p_objectToAdd);
+		void removeGameObject(std::shared_ptr<GameObject> p_objectToRemove);
+		void removeGameObject(const std::wstring& p_objectName);
 	};
 }
