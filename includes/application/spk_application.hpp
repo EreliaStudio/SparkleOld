@@ -77,8 +77,6 @@ namespace spk
 		 */
 		void quit(int p_errorCode);
 
-		
-
 		/**
 		 * @brief Load a new canvas into the application.
 		 * @param p_configurationFilePath The path to the canvas configuration file.

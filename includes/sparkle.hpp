@@ -46,6 +46,7 @@
 #include "graphics/spk_color.hpp"
 #include "graphics/spk_texture.hpp"
 #include "graphics/spk_image.hpp"
+#include "graphics/spk_sprite_sheet.hpp"
 #include "graphics/spk_font.hpp"
 #include "graphics/spk_window.hpp"
 #include "graphics/spk_pipeline.hpp"
