@@ -149,7 +149,5 @@ layout (binding = 1) uniform sampler2D textureID;
 void main()
 {
 	color = texture(textureID, fragmentUV);
-    if (color.r == 0)
-        color = vec4(1, 0, 0, 1);
 })");
 }

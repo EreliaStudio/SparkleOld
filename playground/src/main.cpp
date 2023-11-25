@@ -34,7 +34,10 @@ private:
         {
             for (size_t x = 0; x <= Size; x++)
             {
-                _mesh->points().push_back(spk::Vector3(x, height[x][y] * 10 + 5, y));
+                spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
+                if (position.y < 0)
+                    position.y = 0;
+                _mesh->points().push_back(position);
                 _mesh->normals().push_back(spk::Vector3(0, 1, 0));
             }
         }
@@ -43,7 +46,7 @@ private:
     size_t _computeSpriteID(const int& p_x, const int& p_y)
     {
         float value = (height[p_x][p_y] + height[p_x + 1][p_y] + height[p_x][p_y + 1] + height[p_x + 1][p_y + 1]) / 4;
-        
+
         if (value < -0.2)
             return (4);
         else if (value < 0.0f)
@@ -71,7 +74,7 @@ private:
 
                 for (size_t i = 0; i < 4; i++)
                 {
-                    _mesh->addVertex(baseIndex + pointOffsets[i], baseSprite + uvsOffsets[i], baseIndex + normalOffsets[i]);
+                    _mesh->addVertex(baseIndex + pointOffsets[i], baseSprite * 4 + uvsOffsets[i], baseIndex + normalOffsets[i]);
                 }
             }
         }
