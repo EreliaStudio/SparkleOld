@@ -55,9 +55,9 @@ private:
             return (4);
         else if (value < 0.0f)
             return (3);
-        else if (value < 0.2f)
+        else if (value < 0.35f)
             return (2);
-        else if (value < 0.3f)
+        else if (value < 0.5f)
             return (1);
         else
             return (0);
@@ -120,6 +120,15 @@ private:
     }
 
 public:
+    static void InitializePerlinGeneration()
+    {
+        _perlinGeneration.configureRange(-1, 1);
+        _perlinGeneration.configureFrequency(40);
+        _perlinGeneration.configureOctave(6);
+        _perlinGeneration.configureLacunarity(2.0f);
+        _perlinGeneration.configurePersistance(0.5f);
+    }
+
     Chunk(const spk::Vector2Int& p_position) :
         spk::GameObject(L"Chunk [" + spk::to_wstring(p_position) + L"]", spk::Vector3(Size * p_position.x, 0, Size * p_position.y)),
         _renderer(addComponent<spk::MeshRenderer>()),
@@ -127,17 +136,12 @@ public:
         _position(p_position)
     {
         _renderer->setTexture(SpriteSheet);
-        _perlinGeneration.configureRange(-1, 1);
-        _perlinGeneration.configureFrequency(10);
-        _perlinGeneration.configureOctave(3);
-        _perlinGeneration.configureLacunarity(2.0f);
-        _perlinGeneration.configurePersistance(0.5f);
 
         for (size_t i = 0; i <= Size; i++)
         {
             for (size_t j = 0; j <= Size; j++)
             {
-                height[i][j] = _perlinGeneration.sample(static_cast<float>(p_position.x * Size + i), static_cast<float>(p_position.y * Size + j));
+                height[i][j] = _perlinGeneration.sample(static_cast<float>(p_position.x * Size + i + 150000), static_cast<float>(p_position.y * Size + j + 150000));
             }
         }
 
@@ -167,7 +171,7 @@ private:
 public:
     World()
     {
-
+        Chunk::InitializePerlinGeneration();
     }
     
     bool contains(const spk::Vector2Int& p_chunkPosition) const
@@ -201,7 +205,7 @@ class MainWidget : public spk::Widget::Interface
 {
 private:
     World _world;
-    spk::Vector2Int _playerVisionSize = spk::Vector2Int(10, 10);
+    spk::Vector2Int _playerVisionSize = spk::Vector2Int(20, 20);
 
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
 
@@ -255,7 +259,7 @@ private:
         std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Player", p_position);
 
         result->transform()->lookAt(p_playerTarget);
-        result->addComponent<spk::Camera>();
+        auto camera = result->addComponent<spk::Camera>();
         auto fpsController = result->addComponent<spk::FirstPersonController>();
         fpsController->setMouseControl(spk::FirstPersonController::MouseControl::PressedLeft);
         fpsController->setMovementSpeed(15.0f);
