@@ -30,20 +30,11 @@ namespace spk
 			
 		};
 
-		enum class Distribution
-		{
-			Standard,
-			Exponential,
-			BiExponential
-		};
-
 	protected:
         /**
          * @brief The interpolation method used, default is Linear.
          */
 		Interpolation _interpolation = Interpolation::Linear;
-
-		Distribution _distribution = Distribution::Standard;
 
         /**
          * @brief Size of the permutation table.
@@ -167,8 +158,6 @@ namespace spk
 		 */
 		float _calcRatio(const float& w) const;
 
-		float _applyDistribution(const float& w) const;
-
 	public:
 		/**
 		 * @brief Default constructor for the IPerlin class.
@@ -235,8 +224,6 @@ namespace spk
 		 * @param p_interpolation The interpolation method to be set.
 		 */
 		void configureInterpolation(Interpolation p_interpolation);
-		
-		void configureDistribution(Distribution p_distribution);
 
 	};
 
@@ -246,5 +233,4 @@ namespace spk
      * @return A string representation of the Interpolation type.
      */
 	std::wstring to_wstring(const spk::IPerlin::Interpolation& p_interpolation);
-	std::wstring to_wstring(const spk::IPerlin::Distribution& p_distribution);
 }

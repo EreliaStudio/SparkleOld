@@ -125,7 +125,6 @@ public:
     static void InitializePerlinGeneration()
     {
         _perlinGeneration.configureInterpolation(spk::Perlin2D::Interpolation::Linear);
-        _perlinGeneration.configureDistribution(spk::Perlin2D::Distribution::BiExponential);
         _perlinGeneration.configureRange(-1, 1);
         _perlinGeneration.configureFrequency(250);
         _perlinGeneration.configureOctave(5);
