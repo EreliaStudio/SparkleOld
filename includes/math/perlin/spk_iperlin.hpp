@@ -27,6 +27,14 @@ namespace spk
 		{
 			Linear, ///< Linear interpolation method.
 			SmoothStep ///< SmoothStep interpolation method.
+			
+		};
+
+		enum class Distribution
+		{
+			Standard,
+			Exponential,
+			BiExponential
 		};
 
 	protected:
@@ -34,6 +42,8 @@ namespace spk
          * @brief The interpolation method used, default is Linear.
          */
 		Interpolation _interpolation = Interpolation::Linear;
+
+		Distribution _distribution = Distribution::Standard;
 
         /**
          * @brief Size of the permutation table.
@@ -100,62 +110,64 @@ namespace spk
 		float _lacunarity = 2.0f;
 
 		/**
-     * @brief Updates the Perlin noise parameters when the seed value is edited.
-     */
-    void _onSeedEdition();
+		 * @brief Updates the Perlin noise parameters when the seed value is edited.
+		 */
+		void _onSeedEdition();
 
-    /**
-     * @brief Executes the Perlin noise sampling using a lambda function.
-     * @param p_lambda The lambda function to execute the sampling.
-     * @return The result of the Perlin noise sampling.
-     */
-    float _executeSample(const std::function<float(const float& p_frequency)>& p_lambda) const;
+		/**
+		 * @brief Executes the Perlin noise sampling using a lambda function.
+		 * @param p_lambda The lambda function to execute the sampling.
+		 * @return The result of the Perlin noise sampling.
+		 */
+		float _executeSample(const std::function<float(const float& p_frequency)>& p_lambda) const;
 
-    /**
-     * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
-     * @param ix The x-coordinate of the input point.
-     * @param iy The y-coordinate of the input point.
-     * @param iz The z-coordinate of the input point.
-     * @param x The x-coordinate of the vector from the input coordinate.
-     * @param y The y-coordinate of the vector from the input coordinate.
-     * @param z The z-coordinate of the vector from the input coordinate.
-     * @return The result of the dot product operation.
-     */
-    float _dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const;
-	
-    /**
-     * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
-     * @param ix The x-coordinate of the input point.
-     * @param iy The y-coordinate of the input point.
-     * @param x The x-coordinate of the vector from the input coordinate.
-     * @param y The y-coordinate of the vector from the input coordinate.
-     * @return The result of the dot product operation.
-     */
-	float _dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const;
-	
-    /**
-     * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
-     * @param ix The x-coordinate of the input point.
-     * @param x The x-coordinate of the vector from the input coordinate.
-     * @return The result of the dot product operation.
-     */
-    float _dotGridGradient(const int& ix, const float& x) const;
+		/**
+		 * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
+		 * @param ix The x-coordinate of the input point.
+		 * @param iy The y-coordinate of the input point.
+		 * @param iz The z-coordinate of the input point.
+		 * @param x The x-coordinate of the vector from the input coordinate.
+		 * @param y The y-coordinate of the vector from the input coordinate.
+		 * @param z The z-coordinate of the vector from the input coordinate.
+		 * @return The result of the dot product operation.
+		 */
+		float _dotGridGradient(const int& ix, const int& iy, const int& iz, const float& x, const float& y, const float& z) const;
+		
+		/**
+		 * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
+		 * @param ix The x-coordinate of the input point.
+		 * @param iy The y-coordinate of the input point.
+		 * @param x The x-coordinate of the vector from the input coordinate.
+		 * @param y The y-coordinate of the vector from the input coordinate.
+		 * @return The result of the dot product operation.
+		 */
+		float _dotGridGradient(const int& ix, const int& iy, const float& x, const float& y) const;
+		
+		/**
+		 * @brief Computes the dot product of the gradient and the vector from the input coordinate to the 8 surrounding points in the unit cube.
+		 * @param ix The x-coordinate of the input point.
+		 * @param x The x-coordinate of the vector from the input coordinate.
+		 * @return The result of the dot product operation.
+		 */
+		float _dotGridGradient(const int& ix, const float& x) const;
 
-    /**
-     * @brief Performs an interpolation operation between two points.
-     * @param a0 The first point.
-     * @param a1 The second point.
-     * @param w The weighting factor.
-     * @return The result of the interpolation operation.
-     */
-    float _interpolate(const float& a0, const float& a1, const float& w) const;
+		/**
+		 * @brief Performs an interpolation operation between two points.
+		 * @param a0 The first point.
+		 * @param a1 The second point.
+		 * @param w The weighting factor.
+		 * @return The result of the interpolation operation.
+		 */
+		float _interpolate(const float& a0, const float& a1, const float& w) const;
 
-    /**
-     * @brief Calculates the ratio for the Perlin noise generation.
-     * @param w The weighting factor.
-     * @return The calculated ratio.
-     */
-    float _calcRatio(const float& w) const;
+		/**
+		 * @brief Calculates the ratio for the Perlin noise generation.
+		 * @param w The weighting factor.
+		 * @return The calculated ratio.
+		 */
+		float _calcRatio(const float& w) const;
+
+		float _applyDistribution(const float& w) const;
 
 	public:
 		/**
@@ -223,6 +235,8 @@ namespace spk
 		 * @param p_interpolation The interpolation method to be set.
 		 */
 		void configureInterpolation(Interpolation p_interpolation);
+		
+		void configureDistribution(Distribution p_distribution);
 
 	};
 
@@ -232,4 +246,5 @@ namespace spk
      * @return A string representation of the Interpolation type.
      */
 	std::wstring to_wstring(const spk::IPerlin::Interpolation& p_interpolation);
+	std::wstring to_wstring(const spk::IPerlin::Distribution& p_distribution);
 }

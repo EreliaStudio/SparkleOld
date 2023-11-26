@@ -36,8 +36,10 @@ private:
             for (size_t x = 0; x <= Size; x++)
             {
                 spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
-                if (position.y < 0)
-                    position.y = 0;
+                if (height[x][y] < 0.0f)
+                {
+                    position.y = 0.0f;
+                }
                 _mesh->points().push_back(position);
                 _mesh->normals().push_back(spk::Vector3(0, 1, 0));
             }
@@ -51,11 +53,11 @@ private:
                 height[p_c.x][p_c.y]
             );
 
-        if (value < -0.2)
+        if (value < -0.1f)
             return (4);
         else if (value < 0.0f)
             return (3);
-        else if (value < 0.35f)
+        else if (value < 0.3f)
             return (2);
         else if (value < 0.5f)
             return (1);
@@ -122,9 +124,11 @@ private:
 public:
     static void InitializePerlinGeneration()
     {
+        _perlinGeneration.configureInterpolation(spk::Perlin2D::Interpolation::Linear);
+        _perlinGeneration.configureDistribution(spk::Perlin2D::Distribution::BiExponential);
         _perlinGeneration.configureRange(-1, 1);
-        _perlinGeneration.configureFrequency(40);
-        _perlinGeneration.configureOctave(6);
+        _perlinGeneration.configureFrequency(250);
+        _perlinGeneration.configureOctave(5);
         _perlinGeneration.configureLacunarity(2.0f);
         _perlinGeneration.configurePersistance(0.5f);
     }
@@ -205,9 +209,10 @@ class MainWidget : public spk::Widget::Interface
 {
 private:
     World _world;
-    spk::Vector2Int _playerVisionSize = spk::Vector2Int(20, 20);
+    spk::Vector2Int _playerVisionSize = spk::Vector2Int(15, 15);
 
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
+    std::vector<std::shared_ptr<Chunk>> _activeChunks;
 
     std::shared_ptr<spk::GameEngine> _engine;
     std::shared_ptr<spk::GameObject> _player;
@@ -232,24 +237,60 @@ private:
         
     }
 
+    void _deactivateOutOffBoundChunk(const spk::Vector2Int& p_startPosition, const spk::Vector2Int& p_endPosition)
+    {
+        _activeChunks.erase(
+            std::remove_if(
+                _activeChunks.begin(),
+                _activeChunks.end(),
+                [&p_startPosition, &p_endPosition](const auto& chunkPtr) {
+                    if (spk::Vector2Int::isInsideRectangle(chunkPtr->position(), p_startPosition, p_endPosition) == false) {
+                        chunkPtr->deactivate();
+                        return (true);
+                    }
+                    return (false);
+                }
+            ),
+            _activeChunks.end()
+        );
+    }
+
     bool _onUpdate()
     {
+        static spk::Vector2Int lastPlayerChunkPosition = Chunk::ConvertWorldToChunkPosition(_player->transform()->translation()) - spk::Vector2Int(1, 1);
         spk::Vector2Int playerChunkPosition = Chunk::ConvertWorldToChunkPosition(_player->transform()->translation());
-        spk::Vector2Int startPosition = playerChunkPosition - _playerVisionSize / spk::Vector2(2, 2);
-        spk::Vector2Int endPosition = playerChunkPosition + _playerVisionSize / spk::Vector2(2, 2);
-
-        for (int x = startPosition.x; x <= endPosition.x; x++)
+        if (playerChunkPosition != lastPlayerChunkPosition)
         {
-            for (int y = startPosition.y; y <= endPosition.y; y++)
-            {
-                spk::Vector2Int chunkPosition = spk::Vector2Int(x, y);
+            spk::Vector2Int startPosition = playerChunkPosition - _playerVisionSize / spk::Vector2(2, 2);
+            spk::Vector2Int endPosition = playerChunkPosition + _playerVisionSize / spk::Vector2(2, 2);
 
-                if (_world.contains(chunkPosition) == false)
+            _deactivateOutOffBoundChunk(startPosition, endPosition);
+    
+            for (int x = startPosition.x; x <= endPosition.x; x++)
+            {
+                for (int y = startPosition.y; y <= endPosition.y; y++)
                 {
-                    _generateChunk(chunkPosition);
+                    spk::Vector2Int chunkPosition = spk::Vector2Int(x, y);
+
+                    if (_world.contains(chunkPosition) == false)
+                    {
+                        std::shared_ptr<Chunk> newChunk = _generateChunk(chunkPosition);
+                        _activeChunks.push_back(newChunk);
+                    }
+                    else
+                    {
+                        std::shared_ptr<Chunk> chunk = _world.chunk(chunkPosition);
+                        if (chunk->isActive() == false)
+                        {
+                            chunk->activate();
+                            _activeChunks.push_back(chunk);
+                        }
+                    }
                 }
             }
+            lastPlayerChunkPosition = playerChunkPosition;
         }
+        
 
         return (false);
     }

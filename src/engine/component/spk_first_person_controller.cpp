@@ -16,7 +16,7 @@ namespace spk
 
         if (_movementRequested == true)
         {
-            owner()->transform()->move(_requestedDeltaPosition.normalize() * _movementSpeed * spk::TimeMetrics::instance()->deltaTime() * 10);
+            owner()->transform()->move(_requestedDeltaPosition.normalize() * _movementSpeed * 10);
             _requestedDeltaPosition = spk::Vector3(0, 0, 0);
             _movementRequested = false;
         }

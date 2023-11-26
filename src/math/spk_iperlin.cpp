@@ -73,7 +73,7 @@ namespace spk
 			case Interpolation::Linear:
 				return w;
 			case Interpolation::SmoothStep:
-				return w * w * (3.0f - 2.0f * w);
+				return w * w * (3.0f - 2.0f * w);				
 			default:
 				return w;
 		}
@@ -142,6 +142,20 @@ namespace spk
 		std::copy_n(_permutationTable, PermutationTableSize, _permutationTable + PermutationTableSize);
 	}
 
+	float IPerlin::_applyDistribution(const float& w) const
+	{
+		switch (_distribution)
+		{
+			case Distribution::Standard:
+				return (w);
+			case Distribution::Exponential:
+                return std::exp(w);	
+			case Distribution::BiExponential:
+                return (2.0f - std::exp(-4 * w)) * std::exp(-4 * (1.0f - w));
+		}
+		return (w);
+	}
+
 	float IPerlin::_executeSample(const std::function<float(const float& p_frequency)>& p_lambda) const
 	{
 		float result = 0;
@@ -159,6 +173,8 @@ namespace spk
 		result /= 2;
 
 		result = std::clamp(result, 0.0f, 1.0f - FLT_EPSILON);
+
+		_applyDistribution(result);
 
 		result *= _range;
 		result += _min;
@@ -197,6 +213,11 @@ namespace spk
 	{
 		_interpolation = p_interpolation;
 	}
+
+	void IPerlin::configureDistribution(Distribution p_distribution)
+	{
+		_distribution = p_distribution;
+	}
 	
 	std::wstring to_wstring(const spk::IPerlin::Interpolation& p_interpolation)
 	{
@@ -206,6 +227,20 @@ namespace spk
 				return (L"Linear");
 			case spk::IPerlin::Interpolation::SmoothStep:
 				return (L"SmoothStep");
+			default:
+				return (L"Unknow");
+		}
+	}
+	std::wstring to_wstring(const spk::IPerlin::Distribution& p_distribution)
+	{
+		switch (p_distribution)
+		{
+			case spk::IPerlin::Distribution::Standard:
+				return (L"Standard");
+			case spk::IPerlin::Distribution::Exponential:
+				return (L"Exponential");
+			case spk::IPerlin::Distribution::BiExponential:
+				return (L"BiExponential");
 			default:
 				return (L"Unknow");
 		}
