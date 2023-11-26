@@ -8,14 +8,12 @@
 
 namespace spk
 {
-	class MeshRenderer : public Component
+	class ColorMeshRenderer : public Component
 	{
 	protected:
     	static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;
-		static inline std::shared_ptr<spk::Pipeline::SamplerUniform> _textureIDUniform = nullptr;
 		std::shared_ptr<spk::Pipeline::Object> _renderingObject = nullptr;
 
-		std::shared_ptr<spk::Texture> _texture;
 		bool _updateTransform = true;
 
 		std::shared_ptr<Transform::TranslationType::Contract> _translationContract;
@@ -30,10 +28,10 @@ namespace spk
 		void _updateMeshModelData();
 
 	public:
-		MeshRenderer();
-		MeshRenderer(std::shared_ptr<spk::Mesh> p_mesh, std::shared_ptr<spk::Texture> p_texture);
+		ColorMeshRenderer();
+		ColorMeshRenderer(std::shared_ptr<spk::Mesh> p_mesh, std::shared_ptr<spk::Texture> p_texture);
 
-		static void initializeMeshRendererShader();
+		static void initializeColorMeshRendererShader();
 	
 		void setMesh(std::shared_ptr<spk::Mesh> p_mesh);
 		std::shared_ptr<spk::Mesh> mesh();

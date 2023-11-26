@@ -5,9 +5,10 @@ struct Chunk : public spk::GameObject
 public:
     static inline std::shared_ptr<spk::SpriteSheet> SpriteSheet = nullptr;
 private:
-    static const size_t Size = 16;
+    static const int Size = 16;
     static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(123456);
 
+    spk::Vector2Int _position;
     std::shared_ptr<spk::MeshRenderer> _renderer;
     std::shared_ptr<spk::Mesh> _mesh;
 
@@ -43,9 +44,12 @@ private:
         }
     }
 
-    size_t _computeSpriteID(const int& p_x, const int& p_y)
+    size_t _computeSpriteID(const spk::Vector2Int& p_a, const spk::Vector2Int& p_b, const spk::Vector2Int& p_c)
     {
-        float value = (height[p_x][p_y] + height[p_x + 1][p_y] + height[p_x][p_y + 1] + height[p_x + 1][p_y + 1]) / 4;
+        float value = std::max(
+                std::max(height[p_a.x][p_a.y], height[p_b.x][p_b.y]),
+                height[p_c.x][p_c.y]
+            );
 
         if (value < -0.2)
             return (4);
@@ -61,20 +65,37 @@ private:
 
     void _bakeVertex()
     {
-        size_t pointOffsets[4] = {Size + 1, Size + 2, 1, 0};
-        size_t uvsOffsets[4] = {0, 1, 2, 3};
-        size_t normalOffsets[4] = {Size + 1, Size + 2, 1, 0};
+        size_t pointOffsets[6] = {Size + 1, Size + 2, 1, Size + 1, 1, 0};
+        size_t uvsOffsets[6] = {0, 1, 2, 0, 2, 3};
+        size_t normalOffsets[6] = {Size + 1, Size + 2, 1, 0};
+        spk::Vector2Int positionOffset[2][3] = {
+            {
+                spk::Vector2Int(0, 1),
+                spk::Vector2Int(1, 1),
+                spk::Vector2Int(1, 0)
+            },
+            {
+                spk::Vector2Int(1, 0),
+                spk::Vector2Int(0, 1),
+                spk::Vector2Int(0, 0)
+            }
+        };
 
         for (size_t y = 0; y < Size; y++)
         {
             for (size_t x = 0; x < Size; x++)
             {
+                spk::Vector2Int position = spk::Vector2Int(x, y);
                 size_t baseIndex = x + y * (Size + 1);
-                size_t baseSprite = _computeSpriteID(x, y);
 
-                for (size_t i = 0; i < 4; i++)
+                for (size_t i = 0; i < 2; i++)
                 {
-                    _mesh->addVertex(baseIndex + pointOffsets[i], baseSprite * 4 + uvsOffsets[i], baseIndex + normalOffsets[i]);
+                    size_t baseSprite = _computeSpriteID(position + positionOffset[i][0], position + positionOffset[i][1], position + positionOffset[i][2]);
+
+                    for (size_t j = 0; j < 3; j++)
+                    {
+                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseIndex + normalOffsets[i * 3 + j]);
+                    }
                 }
             }
         }
@@ -82,10 +103,11 @@ private:
 
     void _bakeFaces()
     {
-        for (size_t i = 0; i < _mesh->vertices().size(); i += 4)
+        for (size_t i = 0; i < _mesh->vertices().size(); i += 3)
         {
-            _mesh->addFace(i + 0, i + 1, i + 2, i + 3);
+            _mesh->addFace(i + 0, i + 1, i + 2);
         }
+        _mesh->setNeedUpdateFlag(true);
     }
 
     void _bake()
@@ -101,11 +123,9 @@ public:
     Chunk(const spk::Vector2Int& p_position) :
         spk::GameObject(L"Chunk [" + spk::to_wstring(p_position) + L"]", spk::Vector3(Size * p_position.x, 0, Size * p_position.y)),
         _renderer(addComponent<spk::MeshRenderer>()),
-        _mesh(std::make_shared<spk::Mesh>())
+        _mesh(std::make_shared<spk::Mesh>()),
+        _position(p_position)
     {
-        if (SpriteSheet == nullptr)
-            SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-
         _renderer->setTexture(SpriteSheet);
         _perlinGeneration.configureRange(-1, 1);
         _perlinGeneration.configureFrequency(10);
@@ -124,6 +144,19 @@ public:
         _bake();
         _renderer->setMesh(_mesh);
     }
+
+    const spk::Vector2Int& position() const
+    {
+        return (_position);
+    }
+
+    static spk::Vector2Int ConvertWorldToChunkPosition(const spk::Vector3& p_worldPosition)
+    {
+        return (spk::Vector2Int(
+            static_cast<int>(p_worldPosition.x) / Size - ((p_worldPosition.x < 0 && static_cast<int>(p_worldPosition.x) % Size != 0) ? 1 : 0), 
+            static_cast<int>(p_worldPosition.z) / Size - ((p_worldPosition.z < 0 && static_cast<int>(p_worldPosition.z) % Size != 0) ? 1 : 0)
+        ));
+    }
 };
 
 struct World
@@ -134,6 +167,7 @@ private:
 public:
     World()
     {
+
     }
     
     bool contains(const spk::Vector2Int& p_chunkPosition) const
@@ -149,7 +183,6 @@ public:
             return (_chunks[p_chunkPosition]);
 
         std::shared_ptr<Chunk> result = std::make_shared<Chunk>(p_chunkPosition);
-        result->activate();
     
         _chunks[p_chunkPosition] = result;
 
@@ -168,6 +201,7 @@ class MainWidget : public spk::Widget::Interface
 {
 private:
     World _world;
+    spk::Vector2Int _playerVisionSize = spk::Vector2Int(10, 10);
 
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
 
@@ -179,23 +213,40 @@ private:
         _gameEngineManager->setGeometry(0, size());
     }
 
-    void _generateChunk(const spk::Vector2Int& p_chunkPosition)
+    std::shared_ptr<Chunk> _generateChunk(const spk::Vector2Int& p_chunkPosition)
     {
         std::shared_ptr<Chunk> newChunk = _world.chunk(p_chunkPosition);
 
         _engine->addGameObject(newChunk);
+        newChunk->activate();
+
+        return (newChunk);
     }
 
     void _onRender()
     {
-        if (_world.contains(spk::Vector2Int(0, 0)) == false)
-        {
-            _generateChunk(spk::Vector2Int(0, 0));
-        }
+        
     }
 
     bool _onUpdate()
     {
+        spk::Vector2Int playerChunkPosition = Chunk::ConvertWorldToChunkPosition(_player->transform()->translation());
+        spk::Vector2Int startPosition = playerChunkPosition - _playerVisionSize / spk::Vector2(2, 2);
+        spk::Vector2Int endPosition = playerChunkPosition + _playerVisionSize / spk::Vector2(2, 2);
+
+        for (int x = startPosition.x; x <= endPosition.x; x++)
+        {
+            for (int y = startPosition.y; y <= endPosition.y; y++)
+            {
+                spk::Vector2Int chunkPosition = spk::Vector2Int(x, y);
+
+                if (_world.contains(chunkPosition) == false)
+                {
+                    _generateChunk(chunkPosition);
+                }
+            }
+        }
+
         return (false);
     }
 
@@ -207,6 +258,7 @@ private:
         result->addComponent<spk::Camera>();
         auto fpsController = result->addComponent<spk::FirstPersonController>();
         fpsController->setMouseControl(spk::FirstPersonController::MouseControl::PressedLeft);
+        fpsController->setMovementSpeed(15.0f);
 
         return (result);
     }
@@ -215,6 +267,7 @@ public:
     MainWidget(const std::wstring& p_name) : 
         spk::Widget::Interface(p_name)
     {
+        Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
         _engine = std::make_shared<spk::GameEngine>();
         _player = createPlayer(spk::Vector3(2, 2, 2), spk::Vector3(0, 0, 0));
         _engine->addGameObject(_player);

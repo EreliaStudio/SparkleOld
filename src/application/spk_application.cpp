@@ -4,6 +4,7 @@
 #include "debug/spk_profiler.hpp"
 #include "graphics/spk_window.hpp"
 #include "threading/spk_thread.hpp"
+#include "engine/component/spk_mesh_renderer_component.hpp"
 
 namespace spk
 {
@@ -38,6 +39,11 @@ namespace spk
 		return (_isRunning);
 	}
 
+	void Application::_initializeShaders()
+	{
+		MeshRenderer::initializeMeshRendererShader();
+	}
+
 	int Application::run()
 	{
 		_errorCode = 0;
@@ -62,6 +68,7 @@ namespace spk
 		_renameThread(L"Renderer");
 		spk::Profiler::instance()->fpsCounter();
 		updaterThread.start();
+		_initializeShaders();
 		while (_isRunning)
 		{
 			if (updaterThread.isActive() == false)

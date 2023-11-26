@@ -52,6 +52,8 @@ namespace spk
 
 		bool isRunning() const;
 
+		void _initializeShaders();
+
 	public:
 		/**
 		 * @brief Constructs the Application object.

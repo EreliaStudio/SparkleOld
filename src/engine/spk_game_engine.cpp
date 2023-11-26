@@ -20,7 +20,7 @@ namespace spk
 	}
 
 	void GameEngine::render()
-	{
+	{		
 		if (spk::Camera::mainCamera() == nullptr)
 			spk::throwException(L"Can't render a game engine without MainCamera defined");
 		
