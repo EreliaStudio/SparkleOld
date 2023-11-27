@@ -119,7 +119,7 @@ namespace spk
 
 	void Camera::pushMVP(AbstractPipeline::UniformBlock::Field & p_uniformField)
 	{
-		p_uniformField = spk::Camera::mainCamera()->MVP();
+		p_uniformField = _mainCamera->MVP();
 		_MVPEdited = false;
 	}
 
