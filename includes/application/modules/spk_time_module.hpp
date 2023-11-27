@@ -32,8 +32,14 @@ namespace spk
 		 */
 		void updateTimeMetrics();
 
+		/**
+		 * @brief Set the maximum reachable FPS
+		*/
 		void setMaxFPS(const size_t& p_nbFPSPerSecond);
 
+		/**
+		 * @brief Execute a sleep to reach the next frame
+		*/
 		void wait();
 	};
 }

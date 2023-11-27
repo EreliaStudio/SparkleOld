@@ -48,10 +48,19 @@ namespace spk
 		bool _isRunning;
 
 	protected:
+		/**
+		 * @brief Execute what is necessary to rename the current thread : Edit cout/cerr prefix, define thread name in Profiler settings
+		*/
 		void _renameThread(const std::wstring& p_threadName);
 
+		/**
+		 * @brief Return the running status of the application
+		*/
 		bool isRunning() const;
 
+		/**
+		 * @brief Initialize the shaders used by Sparkle.
+		*/
 		void _initializeShaders();
 
 	public:
@@ -116,6 +125,9 @@ namespace spk
 		*/
 		const spk::Vector2UInt& size() const;
 
+		/**
+		 * @brief Set the maximum number of FPS reachable by the application
+		*/
 		void setMaxFPS(const size_t& p_maxFPS);
 	};
 }

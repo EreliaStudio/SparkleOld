@@ -29,13 +29,18 @@ namespace spk
 		~ProfilerModule();
 
 		/**
-		 * \brief Update the counters.
-		 *
-		 * This method should be called once per frame in the application's main update loop.
+		 * @brief Actualize the affiched FPS/UPS counter
 		 */
 		void updateCounters();
 
+		/**
+		 * @brief Updating FPS counter by incrementing it by one
+		*/
 		void updateFPS();
+
+		/**
+		 * @brief Updating UPS counter by incrementing it by one
+		*/
 		void updateUPS();
 	};
 }
