@@ -132,6 +132,9 @@ namespace spk
             size_t _value; ///< Current value of the counter.
 
         public:
+			/**
+			 * @brief Default constructor
+			*/
             CounterMetric();
 
             /** 
@@ -182,7 +185,15 @@ namespace spk
 				return (p_os);
 			}
 		};
+		
+		/**
+		 * @brief Predefined counter metrics name for the FPS values
+		*/
 		static inline const std::wstring FPS_COUNTER_NAME = L"FPS";
+		
+		/**
+		 * @brief Predefined counter metrics name for the FPS values
+		*/
 		static inline const std::wstring UPS_COUNTER_NAME = L"UPS";
 
 	private:
