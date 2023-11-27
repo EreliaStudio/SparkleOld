@@ -6,7 +6,7 @@ public:
     static inline std::shared_ptr<spk::SpriteSheet> SpriteSheet = nullptr;
 private:
     static const int Size = 16;
-    static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(123456);
+    static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(987654321);
 
     spk::Vector2Int _position;
     std::shared_ptr<spk::MeshRenderer> _renderer;
@@ -53,13 +53,13 @@ private:
                 height[p_c.x][p_c.y]
             );
 
-        if (value < -0.1f)
+        if (value < -0.5f)
             return (4);
         else if (value < 0.0f)
             return (3);
-        else if (value < 0.3f)
+        else if (value < 1.5f)
             return (2);
-        else if (value < 0.5f)
+        else if (value < 2.5f)
             return (1);
         else
             return (0);
@@ -124,10 +124,10 @@ private:
 public:
     static void InitializePerlinGeneration()
     {
-        _perlinGeneration.configureInterpolation(spk::Perlin2D::Interpolation::Linear);
-        _perlinGeneration.configureRange(-1, 1);
-        _perlinGeneration.configureFrequency(250);
-        _perlinGeneration.configureOctave(5);
+        _perlinGeneration.configureInterpolation(spk::Perlin2D::Interpolation::SmoothStep);
+        _perlinGeneration.configureRange(-5, 5);
+        _perlinGeneration.configureFrequency(60);
+        _perlinGeneration.configureOctave(7);
         _perlinGeneration.configureLacunarity(2.0f);
         _perlinGeneration.configurePersistance(0.5f);
     }

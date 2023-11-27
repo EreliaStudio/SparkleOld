@@ -14,7 +14,7 @@ namespace spk
 		{
 			if (_resetPerspectiveParameters == true && spk::Camera::mainCamera() != nullptr)
 			{
-				spk::Camera::mainCamera()->setPerspectiveParameters(90.0f, static_cast<float>(size().x) / static_cast<float>(size().y), 0.1f, 100.0f);
+				spk::Camera::mainCamera()->setPerspectiveParameters(90.0f, static_cast<float>(size().x) / static_cast<float>(size().y), 0.1f, 10000.0f);
 				_resetPerspectiveParameters = false;
 			}
 			_gameEngine->render();
