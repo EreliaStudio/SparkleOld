@@ -57,17 +57,7 @@ namespace spk
 		void _updateMVP();
 
 	protected:
-        /**
-         * @brief Update method for the camera.
-         * 
-         * @return true if the program need to stop updating for this frame.
-         * @return false otherwise.
-         */
         virtual bool _onUpdate() override;
-
-        /**
-         * @brief Render method for the camera.
-         */
         virtual void _onRender() override;
 
 	public:
