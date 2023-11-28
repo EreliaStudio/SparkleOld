@@ -103,6 +103,10 @@ namespace spk
 		 */
 		~Thread();
 
+		/**
+		 * @brief Return if the thread is currently working
+		 * @return True if the thread is working, false otherwise
+		*/
 		bool isActive() const 
 		{
 			return (_isActive);
