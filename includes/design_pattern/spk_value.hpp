@@ -160,6 +160,11 @@ namespace spk
 				return (_value);
 			}
 
+			/**
+			 * @brief Return the value in the Default state.
+			 *
+			 * @return A constant reference to the value in the Default state.
+			 */
 			const TType& get() const
 			{
 				return (_value);
@@ -267,6 +272,9 @@ namespace spk
 			_triggerEditionCallback();
 		}
 
+		/**
+		 * @brief Return the default value of the Value
+		*/
 		std::shared_ptr<const Default> defaultValue() const
 		{
 			return (_default);
@@ -376,6 +384,9 @@ namespace spk
 		 * @brief Alias for the default value type of the wrapped value.
 		 */
 		using Default = typename Value<T>::Default;
+		/**
+		 * @brief Alias for the contract type of the wrapped value.
+		 */
 		using Contract = typename Value<T>::Contract;
 		
 	private:
