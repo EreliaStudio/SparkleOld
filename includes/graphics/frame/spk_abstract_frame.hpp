@@ -74,6 +74,11 @@ namespace spk
 		 */
 		void resize(const spk::Vector2UInt& p_size);
 
+		/**
+		 * @brief Place the frame to a new position.
+		 * 
+		 * @param p_anchor The new position to set for the frame.
+		 */
 		void place(const spk::Vector2Int& p_anchor);
 
 		/**
@@ -90,6 +95,11 @@ namespace spk
 		 */
 		const Vector2UInt &size() const;
 
+		/**
+		 * @brief Get the current anchor of the frame.
+		 * 
+		 * @return A constant reference to the Vector2Int holding the anchor.
+		 */
 		const Vector2Int &anchor() const;
 	};
 }
