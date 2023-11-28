@@ -22,6 +22,17 @@ namespace spk
 		/// Default constructor.
 		Matrix4x4();
 
+
+        /**
+         * @brief Overloads the << operator for outputting the Matrix4x4 value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the Matrix4x4
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like spk::cout).
+         * @param p_matrix The Matrix4x4 value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
         friend std::wostream& operator << (std::wostream& p_os, const Matrix4x4& p_matrix)
         {
             p_os << std::endl;

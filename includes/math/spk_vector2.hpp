@@ -97,6 +97,16 @@ namespace spk
 			return (IVector2<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y)));
 		}
 
+		/**
+		 * @brief Unary minus operator for IVector2.
+		 *
+		 * This operator negates both the x and y components of the IVector2 instance,
+		 * effectively reflecting it across the origin in a 2D coordinate system. This
+		 * can be used for reversing the direction of the vector or for subtractive
+		 * vector operations.
+		 *
+		 * @return IVector2 - A new IVector2 instance with both x and y components negated.
+		 */
 		IVector2 operator-() const
 		{
         	return (IVector2(-x, -y));

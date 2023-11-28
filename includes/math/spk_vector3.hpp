@@ -102,6 +102,16 @@ namespace spk
 			return (IVector3<TOtherType>(static_cast<TOtherType>(x), static_cast<TOtherType>(y), static_cast<TOtherType>(z)));
 		}
 
+		/**
+		 * @brief Unary minus operator for IVector3.
+		 *
+		 * This operator negates both the x and y components of the IVector3 instance,
+		 * effectively reflecting it across the origin in a 3D coordinate system. This
+		 * can be used for reversing the direction of the vector or for subtractive
+		 * vector operations.
+		 *
+		 * @return IVector3 - A new IVector3 instance with both x, y and z components negated.
+		 */
 		IVector3 operator-() const
 		{
         	return (IVector3(-x, -y, -z));
@@ -566,6 +576,19 @@ namespace spk
 				degrees.z * (M_PI / 180.0f));
 		}
 
+		/**
+		 * @brief Clamps each component of the vector within specified lower and upper bounds.
+		 *
+		 * This function clamps each component (x, y, z) of the IVector3 instance to be within the range
+		 * specified by the corresponding components of p_lowerValue and p_higherValue. The clamping is
+		 * done independently for each component. This is useful for ensuring that a vector's components
+		 * remain within a certain range, such as for bounding positions within a specific area.
+		 *
+		 * @param p_lowerValue The IVector3 specifying the lower bound for each component.
+		 * @param p_higherValue The IVector3 specifying the upper bound for each component.
+		 * @return IVector3 - A new IVector3 instance with each component clamped between the corresponding 
+		 * values of p_lowerValue and p_higherValue.
+		 */
 		IVector3 clamp(const IVector3& p_lowerValue, const IVector3& p_higherValue)
 		{
 			return (IVector3(
