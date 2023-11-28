@@ -77,8 +77,20 @@ namespace spk
          */
         void resize(const spk::Vector2UInt& p_size);
 
+        /**
+         * @brief Places the window at a specified anchor point.
+         *
+         * Sets the position of the window on the screen to the given anchor point.
+         *
+         * @param p_anchor The position to place the window at, as a Vector2Int.
+         */
         void place(const spk::Vector2Int& p_anchor);
 
+        /**
+         * @brief Retrieves the current anchor position of the window.
+         *
+         * @return The current anchor position of the window as a Vector2Int.
+         */
         const spk::Vector2Int& anchor() const;
 
         /**

@@ -45,7 +45,7 @@ namespace spk
          * This function overloads the << operator to allow for easy outputting of the OutlineType enumeration
          * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
          * 
-         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_os A reference to a std::wostream object (like spk::cout).
          * @param p_outlineType The OutlineType enumeration value to be outputted.
          * @return std::wostream& - The modified std::wostream object.
          */
@@ -89,7 +89,7 @@ namespace spk
          * This function overloads the << operator to allow for easy outputting of the VerticalAlignment enumeration
          * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
          * 
-         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_os A reference to a std::wostream object (like spk::cout).
          * @param p_verticalAlignment The VerticalAlignment enumeration value to be outputted.
          * @return std::wostream& - The modified std::wostream object.
          */
@@ -130,7 +130,7 @@ namespace spk
          * This function overloads the << operator to allow for easy outputting of the HorizontalAlignment enumeration
          * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
          * 
-         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_os A reference to a std::wostream object (like spk::cout).
          * @param p_horizontalAlignment The HorizontalAlignment enumeration value to be outputted.
          * @return std::wostream& - The modified std::wostream object.
          */
