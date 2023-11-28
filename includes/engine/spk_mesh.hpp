@@ -73,18 +73,95 @@ namespace spk
          */
 		Mesh();
 
+		/**
+		 * @brief Provides access to the mutable points in the mesh.
+		 *
+		 * This method returns a reference to the vector of 3D points that make up the mesh. 
+		 * It allows for direct modification of the mesh's points, which can be used for dynamic 
+		 * mesh manipulation.
+		 * 
+		 * @return std::vector<spk::Vector3>& Reference to the vector of 3D points.
+		 */
 		std::vector<spk::Vector3>& points();
+
+		/**
+		 * @brief Provides access to the immutable points in the mesh.
+		 *
+		 * This method returns a constant reference to the vector of 3D points. 
+		 * It is used for accessing the points without modifying them, typically for 
+		 * read-only operations such as rendering.
+		 * 
+		 * @return const std::vector<spk::Vector3>& Constant reference to the vector of 3D points.
+		 */
 		const std::vector<spk::Vector3>& points() const;
 
+		/**
+		 * @brief Provides access to the mutable UV coordinates in the mesh.
+		 *
+		 * This method returns a reference to the vector of UV coordinates used for texture mapping. 
+		 * It allows for direct modification of the UVs, useful for changing how textures are applied 
+		 * to the mesh.
+		 * 
+		 * @return std::vector<spk::Vector2>& Reference to the vector of UV coordinates.
+		 */
 		std::vector<spk::Vector2>& uvs();
+
+		/**
+		 * @brief Provides access to the immutable UV coordinates in the mesh.
+		 *
+		 * This method returns a constant reference to the vector of UV coordinates. 
+		 * It is used for accessing the UVs without modifying them, typically in texture 
+		 * mapping during rendering.
+		 * 
+		 * @return const std::vector<spk::Vector2>& Constant reference to the vector of UV coordinates.
+		 */
 		const std::vector<spk::Vector2>& uvs() const;
 
+		/**
+		 * @brief Provides access to the mutable normals in the mesh.
+		 *
+		 * This method returns a reference to the vector of normals. Normals are essential for 
+		 * lighting calculations in 3D rendering. Modifying this vector allows for dynamic changes 
+		 * to how the mesh interacts with light.
+		 * 
+		 * @return std::vector<spk::Vector3>& Reference to the vector of normals.
+		 */
 		std::vector<spk::Vector3>& normals();
+
+		/**
+		 * @brief Provides access to the immutable normals in the mesh.
+		 *
+		 * This method returns a constant reference to the vector of normals, which is used 
+		 * in lighting calculations during rendering. It allows for read-only access to the 
+		 * normals, ensuring they are not inadvertently modified.
+		 * 
+		 * @return const std::vector<spk::Vector3>& Constant reference to the vector of normals.
+		 */
 		const std::vector<spk::Vector3>& normals() const;
-		
+
+		/**
+		 * @brief Provides access to the immutable vertices in the mesh.
+		 *
+		 * This method returns a constant reference to the vector of vertices. Each vertex in 
+		 * the vector contains position, UV, and normal data. This method is typically used for 
+		 * read-only operations such as rendering.
+		 * 
+		 * @return const std::vector<Vertex>& Constant reference to the vector of vertices.
+		 */
 		const std::vector<Vertex>& vertices() const;
+
+		/**
+		 * @brief Provides access to the immutable indices in the mesh.
+		 *
+		 * This method returns a constant reference to the vector of indices. These indices 
+		 * define the order in which vertices are connected to form the faces of the mesh. 
+		 * This method is primarily used in rendering to draw the mesh correctly.
+		 * 
+		 * @return const std::vector<unsigned int>& Constant reference to the vector of indices.
+		 */
 		const std::vector<unsigned int> indexes() const;
-/**
+
+		/**
          * @brief Adds a vertex to the mesh.
          * 
          * @param p_pointIndex Index of the point in the mesh.
