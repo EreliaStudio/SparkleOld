@@ -318,6 +318,9 @@ namespace spk
 		class Uniform
 		{
 		public:
+			/**
+			 * @brief Using to redirect the ShaderLayout UniformBlockLayout Key structure.
+			*/
 			using Key = ShaderLayout::UniformBlockLayout::Key;
 
 		protected:
@@ -331,6 +334,10 @@ namespace spk
 			 * @brief Abstract method to push the uniform data to the shader.
 			 */
 			virtual void _pushData() = 0;
+
+			/**
+			 * @brief Abstract method to bind the uniform data to the shader.
+			 */
 			virtual void _bindUniform() = 0;
 
 		public:
@@ -386,7 +393,14 @@ namespace spk
 				return (*this);
 			}
 
+			/**
+			 * @brief Update the content of the uniform, by pushing it to GPU
+			*/
 			void update();
+
+			/**
+			 * @brief Bind the uniform to be used later on by any shader.
+			*/
 			void bind();
 		};
 
@@ -458,6 +472,12 @@ namespace spk
 					std::memcpy(static_cast<uint8_t*>(_data) + _offset, &p_data, _size);
 				}
 
+				/**
+				 * @brief Set the content of the Field to the desired value
+				 *
+				 * @param p_data Data to be pushed.
+				 * @return Reference to this Field object.
+				*/
 				template <typename TType>
 				Field& operator = (const TType& p_data)
 				{
@@ -607,6 +627,10 @@ namespace spk
 		 */
 		static std::shared_ptr<Uniform> uniform(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
 
+		/**
+		 * @brief Check if the desired uniform exist in any pipeline previsouly created, by shearching for a specific key composed of a set and a binding
+		 * @return Return true if the key exist, false otherwise.
+		*/
 		static bool contain(const ShaderLayout::UniformBlockLayout::Key& p_uniformKey);
 
 		/**
