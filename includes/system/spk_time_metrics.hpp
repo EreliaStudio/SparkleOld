@@ -52,6 +52,11 @@ namespace spk
 		TimeMetrics();
 
 	public:
+		/**
+		 * @brief Static method to get the current system time
+		 * 
+		 * @return The time as epoch value
+		*/
 		static long long currentTime();
 
 		/**
