@@ -60,6 +60,9 @@ namespace spk
 		 */
 		long long _endTime;
 
+		/**
+		 * @brief Update the current status of the timer.
+		*/
 		void _updateStatus() const;
 
 	public:
@@ -73,6 +76,11 @@ namespace spk
 		 */
 		Timer(const long long& p_duration = 0);
 
+		/**
+		 * @brief return the current fixed duration of the timer.
+		 * 
+		 * @return Reference to the duration of the Timer
+		*/
 		const long long& duration() const;
 
 		/**
