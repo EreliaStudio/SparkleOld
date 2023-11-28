@@ -39,6 +39,16 @@ namespace spk
             Manhattan   ///< Outline with a Manhattan distance effect.
         };
 
+        /**
+         * @brief Overloads the << operator for outputting the name of the OutlineType enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the OutlineType enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_outlineType The OutlineType enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
         friend std::wostream& operator << (std::wostream& p_os, const OutlineType& p_outlineType)
         {
             switch (p_outlineType)
@@ -73,6 +83,16 @@ namespace spk
             Down    ///< Align text to the bottom.
         };
 
+        /**
+         * @brief Overloads the << operator for outputting the name of the VerticalAlignment enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the VerticalAlignment enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_verticalAlignment The VerticalAlignment enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
         friend std::wostream& operator << (std::wostream& p_os, const VerticalAlignment& p_verticalAlignment)
         {
             switch (p_verticalAlignment)
@@ -104,6 +124,16 @@ namespace spk
             Right   ///< Align text to the right.
         };
 
+        /**
+         * @brief Overloads the << operator for outputting the name of the HorizontalAlignment enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the HorizontalAlignment enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like wcout).
+         * @param p_horizontalAlignment The HorizontalAlignment enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
         friend std::wostream& operator << (std::wostream& p_os, const HorizontalAlignment& p_horizontalAlignment)
         {
             switch (p_horizontalAlignment)
