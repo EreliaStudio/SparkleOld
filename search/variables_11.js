@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['update_5fips_5fcounter_1659',['UPDATE_IPS_COUNTER',['../classspk_1_1Profiler.html#aff4f46bb299ee6b67ab77c19f7f7e07f',1,'spk::Profiler']]],
-  ['uv_1660',['uv',['../structspk_1_1Mesh_1_1Face_1_1Point.html#a259338e92767f8ce405b4d0e7013ada4',1,'spk::Mesh::Face::Point']]],
-  ['uvs_1661',['uvs',['../structspk_1_1Font_1_1Atlas_1_1GlyphData.html#a4971b265dd441116409f8c8ce55cf4da',1,'spk::Font::Atlas::GlyphData']]]
+  ['ups_5fcounter_5fname_1869',['UPS_COUNTER_NAME',['../classspk_1_1Profiler.html#a04e2bfd57d492d69ca2c75e7a569bb08',1,'spk::Profiler']]],
+  ['uv_1870',['uv',['../structspk_1_1Mesh_1_1Vertex.html#a6a121f97556a74672d65d18a20a3cd25',1,'spk::Mesh::Vertex']]],
+  ['uvs_1871',['uvs',['../structspk_1_1Font_1_1Atlas_1_1GlyphData.html#a4971b265dd441116409f8c8ce55cf4da',1,'spk::Font::Atlas::GlyphData']]]
 ];

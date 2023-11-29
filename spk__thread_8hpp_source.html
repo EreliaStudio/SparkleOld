@@ -78,70 +78,82 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;iostream/spk_iostream.hpp&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Thread.html">Thread</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">   31</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            Delayed,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            Immediate</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::function&lt;void()&gt; _funct;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::thread _thread;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::promise&lt;void&gt; _starterSignal;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#a7addb5ad82fee3d906e0a49cb3572f69">   56</a></span>&#160;        <a class="code" href="classspk_1_1Thread.html#a7addb5ad82fee3d906e0a49cb3572f69">Thread</a>(<span class="keyword">const</span> std::wstring&amp; p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args) :</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            _funct(std::bind(std::forward&lt;Funct&gt;(p_func), std::forward&lt;Args&gt;(p_args)...)),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            _starterSignal()</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">auto</span> wrapper = [&amp;](<span class="keyword">const</span> std::wstring&amp; threadName)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                _starterSignal.get_future().wait();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                _funct();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            };</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            _thread = std::thread(wrapper, p_threadName);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#afdc8fce9be9a5bc00dfdd9c7d149f588">   84</a></span>&#160;        <a class="code" href="classspk_1_1Thread.html#afdc8fce9be9a5bc00dfdd9c7d149f588">Thread</a>(<a class="code" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a> p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args) :</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classspk_1_1Thread.html">Thread</a>(p_threadName, p_func, p_args...)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (p_launchMethod == LaunchMethod::Immediate)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">start</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">~Thread</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">  108</a></span>&#160;        std::thread::id <a class="code" href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">getId</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> (_thread.get_id());</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">join</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">start</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;debug/spk_profiler.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Thread.html">Thread</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">   32</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            Delayed,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Immediate</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">bool</span> _isActive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::function&lt;void()&gt; _funct;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::thread _thread;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::promise&lt;void&gt; _starterSignal;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#abfd5a3f1c4be23d74dba1b2354d3c587">   58</a></span>&#160;        <a class="code" href="classspk_1_1Thread.html#abfd5a3f1c4be23d74dba1b2354d3c587">Thread</a>(<span class="keyword">const</span> std::wstring&amp; p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args) :</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            _funct(std::bind(std::forward&lt;Funct&gt;(p_funct), std::forward&lt;Args&gt;(p_args)...)),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            _starterSignal()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">auto</span> wrapper = [&amp;](<span class="keyword">const</span> std::wstring&amp; threadName)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a>.<a class="code" href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">setPrefix</a>(threadName);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Profiler::instance</a>()-&gt;defineThreadName(threadName);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                _starterSignal.get_future().wait();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                _isActive = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                _funct();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                _isActive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            _thread = std::thread(wrapper, p_threadName);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Funct, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#ae6f09206570e59666ab1b5566477a528">   89</a></span>&#160;        <a class="code" href="classspk_1_1Thread.html#ae6f09206570e59666ab1b5566477a528">Thread</a>(<a class="code" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a> p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args) :</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classspk_1_1Thread.html">Thread</a>(p_threadName, std::forward&lt;Funct&gt;(p_funct), std::forward&lt;Args&gt;(p_args)...)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (p_launchMethod == LaunchMethod::Immediate)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">start</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">~Thread</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#aede7a5cc4efa7867e66027a102580bff">  110</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Thread.html#aede7a5cc4efa7867e66027a102580bff">isActive</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span> (_isActive);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">  122</a></span>&#160;        std::thread::id <a class="code" href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">getId</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> (_thread.get_id());</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">join</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">start</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    };</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1IOStream_html_a07173d0c87a90b1d40c5ce9bdf4bcc62"><div class="ttname"><a href="classspk_1_1IOStream.html#a07173d0c87a90b1d40c5ce9bdf4bcc62">spk::IOStream::setPrefix</a></div><div class="ttdeci">void setPrefix(const std::wstring &amp;p_prefix)</div><div class="ttdoc">Sets the prefix of the buffer.</div><div class="ttdef"><b>Definition:</b> spk_iostream.hpp:150</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html"><div class="ttname"><a href="classspk_1_1Thread.html">spk::Thread</a></div><div class="ttdoc">Class for creating and managing a thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:21</div></div>
+<div class="ttc" id="aclassspk_1_1Singleton_html_a5f56bedfe0791cc1cc09d34bb3be382c"><div class="ttname"><a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt; Profiler &gt;::instance</a></div><div class="ttdeci">static constexpr std::shared_ptr&lt; Profiler &gt; instance()</div><div class="ttdoc">Get the singleton instance. This function returns the shared pointer to the singleton instance.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:56</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html"><div class="ttname"><a href="classspk_1_1Thread.html">spk::Thread</a></div><div class="ttdoc">Class for creating and managing a thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:22</div></div>
 <div class="ttc" id="aclassspk_1_1Thread_html_a3c9242c1ea81ec3de8b78445e1d2a421"><div class="ttname"><a href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">spk::Thread::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.cpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1Thread_html_a4eed5d9b453feae180a98f80a2f117ad"><div class="ttname"><a href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">spk::Thread::join</a></div><div class="ttdeci">void join()</div><div class="ttdoc">Join the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.cpp:10</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html_a7addb5ad82fee3d906e0a49cb3572f69"><div class="ttname"><a href="classspk_1_1Thread.html#a7addb5ad82fee3d906e0a49cb3572f69">spk::Thread::Thread</a></div><div class="ttdeci">Thread(const std::wstring &amp;p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</div><div class="ttdoc">Construct a new Thread object with a specified thread name and function.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:56</div></div>
 <div class="ttc" id="aclassspk_1_1Thread_html_a97d08ba39aee6ee49292fd53f08bcb07"><div class="ttname"><a href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">spk::Thread::~Thread</a></div><div class="ttdeci">~Thread()</div><div class="ttdoc">Destroy the Thread object.</div><div class="ttdef"><b>Definition:</b> spk_thread.cpp:5</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html_ab5037a0703104b786425a31b78bacfd0"><div class="ttname"><a href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">spk::Thread::getId</a></div><div class="ttdeci">std::thread::id getId() const</div><div class="ttdoc">Get the ID of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:108</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html_acc625f78afb482c29338759d4b959af6"><div class="ttname"><a href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">spk::Thread::LaunchMethod</a></div><div class="ttdeci">LaunchMethod</div><div class="ttdoc">An enum class to represent the launch method of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:32</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html_afdc8fce9be9a5bc00dfdd9c7d149f588"><div class="ttname"><a href="classspk_1_1Thread.html#afdc8fce9be9a5bc00dfdd9c7d149f588">spk::Thread::Thread</a></div><div class="ttdeci">Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_func, Args &amp;&amp;...p_args)</div><div class="ttdoc">Construct a new Thread object with a specified launch method, thread name, and function.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:84</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html_ab5037a0703104b786425a31b78bacfd0"><div class="ttname"><a href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">spk::Thread::getId</a></div><div class="ttdeci">std::thread::id getId() const</div><div class="ttdoc">Get the ID of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:122</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html_abfd5a3f1c4be23d74dba1b2354d3c587"><div class="ttname"><a href="classspk_1_1Thread.html#abfd5a3f1c4be23d74dba1b2354d3c587">spk::Thread::Thread</a></div><div class="ttdeci">Thread(const std::wstring &amp;p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args)</div><div class="ttdoc">Construct a new Thread object with a specified thread name and function.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:58</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html_acc625f78afb482c29338759d4b959af6"><div class="ttname"><a href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">spk::Thread::LaunchMethod</a></div><div class="ttdeci">LaunchMethod</div><div class="ttdoc">An enum class to represent the launch method of the thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:33</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html_ae6f09206570e59666ab1b5566477a528"><div class="ttname"><a href="classspk_1_1Thread.html#ae6f09206570e59666ab1b5566477a528">spk::Thread::Thread</a></div><div class="ttdeci">Thread(LaunchMethod p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args)</div><div class="ttdoc">Construct a new Thread object with a specified launch method, thread name, and function.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:89</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html_aede7a5cc4efa7867e66027a102580bff"><div class="ttname"><a href="classspk_1_1Thread.html#aede7a5cc4efa7867e66027a102580bff">spk::Thread::isActive</a></div><div class="ttdeci">bool isActive() const</div><div class="ttdoc">Return if the thread is currently working.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:110</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="anamespacespk_html_a2ac7fd07dd4ad46d0ecd4a814bed814d"><div class="ttname"><a href="namespacespk.html#a2ac7fd07dd4ad46d0ecd4a814bed814d">spk::cerr</a></div><div class="ttdeci">thread_local spk::IOStream cerr</div><div class="ttdoc">Thread-local instances of IOStream for error output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:6</div></div>
 <div class="ttc" id="anamespacespk_html_a7a6a5cbca57b40e3f41c1c143eb09680"><div class="ttname"><a href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">spk::cout</a></div><div class="ttdeci">thread_local spk::IOStream cout</div><div class="ttdoc">Thread-local instances of IOStream for standard output.</div><div class="ttdef"><b>Definition:</b> spk_iostream.cpp:5</div></div>

@@ -1,0 +1,4 @@
+<map id="spk::Camera" name="spk::Camera">
+<area shape="rect" id="node1" title="Represents a camera in the Sparkle engine." alt="" coords="17,80,121,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
+</map>

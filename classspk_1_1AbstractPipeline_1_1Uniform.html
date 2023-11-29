@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
@@ -102,6 +103,13 @@ Collaboration diagram for spk::AbstractPipeline::Uniform:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a1d551824a1a9fc50013ba2cb208b3951"><td class="memItemLeft" align="right" valign="top"><a id="a1d551824a1a9fc50013ba2cb208b3951"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a1d551824a1a9fc50013ba2cb208b3951">Key</a> = <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a></td></tr>
+<tr class="memdesc:a1d551824a1a9fc50013ba2cb208b3951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using to redirect the <a class="el" href="classspk_1_1ShaderLayout.html" title="Handles the layout of a Shader, including its different modules and layouts for various buffer types.">ShaderLayout</a> UniformBlockLayout Key structure. <br /></td></tr>
+<tr class="separator:a1d551824a1a9fc50013ba2cb208b3951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afc2877788484a3d0458718159d189db6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#afc2877788484a3d0458718159d189db6">Uniform</a> (const <a class="el" href="classspk_1_1ShaderLayout_1_1UniformBlockLayout.html">ShaderLayout::UniformBlockLayout</a> &amp;p_uniformBlockLayout)</td></tr>
@@ -113,17 +121,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc338f319ef6a42ffdc6e13251cca1dd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#adc338f319ef6a42ffdc6e13251cca1dd">size</a> () const</td></tr>
 <tr class="memdesc:adc338f319ef6a42ffdc6e13251cca1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the size of the uniform data.  <a href="classspk_1_1AbstractPipeline_1_1Uniform.html#adc338f319ef6a42ffdc6e13251cca1dd">More...</a><br /></td></tr>
 <tr class="separator:adc338f319ef6a42ffdc6e13251cca1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2f622f6bb713e7934c9643b3e5c0877"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
-<tr class="memitem:ae2f622f6bb713e7934c9643b3e5c0877"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#ae2f622f6bb713e7934c9643b3e5c0877">operator&lt;&lt;</a> (const TType &amp;p_data)</td></tr>
-<tr class="memdesc:ae2f622f6bb713e7934c9643b3e5c0877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded &lt;&lt; operator to push data into the uniform buffer.  <a href="classspk_1_1AbstractPipeline_1_1Uniform.html#ae2f622f6bb713e7934c9643b3e5c0877">More...</a><br /></td></tr>
-<tr class="separator:ae2f622f6bb713e7934c9643b3e5c0877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed48e26c30c75338582af0d4911ffc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#aeed48e26c30c75338582af0d4911ffc1">operator&lt;&lt;</a> (std::wostream &amp;(*func)(std::wostream &amp;))</td></tr>
-<tr class="memdesc:aeed48e26c30c75338582af0d4911ffc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded &lt;&lt; operator to indicate the emition of the data.  <a href="classspk_1_1AbstractPipeline_1_1Uniform.html#aeed48e26c30c75338582af0d4911ffc1">More...</a><br /></td></tr>
-<tr class="separator:aeed48e26c30c75338582af0d4911ffc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6572716339b5c36c422ec348d41233"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
+<tr class="memitem:a2b6572716339b5c36c422ec348d41233"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a2b6572716339b5c36c422ec348d41233">set</a> (const TType &amp;p_data)</td></tr>
+<tr class="memdesc:a2b6572716339b5c36c422ec348d41233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded &lt;&lt; operator to push data into the uniform buffer.  <a href="classspk_1_1AbstractPipeline_1_1Uniform.html#a2b6572716339b5c36c422ec348d41233">More...</a><br /></td></tr>
+<tr class="separator:a2b6572716339b5c36c422ec348d41233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64197e226019ed013f7755cb3cd3edba"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
 <tr class="memitem:a64197e226019ed013f7755cb3cd3edba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a64197e226019ed013f7755cb3cd3edba">operator=</a> (const TType &amp;p_data)</td></tr>
 <tr class="memdesc:a64197e226019ed013f7755cb3cd3edba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded = operator to push data into the uniform buffer and emit the data.  <a href="classspk_1_1AbstractPipeline_1_1Uniform.html#a64197e226019ed013f7755cb3cd3edba">More...</a><br /></td></tr>
 <tr class="separator:a64197e226019ed013f7755cb3cd3edba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8c0f4cf91108ae7a24997dbdf566f8"><td class="memItemLeft" align="right" valign="top"><a id="a9d8c0f4cf91108ae7a24997dbdf566f8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a9d8c0f4cf91108ae7a24997dbdf566f8">update</a> ()</td></tr>
+<tr class="memdesc:a9d8c0f4cf91108ae7a24997dbdf566f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the content of the uniform, by pushing it to GPU. <br /></td></tr>
+<tr class="separator:a9d8c0f4cf91108ae7a24997dbdf566f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac209e614fef6af361feed63e0db68763"><td class="memItemLeft" align="right" valign="top"><a id="ac209e614fef6af361feed63e0db68763"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#ac209e614fef6af361feed63e0db68763">bind</a> ()</td></tr>
+<tr class="memdesc:ac209e614fef6af361feed63e0db68763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind the uniform to be used later on by any shader. <br /></td></tr>
+<tr class="separator:ac209e614fef6af361feed63e0db68763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -131,6 +144,10 @@ Protected Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a2dbcdf960b40e407c81f02ed1304cb18">_pushData</a> ()=0</td></tr>
 <tr class="memdesc:a2dbcdf960b40e407c81f02ed1304cb18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to push the uniform data to the shader. <br /></td></tr>
 <tr class="separator:a2dbcdf960b40e407c81f02ed1304cb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f342695c911ac6e01ea45ed5b21350e"><td class="memItemLeft" align="right" valign="top"><a id="a8f342695c911ac6e01ea45ed5b21350e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html#a8f342695c911ac6e01ea45ed5b21350e">_bindUniform</a> ()=0</td></tr>
+<tr class="memdesc:a8f342695c911ac6e01ea45ed5b21350e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to bind the uniform data to the shader. <br /></td></tr>
+<tr class="separator:a8f342695c911ac6e01ea45ed5b21350e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -195,70 +212,6 @@ std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="ae2f622f6bb713e7934c9643b3e5c0877"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2f622f6bb713e7934c9643b3e5c0877">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a>&amp; spk::AbstractPipeline::Uniform::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const TType &amp;&#160;</td>
-          <td class="paramname"><em>p_data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Overloaded &lt;&lt; operator to push data into the uniform buffer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_data</td><td>The data to push into the buffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
-
-</div>
-</div>
-<a id="aeed48e26c30c75338582af0d4911ffc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeed48e26c30c75338582af0d4911ffc1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">AbstractPipeline::Uniform</a> &amp; spk::AbstractPipeline::Uniform::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::wostream &amp;(*)(std::wostream &amp;)&#160;</td>
-          <td class="paramname"><em>func</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Overloaded &lt;&lt; operator to indicate the emition of the data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">func</td><td>wostream manipulator function. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
-
-</div>
-</div>
 <a id="a64197e226019ed013f7755cb3cd3edba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64197e226019ed013f7755cb3cd3edba">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -286,6 +239,43 @@ template&lt;typename TType &gt; </div>
 </div><div class="memdoc">
 
 <p>Overloaded = operator to push data into the uniform buffer and emit the data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_data</td><td>The data to push into the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a2b6572716339b5c36c422ec348d41233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b6572716339b5c36c422ec348d41233">&#9670;&nbsp;</a></span>set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::AbstractPipeline::Uniform::set </td>
+          <td>(</td>
+          <td class="paramtype">const TType &amp;&#160;</td>
+          <td class="paramname"><em>p_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloaded &lt;&lt; operator to push data into the uniform buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_data</td><td>The data to push into the buffer. </td></tr>

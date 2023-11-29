@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quit_522',['quit',['../classspk_1_1AbstractApplication.html#ac8f2a348cdbbf7eaf10e77953aa21204',1,'spk::AbstractApplication']]]
+  ['quit_589',['quit',['../classspk_1_1Application.html#ab0720479ac9cb029bad5f3c89f895047',1,'spk::Application']]]
 ];

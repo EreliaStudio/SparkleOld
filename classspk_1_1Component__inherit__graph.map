@@ -1,0 +1,7 @@
+<map id="spk::Component" name="spk::Component">
+<area shape="rect" id="node1" title="Represents a component that can be attached to a GameObject." alt="" coords="260,5,388,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Camera.html" title="Represents a camera in the Sparkle engine." alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" href="$classspk_1_1FirstPersonController.html" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="133,80,323,107"/>
+<area shape="rect" id="node4" href="$classspk_1_1MeshRenderer.html" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="347,80,493,107"/>
+<area shape="rect" id="node5" href="$classspk_1_1Transform.html" title="Represents the transformation component in the Sparkle engine." alt="" coords="518,80,637,107"/>
+</map>

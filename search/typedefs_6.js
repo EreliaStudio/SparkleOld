@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['parent_1679',['Parent',['../classspk_1_1InherenceObject.html#a77e8eb56b6e889a9e8a048bbed8f7c1b',1,'spk::InherenceObject']]],
-  ['permutationtable_1680',['PermutationTable',['../classspk_1_1IPerlin.html#a8a8795af4d4794840f59df17b3dbf9ea',1,'spk::IPerlin']]],
-  ['placepixelfunction_1681',['PlacePixelFunction',['../namespacespk.html#ab63d6b521e49d6b38ad1a1ad57e337a1',1,'spk']]]
+  ['key_1889',['Key',['../classspk_1_1AbstractPipeline_1_1Uniform.html#a1d551824a1a9fc50013ba2cb208b3951',1,'spk::AbstractPipeline::Uniform']]]
 ];

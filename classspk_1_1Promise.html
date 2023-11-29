@@ -108,9 +108,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0560e9b5ba7802bb42716220619d0d89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Promise.html">Promise</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Promise.html#a0560e9b5ba7802bb42716220619d0d89">operator=</a> (const <a class="el" href="classspk_1_1Promise.html">Promise</a> &amp;p_other)=delete</td></tr>
 <tr class="memdesc:a0560e9b5ba7802bb42716220619d0d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator is deleted.  <a href="classspk_1_1Promise.html#a0560e9b5ba7802bb42716220619d0d89">More...</a><br /></td></tr>
 <tr class="separator:a0560e9b5ba7802bb42716220619d0d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac55e4af8d86ac9d7b8fc0cfb8926f0f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Promise.html#ac55e4af8d86ac9d7b8fc0cfb8926f0f0">subscribe</a> (const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
-<tr class="memdesc:ac55e4af8d86ac9d7b8fc0cfb8926f0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to the promise and receive the value when available.  <a href="classspk_1_1Promise.html#ac55e4af8d86ac9d7b8fc0cfb8926f0f0">More...</a><br /></td></tr>
-<tr class="separator:ac55e4af8d86ac9d7b8fc0cfb8926f0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a020e463a9f64785be3d85b1112509b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Promise.html#a8a020e463a9f64785be3d85b1112509b">subscribe</a> (const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
+<tr class="memdesc:a8a020e463a9f64785be3d85b1112509b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to the promise and receive the value when available.  <a href="classspk_1_1Promise.html#a8a020e463a9f64785be3d85b1112509b">More...</a><br /></td></tr>
+<tr class="separator:a8a020e463a9f64785be3d85b1112509b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf9ad2cdc422c2a4c211ce921d50df36"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Promise.html#aaf9ad2cdc422c2a4c211ce921d50df36">realised</a> () const</td></tr>
 <tr class="memdesc:aaf9ad2cdc422c2a4c211ce921d50df36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the promise has been fulfilled.  <a href="classspk_1_1Promise.html#aaf9ad2cdc422c2a4c211ce921d50df36">More...</a><br /></td></tr>
 <tr class="separator:aaf9ad2cdc422c2a4c211ce921d50df36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,14 +128,14 @@ Additional Inherited Members</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> = std::function&lt; void()&gt;</td></tr>
 <tr class="memdesc:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of data representing a callback function. <br /></td></tr>
 <tr class="separator:a3ac086eee3bcd57992944a3d146eca1f inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a8ad7ce7f08974f54c4168b30fe3d7d21"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> = std::deque&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
-<tr class="memdesc:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
-<tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21 inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c6633f84001e137bdda9bbccc37181 inherit pub_types_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a id="a07c6633f84001e137bdda9bbccc37181"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
+<tr class="memdesc:a07c6633f84001e137bdda9bbccc37181 inherit pub_types_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
+<tr class="separator:a07c6633f84001e137bdda9bbccc37181 inherit pub_types_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classspk_1_1ContractProvider"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1ContractProvider')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></td></tr>
-<tr class="memitem:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
-<tr class="memdesc:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">More...</a><br /></td></tr>
-<tr class="separator:a20a4093dd5ca766f2cb8bdf9e0bf0c25 inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ddf44e21a705514f98922b7f6bce09d inherit pro_methods_classspk_1_1ContractProvider"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a7ddf44e21a705514f98922b7f6bce09d">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
+<tr class="memdesc:a7ddf44e21a705514f98922b7f6bce09d inherit pro_methods_classspk_1_1ContractProvider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#a7ddf44e21a705514f98922b7f6bce09d">More...</a><br /></td></tr>
+<tr class="separator:a7ddf44e21a705514f98922b7f6bce09d inherit pro_methods_classspk_1_1ContractProvider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TType&gt;<br />
@@ -311,8 +311,8 @@ template&lt;typename TType &gt; </div>
 
 </div>
 </div>
-<a id="ac55e4af8d86ac9d7b8fc0cfb8926f0f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac55e4af8d86ac9d7b8fc0cfb8926f0f0">&#9670;&nbsp;</a></span>subscribe()</h2>
+<a id="a8a020e463a9f64785be3d85b1112509b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a020e463a9f64785be3d85b1112509b">&#9670;&nbsp;</a></span>subscribe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +323,7 @@ template&lt;typename TType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a> <a class="el" href="classspk_1_1Promise.html">spk::Promise</a>&lt; TType &gt;::subscribe </td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&gt; <a class="el" href="classspk_1_1Promise.html">spk::Promise</a>&lt; TType &gt;::subscribe </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;&#160;</td>
           <td class="paramname"><em>p_callback</em></td><td>)</td>

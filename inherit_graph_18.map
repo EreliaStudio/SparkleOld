@@ -1,27 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,246,168,273"/>
-<area shape="rect" id="node2" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="235,129,383,171"/>
-<area shape="rect" id="node14" href="$classspk_1_1Value.html" title=" " alt="" coords="246,246,373,273"/>
-<area shape="rect" id="node15" href="$classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="219,13,399,39"/>
-<area shape="rect" id="node17" href="$classspk_1_1Observer.html" title="Observer class template." alt="" coords="216,297,403,323"/>
-<area shape="rect" id="node18" href="$classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="228,465,391,491"/>
-<area shape="rect" id="node19" href="$classspk_1_1Promise.html" title="Class for providing a promise with a value." alt="" coords="222,347,397,374"/>
-<area shape="rect" id="node20" href="$classspk_1_1StateMachine.html" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="233,399,386,440"/>
-<area shape="rect" id="node21" href="$classspk_1_1StatedObject.html" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="235,64,383,105"/>
-<area shape="rect" id="node22" href="$classspk_1_1Value.html" title="A class template for managing a value with default and custom states." alt="" coords="231,195,388,222"/>
-<area shape="rect" id="node3" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="452,137,608,163"/>
-<area shape="rect" id="node4" href="$classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="657,166,823,193"/>
-<area shape="rect" id="node5" href="$classspk_1_1Widget_1_1Canvas.html" title="Represents a canvas that holds and manages widgets." alt="" coords="891,115,1045,142"/>
-<area shape="rect" id="node6" href="$classspk_1_1Widget_1_1NoGraphics.html" title="Class for widgets without graphics." alt="" coords="877,166,1059,193"/>
-<area shape="rect" id="node13" href="$classspk_1_1Widget_1_1OnlyGraphics.html" title="Class for widgets with only graphics." alt="" coords="871,217,1065,243"/>
-<area shape="rect" id="node7" href="$classspk_1_1Widget_1_1ActivitySchedulerManager.html" title="Class for managing scheduling of activities." alt="" coords="1127,9,1349,51"/>
-<area shape="rect" id="node8" href="$classspk_1_1Widget_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::Network::CentralNode." alt="" coords="1144,75,1332,116"/>
-<area shape="rect" id="node9" href="$classspk_1_1Widget_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphics." alt="" coords="1137,141,1339,167"/>
-<area shape="rect" id="node10" href="$classspk_1_1Widget_1_1InputGroupManager.html" title="Manager class for grouping inputs." alt="" coords="1120,191,1356,218"/>
-<area shape="rect" id="node11" href="$classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1113,242,1363,269"/>
-<area shape="rect" id="node12" href="$classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1135,293,1341,319"/>
-<area shape="rect" id="node16" href="$classspk_1_1Application.html" title="Main class for managing application." alt="" coords="467,13,593,39"/>
-<area shape="rect" id="node23" title=" " alt="" coords="14,5,159,47"/>
-<area shape="rect" id="node24" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="451,188,609,229"/>
-<area shape="rect" id="node25" href="$classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="37,465,136,491"/>
+<area shape="rect" id="node1" href="$classspk_1_1ContextManager_1_1ReadOnlyAccessor.html" title="This class provides static methods to access and swap the context object for read operations." alt="" coords="5,5,216,61"/>
 </map>

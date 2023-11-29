@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
@@ -132,12 +133,21 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#a5a6ff41a8bc7f05e994b8efe492e914d">deactivate</a> ()=0</td></tr>
 <tr class="memdesc:a5a6ff41a8bc7f05e994b8efe492e914d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to deactivate the pipeline. <br /></td></tr>
 <tr class="separator:a5a6ff41a8bc7f05e994b8efe492e914d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb3b6e42136edaa85b12b0f91a4951b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#aadb3b6e42136edaa85b12b0f91a4951b">uniform</a> (const std::wstring &amp;p_uniformName)</td></tr>
-<tr class="memdesc:aadb3b6e42136edaa85b12b0f91a4951b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a reference to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object.  <a href="classspk_1_1AbstractPipeline.html#aadb3b6e42136edaa85b12b0f91a4951b">More...</a><br /></td></tr>
-<tr class="separator:aadb3b6e42136edaa85b12b0f91a4951b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6e9aab046a845498d7c874538856e4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#a3e6e9aab046a845498d7c874538856e4">uniform</a> (const std::wstring &amp;p_uniformName)</td></tr>
+<tr class="memdesc:a3e6e9aab046a845498d7c874538856e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a shared pointer to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object.  <a href="classspk_1_1AbstractPipeline.html#a3e6e9aab046a845498d7c874538856e4">More...</a><br /></td></tr>
+<tr class="separator:a3e6e9aab046a845498d7c874538856e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf2986341a0b78f5211a498e1be675c1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1Object.html">Object</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#abf2986341a0b78f5211a498e1be675c1">createObject</a> ()</td></tr>
 <tr class="memdesc:abf2986341a0b78f5211a498e1be675c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classspk_1_1AbstractPipeline_1_1Object.html" title="A class representing a graphical object in a rendering pipeline.">Object</a>.  <a href="classspk_1_1AbstractPipeline.html#abf2986341a0b78f5211a498e1be675c1">More...</a><br /></td></tr>
 <tr class="separator:abf2986341a0b78f5211a498e1be675c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9ffa746af1db862d98a792c95189ef15"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#a9ffa746af1db862d98a792c95189ef15">uniform</a> (const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;p_uniformKey)</td></tr>
+<tr class="memdesc:a9ffa746af1db862d98a792c95189ef15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a shared pointer to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object.  <a href="classspk_1_1AbstractPipeline.html#a9ffa746af1db862d98a792c95189ef15">More...</a><br /></td></tr>
+<tr class="separator:a9ffa746af1db862d98a792c95189ef15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662d1987a8e5c8bf454a99ca343510fe"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1AbstractPipeline.html#a662d1987a8e5c8bf454a99ca343510fe">contain</a> (const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;p_uniformKey)</td></tr>
+<tr class="memdesc:a662d1987a8e5c8bf454a99ca343510fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the desired uniform exist in any pipeline previsouly created, by shearching for a specific key composed of a set and a binding.  <a href="classspk_1_1AbstractPipeline.html#a662d1987a8e5c8bf454a99ca343510fe">More...</a><br /></td></tr>
+<tr class="separator:a662d1987a8e5c8bf454a99ca343510fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -406,6 +416,35 @@ static std::map&lt; <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBloc
 
 </div>
 </div>
+<a id="a662d1987a8e5c8bf454a99ca343510fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662d1987a8e5c8bf454a99ca343510fe">&#9670;&nbsp;</a></span>contain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool spk::AbstractPipeline::contain </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_uniformKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the desired uniform exist in any pipeline previsouly created, by shearching for a specific key composed of a set and a binding. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return true if the key exist, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="abf2986341a0b78f5211a498e1be675c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf2986341a0b78f5211a498e1be675c1">&#9670;&nbsp;</a></span>createObject()</h2>
 
@@ -462,14 +501,49 @@ static std::map&lt; <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBloc
 
 </div>
 </div>
-<a id="aadb3b6e42136edaa85b12b0f91a4951b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadb3b6e42136edaa85b12b0f91a4951b">&#9670;&nbsp;</a></span>uniform()</h2>
+<a id="a9ffa746af1db862d98a792c95189ef15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ffa746af1db862d98a792c95189ef15">&#9670;&nbsp;</a></span>uniform() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">AbstractPipeline::Uniform</a> &gt; spk::AbstractPipeline::uniform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBlockLayout_1_1Key.html">ShaderLayout::UniformBlockLayout::Key</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_uniformKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve a shared pointer to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_uniformKey</td><td>The key of the uniform. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the corresponding <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a3e6e9aab046a845498d7c874538856e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6e9aab046a845498d7c874538856e4">&#9670;&nbsp;</a></span>uniform() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">AbstractPipeline::Uniform</a> &amp; spk::AbstractPipeline::uniform </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html">AbstractPipeline::Uniform</a> &gt; spk::AbstractPipeline::uniform </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
           <td class="paramname"><em>p_uniformName</em></td><td>)</td>
@@ -478,14 +552,14 @@ static std::map&lt; <a class="el" href="structspk_1_1ShaderLayout_1_1UniformBloc
       </table>
 </div><div class="memdoc">
 
-<p>Retrieve a reference to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </p>
+<p>Retrieve a shared pointer to a <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_uniformName</td><td>The name of the uniform. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Reference to the corresponding <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the corresponding <a class="el" href="classspk_1_1AbstractPipeline_1_1Uniform.html" title="A class to manage uniform blocks within a shader layout.">Uniform</a> object. </dd></dl>
 
 </div>
 </div>

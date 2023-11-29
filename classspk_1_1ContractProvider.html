@@ -85,18 +85,21 @@ Inheritance diagram for spk::ContractProvider:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1ContractProvider__inherit__graph.png" border="0" usemap="#aspk_1_1ContractProvider_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1ContractProvider_inherit__map" id="aspk_1_1ContractProvider_inherit__map">
-<area shape="rect" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,373,168,399"/>
-<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="235,155,383,196"/>
-<area shape="rect" href="classspk_1_1Value.html" title=" " alt="" coords="246,221,373,247"/>
-<area shape="rect" href="classspk_1_1AbstractApplication.html" title="Abstract base class for the application." alt="" coords="219,271,399,298"/>
-<area shape="rect" href="classspk_1_1Observer.html" title="Observer class template." alt="" coords="216,322,403,349"/>
-<area shape="rect" href="classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="228,373,391,399"/>
-<area shape="rect" href="classspk_1_1Promise.html" title="Class for providing a promise with a value." alt="" coords="222,423,397,450"/>
-<area shape="rect" href="classspk_1_1StateMachine.html" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="233,475,386,516"/>
-<area shape="rect" href="classspk_1_1StatedObject.html" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="235,540,383,581"/>
-<area shape="rect" href="classspk_1_1Value.html" title="A class template for managing a value with default and custom states." alt="" coords="231,606,388,633"/>
-<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="451,162,607,189"/>
-<area shape="rect" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="655,162,820,189"/>
+<area shape="rect" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,313,168,339"/>
+<area shape="rect" href="classspk_1_1ObservableValue.html" title=" " alt="" coords="228,39,391,80"/>
+<area shape="rect" href="classspk_1_1StatedObject.html" title=" " alt="" coords="235,104,383,145"/>
+<area shape="rect" href="classspk_1_1Value.html" title=" " alt="" coords="246,170,373,197"/>
+<area shape="rect" href="classspk_1_1ObservableValue.html" title="A template class for creating observable values." alt="" coords="228,221,391,263"/>
+<area shape="rect" href="classspk_1_1Observer.html" title="Observer class template." alt="" coords="216,287,403,314"/>
+<area shape="rect" href="classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="228,338,391,365"/>
+<area shape="rect" href="classspk_1_1Promise.html" title="Class for providing a promise with a value." alt="" coords="222,389,397,415"/>
+<area shape="rect" href="classspk_1_1StateMachine.html" title="A StateMachine class that handles different state transitions. It allows setting callbacks for state ..." alt="" coords="233,440,386,481"/>
+<area shape="rect" href="classspk_1_1StatedObject.html" title="A class who manage state switching. This class representing an object who can be in different state...." alt="" coords="235,505,383,547"/>
+<area shape="rect" href="classspk_1_1Value.html" title="A class template for managing a value with default and custom states." alt="" coords="231,571,388,598"/>
+<area shape="rect" href="classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="451,111,607,138"/>
+<area shape="rect" href="classspk_1_1GameObject.html" title="Represents a game object in the Sparkle engine." alt="" coords="670,86,805,113"/>
+<area shape="rect" href="classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="655,137,820,163"/>
+<area shape="rect" href="classspk_1_1GameEngineManager.html" title="Manages and integrates the GameEngine with the user interface." alt="" coords="869,61,1062,87"/>
 <area shape="rect" href="classspk_1_1Widget_1_1Canvas.html" title="Represents a canvas that holds and manages widgets." alt="" coords="888,111,1043,138"/>
 <area shape="rect" href="classspk_1_1Widget_1_1NoGraphics.html" title="Class for widgets without graphics." alt="" coords="874,162,1057,189"/>
 <area shape="rect" href="classspk_1_1Widget_1_1OnlyGraphics.html" title="Class for widgets with only graphics." alt="" coords="868,213,1063,239"/>
@@ -106,7 +109,6 @@ Inheritance diagram for spk::ContractProvider:</div>
 <area shape="rect" href="classspk_1_1Widget_1_1InputGroupManager.html" title="Manager class for grouping inputs." alt="" coords="1117,187,1353,214"/>
 <area shape="rect" href="classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1111,238,1360,265"/>
 <area shape="rect" href="classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1132,289,1339,315"/>
-<area shape="rect" href="classspk_1_1Application.html" title="Main class for managing application." alt="" coords="465,271,592,298"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -122,22 +124,22 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> = std::function&lt; void()&gt;</td></tr>
 <tr class="memdesc:a3ac086eee3bcd57992944a3d146eca1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of data representing a callback function. <br /></td></tr>
 <tr class="separator:a3ac086eee3bcd57992944a3d146eca1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad7ce7f08974f54c4168b30fe3d7d21"><td class="memItemLeft" align="right" valign="top"><a id="a8ad7ce7f08974f54c4168b30fe3d7d21"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> = std::deque&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
-<tr class="memdesc:a8ad7ce7f08974f54c4168b30fe3d7d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
-<tr class="separator:a8ad7ce7f08974f54c4168b30fe3d7d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c6633f84001e137bdda9bbccc37181"><td class="memItemLeft" align="right" valign="top"><a id="a07c6633f84001e137bdda9bbccc37181"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &gt;</td></tr>
+<tr class="memdesc:a07c6633f84001e137bdda9bbccc37181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of container for storing callback functions. <br /></td></tr>
+<tr class="separator:a07c6633f84001e137bdda9bbccc37181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a20a4093dd5ca766f2cb8bdf9e0bf0c25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
-<tr class="memdesc:a20a4093dd5ca766f2cb8bdf9e0bf0c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#a20a4093dd5ca766f2cb8bdf9e0bf0c25">More...</a><br /></td></tr>
-<tr class="separator:a20a4093dd5ca766f2cb8bdf9e0bf0c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ddf44e21a705514f98922b7f6bce09d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">Contract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ContractProvider.html#a7ddf44e21a705514f98922b7f6bce09d">subscribe</a> (<a class="el" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> &amp;p_callbackOwner, const <a class="el" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">Callback</a> &amp;p_callback)</td></tr>
+<tr class="memdesc:a7ddf44e21a705514f98922b7f6bce09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the callback inside the container and create a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> representing it.  <a href="classspk_1_1ContractProvider.html#a7ddf44e21a705514f98922b7f6bce09d">More...</a><br /></td></tr>
+<tr class="separator:a7ddf44e21a705514f98922b7f6bce09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Construct a <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it.">Contract</a> with a callback function and a callbackContainer. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a20a4093dd5ca766f2cb8bdf9e0bf0c25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20a4093dd5ca766f2cb8bdf9e0bf0c25">&#9670;&nbsp;</a></span>subscribe()</h2>
+<a id="a7ddf44e21a705514f98922b7f6bce09d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ddf44e21a705514f98922b7f6bce09d">&#9670;&nbsp;</a></span>subscribe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,9 +148,9 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">ContractProvider::Contract</a> spk::ContractProvider::subscribe </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">ContractProvider::Contract</a> &gt; spk::ContractProvider::subscribe </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classspk_1_1ContractProvider.html#a8ad7ce7f08974f54c4168b30fe3d7d21">CallbackContainer</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> &amp;&#160;</td>
           <td class="paramname"><em>p_callbackOwner</em>, </td>
         </tr>
         <tr>

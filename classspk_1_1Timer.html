@@ -94,12 +94,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e92f104c01d4a381c8dbc45ff161cd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Timer.html#a2e92f104c01d4a381c8dbc45ff161cd7">Timer</a> (const long long &amp;p_duration=0)</td></tr>
 <tr class="memdesc:a2e92f104c01d4a381c8dbc45ff161cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Timer.html" title="Class for creating and managing a timer.">Timer</a> object.  <a href="classspk_1_1Timer.html#a2e92f104c01d4a381c8dbc45ff161cd7">More...</a><br /></td></tr>
 <tr class="separator:a2e92f104c01d4a381c8dbc45ff161cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d4d146d5994fc04129da55e37e9e18"><td class="memItemLeft" align="right" valign="top">const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Timer.html#a39d4d146d5994fc04129da55e37e9e18">duration</a> () const</td></tr>
+<tr class="memdesc:a39d4d146d5994fc04129da55e37e9e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the current fixed duration of the timer.  <a href="classspk_1_1Timer.html#a39d4d146d5994fc04129da55e37e9e18">More...</a><br /></td></tr>
+<tr class="separator:a39d4d146d5994fc04129da55e37e9e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae49033702e6ef1875b4517a969bcc07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Timer.html#aae49033702e6ef1875b4517a969bcc07">setDuration</a> (const long long &amp;p_duration)</td></tr>
 <tr class="memdesc:aae49033702e6ef1875b4517a969bcc07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the duration of the timer.  <a href="classspk_1_1Timer.html#aae49033702e6ef1875b4517a969bcc07">More...</a><br /></td></tr>
 <tr class="separator:aae49033702e6ef1875b4517a969bcc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbf9623ac0ac02f0bc97a835fe2a08d8"><td class="memItemLeft" align="right" valign="top">const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Timer.html#adbf9623ac0ac02f0bc97a835fe2a08d8">totalDuration</a> () const</td></tr>
-<tr class="memdesc:adbf9623ac0ac02f0bc97a835fe2a08d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total duration of the timer.  <a href="classspk_1_1Timer.html#adbf9623ac0ac02f0bc97a835fe2a08d8">More...</a><br /></td></tr>
-<tr class="separator:adbf9623ac0ac02f0bc97a835fe2a08d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac07058690788556b47491f9fbbd6b83e"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Timer.html#ac07058690788556b47491f9fbbd6b83e">remainingDuration</a> () const</td></tr>
 <tr class="memdesc:ac07058690788556b47491f9fbbd6b83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the remaining duration of the timer.  <a href="classspk_1_1Timer.html#ac07058690788556b47491f9fbbd6b83e">More...</a><br /></td></tr>
 <tr class="separator:ac07058690788556b47491f9fbbd6b83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +182,26 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a39d4d146d5994fc04129da55e37e9e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d4d146d5994fc04129da55e37e9e18">&#9670;&nbsp;</a></span>duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const long long &amp; spk::Timer::duration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return the current fixed duration of the timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the duration of the <a class="el" href="classspk_1_1Timer.html" title="Class for creating and managing a timer.">Timer</a> </dd></dl>
+
+</div>
+</div>
 <a id="ac2ec1670d0e9e6b00f2b5504b4227740"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2ec1670d0e9e6b00f2b5504b4227740">&#9670;&nbsp;</a></span>isRunning()</h2>
 
@@ -309,27 +329,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Stops the timer. </p>
 <p>This function stops the timer and changes the status to Idle. </p>
-
-</div>
-</div>
-<a id="adbf9623ac0ac02f0bc97a835fe2a08d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbf9623ac0ac02f0bc97a835fe2a08d8">&#9670;&nbsp;</a></span>totalDuration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const long long &amp; spk::Timer::totalDuration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the total duration of the timer. </p>
-<p>This function returns the total duration of the timer.</p>
-<dl class="section return"><dt>Returns</dt><dd>The total duration of the timer in milliseconds. </dd></dl>
 
 </div>
 </div>

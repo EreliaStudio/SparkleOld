@@ -79,32 +79,27 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1ProfilerModule.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1ProfilerModule.html">ProfilerModule</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classspk_1_1Timer.html">spk::Timer</a> _oneSecondTime;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">size_t</span> _renderIPSCounter;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">size_t</span> _updateIPSCounter;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> _resetCounter();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#acf075a37331fc5b9dc855804fb9e66b6">updateData</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a606c70589cc008b90ffe1aed68fb7c70">increaseRenderIPS</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#affa254325e80e6a3c3071f0fa6c5bacd">increaseUpdateIPS</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classspk_1_1Timer.html">spk::Timer</a> _counterTimer;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">float</span> _counterRatio;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a6bd3eb07d5cd2845c0bfdaa5c589f9a9">updateCounters</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a95e0e209a1911edf37f2d428258171fe">updateFPS</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#aa613fe6c670df69eba5a441dcf4879aa">updateUPS</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1ProfilerModule_html"><div class="ttname"><a href="classspk_1_1ProfilerModule.html">spk::ProfilerModule</a></div><div class="ttdoc">A class to profile and manage the frames-per-second rates of the application.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.hpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1ProfilerModule_html_a2c6619183c9e521e1da356b6eddc7666"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">spk::ProfilerModule::~ProfilerModule</a></div><div class="ttdeci">~ProfilerModule()</div><div class="ttdoc">Destructor for the ProfilerModule class.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:14</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a606c70589cc008b90ffe1aed68fb7c70"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a606c70589cc008b90ffe1aed68fb7c70">spk::ProfilerModule::increaseRenderIPS</a></div><div class="ttdeci">void increaseRenderIPS()</div><div class="ttdoc">Increment the counter for frames rendered per second.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:38</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a6bd3eb07d5cd2845c0bfdaa5c589f9a9"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a6bd3eb07d5cd2845c0bfdaa5c589f9a9">spk::ProfilerModule::updateCounters</a></div><div class="ttdeci">void updateCounters()</div><div class="ttdoc">Actualize the affiched FPS/UPS counter.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:29</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a95e0e209a1911edf37f2d428258171fe"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a95e0e209a1911edf37f2d428258171fe">spk::ProfilerModule::updateFPS</a></div><div class="ttdeci">void updateFPS()</div><div class="ttdoc">Updating FPS counter by incrementing it by one.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:19</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_aa613fe6c670df69eba5a441dcf4879aa"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#aa613fe6c670df69eba5a441dcf4879aa">spk::ProfilerModule::updateUPS</a></div><div class="ttdeci">void updateUPS()</div><div class="ttdoc">Updating UPS counter by incrementing it by one.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:24</div></div>
 <div class="ttc" id="aclassspk_1_1ProfilerModule_html_ab79ffae57422fddf6e6cef43f34c5c49"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">spk::ProfilerModule::ProfilerModule</a></div><div class="ttdeci">ProfilerModule()</div><div class="ttdoc">Default constructor for the ProfilerModule class.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:6</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_acf075a37331fc5b9dc855804fb9e66b6"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#acf075a37331fc5b9dc855804fb9e66b6">spk::ProfilerModule::updateData</a></div><div class="ttdeci">void updateData()</div><div class="ttdoc">Update the counters and timer.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:25</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_affa254325e80e6a3c3071f0fa6c5bacd"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#affa254325e80e6a3c3071f0fa6c5bacd">spk::ProfilerModule::increaseUpdateIPS</a></div><div class="ttdeci">void increaseUpdateIPS()</div><div class="ttdoc">Increment the counter for updates processed per second.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:43</div></div>
 <div class="ttc" id="aclassspk_1_1Timer_html"><div class="ttname"><a href="classspk_1_1Timer.html">spk::Timer</a></div><div class="ttdoc">Class for creating and managing a timer.</div><div class="ttdef"><b>Definition:</b> spk_timer.hpp:16</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->

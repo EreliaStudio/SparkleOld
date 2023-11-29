@@ -117,6 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae763c9383a3e027aa67bd15175eb8779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2dce9a9a8f6ac09efeddb8ff06e28e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Window.html#ac2dce9a9a8f6ac09efeddb8ff06e28e4">resize</a> (const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;p_size)</td></tr>
 <tr class="separator:ac2dce9a9a8f6ac09efeddb8ff06e28e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fdef12b02e9f58c35614abb99a98f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Window.html#a0fdef12b02e9f58c35614abb99a98f9a">place</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_anchor)</td></tr>
+<tr class="memdesc:a0fdef12b02e9f58c35614abb99a98f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places the window at a specified anchor point.  <a href="classspk_1_1Window.html#a0fdef12b02e9f58c35614abb99a98f9a">More...</a><br /></td></tr>
+<tr class="separator:a0fdef12b02e9f58c35614abb99a98f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343282934164c7acecd1c1071d65fa4a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Window.html#a343282934164c7acecd1c1071d65fa4a">anchor</a> () const</td></tr>
+<tr class="memdesc:a343282934164c7acecd1c1071d65fa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current anchor position of the window.  <a href="classspk_1_1Window.html#a343282934164c7acecd1c1071d65fa4a">More...</a><br /></td></tr>
+<tr class="separator:a343282934164c7acecd1c1071d65fa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6988398a4a1119748ee66c0eb60215d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Window.html#ad6988398a4a1119748ee66c0eb60215d">size</a> () const</td></tr>
 <tr class="separator:ad6988398a4a1119748ee66c0eb60215d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91c8bd5093a8d920486fedc244e29d54"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Frame.html">spk::Frame</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Window.html#a91c8bd5093a8d920486fedc244e29d54">frame</a> () const</td></tr>
@@ -214,6 +220,26 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a343282934164c7acecd1c1071d65fa4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343282934164c7acecd1c1071d65fa4a">&#9670;&nbsp;</a></span>anchor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp; spk::Window::anchor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the current anchor position of the window. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current anchor position of the window as a Vector2Int. </dd></dl>
+
+</div>
+</div>
 <a id="a43fad77a06224e751ef80ab7d0093282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43fad77a06224e751ef80ab7d0093282">&#9670;&nbsp;</a></span>clear()</h2>
 
@@ -305,6 +331,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Default move assignment operator. </p>
 <p>Move assignment is allowed. Resources are transferred from the source instance to the this instance, replacing the current resources. </p>
+
+</div>
+</div>
+<a id="a0fdef12b02e9f58c35614abb99a98f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fdef12b02e9f58c35614abb99a98f9a">&#9670;&nbsp;</a></span>place()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Window::place </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_anchor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Places the window at a specified anchor point. </p>
+<p>Sets the position of the window on the screen to the given anchor point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_anchor</td><td>The position to place the window at, as a Vector2Int. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

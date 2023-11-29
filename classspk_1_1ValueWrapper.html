@@ -86,12 +86,16 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a> = typename <a class="el" href="classspk_1_1Value.html">Value</a>&lt; T &gt;::<a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a></td></tr>
 <tr class="memdesc:a97ba65da5df887a419391c47569a43e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the default value type of the wrapped value. <br /></td></tr>
 <tr class="separator:a97ba65da5df887a419391c47569a43e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b566fecba8115ebaef822377090632"><td class="memItemLeft" align="right" valign="top"><a id="a00b566fecba8115ebaef822377090632"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ValueWrapper.html#a00b566fecba8115ebaef822377090632">Contract</a> = typename <a class="el" href="classspk_1_1Value.html">Value</a>&lt; T &gt;::<a class="el" href="classspk_1_1ValueWrapper.html#a00b566fecba8115ebaef822377090632">Contract</a></td></tr>
+<tr class="memdesc:a00b566fecba8115ebaef822377090632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for the contract type of the wrapped value. <br /></td></tr>
+<tr class="separator:a00b566fecba8115ebaef822377090632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01e713e4c3a0f92f541425eab0c5f1c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ValueWrapper.html#a01e713e4c3a0f92f541425eab0c5f1c4">ValueWrapper</a> (const std::shared_ptr&lt; const <a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a> &gt; &amp;p_defaultValue)</td></tr>
-<tr class="memdesc:a01e713e4c3a0f92f541425eab0c5f1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classspk_1_1Value.html" title="A class template for managing a value with default and custom states.">Value</a> Wrapper object.  <a href="classspk_1_1ValueWrapper.html#a01e713e4c3a0f92f541425eab0c5f1c4">More...</a><br /></td></tr>
-<tr class="separator:a01e713e4c3a0f92f541425eab0c5f1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c6747767f74177b922c6bd78a3f705"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ValueWrapper.html#a62c6747767f74177b922c6bd78a3f705">ValueWrapper</a> (std::shared_ptr&lt; const <a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a> &gt; p_defaultValue)</td></tr>
+<tr class="memdesc:a62c6747767f74177b922c6bd78a3f705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classspk_1_1Value.html" title="A class template for managing a value with default and custom states.">Value</a> Wrapper object.  <a href="classspk_1_1ValueWrapper.html#a62c6747767f74177b922c6bd78a3f705">More...</a><br /></td></tr>
+<tr class="separator:a62c6747767f74177b922c6bd78a3f705"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92a30789f0021072d8188dcf4fa9d08c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ValueWrapper.html#a92a30789f0021072d8188dcf4fa9d08c">operator T</a> () const</td></tr>
 <tr class="memdesc:a92a30789f0021072d8188dcf4fa9d08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the wrapped value to its underlying type.  <a href="classspk_1_1ValueWrapper.html#a92a30789f0021072d8188dcf4fa9d08c">More...</a><br /></td></tr>
 <tr class="separator:a92a30789f0021072d8188dcf4fa9d08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,8 +140,8 @@ class spk::ValueWrapper&lt; T &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a01e713e4c3a0f92f541425eab0c5f1c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01e713e4c3a0f92f541425eab0c5f1c4">&#9670;&nbsp;</a></span>ValueWrapper()</h2>
+<a id="a62c6747767f74177b922c6bd78a3f705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c6747767f74177b922c6bd78a3f705">&#9670;&nbsp;</a></span>ValueWrapper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +154,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classspk_1_1ValueWrapper.html">spk::ValueWrapper</a>&lt; T &gt;::<a class="el" href="classspk_1_1ValueWrapper.html">ValueWrapper</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::shared_ptr&lt; const <a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="classspk_1_1ValueWrapper.html#a97ba65da5df887a419391c47569a43e7">Default</a> &gt;&#160;</td>
           <td class="paramname"><em>p_defaultValue</em></td><td>)</td>
           <td></td>
         </tr>

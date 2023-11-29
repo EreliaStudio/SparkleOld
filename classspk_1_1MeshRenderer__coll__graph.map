@@ -1,0 +1,4 @@
+<map id="spk::MeshRenderer" name="spk::MeshRenderer">
+<area shape="rect" id="node1" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="15,5,143,32"/>
+</map>

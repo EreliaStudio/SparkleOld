@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -76,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A singleton class that handles profiling using various chronometers.  
+<p>A class for profiling various metrics like time consumption and counters.  
  <a href="classspk_1_1Profiler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__profiler_8hpp_source.html">spk_profiler.hpp</a>&gt;</code></p>
@@ -85,7 +86,7 @@ Inheritance diagram for spk::Profiler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Profiler__inherit__graph.png" border="0" usemap="#aspk_1_1Profiler_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1Profiler_inherit__map" id="aspk_1_1Profiler_inherit__map">
-<area shape="rect" title="A singleton class that handles profiling using various chronometers." alt="" coords="51,80,150,107"/>
+<area shape="rect" title="A class for profiling various metrics like time consumption and counters." alt="" coords="51,80,150,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,196,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -94,62 +95,71 @@ Collaboration diagram for spk::Profiler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Profiler__coll__graph.png" border="0" usemap="#aspk_1_1Profiler_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1Profiler_coll__map" id="aspk_1_1Profiler_coll__map">
-<area shape="rect" title="A singleton class that handles profiling using various chronometers." alt="" coords="51,80,150,107"/>
+<area shape="rect" title="A class for profiling various metrics like time consumption and counters." alt="" coords="51,80,150,107"/>
 <area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,196,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">CounterMetric</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metric class for tracking counters.  <a href="classspk_1_1Profiler_1_1CounterMetric.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler_1_1TimeConsuptionMetric.html">TimeConsuptionMetric</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metric class for tracking time consumption.  <a href="classspk_1_1Profiler_1_1TimeConsuptionMetric.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2da29d5128b6b5b3ad042fd13a164c4c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Chronometer.html">spk::Chronometer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a2da29d5128b6b5b3ad042fd13a164c4c">chronometer</a> (const std::wstring &amp;p_key) const</td></tr>
-<tr class="memdesc:a2da29d5128b6b5b3ad042fd13a164c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#a2da29d5128b6b5b3ad042fd13a164c4c">More...</a><br /></td></tr>
-<tr class="separator:a2da29d5128b6b5b3ad042fd13a164c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab80433abd4e910f0d7077514233b4e54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab80433abd4e910f0d7077514233b4e54">resetChronometer</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:ab80433abd4e910f0d7077514233b4e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#ab80433abd4e910f0d7077514233b4e54">More...</a><br /></td></tr>
-<tr class="separator:ab80433abd4e910f0d7077514233b4e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af26e29829aef92203a8c30fc6e570c81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#af26e29829aef92203a8c30fc6e570c81">startChronometer</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:af26e29829aef92203a8c30fc6e570c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#af26e29829aef92203a8c30fc6e570c81">More...</a><br /></td></tr>
-<tr class="separator:af26e29829aef92203a8c30fc6e570c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d8843a8439baff714cb69fcd46bceea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a3d8843a8439baff714cb69fcd46bceea">resumeChronometer</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:a3d8843a8439baff714cb69fcd46bceea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#a3d8843a8439baff714cb69fcd46bceea">More...</a><br /></td></tr>
-<tr class="separator:a3d8843a8439baff714cb69fcd46bceea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a814971ff26b580fa15607c1d0fe056ac"><td class="memItemLeft" align="right" valign="top">const long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a814971ff26b580fa15607c1d0fe056ac">stopChronometer</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:a814971ff26b580fa15607c1d0fe056ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the chronometer associated with a specific name.  <a href="classspk_1_1Profiler.html#a814971ff26b580fa15607c1d0fe056ac">More...</a><br /></td></tr>
-<tr class="separator:a814971ff26b580fa15607c1d0fe056ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad531226bc8a8a390e9df76dafbf973ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ad531226bc8a8a390e9df76dafbf973ef">createCounter</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:ad531226bc8a8a390e9df76dafbf973ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new counter, named p_key.  <a href="classspk_1_1Profiler.html#ad531226bc8a8a390e9df76dafbf973ef">More...</a><br /></td></tr>
-<tr class="separator:ad531226bc8a8a390e9df76dafbf973ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab541f7d78a82df099e1c96605d91802c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab541f7d78a82df099e1c96605d91802c">increaseCounter</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:ab541f7d78a82df099e1c96605d91802c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the value of the specified counter by one.  <a href="classspk_1_1Profiler.html#ab541f7d78a82df099e1c96605d91802c">More...</a><br /></td></tr>
-<tr class="separator:ab541f7d78a82df099e1c96605d91802c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cb189097b22c31207d8d7c718f90b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84">setCounter</a> (const std::wstring &amp;p_key, const size_t &amp;p_value)</td></tr>
-<tr class="memdesc:a1cb189097b22c31207d8d7c718f90b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the specified counter.  <a href="classspk_1_1Profiler.html#a1cb189097b22c31207d8d7c718f90b84">More...</a><br /></td></tr>
-<tr class="separator:a1cb189097b22c31207d8d7c718f90b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7131d78f8ddedead9f88433e1f639da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a7131d78f8ddedead9f88433e1f639da4">resetCounter</a> (const std::wstring &amp;p_key)</td></tr>
-<tr class="memdesc:a7131d78f8ddedead9f88433e1f639da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the specified counter to 0.  <a href="classspk_1_1Profiler.html#a7131d78f8ddedead9f88433e1f639da4">More...</a><br /></td></tr>
-<tr class="separator:a7131d78f8ddedead9f88433e1f639da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54d18ec265ec42b4cf250295b5db429f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a54d18ec265ec42b4cf250295b5db429f">containCounter</a> (const std::wstring &amp;p_key) const</td></tr>
-<tr class="separator:a54d18ec265ec42b4cf250295b5db429f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addb147302314604495fd898c8b221c73"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#addb147302314604495fd898c8b221c73">counter</a> (const std::wstring &amp;p_key) const</td></tr>
-<tr class="memdesc:addb147302314604495fd898c8b221c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of the specified counter.  <a href="classspk_1_1Profiler.html#addb147302314604495fd898c8b221c73">More...</a><br /></td></tr>
-<tr class="separator:addb147302314604495fd898c8b221c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d75acdf93bfc2c3508b875092074262"><td class="memItemLeft" align="right" valign="top"><a id="a8d75acdf93bfc2c3508b875092074262"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a8d75acdf93bfc2c3508b875092074262">Profiler</a> ()</td></tr>
+<tr class="memdesc:a8d75acdf93bfc2c3508b875092074262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classspk_1_1Profiler.html" title="A class for profiling various metrics like time consumption and counters.">Profiler</a> class. <br /></td></tr>
+<tr class="separator:a8d75acdf93bfc2c3508b875092074262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96403e3f6e2e542d6832868f054cb95"><td class="memItemLeft" align="right" valign="top"><a id="ab96403e3f6e2e542d6832868f054cb95"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab96403e3f6e2e542d6832868f054cb95">~Profiler</a> ()</td></tr>
+<tr class="memdesc:ab96403e3f6e2e542d6832868f054cb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="classspk_1_1Profiler.html" title="A class for profiling various metrics like time consumption and counters.">Profiler</a> class. <br /></td></tr>
+<tr class="separator:ab96403e3f6e2e542d6832868f054cb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f91d47f8a8f07d1b6aadfe329f7331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ad1f91d47f8a8f07d1b6aadfe329f7331">defineThreadName</a> (const std::wstring &amp;p_threadName)</td></tr>
+<tr class="memdesc:ad1f91d47f8a8f07d1b6aadfe329f7331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a name for the current thread.  <a href="classspk_1_1Profiler.html#ad1f91d47f8a8f07d1b6aadfe329f7331">More...</a><br /></td></tr>
+<tr class="separator:ad1f91d47f8a8f07d1b6aadfe329f7331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a488c4e636c266db1f8cbd039517f2211"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler_1_1TimeConsuptionMetric.html">TimeConsuptionMetric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a488c4e636c266db1f8cbd039517f2211">timeConsumptionMetric</a> (const std::wstring &amp;p_metricName)</td></tr>
+<tr class="memdesc:a488c4e636c266db1f8cbd039517f2211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to a time consumption metric by name.  <a href="classspk_1_1Profiler.html#a488c4e636c266db1f8cbd039517f2211">More...</a><br /></td></tr>
+<tr class="separator:a488c4e636c266db1f8cbd039517f2211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac440238f13b4fc6cba9a6048aacb614e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ac440238f13b4fc6cba9a6048aacb614e">containTimeConsumptionMetric</a> (const std::wstring &amp;p_metricName) const</td></tr>
+<tr class="memdesc:ac440238f13b4fc6cba9a6048aacb614e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a time consumption metric exists.  <a href="classspk_1_1Profiler.html#ac440238f13b4fc6cba9a6048aacb614e">More...</a><br /></td></tr>
+<tr class="separator:ac440238f13b4fc6cba9a6048aacb614e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86cbff55e6949a4230f5f6006195c56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">CounterMetric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#af86cbff55e6949a4230f5f6006195c56">counterMetric</a> (const std::wstring &amp;p_metricName)</td></tr>
+<tr class="memdesc:af86cbff55e6949a4230f5f6006195c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to a counter metric by name.  <a href="classspk_1_1Profiler.html#af86cbff55e6949a4230f5f6006195c56">More...</a><br /></td></tr>
+<tr class="separator:af86cbff55e6949a4230f5f6006195c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a20f21ff8b64175619c2892f4e380a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a2a20f21ff8b64175619c2892f4e380a5">containCounterMetric</a> (const std::wstring &amp;p_metricName) const</td></tr>
+<tr class="memdesc:a2a20f21ff8b64175619c2892f4e380a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a counter metric exists.  <a href="classspk_1_1Profiler.html#a2a20f21ff8b64175619c2892f4e380a5">More...</a><br /></td></tr>
+<tr class="separator:a2a20f21ff8b64175619c2892f4e380a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ddf89951e9bb1027d807744b3179a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">CounterMetric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a61ddf89951e9bb1027d807744b3179a5">fpsCounter</a> ()</td></tr>
+<tr class="memdesc:a61ddf89951e9bb1027d807744b3179a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the FPS (Frames Per Second) counter metric.  <a href="classspk_1_1Profiler.html#a61ddf89951e9bb1027d807744b3179a5">More...</a><br /></td></tr>
+<tr class="separator:a61ddf89951e9bb1027d807744b3179a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c3ef6e66f39d20dd4d3fdd0cefa2bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">CounterMetric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab5c3ef6e66f39d20dd4d3fdd0cefa2bc">upsCounter</a> ()</td></tr>
+<tr class="memdesc:ab5c3ef6e66f39d20dd4d3fdd0cefa2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the UPS (Updates Per Second) counter metric.  <a href="classspk_1_1Profiler.html#ab5c3ef6e66f39d20dd4d3fdd0cefa2bc">More...</a><br /></td></tr>
+<tr class="separator:ab5c3ef6e66f39d20dd4d3fdd0cefa2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab4d0edd93a8934bd0c844fe4942791d2"><td class="memItemLeft" align="right" valign="top"><a id="ab4d0edd93a8934bd0c844fe4942791d2"></a>
-static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#ab4d0edd93a8934bd0c844fe4942791d2">RENDER_IPS_COUNTER</a> = L&quot;RenderIPS&quot;</td></tr>
-<tr class="memdesc:ab4d0edd93a8934bd0c844fe4942791d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key representing the counter to the Render thread Iteration Per Second. <br /></td></tr>
-<tr class="separator:ab4d0edd93a8934bd0c844fe4942791d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="memItemLeft" align="right" valign="top"><a id="aff4f46bb299ee6b67ab77c19f7f7e07f"></a>
-static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#aff4f46bb299ee6b67ab77c19f7f7e07f">UPDATE_IPS_COUNTER</a> = L&quot;UpdateIPS&quot;</td></tr>
-<tr class="memdesc:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key representing the counter to the Update thread Iteration Per Second. <br /></td></tr>
-<tr class="separator:aff4f46bb299ee6b67ab77c19f7f7e07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb50ca556551ee9ac07e5e067da7fffd"><td class="memItemLeft" align="right" valign="top"><a id="adb50ca556551ee9ac07e5e067da7fffd"></a>
+static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#adb50ca556551ee9ac07e5e067da7fffd">FPS_COUNTER_NAME</a> = L&quot;FPS&quot;</td></tr>
+<tr class="memdesc:adb50ca556551ee9ac07e5e067da7fffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined counter metrics name for the FPS values. <br /></td></tr>
+<tr class="separator:adb50ca556551ee9ac07e5e067da7fffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e2bfd57d492d69ca2c75e7a569bb08"><td class="memItemLeft" align="right" valign="top"><a id="a04e2bfd57d492d69ca2c75e7a569bb08"></a>
+static const std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html#a04e2bfd57d492d69ca2c75e7a569bb08">UPS_COUNTER_NAME</a> = L&quot;UPS&quot;</td></tr>
+<tr class="memdesc:a04e2bfd57d492d69ca2c75e7a569bb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined counter metrics name for the FPS values. <br /></td></tr>
+<tr class="separator:a04e2bfd57d492d69ca2c75e7a569bb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a149a25a512bb65bfb1a296b4ce69538b"><td class="memItemLeft" align="right" valign="top"><a id="a149a25a512bb65bfb1a296b4ce69538b"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>spk::Singleton&lt; Profiler &gt;</b></td></tr>
 <tr class="separator:a149a25a512bb65bfb1a296b4ce69538b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a20354caf71cb5a5d156e10d20bc2ff"><td class="memItemLeft" align="right" valign="top"><a id="a9a20354caf71cb5a5d156e10d20bc2ff"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ProfilerModule</b></td></tr>
+<tr class="separator:a9a20354caf71cb5a5d156e10d20bc2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -176,353 +186,179 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A singleton class that handles profiling using various chronometers. </p>
-<p>This class is responsible for managing multiple chronometers, allowing the software to keep track of time metrics for profiling purposes. As a singleton, only one instance of this class can exist. This ensures consistency across the entire software. </p>
+<div class="textblock"><p>A class for profiling various metrics like time consumption and counters. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2da29d5128b6b5b3ad042fd13a164c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2da29d5128b6b5b3ad042fd13a164c4c">&#9670;&nbsp;</a></span>chronometer()</h2>
+<a id="a2a20f21ff8b64175619c2892f4e380a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a20f21ff8b64175619c2892f4e380a5">&#9670;&nbsp;</a></span>containCounterMetric()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classspk_1_1Chronometer.html">spk::Chronometer</a> &amp; spk::Profiler::chronometer </td>
+          <td class="memname">bool spk::Profiler::containCounterMetric </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"><em>p_metricName</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the chronometer associated with a specific name. </p>
+<p>Checks if a counter metric exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
+    <tr><td class="paramname">p_metricName</td><td>The name of the counter metric to check. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The specified chronometer. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the metric exists, false otherwise. </dd></dl>
 
 </div>
 </div>
-<a id="a54d18ec265ec42b4cf250295b5db429f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54d18ec265ec42b4cf250295b5db429f">&#9670;&nbsp;</a></span>containCounter()</h2>
+<a id="ac440238f13b4fc6cba9a6048aacb614e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac440238f13b4fc6cba9a6048aacb614e">&#9670;&nbsp;</a></span>containTimeConsumptionMetric()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool spk::Profiler::containCounter </td>
+          <td class="memname">bool spk::Profiler::containTimeConsumptionMetric </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Check if there is a counter name p_key inside the profiler.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the counter exist, false otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="addb147302314604495fd898c8b221c73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addb147302314604495fd898c8b221c73">&#9670;&nbsp;</a></span>counter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const size_t &amp; spk::Profiler::counter </td>
-          <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"><em>p_metricName</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the value of the specified counter. </p>
-<p>If the counter does not exist, a runtime error is thrown.</p>
+<p>Checks if a time consumption metric exists. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+    <tr><td class="paramname">p_metricName</td><td>The name of the time consumption metric to check. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the counter. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the metric exists, false otherwise. </dd></dl>
 
 </div>
 </div>
-<a id="ad531226bc8a8a390e9df76dafbf973ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad531226bc8a8a390e9df76dafbf973ef">&#9670;&nbsp;</a></span>createCounter()</h2>
+<a id="af86cbff55e6949a4230f5f6006195c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86cbff55e6949a4230f5f6006195c56">&#9670;&nbsp;</a></span>counterMetric()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Profiler::createCounter </td>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">Profiler::CounterMetric</a> &amp; spk::Profiler::counterMetric </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"><em>p_metricName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new counter, named p_key. </p>
-<p>If the counter already exist, this method will throw an exception</p>
+<p>Gets a reference to a counter metric by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+    <tr><td class="paramname">p_metricName</td><td>The name of the counter metric. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if a chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html" title="Metric class for tracking counters.">CounterMetric</a> object. </dd></dl>
 
 </div>
 </div>
-<a id="ab541f7d78a82df099e1c96605d91802c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab541f7d78a82df099e1c96605d91802c">&#9670;&nbsp;</a></span>increaseCounter()</h2>
+<a id="ad1f91d47f8a8f07d1b6aadfe329f7331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f91d47f8a8f07d1b6aadfe329f7331">&#9670;&nbsp;</a></span>defineThreadName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Profiler::increaseCounter </td>
+          <td class="memname">void spk::Profiler::defineThreadName </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"><em>p_threadName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Increases the value of the specified counter by one. </p>
-<p>If the counter does not exist, it is created with a value of 0, and then incremented.</p>
+<p>Defines a name for the current thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+    <tr><td class="paramname">p_threadName</td><td>The name to be assigned to the current thread. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ab80433abd4e910f0d7077514233b4e54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab80433abd4e910f0d7077514233b4e54">&#9670;&nbsp;</a></span>resetChronometer()</h2>
+<a id="a61ddf89951e9bb1027d807744b3179a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ddf89951e9bb1027d807744b3179a5">&#9670;&nbsp;</a></span>fpsCounter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Profiler::resetChronometer </td>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">Profiler::CounterMetric</a> &amp; spk::Profiler::fpsCounter </td>
           <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the chronometer associated with a specific name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Gets a reference to the FPS (Frames Per Second) counter metric. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the FPS <a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html" title="Metric class for tracking counters.">CounterMetric</a> object. </dd></dl>
 
 </div>
 </div>
-<a id="a7131d78f8ddedead9f88433e1f639da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7131d78f8ddedead9f88433e1f639da4">&#9670;&nbsp;</a></span>resetCounter()</h2>
+<a id="a488c4e636c266db1f8cbd039517f2211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a488c4e636c266db1f8cbd039517f2211">&#9670;&nbsp;</a></span>timeConsumptionMetric()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Profiler::resetCounter </td>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler_1_1TimeConsuptionMetric.html">Profiler::TimeConsuptionMetric</a> &amp; spk::Profiler::timeConsumptionMetric </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"><em>p_metricName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resets the specified counter to 0. </p>
-<p>If the counter does not exist, a runtime error is thrown.</p>
+<p>Gets a reference to a time consumption metric by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
+    <tr><td class="paramname">p_metricName</td><td>The name of the time consumption metric. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classspk_1_1Profiler_1_1TimeConsuptionMetric.html" title="Metric class for tracking time consumption.">TimeConsuptionMetric</a> object. </dd></dl>
 
 </div>
 </div>
-<a id="a3d8843a8439baff714cb69fcd46bceea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d8843a8439baff714cb69fcd46bceea">&#9670;&nbsp;</a></span>resumeChronometer()</h2>
+<a id="ab5c3ef6e66f39d20dd4d3fdd0cefa2bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c3ef6e66f39d20dd4d3fdd0cefa2bc">&#9670;&nbsp;</a></span>upsCounter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Profiler::resumeChronometer </td>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html">Profiler::CounterMetric</a> &amp; spk::Profiler::upsCounter </td>
           <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Resumes the chronometer associated with a specific name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1cb189097b22c31207d8d7c718f90b84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb189097b22c31207d8d7c718f90b84">&#9670;&nbsp;</a></span>setCounter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::Profiler::setCounter </td>
-          <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>p_value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the value of the specified counter. </p>
-<p>If the counter does not exist, it is created and then set to the specified value.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the counter. </td></tr>
-    <tr><td class="paramname">p_value</td><td>The new value for the counter. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af26e29829aef92203a8c30fc6e570c81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af26e29829aef92203a8c30fc6e570c81">&#9670;&nbsp;</a></span>startChronometer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::Profiler::startChronometer </td>
-          <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Starts the chronometer associated with a specific name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a814971ff26b580fa15607c1d0fe056ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a814971ff26b580fa15607c1d0fe056ac">&#9670;&nbsp;</a></span>stopChronometer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const long long spk::Profiler::stopChronometer </td>
-          <td>(</td>
-          <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_key</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stops the chronometer associated with a specific name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_key</td><td>The name of the chronometer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if no chronometer exists with the given name. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The time elapsed since the chronometer was started. </dd></dl>
+<p>Gets a reference to the UPS (Updates Per Second) counter metric. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the UPS <a class="el" href="classspk_1_1Profiler_1_1CounterMetric.html" title="Metric class for tracking counters.">CounterMetric</a> object. </dd></dl>
 
 </div>
 </div>

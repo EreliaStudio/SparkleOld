@@ -89,56 +89,58 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1Frame.html#a0ac877ae35338497097509c6f090e025">APIModule</a>;  </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">Vector2UInt</a> _size;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">Vector2Int</a> _anchor;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">wchar_t</span> *_convertedTitle;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">Vector2UInt</a> _size;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        HINSTANCE _hInstance;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">wchar_t</span> *_convertedTitle;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        HWND _windowFrame;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        HINSTANCE _hInstance;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        RECT _windowSize;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        HWND _windowFrame;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        WNDCLASSW _frameClass;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        RECT _windowSize;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        DWORD _windowStyle;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        WNDCLASSW _frameClass;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        DWORD _windowExStyle;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        DWORD _windowStyle;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> _wasResized = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        DWORD _windowExStyle;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> _convertTitle(<span class="keyword">const</span> std::wstring &amp;p_title);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> _createGhostInstance();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span> _wasResized = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> _convertTitle(<span class="keyword">const</span> std::wstring &amp;p_title);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> _registerFrameClass();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> _createGhostInstance();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> _createWindowFrame(<span class="keywordtype">void</span> *p_APIModule, <span class="keyword">const</span> <a class="code" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">Vector2UInt</a> &amp;p_size);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> _activeWindow();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> _registerFrameClass();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> _createWindowFrame(<span class="keywordtype">void</span> *p_APIModule, <span class="keyword">const</span> <a class="code" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">Vector2UInt</a> &amp;p_size);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> _onResize();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> _activeWindow();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> _onSetSize();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> _onResize();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649">   93</a></span>&#160;        <a class="code" href="classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649">Frame</a>(<span class="keyword">const</span> std::wstring &amp;p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2UInt</a> &amp;p_size, <span class="keywordtype">void</span> *p_ptr = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a5e60fe064c04500934c9fb4a8a92b8a6">   96</a></span>&#160;        <a class="code" href="classspk_1_1Frame.html#a5e60fe064c04500934c9fb4a8a92b8a6">~Frame</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> _onSetSize();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649">   96</a></span>&#160;        <a class="code" href="classspk_1_1Frame.html#a2b8760f3a071ade51a8a3f5a2eacb649">Frame</a>(<span class="keyword">const</span> std::wstring &amp;p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2UInt</a> &amp;p_size, <span class="keywordtype">void</span> *p_ptr = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        HINSTANCE <a class="code" href="classspk_1_1Frame.html#a22450d17f8ea4fb4d9edee4649b3ec9a">hInstance</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a5e60fe064c04500934c9fb4a8a92b8a6">   99</a></span>&#160;        <a class="code" href="classspk_1_1Frame.html#a5e60fe064c04500934c9fb4a8a92b8a6">~Frame</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        HWND <a class="code" href="classspk_1_1Frame.html#ac69cb9e01bc521099cd3bf0cff6d91a5">windowFrame</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        HINSTANCE <a class="code" href="classspk_1_1Frame.html#a22450d17f8ea4fb4d9edee4649b3ec9a">hInstance</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22">  105</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22">wasResized</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        HWND <a class="code" href="classspk_1_1Frame.html#ac69cb9e01bc521099cd3bf0cff6d91a5">windowFrame</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#ae12291f3280df300bec8b34d6259f3dc">  108</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#ae12291f3280df300bec8b34d6259f3dc">resizeHandled</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22">  108</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Frame.html#a84180f9cba2807ac4244d13183ecfa22">wasResized</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#aa3285034e85d4fb85221069f4462b243">  111</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#aa3285034e85d4fb85221069f4462b243">render</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#ae12291f3280df300bec8b34d6259f3dc">  111</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#ae12291f3280df300bec8b34d6259f3dc">resizeHandled</a>();</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#aa0d76bd8587226eb3125c2766ac4e264">  114</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#aa0d76bd8587226eb3125c2766ac4e264">clear</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#aa3285034e85d4fb85221069f4462b243">  114</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#aa3285034e85d4fb85221069f4462b243">render</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classspk_1_1Frame.html#aa0d76bd8587226eb3125c2766ac4e264">  117</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Frame.html#aa0d76bd8587226eb3125c2766ac4e264">clear</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    };</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1AbstractFrame_html"><div class="ttname"><a href="classspk_1_1AbstractFrame.html">spk::AbstractFrame</a></div><div class="ttdoc">Abstract base class for frames.</div><div class="ttdef"><b>Definition:</b> spk_abstract_frame.hpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1Frame_html_a0ac877ae35338497097509c6f090e025"><div class="ttname"><a href="classspk_1_1Frame.html#a0ac877ae35338497097509c6f090e025">spk::Frame::APIModule</a></div><div class="ttdeci">friend class APIModule</div><div class="ttdoc">Allow APIModule to access private members.</div><div class="ttdef"><b>Definition:</b> spk_frame.hpp:20</div></div>
 <div class="ttc" id="aclassspk_1_1Frame_html_a22450d17f8ea4fb4d9edee4649b3ec9a"><div class="ttname"><a href="classspk_1_1Frame.html#a22450d17f8ea4fb4d9edee4649b3ec9a">spk::Frame::hInstance</a></div><div class="ttdeci">HINSTANCE hInstance() const</div><div class="ttdoc">Get the application instance handle.</div><div class="ttdef"><b>Definition:</b> spk_frame.cpp:87</div></div>
@@ -151,7 +153,8 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Frame_html_ae12291f3280df300bec8b34d6259f3dc"><div class="ttname"><a href="classspk_1_1Frame.html#ae12291f3280df300bec8b34d6259f3dc">spk::Frame::resizeHandled</a></div><div class="ttdeci">void resizeHandled()</div><div class="ttdoc">Mark that the resize has been handled.</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="anamespacespk_html_a35c88ea124c5bf25cfd51823d719a92b"><div class="ttname"><a href="namespacespk.html#a35c88ea124c5bf25cfd51823d719a92b">spk::WindowProc</a></div><div class="ttdeci">LRESULT CALLBACK WindowProc(HWND p_hwnd, UINT p_uMsg, WPARAM p_wParam, LPARAM p_lParam)</div><div class="ttdoc">Processes messages sent to a window.</div><div class="ttdef"><b>Definition:</b> spk_API_module.cpp:6</div></div>
-<div class="ttc" id="anamespacespk_html_a71e1f556496e4d67f41e1f7807069e54"><div class="ttname"><a href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a></div><div class="ttdeci">IVector2&lt; unsigned int &gt; Vector2UInt</div><div class="ttdoc">Alias for IVector2 with unsigned int type.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:692</div></div>
+<div class="ttc" id="anamespacespk_html_a71e1f556496e4d67f41e1f7807069e54"><div class="ttname"><a href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a></div><div class="ttdeci">IVector2&lt; unsigned int &gt; Vector2UInt</div><div class="ttdoc">Alias for IVector2 with unsigned int type.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:737</div></div>
+<div class="ttc" id="anamespacespk_html_a81b9738cf9ec67888207021519d1a673"><div class="ttname"><a href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a></div><div class="ttdeci">IVector2&lt; int &gt; Vector2Int</div><div class="ttdoc">Alias for IVector2 with int type.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:732</div></div>
 <div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; unsigned int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

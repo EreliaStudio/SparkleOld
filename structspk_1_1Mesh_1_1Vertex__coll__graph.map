@@ -1,0 +1,5 @@
+<map id="spk::Mesh::Vertex" name="spk::Mesh::Vertex">
+<area shape="rect" id="node1" title="Structure representing a vertex in the mesh. A Vertex is a representation of 3 variables linked toget..." alt="" coords="113,109,252,136"/>
+<area shape="rect" id="node2" href="$structspk_1_1IVector3.html" title=" " alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node3" href="$structspk_1_1IVector2.html" title=" " alt="" coords="195,5,360,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="spk::GameObject" name="spk::GameObject">
+<area shape="rect" id="node1" title="Represents a game object in the Sparkle engine." alt="" coords="110,259,245,285"/>
+<area shape="rect" id="node2" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="9,177,165,203"/>
+<area shape="rect" id="node3" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="13,80,161,121"/>
+<area shape="rect" id="node4" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node5" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="189,169,347,211"/>
+</map>

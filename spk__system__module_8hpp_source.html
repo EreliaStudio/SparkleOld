@@ -73,27 +73,29 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;application/modules/spk_message_consumer_module.hpp&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;application/spk_abstract_application.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1SystemModule.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1SystemModule.html">SystemModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::shared_ptr&lt;spk::AbstractApplication&gt; _applicationToManage;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classspk_1_1SystemModule.html#a9d60ed49fa9b31a075679b00e4f6186b">SystemModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, std::shared_ptr&lt;spk::AbstractApplication&gt; p_applicationToManage);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classspk_1_1SystemModule.html#a3ea988cf3deb772a60cf6e7869635a58">~SystemModule</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    };</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">class </span>Application;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1SystemModule.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1SystemModule.html">SystemModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classspk_1_1Application.html">spk::Application</a>* _applicationToManage;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classspk_1_1SystemModule.html#afeba2a462b5726cbcc533bf1db358512">SystemModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, <a class="code" href="classspk_1_1Application.html">spk::Application</a>* p_applicationToManage);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classspk_1_1SystemModule.html#a3ea988cf3deb772a60cf6e7869635a58">~SystemModule</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Application_html"><div class="ttname"><a href="classspk_1_1Application.html">spk::Application</a></div><div class="ttdoc">Abstract base class for the application.</div><div class="ttdef"><b>Definition:</b> spk_application.hpp:25</div></div>
 <div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdoc">Class for modules that consume messages.</div><div class="ttdef"><b>Definition:</b> spk_message_consumer_module.hpp:15</div></div>
-<div class="ttc" id="aclassspk_1_1SystemModule_html"><div class="ttname"><a href="classspk_1_1SystemModule.html">spk::SystemModule</a></div><div class="ttdoc">Class for managing system-level interactions.</div><div class="ttdef"><b>Definition:</b> spk_system_module.hpp:15</div></div>
-<div class="ttc" id="aclassspk_1_1SystemModule_html_a3ea988cf3deb772a60cf6e7869635a58"><div class="ttname"><a href="classspk_1_1SystemModule.html#a3ea988cf3deb772a60cf6e7869635a58">spk::SystemModule::~SystemModule</a></div><div class="ttdeci">~SystemModule()</div><div class="ttdoc">Destructs the SystemModule object.</div><div class="ttdef"><b>Definition:</b> spk_system_module.cpp:21</div></div>
-<div class="ttc" id="aclassspk_1_1SystemModule_html_a9d60ed49fa9b31a075679b00e4f6186b"><div class="ttname"><a href="classspk_1_1SystemModule.html#a9d60ed49fa9b31a075679b00e4f6186b">spk::SystemModule::SystemModule</a></div><div class="ttdeci">SystemModule(ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, std::shared_ptr&lt; spk::AbstractApplication &gt; p_applicationToManage)</div><div class="ttdoc">Constructs the SystemModule object.</div><div class="ttdef"><b>Definition:</b> spk_system_module.cpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1SystemModule_html"><div class="ttname"><a href="classspk_1_1SystemModule.html">spk::SystemModule</a></div><div class="ttdoc">Class for managing system-level interactions.</div><div class="ttdef"><b>Definition:</b> spk_system_module.hpp:16</div></div>
+<div class="ttc" id="aclassspk_1_1SystemModule_html_a3ea988cf3deb772a60cf6e7869635a58"><div class="ttname"><a href="classspk_1_1SystemModule.html#a3ea988cf3deb772a60cf6e7869635a58">spk::SystemModule::~SystemModule</a></div><div class="ttdeci">~SystemModule()</div><div class="ttdoc">Destructs the SystemModule object.</div><div class="ttdef"><b>Definition:</b> spk_system_module.cpp:22</div></div>
+<div class="ttc" id="aclassspk_1_1SystemModule_html_afeba2a462b5726cbcc533bf1db358512"><div class="ttname"><a href="classspk_1_1SystemModule.html#afeba2a462b5726cbcc533bf1db358512">spk::SystemModule::SystemModule</a></div><div class="ttdeci">SystemModule(ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, spk::Application *p_applicationToManage)</div><div class="ttdoc">Constructs the SystemModule object.</div><div class="ttdef"><b>Definition:</b> spk_system_module.cpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; SystemMessage &gt;</a></div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->

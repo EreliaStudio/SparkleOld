@@ -84,14 +84,13 @@ Collaboration diagram for spk::Network::Client:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Network_1_1Client__coll__graph.png" border="0" usemap="#aspk_1_1Network_1_1Client_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1Network_1_1Client_coll__map" id="aspk_1_1Network_1_1Client_coll__map">
-<area shape="rect" title="The Client class encapsulates the behavior of a client in a network communication context." alt="" coords="659,112,813,139"/>
+<area shape="rect" title="The Client class encapsulates the behavior of a client in a network communication context." alt="" coords="619,89,773,116"/>
 <area shape="rect" href="classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="238,31,401,57"/>
 <area shape="rect" href="classspk_1_1Thread.html" title="Class for creating and managing a thread." alt="" coords="37,5,136,32"/>
 <area shape="rect" href="classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,56,168,83"/>
 <area shape="rect" href="classspk_1_1ThreadSafeQueue.html" title=" " alt="" coords="217,82,421,123"/>
 <area shape="rect" href="classspk_1_1Network_1_1Socket.html" title="The Socket class is a wrapper around a network socket." alt="" coords="240,148,399,175"/>
 <area shape="rect" href="classspk_1_1Network_1_1Object.html" title="Base class for objects that utilize network resources." alt="" coords="7,148,166,175"/>
-<area shape="rect" href="classspk_1_1ContractProvider_1_1Contract.html" title="Represent the ownership of a callback and allow users to interact with it." alt="" coords="238,199,401,241"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -133,8 +132,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Public Attributes</h2></td></tr>
 <tr class="memitem:aafe74411ccfaaf0991c225df9ff9a458"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1PersistentWorker.html">spk::PersistentWorker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Client.html#aafe74411ccfaaf0991c225df9ff9a458">_socketContextWorker</a></td></tr>
 <tr class="separator:aafe74411ccfaaf0991c225df9ff9a458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c5269c15bad6fca647f458cebe78770"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">spk::ContractProvider::Contract</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Client.html#a2c5269c15bad6fca647f458cebe78770">_readingSocketDataContract</a></td></tr>
-<tr class="separator:a2c5269c15bad6fca647f458cebe78770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9f4c8f4794d60616a9e08ae4e79749"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">spk::ContractProvider::Contract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Client.html#a5a9f4c8f4794d60616a9e08ae4e79749">_readingSocketDataContract</a></td></tr>
+<tr class="separator:a5a9f4c8f4794d60616a9e08ae4e79749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2332ec049a4818a919c754051b15d15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Network_1_1Socket.html">spk::Network::Socket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Client.html#ac2332ec049a4818a919c754051b15d15">_socket</a></td></tr>
 <tr class="separator:ac2332ec049a4818a919c754051b15d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20aeddea81fb016febc4b88f45529f17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue</a>&lt; <a class="el" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Network_1_1Client.html#a20aeddea81fb016febc4b88f45529f17">_messagesToTreat</a></td></tr>
@@ -354,14 +353,14 @@ template&lt;typename TMessageType &gt; </div>
 
 </div>
 </div>
-<a id="a2c5269c15bad6fca647f458cebe78770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c5269c15bad6fca647f458cebe78770">&#9670;&nbsp;</a></span>_readingSocketDataContract</h2>
+<a id="a5a9f4c8f4794d60616a9e08ae4e79749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a9f4c8f4794d60616a9e08ae4e79749">&#9670;&nbsp;</a></span>_readingSocketDataContract</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">spk::ContractProvider::Contract</a> spk::Network::Client::_readingSocketDataContract</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classspk_1_1ContractProvider_1_1Contract.html">spk::ContractProvider::Contract</a>&gt; spk::Network::Client::_readingSocketDataContract</td>
         </tr>
       </table>
 </div><div class="memdoc">

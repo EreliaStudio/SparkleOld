@@ -1,0 +1,6 @@
+<map id="spk::FirstPersonController" name="spk::FirstPersonController">
+<area shape="rect" id="node1" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="145,95,335,121"/>
+<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node3" href="$structspk_1_1IVector3.html" title=" " alt="" coords="157,5,323,32"/>
+<area shape="rect" id="node4" href="$structspk_1_1IVector2.html" title=" " alt="" coords="358,5,511,32"/>
+</map>

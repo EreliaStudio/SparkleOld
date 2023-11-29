@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_1634',['g',['../structspk_1_1Color.html#a9941ab3dea75e7cd1d1e6b0cbc9d9eb5',1,'spk::Color']]]
+  ['g_1842',['g',['../structspk_1_1Color.html#a9941ab3dea75e7cd1d1e6b0cbc9d9eb5',1,'spk::Color']]]
 ];

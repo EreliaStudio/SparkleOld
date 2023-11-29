@@ -71,6 +71,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classspk_1_1Font-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::Font Class Reference</div>  </div>
@@ -150,6 +151,18 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
 static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Font.html#ae48e8b73f43bfc181a1f9362ef3e759a">EMPTY_PIXEL</a> = 0x00</td></tr>
 <tr class="memdesc:ae48e8b73f43bfc181a1f9362ef3e759a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel value representing empty space in the font texture. <br /></td></tr>
 <tr class="separator:ae48e8b73f43bfc181a1f9362ef3e759a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a83a316eaf4671f4de7ea731ecabe1cec"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Font.html#a83a316eaf4671f4de7ea731ecabe1cec">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="classspk_1_1Font.html#ad6aea176b2688e771c0b34525a12bdc8">OutlineType</a> &amp;p_outlineType)</td></tr>
+<tr class="memdesc:a83a316eaf4671f4de7ea731ecabe1cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the &lt;&lt; operator for outputting the name of the OutlineType enumeration value.  <a href="classspk_1_1Font.html#a83a316eaf4671f4de7ea731ecabe1cec">More...</a><br /></td></tr>
+<tr class="separator:a83a316eaf4671f4de7ea731ecabe1cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068e004cb32243939ccb68c2aa219652"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Font.html#a068e004cb32243939ccb68c2aa219652">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="classspk_1_1Font.html#a9748810294acaab304a125b964d62186">VerticalAlignment</a> &amp;p_verticalAlignment)</td></tr>
+<tr class="memdesc:a068e004cb32243939ccb68c2aa219652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the &lt;&lt; operator for outputting the name of the VerticalAlignment enumeration value.  <a href="classspk_1_1Font.html#a068e004cb32243939ccb68c2aa219652">More...</a><br /></td></tr>
+<tr class="separator:a068e004cb32243939ccb68c2aa219652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760727eca444570f3ad0fd1123449491"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Font.html#a760727eca444570f3ad0fd1123449491">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="classspk_1_1Font.html#a774beea95f666be7554603a08d04d58d">HorizontalAlignment</a> &amp;p_horizontalAlignment)</td></tr>
+<tr class="memdesc:a760727eca444570f3ad0fd1123449491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the &lt;&lt; operator for outputting the name of the HorizontalAlignment enumeration value.  <a href="classspk_1_1Font.html#a760727eca444570f3ad0fd1123449491">More...</a><br /></td></tr>
+<tr class="separator:a760727eca444570f3ad0fd1123449491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a font, which can be used for rendering text. </p>
@@ -465,6 +478,148 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Shared pointer to the requested atlas. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a760727eca444570f3ad0fd1123449491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760727eca444570f3ad0fd1123449491">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Font.html#a774beea95f666be7554603a08d04d58d">HorizontalAlignment</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_horizontalAlignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloads the &lt;&lt; operator for outputting the name of the HorizontalAlignment enumeration value. </p>
+<p>This function overloads the &lt;&lt; operator to allow for easy outputting of the HorizontalAlignment enumeration values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_os</td><td>A reference to a std::wostream object (like <a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680" title="Thread-local instances of IOStream for standard output.">spk::cout</a>). </td></tr>
+    <tr><td class="paramname">p_horizontalAlignment</td><td>The HorizontalAlignment enumeration value to be outputted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; - The modified std::wostream object. </dd></dl>
+
+</div>
+</div>
+<a id="a83a316eaf4671f4de7ea731ecabe1cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a316eaf4671f4de7ea731ecabe1cec">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Font.html#ad6aea176b2688e771c0b34525a12bdc8">OutlineType</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_outlineType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloads the &lt;&lt; operator for outputting the name of the OutlineType enumeration value. </p>
+<p>This function overloads the &lt;&lt; operator to allow for easy outputting of the OutlineType enumeration values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_os</td><td>A reference to a std::wostream object (like <a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680" title="Thread-local instances of IOStream for standard output.">spk::cout</a>). </td></tr>
+    <tr><td class="paramname">p_outlineType</td><td>The OutlineType enumeration value to be outputted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; - The modified std::wostream object. </dd></dl>
+
+</div>
+</div>
+<a id="a068e004cb32243939ccb68c2aa219652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068e004cb32243939ccb68c2aa219652">&#9670;&nbsp;</a></span>operator&lt;&lt; <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classspk_1_1Font.html#a9748810294acaab304a125b964d62186">VerticalAlignment</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_verticalAlignment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloads the &lt;&lt; operator for outputting the name of the VerticalAlignment enumeration value. </p>
+<p>This function overloads the &lt;&lt; operator to allow for easy outputting of the VerticalAlignment enumeration values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_os</td><td>A reference to a std::wostream object (like <a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680" title="Thread-local instances of IOStream for standard output.">spk::cout</a>). </td></tr>
+    <tr><td class="paramname">p_verticalAlignment</td><td>The VerticalAlignment enumeration value to be outputted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; - The modified std::wostream object. </dd></dl>
 
 </div>
 </div>

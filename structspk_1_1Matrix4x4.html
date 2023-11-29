@@ -70,6 +70,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structspk_1_1Matrix4x4-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::Matrix4x4 Struct Reference</div>  </div>
@@ -133,12 +134,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4dab87baafea992da45529bc045f7e24"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Matrix4x4.html#a4dab87baafea992da45529bc045f7e24">rotateAroundAxis</a> (const <a class="el" href="namespacespk.html#a25ce29c89e3ca14bf467a94db03d5939">Vector3</a> &amp;p_axis, const float &amp;p_rotationAngle)</td></tr>
 <tr class="memdesc:a4dab87baafea992da45529bc045f7e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a matrix for rotation around an arbitrary axis.  <a href="structspk_1_1Matrix4x4.html#a4dab87baafea992da45529bc045f7e24">More...</a><br /></td></tr>
 <tr class="separator:a4dab87baafea992da45529bc045f7e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965c54fc80043222c68a8c6c68a1f770"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Matrix4x4.html#a965c54fc80043222c68a8c6c68a1f770">perspective</a> (float fov, float aspectRatio, float nearPlane, float farPlane)</td></tr>
+<tr class="memdesc:a965c54fc80043222c68a8c6c68a1f770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a perspective projection matrix.  <a href="structspk_1_1Matrix4x4.html#a965c54fc80043222c68a8c6c68a1f770">More...</a><br /></td></tr>
+<tr class="separator:a965c54fc80043222c68a8c6c68a1f770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ade0a7a802a9e586f4ee00f56f27558"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Matrix4x4.html#a3ade0a7a802a9e586f4ee00f56f27558">ortho</a> (float left, float right, float bottom, float top, float nearPlane, float farPlane)</td></tr>
+<tr class="memdesc:a3ade0a7a802a9e586f4ee00f56f27558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an orthographic projection matrix.  <a href="structspk_1_1Matrix4x4.html#a3ade0a7a802a9e586f4ee00f56f27558">More...</a><br /></td></tr>
+<tr class="separator:a3ade0a7a802a9e586f4ee00f56f27558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a1300d9d8bebad4e73adb1c15d6e28cd8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Matrix4x4.html#a1300d9d8bebad4e73adb1c15d6e28cd8">data</a> [4][4]</td></tr>
 <tr class="memdesc:a1300d9d8bebad4e73adb1c15d6e28cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default 4x4 identity matrix initialization.  <a href="structspk_1_1Matrix4x4.html#a1300d9d8bebad4e73adb1c15d6e28cd8">More...</a><br /></td></tr>
 <tr class="separator:a1300d9d8bebad4e73adb1c15d6e28cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a17ff2b64034b26ba0a03bca1be4a496f"><td class="memItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Matrix4x4.html#a17ff2b64034b26ba0a03bca1be4a496f">operator&lt;&lt;</a> (std::wostream &amp;p_os, const <a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a> &amp;p_matrix)</td></tr>
+<tr class="memdesc:a17ff2b64034b26ba0a03bca1be4a496f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the &lt;&lt; operator for outputting the <a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> value.  <a href="structspk_1_1Matrix4x4.html#a17ff2b64034b26ba0a03bca1be4a496f">More...</a><br /></td></tr>
+<tr class="separator:a17ff2b64034b26ba0a03bca1be4a496f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a 4x4 matrix. </p>
@@ -369,6 +382,142 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a3ade0a7a802a9e586f4ee00f56f27558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ade0a7a802a9e586f4ee00f56f27558">&#9670;&nbsp;</a></span>ortho()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a> spk::Matrix4x4::ortho </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>nearPlane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>farPlane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an orthographic projection matrix. </p>
+<p>This function constructs an orthographic projection matrix defined by the coordinates of the planes defining the viewing volume: left, right, bottom, top, near, and far.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>Coordinate for the left vertical clipping plane. </td></tr>
+    <tr><td class="paramname">right</td><td>Coordinate for the right vertical clipping plane. </td></tr>
+    <tr><td class="paramname">bottom</td><td>Coordinate for the bottom horizontal clipping plane. </td></tr>
+    <tr><td class="paramname">top</td><td>Coordinate for the top horizontal clipping plane. </td></tr>
+    <tr><td class="paramname">nearPlane</td><td>Distance to the near depth clipping plane. </td></tr>
+    <tr><td class="paramname">farPlane</td><td>Distance to the far depth clipping plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> The orthographic projection matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a965c54fc80043222c68a8c6c68a1f770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965c54fc80043222c68a8c6c68a1f770">&#9670;&nbsp;</a></span>perspective()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a> spk::Matrix4x4::perspective </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fov</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>aspectRatio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>nearPlane</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>farPlane</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a perspective projection matrix. </p>
+<p>This function constructs a perspective transformation matrix defined by a field of view, aspect ratio, and the near and far clipping planes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fov</td><td>Field of view in radians. </td></tr>
+    <tr><td class="paramname">aspectRatio</td><td>Aspect ratio of the viewport (width / height). </td></tr>
+    <tr><td class="paramname">nearPlane</td><td>Distance to the near clipping plane. </td></tr>
+    <tr><td class="paramname">farPlane</td><td>Distance to the far clipping plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> The perspective projection matrix. </dd></dl>
+
+</div>
+</div>
 <a id="a290015a56b33ece7f38677ab366434f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a290015a56b33ece7f38677ab366434f2">&#9670;&nbsp;</a></span>ptr()</h2>
 
@@ -557,6 +706,54 @@ Public Attributes</h2></td></tr>
 
 <p>Returns the transpose of the matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd>Transposed matrix. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a17ff2b64034b26ba0a03bca1be4a496f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ff2b64034b26ba0a03bca1be4a496f">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;&#160;</td>
+          <td class="paramname"><em>p_os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structspk_1_1Matrix4x4.html">Matrix4x4</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overloads the &lt;&lt; operator for outputting the <a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> value. </p>
+<p>This function overloads the &lt;&lt; operator to allow for easy outputting of the <a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_os</td><td>A reference to a std::wostream object (like <a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680" title="Thread-local instances of IOStream for standard output.">spk::cout</a>). </td></tr>
+    <tr><td class="paramname">p_matrix</td><td>The <a class="el" href="structspk_1_1Matrix4x4.html" title="Represents a 4x4 matrix.">Matrix4x4</a> value to be outputted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::wostream&amp; - The modified std::wostream object. </dd></dl>
 
 </div>
 </div>
