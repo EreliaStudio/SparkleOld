@@ -43,11 +43,10 @@
 #include "system/spk_timer.hpp"
 #include "system/spk_time_metrics.hpp"
 
-#include "application/spk_abstract_application.hpp"
-
 #include "graphics/spk_color.hpp"
 #include "graphics/spk_texture.hpp"
 #include "graphics/spk_image.hpp"
+#include "graphics/spk_sprite_sheet.hpp"
 #include "graphics/spk_font.hpp"
 #include "graphics/spk_window.hpp"
 #include "graphics/spk_pipeline.hpp"
@@ -91,3 +90,10 @@
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 #include "miscellaneous/JSON/spk_JSON_file.hpp"
 #include "miscellaneous/spk_translation_atlas.hpp"
+
+#include "engine/spk_components.hpp"
+#include "engine/spk_game_object.hpp"
+#include "engine/spk_game_engine.hpp"
+#include "engine/spk_mesh_primitive.hpp"
+
+#include "widget/spk_widget_game_engine_manager.hpp"

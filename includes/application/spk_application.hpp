@@ -1,32 +1,31 @@
-#pragma once 
+#pragma once
 
-#include "application/spk_abstract_application.hpp"
+#include <map>
+#include <vector>
+#include <functional>
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_system_module.hpp"
 #include "application/modules/spk_time_module.hpp"
 #include "application/modules/spk_graphical_api_module.hpp"
-#include "graphics/spk_window.hpp"
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
 #include "application/modules/spk_profiler_module.hpp"
-#include "design_pattern/spk_observer.hpp"
-#include "design_pattern/spk_singleton.hpp"
 #include "widget/spk_widget_canvas.hpp"
 
 namespace spk
 {
 	/**
 	 * @class Application
-	 * @brief Main class for managing application.
+	 * @brief Abstract base class for the application.
 	 *
-	 * This class initializes the SPK modules and manages the application loop.
-	 * The modules are updated and rendered in a specific order.
-	 * The application window can be resized, and the central widget can be retrieved.
+	 * This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses.
 	 */
-	class Application : public spk::AbstractApplication
+	class Application
 	{
 	private:
+		const std::function<void()> _updaterJob;
+
 		spk::APIModule _APIModule; ///< API module instance.
 
 		spk::SystemModule _systemModule; ///< System module instance.
@@ -38,32 +37,56 @@ namespace spk
 
 		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
-		std::vector<Contract> _renderContracts; ///< Contracts related to the Render jobs
-		std::vector<Contract> _updateContracts; ///< Contracts related to the Update jobs
+		/**
+		 * @brief Error code representing the state of the application.
+		 */
+		int _errorCode;
+		
+		/**
+		 * @brief Boolean flag indicating if the application is running.
+		 */
+		bool _isRunning;
 
 	protected:
 		/**
-		 * @brief Setup the application jobs.
-		 *
-		 * This method sets up the jobs for updating and rendering the modules.
-		 */
-		void setupJobs();
+		 * @brief Execute what is necessary to rename the current thread : Edit cout/cerr prefix, define thread name in Profiler settings
+		*/
+		void _renameThread(const std::wstring& p_threadName);
+
+		/**
+		 * @brief Return the running status of the application
+		*/
+		bool isRunning() const;
+
+		/**
+		 * @brief Initialize the shaders used by Sparkle.
+		*/
+		void _initializeShaders();
 
 	public:
 		/**
 		 * @brief Constructs the Application object.
-		 *
-		 * @param p_title Title of the window.
-		 * @param p_size Size of the window.
 		 */
 		Application(const std::wstring& p_title, const spk::Vector2Int& p_size);
 
 		/**
 		 * @brief Destructs the Application object.
-		 *
-		 * This will delete all modules.
 		 */
-		~Application();
+		virtual ~Application();
+
+		/**
+		 * @brief Runs the application.
+		 *
+		 * @return The error code after the application finishes running.
+		 */
+		int run();
+
+		/**
+		 * @brief Quits the application with a specific error code.
+		 *
+		 * @param p_errorCode The error code with which the application should quit.
+		 */
+		void quit(int p_errorCode);
 
 		/**
 		 * @brief Load a new canvas into the application.
@@ -101,6 +124,10 @@ namespace spk
 		 * @brief Return the current size of the Window.
 		*/
 		const spk::Vector2UInt& size() const;
-	};
 
+		/**
+		 * @brief Set the maximum number of FPS reachable by the application
+		*/
+		void setMaxFPS(const size_t& p_maxFPS);
+	};
 }

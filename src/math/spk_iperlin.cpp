@@ -73,7 +73,7 @@ namespace spk
 			case Interpolation::Linear:
 				return w;
 			case Interpolation::SmoothStep:
-				return w * w * (3.0f - 2.0f * w);
+				return w * w * (3.0f - 2.0f * w);				
 			default:
 				return w;
 		}

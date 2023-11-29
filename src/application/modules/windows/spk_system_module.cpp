@@ -1,6 +1,7 @@
 #include "application/modules/spk_system_module.hpp"
-
+#include "application/spk_application.hpp"
 #include "iostream/spk_iostream.hpp"
+
 
 namespace spk
 {
@@ -19,7 +20,8 @@ namespace spk
 		}
 	}
 
-	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, std::shared_ptr<spk::AbstractApplication> p_applicationToManage) : IMessageConsumerModule(p_queue),
+	SystemModule::SystemModule(ThreadSafeQueue<SystemMessage> &p_queue, spk::Application* p_applicationToManage) :
+		IMessageConsumerModule(p_queue),
 		_applicationToManage(p_applicationToManage)
 	{
 

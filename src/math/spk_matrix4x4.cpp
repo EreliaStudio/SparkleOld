@@ -10,9 +10,10 @@ namespace spk
 	{
 		float w = data[3][0] * v.x + data[3][1] * v.y + data[3][2] * v.z + data[3][3];
 		return Vector3(
-			(data[0][0] * v.x + data[0][1] * v.y + data[0][2] * v.z + data[0][3]) / w,
-			(data[1][0] * v.x + data[1][1] * v.y + data[1][2] * v.z + data[1][3]) / w,
-			(data[2][0] * v.x + data[2][1] * v.y + data[2][2] * v.z + data[2][3]) / w);
+				(data[0][0] * v.x + data[0][1] * v.y + data[0][2] * v.z + data[0][3]) / w,
+				(data[1][0] * v.x + data[1][1] * v.y + data[1][2] * v.z + data[1][3]) / w,
+				(data[2][0] * v.x + data[2][1] * v.y + data[2][2] * v.z + data[2][3]) / w
+			);
 	}
 
 	Matrix4x4 Matrix4x4::operator*(const Matrix4x4 &other) const
@@ -23,7 +24,11 @@ namespace spk
 		{
 			for (int j = 0; j < 4; ++j)
 			{
-				result.data[i][j] = data[i][0] * other.data[0][j] + data[i][1] * other.data[1][j] + data[i][2] * other.data[2][j] + data[i][3] * other.data[3][j];
+				result.data[i][j] =
+					other.data[i][0] * data[0][j] +
+					other.data[i][1] * data[1][j] +
+					other.data[i][2] * data[2][j] +
+					other.data[i][3] * data[3][j];
 			}
 		}
 
@@ -32,31 +37,24 @@ namespace spk
 
 	Matrix4x4 Matrix4x4::lookAt(const Vector3 &p_from, const Vector3 &p_to, const Vector3 &p_up)
 	{
+		const spk::Vector3 forward = ((p_to - p_from).normalize());
+		const spk::Vector3 right = (forward != p_up && forward != p_up.inverse() ? forward.cross(p_up).normalize() : spk::Vector3(1, 0, 0));
+		const spk::Vector3 up = right.cross(forward);
+
 		Matrix4x4 result;
 
-		Vector3 forward = (p_from - p_to).normalize();
-		Vector3 right = p_up.cross(forward).normalize();
-		Vector3 up = forward.cross(right).normalize();
-
 		result.data[0][0] = right.x;
-		result.data[0][1] = right.y;
-		result.data[0][2] = right.z;
-		result.data[0][3] = -right.dot(p_from);
-
-		result.data[1][0] = up.x;
+		result.data[1][0] = right.y;
+		result.data[2][0] = right.z;
+		result.data[0][1] = up.x;
 		result.data[1][1] = up.y;
-		result.data[1][2] = up.z;
-		result.data[1][3] = -up.dot(p_from);
-
-		result.data[2][0] = forward.x;
-		result.data[2][1] = forward.y;
-		result.data[2][2] = forward.z;
-		result.data[2][3] = -forward.dot(p_from);
-
-		result.data[3][0] = 0.0f;
-		result.data[3][1] = 0.0f;
-		result.data[3][2] = 0.0f;
-		result.data[3][3] = 1.0f;
+		result.data[2][1] = up.z;
+		result.data[0][2] =-forward.x;
+		result.data[1][2] =-forward.y;
+		result.data[2][2] =-forward.z;
+		result.data[3][0] =-right.dot(p_from);
+		result.data[3][1] =-up.dot(p_from);
+		result.data[3][2] = forward.dot(p_from);
 
 		return result;
 	}
@@ -135,6 +133,36 @@ namespace spk
 		result.data[3][1] = 0.0f;
 		result.data[3][2] = 0.0f;
 		result.data[3][3] = 1.0f;
+
+		return result;
+	}
+
+	Matrix4x4 Matrix4x4::perspective(float p_fov, float p_aspectRatio, float p_nearPlane, float p_farPlane)
+	{
+		Matrix4x4 result;
+
+		const float tanHalfFovY = tan(spk::degreeToRadian(p_fov) / 2.0f);
+
+		result.data[0][0] = 1.0f / (p_aspectRatio * tanHalfFovY);
+		result.data[1][1] = 1.0f / tanHalfFovY;
+		result.data[2][2] = -(p_farPlane + p_nearPlane) / (p_farPlane - p_nearPlane);
+		result.data[2][3] = -1.0f;
+		result.data[3][2] = -(2 * p_farPlane * p_nearPlane) / (p_farPlane - p_nearPlane);
+		result.data[3][3] = 0.0f;
+
+		return result;
+	}
+
+	Matrix4x4 Matrix4x4::ortho(float p_left, float p_right, float p_bottom, float p_top, float p_nearPlane, float p_farPlane)
+	{
+		Matrix4x4 result;
+
+		result.data[0][0] = 2.0f / (p_right - p_left);
+		result.data[1][1] = 2.0f / (p_top - p_bottom);
+		result.data[2][2] = -2.0f / (p_farPlane - p_nearPlane);
+		result.data[3][0] = -(p_right + p_left) / (p_right - p_left);
+		result.data[3][1] = -(p_top + p_bottom) / (p_top - p_bottom);
+		result.data[3][2] = -(p_farPlane + p_nearPlane) / (p_farPlane - p_nearPlane);
 
 		return result;
 	}

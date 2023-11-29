@@ -14,25 +14,8 @@ namespace spk
 	class ProfilerModule
 	{
 	private:
-		/**
-		 * \brief Timer that ticks every second.
-		 */
-		spk::Timer _oneSecondTime;
-
-		/**
-		 * \brief Counter for the number of frames rendered per second.
-		 */
-		size_t _renderIPSCounter;
-
-		/**
-		 * \brief Counter for the number of updates processed per second.
-		 */
-		size_t _updateIPSCounter;
-
-		/**
-		 * \brief Resets the counters for frames rendered and updates processed.
-		 */
-		void _resetCounter();
+		spk::Timer _counterTimer;
+		float _counterRatio;
 
 	public:
 		/**
@@ -46,24 +29,18 @@ namespace spk
 		~ProfilerModule();
 
 		/**
-		 * \brief Update the counters and timer.
-		 *
-		 * This method should be called once per frame in the application's main update loop.
+		 * @brief Actualize the affiched FPS/UPS counter
 		 */
-		void updateData();
+		void updateCounters();
 
 		/**
-		 * \brief Increment the counter for frames rendered per second.
-		 *
-		 * This method should be called once per frame rendered.
-		 */
-		void increaseRenderIPS();
+		 * @brief Updating FPS counter by incrementing it by one
+		*/
+		void updateFPS();
 
 		/**
-		 * \brief Increment the counter for updates processed per second.
-		 *
-		 * This method should be called once per update processed.
-		 */
-		void increaseUpdateIPS();
+		 * @brief Updating UPS counter by incrementing it by one
+		*/
+		void updateUPS();
 	};
 }

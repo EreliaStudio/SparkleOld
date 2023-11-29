@@ -103,12 +103,27 @@ namespace spk
 		}
 
 		/**
+		 * @brief Unary minus operator for IVector3.
+		 *
+		 * This operator negates both the x and y components of the IVector3 instance,
+		 * effectively reflecting it across the origin in a 3D coordinate system. This
+		 * can be used for reversing the direction of the vector or for subtractive
+		 * vector operations.
+		 *
+		 * @return IVector3 - A new IVector3 instance with both x, y and z components negated.
+		 */
+		IVector3 operator-() const
+		{
+        	return (IVector3(-x, -y, -z));
+    	}
+
+		/**
 		 * @brief Overloaded insertion operator for printing the vector to an output stream.
 		 * @param p_os The output stream.
 		 * @param p_self The IVector3 object to be printed.
 		 * @return The modified output stream.
 		 */
-		friend std::ostream &operator<<(std::ostream &p_os, const IVector3 &p_self)
+		friend std::wostream &operator<<(std::wostream &p_os, const IVector3 &p_self)
 		{
 			p_os << p_self.x << " / " << p_self.y << " / " << p_self.z;
 			return (p_os);
@@ -524,9 +539,63 @@ namespace spk
 		 * @brief Returns the inverse (negation) of the vector.
 		 * @return The inverse of the vector.
 		 */
-		IVector3 inverse()
+		IVector3 inverse() const
 		{
 			return (IVector3(-x, -y, -z));
+		}
+
+		/**
+		 * @brief Converts a vector of angles from radians to degrees.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in radians.
+		 *
+		 * @param radians A IVector3 representing angles in radians.
+		 * @return Vector3 A IVector3 with angles in degrees.
+		 */
+		static IVector3 radianToDegree(const IVector3& radians) {
+			return IVector3(
+				radians.x * (180.0f / M_PI),
+				radians.y * (180.0f / M_PI),
+				radians.z * (180.0f / M_PI));
+		}
+
+		/**
+		 * @brief Converts a vector of angles from degrees to radians.
+		 * 
+		 * This function performs the conversion on each component of the vector
+		 * assuming they represent angles in degrees.
+		 *
+		 * @param degrees A IVector3 representing angles in degrees.
+		 * @return Vector3 A IVector3 with angles in radians.
+		 */
+		static IVector3 degreeToRadian(const IVector3& degrees) {
+			return IVector3(
+				degrees.x * (M_PI / 180.0f),
+				degrees.y * (M_PI / 180.0f),
+				degrees.z * (M_PI / 180.0f));
+		}
+
+		/**
+		 * @brief Clamps each component of the vector within specified lower and upper bounds.
+		 *
+		 * This function clamps each component (x, y, z) of the IVector3 instance to be within the range
+		 * specified by the corresponding components of p_lowerValue and p_higherValue. The clamping is
+		 * done independently for each component. This is useful for ensuring that a vector's components
+		 * remain within a certain range, such as for bounding positions within a specific area.
+		 *
+		 * @param p_lowerValue The IVector3 specifying the lower bound for each component.
+		 * @param p_higherValue The IVector3 specifying the upper bound for each component.
+		 * @return IVector3 - A new IVector3 instance with each component clamped between the corresponding 
+		 * values of p_lowerValue and p_higherValue.
+		 */
+		IVector3 clamp(const IVector3& p_lowerValue, const IVector3& p_higherValue)
+		{
+			return (IVector3(
+				std::clamp(x, p_lowerValue.x, p_higherValue.x), 
+				std::clamp(y, p_lowerValue.y, p_higherValue.y), 
+				std::clamp(z, p_lowerValue.z, p_higherValue.z)
+			));
 		}
 	};
 

@@ -13,7 +13,7 @@ namespace spk
 
     void ShaderLayout::OutputBufferLayout::treat(const ShaderModule::Instruction &p_instruction)
     {
-        std::regex re(R"(layout\(location=(\d+)\)\s+out\s+(\w+)\s+(\w+);)");
+        std::regex re(R"(layout\s*\(location=(\d+)\)\s+out\s+(\w+)\s+(\w+);)");
         std::smatch match;
 
         if (std::regex_search(p_instruction.code, match, re))
@@ -26,7 +26,7 @@ namespace spk
             if (it != structureLayout.structures().end())
             {
                 Data outputData = it->second;
-
+                outputData.paddingFormat = 4;
                 this->insert(attributeName, outputData, location);
             }
             else

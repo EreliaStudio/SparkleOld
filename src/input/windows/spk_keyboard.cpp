@@ -10,9 +10,9 @@ namespace spk
 		result.bindKey(9, Tab);
 		result.bindKey(12, Clear);
 		result.bindKey(13, Return);
-		result.bindKey(16, Shift);
-		result.bindKey(17, Control);
-		result.bindKey(18, Alt);
+		result.bindKey(16, LeftShift);
+		result.bindKey(17, LeftControl);
+		result.bindKey(18, LeftAlt);
 		result.bindKey(19, Pause);
 		result.bindKey(20, Capslock);
 		result.bindKey(27, Escape);

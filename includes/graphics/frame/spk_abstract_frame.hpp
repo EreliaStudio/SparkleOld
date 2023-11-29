@@ -16,6 +16,8 @@ namespace spk
 	protected:
 		/// Holds the size of the frame as a Vector2UInt.
 		spk::Vector2UInt _size;
+		/// Holds the size of the frame as a Vector2UInt.
+		spk::Vector2Int _anchor;
 
 		/**
 		 * @brief Method to handle frame resizing logic.
@@ -73,6 +75,13 @@ namespace spk
 		void resize(const spk::Vector2UInt& p_size);
 
 		/**
+		 * @brief Place the frame to a new position.
+		 * 
+		 * @param p_anchor The new position to set for the frame.
+		 */
+		void place(const spk::Vector2Int& p_anchor);
+
+		/**
 		 * @brief Set the frame's size.
 		 * 
 		 * @param p_size The size to set for the frame.
@@ -85,5 +94,12 @@ namespace spk
 		 * @return A constant reference to the Vector2UInt holding the size.
 		 */
 		const Vector2UInt &size() const;
+
+		/**
+		 * @brief Get the current anchor of the frame.
+		 * 
+		 * @return A constant reference to the Vector2Int holding the anchor.
+		 */
+		const Vector2Int &anchor() const;
 	};
 }

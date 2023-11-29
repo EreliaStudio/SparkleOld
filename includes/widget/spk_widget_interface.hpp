@@ -28,8 +28,8 @@ namespace spk::Widget
 		virtual void _onGeometryChange() = 0;
 
 		bool _isOperationnal = false;
-		Contract _activationCallback;
-		Contract _deactivationCallback;
+		std::shared_ptr<Contract> _activationCallback;
+		std::shared_ptr<Contract> _deactivationCallback;
 
 		std::wstring _name;
 		bool _geometryEdited;

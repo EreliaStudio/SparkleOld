@@ -28,19 +28,19 @@ private:
     static const size_t BackgroundIndex = 0;
 
     /**
-     * @brief Index for frontground in the rendering objects array.
+     * @brief Index for foreground in the rendering objects array.
      */
-    static const size_t FrontgroundIndex = 1;
+    static const size_t ForegroundIndex = 1;
 
     /**
-     * @brief Array of rendering objects for the background and frontground.
+     * @brief Array of rendering objects for the background and foreground.
      */
     std::shared_ptr<spk::Pipeline::Object> _renderingObjects[2];
 
     /**
-     * @brief Wrapper for the color of the frontground.
+     * @brief Wrapper for the color of the foreground.
      */
-    ValueWrapper<spk::Color> _frontgroundColor;
+    ValueWrapper<spk::Color> _foregroundColor;
 
     /**
      * @brief Wrapper for the color of the background.
@@ -72,13 +72,13 @@ private:
     void _updateBackgroundColor();
 
     /**
-     * @brief Updates the frontground color of the box.
+     * @brief Updates the foreground color of the box.
      * 
-     * This function handles the updates to the frontground color. It is invoked
-     * whenever there is a change in the frontground color value. The function
-     * ensures the box's frontground reflects the new color appropriately.
+     * This function handles the updates to the foreground color. It is invoked
+     * whenever there is a change in the foreground color value. The function
+     * ensures the box's foreground reflects the new color appropriately.
      */
-    void _updateFrontgroundColor();
+    void _updateForegroundColor();
 
     /**
      * @brief Updates the depth of the box.
@@ -90,18 +90,18 @@ private:
     void _updateDepth();
 
     /**
-     * @brief Updates the vertices for the frontground of the box.
+     * @brief Updates the vertices for the foreground of the box.
      * 
-     * This function recalculates the vertices for the frontground of the box.
+     * This function recalculates the vertices for the foreground of the box.
      * It is typically called when there's a change in the box's properties that
-     * affects its frontground shape or position.
+     * affects its foreground shape or position.
      */
-    void _updateFrontgroundVertices();
+    void _updateForegroundVertices();
 
     /**
      * @brief Updates the vertices for the background of the box.
      * 
-     * Similar to the frontground vertices update, this function recalculates
+     * Similar to the foreground vertices update, this function recalculates
      * the vertices for the background of the box. It is invoked when changes
      * in the box's properties affect the background's geometry.
      */
@@ -111,7 +111,7 @@ private:
      * @brief General function to update the vertices of the box.
      * 
      * This function is a more general vertex update function. It calls the
-     * specific frontground and background vertex update functions. It's used
+     * specific foreground and background vertex update functions. It's used
      * when there is a need to update all vertices of the box, such as during
      * a complete redraw or significant property change.
      */
@@ -130,17 +130,17 @@ public:
     void render();
 
     /**
-     * @brief Default frontground color for all Box instances.
+     * @brief Default foreground color for all Box instances.
      * 
-     * This static value sets the default frontground color used when creating
+     * This static value sets the default foreground color used when creating
      * new Box instances, unless specified otherwise.
      */
-    static inline ValueWrapper<spk::Color>::Default defaultFrontgroundColor = spk::Color(180, 180, 180, 255);
+    static inline ValueWrapper<spk::Color>::Default defaultForegroundColor = spk::Color(180, 180, 180, 255);
 
     /**
      * @brief Default background color for all Box instances.
      * 
-     * Similar to the default frontground color, this static value sets the
+     * Similar to the default foreground color, this static value sets the
      * default background color for new Box instances.
      */
     static inline ValueWrapper<spk::Color>::Default defaultBackgroundColor = spk::Color(120, 120, 120, 255);
@@ -172,11 +172,11 @@ public:
     // Member functions to access and manipulate box properties
 
     /**
-     * @brief Provides access to the current frontground color.
+     * @brief Provides access to the current foreground color.
      * 
-     * @return Value<spk::Color>& Reference to the frontground color value.
+     * @return Value<spk::Color>& Reference to the foreground color value.
      */
-    Value<spk::Color>& frontgroundColor() { return (_frontgroundColor.value()); }
+    Value<spk::Color>& foregroundColor() { return (_foregroundColor.value()); }
 
     /**
      * @brief Provides access to the current background color.
@@ -207,20 +207,20 @@ public:
     Value<spk::Area>& area() { return (_area.value()); }
 
     /**
-     * @brief Provides const access to the current frontground color.
+     * @brief Provides const access to the current foreground color.
      * 
-     * This function returns a constant reference to the frontground color
+     * This function returns a constant reference to the foreground color
      * of the box. It's used in contexts where the box's state should not be
      * modified.
      * 
-     * @return const Value<spk::Color>& Const reference to the frontground color value.
+     * @return const Value<spk::Color>& Const reference to the foreground color value.
      */
-    const Value<spk::Color>& frontgroundColor() const { return (_frontgroundColor.value()); }
+    const Value<spk::Color>& foregroundColor() const { return (_foregroundColor.value()); }
 
     /**
      * @brief Provides const access to the current background color.
      * 
-     * Similar to the frontground color access, this function returns a constant
+     * Similar to the foreground color access, this function returns a constant
      * reference to the background color. It's used where the box is constant and
      * its state should not be altered.
      * 

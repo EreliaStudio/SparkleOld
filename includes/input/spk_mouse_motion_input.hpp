@@ -24,6 +24,8 @@ namespace spk
 		 * @return Always returns true.
 		 */
 		bool _isExecutionNeeded() {
+			if (spk::Mouse::instance()->deltaPosition() == spk::Vector2(0, 0))
+				return (false);
 			return (true);
 		}
 

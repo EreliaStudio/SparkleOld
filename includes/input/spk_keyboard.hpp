@@ -118,6 +118,7 @@ namespace spk
 		Layout _layout;
 		Mapping _mapping[2];
 		InputState _keys[Key::SIZE];
+		std::vector<Key> _keysToUpdate;
 
 		Keyboard();
 

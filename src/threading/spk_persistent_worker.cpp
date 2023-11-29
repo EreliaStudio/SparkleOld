@@ -3,13 +3,15 @@
 
 namespace spk
 {
-	PersistentWorker::PersistentWorker(const std::wstring & p_name) :
-		Thread(LaunchMethod::Delayed, p_name, [&]() {
+	PersistentWorker::PersistentWorker(const std::wstring &p_name) :
+		Thread(LaunchMethod::Delayed, p_name, [&]()
+		{
 			while (_isRunning)
 			{
 				if (_isPaused == true)
 					continue;
-				for (auto &job : _jobs)
+
+				for (const auto &job : _jobs)
 				{
 					try 
 					{
@@ -27,26 +29,28 @@ namespace spk
 		_jobs(),
 		_isRunning(false),
 		_isPaused(false)
-	{}
+	{
+	}
 
 	PersistentWorker::~PersistentWorker()
 	{
 		stop();
 	}
 
-	ContractProvider::Contract PersistentWorker::addJob(const std::wstring& p_jobName, const PersistentWorker::Job& p_job)
+	std::shared_ptr<ContractProvider::Contract> PersistentWorker::addJob(const std::wstring &p_jobName, const PersistentWorker::Job &p_job)
 	{
-		std::function<void()> funct = [this, p_jobName, p_job](){
+		std::function<void()> funct = [this, p_jobName, p_job]()
+		{
 			_activeJobName = &p_jobName;
 			p_job();
 			_activeJobName = nullptr;
 		};
-		return (std::move(ContractProvider::subscribe(_jobs, funct)));
+		return (ContractProvider::subscribe(_jobs, funct));
 	}
 
 	/**
 	 * @brief Start the thread that handle the jobs.
-	 * 
+	 *
 	 * @warning start will throw an exception if the thread is already running
 	 */
 	void PersistentWorker::start()
@@ -59,7 +63,7 @@ namespace spk
 		}
 		catch (...)
 		{
-			throw ;
+			throw;
 		}
 	}
 

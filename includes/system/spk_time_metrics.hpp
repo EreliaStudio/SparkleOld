@@ -3,7 +3,6 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "application/modules/spk_time_module.hpp"
 
-
 namespace spk
 {
 	/**
@@ -54,6 +53,13 @@ namespace spk
 
 	public:
 		/**
+		 * @brief Static method to get the current system time
+		 * 
+		 * @return The time as epoch value
+		*/
+		static long long currentTime();
+
+		/**
 		 * @brief Get the total time since the application started.
 		 * 
 		 * This function is used to get the total time since the application started.
@@ -75,6 +81,6 @@ namespace spk
 		 * \brief Function to put the current thread to sleep for at least the specified duration.
 		 * \param p_millisecond The minimum number of milliseconds the thread should sleep.
 		 */
-		void sleepAtLeast(size_t p_millisecond);
+		static void sleepAtLeast(long long p_millisecond);
 	};
 }

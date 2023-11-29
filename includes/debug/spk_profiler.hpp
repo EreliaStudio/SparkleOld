@@ -3,140 +3,288 @@
 #include <string>
 #include <map>
 #include <stdexcept>
+#include <numeric>
 
 #include "system/spk_chronometer.hpp"
 #include "design_pattern/spk_singleton.hpp"
+#include "spk_basic_functions.hpp"
 
 namespace spk
 {
-	/**
-	 * \class Profiler
-	 * \brief A singleton class that handles profiling using various chronometers.
-	 *
-	 * This class is responsible for managing multiple chronometers, allowing the software
-	 * to keep track of time metrics for profiling purposes. As a singleton, only one instance
-	 * of this class can exist. This ensures consistency across the entire software.
-	 */
+	class ProfilerModule;
+
+    /** 
+     * @class Profiler
+     * @brief A class for profiling various metrics like time consumption and counters.
+     */
 	class Profiler : public spk::Singleton<Profiler>
 	{
 		friend class spk::Singleton<Profiler>;
-	public:
-		static inline const std::wstring RENDER_IPS_COUNTER = L"RenderIPS"; ///< The key representing the counter to the Render thread Iteration Per Second
-		static inline const std::wstring UPDATE_IPS_COUNTER = L"UpdateIPS"; ///< The key representing the counter to the Update thread Iteration Per Second
-
+		friend class ProfilerModule;
 
 	private:
-		/**
-		 * \brief A map that associates each chronometer with a unique name.
-		 */
-		std::map<std::wstring, spk::Chronometer> _chronometers;
+		/** 
+         * @class IMetric
+         * @brief Template class for handling metric data.
+         */
+        template <typename TMetricType>
+        class IMetric
+        {
+            friend class Profiler;
+        protected:
+            std::vector<TMetricType> _values; ///< Vector holding the metric values.
+            TMetricType _min;                 ///< Minimum value of the metric.
+            TMetricType _max;                 ///< Maximum value of the metric.
+            TMetricType _average;             ///< Average value of the metric.
 
-		/**
-		 * \brief A map that associates each counter with a unique name.
-		 */
-		std::map<std::wstring, size_t> _counters;
+            /** 
+             * @brief Add a new value to the metric.
+             * @param p_value Value to be added to the metric.
+             */
+            void addValue(const TMetricType& p_value)
+			{
+				_values.push_back(p_value);
+			}
 
+            /** 
+             * @brief Compute the min, max, and average values of the metric.
+             */
+            void compute()
+			{
+				if (_values.empty() == true)
+				{
+            		_max = _min = _average = 0;
+            		return;
+        		}
+
+				_min = *(std::min_element(_values.begin(), _values.end()));
+				_max = *(std::max_element(_values.begin(), _values.end()));
+				_average = (_values.empty()? TMetricType() : std::accumulate(_values.begin(), _values.end(), TMetricType())) / _values.size();
+			}
+
+        public:
+            // Public members can be added here.
+        };
+
+	public:
+		        /** 
+         * @class TimeConsuptionMetric
+         * @brief Metric class for tracking time consumption.
+         */
+        class TimeConsuptionMetric : public IMetric<long long>
+        {
+        public:
+            long long executionDuration; ///< Duration of the execution.
+
+        private:
+            spk::Chronometer _chrono;    ///< Chronometer instance for measuring time.
+            double _cpuUsage;            ///< CPU usage percentage.
+
+        public:
+            TimeConsuptionMetric();
+            
+            /** 
+             * @brief Compute the time consumption metric.
+             * @param p_totalProgramDuration Total duration of the program.
+             */
+            void compute(const long long& p_totalProgramDuration);
+
+            /** 
+             * @brief Check if the metric has started.
+             * @return True if started, false otherwise.
+             */
+            bool isStarted() const;
+
+            /** 
+             * @brief Start the metric computation.
+             */
+            void start();
+
+            /** 
+             * @brief Stop the metric computation.
+             */
+            void stop();
+
+            /** 
+             * @brief Overload the output stream operator for TimeConsuptionMetric.
+             * @param p_os Output stream.
+             * @param p_counter Time consumption metric to be outputted.
+             * @return Reference to the output stream.
+             */
+			friend std::wostream& operator << (std::wostream& p_os, const TimeConsuptionMetric& p_counter)
+			{
+				p_os << "    - Min         : " << p_counter._min << std::endl;
+				p_os << "    - Max         : " << p_counter._max << std::endl;
+				p_os << "    - Average     : " << p_counter._average << std::endl;
+				p_os << "    - CPU usage   : " << p_counter._cpuUsage << " %" << std::endl;
+				p_os << "    - Cardinality : " << p_counter._values.size() << std::endl;
+				return (p_os);
+			}
+		};
+
+		/** 
+         * @class CounterMetric
+         * @brief Metric class for tracking counters.
+         */
+        class CounterMetric : public IMetric<size_t>
+        {
+        private:
+            size_t _value; ///< Current value of the counter.
+
+        public:
+			/**
+			 * @brief Default constructor
+			*/
+            CounterMetric();
+
+            /** 
+             * @brief Trigger the counter.
+             */
+            void trigger();
+
+            /** 
+             * @brief Save the current value of the counter.
+             */
+            void save();
+
+            /** 
+             * @brief Insert a new value into the counter.
+             * @param p_value Value to be inserted.
+             */
+            void insert(const size_t& p_value);
+
+            /** 
+             * @brief Reset the counter to its initial state.
+             */
+            void reset();
+
+            /** 
+             * @brief Get the current value of the counter.
+             * @return The current value of the counter.
+             */
+            const size_t& value() const;
+
+            /** 
+             * @brief Set a new value for the counter.
+             * @param p_newValue New value to be set.
+             */
+            void set(size_t p_newValue);
+
+            /** 
+             * @brief Overload the output stream operator for CounterMetric.
+             * @param p_os Output stream.
+             * @param p_counter Counter metric to be outputted.
+             * @return Reference to the output stream.
+             */
+			friend std::wostream& operator << (std::wostream& p_os, const CounterMetric& p_counter)
+			{
+				p_os << "    - Min         : " << p_counter._min << " trigger(s)" << std::endl;
+				p_os << "    - Max         : " << p_counter._max << " trigger(s)" << std::endl;
+				p_os << "    - Average     : " << p_counter._average << " trigger(s)" << std::endl;
+				p_os << "    - Cardinality : " << p_counter._values.size() << std::endl;
+				return (p_os);
+			}
+		};
+		
 		/**
-		 * \brief Private constructor to implement the Singleton pattern.
-		 *
-		 * This constructor checks whether a TimeMetrics instance has been created.
-		 * If not, it throws an error, since Profiler requires TimeMetrics.
+		 * @brief Predefined counter metrics name for the FPS values
+		*/
+		static inline const std::wstring FPS_COUNTER_NAME = L"FPS";
+		
+		/**
+		 * @brief Predefined counter metrics name for the FPS values
+		*/
+		static inline const std::wstring UPS_COUNTER_NAME = L"UPS";
+
+	private:
+		long long _startProgramTime; ///< Timestamp marking the start of program execution.
+
+		static inline std::recursive_mutex _mutex; ///< Mutex for thread-safe operations.
+		std::map<std::thread::id, std::wstring> _threadNames; ///< Map of thread IDs to their names.
+		std::map<std::thread::id, std::map<std::wstring, TimeConsuptionMetric>> _timeConsuptionMetrics; ///< Nested map for time consumption metrics organized by thread and metric name.
+		std::map<std::thread::id, std::map<std::wstring, CounterMetric>> _counterMetrics; ///< Nested map for counter metrics organized by thread and metric name.
+
+		CounterMetric* _fpsCounterPointer = nullptr; ///< Pointer to FPS (Frames Per Second) counter metric.
+		CounterMetric* _upsCounterPointer = nullptr; ///< Pointer to UPS (Updates Per Second) counter metric.
+		
+		/** 
+		 * @brief Outputs the time consumption metrics.
+		 * @param p_timeMetrics Map of time consumption metrics to output.
+		 */
+		void _outputTimeConsuptionMetrics(const std::map<std::wstring, TimeConsuptionMetric>& p_timeMetrics);
+
+		/** 
+		 * @brief Outputs the counter metric metrics.
+		 * @param p_counterMetrics Map of counter metrics to output.
+		 */
+		void _outputCounterMetricMetrics(const std::map<std::wstring, CounterMetric>& p_counterMetrics);
+
+		/** 
+		 * @brief Prints the metrics of a specific thread.
+		 * @param p_threadID ID of the thread whose metrics are to be printed.
+		 */
+		void _printThreadMetrics(const std::thread::id& p_threadID);
+
+		/** 
+		 * @brief Computes and summarizes the results from all metrics.
+		 */
+		void computeResults();
+
+	public:
+		/** 
+		 * @brief Constructor for the Profiler class.
 		 */
 		Profiler();
 
-	public:
-		/**
-		 * \brief Retrieves the chronometer associated with a specific name.
-		 * \param p_key The name of the chronometer.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
-		 * \return The specified chronometer.
+		/** 
+		 * @brief Destructor for the Profiler class.
 		 */
-		const spk::Chronometer &chronometer(const std::wstring &p_key) const;
+		~Profiler();
 
-		/**
-		 * \brief Resets the chronometer associated with a specific name.
-		 * \param p_key The name of the chronometer.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
+		/** 
+		 * @brief Defines a name for the current thread.
+		 * @param p_threadName The name to be assigned to the current thread.
 		 */
-		void resetChronometer(const std::wstring &p_key);
-
-		/**
-		 * \brief Starts the chronometer associated with a specific name.
-		 * \param p_key The name of the chronometer.
+		void defineThreadName(const std::wstring& p_threadName);
+		
+		/** 
+		 * @brief Gets a reference to a time consumption metric by name.
+		 * @param p_metricName The name of the time consumption metric.
+		 * @return Reference to the TimeConsuptionMetric object.
 		 */
-		void startChronometer(const std::wstring &p_key);
+		TimeConsuptionMetric& timeConsumptionMetric(const std::wstring& p_metricName);
 
-		/**
-		 * \brief Resumes the chronometer associated with a specific name.
-		 * \param p_key The name of the chronometer.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
+		/** 
+		 * @brief Checks if a time consumption metric exists.
+		 * @param p_metricName The name of the time consumption metric to check.
+		 * @return True if the metric exists, false otherwise.
 		 */
-		void resumeChronometer(const std::wstring &p_key);
+		bool containTimeConsumptionMetric(const std::wstring& p_metricName) const;
 
-		/**
-		 * \brief Stops the chronometer associated with a specific name.
-		 * \param p_key The name of the chronometer.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
-		 * \return The time elapsed since the chronometer was started.
+		/** 
+		 * @brief Gets a reference to a counter metric by name.
+		 * @param p_metricName The name of the counter metric.
+		 * @return Reference to the CounterMetric object.
 		 */
-		const long long stopChronometer(const std::wstring &p_key);
+		CounterMetric& counterMetric(const std::wstring& p_metricName);
 
-		/**
-		 * \brief Create a new counter, named p_key
-		 * 
-		 * If the counter already exist, this method will throw an exception
-		 * 
-		 * \param p_key The name of the counter.
-		 * \throw std::runtime_error if a chronometer exists with the given name.
-		*/
-		void createCounter(const std::wstring& p_key);
-
-		/**
-		 * \brief Increases the value of the specified counter by one.
-		 *
-		 * If the counter does not exist, it is created with a value of 0, and then incremented.
-		 *
-		 * \param p_key The name of the counter.
+		/** 
+		 * @brief Checks if a counter metric exists.
+		 * @param p_metricName The name of the counter metric to check.
+		 * @return True if the metric exists, false otherwise.
 		 */
-		void increaseCounter(const std::wstring& p_key);
+		bool containCounterMetric(const std::wstring& p_metricName) const;
 
-		/**
-		 * \brief Sets the value of the specified counter.
-		 *
-		 * If the counter does not exist, it is created and then set to the specified value.
-		 *
-		 * \param p_key The name of the counter.
-		 * \param p_value The new value for the counter.
+		/** 
+		 * @brief Gets a reference to the FPS (Frames Per Second) counter metric.
+		 * @return Reference to the FPS CounterMetric object.
 		 */
-		void setCounter(const std::wstring& p_key, const size_t& p_value);
+		CounterMetric& fpsCounter();
 
-		/**
-		 * \brief Resets the specified counter to 0.
-		 *
-		 * If the counter does not exist, a runtime error is thrown.
-		 *
-		 * \param p_key The name of the counter.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
+		/** 
+		 * @brief Gets a reference to the UPS (Updates Per Second) counter metric.
+		 * @return Reference to the UPS CounterMetric object.
 		 */
-		void resetCounter(const std::wstring& p_key);
-
-		/**
-		 * Check if there is a counter name p_key inside the profiler.
-		 * 
-		 * \param p_key The name of the counter.
-		 * \return True if the counter exist, false otherwise.
-		*/
-		bool containCounter(const std::wstring& p_key) const;
-
-		/**
-		 * \brief Retrieves the value of the specified counter.
-		 *
-		 * If the counter does not exist, a runtime error is thrown.
-		 *
-		 * \param p_key The name of the counter.
-		 * \return The value of the counter.
-		 * \throw std::runtime_error if no chronometer exists with the given name.
-		 */
-		const size_t& counter(const std::wstring& p_key) const;
+		CounterMetric& upsCounter();
 	};
 }

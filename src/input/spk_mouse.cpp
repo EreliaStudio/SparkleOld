@@ -1,4 +1,5 @@
 #include "input/spk_mouse.hpp"
+#include "graphics/spk_window.hpp"
 
 namespace spk
 {
@@ -15,7 +16,10 @@ namespace spk
 
 	void Mouse::setMousePosition(const Vector2Int& p_newPosition)
 	{
-		_deltaPosition = p_newPosition - _position;
+		if (_deltaPosition == INITIAL_DELTA_POSITION)
+			_deltaPosition = 0;
+		else
+			_deltaPosition = p_newPosition - _position;
 		_position = p_newPosition;
 	}
 
@@ -51,13 +55,14 @@ namespace spk
 			{
 				_buttons[i] = InputState::Up;
 			}
-
-			// spk::cout << "Button " << to_wstring(Button(i)) << " -> " << to_wstring(_buttons[i]) << std::endl;
 		}
 	}
 
 	void Mouse::place(const Vector2Int& p_position)
 	{	
+		SetCursorPos(spk::Window::instance()->anchor().x + p_position.x, spk::Window::instance()->anchor().y + p_position.y);
+		_position = p_position;
+		_deltaPosition = 0;
 	}
 
 	std::wstring to_wstring(const Mouse::Button& p_button)

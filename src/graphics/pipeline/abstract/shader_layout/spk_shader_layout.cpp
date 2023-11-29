@@ -16,7 +16,7 @@ namespace spk
 			&ShaderLayout::_parseFunction,	   // 0b0000000010000000
 			&ShaderLayout::_parseError		   // 0b0000000100000000
 		};
-
+		
 		int index = static_cast<int>(std::log2(static_cast<int>(p_instruction.type)));
 
 		(this->*(handlerArray[index]))(p_instruction);

@@ -42,9 +42,9 @@ namespace spk
 		 * @param p_callback The callback binded to the state.
 		 * @return Contract A Contract representing the bind between state and callback, allowing him to edit/resign the callback added by this method.
 		 */
-		Contract addStateCallback(TState p_state, Callback p_callback)
+		std::shared_ptr<Contract> addStateCallback(TState p_state, Callback p_callback)
 		{
-			return (std::move(ContractProvider::subscribe(_callbacks[p_state], p_callback)));
+			return (ContractProvider::subscribe(_callbacks[p_state], p_callback));
 		}
 
 		/**

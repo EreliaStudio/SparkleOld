@@ -57,9 +57,9 @@ namespace spk
 		 * @param p_callback The callback function to be called when the value is available.
 		 * @return A contract representing the subscription.
 		 */
-		Contract subscribe(const Callback& p_callback)
+		std::shared_ptr<Contract> subscribe(const Callback& p_callback)
 		{
-			return ContractProvider::subscribe(_callbackContainer, p_callback);
+			return (ContractProvider::subscribe(_callbackContainer, p_callback));
 		}
 
 		/**

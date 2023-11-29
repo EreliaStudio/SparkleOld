@@ -176,25 +176,32 @@ namespace spk
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
 
 		if (_keys[static_cast<size_t>(keyValue)] != InputState::Down)
+		{
+			_keysToUpdate.push_back(keyValue);
 			_keys[static_cast<size_t>(keyValue)] = InputState::Pressed;
+		}
 	}
 	void Keyboard::releaseKey(const uint32_t& p_key)
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
 
 		if (_keys[static_cast<size_t>(keyValue)] != InputState::Up)
+		{
+			_keysToUpdate.push_back(keyValue);
 			_keys[static_cast<size_t>(keyValue)] = InputState::Released;
+		}
 	}
 
 	void Keyboard::update()
 	{
-		for (size_t i = 0; i < Key::SIZE; i++)
+		for (const auto& key : _keysToUpdate)
 		{
-			if (_keys[i] == InputState::Pressed)
-				_keys[i] = InputState::Down;
-			else if (_keys[i] == InputState::Released)
-				_keys[i] = InputState::Up;
+			if (_keys[key] == InputState::Pressed)
+				_keys[key] = InputState::Down;
+			else if (_keys[key] == InputState::Released)
+				_keys[key] = InputState::Up;
 		}
+		_keysToUpdate.clear();
 	}
 
 	const std::wstring &Keyboard::keyToString(const Keyboard::Key &p_key)

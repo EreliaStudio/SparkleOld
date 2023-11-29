@@ -159,6 +159,16 @@ namespace spk
 			{
 				return (_value);
 			}
+
+			/**
+			 * @brief Return the value in the Default state.
+			 *
+			 * @return A constant reference to the value in the Default state.
+			 */
+			const TType& get() const
+			{
+				return (_value);
+			}
 		};
 
 	private:
@@ -246,9 +256,9 @@ namespace spk
 		 * @param p_callback The callback function to subscribe.
 		 * @return A Contract object representing the subscription.
 		 */
-		Contract subscribe(const Callback& p_callback)
+		std::shared_ptr<ContractProvider::Contract> subscribe(const Callback& p_callback)
 		{
-			return (std::move(ContractProvider::subscribe(_onEditionCallbacks, p_callback)));
+			return (ContractProvider::subscribe(_onEditionCallbacks, p_callback));
 		}
 
 		/**
@@ -260,6 +270,14 @@ namespace spk
 		{
 			_state = State::Default;
 			_triggerEditionCallback();
+		}
+
+		/**
+		 * @brief Return the default value of the Value
+		*/
+		std::shared_ptr<const Default> defaultValue() const
+		{
+			return (_default);
 		}
 
 		/**
@@ -343,9 +361,13 @@ namespace spk
 		const TType& value() const
 		{
 			if (_state == State::Custom)
+			{
 				return (_value);
+			}
 			else
+			{
 				return (*_default);
+			}
 		}
 	};
 
@@ -362,6 +384,10 @@ namespace spk
 		 * @brief Alias for the default value type of the wrapped value.
 		 */
 		using Default = typename Value<T>::Default;
+		/**
+		 * @brief Alias for the contract type of the wrapped value.
+		 */
+		using Contract = typename Value<T>::Contract;
 		
 	private:
 		/**
@@ -377,7 +403,7 @@ namespace spk
 		/**
 		 * @brief Contract for subscription updates.
 		 */
-		Value<T>::Contract _contract;
+		std::shared_ptr<Contract> _contract;
 
 		/**
 		 * @brief Mutex for thread-safe access.
@@ -390,7 +416,7 @@ namespace spk
 		 * 
 		 * @param p_defaultValue The default value to initialize the wrapper with.
 		 */
-		ValueWrapper(const std::shared_ptr<const Default>& p_defaultValue) :
+		ValueWrapper(std::shared_ptr<const Default> p_defaultValue) :
 			_needUpdate(true),
 			_value(p_defaultValue),
 			_contract(_value.subscribe([&](){
@@ -398,6 +424,7 @@ namespace spk
 				_needUpdate = true;
 			}))
 		{
+			const Default tmp = *p_defaultValue;
 		}
 
 		/**

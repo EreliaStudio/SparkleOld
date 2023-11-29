@@ -26,28 +26,41 @@ namespace spk
 
 	LRESULT APIModule::handleMessage(const HWND& p_hwnd, const UINT& p_uMsg, const WPARAM& p_wParam, const LPARAM& p_lParam)
 	{
-		MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
-
-		newMessage->clear();
-
-		*newMessage << p_uMsg;
 		switch (p_uMsg)
 		{
 		case WM_DESTROY:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+
 			_systemQueue.push_back(newMessage);
 			break;
 		}
-		case WM_MOVE:
 		case WM_MDIRESTORE:
 		case WM_SETFOCUS:
 		case WM_KILLFOCUS:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			_windowQueue.push_back(newMessage);
 			break;
 		}
+		case WM_MOVE:
 		case WM_SIZE:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			unsigned int width = LOWORD(p_lParam);
 			unsigned int height = HIWORD(p_lParam);
 
@@ -65,12 +78,24 @@ namespace spk
 		case WM_MBUTTONUP:
 		case WM_RBUTTONUP:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			_mouseQueue.push_back(newMessage);
 			break;
 		}
 		case WM_XBUTTONDOWN :
 		case WM_XBUTTONUP :
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			short value = GET_XBUTTON_WPARAM (p_wParam);
 
 			*newMessage << value;
@@ -81,6 +106,12 @@ namespace spk
 		case WM_MOUSEHWHEEL:
 		case WM_MOUSEWHEEL:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			short value = GET_WHEEL_DELTA_WPARAM(p_wParam);
 
 			*newMessage << value;
@@ -90,6 +121,12 @@ namespace spk
 		}
 		case WM_MOUSEMOVE:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			int x = LOWORD(p_lParam);
 			int y = HIWORD(p_lParam);
 
@@ -108,6 +145,12 @@ namespace spk
 		case WM_SYSKEYDOWN:
 		case WM_SYSKEYUP:
 		{
+			MessagePool::Object newMessage = MessagePoolInstance::instance()->obtain();
+
+			newMessage->clear();
+
+			*newMessage << p_uMsg;
+			
 			if (p_wParam == VK_F4 && (p_lParam & (1 << 29)))
 			{
 				newMessage->clear();

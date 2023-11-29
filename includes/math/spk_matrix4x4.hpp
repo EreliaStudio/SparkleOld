@@ -22,6 +22,34 @@ namespace spk
 		/// Default constructor.
 		Matrix4x4();
 
+
+        /**
+         * @brief Overloads the << operator for outputting the Matrix4x4 value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the Matrix4x4
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like spk::cout).
+         * @param p_matrix The Matrix4x4 value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
+        friend std::wostream& operator << (std::wostream& p_os, const Matrix4x4& p_matrix)
+        {
+            p_os << std::endl;
+            for (size_t i = 0; i < 4; i++)
+            {
+                for (size_t j = 0; j < 4; j++)
+                {
+                    if (j != 0)
+                        p_os << " ";
+                    p_os << p_matrix.data[i][j];
+                }
+                p_os << std::endl;
+            }
+            
+            return (p_os);
+        }
+
 		/**
          * @brief Multiplies matrix with a Vector3.
          * @param v The Vector3 to multiply with.
@@ -73,6 +101,37 @@ namespace spk
          * @return The rotation matrix.
          */
 		static Matrix4x4 rotateAroundAxis(const Vector3& p_axis, const float& p_rotationAngle);
+
+        /**
+         * @brief Creates a perspective projection matrix.
+         * 
+         * This function constructs a perspective transformation matrix defined by
+         * a field of view, aspect ratio, and the near and far clipping planes.
+         *
+         * @param fov Field of view in radians.
+         * @param aspectRatio Aspect ratio of the viewport (width / height).
+         * @param nearPlane Distance to the near clipping plane.
+         * @param farPlane Distance to the far clipping plane.
+         * @return Matrix4x4 The perspective projection matrix.
+         */
+        static Matrix4x4 perspective(float fov, float aspectRatio, float nearPlane, float farPlane);
+
+        /**
+         * @brief Creates an orthographic projection matrix.
+         * 
+         * This function constructs an orthographic projection matrix defined by the
+         * coordinates of the planes defining the viewing volume: left, right, bottom,
+         * top, near, and far.
+         *
+         * @param left Coordinate for the left vertical clipping plane.
+         * @param right Coordinate for the right vertical clipping plane.
+         * @param bottom Coordinate for the bottom horizontal clipping plane.
+         * @param top Coordinate for the top horizontal clipping plane.
+         * @param nearPlane Distance to the near depth clipping plane.
+         * @param farPlane Distance to the far depth clipping plane.
+         * @return Matrix4x4 The orthographic projection matrix.
+         */
+        static Matrix4x4 ortho(float left, float right, float bottom, float top, float nearPlane, float farPlane);
 
 		/**
          * @brief Checks matrix equality.

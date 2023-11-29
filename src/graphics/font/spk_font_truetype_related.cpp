@@ -18,7 +18,7 @@ namespace spk
 	{
 		std::vector<wchar_t> result;
 
-		wchar_t i = 0;
+		wchar_t i = 32;
 		while (i < static_cast<wchar_t>(0xFFFF))
 		{
 			if (stbtt_FindGlyphIndex(p_fontInfo, i) != 0)
@@ -95,7 +95,7 @@ namespace spk
 		stbtt_aligned_quad quad;
 		spk::Vector2 quadStep;
 
-		stbtt_GetPackedQuad(p_charInformation, p_atlasSize.x, p_atlasSize.y, p_char, &quadStep.x, &quadStep.y, &quad, 1);
+		stbtt_GetPackedQuad(p_charInformation, p_atlasSize.x, p_atlasSize.y, p_char - L' ', &quadStep.x, &quadStep.y, &quad, 1);
 
 		p_data.uvs[0] = {quad.s0 + outlineOffset.x * -1, quad.t0 + outlineOffset.y * -1};
 		p_data.uvs[1] = {quad.s1 + outlineOffset.x * +1, quad.t0 + outlineOffset.y * -1};

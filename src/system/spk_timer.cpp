@@ -6,12 +6,18 @@ namespace spk
 	Timer::Timer(const long long& p_duration) :
 		_duration(p_duration),
 		_status(State::Idle),
-		_startTime(0)
+		_startTime(0),
+		_endTime(0)
 	{
 		if (spk::TimeMetrics::instance() == nullptr)
 		{
 			throw std::runtime_error("Can't create a Timer without an spk::Application");
 		}
+	}
+
+	const long long& Timer::duration() const
+	{
+		return (_duration);
 	}
 
 	void Timer::setDuration(const long long& p_duration)
@@ -22,23 +28,12 @@ namespace spk
 		_duration = p_duration;
 	}
 
-	const long long& Timer::totalDuration() const
-	{
-		return _duration;
-	}
-
 	long long Timer::remainingDuration() const
 	{
 		if (_status == State::Idle)
 			return 0;
 
-		long long result = _duration - (TimeMetrics::instance()->time() - _startTime);
-
-		if (result <= 0 && _status == State::Running)
-		{
-			_status = State::Timeout;
-		}
-		return (result);
+		return (_endTime - TimeMetrics::instance()->time());
 	}
 
 	void Timer::start()
@@ -48,6 +43,7 @@ namespace spk
 
 		_status = State::Running;
 		_startTime = TimeMetrics::instance()->time();
+		_endTime = _startTime + _duration;
 	}
 
 	void Timer::stop()
@@ -58,10 +54,18 @@ namespace spk
 		_status = State::Idle;
 	}
 
+	void Timer::_updateStatus() const
+	{
+		if (TimeMetrics::instance()->time() > _endTime)
+			_status = State::Timeout;
+		else
+			_status = State::Running;
+	}
+
 	const Timer::State& Timer::status() const
 	{
 		if (_status == State::Running)
-			remainingDuration();
+			_updateStatus();
 		return _status;
 	}
 

@@ -2,9 +2,12 @@
 #include <filesystem>
 #include <algorithm>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 namespace spk
 {
-
 	std::wstring methodName(const std::wstring& prettyFunction)
 	{
 		size_t end = prettyFunction.rfind(L"(");
@@ -260,4 +263,14 @@ namespace spk
 
 		return (result);
 	}
+
+    float degreeToRadian(float degrees)
+	{
+        return static_cast<float>(degrees * (M_PI / 180.0f));
+    }
+
+    float radianToDegree(float radians)
+	{
+        return static_cast<float>(radians * (180.0f / M_PI));
+    }
 }

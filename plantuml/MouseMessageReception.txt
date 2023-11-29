@@ -1,0 +1,13 @@
+@startuml$
+box "Updater thread" #Gainsboro
+participant MouseModule
+end box
+box "SharedRessources" #Azure
+participant MouseMessagePool
+end box
+
+title Uppon Message reception
+MouseModule -> MouseMessagePool : Check pool emptiness
+MouseMessagePool --> MouseModule : Return bool
+MouseModule -> MouseModule : Execute command
+@enduml

@@ -55,6 +55,16 @@ namespace spk
 		 */
 		long long _startTime;
 
+		/**
+		 * @brief The time where the timer is suppose to fall to timeout state.
+		 */
+		long long _endTime;
+
+		/**
+		 * @brief Update the current status of the timer.
+		*/
+		void _updateStatus() const;
+
 	public:
 		/**
 		 * @brief Construct a new Timer object.
@@ -67,6 +77,13 @@ namespace spk
 		Timer(const long long& p_duration = 0);
 
 		/**
+		 * @brief return the current fixed duration of the timer.
+		 * 
+		 * @return Reference to the duration of the Timer
+		*/
+		const long long& duration() const;
+
+		/**
 		 * @brief Sets the duration of the timer.
 		 * 
 		 * This function sets the duration of the timer to the specified value.
@@ -74,15 +91,6 @@ namespace spk
 		 * @param p_duration The duration of the timer in milliseconds.
 		 */
 		void setDuration(const long long& p_duration);
-
-		/**
-		 * @brief Get the total duration of the timer.
-		 * 
-		 * This function returns the total duration of the timer.
-		 * 
-		 * @return The total duration of the timer in milliseconds.
-		 */
-		const long long& totalDuration() const;
 
 		/**
 		 * @brief Get the remaining duration of the timer.

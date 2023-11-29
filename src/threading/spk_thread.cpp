@@ -18,6 +18,7 @@ namespace spk
 		try
 		{
 			_starterSignal.set_value();
+			while (_isActive == false);
 		}
 		catch(const std::exception&)
 		{

@@ -74,7 +74,8 @@ namespace spk
 
 			if (_isExecutionNeeded() == true) {
 				_funct();
-				_timer.start();
+				if (_timer.duration() != 0)
+					_timer.start();
 			}
 		}
 	};

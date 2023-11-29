@@ -25,6 +25,11 @@ namespace spk
 			return (_isOriginal == true);
 		}
 
+		bool ContractProvider::Contract::isValid()
+		{
+			return (_callbackOwner != nullptr);
+		}
+
 		ContractProvider::Contract::Contract(Contract &&p_other) :
 			_callbackOwner(p_other._callbackOwner),
 			_callback(p_other._callback),
@@ -37,7 +42,7 @@ namespace spk
 		{
 			if (this != &p_other)
 			{
-				if (isOriginal() == true)
+				if (isOriginal() == true && isValid() == true)
 				{
 					resign();
 				}
@@ -54,7 +59,7 @@ namespace spk
 
 		ContractProvider::Contract::~Contract()
 		{
-			if (isOriginal() == true)
+			if (isOriginal() == true && isValid() == true)
 			{
 				resign();
 			}
@@ -62,7 +67,7 @@ namespace spk
 
 		void ContractProvider::Contract::edit(const Callback& p_callback)
 		{
-			if (isOriginal() == true)
+			if (isOriginal() == true && isValid() == true)
 			{
 				*_callback = p_callback;
 			}
@@ -74,18 +79,21 @@ namespace spk
 
 		void ContractProvider::Contract::resign()
 		{
-			if (isOriginal() == true)
+			if (isOriginal() == true && isValid() == true)
 			{
 				_isOriginal = false;
-				_callback = nullptr;
-				for (auto it = _callbackOwner->begin(); it != _callbackOwner->end(); ++it)
+				if (isValid() == true)
 				{
-					if (&(*it) == _callback)
+					_callback = nullptr;
+					for (auto it = _callbackOwner->begin(); it != _callbackOwner->end(); ++it)
 					{
-						_callbackOwner->erase(it);
-						break;
-					}
-				}
+						if (&(*it) == _callback)
+						{
+							_callbackOwner->erase(it);
+							break;
+						}
+					}	
+				}				
 			}
 			else
 			{
@@ -93,9 +101,21 @@ namespace spk
 			}
 		}
 
-		ContractProvider::Contract ContractProvider::subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback)
+		std::shared_ptr<ContractProvider::Contract> ContractProvider::subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback)
 		{
 			p_callbackOwner.push_back(p_callback);
-			return (std::move(Contract(&p_callbackOwner, &(p_callbackOwner.back()))));
+			std::shared_ptr<ContractProvider::Contract> result = std::shared_ptr<ContractProvider::Contract>(
+					new ContractProvider::Contract(&p_callbackOwner, &(p_callbackOwner.back()))
+				);
+			_contracts.push_back(result);
+			return (result);
+		}
+
+		ContractProvider::~ContractProvider()
+		{
+			for (size_t i = 0; i < _contracts.size(); i++)
+			{
+				_contracts[i]->_callbackOwner = nullptr;
+			}
 		}
 }

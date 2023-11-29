@@ -23,6 +23,17 @@ namespace spk
 			Widget::Atlas::instance()->resize();
 
 			break;
+		case WM_MOVE:
+		{
+			unsigned int x;
+			unsigned int y;
+
+			*p_event >> x;
+			*p_event >> y;
+
+			Window::instance()->place(spk::Vector2Int(x, y));
+			break;
+		}
 		}
 	}
 }

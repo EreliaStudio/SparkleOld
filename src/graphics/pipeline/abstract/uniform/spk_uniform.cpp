@@ -18,9 +18,14 @@ namespace spk
 	{
 		return (_data.size());
 	}
-
-	AbstractPipeline::Uniform& AbstractPipeline::Uniform::operator<<(std::wostream& (*func)(std::wostream&)) {
+	
+	void AbstractPipeline::Uniform::update()
+	{
 		_pushData();
-		return *this;
+	}
+	
+	void AbstractPipeline::Uniform::bind()
+	{
+		_bindUniform();
 	}
 }

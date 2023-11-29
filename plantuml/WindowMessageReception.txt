@@ -1,0 +1,13 @@
+@startuml$
+box "Updater thread" #Gainsboro
+participant WindowModule
+end box
+box "SharedRessources" #Azure
+participant WindowMessagePool
+end box
+
+title Uppon Message reception
+WindowModule -> WindowMessagePool : Check pool emptiness
+WindowMessagePool --> WindowModule : Return bool
+WindowModule -> WindowModule : Execute command
+@enduml

@@ -38,6 +38,37 @@ namespace spk
             Standard,   ///< Standard outline.
             Manhattan   ///< Outline with a Manhattan distance effect.
         };
+
+        /**
+         * @brief Overloads the << operator for outputting the name of the OutlineType enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the OutlineType enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like spk::cout).
+         * @param p_outlineType The OutlineType enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
+        friend std::wostream& operator << (std::wostream& p_os, const OutlineType& p_outlineType)
+        {
+            switch (p_outlineType)
+            {
+                case OutlineType::Pixelized:
+                    p_os << (L"Pixelized");
+                    return (p_os);
+                case OutlineType::SharpEdge:
+                    p_os << (L"SharpEdge");
+                    return (p_os);
+                case OutlineType::Standard:
+                    p_os << (L"Standard");
+                    return (p_os);
+                case OutlineType::Manhattan:
+                    p_os << (L"Manhattan");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
         
         /**
          * @brief Vertical alignment options for text rendering.
@@ -51,6 +82,34 @@ namespace spk
             Middle, ///< Align text to the middle.
             Down    ///< Align text to the bottom.
         };
+
+        /**
+         * @brief Overloads the << operator for outputting the name of the VerticalAlignment enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the VerticalAlignment enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like spk::cout).
+         * @param p_verticalAlignment The VerticalAlignment enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
+        friend std::wostream& operator << (std::wostream& p_os, const VerticalAlignment& p_verticalAlignment)
+        {
+            switch (p_verticalAlignment)
+            {
+                case VerticalAlignment::Top:
+                    p_os << (L"Top");
+                    return (p_os);
+                case VerticalAlignment::Middle:
+                    p_os << (L"Middle");
+                    return (p_os);
+                case VerticalAlignment::Down:
+                    p_os << (L"Down");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
         
         /**
          * @brief Horizontal alignment options for text rendering.
@@ -64,6 +123,35 @@ namespace spk
             Middle, ///< Align text to the center.
             Right   ///< Align text to the right.
         };
+
+        /**
+         * @brief Overloads the << operator for outputting the name of the HorizontalAlignment enumeration value.
+         * 
+         * This function overloads the << operator to allow for easy outputting of the HorizontalAlignment enumeration
+         * values as a wide string. This can be used for logging, debugging, or displaying the value to an end user.
+         * 
+         * @param p_os A reference to a std::wostream object (like spk::cout).
+         * @param p_horizontalAlignment The HorizontalAlignment enumeration value to be outputted.
+         * @return std::wostream& - The modified std::wostream object.
+         */
+        friend std::wostream& operator << (std::wostream& p_os, const HorizontalAlignment& p_horizontalAlignment)
+        {
+            switch (p_horizontalAlignment)
+            {
+                case HorizontalAlignment::Left:
+                    p_os << (L"Left");
+                    return (p_os);
+                case HorizontalAlignment::Middle:
+                    p_os << (L"Middle");
+                    return (p_os);
+                case HorizontalAlignment::Right:
+                    p_os << (L"Right");
+                    return (p_os);
+            }
+            p_os << (L"Unknow");
+            return (p_os);
+        }
+
 
     public:
         /**

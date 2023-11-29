@@ -150,9 +150,9 @@ namespace spk
 	{
 		std::vector<std::pair<std::regex, Instruction::Type>> rules = {
 			{std::regex(R"(#version\s+\d+)"), Instruction::Type::Version},
-			{std::regex(R"(layout\(location\s*=\s*\d+\)\s+in)"), Instruction::Type::StorageBuffer},
-			{std::regex(R"(layout\(location\s*=\s*\d+\)\s+out)"), Instruction::Type::OutputBuffer},
-			{std::regex(R"(layout\(push_constant\)\s+uniform)"), Instruction::Type::PushConstant},
+			{std::regex(R"(layout\s*\(location\s*=\s*\d+\)\s+in)"), Instruction::Type::StorageBuffer},
+			{std::regex(R"(layout\s*\(location\s*=\s*\d+\)\s+out)"), Instruction::Type::OutputBuffer},
+			{std::regex(R"(layout\s*\(push_constant\)\s+uniform)"), Instruction::Type::PushConstant},
 			{std::regex(R"(layout\s*\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+\w+\s*\{)"), Instruction::Type::UniformBlock},
 			{std::regex(R"(layout\s*\((?:set\s*=\s*\d+,\s*)?binding\s*=\s*\d+\)\s+uniform\s+\w+\s+\w+\s*;)"), Instruction::Type::SamplerUniform},
 			{std::regex(R"(struct\s+\w+\s*\{[^\}]+\})"), Instruction::Type::Structure},
