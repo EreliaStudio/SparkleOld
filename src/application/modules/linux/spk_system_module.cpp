@@ -1,4 +1,5 @@
 #include "application/modules/spk_system_module.hpp"
+#include "application/spk_application.hpp"
 
 #include "iostream/spk_iostream.hpp"
 
