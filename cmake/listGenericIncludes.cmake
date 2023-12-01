@@ -13,7 +13,6 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_time_module.hpp - application/modules"
 			"${CMAKE_SOURCE_DIR}/includes/application/modules/spk_widget_module.hpp - application/modules"
 
-			"${CMAKE_SOURCE_DIR}/includes/application/spk_abstract_application.hpp - application"
 			"${CMAKE_SOURCE_DIR}/includes/application/spk_application.hpp - application"
 
 			"${CMAKE_SOURCE_DIR}/includes/data_structure/spk_data_buffer.hpp - data_structure"
@@ -51,7 +50,7 @@ function(listGenericIncludes INCLUDES_TABLE_VAR)
 
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_area.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_color.hpp - graphics"
-			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_mesh.hpp - graphics"
+			"${CMAKE_SOURCE_DIR}/includes/engine/spk_mesh.hpp - graphics"
 			"${CMAKE_SOURCE_DIR}/includes/graphics/spk_window.hpp - graphics"
 
 			"${CMAKE_SOURCE_DIR}/includes/input/spk_input.hpp - input"

@@ -60,7 +60,9 @@ namespace spk
 
 	void Mouse::place(const Vector2Int& p_position)
 	{	
-		SetCursorPos(spk::Window::instance()->anchor().x + p_position.x, spk::Window::instance()->anchor().y + p_position.y);
+		#ifdef _WIN32
+			SetCursorPos(spk::Window::instance()->anchor().x + p_position.x, spk::Window::instance()->anchor().y + p_position.y);
+		#endif
 		_position = p_position;
 		_deltaPosition = 0;
 	}

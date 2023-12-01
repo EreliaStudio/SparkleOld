@@ -4,6 +4,7 @@
 #include <map>
 #include <stdexcept>
 #include <numeric>
+#include <thread>
 
 #include "system/spk_chronometer.hpp"
 #include "design_pattern/spk_singleton.hpp"
