@@ -13,16 +13,16 @@ namespace spk
 	 * This class provides a thread-safe implementation of a queue. It allows multiple threads
 	 * to push and pop items from the queue without causing data races or deadlocks.
 	 *
-	 * @tparam T The type of items stored in the queue.
+	 * @tparam TType The type of items stored in the queue.
 	 */
-	template <typename T>
+	template <typename TType>
 	class ThreadSafeQueue
 	{
 	protected:
 		std::mutex muxQueue;	/**< Mutex for protecting the access to the queue. */
 		std::mutex muxBlocking; /**< Mutex for blocking thread synchronization. */
 
-		std::deque<T> _content;				/**< The underlying deque container storing the items in the queue. */
+		std::deque<TType> _content;				/**< The underlying deque container storing the items in the queue. */
 		std::condition_variable cvBlocking; /**< Condition variable for blocking thread synchronization. */
 
 	public:
@@ -38,7 +38,7 @@ namespace spk
 		 *
 		 * Copying a ThreadSafeQueue is not allowed to avoid data races.
 		 */
-		ThreadSafeQueue(const ThreadSafeQueue<T> &) = delete;
+		ThreadSafeQueue(const ThreadSafeQueue<TType> &) = delete;
 
 		/**
 		 * @brief Destroy the ThreadSafeQueue object.
@@ -55,7 +55,7 @@ namespace spk
 		 * @param p_index The index of the item.
 		 * @return The item at the specified index.
 		 */
-		const T &operator[](const size_t &p_index) const
+		const TType &operator[](const size_t &p_index) const
 		{
 			return (_content[p_index]);
 		}
@@ -67,7 +67,7 @@ namespace spk
 		 *
 		 * @return Reference to the front item.
 		 */
-		T &front()
+		TType &front()
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.front();
@@ -80,7 +80,7 @@ namespace spk
 		 *
 		 * @return Reference to the back item.
 		 */
-		T &back()
+		TType &back()
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.back();
@@ -93,7 +93,7 @@ namespace spk
 		 *
 		 * @return Const reference to the front item.
 		 */
-		const T &front() const
+		const TType &front() const
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.front();
@@ -106,7 +106,7 @@ namespace spk
 		 *
 		 * @return Const reference to the back item.
 		 */
-		const T &back() const
+		const TType &back() const
 		{
 			std::scoped_lock lock(muxQueue);
 			return _content.back();
@@ -119,7 +119,7 @@ namespace spk
 		 *
 		 * @return The front item.
 		 */
-		T pop_front()
+		TType pop_front()
 		{
 			std::scoped_lock lock(muxQueue);
 			auto t = std::move(_content.front());
@@ -134,7 +134,7 @@ namespace spk
 		 *
 		 * @return The back item.
 		 */
-		T pop_back()
+		TType pop_back()
 		{
 			std::scoped_lock lock(muxQueue);
 			auto t = std::move(_content.back());
@@ -149,7 +149,7 @@ namespace spk
 		 *
 		 * @param item The item to be pushed.
 		 */
-		void push_back(const T &item)
+		void push_back(TType &&item)
 		{
 			std::scoped_lock lock(muxQueue);
 			_content.emplace_back(std::move(item));
@@ -165,7 +165,7 @@ namespace spk
 		 *
 		 * @param item The item to be pushed.
 		 */
-		void push_front(const T &item)
+		void push_front(TType &&item)
 		{
 			std::scoped_lock lock(muxQueue);
 			_content.emplace_front(std::move(item));

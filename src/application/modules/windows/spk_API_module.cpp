@@ -36,7 +36,7 @@ namespace spk
 
 			*newMessage << p_uMsg;
 
-			_systemQueue.push_back(newMessage);
+			_systemQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MDIRESTORE:
@@ -49,7 +49,7 @@ namespace spk
 
 			*newMessage << p_uMsg;
 			
-			_windowQueue.push_back(newMessage);
+			_windowQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MOVE:
@@ -67,7 +67,7 @@ namespace spk
 			*newMessage << width;
 			*newMessage << height;
 
-			_windowQueue.push_back(newMessage);
+			_windowQueue.push_back(std::move(newMessage));
 			break;
 		}
 
@@ -84,7 +84,7 @@ namespace spk
 
 			*newMessage << p_uMsg;
 			
-			_mouseQueue.push_back(newMessage);
+			_mouseQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_XBUTTONDOWN :
@@ -100,7 +100,7 @@ namespace spk
 
 			*newMessage << value;
 
-			_mouseQueue.push_back(newMessage);
+			_mouseQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MOUSEHWHEEL:
@@ -116,7 +116,7 @@ namespace spk
 
 			*newMessage << value;
 
-			_mouseQueue.push_back(newMessage);
+			_mouseQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MOUSEMOVE:
@@ -133,7 +133,7 @@ namespace spk
 			*newMessage << x;
 			*newMessage << y;
 
-			_mouseQueue.push_back(newMessage);
+			_mouseQueue.push_back(std::move(newMessage));
 			break;
 		}
 
@@ -157,7 +157,7 @@ namespace spk
 
 				*newMessage << WM_DESTROY;
 
-				_systemQueue.push_back(newMessage);
+				_systemQueue.push_back(std::move(newMessage));
 			}
 			else
 			{
@@ -165,7 +165,7 @@ namespace spk
 
 				*newMessage << value;
 
-				_keyboardQueue.push_back(newMessage);
+				_keyboardQueue.push_back(std::move(newMessage));
 			}
 			break;
 		}

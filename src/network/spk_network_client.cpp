@@ -53,7 +53,7 @@ namespace spk::Network
 								_socket.close();
 								break;
 							case Socket::ReadResult::Success:
-								_messagesToTreat.push_back(newMessage);
+								_messagesToTreat.push_back(std::move(newMessage));
 								break;
 						}
 					}

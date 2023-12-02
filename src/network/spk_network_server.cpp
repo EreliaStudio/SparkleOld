@@ -103,7 +103,7 @@ namespace spk::Network
 								_clients.erase(it);
 								break;
 							case Socket::ReadResult::Success:
-								_messagesToTreat.push_back(std::make_pair(it->first, newMessage));
+								_messagesToTreat.push_back(std::make_pair(it->first, std::move(newMessage)));
 								break;
 							}
 						}
