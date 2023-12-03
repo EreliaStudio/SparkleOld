@@ -14,7 +14,23 @@ private:
 
     float height[Size + 1][Size + 1];
 
-    void _bakeRawData()
+    void _bakePoints()
+    {
+        for (size_t y = 0; y <= Size; y++)
+        {
+            for (size_t x = 0; x <= Size; x++)
+            {
+                spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
+			    if (height[x][y] < 0.0f)
+                {
+                    position.y = 0.0f;
+                }
+                _mesh->points().push_back(position);
+            }
+        }
+    }
+
+    void _bakeUVs()
     {
         spk::Vector2 uvsValues[4] = {
             spk::Vector2(0, 0),
@@ -30,55 +46,51 @@ private:
                 _mesh->uvs().push_back(uvsValues[j] * SpriteSheet->unit() + sprite);
             }
         }
+    }
 
-        for (size_t y = 0; y <= Size; y++)
-        {
-            for (size_t x = 0; x <= Size; x++)
-            {
-                spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
-			    if (height[x][y] < 0.0f)
-                {
-                    position.y = 0.0f;
-                }
-                _mesh->points().push_back(position);
-            }
-        }
-
-		for (size_t y = 0; y < Size; y++)
+    void _bakeNormales()
+    {
+        for (size_t y = 0; y < Size; y++)
         {
             for (size_t x = 0; x < Size; x++)
             {
-
-        /*
-		 * Top side view exemple :
-		 *  Z
-		 *  |   A       B
-		 *  |    *-----*
-		 *  |    |     |
-		 *  |    |     |
-		 *  |    |     |
-		 *  |    *-----*
-		 *  |   D       C
-		 *  |
-		 *  o---------------X
-         *  Order : ABC - ACD
-         */
+                /*
+                *  Z
+                *  |   A       B
+                *  |    *-----*
+                *  |    |     |
+                *  |    |     |
+                *  |    |     |
+                *  |    *-----*
+                *  |   D       C
+                *  |
+                *  o---------------X
+                *  Order : ABC - ACD
+                */
 
                 spk::Vector3 points[4] = {
-                        _mesh->points()[(x + 0) + ((y + 0) * (Size + 1))],
-                        _mesh->points()[(x + 1) + ((y + 0) * (Size + 1))],
+                        _mesh->points()[(x + 0) + ((y + 1) * (Size + 1))],
                         _mesh->points()[(x + 1) + ((y + 1) * (Size + 1))],
-                        _mesh->points()[(x + 0) + ((y + 1) * (Size + 1))]
+                        _mesh->points()[(x + 1) + ((y + 0) * (Size + 1))],
+                        _mesh->points()[(x + 0) + ((y + 0) * (Size + 1))]
                     };
+                size_t pointOffsets[6] = {Size + 1, Size + 2, 1, Size + 1, 1, 0};
 
                 spk::Vector3 vectorAB = points[1] - points[0];
-                spk::Vector3 vectorAC = points[3] - points[0];
-                spk::Vector3 vectorAD = points[2] - points[0];
+                spk::Vector3 vectorAC = points[2] - points[0];
+                spk::Vector3 vectorAD = points[3] - points[0];
 
-                _mesh->normals().push_back(vectorAB.cross(vectorAC).normalize());
+                _mesh->normals().push_back(vectorAC.cross(vectorAB).normalize());
                 _mesh->normals().push_back(vectorAD.cross(vectorAC).normalize());
             }
         }
+    }
+
+    void _bakeRawData()
+    {
+        _bakePoints();
+        _bakeUVs();
+        _bakeNormales();		
     }
 
     size_t _computeSpriteID(const spk::Vector2Int& p_a, const spk::Vector2Int& p_b, const spk::Vector2Int& p_c)
@@ -327,7 +339,18 @@ private:
             lastPlayerChunkPosition = playerChunkPosition;
         }
         
-        _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, 0.05f, 0) * spk::TimeMetrics::instance()->deltaTime()));
+        static long long nextInput = spk::TimeMetrics::instance()->time();
+
+        if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
+        {
+            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, 5, 0)));
+            nextInput = spk::TimeMetrics::instance()->time() + 100;
+        }
+        else if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::E) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
+        {
+            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, -5, 0)));
+            nextInput = spk::TimeMetrics::instance()->time() + 100;
+        }
 
         return (false);
     }
@@ -367,7 +390,7 @@ public:
 
         _lights = createLights(spk::Vector3(0, -1, 0));
         _directionLight = _lights->getComponent<spk::DirectionalLight>();
-        _directionLight->setDirection(spk::Vector3(-1, -1, -1));
+        _directionLight->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
         _engine->addGameObject(_lights);
 
         _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");

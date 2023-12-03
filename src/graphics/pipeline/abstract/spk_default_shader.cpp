@@ -162,15 +162,13 @@ layout (binding = 2) uniform LightingInformation
 
 float computeDiffuse()
 {
-    float result = dot(fragmentNormal, lightingInformation.directionalLight);
-
-    return (result);
+    return (dot(normalize(fragmentNormal), normalize(lightingInformation.directionalLight)) + 1) / 2;
 }
 
 vec4 generateColor(sampler2D textureID, vec2 uv)
 {
     float diffuse = computeDiffuse();
-    float ambiant = 0.25f;
+    float ambiant = 0;//0.25f;
     
     float lightIntensity = min(diffuse + ambiant, 1.0f);
 

@@ -14,7 +14,7 @@ namespace spk
             _inputs[i]->update();
         }
 
-        if (_movementRequested == true)
+        if (_movementRequested == true && _requestedDeltaPosition != spk::Vector3(0, 0, 0))
         {
             owner()->transform()->move(_requestedDeltaPosition.normalize() * _movementSpeed * 10);
             _requestedDeltaPosition = spk::Vector3(0, 0, 0);
