@@ -26,6 +26,11 @@ namespace spk
 	
 	void AbstractPipeline::Uniform::bind()
 	{
+		if (_edited == true)
+		{
+			update();
+			_edited = false;
+		}
 		_bindUniform();
 	}
 }

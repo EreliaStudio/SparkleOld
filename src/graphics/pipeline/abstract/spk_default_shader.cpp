@@ -90,6 +90,7 @@ layout (location = 1) in vec2 model_uv;
 layout (location = 2) in vec3 model_normal;
 
 layout (location = 0) out vec2 fragmentUV;
+layout (location = 1) out vec3 fragmentNormal;
 
 layout(push_constant) uniform PushConstants
 {
@@ -137,17 +138,51 @@ void main()
 	vec3 scaledPosition = pushConstants.translation + rotatedPosition;
 	gl_Position = cameraInformation.MVP * vec4(scaledPosition, 1.0f);
 	fragmentUV = model_uv;
+
+    fragmentNormal = model_normal;
 })");
 
     spk::ShaderModule meshRendererComponentFragmentShaderModule = spk::ShaderModule("MeshRendererComponentFragmentShaderModule", R"(#version 450 core
 
 layout (location = 0) in vec2 fragmentUV;
+layout (location = 1) in vec3 fragmentNormal;
 layout (location = 0) out vec4 color;
 
 layout (binding = 1) uniform sampler2D textureID;
 
+layout (binding = 0) uniform CameraInformation
+{
+	mat4 MVP;
+} cameraInformation;
+
+layout (binding = 2) uniform LightingInformation
+{
+	vec3 directionalLight;
+} lightingInformation;
+
+float computeDiffuse()
+{
+    float result = dot(fragmentNormal, lightingInformation.directionalLight);
+
+    return (result);
+}
+
+vec4 generateColor(sampler2D textureID, vec2 uv)
+{
+    float diffuse = computeDiffuse();
+    float ambiant = 0.25f;
+    
+    float lightIntensity = min(diffuse + ambiant, 1.0f);
+
+    vec4 texColor = texture(textureID, uv);
+    vec4 result = texColor * lightIntensity;
+    result.a = 1.0f;
+    
+    return (result);
+}
+
 void main()
 {
-	color = texture(textureID, fragmentUV);
+    color = generateColor(textureID, fragmentUV);
 })");
 }

@@ -71,6 +71,26 @@ namespace spk
          * @return std::shared_ptr<TComponentType> A shared pointer to the retrieved component, or nullptr if not found.
          */
 		template <typename TComponentType>
+		std::shared_ptr<TComponentType> getComponent()
+		{
+			for (auto& component : _components)
+			{
+				std::shared_ptr<TComponentType> castedComponent = std::dynamic_pointer_cast<TComponentType>(component);
+				if (castedComponent != nullptr)
+				{
+					return castedComponent;
+				}
+			}
+			return nullptr;
+		}
+
+		/**
+         * @brief Retrieves a component of a specific type from the game object.
+         * 
+         * @tparam TComponentType The type of component to retrieve.
+         * @return std::shared_ptr<TComponentType> A shared pointer to the retrieved component, or nullptr if not found.
+         */
+		template <typename TComponentType>
 		std::shared_ptr<TComponentType> getComponent(const std::wstring& p_componentName)
 		{
 			for (auto& component : _components)

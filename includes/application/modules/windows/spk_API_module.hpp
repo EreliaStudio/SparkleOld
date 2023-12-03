@@ -25,6 +25,8 @@ namespace spk
 		spk::ThreadSafeQueue<SystemMessage> _mouseQueue; ///< Thread-safe queue for mouse system messages.
 		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue; ///< Thread-safe queue for keyboard system messages.
 
+		SystemMessage _obtainMessage(const UINT& p_messageID);
+
 	public:
 		/**
 		 * @brief Handles a system message.

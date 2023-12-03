@@ -82,6 +82,34 @@ namespace spk
         }
 
         /**
+         * @brief Equality operator overloading.
+         * 
+         * Compares two SafePointers for equality. Two SafePointers are considered
+         * equal if they point to the same object.
+         * 
+         * @param p_other The SafePointer to compare with.
+         * @return true if the SafePointers are equal, false otherwise.
+         */
+        bool operator==(const SafePointer& p_other) const
+        {
+            return _pointer == p_other._pointer;
+        }
+
+        /**
+         * @brief Inequality operator overloading.
+         * 
+         * Compares two SafePointers for inequality. Two SafePointers are considered
+         * unequal if they do not point to the same object.
+         * 
+         * @param p_other The SafePointer to compare with.
+         * @return true if the SafePointers are unequal, false otherwise.
+         */
+        bool operator!=(const SafePointer& p_other) const
+        {
+            return !(*this == p_other);
+        }
+
+        /**
          * @brief Arrow operator overloading.
          * 
          * Provides direct access to the member functions of the pointed-to object.

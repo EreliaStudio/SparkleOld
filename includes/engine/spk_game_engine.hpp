@@ -17,6 +17,7 @@ namespace spk
     {
     private:
         static inline std::shared_ptr<spk::Pipeline::UniformBlock> _cameraUniformBlock = nullptr; ///< Uniform block for camera data.
+        static inline std::shared_ptr<spk::Pipeline::UniformBlock> _lightUniformBlock = nullptr; ///< Uniform block for camera data.
 
         std::vector<std::shared_ptr<GameObject>> _ownedGameObjects; ///< List of game objects managed by the engine.
 

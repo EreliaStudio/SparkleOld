@@ -6,7 +6,7 @@ namespace spk
 {
 	GameEngine::GameEngine()
 	{
-
+		
 	}
 
 	bool GameEngine::update()
@@ -14,7 +14,9 @@ namespace spk
 		for (size_t i = 0; i < _ownedGameObjects.size(); i++)
 		{
 			if (_ownedGameObjects[i]->isActive() == true && _ownedGameObjects[i]->update() == true)
+			{
 				return (true);
+			}
 		}
 		return (false);
 	}
@@ -25,15 +27,17 @@ namespace spk
 			spk::throwException(L"Can't render a game engine without MainCamera defined");
 		
 		if (_cameraUniformBlock == nullptr)
-			_cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
-		
-		if (spk::Camera::mainCamera()->MVPEdited() == true)
 		{
-			spk::Camera::mainCamera()->pushMVP(_cameraUniformBlock->field(L"MVP"));
-			_cameraUniformBlock->update();
+			_cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+		}
+		
+		if (_lightUniformBlock == nullptr)
+		{
+			_lightUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 2)));
 		}
 
 		_cameraUniformBlock->bind();
+		_lightUniformBlock->bind();
 		
 		for (size_t i = 0; i < _ownedGameObjects.size(); i++)
 		{
