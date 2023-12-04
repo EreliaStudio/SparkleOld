@@ -22,10 +22,10 @@ private:
         {
             for (size_t x = 0; x <= Size; x++)
             {
-                spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
+                spk::Vector3 position = spk::Vector3(x, height[x][y], y);
 			    if (height[x][y] < 0.0f)
                 {
-                    position.y = 0.0f;
+                    //position.y = 0.0f;
                 }
                 _mesh->points().push_back(position);
             }
@@ -243,7 +243,7 @@ class MainWidget : public spk::Widget::Interface
 {
 private:
     World _world;
-    spk::Vector2Int _playerVisionSize = spk::Vector2Int(1, 1);
+    spk::Vector2Int _playerVisionSize = spk::Vector2Int(15, 15);
 
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
     std::vector<std::shared_ptr<Chunk>> _activeChunks;
@@ -370,7 +370,7 @@ public:
         spk::Widget::Interface(p_name)
     {
         Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-        Chunk::Material = std::make_shared<spk::Material>();
+        Chunk::Material = std::make_shared<spk::Material>(0.5f, 8.0f);
 
         _engine = std::make_shared<spk::GameEngine>();
 
@@ -380,7 +380,8 @@ public:
         _lights = createLights(spk::Vector3(0, -1, 0));
         _directionLight = _lights->getComponent<spk::DirectionalLight>();
         _directionLight->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
-        _directionLight->setColor(spk::Color(255, 0, 0));
+        _directionLight->setIntensity(0.25f);
+        _directionLight->setColor(spk::Color(255, 255, 255));
         _engine->addGameObject(_lights);
 
         _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");

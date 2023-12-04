@@ -10,8 +10,9 @@ layout (location = 0) in vec3 model_space;
 layout (location = 1) in vec2 model_uv;
 layout (location = 2) in vec3 model_normal;
 
-layout (location = 0) out vec2 fragmentUV;
-layout (location = 1) out vec3 fragmentNormal;
+layout (location = 0) out vec3 fragmentPosition;
+layout (location = 1) out vec2 fragmentUV;
+layout (location = 2) out vec3 fragmentNormal;
 
 layout(push_constant) uniform PushConstants
 {
@@ -60,15 +61,19 @@ void main()
     vec3 rotatedPosition = (rotationMatrix * vec4(model_space * pushConstants.scale, 1.0)).xyz;
 	vec3 scaledPosition = pushConstants.translation + rotatedPosition;
 	gl_Position = cameraInformation.MVP * vec4(scaledPosition, 1.0f);
-	fragmentUV = model_uv;
 
+	fragmentPosition = scaledPosition;
+	fragmentUV = model_uv;
     fragmentNormal = model_normal;
 })");
 
     spk::ShaderModule MeshRenderer::FragmentShaderModule = spk::ShaderModule("MeshRendererComponentFragmentShaderModule", R"(#version 450 core
 
-layout (location = 0) in vec2 fragmentUV;
-layout (location = 1) in vec3 fragmentNormal;
+
+layout (location = 0) in vec3 fragmentPosition;
+layout (location = 1) in vec2 fragmentUV;
+layout (location = 2) in vec3 fragmentNormal;
+
 layout (location = 0) out vec4 outputColor;
 
 layout (binding = 1) uniform sampler2D textureID;
@@ -92,21 +97,46 @@ layout (binding = 2) uniform LightingInformation
 	DirectionalLight directionalLight;
 } lightingInformation;
 
-float computeDiffuse()
+vec4 computeDiffuseRatio(vec3 p_normal, vec3 p_lightDirection)
 {
-    return (dot(normalize(fragmentNormal), normalize(lightingInformation.directionalLight.direction)) + 1) / 2;
+	float dotValue = dot(normalize(p_normal), normalize(p_lightDirection));
+	float ratio = 1.0f;
+	if (dotValue < 0)
+		ratio = (1 + dotValue);
+
+	return (vec4(ratio * 0.75f, ratio* 0.75f, ratio* 0.75f, 1));
+}
+
+vec4 computeAmbiantRatio(float p_intensity)
+{
+	return (vec4(p_intensity, p_intensity, p_intensity, 1));
+}
+
+vec4 computeSpecularRatio(float p_specularPower, float p_specularIntensity, vec3 p_eyePosition, vec3 p_worldPosition, vec3 p_normal, vec3 p_lightDirection)
+{
+	float ratio = 0.0f;
+
+	vec3 eyeToWorldNormal = normalize(p_eyePosition - p_worldPosition);
+    vec3 lightReflection = normalize(reflect(p_lightDirection, p_normal));
+
+	float specularRatio = dot(eyeToWorldNormal, lightReflection);
+	if (specularRatio > 0)
+		ratio = pow(specularRatio, p_specularPower) * p_specularIntensity;
+	
+	return (vec4(ratio, ratio, ratio, 1));
 }
 
 void main()
 {
-    float diffuse = computeDiffuse();
-    float ambiant = lightingInformation.directionalLight.intensity;
-    
-    float lightIntensity = min(diffuse + ambiant, 1.0f);
+    vec4 textureColor = texture(textureID, fragmentUV);
 
-    vec4 texColor = texture(textureID, fragmentUV);
-    outputColor = texColor * lightingInformation.directionalLight.color * lightIntensity;
-    outputColor.a = 1.0f;
+	vec4 diffuseColor  = lightingInformation.directionalLight.color * computeDiffuseRatio(fragmentNormal, lightingInformation.directionalLight.direction);
+	vec4 ambiantColor  = lightingInformation.directionalLight.color * computeAmbiantRatio(lightingInformation.directionalLight.intensity);
+	vec4 specularColor = lightingInformation.directionalLight.color * computeSpecularRatio(pushConstants.material.specularPower, pushConstants.material.specularIntensity, cameraInformation.position, fragmentPosition, fragmentNormal, lightingInformation.directionalLight.direction);
+	
+	vec4 fuzedColor = min(diffuseColor + ambiantColor, vec4(1, 1, 1, 1)) + specularColor;
+
+	outputColor = textureColor * fuzedColor;
 })");
 
 	void MeshRenderer::initializeMeshRendererShader()

@@ -9,6 +9,13 @@ namespace spk
 		
 	}
 
+	Material::Material(const float& p_specularIntensity, const float& p_specularPower) :
+		specularIntensity(p_specularIntensity),
+		specularPower(p_specularPower)
+	{
+
+	}
+
 	bool Material::operator==(const Material& p_other) const
 	{
 		return ((specularIntensity == p_other.specularIntensity) && (specularPower == p_other.specularPower));
@@ -16,6 +23,6 @@ namespace spk
 	
 	bool Material::operator!=(const Material& p_other) const
 	{
-		return ((specularIntensity != p_other.specularIntensity) || (specularPower != p_other.specularPower));
+		return (!(*this == p_other));
 	}
 }
