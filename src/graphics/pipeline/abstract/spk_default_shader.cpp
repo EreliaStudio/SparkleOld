@@ -146,7 +146,7 @@ void main()
 
 layout (location = 0) in vec2 fragmentUV;
 layout (location = 1) in vec3 fragmentNormal;
-layout (location = 0) out vec4 color;
+layout (location = 0) out vec4 outputColor;
 
 layout (binding = 1) uniform sampler2D textureID;
 
@@ -157,30 +157,23 @@ layout (binding = 0) uniform CameraInformation
 
 layout (binding = 2) uniform LightingInformation
 {
-	vec3 directionalLight;
+	DirectionalLight directionalLight;
 } lightingInformation;
 
 float computeDiffuse()
 {
-    return (dot(normalize(fragmentNormal), normalize(lightingInformation.directionalLight)) + 1) / 2;
-}
-
-vec4 generateColor(sampler2D textureID, vec2 uv)
-{
-    float diffuse = computeDiffuse();
-    float ambiant = 0;//0.25f;
-    
-    float lightIntensity = min(diffuse + ambiant, 1.0f);
-
-    vec4 texColor = texture(textureID, uv);
-    vec4 result = texColor * lightIntensity;
-    result.a = 1.0f;
-    
-    return (result);
+    return (dot(normalize(fragmentNormal), normalize(lightingInformation.directionalLight.direction)) + 1) / 2;
 }
 
 void main()
 {
-    color = generateColor(textureID, fragmentUV);
+    float diffuse = computeDiffuse();
+    float ambiant = lightingInformation.directionalLight.intensity;
+    
+    float lightIntensity = min(diffuse + ambiant, 1.0f);
+
+    vec4 texColor = texture(textureID, fragmentUV);
+    outputColor = texColor * lightingInformation.directionalLight.color * lightIntensity;
+    outputColor.a = 1.0f;
 })");
 }

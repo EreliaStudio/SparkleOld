@@ -54,28 +54,13 @@ private:
         {
             for (size_t x = 0; x < Size; x++)
             {
-                /*
-                *  Z
-                *  |   A       B
-                *  |    *-----*
-                *  |    |     |
-                *  |    |     |
-                *  |    |     |
-                *  |    *-----*
-                *  |   D       C
-                *  |
-                *  o---------------X
-                *  Order : ABC - ACD
-                */
-
                 spk::Vector3 points[4] = {
                         _mesh->points()[(x + 0) + ((y + 1) * (Size + 1))],
                         _mesh->points()[(x + 1) + ((y + 1) * (Size + 1))],
                         _mesh->points()[(x + 1) + ((y + 0) * (Size + 1))],
                         _mesh->points()[(x + 0) + ((y + 0) * (Size + 1))]
                     };
-                size_t pointOffsets[6] = {Size + 1, Size + 2, 1, Size + 1, 1, 0};
-
+                    
                 spk::Vector3 vectorAB = points[1] - points[0];
                 spk::Vector3 vectorAC = points[2] - points[0];
                 spk::Vector3 vectorAD = points[3] - points[0];
