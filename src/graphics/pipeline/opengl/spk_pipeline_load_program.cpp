@@ -10,6 +10,8 @@ namespace spk
 		GLint len;
 		const char *content = p_shaderCode.c_str();
 
+		spk::cout << "Compiling shader :" << spk::to_wstring(p_shaderCode) << std::endl;
+
 		result = GL_FALSE;
 
 		glShaderSource(p_shaderIndex, 1, &content, NULL);

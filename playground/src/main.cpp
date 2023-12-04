@@ -4,6 +4,8 @@ struct Chunk : public spk::GameObject
 {
 public:
     static inline std::shared_ptr<spk::SpriteSheet> SpriteSheet = nullptr;
+    static inline std::shared_ptr<spk::Material> Material = nullptr;
+
 private:
     static const int Size = 16;
     static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(987654321);
@@ -171,6 +173,7 @@ public:
         _position(p_position)
     {
         _renderer->setTexture(SpriteSheet);
+        _renderer->setMaterial(Material);
 
         for (size_t i = 0; i <= Size; i++)
         {
@@ -367,6 +370,7 @@ public:
         spk::Widget::Interface(p_name)
     {
         Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
+        Chunk::Material = std::make_shared<spk::Material>();
 
         _engine = std::make_shared<spk::GameEngine>();
 
@@ -376,6 +380,7 @@ public:
         _lights = createLights(spk::Vector3(0, -1, 0));
         _directionLight = _lights->getComponent<spk::DirectionalLight>();
         _directionLight->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
+        _directionLight->setColor(spk::Color(255, 0, 0));
         _engine->addGameObject(_lights);
 
         _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");

@@ -19,6 +19,25 @@ namespace spk
     class MeshRenderer : public Component
     {
     protected:
+		/**
+		 *  @brief Vertex Shader Module of the Mesh Renderer Component.
+		 *
+		 *  This shader module is intended to handle the vertex shading logic
+		 *  specific to rendering a Mesh Renderer Component in the graphics pipeline.
+		 *  It defines how vertices are processed and transformed during the vertex shading stage.
+		 */
+		static spk::ShaderModule VertexShaderModule;
+
+		/**
+		 *  @brief Fragment Shader Module of the Mesh Renderer Component.
+		 *
+		 *  This shader module is intended to handle the fragment shading logic
+		 *  specific to rendering a Mesh Renderer Component in the graphics pipeline.
+		 *  It defines the processing of fragments (potential pixels) and their properties,
+		 *  determining the final color and other attributes of pixels on the screen.
+		 */
+		static spk::ShaderModule FragmentShaderModule;
+
         static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr; ///< Shared rendering pipeline.
         static inline std::shared_ptr<spk::Pipeline::SamplerUniform> _textureIDUniform = nullptr; ///< Uniform for texture ID.
         std::shared_ptr<spk::Pipeline::Object> _renderingObject = nullptr; ///< Object in the rendering pipeline.
@@ -34,6 +53,7 @@ namespace spk
         virtual void _onRender() override;
 
         std::shared_ptr<spk::Mesh> _mesh; ///< Mesh to be rendered.
+		spk::Material _lastMaterial;
 		std::shared_ptr<spk::Material> _material; ///< Material to be rendered.
 
         void _updateMeshModelData(); ///< Updates the mesh model data.

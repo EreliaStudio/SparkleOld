@@ -8,4 +8,14 @@ namespace spk
 	{
 		
 	}
+
+	bool Material::operator==(const Material& p_other) const
+	{
+		return ((specularIntensity == p_other.specularIntensity) && (specularPower == p_other.specularPower));
+	}
+	
+	bool Material::operator!=(const Material& p_other) const
+	{
+		return ((specularIntensity != p_other.specularIntensity) || (specularPower != p_other.specularPower));
+	}
 }

@@ -18,6 +18,21 @@ namespace spk::WidgetComponent
 	{
     private:
         /**
+         *  @brief Vertex Shader Module of the TextLabel Component.
+         *
+         *  This shader module is intended to handle the vertex shading logic
+         *  specific to rendering a TextLabel Component in the graphics pipeline.
+         */
+        static spk::ShaderModule VertexShaderModule; 
+        /**
+         *  @brief Fragment Shader Module of the TextLabel Component.
+         *
+         *  This shader module is intended to handle the fragment shading logic
+         *  specific to rendering a TextLabel Component in the graphics pipeline.
+         */
+        static spk::ShaderModule FragmentShaderModule; 
+
+        /**
          * @brief Shared pointer to the rendering pipeline used by all TextLabel instances.
          */
         static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr;

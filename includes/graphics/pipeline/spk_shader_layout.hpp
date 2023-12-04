@@ -584,7 +584,6 @@ namespace spk
 		 */
 		int _fragmentTypeMask = static_cast<int>(ShaderModule::Instruction::Type::Version) |
 								static_cast<int>(ShaderModule::Instruction::Type::Structure) |
-								static_cast<int>(ShaderModule::Instruction::Type::PushConstant) |
 								static_cast<int>(ShaderModule::Instruction::Type::SamplerUniform) |
 								static_cast<int>(ShaderModule::Instruction::Type::OutputBuffer) |
 								static_cast<int>(ShaderModule::Instruction::Type::UniformBlock);
