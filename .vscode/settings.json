@@ -88,7 +88,8 @@
         "*.rh": "cpp",
         "csignal": "cpp",
         "cstdarg": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "bitset": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {

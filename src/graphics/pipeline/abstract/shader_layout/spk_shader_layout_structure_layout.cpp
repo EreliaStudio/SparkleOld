@@ -73,7 +73,7 @@ namespace spk
                     currentOffset += it->second.format * it->second.size;
                     
                     while (currentOffset > totalStride)
-                        totalStride += 16;
+                        totalStride += 4;
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace spk
                 searchStart = field_match.suffix().first;
             }
 
-            Data structData(Data::Type::Structure, 1, totalStride, 16);
+            Data structData(Data::Type::Structure, 1, totalStride, 4);
             
             _structures[structName] = structData;
         }

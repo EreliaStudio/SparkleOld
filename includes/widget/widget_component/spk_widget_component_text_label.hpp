@@ -24,6 +24,7 @@ namespace spk::WidgetComponent
          *  specific to rendering a TextLabel Component in the graphics pipeline.
          */
         static spk::ShaderModule VertexShaderModule; 
+        
         /**
          *  @brief Fragment Shader Module of the TextLabel Component.
          *

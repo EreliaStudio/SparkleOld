@@ -243,7 +243,7 @@ class MainWidget : public spk::Widget::Interface
 {
 private:
     World _world;
-    spk::Vector2Int _playerVisionSize = spk::Vector2Int(15, 15);
+    spk::Vector2Int _playerVisionSize = spk::Vector2Int(1, 1);
 
     std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
     std::vector<std::shared_ptr<Chunk>> _activeChunks;

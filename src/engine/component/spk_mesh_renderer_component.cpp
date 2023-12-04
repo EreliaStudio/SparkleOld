@@ -107,9 +107,6 @@ void main()
     vec4 texColor = texture(textureID, fragmentUV);
     outputColor = texColor * lightingInformation.directionalLight.color * lightIntensity;
     outputColor.a = 1.0f;
-
-    if (pushConstants.scale == vec3(1, 1, 1))
-        outputColor = vec4(1, 0, 0, 1);
 })");
 
 	void MeshRenderer::initializeMeshRendererShader()

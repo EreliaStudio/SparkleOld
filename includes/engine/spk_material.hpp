@@ -6,7 +6,6 @@ namespace spk
 	{
 		float specularIntensity;
 		float specularPower;
-		float padding[2];
 
 		Material();
 		bool operator==(const Material& p_other) const;
