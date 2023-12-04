@@ -42,6 +42,7 @@ namespace spk
 				_cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
 			}
 
+			_cameraUniformBlock->field(L"position") = owner()->transform()->translation();
 			_cameraUniformBlock->field(L"MVP") = _MVP;
 			spk::Camera::mainCamera()->_needUpdate = false;
 		}

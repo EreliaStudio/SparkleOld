@@ -60,6 +60,11 @@ namespace spk
 		_mesh->resetNeedUpdateFlag();
 	}
 
+	void MeshRenderer::_updateMaterial()
+	{
+		
+	}
+
 	void MeshRenderer::_onRender()
 	{
 		if (_mesh == nullptr)
@@ -100,6 +105,21 @@ namespace spk
 	std::shared_ptr<const spk::Mesh> MeshRenderer::mesh() const
 	{
 		return (_mesh);
+	}
+
+	void MeshRenderer::setMaterial(std::shared_ptr<spk::Material> p_material)
+	{
+		_material = p_material;
+	}
+
+	std::shared_ptr<spk::Material> MeshRenderer::material()
+	{
+		return (_material);
+	}
+
+	std::shared_ptr<const spk::Material> MeshRenderer::material() const
+	{
+		return (_material);
 	}
 	
 	void MeshRenderer::setTexture(std::shared_ptr<spk::Texture> p_texture)

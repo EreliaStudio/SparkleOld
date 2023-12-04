@@ -97,10 +97,12 @@ layout(push_constant) uniform PushConstants
 	vec3 translation;
 	vec3 scale;
 	vec3 rotation;
+    Material material;
 } pushConstants;
 
 layout(binding = 0) uniform CameraInformation
 {
+    vec3 position;
 	mat4 MVP;
 } cameraInformation;
 
@@ -152,6 +154,7 @@ layout (binding = 1) uniform sampler2D textureID;
 
 layout (binding = 0) uniform CameraInformation
 {
+    vec3 position;
 	mat4 MVP;
 } cameraInformation;
 
