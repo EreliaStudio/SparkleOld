@@ -19,8 +19,14 @@ private:
     float _generateHeight(const int& p_x, const int& p_y)
     {
         float result = _perlinGeneration.sample(static_cast<float>(p_x + _position.x * Size + 150000), static_cast<float>(p_y + _position.y * Size + 150000)) * 10;
-        // if (result < 0.0f)
-        //     return (0.0f);
+        return (result);
+    }
+
+    spk::Vector3 _generatePoint(const int& p_x, const int& p_y)
+    {
+        spk::Vector3 result = spk::Vector3(p_x, (p_x == -1 || p_y == -1 || p_x >= Size + 1 || p_y >= Size + 1 ? _generateHeight(p_x, p_y) : height[p_x][p_y]), p_y);
+        if (result.y < 0.0f)
+            result.y = 0.0f;
         return (result);
     }
 
@@ -30,8 +36,7 @@ private:
         {
             for (size_t x = 0; x <= Size; x++)
             {
-                spk::Vector3 position = spk::Vector3(x, height[x][y], y);
-                _mesh->points().push_back(position);
+                _mesh->points().push_back(_generatePoint(x, y));
             }
         }
     }
@@ -61,11 +66,11 @@ private:
             for (int x = 0; x <= Size; x++)
             {
                 spk::Vector3 points[5] = {
-                    spk::Vector3(x +  0, _generateHeight(x +  0, y +  0), y +  0),
-                    spk::Vector3(x + -1, _generateHeight(x + -1, y +  0), y +  0),
-                    spk::Vector3(x +  0, _generateHeight(x +  0, y + -1), y + -1),
-                    spk::Vector3(x +  0, _generateHeight(x +  0, y +  1), y +  1),
-                    spk::Vector3(x +  1, _generateHeight(x +  1, y +  0), y +  0),
+                    _generatePoint(x +  0, y +  0),
+                    _generatePoint(x + -1, y +  0),
+                    _generatePoint(x +  0, y + -1),
+                    _generatePoint(x +  0, y +  1),
+                    _generatePoint(x +  1, y +  0)
                 };
 
                 int trianglesIndexes[4][2] = {
@@ -81,7 +86,7 @@ private:
 
                     normal += vectorAB.cross(vectorAC).normalize();
                 }
-                normal /= 8;
+                normal /= 4;
 
                 _mesh->normals().push_back(normal);
             }
@@ -137,7 +142,6 @@ private:
             {
                 spk::Vector2Int position = spk::Vector2Int(x, y);
                 size_t baseIndex = x + y * (Size + 1);
-                size_t baseNormalIndex = (x + (y * Size)) * 2;
 
                 for (size_t i = 0; i < 2; i++)
                 {
@@ -375,7 +379,10 @@ private:
     {
         std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Lights", spk::Vector3(0, 0, 0));
 
-        result->addComponent<spk::DirectionalLight>();
+        auto tmp = result->addComponent<spk::DirectionalLight>();
+        tmp->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
+        tmp->setIntensity(0.25f);
+        tmp->setColor(spk::Color(255, 255, 255));
 
         return (result);
     }
@@ -385,7 +392,7 @@ public:
         spk::Widget::Interface(p_name)
     {
         Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-        Chunk::Material = std::make_shared<spk::Material>(1.0f, 32.0f);
+        Chunk::Material = std::make_shared<spk::Material>(0.25f, 32.0f);
 
         _engine = std::make_shared<spk::GameEngine>();
 
@@ -394,9 +401,6 @@ public:
 
         _lights = createLights(spk::Vector3(0, -1, 0));
         _directionLight = _lights->getComponent<spk::DirectionalLight>();
-        _directionLight->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
-        _directionLight->setIntensity(0.25f);
-        _directionLight->setColor(spk::Color(255, 255, 255));
         _engine->addGameObject(_lights);
 
         _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");

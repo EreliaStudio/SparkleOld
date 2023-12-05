@@ -101,8 +101,8 @@ vec4 computeDiffuseRatio(vec3 p_normal, vec3 p_lightDirection)
 {
 	float dotValue = dot(normalize(p_normal), normalize(p_lightDirection));
 	float ratio = 1.0f;
-	if (dotValue < 0)
-		ratio = (1 + dotValue);
+	if (dotValue > 0)
+		ratio = (1 - dotValue - lightingInformation.directionalLight.intensity);
 
 	return (vec4(ratio, ratio, ratio, 1));
 }
