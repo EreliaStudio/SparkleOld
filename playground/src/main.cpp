@@ -16,6 +16,14 @@ private:
 
     float height[Size + 1][Size + 1];
 
+    float _generateHeight(const int& p_x, const int& p_y)
+    {
+        float result = _perlinGeneration.sample(static_cast<float>(p_x + _position.x * Size + 150000), static_cast<float>(p_y + _position.y * Size + 150000)) * 10;
+        // if (result < 0.0f)
+        //     return (0.0f);
+        return (result);
+    }
+
     void _bakePoints()
     {
         for (size_t y = 0; y <= Size; y++)
@@ -23,10 +31,6 @@ private:
             for (size_t x = 0; x <= Size; x++)
             {
                 spk::Vector3 position = spk::Vector3(x, height[x][y], y);
-			    if (height[x][y] < 0.0f)
-                {
-                    //position.y = 0.0f;
-                }
                 _mesh->points().push_back(position);
             }
         }
@@ -52,23 +56,41 @@ private:
 
     void _bakeNormales()
     {
-        for (size_t y = 0; y < Size; y++)
+        for (int y = 0; y <= Size; y++)
         {
-            for (size_t x = 0; x < Size; x++)
+            for (int x = 0; x <= Size; x++)
             {
-                spk::Vector3 points[4] = {
-                        _mesh->points()[(x + 0) + ((y + 1) * (Size + 1))],
-                        _mesh->points()[(x + 1) + ((y + 1) * (Size + 1))],
-                        _mesh->points()[(x + 1) + ((y + 0) * (Size + 1))],
-                        _mesh->points()[(x + 0) + ((y + 0) * (Size + 1))]
-                    };
-                    
-                spk::Vector3 vectorAB = points[1] - points[0];
-                spk::Vector3 vectorAC = points[2] - points[0];
-                spk::Vector3 vectorAD = points[3] - points[0];
+                spk::Vector3 points[9] = {
+                    spk::Vector3(x + -1, _generateHeight(x + -1, y + -1), y + -1),
+                    spk::Vector3(x + -1, _generateHeight(x + -1, y + 0), y + 0),
+                    spk::Vector3(x + -1, _generateHeight(x + -1, y + 1), y + 1),
 
-                _mesh->normals().push_back(vectorAC.cross(vectorAB).normalize());
-                _mesh->normals().push_back(vectorAD.cross(vectorAC).normalize());
+                    spk::Vector3(x + 0, _generateHeight(x + 0, y + -1), y + -1),
+                    spk::Vector3(x + 0, _generateHeight(x + 0, y + 0), y + 0),
+                    spk::Vector3(x + 0, _generateHeight(x + 0, y + 1), y + 1),
+
+                    spk::Vector3(x + 1, _generateHeight(x + 1, y + -1), y + -1),
+                    spk::Vector3(x + 1, _generateHeight(x + 1, y + 0), y + 0),
+                    spk::Vector3(x + 1, _generateHeight(x + 1, y + 1), y + 1)
+                };
+
+                int trianglesIndexes[8][2] = {
+                    {0, 3}, {3, 6}, {6, 7}, {7, 8},
+                    {8, 5}, {5, 2}, {2, 1}, {1, 0}
+                };
+
+                spk::Vector3 normal = spk::Vector3();
+
+                for (size_t i = 0; i < 8; i++)
+                {
+                    spk::Vector3 vectorAB = points[trianglesIndexes[i][0]] - points[4];
+                    spk::Vector3 vectorAC = points[trianglesIndexes[i][1]] - points[4];
+
+                    normal += vectorAB.cross(vectorAC).normalize();
+                }
+                normal /= 8;
+
+                _mesh->normals().push_back(normal);
             }
         }
     }
@@ -87,13 +109,13 @@ private:
                 height[p_c.x][p_c.y]
             );
 
-        if (value < -0.5f)
+        if (value < -5.0f)
             return (4);
         else if (value < 0.0f)
             return (3);
-        else if (value < 1.5f)
+        else if (value < 15.0f)
             return (2);
-        else if (value < 2.5f)
+        else if (value < 25.0f)
             return (1);
         else
             return (0);
@@ -130,7 +152,7 @@ private:
 
                     for (size_t j = 0; j < 3; j++)
                     {
-                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseNormalIndex + i);
+                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseIndex + pointOffsets[i * 3 + j]);
                     }
                 }
             }
@@ -179,7 +201,7 @@ public:
         {
             for (size_t j = 0; j <= Size; j++)
             {
-                height[i][j] = _perlinGeneration.sample(static_cast<float>(p_position.x * Size + i + 150000), static_cast<float>(p_position.y * Size + j + 150000));
+                height[i][j] = _generateHeight(i, j);
             }
         }
 
@@ -370,7 +392,7 @@ public:
         spk::Widget::Interface(p_name)
     {
         Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-        Chunk::Material = std::make_shared<spk::Material>(0.5f, 8.0f);
+        Chunk::Material = std::make_shared<spk::Material>(1.0f, 32.0f);
 
         _engine = std::make_shared<spk::GameEngine>();
 

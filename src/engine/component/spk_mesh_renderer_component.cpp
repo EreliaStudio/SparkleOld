@@ -104,7 +104,7 @@ vec4 computeDiffuseRatio(vec3 p_normal, vec3 p_lightDirection)
 	if (dotValue < 0)
 		ratio = (1 + dotValue);
 
-	return (vec4(ratio * 0.75f, ratio* 0.75f, ratio* 0.75f, 1));
+	return (vec4(ratio, ratio, ratio, 1));
 }
 
 vec4 computeAmbiantRatio(float p_intensity)
@@ -135,8 +135,9 @@ void main()
 	vec4 specularColor = lightingInformation.directionalLight.color * computeSpecularRatio(pushConstants.material.specularPower, pushConstants.material.specularIntensity, cameraInformation.position, fragmentPosition, fragmentNormal, lightingInformation.directionalLight.direction);
 	
 	vec4 fuzedColor = min(diffuseColor + ambiantColor, vec4(1, 1, 1, 1)) + specularColor;
-
 	outputColor = textureColor * fuzedColor;
+	if (outputColor.a == 1.0f || outputColor.a != 1.0f)
+		outputColor = vec4((fragmentNormal + 1) / 2, 1.0f);
 })");
 
 	void MeshRenderer::initializeMeshRendererShader()
