@@ -136,8 +136,6 @@ void main()
 	
 	vec4 fuzedColor = min(diffuseColor + ambiantColor, vec4(1, 1, 1, 1)) + specularColor;
 	outputColor = textureColor * fuzedColor;
-	if (outputColor.a == 1.0f || outputColor.a != 1.0f)
-		outputColor = vec4((fragmentNormal + 1) / 2, 1.0f);
 })");
 
 	void MeshRenderer::initializeMeshRendererShader()

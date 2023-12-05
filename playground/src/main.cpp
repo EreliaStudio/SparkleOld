@@ -60,31 +60,24 @@ private:
         {
             for (int x = 0; x <= Size; x++)
             {
-                spk::Vector3 points[9] = {
-                    spk::Vector3(x + -1, _generateHeight(x + -1, y + -1), y + -1),
-                    spk::Vector3(x + -1, _generateHeight(x + -1, y + 0), y + 0),
-                    spk::Vector3(x + -1, _generateHeight(x + -1, y + 1), y + 1),
-
-                    spk::Vector3(x + 0, _generateHeight(x + 0, y + -1), y + -1),
-                    spk::Vector3(x + 0, _generateHeight(x + 0, y + 0), y + 0),
-                    spk::Vector3(x + 0, _generateHeight(x + 0, y + 1), y + 1),
-
-                    spk::Vector3(x + 1, _generateHeight(x + 1, y + -1), y + -1),
-                    spk::Vector3(x + 1, _generateHeight(x + 1, y + 0), y + 0),
-                    spk::Vector3(x + 1, _generateHeight(x + 1, y + 1), y + 1)
+                spk::Vector3 points[5] = {
+                    spk::Vector3(x +  0, _generateHeight(x +  0, y +  0), y +  0),
+                    spk::Vector3(x + -1, _generateHeight(x + -1, y +  0), y +  0),
+                    spk::Vector3(x +  0, _generateHeight(x +  0, y + -1), y + -1),
+                    spk::Vector3(x +  0, _generateHeight(x +  0, y +  1), y +  1),
+                    spk::Vector3(x +  1, _generateHeight(x +  1, y +  0), y +  0),
                 };
 
-                int trianglesIndexes[8][2] = {
-                    {0, 3}, {3, 6}, {6, 7}, {7, 8},
-                    {8, 5}, {5, 2}, {2, 1}, {1, 0}
+                int trianglesIndexes[4][2] = {
+                    {1, 3}, {3, 4}, {4, 2}, {2, 1},
                 };
 
                 spk::Vector3 normal = spk::Vector3();
 
-                for (size_t i = 0; i < 8; i++)
+                for (size_t i = 0; i < 4; i++)
                 {
-                    spk::Vector3 vectorAB = points[trianglesIndexes[i][0]] - points[4];
-                    spk::Vector3 vectorAC = points[trianglesIndexes[i][1]] - points[4];
+                    spk::Vector3 vectorAB = points[trianglesIndexes[i][0]] - points[0];
+                    spk::Vector3 vectorAC = points[trianglesIndexes[i][1]] - points[0];
 
                     normal += vectorAB.cross(vectorAC).normalize();
                 }
