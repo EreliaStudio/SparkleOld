@@ -53,11 +53,11 @@ namespace spk
         virtual void _onRender() override;
 
         std::shared_ptr<spk::Mesh> _mesh; ///< Mesh to be rendered.
-		spk::Material _lastMaterial;
+		spk::Material _lastMaterial; ///< Last material, used to check if the material have changed during last tick.
 		std::shared_ptr<spk::Material> _material; ///< Material to be rendered.
 
         void _updateMeshModelData(); ///< Updates the mesh model data.
-		void _updateMaterial();
+		void _updateMaterial(); ///< Updates the material data.
 
     public:
         /**

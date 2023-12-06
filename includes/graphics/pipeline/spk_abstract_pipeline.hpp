@@ -330,6 +330,7 @@ namespace spk
 			/// Data buffer to hold the uniform data.
 			spk::DataBuffer _data;
 
+			/// @brief Indicated if the uniform buffer have been edited and need to be pushed
 			bool _edited;
 
 			/**
