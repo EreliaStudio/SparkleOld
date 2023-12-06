@@ -25,8 +25,8 @@ private:
     spk::Vector3 _generatePoint(const int& p_x, const int& p_y)
     {
         spk::Vector3 result = spk::Vector3(p_x, (p_x == -1 || p_y == -1 || p_x >= Size + 1 || p_y >= Size + 1 ? _generateHeight(p_x, p_y) : height[p_x][p_y]), p_y);
-        if (result.y < 0.0f)
-            result.y = 0.0f;
+        // if (result.y <= 0.0f)
+        //     result.y = 0.0f;
         return (result);
     }
 
