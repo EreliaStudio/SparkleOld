@@ -1,0 +1,77 @@
+@startuml
+
+participant User
+participant Application
+participant WidgetModule
+participant WidgetAtlas as "Widget::Atlas"
+participant WidgetInterface as "Widget::Interface"
+participant GrandParentWidget
+participant ParentWidget
+participant ChildrenWidget
+
+== Creation Application ==
+User -> Application : Create application
+Application -> WidgetModule : create a widget module
+WidgetModule-> WidgetAtlas : instanciate the singleton
+
+== Creation of GrandParentWidget ==
+User -> GrandParentWidget : Create GrandParentWidget without setting up a parrent
+GrandParentWidget -> WidgetInterface : WidgetInterface constructor
+WidgetInterface -> WidgetAtlas : subscribe the new widget
+WidgetAtlas -> WidgetAtlas : sort widgets using depth as order
+
+== Creation of ParentWidget ==
+User -> ParentWidget : Create ParentWidget with parent to GrandParentWidget
+ParentWidget -> WidgetInterface : WidgetInterface constructor
+WidgetInterface -> WidgetAtlas : subscribe the new widget
+WidgetAtlas -> WidgetAtlas : sort widgets using depth as order
+
+== Creation of ChildrenWidget ==
+User -> ChildrenWidget : Create ChildrenWidget with parent to ParentWidget
+ChildrenWidget -> WidgetInterface : WidgetInterface constructor
+WidgetInterface -> ParentWidget : indicate a new children to ParentWidget
+WidgetInterface -> WidgetAtlas : subscribe the new widget
+WidgetAtlas -> WidgetAtlas : sort widgets using depth as order
+
+== Uppon Rendering Trigger ==
+Application -> WidgetModule : launch render method of WidgetModule
+WidgetModule -> WidgetAtlas : launch render method of the WidgetAtlas
+activate WidgetAtlas
+WidgetAtlas -> WidgetAtlas : Iterate thought subscribed widget
+WidgetAtlas -> WidgetInterface : check if interface is active
+WidgetAtlas <-- WidgetInterface : Return state
+alt widget is active
+	WidgetAtlas -> WidgetInterface : Render the widget
+	WidgetInterface -> WidgetInterface : launch render behavior
+end
+deactivate WidgetAtlas
+
+== Uppon Updater Trigger ==
+Application -> WidgetModule : launch update method of WidgetModule
+WidgetModule -> WidgetAtlas : launch update method of the WidgetAtlas
+activate WidgetAtlas
+WidgetAtlas -> WidgetAtlas : Iterate thought subscribed widget
+WidgetAtlas -> WidgetInterface : check if interface is active
+WidgetAtlas <-- WidgetInterface : Return state
+alt widget is active
+	WidgetAtlas -> WidgetInterface : Update the widget
+	WidgetInterface -> WidgetInterface : launch update behavior
+	WidgetAtlas <-- WidgetInterface : Return state
+	alt the update method returned true
+		WidgetAtlas --> WidgetAtlas : Stop the loop
+	end
+end
+deactivate WidgetAtlas
+
+== Uppon ParentWidget destruction ==
+User -> ParentWidget : lose the ParentWidget instance 
+ParentWidget -> WidgetInterface : Call destructor
+activate WidgetInterface 
+WidgetInterface -> GrandParentWidget : Indicate the suppression of it's children
+WidgetInterface -> WidgetInterface : Loop thought childrens
+WidgetInterface -> ChildrenWidget : set parent widget to nullptr
+deactivate WidgetInterface
+WidgetInterface -> WidgetAtlas : unsubscribe the widget
+WidgetAtlas -> WidgetAtlas : sort widgets using depth as order
+
+@enduml

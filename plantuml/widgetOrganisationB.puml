@@ -1,0 +1,88 @@
+@startuml
+
+participant User
+participant Application
+participant WidgetModule
+participant WidgetAtlas as "Widget::Atlas"
+participant WidgetInterface as "Widget::Interface"
+participant GrandParentWidget
+participant ParentWidget
+participant ChildrenWidget
+
+== Creation Application ==
+User -> Application : Create application
+Application -> WidgetModule : create a widget module
+WidgetModule-> WidgetAtlas : instanciate the singleton
+
+== Creation of GrandParentWidget ==
+User -> WidgetAtlas : Call createWidget<GrandParentWidget>
+WidgetAtlas -> GrandParentWidget : Create a new pointer to GrandParentWidget
+GrandParentWidget -> WidgetInterface : Call constructor
+GrandParentWidget --> WidgetAtlas : return the newly allocated pointer
+WidgetAtlas -> WidgetAtlas : Insert the new pointer inside\nsubscribed widget\nsort widgets using depth as order
+User <-- WidgetAtlas : return a SafePointer of the new GrandParentWidget allocated
+
+== Creation of ParentWidget ==
+User -> WidgetAtlas : Call createWidget<ParentWidget>
+WidgetAtlas -> ParentWidget : Create a new pointer to ParentWidget
+ParentWidget -> WidgetInterface : Call constructor
+WidgetInterface -> GrandParentWidget : Indicate new children
+ParentWidget --> WidgetAtlas : return the newly allocated pointer
+WidgetAtlas -> WidgetAtlas : Insert the new pointer inside\nsubscribed widget\nsort widgets using depth as order
+User <-- WidgetAtlas : return a SafePointer of the new ParentWidget allocated
+
+== Creation of ChildrenWidget ==
+User -> WidgetAtlas : Call createWidget<ChildrenWidget>
+WidgetAtlas -> ChildrenWidget : Create a new pointer to ChildrenWidget
+ChildrenWidget -> WidgetInterface : Call constructor
+WidgetInterface -> ParentWidget : Indicate new children
+ChildrenWidget --> WidgetAtlas : return the newly allocated pointer
+WidgetAtlas -> WidgetAtlas : Insert the new pointer inside\nsubscribed widget\nsort widgets using depth as order
+User <-- WidgetAtlas : return a SafePointer of the new ChildrenWidget allocated
+
+== Uppon Rendering Trigger ==
+Application -> WidgetModule : launch render method of WidgetModule
+WidgetModule -> WidgetAtlas : launch render method of the WidgetAtlas
+activate WidgetAtlas
+WidgetAtlas -> WidgetAtlas : Iterate thought subscribed widget
+WidgetAtlas -> WidgetInterface : check if interface is active
+WidgetAtlas <-- WidgetInterface : Return state
+alt widget is active
+	WidgetAtlas -> WidgetInterface : Render the widget
+	WidgetInterface -> WidgetInterface : launch render behavior
+end
+deactivate WidgetAtlas
+
+== Uppon Updater Trigger ==
+Application -> WidgetModule : launch update method of WidgetModule
+WidgetModule -> WidgetAtlas : launch update method of the WidgetAtlas
+activate WidgetAtlas
+WidgetAtlas -> WidgetAtlas : Iterate thought subscribed widget
+WidgetAtlas -> WidgetInterface : check if interface is active
+WidgetAtlas <-- WidgetInterface : Return state
+alt widget is active
+	WidgetAtlas -> WidgetInterface : Update the widget
+	WidgetInterface -> WidgetInterface : launch update behavior
+	WidgetAtlas <-- WidgetInterface : Return state
+	alt the update method returned true
+		WidgetAtlas --> WidgetAtlas : Stop the loop
+	end
+end
+deactivate WidgetAtlas
+
+== Uppon ParentWidget destruction ==
+User -> WidgetAtlas : Call deleteWidget
+WidgetAtlas -> WidgetAtlas : remove the widget from subscribed widget
+WidgetAtlas -> ParentWidget : Get widget parent
+ParentWidget --> WidgetAtlas : Return the pointer to GrandParentWidget
+alt pointer != nullptr
+	WidgetAtlas -> GrandParentWidget : remove ParentWidget from GrandParentWidget children 
+	GrandParentWidget -> WidgetInterface : Call the provided method to remove\none children from the list
+end
+WidgetAtlas -> ParentWidget : Calling destructor
+ParentWidget -> WidgetInterface : Calling destructor
+WidgetInterface -> WidgetInterface : Iterate thought childrens
+WidgetInterface -> WidgetInterface : Set parent to nullptr
+WidgetInterface -> WidgetAtlas : Call deleteWidget on each children
+
+@enduml

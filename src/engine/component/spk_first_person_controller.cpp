@@ -14,7 +14,7 @@ namespace spk
             _inputs[i]->update();
         }
 
-        if (_movementRequested == true)
+        if (_movementRequested == true && _requestedDeltaPosition != spk::Vector3(0, 0, 0))
         {
             owner()->transform()->move(_requestedDeltaPosition.normalize() * _movementSpeed * 10);
             _requestedDeltaPosition = spk::Vector3(0, 0, 0);
@@ -76,18 +76,6 @@ namespace spk
                 std::make_shared<spk::KeyInput>(spk::Keyboard::LeftShift, spk::InputState::Down, 10, [&](){
                         _requestedDeltaPosition += (spk::Vector3(0, -1, 0));
                         _movementRequested = true;
-                    }),
-                std::make_shared<spk::KeyInput>(spk::Keyboard::A, spk::InputState::Down, 10, [&](){
-                        if (_mouseControl != MouseControl::Captured)
-                        {
-                            owner()->transform()->rotate(spk::Vector3(0, 1, 0));
-                        }
-                    }),
-                std::make_shared<spk::KeyInput>(spk::Keyboard::E, spk::InputState::Down, 10, [&](){
-                        if (_mouseControl != MouseControl::Captured)
-                        {
-                            owner()->transform()->rotate(spk::Vector3(0, -1, 0));
-                        }
                     }),
                 std::make_shared<spk::MouseInput>(spk::Mouse::Button::Left, spk::InputState::Pressed, 0, [&](){
                         if (_mouseControl == MouseControl::PressedLeft)

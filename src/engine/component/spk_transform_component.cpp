@@ -111,10 +111,6 @@ namespace spk
 		spk::Vector3 tmp = _rotation + p_deltaRotation;
 
 		tmp.x = std::clamp(tmp.x, -89.5f, 89.5f);
-		// while (tmp.y > 360)
-		// 	tmp.y -= 360;
-		// while (tmp.y < -360)
-		// 	tmp.y += 360;
 
 		_rotation = tmp;
 		_computeDirections();

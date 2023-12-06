@@ -65,6 +65,27 @@ namespace spk
 			Field(const std::wstring &p_name, bool* p_needUpdate, uint8_t *p_data, size_t p_offset, size_t p_size);
 
             /**
+             * @brief Gets the name of this field.
+             * 
+             * @return const std::wstring& The name of the field.
+             */
+            const std::wstring& name() const;
+
+            /**
+             * @brief Gets the size of this field.
+             * 
+             * @return const size_t& The size of the field.
+             */
+            const size_t& size() const;
+
+            /**
+             * @brief Gets the offset of this field within the data buffer.
+             * 
+             * @return const size_t& The offset of the field.
+             */
+            const size_t& offset() const;
+
+            /**
             * Overload insertion operator to insert typed data into this field.
             */
 			template <typename TType>
@@ -93,6 +114,7 @@ namespace spk
                 {
                     *_needUpdate = true;
                 }
+
                 return (*this);
             }
 
@@ -128,6 +150,13 @@ namespace spk
         * Constructor that initializes the buffer size.
         */
 		FieldMap(size_t p_bufferSize);
+
+        /**
+         * @brief Returns a const reference to the map containing fields.
+         * 
+         * @return const std::map<std::wstring, Field>& A reference to the map containing fields.
+         */
+        const std::map<std::wstring, Field>& fields() const;
 
         /**
         * Inserts a new field into the map.

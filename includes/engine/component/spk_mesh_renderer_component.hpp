@@ -3,6 +3,7 @@
 #include "engine/component/spk_component.hpp"
 #include "engine/component/spk_transform_component.hpp"
 #include "engine/spk_mesh.hpp"
+#include "engine/spk_material.hpp"
 #include "graphics/spk_pipeline.hpp"
 #include "graphics/spk_texture.hpp"
 
@@ -18,6 +19,25 @@ namespace spk
     class MeshRenderer : public Component
     {
     protected:
+		/**
+		 *  @brief Vertex Shader Module of the Mesh Renderer Component.
+		 *
+		 *  This shader module is intended to handle the vertex shading logic
+		 *  specific to rendering a Mesh Renderer Component in the graphics pipeline.
+		 *  It defines how vertices are processed and transformed during the vertex shading stage.
+		 */
+		static spk::ShaderModule VertexShaderModule;
+
+		/**
+		 *  @brief Fragment Shader Module of the Mesh Renderer Component.
+		 *
+		 *  This shader module is intended to handle the fragment shading logic
+		 *  specific to rendering a Mesh Renderer Component in the graphics pipeline.
+		 *  It defines the processing of fragments (potential pixels) and their properties,
+		 *  determining the final color and other attributes of pixels on the screen.
+		 */
+		static spk::ShaderModule FragmentShaderModule;
+
         static inline std::shared_ptr<spk::Pipeline> _renderingPipeline = nullptr; ///< Shared rendering pipeline.
         static inline std::shared_ptr<spk::Pipeline::SamplerUniform> _textureIDUniform = nullptr; ///< Uniform for texture ID.
         std::shared_ptr<spk::Pipeline::Object> _renderingObject = nullptr; ///< Object in the rendering pipeline.
@@ -33,8 +53,11 @@ namespace spk
         virtual void _onRender() override;
 
         std::shared_ptr<spk::Mesh> _mesh; ///< Mesh to be rendered.
+		spk::Material _lastMaterial; ///< Last material, used to check if the material have changed during last tick.
+		std::shared_ptr<spk::Material> _material; ///< Material to be rendered.
 
         void _updateMeshModelData(); ///< Updates the mesh model data.
+		void _updateMaterial(); ///< Updates the material data.
 
     public:
         /**
@@ -84,6 +107,34 @@ namespace spk
 		 * @return std::shared_ptr<const spk::Mesh> Const shared pointer to the currently set mesh.
 		 */
 		std::shared_ptr<const spk::Mesh> mesh() const;
+	
+		/**
+		 * @brief Sets the material to be rendered.
+		 *
+		 * This method assigns a new material to the renderer. The provided material will be used
+		 * for subsequent rendering operations.
+		 * 
+		 * @param p_material Shared pointer to the material to be rendered.
+		 */
+		void setMaterial(std::shared_ptr<spk::Material> p_material);
+
+		/**
+		 * @brief Gets the currently assigned material.
+		 *
+		 * This method retrieves the material currently set for rendering.
+		 * 
+		 * @return std::shared_ptr<spk::Material> Shared pointer to the currently set material.
+		 */
+		std::shared_ptr<spk::Material> material();
+
+		/**
+		 * @brief Gets the currently assigned material (const version).
+		 *
+		 * This method retrieves the material currently set for rendering, providing a const reference.
+		 * 
+		 * @return std::shared_ptr<const spk::Material> Const shared pointer to the currently set material.
+		 */
+		std::shared_ptr<const spk::Material> material() const;
 
 		/**
 		 * @brief Sets the texture to be applied to the mesh.

@@ -1,0 +1,215 @@
+@startuml
+
+class Application
+{
+	Host responsability to create
+	everything needed by the Sparkle user
+}
+
+class Widget
+{
+	Host responsability to implement
+	the rendering and updating behavior
+}
+
+class Button
+{
+	Host responsability to implement the
+	behavior of Button-like widget such as
+	clicking etc
+}
+
+class Frame
+{
+	Host responsability to implement the
+	behavior of a simple block of color to
+	organize visualy stuff
+}
+
+class TextLabel
+{
+	Host responsability to implement the
+	behavior of a simple text label, showing
+	a specified by user text.
+}	
+
+class TimeMetrics <<Singleton>>
+{
+	Hold responsability to manage a time
+	common to all widgets during a single loop
+
+	Singleton cause user will need to access
+	such information from everywhere in the code
+	within the application
+}
+
+class Profiler <<Singleton>>
+{
+	Hold responsability to retreive information
+	about the application such as FPS, UPS and 
+	time consumption of each method/function it
+	may have been use into
+
+	Singleton cause the user may need to insert
+	profiling request from anywhere within the
+	application scope, to manage information about
+	its duration, time cost, trigger counter,
+	etc etc.
+}
+
+class WidgetAtlas <<Singleton>>
+{
+	Hold responsability to store every created
+	widget, and provide methods to launch the
+	render or update behavior of every stored
+	widgets.
+
+	Singleton cause we want every widget to be
+	stored in a single point, to sort them using
+	their depth as comparator, to render/update
+	them in a correct order.
+	The user may never seen this class, as it's
+	not suppose to be used by someone else than
+	the application or the WidgetAtlasModule.
+}
+
+class Mouse <<Singleton>>
+{
+	Hold responsability to maintain an abstraction
+	of the states the mouse is currently in.
+
+	Singleton cause user will need to access
+	such information from everywhere in the code
+	within the application
+	It's possible that, in future version, we will
+	need to manage multiples mouses, but as for right
+	now, it's not possible and wont be until later
+}
+
+class Keyboard <<Singleton>>
+{
+	Hold responsability to maintain an abstraction
+	of the states the keyboard is currently in	
+
+	Singleton cause user will need to access
+	such information from everywhere in the code
+	within the application
+	It's possible that, in future version, we will
+	need to manage multiples keyboards, but as for right
+	now, it's not possible and wont be until later
+}
+
+class Window <<Singleton>>
+{
+	Hold responsability to clear the window allocated
+	by the kernel to the application, and to update
+	the content of said window when the widgets are
+	done rendering themself
+
+	Singleton cause we currently force the user to
+	have only one windows opened by the application
+	and it make sence to deny the creation of multiple
+	windows right now, but i admit it's an axiom.
+}
+
+class Module
+{
+	Hold the responsability to manage a singleton 
+	and its life cycle.
+	It serve as an abstraction of what the
+	singletized type is for the application
+}
+
+class APIModule
+{
+	Module responsible to retreive every system message
+	send to the application by the kernel, and sort them
+	in different array, to be used later on by the other
+	module
+}
+
+class MessageConsumerModule
+{
+	Implement a system to read thought a deque a set of
+	message. Class inheriting this must implement the reaction
+	to a single message.
+}
+
+class SystemModule
+{
+	Module responsible to react to system message
+	received by the APIModule
+}
+
+class TimeMetricsModule
+{
+	Module to manager a TimeMetrics
+}
+
+class MouseModule
+{
+	Module to manager a Mouse, and to react to
+	system message concerning mouse information
+}
+
+class KeyboardModule
+{
+	Module to manager a Keyboard, and to react to
+	system message concerning keyboard information
+}
+
+class GraphicalAPIModule
+{
+	Module to manager a Window, and to react to
+	system message concerning window information
+	In addition, uppon resize, may call a resize of
+	all the widget contained inside WidgetAtlas.
+	Uppon request, may also launch the clearing
+	process of the screen and its rendering.
+
+	Nicknamed GAPIM
+}
+
+class ProfilerModule
+{
+	Module to manager a Profiler
+}
+
+class WidgetAtlasModule
+{
+	Module to manager a WidgetAtlas
+}
+
+APIModule -[hidden] TimeMetricsModule
+TimeMetricsModule -[hidden] ProfilerModule
+GraphicalAPIModule -[hidden] APIModule
+APIModule -[hidden] WidgetAtlasModule
+WidgetAtlasModule -[hidden] GraphicalAPIModule
+GraphicalAPIModule -[hidden] SystemModule
+SystemModule -[hidden] MouseModule
+MouseModule -[hidden] KeyboardModule
+
+Application *-- Module
+Module <|-- MessageConsumerModule
+MessageConsumerModule <|-- GraphicalAPIModule
+MessageConsumerModule <|-- SystemModule
+MessageConsumerModule <|-- MouseModule
+MessageConsumerModule <|-- KeyboardModule
+Module <|--- APIModule
+Module <|--- TimeMetricsModule
+Module <|--- ProfilerModule
+Module <|--- WidgetAtlasModule
+
+WidgetAtlas o-- Widget
+Widget <|-- Button
+Widget <|-- Frame
+Widget <|-- TextLabel
+
+TimeMetricsModule o-- TimeMetrics
+MouseModule o-- Mouse
+KeyboardModule o-- Keyboard
+GraphicalAPIModule o-- Window
+ProfilerModule o-- Profiler
+WidgetAtlasModule o-- WidgetAtlas
+
+@enduml

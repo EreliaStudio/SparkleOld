@@ -49,6 +49,8 @@ namespace spk
 		_errorCode = 0;
 		_isRunning = true;
 
+		_initializeShaders();
+		
 		spk::Thread updaterThread(spk::Thread::LaunchMethod::Delayed, L"Updater", [&](){
 			while (_isRunning == true)
 			{
@@ -68,7 +70,6 @@ namespace spk
 		_renameThread(L"Renderer");
 		spk::Profiler::instance()->fpsCounter();
 		updaterThread.start();
-		_initializeShaders();
 		while (_isRunning)
 		{
 			if (updaterThread.isActive() == false)

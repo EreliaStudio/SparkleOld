@@ -86,11 +86,12 @@ namespace spk
          */
 		InstructionSet _instructions;
 
-	/**
-	 * @brief A string vector storing every structure type Sparkle will insert inside GLSL provided by users.
-	*/
-	static inline const std::vector<std::string> structuresArray = {
-			R"(struct Area {ivec2 anchor; uvec2 size;};)"
+        /**
+         * @brief A string vector storing every structure type Sparkle will insert inside GLSL provided by users.
+        */
+        static inline const std::vector<std::string> structuresArray = {
+            R"(struct DirectionalLight { vec3 direction; float intensity; vec4 color; };)",
+            R"(struct Material { float specularIntensity; float specularPower;};)"
 		};
 
         /**

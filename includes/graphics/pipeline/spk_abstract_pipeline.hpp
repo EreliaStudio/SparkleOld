@@ -330,6 +330,9 @@ namespace spk
 			/// Data buffer to hold the uniform data.
 			spk::DataBuffer _data;
 
+			/// @brief Indicated if the uniform buffer have been edited and need to be pushed
+			bool _edited;
+
 			/**
 			 * @brief Abstract method to push the uniform data to the shader.
 			 */
@@ -378,6 +381,7 @@ namespace spk
 					spk::throwException(L"Pushing an unexpected data with size [" + std::to_wstring(sizeof(TType)) + L"] into a uniform named [" + _name + L"] of size [" + std::to_wstring(_data.size()) + L"]");
 				}
 				_data.edit(0, p_data);
+				_edited = true;
 			}
 
 			/**
@@ -390,6 +394,7 @@ namespace spk
 			Uniform& operator = (const TType& p_data)
 			{
 				*this << p_data;
+				_edited = true;
 				return (*this);
 			}
 
@@ -470,6 +475,7 @@ namespace spk
 					}
 
 					std::memcpy(static_cast<uint8_t*>(_data) + _offset, &p_data, _size);
+					_owner->_edited = true;
 				}
 
 				/**

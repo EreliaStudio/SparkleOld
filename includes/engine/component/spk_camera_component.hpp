@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "data_structure/spk_safe_pointer.hpp"
 #include "engine/component/spk_component.hpp"
 #include "math/spk_vector2.hpp"
 #include "math/spk_matrix4x4.hpp"
@@ -27,12 +28,15 @@ namespace spk
 		};
 
 	private:
-		static inline Camera* _mainCamera = nullptr; ///< Static pointer to the main camera.
+        static inline std::shared_ptr<spk::Pipeline::UniformBlock> _cameraUniformBlock = nullptr; ///< Uniform block for camera data.
+		static inline spk::SafePointer<Camera> _mainCamera = nullptr; ///< Static pointer to the main camera.
+		
+		bool _needUpdate = false;
+
         Type _type; ///< Type of the camera (Perspective or Orthographic).
         spk::Matrix4x4 _projectionMatrix; ///< Matrix representing the camera's projection.
         spk::Matrix4x4 _MVP; ///< Model-View-Projection matrix.
         bool _positionEdited = false; ///< Flag to check if the position has been edited.
-        bool _MVPEdited = false; ///< Flag to check if the MVP has been edited.
         std::shared_ptr<Transform::TranslationType::Contract> _translationContract; ///< Contract for translation transformations.
         std::shared_ptr<Transform::RotationType::Contract> _rotationContract; ///< Contract for rotation transformations.
 
@@ -76,9 +80,9 @@ namespace spk
         /**
          * @brief Get the main camera.
          * 
-         * @return std::shared_ptr<Camera> A shared pointer to the main camera.
+         * @return spk::SafePointer<Camera> A safe pointer to the main camera.
          */
-        static std::shared_ptr<Camera> mainCamera();
+        static spk::SafePointer<Camera> mainCamera();
 
 		/**
 		 * @brief Sets this camera as the main camera.

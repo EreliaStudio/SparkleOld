@@ -32,8 +32,21 @@ namespace spk
 		if (_positionEdited == true)
 		{
 			_updateMVP();
-			_positionEdited = false;			
+			_positionEdited = false;	
 		}
+		
+		if (spk::Camera::mainCamera() == this && spk::Camera::mainCamera()->_needUpdate == true)
+		{
+			if (_cameraUniformBlock == nullptr)
+			{
+				_cameraUniformBlock = dynamic_pointer_cast<spk::Pipeline::UniformBlock>(spk::Pipeline::uniform(spk::Pipeline::Uniform::Key(0, 0)));
+			}
+
+			_cameraUniformBlock->field(L"position") = owner()->transform()->translation();
+			_cameraUniformBlock->field(L"MVP") = _MVP;
+			spk::Camera::mainCamera()->_needUpdate = false;
+		}
+
 		return (false);
 	}
 
@@ -50,8 +63,8 @@ namespace spk
 			spk::Vector3(0, 1, 0)
 		);
 
-		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4()); 
-		_MVPEdited = true;
+		_MVP = (_projectionMatrix * viewMatrix * spk::Matrix4x4());
+		_needUpdate = true;
 	}
 
 	Camera::Camera(Type p_type) :
@@ -81,14 +94,15 @@ namespace spk
 		
 	}
 
-	std::shared_ptr<Camera> Camera::mainCamera()
+	spk::SafePointer<Camera> Camera::mainCamera()
 	{
-		return (std::shared_ptr<Camera>(_mainCamera, [](Camera* p_camera){}));
+		return (spk::SafePointer<Camera>(_mainCamera));
 	}
 
 	void Camera::setAsMainCamera()
 	{
 		_mainCamera = this;
+		_needUpdate = true;
 	}
 
 	void Camera::setType(Type p_type) {
@@ -104,23 +118,13 @@ namespace spk
 		_farPlane = p_farPlane;
 		_updateProjectionMatrix();
 	}
+
 	void Camera::setOrthographicParameters(const spk::Vector2& p_size, float p_nearPlane, float p_farPlane)
 	{
 		_size = p_size;
 		_nearPlane = p_nearPlane;
 		_farPlane = p_farPlane;
 		_updateProjectionMatrix();
-	}
-
-	bool Camera::MVPEdited() const
-	{
-		return (_MVPEdited);
-	}
-
-	void Camera::pushMVP(AbstractPipeline::UniformBlock::Field & p_uniformField)
-	{
-		p_uniformField = _mainCamera->MVP();
-		_MVPEdited = false;
 	}
 
 	const spk::Matrix4x4& Camera::MVP() const

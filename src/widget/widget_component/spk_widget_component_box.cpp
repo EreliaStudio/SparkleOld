@@ -1,9 +1,39 @@
 #include "widget/widget_component/spk_widget_component_box.hpp"
-#include "graphics/pipeline/spk_default_shader.hpp"
 #include "graphics/spk_viewport.hpp"
 
 namespace spk::WidgetComponent
 {
+	
+	spk::ShaderModule Box::VertexShaderModule = spk::ShaderModule(
+"BoxComponentVertexShader",
+R"(#version 450
+
+layout(location = 0) in vec2 inPosition;
+
+layout(push_constant) uniform PushConstant
+{
+	float depth;
+	vec4 color;
+} pushConstants;
+
+layout(location = 0) out vec4 fragmentColor;
+
+void main() {
+    gl_Position = vec4(inPosition, pushConstants.depth, 1.0);
+    fragmentColor = pushConstants.color;
+})");
+
+	spk::ShaderModule Box::FragmentShaderModule = spk::ShaderModule(
+"BoxComponentFragmentShader", 
+R"(#version 450
+
+layout(location = 0) in vec4 fragmentColor;
+layout(location = 0) out vec4 outColor;
+
+void main() {
+    outColor = fragmentColor;
+})");
+
 	Box::Box():
 		_foregroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultForegroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
 		_backgroundColor(std::shared_ptr<const ValueWrapper<spk::Color>::Default>(&defaultBackgroundColor, [](const ValueWrapper<spk::Color>::Default* p_value){})),
@@ -13,7 +43,7 @@ namespace spk::WidgetComponent
 	{
 		if (_renderingPipeline == nullptr)
 		{
-			_renderingPipeline = std::make_shared<spk::Pipeline>(boxComponentVertexShaderModule, boxComponentFragmentShaderModule);
+			_renderingPipeline = std::make_shared<spk::Pipeline>(Box::VertexShaderModule, Box::FragmentShaderModule);
 		}
 
 		_renderingObjects[BackgroundIndex] = _renderingPipeline->createObject();

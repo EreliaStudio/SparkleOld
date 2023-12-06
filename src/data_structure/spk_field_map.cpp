@@ -20,6 +20,20 @@ namespace spk {
     {
     }
 	
+    const std::wstring& FieldMap::Field::name() const
+    {
+        return (_name);
+    }
+    
+    const size_t& FieldMap::Field::size() const
+    {
+        return (_size);
+    }
+    
+    const size_t& FieldMap::Field::offset() const
+    {
+        return (_offset);
+    }
 
 	FieldMap::Field& FieldMap::Field::operator<<(wostream& (*func)(wostream&)) {
 		if (_needUpdate != nullptr)
@@ -29,6 +43,11 @@ namespace spk {
 	
 	FieldMap::FieldMap(size_t p_bufferSize) : _needUpdate(false), _data(p_bufferSize)
     {
+    }
+
+    const std::map<std::wstring, FieldMap::Field>& FieldMap::fields() const
+    {
+        return (_fields);
     }
 
     void FieldMap::insertNewField(const std::wstring& p_fieldName, size_t p_offset, size_t p_size)

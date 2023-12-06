@@ -4,8 +4,6 @@ struct Chunk : public spk::GameObject
 {
 public:
     static inline std::shared_ptr<spk::SpriteSheet> SpriteSheet = nullptr;
-    static inline std::shared_ptr<spk::Material> Material = nullptr;
-
 private:
     static const int Size = 16;
     static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(987654321);
@@ -16,32 +14,7 @@ private:
 
     float height[Size + 1][Size + 1];
 
-    float _generateHeight(const int& p_x, const int& p_y)
-    {
-        float result = _perlinGeneration.sample(static_cast<float>(p_x + _position.x * Size + 150000), static_cast<float>(p_y + _position.y * Size + 150000)) * 10;
-        return (result);
-    }
-
-    spk::Vector3 _generatePoint(const int& p_x, const int& p_y)
-    {
-        spk::Vector3 result = spk::Vector3(p_x, (p_x == -1 || p_y == -1 || p_x >= Size + 1 || p_y >= Size + 1 ? _generateHeight(p_x, p_y) : height[p_x][p_y]), p_y);
-        // if (result.y <= 0.0f)
-        //     result.y = 0.0f;
-        return (result);
-    }
-
-    void _bakePoints()
-    {
-        for (size_t y = 0; y <= Size; y++)
-        {
-            for (size_t x = 0; x <= Size; x++)
-            {
-                _mesh->points().push_back(_generatePoint(x, y));
-            }
-        }
-    }
-
-    void _bakeUVs()
+    void _bakeRawData()
     {
         spk::Vector2 uvsValues[4] = {
             spk::Vector2(0, 0),
@@ -57,47 +30,20 @@ private:
                 _mesh->uvs().push_back(uvsValues[j] * SpriteSheet->unit() + sprite);
             }
         }
-    }
 
-    void _bakeNormales()
-    {
-        for (int y = 0; y <= Size; y++)
+        for (size_t y = 0; y <= Size; y++)
         {
-            for (int x = 0; x <= Size; x++)
+            for (size_t x = 0; x <= Size; x++)
             {
-                spk::Vector3 points[5] = {
-                    _generatePoint(x +  0, y +  0),
-                    _generatePoint(x + -1, y +  0),
-                    _generatePoint(x +  0, y + -1),
-                    _generatePoint(x +  0, y +  1),
-                    _generatePoint(x +  1, y +  0)
-                };
-
-                int trianglesIndexes[4][2] = {
-                    {1, 3}, {3, 4}, {4, 2}, {2, 1},
-                };
-
-                spk::Vector3 normal = spk::Vector3();
-
-                for (size_t i = 0; i < 4; i++)
+                spk::Vector3 position = spk::Vector3(x, height[x][y] * 10.0f, y);
+                if (height[x][y] < 0.0f)
                 {
-                    spk::Vector3 vectorAB = points[trianglesIndexes[i][0]] - points[0];
-                    spk::Vector3 vectorAC = points[trianglesIndexes[i][1]] - points[0];
-
-                    normal += vectorAB.cross(vectorAC).normalize();
+                    position.y = 0.0f;
                 }
-                normal /= 4;
-
-                _mesh->normals().push_back(normal);
+                _mesh->points().push_back(position);
+                _mesh->normals().push_back(spk::Vector3(0, 1, 0));
             }
         }
-    }
-
-    void _bakeRawData()
-    {
-        _bakePoints();
-        _bakeUVs();
-        _bakeNormales();		
     }
 
     size_t _computeSpriteID(const spk::Vector2Int& p_a, const spk::Vector2Int& p_b, const spk::Vector2Int& p_c)
@@ -107,13 +53,13 @@ private:
                 height[p_c.x][p_c.y]
             );
 
-        if (value < -5.0f)
+        if (value < -0.5f)
             return (4);
         else if (value < 0.0f)
             return (3);
-        else if (value < 15.0f)
+        else if (value < 1.5f)
             return (2);
-        else if (value < 25.0f)
+        else if (value < 2.5f)
             return (1);
         else
             return (0);
@@ -123,6 +69,7 @@ private:
     {
         size_t pointOffsets[6] = {Size + 1, Size + 2, 1, Size + 1, 1, 0};
         size_t uvsOffsets[6] = {0, 1, 2, 0, 2, 3};
+        size_t normalOffsets[6] = {Size + 1, Size + 2, 1, 0};
         spk::Vector2Int positionOffset[2][3] = {
             {
                 spk::Vector2Int(0, 1),
@@ -149,7 +96,7 @@ private:
 
                     for (size_t j = 0; j < 3; j++)
                     {
-                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseIndex + pointOffsets[i * 3 + j]);
+                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseIndex + normalOffsets[i * 3 + j]);
                     }
                 }
             }
@@ -192,13 +139,12 @@ public:
         _position(p_position)
     {
         _renderer->setTexture(SpriteSheet);
-        _renderer->setMaterial(Material);
 
         for (size_t i = 0; i <= Size; i++)
         {
             for (size_t j = 0; j <= Size; j++)
             {
-                height[i][j] = _generateHeight(i, j);
+                height[i][j] = _perlinGeneration.sample(static_cast<float>(p_position.x * Size + i + 150000), static_cast<float>(p_position.y * Size + j + 150000));
             }
         }
 
@@ -269,8 +215,6 @@ private:
 
     std::shared_ptr<spk::GameEngine> _engine;
     std::shared_ptr<spk::GameObject> _player;
-    std::shared_ptr<spk::GameObject> _lights;
-    std::shared_ptr<spk::DirectionalLight> _directionLight;
 
     void _onGeometryChange()
     {
@@ -346,18 +290,6 @@ private:
             lastPlayerChunkPosition = playerChunkPosition;
         }
         
-        static long long nextInput = spk::TimeMetrics::instance()->time();
-
-        if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
-        {
-            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, 5, 0)));
-            nextInput = spk::TimeMetrics::instance()->time() + 100;
-        }
-        else if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::E) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
-        {
-            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, -5, 0)));
-            nextInput = spk::TimeMetrics::instance()->time() + 100;
-        }
 
         return (false);
     }
@@ -375,33 +307,14 @@ private:
         return (result);
     }
 
-    std::shared_ptr<spk::GameObject> createLights(const spk::Vector3& p_direction)
-    {
-        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Lights", spk::Vector3(0, 0, 0));
-
-        auto tmp = result->addComponent<spk::DirectionalLight>();
-        tmp->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
-        tmp->setIntensity(0.25f);
-        tmp->setColor(spk::Color(255, 255, 255));
-
-        return (result);
-    }
-
 public:
     MainWidget(const std::wstring& p_name) : 
         spk::Widget::Interface(p_name)
     {
         Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-        Chunk::Material = std::make_shared<spk::Material>(0.25f, 32.0f);
-
         _engine = std::make_shared<spk::GameEngine>();
-
         _player = createPlayer(spk::Vector3(2, 2, 2), spk::Vector3(0, 0, 0));
         _engine->addGameObject(_player);
-
-        _lights = createLights(spk::Vector3(0, -1, 0));
-        _directionLight = _lights->getComponent<spk::DirectionalLight>();
-        _engine->addGameObject(_lights);
 
         _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");
         _gameEngineManager->setGameEngine(_engine);
