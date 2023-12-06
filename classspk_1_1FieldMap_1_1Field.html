@@ -83,6 +83,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ada3f7816b43429c5f8736e3c5b949828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a828ec5eeb627c9e73ae7912c4c3bd3cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap_1_1Field.html#a828ec5eeb627c9e73ae7912c4c3bd3cb">Field</a> (const std::wstring &amp;p_name, bool *p_needUpdate, uint8_t *p_data, size_t p_offset, size_t p_size)</td></tr>
 <tr class="separator:a828ec5eeb627c9e73ae7912c4c3bd3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc1d8b95cf6fd8974f9c30cc336ce04"><td class="memItemLeft" align="right" valign="top">const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap_1_1Field.html#adfc1d8b95cf6fd8974f9c30cc336ce04">name</a> () const</td></tr>
+<tr class="memdesc:adfc1d8b95cf6fd8974f9c30cc336ce04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of this field.  <a href="classspk_1_1FieldMap_1_1Field.html#adfc1d8b95cf6fd8974f9c30cc336ce04">More...</a><br /></td></tr>
+<tr class="separator:adfc1d8b95cf6fd8974f9c30cc336ce04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58e4fb86eba827965e1c8f8eb15a450"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap_1_1Field.html#ab58e4fb86eba827965e1c8f8eb15a450">size</a> () const</td></tr>
+<tr class="memdesc:ab58e4fb86eba827965e1c8f8eb15a450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of this field.  <a href="classspk_1_1FieldMap_1_1Field.html#ab58e4fb86eba827965e1c8f8eb15a450">More...</a><br /></td></tr>
+<tr class="separator:ab58e4fb86eba827965e1c8f8eb15a450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24245444053d17dca37be4b827a9883b"><td class="memItemLeft" align="right" valign="top">const size_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap_1_1Field.html#a24245444053d17dca37be4b827a9883b">offset</a> () const</td></tr>
+<tr class="memdesc:a24245444053d17dca37be4b827a9883b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the offset of this field within the data buffer.  <a href="classspk_1_1FieldMap_1_1Field.html#a24245444053d17dca37be4b827a9883b">More...</a><br /></td></tr>
+<tr class="separator:a24245444053d17dca37be4b827a9883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb72cb3db2f6c315c557aad9e771724"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
 <tr class="memitem:adcb72cb3db2f6c315c557aad9e771724"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1FieldMap_1_1Field.html">Field</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap_1_1Field.html#adcb72cb3db2f6c315c557aad9e771724">operator&lt;&lt;</a> (const TType &amp;p_value)</td></tr>
 <tr class="separator:adcb72cb3db2f6c315c557aad9e771724"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +176,46 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FieldMap</b></td></t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adfc1d8b95cf6fd8974f9c30cc336ce04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc1d8b95cf6fd8974f9c30cc336ce04">&#9670;&nbsp;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::wstring &amp; spk::FieldMap::Field::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the name of this field. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::wstring&amp; The name of the field. </dd></dl>
+
+</div>
+</div>
+<a id="a24245444053d17dca37be4b827a9883b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24245444053d17dca37be4b827a9883b">&#9670;&nbsp;</a></span>offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t &amp; spk::FieldMap::Field::offset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the offset of this field within the data buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>const size_t&amp; The offset of the field. </dd></dl>
+
+</div>
+</div>
 <a id="adcb72cb3db2f6c315c557aad9e771724"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adcb72cb3db2f6c315c557aad9e771724">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/2]</span></h2>
 
@@ -241,6 +290,26 @@ template&lt;typename TType &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Overload insertion operator to insert typed data into this field. </p>
+
+</div>
+</div>
+<a id="ab58e4fb86eba827965e1c8f8eb15a450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58e4fb86eba827965e1c8f8eb15a450">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t &amp; spk::FieldMap::Field::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the size of this field. </p>
+<dl class="section return"><dt>Returns</dt><dd>const size_t&amp; The size of the field. </dd></dl>
 
 </div>
 </div>

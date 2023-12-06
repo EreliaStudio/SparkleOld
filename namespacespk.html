@@ -114,7 +114,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FieldMap.html">FieldMap</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html">Pool</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic pool class that manages the creation and deletion of objects.  <a href="classspk_1_1Pool.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template class for object pooling.  <a href="classspk_1_1Pool.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1SafePointer.html">SafePointer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for pointers that ensures safer pointer operations.  <a href="classspk_1_1SafePointer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Profiler.html">Profiler</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class for profiling various metrics like time consumption and counters.  <a href="classspk_1_1Profiler.html#details">More...</a><br /></td></tr>
@@ -179,6 +182,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html">Component</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a component that can be attached to a <a class="el" href="classspk_1_1GameObject.html" title="Represents a game object in the Sparkle engine.">GameObject</a>.  <a href="classspk_1_1Component.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1DirectionalLight.html">DirectionalLight</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a directional light in the scene.  <a href="classspk_1_1DirectionalLight.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1FirstPersonController.html">FirstPersonController</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a first-person controller component in the Sparkle engine.  <a href="classspk_1_1FirstPersonController.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +199,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1GameObject.html">GameObject</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a game object in the Sparkle engine.  <a href="classspk_1_1GameObject.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspk_1_1Material.html">Material</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the material properties of a surface in the rendering engine.  <a href="structspk_1_1Material.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Mesh.html">Mesh</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a mesh in the Sparkle engine.  <a href="classspk_1_1Mesh.html#details">More...</a><br /></td></tr>
@@ -611,24 +620,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="names
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:abb99ecdf47f36dba0ebd7b338ec78017"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#abb99ecdf47f36dba0ebd7b338ec78017">boxComponentVertexShaderModule</a></td></tr>
-<tr class="memdesc:abb99ecdf47f36dba0ebd7b338ec78017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Vertex Shader Module of the Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#abb99ecdf47f36dba0ebd7b338ec78017">More...</a><br /></td></tr>
-<tr class="separator:abb99ecdf47f36dba0ebd7b338ec78017"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f2e1b87e99d6da0389f36943856c436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a8f2e1b87e99d6da0389f36943856c436">boxComponentFragmentShaderModule</a></td></tr>
-<tr class="memdesc:a8f2e1b87e99d6da0389f36943856c436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Fragment Shader Module of the Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#a8f2e1b87e99d6da0389f36943856c436">More...</a><br /></td></tr>
-<tr class="separator:a8f2e1b87e99d6da0389f36943856c436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a780e054c2a26779cc9832da97ecf17fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a780e054c2a26779cc9832da97ecf17fd">textLabelComponentVertexShaderModule</a></td></tr>
-<tr class="memdesc:a780e054c2a26779cc9832da97ecf17fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Vertex Shader Module of the TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#a780e054c2a26779cc9832da97ecf17fd">More...</a><br /></td></tr>
-<tr class="separator:a780e054c2a26779cc9832da97ecf17fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b992c412d2ab7be847b146df1ef1b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a44b992c412d2ab7be847b146df1ef1b5">textLabelComponentFragmentShaderModule</a></td></tr>
-<tr class="memdesc:a44b992c412d2ab7be847b146df1ef1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Fragment Shader Module of the TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#a44b992c412d2ab7be847b146df1ef1b5">More...</a><br /></td></tr>
-<tr class="separator:a44b992c412d2ab7be847b146df1ef1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75200b216a9c31971814862b0d0d9cca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a75200b216a9c31971814862b0d0d9cca">meshRendererComponentVertexShaderModule</a></td></tr>
-<tr class="memdesc:a75200b216a9c31971814862b0d0d9cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Vertex Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#a75200b216a9c31971814862b0d0d9cca">More...</a><br /></td></tr>
-<tr class="separator:a75200b216a9c31971814862b0d0d9cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8b8d010d51fd67c89a9ee3984d4689d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#ac8b8d010d51fd67c89a9ee3984d4689d">meshRendererComponentFragmentShaderModule</a></td></tr>
-<tr class="memdesc:ac8b8d010d51fd67c89a9ee3984d4689d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extern declaration for the Fragment Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="namespacespk.html#ac8b8d010d51fd67c89a9ee3984d4689d">More...</a><br /></td></tr>
-<tr class="separator:ac8b8d010d51fd67c89a9ee3984d4689d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a6a5cbca57b40e3f41c1c143eb09680"><td class="memItemLeft" align="right" valign="top"><a id="a7a6a5cbca57b40e3f41c1c143eb09680"></a>
 thread_local <a class="el" href="classspk_1_1IOStream.html">spk::IOStream</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespk.html#a7a6a5cbca57b40e3f41c1c143eb09680">cout</a> = <a class="el" href="classspk_1_1IOStream.html">IOStream</a>(std::wcout)</td></tr>
 <tr class="memdesc:a7a6a5cbca57b40e3f41c1c143eb09680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread-local instances of <a class="el" href="classspk_1_1IOStream.html" title="An output stream with a custom prefix, suitable for logging or debugging.">IOStream</a> for standard output. <br /></td></tr>
@@ -3339,198 +3330,6 @@ template&lt;typename TType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted standard string. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a8f2e1b87e99d6da0389f36943856c436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f2e1b87e99d6da0389f36943856c436">&#9670;&nbsp;</a></span>boxComponentFragmentShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::boxComponentFragmentShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
-<div class="line"><span class="stringliteral">&quot;BoxComponentFragmentShader&quot;</span>, </div>
-<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) in vec4 fragmentColor;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 0) out vec4 outColor;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">void main() {</span></div>
-<div class="line"><span class="stringliteral">    outColor = fragmentColor;</span></div>
-<div class="line"><span class="stringliteral">})&quot;)</span></div>
-<div class="ttc" id="aclassspk_1_1ShaderModule_html"><div class="ttname"><a href="classspk_1_1ShaderModule.html">spk::ShaderModule</a></div><div class="ttdoc">Represents a shader module containing shader instructions.</div><div class="ttdef"><b>Definition:</b> spk_shader_module.hpp:14</div></div>
-</div><!-- fragment -->
-<p>Extern declaration for the Fragment Shader Module of the Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the fragment shading logic specific to rendering a Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. </p>
-
-</div>
-</div>
-<a id="abb99ecdf47f36dba0ebd7b338ec78017"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb99ecdf47f36dba0ebd7b338ec78017">&#9670;&nbsp;</a></span>boxComponentVertexShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::boxComponentVertexShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
-<div class="line"><span class="stringliteral">&quot;BoxComponentVertexShader&quot;</span>,</div>
-<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) in vec2 inPosition;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(push_constant) uniform PushConstant</span></div>
-<div class="line"><span class="stringliteral">{</span></div>
-<div class="line"><span class="stringliteral">    float depth;</span></div>
-<div class="line"><span class="stringliteral">    vec4 color;</span></div>
-<div class="line"><span class="stringliteral">} pushConstants;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) out vec4 fragmentColor;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">void main() {</span></div>
-<div class="line"><span class="stringliteral">    gl_Position = vec4(inPosition, pushConstants.depth, 1.0);</span></div>
-<div class="line"><span class="stringliteral">    fragmentColor = pushConstants.color;</span></div>
-<div class="line"><span class="stringliteral">})&quot;)</span></div>
-</div><!-- fragment -->
-<p>Extern declaration for the Vertex Shader Module of the Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the vertex shading logic specific to rendering a Box <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. </p>
-
-</div>
-</div>
-<a id="ac8b8d010d51fd67c89a9ee3984d4689d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8b8d010d51fd67c89a9ee3984d4689d">&#9670;&nbsp;</a></span>meshRendererComponentFragmentShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::meshRendererComponentFragmentShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(<span class="stringliteral">&quot;MeshRendererComponentFragmentShaderModule&quot;</span>, R<span class="stringliteral">&quot;(#version 450 core</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout (location = 0) in vec2 fragmentUV;</span></div>
-<div class="line"><span class="stringliteral">layout (location = 0) out vec4 color;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout (binding = 1) uniform sampler2D textureID;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">void main()</span></div>
-<div class="line"><span class="stringliteral">{</span></div>
-<div class="line"><span class="stringliteral">    color = texture(textureID, fragmentUV);</span></div>
-<div class="line"><span class="stringliteral">})&quot;)</span></div>
-</div><!-- fragment -->
-<p>Extern declaration for the Fragment Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the fragment shading logic specific to rendering a <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. It defines the processing of fragments (potential pixels) and their properties, determining the final color and other attributes of pixels on the screen. </p>
-
-</div>
-</div>
-<a id="a75200b216a9c31971814862b0d0d9cca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75200b216a9c31971814862b0d0d9cca">&#9670;&nbsp;</a></span>meshRendererComponentVertexShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::meshRendererComponentVertexShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Extern declaration for the Vertex Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the vertex shading logic specific to rendering a <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. It defines how vertices are processed and transformed during the vertex shading stage. </p>
-
-</div>
-</div>
-<a id="a44b992c412d2ab7be847b146df1ef1b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44b992c412d2ab7be847b146df1ef1b5">&#9670;&nbsp;</a></span>textLabelComponentFragmentShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::textLabelComponentFragmentShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
-<div class="line">        <span class="stringliteral">&quot;TextLabelComponentFragmentShader&quot;</span>,</div>
-<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) in vec2 fragmentUVs;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 1) in vec4 textColor;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 2) in vec4 outlineColor;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(binding = 0) uniform sampler2D textureID;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) out vec4 outColor;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">void main() {</span></div>
-<div class="line"><span class="stringliteral">    float r = texture(textureID, fragmentUVs).r;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">    if (r == 0.0) {</span></div>
-<div class="line"><span class="stringliteral">        discard;</span></div>
-<div class="line"><span class="stringliteral">    } else if (r == 1.0) {</span></div>
-<div class="line"><span class="stringliteral">        outColor = textColor;</span></div>
-<div class="line"><span class="stringliteral">    } else {</span></div>
-<div class="line"><span class="stringliteral">        outColor = outlineColor;</span></div>
-<div class="line"><span class="stringliteral">    }</span></div>
-<div class="line"><span class="stringliteral">})&quot;</span></div>
-<div class="line"><span class="stringliteral">    )</span></div>
-</div><!-- fragment -->
-<p>Extern declaration for the Fragment Shader Module of the TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the fragment shading logic specific to rendering a TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. </p>
-
-</div>
-</div>
-<a id="a780e054c2a26779cc9832da97ecf17fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a780e054c2a26779cc9832da97ecf17fd">&#9670;&nbsp;</a></span>textLabelComponentVertexShaderModule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::textLabelComponentVertexShaderModule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>(</div>
-<div class="line">        <span class="stringliteral">&quot;TextLabelComponentVertexShader&quot;</span>,</div>
-<div class="line">R<span class="stringliteral">&quot;(#version 450</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) in vec2 inPosition;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 1) in vec2 inUvs;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(push_constant) uniform PushConstant</span></div>
-<div class="line"><span class="stringliteral">{</span></div>
-<div class="line"><span class="stringliteral">    float depth;</span></div>
-<div class="line"><span class="stringliteral">    vec4 textColor;</span></div>
-<div class="line"><span class="stringliteral">    vec4 outlineColor;</span></div>
-<div class="line"><span class="stringliteral">} pushConstants;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">layout(location = 0) out vec2 fragmentUVs;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 1) out vec4 textColor;</span></div>
-<div class="line"><span class="stringliteral">layout(location = 2) out vec4 outlineColor;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">void main() {</span></div>
-<div class="line"><span class="stringliteral">    gl_Position = vec4(inPosition, pushConstants.depth, 1.0);</span></div>
-<div class="line"><span class="stringliteral">    fragmentUVs = inUvs;</span></div>
-<div class="line"><span class="stringliteral">    textColor = pushConstants.textColor;</span></div>
-<div class="line"><span class="stringliteral">    outlineColor = pushConstants.outlineColor;</span></div>
-<div class="line"><span class="stringliteral">})&quot;</span></div>
-<div class="line"><span class="stringliteral">    )</span></div>
-</div><!-- fragment -->
-<p>Extern declaration for the Vertex Shader Module of the TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
-<p>This shader module is intended to handle the vertex shading logic specific to rendering a TextLabel <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. </p>
 
 </div>
 </div>

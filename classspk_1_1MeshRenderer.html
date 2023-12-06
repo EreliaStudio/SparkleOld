@@ -96,8 +96,10 @@ Collaboration diagram for spk::MeshRenderer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1MeshRenderer__coll__graph.png" border="0" usemap="#aspk_1_1MeshRenderer_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1MeshRenderer_coll__map" id="aspk_1_1MeshRenderer_coll__map">
-<area shape="rect" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="5,80,152,107"/>
-<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="15,5,143,32"/>
+<area shape="rect" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="157,109,304,136"/>
+<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
+<area shape="rect" href="classspk_1_1ShaderModule.html" title="Represents a shader module containing shader instructions." alt="" coords="157,5,304,32"/>
+<area shape="rect" href="structspk_1_1Material.html" title="Represents the material properties of a surface in the rendering engine." alt="" coords="368,5,475,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -119,6 +121,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe262f08a4e787e48fe1829dfea88039"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; const <a class="el" href="classspk_1_1Mesh.html">spk::Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#abe262f08a4e787e48fe1829dfea88039">mesh</a> () const</td></tr>
 <tr class="memdesc:abe262f08a4e787e48fe1829dfea88039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently assigned mesh (const version).  <a href="classspk_1_1MeshRenderer.html#abe262f08a4e787e48fe1829dfea88039">More...</a><br /></td></tr>
 <tr class="separator:abe262f08a4e787e48fe1829dfea88039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2311391c19625077c8570eefc25cf0bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a2311391c19625077c8570eefc25cf0bc">setMaterial</a> (std::shared_ptr&lt; <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt; p_material)</td></tr>
+<tr class="memdesc:a2311391c19625077c8570eefc25cf0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the material to be rendered.  <a href="classspk_1_1MeshRenderer.html#a2311391c19625077c8570eefc25cf0bc">More...</a><br /></td></tr>
+<tr class="separator:a2311391c19625077c8570eefc25cf0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240e3c4cf576861c406954cd2b19e9d1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a240e3c4cf576861c406954cd2b19e9d1">material</a> ()</td></tr>
+<tr class="memdesc:a240e3c4cf576861c406954cd2b19e9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently assigned material.  <a href="classspk_1_1MeshRenderer.html#a240e3c4cf576861c406954cd2b19e9d1">More...</a><br /></td></tr>
+<tr class="separator:a240e3c4cf576861c406954cd2b19e9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374d7a4f42b02a9add20758ba56b1846"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; const <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a374d7a4f42b02a9add20758ba56b1846">material</a> () const</td></tr>
+<tr class="memdesc:a374d7a4f42b02a9add20758ba56b1846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently assigned material (const version).  <a href="classspk_1_1MeshRenderer.html#a374d7a4f42b02a9add20758ba56b1846">More...</a><br /></td></tr>
+<tr class="separator:a374d7a4f42b02a9add20758ba56b1846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f3b8e4177c6f03eee658c828204d355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a8f3b8e4177c6f03eee658c828204d355">setTexture</a> (std::shared_ptr&lt; <a class="el" href="classspk_1_1Texture.html">spk::Texture</a> &gt; p_texture)</td></tr>
 <tr class="memdesc:a8f3b8e4177c6f03eee658c828204d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the texture to be applied to the mesh.  <a href="classspk_1_1MeshRenderer.html#a8f3b8e4177c6f03eee658c828204d355">More...</a><br /></td></tr>
 <tr class="separator:a8f3b8e4177c6f03eee658c828204d355"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +184,10 @@ Protected Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a44b09a749e20e44c81e9ef9be476f92d">_updateMeshModelData</a> ()</td></tr>
 <tr class="memdesc:a44b09a749e20e44c81e9ef9be476f92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the mesh model data. <br /></td></tr>
 <tr class="separator:a44b09a749e20e44c81e9ef9be476f92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c361cd7b1c0fdae03e70ff45dcd609e"><td class="memItemLeft" align="right" valign="top"><a id="a9c361cd7b1c0fdae03e70ff45dcd609e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a9c361cd7b1c0fdae03e70ff45dcd609e">_updateMaterial</a> ()</td></tr>
+<tr class="memdesc:a9c361cd7b1c0fdae03e70ff45dcd609e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the material data. <br /></td></tr>
+<tr class="separator:a9c361cd7b1c0fdae03e70ff45dcd609e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -204,6 +219,14 @@ std::shared_ptr&lt; <a class="el" href="classspk_1_1ContractProvider_1_1Contract
 std::shared_ptr&lt; <a class="el" href="classspk_1_1Mesh.html">spk::Mesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a4254a88d196bbd3c15c3e4f473e4c9b5">_mesh</a></td></tr>
 <tr class="memdesc:a4254a88d196bbd3c15c3e4f473e4c9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> to be rendered. <br /></td></tr>
 <tr class="separator:a4254a88d196bbd3c15c3e4f473e4c9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6791cba037929d43cca6a5f954887b"><td class="memItemLeft" align="right" valign="top"><a id="a6a6791cba037929d43cca6a5f954887b"></a>
+<a class="el" href="structspk_1_1Material.html">spk::Material</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a6a6791cba037929d43cca6a5f954887b">_lastMaterial</a></td></tr>
+<tr class="memdesc:a6a6791cba037929d43cca6a5f954887b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last material, used to check if the material have changed during last tick. <br /></td></tr>
+<tr class="separator:a6a6791cba037929d43cca6a5f954887b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2984eaf910306f5578da2780d3a60ea7"><td class="memItemLeft" align="right" valign="top"><a id="a2984eaf910306f5578da2780d3a60ea7"></a>
+std::shared_ptr&lt; <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a2984eaf910306f5578da2780d3a60ea7">_material</a></td></tr>
+<tr class="memdesc:a2984eaf910306f5578da2780d3a60ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structspk_1_1Material.html" title="Represents the material properties of a surface in the rendering engine.">Material</a> to be rendered. <br /></td></tr>
+<tr class="separator:a2984eaf910306f5578da2780d3a60ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classspk_1_1Component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classspk_1_1Component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classspk_1_1Component.html">spk::Component</a></td></tr>
 <tr class="memitem:adec8b86219e581c8b51cef724975648f inherit pro_attribs_classspk_1_1Component"><td class="memItemLeft" align="right" valign="top"><a id="adec8b86219e581c8b51cef724975648f"></a>
 std::shared_ptr&lt; <a class="el" href="classspk_1_1GameObject.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html#adec8b86219e581c8b51cef724975648f">_owner</a></td></tr>
@@ -216,6 +239,12 @@ std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
+<tr class="memitem:af817146a8a401e4507dd8c55f6b73b9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#af817146a8a401e4507dd8c55f6b73b9c">VertexShaderModule</a></td></tr>
+<tr class="memdesc:af817146a8a401e4507dd8c55f6b73b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="classspk_1_1MeshRenderer.html#af817146a8a401e4507dd8c55f6b73b9c">More...</a><br /></td></tr>
+<tr class="separator:af817146a8a401e4507dd8c55f6b73b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64620b8e577b9466efdffdf48dfe086b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a64620b8e577b9466efdffdf48dfe086b">FragmentShaderModule</a></td></tr>
+<tr class="memdesc:a64620b8e577b9466efdffdf48dfe086b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fragment Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>.  <a href="classspk_1_1MeshRenderer.html#a64620b8e577b9466efdffdf48dfe086b">More...</a><br /></td></tr>
+<tr class="separator:a64620b8e577b9466efdffdf48dfe086b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5723fd233741e03750c614600edfd322"><td class="memItemLeft" align="right" valign="top"><a id="a5723fd233741e03750c614600edfd322"></a>
 static std::shared_ptr&lt; <a class="el" href="classspk_1_1Pipeline.html">spk::Pipeline</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1MeshRenderer.html#a5723fd233741e03750c614600edfd322">_renderingPipeline</a> = nullptr</td></tr>
 <tr class="memdesc:a5723fd233741e03750c614600edfd322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared rendering pipeline. <br /></td></tr>
@@ -356,6 +385,48 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1S
 
 </div>
 </div>
+<a id="a240e3c4cf576861c406954cd2b19e9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240e3c4cf576861c406954cd2b19e9d1">&#9670;&nbsp;</a></span>material() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt; spk::MeshRenderer::material </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the currently assigned material. </p>
+<p>This method retrieves the material currently set for rendering.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;spk::Material&gt; Shared pointer to the currently set material. </dd></dl>
+
+</div>
+</div>
+<a id="a374d7a4f42b02a9add20758ba56b1846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374d7a4f42b02a9add20758ba56b1846">&#9670;&nbsp;</a></span>material() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; const <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt; spk::MeshRenderer::material </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the currently assigned material (const version). </p>
+<p>This method retrieves the material currently set for rendering, providing a const reference.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;const spk::Material&gt; Const shared pointer to the currently set material. </dd></dl>
+
+</div>
+</div>
 <a id="a90a2d06904c4a223a71c7f21f586c095"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90a2d06904c4a223a71c7f21f586c095">&#9670;&nbsp;</a></span>mesh() <span class="overload">[1/2]</span></h2>
 
@@ -395,6 +466,33 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1S
 <p>Gets the currently assigned mesh (const version). </p>
 <p>This method retrieves the mesh currently set for rendering, providing a const reference.</p>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;const spk::Mesh&gt; Const shared pointer to the currently set mesh. </dd></dl>
+
+</div>
+</div>
+<a id="a2311391c19625077c8570eefc25cf0bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2311391c19625077c8570eefc25cf0bc">&#9670;&nbsp;</a></span>setMaterial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::MeshRenderer::setMaterial </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structspk_1_1Material.html">spk::Material</a> &gt;&#160;</td>
+          <td class="paramname"><em>p_material</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the material to be rendered. </p>
+<p>This method assigns a new material to the renderer. The provided material will be used for subsequent rendering operations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_material</td><td>Shared pointer to the material to be rendered. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -491,6 +589,57 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1S
 <p>Gets the currently assigned texture (const version). </p>
 <p>This method retrieves the texture currently set to be applied to the mesh, providing a const reference.</p>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;const spk::Texture&gt; Const shared pointer to the currently set texture. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a64620b8e577b9466efdffdf48dfe086b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64620b8e577b9466efdffdf48dfe086b">&#9670;&nbsp;</a></span>FragmentShaderModule</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::MeshRenderer::FragmentShaderModule</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fragment Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
+<p>This shader module is intended to handle the fragment shading logic specific to rendering a <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. It defines the processing of fragments (potential pixels) and their properties, determining the final color and other attributes of pixels on the screen. </p>
+
+</div>
+</div>
+<a id="af817146a8a401e4507dd8c55f6b73b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af817146a8a401e4507dd8c55f6b73b9c">&#9670;&nbsp;</a></span>VertexShaderModule</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1ShaderModule.html">spk::ShaderModule</a> spk::MeshRenderer::VertexShaderModule</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vertex Shader Module of the <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a>. </p>
+<p>This shader module is intended to handle the vertex shading logic specific to rendering a <a class="el" href="classspk_1_1Mesh.html" title="Represents a mesh in the Sparkle engine.">Mesh</a> Renderer <a class="el" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject.">Component</a> in the graphics pipeline. It defines how vertices are processed and transformed during the vertex shading stage. </p>
 
 </div>
 </div>

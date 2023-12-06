@@ -1,7 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,81,133,108"/>
+<area shape="rect" id="node1" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,107,133,133"/>
 <area shape="rect" id="node2" href="$classspk_1_1Camera.html" title="Represents a camera in the Sparkle engine." alt="" coords="224,5,328,32"/>
-<area shape="rect" id="node3" href="$classspk_1_1FirstPersonController.html" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="181,56,371,83"/>
-<area shape="rect" id="node4" href="$classspk_1_1MeshRenderer.html" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="203,107,349,133"/>
-<area shape="rect" id="node5" href="$classspk_1_1Transform.html" title="Represents the transformation component in the Sparkle engine." alt="" coords="217,157,335,184"/>
+<area shape="rect" id="node3" href="$classspk_1_1DirectionalLight.html" title="Class representing a directional light in the scene." alt="" coords="198,56,354,83"/>
+<area shape="rect" id="node4" href="$classspk_1_1FirstPersonController.html" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="181,107,371,133"/>
+<area shape="rect" id="node5" href="$classspk_1_1MeshRenderer.html" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="203,157,349,184"/>
+<area shape="rect" id="node6" href="$classspk_1_1Transform.html" title="Represents the transformation component in the Sparkle engine." alt="" coords="217,208,335,235"/>
 </map>

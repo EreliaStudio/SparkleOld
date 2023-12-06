@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['scaletype_1894',['ScaleType',['../classspk_1_1Transform.html#aa6670776592e597d79e1d3bf86c90672',1,'spk::Transform']]],
-  ['scissor_1895',['Scissor',['../namespacespk.html#aec5e8bd08055e02d096facc84619ed06',1,'spk']]],
-  ['snapshot_1896',['Snapshot',['../classspk_1_1Memento.html#a4bc44b5f4cf27ca556fe08eee841918b',1,'spk::Memento']]]
+  ['rotationtype_1931',['RotationType',['../classspk_1_1Transform.html#a8fa6d1ad5c6b46fc0deaf3e6610cab2b',1,'spk::Transform']]]
 ];

@@ -67,7 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classspk_1_1Pool-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -75,67 +75,63 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A generic pool class that manages the creation and deletion of objects.  
+<p>A template class for object pooling.  
  <a href="classspk_1_1Pool.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__pool_8hpp_source.html">spk_pool.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool_1_1Object.html">Object</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An internal class to manage objects retrieved from the pool.  <a href="classspk_1_1Pool_1_1Object.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:acd3c21b87850bf108a859e4891ec3a74"><td class="memItemLeft" align="right" valign="top"><a id="acd3c21b87850bf108a859e4891ec3a74"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#acd3c21b87850bf108a859e4891ec3a74">Destructor</a> = typename std::function&lt; void(TType *p_toReturn)&gt;</td></tr>
+<tr class="memdesc:acd3c21b87850bf108a859e4891ec3a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for the destructor function. <br /></td></tr>
+<tr class="separator:acd3c21b87850bf108a859e4891ec3a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3f9e3c9a02338b938ce468ac85ea51"><td class="memItemLeft" align="right" valign="top"><a id="afa3f9e3c9a02338b938ce468ac85ea51"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#afa3f9e3c9a02338b938ce468ac85ea51">Object</a> = typename std::unique_ptr&lt; TType, <a class="el" href="classspk_1_1Pool.html#acd3c21b87850bf108a859e4891ec3a74">Destructor</a> &gt;</td></tr>
+<tr class="memdesc:afa3f9e3c9a02338b938ce468ac85ea51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for a unique pointer to the pooled object with a custom destructor. <br /></td></tr>
+<tr class="separator:afa3f9e3c9a02338b938ce468ac85ea51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d4b6b3222ed33dc857a4f99551fd223"><td class="memItemLeft" align="right" valign="top"><a id="a0d4b6b3222ed33dc857a4f99551fd223"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a0d4b6b3222ed33dc857a4f99551fd223">Pool</a> ()</td></tr>
-<tr class="memdesc:a0d4b6b3222ed33dc857a4f99551fd223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1Pool.html" title="A generic pool class that manages the creation and deletion of objects.">Pool</a> class. <br /></td></tr>
-<tr class="separator:a0d4b6b3222ed33dc857a4f99551fd223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474e0d1a5d1a045baa2351a978e1406e"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a474e0d1a5d1a045baa2351a978e1406e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a474e0d1a5d1a045baa2351a978e1406e">reserve</a> (size_t p_nbElement, Args &amp;&amp;...p_args)</td></tr>
-<tr class="memdesc:a474e0d1a5d1a045baa2351a978e1406e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve a number of elements in the pool.  <a href="classspk_1_1Pool.html#a474e0d1a5d1a045baa2351a978e1406e">More...</a><br /></td></tr>
-<tr class="separator:a474e0d1a5d1a045baa2351a978e1406e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64032a2a21f5cf73a4836178a347a73c"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a64032a2a21f5cf73a4836178a347a73c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Pool_1_1Object.html">Object</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a64032a2a21f5cf73a4836178a347a73c">obtain</a> (Args &amp;&amp;...p_args)</td></tr>
-<tr class="memdesc:a64032a2a21f5cf73a4836178a347a73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain an object from the pool.  <a href="classspk_1_1Pool.html#a64032a2a21f5cf73a4836178a347a73c">More...</a><br /></td></tr>
-<tr class="separator:a64032a2a21f5cf73a4836178a347a73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac584858b3175a8feb8cc778542e216c3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#ac584858b3175a8feb8cc778542e216c3">size</a> () const</td></tr>
-<tr class="memdesc:ac584858b3175a8feb8cc778542e216c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the pool.  <a href="classspk_1_1Pool.html#ac584858b3175a8feb8cc778542e216c3">More...</a><br /></td></tr>
-<tr class="separator:ac584858b3175a8feb8cc778542e216c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d4b4b0ae573ccfc14145797bf9ea214"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a8d4b4b0ae573ccfc14145797bf9ea214">Pool</a> (const size_t &amp;p_poolSize=0)</td></tr>
+<tr class="memdesc:a8d4b4b0ae573ccfc14145797bf9ea214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classspk_1_1Pool.html" title="A template class for object pooling.">Pool</a> class.  <a href="classspk_1_1Pool.html#a8d4b4b0ae573ccfc14145797bf9ea214">More...</a><br /></td></tr>
+<tr class="separator:a8d4b4b0ae573ccfc14145797bf9ea214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea29c0caff3a8a4c5b059ad6ad85ce9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a3ea29c0caff3a8a4c5b059ad6ad85ce9">resize</a> (size_t p_newSize)</td></tr>
+<tr class="memdesc:a3ea29c0caff3a8a4c5b059ad6ad85ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the pool to a new size.  <a href="classspk_1_1Pool.html#a3ea29c0caff3a8a4c5b059ad6ad85ce9">More...</a><br /></td></tr>
+<tr class="separator:a3ea29c0caff3a8a4c5b059ad6ad85ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fa22297beb2a3709b2d65c1d272f20e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Pool.html#afa3f9e3c9a02338b938ce468ac85ea51">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Pool.html#a7fa22297beb2a3709b2d65c1d272f20e">obtain</a> ()</td></tr>
+<tr class="memdesc:a7fa22297beb2a3709b2d65c1d272f20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains an object from the pool.  <a href="classspk_1_1Pool.html#a7fa22297beb2a3709b2d65c1d272f20e">More...</a><br /></td></tr>
+<tr class="separator:a7fa22297beb2a3709b2d65c1d272f20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename TType&gt;<br />
 class spk::Pool&lt; TType &gt;</h3>
 
-<p>A generic pool class that manages the creation and deletion of objects. </p>
-<p>This class is designed to handle memory in an efficient manner by reusing previously allocated objects. This avoids frequent memory allocation and deallocation, which can be costly for performance.</p>
-<p>The <a class="el" href="classspk_1_1Pool.html" title="A generic pool class that manages the creation and deletion of objects.">Pool</a> class provides a mechanism for 'reserving' a number of objects of a specific type, and then 'obtaining' those objects for use. When an object is no longer needed, it is returned to the pool to be reused later.</p>
+<p>A template class for object pooling. </p>
+<p>This class implements an object pool pattern. It is useful for managing a collection of reusable objects of type TType. Object pools can improve performance in situations where the cost of initializing an instance of the class is high, the rate of instantiation of a class is high, and the number of instantiations in use at any one time is low.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">TType</td><td>The type of objects that the pool will manage. </td></tr>
+    <tr><td class="paramname">TType</td><td>The type of object to pool. </td></tr>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a64032a2a21f5cf73a4836178a347a73c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64032a2a21f5cf73a4836178a347a73c">&#9670;&nbsp;</a></span>obtain()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8d4b4b0ae573ccfc14145797bf9ea214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4b4b0ae573ccfc14145797bf9ea214">&#9670;&nbsp;</a></span>Pool()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TType &gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classspk_1_1Pool_1_1Object.html">Object</a> <a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::obtain </td>
+          <td class="memname"><a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::<a class="el" href="classspk_1_1Pool.html">Pool</a> </td>
           <td>(</td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>p_args</em></td><td>)</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>p_poolSize</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -146,82 +142,20 @@ template&lt;typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Obtain an object from the pool. </p>
-<p>This function obtains an object from the pool. If there are no available objects, a new object is created using the provided arguments.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>The types of the arguments. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructor for the <a class="el" href="classspk_1_1Pool.html" title="A template class for object pooling.">Pool</a> class. </p>
+<p>Initializes the pool with a specified number of preallocated elements.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_args</td><td>The arguments to construct the object if necessary. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classspk_1_1Pool_1_1Object.html" title="An internal class to manage objects retrieved from the pool.">Object</a> that manages the obtained object. </dd></dl>
-
-</div>
-</div>
-<a id="a474e0d1a5d1a045baa2351a978e1406e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a474e0d1a5d1a045baa2351a978e1406e">&#9670;&nbsp;</a></span>reserve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TType &gt; </div>
-<div class="memtemplate">
-template&lt;typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::reserve </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>p_nbElement</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>p_args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reserve a number of elements in the pool. </p>
-<p>This function reserves a number of elements in the pool by creating new instances of the template type with the provided arguments.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>The types of the arguments. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_nbElement</td><td>The number of elements to reserve. </td></tr>
-    <tr><td class="paramname">p_args</td><td>The arguments to construct the elements. </td></tr>
+    <tr><td class="paramname">p_poolSize</td><td>Initial size of the pool. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ac584858b3175a8feb8cc778542e216c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac584858b3175a8feb8cc778542e216c3">&#9670;&nbsp;</a></span>size()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7fa22297beb2a3709b2d65c1d272f20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fa22297beb2a3709b2d65c1d272f20e">&#9670;&nbsp;</a></span>obtain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,10 +166,10 @@ template&lt;typename TType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::size </td>
+          <td class="memname"><a class="el" href="classspk_1_1Pool.html#afa3f9e3c9a02338b938ce468ac85ea51">Object</a> <a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::obtain </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -245,8 +179,45 @@ template&lt;typename TType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the size of the pool. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of objects in the pool. </dd></dl>
+<p>Obtains an object from the pool. </p>
+<p>If the pool is empty, a new object is created and added to the pool.</p>
+<dl class="section return"><dt>Returns</dt><dd>Object A unique pointer to the pooled object. </dd></dl>
+
+</div>
+</div>
+<a id="a3ea29c0caff3a8a4c5b059ad6ad85ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea29c0caff3a8a4c5b059ad6ad85ce9">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classspk_1_1Pool.html">spk::Pool</a>&lt; TType &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>p_newSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes the pool to a new size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_newSize</td><td>The new size of the pool. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

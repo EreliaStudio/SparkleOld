@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1ShaderLayout_1_1StructureLayout.html" title="Class to handle structure layout configurations." alt="" coords="5,5,156,47"/>
+<area shape="rect" id="node1" href="$classspk_1_1ShaderLayout_1_1FieldArrayLayout.html" title="Class to manage the layout of a field array." alt="" coords="5,104,156,145"/>
+<area shape="rect" id="node2" href="$classspk_1_1ShaderLayout_1_1OutputBufferLayout.html" title="Class to manage the layout of output buffers." alt="" coords="210,5,361,47"/>
+<area shape="rect" id="node3" href="$classspk_1_1ShaderLayout_1_1PushConstantsLayout.html" title="Class to manage the layout of push constants." alt="" coords="204,71,367,112"/>
+<area shape="rect" id="node4" href="$classspk_1_1ShaderLayout_1_1StorageBufferLayout.html" title="Class to manage the layout of storage buffers." alt="" coords="208,136,363,177"/>
+<area shape="rect" id="node5" href="$classspk_1_1ShaderLayout_1_1UniformBlockLayout.html" title="Class to manage the layout of uniform blocks." alt="" coords="208,201,363,243"/>
 </map>
