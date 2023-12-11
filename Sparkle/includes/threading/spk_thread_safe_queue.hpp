@@ -217,7 +217,7 @@ namespace spk
 		 */
 		void wait()
 		{
-			while (empty())
+			if (empty())
 			{
 				std::unique_lock<std::mutex> ul(muxBlocking);
 				cvBlocking.wait(ul);
