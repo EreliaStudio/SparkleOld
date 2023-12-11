@@ -8,22 +8,20 @@ namespace spk
     /**
      * Singleton class representing a window.
      */
-    class Window : public spk::Singleton<Window>
+    class Window
     {
-        // Allow the Singleton to access Window's private constructor.
-        friend class spk::Singleton<Window>;
-
     private:
         spk::Frame _frame;  /**< Frame object to manage the window frame. */
         spk::Surface _surface;  /**< Surface object to manage the rendering surface. */
 
+
+    public:
         /**
-         * Private constructor for Window.
+         * Constructor for Window.
          * Can only be accessed by Singleton<Window>.
          */
         Window(const std::wstring &p_title, const Vector2UInt &p_size, void *p_ptr = nullptr);
 
-    public:
         /**
          * @brief Deleted copy constructor.
          *
@@ -55,7 +53,6 @@ namespace spk
          * instance to the this instance, replacing the current resources.
          */
         Window& operator=(Window&&) = default;
-
 
         /**
          * Clears the window's frame and surface.

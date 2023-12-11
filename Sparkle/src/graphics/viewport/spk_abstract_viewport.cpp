@@ -1,5 +1,5 @@
 #include "graphics/viewport/spk_abstract_viewport.hpp"
-#include "graphics/spk_window.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
@@ -48,7 +48,7 @@ namespace spk
 		spk::Vector2Int targetTopLeft = _computeAbsoluteAnchor();
 		spk::Vector2Int targetDownRight = targetTopLeft + _area.size();
 
-		const spk::Area& parentActiveArea = (parent() != nullptr ? parent()->_computedArea : spk::Area(0, spk::Window::instance()->size()));
+		spk::Area parentActiveArea = (parent() != nullptr ? parent()->_computedArea : spk::Area(0, spk::Application::instance()->window().size()));
 		spk::Vector2Int parentTopLeft = parentActiveArea.anchor();
 		spk::Vector2Int parentDownRight = parentTopLeft + parentActiveArea.size();
 

@@ -12,9 +12,8 @@ namespace spk
 	*
 	* Represents the mouse device, providing functionalities to manage mouse actions such as button pressing, position, wheel movement, etc.
 	*/
-	class Mouse : public spk::Singleton<Mouse>
+	class Mouse
 	{
-		friend class spk::Singleton<Mouse>;
 		friend class MouseModule;
 
 	public:
@@ -42,6 +41,8 @@ namespace spk
 		Vector2Int _wheel; ///< Mouse wheel movement.
 
 	private:
+
+	public:
 		/**
 		* @brief Constructs a Mouse object.
 		*/
@@ -79,14 +80,6 @@ namespace spk
 		* @brief Updates the state of the mouse.
 		*/
 		void update();
-
-	public:
-		/**
-		* @brief Places the mouse at a given position.
-		*
-		* @param p_position The position to place the mouse at.
-		*/
-		void place(const Vector2Int& p_position);
 
 		/**
 		* @brief Gets the input state of a given button.

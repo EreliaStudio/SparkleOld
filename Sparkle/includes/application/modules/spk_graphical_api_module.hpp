@@ -2,6 +2,7 @@
 
 #include "math/spk_vector2.hpp"
 #include "application/modules/spk_message_consumer_module.hpp"
+#include "graphics/spk_window.hpp"
 
 namespace spk
 {
@@ -15,6 +16,8 @@ namespace spk
 	class GraphicalAPIModule : public IMessageConsumerModule
 	{
 	private:
+		spk::Window _window;
+
 		/**
 		 * @brief Handles a system message.
 		 * 
@@ -47,5 +50,10 @@ namespace spk
 		 * @brief Clears the window.
 		 */
 		void clear();
+
+		void resize(const spk::Vector2UInt& p_newSize);
+
+		spk::Window& window() {return (_window);}
+		const spk::Window& window() const {return (_window);}
 	};
 }

@@ -19,7 +19,7 @@ namespace spk
 			*p_event >> width;
 			*p_event >> height;
 
-			Window::instance()->resize(spk::Vector2Int(width, height));
+			_window.resize(spk::Vector2Int(width, height));
 			Widget::Atlas::instance()->resize();
 
 			break;
@@ -31,7 +31,7 @@ namespace spk
 			*p_event >> x;
 			*p_event >> y;
 
-			Window::instance()->place(spk::Vector2Int(x, y));
+			_window.place(spk::Vector2Int(x, y));
 			break;
 		}
 		}

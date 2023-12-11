@@ -58,15 +58,6 @@ namespace spk
 		}
 	}
 
-	void Mouse::place(const Vector2Int& p_position)
-	{	
-		#ifdef _WIN32
-			SetCursorPos(spk::Window::instance()->anchor().x + p_position.x, spk::Window::instance()->anchor().y + p_position.y);
-		#endif
-		_position = p_position;
-		_deltaPosition = 0;
-	}
-
 	std::wstring to_wstring(const Mouse::Button& p_button)
 	{
 		switch (p_button)

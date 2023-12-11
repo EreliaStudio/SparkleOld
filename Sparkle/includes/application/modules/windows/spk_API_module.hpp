@@ -18,12 +18,15 @@ namespace spk
 	{
 	private:
 		using MessagePool = spk::Pool<spk::DataBuffer>; ///< Type definition for pool of DataBuffer.
-		using MessagePoolInstance = spk::Singleton<MessagePool>; ///< Type definition for singleton instance of DataBuffer pool.
 
-		spk::ThreadSafeQueue<SystemMessage> _systemQueue; ///< Thread-safe queue for system messages.
-		spk::ThreadSafeQueue<SystemMessage> _windowQueue; ///< Thread-safe queue for window system messages.
-		spk::ThreadSafeQueue<SystemMessage> _mouseQueue; ///< Thread-safe queue for mouse system messages.
-		spk::ThreadSafeQueue<SystemMessage> _keyboardQueue; ///< Thread-safe queue for keyboard system messages.
+		MessagePool _messagePool;
+
+		spk::ThreadSafeQueue<MessagePool::Object> _systemQueue; ///< Thread-safe queue for system messages.
+		spk::ThreadSafeQueue<MessagePool::Object> _windowQueue; ///< Thread-safe queue for window system messages.
+		spk::ThreadSafeQueue<MessagePool::Object> _mouseQueue; ///< Thread-safe queue for mouse system messages.
+		spk::ThreadSafeQueue<MessagePool::Object> _keyboardQueue; ///< Thread-safe queue for keyboard system messages.
+
+		MessagePool::Object _obtain(const UINT& p_uMsg);
 
 		SystemMessage _obtainMessage(const UINT& p_messageID);
 

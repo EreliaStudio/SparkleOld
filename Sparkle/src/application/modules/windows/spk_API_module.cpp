@@ -159,12 +159,12 @@ namespace spk
 
 	APIModule::APIModule()
 	{
-		MessagePoolInstance::instanciate();
+
 	}
 
 	APIModule::~APIModule()
 	{
-		MessagePoolInstance::release();
+		
 	}
 
 	void APIModule::pullMessage()

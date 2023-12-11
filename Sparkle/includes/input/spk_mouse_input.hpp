@@ -34,7 +34,7 @@ namespace spk
 		 * @return true if the function execution is needed, false otherwise.
 		 */
 		bool _isExecutionNeeded() {
-			return (spk::Mouse::instance()->inputStatus(_button) == _expectedStatus);
+			return (spk::Application::instance()->mouse().inputStatus(_button) == _expectedStatus);
 		}
 
 	public:
