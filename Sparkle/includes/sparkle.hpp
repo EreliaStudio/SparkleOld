@@ -12,8 +12,6 @@
 #include "data_structure/spk_data_buffer.hpp"
 #include "data_structure/spk_pool.hpp"
 
-#include "debug/spk_profiler.hpp"
-
 #include "design_pattern/spk_singleton.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_command_parser.hpp"

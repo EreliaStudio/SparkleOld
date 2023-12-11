@@ -2,7 +2,6 @@
 #include "system/spk_time_metrics.hpp"
 #include <chrono>
 #include "iostream/spk_iostream.hpp"
-#include "debug/spk_profiler.hpp"
 
 namespace spk
 {

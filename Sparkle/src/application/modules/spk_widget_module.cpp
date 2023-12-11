@@ -4,7 +4,6 @@
 #include "spk_basic_functions.hpp"
 #include "graphics/spk_window.hpp"
 #include <cstring>
-#include "debug/spk_profiler.hpp"
 
 namespace spk
 {

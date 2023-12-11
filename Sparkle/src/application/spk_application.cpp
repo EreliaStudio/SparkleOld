@@ -1,7 +1,6 @@
 #include "application/spk_application.hpp"
 #include "widget/spk_widget_input_group_manager.hpp"
 #include "spk_basic_functions.hpp"
-#include "debug/spk_profiler.hpp"
 #include "graphics/spk_window.hpp"
 #include "threading/spk_thread.hpp"
 #include "engine/component/spk_mesh_renderer_component.hpp"
@@ -17,8 +16,7 @@ namespace spk
 		_GAPIM(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
-		_widgetModule(),
-		_profilerModule()
+		_widgetModule()
 	{		
 		resize(p_size);
 	}
@@ -31,7 +29,7 @@ namespace spk
 	void Application::_renameThread(const std::wstring& p_threadName)
 	{
 		spk::cout.setPrefix(p_threadName);
-		spk::Profiler::instance()->defineThreadName(p_threadName);
+		spk::cerr.setPrefix(p_threadName);
 	}
 		
 	bool Application::isRunning() const
@@ -53,8 +51,6 @@ namespace spk
 			while (_isRunning == true)
 			{
 				_timeModule.updateTimeMetrics();
-				_profilerModule.updateUPS();
-				_profilerModule.updateCounters();
 				_systemModule.treatMessage();
 				_GAPIM.treatMessage();
 				_mouseModule.treatMessage();
@@ -66,7 +62,6 @@ namespace spk
 		});
 
 		_renameThread(L"Renderer");
-		spk::Profiler::instance()->fpsCounter();
 		updaterThread.start();
 		_initializeShaders();
 		while (_isRunning)
@@ -76,7 +71,6 @@ namespace spk
 				quit(1);
 			}
 
-			_profilerModule.updateFPS();
 			_APIModule.pullMessage();
 			_GAPIM.clear();
 			_widgetModule.render();
