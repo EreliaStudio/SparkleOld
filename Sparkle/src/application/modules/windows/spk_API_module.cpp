@@ -41,14 +41,14 @@ namespace spk
 		{
 		case WM_DESTROY:
 		{
-			_systemQueue.push_back(std::move(_obtain(p_uMsg)));
+			_systemQueue.push_back(_obtain(p_uMsg));
 			break;
 		}
 		case WM_MDIRESTORE:
 		case WM_SETFOCUS:
 		case WM_KILLFOCUS:
 		{			
-			_windowQueue.push_back(std::move(_obtain(p_uMsg)));
+			_windowQueue.push_back(_obtain(p_uMsg));
 			break;
 		}
 		case WM_MOVE:

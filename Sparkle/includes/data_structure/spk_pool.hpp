@@ -1,248 +1,64 @@
 #pragma once
-
-#include <vector>
+#include <deque>
+#include <memory>
+#include <functional>
 #include <mutex>
-#include "iostream/spk_iostream.hpp"
+
+#include <iostream>
 
 namespace spk
 {
-	/**
-	 * \class Pool
-	 * \brief A generic pool class that manages the creation and deletion of objects.
-	 *
-	 * This class is designed to handle memory in an efficient manner by reusing
-	 * previously allocated objects. This avoids frequent memory allocation and
-	 * deallocation, which can be costly for performance.
-	 *
-	 * The Pool class provides a mechanism for 'reserving' a number of objects of a
-	 * specific type, and then 'obtaining' those objects for use. When an object is
-	 * no longer needed, it is returned to the pool to be reused later.
-	 *
-	 * \tparam TType The type of objects that the pool will manage.
-	 */
-	template <typename TType>
-	class Pool
-	{
-	private:
-		/**
-		 * \brief The container that holds the objects allocated by the pool.
-		 */
-		using Container = std::vector<TType *>;
-		Container _allocatedObjects;
+    template<typename TType>
+    class Pool {
+    private:
+        using Destructor = typename std::function<void(TType* p_toReturn)>;
 
-	public:
-		/**
-		 * \class Object
-		 * \brief An internal class to manage objects retrieved from the pool.
-		 *
-		 * This class is designed to keep track of the memory it manages and to
-		 * automatically return it to the pool when it is no longer needed.
-		 */
-		class Object
-		{
-			friend class Pool;
+    public:
+        using Object = typename std::unique_ptr<TType, Destructor>;
 
-		private:
-			Pool *_source;
-			size_t *_referenceCount;
-			TType *_content;
+    private:
+        std::recursive_mutex _mutex;
+        std::deque<std::unique_ptr<TType>> _preallocatedElements;
 
-			/**
-			 * @brief Private constructor for the Object class.
-			 *
-			 * The private constructor is only accessible by the `Pool` class.
-			 * It is used to create an `Object` instance that manages a specific content object.
-			 *
-			 * @param p_source Pointer to the container of allocated objects.
-			 * @param p_content Pointer to the content object managed by the `Object` instance.
-			 */
-			Object(Pool *p_source, TType *p_content) : _source(p_source),
-															_content(p_content),
-															_referenceCount(new size_t(1))
-			{
-			}
+        const Destructor _destructorLambda = [&](TType* p_toReturn){
+            _release(p_toReturn);
+        };
 
-		public:
-			/**
-			 * @brief Destructor for the Object class.
-			 *
-			 * The destructor decrements the reference count and if it reaches zero,
-			 * the content of the object is returned to the pool.
-			 */
-			~Object()
-			{
-				(*_referenceCount)--;
+        void _release(TType* p_toReturn)
+        {
+            std::lock_guard<std::recursive_mutex> lock(_mutex);
+            _preallocatedElements.push_back(std::unique_ptr<TType>(p_toReturn));
+        }
 
-				if (*_referenceCount == 0)
-				{
-					_content->~TType();
-					_source->_insertBack(_content);
-				}
+    public:
+        Pool(const size_t& p_poolSize = 0)
+        {
+            resize(p_poolSize);
+        }
 
-			}
+        void resize(size_t p_newSize) {
+            std::lock_guard<std::recursive_mutex> lock(_mutex);
+            while (_preallocatedElements.size() > p_newSize) {
+                _preallocatedElements.pop_back();
+            }
+            while (_preallocatedElements.size() < p_newSize) {
+                _preallocatedElements.push_front(std::make_unique<TType>());
+            }
+        }
 
-			/**
-			 * @brief Copy constructor for the Object class.
-			 *
-			 * The copy constructor increases the reference count.
-			 *
-			 * @param p_other The Object to copy.
-			 */
-			Object(const Object &p_other) : _source(p_other._source),
-											_content(p_other._content),
-											_referenceCount(p_other._referenceCount)
-			{
-				(*_referenceCount)++;
-			}
+        Object obtain() {
+            std::lock_guard<std::recursive_mutex> lock(_mutex);
+            
+            if (_preallocatedElements.empty())
+            {
+                _preallocatedElements.push_front(std::make_unique<TType>());
+            }
 
-			/**
-			 * @brief Function call operator.
-			 *
-			 * Allows accessing the content of the object using the function call syntax.
-			 *
-			 * @return A pointer to the content.
-			 */
-			TType *operator()()
-			{
-				return (_content);
-			}
+            Object item(_preallocatedElements.front().release(), _destructorLambda);
 
-			/**
-			 * @brief Const version of the function call operator.
-			 *
-			 * Allows accessing the content of the object using the function call syntax,
-			 * preserving constness.
-			 *
-			 * @return A const pointer to the content.
-			 */
-			const TType *operator()() const
-			{
-				return (_content);
-			}
+            _preallocatedElements.pop_front();
 
-			/**
-			 * @brief Member access operator.
-			 *
-			 * Allows accessing members of the content using the arrow operator.
-			 *
-			 * @return A pointer to the content.
-			 */
-			TType *operator->()
-			{
-				return (_content);
-			}
-
-			/**
-			 * @brief Const version of the member access operator.
-			 *
-			 * Allows accessing members of the content using the arrow operator,
-			 * preserving constness.
-			 *
-			 * @return A const pointer to the content.
-			 */
-			const TType *operator->() const
-			{
-				return (_content);
-			}
-
-			/**
-			 * @brief Dereference operator.
-			 *
-			 * Allows dereferencing the content using the dereference operator.
-			 *
-			 * @return A reference to the content.
-			 */
-			TType &operator*()
-			{
-				return *_content;
-			}
-
-			/**
-			 * @brief Const version of the dereference operator.
-			 *
-			 * Allows dereferencing the content using the dereference operator,
-			 * preserving constness.
-			 *
-			 * @return A const reference to the content.
-			 */
-			const TType &operator*() const
-			{
-				return *_content;
-			}
-		};
-
-	private:
-		std::recursive_mutex _mutex;
-
-		void _insertBack(TType* p_data)
-		{
-			std::lock_guard<std::recursive_mutex> _lock(_mutex);
-			_allocatedObjects.push_back(p_data);
-		}
-
-	public:
-		/**
-		 * @brief Default constructor for the Pool class.
-		 */
-		Pool()
-		{
-		}
-
-		/**
-		 * @brief Reserve a number of elements in the pool.
-		 *
-		 * This function reserves a number of elements in the pool by creating new instances
-		 * of the template type with the provided arguments.
-		 *
-		 * @param p_nbElement The number of elements to reserve.
-		 * @param p_args The arguments to construct the elements.
-		 */
-		void reserve(size_t p_nbElement)
-		{
-			std::lock_guard<std::recursive_mutex> _lock(_mutex);
-			size_t currentSize = _allocatedObjects.size();
-
-			_allocatedObjects.resize(currentSize + p_nbElement);
-			for (size_t i = currentSize; i < p_nbElement; i++)
-			{
-				_allocatedObjects[i] = new TType();
-			}
-		}
-
-		/**
-		 * @brief Obtain an object from the pool.
-		 *
-		 * This function obtains an object from the pool. If there are no available objects,
-		 * a new object is created using the provided arguments.
-		 *
-		 * @return An Object that manages the obtained object.
-		 */
-		Object obtain()
-		{
-			if (_allocatedObjects.size() == 0)
-			{
-				Object result = Object(this, new TType());
-				return (result);
-			}
-			else
-			{
-				std::lock_guard<std::recursive_mutex> _lock(_mutex);
-				TType *data = _allocatedObjects.back();
-				_allocatedObjects.pop_back();
-
-				Object result = Object(this, data);
-				return (result);
-			}
-		}
-
-		/**
-		 * @brief Get the size of the pool.
-		 *
-		 * @return The number of objects in the pool.
-		 */
-		size_t size() const
-		{
-			return (_allocatedObjects.size());
-		}
-	};
+            return std::move(item);
+        }
+    };
 }
