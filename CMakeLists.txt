@@ -5,6 +5,8 @@ project(Sparkle
     DESCRIPTION "Graphical application library"
     LANGUAGES CXX)	
 
+set(CMAKE_CXX_STANDARD 20)
+
 set(OSBitness 32)
 if (CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(OSBitness 64)
