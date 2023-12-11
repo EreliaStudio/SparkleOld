@@ -1,8 +1,5 @@
 #pragma once
 
-#include <map>
-#include <vector>
-#include <functional>
 #include "application/modules/spk_API_module.hpp"
 #include "application/modules/spk_system_module.hpp"
 #include "application/modules/spk_time_module.hpp"
@@ -10,25 +7,22 @@
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
+
+#include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_canvas.hpp"
 
 namespace spk
 {
-	/**
-	 * @class Application
-	 * @brief Abstract base class for the application.
-	 *
-	 * This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses.
-	 */
 	class Application
 	{
-	private:
-		thread_local static inline Application* _instance = nullptr;
 	public:
-		static Application* instance(){ return (_instance); }
+		static inline Application* _instance = nullptr;
+		static Application* instance() { return (_instance); }
+		void setAsInstance() { _instance = this; }
 
 	private:
-		const std::function<void()> _updaterJob;
+		bool _isRunning = false;
+		int _errorID = 0;
 
 		spk::APIModule _APIModule; ///< API module instance.
 
@@ -40,72 +34,27 @@ namespace spk
 
 		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
-		/**
-		 * @brief Error code representing the state of the application.
-		 */
-		int _errorCode;
+		void _initialisationProcess();
+
+		void _updateProcess();
+		void _executeUpdateTick();
 		
-		/**
-		 * @brief Boolean flag indicating if the application is running.
-		 */
-		bool _isRunning;
-
-	protected:
-		/**
-		 * @brief Execute what is necessary to rename the current thread : Edit cout/cerr prefix, define thread name in Profiler settings
-		*/
-		void _renameThread(const std::wstring& p_threadName);
-
-		/**
-		 * @brief Return the running status of the application
-		*/
-		bool isRunning() const;
-
-		/**
-		 * @brief Initialize the shaders used by Sparkle.
-		*/
-		void _initializeShaders();
+		void _renderProcess();
+		void _executeRenderTick();
 
 	public:
-		/**
-		 * @brief Constructs the Application object.
-		 */
 		Application(const std::wstring& p_title, const spk::Vector2Int& p_size);
+		~Application();
 
-		/**
-		 * @brief Destructs the Application object.
-		 */
-		virtual ~Application();
+		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath)
+		{
+			auto result = std::make_shared<spk::Widget::Canvas>(p_configurationFilePath);
 
-		/**
-		 * @brief Runs the application.
-		 *
-		 * @return The error code after the application finishes running.
-		 */
-		int run();
+			result->setGeometry(spk::Vector2Int(0, 0), _GAPIM.window().size());
 
-		/**
-		 * @brief Quits the application with a specific error code.
-		 *
-		 * @param p_errorCode The error code with which the application should quit.
-		 */
-		void quit(int p_errorCode);
+			return (result);
+		}
 
-		/**
-		 * @brief Load a new canvas into the application.
-		 * @param p_configurationFilePath The path to the canvas configuration file.
-		 * @return The newly created canvas widget.
-		*/
-		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath);
-
-		/**
-		 * @brief Add a new widget inside the application, with the central widget as parent.
-		 *
-		 * @tparam TChildrenType The type of the children widget.
-		 * @tparam Args The types of the arguments for constructing the children widget.
-		 * @param p_args The arguments for constructing the children widget.
-		 * @return Pointer to the children widget.
-		 */
 		template <typename TChildrenType, typename ... Args>
 		std::shared_ptr<TChildrenType> addRootWidget(Args&& ... p_args)
 		{
@@ -116,27 +65,15 @@ namespace spk
 			return (result);
 		}
 
-		/**
-		 * @brief Resizes the application window and central widget.
-		 *
-		 * @param p_size The new size of the window and central widget.
-		 */
-		void resize(const spk::Vector2Int& p_size);
+		int run();
 
-		/**
-		 * @brief Return the current size of the Window.
-		*/
-		const spk::Vector2UInt& size() const;
-
-		/**
-		 * @brief Set the maximum number of FPS reachable by the application
-		*/
-		void setMaxFPS(const size_t& p_maxFPS);
+		void quit(int p_errorID);
 
 		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
 
-		const spk::Window& window() const {return (_GAPIM.window());}
-		const spk::Keyboard& keyboard() const {return (_keyboardModule.keyboard());}
-		const spk::Mouse& mouse() const { return (_mouseModule.mouse()); }
-	};
+		spk::Window& window();
+		const spk::Vector2UInt& size() const;
+		const spk::Mouse& mouse() const;
+		const spk::Keyboard& keyboard() const;
+	};	
 }

@@ -1,28 +1,32 @@
 #include "threading/spk_thread.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
-	Thread::~Thread()
-	{
-		join();
-	}
+    void Thread::configure(const std::wstring& p_name)
+    {
+        spk::cout.setPrefix(p_name);
+        spk::cerr.setPrefix(p_name);
+    }
 
-	void Thread::join()
-	{
-		if (_thread.joinable())
-			_thread.join();
-	}
+    Thread::Thread(const std::wstring& p_name, const std::function<void()>& p_funct) :
+        _innerThread([&, p_funct, p_name](spk::Application* p_application){
+			p_application->setAsInstance();
+            configure(p_name);
+            p_funct();
+        }, spk::Application::instance())
+    {
 
-	void Thread::start()
-	{
-		try
-		{
-			_starterSignal.set_value();
-			while (_isActive == false);
-		}
-		catch(const std::exception&)
-		{
-			throw std::runtime_error("Trying to restart an already launched thread");
-		}
-	}
+    }
+    
+    Thread::~Thread()
+    {
+        join();
+    }
+
+    void Thread::join()
+    {
+        if (_innerThread.joinable())
+            _innerThread.join();
+    }
 }

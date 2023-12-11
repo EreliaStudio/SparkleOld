@@ -2,6 +2,11 @@
 
 namespace spk::Network
 {
+	int Socket::getLastError()
+    {
+        return (WSAGetLastError());
+    }
+	
 	void Socket::connect(SOCKET p_socket)
 	{
 		_socket = p_socket;

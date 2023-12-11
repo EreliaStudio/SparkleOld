@@ -24,9 +24,8 @@ namespace spk::Network
 	private:
 		static const EmiterID MINIMAL_ID_VALUE = 10000; /**< Minimal valid emitter ID value */
 
-		spk::PersistentWorker _socketContextWorker; /**< Persistent worker for socket context */
-		std::shared_ptr<spk::ContractProvider::Contract> _socketListeningContract; /**< Contract for socket listening */
-		std::shared_ptr<spk::ContractProvider::Contract> _readingIncomingMessageContract; /**< Contract for reading incoming messages */
+		spk::PersistentWorker _acceptorPersistantWorker; /**< Persistent worker for accepting new connection */
+		spk::PersistentWorker _messageReceptionWorker; /**< Persistent worker for receiving new message */
 
 		Acceptor _Acceptor; /**< The server socket acceptor */
         spk::Network::Socket::FileDescriptor _maxFDs = Socket::SocketError;
@@ -45,6 +44,9 @@ namespace spk::Network
 
 		void _treatMessage(const EmiterID& p_emiterID, const spk::Network::Message& p_msg); /**< Function to process a received message */
 		long long _findValidID(); /**< Function to find a valid ID for a new client */
+
+        void _acceptNewConnection();
+        void _receiveNewMessage();
 
 	public:
         /**
