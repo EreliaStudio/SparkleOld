@@ -24,9 +24,9 @@ namespace spk
 		}
 	}
 
-	APIModule::MessagePool::Object APIModule::_obtain(const UINT& p_uMsg)
+	APIModule::Message APIModule::_obtain(const UINT& p_uMsg)
 	{
-		MessagePool::Object result = _messagePool.obtain();
+		Message result = _messagePool.obtain();
 
 		result->clear();
 
@@ -41,20 +41,24 @@ namespace spk
 		{
 		case WM_DESTROY:
 		{
-			_systemQueue.push_back(_obtain(p_uMsg));
+			APIModule::Message newMessage = _obtain(p_uMsg);
+
+			_systemQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MDIRESTORE:
 		case WM_SETFOCUS:
 		case WM_KILLFOCUS:
 		{			
-			_windowQueue.push_back(_obtain(p_uMsg));
+			APIModule::Message newMessage = _obtain(p_uMsg);
+
+			_windowQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_MOVE:
 		case WM_SIZE:
 		{
-			MessagePool::Object newMessage = _obtain(p_uMsg);
+			APIModule::Message newMessage = _obtain(p_uMsg);
 			
 			unsigned int width = LOWORD(p_lParam);
 			unsigned int height = HIWORD(p_lParam);
@@ -73,13 +77,15 @@ namespace spk
 		case WM_MBUTTONUP:
 		case WM_RBUTTONUP:
 		{
-			_mouseQueue.push_back(std::move(_obtain(p_uMsg)));
+			APIModule::Message newMessage = _obtain(p_uMsg);
+
+			_mouseQueue.push_back(std::move(newMessage));
 			break;
 		}
 		case WM_XBUTTONDOWN :
 		case WM_XBUTTONUP :
 		{
-			MessagePool::Object newMessage = _obtain(p_uMsg);
+			APIModule::Message newMessage = _obtain(p_uMsg);
 			
 			short value = GET_XBUTTON_WPARAM (p_wParam);
 
@@ -91,7 +97,7 @@ namespace spk
 		case WM_MOUSEHWHEEL:
 		case WM_MOUSEWHEEL:
 		{
-			MessagePool::Object newMessage = _obtain(p_uMsg);
+			Message newMessage = _obtain(p_uMsg);
 			
 			short value = GET_WHEEL_DELTA_WPARAM(p_wParam);
 
@@ -102,7 +108,7 @@ namespace spk
 		}
 		case WM_MOUSEMOVE:
 		{
-			MessagePool::Object newMessage = _obtain(p_uMsg);
+			Message newMessage = _obtain(p_uMsg);
 			
 			int x = LOWORD(p_lParam);
 			int y = HIWORD(p_lParam);
@@ -122,7 +128,7 @@ namespace spk
 		case WM_SYSKEYDOWN:
 		case WM_SYSKEYUP:
 		{
-			MessagePool::Object newMessage = _obtain(p_uMsg);
+			Message newMessage = _obtain(p_uMsg);
 			
 			if (p_wParam == VK_F4 && (p_lParam & (1 << 29)))
 			{

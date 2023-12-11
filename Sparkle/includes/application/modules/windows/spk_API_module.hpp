@@ -18,6 +18,7 @@ namespace spk
 	{
 	private:
 		using MessagePool = spk::Pool<spk::DataBuffer>; ///< Type definition for pool of DataBuffer.
+		using Message = spk::Pool<spk::DataBuffer>::Object;
 
 		MessagePool _messagePool;
 

@@ -51,23 +51,14 @@ namespace spk
 			_instance = this;
 			while (_isRunning == true)
 			{
-			DEBUG_LINE();
 				_timeModule.updateTimeMetrics();
-			DEBUG_LINE();
 				_systemModule.treatMessage();
-			DEBUG_LINE();
 				_GAPIM.treatMessage();
-			DEBUG_LINE();
 				_mouseModule.treatMessage();
-			DEBUG_LINE();
 				_keyboardModule.treatMessage();
-			DEBUG_LINE();
 				_widgetModule.update();
-			DEBUG_LINE();
 				_mouseModule.updateMouse();
-			DEBUG_LINE();
 				_keyboardModule.updateKeyboard();
-			DEBUG_LINE();
 			}
 		});
 

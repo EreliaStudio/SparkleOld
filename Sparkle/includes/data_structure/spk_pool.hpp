@@ -58,7 +58,7 @@ namespace spk
 
             _preallocatedElements.pop_front();
 
-            return std::move(item);
+            return (std::move(item));
         }
     };
 }

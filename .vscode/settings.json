@@ -94,7 +94,8 @@
         "string_view": "cpp",
         "numbers": "cpp",
         "semaphore": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "bitset": "cpp"
     },
     "cmake.generator": "Ninja",
     "cmake.configureSettings": {
