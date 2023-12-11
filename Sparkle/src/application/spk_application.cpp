@@ -1,5 +1,4 @@
 #include "application/spk_application.hpp"
-#include "widget/spk_widget_input_group_manager.hpp"
 #include "spk_basic_functions.hpp"
 #include "graphics/spk_window.hpp"
 #include "threading/spk_thread.hpp"
@@ -18,6 +17,7 @@ namespace spk
 		_keyboardModule(_APIModule.keyboardQueue()),
 		_widgetModule()
 	{		
+		_instance = this;
 		resize(p_size);
 	}
 
@@ -48,6 +48,7 @@ namespace spk
 		_isRunning = true;
 
 		spk::Thread updaterThread(spk::Thread::LaunchMethod::Delayed, L"Updater", [&](){
+			_instance = this;
 			while (_isRunning == true)
 			{
 				_timeModule.updateTimeMetrics();
@@ -61,6 +62,7 @@ namespace spk
 			}
 		});
 
+		_instance = this;
 		_renameThread(L"Renderer");
 		updaterThread.start();
 		_initializeShaders();
@@ -102,16 +104,21 @@ namespace spk
 
 	void Application::resize(const spk::Vector2Int &p_size)
 	{
-		spk::Singleton<spk::Window>::instance()->resize(p_size);
+		_GAPIM.resize(p_size);
 	}
 	
 	const spk::Vector2UInt& Application::size() const
 	{
-		return (spk::Window::instance()->size());
+		return (_GAPIM.window().size());
 	}
 
 	void Application::setMaxFPS(const size_t& p_maxFPS)
 	{
 		_timeModule.setMaxFPS(p_maxFPS);
+	}
+
+	void Application::setKeyboardLayout(const spk::Keyboard::Layout& p_mapping)
+	{
+		_keyboardModule.keyboard().setLayout(p_mapping);
 	}
 }

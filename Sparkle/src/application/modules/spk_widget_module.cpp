@@ -2,7 +2,7 @@
 #include "iostream/spk_iostream.hpp"
 #include "widget/spk_widget_atlas.hpp"
 #include "spk_basic_functions.hpp"
-#include "graphics/spk_window.hpp"
+#include "application/spk_application.hpp"
 #include <cstring>
 
 namespace spk
@@ -50,7 +50,7 @@ namespace spk
 				(*it)->parent()->viewport().activate();
 			}
 			else
-				Viewport::resetViewport(spk::Window::instance()->size());
+				Viewport::resetViewport(spk::Application::instance()->window().size());
 			if ((*it)->_isOperationnal == true)
 				(*it)->_render();
 		}

@@ -1,6 +1,6 @@
 #include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_atlas.hpp"
-#include "graphics/spk_window.hpp"
+#include "application/spk_application.hpp"
 #include "iostream/spk_iostream.hpp"
 
 namespace spk::Widget
@@ -91,7 +91,7 @@ namespace spk::Widget
 
 	void Interface::_computeResizeRatio()
 	{
-		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
+		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Application::instance()->window().size() : parent()->viewport().area().size());
 		
 		_anchorRatio = spk::Vector2(
 			(anchor().x != 0 ? anchor().x / static_cast<float>(areaSize.x) : 0),
@@ -106,7 +106,7 @@ namespace spk::Widget
 
 	void Interface::_applyResizeOperation()
 	{
-		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Window::instance()->size() : parent()->viewport().area().size());
+		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Application::instance()->window().size() : parent()->viewport().area().size());
 		
 		_viewport.setGeometry(spk::Area(areaSize * _anchorRatio, areaSize * _sizeRatio));
 		_geometryEdited = true;

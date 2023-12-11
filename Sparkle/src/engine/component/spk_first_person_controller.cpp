@@ -1,9 +1,9 @@
 #include "engine/component/spk_first_person_controller_component.hpp"
-#include "input/spk_key_input.hpp"
-#include "input/spk_mouse_motion_input.hpp"
-#include "input/spk_mouse_input.hpp"
 #include "engine/spk_game_object.hpp"
-#include "graphics/spk_window.hpp"
+#include "application/spk_application.hpp"
+#include "input/spk_key_input.hpp"
+#include "input/spk_mouse_input.hpp"
+#include "input/spk_mouse_motion_input.hpp"
 
 namespace spk
 {
@@ -30,24 +30,22 @@ namespace spk
 
 	void FirstPersonController::_startCameraRotation()
     {
-        _lastMousePosition = spk::Mouse::instance()->position();
+        _lastMousePosition = spk::Application::instance()->mouse().position();
     }
 
     void FirstPersonController::_applyCameraRotation()
     {
-        if (spk::Mouse::instance()->position() == _lastMousePosition)
+        if (spk::Application::instance()->mouse().position() == _lastMousePosition)
             return ;
 
-        spk::Vector2Int deltaMousePosition = spk::Mouse::instance()->position() - _lastMousePosition;
+        spk::Vector2Int deltaMousePosition = spk::Application::instance()->mouse().position() - _lastMousePosition;
 
         spk::Vector3 rotation = spk::Vector3(-deltaMousePosition.y, -deltaMousePosition.x, 0) * spk::TimeMetrics::instance()->deltaTime() * _rotationSpeed;
 
         owner()->transform()->rotate(rotation);
 
-        _lastMousePosition = spk::Mouse::instance()->position();
+        _lastMousePosition = spk::Application::instance()->mouse().position();
     }
-
-                    // spk::Mouse::instance()->place(spk::Vector2Int(spk::Window::instance()->size() / spk::Vector2UInt(2, 2)));
 
 	FirstPersonController::FirstPersonController() :
 		Component(L"FirstPersonController"),

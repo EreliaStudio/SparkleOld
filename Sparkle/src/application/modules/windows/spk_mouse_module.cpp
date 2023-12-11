@@ -5,7 +5,6 @@ namespace spk
 {
 	void MouseModule::_handleMessage(SystemMessage& p_event)
 	{
-
 		unsigned int messageId;
 		*p_event >> messageId;
 
@@ -13,34 +12,34 @@ namespace spk
 		{
 		case WM_LBUTTONDOWN:
 		{
-			Singleton<Mouse>::instance()->pressButton(Mouse::Left);
+			_mouse.pressButton(Mouse::Left);
 			break;
 		}
 		case WM_MBUTTONDOWN:
 		{
-			Singleton<Mouse>::instance()->pressButton(Mouse::Middle);
+			_mouse.pressButton(Mouse::Middle);
 			break;
 		}
 		case WM_RBUTTONDOWN:
 		{
-			Singleton<Mouse>::instance()->pressButton(Mouse::Right);
+			_mouse.pressButton(Mouse::Right);
 			break;
 		}
 		case WM_LBUTTONUP:
 		{
-			Singleton<Mouse>::instance()->releaseButton(Mouse::Left);
+			_mouse.releaseButton(Mouse::Left);
 
 			break;
 		}
 		case WM_MBUTTONUP:
 		{
-			Singleton<Mouse>::instance()->releaseButton(Mouse::Middle);
+			_mouse.releaseButton(Mouse::Middle);
 
 			break;
 		}
 		case WM_RBUTTONUP:
 		{
-			Singleton<Mouse>::instance()->releaseButton(Mouse::Right);
+			_mouse.releaseButton(Mouse::Right);
 
 			break;
 		}
@@ -52,11 +51,11 @@ namespace spk
 
 			if (value == MK_XBUTTON1)
 			{
-				Singleton<Mouse>::instance()->pressButton(Mouse::Button3);
+				_mouse.pressButton(Mouse::Button3);
 			}
 			else
 			{
-				Singleton<Mouse>::instance()->pressButton(Mouse::Button4);
+				_mouse.pressButton(Mouse::Button4);
 			}
 			break;
 		}
@@ -68,11 +67,11 @@ namespace spk
 
 			if (value == MK_XBUTTON1)
 			{
-				Singleton<Mouse>::instance()->releaseButton(Mouse::Button3);
+				_mouse.releaseButton(Mouse::Button3);
 			}
 			else
 			{
-				Singleton<Mouse>::instance()->releaseButton(Mouse::Button4);
+				_mouse.releaseButton(Mouse::Button4);
 			}
 
 			break;
@@ -83,7 +82,7 @@ namespace spk
 
 			*p_event >> value;
 
-			Singleton<Mouse>::instance()->editWheelPosition(Vector2Int(0, (int)value));
+			_mouse.editWheelPosition(Vector2Int(0, (int)value));
 
 			break;
 		}
@@ -93,7 +92,7 @@ namespace spk
 
 			*p_event >> value;
 			
-			Singleton<Mouse>::instance()->editWheelPosition(Vector2Int((int)value, 0));
+			_mouse.editWheelPosition(Vector2Int((int)value, 0));
 
 			break;
 		}
@@ -104,25 +103,26 @@ namespace spk
 			*p_event >> newPosX;
 			*p_event >> newPosY;
 		
-			Singleton<Mouse>::instance()->setMousePosition(Vector2Int(newPosX, newPosY));
+			_mouse.setMousePosition(Vector2Int(newPosX, newPosY));
 
 			break;
 		}
 		}
 	}
 
-	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
+	MouseModule::MouseModule(ThreadSafeQueue<SystemMessage> &p_queue) :
+		IMessageConsumerModule(p_queue)
 	{
-		spk::Singleton<spk::Mouse>::instanciate();
+
 	}
 
 	MouseModule::~MouseModule()
 	{
-		spk::Singleton<spk::Mouse>::release();
+
 	}
 
 	void MouseModule::updateMouse()
 	{
-		Singleton<Mouse>::instance()->update();
+		_mouse.update();
 	}
 }

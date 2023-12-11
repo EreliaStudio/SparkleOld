@@ -1,6 +1,7 @@
 #pragma once
 
 #include "application/modules/spk_message_consumer_module.hpp"
+#include "input/spk_keyboard.hpp"
 
 namespace spk
 {
@@ -13,6 +14,8 @@ namespace spk
 	class KeyboardModule : public IMessageConsumerModule
 	{
 	private:
+		spk::Keyboard _keyboard;
+
 		/**
 		 * @brief Handles a system message.
 		 * 
@@ -37,5 +40,8 @@ namespace spk
 		 * @brief Updates the keyboard state.
 		 */
 		void updateKeyboard();
+
+		spk::Keyboard& keyboard() {return (_keyboard);}
+		const spk::Keyboard& keyboard() const {return (_keyboard);}
 	};
 }

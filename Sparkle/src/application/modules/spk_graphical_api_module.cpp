@@ -5,23 +5,30 @@
 
 namespace spk
 {
-	GraphicalAPIModule::GraphicalAPIModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) : IMessageConsumerModule(p_queue)
+	GraphicalAPIModule::GraphicalAPIModule(spk::ThreadSafeQueue<SystemMessage> &p_queue, const std::wstring& p_title, const spk::Vector2Int& p_size, void *p_apiModule) :
+		IMessageConsumerModule(p_queue),
+		_window(p_title, p_size, p_apiModule)
 	{
-		Window::instanciate(p_title, p_size, p_apiModule);
+
 	}
 
 	GraphicalAPIModule::~GraphicalAPIModule()
 	{
-		Window::release();
+
 	}
 
 	void GraphicalAPIModule::render()
 	{
-		Window::instance()->render();
+		_window.render();
 	}
 
 	void GraphicalAPIModule::clear()
 	{
-		Window::instance()->clear();
+		_window.clear();
+	}
+
+	void GraphicalAPIModule::resize(const spk::Vector2UInt& p_newSize)
+	{
+		_window.resize(p_newSize);
 	}
 }

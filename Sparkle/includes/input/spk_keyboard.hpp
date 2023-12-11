@@ -13,9 +13,8 @@ namespace spk
 	 * @brief Singleton class for keyboard inputs.
 	 * @details This class handles keyboard inputs and provides key mapping and layout configuration.
 	 */
-	class Keyboard : public spk::Singleton<Keyboard>
+	class Keyboard
 	{
-		friend class spk::Singleton<Keyboard>;
 		friend class KeyboardModule;
 
 	public:
@@ -119,10 +118,10 @@ namespace spk
 		Mapping _mapping[2];
 		InputState _keys[Key::SIZE];
 		std::vector<Key> _keysToUpdate;
-
+	public:
 		Keyboard();
 
-	   /**
+	    /**
 		 * @brief Registers a key press event.
 		 * @param p_key The key that was pressed.
 		 */
@@ -139,7 +138,6 @@ namespace spk
 		 */
 		void update();
 
-	public:
 		/**
 		 * @brief Sets the layout of the keyboard.
 		 * @param p_layout The layout to set.

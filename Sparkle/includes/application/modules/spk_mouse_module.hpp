@@ -1,6 +1,7 @@
 #pragma once
 
 #include "application/modules/spk_message_consumer_module.hpp"
+#include "input/spk_mouse.hpp"
 
 namespace spk
 {
@@ -13,6 +14,8 @@ namespace spk
 	class MouseModule : public IMessageConsumerModule
 	{
 	private:
+		spk::Mouse _mouse;
+
 		/**
 		 * @brief Handles a system message.
 		 *
@@ -42,6 +45,9 @@ namespace spk
 		 * @brief Updates the mouse delta position.
 		 */
 		void updateMouseDeltaPosition();
+
+		spk::Mouse& mouse() { return (_mouse); }
+		const spk::Mouse& mouse() const { return (_mouse); }
 	};
 
 }

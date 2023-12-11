@@ -23,6 +23,11 @@ namespace spk
 	class Application
 	{
 	private:
+		thread_local static inline Application* _instance = nullptr;
+	public:
+		static Application* instance(){ return (_instance); }
+
+	private:
 		const std::function<void()> _updaterJob;
 
 		spk::APIModule _APIModule; ///< API module instance.
@@ -127,5 +132,11 @@ namespace spk
 		 * @brief Set the maximum number of FPS reachable by the application
 		*/
 		void setMaxFPS(const size_t& p_maxFPS);
+
+		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
+
+		const spk::Window& window() const {return (_GAPIM.window());}
+		const spk::Keyboard& keyboard() const {return (_keyboardModule.keyboard());}
+		const spk::Mouse& mouse() const { return (_mouseModule.mouse()); }
 	};
 }

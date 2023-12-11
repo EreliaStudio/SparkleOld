@@ -34,7 +34,7 @@ namespace spk
 		 * @return true if the function execution is needed, false otherwise.
 		 */
 		bool _isExecutionNeeded() {
-			return (spk::Keyboard::instance()->inputStatus(_key) == _expectedStatus);
+			return (spk::Application::instance()->keyboard().inputStatus(_key) == _expectedStatus);
 		}
 
 	public:

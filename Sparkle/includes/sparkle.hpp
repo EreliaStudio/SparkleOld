@@ -83,7 +83,6 @@
 #include "input/spk_mouse_motion_input.hpp"
 #include "input/spk_mouse_input.hpp"
 #include "input/spk_key_input.hpp"
-#include "input/spk_input_group.hpp"
 
 #include "miscellaneous/JSON/spk_JSON_object.hpp"
 #include "miscellaneous/JSON/spk_JSON_file.hpp"

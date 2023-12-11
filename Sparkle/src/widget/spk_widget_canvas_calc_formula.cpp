@@ -1,5 +1,5 @@
 #include "widget/spk_widget_canvas.hpp"
-#include "graphics/spk_window.hpp"
+#include "application/spk_application.hpp"
 #include <stack>
 
 namespace spk::Widget
@@ -101,10 +101,10 @@ namespace spk::Widget
 		std::map<std::wstring, int> variables {
 			{ L"CellX", size().x / _gridSize.x },
 			{ L"CellY", size().y / _gridSize.y },
-			{ L"ScreenX", spk::Window::instance()->size().x },
-			{ L"ScreenY", spk::Window::instance()->size().y },
-			{ L"ParentX", p_target->parent() ? p_target->parent()->size().x : spk::Window::instance()->size().x },
-			{ L"ParentY", p_target->parent() ? p_target->parent()->size().y : spk::Window::instance()->size().y },
+			{ L"ScreenX", spk::Application::instance()->window().size().x },
+			{ L"ScreenY", spk::Application::instance()->window().size().y },
+			{ L"ParentX", p_target->parent() ? p_target->parent()->size().x : spk::Application::instance()->window().size().x },
+			{ L"ParentY", p_target->parent() ? p_target->parent()->size().y : spk::Application::instance()->window().size().y },
 		};
 
 		for (const auto& [key, value] : variables)
