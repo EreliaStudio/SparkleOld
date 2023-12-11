@@ -57,4 +57,9 @@ namespace spk
 	{
 		_keyboard.update();
 	}
+
+	void KeyboardModule::setKeyboardLayout(const spk::Keyboard::Layout& p_layout)
+	{
+		_keyboard.setLayout(p_layout);
+	}
 }

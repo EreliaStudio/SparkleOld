@@ -3,33 +3,14 @@
 
 namespace spk
 {
-	PersistentWorker::PersistentWorker(const std::wstring &p_name) :
-		Thread(LaunchMethod::Delayed, p_name, [&]()
-		{
-			while (_isRunning)
-			{
-				if (_isPaused == true)
-					continue;
-
-				for (const auto &job : _jobs)
-				{
-					try 
-					{
-						if (job != nullptr)
-							job();
-					}
-					catch (std::exception& e)
-					{
-						redirectException(e, _activeJobName);
-						_isRunning = false;
-					}
-				}
-			}
-		}),
-		_jobs(),
+	PersistentWorker::PersistentWorker(const std::wstring& p_threadName, const Job& p_job) :
 		_isRunning(false),
-		_isPaused(false)
+		Thread(p_threadName, [&, p_job]() {
+			_starterSignal.get_future().wait();
+			_runJob(p_job);
+		})
 	{
+		
 	}
 
 	PersistentWorker::~PersistentWorker()
@@ -37,49 +18,24 @@ namespace spk
 		stop();
 	}
 
-	std::shared_ptr<ContractProvider::Contract> PersistentWorker::addJob(const std::wstring &p_jobName, const PersistentWorker::Job &p_job)
-	{
-		std::function<void()> funct = [this, p_jobName, p_job]()
-		{
-			_activeJobName = &p_jobName;
-			p_job();
-			_activeJobName = nullptr;
-		};
-		return (ContractProvider::subscribe(_jobs, funct));
-	}
-
-	/**
-	 * @brief Start the thread that handle the jobs.
-	 *
-	 * @warning start will throw an exception if the thread is already running
-	 */
 	void PersistentWorker::start()
 	{
-		_isRunning = true;
-		_isPaused = false;
-		try
-		{
-			Thread::start();
-		}
-		catch (...)
-		{
-			throw;
-		}
+		_starterSignal.set_value();
 	}
 
 	void PersistentWorker::stop()
 	{
 		_isRunning = false;
-		Thread::join();
+		join();
 	}
 
-	void PersistentWorker::pause()
+	void PersistentWorker::_runJob(const Job& p_job)
 	{
-		_isPaused = true;
-	}
+		_isRunning = true;
 
-	void PersistentWorker::resume()
-	{
-		_isPaused = false;
+		while (_isRunning == true)
+		{
+			p_job();
+		}
 	}
 }

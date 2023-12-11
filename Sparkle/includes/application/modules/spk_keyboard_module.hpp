@@ -40,6 +40,8 @@ namespace spk
 		 * @brief Updates the keyboard state.
 		 */
 		void updateKeyboard();
+		
+		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
 
 		spk::Keyboard& keyboard() {return (_keyboard);}
 		const spk::Keyboard& keyboard() const {return (_keyboard);}

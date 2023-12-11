@@ -26,109 +26,116 @@ namespace spk::Network
 		return (id);
 	}
 
-	Server::Server() : _socketContextWorker(L"Server Socket")
-	{
-		FD_ZERO(&_readingFDs);
-
-		_socketListeningContract = _socketContextWorker.addJob(L"Accepting new connection", [&]()
+        void Server::_acceptNewConnection()
+		{
+			Socket newSocket;
+			if (_Acceptor.accept(newSocket) == true)
 			{
-				Socket newSocket;
-				if (_Acceptor.accept(newSocket) == true)
-				{
-					FD_SET(newSocket.fileDescriptor(), &_readingFDs);
-					
-					if (_maxFDs == Socket::SocketError || newSocket.fileDescriptor() > _maxFDs)
-					{
-						_maxFDs = newSocket.fileDescriptor();
-					}
-
-					EmiterID newId = _findValidID();
-					_clients[newId] = std::move(newSocket);
-					if (_onNewConnectionCallback != nullptr)
-					{
-						_onNewConnectionCallback(newId);
-					}
-				}
-			});
-
-		_readingIncomingMessageContract = _socketContextWorker.addJob(L"Reading incoming message", [&]()
-			{
-				if (_maxFDs == -1)
-					return ;
+				FD_SET(newSocket.fileDescriptor(), &_readingFDs);
 				
-				struct timeval timeout;
-				timeout.tv_sec = 1;
-				timeout.tv_usec = 0;
-
-				fd_set socketToRead = _readingFDs;
-
-				int activity = ::select(static_cast<int>(_maxFDs) + 1, &socketToRead, nullptr, nullptr, &timeout);
-
-				if (activity == Socket::SocketError)
+				if (_maxFDs == Socket::SocketError || newSocket.fileDescriptor() > _maxFDs)
 				{
-					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(getLastSocketErrorValue()) + L"]");
+					_maxFDs = newSocket.fileDescriptor();
 				}
-				else if (activity == 0)
-				{
-					return ;
-				}
-				else
-				{
-					spk::Network::Message newMessage;
 
-					for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
+				EmiterID newId = _findValidID();
+				_clients[newId] = std::move(newSocket);
+				if (_onNewConnectionCallback != nullptr)
+				{
+					_onNewConnectionCallback(newId);
+				}
+			}
+		}
+        
+		void Server::_receiveNewMessage()
+		{
+			if (_maxFDs == -1)
+				return ;
+			
+			struct timeval timeout;
+			timeout.tv_sec = 1;
+			timeout.tv_usec = 0;
+
+			fd_set socketToRead = _readingFDs;
+
+			int activity = ::select(static_cast<int>(_maxFDs) + 1, &socketToRead, nullptr, nullptr, &timeout);
+
+			if (activity == Socket::SocketError)
+			{
+				spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(Socket::getLastError()) + L"]");
+			}
+			else if (activity == 0)
+			{
+				return ;
+			}
+			else
+			{
+				spk::Network::Message newMessage;
+
+				for (auto it = _clients.begin(), next_it = it; it != _clients.end(); it = next_it)
+				{
+					if (it->second.isConnected() == true && 
+						FD_ISSET(it->second.fileDescriptor(), &socketToRead))
 					{
-						if (it->second.isConnected() == true && 
-							FD_ISSET(it->second.fileDescriptor(), &socketToRead))
+						Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
+						
+						try
 						{
-							Socket::ReadResult readStatus = Socket::ReadResult::NothingToRead;
-							
-							try
-							{
-								readStatus = it->second.receive(newMessage);
-							}
-							catch(...)
-							{
-								readStatus = Socket::ReadResult::Closed;
-							}
+							readStatus = it->second.receive(newMessage);
+						}
+						catch(...)
+						{
+							readStatus = Socket::ReadResult::Closed;
+						}
 
-							++next_it;
+						++next_it;
 
-							switch (readStatus)
-							{
-							case Socket::ReadResult::Timeout:
-							case Socket::ReadResult::Closed:
-								if (_onConnectionDisconnectionCallback != nullptr)
-									_onConnectionDisconnectionCallback(it->first);
-								_clients.erase(it);
-								break;
-							case Socket::ReadResult::Success:
-								_messagesToTreat.push_back(std::make_pair(it->first, std::move(newMessage)));
-								break;
-							}
+						switch (readStatus)
+						{
+						case Socket::ReadResult::Timeout:
+						case Socket::ReadResult::Closed:
+							if (_onConnectionDisconnectionCallback != nullptr)
+								_onConnectionDisconnectionCallback(it->first);
+							_clients.erase(it);
+							break;
+						case Socket::ReadResult::Success:
+							_messagesToTreat.push_back(std::make_pair(it->first, std::move(newMessage)));
+							break;
 						}
 					}
 				}
-			});
+			}
+		}
 
-		_socketContextWorker.start();
-		_socketContextWorker.pause();
+	Server::Server() :
+		_acceptorPersistantWorker(L"Acceptor thread", [&]()
+			{
+				_acceptNewConnection();
+			}),
+		_messageReceptionWorker(L"Server thread", [&]()
+			{
+				_receiveNewMessage();
+			})
+	{
+		FD_ZERO(&_readingFDs);
 	}
 
 	Server::~Server()
 	{
-		_socketContextWorker.stop();
+		stop();
 	}
 
 	void Server::start(const size_t& p_serverPort)
 	{
 		_Acceptor.start(p_serverPort);
-		_socketContextWorker.resume();
+		_acceptorPersistantWorker.start();
+		_messageReceptionWorker.start();
 	}
 
 	void Server::stop()
 	{
-		_socketContextWorker.pause();
+		_acceptorPersistantWorker.stop();
+		_messageReceptionWorker.stop();
 		_Acceptor.stop();
 	}
 

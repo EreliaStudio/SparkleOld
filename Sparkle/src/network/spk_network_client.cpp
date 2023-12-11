@@ -15,58 +15,55 @@ namespace spk::Network
 		}
 	}
 
-	Client::Client() : _socketContextWorker(L"Client socket")
+	void Client::_receiveMessage()
 	{
-		_readingSocketDataContract = _socketContextWorker.addJob(L"Reading message", [&]()
+		struct timeval timeout;
+		timeout.tv_sec = 1;
+		timeout.tv_usec = 0;
+
+		fd_set socketToRead;
+		FD_ZERO(&socketToRead);
+		FD_SET(_socket.fileDescriptor(), &socketToRead);
+
+		int activity = ::select(static_cast<int>(_socket.fileDescriptor()) + 1, &socketToRead, nullptr, nullptr, &timeout);
+
+		if (activity == Socket::SocketError)
+		{
+			spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(Socket::getLastError()) + L"]");
+		}
+		else if (activity == 0)
+		{
+			return ;
+		}
+		else
+		{
+			spk::Network::Message newMessage;
+
+			if (_socket.isConnected() == true && 
+				FD_ISSET(_socket.fileDescriptor(), &socketToRead))
 			{
-				struct timeval timeout;
-				timeout.tv_sec = 1;
-				timeout.tv_usec = 0;
+				Socket::ReadResult readStatus = _socket.receive(newMessage);
 
-				fd_set socketToRead;
-				FD_ZERO(&socketToRead);
-				FD_SET(_socket.fileDescriptor(), &socketToRead);
-
-				int activity = ::select(static_cast<int>(_socket.fileDescriptor()) + 1, &socketToRead, nullptr, nullptr, &timeout);
-
-				if (activity == Socket::SocketError)
+				switch (readStatus)
 				{
-					spk::throwException(L"Error while receiving message inside server process [" + std::to_wstring(getLastSocketErrorValue()) + L"]");
+					case Socket::ReadResult::Closed:
+						spk::cout << "Require closing socket" << std::endl;
+						_socket.close();
+						break;
+					case Socket::ReadResult::Success:
+						_messagesToTreat.push_back(std::move(newMessage));
+						break;
 				}
-				else if (activity == 0)
-				{
-					return ;
-				}
-				else
-				{
-					spk::Network::Message newMessage;
+			}
+		}
+	}
 
-					if (_socket.isConnected() == true && 
-						FD_ISSET(_socket.fileDescriptor(), &socketToRead))
-					{
-						Socket::ReadResult readStatus = _socket.receive(newMessage);
-
-						switch (readStatus)
-						{
-							case Socket::ReadResult::Closed:
-								spk::cout << "Require closing socket" << std::endl;
-								_socket.close();
-								break;
-							case Socket::ReadResult::Success:
-								_messagesToTreat.push_back(std::move(newMessage));
-								break;
-						}
-					}
-				}
-
-
-
-
-
-				
-			});
+	Client::Client() : _socketContextWorker(L"Client socket", [&]()
+			{
+				_receiveMessage();
+			})
+	{
 		_socketContextWorker.start();
-		_socketContextWorker.pause();
 	}
 
 	Client::~Client()
@@ -86,9 +83,6 @@ namespace spk::Network
 
 	void Client::treatMessages()
 	{
-		if (_socket.isConnected() == true)
-			_socketContextWorker.resume();
-
 		while (_messagesToTreat.empty() == false)
 		{
 			_treatMessage(_messagesToTreat.pop_front());

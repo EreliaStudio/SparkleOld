@@ -1,13 +1,21 @@
 #include "application/spk_application.hpp"
-#include "spk_basic_functions.hpp"
-#include "graphics/spk_window.hpp"
+
 #include "threading/spk_thread.hpp"
+
 #include "engine/component/spk_mesh_renderer_component.hpp"
 
 namespace spk
 {
+	void Application::_initialisationProcess()
+	{
+		_errorID = 0;
+		_isRunning = true;
+
+		MeshRenderer::initializeMeshRendererShader();
+	}
+
 	Application::Application(const std::wstring& p_title, const spk::Vector2Int& p_size) :
-		_errorCode(0),
+		_errorID(0),
 		_isRunning(false),
 		_APIModule(),
 		_timeModule(),
@@ -16,111 +24,54 @@ namespace spk
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
 		_widgetModule()
-	{		
-		_instance = this;
-		resize(p_size);
+	{
+		setAsInstance();
 	}
 
 	Application::~Application()
 	{
-		_isRunning = false;
-	}
-
-	void Application::_renameThread(const std::wstring& p_threadName)
-	{
-		spk::cout.setPrefix(p_threadName);
-		spk::cerr.setPrefix(p_threadName);
-	}
 		
-	bool Application::isRunning() const
-	{
-		return (_isRunning);
-	}
-
-	void Application::_initializeShaders()
-	{
-		MeshRenderer::initializeMeshRendererShader();
 	}
 
 	int Application::run()
 	{
-		_errorCode = 0;
-		_isRunning = true;
+		_initialisationProcess();
 
-		_initializeShaders();
-		
-		spk::Thread updaterThread(spk::Thread::LaunchMethod::Delayed, L"Updater", [&](){
-			_instance = this;
-			while (_isRunning == true)
-			{
-				_timeModule.updateTimeMetrics();
-				_systemModule.treatMessage();
-				_GAPIM.treatMessage();
-				_mouseModule.treatMessage();
-				_keyboardModule.treatMessage();
-				_widgetModule.update();
-				_mouseModule.updateMouse();
-				_keyboardModule.updateKeyboard();
-			}
-		});
+		spk::Thread updaterThread(L"Updater", [&](){_updateProcess();});
 
-		_instance = this;
-		_renameThread(L"Renderer");
-		updaterThread.start();
-		while (_isRunning)
-		{
-			if (updaterThread.isActive() == false)
-			{
-				quit(1);
-			}
+		_renderProcess();
 
-			_APIModule.pullMessage();
-			_GAPIM.clear();
-			_widgetModule.render();
-			_GAPIM.render();
-			_timeModule.wait();
-		}
-
-		updaterThread.join();
-
-		spk::cout.setPrefix(L"");
-		spk::cerr.setPrefix(L"");
-
-		return _errorCode;
+		return (_errorID);
 	}
 
-	void Application::quit(int p_errorCode)
+	void Application::quit(int p_errorID)
 	{
-		_errorCode = p_errorCode;
+		_errorID = p_errorID;
 		_isRunning = false;
 	}
 
-	std::shared_ptr<spk::Widget::Canvas> Application::addCanvas(const std::filesystem::path& p_configurationFilePath)
+	void Application::setKeyboardLayout(const spk::Keyboard::Layout& p_layout)
 	{
-		auto result = std::make_shared<spk::Widget::Canvas>(p_configurationFilePath);
-
-		result->setGeometry(spk::Vector2Int(0, 0), size());
-
-		return (result);
+		_keyboardModule.setKeyboardLayout(p_layout);
 	}
 
-	void Application::resize(const spk::Vector2Int &p_size)
+	spk::Window& Application::window()
 	{
-		_GAPIM.resize(p_size);
+		return (_GAPIM.window());
 	}
-	
+
 	const spk::Vector2UInt& Application::size() const
 	{
 		return (_GAPIM.window().size());
 	}
-
-	void Application::setMaxFPS(const size_t& p_maxFPS)
-	{
-		_timeModule.setMaxFPS(p_maxFPS);
+	
+	const spk::Mouse& Application::mouse() const
+	{	
+		return (_mouseModule.mouse());
 	}
-
-	void Application::setKeyboardLayout(const spk::Keyboard::Layout& p_mapping)
+	
+	const spk::Keyboard& Application::keyboard() const
 	{
-		_keyboardModule.keyboard().setLayout(p_mapping);
+		return (_keyboardModule.keyboard());
 	}
 }

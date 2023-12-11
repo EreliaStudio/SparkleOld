@@ -33,6 +33,8 @@ namespace spk::Network
         using FileDescriptor = int; /**< A definition for socket's file descriptor*/
         static const FileDescriptor SocketError = -1; /**< A value indicating that the socket is in error state*/
 
+	    static int getLastError();
+
 	private:
 		int _socket = -1;  /**< The socket file descriptor */
 		bool _isConnected = false; /**< Indicates if the socket is currently connected */

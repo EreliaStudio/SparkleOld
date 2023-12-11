@@ -8,6 +8,11 @@
 
 namespace spk::Network
 {
+	int Socket::getLastError()
+    {
+        return (0);
+    }
+
 	void Socket::connect(int p_socket)
 	{
 		_socket = p_socket;
