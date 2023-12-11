@@ -121,13 +121,16 @@ namespace spk
 
 		void _setUnicodeLocale()
 		{
-			if (_localeUpdated == false)
-			{
-				std::locale::global(std::locale(""));
-				std::ios_base::sync_with_stdio(false);
-				std::locale::global(std::locale("C"));
-				_localeUpdated = true;
-			}
+			// if (_localeUpdated == false)
+			// {
+			// 	std::locale::global(std::locale("C"));
+
+			// 	std::ios_base::sync_with_stdio(false);
+
+			// 	std::locale::global(std::locale("C"));
+
+			// 	_localeUpdated = true;
+			// }
 		}
 
 	public:

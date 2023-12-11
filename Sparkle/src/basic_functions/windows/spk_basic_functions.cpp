@@ -5,6 +5,7 @@
 #include <dbghelp.h>
 
 #pragma comment(lib, "dbghelp.lib")
+#pragma comment(lib, "ws2_32")
 
 namespace spk
 {

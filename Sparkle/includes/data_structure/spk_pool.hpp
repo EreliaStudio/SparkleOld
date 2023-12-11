@@ -194,12 +194,10 @@ namespace spk
 		 * This function reserves a number of elements in the pool by creating new instances
 		 * of the template type with the provided arguments.
 		 *
-		 * @tparam Args The types of the arguments.
 		 * @param p_nbElement The number of elements to reserve.
 		 * @param p_args The arguments to construct the elements.
 		 */
-		template <typename... Args>
-		void reserve(size_t p_nbElement, Args &&...p_args)
+		void reserve(size_t p_nbElement)
 		{
 			std::lock_guard<std::recursive_mutex> _lock(_mutex);
 			size_t currentSize = _allocatedObjects.size();
@@ -207,7 +205,7 @@ namespace spk
 			_allocatedObjects.resize(currentSize + p_nbElement);
 			for (size_t i = currentSize; i < p_nbElement; i++)
 			{
-				_allocatedObjects[i] = new TType(std::forward<Args>(p_args)...);
+				_allocatedObjects[i] = new TType();
 			}
 		}
 
@@ -217,16 +215,13 @@ namespace spk
 		 * This function obtains an object from the pool. If there are no available objects,
 		 * a new object is created using the provided arguments.
 		 *
-		 * @tparam Args The types of the arguments.
-		 * @param p_args The arguments to construct the object if necessary.
 		 * @return An Object that manages the obtained object.
 		 */
-		template <typename... Args>
-		Object obtain(Args &&...p_args)
+		Object obtain()
 		{
 			if (_allocatedObjects.size() == 0)
 			{
-				Object result = Object(this, new TType(std::forward<Args>(p_args)...));
+				Object result = Object(this, new TType());
 				return (result);
 			}
 			else
@@ -234,8 +229,6 @@ namespace spk
 				std::lock_guard<std::recursive_mutex> _lock(_mutex);
 				TType *data = _allocatedObjects.back();
 				_allocatedObjects.pop_back();
-
-				*data = TType(std::forward<Args>(p_args)...);
 
 				Object result = Object(this, data);
 				return (result);
