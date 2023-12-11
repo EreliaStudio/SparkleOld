@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.15.2)
 
 set(ProductName "SparkleOpenGL")
 
+list(APPEND CMAKE_PREFIX_PATH "C:/Program Files/glew")
 find_package(GLEW REQUIRED)
 include_directories(${GLEW_INCLUDE_DIRS})
 
@@ -15,7 +16,10 @@ add_library(${ProductName} STATIC ${SOURCE_FILES})
 
 if(UNIX)
 	target_link_libraries(${ProductName} GL xcb X11 X11-xcb)
+else()
+    target_link_libraries(${ProductName} ws2_32 imagehlp)
 endif()
+
 
 target_include_directories(${ProductName} PUBLIC ${INCLUDE_DIRECTORIES})
 
