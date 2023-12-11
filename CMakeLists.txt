@@ -1,21 +1,9 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-include(cmake/createOpenGLSparkleRecipe.cmake)
-include(cmake/createVulkanSparkleRecipe.cmake)
-include(cmake/createExportOpenGLSparkleRecipe.cmake)
-include(cmake/createExportVulkanSparkleRecipe.cmake)
-
 project(Sparkle
     VERSION 1.0
     DESCRIPTION "Graphical application library"
     LANGUAGES CXX)	
-
-if (WIN32)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
-endif()
-
-set(CMAKE_CXX_STANDARD 20)
 
 set(OSBitness 32)
 if (CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -28,22 +16,14 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/archive/${Archit
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/${ArchitectureSufix}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/executable/${ArchitectureSufix}")
 
-if (NOT GraphicalAPI)
-	set (GraphicalAPI "Vulkan")
-endif()
-
-if (NOT (GraphicalAPI STREQUAL "OpenGL" OR GraphicalAPI STREQUAL "Vulkan"))
+if (NOT DEFINED GraphicalAPI)
+    message(FATAL_ERROR "Parameter GraphicalAPI not provided to CMake")
+elseif (NOT (GraphicalAPI STREQUAL "OpenGL" OR GraphicalAPI STREQUAL "Vulkan"))
     message(FATAL_ERROR "Invalid -DGraphicalAPI argument.\nAccepted values: [Vulkan], [OpenGL]")
 endif()
 
-if(GraphicalAPI STREQUAL "OpenGL")
-    createOpenGLRecipe()
-    createExportOpenGLSparkleRecipe()
-else()
-    createVulkanRecipe()
-    createExportVulkanSparkleRecipe()
-endif()
+add_subdirectory(Sparkle)
 
 if (BuildPlayground STREQUAL "ON")
-    add_subdirectory(playground)
+	add_subdirectory(Playground)
 endif()
