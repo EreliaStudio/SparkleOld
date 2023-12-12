@@ -7,6 +7,7 @@
 #include "application/modules/spk_mouse_module.hpp"
 #include "application/modules/spk_keyboard_module.hpp"
 #include "application/modules/spk_widget_module.hpp"
+#include "application/modules/spk_profiler_module.hpp"
 
 #include "widget/spk_widget_interface.hpp"
 #include "widget/spk_widget_canvas.hpp"
@@ -31,6 +32,10 @@ namespace spk
 		spk::GraphicalAPIModule _GAPIM; ///< Window module instance.
 		spk::MouseModule _mouseModule; ///< Mouse module instance.
 		spk::KeyboardModule _keyboardModule; ///< Keyboard module instance.
+
+		spk::ProfilerModule _profilerModule;
+		Counter& _fpsCounter;
+		Counter& _upsCounter;
 
 		spk::WidgetModule _widgetModule; ///< Widget module instance.
 
@@ -71,6 +76,7 @@ namespace spk
 
 		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
 
+		spk::Profiler& profiler();
 		spk::Window& window();
 		const spk::Vector2UInt& size() const;
 		const spk::Mouse& mouse() const;
