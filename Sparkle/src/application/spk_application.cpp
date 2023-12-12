@@ -2,6 +2,8 @@
 
 #include "threading/spk_thread.hpp"
 
+#include "system/spk_timer.hpp"
+
 #include "engine/component/spk_mesh_renderer_component.hpp"
 
 namespace spk
@@ -13,6 +15,36 @@ namespace spk
 
 		MeshRenderer::initializeMeshRendererShader();
 	}
+	
+	void Application::_updateProcess()
+	{
+		while (_isRunning == true)
+		{
+			_upsCounter += 10;
+
+			_executeUpdateTick();
+		}
+	}
+
+	void Application::_renderProcess()
+	{
+		spk::Timer counterTimer(100);
+
+		counterTimer.start();
+
+		while (_isRunning)
+		{
+			_fpsCounter += 10;
+			_executeRenderTick();
+
+			if (counterTimer.isRunning() == false)
+			{
+				_upsCounter.save();
+				_fpsCounter.save();
+				counterTimer.start();
+			}
+		}
+	}
 
 	Application::Application(const std::wstring& p_title, const spk::Vector2Int& p_size) :
 		_errorID(0),
@@ -23,7 +55,10 @@ namespace spk
 		_GAPIM(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
-		_widgetModule()
+		_widgetModule(),
+		_profilerModule(),
+		_fpsCounter(_profilerModule.profiler().metrics<Counter>(L"FPS Counter")),
+		_upsCounter(_profilerModule.profiler().metrics<Counter>(L"UPS Counter"))
 	{
 		setAsInstance();
 	}
@@ -53,6 +88,11 @@ namespace spk
 	void Application::setKeyboardLayout(const spk::Keyboard::Layout& p_layout)
 	{
 		_keyboardModule.setKeyboardLayout(p_layout);
+	}
+
+	spk::Profiler& Application::profiler()
+	{
+		return (_profilerModule.profiler());
 	}
 
 	spk::Window& Application::window()

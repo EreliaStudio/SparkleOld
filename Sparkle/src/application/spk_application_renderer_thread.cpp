@@ -8,14 +8,6 @@ namespace spk
 		_GAPIM.clear();
 		_widgetModule.render();
 		_GAPIM.render();
-		_timeModule.wait();
-	}
-
-	void Application::_renderProcess()
-	{
-		while (_isRunning)
-		{
-			_executeRenderTick();
-		}
+		//_timeModule.wait();
 	}
 }

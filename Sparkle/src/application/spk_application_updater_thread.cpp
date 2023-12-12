@@ -13,12 +13,4 @@ namespace spk
 		_mouseModule.updateMouse();
 		_keyboardModule.updateKeyboard();
 	}
-	
-	void Application::_updateProcess()
-	{
-		while (_isRunning == true)
-		{
-			_executeUpdateTick();
-		}
-	}
 }
