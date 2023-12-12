@@ -46,9 +46,31 @@ namespace spk
 		}
 	}
 
-	Application::Application(const std::wstring& p_title, const spk::Vector2Int& p_size) :
+	void Application::_monothreadProcess()
+	{
+		spk::Timer counterTimer(100);
+
+		while (_isRunning == true)
+		{
+			_fpsCounter += 10;
+			_upsCounter += 10;
+
+			_executeRenderTick();
+			_executeUpdateTick();
+
+			if (counterTimer.isRunning() == false)
+			{
+				_upsCounter.save();
+				_fpsCounter.save();
+				counterTimer.start();
+			}
+		}
+	}
+
+	Application::Application(const std::wstring& p_title, const spk::Vector2Int& p_size, bool p_isMonothread) :
 		_errorID(0),
 		_isRunning(false),
+		_isMonothread(p_isMonothread),
 		_APIModule(),
 		_timeModule(),
 		_systemModule(_APIModule.systemQueue(), this),
@@ -72,9 +94,16 @@ namespace spk
 	{
 		_initialisationProcess();
 
-		spk::Thread updaterThread(L"Updater", [&](){_updateProcess();});
+		if (_isMonothread == true)
+		{
+			_monothreadProcess();
+		}
+		else
+		{
+			spk::Thread updaterThread(L"Updater", [&](){_updateProcess();});
 
-		_renderProcess();
+			_renderProcess();
+		}
 
 		return (_errorID);
 	}

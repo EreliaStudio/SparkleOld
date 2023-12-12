@@ -23,6 +23,7 @@ namespace spk
 
 	private:
 		bool _isRunning = false;
+		bool _isMonothread = false;
 		int _errorID = 0;
 
 		spk::APIModule _APIModule; ///< API module instance.
@@ -47,8 +48,10 @@ namespace spk
 		void _renderProcess();
 		void _executeRenderTick();
 
+		void _monothreadProcess();
+
 	public:
-		Application(const std::wstring& p_title, const spk::Vector2Int& p_size);
+		Application(const std::wstring& p_title, const spk::Vector2Int& p_size, bool p_isMonothread = false);
 		~Application();
 
 		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath)

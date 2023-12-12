@@ -417,7 +417,7 @@ public:
 
 int main()
 {
-    spk::Application app(L"Playground", 900);
+    spk::Application app(L"Playground", 900, false);
     app.setKeyboardLayout(spk::Keyboard::Layout::Azerty);
 
     std::shared_ptr<MainWidget> mainWidget = app.addRootWidget<MainWidget>(L"MainWidget");
