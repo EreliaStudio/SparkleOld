@@ -20,9 +20,9 @@ namespace spk
 	{
 		while (_isRunning == true)
 		{
-			 _upsCounter += 10;
+			_upsCounter += 10;
 
-			 _executeUpdateTick();
+			_executeUpdateTick();
 		}
 	}
 
