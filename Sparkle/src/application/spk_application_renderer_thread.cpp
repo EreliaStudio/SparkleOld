@@ -8,6 +8,6 @@ namespace spk
 		_GAPIM.clear();
 		_widgetModule.render();
 		_GAPIM.render();
-		// _timeModule.wait();
+		_timeModule.wait();
 	}
 }

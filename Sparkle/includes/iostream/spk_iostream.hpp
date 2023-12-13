@@ -56,7 +56,6 @@ namespace spk
 			 * @return 0 on success.
 			 */
 			virtual int sync()
-
 			{
 				std::lock_guard<std::recursive_mutex> lock(_mutex);
 				flush();
@@ -103,6 +102,13 @@ namespace spk
 				}
 			}
 
+			void resetPrefix()
+			{
+				std::lock_guard<std::recursive_mutex> lock(_mutex);
+				_prefix= L"";
+				_maximumPrefixSize = 0;
+			}
+
 			void lock()
 			{
 				_mutex.lock();
@@ -124,11 +130,8 @@ namespace spk
 			// if (_localeUpdated == false)
 			// {
 			// 	std::locale::global(std::locale("C"));
-
 			// 	std::ios_base::sync_with_stdio(false);
-
 			// 	std::locale::global(std::locale("C"));
-
 			// 	_localeUpdated = true;
 			// }
 		}
@@ -153,6 +156,11 @@ namespace spk
 		void setPrefix(const std::wstring& p_prefix)
 		{
 			buffer.setPrefix(p_prefix);
+		}
+
+		void resetPrefix()
+		{
+			buffer.resetPrefix();
 		}
 
 		/**

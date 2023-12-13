@@ -14,6 +14,7 @@ namespace spk
 
     private:
         std::thread _innerThread;
+        bool _isRunning;
 
     public:
         Thread(const std::wstring& p_name, const std::function<void()>& p_funct);
