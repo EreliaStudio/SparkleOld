@@ -53,4 +53,39 @@ namespace spk
          */
         const long long& totalDuration() const;
     };
+
+    /**
+     * @class ScopedTimeConsumptionMetrics
+     * @brief A scope-bound utility class for automatic time measurement.
+     *
+     * ScopedTimeConsumptionMetrics is designed to automatically start and stop time measurement
+     * for a given TimeConsumption instance. When an object of this class is created,
+     * it starts the timer on the associated TimeConsumption instance. When the object goes out of scope
+     * and is destroyed, it stops the timer. This is particularly useful for measuring the duration of
+     * a code block or a function's execution.
+     */
+    class ScopedTimeConsumptionMetrics 
+    {
+    private:
+        TimeConsumption& _target; ///< Reference to the TimeConsumption instance being measured.
+
+    public:
+        /**
+         * @brief Constructs a ScopedTimeConsumptionMetrics object and starts the timer.
+         * @param p_target Reference to a TimeConsumption instance for time measurement.
+         */
+        ScopedTimeConsumptionMetrics(TimeConsumption& p_target) :
+            _target(p_target)
+        {
+            _target.start();
+        }
+
+        /**
+         * @brief Destructs the ScopedTimeConsumptionMetrics object and stops the timer.
+         */
+        ~ScopedTimeConsumptionMetrics()
+        {
+            _target.stop();
+        }
+    };
 }

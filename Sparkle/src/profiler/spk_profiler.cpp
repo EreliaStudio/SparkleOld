@@ -17,6 +17,7 @@ namespace spk
 	{
 		spk::JSON::Object result;
 
+		result.addAttribute(L"Program duration").set<long>(static_cast<long>(spk::TimeMetrics::instance()->programDuration()));
 		for (const auto& metrics : _metrics)
 		{
 			result.addAttribute(metrics.first) = metrics.second->emitReport();

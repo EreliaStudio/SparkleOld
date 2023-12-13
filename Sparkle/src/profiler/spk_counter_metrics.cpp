@@ -12,10 +12,15 @@ namespace spk
 	{
 		spk::JSON::Object result;
 
-		result.addAttribute(L"Min").set<long>(min());
-		result.addAttribute(L"Max").set<long>(max());
-		result.addAttribute(L"Average").set<long>(average());
-		result.addAttribute(L"Cardinal").set<long>(cardinal());
+		if (cardinal() != 0)
+		{
+			result.addAttribute(L"Min").set<long>(min());
+			result.addAttribute(L"Max").set<long>(max());
+			result.addAttribute(L"Average").set<long>(average());
+			result.addAttribute(L"Cardinal").set<long>(cardinal());
+		}
+		else
+			result.set<nullptr_t>(nullptr);
 
 		return (result);
 	}

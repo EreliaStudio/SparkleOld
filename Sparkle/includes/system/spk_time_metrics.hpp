@@ -36,6 +36,16 @@ namespace spk
 		long long _deltaTime;
 
 		/**
+		 * @brief The time mark of the start of the program.
+		 */
+		long long _programStartingTime;
+
+		/**
+		 * @brief The time elapsed since start of the program.
+		 */
+		long long _programDuration;
+
+		/**
 		 * @brief Updates the time metrics.
 		 * 
 		 * This function is used to update the time and delta time variables. 
@@ -60,6 +70,28 @@ namespace spk
 		static long long currentTime();
 
 		/**
+		 * @brief Converts time from nanoseconds to milliseconds.
+		 *
+		 * This function takes a time value in nanoseconds and converts it to milliseconds.
+		 * As there are 1,000,000 nanoseconds in a millisecond, the function divides the input value by 1,000,000.
+		 *
+		 * @param p_nanosecond The time in nanoseconds to be converted.
+		 * @return The time in milliseconds.
+		 */
+		static long long nanosecondToMillisecond(const long long& p_nanosecond);
+
+		/**
+		 * @brief Converts time from milliseconds to nanoseconds.
+		 *
+		 * This function takes a time value in milliseconds and converts it to nanoseconds.
+		 * As there are 1,000,000 nanoseconds in a millisecond, the function multiplies the input value by 1,000,000.
+		 *
+		 * @param p_millisecond The time in milliseconds to be converted.
+		 * @return The time in nanoseconds.
+		 */
+		static long long millisecondToNanosecond(const long long& p_millisecond);
+
+		/**
 		 * @brief Get the total time since the application started.
 		 * 
 		 * This function is used to get the total time since the application started.
@@ -76,6 +108,13 @@ namespace spk
 		 * @return The delta time in milliseconds.
 		 */
 		constexpr const long long& deltaTime() const { return (_deltaTime); }
+
+		/**
+		 * @brief Get the time elapsed since the start of the program.
+		 * 
+		 * @return The delta time since start and now.
+		 */
+		constexpr const long long& programDuration() const { return (_programDuration); }
 
 		/**
 		 * \brief Function to put the current thread to sleep for at least the specified duration.

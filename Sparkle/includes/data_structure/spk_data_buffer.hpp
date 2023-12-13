@@ -175,17 +175,12 @@ namespace spk
 		DataBuffer& operator<<(const InputType& p_input)
 		{
 			static_assert(std::is_standard_layout<InputType>().value, "Unable to handle this type.");
-			try
-			{
-				size_t previous_size(_data.size());
 
-				_data.resize(_data.size() + sizeof(InputType));
-				std::memcpy(_data.data() + previous_size, &p_input, sizeof(InputType));
-			}
-			catch (...)
-			{
-				throw;
-			}
+			size_t previous_size(_data.size());
+
+			_data.resize(_data.size() + sizeof(InputType));
+			std::memcpy(_data.data() + previous_size, &p_input, sizeof(InputType));
+			
 			return *this;
 		}
 

@@ -63,14 +63,14 @@ namespace spk
 
 		/**
 		 * @brief Get the duration since the start of the chronometer. It take count of previous paused and resumed measurements.
-		 * @return The duration in milliseconds. If the chronometer is not running, the duration remains the same.
+		 * @return The duration in nanoseconds. If the chronometer is not running, the duration remains the same.
 		 */
 		long long duration() const;
 
 		/**
 		 * @brief Stop the chronometer. Set the status of the chronometer to stopped.
 		 * @throws std::runtime_error if the chronometer is already stopped.
-		 * @return The total duration in milliseconds. If the chronometer is already stopped, a runtime_error is thrown.
+		 * @return The total duration in nanoseconds. If the chronometer is already stopped, a runtime_error is thrown.
 		 */
 		long long stop();
 	};
