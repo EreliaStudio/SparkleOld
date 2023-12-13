@@ -20,9 +20,9 @@ namespace spk
 	{
 		while (_isRunning == true)
 		{
-			_upsCounter += 10;
+			 _upsCounter += 10;
 
-			_executeUpdateTick();
+			 _executeUpdateTick();
 		}
 	}
 
@@ -100,7 +100,9 @@ namespace spk
 		}
 		else
 		{
-			spk::Thread updaterThread(L"Updater", [&](){_updateProcess();});
+			spk::Thread updaterThread(L"Updater", [&](){
+					_updateProcess();
+				});
 
 			_renderProcess();
 		}

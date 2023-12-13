@@ -9,7 +9,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/executable/Windows/x32/Debug/playground.exe",
+            "program": "${workspaceFolder}/executable/Windows/x32/Debug/Playground.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

@@ -12,7 +12,7 @@ set(SOURCE_FILES "")
 add_subdirectory(includes)
 add_subdirectory(src)
 
-add_library(${ProductName} STATIC ${SOURCE_FILES})
+add_library(${ProductName} ${SOURCE_FILES})
 
 if(UNIX)
 	target_link_libraries(${ProductName} GL xcb X11 X11-xcb)

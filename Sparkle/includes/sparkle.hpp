@@ -34,7 +34,7 @@
 #include "threading/spk_promise.hpp"
 #include "threading/spk_thread.hpp"
 #include "threading/spk_thread_safe_queue.hpp"
-#include "threading/spk_worker_pool.hpp"
+#include "threading/spk_worker.hpp"
 #include "threading/spk_persistent_worker.hpp"
 
 #include "system/spk_chronometer.hpp"

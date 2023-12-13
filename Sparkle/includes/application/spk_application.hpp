@@ -17,7 +17,7 @@ namespace spk
 	class Application
 	{
 	public:
-		static inline Application* _instance = nullptr;
+		thread_local static inline Application* _instance = nullptr;
 		static Application* instance() { return (_instance); }
 		void setAsInstance() { _instance = this; }
 
