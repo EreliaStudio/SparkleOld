@@ -4,19 +4,47 @@
 
 namespace spk
 {
-	class ProfilerModule
-	{
-	private:
-		spk::Profiler _profiler;
+    /**
+     * @brief A module class that encapsulates profiling functionality.
+     *
+     * ProfilerModule serves as a wrapper around the Profiler class, providing
+     * an interface for profiling operations within the application. It includes
+     * functionalities to manage and emit reports from the encapsulated Profiler.
+     */
+    class ProfilerModule
+    {
+    private:
+        spk::Profiler _profiler; ///< Instance of the Profiler class.
 
-	public:
-		ProfilerModule();
+    public:
+        /**
+         * @brief Constructs a ProfilerModule instance.
+         */
+        ProfilerModule();
 
-		~ProfilerModule();
+        /**
+         * @brief Destructs the ProfilerModule instance.
+         */
+        ~ProfilerModule();
 
-		void emitReport();
+        /**
+         * @brief Emits a profiling report.
+         *
+         * This function collects and emits the profiling data gathered by the Profiler.
+         */
+        void emitReport();
 
-		spk::Profiler& profiler() {return (_profiler);}
-		const spk::Profiler& profiler() const {return (_profiler);}
-	};
+        /**
+         * @brief Provides non-const access to the encapsulated Profiler.
+         * @return Reference to the Profiler instance.
+         */
+        spk::Profiler& profiler() { return _profiler; }
+
+        /**
+         * @brief Provides const access to the encapsulated Profiler.
+         * @return Const reference to the Profiler instance.
+         */
+        const spk::Profiler& profiler() const { return _profiler; }
+    };
 }
+

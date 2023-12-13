@@ -9,15 +9,40 @@
 
 namespace spk
 {
+	/**
+     * @brief A class to profile and track various metrics in the application.
+     * 
+     * Profiler manages a collection of metrics, allowing for the creation,
+     * retrieval, and reporting of performance data.
+     */
 	class Profiler
 	{
 	private:
-		std::map<std::wstring, AbstractMetrics*> _metrics;
+		std::map<std::wstring, AbstractMetrics*> _metrics; ///< Map of metric names to AbstractMetrics pointers.
 
 	public:
+        /**
+         * @brief Constructs a Profiler instance.
+         */
 		Profiler();
+
+	    /**
+         * @brief Destructs the Profiler instance.
+         */
 		~Profiler();
 
+        /**
+         * @brief Retrieves or creates a metric of a specified type.
+         * 
+         * If a metric with the given name exists, it is returned. Otherwise, a new metric
+         * of type TMetricsType is created with the provided arguments and returned.
+         * 
+         * @tparam TMetricsType The type of the metrics to retrieve or create.
+         * @tparam Args Variadic template for constructor arguments of TMetricsType.
+         * @param p_metricsName The name of the metric to retrieve or create.
+         * @param p_args Arguments to be forwarded to the constructor of TMetricsType.
+         * @return Reference to the retrieved or created metric of type TMetricsType.
+         */
 		template <typename TMetricsType, typename ... Args>
 		TMetricsType& metrics(const std::wstring& p_metricsName, Args&& ... p_args)
 		{
@@ -30,7 +55,11 @@ namespace spk
 
 			return (*result);
 		}
-
+		
+        /**
+         * @brief Generates a JSON object containing all the metrics reports.
+         * @return JSON::Object representing the aggregated metrics reports.
+         */
 		spk::JSON::Object emitReport() const;
 	};
 }
