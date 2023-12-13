@@ -32,6 +32,9 @@ namespace spk::Network
 
 		void _treatMessage(const spk::Network::Message& p_msg); /**< Internal function to handle a specific message */
 
+        /**
+         * @brief Method called by the reception thread
+        */
         void _receiveMessage();
 
 	public:

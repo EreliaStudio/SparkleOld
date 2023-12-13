@@ -158,6 +158,9 @@ namespace spk
 			buffer.setPrefix(p_prefix);
 		}
 
+		/**
+		 * @brief Reset the prefix of this iostream 
+		*/
 		void resetPrefix()
 		{
 			buffer.resetPrefix();

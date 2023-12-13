@@ -33,6 +33,10 @@ namespace spk::Network
         using FileDescriptor = SOCKET; /**< A definition for socket's file descriptor*/
         static const FileDescriptor SocketError = SOCKET_ERROR; /**< A value indicating that the socket is in error state*/
 
+        /**
+         * @brief Return the last error code returned by the socket
+         * @return The last error
+        */
         static int getLastError();
 
 	private:
