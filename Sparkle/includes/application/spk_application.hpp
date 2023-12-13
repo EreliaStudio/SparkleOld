@@ -14,6 +14,22 @@
 
 namespace spk
 {
+	/**
+     * @class Application
+     * @brief The central class of the application framework.
+     *
+     * Application serves as the core of the application framework, managing the main
+     * application lifecycle, various modules, and system resources. It provides functionalities
+     * for initializing modules, handling events, and rendering processes. Application acts as a
+     * singleton, maintaining a thread-local instance accessible throughout the application.
+     *
+     * This class handles various aspects such as window management, input handling, widget
+     * management, and profiling. It allows the creation and management of custom widgets and
+     * interfaces, as well as providing access to system-level functionalities like keyboard and mouse input.
+     *
+     * The Application class supports both monothreaded and multithreaded operation modes, 
+     * providing flexibility for different types of applications.
+     */
 	class Application
 	{
 	public:

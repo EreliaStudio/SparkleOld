@@ -41,7 +41,18 @@ namespace spk
 		 */
 		void updateKeyboard();
 		
+		/**
+		 * @brief Provides non-const access to the keyboard instance.
+		 * 
+		 * @return Reference to the keyboard instance.
+		 */
 		spk::Keyboard& keyboard() {return (_keyboard);}
+
+		/**
+		 * @brief Provides const access to the keyboard instance.
+		 * 
+		 * @return Const reference to the keyboard instance.
+		 */
 		const spk::Keyboard& keyboard() const {return (_keyboard);}
 	};
 }

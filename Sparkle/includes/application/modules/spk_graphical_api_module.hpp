@@ -51,9 +51,25 @@ namespace spk
 		 */
 		void clear();
 
+		/**
+		 * @brief Resizes the window to a new size.
+		 * 
+		 * @param p_newSize The new size for the window as a Vector2UInt.
+		 */
 		void resize(const spk::Vector2UInt& p_newSize);
 
-		spk::Window& window() {return (_window);}
-		const spk::Window& window() const {return (_window);}
+		/**
+		 * @brief Provides non-const access to the Window instance.
+		 * 
+		 * @return Reference to the Window instance.
+		 */
+		spk::Window& window() { return _window; }
+
+		/**
+		 * @brief Provides const access to the Window instance.
+		 * 
+		 * @return Const reference to the Window instance.
+		 */
+		const spk::Window& window() const { return _window; }
 	};
 }

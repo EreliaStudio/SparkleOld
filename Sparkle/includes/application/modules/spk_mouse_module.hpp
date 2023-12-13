@@ -45,8 +45,19 @@ namespace spk
 		 * @brief Updates the mouse delta position.
 		 */
 		void updateMouseDeltaPosition();
-
+		
+		/**
+		 * @brief Provides non-const access to the mouse instance.
+		 * 
+		 * @return Reference to the mouse instance.
+		 */
 		spk::Mouse& mouse() { return (_mouse); }
+
+		/**
+		 * @brief Provides const access to the mouse instance.
+		 * 
+		 * @return Const reference to the mouse instance.
+		 */
 		const spk::Mouse& mouse() const { return (_mouse); }
 	};
 
