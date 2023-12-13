@@ -116,11 +116,6 @@ namespace spk
 		_isRunning = false;
 	}
 
-	void Application::setKeyboardLayout(const spk::Keyboard::Layout& p_layout)
-	{
-		_keyboardModule.setKeyboardLayout(p_layout);
-	}
-
 	spk::Profiler& Application::profiler()
 	{
 		return (_profilerModule.profiler());

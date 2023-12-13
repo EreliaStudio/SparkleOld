@@ -142,12 +142,6 @@ namespace spk
 		{Keyboard::Key::NumpadReturn, L"NumpadReturn"}};
 	const std::wstring Keyboard::UnknowKeyName = L"Unknow key";
 
-	Keyboard::Mapping::Mapping()
-	{
-		for (int i = 0; i < 255; ++i)
-			keys[i] = Key::Unknown;
-	}
-
 	void Keyboard::Mapping::bindKey(const size_t& p_index, const Key& p_key)
 	{
 		keys[p_index] = p_key;
@@ -158,12 +152,7 @@ namespace spk
 		return (keys[p_index]);
 	}
 
-	Keyboard::Keyboard() :
-		_layout(Layout::Qwerty),
-		_mapping{
-				Mapping::createAzertyMapping(),
-				Mapping::createQwertyMapping()
-			}
+	Keyboard::Keyboard()
 	{
 		for (size_t i = 0; i < Key::SIZE; i++)
 		{
@@ -173,10 +162,7 @@ namespace spk
 
 	void Keyboard::pressKey(const uint32_t& p_key)
 	{
-		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
-
-		if (keyValue == Key::Unknown)
-			spk::cout << "Unknow key ID [" << p_key << "]" << std::endl;
+		Key &keyValue = _mapping[p_key];
 
 		if (_keys[static_cast<size_t>(keyValue)] != InputState::Down)
 		{
@@ -186,7 +172,7 @@ namespace spk
 	}
 	void Keyboard::releaseKey(const uint32_t& p_key)
 	{
-		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
+		Key &keyValue = _mapping[p_key];
 
 		if (_keys[static_cast<size_t>(keyValue)] != InputState::Up)
 		{

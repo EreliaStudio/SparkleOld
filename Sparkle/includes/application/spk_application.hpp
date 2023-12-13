@@ -77,8 +77,6 @@ namespace spk
 
 		void quit(int p_errorID);
 
-		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
-
 		spk::Profiler& profiler();
 		spk::Window& window();
 		const spk::Vector2UInt& size() const;

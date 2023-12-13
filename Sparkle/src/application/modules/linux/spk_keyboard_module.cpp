@@ -39,9 +39,4 @@ namespace spk
 	{
 		Singleton<Keyboard>::instance()->update();
 	}
-
-	void KeyboardModule::setKeyboardLayout(const spk::Keyboard::Layout& p_layout)
-	{
-		_keyboard.setLayout(p_layout);
-	}
 }

@@ -78,16 +78,6 @@ namespace spk
 			SIZE // Represents the total number of keys
 		};
 
-		/**
-		 * @enum Layout
-		 * @brief Enum for representing keyboard layouts.
-		 */
-		enum Layout
-		{
-			Azerty, // Represents Azerty layout
-			Qwerty  // Represents Qwerty layout
-		};
-
 	private:
 		/**
 		 * @struct Mapping
@@ -106,16 +96,12 @@ namespace spk
 			 */
 			void bindKey(const size_t& p_index, const Key& p_key);
 			Key &operator[](const size_t &p_index);
-
-			static Mapping createAzertyMapping();
-			static Mapping createQwertyMapping();
 		};
 
 		static std::map<Keyboard::Key, std::wstring> KeyToStringMap;
 		static const std::wstring UnknowKeyName;
 
-		Layout _layout;
-		Mapping _mapping[2];
+		Mapping _mapping;
 		InputState _keys[Key::SIZE];
 		std::vector<Key> _keysToUpdate;
 	public:
@@ -137,12 +123,6 @@ namespace spk
 		 * @brief Updates the state of the keyboard.
 		 */
 		void update();
-
-		/**
-		 * @brief Sets the layout of the keyboard.
-		 * @param p_layout The layout to set.
-		 */
-		void setLayout(const Layout &p_layout) { _layout = p_layout; }
 
 		/**
 		 * @brief Returns the input status of a key.
