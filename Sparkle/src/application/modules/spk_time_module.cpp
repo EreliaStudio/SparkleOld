@@ -8,18 +8,18 @@ namespace spk
 	TimeModule::TimeModule()
 	{
 		setMaxFPS(60);
-		spk::Singleton<spk::TimeMetrics>::instanciate();
+		spk::TimeMetrics::instanciate();
 		updateTimeMetrics();
 	}
 
 	TimeModule::~TimeModule()
 	{
-		spk::Singleton<spk::TimeMetrics>::release();
+		spk::TimeMetrics::release();
 	}
 
 	void TimeModule::updateTimeMetrics()
 	{
-		spk::Singleton<spk::TimeMetrics>::instance()->_updateMetrics();
+		spk::TimeMetrics::instance()->_updateMetrics();
 	}
 	
 	void TimeModule::setMaxFPS(const size_t& p_nbFPSPerSecond)

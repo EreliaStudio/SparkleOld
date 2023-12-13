@@ -89,3 +89,15 @@ namespace spk
         }
     };
 }
+
+#define MONITOR_DURATION(timeMetricName, action)                     \
+{                                                                    \
+    if (spk::Application::instance() == nullptr)                     \
+    {                                                                \
+        [&](){ action; }();                                          \
+        return ;                                                     \
+    }                                                                \
+	static spk::TimeConsumption& timeModuleMetric = spk::Application::instance()->profiler().metrics<spk::TimeConsumption>(timeMetricName); \
+    spk::ScopedTimeConsumptionMetrics tmpMetric(timeModuleMetric);   \
+    [&](){ action; }();                                              \
+}
