@@ -41,8 +41,6 @@ namespace spk
 		 */
 		void updateKeyboard();
 		
-		void setKeyboardLayout(const spk::Keyboard::Layout& p_layout);
-
 		spk::Keyboard& keyboard() {return (_keyboard);}
 		const spk::Keyboard& keyboard() const {return (_keyboard);}
 	};
