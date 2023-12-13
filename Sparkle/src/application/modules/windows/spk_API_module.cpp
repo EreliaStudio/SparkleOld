@@ -26,7 +26,7 @@ namespace spk
 
 	APIModule::MessagePool::Object APIModule::_obtainMessage(const UINT& p_messageID)
 	{
-		MessagePool::Object result = MessagePoolInstance::instance()->obtain();
+		MessagePool::Object result = _messagePool.obtain();
 
 		result->clear();
 
