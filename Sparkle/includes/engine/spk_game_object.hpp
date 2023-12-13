@@ -5,6 +5,7 @@
 #include "design_pattern/spk_activable_object.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
 #include "engine/spk_components.hpp"
+#include "profiler/spk_time_consumption_metrics.hpp"
 
 namespace spk
 {
@@ -22,6 +23,7 @@ namespace spk
         static inline GameObject* _insertingGameObject = nullptr; ///< Static pointer used during component insertion.
 
         std::wstring _name; ///< Name of the game object.
+		spk::TimeConsumption& _timeConsomptionMetrics;
         std::vector<std::shared_ptr<Component>> _components; ///< List of components attached to the game object.
         std::shared_ptr<Transform> _transform; ///< Transform component of the game object.
 

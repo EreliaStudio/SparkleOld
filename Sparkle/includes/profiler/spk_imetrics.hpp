@@ -13,6 +13,9 @@ namespace spk
 	private:
 
 	public:
+
+		virtual bool needEmition() const = 0;
+
         /**
          * @brief Virtual function to emit a report as a JSON object.
          * @return JSON::Object representing the metrics report.

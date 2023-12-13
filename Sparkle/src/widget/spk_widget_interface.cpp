@@ -26,6 +26,8 @@ namespace spk::Widget
 
 	bool Interface::_update()
 	{
+		MONITOR_TIME_CONSUMPTION(_timeConsomptionMetrics);
+
 		if (isActive() == false)
 			return false;
 
@@ -43,7 +45,8 @@ namespace spk::Widget
 	}
 
 	Interface::Interface(const std::wstring& p_name) :
-		_name(p_name)
+		_name(p_name),
+		_timeConsomptionMetrics(spk::Application::instance()->profiler().metrics<TimeConsumption>(p_name))
 	{
 		Atlas::instance()->insert(this);
 

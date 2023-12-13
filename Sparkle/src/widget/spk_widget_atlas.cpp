@@ -35,7 +35,7 @@ namespace spk::Widget
 					if (lhs->depth() == rhs->depth()) {
 						return lhs < rhs;
 					}
-					return lhs->depth() < rhs->depth();
+					return lhs->depth() > rhs->depth();
 				});
 
 			_widgets.insert(insertion_point, p_widget);
@@ -53,6 +53,11 @@ namespace spk::Widget
 			return *tmp;
 		}
 		return nullptr;
+	}
+
+	Atlas::StoringContainer& Atlas::widgets()
+	{
+		return _widgets;
 	}
 
 	const Atlas::StoringContainer& Atlas::widgets() const

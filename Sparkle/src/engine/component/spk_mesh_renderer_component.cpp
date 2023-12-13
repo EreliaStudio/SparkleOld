@@ -1,5 +1,6 @@
 #include "engine/component/spk_mesh_renderer_component.hpp"
 #include "engine/spk_game_object.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {

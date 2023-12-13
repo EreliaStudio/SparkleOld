@@ -20,7 +20,8 @@ namespace spk
 		result.addAttribute(L"Program duration").set<long>(static_cast<long>(spk::TimeMetrics::instance()->programDuration()));
 		for (const auto& metrics : _metrics)
 		{
-			result.addAttribute(metrics.first) = metrics.second->emitReport();
+			if (metrics.second->needEmition() == true)
+				result.addAttribute(metrics.first) = metrics.second->emitReport();
 		}
 
 		return (result);

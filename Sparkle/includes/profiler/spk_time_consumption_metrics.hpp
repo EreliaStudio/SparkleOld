@@ -25,6 +25,8 @@ namespace spk
          */
         TimeConsumption();
 
+        bool needEmition() const;
+
         /**
          * @brief Creates a JSON object containing the time consumption metrics report.
          * @return JSON::Object representing the metrics.
@@ -90,14 +92,32 @@ namespace spk
     };
 }
 
-#define MONITOR_DURATION(timeMetricName, action)                     \
+#ifndef DEBUG
+#define MONITOR_NAMED_ACTION_TIME_CONSUMPTION(timeMetricName, action){[&](){ action; }();}
+#else
+#define MONITOR_NAMED_ACTION_TIME_CONSUMPTION(timeMetricName, action)                     \
 {                                                                    \
-    if (spk::Application::instance() == nullptr)                     \
-    {                                                                \
-        [&](){ action; }();                                          \
-        return ;                                                     \
-    }                                                                \
 	static spk::TimeConsumption& timeModuleMetric = spk::Application::instance()->profiler().metrics<spk::TimeConsumption>(timeMetricName); \
     spk::ScopedTimeConsumptionMetrics tmpMetric(timeModuleMetric);   \
     [&](){ action; }();                                              \
 }
+#endif
+
+#ifndef DEBUG
+#define MONITOR_AND_CREATE_TIME_CONSUMPTION(timeMetricName){}
+#else
+#define MONITOR_AND_CREATE_TIME_CONSUMPTION(timeMetricName)                     \
+{                                                                    \
+	static spk::TimeConsumption& timeModuleMetric = spk::Application::instance()->profiler().metrics<spk::TimeConsumption>(timeMetricName); \
+    spk::ScopedTimeConsumptionMetrics tmpMetric(timeModuleMetric);   \
+}
+#endif
+
+#ifndef DEBUG
+#define MONITOR_TIME_CONSUMPTION(timeMetrics){}
+#else
+#define MONITOR_TIME_CONSUMPTION(timeMetrics)                     \
+{                                                                 \
+    spk::ScopedTimeConsumptionMetrics tmpMetric(timeMetrics);     \
+}
+#endif

@@ -19,6 +19,7 @@ namespace spk
     class MeshRenderer : public Component
     {
     protected:
+
 		/**
 		 *  @brief Vertex Shader Module of the Mesh Renderer Component.
 		 *

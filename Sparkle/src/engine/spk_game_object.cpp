@@ -1,9 +1,11 @@
 #include "engine/spk_game_object.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
 	GameObject::GameObject(const std::wstring& p_name) : 
-		_name(p_name)
+		_name(p_name),
+		_timeConsomptionMetrics(spk::Application::instance()->profiler().metrics<TimeConsumption>(p_name))
 	{
 		_transform = addComponent<Transform>();
 		activate();
@@ -63,6 +65,8 @@ namespace spk
 	{
 		if (isActive() == false)
 			return (false);
+
+		MONITOR_TIME_CONSUMPTION(_timeConsomptionMetrics);
 
 		for (size_t i = 0; i < childrens().size(); i++)
 		{

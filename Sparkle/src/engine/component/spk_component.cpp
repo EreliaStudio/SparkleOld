@@ -1,11 +1,13 @@
 #include "engine/component/spk_component.hpp"
 #include "engine/spk_game_object.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
 	Component::Component(const std::wstring& p_name) :
 		_owner(std::shared_ptr<spk::GameObject>(spk::GameObject::_insertingGameObject, [](spk::GameObject*){})),
-		_name(p_name)
+		_name(p_name),
+		_timeConsumptionMetrics(spk::Application::instance()->profiler().metrics<TimeConsumption>(p_name))
 	{
 
 	}
@@ -37,6 +39,7 @@ namespace spk
 
 	bool Component::update()
 	{
+		MONITOR_TIME_CONSUMPTION(_timeConsumptionMetrics);
 		return (_onUpdate());
 	}
 

@@ -8,19 +8,21 @@ namespace spk
 
 	}
 
+	bool Counter::needEmition() const
+	{
+		if (cardinal() == 0)
+			return (false);
+		return (true);
+	}
+
 	spk::JSON::Object Counter::emitReport() const
 	{
 		spk::JSON::Object result;
 
-		if (cardinal() != 0)
-		{
-			result.addAttribute(L"Min").set<long>(min());
-			result.addAttribute(L"Max").set<long>(max());
-			result.addAttribute(L"Average").set<long>(average());
-			result.addAttribute(L"Cardinal").set<long>(cardinal());
-		}
-		else
-			result.set<nullptr_t>(nullptr);
+		result.addAttribute(L"Min").set<long>(min());
+		result.addAttribute(L"Max").set<long>(max());
+		result.addAttribute(L"Average").set<long>(average());
+		result.addAttribute(L"Cardinal").set<long>(cardinal());
 
 		return (result);
 	}

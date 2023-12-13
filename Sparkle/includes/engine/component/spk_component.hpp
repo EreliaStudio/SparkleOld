@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "design_pattern/spk_activable_object.hpp"
+#include "profiler/spk_time_consumption_metrics.hpp"
 
 namespace spk
 {
@@ -18,6 +19,7 @@ namespace spk
     protected:
         std::shared_ptr<GameObject> _owner; ///< The GameObject this component is attached to.
         std::wstring _name; ///< Name of the component.
+		spk::TimeConsumption& _timeConsumptionMetrics;
 
         /**
          * @brief Virtual method for updating the component.

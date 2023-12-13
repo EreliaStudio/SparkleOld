@@ -1,7 +1,16 @@
 #pragma once
 
+#include <vector>
+
+#include "widget/spk_widget_atlas.hpp"
+
 namespace spk
 {
+	namespace Widget
+	{
+		class Interface;
+	}
+
 	/**
 	 * @class WidgetModule
 	 * @brief Class for managing widgets within the application.
@@ -11,6 +20,7 @@ namespace spk
 	class WidgetModule
 	{
 	private:
+		Widget::Atlas::StoringContainer* _widgetSet;
 
 	public:
 		/**

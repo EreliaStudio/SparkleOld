@@ -3,7 +3,12 @@
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"
 #include "graphics/spk_viewport.hpp"
-#include "application/modules/spk_widget_module.hpp"
+#include "profiler/spk_time_consumption_metrics.hpp"
+
+namespace spk
+{
+	class WidgetModule;
+}
 
 namespace spk::Widget
 {
@@ -30,6 +35,7 @@ namespace spk::Widget
 		bool _isOperationnal = false;
 		std::shared_ptr<Contract> _activationCallback;
 		std::shared_ptr<Contract> _deactivationCallback;
+		spk::TimeConsumption& _timeConsomptionMetrics;
 
 		std::wstring _name;
 		bool _geometryEdited;

@@ -22,13 +22,14 @@ namespace spk::Widget
 	class Atlas : public spk::Singleton<Atlas>
 	{
 		friend class spk::Singleton<Atlas>;
-
-	private:
-
+	public:
 		/**
 		 * @brief A type definition for the container storing widgets.
 		 */
 		using StoringContainer = std::vector<Interface*>;
+
+	private:
+
 		/**
 		 * @brief Collection of Interface pointers.
 		 */
@@ -68,6 +69,12 @@ namespace spk::Widget
 		*/
 		Interface* get(const std::wstring& p_widgetName);
 
+		/**
+		 * @brief Returns a reference to the collection of widgets.
+		 *
+		 * @return reference to the StoringContainer.
+		 */
+		StoringContainer& widgets();
 		/**
 		 * @brief Returns a constant reference to the collection of widgets.
 		 *

@@ -21,6 +21,8 @@ namespace spk
          */
         Counter();
 
+        bool needEmition() const;
+
         /**
          * @brief Creates a JSON object containing the metrics report.
          * @return JSON::Object representing the metrics.

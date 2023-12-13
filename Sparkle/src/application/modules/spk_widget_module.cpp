@@ -4,12 +4,14 @@
 #include "spk_basic_functions.hpp"
 #include "application/spk_application.hpp"
 #include <cstring>
+#include <ranges>
 
 namespace spk
 {
 	WidgetModule::WidgetModule()
 	{
 		spk::Widget::Atlas::instanciate();
+		_widgetSet = &(Widget::Atlas::instance()->widgets());
 	}
 
 	WidgetModule::~WidgetModule()
@@ -19,40 +21,27 @@ namespace spk
 
 	void WidgetModule::update()
 	{
-		auto &widgetSet = spk::Widget::Atlas::instance()->widgets();
-		
-		for (auto it = widgetSet.rbegin(); it != widgetSet.rend(); ++it)
+		for (const auto& widget : *_widgetSet)
 		{
-			try
-			{	
-				if ((*it)->_isOperationnal == true)
-					(*it)->_update();
-			}
-			catch(const std::exception& e)
-			{
-				const char *tmp = e.what();
-				std::wstring oldError = std::wstring(tmp, tmp + strlen(tmp));
-				spk::throwException(L"Error during update [" + (*it)->name() + L"] : " + oldError);
-			}
+			if (widget->_isOperationnal == true && widget->_update() == true)
+				return ;
 		}
 	}
 
 	void WidgetModule::render()
 	{
-		auto &widgetSet = spk::Widget::Atlas::instance()->widgets();
-
-		for (auto it = widgetSet.begin(); it != widgetSet.end(); ++it)
+		for (auto& widget : *_widgetSet | std::views::reverse)
 		{
-			if ((*it)->parent() != nullptr)
+			if (widget->parent() != nullptr)
 			{
-				if ((*it)->parent()->viewport().needComputation() == true)
-					(*it)->parent()->viewport().compute();
-				(*it)->parent()->viewport().activate();
+				if (widget->parent()->viewport().needComputation() == true)
+					widget->parent()->viewport().compute();
+				widget->parent()->viewport().activate();
 			}
 			else
 				Viewport::resetViewport(spk::Application::instance()->window().size());
-			if ((*it)->_isOperationnal == true)
-				(*it)->_render();
+			if (widget->_isOperationnal == true)
+				widget->_render();
 		}
 	}
 }
