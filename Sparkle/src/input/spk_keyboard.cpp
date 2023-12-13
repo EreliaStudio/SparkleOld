@@ -175,6 +175,9 @@ namespace spk
 	{
 		Key &keyValue = _mapping[static_cast<int>(_layout)][p_key];
 
+		if (keyValue == Key::Unknown)
+			spk::cout << "Unknow key ID [" << p_key << "]" << std::endl;
+
 		if (_keys[static_cast<size_t>(keyValue)] != InputState::Down)
 		{
 			_keysToUpdate.push_back(keyValue);
