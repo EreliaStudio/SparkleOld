@@ -35,7 +35,7 @@ namespace spk
         bool _movementRequested = false; ///< Flag to indicate if movement is requested.
         spk::Vector3 _requestedDeltaPosition; ///< Requested change in position.
         float _movementSpeed = 0.05f; ///< Movement speed in units per second.
-        float _rotationSpeed = 0.05f; ///< Rotation speed.
+        float _rotationSpeed = 0.25f; ///< Rotation speed.
         std::vector<std::shared_ptr<spk::Input>> _inputs; ///< List of input controls.
 
         virtual bool _onUpdate() override;

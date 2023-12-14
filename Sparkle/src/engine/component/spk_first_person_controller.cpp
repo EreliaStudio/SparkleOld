@@ -40,7 +40,7 @@ namespace spk
 
         spk::Vector2Int deltaMousePosition = spk::Application::instance()->mouse().position() - _lastMousePosition;
 
-        spk::Vector3 rotation = spk::Vector3(-deltaMousePosition.y, -deltaMousePosition.x, 0) * spk::TimeMetrics::instance()->deltaTime() * _rotationSpeed;
+        spk::Vector3 rotation = spk::Vector3(-deltaMousePosition.y, -deltaMousePosition.x, 0) * _rotationSpeed;
 
         owner()->transform()->rotate(rotation);
 
