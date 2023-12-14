@@ -1,5 +1,6 @@
 #include "application/modules/spk_keyboard_module.hpp"
 #include "input/spk_keyboard.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
@@ -11,14 +12,14 @@ namespace spk
 			{
 				xcb_key_press_event_t *keyPressEvent(reinterpret_cast<xcb_key_press_event_t *>(p_event));
 
-				spk::Keyboard::instance()->pressKey(keyPressEvent->detail);
+				_keyboard.pressKey(keyPressEvent->detail);
 				break;
 			}
 			case XCB_KEY_RELEASE:
 			{
 				xcb_key_press_event_t *keyReleaseEvent(reinterpret_cast<xcb_key_press_event_t *>(p_event));
 
-				spk::Keyboard::instance()->releaseKey(keyReleaseEvent->detail);
+				_keyboard.releaseKey(keyReleaseEvent->detail);
 				break;
 			}
 		}
@@ -26,17 +27,14 @@ namespace spk
 
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
-		spk::Keyboard::instanciate();
-		spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Qwerty);
 	}
 
 	KeyboardModule::~KeyboardModule()
 	{
-		spk::Keyboard::release();
 	}
 
 	void KeyboardModule::updateKeyboard()
 	{
-		Singleton<Keyboard>::instance()->update();
+		_keyboard.update();
 	}
 }
