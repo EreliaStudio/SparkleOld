@@ -92,7 +92,7 @@ namespace spk
     };
 }
 
-#ifndef DEBUG
+#ifndef _DEBUG
 #define MONITOR_NAMED_ACTION_TIME_CONSUMPTION(timeMetricName, action){[&](){ action; }();}
 #else
 #define MONITOR_NAMED_ACTION_TIME_CONSUMPTION(timeMetricName, action)                     \
@@ -103,7 +103,7 @@ namespace spk
 }
 #endif
 
-#ifndef DEBUG
+#ifndef _DEBUG
 #define MONITOR_AND_CREATE_TIME_CONSUMPTION(timeMetricName){}
 #else
 #define MONITOR_AND_CREATE_TIME_CONSUMPTION(timeMetricName)                     \
@@ -113,7 +113,7 @@ namespace spk
 }
 #endif
 
-#ifndef DEBUG
+#ifndef _DEBUG
 #define MONITOR_TIME_CONSUMPTION(timeMetrics){}
 #else
 #define MONITOR_TIME_CONSUMPTION(timeMetrics)                     \
