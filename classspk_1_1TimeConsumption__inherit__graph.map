@@ -1,0 +1,5 @@
+<map id="spk::TimeConsumption" name="spk::TimeConsumption">
+<area shape="rect" id="node1" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,169,177,196"/>
+<area shape="rect" id="node2" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="17,80,165,121"/>
+<area shape="rect" id="node3" href="$classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+</map>

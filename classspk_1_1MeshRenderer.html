@@ -96,10 +96,13 @@ Collaboration diagram for spk::MeshRenderer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1MeshRenderer__coll__graph.png" border="0" usemap="#aspk_1_1MeshRenderer_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1MeshRenderer_coll__map" id="aspk_1_1MeshRenderer_coll__map">
-<area shape="rect" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="157,109,304,136"/>
-<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
-<area shape="rect" href="classspk_1_1ShaderModule.html" title="Represents a shader module containing shader instructions." alt="" coords="157,5,304,32"/>
-<area shape="rect" href="structspk_1_1Material.html" title="Represents the material properties of a surface in the rendering engine." alt="" coords="368,5,475,32"/>
+<area shape="rect" title="Represents a mesh renderer component in the Sparkle engine." alt="" coords="179,365,326,392"/>
+<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="27,261,155,288"/>
+<area shape="rect" href="classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,172,177,199"/>
+<area shape="rect" href="classspk_1_1IMetrics.html" title=" " alt="" coords="17,81,165,123"/>
+<area shape="rect" href="classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+<area shape="rect" href="classspk_1_1ShaderModule.html" title="Represents a shader module containing shader instructions." alt="" coords="179,261,326,288"/>
+<area shape="rect" href="structspk_1_1Material.html" title="Represents the material properties of a surface in the rendering engine." alt="" coords="390,261,497,288"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -236,6 +239,10 @@ std::shared_ptr&lt; <a class="el" href="classspk_1_1GameObject.html">GameObject<
 std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html#a937053a71ac14286c388a09d9cc6dee0">_name</a></td></tr>
 <tr class="memdesc:a937053a71ac14286c388a09d9cc6dee0 inherit pro_attribs_classspk_1_1Component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the component. <br /></td></tr>
 <tr class="separator:a937053a71ac14286c388a09d9cc6dee0 inherit pro_attribs_classspk_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="memItemLeft" align="right" valign="top"><a id="a29904163258e7c4cad737b6fabdc32d0"></a>
+<a class="el" href="classspk_1_1TimeConsumption.html">spk::TimeConsumption</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html#a29904163258e7c4cad737b6fabdc32d0">_timeConsumptionMetrics</a></td></tr>
+<tr class="memdesc:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A time consuption metrics to mesure this component time consumption. <br /></td></tr>
+<tr class="separator:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -644,8 +651,8 @@ static std::shared_ptr&lt; <a class="el" href="classspk_1_1AbstractPipeline_1_1S
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/engine/component/<a class="el" href="spk__mesh__renderer__component_8hpp_source.html">spk_mesh_renderer_component.hpp</a></li>
-<li>src/engine/component/spk_mesh_renderer_component.cpp</li>
+<li>Sparkle/includes/engine/component/<a class="el" href="spk__mesh__renderer__component_8hpp_source.html">spk_mesh_renderer_component.hpp</a></li>
+<li>Sparkle/src/engine/component/spk_mesh_renderer_component.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

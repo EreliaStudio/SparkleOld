@@ -1,0 +1,8 @@
+<map id="spk::AbstractMetrics" name="spk::AbstractMetrics">
+<area shape="rect" id="node1" title="Abstract base class for metric reporting." alt="" coords="199,5,354,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="17,80,165,121"/>
+<area shape="rect" id="node4" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="190,87,363,114"/>
+<area shape="rect" id="node6" href="$classspk_1_1IMetrics.html" title="Template class for tracking and reporting statistics (min, max, average)." alt="" coords="387,87,561,114"/>
+<area shape="rect" id="node3" href="$classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,169,177,196"/>
+<area shape="rect" id="node5" href="$classspk_1_1Counter.html" title="A class that extends IMetrics for size_t type, designed to count and track values." alt="" coords="225,169,329,196"/>
+</map>

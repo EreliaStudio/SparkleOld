@@ -95,10 +95,13 @@ Collaboration diagram for spk::FirstPersonController:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1FirstPersonController__coll__graph.png" border="0" usemap="#aspk_1_1FirstPersonController_coll__map" alt="Collaboration graph"/></div>
 <map name="aspk_1_1FirstPersonController_coll__map" id="aspk_1_1FirstPersonController_coll__map">
-<area shape="rect" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="145,95,335,121"/>
-<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
-<area shape="rect" href="structspk_1_1IVector3.html" title=" " alt="" coords="157,5,323,32"/>
-<area shape="rect" href="structspk_1_1IVector2.html" title=" " alt="" coords="358,5,511,32"/>
+<area shape="rect" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="167,351,357,377"/>
+<area shape="rect" href="classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="27,261,155,288"/>
+<area shape="rect" href="classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,172,177,199"/>
+<area shape="rect" href="classspk_1_1IMetrics.html" title=" " alt="" coords="17,81,165,123"/>
+<area shape="rect" href="classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+<area shape="rect" href="structspk_1_1IVector3.html" title=" " alt="" coords="179,261,345,288"/>
+<area shape="rect" href="structspk_1_1IVector2.html" title=" " alt="" coords="380,261,533,288"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -212,6 +215,10 @@ std::shared_ptr&lt; <a class="el" href="classspk_1_1GameObject.html">GameObject<
 std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html#a937053a71ac14286c388a09d9cc6dee0">_name</a></td></tr>
 <tr class="memdesc:a937053a71ac14286c388a09d9cc6dee0 inherit pro_attribs_classspk_1_1Component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the component. <br /></td></tr>
 <tr class="separator:a937053a71ac14286c388a09d9cc6dee0 inherit pro_attribs_classspk_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="memItemLeft" align="right" valign="top"><a id="a29904163258e7c4cad737b6fabdc32d0"></a>
+<a class="el" href="classspk_1_1TimeConsumption.html">spk::TimeConsumption</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Component.html#a29904163258e7c4cad737b6fabdc32d0">_timeConsumptionMetrics</a></td></tr>
+<tr class="memdesc:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A time consuption metrics to mesure this component time consumption. <br /></td></tr>
+<tr class="separator:a29904163258e7c4cad737b6fabdc32d0 inherit pro_attribs_classspk_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a first-person controller component in the Sparkle engine. </p>
@@ -427,8 +434,8 @@ std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/engine/component/<a class="el" href="spk__first__person__controller__component_8hpp_source.html">spk_first_person_controller_component.hpp</a></li>
-<li>src/engine/component/spk_first_person_controller.cpp</li>
+<li>Sparkle/includes/engine/component/<a class="el" href="spk__first__person__controller__component_8hpp_source.html">spk_first_person_controller_component.hpp</a></li>
+<li>Sparkle/src/engine/component/spk_first_person_controller.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

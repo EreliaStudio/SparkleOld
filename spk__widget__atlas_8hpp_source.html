@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/widget/spk_widget_atlas.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/widget/spk_widget_atlas.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_6865bbd7fed125b9d907dfb26af48d8a.html">widget</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_6106734b32cd6cc1dfd76d7f7193fe01.html">widget</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,37 +83,40 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classspk_1_1Widget_1_1Atlas.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Widget_1_1Atlas.html">Atlas</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;Atlas&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;<a class="code" href="classspk_1_1Widget_1_1Atlas.html">Atlas</a>&gt;;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">using</span> StoringContainer = std::vector&lt;Interface*&gt;;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        StoringContainer _widgets;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Atlas.html">Atlas</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aefb76217b61aa046653f3b343da76f30">insert</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aafe4da2e4f06924ac6d367c683c4ac7f">remove</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a8c1603633d32048d3bcf7e2f50a6b1ab">sort</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">get</a>(<span class="keyword">const</span> std::wstring&amp; p_widgetName);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> StoringContainer&amp; <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">widgets</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a5b8c1c2bb88f4aa04e2e94901ce4c56c">resize</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">   29</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a> = std::vector&lt;Interface*&gt;;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a> _widgets;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Atlas.html">Atlas</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aefb76217b61aa046653f3b343da76f30">insert</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aafe4da2e4f06924ac6d367c683c4ac7f">remove</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a8c1603633d32048d3bcf7e2f50a6b1ab">sort</a>(<a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* p_widget);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Interface.html">Interface</a>* <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">get</a>(<span class="keyword">const</span> std::wstring&amp; p_widgetName);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a>&amp; <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aafaa36940d387978a08f66cd04ead969">widgets</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a>&amp; <a class="code" href="classspk_1_1Widget_1_1Atlas.html#aafaa36940d387978a08f66cd04ead969">widgets</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a5b8c1c2bb88f4aa04e2e94901ce4c56c">resize</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    };</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html">spk::Widget::Atlas</a></div><div class="ttdoc">A singleton atlas of widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.hpp:23</div></div>
-<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a5b8c1c2bb88f4aa04e2e94901ce4c56c"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a5b8c1c2bb88f4aa04e2e94901ce4c56c">spk::Widget::Atlas::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">Resize every widget using a ratio.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:63</div></div>
-<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a65f944a55cc9cb8a7cfdc8c8c41c2a76"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">spk::Widget::Atlas::widgets</a></div><div class="ttdeci">const StoringContainer &amp; widgets() const</div><div class="ttdoc">Returns a constant reference to the collection of widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:58</div></div>
+<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a5b8c1c2bb88f4aa04e2e94901ce4c56c"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a5b8c1c2bb88f4aa04e2e94901ce4c56c">spk::Widget::Atlas::resize</a></div><div class="ttdeci">void resize()</div><div class="ttdoc">Resize every widget using a ratio.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:68</div></div>
+<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a6ccb6f21bcc7d51cdbd3d10a147fab52"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">spk::Widget::Atlas::StoringContainer</a></div><div class="ttdeci">std::vector&lt; Interface * &gt; StoringContainer</div><div class="ttdoc">A type definition for the container storing widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.hpp:29</div></div>
 <div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a8c1603633d32048d3bcf7e2f50a6b1ab"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a8c1603633d32048d3bcf7e2f50a6b1ab">spk::Widget::Atlas::sort</a></div><div class="ttdeci">void sort(Interface *p_widget)</div><div class="ttdoc">Sorts the widgets in the collection based on some criterion.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:25</div></div>
 <div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_aa4a8df123f7b12994c46dd3ee95006f6"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">spk::Widget::Atlas::get</a></div><div class="ttdeci">Interface * get(const std::wstring &amp;p_widgetName)</div><div class="ttdoc">Get the desired widget.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:45</div></div>
+<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_aafaa36940d387978a08f66cd04ead969"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#aafaa36940d387978a08f66cd04ead969">spk::Widget::Atlas::widgets</a></div><div class="ttdeci">StoringContainer &amp; widgets()</div><div class="ttdoc">Returns a reference to the collection of widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:58</div></div>
 <div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_aafe4da2e4f06924ac6d367c683c4ac7f"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#aafe4da2e4f06924ac6d367c683c4ac7f">spk::Widget::Atlas::remove</a></div><div class="ttdeci">void remove(Interface *p_widget)</div><div class="ttdoc">Removes a widget from the collection.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_aefb76217b61aa046653f3b343da76f30"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#aefb76217b61aa046653f3b343da76f30">spk::Widget::Atlas::insert</a></div><div class="ttdeci">void insert(Interface *p_widget)</div><div class="ttdoc">Inserts a new widget into the collection.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.cpp:10</div></div>
-<div class="ttc" id="aclassspk_1_1Widget_1_1Interface_html"><div class="ttname"><a href="classspk_1_1Widget_1_1Interface.html">spk::Widget::Interface</a></div><div class="ttdoc">Abstract base class for widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_interface.hpp:20</div></div>
+<div class="ttc" id="aclassspk_1_1Widget_1_1Interface_html"><div class="ttname"><a href="classspk_1_1Widget_1_1Interface.html">spk::Widget::Interface</a></div><div class="ttdoc">Abstract base class for widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_interface.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

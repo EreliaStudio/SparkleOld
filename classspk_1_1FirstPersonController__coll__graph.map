@@ -1,6 +1,9 @@
 <map id="spk::FirstPersonController" name="spk::FirstPersonController">
-<area shape="rect" id="node1" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="145,95,335,121"/>
-<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,5,133,32"/>
-<area shape="rect" id="node3" href="$structspk_1_1IVector3.html" title=" " alt="" coords="157,5,323,32"/>
-<area shape="rect" id="node4" href="$structspk_1_1IVector2.html" title=" " alt="" coords="358,5,511,32"/>
+<area shape="rect" id="node1" title="Represents a first&#45;person controller component in the Sparkle engine." alt="" coords="167,351,357,377"/>
+<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="27,261,155,288"/>
+<area shape="rect" id="node3" href="$classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,172,177,199"/>
+<area shape="rect" id="node4" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="17,81,165,123"/>
+<area shape="rect" id="node5" href="$classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+<area shape="rect" id="node6" href="$structspk_1_1IVector3.html" title=" " alt="" coords="179,261,345,288"/>
+<area shape="rect" id="node7" href="$structspk_1_1IVector2.html" title=" " alt="" coords="380,261,533,288"/>
 </map>

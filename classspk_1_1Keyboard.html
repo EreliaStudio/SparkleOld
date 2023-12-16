@@ -82,24 +82,6 @@ $(function() {
  <a href="classspk_1_1Keyboard.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__keyboard_8hpp_source.html">spk_keyboard.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for spk::Keyboard:</div>
-<div class="dyncontent">
-<div class="center"><img src="classspk_1_1Keyboard__inherit__graph.png" border="0" usemap="#aspk_1_1Keyboard_inherit__map" alt="Inheritance graph"/></div>
-<map name="aspk_1_1Keyboard_inherit__map" id="aspk_1_1Keyboard_inherit__map">
-<area shape="rect" title="Singleton class for keyboard inputs." alt="" coords="51,80,165,107"/>
-<area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,211,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for spk::Keyboard:</div>
-<div class="dyncontent">
-<div class="center"><img src="classspk_1_1Keyboard__coll__graph.png" border="0" usemap="#aspk_1_1Keyboard_coll__map" alt="Collaboration graph"/></div>
-<map name="aspk_1_1Keyboard_coll__map" id="aspk_1_1Keyboard_coll__map">
-<area shape="rect" title="Singleton class for keyboard inputs." alt="" coords="51,80,165,107"/>
-<area shape="rect" href="classspk_1_1Singleton.html" title=" " alt="" coords="5,5,211,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -284,17 +266,19 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a13a0bee8478b4e4e8162d4f389134b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for representing keyboard keys. <br /></td></tr>
 <tr class="separator:a13a0bee8478b4e4e8162d4f389134b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aed52e31a47a4a942d7e72aa65a2cb6"><td class="memItemLeft" align="right" valign="top"><a id="a6aed52e31a47a4a942d7e72aa65a2cb6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6">Layout</a> { <b>Azerty</b>
-, <b>Qwerty</b>
- }</td></tr>
-<tr class="memdesc:a6aed52e31a47a4a942d7e72aa65a2cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for representing keyboard layouts. <br /></td></tr>
-<tr class="separator:a6aed52e31a47a4a942d7e72aa65a2cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96c38656ea7b2aefffe62cc4548207bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">setLayout</a> (const <a class="el" href="classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6">Layout</a> &amp;p_layout)</td></tr>
-<tr class="memdesc:a96c38656ea7b2aefffe62cc4548207bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the layout of the keyboard.  <a href="classspk_1_1Keyboard.html#a96c38656ea7b2aefffe62cc4548207bb">More...</a><br /></td></tr>
-<tr class="separator:a96c38656ea7b2aefffe62cc4548207bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c24eb679b40f736ab882f03ab2f292"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#ae7c24eb679b40f736ab882f03ab2f292">pressKey</a> (const uint32_t &amp;p_key)</td></tr>
+<tr class="memdesc:ae7c24eb679b40f736ab882f03ab2f292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a key press event.  <a href="classspk_1_1Keyboard.html#ae7c24eb679b40f736ab882f03ab2f292">More...</a><br /></td></tr>
+<tr class="separator:ae7c24eb679b40f736ab882f03ab2f292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ecd823d91d43f6c364568a7a23efa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#a94ecd823d91d43f6c364568a7a23efa1">releaseKey</a> (const uint32_t &amp;p_key)</td></tr>
+<tr class="memdesc:a94ecd823d91d43f6c364568a7a23efa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a key release event.  <a href="classspk_1_1Keyboard.html#a94ecd823d91d43f6c364568a7a23efa1">More...</a><br /></td></tr>
+<tr class="separator:a94ecd823d91d43f6c364568a7a23efa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a243d7c2e1a559feb73565f9f0a45e"><td class="memItemLeft" align="right" valign="top"><a id="a63a243d7c2e1a559feb73565f9f0a45e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#a63a243d7c2e1a559feb73565f9f0a45e">update</a> ()</td></tr>
+<tr class="memdesc:a63a243d7c2e1a559feb73565f9f0a45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of the keyboard. <br /></td></tr>
+<tr class="separator:a63a243d7c2e1a559feb73565f9f0a45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b65a94087efacfb89ca84dec70253d8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">inputStatus</a> (const <a class="el" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Key</a> &amp;p_key) const</td></tr>
 <tr class="memdesc:a4b65a94087efacfb89ca84dec70253d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input status of a key.  <a href="classspk_1_1Keyboard.html#a4b65a94087efacfb89ca84dec70253d8">More...</a><br /></td></tr>
 <tr class="separator:a4b65a94087efacfb89ca84dec70253d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,39 +288,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2b0cc5897311b9917d2a8e71782db4d"><td class="memItemLeft" align="right" valign="top">static const std::wstring &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Keyboard.html#ad2b0cc5897311b9917d2a8e71782db4d">keyToString</a> (const <a class="el" href="classspk_1_1Keyboard.html#a13a0bee8478b4e4e8162d4f389134b28">Keyboard::Key</a> &amp;p_key)</td></tr>
 <tr class="memdesc:ad2b0cc5897311b9917d2a8e71782db4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a key to a string.  <a href="classspk_1_1Keyboard.html#ad2b0cc5897311b9917d2a8e71782db4d">More...</a><br /></td></tr>
 <tr class="separator:ad2b0cc5897311b9917d2a8e71782db4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Keyboard &gt;</a></td></tr>
-<tr class="memitem:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Keyboard.html">Keyboard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">instanciate</a> (Args &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate the singleton object. This template function creates a new instance of the singleton object if it doesn't exist. If an instance already exists, it returns the existing instance.  <a href="classspk_1_1Singleton.html#ab970838cbc825424436ad64613b20c12">More...</a><br /></td></tr>
-<tr class="separator:ab970838cbc825424436ad64613b20c12 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr std::shared_ptr&lt; <a class="el" href="classspk_1_1Keyboard.html">Keyboard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">instance</a> ()</td></tr>
-<tr class="memdesc:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">More...</a><br /></td></tr>
-<tr class="separator:a5f56bedfe0791cc1cc09d34bb3be382c inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static constexpr const std::shared_ptr&lt; const <a class="el" href="classspk_1_1Keyboard.html">Keyboard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a64fbc9fa7719e8121b71c7d0646b5b44">c_instance</a> ()</td></tr>
-<tr class="memdesc:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance. This function returns the shared pointer to the singleton instance.  <a href="classspk_1_1Singleton.html#a64fbc9fa7719e8121b71c7d0646b5b44">More...</a><br /></td></tr>
-<tr class="separator:a64fbc9fa7719e8121b71c7d0646b5b44 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">release</a> ()</td></tr>
-<tr class="memdesc:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the singleton instance.  <a href="classspk_1_1Singleton.html#a0fd0698aa7eab7c2a5cfbf11a9ddfad1">More...</a><br /></td></tr>
-<tr class="separator:a0fd0698aa7eab7c2a5cfbf11a9ddfad1 inherit pub_static_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a94ba38f3d35ba16980e63a20c9afb2df"><td class="memItemLeft" align="right" valign="top"><a id="a94ba38f3d35ba16980e63a20c9afb2df"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>spk::Singleton&lt; Keyboard &gt;</b></td></tr>
-<tr class="separator:a94ba38f3d35ba16980e63a20c9afb2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa39a823177f470aa267de55498757a22"><td class="memItemLeft" align="right" valign="top"><a id="aa39a823177f470aa267de55498757a22"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>KeyboardModule</b></td></tr>
 <tr class="separator:aa39a823177f470aa267de55498757a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Keyboard &gt;</a></td></tr>
-<tr class="memitem:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top"><a id="a24d01aa8ba49475d195a492d724d43e1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a24d01aa8ba49475d195a492d724d43e1">Singleton</a> ()</td></tr>
-<tr class="memdesc:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected constructor. This constructor is protected to prevent direct instantiation of the singleton class. <br /></td></tr>
-<tr class="separator:a24d01aa8ba49475d195a492d724d43e1 inherit pro_methods_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_attribs_classspk_1_1Singleton"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classspk_1_1Singleton')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classspk_1_1Singleton.html">spk::Singleton&lt; Keyboard &gt;</a></td></tr>
-<tr class="memitem:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classspk_1_1Keyboard.html">Keyboard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Singleton.html#a745f66a5489929948d930a09156aec4c">_instance</a></td></tr>
-<tr class="separator:a745f66a5489929948d930a09156aec4c inherit pro_static_attribs_classspk_1_1Singleton"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classspk_1_1Singleton.html" title="Singleton class template.">Singleton</a> class for keyboard inputs. </p>
@@ -412,34 +369,52 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a96c38656ea7b2aefffe62cc4548207bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96c38656ea7b2aefffe62cc4548207bb">&#9670;&nbsp;</a></span>setLayout()</h2>
+<a id="ae7c24eb679b40f736ab882f03ab2f292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c24eb679b40f736ab882f03ab2f292">&#9670;&nbsp;</a></span>pressKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void spk::Keyboard::setLayout </td>
+          <td class="memname">void spk::Keyboard::pressKey </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classspk_1_1Keyboard.html#a6aed52e31a47a4a942d7e72aa65a2cb6">Layout</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_layout</em></td><td>)</td>
+          <td class="paramtype">const uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Sets the layout of the keyboard. </p>
+<p>Registers a key press event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_layout</td><td>The layout to set. </td></tr>
+    <tr><td class="paramname">p_key</td><td>The key that was pressed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94ecd823d91d43f6c364568a7a23efa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ecd823d91d43f6c364568a7a23efa1">&#9670;&nbsp;</a></span>releaseKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::Keyboard::releaseKey </td>
+          <td>(</td>
+          <td class="paramtype">const uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>p_key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a key release event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_key</td><td>The key that was released. </td></tr>
   </table>
   </dd>
 </dl>
@@ -447,8 +422,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/input/<a class="el" href="spk__keyboard_8hpp_source.html">spk_keyboard.hpp</a></li>
-<li>src/input/spk_keyboard.cpp</li>
+<li>Sparkle/includes/input/<a class="el" href="spk__keyboard_8hpp_source.html">spk_keyboard.hpp</a></li>
+<li>Sparkle/src/input/spk_keyboard.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

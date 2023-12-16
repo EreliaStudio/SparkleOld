@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/threading/spk_thread_safe_queue.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/threading/spk_thread_safe_queue.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_d13c0e61298ef12df375d2f8fbcfc354.html">threading</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_46a85f9882164506482b7fcbaf3f6f7a.html">threading</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -174,7 +174,7 @@ $(function() {
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classspk_1_1ThreadSafeQueue.html#a12f50f59d8aee3d299c94e7e008ae7c9">  218</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ThreadSafeQueue.html#a12f50f59d8aee3d299c94e7e008ae7c9">wait</a>()</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="classspk_1_1ThreadSafeQueue.html#ac36eba392f30292d91c8ad7aa419da85">empty</a>())</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classspk_1_1ThreadSafeQueue.html#ac36eba392f30292d91c8ad7aa419da85">empty</a>())</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                std::unique_lock&lt;std::mutex&gt; ul(<a class="code" href="classspk_1_1ThreadSafeQueue.html#a5620c7331f98ca497a77ea3da619046c">muxBlocking</a>);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <a class="code" href="classspk_1_1ThreadSafeQueue.html#a0a832adf8cffefc4b59bb5893be4dacf">cvBlocking</a>.wait(ul);</div>

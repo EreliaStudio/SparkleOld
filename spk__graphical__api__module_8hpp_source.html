@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/application/modules/spk_graphical_api_module.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/application/modules/spk_graphical_api_module.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_aecd53831fdc6b2dd5eaa5f97724cc82.html">application</a></li><li class="navelem"><a class="el" href="dir_55b1da2540e6841d8143ff5afb8a1ad6.html">modules</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_946ef27526cf24eb655fe56282177e76.html">application</a></li><li class="navelem"><a class="el" href="dir_dafafd11d4f1abdb52973297f1353ca7.html">modules</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,31 +74,44 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;math/spk_vector2.hpp&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;application/modules/spk_message_consumer_module.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1GraphicalAPIModule.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1GraphicalAPIModule.html">GraphicalAPIModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classspk_1_1GraphicalAPIModule.html#a9e3453d085218bf9cc21f07cc070b932">GraphicalAPIModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, <span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size, <span class="keywordtype">void</span> *p_apiModule = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classspk_1_1GraphicalAPIModule.html#a8d1e752556d2c1de0f9fc84e1dd4454e">~GraphicalAPIModule</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1GraphicalAPIModule.html#a9b4ab8b8d5ecce7e7b124192dfaffaa4">render</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1GraphicalAPIModule.html#a20126b92cfda1fd55d899ce5bff1600c">clear</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html">spk::GraphicalAPIModule</a></div><div class="ttdoc">Class for managing the application window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a20126b92cfda1fd55d899ce5bff1600c"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a20126b92cfda1fd55d899ce5bff1600c">spk::GraphicalAPIModule::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:23</div></div>
-<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a8d1e752556d2c1de0f9fc84e1dd4454e"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a8d1e752556d2c1de0f9fc84e1dd4454e">spk::GraphicalAPIModule::~GraphicalAPIModule</a></div><div class="ttdeci">~GraphicalAPIModule()</div><div class="ttdoc">Destructs the GraphicalAPIModule object.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:13</div></div>
-<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a9b4ab8b8d5ecce7e7b124192dfaffaa4"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a9b4ab8b8d5ecce7e7b124192dfaffaa4">spk::GraphicalAPIModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:18</div></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;graphics/spk_window.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classspk_1_1GraphicalAPIModule.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1GraphicalAPIModule.html">GraphicalAPIModule</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1IMessageConsumerModule.html">IMessageConsumerModule</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classspk_1_1Window.html">spk::Window</a> _window;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> _handleMessage(SystemMessage&amp; p_event);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classspk_1_1GraphicalAPIModule.html#a9e3453d085218bf9cc21f07cc070b932">GraphicalAPIModule</a>(<a class="code" href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt;SystemMessage&gt;</a> &amp;p_queue, <span class="keyword">const</span> std::wstring&amp; p_title, <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2Int</a>&amp; p_size, <span class="keywordtype">void</span> *p_apiModule = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classspk_1_1GraphicalAPIModule.html#a8d1e752556d2c1de0f9fc84e1dd4454e">~GraphicalAPIModule</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1GraphicalAPIModule.html#a9b4ab8b8d5ecce7e7b124192dfaffaa4">render</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1GraphicalAPIModule.html#a20126b92cfda1fd55d899ce5bff1600c">clear</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1GraphicalAPIModule.html#ae30a3c11beaf9bedafe08b5f3cbc2eb9">resize</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">spk::Vector2UInt</a>&amp; p_newSize);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classspk_1_1GraphicalAPIModule.html#a4de1cdc11639803dada6b7590da83739">   66</a></span>&#160;        <a class="code" href="classspk_1_1Window.html">spk::Window</a>&amp; <a class="code" href="classspk_1_1GraphicalAPIModule.html#a4de1cdc11639803dada6b7590da83739">window</a>() { <span class="keywordflow">return</span> _window; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classspk_1_1GraphicalAPIModule.html#a1d634b69147f01ac189ff953282448f2">   73</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Window.html">spk::Window</a>&amp; <a class="code" href="classspk_1_1GraphicalAPIModule.html#a1d634b69147f01ac189ff953282448f2">window</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _window; }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html">spk::GraphicalAPIModule</a></div><div class="ttdoc">Class for managing the application window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.hpp:17</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a1d634b69147f01ac189ff953282448f2"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a1d634b69147f01ac189ff953282448f2">spk::GraphicalAPIModule::window</a></div><div class="ttdeci">const spk::Window &amp; window() const</div><div class="ttdoc">Provides const access to the Window instance.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.hpp:73</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a20126b92cfda1fd55d899ce5bff1600c"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a20126b92cfda1fd55d899ce5bff1600c">spk::GraphicalAPIModule::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:25</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a4de1cdc11639803dada6b7590da83739"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a4de1cdc11639803dada6b7590da83739">spk::GraphicalAPIModule::window</a></div><div class="ttdeci">spk::Window &amp; window()</div><div class="ttdoc">Provides non-const access to the Window instance.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.hpp:66</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a8d1e752556d2c1de0f9fc84e1dd4454e"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a8d1e752556d2c1de0f9fc84e1dd4454e">spk::GraphicalAPIModule::~GraphicalAPIModule</a></div><div class="ttdeci">~GraphicalAPIModule()</div><div class="ttdoc">Destructs the GraphicalAPIModule object.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a9b4ab8b8d5ecce7e7b124192dfaffaa4"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a9b4ab8b8d5ecce7e7b124192dfaffaa4">spk::GraphicalAPIModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the window.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:20</div></div>
 <div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_a9e3453d085218bf9cc21f07cc070b932"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#a9e3453d085218bf9cc21f07cc070b932">spk::GraphicalAPIModule::GraphicalAPIModule</a></div><div class="ttdeci">GraphicalAPIModule(spk::ThreadSafeQueue&lt; SystemMessage &gt; &amp;p_queue, const std::wstring &amp;p_title, const spk::Vector2Int &amp;p_size, void *p_apiModule=nullptr)</div><div class="ttdoc">Constructs the GraphicalAPIModule object.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:8</div></div>
+<div class="ttc" id="aclassspk_1_1GraphicalAPIModule_html_ae30a3c11beaf9bedafe08b5f3cbc2eb9"><div class="ttname"><a href="classspk_1_1GraphicalAPIModule.html#ae30a3c11beaf9bedafe08b5f3cbc2eb9">spk::GraphicalAPIModule::resize</a></div><div class="ttdeci">void resize(const spk::Vector2UInt &amp;p_newSize)</div><div class="ttdoc">Resizes the window to a new size.</div><div class="ttdef"><b>Definition:</b> spk_graphical_api_module.cpp:30</div></div>
 <div class="ttc" id="aclassspk_1_1IMessageConsumerModule_html"><div class="ttname"><a href="classspk_1_1IMessageConsumerModule.html">spk::IMessageConsumerModule</a></div><div class="ttdoc">Class for modules that consume messages.</div><div class="ttdef"><b>Definition:</b> spk_message_consumer_module.hpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1ThreadSafeQueue_html"><div class="ttname"><a href="classspk_1_1ThreadSafeQueue.html">spk::ThreadSafeQueue&lt; SystemMessage &gt;</a></div></div>
+<div class="ttc" id="aclassspk_1_1Window_html"><div class="ttname"><a href="classspk_1_1Window.html">spk::Window</a></div><div class="ttdef"><b>Definition:</b> spk_window.hpp:12</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; int &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verticalalignment_1961',['VerticalAlignment',['../classspk_1_1Font.html#a9748810294acaab304a125b964d62186',1,'spk::Font']]]
+  ['wrap_1977',['Wrap',['../classspk_1_1AbstractTexture.html#a51404e7a46755485f8c548db2af49e1f',1,'spk::AbstractTexture']]]
 ];

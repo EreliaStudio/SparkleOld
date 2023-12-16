@@ -1,7 +1,10 @@
 <map id="spk::Transform" name="spk::Transform">
-<area shape="rect" id="node1" title="Represents the transformation component in the Sparkle engine." alt="" coords="179,215,298,241"/>
-<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="5,89,133,115"/>
-<area shape="rect" id="node3" href="$classspk_1_1ObservableValue.html" title=" " alt="" coords="157,81,320,123"/>
-<area shape="rect" id="node4" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="157,5,320,32"/>
-<area shape="rect" id="node5" href="$structspk_1_1IVector3.html" title=" " alt="" coords="344,89,509,115"/>
+<area shape="rect" id="node1" title="Represents the transformation component in the Sparkle engine." alt="" coords="221,395,340,421"/>
+<area shape="rect" id="node2" href="$classspk_1_1Component.html" title="Represents a component that can be attached to a GameObject." alt="" coords="41,269,169,295"/>
+<area shape="rect" id="node3" href="$classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,172,177,199"/>
+<area shape="rect" id="node4" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="17,81,165,123"/>
+<area shape="rect" id="node5" href="$classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+<area shape="rect" id="node6" href="$classspk_1_1ObservableValue.html" title=" " alt="" coords="199,261,362,303"/>
+<area shape="rect" id="node7" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="206,172,369,199"/>
+<area shape="rect" id="node8" href="$structspk_1_1IVector3.html" title=" " alt="" coords="386,269,551,295"/>
 </map>

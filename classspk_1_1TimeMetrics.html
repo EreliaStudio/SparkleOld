@@ -107,12 +107,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a24989064858748b2da18b1726280bd0a"><td class="memItemLeft" align="right" valign="top">constexpr const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">deltaTime</a> () const</td></tr>
 <tr class="memdesc:a24989064858748b2da18b1726280bd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time elapsed between the last two frames.  <a href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">More...</a><br /></td></tr>
 <tr class="separator:a24989064858748b2da18b1726280bd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5adc66dadcbd380ae1e263097991499c"><td class="memItemLeft" align="right" valign="top">constexpr const long long &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#a5adc66dadcbd380ae1e263097991499c">programDuration</a> () const</td></tr>
+<tr class="memdesc:a5adc66dadcbd380ae1e263097991499c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time elapsed since the start of the program.  <a href="classspk_1_1TimeMetrics.html#a5adc66dadcbd380ae1e263097991499c">More...</a><br /></td></tr>
+<tr class="separator:a5adc66dadcbd380ae1e263097991499c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aab7658641b3fbea65c75543a3fff5170"><td class="memItemLeft" align="right" valign="top">static long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#aab7658641b3fbea65c75543a3fff5170">currentTime</a> ()</td></tr>
 <tr class="memdesc:aab7658641b3fbea65c75543a3fff5170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the current system time.  <a href="classspk_1_1TimeMetrics.html#aab7658641b3fbea65c75543a3fff5170">More...</a><br /></td></tr>
 <tr class="separator:aab7658641b3fbea65c75543a3fff5170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9992dc9e06e318297a3ae6bf3a1f5d87"><td class="memItemLeft" align="right" valign="top">static long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#a9992dc9e06e318297a3ae6bf3a1f5d87">nanosecondToMillisecond</a> (const long long &amp;p_nanosecond)</td></tr>
+<tr class="memdesc:a9992dc9e06e318297a3ae6bf3a1f5d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts time from nanoseconds to milliseconds.  <a href="classspk_1_1TimeMetrics.html#a9992dc9e06e318297a3ae6bf3a1f5d87">More...</a><br /></td></tr>
+<tr class="separator:a9992dc9e06e318297a3ae6bf3a1f5d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9abd7bf4e6723f78ff8ec1217ea2b8"><td class="memItemLeft" align="right" valign="top">static long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#acb9abd7bf4e6723f78ff8ec1217ea2b8">millisecondToNanosecond</a> (const long long &amp;p_millisecond)</td></tr>
+<tr class="memdesc:acb9abd7bf4e6723f78ff8ec1217ea2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts time from milliseconds to nanoseconds.  <a href="classspk_1_1TimeMetrics.html#acb9abd7bf4e6723f78ff8ec1217ea2b8">More...</a><br /></td></tr>
+<tr class="separator:acb9abd7bf4e6723f78ff8ec1217ea2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac272250bd5ede5c92c0e02e22a65ba88"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">sleepAtLeast</a> (long long p_millisecond)</td></tr>
 <tr class="memdesc:ac272250bd5ede5c92c0e02e22a65ba88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to put the current thread to sleep for at least the specified duration.  <a href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">More...</a><br /></td></tr>
 <tr class="separator:ac272250bd5ede5c92c0e02e22a65ba88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,6 +220,106 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="acb9abd7bf4e6723f78ff8ec1217ea2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9abd7bf4e6723f78ff8ec1217ea2b8">&#9670;&nbsp;</a></span>millisecondToNanosecond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long spk::TimeMetrics::millisecondToNanosecond </td>
+          <td>(</td>
+          <td class="paramtype">const long long &amp;&#160;</td>
+          <td class="paramname"><em>p_millisecond</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts time from milliseconds to nanoseconds. </p>
+<p>This function takes a time value in milliseconds and converts it to nanoseconds. As there are 1,000,000 nanoseconds in a millisecond, the function multiplies the input value by 1,000,000.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_millisecond</td><td>The time in milliseconds to be converted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The time in nanoseconds. </dd></dl>
+
+</div>
+</div>
+<a id="a9992dc9e06e318297a3ae6bf3a1f5d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9992dc9e06e318297a3ae6bf3a1f5d87">&#9670;&nbsp;</a></span>nanosecondToMillisecond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long spk::TimeMetrics::nanosecondToMillisecond </td>
+          <td>(</td>
+          <td class="paramtype">const long long &amp;&#160;</td>
+          <td class="paramname"><em>p_nanosecond</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts time from nanoseconds to milliseconds. </p>
+<p>This function takes a time value in nanoseconds and converts it to milliseconds. As there are 1,000,000 nanoseconds in a millisecond, the function divides the input value by 1,000,000.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_nanosecond</td><td>The time in nanoseconds to be converted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The time in milliseconds. </dd></dl>
+
+</div>
+</div>
+<a id="a5adc66dadcbd380ae1e263097991499c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5adc66dadcbd380ae1e263097991499c">&#9670;&nbsp;</a></span>programDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const long long&amp; spk::TimeMetrics::programDuration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the time elapsed since the start of the program. </p>
+<dl class="section return"><dt>Returns</dt><dd>The delta time since start and now. </dd></dl>
+
+</div>
+</div>
 <a id="ac272250bd5ede5c92c0e02e22a65ba88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac272250bd5ede5c92c0e02e22a65ba88">&#9670;&nbsp;</a></span>sleepAtLeast()</h2>
 
@@ -275,8 +384,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/system/<a class="el" href="spk__time__metrics_8hpp_source.html">spk_time_metrics.hpp</a></li>
-<li>src/system/spk_time_metrics.cpp</li>
+<li>Sparkle/includes/system/<a class="el" href="spk__time__metrics_8hpp_source.html">spk_time_metrics.hpp</a></li>
+<li>Sparkle/src/system/spk_time_metrics.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

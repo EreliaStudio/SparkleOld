@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A class to profile and manage the frames-per-second rates of the application.  
+<p>A module class that encapsulates profiling functionality.  
  <a href="classspk_1_1ProfilerModule.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__profiler__module_8hpp_source.html">spk_profiler_module.hpp</a>&gt;</code></p>
@@ -83,31 +83,105 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab79ffae57422fddf6e6cef43f34c5c49"><td class="memItemLeft" align="right" valign="top"><a id="ab79ffae57422fddf6e6cef43f34c5c49"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a> ()</td></tr>
-<tr class="memdesc:ab79ffae57422fddf6e6cef43f34c5c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classspk_1_1ProfilerModule.html" title="A class to profile and manage the frames-per-second rates of the application.">ProfilerModule</a> class. <br /></td></tr>
+<tr class="memdesc:ab79ffae57422fddf6e6cef43f34c5c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classspk_1_1ProfilerModule.html" title="A module class that encapsulates profiling functionality.">ProfilerModule</a> instance. <br /></td></tr>
 <tr class="separator:ab79ffae57422fddf6e6cef43f34c5c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6619183c9e521e1da356b6eddc7666"><td class="memItemLeft" align="right" valign="top"><a id="a2c6619183c9e521e1da356b6eddc7666"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a> ()</td></tr>
-<tr class="memdesc:a2c6619183c9e521e1da356b6eddc7666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="classspk_1_1ProfilerModule.html" title="A class to profile and manage the frames-per-second rates of the application.">ProfilerModule</a> class. <br /></td></tr>
+<tr class="memdesc:a2c6619183c9e521e1da356b6eddc7666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classspk_1_1ProfilerModule.html" title="A module class that encapsulates profiling functionality.">ProfilerModule</a> instance. <br /></td></tr>
 <tr class="separator:a2c6619183c9e521e1da356b6eddc7666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bd3eb07d5cd2845c0bfdaa5c589f9a9"><td class="memItemLeft" align="right" valign="top"><a id="a6bd3eb07d5cd2845c0bfdaa5c589f9a9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a6bd3eb07d5cd2845c0bfdaa5c589f9a9">updateCounters</a> ()</td></tr>
-<tr class="memdesc:a6bd3eb07d5cd2845c0bfdaa5c589f9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualize the affiched FPS/UPS counter. <br /></td></tr>
-<tr class="separator:a6bd3eb07d5cd2845c0bfdaa5c589f9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95e0e209a1911edf37f2d428258171fe"><td class="memItemLeft" align="right" valign="top"><a id="a95e0e209a1911edf37f2d428258171fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a95e0e209a1911edf37f2d428258171fe">updateFPS</a> ()</td></tr>
-<tr class="memdesc:a95e0e209a1911edf37f2d428258171fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating FPS counter by incrementing it by one. <br /></td></tr>
-<tr class="separator:a95e0e209a1911edf37f2d428258171fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa613fe6c670df69eba5a441dcf4879aa"><td class="memItemLeft" align="right" valign="top"><a id="aa613fe6c670df69eba5a441dcf4879aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#aa613fe6c670df69eba5a441dcf4879aa">updateUPS</a> ()</td></tr>
-<tr class="memdesc:aa613fe6c670df69eba5a441dcf4879aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updating UPS counter by incrementing it by one. <br /></td></tr>
-<tr class="separator:aa613fe6c670df69eba5a441dcf4879aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5971192d2d68f4f45ff7569a69b32fc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a5971192d2d68f4f45ff7569a69b32fc1">emitReport</a> ()</td></tr>
+<tr class="memdesc:a5971192d2d68f4f45ff7569a69b32fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emits a profiling report.  <a href="classspk_1_1ProfilerModule.html#a5971192d2d68f4f45ff7569a69b32fc1">More...</a><br /></td></tr>
+<tr class="separator:a5971192d2d68f4f45ff7569a69b32fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27faf86d7b8a64bfb97994c45625908d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#a27faf86d7b8a64bfb97994c45625908d">profiler</a> ()</td></tr>
+<tr class="memdesc:a27faf86d7b8a64bfb97994c45625908d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides non-const access to the encapsulated <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>.  <a href="classspk_1_1ProfilerModule.html#a27faf86d7b8a64bfb97994c45625908d">More...</a><br /></td></tr>
+<tr class="separator:a27faf86d7b8a64bfb97994c45625908d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad309a0408a759c9ca14509a4aeec4f71"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1ProfilerModule.html#ad309a0408a759c9ca14509a4aeec4f71">profiler</a> () const</td></tr>
+<tr class="memdesc:ad309a0408a759c9ca14509a4aeec4f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides const access to the encapsulated <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>.  <a href="classspk_1_1ProfilerModule.html#ad309a0408a759c9ca14509a4aeec4f71">More...</a><br /></td></tr>
+<tr class="separator:ad309a0408a759c9ca14509a4aeec4f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class to profile and manage the frames-per-second rates of the application. </p>
-<p>This class is responsible for tracking the number of frames and updates that the application processes every second (known as the "render IPS" and "update IPS" respectively). </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/application/modules/<a class="el" href="spk__profiler__module_8hpp_source.html">spk_profiler_module.hpp</a></li>
-<li>src/application/modules/spk_profiler_module.cpp</li>
+<div class="textblock"><p>A module class that encapsulates profiling functionality. </p>
+<p><a class="el" href="classspk_1_1ProfilerModule.html" title="A module class that encapsulates profiling functionality.">ProfilerModule</a> serves as a wrapper around the <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a> class, providing an interface for profiling operations within the application. It includes functionalities to manage and emit reports from the encapsulated <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5971192d2d68f4f45ff7569a69b32fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5971192d2d68f4f45ff7569a69b32fc1">&#9670;&nbsp;</a></span>emitReport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spk::ProfilerModule::emitReport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Emits a profiling report. </p>
+<p>This function collects and emits the profiling data gathered by the <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>. </p>
+
+</div>
+</div>
+<a id="a27faf86d7b8a64bfb97994c45625908d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27faf86d7b8a64bfb97994c45625908d">&#9670;&nbsp;</a></span>profiler() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a>&amp; spk::ProfilerModule::profiler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides non-const access to the encapsulated <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a> instance. </dd></dl>
+
+</div>
+</div>
+<a id="ad309a0408a759c9ca14509a4aeec4f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad309a0408a759c9ca14509a4aeec4f71">&#9670;&nbsp;</a></span>profiler() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a>&amp; spk::ProfilerModule::profiler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides const access to the encapsulated <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a> instance. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>Sparkle/includes/application/modules/<a class="el" href="spk__profiler__module_8hpp_source.html">spk_profiler_module.hpp</a></li>
+<li>Sparkle/src/application/modules/spk_profiler_module.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

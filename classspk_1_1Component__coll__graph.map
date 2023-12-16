@@ -1,0 +1,6 @@
+<map id="spk::Component" name="spk::Component">
+<area shape="rect" id="node1" title="Represents a component that can be attached to a GameObject." alt="" coords="27,261,155,288"/>
+<area shape="rect" id="node2" href="$classspk_1_1TimeConsumption.html" title="A class for tracking and reporting time consumption metrics." alt="" coords="5,172,177,199"/>
+<area shape="rect" id="node3" href="$classspk_1_1IMetrics.html" title=" " alt="" coords="17,81,165,123"/>
+<area shape="rect" id="node4" href="$classspk_1_1AbstractMetrics.html" title="Abstract base class for metric reporting." alt="" coords="14,5,169,32"/>
+</map>

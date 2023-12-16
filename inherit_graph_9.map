@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classspk_1_1Activity.html" title="Represents an activity. This class defines an activity that can be managed by an ActivityManager...." alt="" coords="5,31,108,57"/>
-<area shape="rect" id="node2" href="$classspk_1_1RetryActivity.html" title="Represents an activity that repeatedly executes a function until it returns true." alt="" coords="159,5,297,32"/>
-<area shape="rect" id="node3" href="$classspk_1_1TimedActivity.html" title="Represents an activity that executes a function after a specified delay." alt="" coords="156,56,300,83"/>
+<area shape="rect" id="node1" href="$classspk_1_1AbstractTexture.html" title="Represents an abstract texture in the Sparkle framework. This class serves as the base class for all ..." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$classspk_1_1Texture.html" title="Represents a concrete implementation of a texture in OpenGL framework." alt="" coords="208,5,309,32"/>
+<area shape="rect" id="node3" href="$classspk_1_1Image.html" title="Represents an image which is a specialized type of texture." alt="" coords="357,5,452,32"/>
+<area shape="rect" id="node4" href="$classspk_1_1SpriteSheet.html" title="A class representing a sprite sheet, derived from an Image class." alt="" coords="500,5,628,32"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/network/windows/spk_network_socket.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/network/windows/spk_network_socket.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_f9d1d7c84a2265286938adb432e18d07.html">network</a></li><li class="navelem"><a class="el" href="dir_608243487b9f621fab819ec07695eb6d.html">windows</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_bb9dcbb52a12ca16964e42a40d4eb748.html">network</a></li><li class="navelem"><a class="el" href="dir_b87169d85670b544a1f41745fc147f7a.html">windows</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -95,34 +95,36 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#a24d549773ef46263a0c24f6fb763a864">   33</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> = SOCKET; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> <a class="code" href="classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685">SocketError</a> = SOCKET_ERROR; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> u_long BLOCKING_SOCKET = 0; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> u_long NON_BLOCKING_SOCKET = 1; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> _socket = SOCKET(); </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">bool</span> _isConnected = <span class="keyword">false</span>; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> connect(SOCKET p_socket);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> connect(<span class="keyword">const</span> std::wstring&amp; p_serverAddress, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_serverPort);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">void</span> close();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#af2ce6e58ea52a629b15415d46bf5658e">   40</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#af2ce6e58ea52a629b15415d46bf5658e">getLastError</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> u_long BLOCKING_SOCKET = 0; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">static</span> <span class="keyword">inline</span> u_long NON_BLOCKING_SOCKET = 1; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">FileDescriptor</a> _socket = SOCKET(); </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">bool</span> _isConnected = <span class="keyword">false</span>; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> connect(SOCKET p_socket);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> connect(<span class="keyword">const</span> std::wstring&amp; p_serverAddress, <span class="keyword">const</span> <span class="keywordtype">size_t</span>&amp; p_serverPort);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _receiveHeader(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _waitForSelection();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _receiveContent(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">   97</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">isConnected</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed">  102</a></span>&#160;        <span class="keyword">const</span> SOCKET&amp; <a class="code" href="classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed">fileDescriptor</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">  109</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">send</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a>&amp; p_msg);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">  117</a></span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> <a class="code" href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">receive</a>(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a>&amp; p_messageToFill);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    };</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> close();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _receiveHeader(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _waitForSelection();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">Socket::ReadResult</a> _receiveContent(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a> &amp;p_messageToFill);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">  103</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">isConnected</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed">  108</a></span>&#160;        <span class="keyword">const</span> SOCKET&amp; <a class="code" href="classspk_1_1Network_1_1Socket.html#a9139f73a319e63ef9a0f761e74450fed">fileDescriptor</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">  115</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Network_1_1Socket.html#a8bc6d869b3ae0dca964eb235475d1546">send</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a>&amp; p_msg);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">  123</a></span>&#160;        <a class="code" href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781">ReadResult</a> <a class="code" href="classspk_1_1Network_1_1Socket.html#aa050f856953dd60a76321ba91f2d0c0f">receive</a>(<a class="code" href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a>&amp; p_messageToFill);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    };</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Message_html"><div class="ttname"><a href="classspk_1_1Network_1_1Message.html">spk::Network::Message</a></div><div class="ttdoc">Class encapsulating a network message.</div><div class="ttdef"><b>Definition:</b> spk_network_message.hpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Object_html"><div class="ttname"><a href="classspk_1_1Network_1_1Object.html">spk::Network::Object</a></div><div class="ttdoc">Base class for objects that utilize network resources.</div><div class="ttdef"><b>Definition:</b> spk_network_object.hpp:16</div></div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_a29267cd30dffd1a26246823a9134e685"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#a29267cd30dffd1a26246823a9134e685">spk::Network::Socket::SocketError</a></div><div class="ttdeci">static const FileDescriptor SocketError</div><div class="ttdef"><b>Definition:</b> spk_network_socket.hpp:34</div></div>
@@ -135,6 +137,7 @@ $(function() {
 <div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ac85a251cc457840f1e032f1b733e9398">spk::Network::Socket::ReadResult::Timeout</a></div><div class="ttdeci">@ Timeout</div><div class="ttdoc">Indicates the socket was timeout during reception of incoming message. *‍/.</div></div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#ad2a48977a3353abca9ce6e18d4f8e781ae20b7e2ed330be4ec4d0b11bb8fd86e0">spk::Network::Socket::ReadResult::NothingToRead</a></div><div class="ttdeci">@ NothingToRead</div><div class="ttdoc">Indicates there was nothing to read from the socket. *‍/.</div></div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_ae21531ebaceab04a0ec7cc7423971311"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#ae21531ebaceab04a0ec7cc7423971311">spk::Network::Socket::isConnected</a></div><div class="ttdeci">bool isConnected()</div><div class="ttdoc">Checks whether the socket is currently connected.</div></div>
+<div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_af2ce6e58ea52a629b15415d46bf5658e"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#af2ce6e58ea52a629b15415d46bf5658e">spk::Network::Socket::getLastError</a></div><div class="ttdeci">static int getLastError()</div><div class="ttdoc">Return the last error code returned by the socket.</div></div>
 <div class="ttc" id="aclassspk_1_1Network_1_1Socket_html_af64382187880bcb8cb79154f05fa8be6"><div class="ttname"><a href="classspk_1_1Network_1_1Socket.html#af64382187880bcb8cb79154f05fa8be6">spk::Network::Socket::FileDescriptor</a></div><div class="ttdeci">int FileDescriptor</div><div class="ttdef"><b>Definition:</b> spk_network_socket.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

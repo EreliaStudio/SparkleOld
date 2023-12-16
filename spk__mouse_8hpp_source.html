@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/input/spk_mouse.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/input/spk_mouse.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_a9d8515c93d115b5c689e0996dc3ef33.html">input</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_18e43d831b98e5af0eff875971b53c06.html">input</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,71 +78,73 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Mouse.html">Mouse</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;Mouse&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1Mouse.html">Mouse</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1Singleton.html">spk::Singleton</a>&lt;<a class="code" href="classspk_1_1Mouse.html">Mouse</a>&gt;;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1MouseModule.html">MouseModule</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">   25</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            Left,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            Middle,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            Right,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Button3,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Button4</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">   34</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">NB_BUTTON</a> = 5; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> INITIAL_DELTA_POSITION = <a class="code" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a>(-10000, -10000);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> _buttons[<a class="code" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">NB_BUTTON</a>]; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _position; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _deltaPosition = INITIAL_DELTA_POSITION; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _wheel; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classspk_1_1Mouse.html">Mouse</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> setMousePosition(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; p_newPosition);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> pressButton(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> releaseButton(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> editWheelPosition(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; p_delta);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#acfc5f290988cf44d44a518391f1f7374">place</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; p_position);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">   97</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">inputStatus</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">        </span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> (_buttons[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(p_button)]);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">  106</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">position</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_position); }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">  112</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">deltaPosition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_deltaPosition); }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classspk_1_1MouseModule.html">MouseModule</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">   24</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            Left,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            Middle,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            Right,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            Button3,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Button4</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">   33</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">NB_BUTTON</a> = 5; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> INITIAL_DELTA_POSITION = <a class="code" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a>(-10000, -10000);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a> _buttons[<a class="code" href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">NB_BUTTON</a>]; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _position; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _deltaPosition = INITIAL_DELTA_POSITION; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a> _wheel; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classspk_1_1Mouse.html#a64dd25a9b4c429e82a180bfee7b67601">Mouse</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#a3576d3accda65e374ca0aa404b60f767">setMousePosition</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; p_newPosition);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#ad9a3b0815e9bcdc053ea6af2953713d1">pressButton</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#a420dd107e3a5c38e7a201b76b9385d4b">releaseButton</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#a996fc2b2a53ee6dffe4c49b80d92c31c">editWheelPosition</a>(<span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; p_delta);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1Mouse.html#ac6ac1c7429fdc3e498a2aa6d09e3dffb">update</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">   90</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">InputState</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">inputStatus</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Button</a>&amp; p_button)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> (_buttons[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(p_button)]);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">   99</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">position</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_position); }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">  105</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">deltaPosition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_deltaPosition); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">  111</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">wheel</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_wheel); }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">  118</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structspk_1_1IVector2.html">Vector2Int</a>&amp; <a class="code" href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">wheel</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_wheel); }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    };</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::wstring <a class="code" href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">to_wstring</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Mouse::Button</a>&amp; p_button);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1MouseModule_html"><div class="ttname"><a href="classspk_1_1MouseModule.html">spk::MouseModule</a></div><div class="ttdoc">Class for managing the mouse interactions.</div><div class="ttdef"><b>Definition:</b> spk_mouse_module.hpp:14</div></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::wstring <a class="code" href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">to_wstring</a>(<span class="keyword">const</span> <a class="code" href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">Mouse::Button</a>&amp; p_button);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1MouseModule_html"><div class="ttname"><a href="classspk_1_1MouseModule.html">spk::MouseModule</a></div><div class="ttdoc">Class for managing the mouse interactions.</div><div class="ttdef"><b>Definition:</b> spk_mouse_module.hpp:15</div></div>
 <div class="ttc" id="aclassspk_1_1Mouse_html"><div class="ttname"><a href="classspk_1_1Mouse.html">spk::Mouse</a></div><div class="ttdoc">Singleton class for Mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_a5430080e4319c4d48d7b482f6bad7994"><div class="ttname"><a href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">spk::Mouse::wheel</a></div><div class="ttdeci">const Vector2Int &amp; wheel() const</div><div class="ttdoc">Gets the position of the mouse wheel.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:118</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_a586de041eeb18225bece40c602fabe4f"><div class="ttname"><a href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">spk::Mouse::deltaPosition</a></div><div class="ttdeci">const Vector2Int &amp; deltaPosition() const</div><div class="ttdoc">Gets the delta position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:112</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_a5f14a04a4540f1b1efe6d09a35b19390"><div class="ttname"><a href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">spk::Mouse::inputStatus</a></div><div class="ttdeci">const InputState &amp; inputStatus(const Button &amp;p_button) const</div><div class="ttdoc">Gets the input state of a given button.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:97</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_a7e51467586bf8952f05461cc3b9fd5b5"><div class="ttname"><a href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">spk::Mouse::Button</a></div><div class="ttdeci">Button</div><div class="ttdoc">Enum for mouse buttons.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:26</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_ac1111549d861795553472775e3ca851a"><div class="ttname"><a href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">spk::Mouse::NB_BUTTON</a></div><div class="ttdeci">static const size_t NB_BUTTON</div><div class="ttdoc">Number of buttons on a mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:34</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_ac3985fa648d414ec9f8e7000e2c35c6e"><div class="ttname"><a href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">spk::Mouse::position</a></div><div class="ttdeci">const Vector2Int &amp; position() const</div><div class="ttdoc">Gets the current position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:106</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_acfc5f290988cf44d44a518391f1f7374"><div class="ttname"><a href="classspk_1_1Mouse.html#acfc5f290988cf44d44a518391f1f7374">spk::Mouse::place</a></div><div class="ttdeci">void place(const Vector2Int &amp;p_position)</div><div class="ttdoc">Places the mouse at a given position.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:61</div></div>
-<div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a3576d3accda65e374ca0aa404b60f767"><div class="ttname"><a href="classspk_1_1Mouse.html#a3576d3accda65e374ca0aa404b60f767">spk::Mouse::setMousePosition</a></div><div class="ttdeci">void setMousePosition(const Vector2Int &amp;p_newPosition)</div><div class="ttdoc">Sets the position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:17</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a420dd107e3a5c38e7a201b76b9385d4b"><div class="ttname"><a href="classspk_1_1Mouse.html#a420dd107e3a5c38e7a201b76b9385d4b">spk::Mouse::releaseButton</a></div><div class="ttdeci">void releaseButton(const Button &amp;p_button)</div><div class="ttdoc">Simulates a mouse button release.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:32</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a5430080e4319c4d48d7b482f6bad7994"><div class="ttname"><a href="classspk_1_1Mouse.html#a5430080e4319c4d48d7b482f6bad7994">spk::Mouse::wheel</a></div><div class="ttdeci">const Vector2Int &amp; wheel() const</div><div class="ttdoc">Gets the position of the mouse wheel.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:111</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a586de041eeb18225bece40c602fabe4f"><div class="ttname"><a href="classspk_1_1Mouse.html#a586de041eeb18225bece40c602fabe4f">spk::Mouse::deltaPosition</a></div><div class="ttdeci">const Vector2Int &amp; deltaPosition() const</div><div class="ttdoc">Gets the delta position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:105</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a5f14a04a4540f1b1efe6d09a35b19390"><div class="ttname"><a href="classspk_1_1Mouse.html#a5f14a04a4540f1b1efe6d09a35b19390">spk::Mouse::inputStatus</a></div><div class="ttdeci">const InputState &amp; inputStatus(const Button &amp;p_button) const</div><div class="ttdoc">Gets the input state of a given button.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:90</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a64dd25a9b4c429e82a180bfee7b67601"><div class="ttname"><a href="classspk_1_1Mouse.html#a64dd25a9b4c429e82a180bfee7b67601">spk::Mouse::Mouse</a></div><div class="ttdeci">Mouse()</div><div class="ttdoc">Constructs a Mouse object.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:6</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a7e51467586bf8952f05461cc3b9fd5b5"><div class="ttname"><a href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">spk::Mouse::Button</a></div><div class="ttdeci">Button</div><div class="ttdoc">Enum for mouse buttons.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:25</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a996fc2b2a53ee6dffe4c49b80d92c31c"><div class="ttname"><a href="classspk_1_1Mouse.html#a996fc2b2a53ee6dffe4c49b80d92c31c">spk::Mouse::editWheelPosition</a></div><div class="ttdeci">void editWheelPosition(const Vector2Int &amp;p_delta)</div><div class="ttdoc">Edits the wheel position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:38</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_ac1111549d861795553472775e3ca851a"><div class="ttname"><a href="classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a">spk::Mouse::NB_BUTTON</a></div><div class="ttdeci">static const size_t NB_BUTTON</div><div class="ttdoc">Number of buttons on a mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:33</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_ac3985fa648d414ec9f8e7000e2c35c6e"><div class="ttname"><a href="classspk_1_1Mouse.html#ac3985fa648d414ec9f8e7000e2c35c6e">spk::Mouse::position</a></div><div class="ttdeci">const Vector2Int &amp; position() const</div><div class="ttdoc">Gets the current position of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:99</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_ac6ac1c7429fdc3e498a2aa6d09e3dffb"><div class="ttname"><a href="classspk_1_1Mouse.html#ac6ac1c7429fdc3e498a2aa6d09e3dffb">spk::Mouse::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the state of the mouse.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:43</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_ad9a3b0815e9bcdc053ea6af2953713d1"><div class="ttname"><a href="classspk_1_1Mouse.html#ad9a3b0815e9bcdc053ea6af2953713d1">spk::Mouse::pressButton</a></div><div class="ttdeci">void pressButton(const Button &amp;p_button)</div><div class="ttdoc">Simulates a mouse button press.</div><div class="ttdef"><b>Definition:</b> spk_mouse.cpp:26</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="anamespacespk_html_a4b79166d0f6923f9730d6d359d9622b3"><div class="ttname"><a href="namespacespk.html#a4b79166d0f6923f9730d6d359d9622b3">spk::to_wstring</a></div><div class="ttdeci">std::wstring to_wstring(const GLenum &amp;p_type)</div><div class="ttdef"><b>Definition:</b> spk_pipeline_basic_functions.cpp:6</div></div>
 <div class="ttc" id="anamespacespk_html_a81b9738cf9ec67888207021519d1a673"><div class="ttname"><a href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a></div><div class="ttdeci">IVector2&lt; int &gt; Vector2Int</div><div class="ttdoc">Alias for IVector2 with int type.</div><div class="ttdef"><b>Definition:</b> spk_vector2.hpp:732</div></div>

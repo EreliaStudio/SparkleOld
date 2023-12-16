@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/application/modules/spk_profiler_module.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/application/modules/spk_profiler_module.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_aecd53831fdc6b2dd5eaa5f97724cc82.html">application</a></li><li class="navelem"><a class="el" href="dir_55b1da2540e6841d8143ff5afb8a1ad6.html">modules</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_946ef27526cf24eb655fe56282177e76.html">application</a></li><li class="navelem"><a class="el" href="dir_dafafd11d4f1abdb52973297f1353ca7.html">modules</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,35 +72,35 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;system/spk_timer.hpp&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;profiler/spk_profiler.hpp&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classspk_1_1ProfilerModule.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1ProfilerModule.html">ProfilerModule</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classspk_1_1Timer.html">spk::Timer</a> _counterTimer;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">float</span> _counterRatio;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a6bd3eb07d5cd2845c0bfdaa5c589f9a9">updateCounters</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a95e0e209a1911edf37f2d428258171fe">updateFPS</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#aa613fe6c670df69eba5a441dcf4879aa">updateUPS</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html"><div class="ttname"><a href="classspk_1_1ProfilerModule.html">spk::ProfilerModule</a></div><div class="ttdoc">A class to profile and manage the frames-per-second rates of the application.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.hpp:15</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a2c6619183c9e521e1da356b6eddc7666"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">spk::ProfilerModule::~ProfilerModule</a></div><div class="ttdeci">~ProfilerModule()</div><div class="ttdoc">Destructor for the ProfilerModule class.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:14</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a6bd3eb07d5cd2845c0bfdaa5c589f9a9"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a6bd3eb07d5cd2845c0bfdaa5c589f9a9">spk::ProfilerModule::updateCounters</a></div><div class="ttdeci">void updateCounters()</div><div class="ttdoc">Actualize the affiched FPS/UPS counter.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:29</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a95e0e209a1911edf37f2d428258171fe"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a95e0e209a1911edf37f2d428258171fe">spk::ProfilerModule::updateFPS</a></div><div class="ttdeci">void updateFPS()</div><div class="ttdoc">Updating FPS counter by incrementing it by one.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:19</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_aa613fe6c670df69eba5a441dcf4879aa"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#aa613fe6c670df69eba5a441dcf4879aa">spk::ProfilerModule::updateUPS</a></div><div class="ttdeci">void updateUPS()</div><div class="ttdoc">Updating UPS counter by incrementing it by one.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:24</div></div>
-<div class="ttc" id="aclassspk_1_1ProfilerModule_html_ab79ffae57422fddf6e6cef43f34c5c49"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">spk::ProfilerModule::ProfilerModule</a></div><div class="ttdeci">ProfilerModule()</div><div class="ttdoc">Default constructor for the ProfilerModule class.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:6</div></div>
-<div class="ttc" id="aclassspk_1_1Timer_html"><div class="ttname"><a href="classspk_1_1Timer.html">spk::Timer</a></div><div class="ttdoc">Class for creating and managing a timer.</div><div class="ttdef"><b>Definition:</b> spk_timer.hpp:16</div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classspk_1_1Profiler.html">spk::Profiler</a> _profiler; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">ProfilerModule</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">~ProfilerModule</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1ProfilerModule.html#a5971192d2d68f4f45ff7569a69b32fc1">emitReport</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classspk_1_1ProfilerModule.html#a27faf86d7b8a64bfb97994c45625908d">   41</a></span>&#160;        <a class="code" href="classspk_1_1Profiler.html">spk::Profiler</a>&amp; <a class="code" href="classspk_1_1ProfilerModule.html#a27faf86d7b8a64bfb97994c45625908d">profiler</a>() { <span class="keywordflow">return</span> _profiler; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classspk_1_1ProfilerModule.html#ad309a0408a759c9ca14509a4aeec4f71">   47</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="classspk_1_1Profiler.html">spk::Profiler</a>&amp; <a class="code" href="classspk_1_1ProfilerModule.html#ad309a0408a759c9ca14509a4aeec4f71">profiler</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _profiler; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html"><div class="ttname"><a href="classspk_1_1ProfilerModule.html">spk::ProfilerModule</a></div><div class="ttdoc">A module class that encapsulates profiling functionality.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.hpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a27faf86d7b8a64bfb97994c45625908d"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a27faf86d7b8a64bfb97994c45625908d">spk::ProfilerModule::profiler</a></div><div class="ttdeci">spk::Profiler &amp; profiler()</div><div class="ttdoc">Provides non-const access to the encapsulated Profiler.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.hpp:41</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a2c6619183c9e521e1da356b6eddc7666"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a2c6619183c9e521e1da356b6eddc7666">spk::ProfilerModule::~ProfilerModule</a></div><div class="ttdeci">~ProfilerModule()</div><div class="ttdoc">Destructs the ProfilerModule instance.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:10</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_a5971192d2d68f4f45ff7569a69b32fc1"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#a5971192d2d68f4f45ff7569a69b32fc1">spk::ProfilerModule::emitReport</a></div><div class="ttdeci">void emitReport()</div><div class="ttdoc">Emits a profiling report.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:15</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_ab79ffae57422fddf6e6cef43f34c5c49"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#ab79ffae57422fddf6e6cef43f34c5c49">spk::ProfilerModule::ProfilerModule</a></div><div class="ttdeci">ProfilerModule()</div><div class="ttdoc">Constructs a ProfilerModule instance.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.cpp:5</div></div>
+<div class="ttc" id="aclassspk_1_1ProfilerModule_html_ad309a0408a759c9ca14509a4aeec4f71"><div class="ttname"><a href="classspk_1_1ProfilerModule.html#ad309a0408a759c9ca14509a4aeec4f71">spk::ProfilerModule::profiler</a></div><div class="ttdeci">const spk::Profiler &amp; profiler() const</div><div class="ttdoc">Provides const access to the encapsulated Profiler.</div><div class="ttdef"><b>Definition:</b> spk_profiler_module.hpp:47</div></div>
+<div class="ttc" id="aclassspk_1_1Profiler_html"><div class="ttname"><a href="classspk_1_1Profiler.html">spk::Profiler</a></div><div class="ttdoc">A class to profile and track various metrics in the application.</div><div class="ttdef"><b>Definition:</b> spk_profiler.hpp:19</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

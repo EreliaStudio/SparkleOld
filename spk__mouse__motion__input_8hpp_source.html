@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/input/spk_mouse_motion_input.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/input/spk_mouse_motion_input.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_a9d8515c93d115b5c689e0996dc3ef33.html">input</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_18e43d831b98e5af0eff875971b53c06.html">input</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> _isExecutionNeeded() {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Mouse::instance</a>()-&gt;deltaPosition() == <a class="code" href="structspk_1_1IVector2.html">spk::Vector2</a>(0, 0))</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">spk::Application::instance</a>()-&gt;mouse().deltaPosition() == <a class="code" href="structspk_1_1IVector2.html">spk::Vector2</a>(0, 0))</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> (<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
@@ -95,10 +95,10 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Application_html_a75e076907a4fed4897b88f4a0febbfe4"><div class="ttname"><a href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">spk::Application::instance</a></div><div class="ttdeci">static Application * instance()</div><div class="ttdoc">Retrieves the instance of the application.</div><div class="ttdef"><b>Definition:</b> spk_application.hpp:42</div></div>
 <div class="ttc" id="aclassspk_1_1Input_html"><div class="ttname"><a href="classspk_1_1Input.html">spk::Input</a></div><div class="ttdoc">Abstract class providing a common interface for input classes in the 'spk' library.</div><div class="ttdef"><b>Definition:</b> spk_input.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1MouseMovementInput_html"><div class="ttname"><a href="classspk_1_1MouseMovementInput.html">spk::MouseMovementInput</a></div><div class="ttdoc">A concrete class derived from Input that represents mouse movement input.</div><div class="ttdef"><b>Definition:</b> spk_mouse_motion_input.hpp:17</div></div>
 <div class="ttc" id="aclassspk_1_1MouseMovementInput_html_aa0b3e3c9d7230949e8e22d5dfd7e7625"><div class="ttname"><a href="classspk_1_1MouseMovementInput.html#aa0b3e3c9d7230949e8e22d5dfd7e7625">spk::MouseMovementInput::MouseMovementInput</a></div><div class="ttdeci">MouseMovementInput(unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</div><div class="ttdoc">Construct a new MouseMovementInput object.</div><div class="ttdef"><b>Definition:</b> spk_mouse_motion_input.hpp:43</div></div>
-<div class="ttc" id="aclassspk_1_1Singleton_html_a5f56bedfe0791cc1cc09d34bb3be382c"><div class="ttname"><a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt; Mouse &gt;::instance</a></div><div class="ttdeci">static constexpr std::shared_ptr&lt; Mouse &gt; instance()</div><div class="ttdoc">Get the singleton instance. This function returns the shared pointer to the singleton instance.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:56</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="astructspk_1_1IVector2_html"><div class="ttname"><a href="structspk_1_1IVector2.html">spk::IVector2&lt; float &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

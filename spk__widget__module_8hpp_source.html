@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/application/modules/spk_widget_module.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/application/modules/spk_widget_module.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_aecd53831fdc6b2dd5eaa5f97724cc82.html">application</a></li><li class="navelem"><a class="el" href="dir_55b1da2540e6841d8143ff5afb8a1ad6.html">modules</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_946ef27526cf24eb655fe56282177e76.html">application</a></li><li class="navelem"><a class="el" href="dir_dafafd11d4f1abdb52973297f1353ca7.html">modules</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,27 +72,38 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classspk_1_1WidgetModule.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1WidgetModule.html">WidgetModule</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c">WidgetModule</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9">~WidgetModule</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WidgetModule.html#a55cababa94fac8da2f4b38a51a2896f3">update</a>();</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;widget/spk_widget_atlas.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>Widget</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">class </span>Interface;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classspk_1_1WidgetModule.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1WidgetModule.html">WidgetModule</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">Widget::Atlas::StoringContainer</a>* _widgetSet;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c">WidgetModule</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WidgetModule.html#aeef8f0294f7ecb10a7d54aa1b30c153c">render</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1WidgetModule_html"><div class="ttname"><a href="classspk_1_1WidgetModule.html">spk::WidgetModule</a></div><div class="ttdoc">Class for managing widgets within the application.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.hpp:12</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9">~WidgetModule</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WidgetModule.html#a55cababa94fac8da2f4b38a51a2896f3">update</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1WidgetModule.html#aeef8f0294f7ecb10a7d54aa1b30c153c">render</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1WidgetModule_html"><div class="ttname"><a href="classspk_1_1WidgetModule.html">spk::WidgetModule</a></div><div class="ttdoc">Class for managing widgets within the application.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.hpp:21</div></div>
 <div class="ttc" id="aclassspk_1_1WidgetModule_html_a40f05901d95d5102006a53982ddff24c"><div class="ttname"><a href="classspk_1_1WidgetModule.html#a40f05901d95d5102006a53982ddff24c">spk::WidgetModule::WidgetModule</a></div><div class="ttdeci">WidgetModule()</div><div class="ttdoc">Constructs the WidgetModule object.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:11</div></div>
-<div class="ttc" id="aclassspk_1_1WidgetModule_html_a55cababa94fac8da2f4b38a51a2896f3"><div class="ttname"><a href="classspk_1_1WidgetModule.html#a55cababa94fac8da2f4b38a51a2896f3">spk::WidgetModule::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the widget state.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:21</div></div>
-<div class="ttc" id="aclassspk_1_1WidgetModule_html_aeb7d3e278f842783e3ea98a37a578fc9"><div class="ttname"><a href="classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9">spk::WidgetModule::~WidgetModule</a></div><div class="ttdeci">~WidgetModule()</div><div class="ttdoc">Destructs the WidgetModule object.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1WidgetModule_html_aeef8f0294f7ecb10a7d54aa1b30c153c"><div class="ttname"><a href="classspk_1_1WidgetModule.html#aeef8f0294f7ecb10a7d54aa1b30c153c">spk::WidgetModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the widget.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:41</div></div>
+<div class="ttc" id="aclassspk_1_1WidgetModule_html_a55cababa94fac8da2f4b38a51a2896f3"><div class="ttname"><a href="classspk_1_1WidgetModule.html#a55cababa94fac8da2f4b38a51a2896f3">spk::WidgetModule::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the widget state.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:22</div></div>
+<div class="ttc" id="aclassspk_1_1WidgetModule_html_aeb7d3e278f842783e3ea98a37a578fc9"><div class="ttname"><a href="classspk_1_1WidgetModule.html#aeb7d3e278f842783e3ea98a37a578fc9">spk::WidgetModule::~WidgetModule</a></div><div class="ttdeci">~WidgetModule()</div><div class="ttdoc">Destructs the WidgetModule object.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:17</div></div>
+<div class="ttc" id="aclassspk_1_1WidgetModule_html_aeef8f0294f7ecb10a7d54aa1b30c153c"><div class="ttname"><a href="classspk_1_1WidgetModule.html#aeef8f0294f7ecb10a7d54aa1b30c153c">spk::WidgetModule::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the widget.</div><div class="ttdef"><b>Definition:</b> spk_widget_module.cpp:31</div></div>
+<div class="ttc" id="aclassspk_1_1Widget_1_1Atlas_html_a6ccb6f21bcc7d51cdbd3d10a147fab52"><div class="ttname"><a href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">spk::Widget::Atlas::StoringContainer</a></div><div class="ttdeci">std::vector&lt; Interface * &gt; StoringContainer</div><div class="ttdoc">A type definition for the container storing widgets.</div><div class="ttdef"><b>Definition:</b> spk_widget_atlas.hpp:29</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

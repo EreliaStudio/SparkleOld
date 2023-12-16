@@ -68,96 +68,165 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classspk_1_1Application-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::Application Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class for the application.  
+<p>The central class of the application framework.  
  <a href="classspk_1_1Application.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__application_8hpp_source.html">spk_application.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for spk::Application:</div>
+<div class="dyncontent">
+<div class="center"><img src="classspk_1_1Application__coll__graph.png" border="0" usemap="#aspk_1_1Application_coll__map" alt="Collaboration graph"/></div>
+<map name="aspk_1_1Application_coll__map" id="aspk_1_1Application_coll__map">
+<area shape="rect" title="The central class of the application framework." alt="" coords="5,5,132,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad7f393b12bf9826e08b5d6401c753b44"><td class="memItemLeft" align="right" valign="top"><a id="ad7f393b12bf9826e08b5d6401c753b44"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#ad7f393b12bf9826e08b5d6401c753b44">Application</a> (const std::wstring &amp;p_title, const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
-<tr class="memdesc:ad7f393b12bf9826e08b5d6401c753b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classspk_1_1Application.html" title="Abstract base class for the application.">Application</a> object. <br /></td></tr>
-<tr class="separator:ad7f393b12bf9826e08b5d6401c753b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b758ce1caf82ba9b2e22bc97c8a198"><td class="memItemLeft" align="right" valign="top"><a id="a12b758ce1caf82ba9b2e22bc97c8a198"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a12b758ce1caf82ba9b2e22bc97c8a198">setAsInstance</a> ()</td></tr>
+<tr class="memdesc:a12b758ce1caf82ba9b2e22bc97c8a198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current object as the application instance. <br /></td></tr>
+<tr class="separator:a12b758ce1caf82ba9b2e22bc97c8a198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62ccc07413b8f83b2bb13d31a764903"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#af62ccc07413b8f83b2bb13d31a764903">Application</a> (const std::wstring &amp;p_title, const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size, bool p_isMonothread=false)</td></tr>
+<tr class="memdesc:af62ccc07413b8f83b2bb13d31a764903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> instance.  <a href="classspk_1_1Application.html#af62ccc07413b8f83b2bb13d31a764903">More...</a><br /></td></tr>
+<tr class="separator:af62ccc07413b8f83b2bb13d31a764903"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcd265ffb90968e0e1351bd2ca899f11"><td class="memItemLeft" align="right" valign="top"><a id="abcd265ffb90968e0e1351bd2ca899f11"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">~Application</a> ()</td></tr>
-<tr class="memdesc:abcd265ffb90968e0e1351bd2ca899f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classspk_1_1Application.html" title="Abstract base class for the application.">Application</a> object. <br /></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#abcd265ffb90968e0e1351bd2ca899f11">~Application</a> ()</td></tr>
+<tr class="memdesc:abcd265ffb90968e0e1351bd2ca899f11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of the <a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> class. <br /></td></tr>
 <tr class="separator:abcd265ffb90968e0e1351bd2ca899f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d5ca22f595b0ac184bb264502097040"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a8d5ca22f595b0ac184bb264502097040">run</a> ()</td></tr>
-<tr class="memdesc:a8d5ca22f595b0ac184bb264502097040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the application.  <a href="classspk_1_1Application.html#a8d5ca22f595b0ac184bb264502097040">More...</a><br /></td></tr>
-<tr class="separator:a8d5ca22f595b0ac184bb264502097040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0720479ac9cb029bad5f3c89f895047"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#ab0720479ac9cb029bad5f3c89f895047">quit</a> (int p_errorCode)</td></tr>
-<tr class="memdesc:ab0720479ac9cb029bad5f3c89f895047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quits the application with a specific error code.  <a href="classspk_1_1Application.html#ab0720479ac9cb029bad5f3c89f895047">More...</a><br /></td></tr>
-<tr class="separator:ab0720479ac9cb029bad5f3c89f895047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae79d417c7fd4d22597a96b65fdeeab3d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#ae79d417c7fd4d22597a96b65fdeeab3d">addCanvas</a> (const std::filesystem::path &amp;p_configurationFilePath)</td></tr>
-<tr class="memdesc:ae79d417c7fd4d22597a96b65fdeeab3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a new canvas into the application.  <a href="classspk_1_1Application.html#ae79d417c7fd4d22597a96b65fdeeab3d">More...</a><br /></td></tr>
-<tr class="separator:ae79d417c7fd4d22597a96b65fdeeab3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b80d99a9c57937eabad18ee283b8207"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a2b80d99a9c57937eabad18ee283b8207">addCanvas</a> (const std::filesystem::path &amp;p_configurationFilePath)</td></tr>
+<tr class="memdesc:a2b80d99a9c57937eabad18ee283b8207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a canvas widget to the application.  <a href="classspk_1_1Application.html#a2b80d99a9c57937eabad18ee283b8207">More...</a><br /></td></tr>
+<tr class="separator:a2b80d99a9c57937eabad18ee283b8207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a056731b4c60f1733a7c498515979f8b5"><td class="memTemplParams" colspan="2">template&lt;typename TChildrenType , typename ... Args&gt; </td></tr>
 <tr class="memitem:a056731b4c60f1733a7c498515979f8b5"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; TChildrenType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a056731b4c60f1733a7c498515979f8b5">addRootWidget</a> (Args &amp;&amp;... p_args)</td></tr>
-<tr class="memdesc:a056731b4c60f1733a7c498515979f8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new widget inside the application, with the central widget as parent.  <a href="classspk_1_1Application.html#a056731b4c60f1733a7c498515979f8b5">More...</a><br /></td></tr>
+<tr class="memdesc:a056731b4c60f1733a7c498515979f8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and adds a root widget of type TChildrenType to the application.  <a href="classspk_1_1Application.html#a056731b4c60f1733a7c498515979f8b5">More...</a><br /></td></tr>
 <tr class="separator:a056731b4c60f1733a7c498515979f8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb34e8823d56131a205757ca25746e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">resize</a> (const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;p_size)</td></tr>
-<tr class="memdesc:a4bb34e8823d56131a205757ca25746e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the application window and central widget.  <a href="classspk_1_1Application.html#a4bb34e8823d56131a205757ca25746e6">More...</a><br /></td></tr>
-<tr class="separator:a4bb34e8823d56131a205757ca25746e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a625fedcebc59670063a3bcc052b88b51"><td class="memItemLeft" align="right" valign="top"><a id="a625fedcebc59670063a3bcc052b88b51"></a>
-const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a625fedcebc59670063a3bcc052b88b51">size</a> () const</td></tr>
-<tr class="memdesc:a625fedcebc59670063a3bcc052b88b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current size of the <a class="el" href="classspk_1_1Window.html">Window</a>. <br /></td></tr>
+<tr class="memitem:a8d5ca22f595b0ac184bb264502097040"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a8d5ca22f595b0ac184bb264502097040">run</a> ()</td></tr>
+<tr class="memdesc:a8d5ca22f595b0ac184bb264502097040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the application run loop.  <a href="classspk_1_1Application.html#a8d5ca22f595b0ac184bb264502097040">More...</a><br /></td></tr>
+<tr class="separator:a8d5ca22f595b0ac184bb264502097040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94669a1830e80a5db1f6a6e731d7a9b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a94669a1830e80a5db1f6a6e731d7a9b9">quit</a> (int p_errorID)</td></tr>
+<tr class="memdesc:a94669a1830e80a5db1f6a6e731d7a9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals the application to quit with a specified error ID.  <a href="classspk_1_1Application.html#a94669a1830e80a5db1f6a6e731d7a9b9">More...</a><br /></td></tr>
+<tr class="separator:a94669a1830e80a5db1f6a6e731d7a9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6779d326713c957caa24d6737171ea5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#ae6779d326713c957caa24d6737171ea5">profiler</a> ()</td></tr>
+<tr class="memdesc:ae6779d326713c957caa24d6737171ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the profiler module of the application.  <a href="classspk_1_1Application.html#ae6779d326713c957caa24d6737171ea5">More...</a><br /></td></tr>
+<tr class="separator:ae6779d326713c957caa24d6737171ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e44a9881352c84495154a337d3cf23a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Window.html">spk::Window</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a5e44a9881352c84495154a337d3cf23a">window</a> ()</td></tr>
+<tr class="memdesc:a5e44a9881352c84495154a337d3cf23a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the window module of the application.  <a href="classspk_1_1Application.html#a5e44a9881352c84495154a337d3cf23a">More...</a><br /></td></tr>
+<tr class="separator:a5e44a9881352c84495154a337d3cf23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625fedcebc59670063a3bcc052b88b51"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a625fedcebc59670063a3bcc052b88b51">size</a> () const</td></tr>
+<tr class="memdesc:a625fedcebc59670063a3bcc052b88b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the application window.  <a href="classspk_1_1Application.html#a625fedcebc59670063a3bcc052b88b51">More...</a><br /></td></tr>
 <tr class="separator:a625fedcebc59670063a3bcc052b88b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0333f1a89de8d9447ff93bcbece0aa36"><td class="memItemLeft" align="right" valign="top"><a id="a0333f1a89de8d9447ff93bcbece0aa36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a0333f1a89de8d9447ff93bcbece0aa36">setMaxFPS</a> (const size_t &amp;p_maxFPS)</td></tr>
-<tr class="memdesc:a0333f1a89de8d9447ff93bcbece0aa36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of FPS reachable by the application. <br /></td></tr>
-<tr class="separator:a0333f1a89de8d9447ff93bcbece0aa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2fbb47ce85a0a8f2706fa47d66e99e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Mouse.html">spk::Mouse</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a7f2fbb47ce85a0a8f2706fa47d66e99e">mouse</a> () const</td></tr>
+<tr class="memdesc:a7f2fbb47ce85a0a8f2706fa47d66e99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the mouse module of the application.  <a href="classspk_1_1Application.html#a7f2fbb47ce85a0a8f2706fa47d66e99e">More...</a><br /></td></tr>
+<tr class="separator:a7f2fbb47ce85a0a8f2706fa47d66e99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596db736069bd47cc6b7c737915ba1c3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Keyboard.html">spk::Keyboard</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a596db736069bd47cc6b7c737915ba1c3">keyboard</a> () const</td></tr>
+<tr class="memdesc:a596db736069bd47cc6b7c737915ba1c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for the keyboard module of the application.  <a href="classspk_1_1Application.html#a596db736069bd47cc6b7c737915ba1c3">More...</a><br /></td></tr>
+<tr class="separator:a596db736069bd47cc6b7c737915ba1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:adb3c806b9c021f7c9a48b9320eb919d7"><td class="memItemLeft" align="right" valign="top"><a id="adb3c806b9c021f7c9a48b9320eb919d7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#adb3c806b9c021f7c9a48b9320eb919d7">_renameThread</a> (const std::wstring &amp;p_threadName)</td></tr>
-<tr class="memdesc:adb3c806b9c021f7c9a48b9320eb919d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute what is necessary to rename the current thread : Edit cout/cerr prefix, define thread name in <a class="el" href="classspk_1_1Profiler.html" title="A class for profiling various metrics like time consumption and counters.">Profiler</a> settings. <br /></td></tr>
-<tr class="separator:adb3c806b9c021f7c9a48b9320eb919d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d4a65ce11e7cac3259857cdcfa82970"><td class="memItemLeft" align="right" valign="top"><a id="a6d4a65ce11e7cac3259857cdcfa82970"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a6d4a65ce11e7cac3259857cdcfa82970">isRunning</a> () const</td></tr>
-<tr class="memdesc:a6d4a65ce11e7cac3259857cdcfa82970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the running status of the application. <br /></td></tr>
-<tr class="separator:a6d4a65ce11e7cac3259857cdcfa82970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349a2999f0fa4911789a787c9bc80ca0"><td class="memItemLeft" align="right" valign="top"><a id="a349a2999f0fa4911789a787c9bc80ca0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a349a2999f0fa4911789a787c9bc80ca0">_initializeShaders</a> ()</td></tr>
-<tr class="memdesc:a349a2999f0fa4911789a787c9bc80ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the shaders used by Sparkle. <br /></td></tr>
-<tr class="separator:a349a2999f0fa4911789a787c9bc80ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a75e076907a4fed4897b88f4a0febbfe4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classspk_1_1Application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">instance</a> ()</td></tr>
+<tr class="memdesc:a75e076907a4fed4897b88f4a0febbfe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the instance of the application.  <a href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">More...</a><br /></td></tr>
+<tr class="separator:a75e076907a4fed4897b88f4a0febbfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae802e8cecc7019b81afd0f552e74ecce"><td class="memItemLeft" align="right" valign="top"><a id="ae802e8cecc7019b81afd0f552e74ecce"></a>
+static thread_local <a class="el" href="classspk_1_1Application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Application.html#ae802e8cecc7019b81afd0f552e74ecce">_instance</a> = nullptr</td></tr>
+<tr class="memdesc:ae802e8cecc7019b81afd0f552e74ecce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread-local instance of the application. <br /></td></tr>
+<tr class="separator:ae802e8cecc7019b81afd0f552e74ecce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for the application. </p>
-<p>This class provides a skeletal implementation of an application, leaving the setup of jobs to subclasses. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae79d417c7fd4d22597a96b65fdeeab3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae79d417c7fd4d22597a96b65fdeeab3d">&#9670;&nbsp;</a></span>addCanvas()</h2>
+<div class="textblock"><p>The central class of the application framework. </p>
+<p><a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> serves as the core of the application framework, managing the main application lifecycle, various modules, and system resources. It provides functionalities for initializing modules, handling events, and rendering processes. <a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> acts as a singleton, maintaining a thread-local instance accessible throughout the application.</p>
+<p>This class handles various aspects such as window management, input handling, widget management, and profiling. It allows the creation and management of custom widgets and interfaces, as well as providing access to system-level functionalities like keyboard and mouse input.</p>
+<p>The <a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> class supports both monothreaded and multithreaded operation modes, providing flexibility for different types of applications. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af62ccc07413b8f83b2bb13d31a764903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62ccc07413b8f83b2bb13d31a764903">&#9670;&nbsp;</a></span>Application()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a> &gt; spk::Application::addCanvas </td>
+          <td class="memname">spk::Application::Application </td>
+          <td>(</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
+          <td class="paramname"><em>p_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>p_isMonothread</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_title</td><td>Title of the application window. </td></tr>
+    <tr><td class="paramname">p_size</td><td>Size of the application window. </td></tr>
+    <tr><td class="paramname">p_isMonothread</td><td>Flag indicating if the application should run in monothreaded mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2b80d99a9c57937eabad18ee283b8207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b80d99a9c57937eabad18ee283b8207">&#9670;&nbsp;</a></span>addCanvas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classspk_1_1Widget_1_1Canvas.html">spk::Widget::Canvas</a>&gt; spk::Application::addCanvas </td>
           <td>(</td>
           <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
           <td class="paramname"><em>p_configurationFilePath</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Load a new canvas into the application. </p>
+<p>Adds a canvas widget to the application. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_configurationFilePath</td><td>The path to the canvas configuration file. </td></tr>
+    <tr><td class="paramname">p_configurationFilePath</td><td>File path for the canvas configuration. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The newly created canvas widget. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the created Canvas widget. </dd></dl>
 
 </div>
 </div>
@@ -187,26 +256,115 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Add a new widget inside the application, with the central widget as parent. </p>
+<p>Creates and adds a root widget of type TChildrenType to the application. </p>
+<p>This function template creates a widget of the specified type using the provided arguments. The created widget is set as a root widget with a depth of 0.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">TChildrenType</td><td>The type of the children widget. </td></tr>
-    <tr><td class="paramname">Args</td><td>The types of the arguments for constructing the children widget. </td></tr>
+    <tr><td class="paramname">TChildrenType</td><td>The type of the widget to be created. </td></tr>
+    <tr><td class="paramname">Args</td><td>Variadic template for constructor arguments of TChildrenType. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_args</td><td>The arguments for constructing the children widget. </td></tr>
+    <tr><td class="paramname">p_args</td><td>Arguments to be forwarded to the constructor of TChildrenType. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the children widget. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;TChildrenType&gt; Shared pointer to the newly created widget. </dd></dl>
 
 </div>
 </div>
-<a id="ab0720479ac9cb029bad5f3c89f895047"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0720479ac9cb029bad5f3c89f895047">&#9670;&nbsp;</a></span>quit()</h2>
+<a id="a75e076907a4fed4897b88f4a0febbfe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e076907a4fed4897b88f4a0febbfe4">&#9670;&nbsp;</a></span>instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classspk_1_1Application.html">Application</a>* spk::Application::instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the instance of the application. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classspk_1_1Application.html" title="The central class of the application framework.">Application</a> instance. </dd></dl>
+
+</div>
+</div>
+<a id="a596db736069bd47cc6b7c737915ba1c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596db736069bd47cc6b7c737915ba1c3">&#9670;&nbsp;</a></span>keyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classspk_1_1Keyboard.html">spk::Keyboard</a> &amp; spk::Application::keyboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for the keyboard module of the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the <a class="el" href="classspk_1_1Keyboard.html" title="Singleton class for keyboard inputs.">Keyboard</a> module. </dd></dl>
+
+</div>
+</div>
+<a id="a7f2fbb47ce85a0a8f2706fa47d66e99e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2fbb47ce85a0a8f2706fa47d66e99e">&#9670;&nbsp;</a></span>mouse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classspk_1_1Mouse.html">spk::Mouse</a> &amp; spk::Application::mouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for the mouse module of the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the <a class="el" href="classspk_1_1Mouse.html" title="Singleton class for Mouse.">Mouse</a> module. </dd></dl>
+
+</div>
+</div>
+<a id="ae6779d326713c957caa24d6737171ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6779d326713c957caa24d6737171ea5">&#9670;&nbsp;</a></span>profiler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Profiler.html">spk::Profiler</a> &amp; spk::Application::profiler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for the profiler module of the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classspk_1_1Profiler.html" title="A class to profile and track various metrics in the application.">Profiler</a> module. </dd></dl>
+
+</div>
+</div>
+<a id="a94669a1830e80a5db1f6a6e731d7a9b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94669a1830e80a5db1f6a6e731d7a9b9">&#9670;&nbsp;</a></span>quit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,42 +373,16 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
           <td class="memname">void spk::Application::quit </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>p_errorCode</em></td><td>)</td>
+          <td class="paramname"><em>p_errorID</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Quits the application with a specific error code. </p>
+<p>Signals the application to quit with a specified error ID. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_errorCode</td><td>The error code with which the application should quit. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4bb34e8823d56131a205757ca25746e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bb34e8823d56131a205757ca25746e6">&#9670;&nbsp;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::Application::resize </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacespk.html#a81b9738cf9ec67888207021519d1a673">spk::Vector2Int</a> &amp;&#160;</td>
-          <td class="paramname"><em>p_size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resizes the application window and central widget. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_size</td><td>The new size of the window and central widget. </td></tr>
+    <tr><td class="paramname">p_errorID</td><td>The error ID to quit with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,14 +404,56 @@ template&lt;typename TChildrenType , typename ... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Runs the application. </p>
-<dl class="section return"><dt>Returns</dt><dd>The error code after the application finishes running. </dd></dl>
+<p>Starts the application run loop. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error ID indicating the status at the end of the application run. </dd></dl>
+
+</div>
+</div>
+<a id="a625fedcebc59670063a3bcc052b88b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625fedcebc59670063a3bcc052b88b51">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacespk.html#a71e1f556496e4d67f41e1f7807069e54">spk::Vector2UInt</a> &amp; spk::Application::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the size of the application window. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to a Vector2UInt representing the size. </dd></dl>
+
+</div>
+</div>
+<a id="a5e44a9881352c84495154a337d3cf23a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e44a9881352c84495154a337d3cf23a">&#9670;&nbsp;</a></span>window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classspk_1_1Window.html">spk::Window</a> &amp; spk::Application::window </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accessor for the window module of the application. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the <a class="el" href="classspk_1_1Window.html">Window</a> module. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/application/<a class="el" href="spk__application_8hpp_source.html">spk_application.hpp</a></li>
-<li>src/application/spk_application.cpp</li>
+<li>Sparkle/includes/application/<a class="el" href="spk__application_8hpp_source.html">spk_application.hpp</a></li>
+<li>Sparkle/src/application/spk_application.cpp</li>
+<li>Sparkle/src/application/spk_application_renderer_thread.cpp</li>
+<li>Sparkle/src/application/spk_application_updater_thread.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

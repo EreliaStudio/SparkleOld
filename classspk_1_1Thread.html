@@ -67,15 +67,15 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classspk_1_1Thread-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">spk::Thread Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class for creating and managing a thread.  
+<p>A wrapper class around std::thread to manage application threads.  
  <a href="classspk_1_1Thread.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="spk__thread_8hpp_source.html">spk_thread.hpp</a>&gt;</code></p>
@@ -84,103 +84,51 @@ Inheritance diagram for spk::Thread:</div>
 <div class="dyncontent">
 <div class="center"><img src="classspk_1_1Thread__inherit__graph.png" border="0" usemap="#aspk_1_1Thread_inherit__map" alt="Inheritance graph"/></div>
 <map name="aspk_1_1Thread_inherit__map" id="aspk_1_1Thread_inherit__map">
-<area shape="rect" title="Class for creating and managing a thread." alt="" coords="37,5,136,32"/>
-<area shape="rect" href="classspk_1_1PersistentWorker.html" title="Class for creating and managing a persistent worker thread." alt="" coords="5,80,168,107"/>
+<area shape="rect" title="A wrapper class around std::thread to manage application threads." alt="" coords="115,5,213,32"/>
+<area shape="rect" href="classspk_1_1PersistentWorker.html" title="Class representing a persistent worker that executes a specific job in a dedicated thread." alt="" coords="5,80,168,107"/>
+<area shape="rect" href="classspk_1_1Worker.html" title="A thread class specialized in executing a queue of jobs." alt="" coords="192,80,291,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:acc625f78afb482c29338759d4b959af6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a> { <b>Delayed</b>
-, <b>Immediate</b>
- }</td></tr>
-<tr class="memdesc:acc625f78afb482c29338759d4b959af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum class to represent the launch method of the thread.  <a href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">More...</a><br /></td></tr>
-<tr class="separator:acc625f78afb482c29338759d4b959af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abfd5a3f1c4be23d74dba1b2354d3c587"><td class="memTemplParams" colspan="2">template&lt;typename Funct , typename... Args&gt; </td></tr>
-<tr class="memitem:abfd5a3f1c4be23d74dba1b2354d3c587"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#abfd5a3f1c4be23d74dba1b2354d3c587">Thread</a> (const std::wstring &amp;p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args)</td></tr>
-<tr class="memdesc:abfd5a3f1c4be23d74dba1b2354d3c587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object with a specified thread name and function.  <a href="classspk_1_1Thread.html#abfd5a3f1c4be23d74dba1b2354d3c587">More...</a><br /></td></tr>
-<tr class="separator:abfd5a3f1c4be23d74dba1b2354d3c587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f09206570e59666ab1b5566477a528"><td class="memTemplParams" colspan="2">template&lt;typename Funct , typename... Args&gt; </td></tr>
-<tr class="memitem:ae6f09206570e59666ab1b5566477a528"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#ae6f09206570e59666ab1b5566477a528">Thread</a> (<a class="el" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a> p_launchMethod, std::wstring p_threadName, Funct &amp;&amp;p_funct, Args &amp;&amp;...p_args)</td></tr>
-<tr class="memdesc:ae6f09206570e59666ab1b5566477a528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object with a specified launch method, thread name, and function.  <a href="classspk_1_1Thread.html#ae6f09206570e59666ab1b5566477a528">More...</a><br /></td></tr>
-<tr class="separator:ae6f09206570e59666ab1b5566477a528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738d07c4566f4ae45c1934f14f4c222d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#a738d07c4566f4ae45c1934f14f4c222d">Thread</a> (const std::wstring &amp;p_name, const std::function&lt; void()&gt; &amp;p_funct)</td></tr>
+<tr class="memdesc:a738d07c4566f4ae45c1934f14f4c222d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classspk_1_1Thread.html" title="A wrapper class around std::thread to manage application threads.">Thread</a> with a specified function to execute.  <a href="classspk_1_1Thread.html#a738d07c4566f4ae45c1934f14f4c222d">More...</a><br /></td></tr>
+<tr class="separator:a738d07c4566f4ae45c1934f14f4c222d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97d08ba39aee6ee49292fd53f08bcb07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">~Thread</a> ()</td></tr>
-<tr class="memdesc:a97d08ba39aee6ee49292fd53f08bcb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object.  <a href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">More...</a><br /></td></tr>
+<tr class="memdesc:a97d08ba39aee6ee49292fd53f08bcb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="classspk_1_1Thread.html" title="A wrapper class around std::thread to manage application threads.">Thread</a> class.  <a href="classspk_1_1Thread.html#a97d08ba39aee6ee49292fd53f08bcb07">More...</a><br /></td></tr>
 <tr class="separator:a97d08ba39aee6ee49292fd53f08bcb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aede7a5cc4efa7867e66027a102580bff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#aede7a5cc4efa7867e66027a102580bff">isActive</a> () const</td></tr>
-<tr class="memdesc:aede7a5cc4efa7867e66027a102580bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the thread is currently working.  <a href="classspk_1_1Thread.html#aede7a5cc4efa7867e66027a102580bff">More...</a><br /></td></tr>
-<tr class="separator:aede7a5cc4efa7867e66027a102580bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5037a0703104b786425a31b78bacfd0"><td class="memItemLeft" align="right" valign="top">std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">getId</a> () const</td></tr>
-<tr class="memdesc:ab5037a0703104b786425a31b78bacfd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ID of the thread.  <a href="classspk_1_1Thread.html#ab5037a0703104b786425a31b78bacfd0">More...</a><br /></td></tr>
-<tr class="separator:ab5037a0703104b786425a31b78bacfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eed5d9b453feae180a98f80a2f117ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">join</a> ()</td></tr>
-<tr class="memdesc:a4eed5d9b453feae180a98f80a2f117ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join the thread.  <a href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">More...</a><br /></td></tr>
+<tr class="memdesc:a4eed5d9b453feae180a98f80a2f117ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the thread to the current context.  <a href="classspk_1_1Thread.html#a4eed5d9b453feae180a98f80a2f117ad">More...</a><br /></td></tr>
 <tr class="separator:a4eed5d9b453feae180a98f80a2f117ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c9242c1ea81ec3de8b78445e1d2a421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">start</a> ()</td></tr>
-<tr class="memdesc:a3c9242c1ea81ec3de8b78445e1d2a421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the thread.  <a href="classspk_1_1Thread.html#a3c9242c1ea81ec3de8b78445e1d2a421">More...</a><br /></td></tr>
-<tr class="separator:a3c9242c1ea81ec3de8b78445e1d2a421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a23381f1ae2a19c6bd8931ec540390bb2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Thread.html#a23381f1ae2a19c6bd8931ec540390bb2">configure</a> (const std::wstring &amp;p_name)</td></tr>
+<tr class="memdesc:a23381f1ae2a19c6bd8931ec540390bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to configure thread properties.  <a href="classspk_1_1Thread.html#a23381f1ae2a19c6bd8931ec540390bb2">More...</a><br /></td></tr>
+<tr class="separator:a23381f1ae2a19c6bd8931ec540390bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class for creating and managing a thread. </p>
-<p>This class provides a convenient way to create and manage a thread. It allows you to specify the thread function and its arguments, as well as the launch method (immediate or delayed). </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="acc625f78afb482c29338759d4b959af6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc625f78afb482c29338759d4b959af6">&#9670;&nbsp;</a></span>LaunchMethod</h2>
+<div class="textblock"><p>A wrapper class around std::thread to manage application threads. </p>
+<p>This class provides a simplified interface for working with threads in the application. It encapsulates a std::thread object and offers methods to configure, start, and join threads. The <a class="el" href="classspk_1_1Thread.html" title="A wrapper class around std::thread to manage application threads.">Thread</a> class is designed to be extended for specific threading tasks in the application. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a738d07c4566f4ae45c1934f14f4c222d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738d07c4566f4ae45c1934f14f4c222d">&#9670;&nbsp;</a></span>Thread()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">spk::Thread::LaunchMethod</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>An enum class to represent the launch method of the thread. </p>
-<p>This enum class has two launch methods: Delayed and Immediate. The Delayed method creates the thread but does not start it immediately. The Immediate method creates and starts the thread immediately. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abfd5a3f1c4be23d74dba1b2354d3c587"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfd5a3f1c4be23d74dba1b2354d3c587">&#9670;&nbsp;</a></span>Thread() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Funct , typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">spk::Thread::Thread </td>
           <td>(</td>
           <td class="paramtype">const std::wstring &amp;&#160;</td>
-          <td class="paramname"><em>p_threadName</em>, </td>
+          <td class="paramname"><em>p_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Funct &amp;&amp;&#160;</td>
-          <td class="paramname"><em>p_funct</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>p_args</em>&#160;</td>
+          <td class="paramtype">const std::function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>p_funct</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -188,96 +136,13 @@ template&lt;typename Funct , typename... Args&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object with a specified thread name and function. </p>
-<p>This constructor creates a new thread with the specified thread name and function. The function can take any number of arguments.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Funct</td><td>The type of the thread function. </td></tr>
-    <tr><td class="paramname">Args</td><td>The types of the arguments of the thread function. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructs a <a class="el" href="classspk_1_1Thread.html" title="A wrapper class around std::thread to manage application threads.">Thread</a> with a specified function to execute. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_threadName</td><td>The name of the thread. </td></tr>
-    <tr><td class="paramname">p_funct</td><td>The thread function. </td></tr>
-    <tr><td class="paramname">p_args</td><td>The arguments of the thread function. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae6f09206570e59666ab1b5566477a528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6f09206570e59666ab1b5566477a528">&#9670;&nbsp;</a></span>Thread() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Funct , typename... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">spk::Thread::Thread </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classspk_1_1Thread.html#acc625f78afb482c29338759d4b959af6">LaunchMethod</a>&#160;</td>
-          <td class="paramname"><em>p_launchMethod</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::wstring&#160;</td>
-          <td class="paramname"><em>p_threadName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Funct &amp;&amp;&#160;</td>
-          <td class="paramname"><em>p_funct</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>p_args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object with a specified launch method, thread name, and function. </p>
-<p>This constructor creates a new thread with the specified launch method, thread name, and function. The function can take any number of arguments. If the launch method is Immediate, the thread is started immediately.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Funct</td><td>The type of the thread function. </td></tr>
-    <tr><td class="paramname">Args</td><td>The types of the arguments of the thread function. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_launchMethod</td><td>The launch method of the thread. </td></tr>
-    <tr><td class="paramname">p_threadName</td><td>The name of the thread. </td></tr>
-    <tr><td class="paramname">p_funct</td><td>The thread function. </td></tr>
-    <tr><td class="paramname">p_args</td><td>The arguments of the thread function. </td></tr>
+    <tr><td class="paramname">p_name</td><td>The name of the thread. </td></tr>
+    <tr><td class="paramname">p_funct</td><td>The function to be executed in this thread. </td></tr>
   </table>
   </dd>
 </dl>
@@ -299,14 +164,14 @@ template&lt;typename Funct , typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> object. </p>
-<p>This is the destructor for the <a class="el" href="classspk_1_1Thread.html" title="Class for creating and managing a thread.">Thread</a> class. It joins the thread if its still running. </p>
+<p>Destructor for the <a class="el" href="classspk_1_1Thread.html" title="A wrapper class around std::thread to manage application threads.">Thread</a> class. </p>
+<p>Ensures that the thread is properly joined or detached before destruction. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab5037a0703104b786425a31b78bacfd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5037a0703104b786425a31b78bacfd0">&#9670;&nbsp;</a></span>getId()</h2>
+<a id="a23381f1ae2a19c6bd8931ec540390bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23381f1ae2a19c6bd8931ec540390bb2">&#9670;&nbsp;</a></span>configure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,50 +180,27 @@ template&lt;typename Funct , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::thread::id spk::Thread::getId </td>
+          <td class="memname">void spk::Thread::configure </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::wstring &amp;&#160;</td>
+          <td class="paramname"><em>p_name</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the ID of the thread. </p>
-<p>This function returns the ID of the thread.</p>
-<dl class="section return"><dt>Returns</dt><dd>The ID of the thread. </dd></dl>
-
-</div>
-</div>
-<a id="aede7a5cc4efa7867e66027a102580bff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aede7a5cc4efa7867e66027a102580bff">&#9670;&nbsp;</a></span>isActive()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool spk::Thread::isActive </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return if the thread is currently working. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the thread is working, false otherwise </dd></dl>
+<p>Static method to configure thread properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_name</td><td>The name to be assigned to the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -377,34 +219,14 @@ template&lt;typename Funct , typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Join the thread. </p>
-<p>This function blocks the current thread until the associated thread finishes its execution. </p>
-
-</div>
-</div>
-<a id="a3c9242c1ea81ec3de8b78445e1d2a421"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c9242c1ea81ec3de8b78445e1d2a421">&#9670;&nbsp;</a></span>start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spk::Thread::start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Start the thread. </p>
-<p>This function starts the thread by releasing the starter signal. The thread function will begin executing once this signal is released. </p>
+<p>Joins the thread to the current context. </p>
+<p>Blocks the calling thread until the thread represented by this object completes its execution. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/threading/<a class="el" href="spk__thread_8hpp_source.html">spk_thread.hpp</a></li>
-<li>src/threading/spk_thread.cpp</li>
+<li>Sparkle/includes/threading/<a class="el" href="spk__thread_8hpp_source.html">spk_thread.hpp</a></li>
+<li>Sparkle/src/threading/spk_thread.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

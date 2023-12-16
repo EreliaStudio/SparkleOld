@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/system/spk_time_metrics.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/system/spk_time_metrics.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_9ce4ba8dea44c80507591b5cb14ca8ba.html">system</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_0d2a988f684bdc89796d54bc063247ba.html">system</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -87,26 +87,39 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> _deltaTime;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> _updateMetrics();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classspk_1_1TimeMetrics.html">TimeMetrics</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classspk_1_1TimeMetrics.html#aab7658641b3fbea65c75543a3fff5170">currentTime</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">   69</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; <a class="code" href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">time</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_time); }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">   78</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; <a class="code" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">deltaTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_deltaTime); }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">sleepAtLeast</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> p_millisecond);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    };</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> _programStartingTime;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> _programDuration;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> _updateMetrics();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classspk_1_1TimeMetrics.html">TimeMetrics</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classspk_1_1TimeMetrics.html#aab7658641b3fbea65c75543a3fff5170">currentTime</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classspk_1_1TimeMetrics.html#a9992dc9e06e318297a3ae6bf3a1f5d87">nanosecondToMillisecond</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; p_nanosecond);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classspk_1_1TimeMetrics.html#acb9abd7bf4e6723f78ff8ec1217ea2b8">millisecondToNanosecond</a>(<span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; p_millisecond);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">  101</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; <a class="code" href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">time</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_time); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">  110</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; <a class="code" href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">deltaTime</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_deltaTime); }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classspk_1_1TimeMetrics.html#a5adc66dadcbd380ae1e263097991499c">  117</a></span>&#160;        constexpr <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; <a class="code" href="classspk_1_1TimeMetrics.html#a5adc66dadcbd380ae1e263097991499c">programDuration</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_programDuration); }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">sleepAtLeast</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> p_millisecond);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    };</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="ttc" id="aclassspk_1_1Singleton_html"><div class="ttname"><a href="classspk_1_1Singleton.html">spk::Singleton</a></div><div class="ttdoc">Singleton class template.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1TimeMetrics_html"><div class="ttname"><a href="classspk_1_1TimeMetrics.html">spk::TimeMetrics</a></div><div class="ttdoc">Class for recording time-related metrics in the application.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:17</div></div>
-<div class="ttc" id="aclassspk_1_1TimeMetrics_html_a24989064858748b2da18b1726280bd0a"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">spk::TimeMetrics::deltaTime</a></div><div class="ttdeci">constexpr const long long &amp; deltaTime() const</div><div class="ttdoc">Get the time elapsed between the last two frames.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:78</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_a24989064858748b2da18b1726280bd0a"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#a24989064858748b2da18b1726280bd0a">spk::TimeMetrics::deltaTime</a></div><div class="ttdeci">constexpr const long long &amp; deltaTime() const</div><div class="ttdoc">Get the time elapsed between the last two frames.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:110</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_a5adc66dadcbd380ae1e263097991499c"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#a5adc66dadcbd380ae1e263097991499c">spk::TimeMetrics::programDuration</a></div><div class="ttdeci">constexpr const long long &amp; programDuration() const</div><div class="ttdoc">Get the time elapsed since the start of the program.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:117</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_a9992dc9e06e318297a3ae6bf3a1f5d87"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#a9992dc9e06e318297a3ae6bf3a1f5d87">spk::TimeMetrics::nanosecondToMillisecond</a></div><div class="ttdeci">static long long nanosecondToMillisecond(const long long &amp;p_nanosecond)</div><div class="ttdoc">Converts time from nanoseconds to milliseconds.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.cpp:12</div></div>
 <div class="ttc" id="aclassspk_1_1TimeMetrics_html_aab7658641b3fbea65c75543a3fff5170"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#aab7658641b3fbea65c75543a3fff5170">spk::TimeMetrics::currentTime</a></div><div class="ttdeci">static long long currentTime()</div><div class="ttdoc">Static method to get the current system time.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.cpp:7</div></div>
-<div class="ttc" id="aclassspk_1_1TimeMetrics_html_ab2ec64db76c2329d780ef3138ea60611"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">spk::TimeMetrics::time</a></div><div class="ttdeci">constexpr const long long &amp; time() const</div><div class="ttdoc">Get the total time since the application started.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:69</div></div>
-<div class="ttc" id="aclassspk_1_1TimeMetrics_html_ac272250bd5ede5c92c0e02e22a65ba88"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">spk::TimeMetrics::sleepAtLeast</a></div><div class="ttdeci">static void sleepAtLeast(long long p_millisecond)</div><div class="ttdoc">Function to put the current thread to sleep for at least the specified duration.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.cpp:31</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_ab2ec64db76c2329d780ef3138ea60611"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#ab2ec64db76c2329d780ef3138ea60611">spk::TimeMetrics::time</a></div><div class="ttdeci">constexpr const long long &amp; time() const</div><div class="ttdoc">Get the total time since the application started.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.hpp:101</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_ac272250bd5ede5c92c0e02e22a65ba88"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#ac272250bd5ede5c92c0e02e22a65ba88">spk::TimeMetrics::sleepAtLeast</a></div><div class="ttdeci">static void sleepAtLeast(long long p_millisecond)</div><div class="ttdoc">Function to put the current thread to sleep for at least the specified duration.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.cpp:40</div></div>
+<div class="ttc" id="aclassspk_1_1TimeMetrics_html_acb9abd7bf4e6723f78ff8ec1217ea2b8"><div class="ttname"><a href="classspk_1_1TimeMetrics.html#acb9abd7bf4e6723f78ff8ec1217ea2b8">spk::TimeMetrics::millisecondToNanosecond</a></div><div class="ttdeci">static long long millisecondToNanosecond(const long long &amp;p_millisecond)</div><div class="ttdoc">Converts time from milliseconds to nanoseconds.</div><div class="ttdef"><b>Definition:</b> spk_time_metrics.cpp:17</div></div>
 <div class="ttc" id="aclassspk_1_1TimeModule_html"><div class="ttname"><a href="classspk_1_1TimeModule.html">spk::TimeModule</a></div><div class="ttdoc">Class for managing time-related functionality.</div><div class="ttdef"><b>Definition:</b> spk_time_module.hpp:15</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->

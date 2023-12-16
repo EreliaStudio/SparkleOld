@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/input/spk_mouse_input.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/input/spk_mouse_input.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_a9d8515c93d115b5c689e0996dc3ef33.html">input</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_18e43d831b98e5af0eff875971b53c06.html">input</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -85,7 +85,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a> _expectedStatus;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> _isExecutionNeeded() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Mouse::instance</a>()-&gt;inputStatus(_button) == _expectedStatus);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">spk::Application::instance</a>()-&gt;mouse().inputStatus(_button) == _expectedStatus);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>:</div>
@@ -99,11 +99,11 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1Application_html_a75e076907a4fed4897b88f4a0febbfe4"><div class="ttname"><a href="classspk_1_1Application.html#a75e076907a4fed4897b88f4a0febbfe4">spk::Application::instance</a></div><div class="ttdeci">static Application * instance()</div><div class="ttdoc">Retrieves the instance of the application.</div><div class="ttdef"><b>Definition:</b> spk_application.hpp:42</div></div>
 <div class="ttc" id="aclassspk_1_1Input_html"><div class="ttname"><a href="classspk_1_1Input.html">spk::Input</a></div><div class="ttdoc">Abstract class providing a common interface for input classes in the 'spk' library.</div><div class="ttdef"><b>Definition:</b> spk_input.hpp:18</div></div>
 <div class="ttc" id="aclassspk_1_1MouseInput_html"><div class="ttname"><a href="classspk_1_1MouseInput.html">spk::MouseInput</a></div><div class="ttdoc">A concrete class derived from Input that represents mouse input.</div><div class="ttdef"><b>Definition:</b> spk_mouse_input.hpp:17</div></div>
 <div class="ttc" id="aclassspk_1_1MouseInput_html_ac7368d01a654eb3c51d0a03a7acc226f"><div class="ttname"><a href="classspk_1_1MouseInput.html#ac7368d01a654eb3c51d0a03a7acc226f">spk::MouseInput::MouseInput</a></div><div class="ttdeci">MouseInput(spk::Mouse::Button p_button, spk::InputState p_expectedStatus, unsigned long p_delayBetweenInput, Funct &amp;&amp;p_funct, Args &amp;&amp;... p_args)</div><div class="ttdoc">Construct a new MouseInput object.</div><div class="ttdef"><b>Definition:</b> spk_mouse_input.hpp:53</div></div>
-<div class="ttc" id="aclassspk_1_1Mouse_html_a7e51467586bf8952f05461cc3b9fd5b5"><div class="ttname"><a href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">spk::Mouse::Button</a></div><div class="ttdeci">Button</div><div class="ttdoc">Enum for mouse buttons.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:26</div></div>
-<div class="ttc" id="aclassspk_1_1Singleton_html_a5f56bedfe0791cc1cc09d34bb3be382c"><div class="ttname"><a href="classspk_1_1Singleton.html#a5f56bedfe0791cc1cc09d34bb3be382c">spk::Singleton&lt; Mouse &gt;::instance</a></div><div class="ttdeci">static constexpr std::shared_ptr&lt; Mouse &gt; instance()</div><div class="ttdoc">Get the singleton instance. This function returns the shared pointer to the singleton instance.</div><div class="ttdef"><b>Definition:</b> spk_singleton.hpp:56</div></div>
+<div class="ttc" id="aclassspk_1_1Mouse_html_a7e51467586bf8952f05461cc3b9fd5b5"><div class="ttname"><a href="classspk_1_1Mouse.html#a7e51467586bf8952f05461cc3b9fd5b5">spk::Mouse::Button</a></div><div class="ttdeci">Button</div><div class="ttdoc">Enum for mouse buttons.</div><div class="ttdef"><b>Definition:</b> spk_mouse.hpp:25</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 <div class="ttc" id="anamespacespk_html_aed6527896d34c2628aec65a369dee252"><div class="ttname"><a href="namespacespk.html#aed6527896d34c2628aec65a369dee252">spk::InputState</a></div><div class="ttdeci">InputState</div><div class="ttdoc">The state of an input device like a button or key.</div><div class="ttdef"><b>Definition:</b> spk_input_status.hpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->

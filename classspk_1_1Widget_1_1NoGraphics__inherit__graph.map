@@ -1,14 +1,13 @@
 <map id="spk::Widget::NoGraphics" name="spk::Widget::NoGraphics">
-<area shape="rect" id="node1" title="Class for widgets without graphics." alt="" coords="832,162,1015,189"/>
+<area shape="rect" id="node1" title="Class for widgets without graphics." alt="" coords="832,137,1015,163"/>
 <area shape="rect" id="node7" href="$classspk_1_1Widget_1_1ActivitySchedulerManager.html" title="Class for managing scheduling of activities." alt="" coords="1077,5,1298,47"/>
 <area shape="rect" id="node8" href="$classspk_1_1Widget_1_1CentralNodeManager.html" title="A no&#45;graphics widget class for managing a spk::Network::CentralNode." alt="" coords="1093,71,1281,112"/>
 <area shape="rect" id="node9" href="$classspk_1_1Widget_1_1ClientManager.html" title="Manager class for Client. Inherits from NoGraphics." alt="" coords="1086,137,1289,163"/>
-<area shape="rect" id="node10" href="$classspk_1_1Widget_1_1InputGroupManager.html" title="Manager class for grouping inputs." alt="" coords="1069,187,1305,214"/>
-<area shape="rect" id="node11" href="$classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1063,238,1312,265"/>
-<area shape="rect" id="node12" href="$classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1084,289,1291,315"/>
-<area shape="rect" id="node2" href="$classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="619,162,784,189"/>
-<area shape="rect" id="node3" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="412,125,571,167"/>
-<area shape="rect" id="node4" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,191,569,218"/>
-<area shape="rect" id="node5" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="216,184,364,225"/>
-<area shape="rect" id="node6" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,191,168,218"/>
+<area shape="rect" id="node10" href="$classspk_1_1Widget_1_1RemoteNodeManager.html" title="Manager class for RemoteNode. Inherits from NoGraphics." alt="" coords="1063,187,1312,214"/>
+<area shape="rect" id="node11" href="$classspk_1_1Widget_1_1ServerManager.html" title="A widget that is used to manage a server." alt="" coords="1084,238,1291,265"/>
+<area shape="rect" id="node2" href="$classspk_1_1Widget_1_1Interface.html" title="Abstract base class for widgets." alt="" coords="619,137,784,163"/>
+<area shape="rect" id="node3" href="$classspk_1_1InherenceObject.html" title=" " alt="" coords="412,100,571,141"/>
+<area shape="rect" id="node4" href="$classspk_1_1ActivableObject.html" title="Represents an activatable object. This class provides functionality to activate and deactivate an obj..." alt="" coords="413,166,569,193"/>
+<area shape="rect" id="node5" href="$classspk_1_1StatedObject.html" title=" " alt="" coords="216,159,364,200"/>
+<area shape="rect" id="node6" href="$classspk_1_1ContractProvider.html" title="Construct a Contract with a callback function and a callbackContainer." alt="" coords="5,166,168,193"/>
 </map>

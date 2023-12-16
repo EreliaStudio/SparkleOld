@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classspk_1_1Widget_1_1Atlas-members.html">List of all members</a>  </div>
@@ -98,6 +99,13 @@ Collaboration diagram for spk::Widget::Atlas:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a6ccb6f21bcc7d51cdbd3d10a147fab52"><td class="memItemLeft" align="right" valign="top"><a id="a6ccb6f21bcc7d51cdbd3d10a147fab52"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a> = std::vector&lt; <a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> * &gt;</td></tr>
+<tr class="memdesc:a6ccb6f21bcc7d51cdbd3d10a147fab52"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type definition for the container storing widgets. <br /></td></tr>
+<tr class="separator:a6ccb6f21bcc7d51cdbd3d10a147fab52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aefb76217b61aa046653f3b343da76f30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#aefb76217b61aa046653f3b343da76f30">insert</a> (<a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> *p_widget)</td></tr>
@@ -112,7 +120,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4a8df123f7b12994c46dd3ee95006f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Widget_1_1Interface.html">Interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">get</a> (const std::wstring &amp;p_widgetName)</td></tr>
 <tr class="memdesc:aa4a8df123f7b12994c46dd3ee95006f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the desired widget.  <a href="classspk_1_1Widget_1_1Atlas.html#aa4a8df123f7b12994c46dd3ee95006f6">More...</a><br /></td></tr>
 <tr class="separator:aa4a8df123f7b12994c46dd3ee95006f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memItemLeft" align="right" valign="top">const StoringContainer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">widgets</a> () const</td></tr>
+<tr class="memitem:aafaa36940d387978a08f66cd04ead969"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#aafaa36940d387978a08f66cd04ead969">widgets</a> ()</td></tr>
+<tr class="memdesc:aafaa36940d387978a08f66cd04ead969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the collection of widgets.  <a href="classspk_1_1Widget_1_1Atlas.html#aafaa36940d387978a08f66cd04ead969">More...</a><br /></td></tr>
+<tr class="separator:aafaa36940d387978a08f66cd04ead969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">StoringContainer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">widgets</a> () const</td></tr>
 <tr class="memdesc:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant reference to the collection of widgets.  <a href="classspk_1_1Widget_1_1Atlas.html#a65f944a55cc9cb8a7cfdc8c8c41c2a76">More...</a><br /></td></tr>
 <tr class="separator:a65f944a55cc9cb8a7cfdc8c8c41c2a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8c1c2bb88f4aa04e2e94901ce4c56c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a5b8c1c2bb88f4aa04e2e94901ce4c56c">resize</a> ()</td></tr>
@@ -284,14 +295,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a65f944a55cc9cb8a7cfdc8c8c41c2a76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65f944a55cc9cb8a7cfdc8c8c41c2a76">&#9670;&nbsp;</a></span>widgets()</h2>
+<a id="aafaa36940d387978a08f66cd04ead969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafaa36940d387978a08f66cd04ead969">&#9670;&nbsp;</a></span>widgets() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const Atlas::StoringContainer &amp; spk::Widget::Atlas::widgets </td>
+          <td class="memname"><a class="el" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">Atlas::StoringContainer</a> &amp; spk::Widget::Atlas::widgets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the collection of widgets. </p>
+<dl class="section return"><dt>Returns</dt><dd>reference to the StoringContainer. </dd></dl>
+
+</div>
+</div>
+<a id="a65f944a55cc9cb8a7cfdc8c8c41c2a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f944a55cc9cb8a7cfdc8c8c41c2a76">&#9670;&nbsp;</a></span>widgets() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classspk_1_1Widget_1_1Atlas.html#a6ccb6f21bcc7d51cdbd3d10a147fab52">Atlas::StoringContainer</a> &amp; spk::Widget::Atlas::widgets </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -305,8 +336,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>includes/widget/<a class="el" href="spk__widget__atlas_8hpp_source.html">spk_widget_atlas.hpp</a></li>
-<li>src/widget/spk_widget_atlas.cpp</li>
+<li>Sparkle/includes/widget/<a class="el" href="spk__widget__atlas_8hpp_source.html">spk_widget_atlas.hpp</a></li>
+<li>Sparkle/src/widget/spk_widget_atlas.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

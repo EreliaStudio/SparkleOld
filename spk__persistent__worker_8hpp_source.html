@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sparkle: includes/threading/spk_persistent_worker.hpp Source File</title>
+<title>Sparkle: Sparkle/includes/threading/spk_persistent_worker.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_d13c0e61298ef12df375d2f8fbcfc354.html">threading</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_3429d7ca3cc00bc309a2ec9474a0a508.html">Sparkle</a></li><li class="navelem"><a class="el" href="dir_ca36643fdc0a1c5191fb33e6753aa751.html">includes</a></li><li class="navelem"><a class="el" href="dir_46a85f9882164506482b7fcbaf3f6f7a.html">threading</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,58 +73,38 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;threading/spk_thread.hpp&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;design_pattern/spk_contract_provider.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacespk.html">spk</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1PersistentWorker.html">PersistentWorker</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Thread.html">Thread</a>, <span class="keyword">public</span> <a class="code" href="classspk_1_1ContractProvider.html">ContractProvider</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classspk_1_1PersistentWorker.html">PersistentWorker</a> : <span class="keyword">public</span> <a class="code" href="classspk_1_1Thread.html">Thread</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">   24</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">Job</a> = <a class="code" href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">ContractProvider::Callback</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">CallbackContainer</a> _jobs;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> std::wstring* _activeJobName = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> _isRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">bool</span> _isPaused = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classspk_1_1PersistentWorker.html#a5b573916b185807a9ea60fbce9690918">PersistentWorker</a>(<span class="keyword">const</span> std::wstring &amp; p_name);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classspk_1_1PersistentWorker.html#ad42857f1630499681af81f5ca49fcf37">~PersistentWorker</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::shared_ptr&lt;ContractProvider::Contract&gt; <a class="code" href="classspk_1_1PersistentWorker.html#a1c1fe2811d03bc5f3fa813679e6536b5">addJob</a>(<span class="keyword">const</span> std::wstring&amp; p_jobName, <span class="keyword">const</span> <a class="code" href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">Job</a>&amp; p_job);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html#ad4101a5a0d541968716eb8cb42e95bda">   69</a></span>&#160;        constexpr <span class="keywordtype">bool</span> <a class="code" href="classspk_1_1PersistentWorker.html#ad4101a5a0d541968716eb8cb42e95bda">isRunning</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (_isRunning); }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#a706be22484b03b2f024308179781e552">start</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#ac2fc8e7d0785eaa63c05d5e3540752d8">stop</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html#ad730a6aef37005bc23999327bdd56ac7">   90</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#ad730a6aef37005bc23999327bdd56ac7">join</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79">pause</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#afbb963099f60af09f97827e3ab1f2d6b">resume</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    };</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="ttc" id="aclassspk_1_1ContractProvider_html"><div class="ttname"><a href="classspk_1_1ContractProvider.html">spk::ContractProvider</a></div><div class="ttdoc">Construct a Contract with a callback function and a callbackContainer.</div><div class="ttdef"><b>Definition:</b> spk_contract_provider.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1ContractProvider_html_a07c6633f84001e137bdda9bbccc37181"><div class="ttname"><a href="classspk_1_1ContractProvider.html#a07c6633f84001e137bdda9bbccc37181">spk::ContractProvider::CallbackContainer</a></div><div class="ttdeci">std::vector&lt; Callback &gt; CallbackContainer</div><div class="ttdoc">Type of container for storing callback functions.</div><div class="ttdef"><b>Definition:</b> spk_contract_provider.hpp:19</div></div>
-<div class="ttc" id="aclassspk_1_1ContractProvider_html_a3ac086eee3bcd57992944a3d146eca1f"><div class="ttname"><a href="classspk_1_1ContractProvider.html#a3ac086eee3bcd57992944a3d146eca1f">spk::ContractProvider::Callback</a></div><div class="ttdeci">std::function&lt; void()&gt; Callback</div><div class="ttdoc">Type of data representing a callback function.</div><div class="ttdef"><b>Definition:</b> spk_contract_provider.hpp:18</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html"><div class="ttname"><a href="classspk_1_1PersistentWorker.html">spk::PersistentWorker</a></div><div class="ttdoc">Class for creating and managing a persistent worker thread.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.hpp:16</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a0e26b08e8a01429bd5f17443021125d2"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a0e26b08e8a01429bd5f17443021125d2">spk::PersistentWorker::Job</a></div><div class="ttdeci">ContractProvider::Callback Job</div><div class="ttdoc">The type of job to be executed by the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.hpp:24</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a1c1fe2811d03bc5f3fa813679e6536b5"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a1c1fe2811d03bc5f3fa813679e6536b5">spk::PersistentWorker::addJob</a></div><div class="ttdeci">std::shared_ptr&lt; ContractProvider::Contract &gt; addJob(const std::wstring &amp;p_jobName, const Job &amp;p_job)</div><div class="ttdoc">Add a job to the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:40</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a48e0003b4bf60e84312d20257a094a79"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a48e0003b4bf60e84312d20257a094a79">spk::PersistentWorker::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:76</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a5b573916b185807a9ea60fbce9690918"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a5b573916b185807a9ea60fbce9690918">spk::PersistentWorker::PersistentWorker</a></div><div class="ttdeci">PersistentWorker(const std::wstring &amp;p_name)</div><div class="ttdoc">Construct a new PersistentWorker object with a specified name.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:6</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a706be22484b03b2f024308179781e552"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a706be22484b03b2f024308179781e552">spk::PersistentWorker::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:56</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ac2fc8e7d0785eaa63c05d5e3540752d8"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ac2fc8e7d0785eaa63c05d5e3540752d8">spk::PersistentWorker::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:70</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ad4101a5a0d541968716eb8cb42e95bda"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ad4101a5a0d541968716eb8cb42e95bda">spk::PersistentWorker::isRunning</a></div><div class="ttdeci">constexpr bool isRunning() const</div><div class="ttdoc">Check if the worker is running.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.hpp:69</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ad42857f1630499681af81f5ca49fcf37"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ad42857f1630499681af81f5ca49fcf37">spk::PersistentWorker::~PersistentWorker</a></div><div class="ttdeci">~PersistentWorker()</div><div class="ttdoc">Destroy the PersistentWorker object.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:35</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ad730a6aef37005bc23999327bdd56ac7"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ad730a6aef37005bc23999327bdd56ac7">spk::PersistentWorker::join</a></div><div class="ttdeci">void join()=delete</div><div class="ttdoc">Join the worker.</div></div>
-<div class="ttc" id="aclassspk_1_1PersistentWorker_html_afbb963099f60af09f97827e3ab1f2d6b"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#afbb963099f60af09f97827e3ab1f2d6b">spk::PersistentWorker::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resume the worker.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:81</div></div>
-<div class="ttc" id="aclassspk_1_1Thread_html"><div class="ttname"><a href="classspk_1_1Thread.html">spk::Thread</a></div><div class="ttdoc">Class for creating and managing a thread.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:22</div></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classspk_1_1PersistentWorker.html#a7c1e4d03a467bdc6875cd1cd21ac1225">   18</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="classspk_1_1PersistentWorker.html#a7c1e4d03a467bdc6875cd1cd21ac1225">Job</a> = std::function&lt;void()&gt;; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> _isRunning; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::promise&lt;void&gt; _starterSignal; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> _runJob(<span class="keyword">const</span> <a class="code" href="classspk_1_1PersistentWorker.html#a7c1e4d03a467bdc6875cd1cd21ac1225">Job</a>&amp; p_job);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classspk_1_1PersistentWorker.html#a88a05467c0c90202f43dd8a29c271b7a">PersistentWorker</a>(<span class="keyword">const</span> std::wstring&amp; p_threadName, <span class="keyword">const</span> <a class="code" href="classspk_1_1PersistentWorker.html#a7c1e4d03a467bdc6875cd1cd21ac1225">Job</a>&amp; p_job);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classspk_1_1PersistentWorker.html#ad42857f1630499681af81f5ca49fcf37">~PersistentWorker</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#a706be22484b03b2f024308179781e552">start</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classspk_1_1PersistentWorker.html#ac2fc8e7d0785eaa63c05d5e3540752d8">stop</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html"><div class="ttname"><a href="classspk_1_1PersistentWorker.html">spk::PersistentWorker</a></div><div class="ttdoc">Class representing a persistent worker that executes a specific job in a dedicated thread.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.hpp:16</div></div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a706be22484b03b2f024308179781e552"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a706be22484b03b2f024308179781e552">spk::PersistentWorker::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the execution of the job in a separate thread.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:21</div></div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a7c1e4d03a467bdc6875cd1cd21ac1225"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a7c1e4d03a467bdc6875cd1cd21ac1225">spk::PersistentWorker::Job</a></div><div class="ttdeci">std::function&lt; void()&gt; Job</div><div class="ttdoc">Alias for the job function type.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.hpp:18</div></div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html_a88a05467c0c90202f43dd8a29c271b7a"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#a88a05467c0c90202f43dd8a29c271b7a">spk::PersistentWorker::PersistentWorker</a></div><div class="ttdeci">PersistentWorker(const std::wstring &amp;p_threadName, const Job &amp;p_job)</div><div class="ttdoc">Constructs a PersistentWorker with a specified job.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:6</div></div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ac2fc8e7d0785eaa63c05d5e3540752d8"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ac2fc8e7d0785eaa63c05d5e3540752d8">spk::PersistentWorker::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the execution of the job.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:26</div></div>
+<div class="ttc" id="aclassspk_1_1PersistentWorker_html_ad42857f1630499681af81f5ca49fcf37"><div class="ttname"><a href="classspk_1_1PersistentWorker.html#ad42857f1630499681af81f5ca49fcf37">spk::PersistentWorker::~PersistentWorker</a></div><div class="ttdeci">~PersistentWorker()</div><div class="ttdoc">Destructs the PersistentWorker instance.</div><div class="ttdef"><b>Definition:</b> spk_persistent_worker.cpp:16</div></div>
+<div class="ttc" id="aclassspk_1_1Thread_html"><div class="ttname"><a href="classspk_1_1Thread.html">spk::Thread</a></div><div class="ttdoc">A wrapper class around std::thread to manage application threads.</div><div class="ttdef"><b>Definition:</b> spk_thread.hpp:19</div></div>
 <div class="ttc" id="anamespacespk_html"><div class="ttname"><a href="namespacespk.html">spk</a></div><div class="ttdoc">Contains the definitions and implementations related to Perlin noise generation.</div><div class="ttdef"><b>Definition:</b> spk_API_module.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
