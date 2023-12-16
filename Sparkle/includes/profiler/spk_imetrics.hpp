@@ -14,6 +14,9 @@ namespace spk
 
 	public:
 
+        /**
+         * @brief Indicate if the counter need to be added to any report
+        */
 		virtual bool needEmition() const = 0;
 
         /**

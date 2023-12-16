@@ -19,7 +19,7 @@ namespace spk
     protected:
         std::shared_ptr<GameObject> _owner; ///< The GameObject this component is attached to.
         std::wstring _name; ///< Name of the component.
-		spk::TimeConsumption& _timeConsumptionMetrics;
+		spk::TimeConsumption& _timeConsumptionMetrics; ///< A time consuption metrics to mesure this component time consumption
 
         /**
          * @brief Virtual method for updating the component.

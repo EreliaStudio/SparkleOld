@@ -21,6 +21,9 @@ namespace spk
          */
         Counter();
 
+        /**
+         * @brief Indicate if the counter need to be added to any report
+        */
         bool needEmition() const;
 
         /**
