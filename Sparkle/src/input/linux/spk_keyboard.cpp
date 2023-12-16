@@ -1,0 +1,107 @@
+#include "input/spk_keyboard.hpp"
+
+namespace spk
+{
+	Keyboard::Mapping::Mapping()
+	{
+		for (int i = 0; i < 255; ++i)
+			keys[i] = Key::Unknown;
+
+		bindKey(9, Escape);
+		bindKey(10, Key1);
+		bindKey(11, Key2);
+		bindKey(12, Key3);
+		bindKey(13, Key4);
+		bindKey(14, Key5);
+		bindKey(15, Key6);
+		bindKey(16, Key7);
+		bindKey(17, Key8);
+		bindKey(18, Key9);
+		bindKey(19, Key0);
+		bindKey(20, Minus);
+		bindKey(21, Equal);
+		bindKey(22, Backspace);
+		bindKey(23, Tab);
+		bindKey(24, Q);
+		bindKey(25, W);
+		bindKey(26, E);
+		bindKey(27, R);
+		bindKey(28, T);
+		bindKey(29, Y);
+		bindKey(30, U);
+		bindKey(31, I);
+		bindKey(32, O);
+		bindKey(33, P);
+		bindKey(34, LeftBracket);
+		bindKey(35, RightBracket);
+		bindKey(36, Return);
+		bindKey(37, LeftControl);
+		bindKey(38, A);
+		bindKey(39, S);
+		bindKey(40, D);
+		bindKey(41, F);
+		bindKey(42, G);
+		bindKey(43, H);
+		bindKey(44, J);
+		bindKey(45, K);
+		bindKey(46, L);
+		bindKey(47, SemiColon);
+		bindKey(48, Quote);
+		bindKey(49, Tilde);
+		bindKey(50, LeftShift);
+		bindKey(51, Backslash);
+		bindKey(52, Z);
+		bindKey(53, X);
+		bindKey(54, C);
+		bindKey(55, V);
+		bindKey(56, B);
+		bindKey(57, N);
+		bindKey(58, M);
+		bindKey(59, Comma);
+		bindKey(60, Period);
+		bindKey(61, Slash);
+		bindKey(62, RightShift);
+		bindKey(63, NumpadMultiply);
+		bindKey(64, LeftAlt);
+		bindKey(65, Space);
+		bindKey(66, Capslock);
+		bindKey(67, F1);
+		bindKey(68, F2);
+		bindKey(69, F3);
+		bindKey(70, F4);
+		bindKey(71, F5);
+		bindKey(72, F6);
+		bindKey(73, F7);
+		bindKey(74, F8);
+		bindKey(75, F9);
+		bindKey(76, F10);
+		bindKey(77, NumLock);
+		bindKey(79, Numpad7);
+		bindKey(80, Numpad8);
+		bindKey(81, Numpad9);
+		bindKey(82, NumpadMinus);
+		bindKey(83, Numpad4);
+		bindKey(84, Numpad5);
+		bindKey(85, Numpad6);
+		bindKey(86, NumpadPlus);
+		bindKey(87, Numpad1);
+		bindKey(88, Numpad2);
+		bindKey(89, Numpad3);
+		bindKey(90, Numpad0);
+		bindKey(91, NumpadDecimal);
+		bindKey(95, F11);
+		bindKey(96, F12);
+		bindKey(104, NumpadReturn);
+		bindKey(105, RightControl);
+		bindKey(106, NumpadDivide);
+		bindKey(108, RightAlt);
+		bindKey(110, Home);
+		bindKey(111, UpArrow);
+		bindKey(113, LeftArrow);
+		bindKey(114, RightArrow);
+		bindKey(115, End);
+		bindKey(116, DownArrow);
+		bindKey(118, Insert);
+		bindKey(119, Clear);
+	}
+}

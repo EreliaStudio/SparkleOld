@@ -1,428 +1,493 @@
 #include "playground.hpp"
 
-struct Chunk : public spk::GameObject
+class PseudoApplication;
+
+class Viewport
 {
-public:
-    static inline std::shared_ptr<spk::SpriteSheet> SpriteSheet = nullptr;
-    static inline std::shared_ptr<spk::Material> Material = nullptr;
-
 private:
-    static const int Size = 16;
-    static inline spk::Perlin2D _perlinGeneration = spk::Perlin2D(987654321);
-
-    spk::Vector2Int _position;
-    std::shared_ptr<spk::MeshRenderer> _renderer;
-    std::shared_ptr<spk::Mesh> _mesh;
-
-    float height[Size + 1][Size + 1];
-
-    float _generateHeight(const int& p_x, const int& p_y)
-    {
-        float result = _perlinGeneration.sample(static_cast<float>(p_x + _position.x * Size + 150000), static_cast<float>(p_y + _position.y * Size + 150000)) * 10;
-        return (result);
-    }
-
-    spk::Vector3 _generatePoint(const int& p_x, const int& p_y)
-    {
-        spk::Vector3 result = spk::Vector3(p_x, (p_x == -1 || p_y == -1 || p_x >= Size + 1 || p_y >= Size + 1 ? _generateHeight(p_x, p_y) : height[p_x][p_y]), p_y);
-        // if (result.y <= 0.0f)
-        //     result.y = 0.0f;
-        return (result);
-    }
-
-    void _bakePoints()
-    {
-        for (size_t y = 0; y <= Size; y++)
-        {
-            for (size_t x = 0; x <= Size; x++)
-            {
-                _mesh->points().push_back(_generatePoint(x, y));
-            }
-        }
-    }
-
-    void _bakeUVs()
-    {
-        spk::Vector2 uvsValues[4] = {
-            spk::Vector2(0, 0),
-            spk::Vector2(1, 0),
-            spk::Vector2(1, 1),
-            spk::Vector2(0, 1)
-        };
-
-        for (const auto& sprite : SpriteSheet->sprites())
-        {
-            for (size_t j = 0; j < 4; j++)
-            {
-                _mesh->uvs().push_back(uvsValues[j] * SpriteSheet->unit() + sprite);
-            }
-        }
-    }
-
-    void _bakeNormales()
-    {
-        for (int y = 0; y <= Size; y++)
-        {
-            for (int x = 0; x <= Size; x++)
-            {
-                spk::Vector3 points[5] = {
-                    _generatePoint(x +  0, y +  0),
-                    _generatePoint(x + -1, y +  0),
-                    _generatePoint(x +  0, y + -1),
-                    _generatePoint(x +  0, y +  1),
-                    _generatePoint(x +  1, y +  0)
-                };
-
-                int trianglesIndexes[4][2] = {
-                    {1, 3}, {3, 4}, {4, 2}, {2, 1},
-                };
-
-                spk::Vector3 normal = spk::Vector3();
-
-                for (size_t i = 0; i < 4; i++)
-                {
-                    spk::Vector3 vectorAB = points[trianglesIndexes[i][0]] - points[0];
-                    spk::Vector3 vectorAC = points[trianglesIndexes[i][1]] - points[0];
-
-                    normal += vectorAB.cross(vectorAC).normalize();
-                }
-                normal /= 4;
-
-                _mesh->normals().push_back(normal);
-            }
-        }
-    }
-
-    void _bakeRawData()
-    {
-        _bakePoints();
-        _bakeUVs();
-        _bakeNormales();		
-    }
-
-    size_t _computeSpriteID(const spk::Vector2Int& p_a, const spk::Vector2Int& p_b, const spk::Vector2Int& p_c)
-    {
-        float value = std::max(
-                std::max(height[p_a.x][p_a.y], height[p_b.x][p_b.y]),
-                height[p_c.x][p_c.y]
-            );
-
-        if (value < -5.0f)
-            return (4);
-        else if (value < 0.0f)
-            return (3);
-        else if (value < 15.0f)
-            return (2);
-        else if (value < 25.0f)
-            return (1);
-        else
-            return (0);
-    }
-
-    void _bakeVertex()
-    {
-        size_t pointOffsets[6] = {Size + 1, Size + 2, 1, Size + 1, 1, 0};
-        size_t uvsOffsets[6] = {0, 1, 2, 0, 2, 3};
-        spk::Vector2Int positionOffset[2][3] = {
-            {
-                spk::Vector2Int(0, 1),
-                spk::Vector2Int(1, 1),
-                spk::Vector2Int(1, 0)
-            },
-            {
-                spk::Vector2Int(1, 0),
-                spk::Vector2Int(0, 1),
-                spk::Vector2Int(0, 0)
-            }
-        };
-
-        for (size_t y = 0; y < Size; y++)
-        {
-            for (size_t x = 0; x < Size; x++)
-            {
-                spk::Vector2Int position = spk::Vector2Int(x, y);
-                size_t baseIndex = x + y * (Size + 1);
-
-                for (size_t i = 0; i < 2; i++)
-                {
-                    size_t baseSprite = _computeSpriteID(position + positionOffset[i][0], position + positionOffset[i][1], position + positionOffset[i][2]);
-
-                    for (size_t j = 0; j < 3; j++)
-                    {
-                        _mesh->addVertex(baseIndex + pointOffsets[i * 3 + j], baseSprite * 4 + uvsOffsets[i * 3 + j], baseIndex + pointOffsets[i * 3 + j]);
-                    }
-                }
-            }
-        }
-    }
-
-    void _bakeFaces()
-    {
-        for (size_t i = 0; i < _mesh->vertices().size(); i += 3)
-        {
-            _mesh->addFace(i + 0, i + 1, i + 2);
-        }
-        _mesh->setNeedUpdateFlag(true);
-    }
-
-    void _bake()
-    {
-        _bakeRawData();
-
-        _bakeVertex();
-        
-        _bakeFaces();
-    }
+    spk::Vector2Int _anchor;
+    spk::Vector2UInt _size;
 
 public:
-    static void InitializePerlinGeneration()
+    Viewport() :
+        _anchor(0, 0),
+        _size(0, 0)
     {
-        _perlinGeneration.configureInterpolation(spk::Perlin2D::Interpolation::SmoothStep);
-        _perlinGeneration.configureRange(-5, 5);
-        _perlinGeneration.configureFrequency(60);
-        _perlinGeneration.configureOctave(7);
-        _perlinGeneration.configureLacunarity(2.0f);
-        _perlinGeneration.configurePersistance(0.5f);
+
     }
 
-    Chunk(const spk::Vector2Int& p_position) :
-        spk::GameObject(L"Chunk [" + spk::to_wstring(p_position) + L"]", spk::Vector3(Size * p_position.x, 0, Size * p_position.y)),
-        _renderer(addComponent<spk::MeshRenderer>()),
-        _mesh(std::make_shared<spk::Mesh>()),
-        _position(p_position)
+    void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
     {
-        _renderer->setTexture(SpriteSheet);
-        _renderer->setMaterial(Material);
-
-        for (size_t i = 0; i <= Size; i++)
-        {
-            for (size_t j = 0; j <= Size; j++)
-            {
-                height[i][j] = _generateHeight(i, j);
-            }
-        }
-
-        _bake();
-        _renderer->setMesh(_mesh);
+        _anchor = p_anchor;
+        _size = p_size;
     }
 
-    const spk::Vector2Int& position() const
+    const spk::Vector2Int& anchor() const 
     {
-        return (_position);
+        return (_anchor);
     }
 
-    static spk::Vector2Int ConvertWorldToChunkPosition(const spk::Vector3& p_worldPosition)
+    const spk::Vector2Int& size() const 
     {
-        return (spk::Vector2Int(
-            static_cast<int>(p_worldPosition.x) / Size - ((p_worldPosition.x < 0 && static_cast<int>(p_worldPosition.x) % Size != 0) ? 1 : 0), 
-            static_cast<int>(p_worldPosition.z) / Size - ((p_worldPosition.z < 0 && static_cast<int>(p_worldPosition.z) % Size != 0) ? 1 : 0)
-        ));
+        return (_size);
+    }
+
+    void use() const
+    {
+
     }
 };
 
-struct World
+class Widget
 {
-private:
-    std::map<spk::Vector2Int, std::shared_ptr<Chunk>> _chunks;
+    friend class WidgetModule;
 
-public:
-    World()
+private:
+    bool _isActive;
+    Viewport _viewport;
+    bool _needGeometryChange = false;
+    Widget* _parent = nullptr;
+    std::vector<Widget*> _childrens;
+
+    void _render()
     {
-        Chunk::InitializePerlinGeneration();
+        if (isActive() == false)
+            return ;
+
+        if (_parent != nullptr)
+            _parent->_activateViewport();
+
+        if (_needGeometryChange == true)
+        {
+            _onGeometryChange();
+            _needGeometryChange = false;
+        }
+
+        _onRender();
+
+        for (size_t i = 0; i < _childrens.size(); i++)
+        {
+            spk::cout << " - ";
+            _childrens[i]->_render();
+        }
     }
-    
-    bool contains(const spk::Vector2Int& p_chunkPosition) const
+
+    bool _update()
     {
-        if (_chunks.contains(p_chunkPosition) == false)
+        if (isActive() == false)
             return (false);
-        return (true);
+
+        for (size_t i = 0; i < _childrens.size(); i++)
+        {
+            if (_childrens[i]->_update() == true)
+            {
+                return (true);
+            }
+            spk::cout << " - ";
+        }
+
+        return (_onUpdate());
     }
 
-    std::shared_ptr<Chunk> chunk(const spk::Vector2Int& p_chunkPosition)
+    virtual void _onRender() = 0;
+    virtual bool _onUpdate() = 0;
+    virtual void _onGeometryChange() = 0;
+
+    void _activateViewport() const
     {
-        if (contains(p_chunkPosition) == true)
-            return (_chunks[p_chunkPosition]);
-
-        std::shared_ptr<Chunk> result = std::make_shared<Chunk>(p_chunkPosition);
-    
-        _chunks[p_chunkPosition] = result;
-
-        return (result);
+        _viewport.use();
     }
-    
-    std::shared_ptr<Chunk> chunk(const spk::Vector2Int& p_chunkPosition) const
+
+    void _removeChild(Widget* p_child)
     {
-        if (contains(p_chunkPosition) == false)
-            return (nullptr);
-        return (_chunks.at(p_chunkPosition));
+        auto it = std::remove(_childrens.begin(), _childrens.end(), p_child);
+        _childrens.erase(it, _childrens.end());
+
+        p_child->_parent = nullptr;
+    }
+
+public:
+    Widget();
+    ~Widget();
+
+    Widget(const Widget& p_other) = delete;
+    Widget& operator=(const Widget& p_other) = delete;
+
+    Widget(Widget&& p_other) noexcept :
+        _isActive(p_other._isActive), 
+        _viewport(std::move(p_other._viewport)), 
+        _needGeometryChange(true), 
+        _parent(p_other._parent)
+    {
+
+    }
+
+    Widget& operator=(const Widget&& p_other)
+    {
+        if (this != &p_other)
+        {
+            _isActive = p_other._isActive;
+            _viewport = std::move(p_other._viewport);
+            _needGeometryChange = true;
+            _parent = p_other._parent;
+        }
+        return *this;
+    }
+
+    void addChild(Widget* p_child)
+    {
+        if (p_child->_parent != nullptr)
+            p_child->_parent->_removeChild(p_child);
+        _childrens.push_back(p_child);
+        p_child->_parent = this;
+    }
+
+    void setGeometry(const spk::Vector2Int& p_anchor, const spk::Vector2UInt& p_size)
+    {
+        _viewport.setGeometry(p_anchor, p_size);
+        _needGeometryChange = true;
+    }
+
+    const Widget* parent() const
+    {
+        return (_parent);
+    }
+
+    const spk::Vector2Int& anchor() const 
+    {
+        return (_viewport.anchor());
+    }
+
+    const spk::Vector2Int& size() const 
+    {
+        return (_viewport.size());
+    }
+
+    void setActive(bool p_state)
+    {
+        _isActive = p_state;
+    }
+
+    bool isActive() const
+    {
+        return (_isActive);
     }
 };
 
-class MainWidget : public spk::Widget::Interface
+class WidgetModule
+{
+public:
+    class CentralWidget : public Widget
+    {
+    private:
+        void _onGeometryChange()
+        {
+
+        }
+
+        void _onRender()
+        {
+            spk::cout << "Central widget";
+        }
+
+        bool _onUpdate()
+        {
+            spk::cout << "Central widget";
+            return (false);
+        }
+
+    public:
+        CentralWidget()
+        {
+            DEBUG_LINE();
+        }
+
+        ~CentralWidget()
+        {
+            DEBUG_LINE();
+        }
+    };
+
+private:
+    CentralWidget _centralWidget;
+
+public:
+    WidgetModule()
+    {
+        _centralWidget.setActive(true);
+    }
+
+    CentralWidget* centralWidget()
+    {
+        return (&_centralWidget);
+    }
+
+    void renderWidgets()
+    {
+        _centralWidget._render();
+    }
+
+    void updateWidgets()
+    {
+        _centralWidget._update();
+    }
+};
+
+class PseudoApplication
+{
+    friend class Widget;
+
+private:
+    static inline PseudoApplication* _instance;
+
+    size_t _index = 0;
+
+    WidgetModule _widgetModule;
+
+    void _executeRenderTick()
+    {
+        spk::cout << "Render tick : ";
+        _widgetModule.renderWidgets();
+        spk::cout << std::endl;
+    }
+
+    void _executeUpdateTick()
+    {
+        spk::cout << "Update tick : ";
+        _widgetModule.updateWidgets();
+        spk::cout << std::endl;
+    }
+
+    WidgetModule::CentralWidget* _centralWidget()
+    {
+        return (_widgetModule.centralWidget());
+    }
+
+public:
+    PseudoApplication()
+    {
+        _instance = this;
+    }
+    ~PseudoApplication()
+    {
+        DEBUG_LINE();
+        if (_instance == this)
+        {
+            DEBUG_LINE();   
+            _instance = nullptr;
+        }
+    }
+
+    static PseudoApplication* instance() {return (_instance);}
+
+    const size_t& index() const
+    {
+        return (_index);
+    }
+
+    int run()
+    {
+        for (size_t i = 0; i < 2; i++)
+        {
+            spk::cout << "Frame : [" << i << "]" << std::endl;
+            _index = i;
+            _executeRenderTick();
+            _executeUpdateTick();
+        }
+        return (0);
+    }
+};
+
+
+Widget::Widget() : 
+    _isActive(false),
+    _parent(nullptr)
+{
+    DEBUG_LINE();
+    if (PseudoApplication::instance() != nullptr && PseudoApplication::instance()->_centralWidget() != this)
+        PseudoApplication::instance()->_centralWidget()->addChild(this);
+}
+
+Widget::~Widget()
+{
+    DEBUG_LINE();
+    if (_parent != nullptr)
+    {
+        _parent->_removeChild(this);
+    }
+    for (size_t i = 0; i < _childrens.size(); i++)
+    {
+        _childrens[i]->_parent = PseudoApplication::instance()->_centralWidget();
+    }
+}
+
+class WidgetA : public Widget
 {
 private:
-    World _world;
-    spk::Vector2Int _playerVisionSize = spk::Vector2Int(15, 15);
-
-    std::shared_ptr<spk::GameEngineManager> _gameEngineManager;
-    std::vector<std::shared_ptr<Chunk>> _activeChunks;
-
-    std::shared_ptr<spk::GameEngine> _engine;
-    std::shared_ptr<spk::GameObject> _player;
-    std::shared_ptr<spk::GameObject> _lights;
-    std::shared_ptr<spk::DirectionalLight> _directionLight;
-
     void _onGeometryChange()
     {
-        _gameEngineManager->setGeometry(0, size());
-    }
 
-    std::shared_ptr<Chunk> _generateChunk(const spk::Vector2Int& p_chunkPosition)
-    {
-        std::shared_ptr<Chunk> newChunk = _world.chunk(p_chunkPosition);
-
-        _engine->addGameObject(newChunk);
-        newChunk->activate();
-
-        return (newChunk);
     }
 
     void _onRender()
     {
-        
-    }
-
-    void _deactivateOutOffBoundChunk(const spk::Vector2Int& p_startPosition, const spk::Vector2Int& p_endPosition)
-    {
-        _activeChunks.erase(
-            std::remove_if(
-                _activeChunks.begin(),
-                _activeChunks.end(),
-                [&p_startPosition, &p_endPosition](const auto& chunkPtr) {
-                    if (spk::Vector2Int::isInsideRectangle(chunkPtr->position(), p_startPosition, p_endPosition) == false) {
-                        chunkPtr->deactivate();
-                        return (true);
-                    }
-                    return (false);
-                }
-            ),
-            _activeChunks.end()
-        );
+        spk::cout << __CLASS__;
     }
 
     bool _onUpdate()
     {
-        static spk::Vector2Int lastPlayerChunkPosition = Chunk::ConvertWorldToChunkPosition(_player->transform()->translation()) - spk::Vector2Int(1, 1);
-        spk::Vector2Int playerChunkPosition = Chunk::ConvertWorldToChunkPosition(_player->transform()->translation());
-        if (playerChunkPosition != lastPlayerChunkPosition)
-        {
-            spk::Vector2Int startPosition = playerChunkPosition - _playerVisionSize / spk::Vector2(2, 2);
-            spk::Vector2Int endPosition = playerChunkPosition + _playerVisionSize / spk::Vector2(2, 2);
-
-            _deactivateOutOffBoundChunk(startPosition, endPosition);
-    
-            for (int x = startPosition.x; x <= endPosition.x; x++)
-            {
-                for (int y = startPosition.y; y <= endPosition.y; y++)
-                {
-                    spk::Vector2Int chunkPosition = spk::Vector2Int(x, y);
-
-                    if (_world.contains(chunkPosition) == false)
-                    {
-                        std::shared_ptr<Chunk> newChunk = _generateChunk(chunkPosition);
-                        _activeChunks.push_back(newChunk);
-                    }
-                    else
-                    {
-                        std::shared_ptr<Chunk> chunk = _world.chunk(chunkPosition);
-                        if (chunk->isActive() == false)
-                        {
-                            chunk->activate();
-                            _activeChunks.push_back(chunk);
-                        }
-                    }
-                }
-            }
-            lastPlayerChunkPosition = playerChunkPosition;
-        }
-        
-        static long long nextInput = spk::TimeMetrics::instance()->time();
-
-        if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::A) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
-        {
-            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, 5, 0)));
-            nextInput = spk::TimeMetrics::instance()->time() + 100;
-        }
-        else if (spk::Keyboard::instance()->inputStatus(spk::Keyboard::E) == spk::InputState::Down && nextInput <= spk::TimeMetrics::instance()->time())
-        {
-            _directionLight->setDirection(_directionLight->direction().rotate(spk::Vector3(0, -5, 0)));
-            nextInput = spk::TimeMetrics::instance()->time() + 100;
-        }
-
+        spk::cout << __CLASS__;
         return (false);
     }
 
-    std::shared_ptr<spk::GameObject> createPlayer(const spk::Vector3& p_position, const spk::Vector3& p_playerTarget)
-    {
-        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Player", p_position);
-
-        result->transform()->lookAt(p_playerTarget);
-        auto camera = result->addComponent<spk::Camera>();
-        auto fpsController = result->addComponent<spk::FirstPersonController>();
-        fpsController->setMouseControl(spk::FirstPersonController::MouseControl::PressedLeft);
-        fpsController->setMovementSpeed(15.0f);
-
-        return (result);
-    }
-
-    std::shared_ptr<spk::GameObject> createLights(const spk::Vector3& p_direction)
-    {
-        std::shared_ptr<spk::GameObject> result = std::make_shared<spk::GameObject>(L"Lights", spk::Vector3(0, 0, 0));
-
-        auto tmp = result->addComponent<spk::DirectionalLight>();
-        tmp->setDirection(spk::Vector3(-1.0f, -1.0f, 0));
-        tmp->setIntensity(0.25f);
-        tmp->setColor(spk::Color(255, 255, 255));
-
-        return (result);
-    }
-
 public:
-    MainWidget(const std::wstring& p_name) : 
-        spk::Widget::Interface(p_name)
+    WidgetA()
     {
-        Chunk::SpriteSheet = std::make_shared<spk::SpriteSheet>(L"worldChunkTexture.png", spk::Vector2UInt(5, 1));
-        Chunk::Material = std::make_shared<spk::Material>(0.25f, 32.0f);
-
-        _engine = std::make_shared<spk::GameEngine>();
-
-        _player = createPlayer(spk::Vector3(2, 2, 2), spk::Vector3(0, 0, 0));
-        _engine->addGameObject(_player);
-
-        _lights = createLights(spk::Vector3(0, -1, 0));
-        _directionLight = _lights->getComponent<spk::DirectionalLight>();
-        _engine->addGameObject(_lights);
-
-        _gameEngineManager = addChildrenWidget<spk::GameEngineManager>(L"GameEngineManager");
-        _gameEngineManager->setGameEngine(_engine);
-        _gameEngineManager->activate();
+        DEBUG_LINE();
     }
 
-    ~MainWidget()
+    ~WidgetA()
     {
-
+        DEBUG_LINE();
     }
 };
 
+class WidgetB : public Widget
+{
+private:
+    void _onGeometryChange()
+    {
+
+    }
+    
+    void _onRender()
+    {
+        spk::cout << __CLASS__;
+    }
+
+    bool _onUpdate()
+    {
+        spk::cout << __CLASS__;
+        return (false);
+    }
+
+public:
+    WidgetB()
+    {
+        DEBUG_LINE();
+    }
+
+    ~WidgetB()
+    {
+        DEBUG_LINE();
+    }
+};
+
+class WidgetC : public Widget
+{
+private:
+    WidgetA _widgetA;
+
+    void _onGeometryChange()
+    {
+
+    }
+    
+    void _onRender()
+    {
+        spk::cout << __CLASS__;
+    }
+
+    bool _onUpdate()
+    {
+        spk::cout << __CLASS__;
+        return (false);
+    }
+
+public:
+    WidgetC()
+    {
+        DEBUG_LINE();
+        addChild(&_widgetA);
+        _widgetA.setActive(true);
+    }
+
+    ~WidgetC()
+    {
+        DEBUG_LINE();
+    }
+};
+
+void runA(PseudoApplication& p_app)
+{
+    spk::cout << "--- Pre Run A ---" << std::endl;
+    
+    WidgetB widgetB3;
+    widgetB3.setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(200, 200));
+    widgetB3.setActive(true);
+
+    spk::cout << "--- Run A ---" << std::endl;
+
+    p_app.run();
+
+    spk::cout << "--- Post Run A ---" << std::endl;
+}
+
+void runB(PseudoApplication& p_app, WidgetC& widgetC1)
+{
+    spk::cout << "--- Pre Run B ---" << std::endl;
+
+    WidgetA widgetA;
+    widgetA.setGeometry(spk::Vector2Int(100, 100), spk::Vector2UInt(100, 100));
+    widgetA.setActive(true);
+    widgetC1.addChild(&widgetA);
+    
+    spk::cout << "--- Run B ---" << std::endl;
+
+    p_app.run();
+
+    spk::cout << "--- Post Run B ---" << std::endl;
+}
+
+void runC(PseudoApplication& p_app)
+{
+    spk::cout << "--- Pre Run C ---" << std::endl;
+
+    spk::cout << "--- Run C ---" << std::endl;
+    p_app.run();
+    spk::cout << "--- Post Run C ---" << std::endl;
+}
+
+void scopedMain()
+{
+    spk::cout << "--- Program initialization ---" << std::endl;
+    PseudoApplication app = PseudoApplication();
+
+    WidgetB widgetB1;
+    widgetB1.setGeometry(spk::Vector2Int(0, 0), spk::Vector2UInt(200, 200));
+    widgetB1.setActive(true);
+
+    WidgetB widgetB2;
+    widgetB2.setGeometry(spk::Vector2Int(200, 0), spk::Vector2UInt(200, 200));
+    widgetB2.setActive(true);
+
+    WidgetC widgetC1;
+    widgetC1.setGeometry(spk::Vector2Int(200, 200), spk::Vector2UInt(400, 400));
+    widgetC1.setActive(true);
+
+    runA(app);
+
+    runB(app, widgetC1);
+
+    runC(app);
+    spk::cout << "--- Program closure ---" << std::endl;
+}
 
 int main()
 {
-    spk::Application app(L"Playground", 900);
-    spk::Keyboard::instance()->setLayout(spk::Keyboard::Layout::Azerty);
+    scopedMain();
 
-    std::shared_ptr<MainWidget> mainWidget = app.addRootWidget<MainWidget>(L"MainWidget");
-    mainWidget->setGeometry(0, app.size());
-    mainWidget->activate();
+    spk::cout << " -------- " << std::endl;
 
-    return (app.run());
+    return (0);
 }
