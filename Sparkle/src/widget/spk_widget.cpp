@@ -152,7 +152,6 @@ namespace spk
 
 	void Widget::_applyResizeOperation()
 	{
-		spk::cout << "[" << name() << "] - Anchor ratio : " << _anchorRatio << " / Size ratio : " << _sizeRatio << std::endl;
 		const spk::Vector2UInt& areaSize = (parent() == nullptr ? spk::Application::instance()->window().size() : parent()->viewport().area().size());
 		
 		_viewport.setGeometry(spk::Area(areaSize * _anchorRatio, areaSize * _sizeRatio));

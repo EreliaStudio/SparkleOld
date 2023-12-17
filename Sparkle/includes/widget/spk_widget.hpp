@@ -167,7 +167,7 @@ namespace spk
 	};
 
 	/**
-	 * @class NoGraphics
+	 * @class NoGraphicsWidget
 	 * @brief Class for widgets without graphics.
 	 * 
 	 * This class extends the Widget class and provides an implementation for widgets without graphics.

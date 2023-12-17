@@ -21,10 +21,10 @@ namespace spk
 	class TreeNode
 	{
 	public:
-		using Parent = TreeNode<TType>;
-		using Child = TreeNode<TType>;
-		using LinkingCallback = std::function<void(TType*)>;
-		using UnlinkingCallback = std::function<void()>;
+		using Parent = TreeNode<TType>; ///< A using directing to an acceptable parent type
+		using Child = TreeNode<TType>; ///< A using directing to an acceptable child type
+		using LinkingCallback = std::function<void(TType*)>; ///< A using directing to a callback used when linking a TreeNode
+		using UnlinkingCallback = std::function<void()>; ///< A using directing to a callback used when unlinking a TreeNode
 		
 	private:
 		Parent* _parent; /**< Pointer to the parent node. */
