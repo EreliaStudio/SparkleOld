@@ -32,7 +32,22 @@ namespace spk
 		{
 		}
 
-		CallbackContainer::Contract subscribe(TEvent p_event, const Callback& p_callback)
+		/**
+		 * @brief Subscribes a callback to a specific event.
+		 *
+		 * This method allows a callback function to be registered for a specific event type.
+		 * When the event of the specified type occurs, the registered callback will be invoked.
+		 * This is a key mechanism for implementing the observer pattern, allowing objects to
+		 * "listen" for and react to specific events.
+		 *
+		 * @param p_event The event to which the callback is being subscribed. This should be
+		 *                of the type TEvent, representing the event of interest.
+		 * @param p_callback A function to be called when the specified event occurs. The function
+		 *                   should match the signature defined in Callback.
+		 * @return Contract A contract object representing the registration of the callback.
+		 *         This contract can be used for managing the callback, such as modifying or removing it later.
+		 */
+		Contract subscribe(TEvent p_event, const Callback& p_callback)
 		{
 			return (_callbacks[p_event].subscribe(p_callback));
 		}

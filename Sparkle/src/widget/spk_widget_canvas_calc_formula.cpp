@@ -4,7 +4,10 @@
 
 namespace spk
 {
-	 double evaluateExpression(const std::wstring& expression)
+    /**
+     * @brief Evaluate the value of the expression passed as parameter.
+    */
+	double evaluateExpression(const std::wstring& expression)
     {
         std::stack<double> values;
         std::stack<wchar_t> ops;

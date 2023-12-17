@@ -75,7 +75,7 @@ namespace spk
 		/**
 		 * @brief Renders all managed widgets.
 		 */
-        void renderWidgets(); /**< . */
+        void renderWidgets();
 
 		/**
 		 * @brief Updates all managed widgets.

@@ -16,6 +16,10 @@ namespace spk
 	template <typename TState>
 	class StatedObject
 	{
+	public:
+		using Contract = CallbackContainer::Contract;
+		using Callback = CallbackContainer::Callback;
+
 	private:
 		TState _state;
 		std::map<TState, CallbackContainer> _callbacks;
@@ -31,8 +35,22 @@ namespace spk
 		{
 
 		}
-
-		CallbackContainer::Contract addStateCallback(TState p_state, CallbackContainer::Callback p_callback)
+		
+	    /**
+		 * @brief Adds a callback to be invoked when the object enters a specific state.
+		 *
+		 * This method allows for the registration of a callback function that will be called whenever
+		 * the object transitions to a specific state. This functionality is crucial for handling state-dependent
+		 * actions or behaviors. When the object's state changes to the specified state, the callback is executed.
+		 *
+		 * @param p_state The state upon entering which the callback should be invoked. This parameter should
+		 *                be of the type TState, which represents the various states the object can be in.
+		 * @param p_callback A function to be called when the object enters the specified state. The function
+		 *                   should match the signature defined in CallbackContainer::Callback.
+		 * @return Contract A contract object that represents the registration of the callback. This contract
+		 *         can be used for later management of the callback, such as removing or modifying it.
+		 */
+		Contract addStateCallback(TState p_state, Callback p_callback)
 		{
 			return (std::move(_callbacks[p_state].subscribe(p_callback)));
 		}

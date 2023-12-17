@@ -48,14 +48,77 @@ namespace spk
 		void _applyResizeOperation();
 
 	public:
-		Widget(const std::wstring& p_name);	
+		/**
+		 * @brief Constructor for the Widget class using only the widget's name.
+		 *
+		 * This constructor initializes a Widget with a specific name. It's used for creating
+		 * a basic widget with minimal initialization requirements.
+		 *
+		 * @param p_name A std::wstring representing the name of the widget. This name is used for identification
+		 *               and searching within the widget hierarchy.
+		 */
+		Widget(const std::wstring& p_name);
+
+		/**
+		 * @brief Constructor for the Widget class using a name and an input JSON object.
+		 *
+		 * This constructor initializes a Widget with a name and additional configuration or properties
+		 * specified in a JSON object. This allows for more complex initialization using data-driven configurations.
+		 *
+		 * @param p_name A std::wstring representing the name of the widget.
+		 * @param p_inputObject A spk::JSON::Object containing configuration data or properties for initializing the widget.
+		 */
 		Widget(const std::wstring& p_name, const spk::JSON::Object& p_inputObject);
+
+		/**
+		 * @brief Destructor for the Widget class.
+		 *
+		 * Cleans up any resources or state associated with the Widget. This is called when a Widget instance
+		 * is destroyed, either through deletion or when it goes out of scope.
+		 */
 		~Widget();
 
+		/**
+		 * @brief Deleted copy constructor.
+		 *
+		 * This disables the copying of Widget instances. Widgets are unique and should not be copied directly.
+		 * This prevents accidental duplication of Widget instances.
+		 *
+		 * @param p_other A reference to another Widget instance.
+		 */
 		Widget(const Widget& p_other) = delete;
+
+		/**
+		 * @brief Deleted copy assignment operator.
+		 *
+		 * This disables the assignment of one Widget to another using the copy assignment operator.
+		 * Like the copy constructor, it ensures that Widgets remain unique and not accidentally duplicated.
+		 *
+		 * @param p_other A reference to another Widget instance.
+		 * @return Reference to the current Widget instance.
+		 */
 		Widget& operator=(const Widget& p_other) = delete;
 
+		/**
+		 * @brief Move constructor for the Widget class.
+		 *
+		 * Enables the transfer of a Widget instance from one variable to another, effectively
+		 * transferring ownership and state without duplication. This is used for efficient manipulation
+		 * of Widgets, especially in container classes or when returning from functions.
+		 *
+		 * @param p_other An rvalue reference to another Widget instance. This is usually a temporary or unnamed Widget.
+		 */
 		Widget(Widget&& p_other) noexcept;
+
+		/**
+		 * @brief Move assignment operator for the Widget class.
+		 *
+		 * Allows for the assignment of a Widget instance using move semantics. This operator transfers
+		 * ownership and state from one Widget to another without duplication, similar to the move constructor.
+		 *
+		 * @param p_other An rvalue reference to another Widget instance.
+		 * @return Reference to the current Widget instance.
+		 */
 		Widget& operator=(Widget&& p_other);
 
 		/**
@@ -101,7 +164,6 @@ namespace spk
 		 */
 		void resize(const spk::Vector2UInt& p_size);
 
-
 		/**
 		 * @brief Set the depth value of the widget.
 		 * @param p_depth The depth value of the widget.
@@ -114,6 +176,18 @@ namespace spk
 		 */
 		void rename(const std::wstring& p_name);
 
+		/**
+		 * @brief Search for a widget by its name within the widget hierarchy.
+		 *
+		 * This method searches for a widget with the specified name within the hierarchy of widgets.
+		 * It traverses the widget tree starting from the current widget and checks each widget's name against
+		 * the provided name. The search is recursive, covering all child widgets and their descendants.
+		 *
+		 * @param p_name The name of the widget to search for. It is a std::wstring representing the unique
+		 *               name identifier of the widget.
+		 * @return spk::Widget* A pointer to the found widget if a widget with the given name exists within
+		 *         the hierarchy. Returns nullptr if no widget with the specified name is found.
+		 */
 		spk::Widget* searchWidget(const std::wstring& p_name) const;
 
 		/**
@@ -166,12 +240,14 @@ namespace spk
 		bool isPointed(const spk::Vector2Int& p_point);
 	};
 
-	/**
-	 * @class NoGraphicsWidget
-	 * @brief Class for widgets without graphics.
-	 * 
-	 * This class extends the Widget class and provides an implementation for widgets without graphics.
-	 */
+    /**
+     * @class NoGraphicsWidget
+     * @brief Specialized widget class for non-visual (non-graphical) widgets.
+     * 
+     * A NoGraphicsWidget is a type of Widget that does not involve any graphical rendering.
+     * It is suitable for widgets that only handle data or logic without needing to display anything.
+     * Rendering and geometry change handlers are empty, as no graphical processing is required.
+     */
 	class NoGraphicsWidget : public Widget
 	{
 	private:
@@ -201,12 +277,14 @@ namespace spk
 		{}
 	};
 
-	/**
-	 * @class OnlyGraphicsWidget
-	 * @brief Class for widgets with only graphics.
-	 * 
-	 * This class extends the Widget class and provides an implementation for widgets with only graphics.
-	 */
+    /**
+     * @class OnlyGraphicsWidget
+     * @brief Specialized widget class for graphical-only widgets.
+     * 
+     * An OnlyGraphicsWidget is a type of Widget that focuses solely on graphical content.
+     * It does not handle any update logic, making it ideal for static visual elements in the UI.
+     * The update methods return false to indicate no updates are required for this widget type.
+     */
 	class OnlyGraphicsWidget : public Widget
 	{
 	private:
