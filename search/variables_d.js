@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['paddingformat_1908',['paddingFormat',['../structspk_1_1ShaderLayout_1_1Data.html#a078e9ab2079e4ed3bb378bf55b66cef4',1,'spk::ShaderLayout::Data']]],
-  ['permutationtablesize_1909',['PermutationTableSize',['../classspk_1_1IPerlin.html#a508c2b883fcb9b05b749247a34a05cf9',1,'spk::IPerlin']]],
-  ['pos_1910',['pos',['../structspk_1_1Mesh_1_1Vertex.html#a142416404e8ccd5bf279bb224755c865',1,'spk::Mesh::Vertex']]],
-  ['position_1911',['position',['../structspk_1_1Font_1_1Atlas_1_1GlyphData.html#a28d3ee1d5654e8365ff2a9f24fe458e6',1,'spk::Font::Atlas::GlyphData']]]
+  ['offset_1911',['offset',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a212184a0f7b712002b03d1043ba90b73',1,'spk::ShaderLayout::FieldArrayLayout::Field']]],
+  ['outlinesize_1912',['outlineSize',['../structspk_1_1Font_1_1Key.html#ab91874c31bfc91b9ad494b1fb06f097b',1,'spk::Font::Key']]],
+  ['outlinesizesquared_1913',['outlineSizeSquared',['../structspk_1_1Font_1_1Key.html#a536789303ace0684816045e14721af1b',1,'spk::Font::Key']]],
+  ['outlinetype_1914',['outlineType',['../structspk_1_1Font_1_1Key.html#af1c8f5fb96895899f194caf2dc588e41',1,'spk::Font::Key']]]
 ];

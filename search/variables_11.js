@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['uv_1921',['uv',['../structspk_1_1Mesh_1_1Vertex.html#a6a121f97556a74672d65d18a20a3cd25',1,'spk::Mesh::Vertex']]],
-  ['uvs_1922',['uvs',['../structspk_1_1Font_1_1Atlas_1_1GlyphData.html#a4971b265dd441116409f8c8ce55cf4da',1,'spk::Font::Atlas::GlyphData']]]
+  ['type_1927',['type',['../structspk_1_1ShaderLayout_1_1Data.html#a7a1daed4b36ebfd17228d5f91cb66eca',1,'spk::ShaderLayout::Data::type()'],['../structspk_1_1ShaderModule_1_1Instruction.html#abcf74681b43a71ed39832c593603661e',1,'spk::ShaderModule::Instruction::type()'],['../structspk_1_1Widget_1_1Canvas_1_1Geometry_1_1Value.html#ab9d1aa0c05c9463583d6c7b79a629ca5',1,'spk::Widget::Canvas::Geometry::Value::type()']]]
 ];

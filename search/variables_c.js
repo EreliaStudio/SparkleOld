@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['offset_1904',['offset',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a212184a0f7b712002b03d1043ba90b73',1,'spk::ShaderLayout::FieldArrayLayout::Field']]],
-  ['outlinesize_1905',['outlineSize',['../structspk_1_1Font_1_1Key.html#ab91874c31bfc91b9ad494b1fb06f097b',1,'spk::Font::Key']]],
-  ['outlinesizesquared_1906',['outlineSizeSquared',['../structspk_1_1Font_1_1Key.html#a536789303ace0684816045e14721af1b',1,'spk::Font::Key']]],
-  ['outlinetype_1907',['outlineType',['../structspk_1_1Font_1_1Key.html#af1c8f5fb96895899f194caf2dc588e41',1,'spk::Font::Key']]]
+  ['name_1908',['name',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a78c1f0926ff851d1438d09a1a1d26313',1,'spk::ShaderLayout::FieldArrayLayout::Field']]],
+  ['nb_5fbutton_1909',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]],
+  ['normal_1910',['normal',['../structspk_1_1Mesh_1_1Vertex.html#afe5b1ade30e10ee613f450b177e19414',1,'spk::Mesh::Vertex']]]
 ];

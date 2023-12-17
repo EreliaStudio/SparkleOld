@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['name_1901',['name',['../structspk_1_1ShaderLayout_1_1FieldArrayLayout_1_1Field.html#a78c1f0926ff851d1438d09a1a1d26313',1,'spk::ShaderLayout::FieldArrayLayout::Field']]],
-  ['nb_5fbutton_1902',['NB_BUTTON',['../classspk_1_1Mouse.html#ac1111549d861795553472775e3ca851a',1,'spk::Mouse']]],
-  ['normal_1903',['normal',['../structspk_1_1Mesh_1_1Vertex.html#afe5b1ade30e10ee613f450b177e19414',1,'spk::Mesh::Vertex']]]
+  ['muxblocking_1906',['muxBlocking',['../classspk_1_1ThreadSafeQueue.html#a5620c7331f98ca497a77ea3da619046c',1,'spk::ThreadSafeQueue']]],
+  ['muxqueue_1907',['muxQueue',['../classspk_1_1ThreadSafeQueue.html#a73fabd015e91d3e4529aa2ac3d22e572',1,'spk::ThreadSafeQueue']]]
 ];
