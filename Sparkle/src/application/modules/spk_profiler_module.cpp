@@ -9,7 +9,7 @@ namespace spk
 
 	ProfilerModule::~ProfilerModule()
 	{
-		emitReport();
+		//emitReport();
 	}
 
 	void ProfilerModule::emitReport()

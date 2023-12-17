@@ -13,7 +13,7 @@
 #include "data_structure/spk_pool.hpp"
 
 #include "design_pattern/spk_singleton.hpp"
-#include "design_pattern/spk_inherence_object.hpp"
+#include "design_pattern/spk_tree_node.hpp"
 #include "design_pattern/spk_command_parser.hpp"
 #include "design_pattern/spk_callback_container.hpp"
 #include "design_pattern/spk_observer.hpp"
@@ -65,9 +65,8 @@
 
 #include "application/modules/spk_widget_module.hpp"
 
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 #include "widget/spk_widget_components.hpp"
-#include "widget/spk_widget_atlas.hpp"
 #include "widget/spk_widget_canvas.hpp"
 
 #include "widget/spk_widget_client_manager.hpp"

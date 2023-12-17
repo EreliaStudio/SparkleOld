@@ -1,7 +1,7 @@
 #include "application/modules/spk_graphical_api_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
-#include "widget/spk_widget_atlas.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
@@ -19,8 +19,8 @@ namespace spk
 			*p_event >> width;
 			*p_event >> height;
 
-			_window.resize(spk::Vector2Int(width, height));
-			Widget::Atlas::instance()->resize();
+
+			resize(spk::Vector2Int(width, height));
 
 			break;
 		case WM_MOVE:

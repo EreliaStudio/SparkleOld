@@ -1,6 +1,6 @@
 #include "widget/spk_widget_server_manager.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 
 	bool ServerManager::_onUpdate()
@@ -11,7 +11,7 @@ namespace spk::Widget
 	}
 
 	ServerManager::ServerManager(const std::wstring& p_name) :
-		NoGraphics(p_name),
+		NoGraphicsWidget(p_name),
 		_serverToManage(nullptr)
 	{
 

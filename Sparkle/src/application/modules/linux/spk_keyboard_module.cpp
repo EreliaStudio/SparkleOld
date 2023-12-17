@@ -27,6 +27,7 @@ namespace spk
 
 	KeyboardModule::KeyboardModule(spk::ThreadSafeQueue<SystemMessage> &p_queue) : IMessageConsumerModule(p_queue)
 	{
+		
 	}
 
 	KeyboardModule::~KeyboardModule()

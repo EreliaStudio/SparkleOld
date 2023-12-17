@@ -1,14 +1,14 @@
 #pragma once
 
 #include "network/spk_network_remote_node.hpp"
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 	/**
-	 * \brief Manager class for RemoteNode. Inherits from NoGraphics.
+	 * \brief Manager class for RemoteNode. Inherits from NoGraphicsWidget.
 	 */
-	class RemoteNodeManager : public NoGraphics
+	class RemoteNodeManager : public NoGraphicsWidget
 	{
 	private:
 		spk::Network::RemoteNode* _remoteNodeToManage; ///< The RemoteNode object to manage.

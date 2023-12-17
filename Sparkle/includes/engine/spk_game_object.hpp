@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include "design_pattern/spk_activable_object.hpp"
-#include "design_pattern/spk_inherence_object.hpp"
+#include "design_pattern/spk_tree_node.hpp"
 #include "engine/spk_components.hpp"
 #include "profiler/spk_time_consumption_metrics.hpp"
 
@@ -15,7 +15,7 @@ namespace spk
      * A game object is a fundamental entity in the game world, capable of containing
      * components and being part of the scene's hierarchy.
      */
-    class GameObject : public spk::ActivableObject, public spk::InherenceObject<GameObject>
+    class GameObject : public spk::ActivableObject, public spk::TreeNode<GameObject>
     {
         friend class Component;
 
@@ -106,14 +106,6 @@ namespace spk
 			return nullptr;
 		}
 		
-        /**
-         * @brief Adds a child game object.
-         * 
-         * @param p_childrenName The name of the child game object.
-         * @return std::shared_ptr<GameObject> A shared pointer to the created child game object.
-         */
-		std::shared_ptr<GameObject> addChildrenGameObject(const std::wstring& p_childrenName);
-
 		/**
          * @brief Gets the name of the game object.
          * 

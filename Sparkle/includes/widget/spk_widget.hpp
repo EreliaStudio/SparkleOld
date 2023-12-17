@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design_pattern/spk_inherence_object.hpp"
+#include "design_pattern/spk_tree_node.hpp"
 #include "design_pattern/spk_activable_object.hpp"
 #include "graphics/spk_viewport.hpp"
 #include "profiler/spk_time_consumption_metrics.hpp"
@@ -8,23 +8,17 @@
 namespace spk
 {
 	class WidgetModule;
-}
-
-namespace spk::Widget
-{
-	class Atlas;
 
 	/**
-	 * @class Interface
+	 * @class Widget
 	 * @brief Abstract base class for widgets.
 	 * 
 	 * This class defines the interface and common functionality for widgets.
-	 * It inherits from InherenceObject and ActivableObject.
+	 * It inherits from TreeNode and ActivableObject.
 	 */
-	class Interface : public spk::InherenceObject<Interface>, public spk::ActivableObject
+	class Widget : public spk::TreeNode<Widget>, public spk::ActivableObject
 	{
 		friend class spk::WidgetModule;
-		friend class spk::Widget::Atlas;
 
 	private:
 		virtual void _onRender() = 0;
@@ -33,8 +27,8 @@ namespace spk::Widget
 		virtual void _onGeometryChange() = 0;
 
 		bool _isOperationnal = false;
-		CallbackContainer::Contract _activationCallback;
-		CallbackContainer::Contract _deactivationCallback;
+		CallbackContainer::Contract _activationContract;
+		CallbackContainer::Contract _deactivationContract;
 		spk::TimeConsumption& _timeConsomptionMetrics;
 
 		std::wstring _name;
@@ -48,49 +42,21 @@ namespace spk::Widget
 
 		virtual bool _update();
 
-		void addChild(Child child);
-
 		void _setOperationnal();
 
 		void _computeResizeRatio();
 		void _applyResizeOperation();
 
 	public:
-		/**
-		 * @brief Construct a new Interface object with a specified name.
-		 * @param p_name The name of the widget.
-		 */
-		Interface(const std::wstring& p_name);
+		Widget(const std::wstring& p_name);	
+		Widget(const std::wstring& p_name, const spk::JSON::Object& p_inputObject);
+		~Widget();
 
-		/**
-		 * @brief Construct a new Interface object with a specified name and input data.
-		 * @param p_name The name of the widget.
-		 * @param p_inputObject The JSON object provided to construct this Interface.
-		 */
-		Interface(const std::wstring& p_name, const spk::JSON::Object& p_inputObject);
+		Widget(const Widget& p_other) = delete;
+		Widget& operator=(const Widget& p_other) = delete;
 
-		/**
-		 * @brief Destroy the Interface object.
-		 */
-		virtual ~Interface();
-
-		/**
-		 * @brief Add a children widget to this widget.
-		 * @tparam TChildrenType The type of the children widget.
-		 * @tparam Args The types of the arguments for constructing the children widget.
-		 * @param p_args The arguments for constructing the children widget.
-		 * @return Pointer to the children widget.
-		 */
-		template <typename TChildrenType, typename ... Args>
-		std::shared_ptr<TChildrenType> addChildrenWidget(Args&& ... p_args)
-		{
-			TChildrenType * result = new TChildrenType(std::forward<Args>(p_args)...);
-
-			addChild(result);
-			result->setDepth(depth() + 1);
-
-			return (std::shared_ptr<TChildrenType>(result, [](TChildrenType*) {}));
-		}
+		Widget(Widget&& p_other) noexcept;
+		Widget& operator=(Widget&& p_other);
 
 		/**
 		 * @brief Set the anchor of the widget.
@@ -148,6 +114,8 @@ namespace spk::Widget
 		 */
 		void rename(const std::wstring& p_name);
 
+		spk::Widget* searchWidget(const std::wstring& p_name) const;
+
 		/**
 		 * @brief Get the name of the widget.
 		 * @return The name of the widget.
@@ -158,7 +126,7 @@ namespace spk::Widget
 		 * @brief Get the viewport of the widget
 		 * @return The viewport of the widget, relative to its parent.
 		*/
-		constexpr spk::Viewport& viewport() { return (_viewport);}
+		spk::Viewport& viewport() { return (_viewport);}
 		
 		/**
 		 * @brief Get the viewport of the widget
@@ -202,9 +170,9 @@ namespace spk::Widget
 	 * @class NoGraphics
 	 * @brief Class for widgets without graphics.
 	 * 
-	 * This class extends the Interface class and provides an implementation for widgets without graphics.
+	 * This class extends the Widget class and provides an implementation for widgets without graphics.
 	 */
-	class NoGraphics : public Interface
+	class NoGraphicsWidget : public Widget
 	{
 	private:
 		/**
@@ -224,22 +192,22 @@ namespace spk::Widget
 
 	public:
 		/**
-		 * @brief Constructor for the NoGraphics class.
+		 * @brief Constructor for the NoGraphicsWidget class.
 		 *
 		 * @param p_name The name of the widget.
 		 */
-		NoGraphics(const std::wstring& p_name) :
-			Interface(p_name)
+		NoGraphicsWidget(const std::wstring& p_name) :
+			Widget(p_name)
 		{}
 	};
 
 	/**
-	 * @class OnlyGraphics
+	 * @class OnlyGraphicsWidget
 	 * @brief Class for widgets with only graphics.
 	 * 
-	 * This class extends the Interface class and provides an implementation for widgets with only graphics.
+	 * This class extends the Widget class and provides an implementation for widgets with only graphics.
 	 */
-	class OnlyGraphics : public Interface
+	class OnlyGraphicsWidget : public Widget
 	{
 	private:
 		/**
@@ -258,12 +226,12 @@ namespace spk::Widget
 
 	public:
 		/**
-		 * @brief Constructor for the OnlyGraphics class.
+		 * @brief Constructor for the OnlyGraphicsWidget class.
 		 *
 		 * @param p_name The name of the widget.
 		 */
-		OnlyGraphics(const std::wstring& p_name) :
-			Interface(p_name)
+		OnlyGraphicsWidget(const std::wstring& p_name) :
+			Widget(p_name)
 		{}
 	};
 

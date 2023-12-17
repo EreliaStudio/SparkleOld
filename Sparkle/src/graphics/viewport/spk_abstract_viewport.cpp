@@ -26,7 +26,7 @@ namespace spk
 		_needComputation = true;
 	}
 
-	bool AbstractViewport::needComputation()
+	bool AbstractViewport::needComputation() const
 	{
 		return (_needComputation);
 	}
@@ -35,7 +35,7 @@ namespace spk
 	{
 		spk::Vector2Int result = _area.anchor();
 
-		for (AbstractViewport* currentParent = parent(); currentParent != nullptr; currentParent = currentParent->parent())
+		for (const AbstractViewport* currentParent = parent(); currentParent != nullptr; currentParent = currentParent->parent())
 		{
 			result += currentParent->area().anchor();
 		}

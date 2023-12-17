@@ -1,6 +1,6 @@
 #include "widget/spk_widget_client_manager.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 
 	bool ClientManager::_onUpdate()
@@ -11,7 +11,7 @@ namespace spk::Widget
 	}
 
 	ClientManager::ClientManager(const std::wstring &p_name) :
-		NoGraphics(p_name),
+		NoGraphicsWidget(p_name),
 		_clientToManage(nullptr)
 	{
 	}

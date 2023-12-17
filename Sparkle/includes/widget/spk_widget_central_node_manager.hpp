@@ -1,16 +1,16 @@
 #pragma once
 
 #include "network/spk_network_central_node.hpp"
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 
-namespace spk::Widget
+namespace spk
 {    /**
      * @class CentralNodeManager
      * @brief A no-graphics widget class for managing a spk::Network::CentralNode.
      *
      * The CentralNodeManager class is an interface widget that can manage an instance of spk::Network::CentralNode. 
      */
-	class CentralNodeManager : public NoGraphics
+	class CentralNodeManager : public NoGraphicsWidget
 	{
 	private:
 		spk::Network::CentralNode* _centralNodeToManage; /**< Pointer to the central node to manage */

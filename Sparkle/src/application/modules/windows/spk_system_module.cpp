@@ -24,7 +24,7 @@ namespace spk
 		IMessageConsumerModule(p_queue),
 		_applicationToManage(p_applicationToManage)
 	{
-
+		
 	}
 
 	SystemModule::~SystemModule()

@@ -8,6 +8,16 @@
 
 namespace spk
 {
+	WidgetModule::CentralWidget* Application::_centralWidget()
+	{
+		return (_widgetModule.centralWidget());
+	}
+
+	void Application::_applyResizeOperation()
+	{
+		_widgetModule.applyResizeOperation();
+	}
+
 	void Application::_initialisationProcess()
 	{
 		_errorID = 0;
@@ -77,12 +87,13 @@ namespace spk
 		_GAPIM(_APIModule.windowQueue(), p_title, p_size, &_APIModule),
 		_mouseModule(_APIModule.mouseQueue()),
 		_keyboardModule(_APIModule.keyboardQueue()),
-		_widgetModule(),
 		_profilerModule(),
+		_widgetModule(),
 		_fpsCounter(_profilerModule.profiler().metrics<Counter>(L"FPS Counter")),
 		_upsCounter(_profilerModule.profiler().metrics<Counter>(L"UPS Counter"))
 	{
 		setAsInstance();
+		_widgetModule.createCentralWidget();
 	}
 
 	Application::~Application()
@@ -124,6 +135,11 @@ namespace spk
 	spk::Window& Application::window()
 	{
 		return (_GAPIM.window());
+	}
+
+	spk::Widget* Application::searchWidget(const std::wstring& p_name) const
+	{
+		return (_widgetModule.searchWidget(p_name));
 	}
 
 	const spk::Vector2UInt& Application::size() const

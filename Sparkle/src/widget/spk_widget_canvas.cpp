@@ -1,10 +1,9 @@
 #include "widget/spk_widget_canvas.hpp"
 #include "miscellaneous/JSON/spk_JSON_file.hpp"
-#include "widget/spk_widget_atlas.hpp"
 
-namespace spk::Widget
+namespace spk
 {
-	spk::Vector2Int Canvas::_calcValue(Interface* p_target, const Geometry::Value& p_value)
+	spk::Vector2Int Canvas::_calcValue(Widget* p_target, const Geometry::Value& p_value)
 	{
 		spk::Vector2Int result;
 
@@ -33,7 +32,7 @@ namespace spk::Widget
 	{
 		for (auto item : _widgetGeometries)
 		{
-			Interface* target = item.first;
+			Widget* target = item.first;
 			Geometry& value = item.second;
 			spk::Vector2Int targetAnchor = _calcValue(target, value.anchor);
 			spk::Vector2Int targetSize = _calcValue(target, value.size);
@@ -124,18 +123,18 @@ namespace spk::Widget
 		for (auto item : p_object.members())
 		{
 			std::wstring classType = item.second->operator[](L"Type").as<std::wstring>();
-			if (spk::Widget::Canvas::classInstanciatorLambda.contains(classType) == false)
+			if (spk::Canvas::classInstanciatorLambda.contains(classType) == false)
 				spk::throwException(L"Class type [" + classType + L"] isn't registered");
-			spk::Widget::Canvas::Instanciator lambda = spk::Widget::Canvas::classInstanciatorLambda[classType];
+			spk::Canvas::Instanciator lambda = spk::Canvas::classInstanciatorLambda[classType];
 
-			spk::Widget::Interface* newWidget = lambda(item.first, *(item.second));
+			Widget* newWidget = lambda(item.first, *(item.second));
 
 			_widgetGeometries[newWidget] = Geometry(*(item.second));
 		}
 	}
 
 	Canvas::Canvas(const std::filesystem::path& p_canvasFilePath) : 
-		spk::Widget::Interface(L"FixedValueName")
+		Widget(L"FixedValueName")
 	{
 		addActivationCallback([&](){
 			if (_activeCanvas != nullptr)

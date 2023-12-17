@@ -1,14 +1,14 @@
 #pragma once
 
 #include "network/spk_network_client.hpp"
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 	/**
-	 * \brief Manager class for Client. Inherits from NoGraphics.
+	 * \brief Manager class for Client. Inherits from NoGraphicsWidget.
 	 */
-	class ClientManager : public NoGraphics
+	class ClientManager : public NoGraphicsWidget
 	{
 	private:
 		spk::Network::Client* _clientToManage; ///< The Client object to manage.

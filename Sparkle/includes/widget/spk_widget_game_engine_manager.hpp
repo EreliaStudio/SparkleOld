@@ -1,6 +1,6 @@
 #pragma once
 
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 #include "engine/spk_game_engine.hpp"
 
 namespace spk
@@ -11,7 +11,7 @@ namespace spk
      * The GameEngineManager class is responsible for handling the game engine's lifecycle,
      * updating its state, and rendering it within the context of a user interface widget.
      */
-    class GameEngineManager : public spk::Widget::Interface
+    class GameEngineManager : public Widget
     {
     private:
         bool _resetPerspectiveParameters = true; ///< Flag to reset perspective parameters.

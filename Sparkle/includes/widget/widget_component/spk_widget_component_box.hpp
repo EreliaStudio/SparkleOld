@@ -56,27 +56,27 @@ namespace spk::WidgetComponent
         /**
          * @brief Wrapper for the color of the foreground.
          */
-        ValueWrapper<spk::Color> _foregroundColor;
+        spk::ValueWrapper<spk::Color> _foregroundColor;
 
         /**
          * @brief Wrapper for the color of the background.
          */
-        ValueWrapper<spk::Color> _backgroundColor;
+        spk::ValueWrapper<spk::Color> _backgroundColor;
 
         /**
          * @brief Wrapper for the border size of the box.
          */
-        ValueWrapper<size_t> _borderSize;
+        spk::ValueWrapper<size_t> _borderSize;
 
         /**
          * @brief Wrapper for the depth of the box.
          */
-        ValueWrapper<float> _depth;
+        spk::ValueWrapper<float> _depth;
 
         /**
          * @brief Wrapper for the area of the box.
          */
-        ValueWrapper<spk::Area> _area;
+        spk::ValueWrapper<spk::Area> _area;
 
         /**
          * @brief Updates the background color of the box.
@@ -151,7 +151,7 @@ namespace spk::WidgetComponent
          * This static value sets the default foreground color used when creating
          * new Box instances, unless specified otherwise.
          */
-        static inline ValueWrapper<spk::Color>::Default defaultForegroundColor = spk::Color(180, 180, 180, 255);
+        static inline spk::ValueWrapper<spk::Color>::Default defaultForegroundColor = spk::Color(180, 180, 180, 255);
 
         /**
          * @brief Default background color for all Box instances.
@@ -159,7 +159,7 @@ namespace spk::WidgetComponent
          * Similar to the default foreground color, this static value sets the
          * default background color for new Box instances.
          */
-        static inline ValueWrapper<spk::Color>::Default defaultBackgroundColor = spk::Color(120, 120, 120, 255);
+        static inline spk::ValueWrapper<spk::Color>::Default defaultBackgroundColor = spk::Color(120, 120, 120, 255);
 
         /**
          * @brief Default border size for all Box instances.
@@ -167,7 +167,7 @@ namespace spk::WidgetComponent
          * Sets the default border size for Box instances, defining the thickness
          * of the border around the box.
          */
-        static inline ValueWrapper<size_t>::Default defaultBorderSize = 1;
+        static inline spk::ValueWrapper<size_t>::Default defaultBorderSize = 1;
 
         /**
          * @brief Default depth for all Box instances.
@@ -175,7 +175,7 @@ namespace spk::WidgetComponent
          * Specifies the default depth value for new Box instances, affecting
          * how the box is rendered in a 3D space.
          */
-        static inline ValueWrapper<float>::Default defaultDepth = 1.0f;
+        static inline spk::ValueWrapper<float>::Default defaultDepth = 1.0f;
 
         /**
          * @brief Default area for all Box instances.
@@ -183,7 +183,7 @@ namespace spk::WidgetComponent
          * Defines the default area (size and position) for new Box instances,
          * with a starting point of (0, 0) and a default size of 100x100 units.
          */
-        static inline ValueWrapper<spk::Area>::Default defaultArea = { spk::Vector2Int(0, 0), spk::Vector2UInt(100, 100) };
+        static inline spk::ValueWrapper<spk::Area>::Default defaultArea = { spk::Vector2Int(0, 0), spk::Vector2UInt(100, 100) };
 
         // Member functions to access and manipulate box properties
 

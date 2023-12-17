@@ -32,7 +32,7 @@ namespace spk
 	}
 
 	GameEngineManager::GameEngineManager(const std::wstring &p_name) :
-		spk::Widget::Interface(p_name)
+		Widget(p_name)
 	{
 		_gameEngine = nullptr;
 	}

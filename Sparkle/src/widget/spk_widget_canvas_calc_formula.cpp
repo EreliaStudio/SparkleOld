@@ -2,7 +2,7 @@
 #include "application/spk_application.hpp"
 #include <stack>
 
-namespace spk::Widget
+namespace spk
 {
 	 double evaluateExpression(const std::wstring& expression)
     {
@@ -93,7 +93,7 @@ namespace spk::Widget
         return values.top();
     }
 
-	spk::Vector2Int Canvas::_calcFormula(Interface* p_target, const spk::IVector2<std::wstring>& p_formula)
+	spk::Vector2Int Canvas::_calcFormula(Widget* p_target, const spk::IVector2<std::wstring>& p_formula)
 	{
 		std::wstring xFormula = p_formula.x;
 		std::wstring yFormula = p_formula.y;

@@ -6,7 +6,7 @@ namespace spk
 	{
 		_APIModule.pullMessage();
 		_GAPIM.clear();
-		_widgetModule.render();
+		_widgetModule.renderWidgets();
 		_GAPIM.render();
 		_timeModule.wait();
 	}

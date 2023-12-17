@@ -1,7 +1,7 @@
 #include "application/modules/spk_graphical_api_module.hpp"
 #include "iostream/spk_iostream.hpp"
 #include "graphics/spk_window.hpp"
-#include "widget/spk_widget_atlas.hpp"
+#include "application/spk_application.hpp"
 
 namespace spk
 {
@@ -9,7 +9,7 @@ namespace spk
 		IMessageConsumerModule(p_queue),
 		_window(p_title, p_size, p_apiModule)
 	{
-
+		
 	}
 
 	GraphicalAPIModule::~GraphicalAPIModule()
@@ -30,5 +30,7 @@ namespace spk
 	void GraphicalAPIModule::resize(const spk::Vector2UInt& p_newSize)
 	{
 		_window.resize(p_newSize);
+		spk::Application::instance()->_widgetModule.centralWidget()->setGeometry(0, p_newSize);
+		spk::Application::instance()->_applyResizeOperation();
 	}
 }

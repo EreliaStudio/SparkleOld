@@ -1,18 +1,18 @@
 #pragma once
 
 #include "network/spk_network_server.hpp"
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 	/** 
 	 *  \class ServerManager
 	 *  \brief A widget that is used to manage a server. 
 	 *
-	 *  The ServerManager class is a NoGraphics that controls the life cycle of a Server.
+	 *  The ServerManager class is a NoGraphicsWidget that controls the life cycle of a Server.
 	 *  It provides an interface to set the Server to manage and access it.
 	 */
-	class ServerManager : public NoGraphics
+	class ServerManager : public NoGraphicsWidget
 	{
 	private:
 		spk::Network::Server* _serverToManage; ///< The server that this manager is controlling.

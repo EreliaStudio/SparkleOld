@@ -1,47 +1,78 @@
 #include "application/modules/spk_widget_module.hpp"
-#include "iostream/spk_iostream.hpp"
-#include "widget/spk_widget_atlas.hpp"
-#include "spk_basic_functions.hpp"
 #include "application/spk_application.hpp"
-#include <cstring>
-#include <ranges>
 
 namespace spk
 {
-	WidgetModule::WidgetModule()
+	void WidgetModule::CentralWidget::_onGeometryChange()
 	{
-		spk::Widget::Atlas::instanciate();
-		_widgetSet = &(Widget::Atlas::instance()->widgets());
+
 	}
 
-	WidgetModule::~WidgetModule()
+	void WidgetModule::CentralWidget::_onRender()
 	{
-		spk::Widget::Atlas::release();
+
 	}
 
-	void WidgetModule::update()
+	bool WidgetModule::CentralWidget::_onUpdate()
 	{
-		for (const auto& widget : *_widgetSet)
+		return (false);
+	}
+
+	WidgetModule::CentralWidget::CentralWidget() : 
+		Widget(L"CentralWidget")
+	{
+
+	}
+
+	WidgetModule::CentralWidget::~CentralWidget()
+	{
+
+	}
+
+
+	WidgetModule::WidgetModule() :
+		_centralWidget(nullptr)
+	{
+	}
+
+	void WidgetModule::createCentralWidget()
+	{
+		_centralWidget = new CentralWidget();
+		_centralWidget->setGeometry(0, spk::Application::instance()->size());
+		_centralWidget->activate();
+	}
+
+	void WidgetModule::_applyWidgetResizeOperation(Widget* p_widget)
+	{
+		p_widget->_applyResizeOperation();
+		for (size_t i = 0; i < p_widget->childrens().size(); i++)
 		{
-			if (widget->_isOperationnal == true && widget->_update() == true)
-				return ;
+			_applyWidgetResizeOperation(p_widget->childrens()[i]);
 		}
 	}
 
-	void WidgetModule::render()
+	void WidgetModule::applyResizeOperation()
 	{
-		for (auto& widget : *_widgetSet | std::views::reverse)
-		{
-			if (widget->parent() != nullptr)
-			{
-				if (widget->parent()->viewport().needComputation() == true)
-					widget->parent()->viewport().compute();
-				widget->parent()->viewport().activate();
-			}
-			else
-				Viewport::resetViewport(spk::Application::instance()->window().size());
-			if (widget->_isOperationnal == true)
-				widget->_render();
-		}
+		_applyWidgetResizeOperation(_centralWidget);
+	}
+
+	WidgetModule::CentralWidget* WidgetModule::centralWidget()
+	{
+		return (_centralWidget);
+	}
+
+	spk::Widget* WidgetModule::searchWidget(const std::wstring& p_name) const
+	{
+		return (_centralWidget->searchWidget(p_name));
+	}
+
+	void WidgetModule::renderWidgets()
+	{
+		_centralWidget->_render();
+	}
+
+	void WidgetModule::updateWidgets()
+	{
+		_centralWidget->_update();
 	}
 }

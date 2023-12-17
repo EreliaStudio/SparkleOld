@@ -1,7 +1,7 @@
 #pragma once
 
 #include "graphics/spk_area.hpp"
-#include "design_pattern/spk_inherence_object.hpp"
+#include "design_pattern/spk_tree_node.hpp"
 
 namespace spk
 {
@@ -9,7 +9,7 @@ namespace spk
      *  @class AbstractViewport
      *  @brief An abstract base class for handling viewports within the Sparkle library.
      */
-	class AbstractViewport : public spk::InherenceObject<AbstractViewport>
+	class AbstractViewport : public spk::TreeNode<AbstractViewport>
 	{
 	private:
         /// @brief Static variable to hold the active viewport area
@@ -80,7 +80,7 @@ namespace spk
         /**
          * @brief Return the computation status of the viewport
         */
-        bool needComputation();
+        bool needComputation() const;
 
         /**
          * @brief Execute the computation of the viewport area/offset definition

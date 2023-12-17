@@ -1,7 +1,7 @@
 #include "widget/spk_widget_activity_scheduler_manager.hpp"
 #include "design_pattern/spk_activity_scheduler.hpp"
 
-namespace spk::Widget
+namespace spk
 {	
 	bool ActivitySchedulerManager::_onUpdate()
 	{
@@ -10,7 +10,7 @@ namespace spk::Widget
 	}
 	
 	ActivitySchedulerManager::ActivitySchedulerManager(const std::wstring& p_name) : 
-		spk::Widget::NoGraphics(p_name)
+		spk::NoGraphicsWidget(p_name)
 	{
 		spk::Singleton<spk::ActivityScheduler>::instanciate();
 	}

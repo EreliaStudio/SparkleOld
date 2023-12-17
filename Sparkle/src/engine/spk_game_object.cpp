@@ -22,15 +22,6 @@ namespace spk
 		
 	}
 
-	std::shared_ptr<GameObject> GameObject::addChildrenGameObject(const std::wstring& p_childrenName)
-	{
-		std::shared_ptr<GameObject> result = std::make_shared<GameObject>(p_childrenName);
-
-		result->setParent(this);
-
-		return (result);
-	}
-
 	const std::wstring& GameObject::name() const
 	{
 		return (_name);

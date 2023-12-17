@@ -9,7 +9,7 @@
 #include "application/modules/spk_widget_module.hpp"
 #include "application/modules/spk_profiler_module.hpp"
 
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 #include "widget/spk_widget_canvas.hpp"
 
 namespace spk
@@ -32,6 +32,9 @@ namespace spk
      */
 	class Application
 	{
+		friend class Widget;
+		friend class GraphicalAPIModule;
+
 	public:
         thread_local static inline Application* _instance = nullptr; ///< Thread-local instance of the application.
 
@@ -75,6 +78,9 @@ namespace spk
 
 		void _monothreadProcess();
 
+		WidgetModule::CentralWidget* _centralWidget();
+		void _applyResizeOperation();
+
 	public:
 		/**
          * @brief Constructs an Application instance.
@@ -88,41 +94,6 @@ namespace spk
          * @brief Destructor of the Application class.
          */
         ~Application();
-
-        /**
-         * @brief Adds a canvas widget to the application.
-         * @param p_configurationFilePath File path for the canvas configuration.
-         * @return Shared pointer to the created Canvas widget.
-         */
-		std::shared_ptr<spk::Widget::Canvas> addCanvas(const std::filesystem::path& p_configurationFilePath)
-		{
-			auto result = std::make_shared<spk::Widget::Canvas>(p_configurationFilePath);
-
-			result->setGeometry(spk::Vector2Int(0, 0), _GAPIM.window().size());
-
-			return (result);
-		}
-
-		/**
-		 * @brief Creates and adds a root widget of type TChildrenType to the application.
-		 * 
-		 * This function template creates a widget of the specified type using the provided arguments.
-		 * The created widget is set as a root widget with a depth of 0.
-		 * 
-		 * @tparam TChildrenType The type of the widget to be created.
-		 * @tparam Args Variadic template for constructor arguments of TChildrenType.
-		 * @param p_args Arguments to be forwarded to the constructor of TChildrenType.
-		 * @return std::shared_ptr<TChildrenType> Shared pointer to the newly created widget.
-		 */
-		template <typename TChildrenType, typename ... Args>
-		std::shared_ptr<TChildrenType> addRootWidget(Args&& ... p_args)
-		{
-			auto result = std::make_shared<TChildrenType>(std::forward<Args>(p_args)...);
-
-			result->setDepth(0);
-
-			return (result);
-		}
 
 		/**
          * @brief Starts the application run loop.
@@ -147,6 +118,8 @@ namespace spk
 		 * @return Reference to the Window module.
 		 */
 		spk::Window& window();
+
+		spk::Widget* searchWidget(const std::wstring& p_name) const;
 
 		/**
 		 * @brief Gets the size of the application window.

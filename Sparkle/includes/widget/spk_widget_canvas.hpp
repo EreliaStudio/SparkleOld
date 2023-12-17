@@ -2,8 +2,7 @@
 
 #include <string>
 #include <filesystem>
-#include "widget/spk_widget_interface.hpp"
-#include "widget/spk_widget_atlas.hpp"
+#include "widget/spk_widget.hpp"
 #include "spk_basic_functions.hpp"
 
 #define WIDE_STRING_LITERAL(x) L ## x
@@ -14,9 +13,9 @@ struct ClassType##_##RegistrationName##_Registrar                               
 {                                                                                 \
     ClassType##_##RegistrationName##_Registrar()                                  \
     {                                                                             \
-        spk::Widget::Canvas::classInstanciatorLambda[spk::stringToWString(#RegistrationName)] =        \
+        spk::Canvas::classInstanciatorLambda[spk::stringToWString(#RegistrationName)] =        \
             [](const std::wstring &p_name,                                        \
-               const spk::JSON::Object &p_obj) -> spk::Widget::Interface*         \
+               const spk::JSON::Object &p_obj) -> Widget*         \
             {                                                                     \
                 return new ClassType(p_name, p_obj);                              \
             };                                                                    \
@@ -25,20 +24,20 @@ struct ClassType##_##RegistrationName##_Registrar                               
 static inline ClassType##_##RegistrationName##_Registrar _class##RegistrationName##Registrar;
 
 
-namespace spk::Widget
+namespace spk
 {
 	/**
 	 * @class Canvas
 	 * @brief Represents a canvas that holds and manages widgets.
 	 * @details This class is responsible for handling widgets, their geometry, rendering, and other related functionalities.
 	 */
-	class Canvas : public spk::Widget::Interface
+	class Canvas : public Widget
 	{
 	public:
 		/**
 		 * @brief Type alias for the lambda function used to create instances of widget classes.
 		 */
-		using Instanciator = std::function<Interface*(const std::wstring&, const spk::JSON::Object&)>;
+		using Instanciator = std::function<Widget*(const std::wstring&, const spk::JSON::Object&)>;
 		/**
 		 * @brief Static map to associate widget class names with instantiation lambdas.
 		 */
@@ -93,7 +92,7 @@ namespace spk::Widget
 		static inline Canvas* _activeCanvas = nullptr; ///< The currently active canvas.
 
 		spk::Vector2Int _gridSize;                     ///< The size of the grid.
-		std::map<Interface*, Geometry> _widgetGeometries; ///< Map of widgets and their geometries.
+		std::map<Widget*, Geometry> _widgetGeometries; ///< Map of widgets and their geometries.
 
 		/**
 		 * @brief Calculates the value based on a given formula.
@@ -101,7 +100,7 @@ namespace spk::Widget
 		 * @param p_formula The formula.
 		 * @return Calculated value.
 		 */
-		spk::Vector2Int _calcFormula(Interface* p_target, const spk::IVector2<std::wstring>& p_formula);
+		spk::Vector2Int _calcFormula(Widget* p_target, const spk::IVector2<std::wstring>& p_formula);
 
 		/**
 		 * @brief Calculates the value based on a given geometric value.
@@ -109,7 +108,7 @@ namespace spk::Widget
 		 * @param p_value The geometric value.
 		 * @return Calculated value.
 		 */
-		spk::Vector2Int _calcValue(Interface* p_target, const Geometry::Value& p_value);
+		spk::Vector2Int _calcValue(Widget* p_target, const Geometry::Value& p_value);
 
 		/**
 		 * @brief Callback for when geometry changes.

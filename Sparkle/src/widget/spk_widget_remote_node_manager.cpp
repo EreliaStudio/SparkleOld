@@ -1,6 +1,6 @@
 #include "widget/spk_widget_remote_node_manager.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 	bool RemoteNodeManager::_onUpdate()
 	{
@@ -10,7 +10,7 @@ namespace spk::Widget
 	}
 
 	RemoteNodeManager::RemoteNodeManager(const std::wstring& p_name) :
-		NoGraphics(p_name),
+		NoGraphicsWidget(p_name),
 		_remoteNodeToManage(nullptr)
 	{
 

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "widget/spk_widget_interface.hpp"
+#include "widget/spk_widget.hpp"
 #include "design_pattern/spk_activity.hpp"
 
-namespace spk::Widget
+namespace spk
 {
 	class Activity;
 
@@ -14,7 +14,7 @@ namespace spk::Widget
 	 * This class is a no-graphics widget that manages the scheduling and execution of activities. 
 	 * Activities can be launched, which means they are added to the schedule and executed when appropriate.
 	 */
-	class ActivitySchedulerManager : public spk::Widget::NoGraphics
+	class ActivitySchedulerManager : public spk::NoGraphicsWidget
 	{
 	private:
 		/**
