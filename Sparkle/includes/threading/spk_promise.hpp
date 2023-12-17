@@ -19,7 +19,22 @@ namespace spk
 	class Promise
 	{
 	public:
+		/**
+		 * @brief Alias for CallbackContainer::Callback.
+		 *
+		 * Callback is used to define the function signature for callback functions that can be subscribed to
+		 * the Promise class. This allows clients of the Promise class to register functions to be called
+		 * when the promise is fulfilled and the value becomes available.
+		 */
 		using Callback = CallbackContainer::Callback;
+
+		/**
+		 * @brief Alias for CallbackContainer::Contract.
+		 *
+		 * Contract represents a handle or token that manages the lifecycle of a callback subscription
+		 * within the Promise class. It provides a means for clients to manage their subscriptions,
+		 * such as removing or modifying a callback after it has been added.
+		 */
 		using Contract = CallbackContainer::Contract;
 
 	private:
@@ -54,6 +69,17 @@ namespace spk
 		 */
 		Promise& operator=(const Promise& p_other) = delete;
 
+		/**
+		 * @brief Subscribes a callback to be notified when the promise is fulfilled.
+		 *
+		 * This method allows clients to register a callback function that will be invoked when the promise
+		 * is fulfilled and the value becomes available. This is useful for implementing reactive behaviors
+		 * where certain actions depend on the availability of the promised value.
+		 *
+		 * @param p_callback The callback function to be executed when the promise is fulfilled.
+		 * @return Contract A contract object representing the registration of the callback. This contract
+		 *         can be used for managing the callback, such as modifying or removing it at a later stage.
+		 */
 		Contract subscribe(const Callback& p_callback)
 		{
 			return (_callbackContainer.subscribe(p_callback));

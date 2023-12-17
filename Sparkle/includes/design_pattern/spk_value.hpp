@@ -24,6 +24,22 @@ namespace spk
 		friend class Default;
 
 	public:
+		/**
+		 * @brief Alias for CallbackContainer::Callback.
+		 *
+		 * Callback is used to define the function signature for callback functions that can be subscribed to
+		 * the Value class. It allows clients of the Value class to be notified when changes occur to the value,
+		 * enabling reactive and event-driven programming patterns.
+		 */
+		using Callback = CallbackContainer::Callback;
+
+		/**
+		 * @brief Alias for CallbackContainer::Contract.
+		 *
+		 * Contract represents a handle or token that manages the lifecycle of a callback subscription
+		 * within the Value class. It provides a means for clients to manage their subscriptions, such as
+		 * removing or replacing a callback after it has been added.
+		 */
 		using Contract = CallbackContainer::Contract;
 
 		/**
@@ -249,7 +265,19 @@ namespace spk
 		{
 			setDefaultValue(nullptr);
 		}
-
+		
+		/**
+		 * @brief Subscribes a callback to be notified when the value changes.
+		 *
+		 * This method allows a client to register a callback function that will be invoked whenever
+		 * the value managed by this class changes. This is particularly useful for implementing reactive
+		 * behaviors where changes in the value should trigger specific actions or responses.
+		 *
+		 * @param p_callback The callback function to be executed when the value changes. The function should
+		 *                   match the signature defined in Callback.
+		 * @return Contract A contract object representing the registration of the callback. This contract
+		 *         can be used for managing the callback, such as modifying or removing it at a later stage.
+		 */
 		CallbackContainer::Contract subscribe(const CallbackContainer::Callback& p_callback)
 		{
 			return (_onEditionCallbacks.subscribe(p_callback));

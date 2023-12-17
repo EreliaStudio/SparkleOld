@@ -19,7 +19,7 @@ namespace spk
         using ScaleType = ObservableValue<spk::Vector3>; ///< Type for scale observable.
         using RotationType = ObservableValue<spk::Vector3>; ///< Type for rotation observable.
 
-	    protected:
+	protected:
         TranslationType _translation; ///< Observable value for position/translation.
         ScaleType _scale; ///< Observable value for scale.
         RotationType _rotation; ///< Observable value for rotation.
@@ -47,11 +47,50 @@ namespace spk
          */
         void lookAt(const spk::Vector3& p_target, const spk::Vector3& p_up = spk::Vector3(0, 1, 0));
 
-		TranslationType::Contract subscribeOnTranslation(const std::function<void()> p_function);
+		/**
+		 * @brief Subscribes a callback function to be notified when the translation of the object changes.
+		 *
+		 * This method allows clients to register a callback function that will be invoked whenever
+		 * the translation (position) of the object changes. This is useful for implementing reactive
+		 * behaviors or updates dependent on the object's position.
+		 *
+		 * @param p_function The callback function to be executed when the translation changes.
+		 * @return TranslationType::Contract A contract object managing the subscription of the callback.
+		 */
+		TranslationType::Contract subscribeOnTranslation(const std::function<void()> p_function)
+		{
+			return _translation.subscribe(p_function);
+		}
 
-		ScaleType::Contract subscribeOnScaling(const std::function<void()> p_function);
+		/**
+		 * @brief Subscribes a callback function to be notified when the scale of the object changes.
+		 *
+		 * This method allows clients to register a callback function that will be invoked whenever
+		 * the scale of the object changes. This is useful for responding to changes in the object's size,
+		 * for example, triggering updates in physics calculations or rendering.
+		 *
+		 * @param p_function The callback function to be executed when the scale changes.
+		 * @return ScaleType::Contract A contract object managing the subscription of the callback.
+		 */
+		ScaleType::Contract subscribeOnScaling(const std::function<void()> p_function)
+		{
+			return _scale.subscribe(p_function);
+		}
 
-		RotationType::Contract subscribeOnRotation(const std::function<void()> p_function);
+		/**
+		 * @brief Subscribes a callback function to be notified when the rotation of the object changes.
+		 *
+		 * This method allows clients to register a callback function that will be invoked whenever
+		 * the rotation of the object changes. This is particularly useful for implementing behaviors
+		 * that depend on the object's orientation, such as camera adjustments or directional lighting.
+		 *
+		 * @param p_function The callback function to be executed when the rotation changes.
+		 * @return RotationType::Contract A contract object managing the subscription of the callback.
+		 */
+		RotationType::Contract subscribeOnRotation(const std::function<void()> p_function)
+		{
+			return _rotation.subscribe(p_function);
+		}
 
 		/**
 		 * @brief Sets the translation of the object.

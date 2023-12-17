@@ -14,7 +14,20 @@ namespace spk
     class StateMachine
     {
     public:
+        /**
+         * @brief Alias for CallbackContainer::Callback.
+         *
+         * Callback is used to define the function signature for callback functions within the state machine.
+         * It encapsulates a function that will be called during state transitions or state executions.
+         */
         using Callback = CallbackContainer::Callback;
+
+        /**
+         * @brief Alias for CallbackContainer::Contract.
+         *
+         * Contract represents a handle or token that manages the lifecycle of a callback subscription
+         * within the state machine. It allows for efficient management and potential removal of callbacks.
+         */
         using Contract = CallbackContainer::Contract;
 
     private:
@@ -84,21 +97,61 @@ namespace spk
             _state = p_state;
         }
 
+        /**
+         * @brief Subscribes a callback for unknown state transitions.
+         *
+         * Registers a callback that is called when a state transition occurs to an undefined or unknown state.
+         * This can be used to handle unexpected or erroneous state transitions.
+         *
+         * @param p_callback The callback function to be executed.
+         * @return Contract A contract object managing the subscription of the callback.
+         */
         Contract setOnUnknowStateTransition(const Callback &p_callback)
         {
             return (_unknownTransitionCallback.subscribe(p_callback));
         }
 
+        /**
+         * @brief Subscribes a callback for unknown state executions.
+         *
+         * Registers a callback that is called when the state machine attempts to execute an unknown state.
+         * This is useful for handling or logging undefined state executions.
+         *
+         * @param p_callback The callback function to be executed.
+         * @return Contract A contract object managing the subscription of the callback.
+         */
         Contract setOnUnknowStateExecution(const Callback &p_callback)
         {
             return (_unknownExecutionCallback.subscribe(p_callback));
         }
 
+        /**
+         * @brief Sets a callback for a specific state transition.
+         *
+         * Registers a callback to be called when the state machine transitions from a specific initial state
+         * to a target state. This allows for defining behavior or actions during certain state changes.
+         *
+         * @param p_initialState The initial state of the transition.
+         * @param p_targetState The target state of the transition.
+         * @param p_callback The callback function to be executed during the transition.
+         * @return Contract A contract object managing the subscription of the callback.
+         */
         Contract setStateTransitionCallback(const TState &p_initialState, const TState &p_targetState, const Callback &p_callback)
         {
             return (subscribe(_transitionCallbacks[{p_initialState, p_targetState}], p_callback));
         }
 
+        /**
+         * @brief Sets a callback for the execution of a specific state.
+         *
+         * Registers a callback to be called when a specific state is executed in the state machine.
+         * This is useful for defining actions or behaviors that should occur when the state machine
+         * is in a particular state.
+         *
+         * @param p_state The state for which the callback is to be executed.
+         * @param p_callback The callback function to be executed.
+         * @return Contract A contract object managing the subscription of the callback.
+         */
         Contract setStateExecutionCallback(const TState &p_state, const Callback &p_callback)
         {
             return (subscribe(_executionCallbacks[p_state], p_callback));

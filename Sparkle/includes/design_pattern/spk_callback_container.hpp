@@ -22,7 +22,22 @@ namespace spk
     class CallbackContainer
     {
     public:
+        /**
+         * @brief Alias for a callback function.
+         *
+         * Callback is defined as a std::function<void()> type. It represents a function that takes no parameters
+         * and returns void. This type of function is commonly used for event handling and notifications,
+         * where a specific action is triggered without the need for additional information.
+         */
         using Callback = std::function<void()>;
+
+        /**
+         * @brief Alias for the container that stores callback functions.
+         *
+         * Container is defined as a std::list of Callback types. This list is used to store multiple
+         * callbacks that have been subscribed to a specific event or trigger. std::list is chosen for 
+         * efficient insertion and removal of callbacks, which is a common operation for callback containers.
+         */
         using Container = std::list<Callback>;
 
     private:
