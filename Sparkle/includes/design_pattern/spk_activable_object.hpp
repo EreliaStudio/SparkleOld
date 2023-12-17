@@ -12,8 +12,25 @@ namespace spk
 	class ActivableObject : protected StatedObject<bool>
 	{
 	public:
-		using Contract = CallbackContainer::Contract;
-		using Callback = CallbackContainer::Callback;
+		/**
+         * @brief Alias for CallbackContainer::Contract.
+         *
+         * Contract is used as a handle for managing the lifecycle of a callback subscription.
+         * When a callback is added to this object, a Contract instance is returned, which can be
+         * used to modify or remove the callback later. This simplifies the management of callback
+         * subscriptions and enhances code readability.
+         */
+        using Contract = CallbackContainer::Contract;
+
+        /**
+         * @brief Alias for CallbackContainer::Callback.
+         *
+         * Callback is used to define the function signature for callback functions. When a callback is
+         * registered with this object, it must conform to this signature. This ensures consistency and
+         * allows for easy integration of callbacks into the object's event handling system. Using an alias
+         * enhances readability and makes it easier to change the callback signature in the future if needed.
+         */
+        using Callback = CallbackContainer::Callback;
 
 	private:
 

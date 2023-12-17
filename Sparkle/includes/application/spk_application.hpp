@@ -119,6 +119,18 @@ namespace spk
 		 */
 		spk::Window& window();
 
+		/**
+		 * @brief Search for a widget by its name within the widget hierarchy.
+		 *
+		 * This method searches for a widget with the specified name within the hierarchy of widgets.
+		 * It traverses the widget tree starting from the current widget and checks each widget's name against
+		 * the provided name. The search is recursive, covering all child widgets and their descendants.
+		 *
+		 * @param p_name The name of the widget to search for. It is a std::wstring representing the unique
+		 *               name identifier of the widget.
+		 * @return spk::Widget* A pointer to the found widget if a widget with the given name exists within
+		 *         the hierarchy. Returns nullptr if no widget with the specified name is found.
+		 */
 		spk::Widget* searchWidget(const std::wstring& p_name) const;
 
 		/**

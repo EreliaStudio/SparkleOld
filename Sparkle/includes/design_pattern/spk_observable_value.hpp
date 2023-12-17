@@ -16,7 +16,25 @@ namespace spk
     class ObservableValue
     {
 	public:
-		using Contract = CallbackContainer::Contract;
+		/**
+         * @brief Alias for CallbackContainer::Contract.
+         *
+         * Contract is used as a handle for managing the lifecycle of a callback subscription.
+         * When a callback is added to this object, a Contract instance is returned, which can be
+         * used to modify or remove the callback later. This simplifies the management of callback
+         * subscriptions and enhances code readability.
+         */
+        using Contract = CallbackContainer::Contract;
+
+        /**
+         * @brief Alias for CallbackContainer::Callback.
+         *
+         * Callback is used to define the function signature for callback functions. When a callback is
+         * registered with this object, it must conform to this signature. This ensures consistency and
+         * allows for easy integration of callbacks into the object's event handling system. Using an alias
+         * enhances readability and makes it easier to change the callback signature in the future if needed.
+         */
+        using Callback = CallbackContainer::Callback;
 
     private:
         TType _value; ///< The value being observed.
@@ -70,7 +88,20 @@ namespace spk
 			return (_value);
 		}
 
-		CallbackContainer::Contract subscribe(std::function<void()> p_callback)
+		/**
+		 * @brief Subscribes a callback to be notified when the observable value changes.
+		 *
+		 * This method allows a callback function to be registered that will be called whenever
+		 * the value held by this ObservableValue object changes. This is a key feature of the observer
+		 * pattern, enabling reactive programming where changes in one value can automatically trigger
+		 * actions elsewhere.
+		 *
+		 * @param p_callback A function to be called when the value changes. The function should match
+		 *                   the signature defined in Callback.
+		 * @return Contract A contract object representing the registration of the callback. This contract
+		 *         can be used for later management of the callback, such as modifying or removing it.
+		 */
+		Contract subscribe(Callback p_callback)
 		{
 			return (std::move(_callbacks.subscribe(p_callback)));
 		}
@@ -303,6 +334,14 @@ namespace spk
 			return *this;
 		}
 
+		/**
+		 * @brief Notifies all subscribed callbacks about a change in the observable value.
+		 *
+		 * This method triggers the execution of all callbacks that have been subscribed to this
+		 * ObservableValue. It is typically called internally whenever the value changes, but can
+		 * also be called manually to force notification. This method forms the core of the
+		 * notification mechanism in the observer pattern.
+		 */
 		void notify()
 		{
 			_callbacks.notify();
