@@ -14,7 +14,7 @@ namespace spk
 	 * Down: The input device is still active.
 	 * Released: The input device just became inactive.
 	 */
-	enum class InputState
+	enum class InputState : uint8_t
 	{
 		Up,
 		Pressed,

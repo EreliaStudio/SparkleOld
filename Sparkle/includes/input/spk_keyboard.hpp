@@ -50,7 +50,7 @@ namespace spk
 			Key0, Key1, Key2, Key3, Key4, Key5, Key6, Key7, Key8, Key9, 
 			A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
 			LeftWindows, RightWindows,
-			App,
+			Apps,
 			Sleep,
 			Numpad0, Numpad1, Numpad2, Numpad3, Numpad4, Numpad5, Numpad6, Numpad7, Numpad8, Numpad9,
 			NumpadMultiply, NumpadPlus, NumpadMinus, NumpadDivide,
@@ -94,15 +94,15 @@ namespace spk
 			 * @param p_index The index to bind the key to.
 			 * @param p_key The key to bind.
 			 */
-			void bindKey(const size_t& p_index, const Key& p_key);
-			Key &operator[](const size_t &p_index);
+			void bindKey(size_t p_index, Key p_key);
+			Key operator[](size_t p_index);
 		};
 
 		static std::map<Keyboard::Key, std::wstring> KeyToStringMap;
 		static const std::wstring UnknowKeyName;
 
 		Mapping _mapping;
-		InputState _keys[Key::SIZE];
+		std::atomic_uint8_t _keys[Key::SIZE];
 		std::vector<Key> _keysToUpdate;
 	public:
 		Keyboard();
@@ -111,13 +111,13 @@ namespace spk
 		 * @brief Registers a key press event.
 		 * @param p_key The key that was pressed.
 		 */
-		void pressKey(const uint32_t &p_key);
+		void pressKey(uint32_t p_key);
 		
 		/**
 		 * @brief Registers a key release event.
 		 * @param p_key The key that was released.
 		 */
-		void releaseKey(const uint32_t &p_key);
+		void releaseKey(uint32_t p_key);
 
 		/**
 		 * @brief Updates the state of the keyboard.
@@ -129,9 +129,9 @@ namespace spk
 		 * @param p_key The key to get the input status of.
 		 * @return The input status of the key.
 		 */
-		const InputState &inputStatus(const Key &p_key) const
+		InputState inputStatus(Key p_key) const
 		{
-			return (_keys[static_cast<size_t>(p_key)]);
+			return (static_cast<InputState>(_keys[static_cast<size_t>(p_key)].load()));
 		}
 
 		/**
@@ -139,7 +139,7 @@ namespace spk
 		 * @param p_key The key to convert to a string.
 		 * @return The string representation of the key.
 		 */
-		static const std::wstring &keyToString(const Keyboard::Key &p_key);
+		static const std::wstring &keyToString(Keyboard::Key p_key);
 	};
 
 
@@ -148,5 +148,5 @@ namespace spk
 	 * @param p_key The Keyboard::Key to convert to a string.
 	 * @return The string representation of the Keyboard::Key.
 	 */
-	const std::wstring &to_wstring(const Keyboard::Key &p_key);
+	const std::wstring &to_wstring(Keyboard::Key p_key);
 }

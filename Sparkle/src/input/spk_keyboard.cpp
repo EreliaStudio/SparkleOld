@@ -71,7 +71,7 @@ namespace spk
 		{Keyboard::Key::Z, L"Z"},
 		{Keyboard::Key::LeftWindows, L"LeftWindows"},
 		{Keyboard::Key::RightWindows, L"RightWindows"},
-		{Keyboard::Key::App, L"App"},
+		{Keyboard::Key::Apps, L"Apps"},
 		{Keyboard::Key::Sleep, L"Sleep"},
 		{Keyboard::Key::Numpad0, L"Numpad0"},
 		{Keyboard::Key::Numpad1, L"Numpad1"},
@@ -142,12 +142,17 @@ namespace spk
 		{Keyboard::Key::NumpadReturn, L"NumpadReturn"}};
 	const std::wstring Keyboard::UnknowKeyName = L"Unknow key";
 
-	void Keyboard::Mapping::bindKey(const size_t& p_index, const Key& p_key)
+	constexpr char kUp = static_cast<char>(InputState::Up); ///< Local helper value.
+	constexpr char kDown = static_cast<char>(InputState::Down); ///< Local helper value.
+	constexpr char kPressed = static_cast<char>(InputState::Pressed); ///< Local helper value.
+	constexpr char kReleased = static_cast<char>(InputState::Released); ///< Local helper value.
+
+	void Keyboard::Mapping::bindKey(size_t p_index, Key p_key)
 	{
 		keys[p_index] = p_key;
 	}
 
-	Keyboard::Key &Keyboard::Mapping::operator[](const size_t &p_index)
+	Keyboard::Key Keyboard::Mapping::operator[](size_t p_index)
 	{
 		return (keys[p_index]);
 	}
@@ -156,28 +161,27 @@ namespace spk
 	{
 		for (size_t i = 0; i < Key::SIZE; i++)
 		{
-			_keys[i] = InputState::Up;
+			_keys[i] = kUp;
 		}
 	}
 
-	void Keyboard::pressKey(const uint32_t& p_key)
+	void Keyboard::pressKey(uint32_t p_key)
 	{
-		Key &keyValue = _mapping[p_key];
-
-		if (_keys[static_cast<size_t>(keyValue)] != InputState::Down)
+		Key keyValue = _mapping[p_key];
+		if (_keys[static_cast<size_t>(keyValue)] != kDown)
 		{
 			_keysToUpdate.push_back(keyValue);
-			_keys[static_cast<size_t>(keyValue)] = InputState::Pressed;
+			_keys[static_cast<size_t>(keyValue)] = kPressed;
 		}
 	}
-	void Keyboard::releaseKey(const uint32_t& p_key)
+	void Keyboard::releaseKey(uint32_t p_key)
 	{
-		Key &keyValue = _mapping[p_key];
+		Key keyValue = _mapping[p_key];
 
-		if (_keys[static_cast<size_t>(keyValue)] != InputState::Up)
+		if (_keys[static_cast<size_t>(keyValue)] != kUp)
 		{
 			_keysToUpdate.push_back(keyValue);
-			_keys[static_cast<size_t>(keyValue)] = InputState::Released;
+			_keys[static_cast<size_t>(keyValue)] = kReleased;
 		}
 	}
 
@@ -185,15 +189,15 @@ namespace spk
 	{
 		for (const auto& key : _keysToUpdate)
 		{
-			if (_keys[key] == InputState::Pressed)
-				_keys[key] = InputState::Down;
-			else if (_keys[key] == InputState::Released)
-				_keys[key] = InputState::Up;
+			if (_keys[key] == kPressed)
+				_keys[key] = kDown;
+			else if (_keys[key] == kReleased)
+				_keys[key] = kUp;
 		}
 		_keysToUpdate.clear();
 	}
 
-	const std::wstring &Keyboard::keyToString(const Keyboard::Key &p_key)
+	const std::wstring &Keyboard::keyToString(Keyboard::Key p_key)
 	{
 		if (Keyboard::KeyToStringMap.contains(p_key) == false)
 			return (Keyboard::UnknowKeyName);
@@ -201,7 +205,7 @@ namespace spk
 			return (Keyboard::KeyToStringMap.at(p_key));
 	}
 
-	const std::wstring &to_wstring(const Keyboard::Key &p_key)
+	const std::wstring &to_wstring(Keyboard::Key p_key)
 	{
 		return (Keyboard::keyToString(p_key));
 	}
