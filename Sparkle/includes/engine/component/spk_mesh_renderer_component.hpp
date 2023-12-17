@@ -46,9 +46,9 @@ namespace spk
         std::shared_ptr<spk::Texture> _texture; ///< Texture applied to the mesh.
         bool _updateTransform = true; ///< Flag indicating if the transform needs an update.
 
-        std::shared_ptr<Transform::TranslationType::Contract> _translationContract; ///< Translation contract for the mesh.
-        std::shared_ptr<Transform::ScaleType::Contract> _scaleContract; ///< Scale contract for the mesh.
-        std::shared_ptr<Transform::RotationType::Contract> _rotationContract; ///< Rotation contract for the mesh.
+        Transform::TranslationType::Contract _translationContract; ///< Translation contract for the mesh.
+        Transform::ScaleType::Contract _scaleContract; ///< Scale contract for the mesh.
+        Transform::RotationType::Contract _rotationContract; ///< Rotation contract for the mesh.
 
         virtual bool _onUpdate() override;
         virtual void _onRender() override;

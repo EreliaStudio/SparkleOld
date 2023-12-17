@@ -33,8 +33,8 @@ namespace spk::Widget
 		virtual void _onGeometryChange() = 0;
 
 		bool _isOperationnal = false;
-		std::shared_ptr<Contract> _activationCallback;
-		std::shared_ptr<Contract> _deactivationCallback;
+		CallbackContainer::Contract _activationCallback;
+		CallbackContainer::Contract _deactivationCallback;
 		spk::TimeConsumption& _timeConsomptionMetrics;
 
 		std::wstring _name;

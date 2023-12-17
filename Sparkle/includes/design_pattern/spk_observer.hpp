@@ -2,7 +2,7 @@
 
 #include <map>
 #include <vector>
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 
 namespace spk
 {
@@ -13,8 +13,12 @@ namespace spk
 	 * @tparam TEvent The type of the event.
 	 */
 	template <typename TEvent>
-	class Observer : public ContractProvider
+	class Observer
 	{
+	public:
+		using Contract = CallbackContainer::Contract;
+		using Callback = CallbackContainer::Callback;
+
 	private:
 		std::map<TEvent, CallbackContainer> _callbacks; /**< The map of keys/values events/callbacks. */
 
@@ -28,19 +32,9 @@ namespace spk
 		{
 		}
 
-		/**
-		 * @brief Subscribe to an event with a callback.
-		 *
-		 * This function subscribes to an event with the specified callback.
-		 * It adds the callback to the corresponding event in the callback map and returns a contract representing the subscription.
-		 *
-		 * @param p_event The event to subscribe to.
-		 * @param p_callback The callback function to be registered.
-		 * @return A contract representing the subscription.
-		 */
-		std::shared_ptr<Contract> subscribe(TEvent p_event, const Callback& p_callback)
+		CallbackContainer::Contract subscribe(TEvent p_event, const Callback& p_callback)
 		{
-			return (ContractProvider::subscribe(_callbacks[p_event], p_callback));
+			return (_callbacks[p_event].subscribe(p_callback));
 		}
 
 		/**
@@ -53,12 +47,7 @@ namespace spk
 		 */
 		void notify(TEvent p_event)
 		{
-			CallbackContainer& container = _callbacks[p_event];
-
-			for (size_t i = 0; i < container.size(); i++)
-			{
-				container[i]();
-			}
+			_callbacks[p_event].notify();
 		}
 	};
 }

@@ -38,18 +38,8 @@ namespace spk
 		 */
 		const bool& isActive() const;
 
-		/**
-		 * @brief Adds a callback function to be called when the object is activated.
-		 * @param p_callback The callback function to be added.
-		 * @return A contract representing the added callback.
-		 */
-		std::shared_ptr<Contract> addActivationCallback(const Callback& p_callback);
+		CallbackContainer::Contract addActivationCallback(const CallbackContainer::Callback& p_callback);
 
-		/**
-		 * @brief Adds a callback function to be called when the object is deactivated.
-		 * @param p_callback The callback function to be added.
-		 * @return A contract representing the added callback.
-		 */
-		std::shared_ptr<Contract> addDeactivationCallback(const Callback& p_callback);
+		CallbackContainer::Contract addDeactivationCallback(const CallbackContainer::Callback& p_callback);
 	};
 }

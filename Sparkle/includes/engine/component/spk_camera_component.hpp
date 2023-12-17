@@ -37,8 +37,8 @@ namespace spk
         spk::Matrix4x4 _projectionMatrix; ///< Matrix representing the camera's projection.
         spk::Matrix4x4 _MVP; ///< Model-View-Projection matrix.
         bool _positionEdited = false; ///< Flag to check if the position has been edited.
-        std::shared_ptr<Transform::TranslationType::Contract> _translationContract; ///< Contract for translation transformations.
-        std::shared_ptr<Transform::RotationType::Contract> _rotationContract; ///< Contract for rotation transformations.
+        Transform::TranslationType::Contract _translationContract; ///< Contract for translation transformations.
+        Transform::RotationType::Contract _rotationContract; ///< Contract for rotation transformations.
 
 
 		// --- Perspective camera attributes

@@ -19,12 +19,12 @@ namespace spk
 		return (state());
 	}
 
-	std::shared_ptr<ActivableObject::Contract> ActivableObject::addActivationCallback(const Callback& p_callback)
+	CallbackContainer::Contract ActivableObject::addActivationCallback(const CallbackContainer::Callback& p_callback)
 	{
-		return (addStateCallback(true, p_callback));
+		return (std::move(addStateCallback(true, p_callback)));
 	}
-	std::shared_ptr<ActivableObject::Contract> ActivableObject::addDeactivationCallback(const Callback& p_callback)
+	CallbackContainer::Contract ActivableObject::addDeactivationCallback(const CallbackContainer::Callback& p_callback)
 	{
-		return (addStateCallback(false, p_callback));
+		return (std::move(addStateCallback(false, p_callback)));
 	}
 }

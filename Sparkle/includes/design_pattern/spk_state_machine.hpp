@@ -1,5 +1,5 @@
 #pragma once
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 #include <map>
 
 namespace spk
@@ -11,8 +11,12 @@ namespace spk
      * @tparam TState The type of state this machine handles.
      */
     template <typename TState>
-    class StateMachine : public spk::ContractProvider
+    class StateMachine
     {
+    public:
+        using Callback = CallbackContainer::Callback;
+        using Contract = CallbackContainer::Contract;
+
     private:
         /**
          * @brief Struct representing a key for the transitionCallbacks map.
@@ -39,36 +43,10 @@ namespace spk
         };
 
         TState _state;                                                             /**< The current state of the state machine. */
-        std::map<TState, ContractProvider::CallbackContainer> _executionCallbacks; /**< Map storing callbacks for state executions. */
-        std::map<Key, ContractProvider::CallbackContainer> _transitionCallbacks;   /**< Map storing callbacks for state transitions. */
-        ContractProvider::CallbackContainer _unknownExecutionCallback;             /**< Callback container for unknown state executions. */
-        ContractProvider::CallbackContainer _unknownTransitionCallback;            /**< Callback container for unknown state transition. */
-
-        /**
-         * @brief Calls the callbacks stored in the provided callback containers.
-         *
-         * @details If the known callback container is empty, the unknown callback container is used.
-         * If both containers are empty, a runtime_error is thrown.
-         *
-         * @param p_known The callback container for known callbacks.
-         * @param p_unknown The callback container for unknown callbacks.
-         */
-        void _callCallbacks(const ContractProvider::CallbackContainer &p_known, const ContractProvider::CallbackContainer &p_unknown)
-        {
-            const CallbackContainer *container = &p_known;
-            if (container->size() == 0)
-            {
-                if (p_unknown.size() == 0)
-                {
-                    throw std::runtime_error("Unknown Callback is undefined and Callback is undefined");
-                }
-                container = &p_unknown;
-            }
-            for (size_t i = 0; i < container->size(); i++)
-            {
-                (*container)[i]();
-            }
-        }
+        std::map<TState, CallbackContainer> _executionCallbacks; /**< Map storing callbacks for state executions. */
+        std::map<Key, CallbackContainer> _transitionCallbacks;   /**< Map storing callbacks for state transitions. */
+        CallbackContainer _unknownExecutionCallback;             /**< Callback container for unknown state executions. */
+        CallbackContainer _unknownTransitionCallback;            /**< Callback container for unknown state transition. */
 
     public:
         /**
@@ -85,7 +63,10 @@ namespace spk
          */
         void update()
         {
-            _callCallbacks(_executionCallbacks[_state], _unknownExecutionCallback);
+            if (_executionCallbacks[_state].size() != 0)
+                _executionCallbacks[_state].notify();
+            else
+                _unknownExecutionCallback.notify();
         }
 
         /**
@@ -95,55 +76,32 @@ namespace spk
          */
         void setState(const TState &p_state)
         {
-            _callCallbacks(_transitionCallbacks[{_state, p_state}], _unknownTransitionCallback);
+            if (_transitionCallbacks[{_state, p_state}].size() != 0)
+                _transitionCallbacks[{_state, p_state}].notify();
+            else
+                _unknownTransitionCallback.notify();
+
             _state = p_state;
         }
 
-        /**
-         * @brief Sets a callback to be called when an unknown state transition occurs.
-         *
-         * @param p_callback The callback to be set.
-         * @return Contract The Contract object representing the ownership of the callback.
-         */
-        std::shared_ptr<Contract> setOnUnknowStateTransition(const Callback &p_callback)
+        Contract setOnUnknowStateTransition(const Callback &p_callback)
         {
-            return (ContractProvider::subscribe(_unknownTransitionCallback, p_callback));
+            return (_unknownTransitionCallback.subscribe(p_callback));
         }
 
-        /**
-         * @brief Sets a callback to be called when an unknown state execution occurs.
-         *
-         * @param p_callback The callback to be set.
-         * @return Contract The Contract object representing the ownership of the callback.
-         */
-        std::shared_ptr<Contract> setOnUnknowStateExecution(const Callback &p_callback)
+        Contract setOnUnknowStateExecution(const Callback &p_callback)
         {
-            return (ContractProvider::subscribe(_unknownExecutionCallback, p_callback));
+            return (_unknownExecutionCallback.subscribe(p_callback));
         }
 
-        /**
-         * @brief Sets a callback to be called when a specific state transition occurs.
-         *
-         * @param p_initialState The initial state.
-         * @param p_targetState The target state.
-         * @param p_callback The callback to be set.
-         * @return Contract The Contract object representing the ownership of the callback.
-         */
-        std::shared_ptr<Contract> setStateTransitionCallback(const TState &p_initialState, const TState &p_targetState, const Callback &p_callback)
+        Contract setStateTransitionCallback(const TState &p_initialState, const TState &p_targetState, const Callback &p_callback)
         {
-            return (ContractProvider::subscribe(_transitionCallbacks[{p_initialState, p_targetState}], p_callback));
+            return (subscribe(_transitionCallbacks[{p_initialState, p_targetState}], p_callback));
         }
 
-        /**
-         * @brief Sets a callback to be called when a specific state is executed.
-         *
-         * @param p_state The specific state.
-         * @param p_callback The callback to be set.
-         * @return Contract The Contract object representing the ownership of the callback.
-         */
-        std::shared_ptr<Contract> setStateExecutionCallback(const TState &p_state, const Callback &p_callback)
+        Contract setStateExecutionCallback(const TState &p_state, const Callback &p_callback)
         {
-            return (ContractProvider::subscribe(_executionCallbacks[p_state], p_callback));
+            return (subscribe(_executionCallbacks[p_state], p_callback));
         }
     };
 }

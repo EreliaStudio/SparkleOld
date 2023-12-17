@@ -47,29 +47,11 @@ namespace spk
          */
         void lookAt(const spk::Vector3& p_target, const spk::Vector3& p_up = spk::Vector3(0, 1, 0));
 
-		/**
-		 * @brief Subscribes a function to be called when the translation changes.
-		 *
-		 * @param p_function The function to call on translation change.
-		 * @return std::shared_ptr<TranslationType::Contract> A contract to manage the subscription.
-		 */
-		std::shared_ptr<TranslationType::Contract> subscribeOnTranslation(const std::function<void()> p_function);
+		TranslationType::Contract subscribeOnTranslation(const std::function<void()> p_function);
 
-		/**
-		 * @brief Subscribes a function to be called when the scaling changes.
-		 *
-		 * @param p_function The function to call on scale change.
-		 * @return std::shared_ptr<ScaleType::Contract> A contract to manage the subscription.
-		 */
-		std::shared_ptr<ScaleType::Contract> subscribeOnScaling(const std::function<void()> p_function);
+		ScaleType::Contract subscribeOnScaling(const std::function<void()> p_function);
 
-		/**
-		 * @brief Subscribes a function to be called when the rotation changes.
-		 *
-		 * @param p_function The function to call on rotation change.
-		 * @return std::shared_ptr<RotationType::Contract> A contract to manage the subscription.
-		 */
-		std::shared_ptr<RotationType::Contract> subscribeOnRotation(const std::function<void()> p_function);
+		RotationType::Contract subscribeOnRotation(const std::function<void()> p_function);
 
 		/**
 		 * @brief Sets the translation of the object.

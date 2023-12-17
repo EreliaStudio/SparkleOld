@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 #include <map>
 
 namespace spk
@@ -14,11 +14,11 @@ namespace spk
 	 * @tparam TState The status class/structure/enum/type in which the object can be set
 	 */
 	template <typename TState>
-	class StatedObject : public ContractProvider
+	class StatedObject
 	{
 	private:
 		TState _state;
-		std::map<TState, ContractProvider::CallbackContainer> _callbacks;
+		std::map<TState, CallbackContainer> _callbacks;
 
 	public:
 		/**
@@ -32,19 +32,9 @@ namespace spk
 
 		}
 
-		/**
-		 * @brief Setup callback for specific state.
-		 * 
-		 * This method will set a specific callback to a desired state.
-		 * This method will provide a Contract to the user.
-		 *
-		 * @param p_state The state binded to the callback.
-		 * @param p_callback The callback binded to the state.
-		 * @return Contract A Contract representing the bind between state and callback, allowing him to edit/resign the callback added by this method.
-		 */
-		std::shared_ptr<Contract> addStateCallback(TState p_state, Callback p_callback)
+		CallbackContainer::Contract addStateCallback(TState p_state, CallbackContainer::Callback p_callback)
 		{
-			return (ContractProvider::subscribe(_callbacks[p_state], p_callback));
+			return (std::move(_callbacks[p_state].subscribe(p_callback)));
 		}
 
 		/**
@@ -55,12 +45,7 @@ namespace spk
 		{
 			_state = p_state;
 	
-			CallbackContainer &container = _callbacks[p_state];
-
-			for (size_t i = 0; i < container.size(); i++)
-			{
-					container[i]();
-			}
+			_callbacks[p_state].notify();
 		}
 		
 		/**

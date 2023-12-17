@@ -2,6 +2,7 @@
 
 #include <future>
 #include <optional>
+#include "design_pattern/spk_callback_container.hpp"
 
 namespace spk
 {
@@ -15,10 +16,14 @@ namespace spk
 	 * @tparam TType The type of the value.
 	 */
 	template<typename TType>
-	class Promise : public ContractProvider
+	class Promise
 	{
+	public:
+		using Callback = CallbackContainer::Callback;
+		using Contract = CallbackContainer::Contract;
+
 	private:
-		ContractProvider::CallbackContainer _callbackContainer;
+		CallbackContainer _callbackContainer;
 		std::promise<TType> _promise;
 		std::optional<TType> _value;
 
@@ -49,17 +54,9 @@ namespace spk
 		 */
 		Promise& operator=(const Promise& p_other) = delete;
 
-		/**
-		 * @brief Subscribe to the promise and receive the value when available.
-		 * 
-		 * This function allows subscribing to the promise to receive the value when it becomes available.
-		 * 
-		 * @param p_callback The callback function to be called when the value is available.
-		 * @return A contract representing the subscription.
-		 */
-		std::shared_ptr<Contract> subscribe(const Callback& p_callback)
+		Contract subscribe(const Callback& p_callback)
 		{
-			return (ContractProvider::subscribe(_callbackContainer, p_callback));
+			return (_callbackContainer.subscribe(p_callback));
 		}
 
 		/**
@@ -89,10 +86,7 @@ namespace spk
 				throw std::runtime_error("Promise already realised");
 			}
 			_promise.set_value(p_value);
-			for (auto& callback : _callbackContainer)
-			{
-				callback();
-			}
+			_callbackContainer.notify();
 		}
 
 		/**

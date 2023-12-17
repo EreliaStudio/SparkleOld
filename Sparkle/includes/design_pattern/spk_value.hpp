@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 
 #include "iostream/spk_iostream.hpp"
 
@@ -19,11 +19,13 @@ namespace spk
 	 * @tparam TType The type of the value.
 	 */
 	template <typename TType>
-	class Value : public ContractProvider
+	class Value
 	{
 		friend class Default;
 
 	public:
+		using Contract = CallbackContainer::Contract;
+
 		/**
 		 * @brief The inner class for managing the default state of the value.
 		 *
@@ -248,17 +250,9 @@ namespace spk
 			setDefaultValue(nullptr);
 		}
 
-		/**
-		 * @brief Subscribe to the value for edition callbacks.
-		 *
-		 * This function subscribes a callback to the value for edition callbacks.
-		 *
-		 * @param p_callback The callback function to subscribe.
-		 * @return A Contract object representing the subscription.
-		 */
-		std::shared_ptr<ContractProvider::Contract> subscribe(const Callback& p_callback)
+		CallbackContainer::Contract subscribe(const CallbackContainer::Callback& p_callback)
 		{
-			return (ContractProvider::subscribe(_onEditionCallbacks, p_callback));
+			return (_onEditionCallbacks.subscribe(p_callback));
 		}
 
 		/**
@@ -403,7 +397,7 @@ namespace spk
 		/**
 		 * @brief Contract for subscription updates.
 		 */
-		std::shared_ptr<Contract> _contract;
+		Contract _contract;
 
 		/**
 		 * @brief Mutex for thread-safe access.

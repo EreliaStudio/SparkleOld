@@ -1,121 +1,83 @@
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 #include "iostream/spk_iostream.hpp"
 
 namespace spk
 {
-		ContractProvider::Contract::Contract() :
-			_callbackOwner(nullptr),
-			_callback(nullptr),
-			_isOriginal(false)
-		{
+	CallbackContainer::Contract::Contract(Container::iterator p_iterator, CallbackContainer::Container* p_container) :
+		_iterator(p_iterator),
+		_container(p_container),
+		_isOwner(true)
+	{
 
-		
+	}
+
+	CallbackContainer::Contract::Contract() :
+		_iterator(),
+		_container(nullptr),
+		_isOwner(false)
+	{
+
+	}
+
+	CallbackContainer::Contract::Contract(Contract&& other) noexcept :
+		_iterator(other._iterator),
+		_container(other._container),
+		_isOwner(other._isOwner)
+	{
+		other._isOwner = false;
+		other._container = nullptr;
+	}
+
+	CallbackContainer::Contract& CallbackContainer::Contract::operator=(Contract&& other) noexcept
+	{
+		if (this != &other) {
+			resign();
+			_iterator = other._iterator;
+			_container = other._container;
+			_isOwner = other._isOwner;
+
+			other._isOwner = false;
+			other._container = nullptr;
 		}
-		
-		ContractProvider::Contract::Contract(CallbackContainer *p_callbackOwner, Callback *p_callback) :
-			_callbackOwner(p_callbackOwner),
-			_callback(p_callback),
-			_isOriginal(true)
-		{
+		return *this;
+	}
 
+	CallbackContainer::Contract::~Contract()
+	{
+		resign();
+	}
+
+	void CallbackContainer::Contract::amend(std::function<void()> p_newCallback)
+	{
+		if (_container) {
+			*_iterator = p_newCallback;
 		}
+	}
 
-		bool ContractProvider::Contract::isOriginal()
-		{
-			return (_isOriginal == true);
+	void CallbackContainer::Contract::resign()
+	{
+		if (_isOwner && _container) {
+			_container->erase(_iterator);
+			_isOwner = false;
 		}
+	}
 
-		bool ContractProvider::Contract::isValid()
-		{
-			return (_callbackOwner != nullptr);
+	size_t CallbackContainer::size() const
+	{
+		return (_callbacks.size());
+	}
+
+	CallbackContainer::Contract CallbackContainer::subscribe(std::function<void()> p_callback)
+	{
+		_callbacks.push_back(p_callback);
+
+		return (std::move(Contract(--(_callbacks.end()), &_callbacks)));
+	}
+
+	void CallbackContainer::notify() const
+	{
+		for (auto& callback : _callbacks) {
+			callback();
 		}
-
-		ContractProvider::Contract::Contract(Contract &&p_other) :
-			_callbackOwner(p_other._callbackOwner),
-			_callback(p_other._callback),
-			_isOriginal(true)
-		{
-			p_other._isOriginal = false;
-		}
-
-		ContractProvider::Contract& ContractProvider::Contract::operator=(Contract &&p_other) noexcept
-		{
-			if (this != &p_other)
-			{
-				if (isOriginal() == true && isValid() == true)
-				{
-					resign();
-				}
-
-				_isOriginal = p_other._isOriginal;
-				_callbackOwner = p_other._callbackOwner;
-				_callback = p_other._callback;
-
-				p_other._isOriginal = false;
-			}
-
-			return *this;
-		}
-
-		ContractProvider::Contract::~Contract()
-		{
-			if (isOriginal() == true && isValid() == true)
-			{
-				resign();
-			}
-		}
-
-		void ContractProvider::Contract::edit(const Callback& p_callback)
-		{
-			if (isOriginal() == true && isValid() == true)
-			{
-				*_callback = p_callback;
-			}
-			else
-			{
-				throw std::runtime_error("Can't edit a resigned contract");
-			}
-		}
-
-		void ContractProvider::Contract::resign()
-		{
-			if (isOriginal() == true && isValid() == true)
-			{
-				_isOriginal = false;
-				if (isValid() == true)
-				{
-					_callback = nullptr;
-					for (auto it = _callbackOwner->begin(); it != _callbackOwner->end(); ++it)
-					{
-						if (&(*it) == _callback)
-						{
-							_callbackOwner->erase(it);
-							break;
-						}
-					}	
-				}				
-			}
-			else
-			{
-				throw std::runtime_error("Can't resign an already resigned contract");
-			}
-		}
-
-		std::shared_ptr<ContractProvider::Contract> ContractProvider::subscribe(CallbackContainer& p_callbackOwner, const Callback& p_callback)
-		{
-			p_callbackOwner.push_back(p_callback);
-			std::shared_ptr<ContractProvider::Contract> result = std::shared_ptr<ContractProvider::Contract>(
-					new ContractProvider::Contract(&p_callbackOwner, &(p_callbackOwner.back()))
-				);
-			_contracts.push_back(result);
-			return (result);
-		}
-
-		ContractProvider::~ContractProvider()
-		{
-			for (size_t i = 0; i < _contracts.size(); i++)
-			{
-				_contracts[i]->_callbackOwner = nullptr;
-			}
-		}
+	}
 }

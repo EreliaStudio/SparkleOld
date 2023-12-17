@@ -15,7 +15,7 @@
 #include "design_pattern/spk_singleton.hpp"
 #include "design_pattern/spk_inherence_object.hpp"
 #include "design_pattern/spk_command_parser.hpp"
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 #include "design_pattern/spk_observer.hpp"
 #include "design_pattern/spk_stated_object.hpp"
 #include "design_pattern/spk_activable_object.hpp"

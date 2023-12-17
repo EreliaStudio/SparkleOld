@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design_pattern/spk_contract_provider.hpp"
+#include "design_pattern/spk_callback_container.hpp"
 
 namespace spk
 {
@@ -13,20 +13,14 @@ namespace spk
      * @tparam TType The type of the value to be observed.
      */
     template <typename TType>
-    class ObservableValue : public ContractProvider
+    class ObservableValue
     {
+	public:
+		using Contract = CallbackContainer::Contract;
+
     private:
         TType _value; ///< The value being observed.
         CallbackContainer _callbacks; ///< Container for callback functions.
-
-        /**
-         * @brief Notifies all subscribed observers about the value change.
-         */
-        void _notify()
-        {
-            for (auto& lambda : _callbacks)
-                lambda();
-        }
 
 	public:
 	    /**
@@ -76,18 +70,9 @@ namespace spk
 			return (_value);
 		}
 
-		/**
-		 * @brief Subscribes a callback function to value changes.
-		 *
-		 * Registers a callback function that will be called whenever the value changes.
-		 * This is part of the observable pattern, allowing observers to react to changes in the value.
-		 *
-		 * @param p_callback A std::function object representing the callback to be called on value change.
-		 * @return std::shared_ptr<ContractProvider::Contract> A shared pointer to the subscription contract.
-		 */
-		std::shared_ptr<ContractProvider::Contract> subscribe(std::function<void()> p_callback)
+		CallbackContainer::Contract subscribe(std::function<void()> p_callback)
 		{
-			return (ContractProvider::subscribe(_callbacks, p_callback));
+			return (std::move(_callbacks.subscribe(p_callback)));
 		}
 
 		/**
@@ -185,7 +170,7 @@ namespace spk
 			if (_value != p_value)
 			{
 				_value = p_value;
-				_notify();
+				_callbacks.notify();
 			}
 			return *this;
 		}
@@ -218,7 +203,7 @@ namespace spk
 		ObservableValue& operator+=(const TOtherType& p_other)
 		{
 			_value += p_other;
-			_notify();
+			_callbacks.notify();
 			return *this;
 		}
 
@@ -250,7 +235,7 @@ namespace spk
 		ObservableValue& operator-=(const TOtherType& p_other)
 		{
 			_value -= p_other;
-			_notify();
+			_callbacks.notify();
 			return *this;
 		}
 
@@ -282,7 +267,7 @@ namespace spk
 		ObservableValue& operator*=(const TOtherType& p_other)
 		{
 			_value *= p_other;
-			_notify();
+			_callbacks.notify();
 			return *this;
 		}
 
@@ -314,8 +299,13 @@ namespace spk
 		ObservableValue& operator/=(const TOtherType& p_other)
 		{
 			_value /= p_other;
-			_notify();
+			_callbacks.notify();
 			return *this;
+		}
+
+		void notify()
+		{
+			_callbacks.notify();
 		}
 	};
 }

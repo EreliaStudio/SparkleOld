@@ -52,17 +52,17 @@ namespace spk
 			);
 	}
 
-	std::shared_ptr<Transform::TranslationType::Contract> Transform::subscribeOnTranslation(const std::function<void()> p_function)
+	Transform::TranslationType::Contract Transform::subscribeOnTranslation(const std::function<void()> p_function)
 	{
 		return (_translation.subscribe(p_function));
 	}
 	
-	std::shared_ptr<Transform::ScaleType::Contract> Transform::subscribeOnScaling(const std::function<void()> p_function)
+	Transform::ScaleType::Contract Transform::subscribeOnScaling(const std::function<void()> p_function)
 	{
 		return (_scale.subscribe(p_function));
 	}
 	
-	std::shared_ptr<Transform::RotationType::Contract> Transform::subscribeOnRotation(const std::function<void()> p_function)
+	Transform::RotationType::Contract Transform::subscribeOnRotation(const std::function<void()> p_function)
 	{
 		return (_rotation.subscribe(p_function));
 	}
