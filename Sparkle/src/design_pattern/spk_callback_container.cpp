@@ -62,6 +62,12 @@ namespace spk
 		}
 	}
 
+	void CallbackContainer::Contract::trigger()
+	{
+		if (_isOwner == true && _container != nullptr)
+			(*_iterator)();
+	}
+
 	size_t CallbackContainer::size() const
 	{
 		return (_callbacks.size());

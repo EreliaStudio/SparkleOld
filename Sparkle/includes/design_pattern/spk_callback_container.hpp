@@ -105,6 +105,11 @@ namespace spk
 			 * @brief Resigns the contract, removing the callback from the container if this contract is the owner.
 			 */
 			void resign();
+
+			/**
+			 * @brief Force the execution of the contract
+			*/
+			void trigger();
 		};
 
         /**

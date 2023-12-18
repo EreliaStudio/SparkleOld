@@ -126,7 +126,7 @@ namespace spk
          * @brief Gets the children of this node.
          * @return Vector of constant pointers to the children nodes.
          */
-		const std::vector<TType*> childrens() const
+		const std::vector<TType*>& childrens() const
 		{
 			return (_childrens);
 		}
